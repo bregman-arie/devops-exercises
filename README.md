@@ -1,6 +1,14 @@
 # DevOps Interview Questions
 
 
+## Table of Contents
+
+  1. [Jenkins Questions](#jenkins)
+  1. [AWS Questions](#aws)
+  1. [Network Questions](#network)
+
+
+
 ## Jenkins
 
 ###### beginner
@@ -51,8 +59,20 @@
 ###### S3 - beginner questions
 
 - Explain what is S3 and what is it used for
+
 - What is a bucket?
+
 - True or False? a bucket name must be globally unique
+
 - What objects in S3 consists of?
+
   - Another way to ask it: explain key, value, version id and metadata in context of objects
+
 - Explain data consistency
+
+  
+
+## Network
+
+Network questions can be found [here](https://github.com/bregman-arie/computer-networking/blob/master/interview_questions/README.md)
+
