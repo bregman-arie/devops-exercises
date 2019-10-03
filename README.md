@@ -36,3 +36,23 @@
 ###### Advanced
 
 * Write a script to remove all the jobs which include the string "REMOVE_ME"
+
+
+
+## AWS
+
+###### Global Infrastructure
+
+- Explain the following
+  - Availability zone
+  - Region
+  - Edge location
+
+###### S3 - beginner questions
+
+- Explain what is S3 and what is it used for
+- What is a bucket?
+- True or False? a bucket name must be globally unique
+- What objects in S3 consists of?
+  - Another way to ask it: explain key, value, version id and metadata in context of objects
+- Explain data consistency
