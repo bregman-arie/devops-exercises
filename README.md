@@ -13,6 +13,7 @@
   1. [Python](#python)
   1. [Prometheus](#prometheus)
   1. [Git](#git)
+  1. [Scenarios](#scenarios)
 
 
 ## Jenkins
@@ -413,3 +414,11 @@ Alert manager is responsible for alerts ;)
 
 * What is the difference between `git pull` and `git pull`?
 * How do you resolve git conflicts?
+
+## Scenarios
+
+Scenarios are questions which combine several subjects together. Some scenarios will
+require from you to design, plan and implement environments with different constraints
+and considerations.
+
+* [Elasticsearch & Kibana on AWS](scenarios/elk_kibana_aws.md)
