@@ -6,7 +6,10 @@
   1. [Jenkins](#jenkins)
   1. [AWS](#aws)
   1. [Network](#network)
-    4. [Linux](#linux)
+  1. [Linux](#linux)
+  1. [Ansible](#ansible)
+  1. [Docker](#docker)
+  1. [Python](#python)
 
 
 
@@ -109,11 +112,16 @@ execution or run forever
 The default signal is SIGTERM (15). This signal kills
 process gracefully which means it allows it to save current
 state configuration.
-followup questions:
-what is SIGKILL?
-what other signals there are?
 ```
 
+* What signals are you familiar with?
+```
+SIGTERM - default signal for terminating a process
+SIGHUP - common usage is for reloading configuration
+SIGKILL - a signal which cannot caught or ignored
+
+To view all available signals run `kill -l`
+```
 
 
 ## Ansible
@@ -215,3 +223,75 @@ The content of the system_info.j2 template
 I'm {{ ansible_hostname }} and my operating system is {{ ansible_distribution }
 ```
 
+## Docker
+
+* What happens when you run `docker run hello-world`?
+
+* How do you run a container?
+
+* What do you see when you run `docker ps`?
+
+* What `docker commit` does? when will you use it?
+
+## Python
+
+###### beginner
+
+* What data type supported in Python and which of them are mutable?
+  What function can you use to show that a certain data type is mutable?
+
+```
+The mutable data types are:
+
+    List
+    Dictionary
+    Set
+    
+The immutable data types are:
+
+    Numbers (int, float, ...)
+    String
+    Bool
+    Tuple
+
+The id function can be used to check if a given variable is mutable or not.
+```
+
+* What is PEP8? Give an example of 5 style guidelines
+
+```
+PEP8 is a list of coding conventions and style guidelines for Python
+
+5 style guidelines:
+
+    1. Limit all lines to a maximum of 79 characters.
+    2. Surround top-level function and class definitions with two blank lines.
+    3. Use commas when making a tuple of one element
+    4. Use spaces (and not tabs) for indentation
+    5. Use 4 spaces per indentation level
+```
+
+###### Intermediate
+
+* What _ is used for in Python?
+
+```
+1. Translation lookup in i18n
+2. Hold the result of the last executed expression or statement
+3. As a general purpose "throwaway" variable name. For example: x, y, _ = get_data() (x and y are used but since we don't care about third variable, we "threw it away").
+```
+
+* Sort a list of lists by the second item of each nested list
+
+```
+li = [[1, 4], [2, 1], [3, 9], [4, 2], [4, 5]]
+
+sorted(x, key=lambda l: l[1])
+```
+
+* You have the following lists: [{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]
+  Extract all type of foods. Final output should be: {'mushrooms', 'goombas', 'turtles'}
+
+```
+set([food for bro in x for food in bro['food']])
+```
