@@ -8,9 +8,11 @@
   1. [Network](#network)
   1. [Linux](#linux)
   1. [Ansible](#ansible)
+  1. [Containers](#containers)
   1. [Docker](#docker)
   1. [Python](#python)
   1. [Prometheus](#prometheus)
+  1. [Git](#git)
 
 
 ## Jenkins
@@ -59,7 +61,7 @@
   - Region
   - Edge location
 
-###### S3 - beginner questions
+###### S3 - beginner
 
 - Explain what is S3 and what is it used for
 - What is a bucket?
@@ -78,6 +80,12 @@
   - Distribution
 - What delivery methods available for the user with CDN?
 - True or False? object are cached for the life of TTL
+
+
+###### EC2 - beginner
+
+* What type of instances have you created?
+* How to increase RAM for a given EC2 instance?
 
 
 ## Network
@@ -246,6 +254,11 @@ The content of the system_info.j2 template
 I'm {{ ansible_hostname }} and my operating system is {{ ansible_distribution }
 ```
 
+## Containers
+
+* How containers different from VMs?
+* In which scenarios would you use containers and in which you would prefer to use VMs?
+
 ## Docker
 
 * What happens when you run `docker run hello-world`?
@@ -281,6 +294,8 @@ Answer:
 Use the image 'rhel7/rhel' from the registry 'registry.access.redhat.com` to run httpd.
 Befor running it, install the httpd package, update all packages and expose port 80.
 ```
+
+* What is the difference between ADD and COPY in Dockerfile?
 
 ## Python
 
@@ -359,3 +374,10 @@ Alert manager is responsible for alerts ;)
 ```
 
 * What is an exporter? What is it used for?
+
+## Git
+
+###### beginner
+
+* What is the difference between `git pull` and `git pull`?
+* How do you resolve git conflicts?
