@@ -10,7 +10,7 @@
   1. [Ansible](#ansible)
   1. [Docker](#docker)
   1. [Python](#python)
-
+  1. [Prometheus](#prometheus)
 
 
 ## Jenkins
@@ -227,15 +227,41 @@ I'm {{ ansible_hostname }} and my operating system is {{ ansible_distribution }
 
 * What happens when you run `docker run hello-world`?
 
+```
+Docker CLI passes your request to Docker daemon.
+Docker daemon downloads the image from Docker Hub
+Docker daemon creates a new container by using the image it downloaded
+Docker daemon redirects output from container to Docker CLI which redirects it to the standard output
+```
+
 * How do you run a container?
 
 * What do you see when you run `docker ps`?
 
 * What `docker commit` does? when will you use it?
 
+* Explain what is Dockerfile used for and the content of the following Dockerfile
+
+```
+FROM registry.access.redhat.com/rhel7/rhel
+
+RUN yum -y install httpd && yum -y update; yum clean all
+
+EXPOSE 80
+ENTRYPOINT [ "/usr/sbin/httpd" ]
+CMD [ "-D", "FOREGROUND" ]
+```
+
+Answer:
+
+```
+Use the image 'rhel7/rhel' from the registry 'registry.access.redhat.com` to run httpd.
+Befor running it, install the httpd package, update all packages and expose port 80.
+```
+
 ## Python
 
-###### beginner
+##### beginner
 
 * What data type supported in Python and which of them are mutable?
   What function can you use to show that a certain data type is mutable?
@@ -271,7 +297,7 @@ PEP8 is a list of coding conventions and style guidelines for Python
     5. Use 4 spaces per indentation level
 ```
 
-###### Intermediate
+##### Intermediate
 
 * What _ is used for in Python?
 
@@ -295,3 +321,18 @@ sorted(x, key=lambda l: l[1])
 ```
 set([food for bro in x for food in bro['food']])
 ```
+
+## Prometheus
+
+* Describe the following Prometheus components:
+  - Prometheus server
+  - Push Gateway
+  - Alert Manager
+
+```
+Prometheus server responsible for scraping the storing the data
+Push gateway is used for short-lived jobs
+Alert manager is responsible for alerts ;)
+```
+
+* What is an exporter? What is it used for?
