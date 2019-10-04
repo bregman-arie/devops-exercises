@@ -59,18 +59,21 @@
 ###### S3 - beginner questions
 
 - Explain what is S3 and what is it used for
-
 - What is a bucket?
-
 - True or False? a bucket name must be globally unique
-
 - What objects in S3 consists of?
-
   - Another way to ask it: explain key, value, version id and metadata in context of objects
-
 - Explain data consistency
 
-  
+###### CloudFront
+
+- Explain what is CloudFront and what is it used for
+- Explain the following
+  - Origin
+  - Edge location
+  - Distribution
+- What delivery methods available for the user with CDN?
+- True or False? object are cached for the life of TTL
 
 ## Network
 
