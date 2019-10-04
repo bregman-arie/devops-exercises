@@ -121,6 +121,18 @@ Network questions can be found [here](https://github.com/bregman-arie/computer-n
 
 * What is a Linux kernel module and how do you load a new module?
 
+* Explain what would be the result of each command:
+
+```
+echo $0
+echo $?
+echo $$
+echo $@
+echo $#
+```
+
+* How to grep two strings?
+
 * What is the different between a soft link and hard link?
 
 ```
@@ -295,7 +307,27 @@ Use the image 'rhel7/rhel' from the registry 'registry.access.redhat.com` to run
 Befor running it, install the httpd package, update all packages and expose port 80.
 ```
 
+* How would you transfer data from one container into another?
+
 * What is the difference between ADD and COPY in Dockerfile?
+* What is the difference between CMD and RUN in Dockerfile?
+
+* Explain what is Docker compose and what is it used for
+* What are the differences between Docker compose, Docker swarm and Kuberenets?
+
+* Explain Docker interlock
+
+* What is the difference between Docker Hub and Docker cloud?
+
+```
+Docker Hub is a native Docker registry service which allows you to run pull
+and push commands to install and deploy Docker images from the Docker Hub.
+
+Docker Cloud is built on top of the Docker Hub so Docker Cloud provides
+you with more options/features compared to Docker Hub. One example is
+Swarm management which means you can create new swarms in Docker Cloud.
+```
+
 
 ## Python
 
