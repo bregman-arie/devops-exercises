@@ -41,9 +41,8 @@
 
 ###### Intermediate
 
-- What type of jobs there are?
-- How do you notify users on build results?
-  - Can also be asked like that: what ways there are to notify users on build results?
+- What type of jobs there are? what is the advantage of each type?
+- What ways are you familiar with to notify users on build results?
 
 ###### Advanced
 
@@ -81,14 +80,38 @@
 - True or False? object are cached for the life of TTL
 
 
-
 ## Network
 
 Network questions can be found [here](https://github.com/bregman-arie/computer-networking/blob/master/interview_questions/README.md)
 
 
-
 ## Linux
+
+##### beginner
+
+* Explain what each of the following commands does and given an example on how to use it
+  * ls
+  * rm 
+  * rmdir (can you achieve the same result by using `rm`?)
+  * grep
+  * wc
+  * df
+
+* How to change the permissions of a file?
+
+* What does the following permissions mean?:
+  * 777
+  * 644
+  * 750
+
+* How to add a new user to the system without providing him the ability to log-in into the system?
+
+* What commands are you using for troubleshooting issues? specifically:
+  * Disk issues
+  * Memory, CPU issues
+  * Networking issues
+
+* What is a Linux kernel module and how do you load a new module?
 
 * What is the different between a soft link and hard link?
 
@@ -100,7 +123,7 @@ soft links can be created between different file systems while
 hard link can be created only within the same file system.
 ```
 
-* How to run a process in background and why to do that in the first place?
+* How to run a process in the background and why to do that in the first place?
 ```
 You can achieve that by specifying & at end of the command.
 As to Why? since some commands/processes can take a lot of time to finish
