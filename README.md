@@ -10,6 +10,7 @@
   1. [Ansible](#ansible)
   1. [Containers](#containers)
   1. [Docker](#docker)
+  1. [Kubernetes](#kubernetes)
   1. [Python](#python)
   1. [Prometheus](#prometheus)
   1. [Git](#git)
@@ -41,11 +42,13 @@
   * How to install Jenkins?
   * How to install a plugin?
   * How to install an agent?
+* Explain CI/CD and how you implemented in Jenkins
 
 ###### Intermediate
 
-- What type of jobs there are? what is the advantage of each type?
-- What ways are you familiar with to notify users on build results?
+* What type of jobs there are? what is the advantage of each type?
+* What ways are you familiar with to notify users on build results?
+* How to secure Jenkins?
 
 ###### Advanced
 
@@ -64,23 +67,24 @@
 
 ###### S3 - beginner
 
-- Explain what is S3 and what is it used for
-- What is a bucket?
-- True or False? a bucket name must be globally unique
-- What objects in S3 consists of?
-  - Another way to ask it: explain key, value, version id and metadata in context of objects
-- Explain data consistency
-- Can you host dynamic websites on s3? what about static websites?
+* Explain what is S3 and what is it used for
+* What is a bucket?
+* True or False? a bucket name must be globally unique
+* What objects in S3 consists of?
+  * Another way to ask it: explain key, value, version id and metadata in context of objects
+* Explain data consistency
+* Can you host dynamic websites on s3? what about static websites?
+* What security measures have you taken in context of S3?
 
 ###### CloudFront
 
-- Explain what is CloudFront and what is it used for
-- Explain the following
-  - Origin
-  - Edge location
-  - Distribution
-- What delivery methods available for the user with CDN?
-- True or False? object are cached for the life of TTL
+* Explain what is CloudFront and what is it used for
+* Explain the following
+  * Origin
+  * Edge location
+  * Distribution
+* What delivery methods available for the user with CDN?
+* True or False? object are cached for the life of TTL
 
 
 ###### EC2 - beginner
@@ -187,6 +191,8 @@ Playbook – One or more plays. Each play can be executed on the same or differe
 
 Role – Ansible roles allows you to group resources based on certain functionality/service such that they can be easily reused. In a role, you have directories for variables, defaults, files, templates, handlers, tasks, and metadata. You can then use the role by simply specifying it in your playbook.
 ```
+
+* You want to run Ansible playbook only on specific minor version of your OS, how would you achieve that?
 
 * Write a task to create the directory ‘/tmp/new_directory’
 
@@ -329,6 +335,16 @@ you with more options/features compared to Docker Hub. One example is
 Swarm management which means you can create new swarms in Docker Cloud.
 ```
 
+## Kubernetes
+
+* What is Kubernetes?
+* Why Docker isn't enough? Why do we need Kubernetes?
+* Describe the architecture of Kuberenets
+* How do you monitor your Kuberenets?
+* What is kubectl? How do you use it?
+* What is kubconfig? What do you use it for?
+* How do you create users?
+
 
 ## Python
 
@@ -413,7 +429,12 @@ Alert manager is responsible for alerts ;)
 ###### beginner
 
 * What is the difference between `git pull` and `git pull`?
+* what is 'working tree'? what is 'staging area'?
 * How do you resolve git conflicts?
+* What is the difference between `git reset` and `git reverse`?
+* In what situations are you using `git rebase`?
+* What branching strategies are you familiar with?
+* Explain octopus strategy
 
 ## Scenarios
 
@@ -422,3 +443,4 @@ require from you to design, plan and implement environments with different const
 and considerations.
 
 * [Elasticsearch & Kibana on AWS](scenarios/elk_kibana_aws.md)
+* [Ansible, Minikube and Docker](scenarios/ansible_minikube_docker.md)

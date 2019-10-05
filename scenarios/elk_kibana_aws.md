@@ -15,3 +15,7 @@ Please describe in detail:
 - How you apply security policy for access control
 - How you transfer the logs from the app to ELK
 - How you deal with multi apps running in different regions
+
+## Solution
+
+One Possible solution can be found [here](solutions/elk_kibana_aws.md)
