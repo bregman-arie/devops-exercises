@@ -1,5 +1,18 @@
 # DevOps Interview Questions
 
+<p align="center">"<i>DevOps is not a goal, but a never-ending process of continual improvement.</i>" - Jez Humble</p>
+
+****
+
+:information_source: &nbsp;This repository contains interview questions on various DevOps related topics
+
+:bar_chart: &nbsp;There are currently **111** interview questions
+
+:warning: &nbsp;Some answers might be only partial and shouldn't be used as they are in interviews
+
+:pencil: &nbsp;You can add more questions & answers by submitting pull requests :)
+
+****
 
 ## Table of Contents
 
@@ -21,12 +34,48 @@
 
 ## DevOps
 
-The following questions are general questions which can be asked also in other topics/technologies related questions.
-
 ###### beginner
 
-* What is CI/CD? why is it important?
-* What is configuration drift? What is the problem with configuration drift?
+* What is Continuous Integration?
+* What is Continuous Deployment?
+* What is Continuous Delivery?
+
+* What DevOps helps us to achieve?
+* What do you consider as best practices for CI/CD?
+* What are the anti-patterns of DevOps?
+
+* Which DevOps tools you consider as top tools? Which tools have you worked with?
+* What systems and/or tools are you using for the following?:
+
+  * CI/CD
+  * Provisioning infrastructure
+  * Configuration Management
+  * Monitoring & alerting
+  * Logging
+  * Code review
+  * Code coverage
+  * Tests
+
+* What is the difference between SQL and NoSQL?
+* What the difference between VPN and VPS?
+* What is the difference between SSH and SSL?
+
+* What scripting language are you familiar with? why specifically this one?
+* Describe some of the scripts you have written. What are they used for? how long did it take you to write them?
+* How long do you think it would take you to learn another language?
+
+##### Intermediate
+
+* Tell me how you perform plan capacity for your CI/CD resources (e.g. servers, storage, etc.)
+* How would you structure/implement CD for an application which depends on several other applications?
+* How do you manage dependencies?
+
+* Explain what are design patterns. Which design patterns are you familar with?
+
+##### advanced
+
+* How do you measure your CI/CD quality? Are there any metrics you are using?
+* What is a configuration drift? What problems is it causing?
 
 ```
 Configuration drift happens when in an environment of servers with the exact same configuration and softwares a certain server
@@ -36,11 +85,9 @@ slightly different than all others.
 This situtation might lead to bugs which hard to identify and reproduce.
 ```
 
-
-##### advanced
-
-* How do you measure your CI/CD quality? Are there any metrics you are using?
 * How to deal with configuration drift?
+* In what scenarios would you prefer to use SQL?
+* In what scenarios would you prefer to use NoSQL?
 
 
 ## Jenkins
@@ -136,6 +183,10 @@ Network questions can be found [here](https://github.com/bregman-arie/computer-n
   * wc
   * df
 
+* How to make sure a service will start on a OS of your choice?
+
+* How do you schedule tasks periodically?
+
 * How to change the permissions of a file?
 
 * What does the following permissions mean?:
@@ -150,7 +201,11 @@ Network questions can be found [here](https://github.com/bregman-arie/computer-n
   * Memory, CPU issues
   * Networking issues
 
+* What is the difference between Linux and Unix?
+
 * What is a Linux kernel module and how do you load a new module?
+
+* What is KVM?
 
 * Explain what would be the result of each command:
 
@@ -195,6 +250,16 @@ SIGHUP - common usage is for reloading configuration
 SIGKILL - a signal which cannot caught or ignored
 
 To view all available signals run `kill -l`
+```
+
+* In what state a process in Linux can be?
+
+```
+Ready
+Running
+Blocked
+Terminated
+Zombie
 ```
 
 
@@ -479,13 +544,45 @@ Alert manager is responsible for alerts ;)
 
 ###### beginner
 
-* What is the difference between `git pull` and `git pull`?
-* what is 'working tree'? what is 'staging area'?
-* How do you resolve git conflicts?
-* What is the difference between `git reset` and `git reverse`?
-* In what situations are you using `git rebase`?
-* What branching strategies are you familiar with?
-* Explain octopus strategy
+<details>
+<summary>What is the difference between `git pull` and `git fetch`?</summary>
+
+Shortly, git pull = git fetch + git merge
+
+When you run git pull, it gets all the changes from the remote or central
+repository and attaches it to your corresponding branch in your local reposistory.
+
+git fetch gets all the changes from the remote repository, stores the changes in
+a separate branch in your local repository
+</details>
+
+<details>
+<summary>Explain the following: `git directory`, `working directory` and `staging area`
+</summary>
+
+The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
+
+The working directory is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
+
+The staging area is a simple file, generally contained in your Git directory, that stores information about what will go into your next commit. It’s sometimes referred to as the index, but it’s becoming standard to refer to it as the staging area.
+
+This answer taken from [git-scm.com](https://git-scm.com/book/en/v1/Getting-Started-Git-Basics#_the_three_states)
+</details>
+<details>
+<summary>How do you resolve git conflicts?</summary>
+</details>
+<details>
+<summary>What is the difference between `git reset` and `git reverse`?</summary>
+</details>
+<details>
+<summary>In what situations are you using `git rebase`?</summary>
+</details>
+<details>
+<summary>What branching strategies are you familiar with?</summary>
+</details>
+<details>
+<summary>Explain octopus strategy</summary>
+</details>
 
 ## Scenarios
 
