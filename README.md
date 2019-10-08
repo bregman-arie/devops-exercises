@@ -3,11 +3,13 @@
 
 ## Table of Contents
 
+  1. [DevOps](#devops)
   1. [Jenkins](#jenkins)
   1. [AWS](#aws)
   1. [Network](#network)
   1. [Linux](#linux)
   1. [Ansible](#ansible)
+  1. [Terraform](#terraform)
   1. [Containers](#containers)
   1. [Docker](#docker)
   1. [Kubernetes](#kubernetes)
@@ -15,6 +17,30 @@
   1. [Prometheus](#prometheus)
   1. [Git](#git)
   1. [Scenarios](#scenarios)
+
+
+## DevOps
+
+The following questions are general questions which can be asked also in other topics/technologies related questions.
+
+###### beginner
+
+* What is CI/CD? why is it important?
+* What is configuration drift? What is the problem with configuration drift?
+
+```
+Configuration drift happens when in an environment of servers with the exact same configuration and softwares a certain server
+or servers are being appied with updates or configuration which other servers don't get and over time these servers become
+slightly different than all others.
+
+This situtation might lead to bugs which hard to identify and reproduce.
+```
+
+
+##### advanced
+
+* How do you measure your CI/CD quality? Are there any metrics you are using?
+* How to deal with configuration drift?
 
 
 ## Jenkins
@@ -273,6 +299,23 @@ The content of the system_info.j2 template
 I'm {{ ansible_hostname }} and my operating system is {{ ansible_distribution }
 ```
 
+## Terraform
+
+##### Beginner
+
+* Can you explain what is Terraform? How it works?
+* What benefits infrastructure-as-code has?
+
+```
+- fully automated process of provisoning, modifying and deleting your infrastructure
+- version control for your infrastructure which allows you to quickly rollback to previous versions
+- valide infrastructure quoality and stability with automated tests and code reviews
+- makes infrastructure tasks less reptitive
+```
+
+* Why Terraform and not other technologies? (e.g. Ansible, Puppet, CloufFormation)
+
+
 ## Containers
 
 * How containers different from VMs?
@@ -382,6 +425,14 @@ PEP8 is a list of coding conventions and style guidelines for Python
     3. Use commas when making a tuple of one element
     4. Use spaces (and not tabs) for indentation
     5. Use 4 spaces per indentation level
+```
+
+* Write a program which will revert a string (e.g. pizza -> azzip)
+
+```
+Shortest way is str[::-1]
+
+"Classic" way:
 ```
 
 ##### Intermediate
