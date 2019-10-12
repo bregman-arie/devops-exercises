@@ -6,7 +6,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **112** interview questions
+:bar_chart: &nbsp;There are currently **109** interview questions
 
 :warning: &nbsp;Some answers might be only partial and shouldn't be used as they are in interviews
 
@@ -89,6 +89,15 @@
 </b></details>
 
 <details>
+<summary>What are you taking into consideration when choosing a tool/technology?</summary><br><b>
+
+You may use one or all of the following:
+  * mature vs. cutting edge
+  * community size
+  * architecture aspects - agent vs. agentless, master vs. masterless, etc.
+</b></details>
+
+<details>
 <summary>What is the difference between SQL and NoSQL?</summary><br><b>
 </b></details>
 
@@ -112,6 +121,19 @@
 <summary>How long do you think it would take you to learn another language?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Explain mutable vs. immutable infrastructure</summary><br><b>
+
+In mutable infrastructure paradigm, changes applied on top of the existing infrastructure and over time
+the infrastructure builds up a history of changes. Ansible, Puppet and Chef are examples to tools which
+follow mutable infrastructure paradigm.
+
+In immutable infrastructure paradigm, every change is actually new infrastructure. So a change
+to a server will result in a new server instead of updating it. Terraform is an example of technology
+which follows the mutable infrastructure paradigm.
+</b></details>
+
+
 <a name="devops-advanced"></a>
 #### :star: Advanced
 
@@ -128,7 +150,7 @@
 </b></details>
 
 <details>
-<summary>Explain what are design patterns. Which design patterns are you familar with?</summary><br><b>
+<summary>Explain what are design patterns. Which design patterns are you familiar with?</summary><br><b>
 </b></details>
 
 <details>
@@ -211,9 +233,10 @@ This situation might lead to bugs which hard to identify and reproduce.
 
 <details>
 <summary>Explain the following
-  - Availability zone
-  - Region
-  - Edge location</summary><br><b>
+
+  * Availability zone
+  * Region
+  * Edge location</summary><br><b>
 </b></details>
 
 ##### S3
@@ -520,37 +543,71 @@ I'm {{ ansible_hostname }} and my operating system is {{ ansible_distribution }
 
 <details>
 <summary>Can you explain what is Terraform? How it works?</summary><br><b>
+
+Read [here](https://www.terraform.io/intro/index.html#what-is-terraform-)
 </b></details>
 
 <details>
 <summary>What benefits infrastructure-as-code has?</summary><br><b>
 
-- fully automated process of provisoning, modifying and deleting your infrastructure
+- fully automated process of provisioning, modifying and deleting your infrastructure
 - version control for your infrastructure which allows you to quickly rollback to previous versions
-- valide infrastructure quoality and stability with automated tests and code reviews
-- makes infrastructure tasks less reptitive
+- validate infrastructure quality and stability with automated tests and code reviews
+- makes infrastructure tasks less repetitive
 </b></details>
 
 <details>
 <summary>Why Terraform and not other technologies? (e.g. Ansible, Puppet, CloufFormation)</summary><br><b>
+
+A common *wrong* answer is to say that Ansible and Puppet are configuration management tools
+and Terraform is a provisioning tool. While technically true, it doesn't mean Ansible and Puppet can't
+be used for provisioning infrastructure. Also, it doesn't explains why Terraform should be used over
+CloudFormation if at all.
+
+The benefits of Terraform over the other tools:
+  * it follows the immutable infrastructure approach which has benefits like avoiding a configuration drift over time
+  * Ansible and Puppet are more procedural (you mention what to execute in each step) and Terraform is declartive since you describe the overall desired state and not per resource or task. You can give the example of going from 1 to 2 servers in each tool. In terrform you specify 2, in Ansible and puppet you have to only provision 1 additional server
 </b></details>
-
-
-## Containers
 
 <details>
-<summary>How containers different from VMs?</summary><br><b>
+<summary>Explain what the following commands do:
+
+  * <code>terraform init</code>
+  * <code>terraform plan</code>
+  * <code>terraform apply</code>
+</summary><br><b>
+
+<code>terraform init</code> scans your code to figure which providers are you using and download them.
+<code>terraform plan</code> will let you see what terraform is about to do before actually doing it.
+<code>terraform apply</code> will provision the resources specified in the .tf files.
 </b></details>
 
-<details>
-<summary>In which scenarios would you use containers and in which you would prefer to use VMs?</summary><br><b>
-</b></details>
 
 ## Docker
 
 <a name="docker-beginner"></a>
 
 #### :baby: beginner
+
+<details>
+<summary>How containers are different from VMs?</summary><br><b>
+
+The primary difference between containers and VMs is that containers allow you to virtualize
+multiple workloads on the operating system while in the case of VMs the hardware is being virtualized to
+run multiple machines each with its own OS.
+</b></details>
+
+<details>
+<summary>In which scenarios would you use containers and in which you would prefer to use VMs?</summary><br><b>
+
+You should choose VMs when:
+  * you need run an application which requires all the resources and functionalilies of an OS
+  * you need full isolation and security
+
+You should choose containers when:
+  * you need a lightweight solution that quickly starts
+  * Running multiple versions or instances of a single application
+</b></details>
 
 <details>
 <summary>What happens when you run `docker run hello-world`?</summary><br><b>
@@ -707,7 +764,7 @@ sorted(x, key=lambda l: l[1])
 </b></details>
 
 <details>
-<summary>You have the following lists: [{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]
+<summary>You have the following list: <code>[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]</code>
   Extract all type of foods. Final output should be: {'mushrooms', 'goombas', 'turtles'}</summary><br><b>
 
 ```
