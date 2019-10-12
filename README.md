@@ -6,7 +6,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **109** interview questions
+:bar_chart: &nbsp;There are currently **111** interview questions
 
 :warning: &nbsp;Some answers might be only partial and shouldn't be used as they are in interviews
 
@@ -24,7 +24,7 @@
     <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="75px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a><br /><sub><a href="#jenkins-beginner">Beginner :baby:</a></sub><br><sub><a href="#jenkins-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#aws"><img src="images/aws.png" width="120px;" height="75px;" alt="AWS"/><br /><b>AWS</b></a><br /><sub><a href="#aws-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#Network"><img src="images/network.png" width="75x;" height="75px;" alt="Network"/><br /><b>Network</b></a><br /><sub><a href="#network-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#linux"><img src="images/linux.png" width="75x;" height="75px;" alt="Linux"/><br /><b>Linux</b></a><br /><sub><a href="#linux-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#linux"><img src="images/linux.png" width="75x;" height="75px;" alt="Linux"/><br /><b>Linux</b></a><br /><sub><a href="#linux-beginner">Beginner :baby:</a></sub><br><sub><a href="#linux-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#ansible"><img src="images/ansible.png" width="75px;" height="75px;" alt="Ansible"/><br /><b>Ansible</b></a><br /><sub><a href="#ansible-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#terraform"><img src="images/terraform.png" width="75px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a><br /><sub><a href="#terraform-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#docker"><img src="images/docker.png" width="75px;" height="75px;" alt="Docker"/><br /><b>Docker</b></a><br /><sub><a href="#docker-beginner">Beginner :baby:</a></sub><br><sub></td>
@@ -49,6 +49,10 @@
 
 <details>
 <summary>What is Continuous Integration?</summary><br><b>
+
+A development practice where developers integrate code into a shared repository frequently. It can range from a couple of changes every day or week to a couple of changes in one hour in larger scales.
+
+Each piece of code (change/patch) is verified, to make the change is safe to merge. Today, it's a common practice to test the change using an automated build that makes sure the code can integrated. It can be one build which runs several tests in different levels (unit, functional, etc.) or several separate builds that all or some has to pass in order for the change to be merged into the repository.
 </b></details>
 
 <details>
@@ -86,6 +90,15 @@
   * Code review
   * Code coverage
   * Tests</summary><br><b>
+
+  * CI/CD - Jenkins, Circle CI, Travis
+  * Provisioning infrastructure - Terraform, CloudFormation
+  * Configuration Management - Ansible, Puppet, Chef
+  * Monitoring & alerting - Prometheus, Nagios
+  * Logging - Logstash, Graylog, Fluentd
+  * Code review - Gerrit, Review Board
+  * Code coverage - Cobertura, Clover, JaCoCo
+  * Tests - Robot, Serenity, Gauge
 </b></details>
 
 <details>
@@ -173,10 +186,17 @@ This situation might lead to bugs which hard to identify and reproduce.
 
 <details>
 <summary>In what scenarios would you prefer to use SQL?</summary><br><b>
+
+  * Homogeneous data, no changes anticipated
+  * ACID compliance is important to you
+
 </b></details>
 
 <details>
-<summary>In what scenarios would you prefer to use NoSQL?</summary><br><b>
+<summary>In what scenarios would you prefer to use NoSQL over SQL?</summary><br><b>
+
+  * Heterogeneous data which changes often
+  * Data consistency and integrity is not top priority
 </b></details>
 
 
@@ -366,13 +386,17 @@ Network questions can be found [here](https://github.com/bregman-arie/computer-n
 </b></details>
 
 <details>
+<summary>What is an exit code? What exit codes are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain what would be the result of each command:
 
-echo $0
-echo $?
-echo $$
-echo $@
-echo $#</summary><br><b>
+<code>echo $0</code>
+<code>echo $?</code>
+<code>echo $$</code>
+<code>echo $@</code>
+<code>echo $#</code></summary><br><b>
 </b></details>
 
 <details>
@@ -423,6 +447,20 @@ Running
 Blocked
 Terminated
 Zombie
+</b></details>
+
+
+<a name="linux-advanced"></a>
+#### :star: Advanced
+
+<details>
+<summary>How to create a file of a certain size?</summary><br><b>
+
+There are a couple of ways to do that:
+  
+  * dd if=/dev/urandom of=new_file.txt bs=2MB count=1
+  * truncate -s 2M new_file.txt
+  * fallocate -l 2097152 new_file.txt
 </b></details>
 
 
@@ -845,8 +883,18 @@ is currently pointing at.
 <details>
 <summary>In what situations are you using <code>git rebase</code>?</summary><br><b>
 </b></details>
+
 <details>
-<summary>What branching strategies are you familiar with?</summary><br><b>
+<summary>What merge strategies are you familiar with?</summary><br><b>
+
+Mentioning two or three should be enough and it's probably good to mention that 'recursive' is the default one.
+
+recursive
+resolve
+ours
+theirs
+
+This page explains it the best: https://git-scm.com/docs/merge-strategies
 </b></details>
 
 <a name="git-advanced"></a>
@@ -854,6 +902,13 @@ is currently pointing at.
 
 <details>
 <summary>Explain Git octopus merge</summary><br><b>
+
+Probably good to mention that it's:
+
+  * It's good for cases of merging more than one branch (and also the default of such use cases)
+  * It's primarily meant for bundling topic branches together 
+
+This is a great article about Octopus merge: http://www.freblogg.com/2016/12/git-octopus-merge.html
 </b></details>
 
 ## Scenarios
