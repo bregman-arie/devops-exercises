@@ -6,7 +6,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **111** interview questions
+:bar_chart: &nbsp;There are currently **115** interview questions
 
 :warning: &nbsp;Some answers might be only partial and shouldn't be used as they are in interviews
 
@@ -337,7 +337,7 @@ Network questions can be found [here](https://github.com/bregman-arie/computer-n
 <summary>Explain what each of the following commands does and given an example on how to use it
   * ls
   * rm 
-  * rmdir (can you achieve the same result by using `rm`?)
+  * rmdir (can you achieve the same result by using <code>rm</code>?)
   * grep
   * wc
   * df</summary><br><b>
@@ -387,6 +387,14 @@ Network questions can be found [here](https://github.com/bregman-arie/computer-n
 
 <details>
 <summary>What is an exit code? What exit codes are you familiar with?</summary><br><b>
+
+An exit code (or return code) represents the code returned by a child process to its
+parent process.
+
+0 is an exit code which represents success while anything higher than 1 represents error.
+Each number has different meaning, based on how the application was developed.
+
+I consider this as a good blog post to read more about it: https://shapeshed.com/unix-exit-codes
 </b></details>
 
 <details>
@@ -449,9 +457,26 @@ Terminated
 Zombie
 </b></details>
 
+<details>
+<summary>Find all files which end with '.yml' and replace the number 1 in 2 in each file</summary><br><b>
+
+find /some_dir -iname \*.yml -exec sed -i "s/1/2/g" {} \;
+</b></details>
+
+<details>
+<summary>How to check how much free memory a system has? How to check memory consumption by each process?</summary><br><b>
+
+You can use the commands <code>top</code> and <code>free</code>
+</b></details>
 
 <a name="linux-advanced"></a>
 #### :star: Advanced
+
+<details>
+<summary>How to delete the last word from each line in a file?</summary><br><b>
+
+sed "s/\s*\w\+\s*$//" file
+</b></details>
 
 <details>
 <summary>How to create a file of a certain size?</summary><br><b>
@@ -618,6 +643,12 @@ The benefits of Terraform over the other tools:
 <code>terraform init</code> scans your code to figure which providers are you using and download them.
 <code>terraform plan</code> will let you see what terraform is about to do before actually doing it.
 <code>terraform apply</code> will provision the resources specified in the .tf files.
+</b></details>
+
+<details>
+<summary>How to write down a variable which changes by an external source or during <code>terraform apply</code>?</summary><br><b>
+
+You use it this way: <code>variable “my_var” {}</code>
 </b></details>
 
 
