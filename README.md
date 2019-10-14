@@ -6,7 +6,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **115** interview questions
+:bar_chart: &nbsp;There are currently **124** interview questions
 
 :warning: &nbsp;Some answers might be only partial and shouldn't be used as they are in interviews
 
@@ -34,6 +34,7 @@
     <td align="center"><a href="#python"><img src="images/python.png" width="75px;" height="75px;" alt="Python"/><br /><b>Python</b></a><br /><sub><a href="#python-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a><br /><sub><a href="#prometheus-beginner">Beginner :baby:</a></sub><br></td>
     <td align="center"><a href="#git"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a><br /><sub><a href="#git-beginner">Beginner :baby:</a></sub><br><sub><a href="#git-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#go"><img src="images/go.png" width="75px;" height="75px;" alt="Go"/><br /><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
   </tr>
 </table>
 </center>
@@ -321,6 +322,8 @@ True
 
 <details>
 <summary>How to increase RAM for a given EC2 instance?</summary><br><b>
+
+Stop the instance, the type of the instance to match the desired RAM and start the instance.
 </b></details>
 
 
@@ -349,6 +352,13 @@ Network questions can be found [here](https://github.com/bregman-arie/computer-n
 
 <details>
 <summary>How do you schedule tasks periodically?</summary><br><b>
+
+You can use the commands <code>cron</code> and <code>at</code>.
+With cron, tasks are scheduled using the following format:
+
+<minute> <hour> <day of month> <month> <day of week> <command to execute>
+
+The tasks are stored in a cron file.
 </b></details>
 
 <details>
@@ -469,6 +479,32 @@ find /some_dir -iname \*.yml -exec sed -i "s/1/2/g" {} \;
 You can use the commands <code>top</code> and <code>free</code>
 </b></details>
 
+<details>
+<summary>How would you split a 50 lines file into 2 files of 25 lines each?</summary><br><b>
+
+You can use the <code>split</code> command this way: <code>split -l 25 some_file</code>
+</b></details>
+
+<details>
+<summary>What is a file descriptor? What file descriptors are you familiar with?</summary><br><b>
+
+File descriptor, also known as file handler, is a unique number which identifies an open file in the operating system.
+
+In Linux (and Unix) the first three file descriptors are:
+  * 0 - the default data stream for input
+  * 1 - the default data stream for output
+  * 2 - the default data stream for output related to errors
+
+This is a great article on the topic: https://www.computerhope.com/jargon/f/file-descriptor.htm
+</b></details>
+
+<details>
+<summary>What's an inode?</summary><br><b>
+
+For each file (and directory) in Linux there is an inode, a data structure which stores metadata
+related to the file like its size, owner, permissions, etc.
+</b></details>
+
 <a name="linux-advanced"></a>
 #### :star: Advanced
 
@@ -508,6 +544,32 @@ Play – One or more tasks executed on a given host(s)
 Playbook – One or more plays. Each play can be executed on the same or different hosts
 
 Role – Ansible roles allows you to group resources based on certain functionality/service such that they can be easily reused. In a role, you have directories for variables, defaults, files, templates, handlers, tasks, and metadata. You can then use the role by simply specifying it in your playbook.
+</b></details>
+
+<details>
+<summary>What is an inventory file and how you define one?</summary><br><b>
+
+An inventory file defines hosts and/or groups of hosts on which Ansible tasks executed upon.
+
+An example of inventory file:
+
+192.168.1.2
+192.168.1.3
+192.168.1.4
+
+[web_servers]
+190.40.2.20
+190.40.2.21
+190.40.2.22
+</b></details>
+
+<details>
+<summary>What is a dynamic inventory file? When you would use one?</summary><br><br>
+
+A dynamic inventory file tracks hosts from one or more sources like cloud providers and CMDB systems.
+
+You should use one when using external sources and especially when the hosts in your environment are being automatically<br>
+spun up and shut down, without you tracking every change in these sources.
 </b></details>
 
 <details>
@@ -597,6 +659,25 @@ The content of the system_info.j2 template
 # {{ ansible_managed }}
 I'm {{ ansible_hostname }} and my operating system is {{ ansible_distribution }
 ```
+</b></details>
+
+<details>
+<summary>The variable 'whoami' defined in the following places:
+
+  * role defaults -> whoami: mario
+  * extra vars (variables you pass to Ansible CLI with -e) -> whoami: toad
+  * host facts -> whoami: luigi
+  * inventory variables (doesn’t matter which type) -> whoami: browser
+
+According to variable precedence, which one will be used?</summary><br><b>
+
+The right answer is ‘toad’.
+
+Variable precedence is about how variables override each other when they set in different locations. If you didn’t experience it so far I’m sure at some point you will, which makes it a useful topic to be aware of.
+
+In the context of our question, the order will be extra vars (always override any other variable) -> host facts -> inventory variables -> role defaults (the weakest).
+
+A full list can be found at the link above. Also, note there is a significant difference between Ansible 1.x and 2.x.
 </b></details>
 
 ## Terraform
@@ -940,6 +1021,49 @@ Probably good to mention that it's:
   * It's primarily meant for bundling topic branches together 
 
 This is a great article about Octopus merge: http://www.freblogg.com/2016/12/git-octopus-merge.html
+</b></details>
+
+## Go
+
+<a name="go-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>What are some characteristics of the Go programming language?</summary><br><b>
+
+  * Strong and static typing - the type of the variables can't be changed over time and they have to be defined at compile time
+  * Simplicity 
+  * Fast compile times
+  * Built-in concurrency
+  * Garbage collected
+  * Platform independant
+  * Compile to standalone binary - anything you need to run your app will be compiled into one binary. Very useful for version management in run-time. 
+
+Go also has good community.
+</b></details>
+
+<details>
+<summary>What libraries of Go have you used?</summary><br><b>
+
+This should be answered based on your usage but some examples are:
+
+  * fmt - formatted I/O
+</b></details>
+
+<details>
+<summary>Write an "hello world" program?</summary><br><b>
+
+```
+package main
+
+import {
+        "fmt"
+}
+
+func main() {
+        fmt.Println("Hello World")
+}
+```
 </b></details>
 
 ## Scenarios
