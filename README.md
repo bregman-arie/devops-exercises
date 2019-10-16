@@ -6,7 +6,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **133** interview questions
+:bar_chart: &nbsp;There are currently **151** interview questions
 
 :warning: &nbsp;Some answers might be only partial and shouldn't be used as they are in interviews
 
@@ -154,6 +154,18 @@ which follows the mutable infrastructure paradigm.
   * Archive - collect all your app files into one archive (e.g. tar) and deliver it to the user.
   * Package - depends on the OS, you can use your OS package format (e.g. in RHEL/Fefodra it's RPM) to deliver your software with a way to install, uninstall and update it using the standard packager commands
   * Images - Either VM or container images where your package is included with everything it needs in order to run successfully.
+</b></details>
+
+<details>
+<summary>What is caching? How it works? Why is it important?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain stateless vs. stateful</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is HTTP and how it works?</summary><br><b>
 </b></details>
 
 
@@ -338,11 +350,95 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 
 ## Network
 
-Network questions can be found [here](https://github.com/bregman-arie/computer-networking/blob/master/interview_questions/README.md)
+<a name="network-beginner"></a>
+#### :baby: Beginner
 
+<details>
+<summary>Explain the OSI model. What layers there are? What each layer reponsible for?</summary><br><b>
+
+Application: user end (HTTP is here)
+Presentation: establishes context between application-layer entities (Encryption is here)
+Session: establishes, manages and terminates the connections
+Transport: transfers variable-length data sequences from a source to a destination host (TCP & UDP are here)
+Network: transfers datagrams from one network to another (IP is here)
+Data link: provides a link between two directly connected nodes (MAC is here)
+Physical: the electrical and physical spec the data connection (Bits are here)
+</b></details>
+
+<details>
+<summary>What delivery schemes are you familiar with?</summary><br><b>
+
+Unitcast: One to one communication where there is one sender and one reciever.
+
+Broadcast: Sending a message to everone in the network. The address ff:ff:ff:ff:ff:ff is used for broadcasting.
+           Two common protocols which use broadcast are ARP and DHCP.
+
+Multicast: Sending a message to a group of subscribers. It can be one-to-many or many-to-many.
+</b></details>
+
+<details>
+<summary>What is CSMA/CD? Is it used in modern ethernet networks?</summary><br><b>
+
+CSMA/CD stands for Carrier Sense Multiple Access / Collision Detection.
+Its primarily focus it to manage access to shared medium/bus where only one host can transmit at a given point of time.
+
+CSMA/CD algorithm:
+
+1. Before sending a frame, it checks whether another host already transmitting a frame.
+2. If no one transmitting, it starts transmitting the frame.
+3. If two hosts transmitted at the same time, we have a collision.
+4. Both hosts stop sending the frame and they send to everyone a 'jam signal' notifying everyone that a collision occured
+5. They are waiting for a random time before sending again
+6. Once each host waited for a raondom time, they try to send the frame again and so the
+</b></details>
+
+<details>
+<summary>Describe the following network devices and the difference between them: router, switch and hub</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is NAT?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between TCP and UDP?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is ARP? How it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is DHCP? How it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is SSL tunneling? How it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a socket?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is IPv6? Why should we consider using it if we have IPv4?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is MTU?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is SDN?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is ICMP?</summary><br><b>
+</b></details>
 
 ## Linux
 
+<a name="linux-beginner"></a>
 #### :baby: Beginner
 
 <details>
@@ -419,11 +515,11 @@ I consider this as a good blog post to read more about it: https://shapeshed.com
 <details>
 <summary>Explain what would be the result of each command:
 
-<code>echo $0</code>
-<code>echo $?</code>
-<code>echo $$</code>
-<code>echo $@</code>
-<code>echo $#</code></summary><br><b>
+  * <code>echo $0</code>
+  * <code>echo $?</code>
+  * <code>echo $$</code>
+  * <code>echo $@</code>
+  * <code>echo $#</code></summary><br><b>
 </b></details>
 
 <details>
@@ -515,6 +611,10 @@ related to the file like its size, owner, permissions, etc.
 </b></details>
 
 <details>
+<summary>How to list ports which being currently used?</summary><br><b>
+</b></details>
+
+<details>
 <summary>DNS: What is A record?</summary><br><b>
 </b></details>
 
@@ -523,7 +623,7 @@ related to the file like its size, owner, permissions, etc.
 </b></details>
 
 <details>
-<summary>DNS: </summary><br><b>
+<summary>DNS: is it using TCP or UDP?</summary><br><b>
 </b></details>
 
 <a name="linux-advanced"></a>
@@ -1121,3 +1221,4 @@ and considerations.
 
 * [Elasticsearch & Kibana on AWS](scenarios/elk_kibana_aws.md)
 * [Ansible, Minikube and Docker](scenarios/ansible_minikube_docker.md)
+* [Cloud Slack bot](scenarios/cloud_slack_bot.md)
