@@ -6,7 +6,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **124** interview questions
+:bar_chart: &nbsp;There are currently **133** interview questions
 
 :warning: &nbsp;Some answers might be only partial and shouldn't be used as they are in interviews
 
@@ -35,6 +35,7 @@
     <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a><br /><sub><a href="#prometheus-beginner">Beginner :baby:</a></sub><br></td>
     <td align="center"><a href="#git"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a><br /><sub><a href="#git-beginner">Beginner :baby:</a></sub><br><sub><a href="#git-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#go"><img src="images/go.png" width="75px;" height="75px;" alt="Go"/><br /><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a><br /><sub><a href="#mongo-beginner">Beginner :baby:</a></sub><br><sub></td>
   </tr>
 </table>
 </center>
@@ -145,6 +146,14 @@ follow mutable infrastructure paradigm.
 In immutable infrastructure paradigm, every change is actually new infrastructure. So a change
 to a server will result in a new server instead of updating it. Terraform is an example of technology
 which follows the mutable infrastructure paradigm.
+</b></details>
+
+<details>
+<summary>What ways are you familiar with to deliver a software?</summary><br><b>
+
+  * Archive - collect all your app files into one archive (e.g. tar) and deliver it to the user.
+  * Package - depends on the OS, you can use your OS package format (e.g. in RHEL/Fefodra it's RPM) to deliver your software with a way to install, uninstall and update it using the standard packager commands
+  * Images - Either VM or container images where your package is included with everything it needs in order to run successfully.
 </b></details>
 
 
@@ -503,6 +512,18 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 
 For each file (and directory) in Linux there is an inode, a data structure which stores metadata
 related to the file like its size, owner, permissions, etc.
+</b></details>
+
+<details>
+<summary>DNS: What is A record?</summary><br><b>
+</b></details>
+
+<details>
+<summary>DNS: What is MX record?</summary><br><b>
+</b></details>
+
+<details>
+<summary>DNS: </summary><br><b>
 </b></details>
 
 <a name="linux-advanced"></a>
@@ -992,6 +1013,12 @@ is currently pointing at.
 </p>
 </b></details>
 
+details>
+<summary>You would like to move forth commit to the top. How would you achieve that?</summary><br><b>
+
+Using <code>git rebase></code> command
+</b></summary>
+
 <details>
 <summary>In what situations are you using <code>git rebase</code>?</summary><br><b>
 </b></details>
@@ -1036,10 +1063,18 @@ This is a great article about Octopus merge: http://www.freblogg.com/2016/12/git
   * Fast compile times
   * Built-in concurrency
   * Garbage collected
-  * Platform independant
+  * Platform independent
   * Compile to standalone binary - anything you need to run your app will be compiled into one binary. Very useful for version management in run-time. 
 
 Go also has good community.
+</b></details>
+
+<details>
+<summary>What is the difference between <code>var x int = 2</code> and <code>x := 2</code>?</summary><br><b>
+
+The result is the same, a variable with the variable 2.
+
+with <code>var x int = 2</code> we are setting the variable type to integer while with <code>x := 2</code> we are letting Go figure out by itself the type.
 </b></details>
 
 <details>
@@ -1056,15 +1091,27 @@ This should be answered based on your usage but some examples are:
 ```
 package main
 
-import {
-        "fmt"
-}
+import "fmt"
 
 func main() {
         fmt.Println("Hello World")
 }
 ```
 </b></details>
+
+## Mongo
+
+<a name="mongo-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>What is a document? What is a collection?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an aggregator?</summary><br><b>
+</b></details>
+
 
 ## Scenarios
 
