@@ -6,7 +6,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **151** interview questions
+:bar_chart: &nbsp;There are currently **161** interview questions
 
 :warning: &nbsp;Some answers might be only partial and shouldn't be used as they are in interviews
 
@@ -425,6 +425,10 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
+<summary>What is VLAN?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is MTU?</summary><br><b>
 </b></details>
 
@@ -442,7 +446,8 @@ CSMA/CD algorithm:
 #### :baby: Beginner
 
 <details>
-<summary>Explain what each of the following commands does and given an example on how to use it
+<summary>Explain what each of the following commands does and given an example on how to use it:
+
   * ls
   * rm 
   * rmdir (can you achieve the same result by using <code>rm</code>?)
@@ -472,6 +477,7 @@ The tasks are stored in a cron file.
 
 <details>
 <summary>What does the following permissions mean?:
+
   * 777
   * 644
   * 750</summary><br><b>
@@ -483,6 +489,7 @@ The tasks are stored in a cron file.
 
 <details>
 <summary>What commands are you using for troubleshooting issues? specifically:
+
   * Disk issues
   * Memory, CPU issues
   * Networking issues</summary><br><b>
@@ -498,6 +505,10 @@ The tasks are stored in a cron file.
 
 <details>
 <summary>What is KVM?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain redirection</summary><br><b>
 </b></details>
 
 <details>
@@ -534,6 +545,27 @@ soft link is a shortcut to another file, using a different inode.
 
 soft links can be created between different file systems while
 hard link can be created only within the same file system.
+</b></details>
+
+<details>
+<summary>What RAID is used for? Can you explain the differences between RAID 0, 1, 5 and 10?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Fix the following commands:
+
+  * sed "s/1/2/g' /tmp/myFile
+  * find . -iname \*.yaml -exec sed -i "s/1/2/g" {} ;</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is stored in each of the following paths and if there is anything unique about it:</summary><br><b>
+
+  * /tmp
+  * /var/log
+  * /bin
+  * /proc
+  * /usr/local
 </b></details>
 
 <details>
@@ -615,11 +647,17 @@ related to the file like its size, owner, permissions, etc.
 </b></details>
 
 <details>
-<summary>DNS: What is A record?</summary><br><b>
+<summary>DNS: What is a "A record"?</summary><br><b>
 </b></details>
 
 <details>
-<summary>DNS: What is MX record?</summary><br><b>
+<summary>DNS: What is a PTR?</summary><br><b>
+
+While an A record points a domain name to an IP address, a PTR record does the opposite and resolves the IP address to a domain name.
+</b></details>
+
+<details>
+<summary>DNS: What is a MX record?</summary><br><b>
 </b></details>
 
 <details>
@@ -633,6 +671,22 @@ related to the file like its size, owner, permissions, etc.
 <summary>How to delete the last word from each line in a file?</summary><br><b>
 
 sed "s/\s*\w\+\s*$//" file
+</b></details>
+
+<details>
+<summary>When you run <code>ip a</code> you see there is a device called 'lo'. What is it and why do we need it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What <code>traceroute</code> command does? How it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the routing table? How do you view it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are cgroups? In what scenario would you use them?</summary><br><b>
 </b></details>
 
 <details>
@@ -963,7 +1017,7 @@ Swarm management which means you can create new swarms in Docker Cloud.
 </b></details>
 
 <details>
-<summary>How do you create users?</summary><br><b>
+<summary>How do you create users? Where user information is stored?</summary><br><b>
 </b></details>
 
 
@@ -1113,7 +1167,7 @@ is currently pointing at.
 </p>
 </b></details>
 
-details>
+<details>
 <summary>You would like to move forth commit to the top. How would you achieve that?</summary><br><b>
 
 Using <code>git rebase></code> command
