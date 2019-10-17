@@ -6,7 +6,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **161** interview questions
+:bar_chart: &nbsp;There are currently **172** interview questions
 
 :warning: &nbsp;Some answers might be only partial and shouldn't be used as they are in interviews
 
@@ -36,6 +36,7 @@
     <td align="center"><a href="#git"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a><br /><sub><a href="#git-beginner">Beginner :baby:</a></sub><br><sub><a href="#git-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#go"><img src="images/go.png" width="75px;" height="75px;" alt="Go"/><br /><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a><br /><sub><a href="#mongo-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a><br /><sub><a href="#openshift-beginner">Beginner :baby:</a></sub><br><sub></td>
   </tr>
 </table>
 </center>
@@ -92,7 +93,6 @@ Each piece of code (change/patch) is verified, to make the change is safe to mer
   * Code review
   * Code coverage
   * Tests</summary><br><b>
-
   * CI/CD - Jenkins, Circle CI, Travis
   * Provisioning infrastructure - Terraform, CloudFormation
   * Configuration Management - Ansible, Puppet, Chef
@@ -226,6 +226,11 @@ This situation might lead to bugs which hard to identify and reproduce.
 
 <a name="jenkins-beginner"></a>
 #### :baby: Beginner
+
+<details>
+<summary>Why are you using Jenkins? What are the advantages of Jenkins over its competitors?</summary><br><b>
+</b></details>
+
 <details>
 <summary>What is a plugin?</summary><br><b>
 </b></details>
@@ -242,9 +247,8 @@ This situation might lead to bugs which hard to identify and reproduce.
 </b></details>
 
 <details>
-<summary>Explain CI/CD and how you implemented in Jenkins</summary><br><b>
+<summary>Explain CI/CD and how you implemented it in Jenkins</summary><br><b>
 </b></details>
-
 
 <details>
 <summary>What type of jobs there are? what is the advantage of each type?</summary><br><b>
@@ -258,11 +262,27 @@ This situation might lead to bugs which hard to identify and reproduce.
 <summary>How to secure Jenkins?</summary><br><b>
 </b></details>
 
+##### Writing pipelines
+
+<details>
+<summary>Can you write a pipeline which will run unit tests upon git push to a certain repository?</summary><br><b>
+</b></details>
+
 <a name="jenkins-advanced"></a>
 #### :star: Advanced
 
 <details>
 <summary>Write a script to remove all the jobs which include the string "REMOVE_ME"</summary><br><b>
+</b></details>
+
+##### Writing pipelines
+
+<details>
+<summary>Can you write a pipeline which will do to the following?:
+
+  * Provision an instance (can also be a container)
+  * Configure the instance as Apache web server
+  * Deploy a web application on the provisioned instance</summary><br><b>
 </b></details>
 
 
@@ -990,6 +1010,10 @@ you with more options/features compared to Docker Hub. One example is
 Swarm management which means you can create new swarms in Docker Cloud.
 </b></details>
 
+<details>
+<summary>Explain image layers</summary><br><b>
+</b></details>
+
 ## Kubernetes
 
 <details>
@@ -1171,7 +1195,7 @@ is currently pointing at.
 <summary>You would like to move forth commit to the top. How would you achieve that?</summary><br><b>
 
 Using <code>git rebase></code> command
-</b></summary>
+</b></details>
 
 <details>
 <summary>In what situations are you using <code>git rebase</code>?</summary><br><b>
@@ -1264,6 +1288,39 @@ func main() {
 
 <details>
 <summary>What is an aggregator?</summary><br><b>
+</b></details>
+
+## OpenShift
+
+<a name="openshift-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>What is OpenShift? Did you use it? If yes, how?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you explain the difference between OpenShift and Kubernetes?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Define Pods and explain what are stateful pods</summary><br><b>
+</b></details>
+
+<details>
+<summary>What types of build strategies are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what are labels and what they are used for</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what are annotations and how they are different from labels</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is Downward API</summary><br><b>
 </b></details>
 
 
