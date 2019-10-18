@@ -425,7 +425,7 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
-<summary>What is a socket?</summary><br><b>
+<summary>What is a socket? Where can you see the list of sockets in your system?</summary><br><b>
 </b></details>
 
 <details>
@@ -739,7 +739,17 @@ There are a couple of ways to do that:
 </b></details>
 
 <details>
+<summary>What are the differences between threads and processes?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain Kernel Threads</summary><br><b>
+</b></details>
+
+<details>
+<summary>What happens when socket system call is used?</summary><br><b>
+
+This is a good article about the topic: https://ops.tips/blog/how-linux-creates-sockets
 </b></details>
 
 
