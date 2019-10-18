@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **170** interview questions
+:bar_chart: &nbsp;There are currently **200** interview questions
 
 :warning: &nbsp;Some answers might be only partial and shouldn't be used as they are in interviews
 
@@ -496,6 +496,10 @@ The tasks are stored in a cron file.
 </b></details>
 
 <details>
+<summary>Explain what is setgid, setuid and sticky bit</summary><br><b>
+</b></details>
+
+<details>
 <summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
 </b></details>
 
@@ -535,6 +539,27 @@ Can you explain when are you using each one?</summary><br><b>
 </b></details>
 
 <details>
+<summary>What are wildcards? Can you give an example of how to use them?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What do we grep for in each of the following commands?:
+
+  * <code>grep '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' some_file</code>
+  * <code>grep -E "error|failure" some_file</code>
+  * <code>grep '[0-9]$' some_file</code>
+</summary><br><b>
+
+1. An IP address
+2. The word "error" or "failure"
+3. Lines which end with a number
+</b></details>
+
+<details>
+<summary>Tell me everything you know about Linux boot process</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is an exit code? What exit codes are you familiar with?</summary><br><b>
 
 An exit code (or return code) represents the code returned by a child process to its
@@ -547,10 +572,6 @@ I consider this as a good blog post to read more about it: https://shapeshed.com
 </b></details>
 
 <details>
-<summary>How to grep two strings?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is the different between a soft link and hard link?</summary><br><b>
 
 hard link is the same file, using the same inode.
@@ -558,6 +579,18 @@ soft link is a shortcut to another file, using a different inode.
 
 soft links can be created between different file systems while
 hard link can be created only within the same file system.
+</b></details>
+
+<details>
+<summary>What do you know about LVM?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the following in regards to LVM:
+
+  * PV
+  * VG
+  * LV</summary><br><b>
 </b></details>
 
 <details>
