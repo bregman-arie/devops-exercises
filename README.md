@@ -139,7 +139,7 @@ follow mutable infrastructure paradigm.
 
 In immutable infrastructure paradigm, every change is actually new infrastructure. So a change
 to a server will result in a new server instead of updating it. Terraform is an example of technology
-which follows the mutable infrastructure paradigm.
+which follows the immutable infrastructure paradigm.
 </b></details>
 
 <details>
