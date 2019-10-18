@@ -1,14 +1,15 @@
 # DevOps Interview Questions
 
-<p align="center">"<i>DevOps is not a goal, but a never-ending process of continual improvement.</i>" - Jez Humble</p>
-
-****
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **172** interview questions
+:bar_chart: &nbsp;There are currently **170** interview questions
 
 :warning: &nbsp;Some answers might be only partial and shouldn't be used as they are in interviews
+
+:exclamation: &nbsp;You don't need to know how to answer all the questions here. DevOps is not about specific set of tools or technologies.
+
+:exclamation: &nbsp;Some questions are very specific and will be asked only if you are interviewing to a specialized role (e.g. Ansible Expert)
 
 :pencil: &nbsp;You can add more questions & answers by submitting pull requests :)
 
@@ -79,10 +80,6 @@ Each piece of code (change/patch) is verified, to make the change is safe to mer
 </b></details>
 
 <details>
-<summary>Which DevOps tools you consider as top tools? Which tools have you worked with?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What systems and/or tools are you using for the following?:
 
   * CI/CD
@@ -126,10 +123,6 @@ You may use one or all of the following:
 
 <details>
 <summary>What scripting language are you familiar with? why specifically this one?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Describe some of the scripts you have written. What are they used for? how long did it take you to write them?</summary><br><b>
 </b></details>
 
 <details>
@@ -210,8 +203,7 @@ This situation might lead to bugs which hard to identify and reproduce.
 <summary>In what scenarios would you prefer to use SQL?</summary><br><b>
 
   * Homogeneous data, no changes anticipated
-  * ACID compliance is important to you
-
+  * ACID compliance is important
 </b></details>
 
 <details>
@@ -236,14 +228,7 @@ This situation might lead to bugs which hard to identify and reproduce.
 </b></details>
 
 <details>
-<summary>What plugins are you using in Jenkins? Which do you consider to most useful?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Installation questions</summary><br><b>
-  * How to install Jenkins?
-  * How to install a plugin?
-  * How to install an agent?
+<summary>What plugins are you using in Jenkins? Which do you consider to be the most useful?</summary><br><b>
 </b></details>
 
 <details>
@@ -262,27 +247,23 @@ This situation might lead to bugs which hard to identify and reproduce.
 <summary>How to secure Jenkins?</summary><br><b>
 </b></details>
 
-##### Writing pipelines
-
-<details>
-<summary>Can you write a pipeline which will run unit tests upon git push to a certain repository?</summary><br><b>
-</b></details>
-
 <a name="jenkins-advanced"></a>
 #### :star: Advanced
 
 <details>
-<summary>Write a script to remove all the jobs which include the string "REMOVE_ME"</summary><br><b>
+<summary>How to acquire multiple slaves for one specific build?</summary><br><b>
 </b></details>
 
-##### Writing pipelines
+<details>
+<summary>There are four teams in your organization. How to prioritize the builds of each team? So the jobs of team x will always run before team y</summary><br><b>
+</b></details>
 
 <details>
-<summary>Can you write a pipeline which will do to the following?:
+<summary>Do you have experience with developing a Jenkins plugin? Can you describe this experience?</summary><br><b>
+</b></details>
 
-  * Provision an instance (can also be a container)
-  * Configure the instance as Apache web server
-  * Deploy a web application on the provisioned instance</summary><br><b>
+<details>
+<summary>If you are managing a dozen of jobs, you can probably use the Jenkins UI. How do you manage the creation and deletion of hundreds of jobs every week/month?</summary><br><b>
 </b></details>
 
 
@@ -1121,6 +1102,10 @@ set([food for bro in x for food in bro['food']])
 ```
 </b></details>
 
+<details>
+<summary>Explain what is GIL</summary><br><b>
+</b></details>
+
 ## Prometheus
 
 <details>
@@ -1333,3 +1318,5 @@ and considerations.
 * [Elasticsearch & Kibana on AWS](scenarios/elk_kibana_aws.md)
 * [Ansible, Minikube and Docker](scenarios/ansible_minikube_docker.md)
 * [Cloud Slack bot](scenarios/cloud_slack_bot.md)
+* [Writing Jenkins Scripts](scenarios/jenkins_scripts.md)
+* [Writing Jenkins Pipelines](scenarios/jenkins_pipelines.md)
