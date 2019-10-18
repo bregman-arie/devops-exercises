@@ -7,9 +7,9 @@
 
 :warning: &nbsp;Some answers might be only partial and shouldn't be used as they are in interviews
 
-:exclamation: &nbsp;You don't need to know how to answer all the questions here. DevOps is not about specific set of tools or technologies.
+:exclamation: &nbsp;You don't need to know how to answer all these questions here. DevOps is not about specific set of tools or techs
 
-:exclamation: &nbsp;Some questions are very specific and will be asked only if you are interviewing to a specialized role (e.g. Ansible Expert)
+:exclamation: &nbsp;Some questions are very specific and will be asked only if you are being interviewed to specialized roles
 
 :pencil: &nbsp;You can add more questions & answers by submitting pull requests :)
 
@@ -38,6 +38,7 @@
     <td align="center"><a href="#go"><img src="images/go.png" width="75px;" height="75px;" alt="Go"/><br /><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a><br /><sub><a href="#mongo-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a><br /><sub><a href="#openshift-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="75px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a><br /><sub><a href="#shell-scripting-beginner">Beginner :baby:</a></sub><br><sub></td>
   </tr>
 </table>
 </center>
@@ -200,17 +201,16 @@ This situation might lead to bugs which hard to identify and reproduce.
 </b></details>
 
 <details>
+<summary>Do you have experience with testing cross-projects changes? (aka cross-dependency)</summary><br><b>
+
+Note: cross-dependency is when you have two or more changes to separate projects and you would like to test them in mutual build instead of testing each change separately.
+</b></details>
+
+<details>
 <summary>In what scenarios would you prefer to use SQL?</summary><br><b>
 
   * Homogeneous data, no changes anticipated
   * ACID compliance is important
-</b></details>
-
-<details>
-<summary>In what scenarios would you prefer to use NoSQL over SQL?</summary><br><b>
-
-  * Heterogeneous data which changes often
-  * Data consistency and integrity is not top priority
 </b></details>
 
 
@@ -266,6 +266,13 @@ This situation might lead to bugs which hard to identify and reproduce.
 <summary>If you are managing a dozen of jobs, you can probably use the Jenkins UI. How do you manage the creation and deletion of hundreds of jobs every week/month?</summary><br><b>
 </b></details>
 
+<details>
+<summary>How would you implement an option of a starting a build from a certain stage and not from the beginning?<summary><br><b>
+</b></details>
+
+<details>
+<summary>What are some of Jenkins limitations?<summary><br><b>
+</b></details>
 
 ## AWS
 
@@ -355,7 +362,7 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 #### :baby: Beginner
 
 <details>
-<summary>Explain the OSI model. What layers there are? What each layer reponsible for?</summary><br><b>
+<summary>Explain the OSI model. What layers there are? What each layer is responsible for?</summary><br><b>
 
 Application: user end (HTTP is here)
 Presentation: establishes context between application-layer entities (Encryption is here)
@@ -439,6 +446,10 @@ CSMA/CD algorithm:
 
 <details>
 <summary>What is ICMP?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is NAT? How it works?</summary><br><b>
 </b></details>
 
 ## Linux
@@ -525,16 +536,6 @@ I consider this as a good blog post to read more about it: https://shapeshed.com
 </b></details>
 
 <details>
-<summary>Explain what would be the result of each command:
-
-  * <code>echo $0</code>
-  * <code>echo $?</code>
-  * <code>echo $$</code>
-  * <code>echo $@</code>
-  * <code>echo $#</code></summary><br><b>
-</b></details>
-
-<details>
 <summary>How to grep two strings?</summary><br><b>
 </b></details>
 
@@ -573,7 +574,7 @@ hard link can be created only within the same file system.
 <summary>How to run a process in the background and why to do that in the first place?</summary><br><b>
 
 You can achieve that by specifying & at end of the command.
-As to Why? since some commands/processes can take a lot of time to finish
+As to why, since some commands/processes can take a lot of time to finish
 execution or run forever
 </b></details>
 
@@ -1268,6 +1269,13 @@ func main() {
 #### :baby: Beginner
 
 <details>
+<summary>In what scenarios would you prefer to use NoSQL/Mongo over SQL?</summary><br><b>
+
+  * Heterogeneous data which changes often
+  * Data consistency and integrity is not top priority
+</b></details>
+
+<details>
 <summary>What is a document? What is a collection?</summary><br><b>
 </b></details>
 
@@ -1308,6 +1316,66 @@ func main() {
 <summary>Explain what is Downward API</summary><br><b>
 </b></details>
 
+## Shell Scripting
+
+<a name="shell-scripting-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>Tell me about your experience with shell scripting</summary><br><b>
+</b></details>
+
+<details>
+<summary>What this line in scripts mean?: <code>#!/bin/bash</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>What do you tend to include in every script you write?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False?: when a certain command/line fails, the script, by default, will exit and will no keep running</summary><br><b>
+
+Depends on the language and settings used but in Bash for example, by default the script will keep running.
+</b></details>
+
+<details>
+<summary>Today we have tools and technologies like Ansible. Why would someone still use shell scripting?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what would be the result of each command:
+
+  * <code>echo $0</code>
+  * <code>echo $?</code>
+  * <code>echo $$</code>
+  * <code>echo $@</code>
+  * <code>echo $#</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you debug shell scripts?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you get input from the user in shell scripts?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain conditionals and how do you use them</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a loop? What types of loops are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain <code>continue</code> and <code>break</code>. When do you use them if at all?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you check variable length?</summary><br><b>
+</b></details>
 
 ## Scenarios
 
