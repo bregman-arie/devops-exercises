@@ -512,6 +512,17 @@ The tasks are stored in a cron file.
 </b></details>
 
 <details>
+<summary>Are you familiar with the following process monitoring tools and commands?:
+
+  * top
+  * ps
+  * htop
+  * atop
+  * lsof
+Can you explain when are you using each one?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is a Linux kernel module and how do you load a new module?</summary><br><b>
 </b></details>
 
@@ -597,19 +608,35 @@ To view all available signals run `kill -l`
 </b></details>
 
 <details>
-<summary>In what state a process in Linux can be?</summary><br><b>
+<summary>What are daemons?</summary><br><b>
+</b></details>
 
-Ready
+<details>
+<summary>What are the possible states of a process in Linux?</summary><br><b>
+
 Running
-Blocked
+Waiting
+Stopped
 Terminated
 Zombie
 </b></details>
 
 <details>
-<summary>Find all files which end with '.yml' and replace the number 1 in 2 in each file</summary><br><b>
+<summary>What is the init process?</summary><br><b>
+</b></details>
 
-find /some_dir -iname \*.yml -exec sed -i "s/1/2/g" {} \;
+<details>
+<summary>How to change the priority of a process? Why would you want to do that?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are system calls? What system calls are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Find all the files which end with '.yml' and replace the number 1 in 2 in each file</summary><br><b>
+
+ind /some_dir -iname \*.yml -print0 | xargs -0 -r sed -i "s/1/2/g"
 </b></details>
 
 <details>
@@ -645,7 +672,7 @@ related to the file like its size, owner, permissions, etc.
 </b></details>
 
 <details>
-<summary>How to list ports which being currently used?</summary><br><b>
+<summary>How to list active connections?</summary><br><b>
 </b></details>
 
 <details>
@@ -670,9 +697,11 @@ While an A record points a domain name to an IP address, a PTR record does the o
 #### :star: Advanced
 
 <details>
-<summary>How to delete the last word from each line in a file?</summary><br><b>
+<summary>What happens in the OS when you execute <code>ls</code>?</summary><br><b>
+</b></details>
 
-sed "s/\s*\w\+\s*$//" file
+<details>
+<summary>How processes are being created?</summary><br><b>
 </b></details>
 
 <details>
@@ -699,6 +728,18 @@ There are a couple of ways to do that:
   * dd if=/dev/urandom of=new_file.txt bs=2MB count=1
   * truncate -s 2M new_file.txt
   * fallocate -l 2097152 new_file.txt
+</b></details>
+
+<details>
+<summary>What are the differences between the following system calls?: exec(), fork(), vfork() and clone()?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Process Descriptor and Task Structure</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Kernel Threads</summary><br><b>
 </b></details>
 
 
@@ -1371,6 +1412,10 @@ Depends on the language and settings used but in Bash for example, by default th
 
 <details>
 <summary>Explain <code>continue</code> and <code>break</code>. When do you use them if at all?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to store the output of a command in a variable?</summary><br><b>
 </b></details>
 
 <details>
