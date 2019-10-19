@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **216** questions
+:bar_chart: &nbsp;There are currently **230** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -166,6 +166,14 @@ which follows the immutable infrastructure paradigm.
 <summary>Describe the workflow of setting up some type of web server (Apache, IIS, Tomact, ...)</summary><br><b>
 </b></details>
 
+<details>
+<summary>Explain monitoring. What is it? Why it's important?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What monitoring methods are you familiar with?</summary><br><b>
+</b></details>
+
 <a name="devops-advanced"></a>
 #### :star: Advanced
 
@@ -223,15 +231,30 @@ Note: cross-dependency is when you have two or more changes to separate projects
 #### :baby: Beginner
 
 <details>
-<summary>Why are you using Jenkins? What are the advantages of Jenkins over its competitors?</summary><br><b>
+<summary>What is Jenkins? What have you used it for?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is a plugin?</summary><br><b>
+<summary>What are the advantages of Jenkins over its competitors? Can you compare it to one of the following systems?:
+
+  * Travis
+  * Bamboo
+  * Teamcity
+  * CircleCI</summary><br><b>
 </b></details>
 
 <details>
-<summary>What plugins are you using in Jenkins? Which do you consider to be the most useful?</summary><br><b>
+<summary>Explain the following:
+
+  * Job
+  * Build
+  * Plugin
+  * Slave
+  * Executor</summary><br><b>
+</b></details>
+
+<details>
+<summary>What plugins have you used in Jenkins?</summary><br><b>
 </b></details>
 
 <details>
@@ -239,11 +262,15 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>What type of jobs there are? what is the advantage of each type?</summary><br><b>
+<summary>What type of jobs are there? Which types have you used and why?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What ways are you familiar with to notify users on build results?</summary><br><b>
+<summary>How did you report build results to users? What ways are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You need to run unit tests every time a change submitted to a given project. Describe in details how your pipeline would look like and what will be executed in each stage</summary><br><b>
 </b></details>
 
 <details>
@@ -258,7 +285,7 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>There are four teams in your organization. How to prioritize the builds of each team? So the jobs of team x will always run before team y</summary><br><b>
+<summary>There are four teams in your organization. How to prioritize the builds of each team? So the jobs of team x will always run before team y for example</summary><br><b>
 </b></details>
 
 <details>
@@ -270,11 +297,18 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
+<summary>What are some of Jenkins limitations?<summary><br><b>
+
+  * Testing cross-dependencies (changes from multiple projects together)
+  * Starting builds from any stage (although cloudbees implemented something called checkpoints)
+</b></details>
+
+<details>
 <summary>How would you implement an option of a starting a build from a certain stage and not from the beginning?<summary><br><b>
 </b></details>
 
 <details>
-<summary>What are some of Jenkins limitations?<summary><br><b>
+<summary>Have you written Jenkins scripts? If yes, what for and how they work?</summary><br><b>
 </b></details>
 
 ## AWS
@@ -480,6 +514,7 @@ CSMA/CD algorithm:
   * rmdir (can you achieve the same result by using <code>rm</code>?)
   * grep
   * wc
+  * touch
   * df</summary><br><b>
 </b></details>
 
@@ -497,6 +532,8 @@ With cron, tasks are scheduled using the following format:
 
 The tasks are stored in a cron file.
 </b></details>
+
+##### Permissions
 
 <details>
 <summary>How to change the permissions of a file?</summary><br><b>
@@ -617,6 +654,10 @@ hard link can be created only within the same file system.
 </b></details>
 
 <details>
+<summary>What is lazy umount?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Fix the following commands:
 
   * sed "s/1/2/g' /tmp/myFile
@@ -728,21 +769,53 @@ related to the file like its size, owner, permissions, etc.
 </b></details>
 
 <details>
-<summary>DNS: What is a "A record"?</summary><br><b>
+<summary>What is NTP? What is it used for?</summary><br><b>
 </b></details>
 
 <details>
-<summary>DNS: What is a PTR?</summary><br><b>
+<summary>What is SELiunx?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is nftables?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What firewalld daemon is responsible for?</summary><br><b>
+</b></details>
+
+##### DNS
+
+<details>
+<summary>What the file <code>/etc/resolv.conf</code> is used for? What does it include?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a "A record"?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a PTR record?</summary><br><b>
 
 While an A record points a domain name to an IP address, a PTR record does the opposite and resolves the IP address to a domain name.
 </b></details>
 
 <details>
-<summary>DNS: What is a MX record?</summary><br><b>
+<summary>What is a MX record?</summary><br><b>
 </b></details>
 
 <details>
-<summary>DNS: is it using TCP or UDP?</summary><br><b>
+<summary>Is DNS using TCP or UDP?</summary><br><b>
+</b></details>
+
+##### Packaging
+
+<details>
+<summary>Do you have experience with packaging? Can you explain how it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>RPM: explain the spec format(what it should and can include)</summary><br><b>
 </b></details>
 
 <a name="linux-advanced"></a>
@@ -1101,6 +1174,9 @@ Swarm management which means you can create new swarms in Docker Cloud.
 
 ## Kubernetes
 
+<a name="kubernetes-beginner"></a>
+#### :baby: Beginner
+
 <details>
 <summary>What is Kubernetes?</summary><br><b>
 </b></details>
@@ -1217,6 +1293,10 @@ Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most 
 </b></details>
 
 <details>
+<summary>Write a function to determine if a given string is a palindrome</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain what is GIL</summary><br><b>
 </b></details>
 
@@ -1232,7 +1312,7 @@ Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most 
 </b></details>
 
 <details>
-<summmary>Are you familiar with Dataclasses? Can you explain what are they used for?</summary><br><b>
+<summary>Are you familiar with Dataclasses? Can you explain what are they used for?</summary><br><b>
 </b></details>
 
 <details>
