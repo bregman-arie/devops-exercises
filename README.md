@@ -3,13 +3,13 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **200** interview questions
+:bar_chart: &nbsp;There are currently **208** interview questions
 
-:warning: &nbsp;Some answers might be only partial and shouldn't be used as they are in interviews
+:warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all the tools and frameworks
 
-:exclamation: &nbsp;You don't need to know how to answer all these questions here. DevOps is not about specific set of tools or techs
+:exclamation: &nbsp;Some questions are more for testing your own knowledge than actual valid interview questions
 
-:exclamation: &nbsp;Some questions are very specific and will be asked only if you are being interviewed to specialized roles
+:exclamation: &nbsp;For interviewers, I suggest focusing on three things: the resume of the candidate, scenario questions and technical concepts. Don't have an interview of only specific technical questions.
 
 :pencil: &nbsp;You can add more questions & answers by submitting pull requests :)
 
@@ -38,7 +38,7 @@
     <td align="center"><a href="#go"><img src="images/go.png" width="75px;" height="75px;" alt="Go"/><br /><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a><br /><sub><a href="#mongo-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a><br /><sub><a href="#openshift-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="75px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a><br /><sub><a href="#shell-scripting-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="75px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a><br /><sub><a href="#shell-scripting-beginner">Beginner :baby:</a></sub><br><sub><a href="#shell-scripting-advanced">Advanced :star:</a></sub></td>
   </tr>
 </table>
 </center>
@@ -162,6 +162,9 @@ which follows the immutable infrastructure paradigm.
 <summary>What is HTTP and how it works?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Describe the workflow of setting up some type of web server (Apache, IIS, Tomact, ...)</summary><br><b>
+</b></details>
 
 <a name="devops-advanced"></a>
 #### :star: Advanced
@@ -591,6 +594,10 @@ soft link is a shortcut to another file, using a different inode.
 
 soft links can be created between different file systems while
 hard link can be created only within the same file system.
+</b></details>
+
+<details>
+<summary>What is a swap partition? What is it used for?</summary><br><b>
 </b></details>
 
 <details>
@@ -1491,9 +1498,14 @@ Depends on the language and settings used but in Bash for example, by default th
 
 ## Scenarios
 
-Scenarios are questions which combine several subjects together. Some scenarios will
-require from you to design, plan and implement environments with different constraints
-and considerations.
+Scenarios are questions which don't have verbal answer and require you one of the following:
+
+  * Set up environments
+  * Write scripts
+  * Design and/or develop infrastructure projects
+
+These questions usually given as an home task to the candidate and they can combine several topics together.
+Below you can find several scenario questions:
 
 * [Elasticsearch & Kibana on AWS](scenarios/elk_kibana_aws.md)
 * [Ansible, Minikube and Docker](scenarios/ansible_minikube_docker.md)
