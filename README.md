@@ -1465,6 +1465,18 @@ Depends on the language and settings used but in Bash for example, by default th
 <summary>How do you check variable length?</summary><br><b>
 </b></details>
 
+
+<a name="shell-scripting-advanced"></a>
+#### Advanced
+
+<details>
+<summary>Explain the following code:
+
+<code>:(){ :|:& };:</code>
+
+</summary><br><b>
+</b></details>
+
 ## Scenarios
 
 Scenarios are questions which combine several subjects together. Some scenarios will
