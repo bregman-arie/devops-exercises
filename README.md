@@ -3,13 +3,13 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **208** interview questions
+:bar_chart: &nbsp;There are currently **216** questions
 
-:warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all the tools and frameworks
+:warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
 :exclamation: &nbsp;Some questions are more for testing your own knowledge than actual valid interview questions
 
-:exclamation: &nbsp;For interviewers, I suggest focusing on three things: the resume of the candidate, scenario questions and technical concepts. Don't have an interview of only specific technical questions.
+:exclamation: &nbsp;For interviewers, I suggest focusing on 3 things: the resume of the candidate, scenario questions and technical concepts. Don't have an interview of only specific technical questions
 
 :pencil: &nbsp;You can add more questions & answers by submitting pull requests :)
 
@@ -32,7 +32,7 @@
   </tr>
   <tr>
     <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a><br /><sub><a href="#kubernetes-beginner">Beginner :baby:</a></sub><br></td>
-    <td align="center"><a href="#python"><img src="images/python.png" width="75px;" height="75px;" alt="Python"/><br /><b>Python</b></a><br /><sub><a href="#python-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#python"><img src="images/python.png" width="75px;" height="75px;" alt="Python"/><br /><b>Python</b></a><br /><sub><a href="#python-beginner">Beginner :baby:</a></sub><br><sub><a href="#python-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a><br /><sub><a href="#prometheus-beginner">Beginner :baby:</a></sub><br></td>
     <td align="center"><a href="#git"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a><br /><sub><a href="#git-beginner">Beginner :baby:</a></sub><br><sub><a href="#git-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#go"><img src="images/go.png" width="75px;" height="75px;" alt="Go"/><br /><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
@@ -1207,7 +1207,44 @@ set([food for bro in x for food in bro['food']])
 </b></details>
 
 <details>
+<summary>What is List Comprehension? Is better than a typical loop? Why?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to reverse a string?</summary><br><b>
+
+Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most efficient one.
+</b></details>
+
+<details>
 <summary>Explain what is GIL</summary><br><b>
+</b></details>
+
+<a name="python-advanced"></a>
+#### :star: Advanced
+
+<details>
+<summary>Explain what is a decorator</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you show how to write and use decorators?</summary><br><b>
+</b></details>
+
+<details>
+<summmary>Are you familiar with Dataclasses? Can you explain what are they used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Context Manager</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the Buffer Protocol</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Descriptors</summary><br><b>
 </b></details>
 
 ## Prometheus
