@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **230** questions
+:bar_chart: &nbsp;There are currently **250** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -24,7 +24,7 @@
     <td align="center"><a href="#devops"><img src="images/devops.png" width="75px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a><br /><sub><a href="#devops-beginner">Beginner :baby:</a></sub><br><sub><a href="#devops-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="75px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a><br /><sub><a href="#jenkins-beginner">Beginner :baby:</a></sub><br><sub><a href="#jenkins-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#aws"><img src="images/aws.png" width="120px;" height="75px;" alt="AWS"/><br /><b>AWS</b></a><br /><sub><a href="#aws-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#Network"><img src="images/network.png" width="75x;" height="75px;" alt="Network"/><br /><b>Network</b></a><br /><sub><a href="#network-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#Network"><img src="images/network.png" width="75x;" height="75px;" alt="Network"/><br /><b>Network</b></a><br /><sub><a href="#network-beginner">Beginner :baby:</a></sub><br><sub><a href="#network-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#linux"><img src="images/linux.png" width="75x;" height="75px;" alt="Linux"/><br /><b>Linux</b></a><br /><sub><a href="#linux-beginner">Beginner :baby:</a></sub><br><sub><a href="#linux-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#ansible"><img src="images/ansible.png" width="75px;" height="75px;" alt="Ansible"/><br /><b>Ansible</b></a><br /><sub><a href="#ansible-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#terraform"><img src="images/terraform.png" width="75px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a><br /><sub><a href="#terraform-beginner">Beginner :baby:</a></sub><br><sub></td>
@@ -277,6 +277,10 @@ Note: cross-dependency is when you have two or more changes to separate projects
 <summary>How to secure Jenkins?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Can you describe some of Jenkins best practices?</summary><br><b>
+</b></details>
+
 <a name="jenkins-advanced"></a>
 #### :star: Advanced
 
@@ -297,7 +301,7 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>What are some of Jenkins limitations?<summary><br><b>
+<summary>What are some of Jenkins limitations?</summary><br><b>
 
   * Testing cross-dependencies (changes from multiple projects together)
   * Starting builds from any stage (although cloudbees implemented something called checkpoints)
@@ -501,6 +505,35 @@ CSMA/CD algorithm:
 <summary>What is NAT? How it works?</summary><br><b>
 </b></details>
 
+<a name="network-advanced"></a>
+#### :star: Advanced
+
+<details>
+<summary>Explain Spanning Tree Protocol (STP)</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is link aggregation? Why is it used?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Asymmetric Routing? How do deal with it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is GRE? How it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain OSPF</summary><br><b>
+</b></details>
+
+<details>
+<summary>Using Hammind code, what would be the code word for the following data word 100111010001101?</summary><br><b>
+
+00110011110100011101
+</b></details>
+
 ## Linux
 
 <a name="linux-beginner"></a>
@@ -515,6 +548,7 @@ CSMA/CD algorithm:
   * grep
   * wc
   * touch
+  * man
   * df</summary><br><b>
 </b></details>
 
@@ -553,6 +587,10 @@ The tasks are stored in a cron file.
 
 <details>
 <summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
+</b></details>
+
+<details>
+<summary>On a system which uses systemd, how would display the logs?</summary>
 </b></details>
 
 <details>
@@ -701,6 +739,10 @@ To view all available signals run `kill -l`
 </b></details>
 
 <details>
+<summary>What happens when you press ctrl + c?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What are daemons?</summary><br><b>
 </b></details>
 
@@ -712,6 +754,10 @@ Waiting
 Stopped
 Terminated
 Zombie
+</b></details>
+
+<details>
+<summary>What is a zombie process? How do you get rid of it?</summary>
 </b></details>
 
 <details>
@@ -746,7 +792,7 @@ You can use the <code>split</code> command this way: <code>split -l 25 some_file
 
 <details>
 <summary>What is a file descriptor? What file descriptors are you familiar with?</summary><br><b>
-
+Kerberos
 File descriptor, also known as file handler, is a unique number which identifies an open file in the operating system.
 
 In Linux (and Unix) the first three file descriptors are:
@@ -777,11 +823,25 @@ related to the file like its size, owner, permissions, etc.
 </b></details>
 
 <details>
+<summary>What is Kerberos?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is nftables?</summary><br><b>
 </b></details>
 
 <details>
 <summary>What firewalld daemon is responsible for?</summary><br><b>
+</b></details>
+
+##### Network
+
+<details>
+<summary>How can you turn your Linux server into a router?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the routing table? How do you view it?</summary><br><b>
 </b></details>
 
 ##### DNS
@@ -829,6 +889,8 @@ While an A record points a domain name to an IP address, a PTR record does the o
 <summary>How processes are being created?</summary><br><b>
 </b></details>
 
+##### Network
+
 <details>
 <summary>When you run <code>ip a</code> you see there is a device called 'lo'. What is it and why do we need it?</summary><br><b>
 </b></details>
@@ -838,7 +900,7 @@ While an A record points a domain name to an IP address, a PTR record does the o
 </b></details>
 
 <details>
-<summary>What is the routing table? How do you view it?</summary><br><b>
+<summary>What is network bonding? What types are you familiar with?</summary><br><b>
 </b></details>
 
 <details>
@@ -880,6 +942,9 @@ This is a good article about the topic: https://ops.tips/blog/how-linux-creates-
 
 ## Ansible
 
+<a name="ansible-beginner"></a>
+#### :baby: Beginner
+
 <details>
 <summary>Describe each of the following components in Ansible, including the relationship between them:
 
@@ -897,6 +962,10 @@ Play – One or more tasks executed on a given host(s)
 Playbook – One or more plays. Each play can be executed on the same or different hosts
 
 Role – Ansible roles allows you to group resources based on certain functionality/service such that they can be easily reused. In a role, you have directories for variables, defaults, files, templates, handlers, tasks, and metadata. You can then use the role by simply specifying it in your playbook.
+</b></details>
+
+<details>
+<summary>What are some of Ansible best practices?</summary><br><b>
 </b></details>
 
 <details>
@@ -1083,6 +1152,10 @@ The benefits of Terraform over the other tools:
 <summary>How to write down a variable which changes by an external source or during <code>terraform apply</code>?</summary><br><b>
 
 You use it this way: <code>variable “my_var” {}</code>
+</b></details>
+
+<details>
+<summary>Give an example of several Terraform best practices</summary><br><b>
 </b></details>
 
 
@@ -1300,6 +1373,10 @@ Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most 
 <summary>Explain what is GIL</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is a generator? Why using generators?</summary>
+</b></details>
+
 <a name="python-advanced"></a>
 #### :star: Advanced
 
@@ -1327,13 +1404,18 @@ Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most 
 <summary>Explain Descriptors</summary><br><b>
 </b></details>
 
+<details>
+<summary>You create a web page where a user can upload a document. But the function which reads the uploaded files, runs for a long time, based on the document size. How can you overcome this?</summary><br><b>
+</b></details>
+
 ## Prometheus
 
 <details>
 <summary>Describe the following Prometheus components:
-  - Prometheus server
-  - Push Gateway
-  - Alert Manager</summary><br><b>
+
+  * Prometheus server
+  * Push Gateway
+  * Alert Manager</summary><br><b>
 
 Prometheus server responsible for scraping the storing the data<br>
 Push gateway is used for short-lived jobs<br>
@@ -1601,6 +1683,9 @@ Depends on the language and settings used but in Bash for example, by default th
 <summary>How do you check variable length?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is the difference between single and double quotes?</summary><br><b>
+</b></details>
 
 <a name="shell-scripting-advanced"></a>
 #### Advanced
@@ -1611,6 +1696,18 @@ Depends on the language and settings used but in Bash for example, by default th
 <code>:(){ :|:& };:</code>
 
 </summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you give an example to some Bash best practices?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the ternary operator? How do you use it in bash?</summary><br><b>
+
+A short way of using if/else. An example:
+
+[[ $a = 1 ]] && b="yes, equal" || b="nope"
 </b></details>
 
 ## Scenarios
