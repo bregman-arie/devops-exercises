@@ -287,16 +287,28 @@ Note: cross-dependency is when you have two or more changes to separate projects
   * Availability zone
   * Region
   * Edge location</summary><br><b>
-</b></details>
+</b>
+<b>
+AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independant from one another. 
+Within each region,There are multiple isolatated locations known as Availability Zones. Multiple availability zones insure high availability in case one of them goes down.
+
+Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
+</b>
+</details>
 
 ##### S3
  
 <details>
-<summary>Explain what is S3 and what is it used for</summary><br><b>
-</b></details>
+<summary>Explain what is S3 and what is it used for</summary><br>
+<b>
+S3 stands for 3 S, Simple Storage Service.
+S3 is a object storage service which is fast, scalable and durable. S3 enables customers to upload, download or store any file or object that is up to 5 TB in size. while having a maximum size of 5 GB per file (multipart upload if more than 5 GB in size).
+</b>
+</details>
 
 <details>
 <summary>What is a bucket?</summary><br><b>
+An S3 bucket is a resource which is similar to folders in a filesystem and allows storing objects, which consist of data and its  metadata.
 </b></details>
 
 <details>
