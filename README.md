@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **271** questions
+:bar_chart: &nbsp;There are currently **282** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -538,7 +538,11 @@ CSMA/CD algorithm:
 #### :baby: Beginner
 
 <details>
-<summary>Explain what each of the following commands does and given an example on how to use it:
+<summary>What is your experience with Linux? When you can set up an application on multiple operating systems, on which one would you prefer to set it up and why?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what each of the following commands does and give an example on how to use it:
 
   * ls
   * rm 
@@ -565,6 +569,10 @@ With cron, tasks are scheduled using the following format:
 The tasks are stored in a cron file.
 </b></details>
 
+<details>
+<summary>Have you scheduled tasks in the past? What kind of tasks?</summary><br><b>
+</b></details>
+
 ##### Permissions
 
 <details>
@@ -577,6 +585,10 @@ The tasks are stored in a cron file.
   * 777
   * 644
   * 750</summary><br><b>
+
+777 - means you are lazy
+644 - owner has read+write permissions and everyone else can only read
+750 - owner can do anything, group can read and execute and others can do nothing
 </b></details>
 
 <details>
@@ -591,27 +603,35 @@ The tasks are stored in a cron file.
 <summary>On a system which uses systemd, how would display the logs?</summary>
 </b></details>
 
-<details>
-<summary>What commands are you using for troubleshooting issues? specifically:
+##### Debugging
 
-  * Disk issues
-  * Memory, CPU issues
-  * Networking issues</summary><br><b>
+<details>
+<summary>What are you using for troubleshooting and debugging <b>network</b> issues?</summary><br><b>
+
+<code>dstat -t</code> is great for identifying network and disk issues.
 </b></details>
 
 <details>
-<summary>What is the difference between Linux and Unix?</summary><br><b>
+<summary>What are you using for troubleshooting and debugging <b>disk</b> issues?</summary><br><b>
+
+<code>dstat -t</code> is great for identifying network and disk issues.
 </b></details>
 
 <details>
-<summary>Are you familiar with the following process monitoring tools and commands?:
+<summary>What are you using for troubleshooting and debugging <b>networking</b> issues?</summary><br><b>
+</b></details>
 
-  * top
-  * ps
-  * htop
-  * atop
-  * lsof
-Can you explain when are you using each one?</summary><br><b>
+<details>
+<summary>What are you using for troubleshooting and debugging <b>process</b> issues?</summary><br><b>
+
+<code>strace</code> is great for understanding what your program does. It prints every system call your program executed.
+</b></details>
+
+<details>
+<summary>You get a call saying "my system is slow" - how would you deal with it?</summary><br><b>
+
+1. Check with <code>top</code> if anything consumes your CPU or RAM.
+2. Run <code>dstat -t</code> to check if it's related to disk or network.
 </b></details>
 
 <details>
@@ -721,6 +741,17 @@ execution or run forever
 </b></details>
 
 <details>
+<summary>Are you familiar with the following process monitoring tools and commands?:
+
+  * top
+  * ps
+  * htop
+  * atop
+  * lsof
+Can you explain when are you using each one?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What signal is used when you run 'kill <process id>'?</summary><br><b>
 
 The default signal is SIGTERM (15). This signal kills
@@ -777,7 +808,7 @@ Zombie
 </b></details>
 
 <details>
-<summary>What does strace does?</summary><br><b>
+<summary>What <code>strace</code> does?</summary><br><b>
 </b></details>
 
 <details>
@@ -890,11 +921,23 @@ While an A record points a domain name to an IP address, a PTR record does the o
 #### :star: Advanced
 
 <details>
-<summary>What happens in the OS when you execute <code>ls</code>?</summary><br><b>
+<summary>What happens when you execute <code>ls</code>? provide a detailed answer</summary><br><b>
 </b></details>
 
 <details>
-<summary>How processes are being created?</summary><br><b>
+<summary>Can you describe how processes are being created?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What's happening in the following code?:
+
+```
+open("/my/file") = 5
+read(5, "file content")
+```
+</summary><br><b>
+
+those are system calls for reading the file <code>/my/file</code> and 5 is the file descriptor number.
 </b></details>
 
 ##### Network
@@ -1238,14 +1281,41 @@ You use it this way: <code>variable “my_var” {}</code>
 </b></details>
 
 <details>
-<summary>What is "tainted resource"?</summary><br><b>
+<summary>What is a "tainted resource"?</summary><br><b>
+
+It's a resource which was successfully created but failed during provisioning. Terraform will fail and mark this resource as "tainted".
+</b></details>
+
+<details>
+<summary>What <code>terraform taint</code> does?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What types of variables are supported in Terraform?</summary><br><b>
+
+Strimg
+Integer
+Map
+List
+</b></details>
+
+<details>
+<summary>What are output variables and what <code>terraform output</code> does?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Modules</summary>
+</b></details>
+
+<details>
+<summary>What is the Terraform Registry?</summary><br><b>
 </b></details>
 
 <a name="terraform-advanced"></a>
 #### :star: Advanced
 
 <details>
-<summary>Explain "remote state". When would you use it and how?</summary><br><b>
+<summary>Explain "Remote State". When would you use it and how?</summary><br><b>
 </b></details>
 
 <details>
