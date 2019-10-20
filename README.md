@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **282** questions
+:bar_chart: &nbsp;There are currently **291** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -53,7 +53,7 @@
 <details>
 <summary>What is Continuous Integration?</summary><br><b>
 
-A development practice where developers integrate code into a shared repository frequently. It can range from a couple of changes every day or week to a couple of changes in one hour in larger scales.
+A development practice where developers integrate code into a shared repository frequently. It can range from a couple of changes every day or a week to a couple of changes in one hour in larger scales.
 
 Each piece of code (change/patch) is verified, to make the change is safe to merge. Today, it's a common practice to test the change using an automated build that makes sure the code can integrated. It can be one build which runs several tests in different levels (unit, functional, etc.) or several separate builds that all or some has to pass in order for the change to be merged into the repository.
 </b></details>
@@ -452,7 +452,11 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
-<summary>Describe the following network devices and the difference between them: router, switch and hub</summary><br><b>
+<summary>Describe the following network devices and the difference between them:
+
+  * router
+  * switch
+  * hub</summary><br><b>
 </b></details>
 
 <details>
@@ -464,7 +468,19 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
+<summary>How TCP works? What is the 3 way handshake?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is ARP? How it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a MAC address? What is it used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is TTL?</summary><br><b>
 </b></details>
 
 <details>
@@ -549,9 +565,15 @@ CSMA/CD algorithm:
   * rmdir (can you achieve the same result by using <code>rm</code>?)
   * grep
   * wc
+  * curl
   * touch
   * man
+  * nslookup or dig
   * df</summary><br><b>
+</b></details>
+
+<details>
+<summary>Running the command <code>df</code> you get "command not found". What could be wrong and how to fix it?</summary><br><b>
 </b></details>
 
 <details>
@@ -609,16 +631,15 @@ The tasks are stored in a cron file.
 <summary>What are you using for troubleshooting and debugging <b>network</b> issues?</summary><br><b>
 
 <code>dstat -t</code> is great for identifying network and disk issues.
+<code>netstat -tnlaup</code> can be used to see which processes are running on which ports.
+<code>lsof -i -P</code> can be used for the same purpose as netstat.
 </b></details>
 
 <details>
-<summary>What are you using for troubleshooting and debugging <b>disk</b> issues?</summary><br><b>
+<summary>What are you using for troubleshooting and debugging <b>disk & filesystem</b> issues?</summary><br><b>
 
 <code>dstat -t</code> is great for identifying network and disk issues.
-</b></details>
-
-<details>
-<summary>What are you using for troubleshooting and debugging <b>networking</b> issues?</summary><br><b>
+<code>opensnoop</code> can be used to see which files are being opened on the system (in real time).
 </b></details>
 
 <details>
@@ -730,6 +751,10 @@ hard link can be created only within the same file system.
   * /usr/local
 </b></details>
 
+<details>
+<summary>What can you find in /etc/services</summary><br><b>
+</b></details>
+
 ##### Processes
 
 <details>
@@ -741,14 +766,7 @@ execution or run forever
 </b></details>
 
 <details>
-<summary>Are you familiar with the following process monitoring tools and commands?:
-
-  * top
-  * ps
-  * htop
-  * atop
-  * lsof
-Can you explain when are you using each one?</summary><br><b>
+<summary>How can you find how much memory a specific process consumes?</summary><br><b>
 </b></details>
 
 <details>
@@ -876,11 +894,19 @@ related to the file like its size, owner, permissions, etc.
 ##### Network
 
 <details>
+<summary>What is a network namespace? What is it used for?</summary><br><b>
+</b></details>
+
+<details>
 <summary>How can you turn your Linux server into a router?</summary><br><b>
 </b></details>
 
 <details>
 <summary>What is the routing table? How do you view it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are packet sniffers? Have you used one in the past? If yes, which packet sniffers have you used and for what purpose?</summary><br><b>
 </b></details>
 
 ##### DNS
@@ -952,6 +978,10 @@ those are system calls for reading the file <code>/my/file</code> and 5 is the f
 
 <details>
 <summary>What is network bonding? What types are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to link two separate network namespaces so you can ping an interface on one namespace from the second one?</summary><br><b>
 </b></details>
 
 <details>
@@ -1499,8 +1529,14 @@ Shortest way is str[::-1]
 3. As a general purpose "throwaway" variable name. For example: x, y, _ = get_data() (x and y are used but since we don't care about third variable, we "threw it away").
 </b></details>
 
+##### Files
+
 <details>
 <summary>How to write to a file?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to reverse a file?</summary><br><b>
 </b></details>
 
 <details>
@@ -1708,6 +1744,12 @@ ours
 theirs
 
 This page explains it the best: https://git-scm.com/docs/merge-strategies
+</b></details>
+
+<details>
+<summary>How can you see which changes have done before committing them?</summary><br><b>
+
+<code>git diff</code>
 </b></details>
 
 <a name="git-advanced"></a>
