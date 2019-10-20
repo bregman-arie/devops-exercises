@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **291** questions
+:bar_chart: &nbsp;There are currently **300** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -51,6 +51,10 @@
 #### :baby: Beginner
 
 <details>
+<summary>What is DevOps? What DevOps helps us to achieve?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is Continuous Integration?</summary><br><b>
 
 A development practice where developers integrate code into a shared repository frequently. It can range from a couple of changes every day or a week to a couple of changes in one hour in larger scales.
@@ -64,10 +68,6 @@ Each piece of code (change/patch) is verified, to make the change is safe to mer
 
 <details>
 <summary>What is Continuous Delivery?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What DevOps helps us to achieve?</summary><br><b>
 </b></details>
 
 <details>
@@ -109,15 +109,7 @@ You may use one or all of the following:
 </b></details>
 
 <details>
-<summary>What is the difference between SQL and NoSQL?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What the difference between VPN and VPS?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the difference between SSH and SSL?</summary><br><b>
 </b></details>
 
 <details>
@@ -633,6 +625,9 @@ The tasks are stored in a cron file.
 <code>dstat -t</code> is great for identifying network and disk issues.
 <code>netstat -tnlaup</code> can be used to see which processes are running on which ports.
 <code>lsof -i -P</code> can be used for the same purpose as netstat.
+<code>ngrep -d any metafilter</code> for matching regex against paylods of packets.
+<code>tcpdump</code> for capturing packets
+<code>wireshark</code> same concept as tcpdump but with GUI (optional).
 </b></details>
 
 <details>
@@ -649,10 +644,19 @@ The tasks are stored in a cron file.
 </b></details>
 
 <details>
+<summary>What are you using for debugging CPU related issues?</summary><br><b>
+
+<code>top</code> will show you how much CPU percentage each process consumes
+<code>perf</code> is a great choice for sampling profiler and in general, figuring out what your CPU cycles are "wasted" on
+<code>flamegraphs</code> is great for CPU consumption visualization (http://www.brendangregg.com/flamegraphs.html)
+</b></details>
+
+<details>
 <summary>You get a call saying "my system is slow" - how would you deal with it?</summary><br><b>
 
 1. Check with <code>top</code> if anything consumes your CPU or RAM.
 2. Run <code>dstat -t</code> to check if it's related to disk or network.
+3. Check I/O stats with <code>iostat</code>
 </b></details>
 
 <details>
@@ -661,6 +665,14 @@ The tasks are stored in a cron file.
 
 <details>
 <summary>What is KVM?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between SSH and SSL?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is SSH port forwarding?</summary><br><b>
 </b></details>
 
 <details>
@@ -715,6 +727,10 @@ hard link can be created only within the same file system.
 </b></details>
 
 <details>
+<summary>You are trying to create a new file but you get "Filesystem is full". You check with df for free space and you see you used only 20% of the space. What could be the problem?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What do you know about LVM?</summary><br><b>
 </b></details>
 
@@ -755,6 +771,10 @@ hard link can be created only within the same file system.
 <summary>What can you find in /etc/services</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is chroot?</summary><br><b>
+</b></details>
+
 ##### Processes
 
 <details>
@@ -785,6 +805,10 @@ SIGHUP - common usage is for reloading configuration
 SIGKILL - a signal which cannot caught or ignored
 
 To view all available signals run `kill -l`
+</b></details>
+
+<details>
+<summary>What is a trap?</summary><br><b>
 </b></details>
 
 <details>
@@ -943,6 +967,10 @@ While an A record points a domain name to an IP address, a PTR record does the o
 <summary>RPM: explain the spec format(what it should and can include)</summary><br><b>
 </b></details>
 
+<details>
+<summary>How do you list the content of a package?</summary><br><b>
+</b></details>
+
 <a name="linux-advanced"></a>
 #### :star: Advanced
 
@@ -964,6 +992,10 @@ read(5, "file content")
 </summary><br><b>
 
 those are system calls for reading the file <code>/my/file</code> and 5 is the file descriptor number.
+</b></details>
+
+<details>
+<summary>What is the difference between a process and a thread?</summary><br><b>
 </b></details>
 
 ##### Network
@@ -1467,10 +1499,15 @@ Swarm management which means you can create new swarms in Docker Cloud.
 <summary>What is kubconfig? What do you use it for?</summary><br><b>
 </b></details>
 
+##### Users
+
 <details>
 <summary>How do you create users? Where user information is stored?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Do you know how to create a new user without using adduser/useradd command?</summary><br><b>
+</b></details>
 
 ## Python
 
@@ -1578,6 +1615,10 @@ Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most 
 
 <details>
 <summary>How to sort a dictionary by keys?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain data serialization and how do you perform it with Python</summary><br><b>
 </b></details>
 
 <details>
@@ -1819,6 +1860,10 @@ func main() {
 
 <a name="mongo-beginner"></a>
 #### :baby: Beginner
+
+<details>
+<summary>What is the difference between SQL and NoSQL?</summary><br><b>
+</b></details>
 
 <details>
 <summary>In what scenarios would you prefer to use NoSQL/Mongo over SQL?</summary><br><b>
