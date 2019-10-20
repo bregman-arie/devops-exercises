@@ -3,13 +3,11 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **257** questions
+:bar_chart: &nbsp;There are currently **264** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
-:exclamation: &nbsp;Some questions are more for testing your own knowledge than actual valid interview questions
-
-:exclamation: &nbsp;For interviewers, I suggest focusing on 3 things: the resume of the candidate, scenario questions and technical concepts. Don't have an interview of only specific technical questions
+:page_facing_up: &nbsp;Different interviewers focus on different things. Some will focus on your resume while others might focus on scenario questions or specific technical questions. In this repository I tried to cover different types of questions for you to practice and test your knowledge
 
 :pencil: &nbsp;You can add more questions & answers by submitting pull requests :)
 
@@ -712,6 +710,8 @@ hard link can be created only within the same file system.
   * /usr/local
 </b></details>
 
+##### Processes
+
 <details>
 <summary>How to run a process in the background and why to do that in the first place?</summary><br><b>
 
@@ -769,7 +769,15 @@ Zombie
 </b></details>
 
 <details>
+<summary>Can you explain how network process/connection is established and how it's terminated?><br></b>
+</b></details>
+
+<details>
 <summary>What are system calls? What system calls are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What does strace does?</summary><br><b>
 </b></details>
 
 <details>
@@ -1380,6 +1388,10 @@ Shortest way is str[::-1]
 </b></details>
 
 <details>
+<summary>How to write to a file?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Sort a list of lists by the second item of each nested list</summary><br><b>
 
 ```
@@ -1413,12 +1425,41 @@ Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most 
 </b></details>
 
 <details>
+<summary>How to sort a dictionary by values?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to sort a dictionary by keys?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain what is GIL</summary><br><b>
 </b></details>
 
 <details>
 <summary>What is a generator? Why using generators?</summary>
 </b></details>
+
+##### Time Complexity
+
+<details>
+<summary>Describe what would be the time complexity of the operations <code>access</code>, <code>search</code> <code>insert</code> and <code>remove</code> for the following data structures:</summary><br><b>
+
+  * Stack
+  * Queue
+  * Linked List
+  * Binary Search Tree
+</b></details>
+
+<details>
+<summary>What is the complexity for the best, worst and average cases of each of the following algorithms?:
+
+  * Quicksort
+  * Mergesort
+  * Bucket Sort
+  * Radix Sort
+</b></details>
+
 
 <a name="python-advanced"></a>
 #### :star: Advanced
@@ -1429,6 +1470,10 @@ Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most 
 
 <details>
 <summary>Can you show how to write and use decorators?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Write a script which will determine if a given host is accessible on a given port</summary><br><b>
 </b></details>
 
 <details>
@@ -1448,7 +1493,15 @@ Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most 
 </b></details>
 
 <details>
-<summary>You create a web page where a user can upload a document. But the function which reads the uploaded files, runs for a long time, based on the document size. How can you overcome this?</summary><br><b>
+<summary>Do you have experience with web scraping? Can you describe what have you used and for what?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you implement Linked List in Python?<br><b>
+</b></details>
+
+<details>
+<summary>You have created a web page where a user can upload a document. But the function which reads the uploaded files, runs for a long time, based on the document size and user has to wait for the read operation to complete before he/she can continue using the web site. How can you overcome this?</summary><br><b>
 </b></details>
 
 ## Prometheus
