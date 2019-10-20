@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **264** questions
+:bar_chart: &nbsp;There are currently **271** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -20,17 +20,17 @@
 <table>
   <tr>
     <td align="center"><a href="#devops"><img src="images/devops.png" width="75px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a><br /><sub><a href="#devops-beginner">Beginner :baby:</a></sub><br><sub><a href="#devops-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="75px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a><br /><sub><a href="#jenkins-beginner">Beginner :baby:</a></sub><br><sub><a href="#jenkins-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#aws"><img src="images/aws.png" width="120px;" height="75px;" alt="AWS"/><br /><b>AWS</b></a><br /><sub><a href="#aws-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#Network"><img src="images/network.png" width="75x;" height="75px;" alt="Network"/><br /><b>Network</b></a><br /><sub><a href="#network-beginner">Beginner :baby:</a></sub><br><sub><a href="#network-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="80px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a><br /><sub><a href="#jenkins-beginner">Beginner :baby:</a></sub><br><sub><a href="#jenkins-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#aws"><img src="images/aws.png" width="110px;" height="75px;" alt="AWS"/><br /><b>AWS</b></a><br /><sub><a href="#aws-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#Network"><img src="images/network.png" width="80x;" height="75px;" alt="Network"/><br /><b>Network</b></a><br /><sub><a href="#network-beginner">Beginner :baby:</a></sub><br><sub><a href="#network-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#linux"><img src="images/linux.png" width="75x;" height="75px;" alt="Linux"/><br /><b>Linux</b></a><br /><sub><a href="#linux-beginner">Beginner :baby:</a></sub><br><sub><a href="#linux-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#ansible"><img src="images/ansible.png" width="75px;" height="75px;" alt="Ansible"/><br /><b>Ansible</b></a><br /><sub><a href="#ansible-beginner">Beginner :baby:</a></sub><br><sub><a href="#ansible-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#terraform"><img src="images/terraform.png" width="75px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a><br /><sub><a href="#terraform-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#terraform"><img src="images/terraform.png" width="75px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a><br /><sub><a href="#terraform-beginner">Beginner :baby:</a></sub><br><sub><a href="#terraform-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#docker"><img src="images/docker.png" width="75px;" height="75px;" alt="Docker"/><br /><b>Docker</b></a><br /><sub><a href="#docker-beginner">Beginner :baby:</a></sub><br><sub></td>
   </tr>
   <tr>
     <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a><br /><sub><a href="#kubernetes-beginner">Beginner :baby:</a></sub><br></td>
-    <td align="center"><a href="#python"><img src="images/python.png" width="75px;" height="75px;" alt="Python"/><br /><b>Python</b></a><br /><sub><a href="#python-beginner">Beginner :baby:</a></sub><br><sub><a href="#python-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a><br /><sub><a href="#python-beginner">Beginner :baby:</a></sub><br><sub><a href="#python-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a><br /><sub><a href="#prometheus-beginner">Beginner :baby:</a></sub><br></td>
     <td align="center"><a href="#git"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a><br /><sub><a href="#git-beginner">Beginner :baby:</a></sub><br><sub><a href="#git-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#go"><img src="images/go.png" width="75px;" height="75px;" alt="Go"/><br /><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
@@ -1178,12 +1178,31 @@ Read [here](https://www.terraform.io/intro/index.html#what-is-terraform-)
 
 A common *wrong* answer is to say that Ansible and Puppet are configuration management tools
 and Terraform is a provisioning tool. While technically true, it doesn't mean Ansible and Puppet can't
-be used for provisioning infrastructure. Also, it doesn't explains why Terraform should be used over
+be used for provisioning infrastructure. Also, it doesn't explain why Terraform should be used over
 CloudFormation if at all.
 
 The benefits of Terraform over the other tools:
-  * it follows the immutable infrastructure approach which has benefits like avoiding a configuration drift over time
-  * Ansible and Puppet are more procedural (you mention what to execute in each step) and Terraform is declartive since you describe the overall desired state and not per resource or task. You can give the example of going from 1 to 2 servers in each tool. In terrform you specify 2, in Ansible and puppet you have to only provision 1 additional server
+
+  * It follows the immutable infrastructure approach which has benefits like avoiding a configuration drift over time
+  * Ansible and Puppet are more procedural (you mention what to execute in each step) and Terraform is declartive since you describe the overall desired state and not per resource or task. You can give the example of going from 1 to 2 servers in each tool. In terrform you specify 2, in Ansible and puppet you have to only provision 1 additional server so you need to explicitly make sure you provision only another one server.
+</b></details>
+
+<details>
+<summary>Explain what is "Terraform configuration"</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain each of the following:
+
+  * Provider
+  * Resource
+  * Provisioner
+</b></details>
+
+<details>
+<summary>What <code>terraform.tfstate</code> file is used for?</summary><br><b> 
+
+It keeps track of the IDs of created resources so that Terraform knows what it is managing.
 </b></details>
 
 <details>
@@ -1191,6 +1210,7 @@ The benefits of Terraform over the other tools:
 
   * <code>terraform init</code>
   * <code>terraform plan</code>
+  * <code>terraform validate</code>
   * <code>terraform apply</code>
 </summary><br><b>
 
@@ -1209,6 +1229,28 @@ You use it this way: <code>variable “my_var” {}</code>
 <summary>Give an example of several Terraform best practices</summary><br><b>
 </b></details>
 
+<details>
+<summary>Explain how implicit and explicit dependencies work in Terraform</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is <code>local-exec</code> and <code>remote-exec</code> in the context of provisioners?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is "tainted resource"?</summary><br><b>
+</b></details>
+
+<a name="terraform-advanced"></a>
+#### :star: Advanced
+
+<details>
+<summary>Explain "remote state". When would you use it and how?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "State Locking"</summary><br><b>
+</b></details>
 
 ## Docker
 
