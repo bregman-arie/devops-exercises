@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **351** questions
+:bar_chart: &nbsp;There are currently **362** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -20,13 +20,13 @@
 <table>
   <tr>
     <td align="center"><a href="#devops"><img src="images/devops.png" width="75px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a><br /><sub><a href="#devops-beginner">Beginner :baby:</a></sub><br><sub><a href="#devops-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="80px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a><br /><sub><a href="#jenkins-beginner">Beginner :baby:</a></sub><br><sub><a href="#jenkins-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="85px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a><br /><sub><a href="#jenkins-beginner">Beginner :baby:</a></sub><br><sub><a href="#jenkins-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#git"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a><br /><sub><a href="#git-beginner">Beginner :baby:</a></sub><br><sub><a href="#git-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#linux"><img src="images/linux.png" width="75x;" height="75px;" alt="Linux"/><br /><b>Linux</b></a><br /><sub><a href="#linux-beginner">Beginner :baby:</a></sub><br><sub><a href="#linux-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#Network"><img src="images/network.png" width="80x;" height="75px;" alt="Network"/><br /><b>Network</b></a><br /><sub><a href="#network-beginner">Beginner :baby:</a></sub><br><sub><a href="#network-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#ansible"><img src="images/ansible.png" width="90px;" height="75px;" alt="Ansible"/><br /><b>Ansible</b></a><br /><sub><a href="#ansible-beginner">Beginner :baby:</a></sub><br><sub><a href="#ansible-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#terraform"><img src="images/terraform.png" width="75px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a><br /><sub><a href="#terraform-beginner">Beginner :baby:</a></sub><br><sub><a href="#terraform-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#docker"><img src="images/docker.png" width="75px;" height="75px;" alt="Docker"/><br /><b>Docker</b></a><br /><sub><a href="#docker-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#docker"><img src="images/docker.png" width="75px;" height="75px;" alt="Docker"/><br /><b>Docker</b></a><br /><sub><a href="#docker-beginner">Beginner :baby:</a></sub><br><sub><a href="#docker-advanced">Advanced :star:</a></sub></td>
   </tr>
   <tr>
     <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a><br /><sub><a href="#python-beginner">Beginner :baby:</a></sub><br><sub><a href="#python-advanced">Advanced :star:</a></sub></td>
@@ -43,7 +43,7 @@
     <td align="center"><a href="#azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a><br /><sub><a href="#azure-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a><br /><sub><a href="#openstack-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a><br /><sub><a href="#security-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a><br /><sub><a href="#puppet-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a><br /><sub><a href="#puppet-beginner">Beginner :baby:</a></sub><br><sub><a href="#puppet-advanced">Advanced :star:</a></sub></td>
   </tr>
 </table>
 </center>
@@ -1410,6 +1410,10 @@ List
 #### :baby: beginner
 
 <details>
+<summary>What is Docker? What are you using it for?</summary><br><b>
+</b></details>
+
+<details>
 <summary>How containers are different from VMs?</summary><br><b>
 
 The primary difference between containers and VMs is that containers allow you to virtualize
@@ -1430,7 +1434,11 @@ You should choose containers when:
 </b></details>
 
 <details>
-<summary>What happens when you run `docker run hello-world`?</summary><br><b>
+<summary>Explain Docker architecture</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe in detail what happens when you run `docker run hello-world`?</summary><br><b>
 
 Docker CLI passes your request to Docker daemon.
 Docker daemon downloads the image from Docker Hub
@@ -1443,7 +1451,7 @@ Docker daemon redirects output from container to Docker CLI which redirects it t
 </b></details>
 
 <details>
-<summary>What do you see when you run `docker ps`?</summary><br><b>
+<summary>What best practices are you familiar related to working with containers?</summary><br><b>
 </b></details>
 
 <details>
@@ -1452,6 +1460,30 @@ Docker daemon redirects output from container to Docker CLI which redirects it t
 
 <details>
 <summary>How would you transfer data from one container into another?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What happens to data of the container when a container exists?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what each of the following commands do:
+
+  * docker run
+  * docker rm
+  * docker ps
+  * docker build
+  * docker commit</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you remove old, non running, containers?</summary><br><b>
+</b></details>
+
+##### Dockerfile
+
+<details>
+<summary>What is Dockerfile</summary><br><b>
 </b></details>
 
 <details>
@@ -1486,7 +1518,26 @@ Swarm management which means you can create new swarms in Docker Cloud.
 </b></details>
 
 <details>
+<summary>Where Docker images are stored?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain image layers</summary><br><b>
+</b></details>
+
+<a name="docker-advanced"></a>
+#### :star: Advanced
+
+<details>
+<summary>How do you manage persistent storage in Docker?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How can you connect from the inside of your container to the localhost of your host, where the container runs?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you copy files from Docker container to the host and vice versa?</summary><br><b>
 </b></details>
 
 ## Kubernetes
@@ -1703,7 +1754,6 @@ Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most 
   * Radix Sort
 </b></details>
 
-
 <a name="python-advanced"></a>
 #### :star: Advanced
 
@@ -1907,6 +1957,27 @@ func main() {
 }
 ```
 </summary><br><b>
+</b></details>
+
+<details>
+<summary>The following block of code tries to convert the integer 101 to a string but instead we get "e". Why is that? How to fix it?
+
+```
+package main
+
+import "fmt"
+
+func main() {
+    var x int = 101
+    var y string
+    y = string(x)
+    fmt.Println(y)
+}
+```
+</summary><br><b>
+
+It looks what unicode value is set at 101 and uses it for converting the integer to a string.
+If you want to get "101" you should use the package "strconv" and repalce <code>y = string(x)</code> with <code>y = strconv.Itoa(x)</code>
 </b></details>
 
 ## Mongo
