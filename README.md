@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **343** questions
+:bar_chart: &nbsp;There are currently **350** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -326,7 +326,7 @@ Note: cross-dependency is when you have two or more changes to separate projects
   * Edge location</summary><br><b>
 </b>
 <b>
-AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independant from one another. 
+AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independant of one another. 
 Within each region,There are multiple isolatated locations known as Availability Zones. Multiple availability zones insure high availability in case one of them goes down.
 
 Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
