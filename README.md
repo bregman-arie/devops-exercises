@@ -591,12 +591,18 @@ The tasks are stored in a cron file.
 
 <details>
 <summary>Have you scheduled tasks in the past? What kind of tasks?</summary><br><b>
+
+Normally you will schedule batch jobs.
+
 </b></details>
 
 ##### Permissions
 
 <details>
 <summary>How to change the permissions of a file?</summary><br><b>
+
+Using the `chmod` command.
+
 </b></details>
 
 <details>
@@ -617,10 +623,16 @@ The tasks are stored in a cron file.
 
 <details>
 <summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
+
+  * adduser user_name --shell=/bin/false --no-create-home
+
 </b></details>
 
 <details>
 <summary>On a system which uses systemd, how would display the logs?</summary>
+
+  * journalctl
+
 </b></details>
 
 ##### Debugging
