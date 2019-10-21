@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **362** questions
+:bar_chart: &nbsp;There are currently **375** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -41,7 +41,7 @@
   <tr>
     <td align="center"><a href="#aws"><img src="images/aws.png" width="110px;" height="75px;" alt="AWS"/><br /><b>AWS</b></a><br /><sub><a href="#aws-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a><br /><sub><a href="#azure-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a><br /><sub><a href="#openstack-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a><br /><sub><a href="#openstack-beginner">Beginner :baby:</a></sub><br><sub><a href="#openstack-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a><br /><sub><a href="#security-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a><br /><sub><a href="#puppet-beginner">Beginner :baby:</a></sub><br><sub><a href="#puppet-advanced">Advanced :star:</a></sub></td>
   </tr>
@@ -62,6 +62,10 @@
 </b></details>
 
 <details>
+<summary>What are the anti-patterns of DevOps?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is Continuous Integration?</summary><br><b>
 
 A development practice where developers integrate code into a shared repository frequently. It can range from a couple of changes every day or a week to a couple of changes in one hour in larger scales.
@@ -79,10 +83,6 @@ Each piece of code (change/patch) is verified, to make the change is safe to mer
 
 <details>
 <summary>What do you consider as best practices for CI/CD?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are the anti-patterns of DevOps?</summary><br><b>
 </b></details>
 
 <details>
@@ -180,10 +180,6 @@ which follows the immutable infrastructure paradigm.
 
 <details>
 <summary>How would you structure/implement CD for an application which depends on several other applications?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you manage dependencies?</summary><br><b>
 </b></details>
 
 <details>
@@ -412,6 +408,22 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 #### :baby: Beginner
 
 <details>
+<summary>What is Ethernet?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a MAC address? What is it used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>When this MAC address is used?: ff:ff:ff:ff:ff:ff</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an IP address? What is a subnet?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain the OSI model. What layers there are? What each layer is responsible for?</summary><br><b>
 
 Application: user end (HTTP is here)
@@ -475,10 +487,6 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
-<summary>What is a MAC address? What is it used for?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is TTL?</summary><br><b>
 </b></details>
 
@@ -511,7 +519,7 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
-<summary>What is ICMP?</summary><br><b>
+<summary>What is ICMP? What is it used for?</summary><br><b>
 </b></details>
 
 <details>
@@ -534,11 +542,27 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
+<summary>What overlay (tunnel) protocols are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is GRE? How it works?</summary><br><b>
 </b></details>
 
 <details>
+<summary>What is VXLAN? How it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is SNAT?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain OSPF</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Spine & Leaf</summary><br><b>
 </b></details>
 
 <details>
@@ -2381,10 +2405,6 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
-<summary>How do you debug OpenStack networking issues? (tools, logs, ...)</summary><br><b>
-</b></details>
-
-<details>
 <summary>How do you debug OpenStack storage issues? (tools, logs, ...)</summary><br><b>
 </b></details>
 
@@ -2394,6 +2414,45 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 
 <details>
 <summary>Are you familiar with TripleO? What benefits it has?</summary><br><b>
+</b></details>
+
+##### Networking
+
+<details>
+<summary>What is a provider network?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What components and services exist in L2 and L3?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the ML2 plug-in? Explain its architecture</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the L2 agent? How it works and what is it responsible for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the L3 agent? How it works and what is it responsible for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what the Metadata agent is responsible for</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you debug OpenStack networking issues? (tools, logs, ...)</summary><br><b>
+</b></details>
+
+<a name="openstack-advanced"></a>
+#### :baby: Advanced
+
+##### Networking
+
+<details>
+<summary>Explain BGP dynamic routing</summary>
 </b></details>
 
 ## Security
