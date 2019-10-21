@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **338** questions
+:bar_chart: &nbsp;There are currently **343** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -1001,7 +1001,7 @@ While an A record points a domain name to an IP address, a PTR record does the o
 </b></details>
 
 <details>
-<summary>What's happening in the following code?:
+<summary>What does the following block do?:
 
 ```
 open("/my/file") = 5
@@ -1009,7 +1009,7 @@ read(5, "file content")
 ```
 </summary><br><b>
 
-those are system calls for reading the file <code>/my/file</code> and 5 is the file descriptor number.
+These system calls are reading the file <code>/my/file</code> and 5 is the file descriptor number.
 </b></details>
 
 <details>
@@ -1552,9 +1552,7 @@ The immutable data types are:
     Bool
     Tuple
 
-The id function can be used to check if a given variable is mutable or not.
-For example if you set a variable this way <code>x = 2</code> and then run the id function this way <code>id(x)</code> you will get an ID which will be different once you change the variable x (like <code>x = x + 5</code>).
-With mutable types, like list, you can modify the variable and the id will stay the same. Try to define a list and then append an item to it.
+You can usually use the function hash() to check an object mutability, if it is hashable it is immutable, although this does not always work as intended as user defined objects might be mutable and hashable
 </b></details>
 
 <details>
@@ -1897,10 +1895,27 @@ This should be answered based on your usage but some examples are:
   * fmt - formatted I/O
 </b></details>
 
+<details>
+<summary>What is the problem with the following block of code? How to fix it?
+
+```
+func main() {
+    var x float32 = 13.5
+    var y int
+    y = x
+}
+```
+</summary><br><b>
+</b></details>
+
 ## Mongo
 
 <a name="mongo-beginner"></a>
 #### :baby: Beginner
+
+<details>
+<summary>What are the advantages of MongoDB? Or in other words, why choosing MongoDB and not other implementation of NoSQL?</summary><br><b>
+</b></details>
 
 <details>
 <summary>What is the difference between SQL and NoSQL?</summary><br><b>
@@ -1919,6 +1934,20 @@ This should be answered based on your usage but some examples are:
 
 <details>
 <summary>What is an aggregator?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is better? embedded documents or referenced?</summary><br><b>
+</b></details>
+
+##### Queries
+
+<details>
+<summary>Explain this query: <code>db.books.find({"name": /abc/})</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain this query: <code>db.books.find().sort({x:1})</code></summary><br><b>
 </b></details>
 
 ## OpenShift
