@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **300** questions
+:bar_chart: &nbsp;There are currently **312** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -2017,6 +2017,7 @@ A short way of using if/else. An example:
 <summary>What does SQL stand for?</summary><br><b>
 
 Structured Query Language
+
 </b></details>
 
 <details>
@@ -2103,6 +2104,7 @@ Customer_ID | Customer_Name | Items_in_cart | Cash_spent_to_Date
 100206 | Bobby Frank | 1 | 100.20
 
 **ORDERS**
+
 Customer_ID | Order_ID | Item | Price | Date_sold
 ------------ | ------------- | ------------- | ------------- | -------------
 100206 | A123 | Rubber Ducky | 2.20 | 2019-09-18
@@ -2117,38 +2119,30 @@ Customer_ID | Order_ID | Item | Price | Date_sold
 <details>
 <summary>How would I select all fields from this table?</summary><br><b>
 
-Select *
+Select * <br>
 From Customers;
 </b></details>
 
 <details>
 <summary>How many items are in John's cart?</summary><br><b>
 
-Select Items_in_cart
-From Customers
+Select Items_in_cart <br>
+From Customers <br>
 Where Customer_Name = "John Smith";
 </b></details>
 
 <details>
 <summary>What is the sum of all the cash spent across all customers?</summary><br><b>
 
-Select SUM(Cash_spent_to_Date) as SUM_CASH
+Select SUM(Cash_spent_to_Date) as SUM_CASH <br>
 From Customers;
 </b></details>
 
 <details>
 <summary>How many people have items in their cart?</summary><br><b>
 
-Select count(1) as Number_of_People_w_items
-From Customers
-where Items_in_cart > 0;
-</b></details>
-
-<details>
-<summary>How many people have items in their cart?</summary><br><b>
-
-Select count(1) as Number_of_People_w_items
-From Customers
+Select count(1) as Number_of_People_w_items <br>
+From Customers <br>
 where Items_in_cart > 0;
 </b></details>
 
@@ -2159,8 +2153,41 @@ You would join them on the unique key. In this case, the unique key is Customer_
 both the Customers table and Orders table
 </b></details>
 
+<details>
+<summary>How would you show which customer ordered which items?</summary><br><b>
+
+Select c.Customer_Name, o.Item <br>
+From Customers c <br>
+Left Join Orders o <br>
+  On c.Customer_ID = o.Customer_ID;
+
+</b></details>
+
 <a name="sql-advanced"></a>
 #### Advanced
+
+<details>
+<summary>Using a with statement, how would you show who ordered cat food, and the total amount of money spent?</summary><br><b>
+
+with cat_food as ( <br>
+Select Customer_ID, SUM(Price) as TOTAL_PRICE <br>
+From Orders <br>
+Where Item like "%Cat Food%" <br>
+Group by Customer_ID <br>
+) <br>
+Select Customer_name, TOTAL_PRICE <br>
+From Customers c <br>
+Inner JOIN cat_food f <br>
+  ON c.Customer_ID = f.Customer_ID <br>
+where c.Customer_ID in (Select Customer_ID from cat_food);
+
+Although this was a simple statement, the "with" clause really shines is when 
+a complex query needs to be run on a table before joining to another. With statements are nice, 
+because you create a pseudo temp when running your query, instead of creating a whole new table.
+
+The Sum of all the purchases of cat food weren't readily available, so we used a with statement to create
+the pseudo table to retrieve the sum of the prices spent by each customer, then join the table normally.
+</b></details>
 
 ## Scenarios
 
