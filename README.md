@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **330** questions
+:bar_chart: &nbsp;There are currently **338** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -1521,8 +1521,11 @@ Swarm management which means you can create new swarms in Docker Cloud.
 #### :baby: Beginner
 
 <details>
-<summary>What data type supported in Python and which of them are mutable?
-  What function can you use to show that a certain data type is mutable?</summary><br><b>
+<summary>What are some characteristics of the Python programming language?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What data types supported in Python and which of them are mutable? How can you show that a certain data type is mutable?</summary><br><b>
 
 The mutable data types are:
 
@@ -1538,10 +1541,12 @@ The immutable data types are:
     Tuple
 
 The id function can be used to check if a given variable is mutable or not.
+For example if you set a variable this way <code>x = 2</code> and then run the id function this way <code>id(x)</code> you will get an ID which will be different once you change the variable x (like <code>x = x + 5</code>).
+With mutable types, like list, you can modify the variable and the id will stay the same. Try to define a list and then append an item to it.
 </b></details>
 
 <details>
-<summary>What is PEP8? Give an example of 5 style guidelines</summary><br><b>
+<summary>What is PEP8? Give an example of 3 style guidelines</summary><br><b>
 
 PEP8 is a list of coding conventions and style guidelines for Python
 
@@ -1555,13 +1560,27 @@ PEP8 is a list of coding conventions and style guidelines for Python
 </b></details>
 
 <details>
+<summary>Explain inheritance and how to use it in Python</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an exception? What types of exceptions are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Exception Handling and how to use it in Python</summary><br><b>
+</b></details>
+
+<details>
 <summary>Write a program which will revert a string (e.g. pizza -> azzip)</summary><br><b>
 
 ```
-Shortest way is str[::-1]
-
-"Classic" way:
+Shortest way is <code>str[::-1]</code> but not the most efficient.
 ```
+</b></details>
+
+<details>
+<summary>How to merge two sorted lists into one sorted list?</summary><br><b>
 </b></details>
 
 <details>
@@ -1570,6 +1589,12 @@ Shortest way is str[::-1]
 1. Translation lookup in i18n
 2. Hold the result of the last executed expression or statement
 3. As a general purpose "throwaway" variable name. For example: x, y, _ = get_data() (x and y are used but since we don't care about third variable, we "threw it away").
+</b></details>
+
+##### Algorithms Implementation
+
+<details>
+<summary>Can you implement "binary search" in Python?</summary><br><b>
 </b></details>
 
 ##### Files
@@ -1602,7 +1627,7 @@ set([food for bro in x for food in bro['food']])
 </b></details>
 
 <details>
-<summary>What is List Comprehension? Is better than a typical loop? Why?</summary><br><b>
+<summary>What is List Comprehension? Is it better than a typical loop? Why? Can you demonstrate how to use it?</summary><br><b>
 </b></details>
 
 <details>
@@ -1632,7 +1657,19 @@ Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most 
 </b></details>
 
 <details>
-<summary>What is a generator? Why using generators?</summary>
+<summary>What is a generator? Why using generators?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the following types of methods and how to use them:
+
+  * Static method
+  * Class method
+  * instance method</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to reverse a list?</summary><br><b>
 </b></details>
 
 ##### Time Complexity
