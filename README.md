@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **312** questions
+:bar_chart: &nbsp;There are currently **318** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -40,6 +40,8 @@
   </tr>
   <tr>
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a><br /><sub><a href="#sql-beginner">Beginner :baby:</a></sub><br><sub><a href="#sql-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a><br /><sub><a href="#azure-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a><br /><sub><a href="#openstack-beginner">Beginner :baby:</a></sub><br><sub></td>
   </tr>
 </table>
 </center>
@@ -2187,6 +2189,41 @@ because you create a pseudo temp when running your query, instead of creating a 
 
 The Sum of all the purchases of cat food weren't readily available, so we used a with statement to create
 the pseudo table to retrieve the sum of the prices spent by each customer, then join the table normally.
+</b></details>
+
+## Azure
+
+<a name="azure-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>Explain availability sets and availability zones</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the Azure Resource Manager? Can you describe the format for ARM templates?</summary><br><b>
+</b></details>
+
+
+## OpenStack
+
+<a name="openstack-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>What components/projects of OpenStack are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What types of networks OpenStack supports?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you debug OpenStack networking issues?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Are you familiar with TripleO? What benefits it has?</summary><br><b>
 </b></details>
 
 ## Scenarios
