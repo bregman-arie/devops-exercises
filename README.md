@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **324** questions
+:bar_chart: &nbsp;There are currently **330** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -42,6 +42,7 @@
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a><br /><sub><a href="#sql-beginner">Beginner :baby:</a></sub><br><sub><a href="#sql-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a><br /><sub><a href="#azure-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a><br /><sub><a href="#openstack-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a><br /><sub><a href="#security-beginner">Beginner :baby:</a></sub><br><sub></td>
   </tr>
 </table>
 </center>
@@ -1834,7 +1835,7 @@ Go also has good community.
 <details>
 <summary>What is the difference between <code>var x int = 2</code> and <code>x := 2</code>?</summary><br><b>
 
-The result is the same, a variable with the variable 2.
+The result is the same, a variable with the value 2.
 
 with <code>var x int = 2</code> we are setting the variable type to integer while with <code>x := 2</code> we are letting Go figure out by itself the type.
 </b></details>
@@ -1845,20 +1846,6 @@ with <code>var x int = 2</code> we are setting the variable type to integer whil
 This should be answered based on your usage but some examples are:
 
   * fmt - formatted I/O
-</b></details>
-
-<details>
-<summary>Write an "hello world" program?</summary><br><b>
-
-```
-package main
-
-import "fmt"
-
-func main() {
-        fmt.Println("Hello World")
-}
-```
 </b></details>
 
 ## Mongo
@@ -2258,6 +2245,36 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 <details>
 <summary>Are you familiar with TripleO? What benefits it has?</summary><br><b>
 </b></details>
+
+## Security
+
+<a name="security-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>Can you describe the DevSecOps core principals?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What DevOps security best practices are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What security techniques are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you manage passwords in different tools and platforms?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you identify and manage vulnerabilities?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Privilege Restriction?</summary><br><b>
+</b></details>
+
 
 ## Scenarios
 
