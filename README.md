@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **318** questions
+:bar_chart: &nbsp;There are currently **324** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -2204,6 +2204,9 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 <summary>What is the Azure Resource Manager? Can you describe the format for ARM templates?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Explain Azure managed disks</summary><br><b>
+</b></details>
 
 ## OpenStack
 
@@ -2211,7 +2214,29 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 #### :baby: Beginner
 
 <details>
+<summary>Tell me about your experience with OpenStack. What do you think are the advantages and disadvantages of OpenStack?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What components/projects of OpenStack are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you tell me what each of the following components/projects is responsible for?:
+
+  * Nova
+  * Neutron
+  * Cinder
+  * Glance
+  * Keystone</summary><br><b>
+</b></details>
+
+<details>
+<summmary>Describe in detail how you bring up an instance with an IP you can reach from outside the cloud</summary><br><b>
+</b></details>
+
+<details>
+<summary>You get a call from a customer saying: "I can ping my instance but can't connect (ssh) it". What might be the problem?</summary><br><b>
 </b></details>
 
 <details>
@@ -2219,7 +2244,15 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
-<summary>How do you debug OpenStack networking issues?</summary><br><b>
+<summary>How do you debug OpenStack networking issues? (tools, logs, ...)</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you debug OpenStack storage issues? (tools, logs, ...)</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you debug OpenStack compute issues? (tools, logs, ...)</summary><br><b>
 </b></details>
 
 <details>
