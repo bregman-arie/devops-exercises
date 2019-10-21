@@ -404,6 +404,37 @@ True
 Stop the instance, the type of the instance to match the desired RAM and start the instance.
 </b></details>
 
+<details>
+<summary>What is an AMI?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How many storage options are there for EC2 Instances?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What happens when an EC2 instance is stopped or terminated?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are Security Groups?</summary><br><b>
+</b></details>
+
+
+<details>
+<summary>How to migrate an instance to another availability zone?</summary><br><b>
+</b></details>
+
+
+<details>
+<summary>What are security groups?</summary><br><b>
+</b></details>
+
+
+<details>
+<summary>What are spot instances?</summary><br><b>
+</b></details>
+  
 
 ## Network
 
