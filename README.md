@@ -611,7 +611,7 @@ Using the `chmod` command.
 <details>
 <summary>On a system which uses systemd, how would display the logs?</summary>
 
-  * journactl
+  * journalctl
 
 </b></details>
 
