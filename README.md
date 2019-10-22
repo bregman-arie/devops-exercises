@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **399** questions
+:bar_chart: &nbsp;There are currently **400** questions
 
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
@@ -45,6 +45,7 @@
     <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a><br /><sub><a href="#openstack-beginner">Beginner :baby:</a></sub><br><sub><a href="#openstack-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a><br /><sub><a href="#security-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a><br /><sub><a href="#puppet-beginner">Beginner :baby:</a></sub><br><sub><a href="#puppet-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#coding"><img src="images/coding.png" width="75px;" height="75px;" alt="coding"/><br /><b>Coding</b></a><br /><sub><a href="#coding-beginner">Beginner :baby:</a></sub><br><sub><a href="#coding-advanced">Advanced :star:</a></sub></td>
   </tr>
 </table>
 </center>
@@ -117,18 +118,6 @@ You may use one or all of the following:
 </b></details>
 
 <details>
-<summary>What the difference between VPN and VPS?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What scripting language are you familiar with? why specifically this one?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How long do you think it would take you to learn another language?</summary><br><b>
-</b></details>
-
-<details>
 <summary>Explain mutable vs. immutable infrastructure</summary><br><b>
 
 In mutable infrastructure paradigm, changes applied on top of the existing infrastructure and over time
@@ -181,10 +170,6 @@ which follows the immutable infrastructure paradigm.
 
 <details>
 <summary>How would you structure/implement CD for an application which depends on several other applications?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain what are design patterns. Which design patterns are you familiar with?</summary><br><b>
 </b></details>
 
 <details>
@@ -1635,6 +1620,44 @@ Swarm management which means you can create new swarms in Docker Cloud.
 <summary>Do you know how to create a new user without using adduser/useradd command?</summary><br><b>
 </b></details>
 
+## Coding
+
+<a name="coding-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>What programming language do you prefer to use for DevOps related tasks? Why specifically this one?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Object Oriented Programming? Why is it important?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain recursion</summary<br><b>
+</b></details>
+
+<details>
+<summary>Explain what are design patterns and describe three of them in detail</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain big O notation</summary><br><b>
+</b></details>
+
+##### Strings
+
+<details>
+<summary>In any language you want, write a function to determine if a given string is a palindrome</summary><br><b>
+</b></details>
+
+<a name="coding-advanced"></a>
+#### :star: Advanced
+
+<details>
+<summary>Name 3 design patterns. Do you know how to implement (= provide an example) these design pattern in any language you'll choose?</summary><br><b>
+</b></details>
+
 ## Python
 
 <a name="python-beginner"></a>
@@ -1957,11 +1980,6 @@ def reverse_string(string):
         temp =  char + temp
     return temp
 ```
-</b></details>
-
-
-<details>
-<summary>Write a function to determine if a given string is a palindrome</summary><br><b>
 </b></details>
 
 <details>
@@ -2314,6 +2332,11 @@ If you want to get "101" you should use the package "strconv" and replace <code>
 
 <details>
 <summary>What is the difference between SQL and NoSQL?</summary><br><b>
+
+The main difference is that SQL databases are structured (data is stored in the form of
+tables with rows and columns - like an excel spreadsheet table) while NoSQL is 
+unstructured, and the data storage can vary depending on how the NoSQL DB is set up, such
+as key-value pair, document-oriented, etc.
 </b></details>
 
 <details>
@@ -2321,6 +2344,7 @@ If you want to get "101" you should use the package "strconv" and replace <code>
 
   * Heterogeneous data which changes often
   * Data consistency and integrity is not top priority
+  * Best if the database needs to scale rapidly
 </b></details>
 
 <details>
@@ -2643,7 +2667,7 @@ Inner JOIN cat_food f <br>
   ON c.Customer_ID = f.Customer_ID <br>
 where c.Customer_ID in (Select Customer_ID from cat_food);
 
-Although this was a simple statement, the "with" clause really shines is when 
+Although this was a simple statement, the "with" clause really shines when 
 a complex query needs to be run on a table before joining to another. With statements are nice, 
 because you create a pseudo temp when running your query, instead of creating a whole new table.
 
