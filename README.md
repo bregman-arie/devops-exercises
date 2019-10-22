@@ -1903,6 +1903,20 @@ for char in 'pizza':
 
 <details>
 <summary>Write a function to return the sum of one or more numbers. The user will decide how many numbers to use.</summary><br><b>
+```
+First you ask the user for the amount of numbers that will be use. Use a while loop that runs until amount_of_numbers becomes 0 through subtracting amount_of_numbers by one each loop. In the while loop you want ask the user for a number which will be added a variable each time the loop runs.
+
+def return_sum():
+	amount_of_numbers = int(input("How many numbers? "))
+	total_sum = 0
+	while amount_of_numbers != 0:
+		num = int(input("Input a number. "))
+		total_sum += num
+		amount_of_numbers -= 1
+	return total_sum
+
+```
+
 </b></details>
 
 <details>
