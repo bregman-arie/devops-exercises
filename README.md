@@ -2314,6 +2314,11 @@ If you want to get "101" you should use the package "strconv" and replace <code>
 
 <details>
 <summary>What is the difference between SQL and NoSQL?</summary><br><b>
+
+The main difference is that SQL databases are structured (data is stored in the form of
+tables with rows and columns - like an excel spreadsheet table) while NoSQL is 
+unstructured, and the data storage can vary depending on how the NoSQL DB is set up, such
+as key-value pair, document-oriented, etc.
 </b></details>
 
 <details>
@@ -2321,6 +2326,7 @@ If you want to get "101" you should use the package "strconv" and replace <code>
 
   * Heterogeneous data which changes often
   * Data consistency and integrity is not top priority
+  * Best if the database needs to scale rapidly
 </b></details>
 
 <details>
@@ -2643,7 +2649,7 @@ Inner JOIN cat_food f <br>
   ON c.Customer_ID = f.Customer_ID <br>
 where c.Customer_ID in (Select Customer_ID from cat_food);
 
-Although this was a simple statement, the "with" clause really shines is when 
+Although this was a simple statement, the "with" clause really shines when 
 a complex query needs to be run on a table before joining to another. With statements are nice, 
 because you create a pseudo temp when running your query, instead of creating a whole new table.
 
