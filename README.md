@@ -1758,7 +1758,7 @@ def reverse_string(string):
     for char in string:
         temp =  char + temp
     return temp
-```</b></details>
+</b></details>
 
 <details>
 <summary>Write a function to determine if a given string is a palindrome</summary><br><b>
