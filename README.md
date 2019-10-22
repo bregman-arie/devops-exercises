@@ -2645,7 +2645,7 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 
 <details>
 <summary>Explain Puppet architecture</summary><br><b>
-</b><details>
+</b></details>
 
 <details>
 <summary>Can you compare Puppet to other configuration management tools? Why did you chose to use Puppet?</summary><br><b>
