@@ -1705,7 +1705,7 @@ Shortest way is <code>str[::-1]</code> but not the most efficient.
 <summary>What _ is used for in Python?</summary><br><b>
 
 1. Translation lookup in i18n
-2. Hold the result of the last executed expression or statement
+2. Hold the result of the last executed expression or statement in the interactive interpreter.
 3. As a general purpose "throwaway" variable name. For example: x, y, _ = get_data() (x and y are used but since we don't care about third variable, we "threw it away").
 </b></details>
 
