@@ -1692,6 +1692,7 @@ PEP8 is a list of coding conventions and style guidelines for Python
 
 <details>
 <summary>Explain inheritance and how to use it in Python</summary><br><b>
+
 ```
 By definition inheritance is the mechanism where an object acts as a base of another object, retaining all its
 properties.
