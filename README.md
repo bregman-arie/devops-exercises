@@ -1754,6 +1754,7 @@ bruno.bark()
 Calling super() calls the Base method, thus, calling super().__init__() we called the Animal __init__.
 
 There is a more advanced python feature called MetaClasses that aid the programmer to directly control class creation.
+
 ```
 
 </b></details>
