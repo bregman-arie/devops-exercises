@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **382** questions
+:bar_chart: &nbsp;There are currently **399** questions
 
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
@@ -34,7 +34,7 @@
     <td align="center"><a href="#go"><img src="images/go.png" width="75px;" height="75px;" alt="Go"/><br /><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="75px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a><br /><sub><a href="#shell-scripting-beginner">Beginner :baby:</a></sub><br><sub><a href="#shell-scripting-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a><br /><sub><a href="#kubernetes-beginner">Beginner :baby:</a></sub><br></td>
-    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a><br /><sub><a href="#prometheus-beginner">Beginner :baby:</a></sub><br></td>
+    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a><br /><sub><a href="#prometheus-beginner">Beginner :baby:</a></sub><br><a href="#prometheus-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a><br /><sub><a href="#mongo-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a><br /><sub><a href="#sql-beginner">Beginner :baby:</a></sub><br><sub><a href="#sql-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a><br /><sub><a href="#openshift-beginner">Beginner :baby:</a></sub><br><sub></td>
@@ -1835,7 +1835,7 @@ Generally, every compiling process have a two steps.
 <summary>Write a program which will revert a string (e.g. pizza -> azzip)</summary><br><b>
 
 ```
-Shortest way is <code>str[::-1]</code> but not the most efficient.
+Shortest way is str[::-1] but not the most efficient.
 
 "Classic" way:
 
@@ -1848,6 +1848,10 @@ for char in 'pizza':
 
 ```
 
+</b></details>
+
+<details>
+<summary>Write a function to return the sum of one or more numbers. The user will decide how many numbers to use.</summary><br><b>
 </b></details>
 
 <details>
@@ -1877,11 +1881,26 @@ for char in 'pizza':
 with open('file.txt', 'w') as file:
     file.write("My insightful comment")
 ```
-
 </b></details>
 
 <details>
 <summary>How to reverse a file?</summary><br><b>
+</b></details>
+
+#### Regex
+
+<details>
+<summary>How do you perform regular expressions related operations in Python? (match patterns, substitute strings, etc.)</summary><br><b>
+
+Using the re module
+</b></details>
+
+<details>
+<summay>How to substitute the string "green" with "blue"?</summary><br><b>
+</b></details>
+
+<details>
+<summay>How to find all the IP addresses in a variable? How to find them in a file?</summary><br><b>
 </b></details>
 
 <details>
@@ -1892,6 +1911,10 @@ li = [[1, 4], [2, 1], [3, 9], [4, 2], [4, 5]]
 
 sorted(x, key=lambda l: l[1])
 ```
+</b></details>
+
+<details>
+<summary>Can you write a function which will print all the file in a given directory? including sub-directories</summary><br><b>
 </b></details>
 
 <details>
@@ -1954,6 +1977,10 @@ def reverse_string(string):
 </b></details>
 
 <details>
+<summary>How do you handle argument parsing in Python?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain what is GIL</summary><br><b>
 </b></details>
 
@@ -1971,6 +1998,10 @@ def reverse_string(string):
 
 <details>
 <summary>How to reverse a list?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What empty <code>return</code> returns?</summary><br><b>
 </b></details>
 
 ##### Time Complexity
@@ -2038,6 +2069,21 @@ def reverse_string(string):
 
 ## Prometheus
 
+<a name="prometheus-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>What is Prometheus? What its benefits?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe Prometheus architecture</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you compare Prometheus to other solutions like Zabbix for example?</summary><br><b>
+</b></details>
+
 <details>
 <summary>Describe the following Prometheus components:
 
@@ -2051,7 +2097,30 @@ Alert manager is responsible for alerts ;)
 </b></details>
 
 <details>
+<summary>What core metrics types Prometheus supports?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is an exporter? What is it used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to get total requests in a given period of time?</summary><br><b>
+</b></details>
+
+<a name="prometheus-advanced"></a>
+#### :star: Advanced
+
+<details>
+<summary>How do you join two metrics?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to write a query that returns the value of a label?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you convert cpu_user_seconds to cpu usage in percentage?</summary><br><b>
 </b></details>
 
 ## Git
@@ -2136,6 +2205,15 @@ This page explains it the best: https://git-scm.com/docs/merge-strategies
 <code>git diff</code>
 </b></details>
 
+<details>
+<summary>How do you revert a specific file to previous commit?</summary><br><b>
+
+```
+git checkout HEAD~1 -- /path/of/the/file
+```
+</b></details>
+
+
 <a name="git-advanced"></a>
 #### :star: Advanced
 
@@ -2175,6 +2253,12 @@ Go also has good community.
 The result is the same, a variable with the value 2.
 
 with <code>var x int = 2</code> we are setting the variable type to integer while with <code>x := 2</code> we are letting Go figure out by itself the type.
+</b></details>
+
+<details>
+<summary>True or False? In Go we can redeclare variables and once declared we must use it.</summary>
+
+False. We can't redeclare variables but yes, we must used declared variables.
 </b></details>
 
 <details>
