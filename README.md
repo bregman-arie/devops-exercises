@@ -1751,8 +1751,14 @@ set([food for bro in x for food in bro['food']])
 <details>
 <summary>How to reverse a string?</summary><br><b>
 
-Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most efficient one.
-</b></details>
+Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most efficient one. <br>
+Cassic way is: <code>
+def reverse_string(string):
+    temp = ""
+    for char in string:
+        temp =  char + temp
+    return temp
+</code></b></details>
 
 <details>
 <summary>Write a function to determine if a given string is a palindrome</summary><br><b>
