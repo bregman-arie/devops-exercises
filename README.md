@@ -1672,6 +1672,7 @@ The immutable data types are:
     String
     Bool
     Tuple
+    Frozenset
 
 You can usually use the function hash() to check an object mutability, if it is hashable it is immutable, although this does not always work as intended as user defined objects might be mutable and hashable
 </b></details>
@@ -1760,7 +1761,70 @@ There is a more advanced python feature called MetaClasses that aid the programm
 </b></details>
 
 <details>
-<summary>What is an exception? What types of exceptions are you familiar with?</summary><br><b>
+<summary> What is an error? What is an exception? What types of exceptions are you familiar with?</summary><br><b>
+
+```
+
+#  Note that you generally don't need to know the compiling process but knowing where everything comes from
+#  and giving complete answers shows that you truly know what you are talking about.
+
+Generally, every compiling process have a two steps.
+    - Analysis
+    - Code Generation.
+    
+    Analysis can be broken into:
+        1. Lexycal analysis   (Tokenizes source code)
+        2. Syntactic analysis (Check whether the tokens are legal or not, tldr, if syntax is correct)
+           
+               for i in 'foo'
+                          ^
+             SyntaxError: invalid syntax
+        
+        We missed ':'
+        
+        
+        3. Semantic analysis  (Contextual analysis, legal syntax can still trigger errors, did you try to divide by 0,
+          hash a mutable object or use an undeclared function?)
+          
+                 1/0
+                ZeroDivisionError: division by zero
+        
+    These three analysis steps are the responsible for error handlings.
+    
+    The second step would be responsible for errors, mostly syntax errors, the most common error.
+    The third step would be responsible for Exceptions.
+    
+    As we have seen, Exceptions are semantic errors, there are many builtin Exceptions:
+        
+        ImportError
+        ValueError
+        KeyError
+        FileNotFoundError
+        IndentationError
+        IndexError
+        ...
+    
+    You can also have user defined Exceptions that have to inherit from the `Exception` class, directly or indirectly.
+
+    Basic example:
+        
+    class DividedBy2Error(Exception):
+        def __init__(self, message):
+            self.message = message
+    
+    
+    def division(dividend,divisor):
+        if divisor == 2:
+            raise DividedBy2Error('I dont want you to divide by 2!')
+        return dividend / divisor
+    
+    division(100, 2)
+    
+    >>> __main__.DividedBy2Error: I dont want you to divide by 2!
+
+```
+
+
 </b></details>
 
 <details>
@@ -1848,6 +1912,7 @@ def get_food(brothers_menu) -> set:
 
     return set(temp)
 
+# One liner way (Using list comprehension)
 set([food for bro in x for food in bro['food']])
 ```
 
@@ -2151,7 +2216,7 @@ func main() {
 </summary><br><b>
 
 It looks what unicode value is set at 101 and uses it for converting the integer to a string.
-If you want to get "101" you should use the package "strconv" and repalce <code>y = string(x)</code> with <code>y = strconv.Itoa(x)</code>
+If you want to get "101" you should use the package "strconv" and replace <code>y = string(x)</code> with <code>y = strconv.Itoa(x)</code>
 </b></details>
 
 ## Mongo
