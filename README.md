@@ -1768,7 +1768,7 @@ There is a more advanced python feature called MetaClasses that aid the programm
 #  Note that you generally don't need to know the compiling process but knowing where everything comes from
 #  and giving complete answers shows that you truly know what you are talking about.
 
-Generally, every compiling process have a two stops.
+Generally, every compiling process have a two steps.
     - Analysis
     - Code Generation.
     
@@ -1912,6 +1912,7 @@ def get_food(brothers_menu) -> set:
 
     return set(temp)
 
+# One liner way (Using list comprehension)
 set([food for bro in x for food in bro['food']])
 ```
 
