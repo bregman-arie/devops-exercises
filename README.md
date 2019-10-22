@@ -1642,6 +1642,7 @@ Swarm management which means you can create new swarms in Docker Cloud.
 
 <details>
 <summary>What are some characteristics of the Python programming language?</summary><br><b>
+
 ```
 1. It is a high level general purpose programming language created in 1991 by Guido Van Rosum.
 2. The language is interpreted, being the CPython (Written in C) the most used/maintained implementation.
@@ -1652,6 +1653,7 @@ Swarm management which means you can create new swarms in Docker Cloud.
 7. In python **Everything** is an object.
 
 There are many other characteristics but these are the main ones that every python programmer should know.
+
 ```
 </b></details>
 
