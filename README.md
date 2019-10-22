@@ -1855,7 +1855,7 @@ for char in 'pizza':
 ```
 First you ask the user for the amount of numbers that will be use. Use a while loop that runs until amount_of_numbers becomes 0 through subtracting amount_of_numbers by one each loop. In the while loop you want ask the user for a number which will be added a variable each time the loop runs.
 
-def returnsum():
+def return_sum():
 	amount_of_numbers = int(input("How many numbers? "))
 	total_sum = 0
 	while amount_of_numbers != 0:
