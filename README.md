@@ -1707,7 +1707,18 @@ PEP8 is a list of coding conventions and style guidelines for Python
 
 ```
 Shortest way is <code>str[::-1]</code> but not the most efficient.
+
+"Classic" way:
+
+foo = ''
+
+for char in 'pizza':
+    foo = char + foo
+
+>> 'azzip'   
+
 ```
+
 </b></details>
 
 <details>
@@ -1732,10 +1743,12 @@ Shortest way is <code>str[::-1]</code> but not the most efficient.
 
 <details>
 <summary>How to write to a file?</summary><br><b>
+
 ```
 with open('file.txt', 'w') as file:
     file.write("My insightful comment")
 ```
+
 </b></details>
 
 <details>
@@ -1757,8 +1770,22 @@ sorted(x, key=lambda l: l[1])
   Extract all type of foods. Final output should be: {'mushrooms', 'goombas', 'turtles'}</summary><br><b>
 
 ```
+brothers_menu =  \
+[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]
+
+# "Classic" Way
+def get_food(brothers_menu) -> set:
+    temp = []
+
+    for brother in brothers_menu:
+        for food in brother['food']:
+            temp.append(food)
+
+    return set(temp)
+
 set([food for bro in x for food in bro['food']])
 ```
+
 </b></details>
 
 <details>
