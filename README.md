@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **406** questions
+:bar_chart: &nbsp;There are currently **409** questions
 
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
@@ -34,8 +34,8 @@
     <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a><br /><sub><a href="#python-beginner">Beginner :baby:</a></sub><br><sub><a href="#python-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#go"><img src="images/go.png" width="80px;" height="75px;" alt="Go"/><br /><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a><br /><sub><a href="#shell-scripting-beginner">Beginner :baby:</a></sub><br><sub><a href="#shell-scripting-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a><br /><sub><a href="#kubernetes-beginner">Beginner :baby:</a></sub><br></td>
-    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a><br /><sub><a href="#prometheus-beginner">Beginner :baby:</a></sub><br><a href="#prometheus-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a><br /><sub><a href="#kubernetes-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a><br /><sub><a href="#prometheus-beginner">Beginner :baby:</a></sub><br><sub><a href="#prometheus-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a><br /><sub><a href="#mongo-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a><br /><sub><a href="#sql-beginner">Beginner :baby:</a></sub><br><sub><a href="#sql-advanced">Advanced :star:</a></sub></td>
   </tr>
@@ -2119,15 +2119,19 @@ def reverse_string(string):
 #### :baby: Beginner
 
 <details>
-<summary>What is Prometheus? What its benefits?</summary><br><b>
+<summary>What is Prometheus? What are some of Prometheus's main features?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Describe Prometheus architecture</summary><br><b>
+<summary>Describe Prometheus architecture and components</summary><br><b>
 </b></details>
 
 <details>
-<summary>Can you compare Prometheus to other solutions like Zabbix for example?</summary><br><b>
+<summary>Can you compare Prometheus to other solutions like InfluxDB for example?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an Alert?</summary><br><b>
 </b></details>
 
 <details>
@@ -2143,11 +2147,19 @@ Alert manager is responsible for alerts ;)
 </b></details>
 
 <details>
+<summary>What is an Instance? What is a Job?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What core metrics types Prometheus supports?</summary><br><b>
 </b></details>
 
 <details>
 <summary>What is an exporter? What is it used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Which Prometheus best practices are you familiar with? name at least three</summary><br><b>
 </b></details>
 
 <details>
