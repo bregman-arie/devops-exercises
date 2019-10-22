@@ -1642,6 +1642,19 @@ Swarm management which means you can create new swarms in Docker Cloud.
 
 <details>
 <summary>What are some characteristics of the Python programming language?</summary><br><b>
+
+```
+1. It is a high level general purpose programming language created in 1991 by Guido Van Rosum.
+2. The language is interpreted, being the CPython (Written in C) the most used/maintained implementation.
+3. It is strongly typed. The typing discipline is duck typing and gradual.
+4. Python focuses on readability and makes use of whitespaces/identation instead of brackets { }
+5. The python packate manager is called PIP "pip installs packages", having more than 200.000 available packages.
+6. Python comes with pip installed and a big standard library that offers the programmer many precooked solutions.
+7. In python **Everything** is an object.
+
+There are many other characteristics but these are the main ones that every python programmer should know.
+
+```
 </b></details>
 
 <details>
@@ -1679,6 +1692,71 @@ PEP8 is a list of coding conventions and style guidelines for Python
 
 <details>
 <summary>Explain inheritance and how to use it in Python</summary><br><b>
+
+```
+By definition inheritance is the mechanism where an object acts as a base of another object, retaining all its
+properties.
+
+So if Class B inherits from Class A, every characteristics from class A will be also available in class B.
+Class A would be the 'Base class' and B class would be the 'derived class'.
+
+This comes handy when you have several classes that share the same functionalities.
+
+The basic syntax is:
+
+class Base: pass
+
+class Derived(Base): pass
+
+A more forged example:
+
+class Animal:
+    def __init__(self):
+        print("and I'm alive!")
+
+    def eat(self, food):
+        print("ñom ñom ñom", food)
+
+class Human(Animal):
+    def __init__(self, name):
+        print('My name is ', name)
+        super().__init__()
+
+    def write_poem(self):
+        print('Foo bar bar foo foo bar!')
+
+class Dog(Animal):
+    def __init__(self, name):
+        print('My name is', name)
+        super().__init__()
+
+    def bark(self):
+        print('woof woof')
+
+
+michael = Human('Michael')
+michael.eat('Spam')
+michael.write_poem()
+
+bruno = Dog('Bruno')
+bruno.eat('bone')
+bruno.bark()
+
+>>> My name is  Michael
+>>> and I'm alive!
+>>> ñom ñom ñom Spam
+>>> Foo bar bar foo foo bar!
+>>> My name is Bruno
+>>> and I'm alive!
+>>> ñom ñom ñom bone
+>>> woof woof
+
+Calling super() calls the Base method, thus, calling super().__init__() we called the Animal __init__.
+
+There is a more advanced python feature called MetaClasses that aid the programmer to directly control class creation.
+
+```
+
 </b></details>
 
 <details>
@@ -1694,7 +1772,18 @@ PEP8 is a list of coding conventions and style guidelines for Python
 
 ```
 Shortest way is <code>str[::-1]</code> but not the most efficient.
+
+"Classic" way:
+
+foo = ''
+
+for char in 'pizza':
+    foo = char + foo
+
+>> 'azzip'   
+
 ```
+
 </b></details>
 
 <details>
@@ -1705,7 +1794,7 @@ Shortest way is <code>str[::-1]</code> but not the most efficient.
 <summary>What _ is used for in Python?</summary><br><b>
 
 1. Translation lookup in i18n
-2. Hold the result of the last executed expression or statement
+2. Hold the result of the last executed expression or statement in the interactive interpreter.
 3. As a general purpose "throwaway" variable name. For example: x, y, _ = get_data() (x and y are used but since we don't care about third variable, we "threw it away").
 </b></details>
 
@@ -1719,6 +1808,12 @@ Shortest way is <code>str[::-1]</code> but not the most efficient.
 
 <details>
 <summary>How to write to a file?</summary><br><b>
+
+```
+with open('file.txt', 'w') as file:
+    file.write("My insightful comment")
+```
+
 </b></details>
 
 <details>
@@ -1740,8 +1835,22 @@ sorted(x, key=lambda l: l[1])
   Extract all type of foods. Final output should be: {'mushrooms', 'goombas', 'turtles'}</summary><br><b>
 
 ```
+brothers_menu =  \
+[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]
+
+# "Classic" Way
+def get_food(brothers_menu) -> set:
+    temp = []
+
+    for brother in brothers_menu:
+        for food in brother['food']:
+            temp.append(food)
+
+    return set(temp)
+
 set([food for bro in x for food in bro['food']])
 ```
+
 </b></details>
 
 <details>
@@ -1751,8 +1860,17 @@ set([food for bro in x for food in bro['food']])
 <details>
 <summary>How to reverse a string?</summary><br><b>
 
-Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most efficient one.
+Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most efficient one. <br>
+Cassic way is:
+```
+def reverse_string(string):
+    temp = ""
+    for char in string:
+        temp =  char + temp
+    return temp
+```
 </b></details>
+
 
 <details>
 <summary>Write a function to determine if a given string is a palindrome</summary><br><b>
