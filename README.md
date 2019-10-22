@@ -1642,6 +1642,17 @@ Swarm management which means you can create new swarms in Docker Cloud.
 
 <details>
 <summary>What are some characteristics of the Python programming language?</summary><br><b>
+```
+1. It is a high level general purpose programming language created in 1991 by Guido Van Rosum.
+2. The language is interpreted, being the CPython (Written in C) the most used/maintained implementation.
+3. It is strongly typed. The typing discipline is duck typing and gradual.
+4. Python focuses on readability and makes use of whitespaces/identation instead of brackets { }
+5. The python packate manager is called PIP "pip installs packages", having more than 200.000 available packages.
+6. Python comes with pip installed and a big standard library that offers the programmer many precooked solutions.
+7. In python **Everything** is an object.
+
+There are many other characteristics but these are the main ones that every python programmer should know.
+```
 </b></details>
 
 <details>
@@ -1719,6 +1730,10 @@ Shortest way is <code>str[::-1]</code> but not the most efficient.
 
 <details>
 <summary>How to write to a file?</summary><br><b>
+```
+with open('file.txt', 'w') as file:
+    file.write("My insightful comment")
+```
 </b></details>
 
 <details>
