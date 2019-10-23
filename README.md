@@ -3,14 +3,15 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **413** questions
-
+:bar_chart: &nbsp;There are currently **416** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
-:page_facing_up: &nbsp;Different interviewers focus on different things. Some will focus on your resume while others might focus on scenario questions or specific technical questions. In this repository I tried to cover different types of questions for you to practice and test your knowledge
+:thought_balloon: &nbsp;Different interviewers focus on different things. Some will focus on your resume while others might focus on scenario questions or specific technical questions. I tried to cover different types of questions for you to practice and test your skills
 
-:pencil: &nbsp;You can add more questions & answers by submitting pull requests :)
+:page_facing_up: &nbsp;Some questions are also relevant to similar roles like SRE and Production Engineer
+
+:pencil: &nbsp;You can add more questions & answers by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
 
 ****
 
@@ -156,11 +157,31 @@ which follows the immutable infrastructure paradigm.
 </b></details>
 
 <details>
-<summary>Explain monitoring. What is it? Why it's important?</summary><br><b>
+<summary>Explain monitoring. What is it? What its goal?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What monitoring methods are you familiar with?</summary><br><b>
+<summary>What types of monitoring outputs are you familiar with and/or used in the past?</summary><br><b>
+
+Alerts
+Tickets
+Logging
+</b></details>
+
+##### SRE
+
+<details>
+<summary>What SRE team is responsible for?</summary><br><b>
+
+One can argue whether it's per company definition or a global one but at least according to a large companies, like Google for example, the SRE team is responsible for availability, latency, performance, efficiency, change management, monitoring, emergency response, and capacity planning of their services
+</b></details>
+
+<details>
+<summary>What is an error budget?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are MTTF (mean time to failure) and MTTR (mean time to repair)? What these metrics help us to evaluate?</summary><br><b>
 </b></details>
 
 <a name="devops-advanced"></a>
