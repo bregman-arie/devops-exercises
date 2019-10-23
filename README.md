@@ -2643,6 +2643,405 @@ Structured Query Language
 
 </b></details>
 
+
+<details>
+<summary> What is DBMS?</summary><br><b>
+
+A Database Management System (DBMS) is a program that controls creation, maintenance and use of a database. DBMS can be termed as File Manager that manages data in a database rather than saving it in file systems.
+</b></details>
+<details>
+<summary>What is RDBMS?</summary><br><b>
+
+RDBMS stands for Relational Database Management System. RDBMS store the data into the collection of tables, which is related by common fields between the columns of the table. It also provides relational operators to manipulate the data stored into the tables.
+
+Example: SQL Server.
+</b></details>
+<details>
+<summary>What is SQL?</summary><br><b>
+
+SQL stands for Structured Query Language , and it is used to communicate with the Database. This is a standard language used to perform tasks such as retrieval, updation, insertion and deletion of data from a database.
+
+Standard SQL Commands are Select.
+</b></details>
+<details>
+<summary>What is a Database?</summary><br><b>
+
+Database is nothing but an organized form of data for easy access, storing, retrieval and managing of data. This is also known as structured form of data which can be accessed in many ways.
+
+Example: School Management Database, Bank Management Database.
+</b></details>
+<details>
+<summary>What are tables and Fields?</summary><br><b>
+
+A table is a set of data that are organized in a model with Columns and Rows. Columns can be categorized as vertical, and Rows are horizontal. A table has specified number of column called fields but can have any number of rows which is called record.
+
+Example:.
+
+Table: Employee.
+
+Field: Emp ID, Emp Name, Date of Birth.
+
+Data: 201456, David, 11/15/1960. </b></details>
+
+<details>
+<summary>What is a primary key?</summary><br><b>
+
+A primary key is a combination of fields which uniquely specify a row. This is a special kind of unique key, and it has implicit NOT NULL constraint. It means, Primary key values cannot be NULL.
+</b></details>
+<details>
+<summary> What is a unique key?</summary><br><b>
+
+A Unique key constraint uniquely identified each record in the database. This provides uniqueness for the column or set of columns.
+
+A Primary key constraint has automatic unique constraint defined on it. But not, in the case of Unique Key.
+
+There can be many unique constraint defined per table, but only one Primary key constraint defined per table.
+</b></details>
+<details>
+<summary>What is a foreign key?</summary><br><b>
+
+A foreign key is one table which can be related to the primary key of another table. Relationship needs to be created between two tables by referencing foreign key with the primary key of another table.
+</b></details>
+<details>
+<summary>What is a join?</summary><br><b>
+
+This is a keyword used to query data from more tables based on the relationship between the fields of the tables. Keys play a major role when JOINs are used.
+</b></details>
+<details>
+<summary>What are the types of join and explain each?</summary><br><b>
+
+There are various types of join which can be used to retrieve data and it depends on the relationship between tables.
+
+    Inner Join. 
+
+Inner join return rows when there is at least one match of rows between the tables.
+
+    Right Join. 
+
+Right join return rows which are common between the tables and all rows of Right hand side table. Simply, it returns all the rows from the right hand side table even though there are no matches in the left hand side table.
+
+    Left Join. 
+
+Left join return rows which are common between the tables and all rows of Left hand side table. Simply, it returns all the rows from Left hand side table even though there are no matches in the Right hand side table.
+
+    Full Join. 
+
+Full join return rows when there are matching rows in any one of the tables. This means, it returns all the rows from the left hand side table and all the rows from the right hand side table.
+</b></details>
+<details>
+<summary>What is normalization?</summary><br><b>
+
+Normalization is the process of minimizing redundancy and dependency by organizing fields and table of a database. The main aim of Normalization is to add, delete or modify field that can be made in a single table.
+</b></details>
+<details>
+<summary>What is Denormalization.</summary><br><b>
+
+DeNormalization is a technique used to access the data from higher to lower normal forms of database. It is also process of introducing redundancy into a table by incorporating data from the related tables.
+</b></details>
+<details>
+<summary>What are all the different normalizations?</summary><br><b>
+
+The normal forms can be divided into 5 forms, and they are explained below -.
+
+    First Normal Form (1NF):. 
+
+This should remove all the duplicate columns from the table. Creation of tables for the related data and identification of unique columns.
+
+    Second Normal Form (2NF):. 
+
+Meeting all requirements of the first normal form. Placing the subsets of data in separate tables and Creation of relationships between the tables using primary keys.
+
+    Third Normal Form (3NF):. 
+
+This should meet all requirements of 2NF. Removing the columns which are not dependent on primary key constraints.
+
+    Fourth Normal Form (4NF):. 
+
+Meeting all the requirements of third normal form and it should not have multi- valued dependencies.
+</b></details><details>
+<summary>What is a View?</summary><br><b>
+
+A view is a virtual table which consists of a subset of data contained in a table. Views are not virtually present, and it takes less space to store. View can have data of one or more tables combined, and it is depending on the relationship.
+</b></details>
+<details>
+<summary>What is an Index?</summary><br><b>
+
+An index is performance tuning method of allowing faster retrieval of records from the table. An index creates an entry for each value and it will be faster to retrieve data.
+</b></details>
+<details>
+<summary>What are all the different types of indexes?</summary><br><b>
+
+There are three types of indexes -.
+
+    Unique Index. 
+
+This indexing does not allow the field to have duplicate values if the column is unique indexed. Unique index can be applied automatically when primary key is defined.
+
+    Clustered Index. 
+
+This type of index reorders the physical order of the table and search based on the key values. Each table can have only one clustered index.
+
+    NonClustered Index. 
+
+NonClustered Index does not alter the physical order of the table and maintains logical order of data. Each table can have 999 nonclustered indexes.
+</b></details><details>
+<summary>What is a Cursor?</summary><br><b>
+
+A database Cursor is a control which enables traversal over the rows or records in the table. This can be viewed as a pointer to one row in a set of rows. Cursor is very much useful for traversing such as retrieval, addition and removal of database records.
+</b></details>
+<details>
+<summary>What is a relationship and what are they?</summary><br><b>
+
+Database Relationship is defined as the connection between the tables in a database. There are various data basing relationships, and they are as follows:.
+
+    One to One Relationship.
+    One to Many Relationship.
+    Many to One Relationship.
+    Self-Referencing Relationship.
+</b></details>
+<details>
+<summary>What is a query?</summary><br><b>
+
+A DB query is a code written in order to get the information back from the database. Query can be designed in such a way that it matched with our expectation of the result set. Simply, a question to the Database.
+</b></details><details>
+<summary>What is subquery?</summary><br><b>
+
+A subquery is a query within another query. The outer query is called as main query, and inner query is called subquery. SubQuery is always executed first, and the result of subquery is passed on to the main query.
+</b></details>
+<details>
+<summary>What are the types of subquery?</summary><br><b>
+
+There are two types of subquery – Correlated and Non-Correlated.
+
+A correlated subquery cannot be considered as independent query, but it can refer the column in a table listed in the FROM the list of the main query.
+
+A Non-Correlated sub query can be considered as independent query and the output of subquery are substituted in the main query.
+</b></details>
+<details>
+<summary>What is a stored procedure?</summary><br><b>
+
+Stored Procedure is a function consists of many SQL statement to access the database system. Several SQL statements are consolidated into a stored procedure and execute them whenever and wherever required.
+</b></details>
+<details>
+<summary>What is a trigger?</summary><br><b>
+
+A DB trigger is a code or programs that automatically execute with response to some event on a table or view in a database. Mainly, trigger helps to maintain the integrity of the database.
+
+Example: When a new student is added to the student database, new records should be created in the related tables like Exam, Score and Attendance tables.
+</b></details>
+<details>
+<summary>What is the difference between DELETE and TRUNCATE commands?</summary><br><b>
+
+DELETE command is used to remove rows from the table, and WHERE clause can be used for conditional set of parameters. Commit and Rollback can be performed after delete statement.
+
+TRUNCATE removes all rows from the table. Truncate operation cannot be rolled back.
+</b></details><details>
+<summary>What are local and global variables and their differences?</summary><br><b>
+
+Local variables are the variables which can be used or exist inside the function. They are not known to the other functions and those variables cannot be referred or used. Variables can be created whenever that function is called.
+
+Global variables are the variables which can be used or exist throughout the program. Same variable declared in global cannot be used in functions. Global variables cannot be created whenever that function is called.
+</b></details>
+<details>
+<summary>What is a constraint?</summary><br><b>
+
+Constraint can be used to specify the limit on the data type of table. Constraint can be specified while creating or altering the table statement. Sample of constraint are.
+
+    NOT NULL.
+    CHECK.
+    DEFAULT.
+    UNIQUE.
+    PRIMARY KEY.
+    FOREIGN KEY.
+</b></details>
+<details>
+<summary>What is data Integrity?</summary><br><b>
+
+Data Integrity defines the accuracy and consistency of data stored in a database. It can also define integrity constraints to enforce business rules on the data when it is entered into the application or database.
+</b></details>
+<details>
+<summary>What is Auto Increment?</summary><br><b>
+
+Auto increment keyword allows the user to create a unique number to be generated when a new record is inserted into the table. AUTO INCREMENT keyword can be used in Oracle and IDENTITY keyword can be used in SQL SERVER.
+
+Mostly this keyword can be used whenever PRIMARY KEY is used.
+</b></details>
+<details>
+<summary>What is the difference between Cluster and Non-Cluster Index?</summary><br><b>
+
+Clustered index is used for easy retrieval of data from the database by altering the way that the records are stored. Database sorts out rows by the column which is set to be clustered index.
+
+A nonclustered index does not alter the way it was stored but creates a complete separate object within the table. It point back to the original table rows after searching.
+</b></details>
+<details>
+<summary>What is Datawarehouse?</summary><br><b>
+
+Datawarehouse is a central repository of data from multiple sources of information. Those data are consolidated, transformed and made available for the mining and online processing. Warehouse data have a subset of data called Data Marts.
+</b></details>
+<details>
+<summary>What is Self-Join?</summary><br><b>
+
+Self-join is set to be query used to compare to itself. This is used to compare values in a column with other values in the same column in the same table. ALIAS ES can be used for the same table comparison.
+</b></details>
+<details>
+<summary>What is Cross-Join?</summary><br><b>
+
+Cross join defines as Cartesian product where number of rows in the first table multiplied by number of rows in the second table. If suppose, WHERE clause is used in cross join then the query will work like an INNER JOIN.
+</b></details>
+<details>
+<summary>What is user defined functions?</summary><br><b>
+
+User defined functions are the functions written to use that logic whenever required. It is not necessary to write the same logic several times. Instead, function can be called or executed whenever needed.
+</b></details>
+<details>
+<summary>What are all types of user defined functions?</summary><br><b>
+
+Three types of user defined functions are.
+
+    Scalar Functions.
+    Inline Table valued functions.
+    Multi statement valued functions.
+
+Scalar returns unit, variant defined the return clause. Other two types return table as a return.
+</b></details>
+<details>
+<summary>What is collation?</summary><br><b>
+
+Collation is defined as set of rules that determine how character data can be sorted and compared. This can be used to compare A and, other language characters and also depends on the width of the characters.
+
+ASCII value can be used to compare these character data.
+</b></details>
+<details>
+<summary>What are all different types of collation sensitivity?</summary><br><b>
+
+Following are different types of collation sensitivity -.
+
+    Case Sensitivity – A and a and B and b.
+    Accent Sensitivity.
+    Kana Sensitivity – Japanese Kana characters.
+    Width Sensitivity – Single byte character and double byte character.
+</b></details>
+<details>
+<summary>Advantages and Disadvantages of Stored Procedure?</summary><br><b>
+
+Stored procedure can be used as a modular programming – means create once, store and call for several times whenever required. This supports faster execution instead of executing multiple queries. This reduces network traffic and provides better security to the data.
+
+Disadvantage is that it can be executed only in the Database and utilizes more memory in the database server.
+</b></details>
+<details>
+<summary>What is Online Transaction Processing (OLTP)?</summary><br><b>
+
+Online Transaction Processing (OLTP) manages transaction based applications which can be used for data entry, data retrieval and data processing. OLTP makes data management simple and efficient. Unlike OLAP systems goal of OLTP systems is serving real-time transactions.
+
+Example – Bank Transactions on a daily basis.
+</b></details>
+<details>
+<summary>What is CLAUSE?</summary><br><b>
+
+SQL clause is defined to limit the result set by providing condition to the query. This usually filters some rows from the whole set of records.
+
+Example – Query that has WHERE condition
+
+Query that has HAVING condition.
+</b></details>
+<details>
+<summary>What is recursive stored procedure?</summary><br><b>
+
+A stored procedure which calls by itself until it reaches some boundary condition. This recursive function or procedure helps programmers to use the same set of code any number of times.
+</b></details>
+<details>
+<summary>What is Union, minus and Interact commands?</summary><br><b>
+
+UNION operator is used to combine the results of two tables, and it eliminates duplicate rows from the tables.
+
+MINUS operator is used to return rows from the first query but not from the second query. Matching records of first and second query and other rows from the first query will be displayed as a result set.
+
+INTERSECT operator is used to return rows returned by both the queries.
+</b></details>
+<details>
+<summary>What is an ALIAS command?</summary><br><b>
+
+ALIAS name can be given to a table or column. This alias name can be referred in WHERE clause to identify the table or column.
+
+Example-.
+
+Select st.StudentID, Ex.Result from student st, Exam as Ex where st.studentID = Ex. StudentID
+
+Here, st refers to alias name for student table and Ex refers to alias name for exam table.
+</b></details>
+<details>
+<summary>What is the difference between TRUNCATE and DROP statements?</summary><br><b>
+
+TRUNCATE removes all the rows from the table, and it cannot be rolled back. DROP command removes a table from the database and operation cannot be rolled back.
+</b></details><details>
+<summary>What are aggregate and scalar functions?</summary><br><b>
+
+Aggregate functions are used to evaluate mathematical calculation and return single values. This can be calculated from the columns in a table. Scalar functions return a single value based on the input value.
+
+Example -.
+
+Aggregate – max(), count - Calculated with respect to numeric.
+
+Scalar – UCASE(), NOW() – Calculated with respect to strings.
+</b></details>
+<details>
+<summary>How can you create an empty table from an existing table?
+
+Example will be -.
+
+Select * into studentcopy from student where 1=2
+
+Here, we are copying student table to another table with the same structure with no rows copied.
+</b></details>
+<details>
+<summary>How to fetch common records from two tables?</summary><br><b>
+
+Common records result set can be achieved by -.
+
+Select studentID from student. <strong>INTERSECT </strong> Select StudentID from Exam
+</b></details><details>
+<summary>How to fetch alternate records from a table?</summary><br><b>
+
+Records can be fetched for both Odd and Even row numbers -.
+
+To display even numbers-.
+
+Select studentId from (Select rowno, studentId from student) where mod(rowno,2)=0
+
+To display odd numbers-.
+
+Select studentId from (Select rowno, studentId from student) where mod(rowno,2)=1
+
+from (Select rowno, studentId from student) where mod(rowno,2)=1.[/sql]
+</b></details>
+<details>
+<summary>How to select unique records from a table?</summary><br><b>
+
+Select unique records from a table by using DISTINCT keyword.
+
+Select DISTINCT StudentID, StudentName from Student.
+</b></details>
+<details>
+<summary>What is the command used to fetch first 5 characters of the string?</summary><br><b>
+
+There are many ways to fetch first 5 characters of the string -.
+
+Select SUBSTRING(StudentName,1,5) as studentname from student
+
+Select RIGHT(Studentname,5) as studentname from student
+</b></details>
+<details>
+<summary>Which operator is used in query for pattern matching?</summary><br><b>
+
+LIKE operator is used for pattern matching, and it can be used as -.
+
+    % - Matches zero or more characters.
+    _(Underscore) – Matching exactly one character.
+Example -.
+Select * from Student where studentname like 'a%'
+Select * from Student where studentname like 'ami_'
+</b></details>
+
 <details>
 <summary>How is SQL Different from NoSQL</summary><br><b>
 
