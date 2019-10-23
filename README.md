@@ -542,6 +542,8 @@ CSMA/CD algorithm:
 
 <details>
 <summary>What is the difference between TCP and UDP?</summary><br><b>
+	
+TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for streaming services.
 </b></details>
 
 <details>
