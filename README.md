@@ -156,11 +156,31 @@ which follows the immutable infrastructure paradigm.
 </b></details>
 
 <details>
-<summary>Explain monitoring. What is it? Why it's important?</summary><br><b>
+<summary>Explain monitoring. What is it? What its goal?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What monitoring methods are you familiar with?</summary><br><b>
+<summary>What types of monitoring outputs are you familiar with and/or used in the past?</summary><br><b>
+
+Alerts
+Tickets
+Logging
+</b></details>
+
+##### SRE
+
+<details>
+<summary>What SRE team is responsible for?</summary><br><b>
+
+One can argue whether it's per company definition or a global one but at least according to a large companies, like Google for example, the SRE team is responsible for availability, latency, performance, efficiency, change management, monitoring, emergency response, and capacity planning of their services
+</b></details>
+
+<details>
+<summary>What is an error budget?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are MTTF (mean time to failure) and MTTR (mean time to repair)? What these metrics help us to evaluate?</summary><br><b>
 </b></details>
 
 <a name="devops-advanced"></a>
