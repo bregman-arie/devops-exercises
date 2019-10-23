@@ -2631,6 +2631,17 @@ A short way of using if/else. An example:
 [[ $a = 1 ]] && b="yes, equal" || b="nope"
 </b></details>
 
+<details>
+<summary>What does the following code do and when would you use it?
+	
+<code>diff <(ls /tmp) <(ls /var/tmp)</code>
+
+</summary><br>
+It is called 'process substitution'. It provides a way to pass the output of a command to another command when using a pipe <code>|</code> is not possible. It can be used when a command does not support <code>STDIN</code> or you need the output of multiple commands. 
+https://superuser.com/a/1060002/167769
+</details>
+
+
 ## SQL
 
 <a name="sql-beginner"></a>
