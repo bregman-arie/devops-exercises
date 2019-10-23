@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **409** questions
+:bar_chart: &nbsp;There are currently **413** questions
 
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
@@ -2373,6 +2373,68 @@ func main() {
 
 It looks what unicode value is set at 101 and uses it for converting the integer to a string.
 If you want to get "101" you should use the package "strconv" and replace <code>y = string(x)</code> with <code>y = strconv.Itoa(x)</code>
+</b></details>
+
+<details>
+<summary>What is wrong with the following code?:
+
+```
+package main
+
+func main() {
+    var x = 2
+    var y = 3
+    const someConst = x + y
+}
+```
+</summary><br><b>
+</b></details>
+
+<details>
+<summary>What will be the output of the following block of code?:
+
+```
+package main
+
+import "fmt"
+
+const (
+	x = iota
+	y = iota
+)
+const z = iota
+
+func main() {
+	fmt.Printf("%v\n", x)
+	fmt.Printf("%v\n", y)
+	fmt.Printf("%v\n", z)
+}
+```
+</summary><br><b>
+</b></details>
+
+<details>
+<summary>What _ is used for in Go?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What will be the output of the following block of code?:
+
+```
+package main
+
+import "fmt"
+
+const (
+	_ = iota + 3
+	x
+)
+
+func main() {
+	fmt.Printf("%v\n", x)
+}
+```
+</summary><br><b>
 </b></details>
 
 ## Mongo
