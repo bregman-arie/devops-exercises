@@ -13,6 +13,8 @@
 
 :pencil: &nbsp;You can add more questions & answers by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
 
+:cn: &nbsp;You can find the [中文](README-ZH_CN.md) chinese translation right [here](README-zh_CN.md)
+
 ****
 
 <!-- ALL-TOPICS-LIST:START -->
@@ -56,8 +58,6 @@
 <!-- prettier-ignore-end -->
 <!-- ALL-TOPICS-LIST:END -->
 
-[中文 README](README-zh_CN.md)
-
 ## DevOps
 
 <a name="devops-beginner"></a>
@@ -88,7 +88,7 @@ Each piece of code (change/patch) is verified, to make the change is safe to mer
 </b></details>
 
 <details>
-<summary>What do you consider as best practices for CI/CD?</summary><br><b>
+<summary>What CI/CD best practices are you familiar with? Or what do you consider as CI/CD best practice?</summary><br><b>
 </b></details>
 
 <details>
@@ -115,7 +115,7 @@ Each piece of code (change/patch) is verified, to make the change is safe to mer
 <details>
 <summary>What are you taking into consideration when choosing a tool/technology?</summary><br><b>
 
-You may use one or all of the following:
+In your answer you can mention one or more of the following:
   * mature vs. cutting edge
   * community size
   * architecture aspects - agent vs. agentless, master vs. masterless, etc.
@@ -134,7 +134,7 @@ which follows the immutable infrastructure paradigm.
 </b></details>
 
 <details>
-<summary>What ways are you familiar with to deliver a software?</summary><br><b>
+<summary>What ways are you familiar with to deliver a software? What are the disadvantages of each method?</summary><br><b>
 
   * Archive - collect all your app files into one archive (e.g. tar) and deliver it to the user.
   * Package - depends on the OS, you can use your OS package format (e.g. in RHEL/Fefodra it's RPM) to deliver your software with a way to install, uninstall and update it using the standard packager commands
@@ -197,7 +197,7 @@ One can argue whether it's per company definition or a global one but at least a
 </b></details>
 
 <details>
-<summary>How do you measure your CI/CD quality? Are there any metrics you are using?</summary><br><b>
+<summary>How do you measure your CI/CD quality? Are there any metrics you are using for measuring the quality?</summary><br><b>
 </b></details>
 
 <details>
@@ -211,7 +211,7 @@ This situation might lead to bugs which hard to identify and reproduce.
 </b></details>
 
 <details>
-<summary>How to deal with configuration drift?</summary><br><b>
+<summary>How to deal with a configuration drift?</summary><br><b>
 </b></details>
 
 <details>
@@ -219,14 +219,6 @@ This situation might lead to bugs which hard to identify and reproduce.
 
 Note: cross-dependency is when you have two or more changes to separate projects and you would like to test them in mutual build instead of testing each change separately.
 </b></details>
-
-<details>
-<summary>In what scenarios would you prefer to use SQL?</summary><br><b>
-
-  * Homogeneous data, no changes anticipated
-  * ACID compliance is important
-</b></details>
-
 
 ## Jenkins
 
@@ -265,11 +257,11 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>What type of jobs are there? Which types have you used and why?</summary><br><b>
+<summary>What type of jobs are there? Which types have you used?</summary><br><b>
 </b></details>
 
 <details>
-<summary>How did you report build results to users? What ways are you familiar with?</summary><br><b>
+<summary>How did you report build results to users? What ways are you familiar with for reporting results?</summary><br><b>
 </b></details>
 
 <details>
@@ -296,10 +288,6 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>Do you have experience with developing a Jenkins plugin? Can you describe this experience?</summary><br><b>
-</b></details>
-
-<details>
 <summary>If you are managing a dozen of jobs, you can probably use the Jenkins UI. How do you manage the creation and deletion of hundreds of jobs every week/month?</summary><br><b>
 </b></details>
 
@@ -314,9 +302,16 @@ Note: cross-dependency is when you have two or more changes to separate projects
 <summary>How would you implement an option of a starting a build from a certain stage and not from the beginning?<summary><br><b>
 </b></details>
 
+##### Jenkins Dev
+
+<details>
+<summary>Do you have experience with developing a Jenkins plugin? Can you describe this experience?</summary><br><b>
+</b></details>
+
 <details>
 <summary>Have you written Jenkins scripts? If yes, what for and how they work?</summary><br><b>
 </b></details>
+
 
 ## Cloud 
 
@@ -328,7 +323,7 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>What types of Cloud Computing there are?</summary><br><b>
+<summary>What types of Cloud Computing are there?</summary><br><b>
 
 IAAS
 PAAS
