@@ -147,6 +147,9 @@ which follows the immutable infrastructure paradigm.
 
 <details>
 <summary>Explain stateless vs. stateful</summary><br><b>
+
+Stateless applications don't store any data in the host which makes it ideal for horizontal scaling and microservices.
+Stateful applications depend on the storage to save state and data, typically databases are stateful applications.
 </b></details>
 
 <details>
