@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **416** questions
+:bar_chart: &nbsp;There are currently **434** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -52,6 +52,9 @@
     <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a><br /><sub><a href="#puppet-beginner">Beginner :baby:</a></sub><br><sub><a href="#puppet-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a><br /><sub><a href="#openshift-beginner">Beginner :baby:</a></sub><br><sub></td>
   </tr>
+  <tr>
+    <td align="center"><a href="#scenarios"><img src="images/scenarios.png" width="110px;" height="75px;" alt="Scenarios"/><br /><b>Scenarios</b></a></td>
+  </tr>
 </table>
 </center>
 <!-- markdownlint-enable -->
@@ -65,6 +68,27 @@
 
 <details>
 <summary>What is DevOps? What DevOps helps us to achieve?</summary><br><b>
+
+There are many good answers to this question. I like Amazon's description of DevOps:
+
+"DevOps is the combination of cultural philosophies, practices, and tools that increases an organization’s ability to deliver applications and services at high velocity: evolving and improving products at a faster pace than organizations using traditional software development and infrastructure management processes. This speed enables organizations to better serve their customers and compete more effectively in the market."
+
+You can find more details here: https://aws.amazon.com/devops/what-is-devops
+</b></details>
+
+<details>
+<summary>What are the benefits of DevOps? What it can help us to achieve?</summary><br><b>
+
+You should mention some or all of the following:
+
+  * Collaboration
+  * Improved delivery
+  * Security
+  * Speed
+  * Scale
+  * Reliability
+
+Detailed answer can be found here: https://aws.amazon.com/devops/what-is-devops 
 </b></details>
 
 <details>
@@ -485,7 +509,15 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 </b></details>
 
 <details>
-<summary>What is an IP address? What is a subnet?</summary><br><b>
+<summary>What is an IP address?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain subnet mask and given an example</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a private IP address? What do we need it for?</summary><br><b>
 </b></details>
 
 <details>
@@ -498,6 +530,18 @@ Transport: transfers variable-length data sequences from a source to a destinati
 Network: transfers datagrams from one network to another (IP is here)
 Data link: provides a link between two directly connected nodes (MAC is here)
 Physical: the electrical and physical spec the data connection (Bits are here)
+</b></details>
+
+<details>
+<summary>For each of the following determine to which OSI layer it belongs:
+
+  * Error correction
+  * Packets routing
+  * Cables and electrical signals
+  * MAC address
+  * IP address
+  * Sessions between applications
+  * 3 way handshake</summary><br><b>
 </b></details>
 
 <details>
@@ -540,9 +584,17 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
+<summary>What is a proxy? How it works? What do we need it for?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is the difference between TCP and UDP?</summary><br><b>
 	
 TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for streaming services.
+</b></details>
+
+<details>
+<summary>Explain "default gateway"</summary><br><b>
 </b></details>
 
 <details>
@@ -714,6 +766,10 @@ Using the `chmod` command.
 </b></details>
 
 <details>
+<summary>You try to delete a file but it fails. Name at least three different reason as to why it could happen</summary><br><b>
+</b></details>
+
+<details>
 <summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
 
   * adduser user_name --shell=/bin/false --no-create-home
@@ -823,13 +879,17 @@ I consider this as a good blog post to read more about it: https://shapeshed.com
 </b></details>
 
 <details>
-<summary>What is the different between a soft link and hard link?</summary><br><b>
+<summary>What is the difference between a soft link and hard link?</summary><br><b>
 
 hard link is the same file, using the same inode.
 soft link is a shortcut to another file, using a different inode.
 
 soft links can be created between different file systems while
 hard link can be created only within the same file system.
+</b></details>
+
+<details>
+<summary>What happens when you delete the original file in case of soft link and hard link?</summary><br><b>
 </b></details>
 
 <details>
@@ -1033,6 +1093,19 @@ related to the file like its size, owner, permissions, etc.
 
 <details>
 <summary>How can you turn your Linux server into a router?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a virtual IP? In what situation would you use it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Which port is used in each of the following protocols?:
+
+  * SSH
+  * HTTP
+  * DNS
+  * HTTPS</summary><br><b>
 </b></details>
 
 <details>
@@ -2830,6 +2903,10 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 #### :baby: Beginner
 
 <details>
+<summary>Explain Azure's architecture</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain availability sets and availability zones</summary><br><b>
 </b></details>
 
@@ -2845,6 +2922,10 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 
 <a name="gcp-beginner"></a>
 #### :baby: Beginner
+
+<details>
+<summary>Explain GCP's architecture</summary><br><b>
+</b></details>
 
 <details>
 <summary>What are the main components and services of GCP?</summary><br><b>
@@ -2970,7 +3051,33 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
-<summary>What is Privilege Restriction?</summary><br><b>
+<summary>Explain "Privilege Restriction"</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is DDoS attach? How do you deal with it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Man-in-the-middle attach</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain CVE and CVSS</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe how do you secure public repositories</summary>
+</b></details>
+
+##### Containers
+
+<details>
+<summary>What security measures are you taking when dealing with containers?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is Docker Bench</summary><br><b>
 </b></details>
 
 ## Puppet
