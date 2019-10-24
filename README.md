@@ -56,6 +56,7 @@
 <!-- prettier-ignore-end -->
 <!-- ALL-TOPICS-LIST:END -->
 
+[中文 README](README-zh_CN.md)
 
 ## DevOps
 
