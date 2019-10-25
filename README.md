@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **440** questions
+:bar_chart: &nbsp;There are currently **450** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -53,6 +53,8 @@
     <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a><br /><sub><a href="#openshift-beginner">Beginner :baby:</a></sub><br><sub></td>
   </tr>
   <tr>
+    <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a><br /><sub><a href="#monitoring-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#general"><img src="images/general.png" width="110px;" height="75px;" alt="General"/><br /><b>General</b></a></td>
     <td align="center"><a href="#scenarios"><img src="images/scenarios.png" width="110px;" height="75px;" alt="Scenarios"/><br /><b>Scenarios</b></a></td>
   </tr>
 </table>
@@ -185,15 +187,7 @@ Stateful applications depend on the storage to save state and data, typically da
 </b></details>
 
 <details>
-<summary>Explain monitoring. What is it? What its goal?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What types of monitoring outputs are you familiar with and/or used in the past?</summary><br><b>
-
-Alerts
-Tickets
-Logging
+<summary>What is Open Source? What are some its benefits?</summary><br><b>
 </b></details>
 
 ##### SRE
@@ -245,6 +239,14 @@ This situation might lead to bugs which hard to identify and reproduce.
 <summary>Do you have experience with testing cross-projects changes? (aka cross-dependency)</summary><br><b>
 
 Note: cross-dependency is when you have two or more changes to separate projects and you would like to test them in mutual build instead of testing each change separately.
+</b></details>
+
+<details>
+<summary>Have you contributed to an open source project? Tell me about this experience</summary><br><b>
+</b></details>
+
+<details>
+<summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with?</summary><br><b>
 </b></details>
 
 ## Jenkins
@@ -1239,6 +1241,10 @@ There are a couple of ways to do that:
 This is a good article about the topic: https://ops.tips/blog/how-linux-creates-sockets
 </b></details>
 
+<details>
+<summary>You executed a script and while still running, it got accidentally removed. Is it possible to restore the script while it's still running?</summary><br><b>
+</b></details>
+
 
 ## Ansible
 
@@ -1753,6 +1759,11 @@ Swarm management which means you can create new swarms in Docker Cloud.
   * adduser user_name --shell=/bin/false --no-create-home
 </b></details>
 
+<details>
+<summary>What can you do if you lost/forogt the root password?</summary><br><b>
+
+Re-install the OS IS NOT the right answer :)
+</b></details>
 
 ## Coding
 
@@ -2233,6 +2244,27 @@ def reverse_string(string):
 <summary>You have created a web page where a user can upload a document. But the function which reads the uploaded files, runs for a long time, based on the document size and user has to wait for the read operation to complete before he/she can continue using the web site. How can you overcome this?</summary><br><b>
 </b></details>
 
+## Monitoring
+
+<a name="monitoring-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>Explain monitoring. What is it? What its goal?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What types of monitoring outputs are you familiar with and/or used in the past?</summary><br><b>
+
+Alerts
+Tickets
+Logging
+</b></details>
+
+<details>
+<summary>What is the different between infrastructure monitoring and application monitoring? (methods, tools, ...)</summary><br><b>
+</b></details>
+
 ## Prometheus
 
 <a name="prometheus-beginner"></a>
@@ -2391,6 +2423,16 @@ git checkout HEAD~1 -- /path/of/the/file
 ```
 </b></details>
 
+<details>
+<summary>What is the <code>.git</code> directory? What can you find there?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are some Git anti-patterns? Things that you shouldn't do</summary><br><b>
+
+  * Not waiting to long between commits
+  * Not removing the .git directory :)
+</b></details>
 
 <a name="git-advanced"></a>
 #### :star: Advanced
@@ -3161,6 +3203,17 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 <summary>Explain what is Hiera</summary><br><b>
 </b></details>
 
+## General
+
+Although the following questions are not DevOps related, they are still quite common so it's better to prepare for them as well.
+
+<details>
+<summary>Tell us little bit about yourself</summary><br><b>
+</b></details>
+
+<details>
+<summary>Tell me about your last big project/task you worked on</summary><br><b>
+</b></details>
 
 ## Scenarios
 
