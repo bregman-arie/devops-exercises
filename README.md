@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **450** questions
+:bar_chart: &nbsp;There are currently **461** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -491,6 +491,29 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 
 <details>
 <summary>True or False? objects are cached for the life of TTL</summary><br><b>
+</b></details>
+
+##### Load Balancers
+
+<details>
+<summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
+
+  * Application LB - layer 7 traffic
+  * Network LB - ultra-high performances or static IP adress
+  * Classic LB - low costs, good for test or dev environments
+</b></details>
+
+#### Databases
+
+<details>
+<summary>What is RDS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are some features or benefits of using RDS?</summary><br><b>
+
+1. Multi AZ - great for Disaster Recovery
+2. Read Replicas - for better performences
 </b></details>
 
 ## Network
@@ -1796,6 +1819,10 @@ Re-install the OS IS NOT the right answer :)
 <summary>In any language you want, write a function to determine if a given string is a palindrome</summary><br><b>
 </b></details>
 
+<details>
+<summary>In any language you want, write a function to determine if two strings are Anagrams </summary><br><b>
+</b></details>
+
 <a name="coding-advanced"></a>
 #### :star: Advanced
 
@@ -2015,7 +2042,15 @@ for char in 'pizza':
 >> 'azzip'   
 
 ```
+</b></details>
 
+<details>
+<summary>How to extract the unique characters from a string? for example given the input "itssssssameeeemarioooooo" the output will be "mrtisaoe"</summary><br><b>
+
+```
+x = "itssssssameeeemarioooooo"
+y = ''.join(set(x))
+```
 </b></details>
 
 <details>
@@ -2041,11 +2076,29 @@ def return_sum():
 </b></details>
 
 <details>
+<summary>How to merge two dictionries?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you swap values between two variables?</summary><br><b>
+
+x, y = y, x
+</b></details>
+
+<details>
+<summary>How to check if all the elements in a given lists are unique? so [1, 2, 3] is unique but [1, 1, 2, 3] is not unique but we 1 twice</summary><br><b>
+</b></details>
+
+<details>
 <summary>What _ is used for in Python?</summary><br><b>
 
 1. Translation lookup in i18n
 2. Hold the result of the last executed expression or statement in the interactive interpreter.
 3. As a general purpose "throwaway" variable name. For example: x, y, _ = get_data() (x and y are used but since we don't care about third variable, we "threw it away").
+</b></details>
+
+<details>
+<summary>How to check how much time it took to execute a certain script or block of code?</summary><br><b>
 </b></details>
 
 ##### Algorithms Implementation
@@ -2178,6 +2231,10 @@ def reverse_string(string):
 </b></details>
 
 <details>
+<summary>How to combine list of strings into one string with spaces between the strings</summary><br><b>
+</b></details>
+
+<details>
 <summary>What empty <code>return</code> returns?</summary><br><b>
 </b></details>
 
@@ -2251,6 +2308,13 @@ def reverse_string(string):
 
 <details>
 <summary>Explain monitoring. What is it? What its goal?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is wrong with the old approach of watching for a specific value and trigger an email/phone alert while value is exceeded?</summary><br><b>
+
+This approach require from a human to always check why the value exceeded and how to handle it while today, it is more effective to notify people only when they need to take an actual action.
+If the issue doesn't require any human intervention, then the problem can be fixed by some processes running in the relevant environment.
 </b></details>
 
 <details>
