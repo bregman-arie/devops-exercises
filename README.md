@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **434** questions
+:bar_chart: &nbsp;There are currently **440** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -379,14 +379,15 @@ SAAS
   * Availability zone
   * Region
   * Edge location</summary><br><b>
-</b>
-<b>
 AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independant of one another. 
 Within each region,There are multiple isolatated locations known as Availability Zones. Multiple availability zones insure high availability in case one of them goes down.
 
 Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
-</b>
-</details>
+</b></details>
+
+<details>
+<summary>What is IAM?</summary><br><b>
+</b></details>
 
 ##### S3
  
@@ -425,32 +426,18 @@ True
 <summary>What security measures have you taken in context of S3?</summary><br><b>
 </b></details>
 
-##### CloudFront
-
 <details>
-<summary>Explain what is CloudFront and what is it used for</summary><br><b>
+<summary>What is a storage class? What storage classes are you familiar with?</summary><br><b>
 </b></details>
-
-<details>
-<summary>Explain the following
-  * Origin
-  * Edge location
-  * Distribution</summary><br><b>
-</b></details>
-
-<details>
-<summary>What delivery methods available for the user with CDN?</summary><br><b>
-</b></details>
-
-<details>
-<summary>True or False? objects are cached for the life of TTL</summary><br><b>
-</b></details>
-
 
 ##### EC2
 
 <details>
-<summary>What type of instances have you created?</summary><br><b>
+<summary>What is EC2? What is it used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What EC2 pricing models are there?</summary><br><b>
 </b></details>
 
 <details>
@@ -475,21 +462,34 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 <summary>What are Security Groups?</summary><br><b>
 </b></details>
 
-
 <details>
 <summary>How to migrate an instance to another availability zone?</summary><br><b>
 </b></details>
 
-
-<details>
-<summary>What are security groups?</summary><br><b>
-</b></details>
-
-
 <details>
 <summary>What are spot instances?</summary><br><b>
 </b></details>
-  
+
+##### CloudFront
+
+<details>
+<summary>Explain what is CloudFront and what is it used for</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the following
+  * Origin
+  * Edge location
+  * Distribution</summary><br><b>
+</b></details>
+
+<details>
+<summary>What delivery methods available for the user with CDN?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? objects are cached for the life of TTL</summary><br><b>
+</b></details>
 
 ## Network
 
@@ -770,17 +770,13 @@ Using the `chmod` command.
 </b></details>
 
 <details>
-<summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
-
-  * adduser user_name --shell=/bin/false --no-create-home
-
+<summary>What is systemd?</summary><br><b>
 </b></details>
 
 <details>
 <summary>On a system which uses systemd, how would display the logs?</summary>
 
-  * journalctl
-
+<code>journalctl</code>
 </b></details>
 
 ##### Debugging
@@ -910,6 +906,10 @@ hard link can be created only within the same file system.
   * PV
   * VG
   * LV</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is NFS? What is it used for?</summary><br><b>
 </b></details>
 
 <details>
@@ -1119,6 +1119,10 @@ related to the file like its size, owner, permissions, etc.
 ##### DNS
 
 <details>
+<summary>What is DNS? Why do we need it?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What the file <code>/etc/resolv.conf</code> is used for? What does it include?</summary><br><b>
 </b></details>
 
@@ -1151,7 +1155,7 @@ While an A record points a domain name to an IP address, a PTR record does the o
 </b></details>
 
 <details>
-<summary>How do you list the content of a package?</summary><br><b>
+<summary>How do you list the content of a package without actually installing it?</summary><br><b>
 </b></details>
 
 <a name="linux-advanced"></a>
@@ -1742,6 +1746,13 @@ Swarm management which means you can create new swarms in Docker Cloud.
 <details>
 <summary>Do you know how to create a new user without using adduser/useradd command?</summary><br><b>
 </b></details>
+
+<details>
+<summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
+
+  * adduser user_name --shell=/bin/false --no-create-home
+</b></details>
+
 
 ## Coding
 
@@ -2628,16 +2639,29 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>What do you tend to include in every script you write?</summary><br><b>
+
+Few example:
+
+  * Comments on how to run it and/or what it does
+  * Adding "set -e" since I want the script to exit if a certain command failed 
+
+You can have an entirely different answer. It's based only on your experience.
 </b></details>
 
 <details>
 <summary>True or False?: when a certain command/line fails, the script, by default, will exit and will no keep running</summary><br><b>
 
-Depends on the language and settings used but in Bash for example, by default the script will keep running.
+Depends on the language and settings used.
+When a script written in Bash fails to run a certain command it will keep running and will execute all other commands mentioned after the command which failed.
+Most of the time we would actually want the opposite to happen. In order to make Bash exist when a specific command fails, use 'set -e' in your script.
 </b></details>
 
 <details>
 <summary>Today we have tools and technologies like Ansible. Why would someone still use shell scripting?</summary><br><b>
+
+  * Speed
+  * The module we need doesn't exist
+  * We are delivering the scripts to customers who don't have access to the public network and don't necessarily have Ansible installed on their systems.
 </b></details>
 
 <details>
@@ -2652,10 +2676,19 @@ Depends on the language and settings used but in Bash for example, by default th
 
 <details>
 <summary>How do you debug shell scripts?</summary><br><b>
+
+Answer depends on the language you are using for writing your scripts. If Bash is used for example then:
+
+  * Adding -x to the script I'm running in Bash
+  * Old good way of adding echo statements
+
+If Python, then using pdb is very useful.
 </b></details>
 
 <details>
 <summary>How do you get input from the user in shell scripts?</summary><br><b>
+
+Using the keyword <code>read</code> so for example <code>read x</code> will wait for user input and will store it in the variable x.
 </b></details>
 
 <details>
@@ -2680,6 +2713,10 @@ Depends on the language and settings used but in Bash for example, by default th
 
 <details>
 <summary>What is the difference between single and double quotes?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Write a script which will list the differences between two directories</summary><br><b>
 </b></details>
 
 <a name="shell-scripting-advanced"></a>
