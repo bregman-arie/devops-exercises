@@ -3,7 +3,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps related topics
 
-:bar_chart: &nbsp;There are currently **461** questions
+:bar_chart: &nbsp;There are currently **485** questions
 
 :warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
 
@@ -48,7 +48,7 @@
     <td align="center"><a href="#azure"><img src="images/azure.png" width="80px;" height="75px;" alt="azure"/><br /><b>Azure</b></a><br /><sub><a href="#azure-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#gcp"><img src="images/gcp.png" width="75px;" height="75px;" alt="gcp"/><br /><b>Google Cloud Platform</b></a><br /><sub><a href="#gcp-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a><br /><sub><a href="#openstack-beginner">Beginner :baby:</a></sub><br><sub><a href="#openstack-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a><br /><sub><a href="#security-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a><br /><sub><a href="#security-beginner">Beginner :baby:</a></sub><br><sub><a href="#security-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a><br /><sub><a href="#puppet-beginner">Beginner :baby:</a></sub><br><sub><a href="#puppet-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a><br /><sub><a href="#openshift-beginner">Beginner :baby:</a></sub><br><sub></td>
   </tr>
@@ -193,6 +193,10 @@ Stateful applications depend on the storage to save state and data, typically da
 ##### SRE
 
 <details>
+<summary>Compare SRE to DevOps</summary><br><b>
+</b></details>
+
+<details>
 <summary>What SRE team is responsible for?</summary><br><b>
 
 One can argue whether it's per company definition or a global one but at least according to a large companies, like Google for example, the SRE team is responsible for availability, latency, performance, efficiency, change management, monitoring, emergency response, and capacity planning of their services
@@ -205,6 +209,15 @@ One can argue whether it's per company definition or a global one but at least a
 <details>
 <summary>What are MTTF (mean time to failure) and MTTR (mean time to repair)? What these metrics help us to evaluate?</summary><br><b>
 </b></details>
+
+<details>
+<summary>What is a post-mortem meeting? Why is it important?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is "infrastructure as code"? What implementation of IAC are you familiar with?</summary><br><b>
+</b></details>
+
 
 <a name="devops-advanced"></a>
 #### :star: Advanced
@@ -514,6 +527,14 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 
 1. Multi AZ - great for Disaster Recovery
 2. Read Replicas - for better performences
+</b></details>
+
+<details>
+<summary>What is EBS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is VPC?</summary><br><b>
 </b></details>
 
 ## Network
@@ -1095,6 +1116,10 @@ related to the file like its size, owner, permissions, etc.
 </b></details>
 
 <details>
+<summary>Explain Kernel OOM</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is SELiunx?</summary><br><b>
 </b></details>
 
@@ -1181,6 +1206,24 @@ While an A record points a domain name to an IP address, a PTR record does the o
 
 <details>
 <summary>How do you list the content of a package without actually installing it?</summary><br><b>
+</b></details>
+
+##### Applications and Services
+
+<details>
+<summary>What is a load balancer?</summary><br><b> 
+</b></details>
+
+<details>
+<summary>What load balancer algorithms are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a proxy?</summary><br><b> 
+</b></details>
+
+<details>
+<summary>What is a reverse proxy?</summary><br><b> 
 </b></details>
 
 <a name="linux-advanced"></a>
@@ -1788,6 +1831,10 @@ Swarm management which means you can create new swarms in Docker Cloud.
 Re-install the OS IS NOT the right answer :)
 </b></details>
 
+<details>
+<summary>What is sudo? How do you set it up?</summary><br><b>
+</b></details>
+
 ## Coding
 
 <a name="coding-beginner"></a>
@@ -1811,6 +1858,19 @@ Re-install the OS IS NOT the right answer :)
 
 <details>
 <summary>Explain big O notation</summary><br><b>
+</b></details>
+
+##### Code Review
+
+<details>
+<summary>What are your code-review best practices?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Do you agree/disagree with each of the following statements and why?:
+
+  * The commit message is not important. When reviewing a change/patch one should focus on the actual change</summary><br><b>
+  * You shouldn't test your code before submitting it. This is what CI/CD exists for.
 </b></details>
 
 ##### Strings
@@ -3190,6 +3250,27 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
+<summary>Explain the following:
+
+  * Vulnerability
+  * Exploits
+  * Risk
+  * Threat</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is XSS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an SQL injection? How to manage it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Certification Authority?</summary><br><b>
+</b></details>
+
+<details>
 <summary>How do you identify and manage vulnerabilities?</summary><br><b>
 </b></details>
 
@@ -3198,7 +3279,15 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
+<summary>What types of firewalls are there?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is DDoS attach? How do you deal with it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between asynchronous and synchronous encryption?</summary><br><b>
 </b></details>
 
 <details>
@@ -3210,7 +3299,24 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
+<summary>What is ARP Poisoning?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Describe how do you secure public repositories</summary>
+</b></details>
+
+<details>
+<summary>How do cookies work?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Do you think open source project is more secured when compared to a proprietary software?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain OAuth</summary><br><b>
+<a name="puppet-advanced"></a>
 </b></details>
 
 ##### Containers
@@ -3221,6 +3327,13 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 
 <details>
 <summary>Explain what is Docker Bench</summary><br><b>
+</b></details>
+
+<a name="security-advanced"></a>
+#### :baby: Advanced
+
+<details>
+<summary>Explain MAC flooding attach</summary><br><b>
 </b></details>
 
 ## Puppet
