@@ -1,19 +1,14 @@
 # DevOps Interview Questions
 
+:information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:information_source: &nbsp;This repository contains interview questions on various DevOps related topics
-
-:bar_chart: &nbsp;There are currently **485** questions
-
-:warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
+:bar_chart: &nbsp;There are currently **500** questions
 
 :thought_balloon: &nbsp;Different interviewers focus on different things. Some will focus on your resume while others might focus on scenario questions or specific technical questions. I tried to cover different types of questions for you to practice and test your skills
 
-:page_facing_up: &nbsp;Some questions are also relevant to similar roles like SRE and Production Engineer
-
 :pencil: &nbsp;You can add more questions & answers by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
 
-:cn: &nbsp;You can find the [中文](README-ZH_CN.md) chinese translation right [here](README-zh_CN.md)
+:cn: &nbsp;You can find a [中文](README-ZH_CN.md) Chinese translation right [here](README-zh_CN.md)
 
 ****
 
@@ -680,6 +675,10 @@ TCP establishes a connection between the client and the server to guarantee the 
 </b></details>
 
 <details>
+<summary>True or False? ping is using UDP because it doesn't care about reliable connection</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is SDN?</summary><br><b>
 </b></details>
 
@@ -865,6 +864,10 @@ Using the `chmod` command.
 1. Check with <code>top</code> if anything consumes your CPU or RAM.
 2. Run <code>dstat -t</code> to check if it's related to disk or network.
 3. Check I/O stats with <code>iostat</code>
+</b></details>
+
+<details>
+<summary>How to debug binaries?</summary><br><b>
 </b></details>
 
 <details>
@@ -3279,6 +3282,10 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
+<summary>How HTTPS is different from HTTP?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What types of firewalls are there?</summary><br><b>
 </b></details>
 
@@ -3319,6 +3326,46 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 <a name="puppet-advanced"></a>
 </b></details>
 
+<details>
+<summary>Explain "Format String Vulnerability"</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "Buffer Overflow"</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain DMZ</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain TLS</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is CSRF? How to handle CSRF?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain HTTP Header Injection vulnerability</summary><br><b>
+</b></details>
+
+<details>
+<summary>What security sources are you using to keep updated on latest news?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What TCP and UDP vulnerabilities are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Do using VLANs contribute to network security?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are some examples of security architecture requirements?</summary><br><b>
+</b></details>
+
 ##### Containers
 
 <details>
@@ -3334,6 +3381,14 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 
 <details>
 <summary>Explain MAC flooding attach</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is "Diffie-Hellman key exchange" and how does it work?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "Forward Secrecy"</summary><br><b>
 </b></details>
 
 ## Puppet
