@@ -64,7 +64,7 @@
 #### :baby: Beginner
 
 <details>
-<summary>What is DevOps? What DevOps helps us to achieve?</summary><br><b>
+<summary>What is DevOps?</summary><br><b>
 
 There are many good answers to this question. I like Amazon's description of DevOps:
 
@@ -155,7 +155,7 @@ which follows the immutable infrastructure paradigm.
 </b></details>
 
 <details>
-<summary>What ways are you familiar with to deliver a software? What are the disadvantages of each method?</summary><br><b>
+<summary>What ways are you familiar with to deliver a software? What are the advantages and disadvantages of each method?</summary><br><b>
 
   * Archive - collect all your app files into one archive (e.g. tar) and deliver it to the user.
   * Package - depends on the OS, you can use your OS package format (e.g. in RHEL/Fefodra it's RPM) to deliver your software with a way to install, uninstall and update it using the standard packager commands
@@ -182,7 +182,7 @@ Stateful applications depend on the storage to save state and data, typically da
 </b></details>
 
 <details>
-<summary>What is Open Source? What are some its benefits?</summary><br><b>
+<summary>Explain "Open Source"</summary><br><b>
 </b></details>
 
 ##### SRE
@@ -254,7 +254,7 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with?</summary><br><b>
+<summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with and which one do you prefer to use?</summary><br><b>
 </b></details>
 
 ## Jenkins
@@ -267,7 +267,7 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>What are the advantages of Jenkins over its competitors? Can you compare it to one of the following systems?:
+<summary>What are the advantages of Jenkins over its competitors? Can you compare it to one of the following systems?
 
   * Travis
   * Bamboo
@@ -349,14 +349,13 @@ Note: cross-dependency is when you have two or more changes to separate projects
 <summary>Have you written Jenkins scripts? If yes, what for and how they work?</summary><br><b>
 </b></details>
 
-
 ## Cloud 
 
 <a name="cloud-beginner"></a>
 #### :baby: Beginner
 
 <details>
-<summary>What are The advantages of cloud computing? Mention at least 3 advantages</summary><br><b>
+<summary>What are the advantages of cloud computing? Mention at least 3 advantages</summary><br><b>
 </b></details>
 
 <details>
