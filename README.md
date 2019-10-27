@@ -2,13 +2,13 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **500** questions
+:bar_chart: &nbsp;There are currently **501** questions
 
 :thought_balloon: &nbsp;Different interviewers focus on different things. Some will focus on your resume while others might focus on scenario questions or specific technical questions. I tried to cover different types of questions for you to practice and test your skills
 
 :pencil: &nbsp;You can add more questions & answers by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
 
-:cn: &nbsp;You can find a [中文](README-ZH_CN.md) Chinese translation right [here](README-zh_CN.md)
+:cn: &nbsp;You can find a [中文](README-zh_CN.md) Chinese translation right [here](README-zh_CN.md)
 
 ****
 
@@ -986,10 +986,6 @@ hard link can be created only within the same file system.
 </b></details>
 
 <details>
-<summary>What can you find in /etc/services</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is chroot?</summary><br><b>
 </b></details>
 
@@ -1226,6 +1222,17 @@ While an A record points a domain name to an IP address, a PTR record does the o
 
 <details>
 <summary>What is a reverse proxy?</summary><br><b> 
+</b></details>
+
+<details>
+<summary>What can you find in /etc/services</summary><br><b>
+</b></details>
+
+<details>
+<summary>You run <code>ssh 127.0.0.1</code> but it fails with "connection refused". What could be the problem?</summary><br><b>
+
+1. SSH server is not installed
+2. SSH server is not running
 </b></details>
 
 <a name="linux-advanced"></a>
@@ -2193,11 +2200,11 @@ Using the re module
 </b></details>
 
 <details>
-<summay>How to substitute the string "green" with "blue"?</summary><br><b>
+<summary>How to substitute the string "green" with "blue"?</summary><br><b>
 </b></details>
 
 <details>
-<summay>How to find all the IP addresses in a variable? How to find them in a file?</summary><br><b>
+<summary>How to find all the IP addresses in a variable? How to find them in a file?</summary><br><b>
 </b></details>
 
 <details>
