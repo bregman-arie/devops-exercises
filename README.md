@@ -1585,6 +1585,14 @@ func main() {
 <summary>What is an aggregator?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is sharding and replica set in mongodb?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are indexes in mongodb?</summary><br><b>
+</b></details>
+
 ## OpenShift
 
 <a name="openshift-beginner"></a>
