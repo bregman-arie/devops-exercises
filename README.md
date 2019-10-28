@@ -84,8 +84,8 @@ Each piece of code (change/patch) is verified, to make the change is safe to mer
   * CI/CD
   * Provisioning infrastructure
   * Configuration Management
-  * Monitoring & alerting
-  * Logging
+  * Monitoring & alerting - Prometheus, DataDog, Sensu, Grafana
+  * Logging - ELK (Elastic Search, Logstash, Kibana), EFK (Elastic Search, Fluentd, Kibana)
   * Code review
   * Code coverage
   * Tests</summary><br><b>
