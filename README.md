@@ -390,8 +390,8 @@ SAAS
   * Availability zone
   * Region
   * Edge location</summary><br><b>
-AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independant of one another. 
-Within each region,There are multiple isolatated locations known as Availability Zones. Multiple availability zones insure high availability in case one of them goes down.
+AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independent of one another. 
+Within each region,There are multiple isolated locations known as Availability Zones. Multiple availability zones insure high availability in case one of them goes down.
 
 Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
 </b></details>
@@ -406,23 +406,23 @@ Edge locations are basically content delivery network which caches data and insu
 <summary>Explain what is S3 and what is it used for</summary><br>
 <b>
 S3 stands for 3 S, Simple Storage Service.
-S3 is a object storage service which is fast, scalable and durable. S3 enables customers to upload, download or store any file or object that is up to 5 TB in size. while having a maximum size of 5 GB per file (multipart upload if more than 5 GB in size).
+S3 is a object storage service which is fast, scalable and durable. S3 enables customers to upload, download or store any file or object that is up to 5 TB in size. While having a maximum size of 5 GB per file (multipart upload if more than 5 GB in size).
 </b>
 </details>
 
 <details>
 <summary>What is a bucket?</summary><br><b>
-An S3 bucket is a resource which is similar to folders in a filesystem and allows storing objects, which consist of data and its  metadata.
+An S3 bucket is a resource which is similar to folders in a file system and allows storing objects, which consist of data and its  meta data.
 </b></details>
 
 <details>
-<summary>True or False? a bucket name must be globally unique</summary><br><b>
+<summary>True or False? A bucket name must be globally unique</summary><br><b>
 True
 </b></details>
 
 <details>
 <summary>What objects in S3 consists of?
-  * Another way to ask it: explain key, value, version id and metadata in context of objects</summary><br><b>
+  * Another way to ask it: explain key, value, version id and meta data in context of objects</summary><br><b>
 </b></details>
 
 <details>
@@ -430,7 +430,7 @@ True
 </b></details>
 
 <details>
-<summary>Can you host dynamic websites on s3? what about static websites?</summary><br><b>
+<summary>Can you host dynamic websites on S3?. What about static websites?</summary><br><b>
 </b></details>
 
 <details>
@@ -499,7 +499,7 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 </b></details>
 
 <details>
-<summary>True or False? objects are cached for the life of TTL</summary><br><b>
+<summary>True or False?. Objects are cached for the life of TTL</summary><br><b>
 </b></details>
 
 ##### Load Balancers
@@ -508,7 +508,7 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 <summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
 
   * Application LB - layer 7 traffic
-  * Network LB - ultra-high performances or static IP adress
+  * Network LB - ultra-high performances or static IP address
   * Classic LB - low costs, good for test or dev environments
 </b></details>
 
@@ -522,7 +522,7 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 <summary>What are some features or benefits of using RDS?</summary><br><b>
 
 1. Multi AZ - great for Disaster Recovery
-2. Read Replicas - for better performences
+2. Read Replicas - for better performances
 </b></details>
 
 <details>
@@ -589,9 +589,9 @@ Physical: the electrical and physical spec the data connection (Bits are here)
 <details>
 <summary>What delivery schemes are you familiar with?</summary><br><b>
 
-Unitcast: One to one communication where there is one sender and one reciever.
+Unitcast: One to one communication where there is one sender and one receiver.
 
-Broadcast: Sending a message to everone in the network. The address ff:ff:ff:ff:ff:ff is used for broadcasting.
+Broadcast: Sending a message to everyone in the network. The address ff:ff:ff:ff:ff:ff is used for broadcasting.
            Two common protocols which use broadcast are ARP and DHCP.
 
 Multicast: Sending a message to a group of subscribers. It can be one-to-many or many-to-many.
@@ -608,9 +608,9 @@ CSMA/CD algorithm:
 1. Before sending a frame, it checks whether another host already transmitting a frame.
 2. If no one transmitting, it starts transmitting the frame.
 3. If two hosts transmitted at the same time, we have a collision.
-4. Both hosts stop sending the frame and they send to everyone a 'jam signal' notifying everyone that a collision occured
+4. Both hosts stop sending the frame and they send to everyone a 'jam signal' notifying everyone that a collision occurred
 5. They are waiting for a random time before sending again
-6. Once each host waited for a raondom time, they try to send the frame again and so the
+6. Once each host waited for a random time, they try to send the frame again and so the
 </b></details>
 
 <details>
@@ -676,7 +676,7 @@ TCP establishes a connection between the client and the server to guarantee the 
 </b></details>
 
 <details>
-<summary>True or False? ping is using UDP because it doesn't care about reliable connection</summary><br><b>
+<summary>True or False?. Ping is using UDP because it doesn't care about reliable connection</summary><br><b>
 </b></details>
 
 <details>
@@ -731,7 +731,7 @@ TCP establishes a connection between the client and the server to guarantee the 
 </b></details>
 
 <details>
-<summary>Using Hammind code, what would be the code word for the following data word 100111010001101?</summary><br><b>
+<summary>Using Hamming code, what would be the code word for the following data word 100111010001101?</summary><br><b>
 
 00110011110100011101
 </b></details>
@@ -833,13 +833,13 @@ Using the `chmod` command.
 <code>dstat -t</code> is great for identifying network and disk issues.
 <code>netstat -tnlaup</code> can be used to see which processes are running on which ports.
 <code>lsof -i -P</code> can be used for the same purpose as netstat.
-<code>ngrep -d any metafilter</code> for matching regex against paylods of packets.
+<code>ngrep -d any metafilter</code> for matching regex against payloads of packets.
 <code>tcpdump</code> for capturing packets
 <code>wireshark</code> same concept as tcpdump but with GUI (optional).
 </b></details>
 
 <details>
-<summary>What are you using for troubleshooting and debugging <b>disk & filesystem</b> issues?</summary><br><b>
+<summary>What are you using for troubleshooting and debugging <b>disk & file system</b> issues?</summary><br><b>
 
 <code>dstat -t</code> is great for identifying network and disk issues.
 <code>opensnoop</code> can be used to see which files are being opened on the system (in real time).
@@ -927,11 +927,11 @@ I consider this as a good blog post to read more about it: https://shapeshed.com
 <details>
 <summary>What is the difference between a soft link and hard link?</summary><br><b>
 
-hard link is the same file, using the same inode.
-soft link is a shortcut to another file, using a different inode.
+Hard link is the same file, using the same inode.
+Soft link is a shortcut to another file, using a different inode.
 
-soft links can be created between different file systems while
-hard link can be created only within the same file system.
+Soft links can be created between different file systems while.
+Hard link can be created only within the same file system.
 </b></details>
 
 <details>
@@ -943,7 +943,7 @@ hard link can be created only within the same file system.
 </b></details>
 
 <details>
-<summary>You are trying to create a new file but you get "Filesystem is full". You check with df for free space and you see you used only 20% of the space. What could be the problem?</summary><br><b>
+<summary>You are trying to create a new file but you get "File system is full". You check with df for free space and you see you used only 20% of the space. What could be the problem?</summary><br><b>
 </b></details>
 
 <details>
@@ -1103,7 +1103,7 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 <details>
 <summary>What's an inode?</summary><br><b>
 
-For each file (and directory) in Linux there is an inode, a data structure which stores metadata
+For each file (and directory) in Linux there is an inode, a data structure which stores meta data
 related to the file like its size, owner, permissions, etc.
 </b></details>
 
@@ -1241,7 +1241,7 @@ While an A record points a domain name to an IP address, a PTR record does the o
 #### :star: Advanced
 
 <details>
-<summary>What happens when you execute <code>ls</code>? provide a detailed answer</summary><br><b>
+<summary>What happens when you execute <code>ls</code>?. Provide a detailed answer</summary><br><b>
 </b></details>
 
 <details>
@@ -1348,7 +1348,7 @@ Role – Ansible roles allows you to group resources based on certain functional
 </b></details>
 
 <details>
-<summary>Which Ansible best practices are you familiar with? name at least three</summary><br><b>
+<summary>Which Ansible best practices are you familiar with?. Name at least three</summary><br><b>
 </b></details>
 
 <details>
@@ -1443,7 +1443,7 @@ When given a written code, always inspect it thoroughly. If your answer is “th
   I'm <HOSTNAME> and my operating system is <OS>
   ```
 
-  replace <HOSTNAME> and  <OS> with the actual data for the specific host you are running on
+  Replace <HOSTNAME> and  <OS> with the actual data for the specific host you are running on
 
 The playbook to deploy the system_info file
 
@@ -1559,7 +1559,7 @@ CloudFormation if at all.
 The benefits of Terraform over the other tools:
 
   * It follows the immutable infrastructure approach which has benefits like avoiding a configuration drift over time
-  * Ansible and Puppet are more procedural (you mention what to execute in each step) and Terraform is declartive since you describe the overall desired state and not per resource or task. You can give the example of going from 1 to 2 servers in each tool. In terrform you specify 2, in Ansible and puppet you have to only provision 1 additional server so you need to explicitly make sure you provision only another one server.
+  * Ansible and Puppet are more procedural (you mention what to execute in each step) and Terraform is declarative since you describe the overall desired state and not per resource or task. You can give the example of going from 1 to 2 servers in each tool. In Terraform you specify 2, in Ansible and puppet you have to only provision 1 additional server so you need to explicitly make sure you provision only another one server.
 </b></details>
 
 <details>
@@ -1625,7 +1625,7 @@ It's a resource which was successfully created but failed during provisioning. T
 <details>
 <summary>What types of variables are supported in Terraform?</summary><br><b>
 
-Strimg
+String
 Integer
 Map
 List
@@ -1676,7 +1676,7 @@ run multiple machines each with its own OS.
 <summary>In which scenarios would you use containers and in which you would prefer to use VMs?</summary><br><b>
 
 You should choose VMs when:
-  * you need run an application which requires all the resources and functionalilies of an OS
+  * you need run an application which requires all the resources and functionalities of an OS
   * you need full isolation and security
 
 You should choose containers when:
@@ -1706,7 +1706,7 @@ Docker daemon redirects output from container to Docker CLI which redirects it t
 </b></details>
 
 <details>
-<summary>What `docker commit` does? when will you use it?</summary><br><b>
+<summary>What `docker commit` does?. When will you use it?</summary><br><b>
 </b></details>
 
 <details>
@@ -1750,7 +1750,7 @@ Docker daemon redirects output from container to Docker CLI which redirects it t
 </b></details>
 
 <details>
-<summary>What are the differences between Docker compose, Docker swarm and Kuberenets?</summary><br><b>
+<summary>What are the differences between Docker compose, Docker swarm and Kubernetes?</summary><br><b>
 </b></details>
 
 <details>
@@ -1805,11 +1805,11 @@ Swarm management which means you can create new swarms in Docker Cloud.
 </b></details>
 
 <details>
-<summary>Describe the architecture of Kuberenets</summary><br><b>
+<summary>Describe the architecture of Kubernetes</summary><br><b>
 </b></details>
 
 <details>
-<summary>How do you monitor your Kuberenets?</summary><br><b>
+<summary>How do you monitor your Kubernetes?</summary><br><b>
 </b></details>
 
 <details>
@@ -1914,7 +1914,7 @@ Re-install the OS IS NOT the right answer :)
 2. The language is interpreted, being the CPython (Written in C) the most used/maintained implementation.
 3. It is strongly typed. The typing discipline is duck typing and gradual.
 4. Python focuses on readability and makes use of whitespaces/identation instead of brackets { }
-5. The python packate manager is called PIP "pip installs packages", having more than 200.000 available packages.
+5. The python package manager is called PIP "pip installs packages", having more than 200.000 available packages.
 6. Python comes with pip installed and a big standard library that offers the programmer many precooked solutions.
 7. In python **Everything** is an object.
 
@@ -2039,7 +2039,7 @@ Generally, every compiling process have a two steps.
     - Code Generation.
     
     Analysis can be broken into:
-        1. Lexycal analysis   (Tokenizes source code)
+        1. Lexical analysis   (Tokenizes source code)
         2. Syntactic analysis (Check whether the tokens are legal or not, tldr, if syntax is correct)
            
                for i in 'foo'
@@ -2147,7 +2147,7 @@ def return_sum():
 </b></details>
 
 <details>
-<summary>How to merge two dictionries?</summary><br><b>
+<summary>How to merge two dictionaries?</summary><br><b>
 </b></details>
 
 <details>
@@ -2323,8 +2323,8 @@ def reverse_string(string):
 <details>
 <summary>What is the complexity for the best, worst and average cases of each of the following algorithms?:
 
-  * Quicksort
-  * Mergesort
+  * Quick sort
+  * Merge sort
   * Bucket Sort
   * Radix Sort
 </b></details>
@@ -2446,7 +2446,7 @@ Alert manager is responsible for alerts ;)
 </b></details>
 
 <details>
-<summary>Which Prometheus best practices are you familiar with? name at least three</summary><br><b>
+<summary>Which Prometheus best practices are you familiar with?. Name at least three</summary><br><b>
 </b></details>
 
 <details>
@@ -2479,7 +2479,7 @@ Alert manager is responsible for alerts ;)
 Shortly, git pull = git fetch + git merge
 
 When you run git pull, it gets all the changes from the remote or central
-repository and attaches it to your corresponding branch in your local reposistory.
+repository and attaches it to your corresponding branch in your local repository.
 
 git fetch gets all the changes from the remote repository, stores the changes in
 a separate branch in your local repository
@@ -2488,7 +2488,7 @@ a separate branch in your local repository
 <details>
 <summary>Explain the following: <code>git directory</code>, <code>working directory</code> and <code>staging area</code></summary><br><b>
 
-The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
+The Git directory is where Git stores the meta data and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
 
 The working directory is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
 
@@ -2607,7 +2607,7 @@ Go also has good community.
 
 The result is the same, a variable with the value 2.
 
-with <code>var x int = 2</code> we are setting the variable type to integer while with <code>x := 2</code> we are letting Go figure out by itself the type.
+With <code>var x int = 2</code> we are setting the variable type to integer while with <code>x := 2</code> we are letting Go figure out by itself the type.
 </b></details>
 
 <details>
@@ -2755,7 +2755,7 @@ as key-value pair, document-oriented, etc.
 </b></details>
 
 <details>
-<summary>What is better? embedded documents or referenced?</summary><br><b>
+<summary>What is better?. Embedded documents or referenced?</summary><br><b>
 </b></details>
 
 ##### Queries
@@ -2979,7 +2979,7 @@ only see the 15 changes that had completed - you wouldn't see the database mid-u
 
 **Durability** - Once a change is committed, it will remain committed regardless of what happens
 (power failure, system crash, etc.). This means that all completed transactions 
-must be recorded in non-voliatile memory. 
+must be recorded in non-volatile memory. 
 
 Note that SQL is by nature ACID compliant. Certain NoSQL DB's can be ACID compliant depending on 
 how they operate, but as a general rule of thumb, NoSQL DB's are not considered ACID compliant
@@ -3298,7 +3298,7 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
-<summary>What is DDoS attach? How do you deal with it?</summary><br><b>
+<summary>What is DDoS attack? How do you deal with it?</summary><br><b>
 </b></details>
 
 <details>
@@ -3306,7 +3306,7 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
-<summary>Explain Man-in-the-middle attach</summary><br><b>
+<summary>Explain Man-in-the-middle attack</summary><br><b>
 </b></details>
 
 <details>
@@ -3388,7 +3388,7 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 #### :baby: Advanced
 
 <details>
-<summary>Explain MAC flooding attach</summary><br><b>
+<summary>Explain MAC flooding attack</summary><br><b>
 </b></details>
 
 <details>
