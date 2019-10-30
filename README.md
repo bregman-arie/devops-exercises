@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **501** questions
+:bar_chart: &nbsp;There are currently **503** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources)
 
@@ -1235,6 +1235,10 @@ While an A record points a domain name to an IP address, a PTR record does the o
 
 1. SSH server is not installed
 2. SSH server is not running
+</b></details>
+
+<details>
+<summary>How to print the shared libraries required by a certain program? What is it useful for?</summary><br><b>
 </b></details>
 
 <a name="linux-advanced"></a>
@@ -3466,6 +3470,7 @@ Scenarios are questions which don't have verbal answer and require you one of th
 These questions usually given as an home task to the candidate and they can combine several topics together.
 Below you can find several scenario questions:
 
+* [Writing a Dockerfile and running a container](scenarios/write_dockerfile_run_container.md)
 * [Elasticsearch & Kibana on AWS](scenarios/elk_kibana_aws.md)
 * [Ansible, Minikube and Docker](scenarios/ansible_minikube_docker.md)
 * [Cloud Slack bot](scenarios/cloud_slack_bot.md)
