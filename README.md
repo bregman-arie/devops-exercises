@@ -547,7 +547,7 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 </b></details>
 
 <details>
-<summary>When this MAC address is used?: ff:ff:ff:ff:ff:ff</summary><br><b>
+<summary>When is this MAC address used?: ff:ff:ff:ff:ff:ff</summary><br><b>
 </b></details>
 
 <details>
