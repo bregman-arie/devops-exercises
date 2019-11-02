@@ -147,7 +147,7 @@ In your answer you can mention one or more of the following:
 <details>
 <summary>Explain mutable vs. immutable infrastructure</summary><br><b>
 
-In mutable infrastructure paradigm, changes applied on top of the existing infrastructure and over time
+In mutable infrastructure paradigm, changes are applied on top of the existing infrastructure and over time
 the infrastructure builds up a history of changes. Ansible, Puppet and Chef are examples to tools which
 follow mutable infrastructure paradigm.
 
@@ -547,7 +547,7 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 </b></details>
 
 <details>
-<summary>When is this MAC address used?: ff:ff:ff:ff:ff:ff</summary><br><b>
+<summary>When this MAC address is used?: ff:ff:ff:ff:ff:ff</summary><br><b>
 </b></details>
 
 <details>
