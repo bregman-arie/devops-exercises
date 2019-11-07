@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **503** questions
+:bar_chart: &nbsp;There are currently **506** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources)
 
@@ -313,6 +313,12 @@ Note: cross-dependency is when you have two or more changes to separate projects
 
 <details>
 <summary>Can you describe some of Jenkins best practices?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe how do you add new slaves to Jenkins</summary><br><b>
+
+You can describe the UI way to add new slaves but better to explain how to do in a way that scales like a script or using dynamic source for slaves like one of the existing clouds.
 </b></details>
 
 <a name="jenkins-advanced"></a>
@@ -1633,6 +1639,10 @@ String
 Integer
 Map
 List
+</b></details>
+
+<details>
+<summary>What is a data source? In what scenarios for example would need to use it?</summary><br><b>
 </b></details>
 
 <details>
@@ -3459,6 +3469,10 @@ Although the following questions are not DevOps related, they are still quite co
 <summary>Tell me about your last big project/task you worked on</summary><br><b>
 </b></details>
 
+<details>
+<summary>Why do you want to work here?</summary><br><b>
+</b></details>
+
 ## Scenarios
 
 Scenarios are questions which don't have verbal answer and require you one of the following:
@@ -3476,3 +3490,7 @@ Below you can find several scenario questions:
 * [Cloud Slack bot](scenarios/cloud_slack_bot.md)
 * [Writing Jenkins Scripts](scenarios/jenkins_scripts.md)
 * [Writing Jenkins Pipelines](scenarios/jenkins_pipelines.md)
+
+## License
+
+[![License: CC BY-NC-ND 3.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%203.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/3.0/)
