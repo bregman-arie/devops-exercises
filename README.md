@@ -2,9 +2,9 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **506** questions
+:bar_chart: &nbsp;There are currently **509** questions
 
-:books: &nbsp;To learn more about DevOps check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources)
+:books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
 :thought_balloon: &nbsp;Different interviewers focus on different things. Some will focus on your resume while others might focus on scenario questions or specific technical questions. I tried to cover different types of questions for you to practice and test your skills
 
@@ -1657,6 +1657,11 @@ List
 <summary>What is the Terraform Registry?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Explain <code>remote-exec</code> and <code>local-exec</code></summary><br><b>
+</b></details>
+
+
 <a name="terraform-advanced"></a>
 #### :star: Advanced
 
@@ -1816,10 +1821,20 @@ Swarm management which means you can create new swarms in Docker Cloud.
 
 <details>
 <summary>Why Docker isn't enough? Why do we need Kubernetes?</summary><br><b>
+
+Kubernetes is especially good for scenarios when you no longer running small number of containers. When you have to scale from 3 containers for eaxmple to hundreds or thousands of containers.
 </b></details>
 
 <details>
 <summary>Describe the architecture of Kubernetes</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a worker?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is a Pod</summary><br><b>
 </b></details>
 
 <details>
