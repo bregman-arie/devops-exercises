@@ -4,6 +4,11 @@
 
 :bar_chart: &nbsp;There are currently **509** questions
 
+***
+<p align="center"><b> 🎉 Questions are now available at <a href="http://devopsbit.com/devops-interview-questions">devopsbit.com</a> 🎉 </b> </p>
+
+***
+
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
 :thought_balloon: &nbsp;Different interviewers focus on different things. Some will focus on your resume while others might focus on scenario questions or specific technical questions. I tried to cover different types of questions for you to practice and test your skills
