@@ -3493,6 +3493,20 @@ Although the following questions are not DevOps related, they are still quite co
 <summary>Why do you want to work here?</summary><br><b>
 </b></details>
 
+## Questions you CAN ask
+
+A list of questions you as a candidate can ask the interviewer during or after the interview.
+These are only a suggestion. Use them carefully :)
+
+<details>
+<summary>What do you like about working here?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How does the company promote personal growth?</summary><br><b>
+</b></details>
+
+
 ## Scenarios
 
 Scenarios are questions which don't have verbal answer and require you one of the following:
@@ -3510,6 +3524,10 @@ Below you can find several scenario questions:
 * [Cloud Slack bot](scenarios/cloud_slack_bot.md)
 * [Writing Jenkins Scripts](scenarios/jenkins_scripts.md)
 * [Writing Jenkins Pipelines](scenarios/jenkins_pipelines.md)
+
+## Credits
+
+Logos credits can be found [here](credits.md)
 
 ## License
 
