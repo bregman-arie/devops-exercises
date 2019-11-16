@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **509** questions
+:bar_chart: &nbsp;There are currently **512** questions
 
 ***
 <p align="center"><b> 🎉 Questions are now available at <a href="http://devopsbit.com/devops-interview-questions">devopsbit.com</a> 🎉 </b> </p>
@@ -3504,6 +3504,36 @@ These are only a suggestion. Use them carefully :)
 
 <details>
 <summary>How does the company promote personal growth?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the current level of technical debt you are dealing with?</summary><br><b>
+
+Be careful when asking this question - all companies, regardless of size, have some level of tech debt. 
+Phrase the question in the light that all companies have the deal with this, but you want to see the current
+pain points they are dealing with <br>
+
+This is a great way to figure how managers deal with unplanned work, and how good they are at 
+setting expectations with projects.
+</b></details>
+
+<details>
+<summary>What was your favorite project you've worked on?</summary><br><b>
+
+This can give you insights in some of the cool projects a company is working on, and if 
+you would enjoy working on projects like these. This is also a good way to see if
+the managers are allowing employees to learn and grow with projects outside of the
+normal work you'd do.
+</b></details>
+
+<details>
+<summary>If you could change one thing about your day to day, what would it be?</summary><br><b>
+
+Similar to the tech debt question, this helps you identify any pain points with the company.
+Additionally, it can be a great way to show how you'd be an asset to the team.<br>
+
+For Example, if they mention they have problem X, and you've solved that in the past,
+you can show how you'd be able to mitigate that problem.
 </b></details>
 
 
