@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **512** questions
+:bar_chart: &nbsp;There are currently **516** questions
 
 ***
 <p align="center"><b> 🎉 Questions are now available at <a href="http://devopsbit.com/devops-interview-questions">devopsbit.com</a> 🎉 </b> </p>
@@ -941,8 +941,7 @@ I consider this as a good blog post to read more about it: https://shapeshed.com
 Hard link is the same file, using the same inode.
 Soft link is a shortcut to another file, using a different inode.
 
-Soft links can be created between different file systems while.
-Hard link can be created only within the same file system.
+Soft links can be created between different file systems while hard link can be created only within the same file system.
 </b></details>
 
 <details>
@@ -1250,6 +1249,32 @@ While an A record points a domain name to an IP address, a PTR record does the o
 
 <details>
 <summary>How to print the shared libraries required by a certain program? What is it useful for?</summary><br><b>
+</b></details>
+
+##### Users
+
+<details>
+<summary>How do you create users? Where user information is stored?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Do you know how to create a new user without using adduser/useradd command?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
+
+  * adduser user_name --shell=/bin/false --no-create-home
+</b></details>
+
+<details>
+<summary>What can you do if you lost/forogt the root password?</summary><br><b>
+
+Re-install the OS IS NOT the right answer :)
+</b></details>
+
+<details>
+<summary>What is sudo? How do you set it up?</summary><br><b>
 </b></details>
 
 <a name="linux-advanced"></a>
@@ -1678,6 +1703,10 @@ List
 <summary>Explain "State Locking"</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is the "Random" provider? What is it used for</summary><br><b>
+</b></details>
+
 ## Docker
 
 <a name="docker-beginner"></a>
@@ -1843,6 +1872,10 @@ Kubernetes is especially good for scenarios when you no longer running small num
 </b></details>
 
 <details>
+<summary>True or False? A pod can manage multiple containers</summary><br><b>
+</b></details>
+
+<details>
 <summary>How do you monitor your Kubernetes?</summary><br><b>
 </b></details>
 
@@ -1852,32 +1885,6 @@ Kubernetes is especially good for scenarios when you no longer running small num
 
 <details>
 <summary>What is kubconfig? What do you use it for?</summary><br><b>
-</b></details>
-
-##### Users
-
-<details>
-<summary>How do you create users? Where user information is stored?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Do you know how to create a new user without using adduser/useradd command?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
-
-  * adduser user_name --shell=/bin/false --no-create-home
-</b></details>
-
-<details>
-<summary>What can you do if you lost/forogt the root password?</summary><br><b>
-
-Re-install the OS IS NOT the right answer :)
-</b></details>
-
-<details>
-<summary>What is sudo? How do you set it up?</summary><br><b>
 </b></details>
 
 ## Coding
