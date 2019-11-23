@@ -1697,14 +1697,20 @@ List
 
 <details>
 <summary>Explain "Remote State". When would you use it and how?</summary><br><b>
+  Terraform generates a `terraform.tfstate` json file that describes components/service provisioned on the specified provider. Remote  
+  State stores this file in a remote storage media to enable collaboration amongst team.
 </b></details>
 
 <details>
 <summary>Explain "State Locking"</summary><br><b>
+  State locking is a mechanism that blocks an operations against a specific state file from multiple callers so as to avoid conflicting   operations from different team members. Once the first caller's operation's lock is released the other team member may go ahead to   
+  carryout his own operation. Nevertheless Terraform will first check the state file to see if the desired resource already exist and 
+  if not it goes ahead to create it.
 </b></details>
 
 <details>
 <summary>What is the "Random" provider? What is it used for</summary><br><b>
+ The random provider aids in generating numeric or alphabetic characters to use as a prefix or suffix for a desired named identifier.
 </b></details>
 
 ## Docker
