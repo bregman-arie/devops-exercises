@@ -1,16 +1,21 @@
 # DevOps Interview Questions
 
+:information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:information_source: &nbsp;This repository contains interview questions on various DevOps related topics
+:bar_chart: &nbsp;There are currently **516** questions
 
-:bar_chart: &nbsp;There are currently **413** questions
+***
+<p align="center"><b> 🎉 Questions are now available at <a href="http://devopsbit.com/devops-interview-questions">devopsbit.com</a> 🎉 </b> </p>
 
+***
 
-:warning: &nbsp;You don't need to know how to answer all the questions in this repo. DevOps is not about knowing all :)
+:books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
-:page_facing_up: &nbsp;Different interviewers focus on different things. Some will focus on your resume while others might focus on scenario questions or specific technical questions. In this repository I tried to cover different types of questions for you to practice and test your knowledge
+:thought_balloon: &nbsp;Different interviewers focus on different things. Some will focus on your resume while others might focus on scenario questions or specific technical questions. I tried to cover different types of questions for you to practice and test your skills
 
-:pencil: &nbsp;You can add more questions & answers by submitting pull requests :)
+:pencil: &nbsp;You can add more questions & answers by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
+
+:cn: &nbsp;You can find a [中文](README-zh_CN.md) Chinese translation right [here](README-zh_CN.md)
 
 ****
 
@@ -32,7 +37,7 @@
   <tr>
     <td align="center"><a href="#coding"><img src="images/coding.png" width="75px;" height="75px;" alt="coding"/><br /><b>Coding</b></a><br /><sub><a href="#coding-beginner">Beginner :baby:</a></sub><br><sub><a href="#coding-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a><br /><sub><a href="#python-beginner">Beginner :baby:</a></sub><br><sub><a href="#python-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#go"><img src="images/go.png" width="80px;" height="75px;" alt="Go"/><br /><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#go"><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a><br /><sub><a href="#shell-scripting-beginner">Beginner :baby:</a></sub><br><sub><a href="#shell-scripting-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a><br /><sub><a href="#kubernetes-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a><br /><sub><a href="#prometheus-beginner">Beginner :baby:</a></sub><br><sub><a href="#prometheus-advanced">Advanced :star:</a></sub></td>
@@ -41,13 +46,18 @@
   </tr>
   <tr>
     <td align="center"><a href="#cloud"><img src="images/cloud.png" width="110px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a><br /><sub><a href="#cloud-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#aws"><img src="images/aws.png" width="110px;" height="75px;" alt="AWS"/><br /><b>AWS</b></a><br /><sub><a href="#aws-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#azure"><img src="images/azure.png" width="80px;" height="75px;" alt="azure"/><br /><b>Azure</b></a><br /><sub><a href="#azure-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#gcp"><img src="images/gcp.png" width="75px;" height="75px;" alt="gcp"/><br /><b>Google Cloud Platform</b></a><br /><sub><a href="#gcp-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#aws"><b>AWS</b></a><br /><sub><a href="#aws-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#azure"><b>Azure</b></a><br /><sub><a href="#azure-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#gcp"><b>Google Cloud Platform</b></a><br /><sub><a href="#gcp-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a><br /><sub><a href="#openstack-beginner">Beginner :baby:</a></sub><br><sub><a href="#openstack-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a><br /><sub><a href="#security-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a><br /><sub><a href="#security-beginner">Beginner :baby:</a></sub><br><sub><a href="#security-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a><br /><sub><a href="#puppet-beginner">Beginner :baby:</a></sub><br><sub><a href="#puppet-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a><br /><sub><a href="#openshift-beginner">Beginner :baby:</a></sub><br><sub></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a><br /><sub><a href="#monitoring-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#general"><img src="images/general.png" width="110px;" height="75px;" alt="General"/><br /><b>General</b></a></td>
+    <td align="center"><a href="#scenarios"><img src="images/scenarios.png" width="110px;" height="75px;" alt="Scenarios"/><br /><b>Scenarios</b></a></td>
   </tr>
 </table>
 </center>
@@ -55,22 +65,34 @@
 <!-- prettier-ignore-end -->
 <!-- ALL-TOPICS-LIST:END -->
 
-
 ## DevOps
 
 <a name="devops-beginner"></a>
 #### :baby: Beginner
 
 <details>
-<summary>What is DevOps? What DevOps helps us to achieve?</summary><br><b>
-DevOps is more than just a job. It’s a mindset, a culture and a strategy whereby the Development and Operations teams work together to write software in small burst and then integrate, test, monitor and deploy code in short time periods.
+<summary>What is DevOps?</summary><br><b>
 
-DevOps integrates developers and operations teams to improve collaboration and productivity by automating infrastructure, automating workflows and continuously measuring application performance.
+There are many good answers to this question. I like Amazon's description of DevOps:
 
-DevOps Engineers are the middle people that collaborate with the Development and Operations teams to build, test and deploy software in short, fast bursts.
+"DevOps is the combination of cultural philosophies, practices, and tools that increases an organization’s ability to deliver applications and services at high velocity: evolving and improving products at a faster pace than organizations using traditional software development and infrastructure management processes. This speed enables organizations to better serve their customers and compete more effectively in the market."
 
-DevOps is a strategy and mindset, and this role bridges a gap in traditional development, whereby Developers create software and Operations runs software exclusive from one another. The traditional strategy is also built around infrequent, large deployments of software, that lends itself to long phases of fixing unforeseen issues and software failures.
-</summary><br><b>
+You can find more details here: https://aws.amazon.com/devops/what-is-devops
+</b></details>
+
+<details>
+<summary>What are the benefits of DevOps? What it can help us to achieve?</summary><br><b>
+
+You should mention some or all of the following:
+
+  * Collaboration
+  * Improved delivery
+  * Security
+  * Speed
+  * Scale
+  * Reliability
+
+Detailed answer can be found here: https://aws.amazon.com/devops/what-is-devops 
 </b></details>
 
 <details>
@@ -114,8 +136,8 @@ Take a ‘security first approach’
   * CI/CD
   * Provisioning infrastructure
   * Configuration Management
-  * Monitoring & alerting
-  * Logging
+  * Monitoring & alerting - Prometheus, DataDog, Sensu, Grafana
+  * Logging - ELK (Elastic Search, Logstash, Kibana), EFK (Elastic Search, Fluentd, Kibana)
   * Code review
   * Code coverage
   * Tests</summary><br><b>
@@ -132,7 +154,7 @@ Take a ‘security first approach’
 <details>
 <summary>What are you taking into consideration when choosing a tool/technology?</summary><br><b>
 
-You may use one or all of the following:
+In your answer you can mention one or more of the following:
   * mature vs. cutting edge
   * community size
   * architecture aspects - agent vs. agentless, master vs. masterless, etc.
@@ -141,7 +163,7 @@ You may use one or all of the following:
 <details>
 <summary>Explain mutable vs. immutable infrastructure</summary><br><b>
 
-In mutable infrastructure paradigm, changes applied on top of the existing infrastructure and over time
+In mutable infrastructure paradigm, changes are applied on top of the existing infrastructure and over time
 the infrastructure builds up a history of changes. Ansible, Puppet and Chef are examples to tools which
 follow mutable infrastructure paradigm.
 
@@ -151,7 +173,7 @@ which follows the immutable infrastructure paradigm.
 </b></details>
 
 <details>
-<summary>What ways are you familiar with to deliver a software?</summary><br><b>
+<summary>What ways are you familiar with to deliver a software? What are the advantages and disadvantages of each method?</summary><br><b>
 
   * Archive - collect all your app files into one archive (e.g. tar) and deliver it to the user.
   * Package - depends on the OS, you can use your OS package format (e.g. in RHEL/Fefodra it's RPM) to deliver your software with a way to install, uninstall and update it using the standard packager commands
@@ -164,17 +186,8 @@ which follows the immutable infrastructure paradigm.
 
 <details>
 <summary>Explain stateless vs. stateful</summary><br><b>
-A stateful server keeps state between connections. A stateless server does not.
-
-So, when you send a request to a stateful server, it may create some kind of connection object that tracks what information you request. When you send another request, that request operates on the state from the previous request. So you can send a request to "open" something. And then you can send a request to "close" it later. In-between the two requests, that thing is "open" on the server.
-
-When you send a request to a stateless server, it does not create any objects that track information regarding your requests. If you "open" something on the server, the server retains no information at all that you have something open. A "close" operation would make no sense, since there would be nothing to close.
-
-HTTP and NFS are stateless protocols. Each request stands on its own.
-
-Sometimes cookies are used to add some state to a stateless protocol. In HTTP (web pages), the server sends you a cookie and then the browser holds the state, only to send it back to the server on a subsequent request.
-
-SMB is a stateful protocol. A client can open a file on the server, and the server may deny other clients access to that file until the client closes it.
+Stateless applications don't store any data in the host which makes it ideal for horizontal scaling and microservices.
+Stateful applications depend on the storage to save state and data, typically databases are stateful applications.
 </b></details>
 
 <details>
@@ -200,6 +213,7 @@ All HTTP servers use the GET and HEAD methods, but not all support the rest of t
 </b></details>
 
 <details>
+
 <summary>Explain monitoring. What is it? What its goal?</summary><br><b>
 Monitoring provides feedback from production. Monitoring delivers information about an application’s performance and usage patterns.
 
@@ -230,6 +244,15 @@ One can argue whether it's per company definition or a global one but at least a
 <summary>What are MTTF (mean time to failure) and MTTR (mean time to repair)? What these metrics help us to evaluate?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is a post-mortem meeting? Why is it important?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is "infrastructure as code"? What implementation of IAC are you familiar with?</summary><br><b>
+</b></details>
+
+
 <a name="devops-advanced"></a>
 #### :star: Advanced
 
@@ -242,7 +265,7 @@ One can argue whether it's per company definition or a global one but at least a
 </b></details>
 
 <details>
-<summary>How do you measure your CI/CD quality? Are there any metrics you are using?</summary><br><b>
+<summary>How do you measure your CI/CD quality? Are there any metrics you are using for measuring the quality?</summary><br><b>
 </b></details>
 
 <details>
@@ -256,7 +279,7 @@ This situation might lead to bugs which hard to identify and reproduce.
 </b></details>
 
 <details>
-<summary>How to deal with configuration drift?</summary><br><b>
+<summary>How to deal with a configuration drift?</summary><br><b>
 </b></details>
 
 <details>
@@ -266,12 +289,12 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>In what scenarios would you prefer to use SQL?</summary><br><b>
-
-  * Homogeneous data, no changes anticipated
-  * ACID compliance is important
+<summary>Have you contributed to an open source project? Tell me about this experience</summary><br><b>
 </b></details>
 
+<details>
+<summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with and which one do you prefer to use?</summary><br><b>
+</b></details>
 
 ## Jenkins
 
@@ -283,7 +306,7 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>What are the advantages of Jenkins over its competitors? Can you compare it to one of the following systems?:
+<summary>What are the advantages of Jenkins over its competitors? Can you compare it to one of the following systems?
 
   * Travis
   * Bamboo
@@ -310,11 +333,11 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>What type of jobs are there? Which types have you used and why?</summary><br><b>
+<summary>What type of jobs are there? Which types have you used?</summary><br><b>
 </b></details>
 
 <details>
-<summary>How did you report build results to users? What ways are you familiar with?</summary><br><b>
+<summary>How did you report build results to users? What ways are you familiar with for reporting results?</summary><br><b>
 </b></details>
 
 <details>
@@ -329,6 +352,12 @@ Note: cross-dependency is when you have two or more changes to separate projects
 <summary>Can you describe some of Jenkins best practices?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Describe how do you add new slaves to Jenkins</summary><br><b>
+
+You can describe the UI way to add new slaves but better to explain how to do in a way that scales like a script or using dynamic source for slaves like one of the existing clouds.
+</b></details>
+
 <a name="jenkins-advanced"></a>
 #### :star: Advanced
 
@@ -338,10 +367,6 @@ Note: cross-dependency is when you have two or more changes to separate projects
 
 <details>
 <summary>There are four teams in your organization. How to prioritize the builds of each team? So the jobs of team x will always run before team y for example</summary><br><b>
-</b></details>
-
-<details>
-<summary>Do you have experience with developing a Jenkins plugin? Can you describe this experience?</summary><br><b>
 </b></details>
 
 <details>
@@ -359,6 +384,12 @@ Note: cross-dependency is when you have two or more changes to separate projects
 <summary>How would you implement an option of a starting a build from a certain stage and not from the beginning?<summary><br><b>
 </b></details>
 
+##### Jenkins Dev
+
+<details>
+<summary>Do you have experience with developing a Jenkins plugin? Can you describe this experience?</summary><br><b>
+</b></details>
+
 <details>
 <summary>Have you written Jenkins scripts? If yes, what for and how they work?</summary><br><b>
 </b></details>
@@ -369,11 +400,11 @@ Note: cross-dependency is when you have two or more changes to separate projects
 #### :baby: Beginner
 
 <details>
-<summary>What are The advantages of cloud computing? Mention at least 3 advantages</summary><br><b>
+<summary>What are the advantages of cloud computing? Mention at least 3 advantages</summary><br><b>
 </b></details>
 
 <details>
-<summary>What types of Cloud Computing there are?</summary><br><b>
+<summary>What types of Cloud Computing are there?</summary><br><b>
 
 IAAS
 PAAS
@@ -402,14 +433,15 @@ SAAS
   * Availability zone
   * Region
   * Edge location</summary><br><b>
-</b>
-<b>
-AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independant of one another. 
-Within each region,There are multiple isolatated locations known as Availability Zones. Multiple availability zones insure high availability in case one of them goes down.
+AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independent of one another. 
+Within each region,There are multiple isolated locations known as Availability Zones. Multiple availability zones insure high availability in case one of them goes down.
 
 Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
-</b>
-</details>
+</b></details>
+
+<details>
+<summary>What is IAM?</summary><br><b>
+</b></details>
 
 ##### S3
  
@@ -417,23 +449,23 @@ Edge locations are basically content delivery network which caches data and insu
 <summary>Explain what is S3 and what is it used for</summary><br>
 <b>
 S3 stands for 3 S, Simple Storage Service.
-S3 is a object storage service which is fast, scalable and durable. S3 enables customers to upload, download or store any file or object that is up to 5 TB in size. while having a maximum size of 5 GB per file (multipart upload if more than 5 GB in size).
+S3 is a object storage service which is fast, scalable and durable. S3 enables customers to upload, download or store any file or object that is up to 5 TB in size. While having a maximum size of 5 GB per file (multipart upload if more than 5 GB in size).
 </b>
 </details>
 
 <details>
 <summary>What is a bucket?</summary><br><b>
-An S3 bucket is a resource which is similar to folders in a filesystem and allows storing objects, which consist of data and its  metadata.
+An S3 bucket is a resource which is similar to folders in a file system and allows storing objects, which consist of data and its  meta data.
 </b></details>
 
 <details>
-<summary>True or False? a bucket name must be globally unique</summary><br><b>
+<summary>True or False? A bucket name must be globally unique</summary><br><b>
 True
 </b></details>
 
 <details>
 <summary>What objects in S3 consists of?
-  * Another way to ask it: explain key, value, version id and metadata in context of objects</summary><br><b>
+  * Another way to ask it: explain key, value, version id and meta data in context of objects</summary><br><b>
 </b></details>
 
 <details>
@@ -441,39 +473,25 @@ True
 </b></details>
 
 <details>
-<summary>Can you host dynamic websites on s3? what about static websites?</summary><br><b>
+<summary>Can you host dynamic websites on S3?. What about static websites?</summary><br><b>
 </b></details>
 
 <details>
 <summary>What security measures have you taken in context of S3?</summary><br><b>
 </b></details>
 
-##### CloudFront
-
 <details>
-<summary>Explain what is CloudFront and what is it used for</summary><br><b>
+<summary>What is a storage class? What storage classes are you familiar with?</summary><br><b>
 </b></details>
-
-<details>
-<summary>Explain the following
-  * Origin
-  * Edge location
-  * Distribution</summary><br><b>
-</b></details>
-
-<details>
-<summary>What delivery methods available for the user with CDN?</summary><br><b>
-</b></details>
-
-<details>
-<summary>True or False? objects are cached for the life of TTL</summary><br><b>
-</b></details>
-
 
 ##### EC2
 
 <details>
-<summary>What type of instances have you created?</summary><br><b>
+<summary>What is EC2? What is it used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What EC2 pricing models are there?</summary><br><b>
 </b></details>
 
 <details>
@@ -498,21 +516,65 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 <summary>What are Security Groups?</summary><br><b>
 </b></details>
 
-
 <details>
 <summary>How to migrate an instance to another availability zone?</summary><br><b>
 </b></details>
 
-
-<details>
-<summary>What are security groups?</summary><br><b>
-</b></details>
-
-
 <details>
 <summary>What are spot instances?</summary><br><b>
 </b></details>
-  
+
+##### CloudFront
+
+<details>
+<summary>Explain what is CloudFront and what is it used for</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the following
+  * Origin
+  * Edge location
+  * Distribution</summary><br><b>
+</b></details>
+
+<details>
+<summary>What delivery methods available for the user with CDN?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False?. Objects are cached for the life of TTL</summary><br><b>
+</b></details>
+
+##### Load Balancers
+
+<details>
+<summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
+
+  * Application LB - layer 7 traffic
+  * Network LB - ultra-high performances or static IP address
+  * Classic LB - low costs, good for test or dev environments
+</b></details>
+
+#### Databases
+
+<details>
+<summary>What is RDS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are some features or benefits of using RDS?</summary><br><b>
+
+1. Multi AZ - great for Disaster Recovery
+2. Read Replicas - for better performances
+</b></details>
+
+<details>
+<summary>What is EBS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is VPC?</summary><br><b>
+</b></details>
 
 ## Network
 
@@ -528,11 +590,19 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 </b></details>
 
 <details>
-<summary>When this MAC address is used?: ff:ff:ff:ff:ff:ff</summary><br><b>
+<summary>When is this MAC address used?: ff:ff:ff:ff:ff:ff</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is an IP address? What is a subnet?</summary><br><b>
+<summary>What is an IP address?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain subnet mask and given an example</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a private IP address? What do we need it for?</summary><br><b>
 </b></details>
 
 <details>
@@ -548,11 +618,23 @@ Physical: the electrical and physical spec the data connection (Bits are here)
 </b></details>
 
 <details>
+<summary>For each of the following determine to which OSI layer it belongs:
+
+  * Error correction
+  * Packets routing
+  * Cables and electrical signals
+  * MAC address
+  * IP address
+  * Sessions between applications
+  * 3 way handshake</summary><br><b>
+</b></details>
+
+<details>
 <summary>What delivery schemes are you familiar with?</summary><br><b>
 
-Unitcast: One to one communication where there is one sender and one reciever.
+Unitcast: One to one communication where there is one sender and one receiver.
 
-Broadcast: Sending a message to everone in the network. The address ff:ff:ff:ff:ff:ff is used for broadcasting.
+Broadcast: Sending a message to everyone in the network. The address ff:ff:ff:ff:ff:ff is used for broadcasting.
            Two common protocols which use broadcast are ARP and DHCP.
 
 Multicast: Sending a message to a group of subscribers. It can be one-to-many or many-to-many.
@@ -569,9 +651,9 @@ CSMA/CD algorithm:
 1. Before sending a frame, it checks whether another host already transmitting a frame.
 2. If no one transmitting, it starts transmitting the frame.
 3. If two hosts transmitted at the same time, we have a collision.
-4. Both hosts stop sending the frame and they send to everyone a 'jam signal' notifying everyone that a collision occured
+4. Both hosts stop sending the frame and they send to everyone a 'jam signal' notifying everyone that a collision occurred
 5. They are waiting for a random time before sending again
-6. Once each host waited for a raondom time, they try to send the frame again and so the
+6. Once each host waited for a random time, they try to send the frame again and so the
 </b></details>
 
 <details>
@@ -587,7 +669,17 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
+<summary>What is a proxy? How it works? What do we need it for?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is the difference between TCP and UDP?</summary><br><b>
+	
+TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for streaming services.
+</b></details>
+
+<details>
+<summary>Explain "default gateway"</summary><br><b>
 </b></details>
 
 <details>
@@ -624,6 +716,10 @@ CSMA/CD algorithm:
 
 <details>
 <summary>What is MTU?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False?. Ping is using UDP because it doesn't care about reliable connection</summary><br><b>
 </b></details>
 
 <details>
@@ -678,7 +774,7 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
-<summary>Using Hammind code, what would be the code word for the following data word 100111010001101?</summary><br><b>
+<summary>Using Hamming code, what would be the code word for the following data word 100111010001101?</summary><br><b>
 
 00110011110100011101
 </b></details>
@@ -759,17 +855,17 @@ Using the `chmod` command.
 </b></details>
 
 <details>
-<summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
+<summary>You try to delete a file but it fails. Name at least three different reason as to why it could happen</summary><br><b>
+</b></details>
 
-  * adduser user_name --shell=/bin/false --no-create-home
-
+<details>
+<summary>What is systemd?</summary><br><b>
 </b></details>
 
 <details>
 <summary>On a system which uses systemd, how would display the logs?</summary>
 
-  * journalctl
-
+<code>journalctl</code>
 </b></details>
 
 ##### Debugging
@@ -780,13 +876,13 @@ Using the `chmod` command.
 <code>dstat -t</code> is great for identifying network and disk issues.
 <code>netstat -tnlaup</code> can be used to see which processes are running on which ports.
 <code>lsof -i -P</code> can be used for the same purpose as netstat.
-<code>ngrep -d any metafilter</code> for matching regex against paylods of packets.
+<code>ngrep -d any metafilter</code> for matching regex against payloads of packets.
 <code>tcpdump</code> for capturing packets
 <code>wireshark</code> same concept as tcpdump but with GUI (optional).
 </b></details>
 
 <details>
-<summary>What are you using for troubleshooting and debugging <b>disk & filesystem</b> issues?</summary><br><b>
+<summary>What are you using for troubleshooting and debugging <b>disk & file system</b> issues?</summary><br><b>
 
 <code>dstat -t</code> is great for identifying network and disk issues.
 <code>opensnoop</code> can be used to see which files are being opened on the system (in real time).
@@ -812,6 +908,10 @@ Using the `chmod` command.
 1. Check with <code>top</code> if anything consumes your CPU or RAM.
 2. Run <code>dstat -t</code> to check if it's related to disk or network.
 3. Check I/O stats with <code>iostat</code>
+</b></details>
+
+<details>
+<summary>How to debug binaries?</summary><br><b>
 </b></details>
 
 <details>
@@ -868,13 +968,16 @@ I consider this as a good blog post to read more about it: https://shapeshed.com
 </b></details>
 
 <details>
-<summary>What is the different between a soft link and hard link?</summary><br><b>
+<summary>What is the difference between a soft link and hard link?</summary><br><b>
 
-hard link is the same file, using the same inode.
-soft link is a shortcut to another file, using a different inode.
+Hard link is the same file, using the same inode.
+Soft link is a shortcut to another file, using a different inode.
 
-soft links can be created between different file systems while
-hard link can be created only within the same file system.
+Soft links can be created between different file systems while hard link can be created only within the same file system.
+</b></details>
+
+<details>
+<summary>What happens when you delete the original file in case of soft link and hard link?</summary><br><b>
 </b></details>
 
 <details>
@@ -882,7 +985,7 @@ hard link can be created only within the same file system.
 </b></details>
 
 <details>
-<summary>You are trying to create a new file but you get "Filesystem is full". You check with df for free space and you see you used only 20% of the space. What could be the problem?</summary><br><b>
+<summary>You are trying to create a new file but you get "File system is full". You check with df for free space and you see you used only 20% of the space. What could be the problem?</summary><br><b>
 </b></details>
 
 <details>
@@ -895,6 +998,10 @@ hard link can be created only within the same file system.
   * PV
   * VG
   * LV</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is NFS? What is it used for?</summary><br><b>
 </b></details>
 
 <details>
@@ -920,10 +1027,6 @@ hard link can be created only within the same file system.
   * /bin
   * /proc
   * /usr/local
-</b></details>
-
-<details>
-<summary>What can you find in /etc/services</summary><br><b>
 </b></details>
 
 <details>
@@ -1042,7 +1145,7 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 <details>
 <summary>What's an inode?</summary><br><b>
 
-For each file (and directory) in Linux there is an inode, a data structure which stores metadata
+For each file (and directory) in Linux there is an inode, a data structure which stores meta data
 related to the file like its size, owner, permissions, etc.
 </b></details>
 
@@ -1052,6 +1155,10 @@ related to the file like its size, owner, permissions, etc.
 
 <details>
 <summary>What is NTP? What is it used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Kernel OOM</summary><br><b>
 </b></details>
 
 <details>
@@ -1081,6 +1188,19 @@ related to the file like its size, owner, permissions, etc.
 </b></details>
 
 <details>
+<summary>What is a virtual IP? In what situation would you use it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Which port is used in each of the following protocols?:
+
+  * SSH
+  * HTTP
+  * DNS
+  * HTTPS</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is the routing table? How do you view it?</summary><br><b>
 </b></details>
 
@@ -1089,6 +1209,10 @@ related to the file like its size, owner, permissions, etc.
 </b></details>
 
 ##### DNS
+
+<details>
+<summary>What is DNS? Why do we need it?</summary><br><b>
+</b></details>
 
 <details>
 <summary>What the file <code>/etc/resolv.conf</code> is used for? What does it include?</summary><br><b>
@@ -1123,14 +1247,73 @@ While an A record points a domain name to an IP address, a PTR record does the o
 </b></details>
 
 <details>
-<summary>How do you list the content of a package?</summary><br><b>
+<summary>How do you list the content of a package without actually installing it?</summary><br><b>
+</b></details>
+
+##### Applications and Services
+
+<details>
+<summary>What is a load balancer?</summary><br><b> 
+</b></details>
+
+<details>
+<summary>What load balancer algorithms are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a proxy?</summary><br><b> 
+</b></details>
+
+<details>
+<summary>What is a reverse proxy?</summary><br><b> 
+</b></details>
+
+<details>
+<summary>What can you find in /etc/services</summary><br><b>
+</b></details>
+
+<details>
+<summary>You run <code>ssh 127.0.0.1</code> but it fails with "connection refused". What could be the problem?</summary><br><b>
+
+1. SSH server is not installed
+2. SSH server is not running
+</b></details>
+
+<details>
+<summary>How to print the shared libraries required by a certain program? What is it useful for?</summary><br><b>
+</b></details>
+
+##### Users
+
+<details>
+<summary>How do you create users? Where user information is stored?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Do you know how to create a new user without using adduser/useradd command?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
+
+  * adduser user_name --shell=/bin/false --no-create-home
+</b></details>
+
+<details>
+<summary>What can you do if you lost/forogt the root password?</summary><br><b>
+
+Re-install the OS IS NOT the right answer :)
+</b></details>
+
+<details>
+<summary>What is sudo? How do you set it up?</summary><br><b>
 </b></details>
 
 <a name="linux-advanced"></a>
 #### :star: Advanced
 
 <details>
-<summary>What happens when you execute <code>ls</code>? provide a detailed answer</summary><br><b>
+<summary>What happens when you execute <code>ls</code>?. Provide a detailed answer</summary><br><b>
 </b></details>
 
 <details>
@@ -1207,6 +1390,10 @@ There are a couple of ways to do that:
 This is a good article about the topic: https://ops.tips/blog/how-linux-creates-sockets
 </b></details>
 
+<details>
+<summary>You executed a script and while still running, it got accidentally removed. Is it possible to restore the script while it's still running?</summary><br><b>
+</b></details>
+
 
 ## Ansible
 
@@ -1233,7 +1420,7 @@ Role – Ansible roles allows you to group resources based on certain functional
 </b></details>
 
 <details>
-<summary>Which Ansible best practices are you familiar with? name at least three</summary><br><b>
+<summary>Which Ansible best practices are you familiar with?. Name at least three</summary><br><b>
 </b></details>
 
 <details>
@@ -1328,7 +1515,7 @@ When given a written code, always inspect it thoroughly. If your answer is “th
   I'm <HOSTNAME> and my operating system is <OS>
   ```
 
-  replace <HOSTNAME> and  <OS> with the actual data for the specific host you are running on
+  Replace <HOSTNAME> and  <OS> with the actual data for the specific host you are running on
 
 The playbook to deploy the system_info file
 
@@ -1444,7 +1631,7 @@ CloudFormation if at all.
 The benefits of Terraform over the other tools:
 
   * It follows the immutable infrastructure approach which has benefits like avoiding a configuration drift over time
-  * Ansible and Puppet are more procedural (you mention what to execute in each step) and Terraform is declartive since you describe the overall desired state and not per resource or task. You can give the example of going from 1 to 2 servers in each tool. In terrform you specify 2, in Ansible and puppet you have to only provision 1 additional server so you need to explicitly make sure you provision only another one server.
+  * Ansible and Puppet are more procedural (you mention what to execute in each step) and Terraform is declarative since you describe the overall desired state and not per resource or task. You can give the example of going from 1 to 2 servers in each tool. In Terraform you specify 2, in Ansible and puppet you have to only provision 1 additional server so you need to explicitly make sure you provision only another one server.
 </b></details>
 
 <details>
@@ -1510,10 +1697,14 @@ It's a resource which was successfully created but failed during provisioning. T
 <details>
 <summary>What types of variables are supported in Terraform?</summary><br><b>
 
-Strimg
+String
 Integer
 Map
 List
+</b></details>
+
+<details>
+<summary>What is a data source? In what scenarios for example would need to use it?</summary><br><b>
 </b></details>
 
 <details>
@@ -1528,15 +1719,30 @@ List
 <summary>What is the Terraform Registry?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Explain <code>remote-exec</code> and <code>local-exec</code></summary><br><b>
+</b></details>
+
+
 <a name="terraform-advanced"></a>
 #### :star: Advanced
 
 <details>
 <summary>Explain "Remote State". When would you use it and how?</summary><br><b>
+  Terraform generates a `terraform.tfstate` json file that describes components/service provisioned on the specified provider. Remote  
+  State stores this file in a remote storage media to enable collaboration amongst team.
 </b></details>
 
 <details>
 <summary>Explain "State Locking"</summary><br><b>
+  State locking is a mechanism that blocks an operations against a specific state file from multiple callers so as to avoid conflicting   operations from different team members. Once the first caller's operation's lock is released the other team member may go ahead to   
+  carryout his own operation. Nevertheless Terraform will first check the state file to see if the desired resource already exist and 
+  if not it goes ahead to create it.
+</b></details>
+
+<details>
+<summary>What is the "Random" provider? What is it used for</summary><br><b>
+ The random provider aids in generating numeric or alphabetic characters to use as a prefix or suffix for a desired named identifier.
 </b></details>
 
 ## Docker
@@ -1561,7 +1767,7 @@ run multiple machines each with its own OS.
 <summary>In which scenarios would you use containers and in which you would prefer to use VMs?</summary><br><b>
 
 You should choose VMs when:
-  * you need run an application which requires all the resources and functionalilies of an OS
+  * you need run an application which requires all the resources and functionalities of an OS
   * you need full isolation and security
 
 You should choose containers when:
@@ -1591,7 +1797,7 @@ Docker daemon redirects output from container to Docker CLI which redirects it t
 </b></details>
 
 <details>
-<summary>What `docker commit` does? when will you use it?</summary><br><b>
+<summary>What `docker commit` does?. When will you use it?</summary><br><b>
 </b></details>
 
 <details>
@@ -1635,7 +1841,7 @@ Docker daemon redirects output from container to Docker CLI which redirects it t
 </b></details>
 
 <details>
-<summary>What are the differences between Docker compose, Docker swarm and Kuberenets?</summary><br><b>
+<summary>What are the differences between Docker compose, Docker swarm and Kubernetes?</summary><br><b>
 </b></details>
 
 <details>
@@ -1687,14 +1893,28 @@ Swarm management which means you can create new swarms in Docker Cloud.
 
 <details>
 <summary>Why Docker isn't enough? Why do we need Kubernetes?</summary><br><b>
+
+Kubernetes is especially good for scenarios when you no longer running small number of containers. When you have to scale from 3 containers for eaxmple to hundreds or thousands of containers.
 </b></details>
 
 <details>
-<summary>Describe the architecture of Kuberenets</summary><br><b>
+<summary>Describe the architecture of Kubernetes</summary><br><b>
 </b></details>
 
 <details>
-<summary>How do you monitor your Kuberenets?</summary><br><b>
+<summary>What is a worker?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is a Pod</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? A pod can manage multiple containers</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you monitor your Kubernetes?</summary><br><b>
 </b></details>
 
 <details>
@@ -1703,16 +1923,6 @@ Swarm management which means you can create new swarms in Docker Cloud.
 
 <details>
 <summary>What is kubconfig? What do you use it for?</summary><br><b>
-</b></details>
-
-##### Users
-
-<details>
-<summary>How do you create users? Where user information is stored?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Do you know how to create a new user without using adduser/useradd command?</summary><br><b>
 </b></details>
 
 ## Coding
@@ -1740,10 +1950,27 @@ Swarm management which means you can create new swarms in Docker Cloud.
 <summary>Explain big O notation</summary><br><b>
 </b></details>
 
+##### Code Review
+
+<details>
+<summary>What are your code-review best practices?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Do you agree/disagree with each of the following statements and why?:
+
+  * The commit message is not important. When reviewing a change/patch one should focus on the actual change</summary><br><b>
+  * You shouldn't test your code before submitting it. This is what CI/CD exists for.
+</b></details>
+
 ##### Strings
 
 <details>
 <summary>In any language you want, write a function to determine if a given string is a palindrome</summary><br><b>
+</b></details>
+
+<details>
+<summary>In any language you want, write a function to determine if two strings are Anagrams </summary><br><b>
 </b></details>
 
 <a name="coding-advanced"></a>
@@ -1766,7 +1993,7 @@ Swarm management which means you can create new swarms in Docker Cloud.
 2. The language is interpreted, being the CPython (Written in C) the most used/maintained implementation.
 3. It is strongly typed. The typing discipline is duck typing and gradual.
 4. Python focuses on readability and makes use of whitespaces/identation instead of brackets { }
-5. The python packate manager is called PIP "pip installs packages", having more than 200.000 available packages.
+5. The python package manager is called PIP "pip installs packages", having more than 200.000 available packages.
 6. Python comes with pip installed and a big standard library that offers the programmer many precooked solutions.
 7. In python **Everything** is an object.
 
@@ -1891,7 +2118,7 @@ Generally, every compiling process have a two steps.
     - Code Generation.
     
     Analysis can be broken into:
-        1. Lexycal analysis   (Tokenizes source code)
+        1. Lexical analysis   (Tokenizes source code)
         2. Syntactic analysis (Check whether the tokens are legal or not, tldr, if syntax is correct)
            
                for i in 'foo'
@@ -1965,7 +2192,15 @@ for char in 'pizza':
 >> 'azzip'   
 
 ```
+</b></details>
 
+<details>
+<summary>How to extract the unique characters from a string? for example given the input "itssssssameeeemarioooooo" the output will be "mrtisaoe"</summary><br><b>
+
+```
+x = "itssssssameeeemarioooooo"
+y = ''.join(set(x))
+```
 </b></details>
 
 <details>
@@ -1991,11 +2226,29 @@ def return_sum():
 </b></details>
 
 <details>
+<summary>How to merge two dictionaries?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you swap values between two variables?</summary><br><b>
+
+x, y = y, x
+</b></details>
+
+<details>
+<summary>How to check if all the elements in a given lists are unique? so [1, 2, 3] is unique but [1, 1, 2, 3] is not unique but we 1 twice</summary><br><b>
+</b></details>
+
+<details>
 <summary>What _ is used for in Python?</summary><br><b>
 
 1. Translation lookup in i18n
 2. Hold the result of the last executed expression or statement in the interactive interpreter.
 3. As a general purpose "throwaway" variable name. For example: x, y, _ = get_data() (x and y are used but since we don't care about third variable, we "threw it away").
+</b></details>
+
+<details>
+<summary>How to check how much time it took to execute a certain script or block of code?</summary><br><b>
 </b></details>
 
 ##### Algorithms Implementation
@@ -2028,11 +2281,11 @@ Using the re module
 </b></details>
 
 <details>
-<summay>How to substitute the string "green" with "blue"?</summary><br><b>
+<summary>How to substitute the string "green" with "blue"?</summary><br><b>
 </b></details>
 
 <details>
-<summay>How to find all the IP addresses in a variable? How to find them in a file?</summary><br><b>
+<summary>How to find all the IP addresses in a variable? How to find them in a file?</summary><br><b>
 </b></details>
 
 <details>
@@ -2128,6 +2381,10 @@ def reverse_string(string):
 </b></details>
 
 <details>
+<summary>How to combine list of strings into one string with spaces between the strings</summary><br><b>
+</b></details>
+
+<details>
 <summary>What empty <code>return</code> returns?</summary><br><b>
 </b></details>
 
@@ -2145,8 +2402,8 @@ def reverse_string(string):
 <details>
 <summary>What is the complexity for the best, worst and average cases of each of the following algorithms?:
 
-  * Quicksort
-  * Mergesort
+  * Quick sort
+  * Merge sort
   * Bucket Sort
   * Radix Sort
 </b></details>
@@ -2192,6 +2449,34 @@ def reverse_string(string):
 
 <details>
 <summary>You have created a web page where a user can upload a document. But the function which reads the uploaded files, runs for a long time, based on the document size and user has to wait for the read operation to complete before he/she can continue using the web site. How can you overcome this?</summary><br><b>
+</b></details>
+
+## Monitoring
+
+<a name="monitoring-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>Explain monitoring. What is it? What its goal?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is wrong with the old approach of watching for a specific value and trigger an email/phone alert while value is exceeded?</summary><br><b>
+
+This approach require from a human to always check why the value exceeded and how to handle it while today, it is more effective to notify people only when they need to take an actual action.
+If the issue doesn't require any human intervention, then the problem can be fixed by some processes running in the relevant environment.
+</b></details>
+
+<details>
+<summary>What types of monitoring outputs are you familiar with and/or used in the past?</summary><br><b>
+
+Alerts
+Tickets
+Logging
+</b></details>
+
+<details>
+<summary>What is the different between infrastructure monitoring and application monitoring? (methods, tools, ...)</summary><br><b>
 </b></details>
 
 ## Prometheus
@@ -2240,7 +2525,7 @@ Alert manager is responsible for alerts ;)
 </b></details>
 
 <details>
-<summary>Which Prometheus best practices are you familiar with? name at least three</summary><br><b>
+<summary>Which Prometheus best practices are you familiar with?. Name at least three</summary><br><b>
 </b></details>
 
 <details>
@@ -2273,7 +2558,7 @@ Alert manager is responsible for alerts ;)
 Shortly, git pull = git fetch + git merge
 
 When you run git pull, it gets all the changes from the remote or central
-repository and attaches it to your corresponding branch in your local reposistory.
+repository and attaches it to your corresponding branch in your local repository.
 
 git fetch gets all the changes from the remote repository, stores the changes in
 a separate branch in your local repository
@@ -2282,7 +2567,7 @@ a separate branch in your local repository
 <details>
 <summary>Explain the following: <code>git directory</code>, <code>working directory</code> and <code>staging area</code></summary><br><b>
 
-The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
+The Git directory is where Git stores the meta data and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
 
 The working directory is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
 
@@ -2352,6 +2637,16 @@ git checkout HEAD~1 -- /path/of/the/file
 ```
 </b></details>
 
+<details>
+<summary>What is the <code>.git</code> directory? What can you find there?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are some Git anti-patterns? Things that you shouldn't do</summary><br><b>
+
+  * Not waiting to long between commits
+  * Not removing the .git directory :)
+</b></details>
 
 <a name="git-advanced"></a>
 #### :star: Advanced
@@ -2391,7 +2686,7 @@ Go also has good community.
 
 The result is the same, a variable with the value 2.
 
-with <code>var x int = 2</code> we are setting the variable type to integer while with <code>x := 2</code> we are letting Go figure out by itself the type.
+With <code>var x int = 2</code> we are setting the variable type to integer while with <code>x := 2</code> we are letting Go figure out by itself the type.
 </b></details>
 
 <details>
@@ -2539,7 +2834,7 @@ as key-value pair, document-oriented, etc.
 </b></details>
 
 <details>
-<summary>What is better? embedded documents or referenced?</summary><br><b>
+<summary>What is better?. Embedded documents or referenced?</summary><br><b>
 </b></details>
 
 ##### Queries
@@ -2600,16 +2895,29 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>What do you tend to include in every script you write?</summary><br><b>
+
+Few example:
+
+  * Comments on how to run it and/or what it does
+  * Adding "set -e" since I want the script to exit if a certain command failed 
+
+You can have an entirely different answer. It's based only on your experience.
 </b></details>
 
 <details>
 <summary>True or False?: when a certain command/line fails, the script, by default, will exit and will no keep running</summary><br><b>
 
-Depends on the language and settings used but in Bash for example, by default the script will keep running.
+Depends on the language and settings used.
+When a script written in Bash fails to run a certain command it will keep running and will execute all other commands mentioned after the command which failed.
+Most of the time we would actually want the opposite to happen. In order to make Bash exist when a specific command fails, use 'set -e' in your script.
 </b></details>
 
 <details>
 <summary>Today we have tools and technologies like Ansible. Why would someone still use shell scripting?</summary><br><b>
+
+  * Speed
+  * The module we need doesn't exist
+  * We are delivering the scripts to customers who don't have access to the public network and don't necessarily have Ansible installed on their systems.
 </b></details>
 
 <details>
@@ -2624,10 +2932,19 @@ Depends on the language and settings used but in Bash for example, by default th
 
 <details>
 <summary>How do you debug shell scripts?</summary><br><b>
+
+Answer depends on the language you are using for writing your scripts. If Bash is used for example then:
+
+  * Adding -x to the script I'm running in Bash
+  * Old good way of adding echo statements
+
+If Python, then using pdb is very useful.
 </b></details>
 
 <details>
 <summary>How do you get input from the user in shell scripts?</summary><br><b>
+
+Using the keyword <code>read</code> so for example <code>read x</code> will wait for user input and will store it in the variable x.
 </b></details>
 
 <details>
@@ -2654,6 +2971,10 @@ Depends on the language and settings used but in Bash for example, by default th
 <summary>What is the difference between single and double quotes?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Write a script which will list the differences between two directories</summary><br><b>
+</b></details>
+
 <a name="shell-scripting-advanced"></a>
 #### Advanced
 
@@ -2676,6 +2997,17 @@ A short way of using if/else. An example:
 
 [[ $a = 1 ]] && b="yes, equal" || b="nope"
 </b></details>
+
+<details>
+<summary>What does the following code do and when would you use it?
+	
+<code>diff <(ls /tmp) <(ls /var/tmp)</code>
+
+</summary><br>
+It is called 'process substitution'. It provides a way to pass the output of a command to another command when using a pipe <code>|</code> is not possible. It can be used when a command does not support <code>STDIN</code> or you need the output of multiple commands. 
+https://superuser.com/a/1060002/167769
+</details>
+
 
 ## SQL
 
@@ -2726,7 +3058,7 @@ only see the 15 changes that had completed - you wouldn't see the database mid-u
 
 **Durability** - Once a change is committed, it will remain committed regardless of what happens
 (power failure, system crash, etc.). This means that all completed transactions 
-must be recorded in non-voliatile memory. 
+must be recorded in non-volatile memory. 
 
 Note that SQL is by nature ACID compliant. Certain NoSQL DB's can be ACID compliant depending on 
 how they operate, but as a general rule of thumb, NoSQL DB's are not considered ACID compliant
@@ -2864,6 +3196,10 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 #### :baby: Beginner
 
 <details>
+<summary>Explain Azure's architecture</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain availability sets and availability zones</summary><br><b>
 </b></details>
 
@@ -2879,6 +3215,10 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 
 <a name="gcp-beginner"></a>
 #### :baby: Beginner
+
+<details>
+<summary>Explain GCP's architecture</summary><br><b>
+</b></details>
 
 <details>
 <summary>What are the main components and services of GCP?</summary><br><b>
@@ -3000,11 +3340,142 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
+<summary>Explain the following:
+
+  * Vulnerability
+  * Exploits
+  * Risk
+  * Threat</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is XSS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an SQL injection? How to manage it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Certification Authority?</summary><br><b>
+</b></details>
+
+<details>
 <summary>How do you identify and manage vulnerabilities?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is Privilege Restriction?</summary><br><b>
+<summary>Explain "Privilege Restriction"</summary><br><b>
+</b></details>
+
+<details>
+<summary>How HTTPS is different from HTTP?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What types of firewalls are there?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is DDoS attack? How do you deal with it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between asynchronous and synchronous encryption?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Man-in-the-middle attack</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain CVE and CVSS</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is ARP Poisoning?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe how do you secure public repositories</summary>
+</b></details>
+
+<details>
+<summary>How do cookies work?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Do you think open source project is more secured when compared to a proprietary software?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain OAuth</summary><br><b>
+<a name="puppet-advanced"></a>
+</b></details>
+
+<details>
+<summary>Explain "Format String Vulnerability"</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "Buffer Overflow"</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain DMZ</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain TLS</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is CSRF? How to handle CSRF?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain HTTP Header Injection vulnerability</summary><br><b>
+</b></details>
+
+<details>
+<summary>What security sources are you using to keep updated on latest news?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What TCP and UDP vulnerabilities are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Do using VLANs contribute to network security?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are some examples of security architecture requirements?</summary><br><b>
+</b></details>
+
+##### Containers
+
+<details>
+<summary>What security measures are you taking when dealing with containers?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is Docker Bench</summary><br><b>
+</b></details>
+
+<a name="security-advanced"></a>
+#### :baby: Advanced
+
+<details>
+<summary>Explain MAC flooding attack</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is "Diffie-Hellman key exchange" and how does it work?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "Forward Secrecy"</summary><br><b>
 </b></details>
 
 ## Puppet
@@ -3051,6 +3522,65 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 <summary>Explain what is Hiera</summary><br><b>
 </b></details>
 
+## General
+
+Although the following questions are not DevOps related, they are still quite common so it's better to prepare for them as well.
+
+<details>
+<summary>Tell us little bit about yourself</summary><br><b>
+</b></details>
+
+<details>
+<summary>Tell me about your last big project/task you worked on</summary><br><b>
+</b></details>
+
+<details>
+<summary>Why do you want to work here?</summary><br><b>
+</b></details>
+
+## Questions you CAN ask
+
+A list of questions you as a candidate can ask the interviewer during or after the interview.
+These are only a suggestion. Use them carefully :)
+
+<details>
+<summary>What do you like about working here?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How does the company promote personal growth?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the current level of technical debt you are dealing with?</summary><br><b>
+
+Be careful when asking this question - all companies, regardless of size, have some level of tech debt. 
+Phrase the question in the light that all companies have the deal with this, but you want to see the current
+pain points they are dealing with <br>
+
+This is a great way to figure how managers deal with unplanned work, and how good they are at 
+setting expectations with projects.
+</b></details>
+
+<details>
+<summary>What was your favorite project you've worked on?</summary><br><b>
+
+This can give you insights in some of the cool projects a company is working on, and if 
+you would enjoy working on projects like these. This is also a good way to see if
+the managers are allowing employees to learn and grow with projects outside of the
+normal work you'd do.
+</b></details>
+
+<details>
+<summary>If you could change one thing about your day to day, what would it be?</summary><br><b>
+
+Similar to the tech debt question, this helps you identify any pain points with the company.
+Additionally, it can be a great way to show how you'd be an asset to the team.<br>
+
+For Example, if they mention they have problem X, and you've solved that in the past,
+you can show how you'd be able to mitigate that problem.
+</b></details>
+
 
 ## Scenarios
 
@@ -3063,8 +3593,17 @@ Scenarios are questions which don't have verbal answer and require you one of th
 These questions usually given as an home task to the candidate and they can combine several topics together.
 Below you can find several scenario questions:
 
+* [Writing a Dockerfile and running a container](scenarios/write_dockerfile_run_container.md)
 * [Elasticsearch & Kibana on AWS](scenarios/elk_kibana_aws.md)
 * [Ansible, Minikube and Docker](scenarios/ansible_minikube_docker.md)
 * [Cloud Slack bot](scenarios/cloud_slack_bot.md)
 * [Writing Jenkins Scripts](scenarios/jenkins_scripts.md)
 * [Writing Jenkins Pipelines](scenarios/jenkins_pipelines.md)
+
+## Credits
+
+Logos credits can be found [here](credits.md)
+
+## License
+
+[![License: CC BY-NC-ND 3.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%203.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/3.0/)
