@@ -1609,10 +1609,13 @@ The benefits of Terraform over the other tools:
 <details>
 <summary>Explain each of the following:
 
-  * Provider: is any cloud based technology - github, aws, postgresql etc - which one can make an API call to with its unique terraform 
-  	      provider binary to provision available services and components.
-  * Resource: resources are the services and components you provision on these platforms.
-  * Provisioner: Provisioner in terraform's lingo specifically refers to configuration tools like ansible or salt-stack which are used 
+  * Provider: 
+  * Resource: 
+  * Provisioner: 
+<b>- Provider is any cloud based technology - github, aws, postgresql etc - which one can make an API call to with its unique terraform 
+  	      provider binary to provision available services and components.  
+- Resources are the services and components you provision on these platforms.
+- Provisioner in terraform's lingo specifically refers to configuration tools like ansible or salt-stack which are used 
   		 in combination with terraform to orchestrate a system e.g vm's 
 </b></details>
 
@@ -1625,12 +1628,15 @@ It keeps track of the IDs of created resources so that Terraform knows what it i
 <details>
 <summary>Explain what the following commands do:
 
-  * <code>terraform init</code> initialises and downloads the provider's binary as described in the .tf files
-  * <code>terraform plan</code>	is a dry-run listing the services and components that will be provisioned on specified provider's 
-  				platform.
-  * <code>terraform validate</code> parses through the terraform code to ensure that they are both syntactically correct and runtime 
-  				    error free.
-  * <code>terraform apply</code> this command provision's the described services on the providers platform.
+  * <code>terraform init</code> 
+  * <code>terraform plan</code>	
+  * <code>terraform validate</code> 
+  * <code>terraform apply</code> 
+  <details> - terraform init initialises and downloads the provider's binary as described in the .tf files
+ - terraform plan is a dry-run listing the services and components that will be provisioned on specified provider's platform.
+- terraform validate parses through the terraform code to ensure that they are both syntactically correct and runtime error free.
+- terraform apply this command provision's the described services on the providers platform.
+</details >
 </summary><br><b>
 
 <code>terraform init</code> scans your code to figure which providers are you using and download them.
