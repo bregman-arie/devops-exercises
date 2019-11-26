@@ -785,9 +785,15 @@ TCP establishes a connection between the client and the server to guarantee the 
 You can use the commands <code>cron</code> and <code>at</code>.
 With cron, tasks are scheduled using the following format:
 
+<code>*/30 * * * * bash myscript.sh</code> Executes the script every 30 minutes.
+
 <minute> <hour> <day of month> <month> <day of week> <command to execute>
 
 The tasks are stored in a cron file.
+
+
+Alternatively if you are using a distro with systemd it's recommended to use systemd timers.
+
 </b></details>
 
 <details>
@@ -813,9 +819,11 @@ Using the `chmod` command.
   * 644
   * 750</summary><br><b>
 
-777 - means you are lazy
-644 - owner has read+write permissions and everyone else can only read
-750 - owner can do anything, group can read and execute and others can do nothing
+<pre>
+777 - You give the owner, group and other: Execute (1), Write (2) and Read (4); 4+2+1 = 7.
+644 - Owner has Read (4), Write (2), 4+2 = 6; Group and Other have Read (4).
+750 - Owner has x+r+w, Group has Read (4) and Execute (1); 4+1 = 5. Other have no permissions.
+</pre>
 </b></details>
 
 <details>
@@ -827,8 +835,23 @@ Using the `chmod` command.
 </b></details>
 
 <details>
-<summary>What is systemd?</summary><br><b>
-</b></details>
+<summary>What is systemd?</summary><br>
+<b>
+Systemd is a daemon (System 'd', d stands from daemon).
+
+A daemon is a program that runs in the background without direct control of the user, although the user can at any time
+talk to the daemon.
+
+systemd has many features such as user processes control/tracking, snapshot support, inhibitor locks..
+
+
+If we visualize the unix/linux system in layers, systemd would fall directly after the linux kernel.
+
+Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
+
+
+</b>
+</details>
 
 <details>
 <summary>On a system which uses systemd, how would display the logs?</summary>
