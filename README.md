@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **516** questions
+:bar_chart: &nbsp;There are currently **522** questions
 
 ***
 <p align="center"><b> 🎉 Questions are now available at <a href="http://devopsbit.com/devops-interview-questions">devopsbit.com</a> 🎉 </b> </p>
@@ -521,6 +521,33 @@ Stop the instance, the type of the instance to match the desired RAM and start t
   * Application LB - layer 7 traffic
   * Network LB - ultra-high performances or static IP address
   * Classic LB - low costs, good for test or dev environments
+</b></details>
+
+##### Security 
+
+<summary>What is the shared responsibility model? In other words, what AWS is responsible for and what the user is responsible for in regards to Security?</summary><br><b>
+</b></details>
+
+<summary>What is the AWS compliance program?</summary><br><b>
+</b></details>
+
+<summary>Explain what each of the following services is used for
+
+  * AWS Inspector
+  * AWS Artifact
+  * AWS WAF
+  * AWS Shield</summary><br><b>
+</b></details>
+
+<summary>What AWS VPN is usef for?</summary><br><b>
+</b></details>
+
+<summary>What is the difference between Site-to-Site VPN and Client VPN?</summary><br><b>
+</b></details>
+
+<summary>True or False? AWS Inspector can perform both network and host assessments</summary><br><b>
+
+True
 </b></details>
 
 #### Databases
