@@ -63,6 +63,14 @@
 
 <details>
 <summary>What is DevOps? What DevOps helps us to achieve?</summary><br><b>
+DevOps is more than just a job. It’s a mindset, a culture and a strategy whereby the Development and Operations teams work together to write software in small burst and then integrate, test, monitor and deploy code in short time periods.
+
+DevOps integrates developers and operations teams to improve collaboration and productivity by automating infrastructure, automating workflows and continuously measuring application performance.
+
+DevOps Engineers are the middle people that collaborate with the Development and Operations teams to build, test and deploy software in short, fast bursts.
+
+DevOps is a strategy and mindset, and this role bridges a gap in traditional development, whereby Developers create software and Operations runs software exclusive from one another. The traditional strategy is also built around infrequent, large deployments of software, that lends itself to long phases of fixing unforeseen issues and software failures.
+</summary><br><b>
 </b></details>
 
 <details>
@@ -79,14 +87,25 @@ Each piece of code (change/patch) is verified, to make the change is safe to mer
 
 <details>
 <summary>What is Continuous Deployment?</summary><br><b>
+Continuous deployment is the next step of continuous delivery. Every change that passes the automated tests is deployed to production automatically.
 </b></details>
 
 <details>
 <summary>What is Continuous Delivery?</summary><br><b>
+Continuous delivery is a series of practices designed to ensure that code can be rapidly and safely deployed to production by delivering every change to a production-like environment and ensuring business applications and services function as expected through rigorous automated testing. 
 </b></details>
 
 <details>
 <summary>What do you consider as best practices for CI/CD?</summary><br><b>
+• Implement tracking and version control tools
+• Commit daily, reduce branching
+• Build only once
+• Write an extensive test suite
+• Release often
+• Always run smoke tests after a deploy.
+• Provide an easy way to rollback.
+• Keep Your Pipelines Fast
+Take a ‘security first approach’
 </b></details>
 
 <details>
@@ -145,10 +164,35 @@ which follows the immutable infrastructure paradigm.
 
 <details>
 <summary>Explain stateless vs. stateful</summary><br><b>
+A stateful server keeps state between connections. A stateless server does not.
+
+So, when you send a request to a stateful server, it may create some kind of connection object that tracks what information you request. When you send another request, that request operates on the state from the previous request. So you can send a request to "open" something. And then you can send a request to "close" it later. In-between the two requests, that thing is "open" on the server.
+
+When you send a request to a stateless server, it does not create any objects that track information regarding your requests. If you "open" something on the server, the server retains no information at all that you have something open. A "close" operation would make no sense, since there would be nothing to close.
+
+HTTP and NFS are stateless protocols. Each request stands on its own.
+
+Sometimes cookies are used to add some state to a stateless protocol. In HTTP (web pages), the server sends you a cookie and then the browser holds the state, only to send it back to the server on a subsequent request.
+
+SMB is a stateful protocol. A client can open a file on the server, and the server may deny other clients access to that file until the client closes it.
 </b></details>
 
 <details>
 <summary>What is HTTP and how it works?</summary><br><b>
+The Hypertext Transfer Protocol(HTTP) is an application protocol for distributed, collaborative, hypermedia information systems that allows users to communicate data on the World Wide Web.
+
+As a request-response protocol, HTTP gives users a way to interact with web resources such as HTML files by transmitting hypertext messages between clients and servers. HTTP clients generally use Transmission Control Protocol (TCP) connections to communicate with servers.
+HTTP utilizes specific request methods in order to perform various tasks:
+• GET requests a specific resource in its entirety
+• HEAD requests a specific resource without the body content
+• POST adds content, messages, or data to a new page under an existing web resource
+• PUT directly modifies an existing web resource or creates a new URI if need be
+• DELETE gets rid of a specified resource
+• TRACE shows users any changes or additions made to a web resource
+• OPTIONS shows users which HTTP methods are available for a specific URL
+• CONNECT converts the request connection to a transparent TCP/IP tunnel
+• PATCH partially modifies a web resource
+All HTTP servers use the GET and HEAD methods, but not all support the rest of these request methods.
 </b></details>
 
 <details>
@@ -157,6 +201,9 @@ which follows the immutable infrastructure paradigm.
 
 <details>
 <summary>Explain monitoring. What is it? What its goal?</summary><br><b>
+Monitoring provides feedback from production. Monitoring delivers information about an application’s performance and usage patterns.
+
+One goal of monitoring is to achieve high availability by minimizing time to detect and time to mitigate (TTD, TTM). In other words, as soon as performance and other issues arise, rich diagnostic data about the issues are fed back to development teams via automated monitoring. That’s TTD.
 </b></details>
 
 <details>
