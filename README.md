@@ -2250,12 +2250,57 @@ def return_sum():
 <details>
 <summary>How do you swap values between two variables?</summary><br><b>
 
+```
 x, y = y, x
+```
+
 </b></details>
 
 <details>
-<summary>How to check if all the elements in a given lists are unique? so [1, 2, 3] is unique but [1, 1, 2, 3] is not unique but we 1 twice</summary><br><b>
-</b></details>
+<summary>How to check if all the elements in a given lists are unique? so [1, 2, 3] is unique but [1, 1, 2, 3] is not unique because 1 exists twice</summary><br><b>
+</b>
+
+There are many ways of solving this problem:<br>
+<code># Note: :list and -> bool are just python typings, they are not needed for the correct execution of the algorithm. </code>
+
+Taking advantage of sets and len:
+
+```
+def is_unique(l:list) -> bool:
+    return len(set(l)) == len(l)
+```
+
+This one is can be seen used in other programming languages.
+
+```
+def is_unique2(l:list) -> bool:
+    seen = []
+
+    for i in l:
+        if i in seen:
+            return False
+        seen.append(i)
+    return True
+```
+
+Here we just count and make sure every element is just repeated once.
+
+```
+def is_unique3(l:list) -> bool:
+    for i in l:
+        if l.count(i) > 1:
+            return False
+    return True
+```
+
+This one might look more convulated but hey, one liners.
+
+```
+def is_unique4(l:list) -> bool:
+    return all(map(lambda x: l.count(x) < 2, l))
+```
+
+</details>
 
 <details>
 <summary>What _ is used for in Python?</summary><br><b>
@@ -2404,7 +2449,66 @@ def reverse_string(string):
 
 <details>
 <summary>What empty <code>return</code> returns?</summary><br><b>
-</b></details>
+</b>
+
+Short answer is: It returns a None object.
+
+We could go a bit deeper and explain the difference between 
+
+```
+def a ():
+    return
+    
+>>> None
+```
+
+And
+
+```
+def a ():
+    pass
+    
+>>> None
+```
+Or we could be asked this as a following question, since they both give the same result.
+
+We could use the dis module to see what's going on:
+
+```
+  2           0 LOAD_CONST               0 (<code object a at 0x0000029C4D3C2DB0, file "<dis>", line 2>)
+              2 LOAD_CONST               1 ('a')
+              4 MAKE_FUNCTION            0
+              6 STORE_NAME               0 (a)
+
+  5           8 LOAD_CONST               2 (<code object b at 0x0000029C4D3C2ED0, file "<dis>", line 5>)
+             10 LOAD_CONST               3 ('b')
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               1 (b)
+             16 LOAD_CONST               4 (None)
+             18 RETURN_VALUE
+
+Disassembly of <code object a at 0x0000029C4D3C2DB0, file "<dis>", line 2>:
+  3           0 LOAD_CONST               0 (None)
+              2 RETURN_VALUE
+
+Disassembly of <code object b at 0x0000029C4D3C2ED0, file "<dis>", line 5>:
+  6           0 LOAD_CONST               0 (None)
+              2 RETURN_VALUE
+```
+
+An empty <code> return</code> is exactly the same as <code>return None</code> and functions without any explicit return
+will always return None regardless of the operations, therefore 
+
+
+```
+def sum(a, b):
+    global c
+    c = a + b
+    
+>>> None
+```
+
+</details>
 
 ##### Time Complexity
 
