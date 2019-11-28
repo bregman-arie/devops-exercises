@@ -2250,12 +2250,57 @@ def return_sum():
 <details>
 <summary>How do you swap values between two variables?</summary><br><b>
 
+```
 x, y = y, x
+```
+
 </b></details>
 
 <details>
-<summary>How to check if all the elements in a given lists are unique? so [1, 2, 3] is unique but [1, 1, 2, 3] is not unique but we 1 twice</summary><br><b>
-</b></details>
+<summary>How to check if all the elements in a given lists are unique? so [1, 2, 3] is unique but [1, 1, 2, 3] is not unique because 1 exists twice</summary><br><b>
+</b>
+
+There are many ways of solving this problem:
+# Note: :list and -> bool are just python typings, they are not needed for the correct execution of the algorithm.
+
+Taking advantage of sets and len:
+
+```
+def is_unique(l:list) -> bool:
+    return len(set(l)) == len(l)
+```
+
+This one is can be seen used in other programming languages.
+
+```
+def is_unique2(l:list) -> bool:
+    seen = []
+
+    for i in l:
+        if i in seen:
+            return False
+        seen.append(i)
+    return True
+```
+
+Here we just count and make sure every element is just repeated once.
+
+```
+def is_unique3(l:list) -> bool:
+    for i in l:
+        if l.count(i) > 1:
+            return False
+    return True
+```
+
+This one might look more convulated but hey, one liners.
+
+```
+def is_unique4(l:list) -> bool:
+    return all(map(lambda x: l.count(x) < 2, l))
+```
+
+</details>
 
 <details>
 <summary>What _ is used for in Python?</summary><br><b>
@@ -2457,7 +2502,7 @@ will always return None regardless of the operations, therefore
 
 ```
 def sum(a, b):
-    global C
+    global c
     c = a + b
     
 >>> None
