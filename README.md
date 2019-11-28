@@ -1612,11 +1612,12 @@ The benefits of Terraform over the other tools:
   * Provider: 
   * Resource: 
   * Provisioner: 
-</b></details><br><b>
+</summary><br><b>
 <code>Provider</code> is any cloud based technology - github, aws, postgresql etc - which one can make an API call to with its unique terraform provider binary to provision available services and components.  
 <code>Resources</code> are the services and components you provision on these platforms.<br>
 <code>Provisioner</code> in terraform's lingo specifically refers to configuration tools like ansible or salt-stack which are used in combination with terraform to orchestrate a system e.g vm's
-</b>
+</details>
+
 <details>
 <summary>What <code>terraform.tfstate</code> file is used for?</summary><br><b> 
 
