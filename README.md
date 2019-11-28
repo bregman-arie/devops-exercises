@@ -2260,7 +2260,7 @@ x, y = y, x
 <summary>How to check if all the elements in a given lists are unique? so [1, 2, 3] is unique but [1, 1, 2, 3] is not unique because 1 exists twice</summary><br><b>
 </b>
 
-There are many ways of solving this problem:
+There are many ways of solving this problem:<br>
 <code># Note: :list and -> bool are just python typings, they are not needed for the correct execution of the algorithm. </code>
 
 Taking advantage of sets and len:
