@@ -2261,7 +2261,7 @@ x, y = y, x
 </b>
 
 There are many ways of solving this problem:
-# Note: :list and -> bool are just python typings, they are not needed for the correct execution of the algorithm.
+<code># Note: :list and -> bool are just python typings, they are not needed for the correct execution of the algorithm. </code>
 
 Taking advantage of sets and len:
 
