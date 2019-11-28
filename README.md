@@ -2415,7 +2415,6 @@ def a ():
     return
     
 >>> None
-
 ```
 
 And
@@ -2452,10 +2451,8 @@ Disassembly of <code object b at 0x0000029C4D3C2ED0, file "<dis>", line 5>:
               2 RETURN_VALUE
 ```
 
-An empty <code> return </code> is exactly the same as <code> return None </code> and functions without any return
+An empty <code> return</code> is exactly the same as <code>return None</code> and functions without any explicit return
 will always return None regardless of the operations, therefore 
-
-
 
 
 ```
@@ -2464,7 +2461,6 @@ def sum(a, b):
     c = a + b
     
 >>> None
-
 ```
 
 </details>
