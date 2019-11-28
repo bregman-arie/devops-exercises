@@ -2404,7 +2404,70 @@ def reverse_string(string):
 
 <details>
 <summary>What empty <code>return</code> returns?</summary><br><b>
-</b></details>
+</b>
+
+Short answer is: It returns a None object.
+
+We could go a bit deeper and explain the difference between 
+
+```
+def a ():
+    return
+    
+>>> None
+
+```
+
+And
+
+```
+def a ():
+    pass
+    
+>>> None
+```
+Or we could be asked this as a following question, since they both give the same result.
+
+We could use the dis module to see what's going on:
+
+```
+  2           0 LOAD_CONST               0 (<code object a at 0x0000029C4D3C2DB0, file "<dis>", line 2>)
+              2 LOAD_CONST               1 ('a')
+              4 MAKE_FUNCTION            0
+              6 STORE_NAME               0 (a)
+
+  5           8 LOAD_CONST               2 (<code object b at 0x0000029C4D3C2ED0, file "<dis>", line 5>)
+             10 LOAD_CONST               3 ('b')
+             12 MAKE_FUNCTION            0
+             14 STORE_NAME               1 (b)
+             16 LOAD_CONST               4 (None)
+             18 RETURN_VALUE
+
+Disassembly of <code object a at 0x0000029C4D3C2DB0, file "<dis>", line 2>:
+  3           0 LOAD_CONST               0 (None)
+              2 RETURN_VALUE
+
+Disassembly of <code object b at 0x0000029C4D3C2ED0, file "<dis>", line 5>:
+  6           0 LOAD_CONST               0 (None)
+              2 RETURN_VALUE
+```
+
+An empty <code> return </code> is exactly the same as <code> return None </code> and functions without any return
+will always return None regardless of the operations, therefore 
+
+
+
+
+```
+def sum(a, b):
+    global C
+    c = a + b
+    
+>>> None
+
+```
+
+</details>
 
 ##### Time Complexity
 
