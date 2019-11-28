@@ -1034,8 +1034,13 @@ Soft links can be created between different file systems while hard link can be 
 <summary>Fix the following commands:
 
   * sed "s/1/2/g' /tmp/myFile
-  * find . -iname \*.yaml -exec sed -i "s/1/2/g" {} ;</summary><br><b>
-</b></details>
+  * find . -iname \*.yaml -exec sed -i "s/1/2/g" {} ;
+  
+  </summary><br><b>
+</b>
+<code>sed 's/1/2/g' /tmp/myFile</code>
+<code> find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \; </code>
+</details>
 
 <details>
 <summary>Explain what is stored in each of the following paths and if there is anything unique about it:</summary><br><b>
@@ -1097,12 +1102,13 @@ To view all available signals run `kill -l`
 
 <details>
 <summary>What are the possible states of a process in Linux?</summary><br><b>
-
+<pre>
 Running
 Waiting
 Stopped
 Terminated
 Zombie
+</pre>
 </b></details>
 
 <details>
