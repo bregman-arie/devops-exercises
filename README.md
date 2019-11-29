@@ -800,7 +800,22 @@ TCP establishes a connection between the client and the server to guarantee the 
 
 <details>
 <summary>Running the command <code>df</code> you get "command not found". What could be wrong and how to fix it?</summary><br><b>
-</b></details>
+</b>
+<p><b>
+Most likely the default/generated $PATH was somehow modified or overridden thus not containing <code>/bin/</code> where df would normally go.
+This issue could also happen if bash_profile or any configuration file of your interpreter was wrongly modified, causing erratics behaviours.
+You would solve this by fixing your $PATH variable:
+
+As to fix it there are serveral options:
+
+1. Manually adding what you need to your $PATH <code>PATH="$PATH":/user/bin:/..etc</code> 
+2. You have your weird env variables backed up.
+3. You would look for your distro default $PATH variable, copy paste using method #1
+
+Note: There are many ways of getting errors like this: if bash_profile or any configuration file of your interpreter was wrongly modified; causing erratics behaviours,
+permissions issues, bad compiled software (if you compiled it by yourself)... there is no answer that will be true 100% of the time.</b>
+</p>
+</details>
 
 <details>
 <summary>How to make sure a service will start on a OS of your choice?</summary><br><b>
@@ -816,8 +831,7 @@ With cron, tasks are scheduled using the following format:
 
 <minute> <hour> <day of month> <month> <day of week> <command to execute>
 
-The tasks are stored in a cron file.
-
+The tasks are stored in a cron file, you can write in it using <code>crontab -e</code>
 
 Alternatively if you are using a distro with systemd it's recommended to use systemd timers.
 
@@ -827,6 +841,8 @@ Alternatively if you are using a distro with systemd it's recommended to use sys
 <summary>Have you scheduled tasks in the past? What kind of tasks?</summary><br><b>
 
 Normally you will schedule batch jobs.
+
+
 
 </b></details>
 
@@ -1034,8 +1050,13 @@ Soft links can be created between different file systems while hard link can be 
 <summary>Fix the following commands:
 
   * sed "s/1/2/g' /tmp/myFile
-  * find . -iname \*.yaml -exec sed -i "s/1/2/g" {} ;</summary><br><b>
-</b></details>
+  * find . -iname \*.yaml -exec sed -i "s/1/2/g" {} ;
+  
+  </summary><br><b>
+</b>
+<code>sed 's/1/2/g' /tmp/myFile</code><br>
+<code> find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \; </code>
+</details>
 
 <details>
 <summary>Explain what is stored in each of the following paths and if there is anything unique about it:</summary><br><b>
@@ -1067,10 +1088,11 @@ execution or run forever
 
 <details>
 <summary>What signal is used when you run 'kill <process id>'?</summary><br><b>
-
+<pre>
 The default signal is SIGTERM (15). This signal kills
 process gracefully which means it allows it to save current
 state configuration.
+</pre>
 </b></details>
 
 <details>
@@ -1097,12 +1119,13 @@ To view all available signals run `kill -l`
 
 <details>
 <summary>What are the possible states of a process in Linux?</summary><br><b>
-
+<pre>
 Running
 Waiting
 Stopped
 Terminated
 Zombie
+</pre>
 </b></details>
 
 <details>
