@@ -801,7 +801,7 @@ TCP establishes a connection between the client and the server to guarantee the 
 <details>
 <summary>Running the command <code>df</code> you get "command not found". What could be wrong and how to fix it?</summary><br><b>
 </b>
-<p>
+<p><b>
 Most likely the default/generated $PATH was somehow modified or overridden thus not containing <code>/bin/</code> where df would normally go.
 This issue could also happen if bash_profile or any configuration file of your interpreter was wrongly modified, causing erratics behaviours.
 You would solve this by fixing your $PATH variable:
@@ -813,7 +813,7 @@ As to fix it there are serveral options:
 3. You would look for your distro default $PATH variable, copy paste using method #1
 
 Note: There are many ways of getting errors like this: if bash_profile or any configuration file of your interpreter was wrongly modified; causing erratics behaviours,
-permissions issues, bad compiled software (if you compiled it by yourself)... there is no answer that will be true 100% of the time.
+permissions issues, bad compiled software (if you compiled it by yourself)... there is no answer that will be true 100% of the time.</b>
 </p>
 </details>
 
@@ -1054,7 +1054,7 @@ Soft links can be created between different file systems while hard link can be 
   
   </summary><br><b>
 </b>
-<code>sed 's/1/2/g' /tmp/myFile</code>
+<code>sed 's/1/2/g' /tmp/myFile</code><br>
 <code> find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \; </code>
 </details>
 
