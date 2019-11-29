@@ -1682,10 +1682,14 @@ The benefits of Terraform over the other tools:
 <details>
 <summary>Explain each of the following:
 
-  * Provider
-  * Resource
-  * Provisioner
-</b></details>
+  * Provider: 
+  * Resource: 
+  * Provisioner: 
+</summary><br><b>
+<code>Provider</code> is any cloud based technology - github, aws, postgresql etc - which one can make an API call to with its unique terraform provider binary to provision available services and components.<br>  
+<code>Resources</code> are the services and components you provision on these platforms.<br>
+<code>Provisioner</code> in terraform's lingo specifically refers to configuration tools like ansible or salt-stack which are used in combination with terraform to orchestrate a system e.g vm's
+</details>
 
 <details>
 <summary>What <code>terraform.tfstate</code> file is used for?</summary><br><b> 
@@ -1696,10 +1700,10 @@ It keeps track of the IDs of created resources so that Terraform knows what it i
 <details>
 <summary>Explain what the following commands do:
 
-  * <code>terraform init</code>
-  * <code>terraform plan</code>
-  * <code>terraform validate</code>
-  * <code>terraform apply</code>
+  * <code>terraform init</code> 
+  * <code>terraform plan</code>	
+  * <code>terraform validate</code> 
+  * <code>terraform apply</code> 
 </summary><br><b>
 
 <code>terraform init</code> scans your code to figure which providers are you using and download them.
