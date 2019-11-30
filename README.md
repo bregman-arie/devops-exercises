@@ -2,12 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **522** questions
-
-***
-<p align="center"><b> 🎉 Questions are now available at <a href="http://devopsbit.com/devops-interview-questions">devopsbit.com</a> 🎉 </b> </p>
-
-***
+:bar_chart: &nbsp;There are currently **526** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -56,6 +51,7 @@
   </tr>
   <tr>
     <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a><br /><sub><a href="#monitoring-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#elastic"><img src="images/elastic.png" width="75px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a><br /><sub><a href="#elastic-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#general"><img src="images/general.png" width="110px;" height="75px;" alt="General"/><br /><b>General</b></a></td>
     <td align="center"><a href="#scenarios"><img src="images/scenarios.png" width="110px;" height="75px;" alt="Scenarios"/><br /><b>Scenarios</b></a></td>
   </tr>
@@ -3671,6 +3667,39 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 <summary>Explain what is Hiera</summary><br><b>
 </b></details>
 
+## Elastic
+
+<a name="elastic-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>What is the Elastic Stack? What products does it includes?</summary><br><b>
+
+The Elastic Stack consists of:
+  * Elasticsearch
+  * Elastic Hadoop
+  * Kibana
+  * Logstash
+  * Beats
+  * APM Server
+</b></details>
+
+<details>
+<summary>Describe what happens from the moment the app logged some information until it's displayed to the user in the dashboard when the Elastic stack is used</summary><br><b>
+</b></details>
+
+<a name="elastic-advanced"></a>
+#### :star: Advnaced
+
+<details>
+<summary>Describe how would an architecture of production environment with large amounts of data would be different from a small-scale environment</summary><br><b>
+
+There are several possible answers for this question. One of them is as follows:
+
+A small-scale architecture of elastic will consist of the elastic stack as it is. This means we will have beats, logstash, elastcsearch and kibana.<br>
+A production environment with large amounts of data can include some kind of buffering component (e.g. Reddis or RabbitMQ) and also security component such as Nginx.
+</b></details>
+
 ## General
 
 Although the following questions are not DevOps related, they are still quite common so it's better to prepare for them as well.
@@ -3750,6 +3779,8 @@ Below you can find several scenario questions:
 * [Writing Jenkins Pipelines](scenarios/jenkins_pipelines.md)
 
 ## Credits
+
+Thanks to all of our amazing [contributors](https://github.com/bregman-arie/devops-interview-questions/graphs/contributors) who make it easy for everyone to learn and prepare to their interviews.
 
 Logos credits can be found [here](credits.md)
 
