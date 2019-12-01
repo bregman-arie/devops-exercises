@@ -2,13 +2,15 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **532** questions
+:bar_chart: &nbsp;There are currently **541** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
 :thought_balloon: &nbsp;Different interviewers focus on different things. Some will focus on your resume while others might focus on scenario questions or specific technical questions. I tried to cover different types of questions for you to practice and test your skills
 
 :pencil: &nbsp;You can add more questions & answers by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
+
+:warning: &nbsp;The purpose of this repo is to help you test your knowledge and/or prepare for interviews. It doesn't represents a DevOps interview and it doesn't mean the questions here will be asked in your interview
 
 :cn: &nbsp;You can find a [中文](README-zh_CN.md) Chinese translation right [here](README-zh_CN.md)
 
@@ -3701,6 +3703,50 @@ As in NoSQL a Document is a JSON object which holds data on a unit in your app. 
   * _index
   * _id
   * _type
+</b></details>
+
+<details>
+<summary>Explain Mapping</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Shards</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Replicas</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Elasticsearch query syntax (Booleans, Fields, Ranges)</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are Logstash plugins? What plugins types are there?</summary><br><b>
+
+  * Input Plugins - how to collect data from different sources
+  * Filter Plugins - processing data
+  * Output Plugins - push data to different outputs/services/platforms
+</b></details>
+
+<details>
+<summary>What are Logstash Codecs?</summary><br><b>
+</b></details>
+
+##### Kibana
+
+<details>
+<summary>What visualization types are supported/included in Kibana?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What visualization type would you use for statistical outliers (e.g. Heat Map)</summary><br><b>
+</b></details>
+
+##### Beats
+
+<details>
+<summary>What is Filebeat?</summary><br><b>
 </b></details>
 
 <a name="elastic-advanced"></a>
