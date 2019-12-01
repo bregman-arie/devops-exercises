@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **541** questions
+:bar_chart: &nbsp;There are currently **551** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -667,17 +667,25 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
+<summary>What is TCP? How it works? What is the 3 way handshake?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is the difference between TCP and UDP?</summary><br><b>
 	
 TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for streaming services.
 </b></details>
 
 <details>
-<summary>Explain "default gateway"</summary><br><b>
+<summary>True or False? TCP is better than UDP</summary><br><b>
 </b></details>
 
 <details>
-<summary>How TCP works? What is the 3 way handshake?</summary><br><b>
+<summary>What TCP/IP protocols are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "default gateway"</summary><br><b>
 </b></details>
 
 <details>
@@ -728,6 +736,18 @@ TCP establishes a connection between the client and the server to guarantee the 
 <summary>What is NAT? How it works?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is latency?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is bandwidth?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Which factors affect network performances</summary><br><b>
+</b></details>
+
 <a name="network-advanced"></a>
 #### :star: Advanced
 
@@ -765,6 +785,14 @@ TCP establishes a connection between the client and the server to guarantee the 
 
 <details>
 <summary>Explain Spine & Leaf</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Network Congestion? What can cause it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What can you tell me about UDP packet format? What about TCP packet format? How is it different?</summary><br><b>
 </b></details>
 
 <details>
@@ -1068,7 +1096,7 @@ Soft links can be created between different file systems while hard link can be 
 </b></details>
 
 <details>
-<summary>What is chroot?</summary><br><b>
+<summary>What is chroot? In what scenarios would you consider using it?</summary><br><b>
 </b></details>
 
 ##### Processes
@@ -1387,7 +1415,7 @@ These system calls are reading the file <code>/my/file</code> and 5 is the file 
 </b></details>
 
 <details>
-<summary>What are cgroups? In what scenario would you use them?</summary><br><b>
+<summary>What are cgroups?</summary><br><b>
 </b></details>
 
 <details>
@@ -3545,7 +3573,7 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
-<summary>Do you think open source project is more secured when compared to a proprietary software?</summary><br><b>
+<summary>What is DNS Spoofing? How to prevent it?</summary><br><b>
 </b></details>
 
 <details>
@@ -3809,6 +3837,18 @@ While an A record points a domain name to an IP address, a PTR record does the o
 
 <details>
 <summary>Is DNS using TCP or UDP?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Round Robin DNS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is DNS Record TTL? Why do we need it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a zone? What types of zones are there?</summary><br><b>
 </b></details>
 
 ## General
