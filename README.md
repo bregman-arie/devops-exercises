@@ -51,7 +51,8 @@
   </tr>
   <tr>
     <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a><br /><sub><a href="#monitoring-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#elastic"><img src="images/elastic.png" width="75px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a><br /><sub><a href="#elastic-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#elastic"><img src="images/elastic.png" width="110px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a><br /><sub><a href="#elastic-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#dns"><b>DNS</b></a><br /><sub><a href="#dns-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#general"><img src="images/general.png" width="110px;" height="75px;" alt="General"/><br /><b>General</b></a></td>
     <td align="center"><a href="#scenarios"><img src="images/scenarios.png" width="110px;" height="75px;" alt="Scenarios"/><br /><b>Scenarios</b></a></td>
   </tr>
@@ -1235,6 +1236,11 @@ related to the file like its size, owner, permissions, etc.
   * HTTP
   * DNS
   * HTTPS</summary><br><b>
+
+  * SSH - 22
+  * HTTP - 80
+  * DNS - 53
+  * HTTPS - 443
 </b></details>
 
 <details>
@@ -1248,29 +1254,16 @@ related to the file like its size, owner, permissions, etc.
 ##### DNS
 
 <details>
-<summary>What is DNS? Why do we need it?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What the file <code>/etc/resolv.conf</code> is used for? What does it include?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is a "A record"?</summary><br><b>
-</b></details>
+<summary>What commands are you using performing DNS queries (or troubleshoot DNS related issues)?</summary><br><b>
 
-<details>
-<summary>What is a PTR record?</summary><br><b>
+You can specify one or more of the following:
 
-While an A record points a domain name to an IP address, a PTR record does the opposite and resolves the IP address to a domain name.
-</b></details>
-
-<details>
-<summary>What is a MX record?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Is DNS using TCP or UDP?</summary><br><b>
+ * <code>dig</code>
+ * <code>nslookup</code>
 </b></details>
 
 ##### Packaging
@@ -3698,6 +3691,56 @@ There are several possible answers for this question. One of them is as follows:
 
 A small-scale architecture of elastic will consist of the elastic stack as it is. This means we will have beats, logstash, elastcsearch and kibana.<br>
 A production environment with large amounts of data can include some kind of buffering component (e.g. Reddis or RabbitMQ) and also security component such as Nginx.
+</b></details>
+
+## DNS
+
+<a name="dns-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>What is DNS? What is it used for?</summary><br><b>
+
+DNS (Domain Name Systems) is a protocol used for converting domain names into IP addresses.<br>
+As you know computer networking is done with IP addresses (layer 3 of the OSI model) but for as humans it's hard to remember IP addresses, it's much easier to remember names. This why we need something such as DNS to convert any domain name we type into an IP address. You can think on DNS as a huge phonebook or database where each corresponding name has an IP.
+</b></details>
+
+<details>
+<summary>How DNS works?</summary><br><b>
+
+In general the process is as follows:
+
+  * The user types an address in the web browser (some_site.com)
+  * The operating system gets a request from the browser to translate the address the user entered
+  * A query created to check a local entry of the address exists in the system. In case it doesn't, the request is forwarded to the DNS resolver
+  * The Resolver is a server, usually configured by your ISP when you connect to the internet, that responsible for resolving your query by contacting other DNS servers
+  * The Resolver contacts the root nameserver (aka as .)
+  * The root nameserver responds with the address of the relevant Top Level Domain DNS server (if your address ends with org then the org TLD)
+  * The Resolver then contacts the TLD DNS and TLD DNS responds with the IP address that matches the address the user typed in the browser
+  * The Resolver passes this information to the browser
+  * The user is happy :D
+</b></details>
+
+<details>
+<summary>What types of DNS records are there?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a "A record"?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a PTR record?</summary><br><b>
+
+While an A record points a domain name to an IP address, a PTR record does the opposite and resolves the IP address to a domain name.
+</b></details>
+
+<details>
+<summary>What is a MX record?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Is DNS using TCP or UDP?</summary><br><b>
 </b></details>
 
 ## General
