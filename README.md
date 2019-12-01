@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **526** questions
+:bar_chart: &nbsp;There are currently **532** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -1258,7 +1258,7 @@ related to the file like its size, owner, permissions, etc.
 </b></details>
 
 <details>
-<summary>What commands are you using performing DNS queries (or troubleshoot DNS related issues)?</summary><br><b>
+<summary>What commands are you using for performing DNS queries (or troubleshoot DNS related issues)?</summary><br><b>
 
 You can specify one or more of the following:
 
@@ -3679,6 +3679,28 @@ The Elastic Stack consists of:
 
 <details>
 <summary>Describe what happens from the moment the app logged some information until it's displayed to the user in the dashboard when the Elastic stack is used</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an Index?</summary><br><b>
+
+Index in Elastic is in most cases compared to a whole database from the SQL/NoSQL world.<br>
+You can choose to have one index to hold all the data of your app or have multiple indices where each index holds different type of your app (e.g. index for each service your app is running).
+</b></details>
+
+<details>
+<summary>What is a Document?</summary><br><b>
+
+Continuing with the comparison to SQL/NoSQL a Document in Elastic is a row in table in the case of SQL or a document in a collection in the case of NoSQL.
+As in NoSQL a Document is a JSON object which holds data on a unit in your app. What is this unit depends on the your app. If your app related to book then each document describes a book. If you are app is about shirts then each document is a shirt.
+</b></details>
+
+<details>
+<summary>What reserved fields a document has?</summary><br><b>
+
+  * _index
+  * _id
+  * _type
 </b></details>
 
 <a name="elastic-advanced"></a>
