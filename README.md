@@ -2581,12 +2581,135 @@ def sum(a, b):
 
 <details>
 <summary>Explain what is a decorator</summary><br><b>
-</b></details>
+</b>
+<b>In python, everything is an object, even functions themselves. Therefore you could pass functions as arguments
+for another function eg;
+
+```
+def wee(word):
+    return word
+
+def oh(f):
+    return f + "Ohh"
+    
+>>> oh(wee("Wee"))
+<<< Wee Ohh
+```
+
+This allows us to control the before execution of any given function and if we added another function as wrapper,
+(a function receiving another function that receives a function as parameter) we could also control the after execution.
+
+Sometimes we want to control the before-after execution of many functions and it would get tedious to write
+
+<code> f = function(function_1())</code>
+<code> f = function(function_1(function_2(*args)))</code>
+
+every time, that's what decorators do, they introduce syntax to write all of this on the go, using the keyword '@'.
+</b>
+</details>
 
 <details>
 <summary>Can you show how to write and use decorators?</summary><br><b>
-</b></details>
 
+<code>
+These two decorators (ntimes and timer) are usually used to display decorators functionalities, you can find them in lots of
+tutorials/reviews. I first saw these examples two years ago in pyData 2017. https://www.youtube.com/watch?v=7lmCu8wz8ro&t=3731s</code>
+
+```
+Simple decorator:
+
+def deco(f):
+    print(f"Hi I am the {f.__name__}() function!")
+    return f
+
+@deco
+def hello_world():
+    return "Hi, I'm in!"
+
+a = hello_world()
+print(a)
+
+>>> Hi I am the hello_world() function!
+    Hi, I'm in!
+```
+
+This is the simplest decorator version, it basically saves us from writting <code>a = deco(hello_world())</code>.
+But at this point we can only control the before execution, let's take on the after:
+
+```
+def deco(f):
+    def wrapper(*args, **kwargs):
+        print("Rick Sanchez!")
+        func = f(*args, **kwargs)
+        print("I'm in!")
+        return func
+    return wrapper
+
+@deco
+def f(word):
+    print(word)
+
+a = f("************")
+>>> Rick Sanchez!
+    ************
+    I'm in!
+```
+
+deco receives a function -> f
+wrapper receives the arguments -> *args, **kwargs
+
+wrapper returns the function plus the arguments -> f(*args, **kwargs)
+deco returns wrapper.
+
+As you can see we conveniently do things before and after the execution of a given function.
+
+For example, we could write a decorator that calculates the execution time of a function.
+
+```
+import time
+def deco(f):
+    def wrapper(*args, **kwargs):
+        before = time.time()
+        func = f(*args, **kwargs)
+        after = time.time()
+        print(after-before)
+        return func
+    return wrapper
+
+@deco
+def f():
+    time.sleep(2)
+    print("************")
+
+a = f()
+>>> 2.0008859634399414
+```
+
+Or create a decorator that executes a function n times.
+
+```
+def n_times(n):
+    def wrapper(f):
+        def inner(*args, **kwargs):
+            for _ in range(n):
+                func = f(*args, **kwargs)
+            return func
+        return inner
+    return wrapper
+
+@n_times(4)
+def f():
+    print("************")
+
+a = f()
+
+>>>************
+   ************
+   ************
+   ************
+```
+
+</b></details>
 <details>
 <summary>Write a script which will determine if a given host is accessible on a given port</summary><br><b>
 </b></details>
