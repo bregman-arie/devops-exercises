@@ -2052,6 +2052,21 @@ Kubernetes is especially good for scenarios when you no longer running small num
 <summary>Explain big O notation</summary><br><b>
 </b></details>
 
+##### Common algorithms
+
+<details>
+<summary>Binary search:
+  * How it works?
+  * Can you implement it? (in any language you prefer)
+  * What is the average performance of the algorithm you wrote?</summary><br><b>
+
+It's a search algorithm used with sorted arrays/lists to find a target value by dividing the array each iteration and comparing the middle value to the target value. If the middle value is smaller than target value, then the target value is searched in the right part of the divided array, else in the left side. This continues until the value is found (or the array divided max times) 
+
+[python implementation](coding/python/binary_search.py)
+
+The average performance of the above algorithm is O(log n). Best performance can be O(1) and worst O(log n).
+</b></details>
+
 ##### Code Review
 
 <details>
@@ -2398,10 +2413,12 @@ def is_unique4(l:list) -> bool:
 <summary>How to check how much time it took to execute a certain script or block of code?</summary><br><b>
 </b></details>
 
-##### Algorithms Implementation
+##### Common Algorithms Implementation
 
 <details>
 <summary>Can you implement "binary search" in Python?</summary><br><b>
+
+[Solution](coding/python/binary_search.py)
 </b></details>
 
 ##### Files
