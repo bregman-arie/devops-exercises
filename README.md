@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **560** questions
+:bar_chart: &nbsp;There are currently **562** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -4101,8 +4101,10 @@ Below you can find several scenario questions:
 * [Elasticsearch & Kibana on AWS](scenarios/elk_kibana_aws.md)
 * [Ansible, Minikube and Docker](scenarios/ansible_minikube_docker.md)
 * [Cloud Slack bot](scenarios/cloud_slack_bot.md)
-* [Writing Jenkins Scripts](scenarios/jenkins_scripts.md)
-* [Writing Jenkins Pipelines](scenarios/jenkins_pipelines.md)
+* [Jenkins: writing scripts](scenarios/jenkins_scripts.md)
+* [Jenkins: writing pipelines](scenarios/jenkins_pipelines.md)
+* [Jenkins: infra fairness](scenarios/jenkins_infra_fairness.md)
+* [CI for open source project](scenarios/ci_for_open_source_project.md)
 
 ## Credits
 
