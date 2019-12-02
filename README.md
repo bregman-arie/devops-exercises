@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **553** questions
+:bar_chart: &nbsp;There are currently **560** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -189,6 +189,10 @@ Stateful applications depend on the storage to save state and data, typically da
 
 <details>
 <summary>Explain "Open Source"</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe me the architecture of service/app/project/... you designed and/or implemented</summary><br><b>
 </b></details>
 
 ##### SRE
@@ -924,9 +928,13 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </details>
 
 <details>
-<summary>On a system which uses systemd, how would display the logs?</summary>
+<summary>On a system which uses systemd, how would you display the logs?</summary><br><b>
 
 <code>journalctl</code>
+</b></details>
+
+<details>
+<summary>Describe how to make a certain process/app a service</summary><br><b>
 </b></details>
 
 ##### Debugging
@@ -984,6 +992,10 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
+<summary>What is SSH key? How is it used?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is the difference between SSH and SSL?</summary><br><b>
 </b></details>
 
@@ -1013,7 +1025,9 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
-<summary>Tell me everything you know about Linux boot process</summary><br><b>
+<summary>Tell me everything you know about the Linux boot process</summary><br><b>
+
+Another way to ask this: what happens from the moment you turned on the server until you get a prompt
 </b></details>
 
 <details>
@@ -1026,6 +1040,19 @@ parent process.
 Each number has different meaning, based on how the application was developed.
 
 I consider this as a good blog post to read more about it: https://shapeshed.com/unix-exit-codes
+</b></details>
+
+##### Storage, Filesystem
+
+<details>
+<summary>What's an inode?</summary><br><b>
+
+For each file (and directory) in Linux there is an inode, a data structure which stores meta data
+related to the file like its size, owner, permissions, etc.
+</b></details>
+
+<details>
+<summary>How to check which disks are currently mounted?</summary><br><b>
 </b></details>
 
 <details>
@@ -1047,6 +1074,10 @@ Soft links can be created between different file systems while hard link can be 
 
 <details>
 <summary>You are trying to create a new file but you get "File system is full". You check with df for free space and you see you used only 20% of the space. What could be the problem?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How would you check what is the size of a certain directory?</summary><br><b>
 </b></details>
 
 <details>
@@ -1093,10 +1124,6 @@ Soft links can be created between different file systems while hard link can be 
   * /bin
   * /proc
   * /usr/local
-</b></details>
-
-<details>
-<summary>What is chroot? In what scenarios would you consider using it?</summary><br><b>
 </b></details>
 
 ##### Processes
@@ -1221,22 +1248,17 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 </b></details>
 
 <details>
-<summary>What's an inode?</summary><br><b>
-
-For each file (and directory) in Linux there is an inode, a data structure which stores meta data
-related to the file like its size, owner, permissions, etc.
-</b></details>
-
-<details>
-<summary>How to list active connections?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is NTP? What is it used for?</summary><br><b>
 </b></details>
 
 <details>
 <summary>Explain Kernel OOM</summary><br><b>
+</b></details>
+
+##### Security
+
+<details>
+<summary>What is chroot? In what scenarios would you consider using it?</summary><br><b>
 </b></details>
 
 <details>
@@ -1289,6 +1311,10 @@ related to the file like its size, owner, permissions, etc.
 
 <details>
 <summary>What are packet sniffers? Have you used one in the past? If yes, which packet sniffers have you used and for what purpose?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to list active connections?</summary><br><b>
 </b></details>
 
 ##### DNS
@@ -1414,6 +1440,8 @@ These system calls are reading the file <code>/my/file</code> and 5 is the file 
 
 <details>
 <summary>What <code>traceroute</code> command does? How it works?</summary><br><b>
+
+Another common way to task this questions is "what part of the tcp header does traceroute modify?"
 </b></details>
 
 <details>
@@ -4001,7 +4029,17 @@ Although the following questions are not DevOps related, they are still quite co
 </b></details>
 
 <details>
+<summary>What was most challenging part in the project you worked on?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Why do you want to work here?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How did you hear about us?</summary><br><b>
+
+Tell them how did you hear about them :D
 </b></details>
 
 ## Questions you CAN ask
