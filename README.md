@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **551** questions
+:bar_chart: &nbsp;There are currently **553** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -1156,7 +1156,17 @@ Zombie
 </b></details>
 
 <details>
-<summary>What is a zombie process? How do you get rid of it?</summary>
+<summary>What is a zombie process?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to get rid of zombie processes?</summary><br><b>
+
+You can't kill a zombie process the regular way with `kill -9` for example as it's already dead.
+
+One way to kill zombie process is by sending SIGCHLD to the parent process telling it to terminate its child processes. This might not work if the parent process wasn't programmed properly. The invocation is `kill -s SIGCHLD [parent_pid]`
+
+You can also try closing/terminating the parent process. This will make the zombie process a child of init (1) which does periodic cleanups and will at some point clean up the zombie process.
 </b></details>
 
 <details>
@@ -2736,6 +2746,10 @@ a = f()
 
 <details>
 <summary>Can you implement Linked List in Python?<br><b>
+</b></details>
+
+<details>
+<summary>Can you implement Linux's <code>tail</code> command in Python? Bonus: implement <code>head</code> as well</summary><br><b>
 </b></details>
 
 <details>
