@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **562** questions
+:bar_chart: &nbsp;There are currently **565** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -2413,6 +2413,10 @@ def is_unique4(l:list) -> bool:
 <summary>How to check how much time it took to execute a certain script or block of code?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Find all the permutations of a given string</summary><br><b>
+</b></details>
+
 ##### Common Algorithms Implementation
 
 <details>
@@ -2434,6 +2438,10 @@ with open('file.txt', 'w') as file:
 
 <details>
 <summary>How to reverse a file?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Sum all the integers in a given file</summary><br><b>
 </b></details>
 
 #### Regex
