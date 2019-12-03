@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **565** questions
+:bar_chart: &nbsp;There are currently **571** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -811,7 +811,17 @@ TCP establishes a connection between the client and the server to guarantee the 
 #### :baby: Beginner
 
 <details>
-<summary>What is your experience with Linux? When you can set up an application on multiple operating systems, on which one would you prefer to set it up and why?</summary><br><b>
+<summary>What is your experience with Linux?</summary><br><b>
+
+An open question. Answer based on your real experience.
+</b></details>
+
+<details>
+<summary>What is an operating system?</summary><br><b>
+
+There are many ways to answer that. For those who look for simplicity, the book "Operating Systems: Three Easy Pieces" offers nice version:
+
+"responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interac  t with devices, and other fun stuff like that"
 </b></details>
 
 <details>
@@ -872,9 +882,6 @@ Alternatively if you are using a distro with systemd it's recommended to use sys
 <summary>Have you scheduled tasks in the past? What kind of tasks?</summary><br><b>
 
 Normally you will schedule batch jobs.
-
-
-
 </b></details>
 
 ##### Permissions
@@ -2090,6 +2097,36 @@ The average performance of the above algorithm is O(log n). Best performance can
 <summary>In any language you want, write a function to determine if two strings are Anagrams </summary><br><b>
 </b></details>
 
+##### Time Complexity
+
+<details>
+<summary>Describe what would be the time complexity of the operations <code>access</code>, <code>search</code> <code>insert</code> and <code>remove</code> for the following data structures:</summary><br><b>
+
+  * Stack
+  * Queue
+  * Linked List
+  * Binary Search Tree
+</b></details>
+
+<details>
+<summary>What is the complexity for the best, worst and average cases of each of the following algorithms?:
+
+  * Quick sort
+  * Merge sort
+  * Bucket Sort
+  * Radix Sort</summary><br><b>
+</b></details>
+
+##### Data Structures & Types
+
+<details>
+<summary>Implement Stack in any language you would like</summary><br><b>
+</b></details>
+
+<details>
+<summary>Implement Hash table in any language you would like</summary><br><b>
+</b></details>
+
 <a name="coding-advanced"></a>
 #### :star: Advanced
 
@@ -2619,24 +2656,14 @@ def sum(a, b):
 
 </details>
 
-##### Time Complexity
+##### Data Structures & Types
 
 <details>
-<summary>Describe what would be the time complexity of the operations <code>access</code>, <code>search</code> <code>insert</code> and <code>remove</code> for the following data structures:</summary><br><b>
-
-  * Stack
-  * Queue
-  * Linked List
-  * Binary Search Tree
+<summary>Implement Stack in Python</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is the complexity for the best, worst and average cases of each of the following algorithms?:
-
-  * Quick sort
-  * Merge sort
-  * Bucket Sort
-  * Radix Sort
+<summary>Implement Hash table in Python</summary><br><b>
 </b></details>
 
 <a name="python-advanced"></a>
