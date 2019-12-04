@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **571** questions
+:bar_chart: &nbsp;There are currently **582** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -4094,6 +4094,48 @@ Although the following questions are not DevOps related, they are still quite co
 Tell them how did you hear about them :D
 </b></details>
 
+<details>
+<summary>How would you describe a good leadership? What makes a good boss for you?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Tell me about a time where you didn't agree on an implementation</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you deal with a situation where key stakeholders are not around and a big decision needs to be made? </summary><br><b>
+</b></details>
+
+<details>
+<summary>Give an example of a time you were able to change the view of a team about a particular tool/project/technology</summary><br><b>
+</b></details>
+
+<details>
+<summary>Have you ever caused a service outage? (or broke a working project, tool, ...?)</summary><br><b>
+</b></details>
+
+<details>
+<summary>Rank the following in order 1 to 5, where 1 is most important: salaray, benefits, career, team/people, work life balance</summary><br><b>
+
+Don't put salary in bottom or top.
+</b></details>
+
+<details>
+<summary>You have three important tasks scheduled for today. One is for your boss, second for a colleague who is also a friend, third is for a customer. All tasks are equally important. What do you do first?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You have a colleague you don‘t get along with. Tell us some strategies how you create a good work relationship with them anyway.</summary><br><b>
+</b></details>
+
+<details>
+<summary>What do you love about your work?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Why should we hire you for the role?</summary><br><b>
+</b></details>
+
 ## Questions you CAN ask
 
 A list of questions you as a candidate can ask the interviewer during or after the interview.
@@ -4137,6 +4179,9 @@ For Example, if they mention they have problem X, and you've solved that in the 
 you can show how you'd be able to mitigate that problem.
 </b></details>
 
+<details>
+<summary>Let's say that we agree and you hire me to this position, after X months, what do you expect that I have achieved?</summary><br><b>
+</b></details>
 
 ## Scenarios
 
