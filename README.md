@@ -1,12 +1,12 @@
 # DevOps Interview Questions
 
-:information_source: &nbsp;This repository contains interview questions on various DevOps and SRE related topics
+:information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
 :bar_chart: &nbsp;There are currently **582** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
-:warning: &nbsp;The purpose of this repo is to help you test your knowledge and/or prepare for interviews. It doesn't represents a DevOps interview. Please read [Q&A](common-qa.md) for more details
+:warning: &nbsp;The purpose of this repo is to help you test your knowledge and prepare for interviews. It doesn't represents a DevOps interview. Please read [Q&A](common-qa.md) for more details
 
 :pencil: &nbsp;You can add more questions & answers by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
 
@@ -4198,6 +4198,7 @@ Below you can find several scenario questions:
 * [Cloud Slack bot](scenarios/cloud_slack_bot.md)
 * [Jenkins: writing scripts](scenarios/jenkins_scripts.md)
 * [Jenkins: writing pipelines](scenarios/jenkins_pipelines.md)
+* [CI for open source project](scenarios/ci_for_open_source_project.md)
 
 ## Credits
 
