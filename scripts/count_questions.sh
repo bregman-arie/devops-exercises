@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo $((8 + $(cat README.md | grep \<\/summary\> | wc -l)))
+echo $((6 + $(cat README.md | grep \<\/summary\> | wc -l)))

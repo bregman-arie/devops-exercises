@@ -6,11 +6,9 @@
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
-:thought_balloon: &nbsp;Different interviewers focus on different things. Some will focus on your resume while others might focus on scenario questions or specific technical questions. I tried to cover different types of questions for you to practice and test your skills
+:warning: &nbsp;The purpose of this repo is to help you test your knowledge and/or prepare for interviews. It doesn't represents a DevOps interview. Please read [Q&A](common-qa.md) for more details
 
 :pencil: &nbsp;You can add more questions & answers by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
-
-:warning: &nbsp;The purpose of this repo is to help you test your knowledge and/or prepare for interviews. It doesn't represents a DevOps interview and it doesn't mean the questions here will be asked in your interview
 
 :cn: &nbsp;You can find a [中文](README-zh_CN.md) Chinese translation right [here](README-zh_CN.md)
 
@@ -4200,8 +4198,6 @@ Below you can find several scenario questions:
 * [Cloud Slack bot](scenarios/cloud_slack_bot.md)
 * [Jenkins: writing scripts](scenarios/jenkins_scripts.md)
 * [Jenkins: writing pipelines](scenarios/jenkins_pipelines.md)
-* [Jenkins: infra fairness](scenarios/jenkins_infra_fairness.md)
-* [CI for open source project](scenarios/ci_for_open_source_project.md)
 
 ## Credits
 
