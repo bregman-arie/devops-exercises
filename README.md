@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **582** questions
+:bar_chart: &nbsp;There are currently **587** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -2329,6 +2329,10 @@ Generally, every compiling process have a two steps.
 </b></details>
 
 <details>
+<summary>What <code>//</code> is used for?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Write a program which will revert a string (e.g. pizza -> azzip)</summary><br><b>
 
 ```
@@ -2572,6 +2576,10 @@ def reverse_string(string):
 </b></details>
 
 <details>
+<summary>What is an iterator?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is a generator? Why using generators?</summary><br><b>
 </b></details>
 
@@ -2589,6 +2597,13 @@ def reverse_string(string):
 
 <details>
 <summary>How to combine list of strings into one string with spaces between the strings</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the following:
+  * zip()
+  * map()
+  * filter()</summary><br><b>
 </b></details>
 
 <details>
@@ -2662,6 +2677,16 @@ def sum(a, b):
 
 <details>
 <summary>Implement Hash table in Python</summary><br><b>
+</b></details>
+
+##### Tests
+
+<details>
+<summary>What is your experience with writing tests in Python?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain mocks</summary><br><b>
 </b></details>
 
 <a name="python-advanced"></a>
@@ -2804,6 +2829,10 @@ a = f()
 
 <details>
 <summary>Are you familiar with Dataclasses? Can you explain what are they used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You wrote a class to represent a car. How would you compare two cars instances if two cars are equal if they have the same model and color?</summary><br><b>
 </b></details>
 
 <details>
