@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **587** questions
+:bar_chart: &nbsp;There are currently **591** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -122,8 +122,8 @@ Each piece of code (change/patch) is verified, to make the change is safe to mer
   * CI/CD
   * Provisioning infrastructure
   * Configuration Management
-  * Monitoring & alerting - Prometheus, DataDog, Sensu, Grafana
-  * Logging - ELK (Elastic Search, Logstash, Kibana), EFK (Elastic Search, Fluentd, Kibana)
+  * Monitoring & alerting
+  * Logging
   * Code review
   * Code coverage
   * Tests</summary><br><b>
@@ -3989,9 +3989,27 @@ As in NoSQL a Document is a JSON object which holds data on a unit in your app. 
 <summary>Explain Replicas</summary><br><b>
 </b></details>
 
+##### Query DSL
+
 <details>
 <summary>Explain Elasticsearch query syntax (Booleans, Fields, Ranges)</summary><br><b>
 </b></details>
+
+<details>
+<summary>Explain what is Relevance Score</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Query Context and Filter Context</summary><br><b>
+
+From the official docs:
+
+"In the query context, a query clause answers the question “How well does this document match this query clause?” Besides deciding whether or not the document matches, the query clause also calculates a relevance score in the _score meta-field."
+
+"In a filter context, a query clause answers the question “Does this document match this query clause?” The answer is a simple Yes or No — no scores are calculated. Filter context is mostly used for filtering structured data"
+</b></details>
+
+##### Logstash
 
 <details>
 <summary>What are Logstash plugins? What plugins types are there?</summary><br><b>
@@ -4008,11 +4026,23 @@ As in NoSQL a Document is a JSON object which holds data on a unit in your app. 
 ##### Kibana
 
 <details>
+<summary>What is Kibana?</summary><br><b>
+
+From the official docs:
+
+"Kibana is an open source analytics and visualization platform designed to work with Elasticsearch. You use Kibana to search, view, and interact with data stored in Elasticsearch indices. You can easily perform advanced data analysis and visualize your data in a variety of charts, tables, and maps."
+</b></details>
+
+<details>
 <summary>What visualization types are supported/included in Kibana?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What visualization type would you use for statistical outliers (e.g. Heat Map)</summary><br><b>
+<summary>What visualization type would you use for statistical outliers</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe in detail how do you create a dashboard in Kibana</summary><br><b>
 </b></details>
 
 ##### Beats
