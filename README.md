@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **591** questions
+:bar_chart: &nbsp;There are currently **596** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -281,6 +281,10 @@ Note: cross-dependency is when you have two or more changes to separate projects
   * Bamboo
   * Teamcity
   * CircleCI</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are the limitations or disadvantages of Jenkins?</summary><br><b>
 </b></details>
 
 <details>
@@ -1322,7 +1326,7 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 <summary>How to list active connections?</summary><br><b>
 </b></details>
 
-##### DNS
+##### Linux DNS
 
 <details>
 <summary>What the file <code>/etc/resolv.conf</code> is used for? What does it include?</summary><br><b>
@@ -1702,6 +1706,38 @@ def cap(self, string):
 <summary>What are callback plugins? What can you achieve by using callback plugins?</summary><br><b>
 </b></details>
 
+<details>
+<summary>File '/tmp/exercise' includes the following content
+
+```
+Goku = 9001
+Vegeta = 5200
+Trunks = 6000
+Gotenks = 32
+```
+
+With one task, switch the content to:
+
+```
+Goku = 9001
+Vegeta = 250
+Trunks = 40
+Gotenks = 32
+```
+</summary><br><b>
+
+```
+- name: Change saiyans levels
+  lineinfile:
+    dest: /tmp/exercise
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  with_items:
+    - { regexp: '^Vegeta', line: 'Vegeta = 250' }
+    - { regexp: '^Trunks', line: 'Trunks = 40' }
+    ...
+```
+</b></details>
 
 ## Terraform
 
@@ -2604,6 +2640,10 @@ def reverse_string(string):
   * zip()
   * map()
   * filter()</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you debug Python code?</summary><br><b>
 </b></details>
 
 <details>
@@ -3698,7 +3738,7 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
-<summary>What components and services exist in L2 and L3?</summary><br><b>
+<summary>What components and services exist for L2 and L3?</summary><br><b>
 </b></details>
 
 <details>
@@ -3718,6 +3758,10 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
+<summary>What networking entities Neutron supports?</summary><br><b>
+</b></details>
+
+<details>
 <summary>How do you debug OpenStack networking issues? (tools, logs, ...)</summary><br><b>
 </b></details>
 
@@ -3729,6 +3773,11 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 <details>
 <summary>Explain BGP dynamic routing</summary>
 </b></details>
+
+<details>
+<summary>What is the role of network namespaces in OpenStack?</summary>
+</b></details>
+
 
 ## Security
 
