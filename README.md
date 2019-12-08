@@ -2,11 +2,13 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **596** questions
+:bar_chart: &nbsp;There are currently **605** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
 :warning: &nbsp;The purpose of this repo is to help you test your knowledge and prepare for interviews. It doesn't represents a DevOps interview. Please read [Q&A](common-qa.md) for more details
+
+:thought_balloon: &nbsp;If you wonder how to prepare to your DevOps Interview, we added a couple of suggestions [here](prepare_for_interview.md)
 
 :pencil: &nbsp;You can add more questions & answers by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
 
@@ -53,6 +55,7 @@
     <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a><br /><sub><a href="#monitoring-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#elastic"><img src="images/elastic.png" width="110px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a><br /><sub><a href="#elastic-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#dns"><b>DNS</b></a><br /><sub><a href="#dns-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#virtualization"><b>Virtualization</b></a><br /><sub><a href="#virtualization-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#general"><img src="images/general.png" width="110px;" height="75px;" alt="General"/><br /><b>General</b></a></td>
     <td align="center"><a href="#scenarios"><img src="images/scenarios.png" width="110px;" height="75px;" alt="Scenarios"/><br /><b>Scenarios</b></a></td>
   </tr>
@@ -1138,6 +1141,12 @@ Soft links can be created between different file systems while hard link can be 
 ##### Processes
 
 <details>
+<summary>Can you explain what is a process?</summary><br><b>
+
+A process is a running program. A program is one or more instructions and the program (or process) is executed by the operating system.
+</b></details>
+
+<details>
 <summary>How to run a process in the background and why to do that in the first place?</summary><br><b>
 
 You can achieve that by specifying & at end of the command.
@@ -1150,7 +1159,7 @@ execution or run forever
 </b></details>
 
 <details>
-<summary>What signal is used when you run 'kill <process id>'?</summary><br><b>
+<summary>What signal is used by default when you run 'kill <process id>'?</summary><br><b>
 <pre>
 The default signal is SIGTERM (15). This signal kills
 process gracefully which means it allows it to save current
@@ -1183,11 +1192,12 @@ To view all available signals run `kill -l`
 <details>
 <summary>What are the possible states of a process in Linux?</summary><br><b>
 <pre>
-Running
-Waiting
-Stopped
-Terminated
-Zombie
+Running (R)
+Uninterruptible Sleep (D) - The process is waiting for I/O
+Interruptible Sleep (S)
+Stopped (T)
+Dead (x)
+Zombie (z)
 </pre>
 </b></details>
 
@@ -1441,6 +1451,10 @@ These system calls are reading the file <code>/my/file</code> and 5 is the file 
 <summary>What is the difference between a process and a thread?</summary><br><b>
 </b></details>
 
+<details>
+<summary>You found there is a server with high CPU load but you didn't find a process with high CPU. How is that possible?</summary><br><b>
+</b></details>
+
 ##### Network
 
 <details>
@@ -1501,6 +1515,15 @@ This is a good article about the topic: https://ops.tips/blog/how-linux-creates-
 <summary>You executed a script and while still running, it got accidentally removed. Is it possible to restore the script while it's still running?</summary><br><b>
 </b></details>
 
+## Virtualization
+
+<details>
+<summary>Explain what is Virtualization</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is "time sharing"?</summary><br><b>
+</b></details>
 
 ## Ansible
 
@@ -2166,6 +2189,27 @@ The average performance of the above algorithm is O(log n). Best performance can
 
 <details>
 <summary>Name 3 design patterns. Do you know how to implement (= provide an example) these design pattern in any language you'll choose?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Given an array/list of integers, find 3 integers which are adding up to 0 (in any language you would like)</summary><br><b>
+
+```
+def find_triplets_sum_to_zero(li):
+    li = sorted(li)
+    for i, val in enumerate(li):
+        low, up = 0, len(li)-1
+        while low < i < up:
+            tmp = var + li[low] + li[up]
+            if tmp > 0:
+                up -= 1
+            elif tmp < 0:
+                low += 1
+            else:
+                yield li[low], val, li[up]
+                low += 1
+                up -= 1
+```
 </b></details>
 
 ## Python
@@ -4191,10 +4235,19 @@ In general the process is as follows:
 
 <details>
 <summary>What types of DNS records are there?</summary><br><b>
+
+  * A
+  * PTR
+  * MX
+  * AAAA
 </b></details>
 
 <details>
-<summary>What is a "A record"?</summary><br><b>
+<summary>What is a A record?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a AAAA record?</summary><br><b>
 </b></details>
 
 <details>

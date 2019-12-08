@@ -29,7 +29,13 @@ With that being said, there are some concepts, tools, platforms, ... that are qu
 Excellent question. This repository alone will not be enough in many cases. We are exploring the answer to this question [here](prepare_for_interview.md)
 If you have any ideas, insights, questions, ... please contribute :)
 
-### Why there are no answers to most of the questions?
+### How do I become a better DevOps Engineer?
+
+That's even a better question than the previous one.
+I don't know to answer this but what I feel works for me is to read, practice and share. One of the reasons this project was created.
+I've gathered some resources, on different topics, [here](http://devopsbit.com/devops-resources)
+
+### Why most of the questions don't have answers?
 
 Because we need more contributors ;)<br>
 Also because the maintainer really likes to ask questions and less answering them.
@@ -42,9 +48,14 @@ Well, from everywhere - past experience, colleagues, contributors, ... But we do
 
 It's a hard question and the reason is that if you'll ask 20 different people, you'll probably get at least 10 different answers but here what you can check and see for yourself if going over jobs postings:
 
-* DevOps require you good understanding of operating system concepts - the level required is mainly depends on the company
-* Coding is part of DevOps - the level again depends on the company. Some will require you to know basic level of scripting while others deep understanding of common aalgorithms, data structure, etc.
+* DevOps require you good understanding of operating system concepts. The level required is mainly depends on the company
+* Coding is part of DevOps. The level again depends on the company. Some will require you to know basic level of scripting while others deep understanding of common algorithms, data structure, design patterns etc.
 * Cloud and Containers - while not 100% must in all companies/positions, this skill is on the rise every year and many (if not most) of the positions/companies require this skill. This specifically means: AWS/Azure/GCP, Docker, Kubernetes, ...
+
+### I feel like there are some questions that shouldn't be included in this project
+
+Is that a question?
+In any case, if you don't like some/most of the questions or think that some questions should be removed you can open an issue or submit a PR and we can discuss it there :)
 
 ### Can I add questions and/or answers to this project?
 
