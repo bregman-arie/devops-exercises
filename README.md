@@ -3989,19 +3989,38 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 #### :baby: Beginner
 
 <details>
-<summary>What is the Elastic Stack? What products does it includes?</summary><br><b>
+<summary>What is the Elastic Stack?</summary><br><b>
 
 The Elastic Stack consists of:
+
   * Elasticsearch
   * Elastic Hadoop
   * Kibana
   * Logstash
   * Beats
   * APM Server
+
+The most used projects are the Elasticserach, Logstash and Kibana. Also known as the ELK stack.
 </b></details>
 
 <details>
-<summary>Describe what happens from the moment the app logged some information until it's displayed to the user in the dashboard when the Elastic stack is used</summary><br><b>
+<summary>Describe what happens from the moment the app logged some information until it's displayed to the user in the dashboard when the Elastic stack is used</summary><br><b>  
+
+1. The data logged by the application is sent to Elasticsearch
+2. Elasticsearch stores the document it got and the document is indexed for quick future access
+3. Logstash processes the data
+4. The user creates visualizations which uses the index in elasticsearch and more specifically the data there (this is done in Kibana).
+5. The user creates a dashboard which composed out of the visualization created earlier
+</b></details>
+
+##### Elasticsearch
+
+<details>
+<summary>Explain what is Elasticsearch</summary><br><b>
+
+From the official [docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/documents-indices.html):
+
+"Elasticsearch is a distributed document store. Instead of storing information as rows of columnar data, Elasticsearch stores complex data structures that have been serialized as JSON documents"
 </b></details>
 
 <details>
@@ -4009,6 +4028,18 @@ The Elastic Stack consists of:
 
 Index in Elastic is in most cases compared to a whole database from the SQL/NoSQL world.<br>
 You can choose to have one index to hold all the data of your app or have multiple indices where each index holds different type of your app (e.g. index for each service your app is running).
+
+The official docs also offer a great explanation (in general, it's really good documentation, as every project should have):
+
+"An index can be thought of as an optimized collection of documents and each document is a collection of fields, which are the key-value pairs that contain your data"
+</b></details>
+
+<details>
+<summary>What is an Inverted Index?</summary><br><b>
+
+From the official docs:
+
+"An inverted index lists every unique word that appears in any document and identifies all of the documents each word occurs in."
 </b></details>
 
 <details>
@@ -4016,6 +4047,16 @@ You can choose to have one index to hold all the data of your app or have multip
 
 Continuing with the comparison to SQL/NoSQL a Document in Elastic is a row in table in the case of SQL or a document in a collection in the case of NoSQL.
 As in NoSQL a Document is a JSON object which holds data on a unit in your app. What is this unit depends on the your app. If your app related to book then each document describes a book. If you are app is about shirts then each document is a shirt.
+</b></details>
+
+<details>
+<summary>True or False? Elasticsearch indexes all data in every field and each indexed field has the same data structure for unified and quick query ability</summary><br><b>
+
+False.
+
+From the official docs:
+
+"Each indexed field has a dedicated, optimized data structure. For example, text fields are stored in inverted indices, and numeric and geo fields are stored in BKD trees."
 </b></details>
 
 <details>
@@ -4028,6 +4069,14 @@ As in NoSQL a Document is a JSON object which holds data on a unit in your app. 
 
 <details>
 <summary>Explain Mapping</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are the advantages of defining your own mapping? (or: when would you use your own mapping?)</summary><br><b>
+
+* You can optimize fields for partial matching
+* You can define custom formats of known fields (e.g. date)
+* You can perform language-specific analysis
 </b></details>
 
 <details>
