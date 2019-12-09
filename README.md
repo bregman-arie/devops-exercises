@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **609** questions
+:bar_chart: &nbsp;There are currently **611** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -1532,7 +1532,27 @@ There are many ways to answer that. For those who look for simplicity, the book 
 
 <details>
 <summary>How a process is created?</summary><br><b>
+
+* The OS is reading program's code and any additional relevant data
+* Program's bytes are loaded into the memory or more specifically, into the address space of the process.
+* Memory is allocated for program's stack (aka run-time stack). The stack also initialized by the OS with data like argv, argc and parameters to main()
+* Memory is allocated for program's heap which is required for data structures like linked lists and hash tables
+* I/O initialization tasks like in Unix/Linux based systems where each process has 3 file descriptors (input, output and error)
+* OS is running the program, strarting from main()
+
+Note: The loading of the program's code into the memory done lazily which means the OS loads only partial relevant pieces required for the process to run and not the entire code.
 </b></details>
+
+<details>
+<summary>True or False? The loading of the program into the memory is done eagerly (all at once)</summary><br><b>
+
+False. It was true in the past but today's operating systems perform lazy loading which means only the relevant pieces required for the process to run are loaded first.
+</b></details>
+
+<details>
+<summary>What are different states of a process?</summary><br><b>
+</b></details>
+
 
 ## Virtualization
 
