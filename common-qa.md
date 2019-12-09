@@ -19,7 +19,7 @@ Also, "coding-operational-HR-...-interview-questions" is too long name for a rep
 
 ### Should I be familiar with all the tools/platforms/... listed in this repository?
 
-NO NO NO! :)
+NO NO NO! :)<br>
 I won't give you the crap of "DevOps is a culture, not a role" kind of stuff but one thing is for sure, DevOps is not about being familiar with all the existing tools.
 
 With that being said, there are some concepts, tools, platforms, ... that are quite common in jobs requirements. Take Linux for example, while Linux is not part of 100% of DevOps roles out there, it's still quite a desired skill and probably appear as a requirement in more than 80% of DevOps roles if I had to guess. So go learn some Linux ;)
@@ -31,8 +31,8 @@ If you have any ideas, insights, questions, ... please contribute :)
 
 ### How do I become a better DevOps Engineer?
 
-That's even a better question than the previous one.
-I don't know to answer this but what I feel works for me is to read, practice and share. One of the reasons this project was created.
+That's even a better question than the previous one.<br>
+I don't have a definitive answer for this question, but what I feel works for me is to read, practice and share (One of the reasons this project was created).<br>
 I've gathered some resources, on different topics, [here](http://devopsbit.com/devops-resources)
 
 ### Why most of the questions don't have answers?

@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **605** questions
+:bar_chart: &nbsp;There are currently **609** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -56,6 +56,7 @@
     <td align="center"><a href="#elastic"><img src="images/elastic.png" width="110px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a><br /><sub><a href="#elastic-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#dns"><b>DNS</b></a><br /><sub><a href="#dns-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#virtualization"><b>Virtualization</b></a><br /><sub><a href="#virtualization-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#operating-system"><b>Operating System</b></a><br /><sub><a href="#operating-system-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#general"><img src="images/general.png" width="110px;" height="75px;" alt="General"/><br /><b>General</b></a></td>
     <td align="center"><a href="#scenarios"><img src="images/scenarios.png" width="110px;" height="75px;" alt="Scenarios"/><br /><b>Scenarios</b></a></td>
   </tr>
@@ -822,14 +823,6 @@ An open question. Answer based on your real experience.
 </b></details>
 
 <details>
-<summary>What is an operating system?</summary><br><b>
-
-There are many ways to answer that. For those who look for simplicity, the book "Operating Systems: Three Easy Pieces" offers nice version:
-
-"responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interac  t with devices, and other fun stuff like that"
-</b></details>
-
-<details>
 <summary>Explain what each of the following commands does and give an example on how to use it:
 
   * ls
@@ -1515,7 +1508,36 @@ This is a good article about the topic: https://ops.tips/blog/how-linux-creates-
 <summary>You executed a script and while still running, it got accidentally removed. Is it possible to restore the script while it's still running?</summary><br><b>
 </b></details>
 
+## Operating System
+
+<a name="operating-system-beginner"></a>
+#### :baby: Beginner
+
+<details>
+<summary>What is an operating system?</summary><br><b>
+
+There are many ways to answer that. For those who look for simplicity, the book "Operating Systems: Three Easy Pieces" offers nice version:
+
+"responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that"
+</b></details>
+
+<details>
+<summary>If you had to design an API for processes in an operating system, what would this API look like?</summary><br><b>
+
+* Create - allow to create new processes 
+* Delete - allow to remove/destroy processes
+* State - allow to check the state of the process, whether it's running, stopped, waiting, etc.
+* Stop - allow to stop a running process
+</b></details>
+
+<details>
+<summary>How a process is created?</summary><br><b>
+</b></details>
+
 ## Virtualization
+
+<a name="virtualization-beginner"></a>
+#### :baby: Beginner
 
 <details>
 <summary>Explain what is Virtualization</summary><br><b>
@@ -1523,6 +1545,15 @@ This is a good article about the topic: https://ops.tips/blog/how-linux-creates-
 
 <details>
 <summary>What is "time sharing"?</summary><br><b>
+
+Even when using a system with one physical CPU, it's possible to allow multiple users to work on it and run programs. This is possible with time sharing where computing resources are shared in a way it seems to the user the system has multiple CPUs but in fact it's simply one CPU shared by applying multiprogramming and multi-tasking.
+</b></details>
+
+<details>
+<summary>What is "space sharing"?</summary><br><b>
+
+Somewhat the opposite of time sharing. While in time sharing a resource is used for a while by one entity and then the same resource can be used by another resource, in space sharing the space is shared by multiple entities but in a way it's not being transfered between them.<br>
+It's used by one entity until this entity decides to get rid of it. Take for example storage. In storage, a file is your until you decide to delete it.
 </b></details>
 
 ## Ansible
