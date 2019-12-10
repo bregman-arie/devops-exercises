@@ -1,15 +1,44 @@
 ## How to prepare for an DevOps interview?
 
-Note: the following suggestions are opinionated
+Note: the following is opinionated.
 
-### Prepare by answering interview questions
+### Technical subjects you should be familiar with
 
-Make a sample list of interview questions on different topics: technical, company, role, ... and try to answer them. See if you can manage answering them in a fluent, detailed way.
+#### Linux
 
-### Coding
+Every DevOps Engineer should have knowledge about operating systems and specifically Linux which is probably in 95% of the DevOps jobs postings out there.
+Usually next question is "How extensive my knowledge should be?" - this should be your strongest area. Be familiar with processes, debugging tools, filesystem, networking, ... you got this :)
 
-Some (if not most) DevOps interviews include coding tasks/questions. Be prepared for those by doing actual coding.
-Also, the following probably clear to most people but still, when given the chance to choose any language for answering questions or coding tasks, choose the one you have experience with and not the one the company is using or you think it's using.
+#### Coding
+
+Some DevOps interviews include coding tasks/questions. Be prepared for those by doing actual coding. It should be at least scripting level but some companies (especially top 5) will require more than that which means you should be familiar with common algorithms, data structures, etc.
+ 
+Also, the following is probably clear to most people but let's still clarify it: when given the chance to choose any language for answering coding tasks/questions, choose the one you have experience with! Some candidates prefer to to choose the language they think the company is using and this is a huge mistake because right answer > wrong answer in any language.
+
+#### Architecture and Design
+
+This is also an important aspect of DevOps. You should be able to describe how to design systems, workflows and in a way which will s-c-a-l-e. This is important because sometimes candidates will describe something that works great with 5 hosts or data of 100GB but will not scale to 100,000 hosts or big amounts of data.
+
+Some ideas:
+
+* How to design and implement a CI pipeline (or pipelines) for verifying PRs, run multiple different types of tests, package the project and deploy it somewhere
+* How to design and implement secured ELK architecture which will get logs from 10,000 apps and will display the data eventually to the user
+
+#### Tools
+
+Some interviews will focus on specific tools. Which tools is mainly based on what you mentioned in your C.V + those that are mentioned in the job posting and used in the company. Here are some questions I believe anyone should know to answer regarding the tools he/she is familiar with:
+
+* What the tool does? What it allow us to achieve that we couldn't do without it?
+* What its advantages over other tools in the same area, with the same purpose?
+* How it works?
+* How to use it? (general usage, no need to start memorizing flags)
+
+Let's deep dive into practical preparation steps
+
+### Sample interview questions
+
+Make a sample list of interview questions on various topics/areas like technical, company, role, ... and try to answer them.
+See if you can manage answering them in a fluent, detailed way.
 
 ### Know your resume
 
@@ -34,15 +63,15 @@ In most cases, you will do fine with reading books but for the AAA interviews (h
 
 This is a very common way to interview today for DevOps roles. The candidate is given a task which represents a common task of DevOps Engineers or common knowledge and the candidate has several hours or days to accomplish the task.<br>
 
-This is a great way to prepare to interviews and I recommend to try it out before actually interviewing. How? take requirements from job posts and convert them to scenarios. Let's see an example:
+This is a great way to prepare to interviews and I recommend to try it out before actually interviewing. How? Take requirements from job posts and convert them to scenarios. Let's see an example:
 
 "Knowledge in CI/CD" -> Scenario: create a CI/CD pipeline for a project.
 
-At this point some people ask: "but what project? I'm not working right now" and the answer is: what about GitHub? it has only 9125912851285192 projects...and a free way to set up CI to any of them.
+At this point some people ask: "but what project?" and the answer is: what about GitHub? it has only 9125912851285192 projects...and a free way to set up CI to any of them (also a great way to learn how to collaborate with others :) )
 
 Let's convert another scenario:
 
-"Experience with provisioning servers" -> Scenario: provision a server (to make it more interesting, create
+"Experience with provisioning servers" -> Scenario: provision a server (to make it more interesting: create a web server).
 
 And the last example:
 
@@ -54,15 +83,15 @@ Starting a DevOps is a good idea because:
 
 * It will make you practice coding
 * It will be something you can add to your resume and talk about with the interviewer
-* Depends on size and complexity, it can teach you a thing or two about design
-* Depends on adoption, it can you teach you a lot about managing Open Source projects
+* Depends on size and complexity, it can teach you one thing or two about design
+* Depends on adoption, it can you teach you about managing Open Source projects
 
 ### Consider starting in non-DevOps position
 
-Landing DevOps as a first position can be challenging. No, it's not impossible but still, since DevOps covers many different practices, tools, ... it can be quite challanging.
+Landing DevOps as a first position can be challenging. No, it's not impossible but still, since DevOps covers many different practices, tools, ... it can be quite challanging. A possible path to become a DevOps engineer is to start with actually a different position and switch from there after 1-2 years or more.
 
-A possible path to become a DevOps engineer is to start with actually a different position and switch from there. Some ideas:
+Some ideas:
 
-* Linux System Administrator - This is perfect because every DevOps Engineer should have solid understanding of the OS.
+* System Administrator - This is perfect because every DevOps Engineer should have solid understanding of the OS and sys admins know their OS :)
 * Software Developer/Engineer - A DevOps should have coding skills and this position will provide more than the required knowledge
 * QA Engineer - This is more tricky one because IMHO there are less overlapping areas/skills with DevOps Engineer but some people done it so it's not impossible :)
