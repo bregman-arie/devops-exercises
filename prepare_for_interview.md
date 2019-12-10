@@ -95,3 +95,14 @@ Some ideas:
 * System Administrator - This is perfect because every DevOps Engineer should have solid understanding of the OS and sys admins know their OS :)
 * Software Developer/Engineer - A DevOps should have coding skills and this position will provide more than the required knowledge
 * QA Engineer - This is more tricky one because IMHO there are less overlapping areas/skills with DevOps Engineer but some people done it so it's not impossible :)
+
+### One Last Note
+
+DevOps interviews can be very different. Some will include design questions, some will focus on coding, others will include short technical questions and you might even have an interview where the focus is only about going over your resume and discussing your past experience.
+There are a couple of things you can do about about it:
+
+1. You can and probably should ask the HR (in some cases even the team lead) how the interview process looks like. Some will be kind enough to even tell you how to prepare.
+2. Usually the job posting gives more than an hint on where the focus will be and what you should focus on in your preparations so read it carefully.
+3. There are plenty of sites that have notes or summary of the interview process in different companies, especially the big enterprises.
+
+One last thing, [good luck](https://youtu.be/Xz-UvQYAmbg?t=29) :) 
