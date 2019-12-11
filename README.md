@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **612** questions
+:bar_chart: &nbsp;There are currently **615** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -1209,6 +1209,10 @@ Zombie (z)
 
 <details>
 <summary>What is a zombie process?</summary><br><b>
+
+A process which has finished to run but has not exited.
+
+One reason it happens is when a parent process is programmed incorrectly. Every parent process should execute wait() to get the exit code from the child process which finished to run. But when the parent isn't checking for the child exit code, the child process can still exists although it finished to run.
 </b></details>
 
 <details>
@@ -1510,6 +1514,10 @@ There are a couple of ways to do that:
 </b></details>
 
 <details>
+<summary>Explain the fork() system call</summary><br><b>
+</b></details>
+
+<details>
 <summary>What are the differences between the following system calls?: exec(), fork(), vfork() and clone()?</summary><br><b>
 </b></details>
 
@@ -1578,8 +1586,11 @@ False. It was true in the past but today's operating systems perform lazy loadin
 
 <details>
 <summary>What are different states of a process?</summary><br><b>
-</b></details>
 
+* Running - it's executing instructions
+* Ready - it's ready to run but for different reasons it's on hold
+* Blocked - it's waiting for some operation to complete. For example I/O disk request
+</b></details>
 
 ## Virtualization
 
@@ -3067,6 +3078,10 @@ Logging
 </b></details>
 
 <details>
+<summary>Have you set up Prometheus? How did you do it? Describe the process</summary><br><b>
+</b></details>
+
+<details>
 <summary>Can you compare Prometheus to other solutions like InfluxDB for example?</summary><br><b>
 </b></details>
 
@@ -3104,6 +3119,10 @@ Alert manager is responsible for alerts ;)
 
 <details>
 <summary>How to get total requests in a given period of time?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What HA in Prometheus means?</summary><br><b>
 </b></details>
 
 <a name="prometheus-advanced"></a>
