@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **611** questions
+:bar_chart: &nbsp;There are currently **612** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -819,7 +819,13 @@ TCP establishes a connection between the client and the server to guarantee the 
 <details>
 <summary>What is your experience with Linux?</summary><br><b>
 
-An open question. Answer based on your real experience.
+An open question. Answer based on your real experience. You can highlight one or more of the following:
+
+* Troubleshooting & Debugging
+* Storage
+* Networking
+* Development
+* Deployments
 </b></details>
 
 <details>
@@ -835,6 +841,17 @@ An open question. Answer based on your real experience.
   * man
   * nslookup or dig
   * df</summary><br><b>
+
+  * ls - list files and directories. You can highlight common flags like -d, -a, -l, ...
+  * rm - remove files and directories. You should mention -r for recursive removal
+  * rmdir - remove directories but you should mention it's possible to use rm for that
+  * grep - print lines that match patterns. Could be nice to mention -v, -r, -E flags
+  * wc - print newline, word, and byte counts
+  * curl - tranfer a URL or mention common usage like downloading files, API calls, ...
+  * touch - update timestamps but common usage is to create files
+  * man - reference manuals
+  * nslookup or dig - query nameservers
+  * df - provides info regarding file system disk space usage
 </b></details>
 
 <details>
@@ -855,10 +872,6 @@ Note: There are many ways of getting errors like this: if bash_profile or any co
 permissions issues, bad compiled software (if you compiled it by yourself)... there is no answer that will be true 100% of the time.</b>
 </p>
 </details>
-
-<details>
-<summary>How to make sure a service will start on a OS of your choice?</summary><br><b>
-</b></details>
 
 <details>
 <summary>How do you schedule tasks periodically?</summary><br><b>
@@ -1358,8 +1371,22 @@ You can specify one or more of the following:
 <summary>How do you list the content of a package without actually installing it?</summary><br><b>
 </b></details>
 
+<details>
+<summary>How to know to which package a file on the system belongs to?</summary><br><b>
+</b></details>
+
 ##### Applications and Services
 
+<details>
+<summary>How to make sure a Service starts automatically after a reboot or crash?</summary><br><b>
+
+Depends on the init system.
+
+Systemd: <code> systemctl enable [service_name] </code>
+System V: <code> update-rc.d [service_name] </code> and add this line <code> id:5678:respawn:/bin/sh /path/to/app </code> to /etc/inittab
+Upstart: add Upstart init script at /etc/init/service.conf
+
+</b></details>
 <details>
 <summary>What is a load balancer?</summary><br><b> 
 </b></details>
@@ -4351,6 +4378,7 @@ Although the following questions are not DevOps related, they are still quite co
 <summary>How did you hear about us?</summary><br><b>
 
 Tell them how did you hear about them :D
+Relax, there is no wrong or right answer here...I think.
 </b></details>
 
 <details>
@@ -4371,12 +4399,14 @@ Tell them how did you hear about them :D
 
 <details>
 <summary>Have you ever caused a service outage? (or broke a working project, tool, ...?)</summary><br><b>
+
+If you worked in this area for more than 5 areas it's hard to imagine the answer would be no. It also doesn't have to be big service outage. Maybe you merged some code that broke a project or its tests. Simply focus on what you learned from such experience.
 </b></details>
 
 <details>
 <summary>Rank the following in order 1 to 5, where 1 is most important: salaray, benefits, career, team/people, work life balance</summary><br><b>
 
-Don't put salary in bottom or top.
+You know best your order just have a good thought if you really want to put salary in top or bottom....
 </b></details>
 
 <details>
@@ -4385,20 +4415,37 @@ Don't put salary in bottom or top.
 
 <details>
 <summary>You have a colleague you don‘t get along with. Tell us some strategies how you create a good work relationship with them anyway.</summary><br><b>
+
+Bad answer: I don't.
+Better answer: Every person has strengths and weaknesses. This is true also for colleagues I don't have good work relationship with and this is what helps me to create good work relationship with them. If I am able to highlight or recognize their strengths I'm able to focus mainly on that when communicating with them.
 </b></details>
 
 <details>
 <summary>What do you love about your work?</summary><br><b>
+
+You know the best, but some ideas if you find it hard to express yourself:
+
+* Diversity
+* Complexity
+* Challenging
+* Communication with several different teams
 </b></details>
 
 <details>
 <summary>Why should we hire you for the role?</summary><br><b>
+
+You can use and elaborate on one or all of the following:
+
+* Passion
+* Motivation 
+* Autodidact
+* Creativity (be able to support it with some actual examples)
 </b></details>
 
 ## Questions you CAN ask
 
 A list of questions you as a candidate can ask the interviewer during or after the interview.
-These are only a suggestion. Use them carefully :)
+These are only a suggestion, use them carefully. Not every interviewer will be able to answer these (or happy to) which should be perhaps a red flag warning for your regarding working in such place but that's really up to you.
 
 <details>
 <summary>What do you like about working here?</summary><br><b>
@@ -4440,6 +4487,8 @@ you can show how you'd be able to mitigate that problem.
 
 <details>
 <summary>Let's say that we agree and you hire me to this position, after X months, what do you expect that I have achieved?</summary><br><b>
+
+Not only this will tell you what is expected from you, it will also provide big hint on the type of work you are going to do in the first months of your job.
 </b></details>
 
 ## Scenarios
