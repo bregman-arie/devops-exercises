@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **620** questions
+:bar_chart: &nbsp;There are currently **630** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -235,6 +235,13 @@ One can argue whether it's per company definition or a global one but at least a
 <summary>What is "infrastructure as code"? What implementation of IAC are you familiar with?</summary><br><b>
 </b></details>
 
+<details>
+<summary>How do you manage build artifacts?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What Continuous Integration solution are you using/prefer and why?</summary><br><b>
+</b></details>
 
 <a name="devops-advanced"></a>
 #### :star: Advanced
@@ -385,6 +392,10 @@ You can describe the UI way to add new slaves but better to explain how to do in
 
 <a name="cloud-beginner"></a>
 #### :baby: Beginner
+
+<details>
+<summary>What is "Cloud"?</summary><br><b>
+</b></details>
 
 <details>
 <summary>What are the advantages of cloud computing? Mention at least 3 advantages</summary><br><b>
@@ -1012,6 +1023,14 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
+<summary>What kind of information one can find in /proc?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How you measure time execution of a program?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is a Linux kernel module and how do you load a new module?</summary><br><b>
 </b></details>
 
@@ -1101,6 +1120,13 @@ Soft links can be created between different file systems while hard link can be 
 </b></details>
 
 <details>
+<summary>How to create a
+  * new empty file 
+  * a file with text (without using text editor)
+  * a file with given size</summary><br><b>
+</b></details>
+
+<details>
 <summary>You are trying to create a new file but you get "File system is full". You check with df for free space and you see you used only 20% of the space. What could be the problem?</summary><br><b>
 </b></details>
 
@@ -1129,6 +1155,10 @@ Soft links can be created between different file systems while hard link can be 
 </b></details>
 
 <details>
+<summary>Describe the process of extending a filesystem disk space</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is lazy umount?</summary><br><b>
 </b></details>
 
@@ -1150,7 +1180,6 @@ Soft links can be created between different file systems while hard link can be 
   * /tmp
   * /var/log
   * /bin
-  * /proc
   * /usr/local
 </b></details>
 
@@ -1316,6 +1345,10 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 <summary>What firewalld daemon is responsible for?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Do you have experience with hardening servers? Can you describe the process?</summary><br><b>
+</b></details>
+
 ##### Network
 
 <details>
@@ -1440,6 +1473,10 @@ Upstart: add Upstart init script at /etc/init/service.conf
 
 <details>
 <summary>Do you know how to create a new user without using adduser/useradd command?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What information is stored in /etc/passwd?</summary><br><b>
 </b></details>
 
 <details>
@@ -4506,6 +4543,12 @@ You know the best, but some ideas if you find it hard to express yourself:
 </b></details>
 
 <details>
+<summary>What are your responsibilities in your current position?</summary><br><b>
+
+You know the best :)
+</b></details>
+
+<details>
 <summary>Why should we hire you for the role?</summary><br><b>
 
 You can use and elaborate on one or all of the following:
@@ -4583,6 +4626,7 @@ Below you can find several scenario questions:
 * [Jenkins: writing scripts](scenarios/jenkins_scripts.md)
 * [Jenkins: writing pipelines](scenarios/jenkins_pipelines.md)
 * [CI for open source project](scenarios/ci_for_open_source_project.md)
+
 
 ## Credits
 
