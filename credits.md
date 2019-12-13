@@ -10,3 +10,4 @@ Bash logo created by Prospect One<br>
 OpenStack logo created by and a trademark of The <a href="https://www.openstack.org">OpenStack Foundation®</a><br>
 Linux, Kubernetes and Prometheus logos are trademarks of The Linux Foundation®<br>
 Mongo logo is a trademark of <a href="www.mongodb.com">Mongo®</a><br>
+Design logo by Aleksandr Reva 

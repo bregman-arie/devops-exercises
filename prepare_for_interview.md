@@ -79,7 +79,7 @@ And the last example:
 
 ### Start your own DevOps project
 
-Starting a DevOps is a good idea because:
+Starting a DevOps project is a good idea because:
 
 * It will make you practice coding
 * It will be something you can add to your resume and talk about with the interviewer

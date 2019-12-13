@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **615** questions
+:bar_chart: &nbsp;There are currently **620** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -57,6 +57,7 @@
     <td align="center"><a href="#dns"><b>DNS</b></a><br /><sub><a href="#dns-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#virtualization"><b>Virtualization</b></a><br /><sub><a href="#virtualization-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#operating-system"><b>Operating System</b></a><br /><sub><a href="#operating-system-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#distributed"><img src="images/distributed.png" width="110px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
     <td align="center"><a href="#general"><img src="images/general.png" width="110px;" height="75px;" alt="General"/><br /><b>General</b></a></td>
     <td align="center"><a href="#scenarios"><img src="images/scenarios.png" width="110px;" height="75px;" alt="Scenarios"/><br /><b>Scenarios</b></a></td>
   </tr>
@@ -74,11 +75,20 @@
 <details>
 <summary>What is DevOps?</summary><br><b>
 
-There are many good answers to this question. I like Amazon's description of DevOps:
+There are many good answers to this question.
+
+Amazon:
 
 "DevOps is the combination of cultural philosophies, practices, and tools that increases an organization’s ability to deliver applications and services at high velocity: evolving and improving products at a faster pace than organizations using traditional software development and infrastructure management processes. This speed enables organizations to better serve their customers and compete more effectively in the market."
 
-You can find more details here: https://aws.amazon.com/devops/what-is-devops
+Microsoft:
+
+"DevOps is the union of people, process, and products to enable continuous delivery of value to our end users. The contraction of “Dev” and “Ops” refers to replacing siloed Development and Operations to create multidisciplinary teams that now work together with shared and efficient practices and tools. Essential DevOps practices include agile planning, continuous integration, continuous delivery, and monitoring of applications."
+
+Red Hat:
+
+"DevOps describes approaches to speeding up the processes by which an idea (like a new software feature, a request for enhancement, or a bug fix) goes from development to deployment in a production environment where it can provide value to the user. These approaches require that development teams and operations teams communicate frequently and approach their work with empathy for their teammates. Scalability and flexible provisioning are also necessary. With DevOps, those that need power the most, get it—through self service and automation. Developers, usually coding in a standard development environment, work closely with IT operations to speed software builds, tests, and releases—without sacrificing reliability."
+
 </b></details>
 
 <details>
@@ -93,7 +103,7 @@ You should mention some or all of the following:
   * Scale
   * Reliability
 
-Detailed answer can be found here: https://aws.amazon.com/devops/what-is-devops 
+Make sure to elaborate :)
 </b></details>
 
 <details>
@@ -2026,7 +2036,7 @@ You should choose VMs when:
   * you need full isolation and security
 
 You should choose containers when:
-  * you need a lightweight solution that quickly starts
+  * you need a lightweight solution
   * Running multiple versions or instances of a single application
 </b></details>
 
@@ -2048,10 +2058,6 @@ Docker daemon redirects output from container to Docker CLI which redirects it t
 </b></details>
 
 <details>
-<summary>What best practices are you familiar related to working with containers?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What `docker commit` does?. When will you use it?</summary><br><b>
 </b></details>
 
@@ -2069,6 +2075,7 @@ Docker daemon redirects output from container to Docker CLI which redirects it t
   * docker run
   * docker rm
   * docker ps
+  * docker pull
   * docker build
   * docker commit</summary><br><b>
 </b></details>
@@ -2092,7 +2099,15 @@ Docker daemon redirects output from container to Docker CLI which redirects it t
 </b></details>
 
 <details>
+<summary>Do you perform any checks or testing related to your Dockerfile?</summary><br><b>
+
+A common answer to this is to use [hadolint](https://github.com/hadolint/hadolint) project which is a linter based on Dockerfile best practices.
+</b></details>
+
+<details>
 <summary>Explain what is Docker compose and what is it used for</summary><br><b>
+
+Docker Compose is used for running multi-container applications 
 </b></details>
 
 <details>
@@ -2124,6 +2139,10 @@ Swarm management which means you can create new swarms in Docker Cloud.
 
 <a name="docker-advanced"></a>
 #### :star: Advanced
+
+<details>
+<summary>What best practices are you familiar related to working with containers?</summary><br><b>
+</b></details>
 
 <details>
 <summary>How do you manage persistent storage in Docker?</summary><br><b>
@@ -2178,6 +2197,18 @@ Kubernetes is especially good for scenarios when you no longer running small num
 
 <details>
 <summary>What is kubconfig? What do you use it for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You suspect one of the pods is having issues, what do you do?</summary><br><b>
+
+Start by inspecting the pods status. we can use the command `kubectl get pods` (--all-namespaces for pods in system namespace)<br>
+
+If we see "Error" status, we can keep debugging by running the command `kubectl describe pod [name]`. In case we still don't see anything useful we can try stern for log tailing.<br>
+
+In case we find out there was a temporary issue with the pod or the system, we can try restarting the pod with the following `kubectl scale deployment [name] --replicas=0`<br>
+
+Setting the replicas to 0 will shut down the process. Now start it with `kubectl scale deployment [name] --replicas=1`
 </b></details>
 
 ## Coding
@@ -3239,6 +3270,14 @@ git checkout HEAD~1 -- /path/of/the/file
 
   * Not waiting to long between commits
   * Not removing the .git directory :)
+</b></details>
+
+<details>
+<summary>How do you remove a remote branch?</summary><br><b>
+
+You delete a remote branch with this syntax:
+
+git push origin :[branch_name]
 </b></details>
 
 <a name="git-advanced"></a>
@@ -4371,6 +4410,22 @@ While an A record points a domain name to an IP address, a PTR record does the o
 
 <details>
 <summary>What is a zone? What types of zones are there?</summary><br><b>
+</b></details>
+
+## Distributed
+
+<details>
+<summary>Explain Distributed Computing</summary><br><b>
+</b></details>
+
+<details>
+<summary>Do you know what is CAP theorem" (aka as Brewer's theorem)</summary><br><b>
+
+According to the CAP theorem, it's not possible for a distributed data store to provide more than two of the following at the same time:
+
+* Availability: Every request receives a response (it doesn't has to be the most recent data)
+* Consistency: Every request receives a response with the latest/most recent data
+* Partition tolerance: Even if some the data is lost/dropped, the system keeps running 
 </b></details>
 
 ## General
