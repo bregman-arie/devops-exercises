@@ -17,7 +17,8 @@ Also, the following is probably clear to most people but let's still clarify it:
 
 #### Architecture and Design
 
-This is also an important aspect of DevOps. You should be able to describe how to design systems, workflows and in a way which will s-c-a-l-e. This is important because sometimes candidates will describe something that works great with 5 hosts or data of 100GB but will not scale to 100,000 hosts or big amounts of data.
+This is also an important aspect of DevOps. You should be able to describe how to design different systems, workflows and architectures. Some will also say scale is an important aspect of that.<br>
+A design which might work for a dozen of hosts or X amount of data, will not necessarily work with thousands of hosts and different scale of data.
 
 Some ideas:
 
@@ -40,24 +41,32 @@ Let's deep dive into practical preparation steps
 Make a sample list of interview questions on various topics/areas like technical, company, role, ... and try to answer them.
 See if you can manage answering them in a fluent, detailed way.
 
+Better yet, ask a good friend/colleague to challenge you with some questions. You might not be objective enough when self-interviewing yourself :)
+
+### Networking
+
+For those who attend technical meetups, conferences, ... it can be a great opportunity to chat with people from other companies on their interviewing process. But don't start with it, it can be quite awkward. Say at least hello first... (:
+
+Doing so can give you a lot of information on what to expect from an interview at some companies or how to how to better prepare.
+
 ### Know your resume
 
-It may sounds strange but the idea here is simple: be ready to answer any question regarding any line you included in your resume.
+It may sound trivial but the idea here is simple: be ready to answer any question regarding any line you included in your resume.
 Sometimes candidates surprised when they are asked on a skill or line which seems to be not related to the position but the simple truth is: if you mentioned something on your resume, it's only fair to ask you about it.
 
 ### Know the company
 
 Be familiar with the company you are interviewing at. Some ideas:
 
-  * What the company does
-  * What products it has
-  * Major achievements
+  * What the company does?
+  * What products it has?
+  * Latest major achievement(s)
 
 ### Books
 
 From my experience this is not done by many candidates but it's one of the best ways to deep dive into topics like operating system, virtualization, scale, distributed systems, ...
 
-In most cases, you will do fine with reading books but for the AAA interviews (hardest level) you'll want to read some books and overall, if you inspire to be better DevOps Engineer, books is a great way.
+In most cases, you will do fine with reading books but for the AAA interviews (hardest level) you'll want to read some books and overall, if you inspire to be better DevOps Engineer, books is a great way :)
 
 ### Scenarios
 
@@ -75,7 +84,7 @@ Let's convert another scenario:
 
 And the last example:
 
-"Experience with scripting" -> Scenario: write a script which helps to accomplish some of the DevOps goals. For example, a script for generating Travis YAML for projects based on their content. If you need more ideas, open an issue and we'll help!
+"Experience with scripting" -> Scenario: write a script. Don't waste too much time thinking "what script should I write?". Simply automate something you are doing manually or even implement you own version of common small utils.
 
 ### Start your own DevOps project
 
@@ -83,26 +92,42 @@ Starting a DevOps project is a good idea because:
 
 * It will make you practice coding
 * It will be something you can add to your resume and talk about with the interviewer
-* Depends on size and complexity, it can teach you one thing or two about design
+* Depends on size and complexity, it can teach you something about design
 * Depends on adoption, it can you teach you about managing Open Source projects
 
 ### Consider starting in non-DevOps position
 
-Landing DevOps as a first position can be challenging. No, it's not impossible but still, since DevOps covers many different practices, tools, ... it can be quite challanging. A possible path to become a DevOps engineer is to start with actually a different position and switch from there after 1-2 years or more.
+Landing DevOps as a first position can be challenging. No, it's not impossible but still, since DevOps covers many different practices, tools, ... it can be quite challanging and also overwhelming for someone to try and achieve it as a first position.<br>
+A possible path to become a DevOps engineer is to start with actually a different (but related) position and switch from there after 1-2 years or more.
 
 Some ideas:
 
 * System Administrator - This is perfect because every DevOps Engineer should have solid understanding of the OS and sys admins know their OS :)
-* Software Developer/Engineer - A DevOps should have coding skills and this position will provide more than the required knowledge
+* Software Developer/Engineer - A DevOps should have coding skills and this position will provide more than the required knowledge in most cases
 * QA Engineer - This is more tricky one because IMHO there are less overlapping areas/skills with DevOps Engineer but some people done it so it's not impossible :)
 
-### One Last Note
+### What to expect from a DevOps interview?
 
-DevOps interviews can be very different. Some will include design questions, some will focus on coding, others will include short technical questions and you might even have an interview where the focus is only about going over your resume and discussing your past experience.
-There are a couple of things you can do about about it:
+DevOps interviews can be very different. Some will include design questions, some will focus on coding, others will include short technical questions and you might even have an interview where the interviewer only goes over your resume and discussing your past experience.
+
+There are a couple of things you can do about about it so it will be less overwhelming experience:
 
 1. You can and probably should ask the HR (in some cases even the team lead) how the interview process looks like. Some will be kind enough to even tell you how to prepare.
 2. Usually the job posting gives more than an hint on where the focus will be and what you should focus on in your preparations so read it carefully.
 3. There are plenty of sites that have notes or summary of the interview process in different companies, especially the big enterprises.
 
-One last thing, [good luck](https://youtu.be/Xz-UvQYAmbg?t=29) :) 
+### Don't forget to be an interviewer as well
+
+Some people tend to look at interviews as one-way road of "Determining whether a candidate is qualified" but in reality, a candidate should also determine whether
+the company is interviewing at, is the right place for him/her.
+
+* Do I care about team size? More specifically, do I care about being one-man show or being part of a bigger team?
+* Do I care about work-life balance?
+* Do I care about personal growth and how it's practically done?
+* Do I care about knowing what are my responsibilities as part of the role?
+
+If you do, you should also play the interviewer role :)
+
+### One Last Thing
+
+[Good luck](https://youtu.be/Xz-UvQYAmbg?t=29) :) 
