@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **630** questions
+:bar_chart: &nbsp;There are currently **635** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -417,6 +417,14 @@ SAAS
   * Private</summary><br><b>
 </b></details>
 
+<details>
+<summary>What are the differences between Cloud Provides and On-Premise solution?</summary><br><b>
+
+In cloud providers, someone else owns and manages the hardware, hire the relevant infrastructure teams and pays for real-estate (for both hardware and people). You can focus on your business.
+
+In On-Premise solution, it's quite the opposite. You need to take care of hardware, infrastructure teams and pay for everything which can be quite expensive. On the other hand it's tailored to your needs.
+</b></details>
+
 
 ## AWS
 
@@ -439,6 +447,12 @@ Edge locations are basically content delivery network which caches data and insu
 
 <details>
 <summary>What is IAM?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? IAM configuration is defined globally and not per region</summary><br><b>
+
+True
 </b></details>
 
 ##### S3
@@ -553,20 +567,26 @@ Stop the instance, the type of the instance to match the desired RAM and start t
   * Classic LB - low costs, good for test or dev environments
 </b></details>
 
-##### Security 
+##### AWS Security 
 
+<details>
 <summary>What is the shared responsibility model? In other words, what AWS is responsible for and what the user is responsible for in regards to Security?</summary><br><b>
 </b></details>
 
+<details>
 <summary>What is the AWS compliance program?</summary><br><b>
 </b></details>
 
+<details>
 <summary>Explain what each of the following services is used for
 
   * AWS Inspector
   * AWS Artifact
-  * AWS WAF
   * AWS Shield</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS WAF? Give an example of how it can used and describe what resources or services you can use it with</summary><br><b>
 </b></details>
 
 <summary>What AWS VPN is usef for?</summary><br><b>
@@ -580,7 +600,7 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 True
 </b></details>
 
-#### Databases
+#### AWS Databases
 
 <details>
 <summary>What is RDS?</summary><br><b>
@@ -597,9 +617,26 @@ True
 <summary>What is EBS?</summary><br><b>
 </b></details>
 
+#### AWS Networking
+
 <details>
 <summary>What is VPC?</summary><br><b>
 </b></details>
+
+<details>
+<summary>Explain Security Groups and Network ACLs</summary><br><b>
+</b></details>
+
+#### Misc
+
+<details>
+<summary>Explain what are the following services and give an use case example for each one them:
+
+  * CloudTrail
+  * CloudWatch
+  * CloudSearch</summary><br><b>
+</b></details>
+
 
 ## Network
 
