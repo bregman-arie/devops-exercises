@@ -418,7 +418,7 @@ SAAS
 </b></details>
 
 <details>
-<summary>What are the differences between Cloud Provides and On-Premise solution?</summary><br><b>
+<summary>What are the differences between Cloud Providers and On-Premise solution?</summary><br><b>
 
 In cloud providers, someone else owns and manages the hardware, hire the relevant infrastructure teams and pays for real-estate (for both hardware and people). You can focus on your business.
 
