@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **635** questions
+:bar_chart: &nbsp;There are currently **640** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -255,7 +255,7 @@ One can argue whether it's per company definition or a global one but at least a
 </b></details>
 
 <details>
-<summary>How do you measure your CI/CD quality? Are there any metrics you are using for measuring the quality?</summary><br><b>
+<summary>How do you measure your CI/CD quality? Are there any metrics or KPIs you are using for measuring the quality?</summary><br><b>
 </b></details>
 
 <details>
@@ -1133,6 +1133,15 @@ I consider this as a good blog post to read more about it: https://shapeshed.com
 
 For each file (and directory) in Linux there is an inode, a data structure which stores meta data
 related to the file like its size, owner, permissions, etc.
+</b></details> 
+
+<details>
+<summary>Which of the following is not included in inode:
+
+  * Link count
+  * File size
+  * File name
+  * File timestamp</summary><br><b>
 </b></details>
 
 <details>
@@ -1144,8 +1153,18 @@ related to the file like its size, owner, permissions, etc.
 
 Hard link is the same file, using the same inode.
 Soft link is a shortcut to another file, using a different inode.
+</b></details>
 
-Soft links can be created between different file systems while hard link can be created only within the same file system.
+<details>
+<summary>True or False? You can create an hard link for a directory</summary><br><b>
+
+False
+</b></details>
+
+<details>
+<summary>True or False? You can create a soft link between different filesystems</summary><br><b>
+
+True
 </b></details>
 
 <details>
@@ -1257,6 +1276,10 @@ SIGHUP - common usage is for reloading configuration
 SIGKILL - a signal which cannot caught or ignored
 
 To view all available signals run `kill -l`
+</b></details>
+
+<details>
+<summary>What <code>kill 0</code> does?</summary><br><b>
 </b></details>
 
 <details>
@@ -1424,6 +1447,12 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 
 <details>
 <summary>How to list active connections?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to trigger neighbor discovery in IPv6?</summary><br><b>
+
+One way would be `ping6 ff02::1`
 </b></details>
 
 ##### Linux DNS
