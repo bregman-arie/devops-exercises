@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **640** questions
+:bar_chart: &nbsp;There are currently **650** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -205,6 +205,20 @@ Stateful applications depend on the storage to save state and data, typically da
 
 <details>
 <summary>Describe me the architecture of service/app/project/... you designed and/or implemented</summary><br><b>
+</b></details>
+
+<details>
+<summary>What types of tests are you familiar with?</summary><br><b>
+
+Styling, unit, functional, API, integration, smoke, scenario, ...
+
+You should be able to explain those that you mention.
+</b></details>
+
+<details>
+<summary>You need to install periodically the same package on different operating systems (Ubuntu, RHEL, ...). How would you do it?</summary><br><b>
+
+It can be as simple as one Ansible (or other CM tool) task that runs periodically with Cron. In more advanced cases, perhaps a CI system.
 </b></details>
 
 ##### SRE
@@ -1072,6 +1086,14 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
+<summary>Explain user space and kernel space</summary><br><b>
+</b></details>
+
+<details>
+<summary>Wildcards are implemented on user or kernel space?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is KVM?</summary><br><b>
 </b></details>
 
@@ -1383,7 +1405,7 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 <summary>Explain Kernel OOM</summary><br><b>
 </b></details>
 
-##### Security
+##### Linux Security
 
 <details>
 <summary>What is chroot? In what scenarios would you consider using it?</summary><br><b>
@@ -1561,6 +1583,14 @@ Re-install the OS IS NOT the right answer :)
 <summary>What is sudo? How do you set it up?</summary><br><b>
 </b></details>
 
+##### Random and Strange :)
+
+<details>
+<summary>Give 5 commands which are two letters long</summary><br><b>
+
+ls, wc, dd, df, du, ps, ip, ...
+</b></details>
+
 <a name="linux-advanced"></a>
 #### :star: Advanced
 
@@ -1582,6 +1612,14 @@ read(5, "file content")
 </summary><br><b>
 
 These system calls are reading the file <code>/my/file</code> and 5 is the file descriptor number.
+</b></details>
+
+<details>
+<summary>What system call is used for listing files?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What system call is used for creating a new process?</summary><br><b>
 </b></details>
 
 <details>
@@ -3710,6 +3748,12 @@ Using the keyword <code>read</code> so for example <code>read x</code> will wait
 <summary>Write a script which will list the differences between two directories</summary><br><b>
 </b></details>
 
+##### Practical
+
+<details>
+<summary>Write a script to determine whether a host is up or down</summary><br><b>
+</b></details>
+
 <a name="shell-scripting-advanced"></a>
 #### Advanced
 
@@ -4153,8 +4197,15 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
+<summary>What can you tell me about Stuxnet?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What can you tell me about Spectre?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain OAuth</summary><br><b>
-<a name="puppet-advanced"></a>
 </b></details>
 
 <details>
