@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **668** questions
+:bar_chart: &nbsp;There are currently **672** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -2511,7 +2511,7 @@ There are many other characteristics but these are the main ones that every pyth
 </b></details>
 
 <details>
-<summary>What data types supported in Python and which of them are mutable? How can you show that a certain data type is mutable?</summary><br><b>
+<summary>What build-in types Python has? Which of them are mutable? How can you show that a certain data type is mutable?</summary><br><b>
 
 The mutable data types are:
 
@@ -3049,6 +3049,10 @@ def sum(a, b):
 <summary>Explain mocks</summary><br><b>
 </b></details>
 
+<details>
+<summary>How do you measure execution time of small code snippets?</summary><br><b>
+</b></details>
+
 ##### Flask
 
 <details>
@@ -3065,6 +3069,12 @@ def sum(a, b):
 
 <a name="python-advanced"></a>
 #### :star: Advanced
+
+<details>
+<summary>What data types are you familiar with that are not Python built-in types but still provided by modules which are part of the standard library?</summary><br><b>
+
+This is a good reference https://docs.python.org/3/library/datatypes.html
+</b></details>
 
 <details>
 <summary>Explain what is a decorator</summary><br><b>
@@ -3214,6 +3224,10 @@ a = f()
 </b></details>
 
 <details>
+<summary>Tell me everything you know about concurrency in Python</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain the Buffer Protocol</summary><br><b>
 </b></details>
 
@@ -3263,6 +3277,12 @@ Logging
 
 <details>
 <summary>What is the different between infrastructure monitoring and application monitoring? (methods, tools, ...)</summary><br><b>
+</b></details>
+
+##### Python Geeks :)
+
+<details>
+<summary>Tell me something about Python that you think most people don't know</summary><br><b>
 </b></details>
 
 ## Prometheus
