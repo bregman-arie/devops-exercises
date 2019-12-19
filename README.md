@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **650** questions
+:bar_chart: &nbsp;There are currently **655** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -192,7 +192,38 @@ Stateful applications depend on the storage to save state and data, typically da
 </b></details>
 
 <details>
-<summary>What is HTTP and how it works?</summary><br><b>
+<summary>What is HTTP?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe HTTP request lifecycle</summary><br><b>
+
+* Resolve host by request to DNS resolver
+* Client SYN
+* Server SYN+ACK
+* Client SYN
+* HTTP request
+* HTTP response
+</b></details>
+
+<details>
+<summary>True or False? HTTP is stateful</summary><br><b>
+
+False. Server doesn't maintain state for incoming request.
+</b></details>
+
+<details>
+<summary>How HTTP request looks like?</summary><br><b>
+
+It consits of:
+
+ * Request line - request type
+ * Headers - content info like length, enconding, etc.
+ * Body (not always included)
+</b></details>
+
+<details>
+<summary>What is HTTPS?</summary><br><b>
 </b></details>
 
 <details>
@@ -1465,6 +1496,12 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 
 <details>
 <summary>What is the routing table? How do you view it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How can you send an HTTP request from your shell?</summary><br><b>
+
+Using nc is one way
 </b></details>
 
 <details>
