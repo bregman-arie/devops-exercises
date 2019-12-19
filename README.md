@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **655** questions
+:bar_chart: &nbsp;There are currently **658** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -58,7 +58,10 @@
     <td align="center"><a href="#virtualization"><b>Virtualization</b></a><br /><sub><a href="#virtualization-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#operating-system"><b>Operating System</b></a><br /><sub><a href="#operating-system-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#distributed"><img src="images/distributed.png" width="110px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
-    <td align="center"><a href="#general"><img src="images/general.png" width="110px;" height="75px;" alt="General"/><br /><b>General</b></a></td>
+    <td align="center"><a href="#general"><b>General</b></a><br /><sub><a href="#general-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
+  </tr>
+  <tr>
     <td align="center"><a href="#scenarios"><img src="images/scenarios.png" width="110px;" height="75px;" alt="Scenarios"/><br /><b>Scenarios</b></a></td>
   </tr>
 </table>
@@ -192,41 +195,6 @@ Stateful applications depend on the storage to save state and data, typically da
 </b></details>
 
 <details>
-<summary>What is HTTP?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Describe HTTP request lifecycle</summary><br><b>
-
-* Resolve host by request to DNS resolver
-* Client SYN
-* Server SYN+ACK
-* Client SYN
-* HTTP request
-* HTTP response
-</b></details>
-
-<details>
-<summary>True or False? HTTP is stateful</summary><br><b>
-
-False. Server doesn't maintain state for incoming request.
-</b></details>
-
-<details>
-<summary>How HTTP request looks like?</summary><br><b>
-
-It consits of:
-
- * Request line - request type
- * Headers - content info like length, enconding, etc.
- * Body (not always included)
-</b></details>
-
-<details>
-<summary>What is HTTPS?</summary><br><b>
-</b></details>
-
-<details>
 <summary>Describe the workflow of setting up some type of web server (Apache, IIS, Tomact, ...)</summary><br><b>
 </b></details>
 
@@ -325,10 +293,6 @@ Note: cross-dependency is when you have two or more changes to separate projects
 
 <details>
 <summary>Have you contributed to an open source project? Tell me about this experience</summary><br><b>
-</b></details>
-
-<details>
-<summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with and which one do you prefer to use?</summary><br><b>
 </b></details>
 
 ## Jenkins
@@ -4314,6 +4278,10 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 <summary>Explain "Forward Secrecy"</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is Cache Poisoned Denial of Service?</summary><br><b>
+</b></details>
+
 ## Puppet
 
 <a name="puppet-beginner"></a>
@@ -4625,7 +4593,71 @@ According to the CAP theorem, it's not possible for a distributed data store to 
 
 ## General
 
-Although the following questions are not DevOps related, they are still quite common so it's better to prepare for them as well.
+<details>
+<summary>What is HTTP?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe HTTP request lifecycle</summary><br><b>
+
+* Resolve host by request to DNS resolver
+* Client SYN
+* Server SYN+ACK
+* Client SYN
+* HTTP request
+* HTTP response
+</b></details>
+
+<details>
+<summary>True or False? HTTP is stateful</summary><br><b>
+
+False. Server doesn't maintain state for incoming request.
+</b></details>
+
+<details>
+<summary>How HTTP request looks like?</summary><br><b>
+
+It consits of:
+
+ * Request line - request type
+ * Headers - content info like length, enconding, etc.
+ * Body (not always included)
+</b></details>
+
+<details>
+<summary>What HTTP method types are there?</summary><br><b>
+
+* GET
+* POST
+* HEAD
+* PUT
+* DELETE
+* CONNECT
+* OPTIONS
+* TRACE
+</b></details>
+
+<details>
+<summary>What HTTP response codes are there?</summary><br><b>
+
+* 1xx - informational
+* 2xx - Success
+* 3xx - Redirect
+* 4xx - Error, client fault
+* 5xx - Error, server fault
+</b></details>
+
+<details>
+<summary>What is HTTPS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with and which one do you prefer to use?</summary><br><b>
+</b></details>
+
+## HR
+
+Although the following questions are not DevOps related, they are still quite common and part of the DevOps interview process so it's better to prepare for them as well.
 
 <details>
 <summary>Tell us little bit about yourself</summary><br><b>
