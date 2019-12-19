@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **658** questions
+:bar_chart: &nbsp;There are currently **662** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -1026,6 +1026,10 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 <summary>Describe how to make a certain process/app a service</summary><br><b>
 </b></details>
 
+<details>
+<summary>How do you kill a process in D state?</summary><br><b>
+</b></details>
+
 ##### Debugging
 
 <details>
@@ -1167,6 +1171,10 @@ related to the file like its size, owner, permissions, etc.
 
 <details>
 <summary>How to check which disks are currently mounted?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You run mount command but you get no output. How would you check what mounts you have on your system?</summary><br><b>
 </b></details>
 
 <details>
@@ -1375,6 +1383,12 @@ ind /some_dir -iname \*.yml -print0 | xargs -0 -r sed -i "s/1/2/g"
 <summary>How to check how much free memory a system has? How to check memory consumption by each process?</summary><br><b>
 
 You can use the commands <code>top</code> and <code>free</code>
+</b></details>
+
+<details>
+<summary>You run ls and you get "/lib/ld-linux-armhf.so.3 no such file or directory". What is the problem?</summary><br><b>
+
+The ls executable is built for an incompatible architecture.
 </b></details>
 
 <details>
@@ -4649,6 +4663,14 @@ It consits of:
 
 <details>
 <summary>What is HTTPS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain HTTP Cookies</summary><br><b>
+
+HTTP is stateless. To share state, we can use Cookies.
+
+TODO: explain what is actually a Cookie
 </b></details>
 
 <details>
