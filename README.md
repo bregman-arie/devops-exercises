@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **662** questions
+:bar_chart: &nbsp;There are currently **668** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -111,6 +111,10 @@ Make sure to elaborate :)
 
 <details>
 <summary>What are the anti-patterns of DevOps?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Reliability? How does it DevOps?</summary><br><b>
 </b></details>
 
 <details>
@@ -1547,14 +1551,6 @@ Upstart: add Upstart init script at /etc/init/service.conf
 
 <details>
 <summary>What load balancer algorithms are you familiar with?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a proxy?</summary><br><b> 
-</b></details>
-
-<details>
-<summary>What is a reverse proxy?</summary><br><b> 
 </b></details>
 
 <details>
@@ -3051,6 +3047,20 @@ def sum(a, b):
 
 <details>
 <summary>Explain mocks</summary><br><b>
+</b></details>
+
+##### Flask
+
+<details>
+<summary>You wrote you have experience with Django/Flask. Can you describe what is Django/Flask and how you used it? Why Flask and not Djano? (or vice versa)</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a route?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you manage DB integration?</summary><br><b>
 </b></details>
 
 <a name="python-advanced"></a>
@@ -4671,6 +4681,22 @@ It consits of:
 HTTP is stateless. To share state, we can use Cookies.
 
 TODO: explain what is actually a Cookie
+</b></details>
+
+<details>
+<summary>What is HTTP Pipelining?</summary><br><b> 
+</b></details>
+
+<details>
+<summary>What is a proxy?</summary><br><b> 
+</b></details>
+
+<details>
+<summary>What is a reverse proxy?</summary><br><b> 
+</b></details>
+
+<details>
+<summary>What is CDN?</summary><br><b> 
 </b></details>
 
 <details>
