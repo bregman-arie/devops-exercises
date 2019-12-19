@@ -996,6 +996,10 @@ Using the `chmod` command.
 
 <details>
 <summary>You try to delete a file but it fails. Name at least three different reason as to why it could happen</summary><br><b>
+
+* No more disk space
+* No more indoes
+* No permissions
 </b></details>
 
 <details>
@@ -1507,7 +1511,7 @@ You can specify one or more of the following:
 </b></details>
 
 <details>
-<summary>How to know to which package a file on the system belongs to?</summary><br><b>
+<summary>How to know to which package a file on the system belongs to? Is it a problem if it doesn't belongs to a package?</summary><br><b>
 </b></details>
 
 ##### Applications and Services
