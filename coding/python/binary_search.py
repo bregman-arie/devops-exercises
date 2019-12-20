@@ -2,8 +2,9 @@
 
 import random
 
-rand_num_li = sorted([random.randint(1, 50) for iter in range(10)])
+rand_num_li = sorted([random.randint(1, 50) for _ in range(10)])
 target = random.randint(1, 50)
+
 
 def binary_search(li, le, ri, target):
     if le <= ri:
