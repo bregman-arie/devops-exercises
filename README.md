@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **672** questions
+:bar_chart: &nbsp;There are currently **679** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -1316,6 +1316,10 @@ To view all available signals run `kill -l`
 </b></details>
 
 <details>
+<summary>What <code>kill -0 <PID></code> does?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is a trap?</summary><br><b>
 </b></details>
 
@@ -1645,7 +1649,7 @@ These system calls are reading the file <code>/my/file</code> and 5 is the file 
 <summary>You found there is a server with high CPU load but you didn't find a process with high CPU. How is that possible?</summary><br><b>
 </b></details>
 
-##### Network
+##### Linux Networking
 
 <details>
 <summary>When you run <code>ip a</code> you see there is a device called 'lo'. What is it and why do we need it?</summary><br><b>
@@ -2531,6 +2535,20 @@ You can usually use the function hash() to check an object mutability, if it is 
 </b></details>
 
 <details>
+<summary>In Python, functions are first-class objects. What does it mean?</summary><br><b>
+
+In general, first class objects in programming languages are objects which can assigned to variable, used as a return value and can be used as arguments or parameters.<br>
+In python you can treat functions this way. Let's say we have the following function
+
+```
+def my_function():
+    return 5
+```
+
+You can then assign a function to a variables like this `x = my_function` or you can return functions as return values like this `return my_function`
+</b></details>
+
+<details>
 <summary>What is PEP8? Give an example of 3 style guidelines</summary><br><b>
 
 PEP8 is a list of coding conventions and style guidelines for Python
@@ -3026,8 +3044,45 @@ def sum(a, b):
     
 >>> None
 ```
+</b></details>
 
-</details>
+<details>
+<summary>How to improve the following block of code?
+
+```
+li = []
+for i in range(1,10):
+    li.append(i)
+```
+</summary><br><b>
+</b></details>
+
+<details>
+<summary>You have the following function
+
+```
+def my_func(li = []):
+    li.append("hmm")  
+    print(li)
+```
+
+If we call it 3 times, what would be the result each call?
+</summary><br><b>
+</b></details>
+
+<details>
+<summary>Given the following function
+
+```
+def is_int(num):
+    if isinstance(num, int):
+        print('Yes')
+    else:
+        print('No')
+```
+What would be the result of is_int(2) and is_int(False)?
+</summary><br><b>
+</b></details>
 
 ##### Data Structures & Types
 
@@ -3046,11 +3101,19 @@ def sum(a, b):
 </b></details>
 
 <details>
+<summary>What <code>assert</code> does in Python?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain mocks</summary><br><b>
 </b></details>
 
 <details>
 <summary>How do you measure execution time of small code snippets?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Why one shouldn't use <code>assert</code> in non-test/production code?</summary><br><b>
 </b></details>
 
 ##### Flask
