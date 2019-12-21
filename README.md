@@ -1387,7 +1387,7 @@ You can also try closing/terminating the parent process. This will make the zomb
 <details>
 <summary>Find all the files which end with '.yml' and replace the number 1 in 2 in each file</summary><br><b>
 
-ind /some_dir -iname \*.yml -print0 | xargs -0 -r sed -i "s/1/2/g"
+find /some_dir -iname \*.yml -print0 | xargs -0 -r sed -i "s/1/2/g"
 </b></details>
 
 <details>
@@ -1610,7 +1610,7 @@ Re-install the OS IS NOT the right answer :)
 <details>
 <summary>Give 5 commands which are two letters long</summary><br><b>
 
-ls, wc, dd, df, du, ps, ip, ...
+ls, wc, dd, df, du, ps, ip, cp, cd ...
 </b></details>
 
 <a name="linux-advanced"></a>
@@ -4703,6 +4703,8 @@ According to the CAP theorem, it's not possible for a distributed data store to 
 
 ## General
 
+##### HTTP
+
 <details>
 <summary>What is HTTP?</summary><br><b>
 </b></details>
@@ -4835,7 +4837,7 @@ Relax, there is no wrong or right answer here...I think.
 <details>
 <summary>Have you ever caused a service outage? (or broke a working project, tool, ...?)</summary><br><b>
 
-If you worked in this area for more than 5 areas it's hard to imagine the answer would be no. It also doesn't have to be big service outage. Maybe you merged some code that broke a project or its tests. Simply focus on what you learned from such experience.
+If you worked in this area for more than 5 years it's hard to imagine the answer would be no. It also doesn't have to be big service outage. Maybe you merged some code that broke a project or its tests. Simply focus on what you learned from such experience.
 </b></details>
 
 <details>
