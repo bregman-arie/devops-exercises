@@ -68,11 +68,12 @@ def check_details_tag(file_list):
                 after_detail = True
 
             if b'</details>' in line and after_detail:
-
                 after_detail = False
 
             if error:
-                raise Exception(err_message)
+                errors.append(err_message)
+
+        error = False
 
 
 def check_summary_tag(file_list):
@@ -107,10 +108,17 @@ def check_summary_tag(file_list):
                 after_summary = False
 
             if error:
-                raise Exception(err_message)
+                errors.append(err_message)
+
+        error = False
 
 
 if __name__ == '__main__':
     check_details_tag(file_list)
     check_summary_tag(file_list)
-    print("tests passed successfully")
+    if errors:
+        for error in errors:
+            print(error)
+        exit(1)
+
+    print("Tests passed successfully.")
