@@ -4,5 +4,5 @@ python:
 install:
     - pip install flake8
 script:
-    - flake8 flake8 --max-line-length=100 .
+    - flake8 --max-line-length=100 .
     - python tests/syntax_checker.py
