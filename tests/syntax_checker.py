@@ -58,16 +58,17 @@ def check_details_tag(file_list):
             pass
         else:
             if b'<details>' in line and after_detail:
+                err_message = f'Missing closing detail tag round line {line_number - 1}'
                 error = True
             if b'</details>' in line and not after_detail:
-                err_message = f'Missing opening detail tag at line {line_number}'
+                err_message = f'Missing opening detail tag round line {line_number - 1}'
                 error = True
 
             if b'<details>' in line:
                 after_detail = True
 
             if b'</details>' in line and after_detail:
-                err_message = f'Missing closing detail tag at line {line_number}'
+
                 after_detail = False
 
             if error:
@@ -85,25 +86,25 @@ def check_summary_tag(file_list):
 
     """
 
-    after_detail = False
+    after_summary = False
     error = False
     err_message = ''
     for line_number, line in enumerate(file_list):
         if b'<summary>' in line and b'</summary>' in line:
             pass
         else:
-            if b'<summary>' in line and after_detail:
+            if b'<summary>' in line and after_summary:
+                err_message = f'Missing closing summary tag around line {line_number}'
                 error = True
-            if b'</summary>' in line and not after_detail:
-                err_message = f'Missing opening summary tag at line {line_number}'
+            if b'</summary>' in line and not after_summary:
+                err_message = f'Missing opening summary tag around line {line_number}'
                 error = True
 
             if b'<summary>' in line:
-                after_detail = True
+                after_summary = True
 
-            if b'</summary>' in line and after_detail:
-                err_message = f'Missing closing summary tag at line {line_number}'
-                after_detail = False
+            if b'</summary>' in line and after_summary:
+                after_summary = False
 
             if error:
                 raise Exception(err_message)
