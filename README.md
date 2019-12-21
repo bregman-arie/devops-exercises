@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **630** questions
+:bar_chart: &nbsp;There are currently **635** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -375,7 +375,7 @@ You can describe the UI way to add new slaves but better to explain how to do in
 </b></details>
 
 <details>
-<summary>How would you implement an option of a starting a build from a certain stage and not from the beginning?<summary><br><b>
+<summary>How would you implement an option of a starting a build from a certain stage and not from the beginning?</summary><br><b>
 </b></details>
 
 ##### Jenkins Dev
@@ -417,6 +417,14 @@ SAAS
   * Private</summary><br><b>
 </b></details>
 
+<details>
+<summary>What are the differences between Cloud Provides and On-Premise solution?</summary><br><b>
+
+In cloud providers, someone else owns and manages the hardware, hire the relevant infrastructure teams and pays for real-estate (for both hardware and people). You can focus on your business.
+
+In On-Premise solution, it's quite the opposite. You need to take care of hardware, infrastructure teams and pay for everything which can be quite expensive. On the other hand it's tailored to your needs.
+</b></details>
+
 
 ## AWS
 
@@ -439,6 +447,12 @@ Edge locations are basically content delivery network which caches data and insu
 
 <details>
 <summary>What is IAM?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? IAM configuration is defined globally and not per region</summary><br><b>
+
+True
 </b></details>
 
 ##### S3
@@ -553,25 +567,33 @@ Stop the instance, the type of the instance to match the desired RAM and start t
   * Classic LB - low costs, good for test or dev environments
 </b></details>
 
-##### Security 
+##### AWS Security 
 
+<details>
 <summary>What is the shared responsibility model? In other words, what AWS is responsible for and what the user is responsible for in regards to Security?</summary><br><b>
 </b></details>
 
+<details>
 <summary>What is the AWS compliance program?</summary><br><b>
 </b></details>
 
+<details>
 <summary>Explain what each of the following services is used for
 
   * AWS Inspector
   * AWS Artifact
-  * AWS WAF
   * AWS Shield</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is AWS WAF? Give an example of how it can used and describe what resources or services you can use it with</summary><br><b>
+</b></details>
+
+<details>
 <summary>What AWS VPN is usef for?</summary><br><b>
 </b></details>
 
+<details>
 <summary>What is the difference between Site-to-Site VPN and Client VPN?</summary><br><b>
 </b></details>
 
@@ -580,7 +602,7 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 True
 </b></details>
 
-#### Databases
+#### AWS Databases
 
 <details>
 <summary>What is RDS?</summary><br><b>
@@ -597,9 +619,26 @@ True
 <summary>What is EBS?</summary><br><b>
 </b></details>
 
+#### AWS Networking
+
 <details>
 <summary>What is VPC?</summary><br><b>
 </b></details>
+
+<details>
+<summary>Explain Security Groups and Network ACLs</summary><br><b>
+</b></details>
+
+#### Misc
+
+<details>
+<summary>Explain what are the following services and give an use case example for each one them:
+
+  * CloudTrail
+  * CloudWatch
+  * CloudSearch</summary><br><b>
+</b></details>
+
 
 ## Network
 
@@ -890,7 +929,8 @@ As to fix it there are serveral options:
 3. You would look for your distro default $PATH variable, copy paste using method #1
 
 Note: There are many ways of getting errors like this: if bash_profile or any configuration file of your interpreter was wrongly modified; causing erratics behaviours,
-permissions issues, bad compiled software (if you compiled it by yourself)... there is no answer that will be true 100% of the time.</b>
+permissions issues, bad compiled software (if you compiled it by yourself)... there is no answer that will be true 100% of the time.
+</b>
 </p>
 </details>
 
@@ -1204,7 +1244,7 @@ execution or run forever
 </b></details>
 
 <details>
-<summary>What signal is used by default when you run 'kill <process id>'?</summary><br><b>
+<summary>What signal is used by default when you run 'kill *process id*'?</summary><br><b>
 <pre>
 The default signal is SIGTERM (15). This signal kills
 process gracefully which means it allows it to save current
@@ -1273,7 +1313,7 @@ You can also try closing/terminating the parent process. This will make the zomb
 </b></details>
 
 <details>
-<summary>Can you explain how network process/connection is established and how it's terminated?><br></b>
+<summary>Can you explain how network process/connection is established and how it's terminated?></summary><br></b>
 </b></details>
 
 <details>
@@ -2262,7 +2302,7 @@ Setting the replicas to 0 will shut down the process. Now start it with `kubectl
 </b></details>
 
 <details>
-<summary>Explain recursion</summary<br><b>
+<summary>Explain recursion</summary><br><b>
 </b></details>
 
 <details>
@@ -3093,7 +3133,7 @@ a = f()
 </b></details>
 
 <details>
-<summary>Can you implement Linked List in Python?<br><b>
+<summary>Can you implement Linked List in Python?</summary><br><b>
 </b></details>
 
 <details>
@@ -3925,7 +3965,7 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
-<summmary>Describe in detail how you bring up an instance with an IP you can reach from outside the cloud</summary><br><b>
+<summary>Describe in detail how you bring up an instance with an IP you can reach from outside the cloud</summary><br><b>
 </b></details>
 
 <details>
