@@ -91,3 +91,6 @@ env.bak/
 venv.bak/
 
 *.pyc
+
+#Jetbrain's ides.
+.idea
