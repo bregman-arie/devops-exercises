@@ -388,7 +388,7 @@ You can describe the UI way to add new slaves but better to explain how to do in
 </b></details>
 
 <details>
-<summary>How would you implement an option of a starting a build from a certain stage and not from the beginning?<summary><br><b>
+<summary>How would you implement an option of a starting a build from a certain stage and not from the beginning?</summary><br><b>
 </b></details>
 
 ##### Jenkins Dev
@@ -601,13 +601,13 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 <details>
 <summary>What is AWS WAF? Give an example of how it can used and describe what resources or services you can use it with</summary><br><b>
 </b></details>
-
-<summary>What AWS VPN is usef for?</summary><br><b>
+<details>
+<summary>What AWS VPN is used for?</summary><br><b>
 </b></details>
-
+<details>
 <summary>What is the difference between Site-to-Site VPN and Client VPN?</summary><br><b>
 </b></details>
-
+<details>
 <summary>True or False? AWS Inspector can perform both network and host assessments</summary><br><b>
 
 True
@@ -1370,7 +1370,7 @@ You can also try closing/terminating the parent process. This will make the zomb
 </b></details>
 
 <details>
-<summary>Can you explain how network process/connection is established and how it's terminated?><br></b>
+<summary>Can you explain how network process/connection is established and how it's terminated?></summary><br></b>
 </b></details>
 
 <details>
@@ -2385,7 +2385,7 @@ Setting the replicas to 0 will shut down the process. Now start it with `kubectl
 </b></details>
 
 <details>
-<summary>Explain recursion</summary<br><b>
+<summary>Explain recursion</summary><br><b>
 </b></details>
 
 <details>
@@ -3303,7 +3303,7 @@ a = f()
 </b></details>
 
 <details>
-<summary>Can you implement Linked List in Python?<br><b>
+<summary>Can you implement Linked List in Python?</summary><br><b>
 </b></details>
 
 <details>
@@ -4147,7 +4147,7 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
-<summmary>Describe in detail how you bring up an instance with an IP you can reach from outside the cloud</summary><br><b>
+<summary>Describe in detail how you bring up an instance with an IP you can reach from outside the cloud</summary><br><b>
 </b></details>
 
 <details>
