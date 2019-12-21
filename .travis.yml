@@ -1,0 +1,8 @@
+language: "python"
+python:
+    - "3.8"
+install:
+    - pip install flake8
+script:
+    - flake8 .
+    - python tests/syntax_checker.py

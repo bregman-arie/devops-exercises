@@ -110,3 +110,4 @@ def check_summary_tag(file_list):
 if __name__ == '__main__':
     check_details_tag(file_list)
     check_summary_tag(file_list)
+    print("tests passed successfully")
