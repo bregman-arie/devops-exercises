@@ -601,9 +601,11 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 <details>
 <summary>What is AWS WAF? Give an example of how it can used and describe what resources or services you can use it with</summary><br><b>
 </b></details>
+
 <details>
 <summary>What AWS VPN is used for?</summary><br><b>
 </b></details>
+
 <details>
 <summary>What is the difference between Site-to-Site VPN and Client VPN?</summary><br><b>
 </b></details>
@@ -940,7 +942,8 @@ As to fix it there are serveral options:
 3. You would look for your distro default $PATH variable, copy paste using method #1
 
 Note: There are many ways of getting errors like this: if bash_profile or any configuration file of your interpreter was wrongly modified; causing erratics behaviours,
-permissions issues, bad compiled software (if you compiled it by yourself)... there is no answer that will be true 100% of the time.</b>
+permissions issues, bad compiled software (if you compiled it by yourself)... there is no answer that will be true 100% of the time.
+</b>
 </p>
 </details>
 
@@ -1293,7 +1296,7 @@ execution or run forever
 </b></details>
 
 <details>
-<summary>What signal is used by default when you run 'kill <process id>'?</summary><br><b>
+<summary>What signal is used by default when you run 'kill *process id*'?</summary><br><b>
 <pre>
 The default signal is SIGTERM (15). This signal kills
 process gracefully which means it allows it to save current
