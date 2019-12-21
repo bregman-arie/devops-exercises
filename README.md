@@ -62,7 +62,7 @@
     <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
   </tr>
   <tr>
-    <td align="center"><a href="#scenarios"><img src="images/scenarios.png" width="110px;" height="75px;" alt="Scenarios"/><br /><b>Scenarios</b></a></td>
+    <td align="center"><a href="#challenges"><img src="images/challenges.png" width="110px;" height="75px;" alt="Challenges"/><br /><b>Challenges</b></a></td>
   </tr>
 </table>
 </center>
@@ -4929,24 +4929,26 @@ you can show how you'd be able to mitigate that problem.
 Not only this will tell you what is expected from you, it will also provide big hint on the type of work you are going to do in the first months of your job.
 </b></details>
 
-## Scenarios
+## Challenges
 
-Scenarios are questions which don't have verbal answer and require you one of the following:
+Challenges require you one of the following:
 
   * Set up environments
   * Write scripts
   * Design and/or develop infrastructure projects
+  * Fix existing applications
 
-These questions usually given as an home task to the candidate and they can combine several topics together.
-Below you can find several scenario questions:
+These type of questions usually given as an home task to the candidate and they can combine several topics together.
+Below you can find several challenges:
 
-* [Writing a Dockerfile and running a container](scenarios/write_dockerfile_run_container.md)
-* [Elasticsearch & Kibana on AWS](scenarios/elk_kibana_aws.md)
-* [Ansible, Minikube and Docker](scenarios/ansible_minikube_docker.md)
-* [Cloud Slack bot](scenarios/cloud_slack_bot.md)
-* [Jenkins: writing scripts](scenarios/jenkins_scripts.md)
-* [Jenkins: writing pipelines](scenarios/jenkins_pipelines.md)
-* [CI for open source project](scenarios/ci_for_open_source_project.md)
+* [Writing a Dockerfile and running a container](challenges/write_dockerfile_run_container.md)
+* [Elasticsearch & Kibana on AWS](challenges/elk_kibana_aws.md)
+* [Ansible, Minikube and Docker](challenges/ansible_minikube_docker.md)
+* [Cloud Slack bot](challenges/cloud_slack_bot.md)
+* [Jenkins: writing scripts](challenges/jenkins_scripts.md)
+* [Jenkins: writing pipelines](challenges/jenkins_pipelines.md)
+* [CI for open source project](challenges/ci_for_open_source_project.md)
+* [Flask, Containers and CI](challenges/flask_container_ci/README.md)
 
 
 ## Credits
