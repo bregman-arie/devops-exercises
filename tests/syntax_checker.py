@@ -60,18 +60,18 @@ def check_details_tag(file_list):
             if b'<details>' in line and after_detail:
                 error = True
             if b'</details>' in line and not after_detail:
-                err_message = 'Missing opening detail tag'
+                err_message = f'Missing opening detail tag at line {line_number}'
                 error = True
 
             if b'<details>' in line:
                 after_detail = True
 
             if b'</details>' in line and after_detail:
-                err_message = 'Missing closing detail tag'
+                err_message = f'Missing closing detail tag at line {line_number}'
                 after_detail = False
 
             if error:
-                raise Exception(f'{err_message} at line {line_number -1}')
+                raise Exception(err_message)
 
 
 def check_summary_tag(file_list):
@@ -95,18 +95,18 @@ def check_summary_tag(file_list):
             if b'<summary>' in line and after_detail:
                 error = True
             if b'</summary>' in line and not after_detail:
-                err_message = 'Missing opening detail tag'
+                err_message = f'Missing opening summary tag at line {line_number}'
                 error = True
 
             if b'<summary>' in line:
                 after_detail = True
 
             if b'</summary>' in line and after_detail:
-                err_message = 'Missing closing detail tag'
+                err_message = f'Missing closing summary tag at line {line_number}'
                 after_detail = False
 
             if error:
-                raise Exception(f'{err_message} at line {line_number -3}')
+                raise Exception(err_message)
 
 
 if __name__ == '__main__':
