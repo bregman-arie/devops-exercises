@@ -1,0 +1,18 @@
+{
+  "geralt" : {
+    "id": "whitewolf",
+    "name": "Geralt of Rivia"
+  },
+  "lara_croft" : {
+    "id": "m31a3n6sion",
+    "name": "Lara Croft"
+  },
+  "mario" : {
+    "id": "smb3igiul",
+    "name": "Mario"
+  },
+  "gordon_freeman" : {
+    "id": "nohalflife3",
+    "name": "Gordon Freeman"
+  }
+}
