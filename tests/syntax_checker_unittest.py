@@ -1,5 +1,7 @@
 """
 WIP
+
+Yes, we do write tests for our tests.
 """
 import unittest
 import pathlib
