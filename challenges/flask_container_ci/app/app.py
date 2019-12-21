@@ -25,9 +25,11 @@ def index():
         "current_uri": "/"
     })
 
+
 @app.route("/users", methods=['GET'])
 def all_users():
     return pretty_json(users)
+
 
 @app.route("/users/<username>", methods=['GET'])
 def user_data(username):
@@ -43,9 +45,10 @@ def user_something(username):
 
 
 def pretty_json(arg):
-    response = make_response(json.dumps(arg, sort_keys = True, indent=4))
+    response = make_response(json.dumps(arg, sort_keys=True, indent=4))
     response.headers['Content-type'] = "application/json"
     return response
+
 
 if __name__ == "__main__":
     app.run(port=5000)

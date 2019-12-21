@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **679** questions
+:bar_chart: &nbsp;There are currently **684** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -3534,6 +3534,14 @@ git checkout HEAD~1 -- /path/of/the/file
 You delete a remote branch with this syntax:
 
 git push origin :[branch_name]
+</b></details>
+
+<details>
+<summary>Are you familiar with gitattributes? When would you use it?</summary><br><b>
+
+gitattributes allow you to define attributes per pathname or path pattern.<br>
+
+You can use it for example to control endlines in files. In Windows and Unix based systems, you have different characters for new lines (\r\n and \n accordingly). So using gitattributes we can align it for both Windows and Unix with `* text=auto` in .gitattributes for anyone working with git. This is way, if you use the Git project in Windows you'll get \r\n and if you are using Unix or Linux, you'll get \n.
 </b></details>
 
 <a name="git-advanced"></a>

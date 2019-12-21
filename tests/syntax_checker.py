@@ -1,8 +1,10 @@
 """
-Testing suite for https://github.com/bregman-arie/devops-interview-questions written by surister
+Testing suite for https://github.com/bregman-arie/devops-interview-questions
+written by surister
 
-Even though both check_details_tag and check_summary_tags are practically the same, due to readability and functionality
-it was decided to be split like that.
+Even though both check_details_tag and check_summary_tags are practically the
+same, due to readability and functionality it was decided to be split like
+that.
 
 Usage:
 $ python tests/syntax_checker.py
