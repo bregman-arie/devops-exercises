@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **684** questions
+:bar_chart: &nbsp;There are currently **690** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -452,8 +452,9 @@ In On-Premise solution, it's quite the opposite. You need to take care of hardwa
   * Availability zone
   * Region
   * Edge location</summary><br><b>
-AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independent of one another. 
-Within each region,There are multiple isolated locations known as Availability Zones. Multiple availability zones insure high availability in case one of them goes down.
+AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independent of one another.<br>
+
+Within each region, there are multiple isolated locations known as Availability Zones. Multiple availability zones ensure high availability in case one of them goes down.<br>
 
 Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
 </b></details>
@@ -549,7 +550,19 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 <summary>What are spot instances?</summary><br><b>
 </b></details>
 
-##### CloudFront
+#### CloudFormation
+
+<details>
+<summary>Explain what is CloudFormation</summary><br><b>
+</b></details>
+
+#### Costs
+
+<details>
+<summary>Are you familiar with Cost Explorer tool? Have you used it? What for exactly?</summary><br><b>
+</b></details>
+
+#### CloudFront
 
 <details>
 <summary>Explain what is CloudFront and what is it used for</summary><br><b>
@@ -557,9 +570,11 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 
 <details>
 <summary>Explain the following
+
   * Origin
   * Edge location
-  * Distribution</summary><br><b>
+  * Distribution
+</summary><br><b>
 </b></details>
 
 <details>
@@ -642,6 +657,32 @@ True
 <summary>Explain Security Groups and Network ACLs</summary><br><b>
 </b></details>
 
+#### Identify the service
+
+<details>
+<summary>What would you use for easily creating similar AWS environments/resources for different customers?</summary><br><b>
+
+CloudFormation
+</b></details>
+
+<details>
+<summary>Using which service, can you add user sign-up, sign-in and access control to mobile and web apps?</summary><br><b>
+
+Cognito
+</b></details>
+
+<details>
+<summary>Which service would you use for building a website or web application?</summary><br><b>
+
+Lightsail
+</b></details>
+
+<details>
+<summary>Which tool would you use for choosing between Reserved instances or On-Demand instances??</summary><br><b>
+
+Cost Explorer
+</b></details>
+
 #### Misc
 
 <details>
@@ -651,7 +692,6 @@ True
   * CloudWatch
   * CloudSearch</summary><br><b>
 </b></details>
-
 
 ## Network
 
