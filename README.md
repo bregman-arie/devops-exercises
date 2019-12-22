@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **690** questions
+:bar_chart: &nbsp;There are currently **700** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -24,12 +24,12 @@
   <tr>
     <td align="center"><a href="#devops"><img src="images/devops.png" width="70px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a><br /><sub><a href="#devops-beginner">Beginner :baby:</a></sub><br><sub><a href="#devops-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="80px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a><br /><sub><a href="#jenkins-beginner">Beginner :baby:</a></sub><br><sub><a href="#jenkins-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#git"><img src="images/git.png" width="110px;" height="75px;" alt="Git"/><br /><b>Git</b></a><br /><sub><a href="#git-beginner">Beginner :baby:</a></sub><br><sub><a href="#git-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#git"><img src="images/git.png" width="80px;" height="75px;" alt="Git"/><br /><b>Git</b></a><br /><sub><a href="#git-beginner">Beginner :baby:</a></sub><br><sub><a href="#git-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#ansible"><img src="images/ansible.png" width="65px;" height="75px;" alt="Ansible"/><br /><b>Ansible</b></a><br /><sub><a href="#ansible-beginner">Beginner :baby:</a></sub><br><sub><a href="#ansible-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#Network"><img src="images/network.png" width="80x;" height="75px;" alt="Network"/><br /><b>Network</b></a><br /><sub><a href="#network-beginner">Beginner :baby:</a></sub><br><sub><a href="#network-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#linux"><img src="images/linux.png" width="75x;" height="75px;" alt="Linux"/><br /><b>Linux</b></a><br /><sub><a href="#linux-beginner">Beginner :baby:</a></sub><br><sub><a href="#linux-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#terraform"><img src="images/terraform.png" width="75px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a><br /><sub><a href="#terraform-beginner">Beginner :baby:</a></sub><br><sub><a href="#terraform-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#docker"><img src="images/docker.png" width="75px;" height="75px;" alt="Docker"/><br /><b>Docker</b></a><br /><sub><a href="#docker-beginner">Beginner :baby:</a></sub><br><sub><a href="#docker-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#terraform"><img src="images/terraform.png" width="70px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a><br /><sub><a href="#terraform-beginner">Beginner :baby:</a></sub><br><sub><a href="#terraform-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#docker"><img src="images/docker.png" width="70px;" height="75px;" alt="Docker"/><br /><b>Docker</b></a><br /><sub><a href="#docker-beginner">Beginner :baby:</a></sub><br><sub><a href="#docker-advanced">Advanced :star:</a></sub></td>
   </tr>
   <tr>
     <td align="center"><a href="#coding"><img src="images/coding.png" width="75px;" height="75px;" alt="coding"/><br /><b>Coding</b></a><br /><sub><a href="#coding-beginner">Beginner :baby:</a></sub><br><sub><a href="#coding-advanced">Advanced :star:</a></sub></td>
@@ -54,8 +54,8 @@
   <tr>
     <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a><br /><sub><a href="#monitoring-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#elastic"><img src="images/elastic.png" width="110px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a><br /><sub><a href="#elastic-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#dns"><b>DNS</b></a><br /><sub><a href="#dns-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#virtualization"><b>Virtualization</b></a><br /><sub><a href="#virtualization-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#dns"><b>DNS</b></a><br /><sub><a href="#dns-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#operating-system"><b>Operating System</b></a><br /><sub><a href="#operating-system-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#distributed"><img src="images/distributed.png" width="110px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
     <td align="center"><a href="#general"><b>General</b></a><br /><sub><a href="#general-beginner">Beginner :baby:</a></sub><br><sub></td>
@@ -260,6 +260,10 @@ One can argue whether it's per company definition or a global one but at least a
 <summary>What Continuous Integration solution are you using/prefer and why?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What deployment strategies are you familiar with or have used?</summary><br><b>
+</b></details>
+
 <a name="devops-advanced"></a>
 #### :star: Advanced
 
@@ -444,7 +448,7 @@ In On-Premise solution, it's quite the opposite. You need to take care of hardwa
 <a name="aws-beginner"></a>
 #### :baby: Beginner
 
-##### Global Infrastructure
+#### Global Infrastructure
 
 <details>
 <summary>Explain the following
@@ -469,7 +473,7 @@ Edge locations are basically content delivery network which caches data and insu
 True
 </b></details>
 
-##### S3
+#### S3
  
 <details>
 <summary>Explain what is S3 and what is it used for</summary><br>
@@ -510,7 +514,7 @@ True
 <summary>What is a storage class? What storage classes are you familiar with?</summary><br><b>
 </b></details>
 
-##### EC2
+#### EC2
 
 <details>
 <summary>What is EC2? What is it used for?</summary><br><b>
@@ -654,10 +658,14 @@ True
 </b></details>
 
 <details>
+<summary>What is an Elastic IP address?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain Security Groups and Network ACLs</summary><br><b>
 </b></details>
 
-#### Identify the service
+#### Identify the service or tool
 
 <details>
 <summary>What would you use for easily creating similar AWS environments/resources for different customers?</summary><br><b>
@@ -678,12 +686,18 @@ Lightsail
 </b></details>
 
 <details>
-<summary>Which tool would you use for choosing between Reserved instances or On-Demand instances??</summary><br><b>
+<summary>Which tool would you use for choosing between Reserved instances or On-Demand instances?</summary><br><b>
 
 Cost Explorer
 </b></details>
 
-#### Misc
+<details>
+<summary>What would you use to check how many unassociated Elastic IP address you have?</summary><br><b>
+
+Trusted Advisor
+</b></details>
+
+#### AWS Misc
 
 <details>
 <summary>Explain what are the following services and give an use case example for each one them:
@@ -691,6 +705,10 @@ Cost Explorer
   * CloudTrail
   * CloudWatch
   * CloudSearch</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is AWS Lambda</summary><br><b>
 </b></details>
 
 ## Network
@@ -791,6 +809,10 @@ CSMA/CD algorithm:
 
 <details>
 <summary>What is TCP? How it works? What is the 3 way handshake?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How does SSL handshake work?</summary><br><b>
 </b></details>
 
 <details>
@@ -1315,13 +1337,7 @@ True
   * /usr/local
 </b></details>
 
-##### Processes
-
-<details>
-<summary>Can you explain what is a process?</summary><br><b>
-
-A process is a running program. A program is one or more instructions and the program (or process) is executed by the operating system.
-</b></details>
+#### Processes
 
 <details>
 <summary>How to run a process in the background and why to do that in the first place?</summary><br><b>
@@ -1402,6 +1418,17 @@ You can't kill a zombie process the regular way with `kill -9` for example as it
 One way to kill zombie process is by sending SIGCHLD to the parent process telling it to terminate its child processes. This might not work if the parent process wasn't programmed properly. The invocation is `kill -s SIGCHLD [parent_pid]`
 
 You can also try closing/terminating the parent process. This will make the zombie process a child of init (1) which does periodic cleanups and will at some point clean up the zombie process.
+</b></details>
+
+<details>
+<summary>How to find all the
+
+  * Processes executed/owned by a certain user
+  * Process which are Java processes
+  * Zombie Processes
+</summary><br><b>
+
+If you mention at any point ps command with arugments, be familiar with what these arguments does exactly.
 </b></details>
 
 <details>
@@ -1583,6 +1610,10 @@ You can specify one or more of the following:
 ##### Applications and Services
 
 <details>
+<summary>What can you find in /etc/services?</summary><br><b>
+</b></details>
+
+<details>
 <summary>How to make sure a Service starts automatically after a reboot or crash?</summary><br><b>
 
 Depends on the init system.
@@ -1590,18 +1621,6 @@ Depends on the init system.
 Systemd: <code> systemctl enable [service_name] </code>
 System V: <code> update-rc.d [service_name] </code> and add this line <code> id:5678:respawn:/bin/sh /path/to/app </code> to /etc/inittab
 Upstart: add Upstart init script at /etc/init/service.conf
-
-</b></details>
-<details>
-<summary>What is a load balancer?</summary><br><b> 
-</b></details>
-
-<details>
-<summary>What load balancer algorithms are you familiar with?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What can you find in /etc/services</summary><br><b>
 </b></details>
 
 <details>
@@ -1776,6 +1795,12 @@ There are many ways to answer that. For those who look for simplicity, the book 
 * Delete - allow to remove/destroy processes
 * State - allow to check the state of the process, whether it's running, stopped, waiting, etc.
 * Stop - allow to stop a running process
+</b></details>
+
+<details>
+<summary>Can you explain what is a process?</summary><br><b>
+
+A process is a running program. A program is one or more instructions and the program (or process) is executed by the operating system.
 </b></details>
 
 <details>
@@ -2412,6 +2437,10 @@ If we see "Error" status, we can keep debugging by running the command `kubectl 
 In case we find out there was a temporary issue with the pod or the system, we can try restarting the pod with the following `kubectl scale deployment [name] --replicas=0`<br>
 
 Setting the replicas to 0 will shut down the process. Now start it with `kubectl scale deployment [name] --replicas=1`
+</b></details>
+
+<details>
+<summary>Describe how roll-back works</summary><br><b>
 </b></details>
 
 ## Coding
@@ -3770,7 +3799,11 @@ as key-value pair, document-oriented, etc.
 </b></details>
 
 <details>
-<summary>What is better?. Embedded documents or referenced?</summary><br><b>
+<summary>What is better? Embedded documents or referenced?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Have you performed data retrieval optimizations in Mongo? If not, can you think about ways to optimize a slow data retrieval?</summary><br><b>
 </b></details>
 
 ##### Queries
@@ -3915,6 +3948,10 @@ Using the keyword <code>read</code> so for example <code>read x</code> will wait
 
 <details>
 <summary>Write a script to determine whether a host is up or down</summary><br><b>
+</b></details>
+
+<details>
+<summary>Write a script to remove all the empty files in a given directory (also nested directories)</summary><br><b>
 </b></details>
 
 <a name="shell-scripting-advanced"></a>
@@ -4837,6 +4874,20 @@ TODO: explain what is actually a Cookie
 
 <details>
 <summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with and which one do you prefer to use?</summary><br><b>
+</b></details>
+
+#### Load Balancers
+
+<details>
+<summary>What is a load balancer?</summary><br><b> 
+</b></details>
+
+<details>
+<summary>What load balancer algorithms are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an Application Load Balancer?</summary><br><b>
 </b></details>
 
 ## HR
