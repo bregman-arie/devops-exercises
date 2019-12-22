@@ -11,6 +11,7 @@ Please read carefully all the instructions.
 
 If any of the following steps is not working, it is expected from you to fix them
 
+1. Move to `challenges/flask_container_ci` directory, if you are not already there
 1. Run `export FLASK_APP=app/app.py`
 1. To run the app execute `flask run`. If it doesn't works, fix it
 3. Access `http://127.0.0.1:5000`. You should see the following
@@ -27,8 +28,10 @@ If any of the following steps is not working, it is expected from you to fix the
 
 4. You should be able to access any of the resources and get the following data:
 
-* /users/<username> - data on the specific chosen user
 * /users - all users data 
+* /users/<username> - data on the specific chosen user
+
+5. When accessing /users, the data returned should not include the id of the user, only its name and description. Also, the data should be ordered by users names.
 
 ## Containers
 
@@ -40,7 +43,7 @@ docker run -d -p 5000:5000 app
 ```
 
 1. You can use any image base you would like
-2. Containrize only what you need for running the application, nothing else.
+2. Containerize only what you need for running the application, nothing else.
 
 ## CI
 

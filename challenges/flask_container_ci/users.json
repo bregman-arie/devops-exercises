@@ -1,18 +1,22 @@
 {
   "geralt" : {
     "id": "whitewolf",
-    "name": "Geralt of Rivia"
+    "name": "Geralt of Rivia",
+    "description": "Traveling monster slayer for hire"
   },
   "lara_croft" : {
     "id": "m31a3n6sion",
-    "name": "Lara Croft"
+    "name": "Lara Croft",
+    "description": "Highly intelligent and athletic English archaeologist"
   },
   "mario" : {
     "id": "smb3igiul",
-    "name": "Mario"
+    "name": "Mario",
+    "description": "Italian plumber who really likes mushrooms"
   },
   "gordon_freeman" : {
     "id": "nohalflife3",
-    "name": "Gordon Freeman"
+    "name": "Gordon Freeman",
+    "description": "Physicist with great shooting skills"
   }
 }

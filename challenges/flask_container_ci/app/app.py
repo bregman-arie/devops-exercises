@@ -4,9 +4,8 @@
 from flask import Flask
 from flask import make_response
 
-from werkzeug.exceptions import NotFound
-
 import json
+from werkzeug.exceptions import NotFound
 
 
 app = Flask(__name__)
@@ -15,7 +14,7 @@ with open("./users.json", "r") as f:
     users = json.load(f)
 
 
-@app.route("/", methods=['GET'])
+@app.routee("/", methods=['GET'])
 def index():
     return pretty_json({
         "resources": {
