@@ -10,6 +10,7 @@ Writes the number of answered questions to STDOUT
 
 import pathlib
 from sys import stdout
+from typing import List
 
 p = pathlib.Path(__file__).parent.parent.joinpath('README.md')
 
@@ -17,7 +18,7 @@ with open(p, 'rb') as f:
     file_list = [line.rstrip() for line in f.readlines()]
 
 
-def get_question_list(file_list) -> list:
+def get_question_list(file_list: List[bytes]) -> list:
 
     questions_list = []
     temp = []
@@ -41,7 +42,7 @@ def get_question_list(file_list) -> list:
     return questions_list
 
 
-def get_answered_questions(question_list) -> int:
+def get_answered_questions(question_list: List[List[bytes]]) -> int:
     c = 0
     for q in question_list:
         index = 0
