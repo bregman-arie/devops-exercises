@@ -12,7 +12,7 @@ Please read carefully all the instructions.
 If any of the following steps is not working, it is expected from you to fix them
 
 1. Move to `challenges/flask_container_ci` directory, if you are not already there
-1. Run `export FLASK_APP=app/app.py`
+1. Run `export FLASK_APP=app/main.py`
 1. To run the app execute `flask run`. If it doesn't works, fix it
 3. Access `http://127.0.0.1:5000`. You should see the following
 
@@ -50,7 +50,7 @@ docker run -d -p 5000:5000 app
 Great, now that we have a working app and also can run it in a container, let's set up a CI for it so it won't break again in the future
 In current directory you have a file called tests.py which includes the tests for the app. What is expected from you is:
 
-1. The CI should run the app tests. You are free to choose whatever CI system or service you prefer.
+1. The CI should run the app tests. You are free to choose whatever CI system or service you prefer. Use `python tests.py` for running the tests.
 2. There should be some kind of test for the Dockerfile you wrote
 3. Add additional unit test (or another level of tests) for testing the app
 
