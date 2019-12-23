@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **701** questions
+:bar_chart: &nbsp;There are currently **704** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -4625,10 +4625,19 @@ From the official docs:
 
 <details>
 <summary>Explain Shards</summary><br><b>
+
+An index is split into shards and documents are hashed to a particular shard. Each shard may be on a different node in a cluster and each one of the shards is a self contained index.<br>
+This allows Elasticsearch to scale to an entire cluster of servers.
 </b></details>
 
 <details>
 <summary>Explain Replicas</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you explain Term Frequency & Document Frequency?</summary><br><b>
+
+Term Frequency is how often a term appears in a given document and Document Frequency is how often a term appears in all documents. They both are used for determining the relevance of a term by calculating Term Frequency / Document Frequency.
 </b></details>
 
 ##### Query DSL
@@ -4779,17 +4788,27 @@ While an A record points a domain name to an IP address, a PTR record does the o
 ## Distributed
 
 <details>
-<summary>Explain Distributed Computing</summary><br><b>
+<summary>Explain Distributed Computing (or Distributed System)</summary><br><b>
+
+According to Martin Kleppmann:
+
+"Many processes running on many machines...only message-passing via an unreliable network with variable delays, and the system may suffer from partial failures, unreliable clocks, and process pauses."
 </b></details>
 
 <details>
-<summary>Do you know what is CAP theorem" (aka as Brewer's theorem)</summary><br><b>
+<summary>Do you know what is "CAP theorem"? (aka as Brewer's theorem)</summary><br><b>
 
 According to the CAP theorem, it's not possible for a distributed data store to provide more than two of the following at the same time:
 
 * Availability: Every request receives a response (it doesn't has to be the most recent data)
 * Consistency: Every request receives a response with the latest/most recent data
 * Partition tolerance: Even if some the data is lost/dropped, the system keeps running 
+</b></details>
+
+<details>
+<summary>What is "Shared-Nothing" architecture?</summary><br><b>
+
+It's an architecture in which data is and retrieved from a single, non-shared, source usually exclusively connected to one node as opposed to architectures where the request can get to one of many nodes and the data will be retrieved from one shared location (storage, memory, ...).
 </b></details>
 
 ## General
@@ -4894,6 +4913,12 @@ TODO: explain what is actually a Cookie
 
 <details>
 <summary>What is an Application Load Balancer?</summary><br><b>
+</b></details>
+
+#### General Misc
+
+<details>
+<summary>How a search engine works?</summary><br><b>
 </b></details>
 
 ## HR
