@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **704** questions
+:bar_chart: &nbsp;There are currently **711** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -463,14 +463,28 @@ Within each region, there are multiple isolated locations known as Availability 
 Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
 </b></details>
 
+#### IAM
+
 <details>
-<summary>What is IAM?</summary><br><b>
+<summary>What is IAM? What are some of its features?</summary><br><b>
 </b></details>
 
 <details>
 <summary>True or False? IAM configuration is defined globally and not per region</summary><br><b>
 
 True
+</b></details>
+
+<details>
+<summary>What are Roles?</summary><br><b>
+
+A way for allowing a service of AWS to use another service of AWS. You assign roles to AWS resources.
+</b></details>
+
+<details>
+<summary>What are Policies?</summary><br><b>
+
+Policies documents used to give permissions as to what a user, group or role are able to do. Their format is JSON.
 </b></details>
 
 #### S3
@@ -1675,7 +1689,11 @@ ls, wc, dd, df, du, ps, ip, cp, cd ...
 #### Commands
 
 <details>
-<summary>What the lsof command does?</summary><br><b>
+<summary>What the <code>lsof</code> command does? Have you used it? What for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What the <code>awk</code> command does? Have you used it? What for?</summary><br><b>
 </b></details>
 
 <a name="linux-advanced"></a>
@@ -2460,6 +2478,10 @@ Setting the replicas to 0 will shut down the process. Now start it with `kubectl
 
 <details>
 <summary>What is Object Oriented Programming? Why is it important?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are the four pillars of object oriented programming?</summary><br><b>
 </b></details>
 
 <details>
@@ -4454,6 +4476,10 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 <summary>What are some examples of security architecture requirements?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is air-gapped network (or air-gapped environment)? What its advantages and disadvantages?</summary><br><b>
+</b></details>
+
 ##### Containers
 
 <details>
@@ -4915,10 +4941,14 @@ TODO: explain what is actually a Cookie
 <summary>What is an Application Load Balancer?</summary><br><b>
 </b></details>
 
-#### General Misc
+#### Random
 
 <details>
 <summary>How a search engine works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is faster than RAM?</summary><br><b>
 </b></details>
 
 ## HR
@@ -4958,6 +4988,17 @@ Relax, there is no wrong or right answer here...I think.
 
 <details>
 <summary>How do you deal with a situation where key stakeholders are not around and a big decision needs to be made? </summary><br><b>
+</b></details>
+
+<details>
+<summary>Where do you see yourself in 5 years?</summary><br><b>
+
+Some ideas (some of them bad and should not be used):
+
+* Senior DevOps
+* Manager
+* Retirement
+* Your manager
 </b></details>
 
 <details>

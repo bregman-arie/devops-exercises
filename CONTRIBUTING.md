@@ -4,11 +4,14 @@ Use pull requests to contribute to the project.
 
 Stick to the following format:
 
-<details>
+\<details>
 <summary>[Question]</summary><br><b>
 
 [Answer]
-</b></details>
+\</b></details>
+
+* If you added several questions and you would like to know how many questions are there you can use the script "count_questions.sh" in scripts directory.
+
 
 ## What to avoid
 
