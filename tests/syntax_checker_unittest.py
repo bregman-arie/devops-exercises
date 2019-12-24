@@ -3,37 +3,42 @@ WIP
 
 Yes, we do write tests for our tests.
 """
-import unittest
-# import pathlib
-
-# from tests import *
-# from scripts import get_answered_questions
-
-
-def open_test_case_file(n: int):
-    pass
-    # p = pathlib.Path(
-    #    rf'D:\PycharmProjects\devops-interview-questions\scripts\tests\' + '
-    # testcase{n}.md')
-
-    # with open(p, 'rb') as f:
-    #    file_list = [line.rstrip() for line in f.readlines()]
-    # return file_list
+from pathlib import Path
+from typing import List
+from unittest import TestCase
+from tests import syntax_checker
 
 
-class QuestionCount(unittest.TestCase):
-    solutions = (
+def open_test_case_file(n: int) -> List[bytes]:
+    tests_path = Path(__file__).parent.joinpath()
 
-    )
+    with open(f'{tests_path}/testcases/testcase{n}.md', 'rb') as f:
+        file_list = [line.rstrip() for line in f.readlines()]
+    return file_list
 
-    def test_count_case_1(self):
-        pass
-        # raw_list = open_test_case_file(1)
-        # question_list = get_question_list(raw_list)
-        # answers = get_answered_questions.n_answers(question_list)
 
-        # self.assertEqual(len(question_list), 21)
-        # self.assertEqual(answers, 2)
+test_case_1 = open_test_case_file(1)
+test_case_2 = open_test_case_file(2)
+test_case_3 = open_test_case_file(3)
 
-    def test_count_case_2(self):
-        pass
+
+class TestSyntax(TestCase):
+
+    def test_details_count_case1(self):
+        self.assertTrue(syntax_checker.count_details(test_case_1))
+
+    def test_details_count_case2(self):
+        self.assertTrue(syntax_checker.count_details(test_case_2))
+
+    def test_details_errors_1(self):
+        syntax_checker.check_details_tag(test_case_1)
+        self.assertFalse(syntax_checker.errors)
+
+    def test_details_errors_2(self):
+        syntax_checker.check_details_tag(test_case_2)
+        self.assertFalse(syntax_checker.errors)
+    #
+    # def test_details_error_exist_1(self):
+    #     syntax_checker.check_details_tag(test_case_3)
+    #     print(syntax_checker.errors)
+    #     self.assertEqual(len(syntax_checker.errors), 3)

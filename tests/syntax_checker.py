@@ -36,7 +36,7 @@ def count_details(file_list):
         if b'</details>' in line:
             details_final_count += 1
 
-    return details_count, details_final_count
+    return details_count == details_final_count
 
 
 def check_details_tag(file_list):
