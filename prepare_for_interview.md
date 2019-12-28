@@ -7,13 +7,18 @@ Note: the following is opinionated.
 #### Linux
 
 Every DevOps Engineer should have knowledge about operating systems and specifically Linux which is probably in 95% of the DevOps jobs postings out there.
-Usually next question is "How extensive my knowledge should be?" - this should be your strongest area. Be familiar with processes, debugging tools, filesystem, networking, ... you got this :)
+Usually next question is "How extensive my knowledge should be?" - out of all DevOps skills, I would say this should be your strongest one. Be familiar with processes, debugging tools, filesystem, networking, ... be familiar with the operating system. Understand how it works, how to deal with issues, ... this is where it all starts.
 
 #### Coding
 
 Some DevOps interviews include coding tasks/questions. Be prepared for those by doing actual coding. It should be at least scripting level but some companies (especially top 5) will require more than that which means you should be familiar with common algorithms, data structures, etc.
  
 Also, the following is probably clear to most people but let's still clarify it: when given the chance to choose any language for answering coding tasks/questions, choose the one you have experience with! Some candidates prefer to to choose the language they think the company is using and this is a huge mistake because right answer > wrong answer in any language.
+
+I recommend the following sites for practicing coding:
+
+* [HackerRank](https://www.hackerrank.com)
+* [LeetCode](https://leetcode.com)
 
 #### Architecture and Design
 
