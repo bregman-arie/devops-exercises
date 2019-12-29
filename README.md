@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **714** questions
+:bar_chart: &nbsp;There are currently **720** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -1678,12 +1678,18 @@ Re-install the OS IS NOT the right answer :)
 <summary>What is sudo? How do you set it up?</summary><br><b>
 </b></details>
 
-#### Random and Strange :)
+#### Random and perhaps useless :)
 
 <details>
 <summary>Give 5 commands which are two letters long</summary><br><b>
 
 ls, wc, dd, df, du, ps, ip, cp, cd ...
+</b></details>
+
+<details>
+<summary>What a double dash (--) mean?</summary><br><b>
+
+It's used in commands to mark the end of commands options. One common example is when used with git to discard local changes: `git checkout -- some_file`
 </b></details>
 
 #### Commands
@@ -1699,8 +1705,43 @@ ls, wc, dd, df, du, ps, ip, cp, cd ...
 <a name="linux-advanced"></a>
 #### :star: Advanced
 
+#### System Calls
+
+<details>
+<summary>Explain the fork system call</summary><br><b>
+
+fork() is used for creating a new process. It does so by cloning the calling process but the child process has its own PID and any memory locks, I/O operations and semaphores are not inherited.
+</b></details>
+
+<details>
+<summary>Explain the exec system call</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are the differences between exec() and fork()?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Why do we need the wait system call?</summary><br><b>
+
+wait() is used by a parent process to wait for the child process to finish execution.
+If wait is not used by a parent process then a child process might become a zombie process.
+</b></details>
+
 <details>
 <summary>What happens when you execute <code>ls</code>?. Provide a detailed answer</summary><br><b>
+</b></details>
+
+#### Linux Filesystem & Files
+
+<details>
+<summary>How to create a file of a certain size?</summary><br><b>
+
+There are a couple of ways to do that:
+  
+  * dd if=/dev/urandom of=new_file.txt bs=2MB count=1
+  * truncate -s 2M new_file.txt
+  * fallocate -l 2097152 new_file.txt
 </b></details>
 
 <details>
@@ -1760,37 +1801,6 @@ Another common way to task this questions is "what part of the tcp header does t
 </b></details>
 
 <details>
-<summary>How to create a file of a certain size?</summary><br><b>
-
-There are a couple of ways to do that:
-  
-  * dd if=/dev/urandom of=new_file.txt bs=2MB count=1
-  * truncate -s 2M new_file.txt
-  * fallocate -l 2097152 new_file.txt
-</b></details>
-
-<details>
-<summary>Explain the fork system call</summary><br><b>
-
-fork() is used for creating a new process.
-</b></details>
-
-<details>
-<summary>Explain the fork system call</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are the differences between exec() and fork()?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Why do we need the wait system call?</summary><br><b>
-
-wait() is used by a parent process to wait for the child process to finish execution.
-If wait is not used by a parent process then a child process might become a zombie process.
-</b></details>
-
-<details>
 <summary>Explain Process Descriptor and Task Structure</summary><br><b>
 </b></details>
 
@@ -1825,19 +1835,23 @@ There are many ways to answer that. For those who look for simplicity, the book 
 "responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that"
 </b></details>
 
-<details>
-<summary>If you had to design an API for processes in an operating system, what would this API look like?</summary><br><b>
-
-* Create - allow to create new processes 
-* Delete - allow to remove/destroy processes
-* State - allow to check the state of the process, whether it's running, stopped, waiting, etc.
-* Stop - allow to stop a running process
-</b></details>
+#### Processes
 
 <details>
 <summary>Can you explain what is a process?</summary><br><b>
 
 A process is a running program. A program is one or more instructions and the program (or process) is executed by the operating system.
+</b></details>
+
+<details>
+<summary>If you had to design an API for processes in an operating system, what would this API look like?</summary><br><b>
+
+It would support the following:
+
+* Create - allow to create new processes 
+* Delete - allow to remove/destroy processes
+* State - allow to check the state of the process, whether it's running, stopped, waiting, etc.
+* Stop - allow to stop a running process
 </b></details>
 
 <details>
@@ -1865,6 +1879,12 @@ False. It was true in the past but today's operating systems perform lazy loadin
 * Running - it's executing instructions
 * Ready - it's ready to run but for different reasons it's on hold
 * Blocked - it's waiting for some operation to complete. For example I/O disk request
+</b></details>
+
+#### Concurrency
+
+<details>
+<summary>Explain what is Semaphore and what its role in operating systems</summary><br><b>
 </b></details>
 
 ## Virtualization
@@ -2629,7 +2649,6 @@ def find_triplets_sum_to_zero(li):
 7. In python **Everything** is an object.
 
 There are many other characteristics but these are the main ones that every python programmer should know.
-
 ```
 </b></details>
 
@@ -2650,13 +2669,13 @@ The immutable data types are:
     Tuple
     Frozenset
 
-You can usually use the function hash() to check an object mutability, if it is hashable it is immutable, although this does not always work as intended as user defined objects might be mutable and hashable
+You can usually use the function hash() to check an object mutability. If an object is hashable, it is immutable (although this does not always work as intended as user defined objects might be mutable and hashable).
 </b></details>
 
 <details>
 <summary>In Python, functions are first-class objects. What does it mean?</summary><br><b>
 
-In general, first class objects in programming languages are objects which can assigned to variable, used as a return value and can be used as arguments or parameters.<br>
+In general, first class objects in programming languages are objects which can be assigned to variable, used as a return value and can be used as arguments or parameters.<br>
 In python you can treat functions this way. Let's say we have the following function
 
 ```
@@ -2665,6 +2684,10 @@ def my_function():
 ```
 
 You can then assign a function to a variables like this `x = my_function` or you can return functions as return values like this `return my_function`
+</b></details>
+
+<details>
+<summary>Explain expressions and statements</summary><br><b>
 </b></details>
 
 <details>
@@ -2822,25 +2845,19 @@ Generally, every compiling process have a two steps.
 </b></details>
 
 <details>
-<summary>What <code>//</code> is used for?</summary><br><b>
+<summary>Explain Exception Handling and how to use it in Python</summary><br><b>
 </b></details>
 
 <details>
-<summary>Write a program which will revert a string (e.g. pizza -> azzip)</summary><br><b>
+<summary>Explain what is GIL</summary><br><b>
+</b></details>
 
-```
-Shortest way is str[::-1] but not the most efficient.
+<details>
+<summary>What is Lambda? How is it used?</summary><br><b>
+</b></details>
 
-"Classic" way:
-
-foo = ''
-
-for char in 'pizza':
-    foo = char + foo
-
->> 'azzip'   
-
-```
+<details>
+<summary>What <code>//</code> is used for?</summary><br><b>
 </b></details>
 
 <details>
@@ -2957,7 +2974,7 @@ def is_unique4(l:list) -> bool:
 [Solution](coding/python/binary_search.py)
 </b></details>
 
-##### Files
+#### Files
 
 <details>
 <summary>How to write to a file?</summary><br><b>
@@ -2974,6 +2991,10 @@ with open('file.txt', 'w') as file:
 
 <details>
 <summary>Sum all the integers in a given file</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you write a function which will print all the file in a given directory? including sub-directories</summary><br><b>
 </b></details>
 
 #### Regex
@@ -3003,10 +3024,6 @@ sorted(x, key=lambda l: l[1])
 </b></details>
 
 <details>
-<summary>Can you write a function which will print all the file in a given directory? including sub-directories</summary><br><b>
-</b></details>
-
-<details>
 <summary>You have the following list: <code>[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]</code>
   Extract all type of foods. Final output should be: {'mushrooms', 'goombas', 'turtles'}</summary><br><b>
 
@@ -3027,18 +3044,26 @@ def get_food(brothers_menu) -> set:
 # One liner way (Using list comprehension)
 set([food for bro in x for food in bro['food']])
 ```
-
 </b></details>
 
 <details>
 <summary>What is List Comprehension? Is it better than a typical loop? Why? Can you demonstrate how to use it?</summary><br><b>
 </b></details>
 
-<details>
-<summary>How to reverse a string?</summary><br><b>
+#### Practical
 
-Shortest way is: <code>my_string[::-1]</code> but it doesn't mean it's the most efficient one. <br>
-Cassic way is:
+<details>
+<summary>How to reverse a string? (e.g. pizza -> azzip)</summary><br><b>
+
+Shortest way is: 
+
+```
+my_string[::-1]
+```
+
+But it doesn't mean it's the most efficient one. <br>
+
+The Classic way is:
 ```
 def reverse_string(string):
     temp = ""
@@ -3062,10 +3087,6 @@ def reverse_string(string):
 
 <details>
 <summary>How do you handle argument parsing in Python?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain what is GIL</summary><br><b>
 </b></details>
 
 <details>
@@ -3093,6 +3114,14 @@ def reverse_string(string):
 </b></details>
 
 <details>
+<summary>You have the following list of nested lists: <code>[['Mario', 90], ['Geralt', 82], ['Gordon', 88]]</code> How to sort the list by the numbers in the nested lists?</code></summary><br><b>
+
+One way is:
+
+the_list.sort(key=lambda x: x[1])
+</b></details>
+
+<details>
 <summary>Explain the following:
   * zip()
   * map()
@@ -3101,6 +3130,8 @@ def reverse_string(string):
 
 <details>
 <summary>How do you debug Python code?</summary><br><b>
+
+pdb :D
 </b></details>
 
 <details>
@@ -3238,7 +3269,7 @@ What would be the result of is_int(2) and is_int(False)?
 ##### Flask
 
 <details>
-<summary>You wrote you have experience with Django/Flask. Can you describe what is Django/Flask and how you used it? Why Flask and not Djano? (or vice versa)</summary><br><b>
+<summary>You wrote you have experience with Django/Flask. Can you describe what is Django/Flask and how you have used it? Why Flask and not Djano? (or vice versa)</summary><br><b>
 </b></details>
 
 <details>
@@ -3658,6 +3689,12 @@ git push origin :[branch_name]
 gitattributes allow you to define attributes per pathname or path pattern.<br>
 
 You can use it for example to control endlines in files. In Windows and Unix based systems, you have different characters for new lines (\r\n and \n accordingly). So using gitattributes we can align it for both Windows and Unix with `* text=auto` in .gitattributes for anyone working with git. This is way, if you use the Git project in Windows you'll get \r\n and if you are using Unix or Linux, you'll get \n.
+</b></details>
+
+<details>
+<summary>How do you discard local file changes?</summary><br><b>
+
+You can use `git checkout -- <file_name>`
 </b></details>
 
 <a name="git-advanced"></a>
