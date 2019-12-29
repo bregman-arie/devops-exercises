@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **711** questions
+:bar_chart: &nbsp;There are currently **714** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -114,7 +114,7 @@ Make sure to elaborate :)
 </b></details>
 
 <details>
-<summary>What is Reliability? How does it DevOps?</summary><br><b>
+<summary>What is Reliability? How does it fit DevOps?</summary><br><b>
 </b></details>
 
 <details>
@@ -1770,11 +1770,24 @@ There are a couple of ways to do that:
 </b></details>
 
 <details>
-<summary>Explain the fork() system call</summary><br><b>
+<summary>Explain the fork system call</summary><br><b>
+
+fork() is used for creating a new process.
 </b></details>
 
 <details>
-<summary>What are the differences between the following system calls?: exec(), fork(), vfork() and clone()?</summary><br><b>
+<summary>Explain the fork system call</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are the differences between exec() and fork()?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Why do we need the wait system call?</summary><br><b>
+
+wait() is used by a parent process to wait for the child process to finish execution.
+If wait is not used by a parent process then a child process might become a zombie process.
 </b></details>
 
 <details>
@@ -2524,7 +2537,7 @@ The average performance of the above algorithm is O(log n). Best performance can
   * You shouldn't test your code before submitting it. This is what CI/CD exists for.
 </b></details>
 
-##### Strings
+#### Strings
 
 <details>
 <summary>In any language you want, write a function to determine if a given string is a palindrome</summary><br><b>
@@ -2534,7 +2547,13 @@ The average performance of the above algorithm is O(log n). Best performance can
 <summary>In any language you want, write a function to determine if two strings are Anagrams </summary><br><b>
 </b></details>
 
-##### Time Complexity
+#### Integers
+
+<details>
+<summary>In any language you would like, print the numbers from 1 to a given integer. For example for input: 5, the output is: 12345</summary><br><b>
+</b></details>
+
+#### Time Complexity
 
 <details>
 <summary>Describe what would be the time complexity of the operations <code>access</code>, <code>search</code> <code>insert</code> and <code>remove</code> for the following data structures:</summary><br><b>
