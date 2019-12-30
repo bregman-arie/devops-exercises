@@ -19,6 +19,7 @@ I recommend the following sites for practicing coding:
 
 * [HackerRank](https://www.hackerrank.com)
 * [LeetCode](https://leetcode.com)
+* [Exercism](https://exercism.io)
 
 #### Architecture and Design
 

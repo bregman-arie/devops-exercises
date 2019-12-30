@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **725** questions
+:bar_chart: &nbsp;There are currently **726** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -78,8 +78,6 @@
 <details>
 <summary>What is DevOps?</summary><br><b>
 
-There are many good answers to this question.
-
 Amazon:
 
 "DevOps is the combination of cultural philosophies, practices, and tools that increases an organization’s ability to deliver applications and services at high velocity: evolving and improving products at a faster pace than organizations using traditional software development and infrastructure management processes. This speed enables organizations to better serve their customers and compete more effectively in the market."
@@ -111,10 +109,10 @@ Make sure to elaborate :)
 
 <details>
 <summary>What are the anti-patterns of DevOps?</summary><br><b>
-</b></details>
 
-<details>
-<summary>What is Reliability? How does it fit DevOps?</summary><br><b>
+* Now allowing to push in production on Friday :)
+* One specific person is in charge of different tasks. For example there is only one person who is allowed to merge the code of everyone else
+* Treating production differently from development environment. For example, not implementing security in development environment
 </b></details>
 
 <details>
@@ -228,6 +226,10 @@ It can be as simple as one Ansible (or other CM tool) task that runs periodicall
 
 <details>
 <summary>Compare SRE to DevOps</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Reliability? How does it fit DevOps?</summary><br><b>
 </b></details>
 
 <details>
@@ -2541,6 +2543,7 @@ Statements are instructions executed by the interpreter like variable assignment
 
 <details>
 <summary>Binary search:
+
   * How it works?
   * Can you implement it? (in any language you prefer)
   * What is the average performance of the algorithm you wrote?</summary><br><b>
@@ -2561,8 +2564,8 @@ The average performance of the above algorithm is O(log n). Best performance can
 <details>
 <summary>Do you agree/disagree with each of the following statements and why?:
 
-  * The commit message is not important. When reviewing a change/patch one should focus on the actual change</summary><br><b>
-  * You shouldn't test your code before submitting it. This is what CI/CD exists for.
+  * The commit message is not important. When reviewing a change/patch one should focus on the actual change
+  * You shouldn't test your code before submitting it. This is what CI/CD exists for.</summary><br><b>
 </b></details>
 
 #### Strings
@@ -3103,6 +3106,12 @@ def reverse_string(string):
         temp =  char + temp
     return temp
 ```
+</b></details>
+
+<details>
+<summary>What is the output of the following code: <code>"".join(["a", "h", "m", "a", "h", "a", "n", "q", "r", "l", "o", "i", "f", "o", "o"])[2::3]</code></summary><br><b>
+
+mario
 </b></details>
 
 <details>

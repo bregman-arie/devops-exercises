@@ -89,6 +89,7 @@ Personally, I really like the following sites
 
 * [HackerRank](https://www.hackerrank.com)
 * [LeetCode](https://leetcode.com)
+* [Exercism](https://exercism.io)
 
 ### How to learn more about Linux?
 
