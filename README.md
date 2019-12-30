@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **720** questions
+:bar_chart: &nbsp;There are currently **725** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -2510,6 +2510,14 @@ Setting the replicas to 0 will shut down the process. Now start it with `kubectl
 </b></details>
 
 <details>
+<summary>Explain expressions and statements</summary><br><b>
+
+An expression is anything that results in a value (even if the value is None). Basically, any sequence of literals so, you can say that a string, integer, list, ... are all expressions.
+
+Statements are instructions executed by the interpreter like variable assignments, for loops and conditionals (if-else).
+</b></details>
+
+<details>
 <summary>What is Object Oriented Programming? Why is it important?</summary><br><b>
 </b></details>
 
@@ -2687,10 +2695,6 @@ You can then assign a function to a variables like this `x = my_function` or you
 </b></details>
 
 <details>
-<summary>Explain expressions and statements</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is PEP8? Give an example of 3 style guidelines</summary><br><b>
 
 PEP8 is a list of coding conventions and style guidelines for Python
@@ -2702,6 +2706,13 @@ PEP8 is a list of coding conventions and style guidelines for Python
     3. Use commas when making a tuple of one element
     4. Use spaces (and not tabs) for indentation
     5. Use 4 spaces per indentation level
+</b></details>
+
+<details>
+<summary>What is the result of running <code>[] is not []</code>? explain the result</summary><br><b>
+
+It evaluates to True.<br>
+The reason is that the two created empty list are different objects. `x is y` only evaluates to true when x and y are the same object.
 </b></details>
 
 <details>
@@ -2768,16 +2779,13 @@ bruno.bark()
 Calling super() calls the Base method, thus, calling super().__init__() we called the Animal __init__.
 
 There is a more advanced python feature called MetaClasses that aid the programmer to directly control class creation.
-
 ```
-
 </b></details>
 
 <details>
 <summary> What is an error? What is an exception? What types of exceptions are you familiar with?</summary><br><b>
 
 ```
-
 #  Note that you generally don't need to know the compiling process but knowing where everything comes from
 #  and giving complete answers shows that you truly know what you are talking about.
 
@@ -2834,10 +2842,7 @@ Generally, every compiling process have a two steps.
     division(100, 2)
     
     >>> __main__.DividedBy2Error: I dont want you to divide by 2!
-
 ```
-
-
 </b></details>
 
 <details>
@@ -2845,7 +2850,11 @@ Generally, every compiling process have a two steps.
 </b></details>
 
 <details>
-<summary>Explain Exception Handling and how to use it in Python</summary><br><b>
+<summary>What _ is used for in Python?</summary><br><b>
+
+1. Translation lookup in i18n
+2. Hold the result of the last executed expression or statement in the interactive interpreter.
+3. As a general purpose "throwaway" variable name. For example: x, y, _ = get_data() (x and y are used but since we don't care about third variable, we "threw it away").
 </b></details>
 
 <details>
@@ -2861,11 +2870,10 @@ Generally, every compiling process have a two steps.
 </b></details>
 
 <details>
-<summary>How to extract the unique characters from a string? for example given the input "itssssssameeeemarioooooo" the output will be "mrtisaoe"</summary><br><b>
+<summary>How do you swap values between two variables?</summary><br><b>
 
 ```
-x = "itssssssameeeemarioooooo"
-y = ''.join(set(x))
+x, y = y, x
 ```
 </b></details>
 
@@ -2887,21 +2895,10 @@ def return_sum():
 ```
 </b></details>
 
+#### Lists
+
 <details>
 <summary>How to merge two sorted lists into one sorted list?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to merge two dictionaries?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you swap values between two variables?</summary><br><b>
-
-```
-x, y = y, x
-```
-
 </b></details>
 
 <details>
@@ -2947,23 +2944,37 @@ This one might look more convulated but hey, one liners.
 def is_unique4(l:list) -> bool:
     return all(map(lambda x: l.count(x) < 2, l))
 ```
-
 </details>
 
 <details>
-<summary>What _ is used for in Python?</summary><br><b>
+<summary>You have the following function
 
-1. Translation lookup in i18n
-2. Hold the result of the last executed expression or statement in the interactive interpreter.
-3. As a general purpose "throwaway" variable name. For example: x, y, _ = get_data() (x and y are used but since we don't care about third variable, we "threw it away").
+```
+def my_func(li = []):
+    li.append("hmm")  
+    print(li)
+```
+
+If we call it 3 times, what would be the result each call?
+</summary><br><b>
 </b></details>
 
 <details>
-<summary>How to check how much time it took to execute a certain script or block of code?</summary><br><b>
+<summary>How to iterate over a list in reverse order?</summary><br><b>
+</b></details>
+
+#### Dictionaries
+
+<details>
+<summary>How to sort a dictionary by values?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Find all the permutations of a given string</summary><br><b>
+<summary>How to sort a dictionary by keys?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to merge two dictionaries?</summary><br><b>
 </b></details>
 
 ##### Common Algorithms Implementation
@@ -3050,7 +3061,28 @@ set([food for bro in x for food in bro['food']])
 <summary>What is List Comprehension? Is it better than a typical loop? Why? Can you demonstrate how to use it?</summary><br><b>
 </b></details>
 
-#### Practical
+#### Strings
+
+<details>
+<summary>How to extract the unique characters from a string? for example given the input "itssssssameeeemarioooooo" the output will be "mrtisaoe"</summary><br><b>
+
+```
+x = "itssssssameeeemarioooooo"
+y = ''.join(set(x))
+```
+</b></details>
+
+<details>
+<summary>Find all the permutations of a given string</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to check if a string contains a sub string?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Find the frequency of each character in string</summary><br><b>
+</b></details>
 
 <details>
 <summary>How to reverse a string? (e.g. pizza -> azzip)</summary><br><b>
@@ -3071,14 +3103,6 @@ def reverse_string(string):
         temp =  char + temp
     return temp
 ```
-</b></details>
-
-<details>
-<summary>How to sort a dictionary by values?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to sort a dictionary by keys?</summary><br><b>
 </b></details>
 
 <details>
@@ -3128,10 +3152,16 @@ the_list.sort(key=lambda x: x[1])
   * filter()</summary><br><b>
 </b></details>
 
+#### Debugging
+
 <details>
 <summary>How do you debug Python code?</summary><br><b>
 
 pdb :D
+</b></details>
+
+<details>
+<summary>How to check how much time it took to execute a certain script or block of code?</summary><br><b>
 </b></details>
 
 <details>
@@ -3204,19 +3234,6 @@ li = []
 for i in range(1,10):
     li.append(i)
 ```
-</summary><br><b>
-</b></details>
-
-<details>
-<summary>You have the following function
-
-```
-def my_func(li = []):
-    li.append("hmm")  
-    print(li)
-```
-
-If we call it 3 times, what would be the result each call?
 </summary><br><b>
 </b></details>
 
@@ -3692,9 +3709,22 @@ You can use it for example to control endlines in files. In Windows and Unix bas
 </b></details>
 
 <details>
-<summary>How do you discard local file changes?</summary><br><b>
+<summary>How do you discard local file changes? (before commit)</summary><br><b>
 
-You can use `git checkout -- <file_name>`
+`git checkout -- <file_name>`
+</b></details>
+
+<details>
+<summary>How do you discard local commits?</summary><br><b>
+
+`git reset HEAD~1` for removing last commit
+If you would like to also discard the changes you `git reset --hard``
+</b></details>
+
+<details>
+<summary>True or False? To remove a file from git but not from the filesystem, one should use <code>git rm </code></summary><br><b>
+
+False. If you would like to keep a file on your filesystem, use `git reset <file_name>`
 </b></details>
 
 <a name="git-advanced"></a>
