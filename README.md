@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **726** questions
+:bar_chart: &nbsp;There are currently **733** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -110,7 +110,7 @@ Make sure to elaborate :)
 <details>
 <summary>What are the anti-patterns of DevOps?</summary><br><b>
 
-* Now allowing to push in production on Friday :)
+* Not allowing to push in production on Friday :)
 * One specific person is in charge of different tasks. For example there is only one person who is allowed to merge the code of everyone else
 * Treating production differently from development environment. For example, not implementing security in development environment
 </b></details>
@@ -2467,7 +2467,11 @@ Kubernetes is especially good for scenarios when you no longer running small num
 </b></details>
 
 <details>
-<summary>Explain what is a Pod</summary><br><b>
+<summary>Explain what is a Kubernetes pod</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is a Kubernetes node</summary><br><b>
 </b></details>
 
 <details>
@@ -2496,6 +2500,18 @@ If we see "Error" status, we can keep debugging by running the command `kubectl 
 In case we find out there was a temporary issue with the pod or the system, we can try restarting the pod with the following `kubectl scale deployment [name] --replicas=0`<br>
 
 Setting the replicas to 0 will shut down the process. Now start it with `kubectl scale deployment [name] --replicas=1`
+</b></details>
+
+<details>
+<summary>What the Kubernetes Scheduler does?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is Kubelet</summary><br><b>
+</b></details>
+
+<details>
+<summary>What happens to running pods if if you stop Kubelet on the worker nodes?</summary><br><b>
 </b></details>
 
 <details>
@@ -2664,7 +2680,7 @@ There are many other characteristics but these are the main ones that every pyth
 </b></details>
 
 <details>
-<summary>What build-in types Python has? Which of them are mutable? How can you show that a certain data type is mutable?</summary><br><b>
+<summary>What built-in types Python has? Which of them are mutable? How can you show that a certain data type is mutable?</summary><br><b>
 
 The mutable data types are:
 
@@ -2869,10 +2885,6 @@ Generally, every compiling process have a two steps.
 </b></details>
 
 <details>
-<summary>What <code>//</code> is used for?</summary><br><b>
-</b></details>
-
-<details>
 <summary>How do you swap values between two variables?</summary><br><b>
 
 ```
@@ -2898,7 +2910,34 @@ def return_sum():
 ```
 </b></details>
 
+<details>
+<summary>Print the average of [2, 5, 6]. It should be rounded to 3 decimal places</summary><br><b>
+
+```
+li = [2, 5, 6]
+print("{0:.3f}".format(sum(li)/len(li)))
+```
+</b></details>
+
 #### Lists
+
+<details>
+<summary>How do you get the maximum and minimum values from a list? How to get the last item from a list?</summary><br><b>
+
+```
+Maximum: max(some_list)
+Minimum: min(some_list)
+Last item: some_list[-1]
+```
+</b></details>
+
+<details>
+<summary>How to get the top/biggest 3 items from a list?</summary><br><b>
+
+```
+sorted(some_list, reverse=True)[:3]
+```
+</b></details>
 
 <details>
 <summary>How to merge two sorted lists into one sorted list?</summary><br><b>
@@ -3085,6 +3124,20 @@ y = ''.join(set(x))
 
 <details>
 <summary>Find the frequency of each character in string</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the result of each of the following?
+```
+>> ', '.join(["One", "Two", "Three"])
+>> " ".join("welladsadgadoneadsadga".split("adsadga")[:2])
+>> "".join(["c", "t", "o", "a", "o", "q", "l"])[0::2]
+</summary><br><b>
+```
+>>> 'One, Two, Three'
+>>> 'well done'
+>>> 'cool'
+```
 </b></details>
 
 <details>
