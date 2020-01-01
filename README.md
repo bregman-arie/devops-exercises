@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **733** questions
+:bar_chart: &nbsp;There are currently **738** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -2940,6 +2940,15 @@ sorted(some_list, reverse=True)[:3]
 </b></details>
 
 <details>
+<summary>Convert every string to an integer: <code>[['1', '2', '3'], ['4', '5', '6']]</code></summary><br><b>
+
+```
+nested_li = [['1', '2', '3'], ['4', '5', '6']]
+[[int(x) for x in li] for li in nested_li]
+```
+</b></details>
+
+<details>
 <summary>How to merge two sorted lists into one sorted list?</summary><br><b>
 </b></details>
 
@@ -3003,6 +3012,29 @@ If we call it 3 times, what would be the result each call?
 
 <details>
 <summary>How to iterate over a list in reverse order?</summary><br><b>
+
+Method 1
+```
+for i in reversed(li):
+    ...
+```
+
+Method 2
+```
+for i in li[::-1]:
+    ...
+```
+</b></details>
+
+<details>
+<summary>Combine [1, 2, 3] and ['x', 'y', 'z'] so the result is [(1, 'x'), (2, 'y'), (3, 'z')]</summary><br><b>
+
+```
+nums = [1, 2, 3]
+letters = ['x', 'y', 'z']
+
+list(zip(nums, letters))
+```
 </b></details>
 
 #### Dictionaries
@@ -3116,6 +3148,34 @@ y = ''.join(set(x))
 
 <details>
 <summary>Find all the permutations of a given string</summary><br><b>
+
+```
+def permute_string(string):
+
+    if len(string) == 1:
+        return [string]
+
+    permutations = []
+    for i in range(len(string)):
+        swaps = permute_string(string[:i] + string[(i+1):])
+        for swap in swaps:
+            permutations.append(string[i] + swap)
+
+    return permutations
+
+print(permute_string("abc"))
+```
+
+Short way (but probably not acceptable in interviews):
+
+```
+from itertools import permutations
+
+[''.join(p) for p in permutations("abc")]
+```
+
+Detailed answer can be found here: http://codingshell.com/python-all-string-permutations
+
 </b></details>
 
 <details>
@@ -3124,6 +3184,16 @@ y = ''.join(set(x))
 
 <details>
 <summary>Find the frequency of each character in string</summary><br><b>
+</b></details>
+
+<details>
+<summary>Given the string (which represents a matrix) "1 2 3\n4 5 6\n7 8 9" create rows and colums variables (should contain integers, not strings)</summary><br><b>
+
+```
+matrix = "1 2 3\n4 5 6\n7 8 9"
+rows = [ [int(x) for x in li if x != ' '] for li in matrix.split("\n")]
+colums = list(zip(*(rows)))
+```
 </b></details>
 
 <details>
@@ -3293,10 +3363,14 @@ def sum(a, b):
 
 ```
 li = []
-for i in range(1,10):
+for i in range(1, 10):
     li.append(i)
 ```
 </summary><br><b>
+
+```
+[for i in in range(1, 10)]
+```
 </b></details>
 
 <details>
@@ -3345,7 +3419,7 @@ What would be the result of is_int(2) and is_int(False)?
 <summary>Why one shouldn't use <code>assert</code> in non-test/production code?</summary><br><b>
 </b></details>
 
-##### Flask
+#### Flask
 
 <details>
 <summary>You wrote you have experience with Django/Flask. Can you describe what is Django/Flask and how you have used it? Why Flask and not Djano? (or vice versa)</summary><br><b>
@@ -3357,6 +3431,31 @@ What would be the result of is_int(2) and is_int(False)?
 
 <details>
 <summary>How do you manage DB integration?</summary><br><b>
+</b></details>
+
+#### zip
+
+<details>
+<summary>Given <code>x = [1, 2, 3]</code>, what is the result of list(zip(x))?</summary><br><b>
+
+```
+[(1,), (2,), (3,)]
+```
+</b></details>
+
+<details>
+<summary>What is the result of each of the following:
+
+```
+list(zip(range(5), range(50), range(50)))
+list(zip(range(5), range(50), range(-2)))
+```
+</summary><br><b>
+
+```
+[(0, 0, 0), (1, 1, 1), (2, 2, 2), (3, 3, 3), (4, 4, 4)]
+[]
+```
 </b></details>
 
 <a name="python-advanced"></a>
