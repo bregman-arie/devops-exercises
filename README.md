@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **738** questions
+:bar_chart: &nbsp;There are currently **740** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -2937,6 +2937,23 @@ Last item: some_list[-1]
 ```
 sorted(some_list, reverse=True)[:3]
 ```
+
+Or
+
+```
+some_list.sort(reverse=True)
+some_list[:3]
+```
+</b></details>
+
+<details>
+<summary>Do you know what is the difference between list.sort() and sorted(list)?</summary><br><b>
+
+* sorted(list) will return a new list (original list doesn't change)
+* list.sort() will return None but the list is change in-place
+
+* sorted() works on any iterable (Dictionaries, Strings, ...)
+* list.sort() is faster than sorted(list) in case of Lists
 </b></details>
 
 <details>
@@ -2950,6 +2967,27 @@ nested_li = [['1', '2', '3'], ['4', '5', '6']]
 
 <details>
 <summary>How to merge two sorted lists into one sorted list?</summary><br><b>
+
+```
+sorted(li1 + li2) 
+```
+
+Another way:
+
+```
+i, j = 0
+merged_li = []
+
+while i < len(li1) and j < len(li2):
+    if li1[i] < li2[j]:
+        merged_li.append(li1[i])
+        i += 1
+    else:
+        merged_li.append(li2[j])
+        j += 1
+
+merged_li = merged_li + merged_li[i:] + merged_li[j:] 
+```
 </b></details>
 
 <details>
@@ -3008,6 +3046,12 @@ def my_func(li = []):
 
 If we call it 3 times, what would be the result each call?
 </summary><br><b>
+
+```
+['hmm']
+['hmm', 'hmm']
+['hmm', 'hmm', 'hmm']
+```
 </b></details>
 
 <details>
@@ -3021,8 +3065,10 @@ for i in reversed(li):
 
 Method 2
 ```
-for i in li[::-1]:
+n = len(li) - 1
+while n > 0:
     ...
+    n -= 1
 ```
 </b></details>
 
@@ -3041,14 +3087,26 @@ list(zip(nums, letters))
 
 <details>
 <summary>How to sort a dictionary by values?</summary><br><b>
+
+```
+{k: v for k, v in sorted(x.items(), key=lambda item: item[1])}
+```
 </b></details>
 
 <details>
 <summary>How to sort a dictionary by keys?</summary><br><b>
+
+```
+dict(sorted(some_dictionary.items()))
+```
 </b></details>
 
 <details>
 <summary>How to merge two dictionaries?</summary><br><b>
+
+```
+some_dict1.update(some_dict2)
+```
 </b></details>
 
 ##### Common Algorithms Implementation
@@ -3457,6 +3515,44 @@ list(zip(range(5), range(50), range(-2)))
 []
 ```
 </b></details>
+
+#### Misc
+
+
+<details>
+<summary>Implement simple calculator for two numbers</summary><br><b>
+
+```
+def add(num1, num2):
+    return num1 + num2
+        
+        
+def sub(num1, num2):
+    return num1 - num2
+
+
+def mul(num1, num2):
+    return num1*num2
+
+
+def div(num1, num2):
+    return num1 / num2
+
+operators = { 
+    '+': add,
+    '-': sub,
+    '*': mul,
+    '/': div 
+}
+
+if __name__ == '__main__':
+    operator = str(input("Operator: "))
+    num1 = int(input("1st number: "))
+    num2 = int(input("2nd number: "))
+    print(operators[operator](num1, num2))
+```
+</b></details>
+
 
 <a name="python-advanced"></a>
 #### :star: Advanced
