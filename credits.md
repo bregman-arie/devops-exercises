@@ -11,3 +11,4 @@ OpenStack logo created by and a trademark of The <a href="https://www.openstack.
 Linux, Kubernetes and Prometheus logos are trademarks of The Linux Foundation®<br>
 Mongo logo is a trademark of <a href="www.mongodb.com">Mongo®</a><br>
 Distributed logo by <a href="https://www.iconfinder.com/Flatart">Flatart</a><br>
+Challenge icon by Elizabeth Arostegui in Technology Mix

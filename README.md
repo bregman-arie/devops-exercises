@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **744** questions
+:bar_chart: &nbsp;There are currently **746** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -62,6 +62,7 @@
     <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
   </tr>
   <tr>
+    <td align="center"><a href="#design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>Design</b></a></td>
     <td align="center"><a href="#challenges"><img src="images/challenges.png" width="110px;" height="75px;" alt="Challenges"/><br /><b>Challenges</b></a></td>
   </tr>
 </table>
@@ -413,11 +414,14 @@ You can describe the UI way to add new slaves but better to explain how to do in
 #### :baby: Beginner
 
 <details>
-<summary>What is "Cloud"?</summary><br><b>
+<summary>What is Cloud Computing? What is a Cloud Provider?</summary><br><b>
 </b></details>
 
 <details>
 <summary>What are the advantages of cloud computing? Mention at least 3 advantages</summary><br><b>
+
+* Pay as you go (or consumption-based payment) - you are paying only for what you are using. No upfront payments and payment stops when resources are no longer used.
+* Scalable - resources are scaled down or up based on demand
 </b></details>
 
 <details>
@@ -446,6 +450,13 @@ In On-Premise solution, it's quite the opposite. You need to take care of hardwa
 
 <details>
 <summary>What is Serverless Computing?</summary><br><b>
+
+The main idea behind serverless computing is that you don't need to manage the creation and configuration of server. All you need to focus on is splitting your app into multiple functions which will be triggered by some actions.
+
+It's important to note that:
+
+* Serverless Computing is still using servers. So saying there are no servers in serverless computing is completely wrong
+* Serverless Computing allows you to have different paying model. You basically pay only when your functions are running and not when the VM or containers are running as in other payment models
 </b></details>
 
 ## AWS
@@ -5465,6 +5476,22 @@ you can show how you'd be able to mitigate that problem.
 <summary>Let's say that we agree and you hire me to this position, after X months, what do you expect that I have achieved?</summary><br><b>
 
 Not only this will tell you what is expected from you, it will also provide big hint on the type of work you are going to do in the first months of your job.
+</b></details>
+
+## Design
+
+#### Scalability
+
+<details>
+<summary>Explain Vertical Scaling</summary><br><b>
+
+Vertical Scaling is the process of adding resources to increase power of existing servers. For example, adding more CPUs, adding more RAM, etc.
+</b></details>
+
+<details>
+<summary>Explain Horizontal Scaling</summary><br><b>
+
+Horizontal Scaling is the process of adding more resources that will be able handle requests as one unit
 </b></details>
 
 ## Challenges
