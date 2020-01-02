@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **740** questions
+:bar_chart: &nbsp;There are currently **744** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -444,6 +444,9 @@ In cloud providers, someone else owns and manages the hardware, hire the relevan
 In On-Premise solution, it's quite the opposite. You need to take care of hardware, infrastructure teams and pay for everything which can be quite expensive. On the other hand it's tailored to your needs.
 </b></details>
 
+<details>
+<summary>What is Serverless Computing?</summary><br><b>
+</b></details>
 
 ## AWS
 
@@ -2313,6 +2316,10 @@ List
 The primary difference between containers and VMs is that containers allow you to virtualize
 multiple workloads on the operating system while in the case of VMs the hardware is being virtualized to
 run multiple machines each with its own OS.
+
+* Containers don't require an entire guest operating system as VMs
+* It's usually takes a few seconds to set up a container as opposed to VMs which can take minutes or at least more time than containers as there is an entire OS to boot and initialize as opposed to container where you mainly lunch the app itself
+* Docker is one of the technologies allowing you to manage containers - run multiple containers on a host, move containers between hosts, etc.
 </b></details>
 
 <details>
@@ -3193,7 +3200,7 @@ set([food for bro in x for food in bro['food']])
 <summary>What is List Comprehension? Is it better than a typical loop? Why? Can you demonstrate how to use it?</summary><br><b>
 </b></details>
 
-#### Strings
+#### Python Strings
 
 <details>
 <summary>How to extract the unique characters from a string? for example given the input "itssssssameeeemarioooooo" the output will be "mrtisaoe"</summary><br><b>
@@ -3242,6 +3249,10 @@ Detailed answer can be found here: http://codingshell.com/python-all-string-perm
 
 <details>
 <summary>Find the frequency of each character in string</summary><br><b>
+</b></details>
+
+<details>
+<summary>Count the number of spaces in a string</summary><br><b>
 </b></details>
 
 <details>
@@ -3309,6 +3320,10 @@ mario
 
 <details>
 <summary>What is a generator? Why using generators?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is <code>yeild</code>? When would you use it?</summary><br><b>
 </b></details>
 
 <details>
@@ -3736,6 +3751,10 @@ a = f()
 
 <details>
 <summary>You have created a web page where a user can upload a document. But the function which reads the uploaded files, runs for a long time, based on the document size and user has to wait for the read operation to complete before he/she can continue using the web site. How can you overcome this?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How yield works exactly?</summary><br><b>
 </b></details>
 
 ## Monitoring
