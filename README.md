@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **752** questions
+:bar_chart: &nbsp;There are currently **761** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -4584,11 +4584,31 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
+<summary>What is Azure Policy?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is the Azure Resource Manager? Can you describe the format for ARM templates?</summary><br><b>
 </b></details>
 
 <details>
 <summary>Explain Azure managed disks</summary><br><b>
+</b></details>
+
+#### Network
+
+<details>
+<summary>What's an Azure region?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the N-tier architecture?</summary><br><b>
+</b></details>
+
+#### Storage
+
+<details>
+<summary>What storage options Azure supports?</summary><br><b>
 </b></details>
 
 #### Security
@@ -4610,6 +4630,15 @@ More specifically, it:
 
 Azure AD is a cloud-based identity service. You can use it as a standalone service or integrate it with existing Active Directory service you already running.
 </b></details>
+
+<details>
+<summary>What is Azure Advanced Threat Protection?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What components are part of Azure ATP?</summary><br><b>
+</b></details>
+
 
 ## GCP
 
@@ -4761,6 +4790,18 @@ Authorization is the process of identifying what level of access the service or 
 
 <details>
 <summary>Explain MFA (Multi-Factor Authentication)</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain RBAC (Role-based Access Control)</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Symmetric encryption</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Asymmetric encryption</summary><br><b>
 </b></details>
 
 <details>
