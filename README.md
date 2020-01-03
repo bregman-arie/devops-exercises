@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **746** questions
+:bar_chart: &nbsp;There are currently **752** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -4591,6 +4591,26 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 <summary>Explain Azure managed disks</summary><br><b>
 </b></details>
 
+#### Security
+
+<details>
+<summary>What is the Azure Security Center? What are some of its features?</summary><br><b>
+
+It's a monitoring service that provides threat protection across all of the services in Azure.
+More specifically, it:
+
+* Provides security recommendations based on your usage
+* Monitors security settings and continuously all the services
+* Analyzes and identifies potential inbound attacks
+* Detects and blocks malware using machine learning
+</b></details>
+
+<details>
+<summary>What is Azure Active Directory?</summary><br><b>
+
+Azure AD is a cloud-based identity service. You can use it as a standalone service or integrate it with existing Active Directory service you already running.
+</b></details>
+
 ## GCP
 
 <a name="gcp-beginner"></a>
@@ -4725,7 +4745,26 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 <details>
+<summary>Explain Authentication and Authorization</summary><br><b>
+
+Authentication is the process of identifying whether a service or a person is who they claim to be.
+Authorization is the process of identifying what level of access the service or the person have (after authentication was done)
+</b></details>
+
+<details>
 <summary>How do you manage passwords in different tools and platforms?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is Single Sign-On</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain MFA (Multi-Factor Authentication)</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain RBAC (Role-based Access Control)</summary><br><b>
 </b></details>
 
 <details>
