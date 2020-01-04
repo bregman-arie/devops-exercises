@@ -19,7 +19,7 @@ If any of the following steps is not working, it is expected from you to fix the
 ```
 {
     "resources_uris": {
-        "user": "/users/<username>",
+        "user": "/users/\<username\>",
         "users": "/users"
     },
     "current_uri": "/"
@@ -48,7 +48,7 @@ docker run -d -p 5000:5000 app
 ## CI
 
 Great, now that we have a working app and also can run it in a container, let's set up a CI for it so it won't break again in the future
-In current directory you have a file called tests.py which includes the tests for the app. What is expected from you is:
+In current directory you have a file called tests.py which includes the tests for the app. What is required from you, is:
 
 1. The CI should run the app tests. You are free to choose whatever CI system or service you prefer. Use `python tests.py` for running the tests.
 2. There should be some kind of test for the Dockerfile you wrote

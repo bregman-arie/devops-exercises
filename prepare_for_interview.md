@@ -14,9 +14,13 @@ Not long ago, I've created a list of Linux resources right [here](http://devopsb
  
 #### Coding
  
-My personal belief is that any DevOps engineer should know coding, at least to some degree and you'll find out that indeed some of DevOps interviews will include coding tasks/questions. Be prepared for those by doing some actual coding. It should be at least a scripting level but some companies will require more than that which means you should be familiar with common algorithms, data structures, etc.
-                                                                                                                                                                             
-Also, the following is probably clear to most people but let's still clarify the next point: when given the chance to choose any language for answering coding tasks/questions, choose the one you have experience with! Some candidates prefer to choose the language they think the company is using and this is a huge mistake since giving the right answer is always better than a wrong answer, no matter which language you used :)
+My personal belief is that any DevOps engineer should know coding, at least to some degree. Having this skill you can automate manual processes, improve some of the open source tools you are using today or build new tools & projects to provide a solution to existing problems. Knowing how to code =  a lot of power.
+
+When it comes to interviews you'll notice that the level of knowledge very much depends on the company or position you are interviewing for. Some will require you just to be able to write simple scripts while others will deep dive into common algorithms, data structures, etc. It's usually clear from the job requirements or phone interview.
+
+The best way to practice this skill is by doing some actual coding - scripts, online challenges, CLI tools, web applications, ... just code :)
+
+Also, the following is probably clear to most people but let's still clarify it: when given the chance to choose any language for answering coding tasks/questions, choose the one you have experience with! Some candidates prefer to choose the language they think the company is using and this is a huge mistake since giving the right answer is always better than a wrong answer, no matter which language you have used :)
  
 I recommend the following sites for practicing coding:
                                                  

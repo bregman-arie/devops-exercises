@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **761** questions
+:bar_chart: &nbsp;There are currently **770** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -231,6 +231,8 @@ It can be as simple as one Ansible (or other CM tool) task that runs periodicall
 
 <details>
 <summary>What is Reliability? How does it fit DevOps?</summary><br><b>
+
+Reliability, when used in DevOps context, is the ability of a system to recover from infrastructure failure or disruption. Part of it is also being able to scale based on your organization or team demands.
 </b></details>
 
 <details>
@@ -617,6 +619,14 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 
 <details>
 <summary>True or False?. Objects are cached for the life of TTL</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What is AWS Snowball?</summary><br><b>
+
+A transport solution which was designed for transferring large amounts of data (petabyte-scale) into and out the AWS cloud.
 </b></details>
 
 ##### Load Balancers
@@ -681,6 +691,24 @@ True
 <summary>What is EBS?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is Amazon ElastiCache? For what cases it used?</summary><br><b>
+
+Amazon Elasticache is a fully managed Redis or Memcached in-memory data store.                                                                       
+It's great for use cases like two-tier web applications where the most frequently accesses data is stored in ElastiCache so response time is optimal.
+</b></details>
+
+<details>
+<summary>What is Amazon Aurora</summary><br><b>
+
+A MySQL & Postgresql based relational database.
+Great for use cases like two-tier web applications that has a MySQL or Postgresql database layer and you need automated backups for your application.
+</b></details>
+
+<details>
+<summary>What "AWS Database Migration Service" is used for?</summary><br><b>
+</b></details>
+
 #### AWS Networking
 
 <details>
@@ -725,6 +753,36 @@ Cost Explorer
 <summary>What would you use to check how many unassociated Elastic IP address you have?</summary><br><b>
 
 Trusted Advisor
+</b></details>
+
+<details>
+<summary>What service allows you to transfer large amounts (Petabytes) of data in and out of the AWS cloud?</summary><br><b>
+
+AWS Snowball
+</b></details>
+
+<details>
+<summary>What provides a virtual network dedicated to your AWS account?</summary><br><b>
+
+VPC
+</b></details>
+
+<details>
+<summary>What you would use for having automated backups for an application that has MySQL database layer?</summary><br><b>
+
+Amazon Aurora
+</b></details>
+
+<details>
+<summary>What would you use to migrate on-premise Oracle database to AWS?</summary><br><b>
+
+AWS Database Migration Service
+</b></details>
+
+<details>
+<summary>What would you use to check why certain EC2 instances were terminated?</summary><br><b>
+
+AWS CloudTrail
 </b></details>
 
 #### AWS Misc
