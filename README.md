@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **770** questions
+:bar_chart: &nbsp;There are currently **781** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -63,6 +63,7 @@
   </tr>
   <tr>
     <td align="center"><a href="#design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>Design</b></a></td>
+    <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
     <td align="center"><a href="#challenges"><img src="images/challenges.png" width="110px;" height="75px;" alt="Challenges"/><br /><b>Challenges</b></a></td>
   </tr>
 </table>
@@ -1308,7 +1309,7 @@ Each number has different meaning, based on how the application was developed.
 I consider this as a good blog post to read more about it: https://shapeshed.com/unix-exit-codes
 </b></details>
 
-##### Storage, Filesystem
+##### Storage & Filesystem
 
 <details>
 <summary>What's an inode?</summary><br><b>
@@ -1402,6 +1403,10 @@ True
 
 <details>
 <summary>What is lazy umount?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is tmpfs?</summary><br><b>
 </b></details>
 
 <details>
@@ -1896,6 +1901,15 @@ This is a good article about the topic: https://ops.tips/blog/how-linux-creates-
 <summary>You executed a script and while still running, it got accidentally removed. Is it possible to restore the script while it's still running?</summary><br><b>
 </b></details>
 
+#### Memory
+
+<details>
+<summary>What is the difference between MemFree and MemAvailable in /proc/meminfo?</summary><br><b>
+
+MemFree - The amount of unused physical RAM in your system
+MemAvailable - The amount of available memory for new workloads (without pushing system to use swap) based on MemFree, Active(file), Inactive(file), and SReclaimable.
+</b></details>
+
 ## Operating System
 
 <a name="operating-system-beginner"></a>
@@ -1959,6 +1973,15 @@ False. It was true in the past but today's operating systems perform lazy loadin
 
 <details>
 <summary>Explain what is Semaphore and what its role in operating systems</summary><br><b>
+</b></details>
+
+#### Memory
+
+<details>
+<summary>What is cache? What is buffer?</summary><br><b>
+
+Buffer: Reserved place in RAM which is used to hold data for temporary purposes
+Cache: Cache is usually used when processes reading and writing to the disk to make the process faster by making similar data used by different programs easily accessible.
 </b></details>
 
 ## Virtualization
@@ -2776,6 +2799,10 @@ You can usually use the function hash() to check an object mutability. If an obj
 </b></details>
 
 <details>
+<summary>Explain set and frozenset types. What would you use them for?</summary><br><b>
+</b></details>
+
+<details>
 <summary>In Python, functions are first-class objects. What does it mean?</summary><br><b>
 
 In general, first class objects in programming languages are objects which can be assigned to variable, used as a return value and can be used as arguments or parameters.<br>
@@ -2957,6 +2984,10 @@ Generally, every compiling process have a two steps.
 </b></details>
 
 <details>
+<summary>Explain the @property decorator</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is Lambda? How is it used?</summary><br><b>
 </b></details>
 
@@ -3019,6 +3050,20 @@ Or
 ```
 some_list.sort(reverse=True)
 some_list[:3]
+```
+</b></details>
+
+<details>
+<summary>How to sort list be the length of items?</summary><br><b>
+
+```
+sorted_li = sorted(li, key=len)
+```
+
+Or without creating a new list:
+
+```
+li.sort(key=len)
 ```
 </b></details>
 
@@ -4991,6 +5036,10 @@ Authorization is the process of identifying what level of access the service or 
 <summary>What is air-gapped network (or air-gapped environment)? What its advantages and disadvantages?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Explain what is Buffer Overflow</summary><br><b>
+</b></details>
+
 ##### Containers
 
 <details>
@@ -5462,6 +5511,12 @@ TODO: explain what is actually a Cookie
 <summary>What is faster than RAM?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is the C10K problem? Is it relevant today?</summary><br><b>
+
+https://idiallo.com/blog/c10k-2016
+</b></details>
+
 ## HR
 
 Although the following questions are not DevOps related, they are still quite common and part of the DevOps interview process so it's better to prepare for them as well.
@@ -5569,6 +5624,8 @@ You can use and elaborate on one or all of the following:
 
 ## Questions you CAN ask
 
+<a name="questions-you-ask"></a>
+
 A list of questions you as a candidate can ask the interviewer during or after the interview.
 These are only a suggestion, use them carefully. Not every interviewer will be able to answer these (or happy to) which should be perhaps a red flag warning for your regarding working in such place but that's really up to you.
 
@@ -5630,6 +5687,22 @@ Vertical Scaling is the process of adding resources to increase power of existin
 <summary>Explain Horizontal Scaling</summary><br><b>
 
 Horizontal Scaling is the process of adding more resources that will be able handle requests as one unit
+</b></details>
+
+<details>
+<summary>How would you update each of the services in the following drawing without having app (foo.com) downtime?<br>
+<img src="images/design/cdn-no-downtime.png" width="200x;" height="300px;"/>
+</summary><br><b>
+</b></details>
+
+<details>
+<summary>Users report that there is huge spike in process time when adding little bit more data to process as an input. What might be the problem?<br>
+<img src="images/design/input-process-output.png" width="300x;" height="200px;"/>
+</summary><br><b>
+</b></details>
+
+<details>
+<summary>How would you scale the architecture from the previous question to hundreds of users?</summary><br><b>
 </b></details>
 
 ## Challenges
