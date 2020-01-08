@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **781** questions
+:bar_chart: &nbsp;There are currently **786** questions
 
 :books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
 
@@ -2905,7 +2905,21 @@ There is a more advanced python feature called MetaClasses that aid the programm
 </b></details>
 
 <details>
-<summary> What is an error? What is an exception? What types of exceptions are you familiar with?</summary><br><b>
+<summary>Explain and demonstrate class attributes & instance attributes</summary><br><b>
+
+In the following block of code `x` is a class attribute while `self.y` is a instance attribute
+
+```
+class MyClass(object):
+    x = 1
+
+    def __init__(self, y):
+        self.y = y
+```
+</b></details>
+
+<details>
+<summary>What is an error? What is an exception? What types of exceptions are you familiar with?</summary><br><b>
 
 ```
 #  Note that you generally don't need to know the compiling process but knowing where everything comes from
@@ -3054,7 +3068,7 @@ some_list[:3]
 </b></details>
 
 <details>
-<summary>How to sort list be the length of items?</summary><br><b>
+<summary>How to sort list by the length of items?</summary><br><b>
 
 ```
 sorted_li = sorted(li, key=len)
@@ -3381,11 +3395,14 @@ colums = list(zip(*(rows)))
 
 <details>
 <summary>What is the result of each of the following?
+
 ```
 >> ', '.join(["One", "Two", "Three"])
 >> " ".join("welladsadgadoneadsadga".split("adsadga")[:2])
 >> "".join(["c", "t", "o", "a", "o", "q", "l"])[0::2]
+```
 </summary><br><b>
+
 ```
 >>> 'One, Two, Three'
 >>> 'well done'
@@ -3466,6 +3483,7 @@ the_list.sort(key=lambda x: x[1])
 
 <details>
 <summary>Explain the following:
+
   * zip()
   * map()
   * filter()</summary><br><b>
@@ -5675,6 +5693,24 @@ Not only this will tell you what is expected from you, it will also provide big 
 
 ## Design
 
+#### Architecture
+
+<details>
+<summary>Explain "3-Tier Architecture" (including pros and cons)</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are the drawbacks of monolithic architecture?</summary><br><b>
+
+* Not suitable for frequent code changes and the ability to deploy new features
+* Not designed for today's infrastructure (like public clouds)
+* Scaling a team to work monolithic architecture is more challenging
+</b></details>
+
+<details>
+<summary>What are the advantages of micro-services architecture over a monolithic architecture?</summary><br><b>
+</b></details>
+
 #### Scalability
 
 <details>
@@ -5693,6 +5729,17 @@ Horizontal Scaling is the process of adding more resources that will be able han
 <summary>How would you update each of the services in the following drawing without having app (foo.com) downtime?<br>
 <img src="images/design/cdn-no-downtime.png" width="200x;" height="300px;"/>
 </summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the problem with the following architecture and how would you fix it?<br>
+<img src="images/design/producers_consumers_issue.png" width="300x;" height="200px;"/>
+</summary><br><b>
+
+The load on the producers or consumers may be high which will then cause them to hang or crash.<br>
+Instead of working in "push mode", the consumers can pull tasks only when they are ready to handle them. It can be fixed by using a streaming platform like Kafka, Kinesis, etc. This platform will make sure to handle the high load/traffic and pass tasks/messages to consumers only when the ready to get them.
+
+<img src="images/design/producers_consumers_fix.png" width="300x;" height="200px;"/>
 </b></details>
 
 <details>
