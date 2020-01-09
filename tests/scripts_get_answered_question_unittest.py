@@ -1,7 +1,7 @@
 import unittest
 from pathlib import Path
 from typing import List
-from scripts.get_answered_questions import get_answered_questions, get_question_list
+from scripts.question_utils import get_answered_questions, get_question_list
 
 
 def open_test_case_file(n: int) -> List[bytes]:

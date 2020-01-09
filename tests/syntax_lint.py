@@ -7,7 +7,7 @@ same, due to readability and functionality it was decided to be split like
 that.
 
 Usage:
-$ python tests/syntax_checker.py
+$ python tests/syntax_lint.py
 
 """
 
@@ -34,6 +34,24 @@ def count_details(file_list):
         if b'<details>' in line:
             details_count += 1
         if b'</details>' in line:
+            details_final_count += 1
+
+    return details_count == details_final_count
+
+
+def count_summary(file_list):
+    """
+    Counts the total amount of <details> and </details>
+
+    Used for debugging purpose, not meant to be used in actual tests
+    """
+    details_final_count = 0
+    details_count = 0
+
+    for line_number, line in enumerate(file_list):
+        if b'<summary>' in line:
+            details_count += 1
+        if b'</summary>' in line:
             details_final_count += 1
 
     return details_count == details_final_count
