@@ -74,10 +74,10 @@ def get_random_question(question_list: List[List[bytes]], with_answer=False):
     return choice(question_list)
 
 
-"""Use this question_list. Unless you have already opened/worked/need the file, then don't or 
+"""Use this question_list. Unless you have already opened/worked/need the file, then don't or
 you will end up doing the same thing twice.
 
-eg: 
+eg:
 
 #my_dir/main.py
 
