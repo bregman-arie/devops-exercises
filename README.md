@@ -2,9 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **786** questions
-
-:books: &nbsp;To learn more about DevOps check the resources in [DevOpsBit.com](https://devopsbit.com)
+:bar_chart: &nbsp;There are currently **800** questions
 
 :warning: &nbsp;The purpose of this repo is to help you test your knowledge and prepare for interviews. It doesn't represents a DevOps interview. Please read [Q&A](common-qa.md) for more details
 
@@ -889,6 +887,10 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
+<summary>How does a router works?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is NAT?</summary><br><b>
 </b></details>
 
@@ -1169,8 +1171,6 @@ systemd has many features such as user processes control/tracking, snapshot supp
 If we visualize the unix/linux system in layers, systemd would fall directly after the linux kernel.
 
 Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
-
-
 </b>
 </details>
 
@@ -1188,7 +1188,7 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 <summary>How do you kill a process in D state?</summary><br><b>
 </b></details>
 
-##### Debugging
+##### Debugging (Beginner)
 
 <details>
 <summary>What are you using for troubleshooting and debugging <b>network</b> issues?</summary><br><b>
@@ -1223,11 +1223,16 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
-<summary>You get a call saying "my system is slow" - how would you deal with it?</summary><br><b>
+<summary>You get a call from someone claiming "my system is SLOW". What do yo do?</summary><br><b>
 
-1. Check with <code>top</code> if anything consumes your CPU or RAM.
-2. Run <code>dstat -t</code> to check if it's related to disk or network.
-3. Check I/O stats with <code>iostat</code>
+* Check with `top` for anything unusual
+* Run `dstat -t` to check if it's related to disk or network.
+* Check if it's network related with `sar`
+* Check I/O stats with `iostat`
+</b></details>
+
+<details>
+<summary>Explain iostat output</summary><br><b>
 </b></details>
 
 <details>
@@ -1239,7 +1244,17 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
+<summary>What is the difference between CPU load and utilization?</summary><br><b>
+</b></details>
+
+<details>
 <summary>How you measure time execution of a program?</summary><br><b>
+</b></details>
+
+#### Kernel
+
+<details>
+<summary>How do you find out which Kernel version your system is using?</summary><br><b>
 </b></details>
 
 <details>
@@ -1309,7 +1324,7 @@ Each number has different meaning, based on how the application was developed.
 I consider this as a good blog post to read more about it: https://shapeshed.com/unix-exit-codes
 </b></details>
 
-##### Storage & Filesystem
+##### Storage & Filesystem (Beginner)
 
 <details>
 <summary>What's an inode?</summary><br><b>
@@ -1622,11 +1637,28 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 </b></details>
 
 <details>
+<summary>How to check if a certain port is being used?</summary><br><b>
+
+One of the following would work:
+
+```
+netstat -tnlp | grep <port_number>
+lsof -i -n -P | grep <port_number>
+```
+</b></details>
+
+<details>
 <summary>How can you turn your Linux server into a router?</summary><br><b>
 </b></details>
 
 <details>
 <summary>What is a virtual IP? In what situation would you use it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you have more than one default gateway in a given system?</summary><br><b>
+
+Technically, yes.
 </b></details>
 
 <details>
@@ -1808,7 +1840,11 @@ If wait is not used by a parent process then a child process might become a zomb
 </b></details>
 
 <details>
-<summary>What happens when you execute <code>ls</code>?. Provide a detailed answer</summary><br><b>
+<summary>What happens when you execute <code>ls</code>?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What happens when you execute <code>ls -l *.log</code>?</summary><br><b>
 </b></details>
 
 #### Linux Filesystem & Files
@@ -1862,7 +1898,7 @@ These system calls are reading the file <code>/my/file</code> and 5 is the file 
 </b></details>
 
 <details>
-<summary>What <code>traceroute</code> command does? How it works?</summary><br><b>
+<summary>What the <code>traceroute</code> command does? How does it works?</summary><br><b>
 
 Another common way to task this questions is "what part of the tcp header does traceroute modify?"
 </b></details>
@@ -2031,11 +2067,17 @@ Role – Ansible roles allows you to group resources based on certain functional
 </b></details>
 
 <details>
-<summary>Which Ansible best practices are you familiar with?. Name at least three</summary><br><b>
+<summary>How Ansible is different from other Automation tools?</summary><br><b>
+
+Ansible is:
+
+* Agent-less
+* Minimal run requirements (Python & SSH) and simple to use
+* Default mode is "push" (it supports also pull)
 </b></details>
 
 <details>
-<summary>What is an inventory file and how you define one?</summary><br><b>
+<summary>What is an inventory file and how do you define one?</summary><br><b>
 
 An inventory file defines hosts and/or groups of hosts on which Ansible tasks executed upon.
 
@@ -2090,6 +2132,10 @@ spun up and shut down, without you tracking every change in these sources.
 ```
 
 When given a written code, always inspect it thoroughly. If your answer is “this will fail” then you are right. We are using a fact (ansible_hostname), which is a gathered piece of information from the host we are running on. But in this case, we disabled facts gathering (gather_facts: no) so the variable would be undefined which will result in failure.
+</b></details>
+
+<details>
+<summary>Which Ansible best practices are you familiar with?. Name at least three</summary><br><b>
 </b></details>
 
 <details>
@@ -2184,7 +2230,6 @@ A full list can be found at the link above. Also, note there is a significant di
 <details>
 <summary>What is ansible-pull?  How it’s different compared to ansible-playbook?</summary><br><b>
 </b></details>
-
 
 <a name="ansible-advanced"></a>
 #### :star: Advanced
@@ -2636,6 +2681,14 @@ Statements are instructions executed by the interpreter like variable assignment
 
 <details>
 <summary>What is Object Oriented Programming? Why is it important?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Are you familiar with SOLID design principals?</summary><br><b>
+
+SOLID design principals are about:
+
+* Make it easier to extend functionality 
 </b></details>
 
 <details>
@@ -3384,6 +3437,10 @@ Detailed answer can be found here: http://codingshell.com/python-all-string-perm
 </b></details>
 
 <details>
+<summary>Given a string, find the N most repeated words</summary><br><b>
+</b></details>
+
+<details>
 <summary>Given the string (which represents a matrix) "1 2 3\n4 5 6\n7 8 9" create rows and colums variables (should contain integers, not strings)</summary><br><b>
 
 ```
@@ -3602,10 +3659,18 @@ What would be the result of is_int(2) and is_int(False)?
 <summary>Implement Hash table in Python</summary><br><b>
 </b></details>
 
-##### Tests
+##### Python Testing
 
 <details>
 <summary>What is your experience with writing tests in Python?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How would you check if two strings are equal? What about booleans?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to test if an exception was raised?</summary><br><b>
 </b></details>
 
 <details>
@@ -5530,6 +5595,20 @@ TODO: explain what is actually a Cookie
 </b></details>
 
 <details>
+<summary>What is your favorite protocol?</summary><br><b>
+
+SSH
+HTTP
+DHCP
+DNS
+...
+</b></details>
+
+<details>
+<summary>What is Cache API?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is the C10K problem? Is it relevant today?</summary><br><b>
 
 https://idiallo.com/blog/c10k-2016
@@ -5638,6 +5717,12 @@ You can use and elaborate on one or all of the following:
 * Motivation 
 * Autodidact
 * Creativity (be able to support it with some actual examples)
+</b></details>
+
+#### Team Lead
+
+<details>
+<summary>How would you improve productivity in your team?</summary><br><b>
 </b></details>
 
 ## Questions you CAN ask
