@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
 
-:bar_chart: &nbsp;There are currently **800** questions
+:bar_chart: &nbsp;There are currently **804** questions
 
 :warning: &nbsp;The purpose of this repo is to help you test your knowledge and prepare for interviews. It doesn't represents a DevOps interview. Please read [Q&A](common-qa.md) for more details
 
@@ -2593,13 +2593,17 @@ Swarm management which means you can create new swarms in Docker Cloud.
 #### :baby: Beginner
 
 <details>
-<summary>What is Kubernetes?</summary><br><b>
-</b></details>
+<summary>What is Kubernetes? What use cases is it good for?</summary><br><b>
 
-<details>
-<summary>Why Docker isn't enough? Why do we need Kubernetes?</summary><br><b>
+Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
 
-Kubernetes is especially good for scenarios when you no longer running small number of containers. When you have to scale from 3 containers for eaxmple to hundreds or thousands of containers.
+To understand what Kubernetes is good for, let's look at some examples:
+
+* You would like to run a certain application in a container on multiple different locations. Sure, if it's 2-3 servers/locations, you can do it by yourself but it can be challenging to scale. Also, running them is not only running the container but also react on different events.
+
+* Performing updates and changes across hundreds of containers
+
+* Handle cases where the current load requires to scale up (or down)
 </b></details>
 
 <details>
@@ -2607,15 +2611,42 @@ Kubernetes is especially good for scenarios when you no longer running small num
 </b></details>
 
 <details>
-<summary>What is a worker?</summary><br><b>
+<summary>What is a Kubernetes Cluster?</summary><br><b>
+
+A cluster consists of a Master (which coordinates the cluster) and Nodes where the applications are running.
+</b></details>
+
+<details>
+<summary>What the Master is responsible for?</summary><br><b>
+
+The master coordinates all the workflows in the cluster:
+
+* Scheduling applications
+* Managing desired state
+* Rolling out new updates
+</b></details>
+
+<details>
+<summary>What is a Node?</summary><br><b>
+
+A node is a virtual machine or a physical server that serves as a worker for running the applications.
+It's recommended to have at least 3 nodes in Kubernetes production environment.
+</b></details>
+
+<details>
+<summary>Explain what is Kubelet</summary><br><b>
+
+Kubelet is an agent running on each node and responsible for node communication with the master.
+</b></details>
+
+<details>
+<summary>What is Minikube?</summary><br><b>
+
+Minikube is a lightweight Kubernetes implementation. It create a local virtual machine and deploys a simple (single node) cluster.
 </b></details>
 
 <details>
 <summary>Explain what is a Kubernetes pod</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain what is a Kubernetes node</summary><br><b>
 </b></details>
 
 <details>
@@ -2624,14 +2655,6 @@ Kubernetes is especially good for scenarios when you no longer running small num
 
 <details>
 <summary>How do you monitor your Kubernetes?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is kubectl? How do you use it?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is kubconfig? What do you use it for?</summary><br><b>
 </b></details>
 
 <details>
@@ -2651,15 +2674,35 @@ Setting the replicas to 0 will shut down the process. Now start it with `kubectl
 </b></details>
 
 <details>
-<summary>Explain what is Kubelet</summary><br><b>
-</b></details>
-
-<details>
 <summary>What happens to running pods if if you stop Kubelet on the worker nodes?</summary><br><b>
 </b></details>
 
 <details>
 <summary>Describe how roll-back works</summary><br><b>
+</b></details>
+
+#### Kubernetes Commands
+
+<details>
+<summary>What is kubectl?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you:
+
+  * Check the cluster status?
+  * Check the status of the nodes?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What the following commands do?
+
+  * kubectl get nodes
+  * kubectl </summary><br><b>
+</b></details>
+
+<details>
+<summary>What is kubconfig? What do you use it for?</summary><br><b>
 </b></details>
 
 ## Coding
@@ -2832,7 +2875,20 @@ There are many other characteristics but these are the main ones that every pyth
 </b></details>
 
 <details>
-<summary>What built-in types Python has? Which of them are mutable? How can you show that a certain data type is mutable?</summary><br><b>
+<summary>What built-in types Python has?</summary><br><b>
+
+    List
+    Dictionary
+    Set
+    Numbers (int, float, ...)
+    String
+    Bool
+    Tuple
+    Frozenset
+</b></details>
+
+<details>
+<summary>What is mutability? Which of the built-in types in Python are mutable? How can you show that a certain data type is mutable?</summary><br><b>
 
 The mutable data types are:
 
@@ -2852,10 +2908,6 @@ You can usually use the function hash() to check an object mutability. If an obj
 </b></details>
 
 <details>
-<summary>Explain set and frozenset types. What would you use them for?</summary><br><b>
-</b></details>
-
-<details>
 <summary>In Python, functions are first-class objects. What does it mean?</summary><br><b>
 
 In general, first class objects in programming languages are objects which can be assigned to variable, used as a return value and can be used as arguments or parameters.<br>
@@ -2867,20 +2919,6 @@ def my_function():
 ```
 
 You can then assign a function to a variables like this `x = my_function` or you can return functions as return values like this `return my_function`
-</b></details>
-
-<details>
-<summary>What is PEP8? Give an example of 3 style guidelines</summary><br><b>
-
-PEP8 is a list of coding conventions and style guidelines for Python
-
-5 style guidelines:
-
-    1. Limit all lines to a maximum of 79 characters.
-    2. Surround top-level function and class definitions with two blank lines.
-    3. Use commas when making a tuple of one element
-    4. Use spaces (and not tabs) for indentation
-    5. Use 4 spaces per indentation level
 </b></details>
 
 <details>
@@ -3093,7 +3131,7 @@ print("{0:.3f}".format(sum(li)/len(li)))
 ```
 </b></details>
 
-#### Lists
+#### Python Lists
 
 <details>
 <summary>How do you get the maximum and minimum values from a list? How to get the last item from a list?</summary><br><b>
@@ -3261,6 +3299,22 @@ while n > 0:
 </b></details>
 
 <details>
+<summary>Sort a list of lists by the second item of each nested list</summary><br><b>
+
+```
+li = [[1, 4], [2, 1], [3, 9], [4, 2], [4, 5]]
+
+sorted(li, key=lambda l: l[1])
+```
+
+or
+
+```
+li.sort(key=lambda l: l[1)
+```
+</b></details>
+
+<details>
 <summary>Combine [1, 2, 3] and ['x', 'y', 'z'] so the result is [(1, 'x'), (2, 'y'), (3, 'z')]</summary><br><b>
 
 ```
@@ -3342,16 +3396,6 @@ Using the re module
 
 <details>
 <summary>How to find all the IP addresses in a variable? How to find them in a file?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Sort a list of lists by the second item of each nested list</summary><br><b>
-
-```
-li = [[1, 4], [2, 1], [3, 9], [4, 2], [4, 5]]
-
-sorted(x, key=lambda l: l[1])
-```
 </b></details>
 
 <details>
@@ -3442,12 +3486,6 @@ Detailed answer can be found here: http://codingshell.com/python-all-string-perm
 
 <details>
 <summary>Given the string (which represents a matrix) "1 2 3\n4 5 6\n7 8 9" create rows and colums variables (should contain integers, not strings)</summary><br><b>
-
-```
-matrix = "1 2 3\n4 5 6\n7 8 9"
-rows = [ [int(x) for x in li if x != ' '] for li in matrix.split("\n")]
-colums = list(zip(*(rows)))
-```
 </b></details>
 
 <details>
@@ -3663,6 +3701,20 @@ What would be the result of is_int(2) and is_int(False)?
 
 <details>
 <summary>What is your experience with writing tests in Python?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is PEP8? Give an example of 3 style guidelines</summary><br><b>
+
+PEP8 is a list of coding conventions and style guidelines for Python
+
+5 style guidelines:
+
+    1. Limit all lines to a maximum of 79 characters.
+    2. Surround top-level function and class definitions with two blank lines.
+    3. Use commas when making a tuple of one element
+    4. Use spaces (and not tabs) for indentation
+    5. Use 4 spaces per indentation level
 </b></details>
 
 <details>
