@@ -1,16 +1,14 @@
-# DevOps Interview Questions
+# DevOps Questions & Exercises
 
-:information_source: &nbsp;This repository contains questions on various DevOps and SRE related topics
+:information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **804** questions
+:bar_chart: &nbsp;There are currently **819** questions
 
-:warning: &nbsp;The purpose of this repo is to help you test your knowledge and prepare for interviews. It doesn't represents a DevOps interview. Please read [Q&A](common-qa.md) for more details
+:warning: &nbsp;These are not interview questions and most of them shouldn't be used as interview questions. Please read [Q&A](common-qa.md) for more details
 
-:thought_balloon: &nbsp;If you wonder how to prepare to your DevOps Interview, we added a couple of suggestions [here](prepare_for_interview.md)
+:thought_balloon: &nbsp;If you wonder "How to prepare for a DevOps interview?", you might want to read some of my suggestions [here](prepare_for_interview.md)
 
-:pencil: &nbsp;You can add more questions & answers by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
-
-:cn: &nbsp;You can find a [中文](README-zh_CN.md) Chinese translation right [here](README-zh_CN.md)
+:pencil: &nbsp;You can add more questions and exercises by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
 
 ****
 
@@ -63,7 +61,7 @@
     <td align="center"><a href="#databases"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
     <td align="center"><a href="#design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>Design</b></a></td>
     <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
-    <td align="center"><a href="#challenges"><img src="images/challenges.png" width="110px;" height="75px;" alt="Challenges"/><br /><b>Challenges</b></a></td>
+    <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
   </tr>
 </table>
 </center>
@@ -1854,15 +1852,33 @@ If wait is not used by a parent process then a child process might become a zomb
 </b></details>
 
 <details>
+<summary>What execve() does?</summary><br><b>
+
+Executes a program. The program is passed as a filename (or path) and must be a binary executable or a script.
+</b></details>
+
+<details>
 <summary>What happens when you execute <code>ls -l</code>?</summary><br><b>
 
 * Shell reads the input using getline() which reads the input file stream and stores into a buffer as a string
 * The buffer is broken down into tokens and stored in an array this way: {"ls", "-l", "NULL"}
 * Shell checks if an expansion is required (in case of ls *.c)
+
+* Once the program in memory, its execution starts. First by calling readdir()
+
+Notes:
+
+* getline() originates in GNU C library and used to read lines from input stream and stores those lines in the buffer
 </b></details>
 
 <details>
 <summary>What happens when you execute <code>ls -l *.log</code>?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What readdir() system call does?</summary><br><b>
+
+
 </b></details>
 
 #### Linux Filesystem & Files
@@ -5987,31 +6003,30 @@ Instead of working in "push mode", the consumers can pull tasks only when they a
 <summary>How would you scale the architecture from the previous question to hundreds of users?</summary><br><b>
 </b></details>
 
-## Challenges
+## Exercises
 
-Challenges require you one of the following:
+Exercises are all about:
 
-  * Set up environments
-  * Write scripts
-  * Design and/or develop infrastructure projects
-  * Fix existing applications
+  * Setting up environments
+  * Writing scripts
+  * Designing and/or developing infrastructure apps
+  * Fixing existing applications
 
-These type of questions usually given as an home task to the candidate and they can combine several topics together.
-Below you can find several challenges:
+Below you can find several exercises
 
-* [Writing a Dockerfile and running a container](challenges/write_dockerfile_run_container.md)
-* [Elasticsearch & Kibana on AWS](challenges/elk_kibana_aws.md)
-* [Ansible, Minikube and Docker](challenges/ansible_minikube_docker.md)
-* [Cloud Slack bot](challenges/cloud_slack_bot.md)
-* [Jenkins: writing scripts](challenges/jenkins_scripts.md)
-* [Jenkins: writing pipelines](challenges/jenkins_pipelines.md)
-* [CI for open source project](challenges/ci_for_open_source_project.md)
-* [Flask, Containers and CI](challenges/flask_container_ci/README.md)
+* [Writing a Dockerfile and running a container](exercises/write_dockerfile_run_container.md)
+* [Elasticsearch & Kibana on AWS](exercises/elk_kibana_aws.md)
+* [Ansible, Minikube and Docker](exercises/ansible_minikube_docker.md)
+* [Cloud Slack bot](exercises/cloud_slack_bot.md)
+* [Jenkins: writing scripts](exercises/jenkins_scripts.md)
+* [Jenkins: writing pipelines](exercises/jenkins_pipelines.md)
+* [CI for open source project](exercises/ci_for_open_source_project.md)
+* [Flask, Containers and CI](exercises/flask_container_ci/README.md)
 
 
 ## Credits
 
-Thanks to all of our amazing [contributors](https://github.com/bregman-arie/devops-interview-questions/graphs/contributors) who make it easy for everyone to learn and prepare to their interviews.
+Thanks to all of our amazing [contributors](https://github.com/bregman-arie/devops-exercises/graphs/contributors) who make it easy for everyone to learn and prepare to their interviews.
 
 Logos credits can be found [here](credits.md)
 

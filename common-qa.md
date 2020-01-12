@@ -2,40 +2,23 @@
 
 ### What is the purpose of repository?
 
-To learn, of course :)
-Or more specifically, any of the following:
+1. Learn - asking questions or doing exercises is a great way to learn
+2. Share - sharing knowledge is a great experience, give it a try
 
-* Test your knowledge
-* Prepare for interviews
-* Simply learning something new :)
+It is also used sometimes (from what I've been told) to prepare for interviews but a note for interviewers: most of the questions in this repository shouldn't be used as interview questions. A DevOps interview (or any technical interview) is not a trivia game :)
 
-### Are these real DevOps interview questions?
+### My goal is to prepare for a DevOps interview. How to do that?
 
-The answer is no. While the name of the repository indicates it should include only (or mainly) DevOps Interview Questions in reality, this repository includes many questions on many different topics - Linux, Git, Python, ... Only small subset of the questions are actually DevOps questions.
-
-If you wonder why then it quite simple. DevOps is still, after many years, a controversial topic. If you ask different people what is DevOps, you'll get different answers and DevOps interviews are not an exception in this case. Different DevOps interviews will include different questions on various topics. Some of the questions you'll be asked might be included in this repository, some might none. It's even possible you'll be asked none of the questions in this repository but in my opinion it's still decent test of your knowledge.
-
-Also, I can rename the project name to better represent its content but "coding-operations-HR-...-interview-questions" is too long name for a repository :)
-
-### Should I be familiar with all the tools/platforms/... listed in this repository?
-
-NO NO NO! :)<br>
-"DevOps is a culture, not a role" is BS. Same goes for "DevOps is not about tools". And yet, one thing is for sure, DevOps is not about being familiar with all the existing tools.
-
-With that being said, there are some concepts, tools, platforms, ... that are quite common in jobs requirements. Take Linux for example. While Linux is not a requirement of every DevOps position out there, it's still quite a desired skill and probably appear as a requirement in more than 90% of the DevOps positions if I had to guess. So it will be wise to be familiar with Linux as well as some other concepts/tool/projects...
-
-### How should I prepare for my DevOps interview?
-
-Excellent question. This repository alone might not be enough in some cases. We are exploring the answer to this question [here](prepare_for_interview.md)
-If you have any ideas, insights, questions, ... please contribute :)
+I've added a couple of suggestions here [here](prepare_for_interview.md)
+Feel free to contribute any ideas and insights
 
 ### How do I become a better DevOps Engineer?
 
-That's even a better question than the previous one.<br>
+That's a great question.<br>
 I don't have a definitive answer for this question, but what I feel works for me is to:
 
+  * Practice - doing DevOps tasks/work is probably the best way to gain experience and knowledge
   * Read - Read blogs, books, ... anything that can enrich you about DevOps
-  * Practice - Some practical DevOps work at work and/or home
   * Share - This is one of the reasons I created this project. Primary goal was to help others but a secondary goal quickly became to learn more. By asking questions, you actually learn better a certain topic. Try it out, take a certain subject and try to come up with questions you would ask someone to test his/her skills.
 
 ### Why most of the questions don't have answers?
@@ -66,22 +49,15 @@ You can but:
 * Not without attribution. Many people worked hard on adding these questions and they deserve a proper credit for their work
 * Not if you plan to make money out of it. Directly or indirectly (e.g. ADS) as this is a free content and we would like it to stay this way :)
 
-### If there are already many interview questions sites why creating this repository?
-
-Good question. When a friend asked me to help him with learning for an interview, I was curious what the Internet has to offer as an help for people, like my friend, who want to prepare for their DevOps interviews and to be honest, I was pretty shocked to find out questions like the following:
-
-* How to install Git/Jenkins/...?
-* How do you open the terminal in Linux?
-
-These, in my opinion, are questions no one should ever ask in an interview and so, I decided to start my own interview questions project to help others (and yes, also myself) to test their knowledge.
-
 ### Can I add questions and/or answers to this project?
 
 I'll simply imagine you didn't ask that on an open source project... :)
 
-### Why can't I add installation interview questions?
+### Why can't I add installation questions?
 
-Personally, I don't think installation questions are interview questions. Yes, I know many sites and sources advertise them as such but personally I think we should have the responsibility to not encourage or even create a phenomenon where interviewers will think it's normal or has any benefit to ask such questions. If you think there is value in this, please create an issue and I'll be happy to discuss this with you.
+Because these is one of the worst types of questions out there.
+
+Some sites claim "How to install Jenkins?" or "What is the home directory of Jenkins?" are proper interview questions but personally I think we should have the responsibility to not encourage or even create a phenomenon where interviewers will think it's normal or has any benefit to ask such questions.
 
 ### Where can I practice coding?
 
