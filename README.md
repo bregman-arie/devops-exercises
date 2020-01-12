@@ -2445,6 +2445,7 @@ List
 
 <details>
 <summary>What is Docker? What are you using it for?</summary><br><b>
+Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
 </b></details>
 
 <details>
@@ -2486,10 +2487,12 @@ Docker daemon redirects output from container to Docker CLI which redirects it t
 
 <details>
 <summary>How do you run a container?</summary><br><b>
+docker run
 </b></details>
 
 <details>
 <summary>What `docker commit` does?. When will you use it?</summary><br><b>
+Create a new image from a container’s changes
 </b></details>
 
 <details>
@@ -2513,20 +2516,30 @@ Docker daemon redirects output from container to Docker CLI which redirects it t
 
 <details>
 <summary>How do you remove old, non running, containers?</summary><br><b>
+1. To remove one or more Docker images use the docker container rm command followed by the ID of the containers you want to remove.
+2. The docker system prune command will remove all stopped containers, all dangling images, and all unused networks
+3. docker rm $(docker ps -a -q) - This command will delete all stopped containers. The command docker ps -a -q will return all existing container IDs and pass them to the rm command which will delete them. Any running containers will not be deleted.
 </b></details>
 
 ##### Dockerfile
 
 <details>
 <summary>What is Dockerfile</summary><br><b>
+Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image.
 </b></details>
 
 <details>
 <summary>What is the difference between ADD and COPY in Dockerfile?</summary><br><b>
+COPY takes in a src and destination. It only lets you copy in a local file or directory from your host (the machine building the Docker image) into the Docker image itself.
+ADD lets you do that too, but it also supports 2 other sources. First, you can use a URL instead of a local file / directory. Secondly, you can extract a tar file from the source directly into the destination.
+Although ADD and COPY are functionally similar, generally speaking, COPY is preferred. That’s because it’s more transparent than ADD. COPY only supports the basic copying of local files into the container, while ADD has some features (like local-only tar extraction and remote URL support) that are not immediately obvious.
 </b></details>
 
 <details>
 <summary>What is the difference between CMD and RUN in Dockerfile?</summary><br><b>
+RUN lets you execute commands inside of your Docker image. These commands get executed once at build time and get written into your Docker image as a new layer.
+CMD is the command the container executes by default when you launch the built image. A Dockerfile can only have one CMD.
+You could say that CMD is a Docker run-time operation, meaning it’s not something that gets executed at build time. It happens when you run an image. A running image is called a container.
 </b></details>
 
 <details>
