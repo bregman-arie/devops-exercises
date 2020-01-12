@@ -60,6 +60,7 @@
     <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
   </tr>
   <tr>
+    <td align="center"><a href="#databases"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
     <td align="center"><a href="#design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>Design</b></a></td>
     <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
     <td align="center"><a href="#challenges"><img src="images/challenges.png" width="110px;" height="75px;" alt="Challenges"/><br /><b>Challenges</b></a></td>
@@ -676,7 +677,7 @@ True
 #### AWS Databases
 
 <details>
-<summary>What is RDS?</summary><br><b>
+<summary>What is Amazon RDS?</summary><br><b>
 </b></details>
 
 <details>
@@ -684,6 +685,19 @@ True
 
 1. Multi AZ - great for Disaster Recovery
 2. Read Replicas - for better performances
+</b></details>
+
+<details>
+<summary>What is AWS Redshift and how its different than RDS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What do you if you suspect AWS Redshift performs slowly?</summary><br><b>
+
+* You can confirm your suspicion by going to AWS Redshift console and see running queries graph. This should tell you if there are any long-running queries.
+* If confirmed, you can query for running queries and cancel the irrelevant queries
+* Check for connection leaks (query for running connections and include their IP)
+* Check for table locks and kill irrelevant locking sessions
 </b></details>
 
 <details>
@@ -1556,7 +1570,7 @@ If you mention at any point ps command with arugments, be familiar with what the
 </b></details>
 
 <details>
-<summary>What <code>strace</code> does?</summary><br><b>
+<summary>What <code>strace</code> does? What about <code>ltrace</code>?</summary><br><b>
 </b></details>
 
 <details>
@@ -1840,7 +1854,11 @@ If wait is not used by a parent process then a child process might become a zomb
 </b></details>
 
 <details>
-<summary>What happens when you execute <code>ls</code>?</summary><br><b>
+<summary>What happens when you execute <code>ls -l</code>?</summary><br><b>
+
+* Shell reads the input using getline() which reads the input file stream and stores into a buffer as a string
+* The buffer is broken down into tokens and stored in an array this way: {"ls", "-l", "NULL"}
+* Shell checks if an expansion is required (in case of ls *.c)
 </b></details>
 
 <details>
@@ -2731,7 +2749,16 @@ Statements are instructions executed by the interpreter like variable assignment
 
 SOLID design principals are about:
 
-* Make it easier to extend functionality 
+* Make it easier to extend the functionality of the system
+* Make the code more readable and easier to maintain
+
+SOLID is:
+
+* Single Responsibility - A class should only have a single responsibility
+* Open-Closed - An entity should be open for extension, but closed for modification. What this practically means is that you should extend functionality by adding a new code and not by modifying it. Your system should be separated into components so it can be easily extended without breaking everything.
+* Liskov Substitution - Any derived class should be able to substitute the its parent without altering its corrections. Practically, every part of the code will get the expected result no matter which part is using it
+* Interface segregation - A client should never depend on anything it doesn't uses 
+* Dependency Inversion - High level modules should depend on abstractions, not low level modules
 </b></details>
 
 <details>
@@ -3368,6 +3395,10 @@ some_dict1.update(some_dict2)
 with open('file.txt', 'w') as file:
     file.write("My insightful comment")
 ```
+</b></details>
+
+<details>
+<summary>How to print the 12th line of a file?</summary><br><b>
 </b></details>
 
 <details>
@@ -5647,6 +5678,10 @@ TODO: explain what is actually a Cookie
 </b></details>
 
 <details>
+<summary>What is a memory leak?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is your favorite protocol?</summary><br><b>
 
 SSH
@@ -5826,6 +5861,56 @@ you can show how you'd be able to mitigate that problem.
 <summary>Let's say that we agree and you hire me to this position, after X months, what do you expect that I have achieved?</summary><br><b>
 
 Not only this will tell you what is expected from you, it will also provide big hint on the type of work you are going to do in the first months of your job.
+</b></details>
+
+## Databases
+
+<details>
+<summary>What is a connection pool?</summary><br><b>
+
+Connection Pool is a cache of database connections and the reason it's used is to avoid an overhead of establishing a connection for every query done to a database.
+</b></details>
+
+<details>
+<summary>What is a connection leak?</summary><br><b>
+
+A connection leak is a situation where database connection isn't closed after being created and is no longer needed.
+</b></details>
+
+<details>
+<summary>What is Table Lock?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Your database performs slowly than usual. More specifically, your queries are taking a lot of time. What would you do?</summary><br><b>
+
+* Query for running queries and cancel the irrelevant queries
+* Check for connection leaks (query for running connections and include their IP)
+* Check for table locks and kill irrelevant locking sessions
+</b></details>
+
+<details>
+<summary>What is a connection leak?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a Data Warehouse?</summary><br><b>
+
+"A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of organisation's decision-making process"
+</b></details>
+
+<details>
+<summary>What is a data lake?</summary><br><b>
+
+A single data source (at least usually) which is stored in a raw format.
+</b></details>
+
+<details>
+<summary>What is OLTP (Online transaction processing)?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is OLAP (Online Analytical Processing)?</summary><br><b>
 </b></details>
 
 ## Design
