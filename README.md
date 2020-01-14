@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **819** questions
+:bar_chart: &nbsp;There are currently **834** questions
 
 :warning: &nbsp;These are not interview questions and most of them shouldn't be used as interview questions. Please read [Q&A](common-qa.md) for more details
 
@@ -58,6 +58,7 @@
     <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
   </tr>
   <tr>
+    <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
     <td align="center"><a href="#databases"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
     <td align="center"><a href="#design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>Design</b></a></td>
     <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
@@ -2799,6 +2800,14 @@ SOLID is:
 </b></details>
 
 <details>
+<summary>Explain Inversion of Control</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Dependency Injection</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain what are design patterns and describe three of them in detail</summary><br><b>
 </b></details>
 
@@ -2945,6 +2954,8 @@ There are many other characteristics but these are the main ones that every pyth
 
 <details>
 <summary>What is mutability? Which of the built-in types in Python are mutable? How can you show that a certain data type is mutable?</summary><br><b>
+
+Mutability determines whether you can modify an object of specific type.
 
 The mutable data types are:
 
@@ -3145,11 +3156,25 @@ Generally, every compiling process have a two steps.
 </b></details>
 
 <details>
-<summary>Explain the @property decorator</summary><br><b>
+<summary>What is Lambda? How is it used?</summary><br><b>
+</b></details>
+
+#### Properties
+
+<details>
+<summary>Are there private variables in Python? How would you make an attribute of a class, private?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is Lambda? How is it used?</summary><br><b>
+<summary>Explain the following:
+
+* getter
+* setter
+* deleter</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is @property</summary><br><b>
 </b></details>
 
 <details>
@@ -3158,6 +3183,13 @@ Generally, every compiling process have a two steps.
 ```
 x, y = y, x
 ```
+</b></details>
+
+<details>
+<summary>Explain the following object's magic variables:
+
+  * __dict__ 
+</summary><br><b>
 </b></details>
 
 <details>
@@ -4018,6 +4050,11 @@ a = f()
 ```
 
 </b></details>
+
+<details>
+<summary>Write a decorator that calculates the execution time of a function</summary><br><b>
+</b></details>
+
 <details>
 <summary>Write a script which will determine if a given host is accessible on a given port</summary><br><b>
 </b></details>
@@ -5892,6 +5929,43 @@ you can show how you'd be able to mitigate that problem.
 Not only this will tell you what is expected from you, it will also provide big hint on the type of work you are going to do in the first months of your job.
 </b></details>
 
+## Testing
+
+<details>
+<summary>What types of tests would you run for web application?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are unit tests?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain test harness?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is A/B testing?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is network simulation and how do you perform it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What types of performances tests are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the following types of tests:
+
+  * Load Testing
+  * Stress Testing
+  * Capacity Testing
+  * Volume Testing
+  * Endurance Testing
+</summary><br><b>
+</b></details>
+
 ## Databases
 
 <details>
@@ -6001,6 +6075,23 @@ Instead of working in "push mode", the consumers can pull tasks only when they a
 
 <details>
 <summary>How would you scale the architecture from the previous question to hundreds of users?</summary><br><b>
+</b></details>
+
+#### Migrations
+
+<details>
+<summary>How you prepare for a migration? (or plan a migration)</summary><br><b>
+
+You can mention:
+
+roll-back & roll-forward
+cut over 
+dress rehearsals 
+DNS redirection
+</b></details>
+
+<details>
+<summary>Explain "Branch by Abstraction" technique</summary><br><b>
 </b></details>
 
 ## Exercises
