@@ -1,4 +1,4 @@
-Your mission, should you choose to accept it, involves fixing the app in this directory, containerize it and set up a CI for it.
+Your mission, should you choose to accept it, involves developing an app, containerize it and set up a CI for it.
 Please read carefully all the instructions.
 
 If any of the following steps is not working, it is expected from you to fix them
@@ -18,20 +18,39 @@ If any of the following steps is not working, it is expected from you to fix the
 
 ```
 {
-    "resources_uris": {
-        "user": "/users/\<username\>",
-        "users": "/users"
-    },
-    "current_uri": "/"
+    "current_uri": "/",
+    "example": "/matrix/'123n456n789'",
+    "resources": {
+        "column": "/columns/<matrix>/<column_number>",
+        "matrix": "/matrix/<matrix>",
+        "row": "/rows/<matrix>/<row_number>"
+    }
 }
 ```
 
 4. You should be able to access any of the resources and get the following data:
 
-* /users - all users data 
-* /users/<username> - data on the specific chosen user
+* /matrix/\<matrix\>
 
-5. When accessing /users, the data returned should not include the id of the user, only its name and description. Also, the data should be ordered by users names.
+    for example, for /matrix/123n456n789 the user will get:
+
+    1 2 3
+    4 5 6
+    7 8 9
+
+* /matrix/\<matrix\>/\<column_number\> 
+
+    for example, for /matrix/123n456n789/2 the user will get:
+
+    2
+    5
+    8
+
+* /matrix/\<matrix\>/\<row_number\> 
+
+    for example, for /matrix/123n456n789/1 the user will get:
+
+    1 2 3 
 
 ## Containers
 
@@ -50,11 +69,11 @@ docker run -d -p 5000:5000 app
 Great, now that we have a working app and also can run it in a container, let's set up a CI for it so it won't break again in the future
 In current directory you have a file called tests.py which includes the tests for the app. What is required from you, is:
 
-1. The CI should run the app tests. You are free to choose whatever CI system or service you prefer. Use `python tests.py` for running the tests.
+1. Write a CI pipeline that will run the app tests. You are free to choose whatever CI system or service you prefer. Use `python tests.py` for running the tests.
 2. There should be some kind of test for the Dockerfile you wrote
-3. Add additional unit test (or another level of tests) for testing the app
+3. Add additional unit test (or any other level of tests) for testing the app
 
 ### Guidelines 
 
-* Except the app functionality, you can change whatever you want - structure, tooling, libraries, ... If possible add `notes.md` file which explains reasons, logic, thoughts and anything else you would like to share
+* Except the app functionality, you can change whatever you want - structure, tooling, libraries, ... If possible, add `notes.md` file which explains reasons, logic, thoughts and anything else you would like to share
 * The CI part should include the source code for the pipeline definition

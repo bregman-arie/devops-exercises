@@ -4,7 +4,7 @@
 
 :bar_chart: &nbsp;There are currently **834** questions
 
-:warning: &nbsp;These are not interview questions and most of them shouldn't be used as interview questions. Please read [Q&A](common-qa.md) for more details
+:warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
 :thought_balloon: &nbsp;If you wonder "How to prepare for a DevOps interview?", you might want to read some of my suggestions [here](prepare_for_interview.md)
 
@@ -6125,11 +6125,12 @@ Below you can find several exercises
 * [Jenkins: writing pipelines](exercises/jenkins_pipelines.md)
 * [CI for open source project](exercises/ci_for_open_source_project.md)
 * [Flask, Containers and CI](exercises/flask_container_ci/README.md)
+* [Flask, Containers and CI 2](exercises/flask_container_ci2/README.md)
 
 
 ## Credits
 
-Thanks to all of our amazing [contributors](https://github.com/bregman-arie/devops-exercises/graphs/contributors) who make it easy for everyone to learn and prepare to their interviews.
+Thanks to all of our amazing [contributors](https://github.com/bregman-arie/devops-exercises/graphs/contributors) who make it easy for everyone to learn new things :)
 
 Logos credits can be found [here](credits.md)
 
