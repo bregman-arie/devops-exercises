@@ -2109,6 +2109,11 @@ Ansible is:
 * Agent-less
 * Minimal run requirements (Python & SSH) and simple to use
 * Default mode is "push" (it supports also pull)
+* Focus on simpleness and ease-of-use
+</b></details>
+
+<details>
+<summary>What kind of automation you wouldn't do with Ansible and why?</summary><br><b>
 </b></details>
 
 <details>
@@ -2118,6 +2123,7 @@ An inventory file defines hosts and/or groups of hosts on which Ansible tasks ex
 
 An example of inventory file:
 
+```
 192.168.1.2
 192.168.1.3
 192.168.1.4
@@ -2126,6 +2132,7 @@ An example of inventory file:
 190.40.2.20
 190.40.2.21
 190.40.2.22
+```
 </b></details>
 
 <details>
@@ -2138,7 +2145,10 @@ spun up and shut down, without you tracking every change in these sources.
 </b></details>
 
 <details>
-<summary>You want to run Ansible playbook only on specific minor version of your OS, how would you achieve that?</summary><br><b>
+<summary>How do you list all modules and how can you see details on a specific module?</summary><br><br>
+
+1. Ansible online docs
+2. `ansible-doc -l` for list of modules and `ansible [module_name]` for detailed information on a specific module
 </b></details>
 
 <details>
@@ -2147,9 +2157,13 @@ spun up and shut down, without you tracking every change in these sources.
 ```
 - name: Create a new directory
   file:
-      path: "/tmp/new_directory"
-      state: directory
+    path: "/tmp/new_directory"
+    state: directory
 ```
+</b></details>
+
+<details>
+<summary>You want to run Ansible playbook only on specific minor version of your OS, how would you achieve that?</summary><br><b>
 </b></details>
 
 <details>
@@ -2170,7 +2184,25 @@ When given a written code, always inspect it thoroughly. If your answer is “th
 </b></details>
 
 <details>
+<summary>What would be the result of running the following task?
+
+```
+- hosts: localhost
+  tasks:
+      - name: Install zlib
+        package:
+          name: zlib
+          state: present
+```
+</summary><br><b>
+</b></details>
+
+<details>
 <summary>Which Ansible best practices are you familiar with?. Name at least three</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the directory layout of an Ansible role</summary><br><b>
 </b></details>
 
 <details>
@@ -2263,7 +2295,19 @@ A full list can be found at the link above. Also, note there is a significant di
 </b></details>
 
 <details>
-<summary>What is ansible-pull?  How it’s different compared to ansible-playbook?</summary><br><b>
+<summary>What is ansible-pull? How is it different from how ansible-playbook works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Ansible Vault?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Demonstrate each of the following with Ansible:
+
+  * Conditionals
+  * Loops
+</summary><br><b>
 </b></details>
 
 <a name="ansible-advanced"></a>
@@ -2280,6 +2324,10 @@ A full list can be found at the link above. Also, note there is a significant di
 def cap(self, string):
     return string.capitalize()
 </code>
+</b></details>
+
+<details>
+<summary>You would like to run a task only if previous task changed anything. How would you achieve that?</summary><br><b>
 </b></details>
 
 <details>
