@@ -2359,6 +2359,12 @@ The benefits of Terraform over the other tools:
 
 <details>
 <summary>Explain what is "Terraform configuration"</summary><br><b>
+A configuration is a root module along with a tree of child modules that are called as dependencies from the root module.
+</b></details>
+
+<details>
+<summary>What is HCL?</summary><br><b>
+HCL stands for Hashicorp Conviguration Language. It is the language Hashicorp made to use as the configuration language for a number of its tools, including terraform.
 </b></details>
 
 <details>
@@ -2390,6 +2396,7 @@ It keeps track of the IDs of created resources so that Terraform knows what it i
 
 <code>terraform init</code> scans your code to figure which providers are you using and download them.
 <code>terraform plan</code> will let you see what terraform is about to do before actually doing it.
+<code>terraform validate</code> checks if configuration is syntactically valid and internally consistent within a directory.
 <code>terraform apply</code> will provision the resources specified in the .tf files.
 </b></details>
 
@@ -2424,18 +2431,29 @@ It's a resource which was successfully created but failed during provisioning. T
 <details>
 <summary>What types of variables are supported in Terraform?</summary><br><b>
 
-String
-Integer
-Map
-List
+string
+number
+bool
+list(<TYPE>)
+set(<TYPE>)
+map(<TYPE>)
+object({<ATTR_NAME> = <TYPE>, ... })
+tuple([<TYPE>, ...])
 </b></details>
 
 <details>
 <summary>What is a data source? In what scenarios for example would need to use it?</summary><br><b>
+Data sources lookup or compute values that can be used elsewhere in terraform configuration.
+
+There are quite a few cases you might need to use them:
+* you want to reference resources not managed through terraform
+* you want to reference resources managed by a different terraform module
+* you want to cleanly compute a value with typechecking, such as with <code>aws_iam_policy_document</code>
 </b></details>
 
 <details>
 <summary>What are output variables and what <code>terraform output</code> does?</summary><br><b>
+Output variables are named values that are sourced from the attributes of a module. They are stored in terraform state, and can be used by other modules through <code>remote_state</code>
 </b></details>
 
 <details>
@@ -2462,7 +2480,7 @@ List
 
 <details>
 <summary>Explain "State Locking"</summary><br><b>
-  State locking is a mechanism that blocks an operations against a specific state file from multiple callers so as to avoid conflicting   operations from different team members. Once the first caller's operation's lock is released the other team member may go ahead to   
+  State locking is a mechanism that blocks an operations against a specific state file from multiple callers so as to avoid conflicting operations from different team members. Once the first caller's operation's lock is released the other team member may go ahead to   
   carryout his own operation. Nevertheless Terraform will first check the state file to see if the desired resource already exist and 
   if not it goes ahead to create it.
 </b></details>
@@ -2470,6 +2488,17 @@ List
 <details>
 <summary>What is the "Random" provider? What is it used for</summary><br><b>
  The random provider aids in generating numeric or alphabetic characters to use as a prefix or suffix for a desired named identifier.
+</b></details>
+
+<details>
+<summary>How do you test a terraform module?</summary><br><b>
+  Many examples are acceptable, but the most common answer would likely to be using the tool <code>terratest</code>, and to test that a module can be initialized, can create resources, and can destroy those resources cleanly.
+</b></details>
+
+<details>
+<summary>Aside from <code>.tfvars</code> files or CLI arguments, how can you inject dependencies from other modules?</summary><br><b>
+  The built-in terraform way would be to use <code>remote-state</code> to lookup the outputs from other modules.
+  It is also common in the community to use a tool called <code>terragrunt</code> to explicitly inject variables between modules.
 </b></details>
 
 ## Docker
