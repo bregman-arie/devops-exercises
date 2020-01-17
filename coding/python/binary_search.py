@@ -6,15 +6,15 @@ rand_num_li = sorted([random.randint(1, 50) for _ in range(10)])
 target = random.randint(1, 50)
 
 
-def binary_search(li, le, ri, target):
-    if le <= ri:
-        mid = ri + le // 2
-        if li[mid] == target:
+def binary_search(arr, lb, ub, target):
+    if lb <= ub:
+        mid = ub + lb // 2
+        if arr[mid] == target:
             return mid
-        elif li[mid] < target:
-            return binary_search(li, mid + 1, ri, target)
+        elif arr[mid] < target:
+            return binary_search(arr, mid + 1, ub, target)
         else:
-            return binary_search(li, le, mid - 1, target)
+            return binary_search(arr, lb, mid - 1, target)
     else:
         return -1
 
