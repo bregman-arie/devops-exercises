@@ -5554,6 +5554,11 @@ This allows Elasticsearch to scale to an entire cluster of servers.
 
 <details>
 <summary>Explain Replicas</summary><br><b>
+
+In a network/cloud environment where failures can be expected any time, it is very useful and highly recommended to have a failover mechanism in case a shard/node somehow goes offline or disappears for whatever reason.
+To this end, Elasticsearch allows you to make one or more copies of your index’s shards into what are called replica shards, or replicas for short.
+
+
 </b></details>
 
 <details>
@@ -5675,6 +5680,10 @@ In general the process is as follows:
 
 <details>
 <summary>What is a A record?</summary><br><b>
+
+
+A (Address) Maps a host name to an IP address. When a computer has multiple adapter cards and IP addresses, it should have multiple address records.
+
 </b></details>
 
 <details>
@@ -5689,6 +5698,8 @@ While an A record points a domain name to an IP address, a PTR record does the o
 
 <details>
 <summary>What is a MX record?</summary><br><b>
+MX (Mail Exchange) Specifies a mail exchange server for the domain, which allows mail to be delivered to the correct mail servers in the domain.
+
 </b></details>
 
 <details>
