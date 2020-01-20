@@ -3244,9 +3244,8 @@ If user enter a non-integer value it will raise exception and using except it wi
 while True:
     try:
         a = int(input("please enter an integer value: "))
-        print(a)
         break
-    except:
+    except ValueError:
         print("Ops! Please enter a valid integer value.")
 
 ```
