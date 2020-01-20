@@ -4394,6 +4394,10 @@ git checkout HEAD~1 -- /path/of/the/file
 
 <details>
 <summary>What is the <code>.git</code> directory? What can you find there?</summary><br><b>
+	The <code>.git</code> folder contains all the information that is necessary for your project in version control and all the information about commits, remote repository address, etc. All of them are present in this folder. It also contains a log that stores your commit history so that you can roll back to history.
+
+
+This info copied from [https://stackoverflow.com/questions/29217859/what-is-the-git-folder](https://stackoverflow.com/questions/29217859/what-is-the-git-folder)
 </b></details>
 
 <details>
