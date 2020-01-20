@@ -3230,6 +3230,29 @@ Generally, every compiling process have a two steps.
 
 <details>
 <summary>Explain Exception Handling and how to use it in Python</summary><br><b>
+	
+**Exceptions:** Errors detected during execution are called Exceptions.
+
+**Handling Exception:** When an error occurs, or exception as we call it, Python will normally stop and generate an error message.</br> 
+Exceptions can be handled using `try` and `except` statement in python.
+
+**Example:** Following example asks the user for input until a valid integer has been entered. </br>
+If user enter a non-integer value it will raise exception and using except it will catch that exception and ask the user to enter valid integer again.
+
+
+```py
+while True:
+    try:
+        a = int(input("please enter an integer value: "))
+        print(a)
+        break
+    except:
+        print("Ops! Please enter a valid integer value.")
+
+```
+
+For more details about errors and exceptions follow this [https://docs.python.org/3/tutorial/errors.html](https://docs.python.org/3/tutorial/errors.html)
+
 </b></details>
 
 <details>
