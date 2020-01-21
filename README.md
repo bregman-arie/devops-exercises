@@ -5246,10 +5246,16 @@ Access control based on user roles (i.e., a collection of access authorizations 
 
 <details>
 <summary>Explain Symmetric encryption</summary><br><b>
+
+A symmetric encryption is any technique where the same key is used to both encrypt and decrypt the data. 
+
 </b></details>
 
 <details>
 <summary>Explain Asymmetric encryption</summary><br><b>
+
+A asymmetric encryption is any technique where the there is two different keys that are used for encryption and decryption, these keys are known as public key and private key.
+
 </b></details>
 
 
