@@ -5220,14 +5220,28 @@ Authorization is the process of identifying what level of access the service or 
 
 <details>
 <summary>Explain what is Single Sign-On</summary><br><b>
+
+SSO (Single Sign-on), is a method of access control that enables a user to log in once and gain access to the resources of multiple software systems without being prompted to log in again.
+
+
 </b></details>
 
 <details>
 <summary>Explain MFA (Multi-Factor Authentication)</summary><br><b>
+
+Multi-Factor Authentication (Also known as 2FA). Allows the user to present two pieces of evidence, credentials, when logging into an account.
+
+- The credentials fall into any of these three categories: something you know (like a password or PIN), something you have (like a smart card), or something you are (like your fingerprint).  Credentials must come from two different categories to enhance security.
+
 </b></details>
 
 <details>
 <summary>Explain RBAC (Role-based Access Control)</summary><br><b>
+
+Access control based on user roles (i.e., a collection of access authorizations a user receives based on an explicit or implicit assumption of a given role). Role permissions may be inherited through a role hierarchy and typically reflect the permissions needed to perform defined functions within an organization. A given role may apply to a single individual or to several individuals.
+
+- RBAC mapped to job function, assumes that a person will take on different roles, overtime, within an organization and different responsibilities in relation to IT systems.
+
 </b></details>
 
 <details>
