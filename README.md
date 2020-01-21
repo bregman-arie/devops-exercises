@@ -4799,6 +4799,20 @@ Using the keyword <code>read</code> so for example <code>read x</code> will wait
 
 <details>
 <summary>Write a script to determine whether a host is up or down</summary><br><b>
+
+```
+#!/bin/bash
+SERVERIP=<IP Address>
+NOTIFYEMAIL=test@example.com
+
+ping -c 3 $SERVERIP > /dev/null 2>&1
+if [ $? -ne 0 ]
+then
+   # Use mailer here:
+   mailx -s "Server $SERVERIP is down" -t "$NOTIFYEMAIL" < /dev/null 
+fi
+```
+
 </b></details>
 
 <details>
