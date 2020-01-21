@@ -4606,6 +4606,13 @@ func main() {
 
 <details>
 <summary>What are the advantages of MongoDB? Or in other words, why choosing MongoDB and not other implementation of NoSQL?</summary><br><b>
+
+MongoDB advantages are as followings:
+- Schemaless
+- Easy to scale-out
+- No complex joins
+- Structure of a single object is clear
+
 </b></details>
 
 <details>
