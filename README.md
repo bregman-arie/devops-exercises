@@ -5486,6 +5486,9 @@ MAC address flooding attack (CAM table flooding attack) is a type of network att
 
 <details>
 <summary>What is Cache Poisoned Denial of Service?</summary><br><b>
+
+CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipulating certain header requests, the attacker forces the origin server to return a Bad Request error which is stored in the CDN’s cache. Thus, every request that comes after the attack will get an error page. 
+
 </b></details>
 
 ## Puppet
