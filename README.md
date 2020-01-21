@@ -3268,6 +3268,31 @@ For more details about errors and exceptions follow this [https://docs.python.or
 
 <details>
 <summary>What is Lambda? How is it used?</summary><br><b>
+	A <code>lambda</code> function is a small anonymous function which returns an object. </br>
+The object returned by lambda is usually assigned to a variable or used as a part of other bigger functions.
+
+**Examples:**
+
+1. A lambda function add 10 with any argument passed.
+
+```py
+x = lambda a: a + 10
+print(x(10))
+```
+
+2. An addition function
+
+```py
+addition = lambda x, y: x + y
+print(addition(10, 20))
+```
+
+3. Squaring function
+
+```py
+square = lambda x : x ** 2
+print(square(5))
+```
 </b></details>
 
 #### Properties
