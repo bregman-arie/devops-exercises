@@ -4800,6 +4800,7 @@ Using the keyword <code>read</code> so for example <code>read x</code> will wait
 <details>
 <summary>Write a script to determine whether a host is up or down</summary><br><b>
 
+**EXAMPLE ONE**
 ```
 #!/bin/bash
 SERVERIP=<IP Address>
@@ -4817,6 +4818,21 @@ fi
 
 <details>
 <summary>Write a script to remove all the empty files in a given directory (also nested directories)</summary><br><b>
+
+**EXAMPLE ONE**
+```
+#! /bin/bash
+for x in *
+do
+    if [ -s $x ]
+    then
+        continue
+    else
+        rm -rf $x
+    fi
+done
+```
+
 </b></details>
 
 <a name="shell-scripting-advanced"></a>
