@@ -3246,6 +3246,16 @@ Generally, every compiling process have a two steps.
 
 <details>
 <summary>What is Lambda? How is it used?</summary><br><b>
+
+Lambda is an anonymous function is known as a lambda function. This function can have any number of parameters but, can have just one statement.
+
+Example:
+```
+1	a = lambda x,y : x+y
+2	print(a(5, 6))
+Output: 11
+```
+
 </b></details>
 
 #### Properties
