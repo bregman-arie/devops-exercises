@@ -5394,6 +5394,9 @@ You can test by using a stored procedure, so the application must be sanitize th
 
 <details>
 <summary>What can you tell me about Spectre?</summary><br><b>
+
+Spectre is an attack method which allows a hacker to “read over the shoulder” of a program it does not have access to. Using code, the hacker forces the program to pull up its encryption key allowing full access to the program
+
 </b></details>
 
 <details>
