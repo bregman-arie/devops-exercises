@@ -5427,6 +5427,9 @@ You can use OWASP ZAP to analyze a "request", and if it appears that there no pr
 
 <details>
 <summary>Explain HTTP Header Injection vulnerability</summary><br><b>
+
+HTTP Header Injection vulnerabilities occur when user input is insecurely included within server responses headers. If an attacker can inject newline characters into the header, then they can inject new HTTP headers and also, by injecting an empty line, break out of the headers into the message body and write arbitrary content into the application's response.
+
 </b></details>
 
 <details>
