@@ -5390,6 +5390,10 @@ You can test by using a stored procedure, so the application must be sanitize th
 
 <details>
 <summary>What can you tell me about Stuxnet?</summary><br><b>
+
+Stuxnet is a computer worm that was originally aimed at Iran’s nuclear facilities and has since mutated and spread to other industrial and energy-producing facilities. The original Stuxnet malware attack targeted the programmable logic controllers (PLCs) used to automate machine processes. It generated a flurry of media attention after it was discovered in 2010 because it was the first known virus to be capable of crippling hardware and because it appeared to have been created by the U.S. National Security Agency, the CIA, and Israeli intelligence.
+
+
 </b></details>
 
 <details>
