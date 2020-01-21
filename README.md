@@ -5252,9 +5252,6 @@ Access control based on user roles (i.e., a collection of access authorizations 
 <summary>Explain Asymmetric encryption</summary><br><b>
 </b></details>
 
-<details>
-<summary>Explain RBAC (Role-based Access Control)</summary><br><b>
-</b></details>
 
 <details>
 <summary>Explain the following:
