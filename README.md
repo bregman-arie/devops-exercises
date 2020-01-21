@@ -5471,6 +5471,9 @@ HTTP Header Injection vulnerabilities occur when user input is insecurely includ
 
 <details>
 <summary>Explain MAC flooding attack</summary><br><b>
+
+MAC address flooding attack (CAM table flooding attack) is a type of network attack where an attacker connected to a switch port floods the switch interface with very large number of Ethernet frames with different fake source MAC address.
+
 </b></details>
 
 <details>
