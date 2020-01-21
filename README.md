@@ -5404,9 +5404,6 @@ You can test by using a stored procedure, so the application must be sanitize th
 <summary>Explain "Format String Vulnerability"</summary><br><b>
 </b></details>
 
-<details>
-<summary>Explain "Buffer Overflow"</summary><br><b>
-</b></details>
 
 <details>
 <summary>Explain DMZ</summary><br><b>
