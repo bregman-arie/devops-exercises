@@ -3268,6 +3268,16 @@ For more details about errors and exceptions follow this [https://docs.python.or
 
 <details>
 <summary>What is Lambda? How is it used?</summary><br><b>
+
+Lambda is an anonymous function is known as a lambda function. This function can have any number of parameters but, can have just one statement.
+
+Example:
+```
+1	a = lambda x,y : x+y
+2	print(a(5, 6))
+Output: 11
+```
+
 </b></details>
 
 #### Properties
@@ -4622,6 +4632,13 @@ func main() {
 
 <details>
 <summary>What are the advantages of MongoDB? Or in other words, why choosing MongoDB and not other implementation of NoSQL?</summary><br><b>
+
+MongoDB advantages are as followings:
+- Schemaless
+- Easy to scale-out
+- No complex joins
+- Structure of a single object is clear
+
 </b></details>
 
 <details>
@@ -4707,10 +4724,19 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>Tell me about your experience with shell scripting</summary><br><b>
+
 </b></details>
 
 <details>
 <summary>What this line in scripts mean?: <code>#!/bin/bash</code></summary><br><b>
+
+
+`#!/bin/bash` is She-bang 
+
+/bin/bash is the most common shell used as default shell for user login of the linux system. The shell’s name is an acronym for Bourne-again shell. Bash can execute the vast majority of scripts and thus is widely used because it has more features, is well developed and better syntax.
+
+
+
 </b></details>
 
 <details>
@@ -4799,10 +4825,40 @@ Using the keyword <code>read</code> so for example <code>read x</code> will wait
 
 <details>
 <summary>Write a script to determine whether a host is up or down</summary><br><b>
+
+**EXAMPLE ONE**
+```
+#!/bin/bash
+SERVERIP=<IP Address>
+NOTIFYEMAIL=test@example.com
+
+ping -c 3 $SERVERIP > /dev/null 2>&1
+if [ $? -ne 0 ]
+then
+   # Use mailer here:
+   mailx -s "Server $SERVERIP is down" -t "$NOTIFYEMAIL" < /dev/null 
+fi
+```
+
 </b></details>
 
 <details>
 <summary>Write a script to remove all the empty files in a given directory (also nested directories)</summary><br><b>
+
+**EXAMPLE ONE**
+```
+#! /bin/bash
+for x in *
+do
+    if [ -s $x ]
+    then
+        continue
+    else
+        rm -rf $x
+    fi
+done
+```
+
 </b></details>
 
 <a name="shell-scripting-advanced"></a>
@@ -5031,6 +5087,10 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 
 <details>
 <summary>Explain availability sets and availability zones</summary><br><b>
+
+An availability set is a logical grouping of VMs that allows Azure to understand how your application is built to provide redundancy and availability. It is recommended that two or more VMs are created within an availability set to provide for a highly available application and to meet the 99.95% Azure SLA.
+
+
 </b></details>
 
 <details>
@@ -5236,27 +5296,44 @@ Authorization is the process of identifying what level of access the service or 
 
 <details>
 <summary>Explain what is Single Sign-On</summary><br><b>
+
+SSO (Single Sign-on), is a method of access control that enables a user to log in once and gain access to the resources of multiple software systems without being prompted to log in again.
+
+
 </b></details>
 
 <details>
 <summary>Explain MFA (Multi-Factor Authentication)</summary><br><b>
+
+Multi-Factor Authentication (Also known as 2FA). Allows the user to present two pieces of evidence, credentials, when logging into an account.
+
+- The credentials fall into any of these three categories: something you know (like a password or PIN), something you have (like a smart card), or something you are (like your fingerprint).  Credentials must come from two different categories to enhance security.
+
 </b></details>
 
 <details>
 <summary>Explain RBAC (Role-based Access Control)</summary><br><b>
+
+Access control based on user roles (i.e., a collection of access authorizations a user receives based on an explicit or implicit assumption of a given role). Role permissions may be inherited through a role hierarchy and typically reflect the permissions needed to perform defined functions within an organization. A given role may apply to a single individual or to several individuals.
+
+- RBAC mapped to job function, assumes that a person will take on different roles, overtime, within an organization and different responsibilities in relation to IT systems.
+
 </b></details>
 
 <details>
 <summary>Explain Symmetric encryption</summary><br><b>
+
+A symmetric encryption is any technique where the same key is used to both encrypt and decrypt the data. 
+
 </b></details>
 
 <details>
 <summary>Explain Asymmetric encryption</summary><br><b>
+
+A asymmetric encryption is any technique where the there is two different keys that are used for encryption and decryption, these keys are known as public key and private key.
+
 </b></details>
 
-<details>
-<summary>Explain RBAC (Role-based Access Control)</summary><br><b>
-</b></details>
 
 <details>
 <summary>Explain the following:
@@ -5376,6 +5453,9 @@ You can use OWASP ZAP to analyze a "request", and if it appears that there no pr
 
 <details>
 <summary>Explain HTTP Header Injection vulnerability</summary><br><b>
+
+HTTP Header Injection vulnerabilities occur when user input is insecurely included within server responses headers. If an attacker can inject newline characters into the header, then they can inject new HTTP headers and also, by injecting an empty line, break out of the headers into the message body and write arbitrary content into the application's response.
+
 </b></details>
 
 <details>
@@ -5580,6 +5660,11 @@ This allows Elasticsearch to scale to an entire cluster of servers.
 
 <details>
 <summary>Explain Replicas</summary><br><b>
+
+In a network/cloud environment where failures can be expected any time, it is very useful and highly recommended to have a failover mechanism in case a shard/node somehow goes offline or disappears for whatever reason.
+To this end, Elasticsearch allows you to make one or more copies of your index’s shards into what are called replica shards, or replicas for short.
+
+
 </b></details>
 
 <details>
@@ -5701,6 +5786,10 @@ In general the process is as follows:
 
 <details>
 <summary>What is a A record?</summary><br><b>
+
+
+A (Address) Maps a host name to an IP address. When a computer has multiple adapter cards and IP addresses, it should have multiple address records.
+
 </b></details>
 
 <details>
@@ -5715,6 +5804,8 @@ While an A record points a domain name to an IP address, a PTR record does the o
 
 <details>
 <summary>What is a MX record?</summary><br><b>
+MX (Mail Exchange) Specifies a mail exchange server for the domain, which allows mail to be delivered to the correct mail servers in the domain.
+
 </b></details>
 
 <details>
