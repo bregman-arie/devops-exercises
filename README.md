@@ -5412,14 +5412,29 @@ You can test by using a stored procedure, so the application must be sanitize th
 
 <details>
 <summary>What is DNS Spoofing? How to prevent it?</summary><br><b>
+
+DNS spoofing occurs when a particular DNS server’s records of “spoofed” or altered maliciously to redirect traffic to the attacker. This redirection of traffic allows the attacker to spread malware, steal data, etc.
+
+**Prevention**
+- Use encrypted data transfer protocols - Using end-to-end encryption vian SSL/TLS will help decrease the chance that a website / its visitors are compromised by DNS spoofing. 
+- Use DNSSEC - DNSSEC, or Domain Name System Security Extensions, uses digitally signed DNS records to help determine data authenticity.
+- Implement DNS spoofing detection mechanisms - it’s important to implement DNS spoofing detection software. Products such as XArp help product against ARP cache poisoning by inspecting the data that comes through before transmitting it.
+
 </b></details>
 
 <details>
 <summary>What can you tell me about Stuxnet?</summary><br><b>
+
+Stuxnet is a computer worm that was originally aimed at Iran’s nuclear facilities and has since mutated and spread to other industrial and energy-producing facilities. The original Stuxnet malware attack targeted the programmable logic controllers (PLCs) used to automate machine processes. It generated a flurry of media attention after it was discovered in 2010 because it was the first known virus to be capable of crippling hardware and because it appeared to have been created by the U.S. National Security Agency, the CIA, and Israeli intelligence.
+
+
 </b></details>
 
 <details>
 <summary>What can you tell me about Spectre?</summary><br><b>
+
+Spectre is an attack method which allows a hacker to “read over the shoulder” of a program it does not have access to. Using code, the hacker forces the program to pull up its encryption key allowing full access to the program
+
 </b></details>
 
 <details>
@@ -5430,9 +5445,6 @@ You can test by using a stored procedure, so the application must be sanitize th
 <summary>Explain "Format String Vulnerability"</summary><br><b>
 </b></details>
 
-<details>
-<summary>Explain "Buffer Overflow"</summary><br><b>
-</b></details>
 
 <details>
 <summary>Explain DMZ</summary><br><b>
@@ -5480,6 +5492,10 @@ HTTP Header Injection vulnerabilities occur when user input is insecurely includ
 
 <details>
 <summary>Explain what is Buffer Overflow</summary><br><b>
+
+A buffer overflow (or buffer overrun) occurs when the volume of data exceeds the storage capacity of the memory buffer. As a result, the program attempting to write the data to the buffer overwrites adjacent memory locations.
+
+
 </b></details>
 
 ##### Containers
@@ -5497,6 +5513,9 @@ HTTP Header Injection vulnerabilities occur when user input is insecurely includ
 
 <details>
 <summary>Explain MAC flooding attack</summary><br><b>
+
+MAC address flooding attack (CAM table flooding attack) is a type of network attack where an attacker connected to a switch port floods the switch interface with very large number of Ethernet frames with different fake source MAC address.
+
 </b></details>
 
 <details>
@@ -5509,6 +5528,9 @@ HTTP Header Injection vulnerabilities occur when user input is insecurely includ
 
 <details>
 <summary>What is Cache Poisoned Denial of Service?</summary><br><b>
+
+CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipulating certain header requests, the attacker forces the origin server to return a Bad Request error which is stored in the CDN’s cache. Thus, every request that comes after the attack will get an error page. 
+
 </b></details>
 
 ## Puppet
