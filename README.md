@@ -3269,14 +3269,35 @@ For more details about errors and exceptions follow this [https://docs.python.or
 <details>
 <summary>What is Lambda? How is it used?</summary><br><b>
 
-Lambda is an anonymous function is known as a lambda function. This function can have any number of parameters but, can have just one statement.
+A <code>lambda</code> expression is an 'anonymous' function, the differnce between a normal defined function using the keyword `def`` is the syntax and ussage.
 
-Example:
+The syntax is:
+
+```lambda[parameters]: [expresion]```
+
+**Examples:**
+
+* A lambda function add 10 with any argument passed.
+
+```py
+x = lambda a: a + 10
+print(x(10))
 ```
-1	a = lambda x,y : x+y
-2	print(a(5, 6))
-Output: 11
+
+* An addition function
+
+```py
+addition = lambda x, y: x + y
+print(addition(10, 20))
 ```
+
+* Squaring function
+
+```py
+square = lambda x : x ** 2
+print(square(5))
+```
+Generally it is considered a bad practice under PEP 8 to asign a lambda expresion, they are meant to be used as parameters and inside of other defined functions.
 
 </b></details>
 
