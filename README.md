@@ -3269,7 +3269,7 @@ For more details about errors and exceptions follow this [https://docs.python.or
 <details>
 <summary>What is Lambda? How is it used?</summary><br><b>
 
-A <code>lambda</code> expression is an 'anonymous' function, the differnce between a normal defined function using the keyword `def`` is the syntax and ussage.
+A <code>lambda</code> expression is an 'anonymous' function, the differnce from a normal defined function using the keyword `def`` is the syntax and ussage.
 
 The syntax is:
 
