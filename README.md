@@ -3742,15 +3742,15 @@ Detailed answer can be found here: http://codingshell.com/python-all-string-perm
 <details>
 <summary>How to reverse a string? (e.g. pizza -> azzip)</summary><br><b>
 
-Shortest way is: 
+The correct way is: 
 
 ```
 my_string[::-1]
 ```
 
-But it doesn't mean it's the most efficient one. <br>
+A more visual way is:<br>
+<i>Careful: this is very slow</i>
 
-The Classic way is:
 ```
 def reverse_string(string):
     temp = ""
