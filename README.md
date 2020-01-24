@@ -4456,7 +4456,7 @@ This info copied from [https://stackoverflow.com/questions/29217859/what-is-the-
 <details>
 <summary>What are some Git anti-patterns? Things that you shouldn't do</summary><br><b>
 
-  * Not waiting to long between commits
+  * Not waiting too long between commits
   * Not removing the .git directory :)
 </b></details>
 
