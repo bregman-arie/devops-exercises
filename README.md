@@ -1001,6 +1001,10 @@ UDP is faster, simpler and more efficient than TCP
 
 <details>
 <summary>Explain "default gateway"</summary><br><b>
+
+A default gateway serves as an access point or IP router that a networked computer uses to send information to a computer in another network or the internet.
+
+
 </b></details>
 
 <details>
