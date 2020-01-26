@@ -947,12 +947,20 @@ A router is a physical or virtual appliance that passes information between two 
 <summary>What is NAT?</summary><br><b>
 
  Network Address Translation (NAT) is a process in which one or more local IP address is translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts. 
- 
+
 
 </b></details>
 
 <details>
 <summary>What is a proxy? How it works? What do we need it for?</summary><br><b>
+
+A proxy server acts as a gateway between you and the internet. It’s an intermediary server separating end users from the websites they browse.
+
+If you’re using a proxy server, internet traffic flows through the proxy server on its way to the address you requested. The request then comes back through that same proxy server (there are exceptions to this rule), and then the proxy server forwards the data received from the website to you.
+
+roxy servers provide varying levels of functionality, security, and privacy depending on your use case, needs, or company policy.
+
+
 </b></details>
 
 <details>
