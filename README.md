@@ -945,6 +945,10 @@ A router is a physical or virtual appliance that passes information between two 
 
 <details>
 <summary>What is NAT?</summary><br><b>
+
+ Network Address Translation (NAT) is a process in which one or more local IP address is translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts. 
+ 
+
 </b></details>
 
 <details>
