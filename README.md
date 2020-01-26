@@ -937,6 +937,10 @@ CSMA/CD algorithm:
 
 <details>
 <summary>How does a router works?</summary><br><b>
+
+A router is a physical or virtual appliance that passes information between two or more packet-switched computer networks. A router inspects a given data packet's destination Internet Protocol address (IP address), calculates the best way for it to reach its destination and then forwards it accordingly.
+
+
 </b></details>
 
 <details>
