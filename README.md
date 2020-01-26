@@ -989,6 +989,10 @@ TCP establishes a connection between the client and the server to guarantee the 
 
 <details>
 <summary>True or False? TCP is better than UDP</summary><br><b>
+
+False. 
+UDP is faster, simpler and more efficient than TCP
+
 </b></details>
 
 <details>
