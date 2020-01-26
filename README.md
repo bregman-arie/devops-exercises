@@ -839,6 +839,10 @@ Packets that are sent on the ethernet are always coming from a MAC address and s
 
 <details>
 <summary>What is an IP address?</summary><br><b>
+
+An Internet Protocol address (IP address) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.An IP address serves two main functions: host or network interface identification and location addressing.
+
+
 </b></details>
 
 <details>
