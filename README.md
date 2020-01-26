@@ -170,10 +170,10 @@ In your answer you can mention one or more of the following:
 <summary>Explain mutable vs. immutable infrastructure</summary><br><b>
 
 In mutable infrastructure paradigm, changes are applied on top of the existing infrastructure and over time
-the infrastructure builds up a history of changes. Ansible, Puppet and Chef are examples to tools which
+the infrastructure builds up a history of changes. Ansible, Puppet and Chef are examples of tools which
 follow mutable infrastructure paradigm.
 
-In immutable infrastructure paradigm, every change is actually new infrastructure. So a change
+In immutable infrastructure paradigm, every change is actually a new infrastructure. So a change
 to a server will result in a new server instead of updating it. Terraform is an example of technology
 which follows the immutable infrastructure paradigm.
 </b></details>
