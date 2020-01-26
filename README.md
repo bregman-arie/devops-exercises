@@ -965,6 +965,16 @@ roxy servers provide varying levels of functionality, security, and privacy depe
 
 <details>
 <summary>What is TCP? How it works? What is the 3 way handshake?</summary><br><b>
+
+TCP 3-way handshake or three-way handshake is a process which is used in a TCP/IP network to make a connection between server and client.
+
+A three-way handshake is primarily used to create a TCP socket connection. It works when:
+
+- A client node sends a SYN data packet over an IP network to a server on the same or an external network. The objective of this packet is to ask/infer if the server is open for new connections.
+- The target server must have open ports that can accept and initiate new connections. When the server receives the SYN packet from the client node, it responds and returns a confirmation receipt – the ACK packet or SYN/ACK packet.
+- The client node receives the SYN/ACK from the server and responds with an ACK packet.
+
+
 </b></details>
 
 <details>
