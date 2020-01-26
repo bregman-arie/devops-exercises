@@ -197,7 +197,7 @@ Stateful applications depend on the storage to save state and data, typically da
 </b></details>
 
 <details>
-<summary>Describe the workflow of setting up some type of web server (Apache, IIS, Tomact, ...)</summary><br><b>
+<summary>Describe the workflow of setting up some type of web server (Apache, IIS, Tomcat, ...)</summary><br><b>
 </b></details>
 
 <details>
@@ -3230,6 +3230,28 @@ Generally, every compiling process have a two steps.
 
 <details>
 <summary>Explain Exception Handling and how to use it in Python</summary><br><b>
+	
+**Exceptions:** Errors detected during execution are called Exceptions.
+
+**Handling Exception:** When an error occurs, or exception as we call it, Python will normally stop and generate an error message.</br> 
+Exceptions can be handled using `try` and `except` statement in python.
+
+**Example:** Following example asks the user for input until a valid integer has been entered. </br>
+If user enter a non-integer value it will raise exception and using except it will catch that exception and ask the user to enter valid integer again.
+
+
+```py
+while True:
+    try:
+        a = int(input("please enter an integer value: "))
+        break
+    except ValueError:
+        print("Ops! Please enter a valid integer value.")
+
+```
+
+For more details about errors and exceptions follow this [https://docs.python.org/3/tutorial/errors.html](https://docs.python.org/3/tutorial/errors.html)
+
 </b></details>
 
 <details>
@@ -3247,14 +3269,35 @@ Generally, every compiling process have a two steps.
 <details>
 <summary>What is Lambda? How is it used?</summary><br><b>
 
-Lambda is an anonymous function is known as a lambda function. This function can have any number of parameters but, can have just one statement.
+A <code>lambda</code> expression is an 'anonymous' function, the differnce from a normal defined function using the keyword `def`` is the syntax and ussage.
 
-Example:
+The syntax is:
+
+```lambda[parameters]: [expresion]```
+
+**Examples:**
+
+* A lambda function add 10 with any argument passed.
+
+```py
+x = lambda a: a + 10
+print(x(10))
 ```
-1	a = lambda x,y : x+y
-2	print(a(5, 6))
-Output: 11
+
+* An addition function
+
+```py
+addition = lambda x, y: x + y
+print(addition(10, 20))
 ```
+
+* Squaring function
+
+```py
+square = lambda x : x ** 2
+print(square(5))
+```
+Generally it is considered a bad practice under PEP 8 to asign a lambda expresion, they are meant to be used as parameters and inside of other defined functions.
 
 </b></details>
 
@@ -3699,15 +3742,15 @@ Detailed answer can be found here: http://codingshell.com/python-all-string-perm
 <details>
 <summary>How to reverse a string? (e.g. pizza -> azzip)</summary><br><b>
 
-Shortest way is: 
+The correct way is: 
 
 ```
 my_string[::-1]
 ```
 
-But it doesn't mean it's the most efficient one. <br>
+A more visual way is:<br>
+<i>Careful: this is very slow</i>
 
-The Classic way is:
 ```
 def reverse_string(string):
     temp = ""
@@ -4404,12 +4447,16 @@ git checkout HEAD~1 -- /path/of/the/file
 
 <details>
 <summary>What is the <code>.git</code> directory? What can you find there?</summary><br><b>
+	The <code>.git</code> folder contains all the information that is necessary for your project in version control and all the information about commits, remote repository address, etc. All of them are present in this folder. It also contains a log that stores your commit history so that you can roll back to history.
+
+
+This info copied from [https://stackoverflow.com/questions/29217859/what-is-the-git-folder](https://stackoverflow.com/questions/29217859/what-is-the-git-folder)
 </b></details>
 
 <details>
 <summary>What are some Git anti-patterns? Things that you shouldn't do</summary><br><b>
 
-  * Not waiting to long between commits
+  * Not waiting too long between commits
   * Not removing the .git directory :)
 </b></details>
 
