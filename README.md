@@ -883,13 +883,14 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
 <details>
 <summary>Explain the OSI model. What layers there are? What each layer is responsible for?</summary><br><b>
 
-Application: user end (HTTP is here)
-Presentation: establishes context between application-layer entities (Encryption is here)
-Session: establishes, manages and terminates the connections
-Transport: transfers variable-length data sequences from a source to a destination host (TCP & UDP are here)
-Network: transfers datagrams from one network to another (IP is here)
-Data link: provides a link between two directly connected nodes (MAC is here)
-Physical: the electrical and physical spec the data connection (Bits are here)
+- Application: user end (HTTP is here)
+- Presentation: establishes context between application-layer entities (Encryption is here)
+- Session: establishes, manages and terminates the connections
+- Transport: transfers variable-length data sequences from a source to a destination host (TCP & UDP are here)
+- Network: transfers datagrams from one network to another (IP is here)
+- Data link: provides a link between two directly connected nodes (MAC is here)
+- Physical: the electrical and physical spec the data connection (Bits are here)
+
 </b></details>
 
 <details>
