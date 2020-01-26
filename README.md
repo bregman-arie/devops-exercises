@@ -847,6 +847,29 @@ An Internet Protocol address (IP address) is a numerical label assigned to each 
 
 <details>
 <summary>Explain subnet mask and given an example</summary><br><b>
+
+A Subnet mask is a 32-bit number that masks an IP address, and divides the IP address into network address and host address. Subnet Mask is made by setting network bits to all "1"s and setting host bits to all "0"s. Within a given network, two host addresses are reserved for special purpose, and cannot be assigned to hosts. The "0" address is assigned a network address and "255" is assigned to a broadcast address, and they cannot be assigned to hosts.
+
+**For Example**
+| Address Class | No of Network Bits | No of Host Bits | Subnet mask     | CIDR notation |
+| ------------- | ------------------ | --------------- | --------------- | ------------- |
+| A             | 8                  | 24              | 255.0.0.0       | /8            |
+| A             | 9                  | 23              | 255.128.0.0     | /9            |
+| A             | 12                 | 20              | 255.240.0.0     | /12           |
+| A             | 14                 | 18              | 255.252.0.0     | /14           |
+| B             | 16                 | 16              | 255.255.0.0     | /16           |
+| B             | 17                 | 15              | 255.255.128.0   | /17           |
+| B             | 20                 | 12              | 255.255.240.0   | /20           |
+| B             | 22                 | 10              | 255.255.252.0   | /22           |
+| C             | 24                 | 8               | 255.255.255.0   | /24           |
+| C             | 25                 | 7               | 255.255.255.128 | /25           |
+| C             | 28                 | 4               | 255.255.255.240 | /28           |
+| C             | 30                 | 2               | 255.255.255.252 | /30           |
+
+### 
+
+
+
 </b></details>
 
 <details>
