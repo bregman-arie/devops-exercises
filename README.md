@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **834** questions
+:bar_chart: &nbsp;There are currently **854** questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -60,6 +60,7 @@
   <tr>
     <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
     <td align="center"><a href="#databases"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
+    <td align="center"><a href="#regex"><b>Regex</b></a><br /><sub><a href="#regex-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>Design</b></a></td>
     <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
     <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
@@ -2167,6 +2168,14 @@ spun up and shut down, without you tracking every change in these sources.
 </b></details>
 
 <details>
+<summary>What the "become" directive used for in Ansible?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are facts? How to see all the facts of a certain host?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What would be the result of the following play?</summary><br><b>
 
 ```
@@ -2184,7 +2193,7 @@ When given a written code, always inspect it thoroughly. If your answer is “th
 </b></details>
 
 <details>
-<summary>What would be the result of running the following task?
+<summary>What would be the result of running the following task? How to fix it?
 
 ```
 - hosts: localhost
@@ -2203,6 +2212,18 @@ When given a written code, always inspect it thoroughly. If your answer is “th
 
 <details>
 <summary>Explain the directory layout of an Ansible role</summary><br><b>
+</b></details>
+
+<details>
+<summary>What 'blocks' are used for in Ansible?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you handle errors in Ansible?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You would like to run a certain command if a task fails. How would you achieve that?</summary><br><b>
 </b></details>
 
 <details>
@@ -2320,10 +2341,10 @@ A full list can be found at the link above. Also, note there is a significant di
 <details>
 <summary>Write a filter to capitalize a string</summary><br><b>
 
-<code>
+```
 def cap(self, string):
     return string.capitalize()
-</code>
+```
 </b></details>
 
 <details>
@@ -3616,7 +3637,7 @@ with open('file.txt', 'w') as file:
 <summary>Can you write a function which will print all the file in a given directory? including sub-directories</summary><br><b>
 </b></details>
 
-#### Regex
+#### Python Regex
 
 <details>
 <summary>How do you perform regular expressions related operations in Python? (match patterns, substitute strings, etc.)</summary><br><b>
@@ -6278,6 +6299,44 @@ A single data source (at least usually) which is stored in a raw format.
 
 <details>
 <summary>What is OLAP (Online Analytical Processing)?</summary><br><b>
+</b></details>
+
+## Regex
+
+Given a text file, perform the following exercises
+
+#### Extract
+
+<details>
+<summary>Extract all the numbers</summary><br><b>
+</b></details>
+
+<details>
+<summary>Extract the first word of each line</summary><br><b>
+
+Bonus: extract the last word of each line
+</b></details>
+
+<details>
+<summary>Extract all the IP addresses</summary><br><b>
+</b></details>
+
+<details>
+<summary>Extract dates in the format of yyyy-mm-dd or yyyy-dd-mm</summary><br><b>
+</b></details>
+
+<details>
+<summary>Extract email addresses</summary><br><b>
+</b></details>
+
+#### Replace
+
+<details>
+<summary>Replace tabs with four spaces</summary><br><b>
+</b></details>
+
+<details>
+<summary>Replace 'red' with 'green'</summary><br><b>
 </b></details>
 
 ## Design
