@@ -818,6 +818,8 @@ AWS CloudTrail
 
 <details>
 <summary>What is Ethernet?</summary><br><b>
+
+Ethernet simply refers to the most common type of Local Area Network (LAN) used today. A LAN—in contrast to a WAN (Wide Area Network), which spans a larger geographical area—is a connected network of computers in a small area, like your office, college campus, or even home.
 </b></details>
 
 <details>
