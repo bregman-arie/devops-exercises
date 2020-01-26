@@ -1009,6 +1009,12 @@ A default gateway serves as an access point or IP router that a networked comput
 
 <details>
 <summary>What is ARP? How it works?</summary><br><b>
+
+ARP stands for Address Resolution Protocol. When you try to ping an IP address on your local network, say 192.168.1.1, your system has to turn the IP address 192.168.1.1 into a MAC address. This involves using ARP to resolve the address, hence its name.
+
+Systems keep an ARP look-up table where they store information about what IP addresses are associated with what MAC addresses. When trying to send a packet to an IP address, the system will first consult this table to see if it already knows the MAC address. If there is a value cached, ARP is not used.
+
+
 </b></details>
 
 <details>
