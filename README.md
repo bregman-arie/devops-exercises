@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **854** questions
+:bar_chart: &nbsp;There are currently **864** questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -991,14 +991,6 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 <summary>What is the difference between TCP and UDP?</summary><br><b>
 	
 TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for streaming services.
-</b></details>
-
-<details>
-<summary>True or False? TCP is better than UDP</summary><br><b>
-
-False. 
-UDP is faster, simpler and more efficient than TCP
-
 </b></details>
 
 <details>
@@ -2433,10 +2425,6 @@ def cap(self, string):
 </b></details>
 
 <details>
-<summary>How do you test your Ansible based projects?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What are callback plugins? What can you achieve by using callback plugins?</summary><br><b>
 </b></details>
 
@@ -2471,6 +2459,16 @@ Gotenks = 32
     - { regexp: '^Trunks', line: 'Trunks = 40' }
     ...
 ```
+</b></details>
+
+#### Ansible Testing
+
+<details>
+<summary>How do you test your Ansible based projects?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Molecule? How it works?</summary><br><b>
 </b></details>
 
 ## Terraform
@@ -3691,7 +3689,7 @@ some_dict1.update(some_dict2)
 [Solution](coding/python/binary_search.py)
 </b></details>
 
-#### Files
+#### Python Files
 
 <details>
 <summary>How to write to a file?</summary><br><b>
@@ -3715,7 +3713,45 @@ with open('file.txt', 'w') as file:
 </b></details>
 
 <details>
+<summary>Print a random line of a given file</summary><br><b>
+</b></details>
+
+<details>
+<summary>Print every 3rd line of a given file</summary><br><b>
+</b></details>
+
+<details>
+<summary>Print the number of lines in a given file</summary><br><b>
+</b></details>
+
+<details>
+<summary>Print the number of of words in a given file</summary><br><b>
+</b></details>
+
+<details>
 <summary>Can you write a function which will print all the file in a given directory? including sub-directories</summary><br><b>
+</b></details>
+
+#### Python OS
+
+<details>
+<summary>How to print current working directory?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Given the path <code>/dir1/dir2/file1</code> print the file name (file1)</summary><br><b>
+</b></details>
+
+<details>
+<summary>Given the path <code>/dir1/dir2/file1</code> print the name of the directory where the file resides (dir2)</summary><br><b>
+</b></details>
+
+<details>
+<summary>Given the path <code>/dir1/dir2/file1</code> print the path without the file name (/dir1/dir2)</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you execute shell commands using Python?</summary><br><b>
 </b></details>
 
 #### Python Regex
@@ -5728,6 +5764,10 @@ The most used projects are the Elasticserach, Logstash and Kibana. Also known as
 3. Logstash processes the data
 4. The user creates visualizations which uses the index in elasticsearch and more specifically the data there (this is done in Kibana).
 5. The user creates a dashboard which composed out of the visualization created earlier
+</b></details>
+
+<details>
+<summary>You are running an app which outputs several log files (without timestamps). What do you do in order to process the information they include and display it in Kibana? you can ask for additional information if required for answering this question</summary><br><b>
 </b></details>
 
 ##### Elasticsearch
