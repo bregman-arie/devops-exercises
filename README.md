@@ -2495,6 +2495,7 @@ It's a resource which was successfully created but failed during provisioning. T
 
 <details>
 <summary>What <code>terraform taint</code> does?</summary><br><b>
+<code>terraform taint resource.id</code> manually marks the resource as tainted in the state file. So when you <code>terraform apply</code> the next time, the resource will be destroyed and recreated.
 </b></details>
 
 <details>
