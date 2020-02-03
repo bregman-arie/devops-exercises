@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **864** questions
+:bar_chart: &nbsp;There are currently **871** questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -2180,7 +2180,7 @@ Role – Ansible roles allows you to group resources based on certain functional
 
 Ansible is:
 
-* Agent-less
+* Agentless
 * Minimal run requirements (Python & SSH) and simple to use
 * Default mode is "push" (it supports also pull)
 * Focus on simpleness and ease-of-use
@@ -2188,6 +2188,10 @@ Ansible is:
 
 <details>
 <summary>What kind of automation you wouldn't do with Ansible and why?</summary><br><b>
+
+While it's possible to provision resources with Ansible it might not be the best choice for doing so as Ansible doesn't
+save state by default and a task that creates 5 instances, when executed again will create additional 5 instances (unless
+additional check is implemented).
 </b></details>
 
 <details>
@@ -2323,6 +2327,18 @@ When given a written code, always inspect it thoroughly. If your answer is “th
             state: present
         with_items: "{{ package_list }}"
         when: mario_f.stat.exists
+```
+</b></details>
+
+<details>
+<summary>Write a single task that verifies all the files in files_list variable exist on the host</summary><br><b>
+
+```
+- name: Ensure all files exist
+  assert:
+    that:
+      - item.stat.exists
+  loop: "{{ files_list }}"
 ```
 </b></details>
 
@@ -2471,6 +2487,10 @@ Gotenks = 32
 <summary>What is Molecule? How it works?</summary><br><b>
 </b></details>
 
+<details>
+<summary>You run Ansibe tests and you get "idempotence test failed". What does it mean? Why idempotence is important?</summary><br><b>
+</b></details>
+
 ## Terraform
 
 <a name="terraform-beginner"></a>
@@ -2574,7 +2594,7 @@ It's a resource which was successfully created but failed during provisioning. T
 
 <details>
 <summary>What <code>terraform taint</code> does?</summary><br><b>
-<code>terraform taint resource.id</code> manually marks the resource as tainted in the state file. So when you <code>terraform apply</code> the next time, the resource will be destroyed and recreated.
+<code>terraform taint resource.id</code> manually marks the resource as tainted in the state file. So when you run <code>terraform apply</code> the next time, the resource will be destroyed and recreated.
 </b></details>
 
 <details>
@@ -2771,10 +2791,15 @@ A common answer to this is to use [hadolint](https://github.com/hadolint/hadolin
 <summary>Explain what is Docker compose and what is it used for</summary><br><b>
 	
 Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.
+
+For example, you can use it to set up ELK stack where the services are: elasticsearch, logstash and kibana. Each running in its own container.
 </b></details>
 
 <details>
-<summary>What are the differences between Docker compose, Docker swarm and Kubernetes?</summary><br><b>
+<summary>Describe the process of using Docker Compose</summary><br><br>
+
+* Define the services you would like to run together in a docker-compose.yml file
+* Run `docker-compose up` to run the services
 </b></details>
 
 <details>
@@ -3070,7 +3095,7 @@ The average performance of the above algorithm is O(log n). Best performance can
   * Radix Sort</summary><br><b>
 </b></details>
 
-##### Data Structures & Types
+#### Data Structures & Types
 
 <details>
 <summary>Implement Stack in any language you would like</summary><br><b>
@@ -3078,6 +3103,10 @@ The average performance of the above algorithm is O(log n). Best performance can
 
 <details>
 <summary>Implement Hash table in any language you would like</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Integer Overflow? How is it handled?</summary><br><b>
 </b></details>
 
 <a name="coding-advanced"></a>
@@ -5904,6 +5933,12 @@ From the official docs:
 </b></details>
 
 <details>
+<summary>You see in Kibana, after clicking on Discover, "561 hits". What does it mean?</summary><br><b>
+
+Total number of documents matching the search results. If not query used then simply the total number of documents.
+</b></details>
+
+<details>
 <summary>What visualization types are supported/included in Kibana?</summary><br><b>
 </b></details>
 
@@ -6038,7 +6073,29 @@ It's an architecture in which data is and retrieved from a single, non-shared, s
 
 ## General
 
-##### HTTP
+<details>
+<summary>Define or Explain what is an API</summary><br><b>
+
+I like this definition from [here](https://blog.christianposta.com/microservices/api-gateways-are-going-through-an-identity-crisis):
+
+"An explicitly and purposefully defined interface designed to be invoked over a network that enables software developers to get programmatic access to data and functionality within an organization in a controlled and comfortable way."
+</b></details>
+
+#### Jira
+
+<details>
+<summary>Explain/Demonstrate the following types in Jira:
+
+  * Epic
+  * Story
+  * Task</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a project in Jira?</summary><br><b>
+</b></details>
+
+#### HTTP
 
 <details>
 <summary>What is HTTP?</summary><br><b>
