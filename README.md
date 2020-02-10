@@ -2532,7 +2532,7 @@ A configuration is a root module along with a tree of child modules that are cal
 
 <details>
 <summary>What is HCL?</summary><br><b>
-HCL stands for Hashicorp Conviguration Language. It is the language Hashicorp made to use as the configuration language for a number of its tools, including terraform.
+HCL stands for Hashicorp Configuration Language. It is the language Hashicorp made to use as the configuration language for a number of its tools, including terraform.
 </b></details>
 
 <details>
