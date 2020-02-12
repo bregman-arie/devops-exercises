@@ -2807,6 +2807,14 @@ For example, you can use it to set up ELK stack where the services are: elastics
 </b></details>
 
 <details>
+<summary>Where can you store Docker images?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Docker Hub?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is the difference between Docker Hub and Docker cloud?</summary><br><b>
 
 Docker Hub is a native Docker registry service which allows you to run pull
@@ -2818,8 +2826,7 @@ Swarm management which means you can create new swarms in Docker Cloud.
 </b></details>
 
 <details>
-<summary>Where Docker images are stored?</summary><br><b>
-In DockerHub
+<summary>What is Docker Repository?</summary><br><b>
 </b></details>
 
 <details>
@@ -5956,6 +5963,10 @@ Total number of documents matching the search results. If not query used then si
 <summary>What is Filebeat?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What are filebeat modules?</summary><br><b>
+</b></details>
+
 <a name="elastic-advanced"></a>
 #### :star: Advnaced
 
@@ -6366,6 +6377,10 @@ pain points they are dealing with <br>
 
 This is a great way to figure how managers deal with unplanned work, and how good they are at 
 setting expectations with projects.
+</b></details>
+
+<details>
+<summary>Why I should NOT join you? (or 'what you don't like about working here?')</summary><br><b>
 </b></details>
 
 <details>
