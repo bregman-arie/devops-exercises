@@ -2532,7 +2532,7 @@ A configuration is a root module along with a tree of child modules that are cal
 
 <details>
 <summary>What is HCL?</summary><br><b>
-HCL stands for Hashicorp Conviguration Language. It is the language Hashicorp made to use as the configuration language for a number of its tools, including terraform.
+HCL stands for Hashicorp Configuration Language. It is the language Hashicorp made to use as the configuration language for a number of its tools, including terraform.
 </b></details>
 
 <details>
@@ -4772,6 +4772,11 @@ func main() {
 }
 ```
 </summary><br><b>
+
+Constants in Go can only be declared using constant expressions.
+But `x`, `y` and their sum is variable.
+<br>
+<code>const initializer x + y is not a constant</code>
 </b></details>
 
 <details>
@@ -4795,10 +4800,21 @@ func main() {
 }
 ```
 </summary><br><b>
+
+Go's iota identifier is used in const declarations to simplify definitions of incrementing numbers. Because it can be used in expressions, it provides a generality beyond that of simple enumerations.
+<br>
+`x` and `y` in the first iota group, `z` in the second.
+<br>
+[Iota page in Go Wiki](https://github.com/golang/go/wiki/Iota)
 </b></details>
 
 <details>
 <summary>What _ is used for in Go?</summary><br><b>
+	
+It avoids having to declare all the variables for the returns values.
+It is called the [blank identifier](https://golang.org/doc/effective_go.html#blank).
+<br>
+[answer in SO](https://stackoverflow.com/questions/27764421/what-is-underscore-comma-in-a-go-declaration#answer-27764432)
 </b></details>
 
 <details>
@@ -4819,6 +4835,8 @@ func main() {
 }
 ```
 </summary><br><b>
+
+Since the first iota is declared with the value `3` (` + 3`), the next one has the value `4`
 </b></details>
 
 ## Mongo
