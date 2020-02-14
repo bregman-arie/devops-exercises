@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **834** questions
+:bar_chart: &nbsp;There are currently **871** questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -60,6 +60,7 @@
   <tr>
     <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
     <td align="center"><a href="#databases"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
+    <td align="center"><a href="#regex"><b>Regex</b></a><br /><sub><a href="#regex-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>Design</b></a></td>
     <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
     <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
@@ -169,10 +170,10 @@ In your answer you can mention one or more of the following:
 <summary>Explain mutable vs. immutable infrastructure</summary><br><b>
 
 In mutable infrastructure paradigm, changes are applied on top of the existing infrastructure and over time
-the infrastructure builds up a history of changes. Ansible, Puppet and Chef are examples to tools which
+the infrastructure builds up a history of changes. Ansible, Puppet and Chef are examples of tools which
 follow mutable infrastructure paradigm.
 
-In immutable infrastructure paradigm, every change is actually new infrastructure. So a change
+In immutable infrastructure paradigm, every change is actually a new infrastructure. So a change
 to a server will result in a new server instead of updating it. Terraform is an example of technology
 which follows the immutable infrastructure paradigm.
 </b></details>
@@ -990,14 +991,6 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 <summary>What is the difference between TCP and UDP?</summary><br><b>
 	
 TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for streaming services.
-</b></details>
-
-<details>
-<summary>True or False? TCP is better than UDP</summary><br><b>
-
-False. 
-UDP is faster, simpler and more efficient than TCP
-
 </b></details>
 
 <details>
@@ -2187,7 +2180,7 @@ Role – Ansible roles allows you to group resources based on certain functional
 
 Ansible is:
 
-* Agent-less
+* Agentless
 * Minimal run requirements (Python & SSH) and simple to use
 * Default mode is "push" (it supports also pull)
 * Focus on simpleness and ease-of-use
@@ -2195,6 +2188,10 @@ Ansible is:
 
 <details>
 <summary>What kind of automation you wouldn't do with Ansible and why?</summary><br><b>
+
+While it's possible to provision resources with Ansible it might not be the best choice for doing so as Ansible doesn't
+save state by default and a task that creates 5 instances, when executed again will create additional 5 instances (unless
+additional check is implemented).
 </b></details>
 
 <details>
@@ -2248,6 +2245,14 @@ spun up and shut down, without you tracking every change in these sources.
 </b></details>
 
 <details>
+<summary>What the "become" directive used for in Ansible?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are facts? How to see all the facts of a certain host?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What would be the result of the following play?</summary><br><b>
 
 ```
@@ -2265,7 +2270,7 @@ When given a written code, always inspect it thoroughly. If your answer is “th
 </b></details>
 
 <details>
-<summary>What would be the result of running the following task?
+<summary>What would be the result of running the following task? How to fix it?
 
 ```
 - hosts: localhost
@@ -2284,6 +2289,18 @@ When given a written code, always inspect it thoroughly. If your answer is “th
 
 <details>
 <summary>Explain the directory layout of an Ansible role</summary><br><b>
+</b></details>
+
+<details>
+<summary>What 'blocks' are used for in Ansible?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you handle errors in Ansible?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You would like to run a certain command if a task fails. How would you achieve that?</summary><br><b>
 </b></details>
 
 <details>
@@ -2310,6 +2327,18 @@ When given a written code, always inspect it thoroughly. If your answer is “th
             state: present
         with_items: "{{ package_list }}"
         when: mario_f.stat.exists
+```
+</b></details>
+
+<details>
+<summary>Write a single task that verifies all the files in files_list variable exist on the host</summary><br><b>
+
+```
+- name: Ensure all files exist
+  assert:
+    that:
+      - item.stat.exists
+  loop: "{{ files_list }}"
 ```
 </b></details>
 
@@ -2401,18 +2430,14 @@ A full list can be found at the link above. Also, note there is a significant di
 <details>
 <summary>Write a filter to capitalize a string</summary><br><b>
 
-<code>
+```
 def cap(self, string):
     return string.capitalize()
-</code>
+```
 </b></details>
 
 <details>
 <summary>You would like to run a task only if previous task changed anything. How would you achieve that?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you test your Ansible based projects?</summary><br><b>
 </b></details>
 
 <details>
@@ -2450,6 +2475,20 @@ Gotenks = 32
     - { regexp: '^Trunks', line: 'Trunks = 40' }
     ...
 ```
+</b></details>
+
+#### Ansible Testing
+
+<details>
+<summary>How do you test your Ansible based projects?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Molecule? How it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You run Ansibe tests and you get "idempotence test failed". What does it mean? Why idempotence is important?</summary><br><b>
 </b></details>
 
 ## Terraform
@@ -2493,7 +2532,7 @@ A configuration is a root module along with a tree of child modules that are cal
 
 <details>
 <summary>What is HCL?</summary><br><b>
-HCL stands for Hashicorp Conviguration Language. It is the language Hashicorp made to use as the configuration language for a number of its tools, including terraform.
+HCL stands for Hashicorp Configuration Language. It is the language Hashicorp made to use as the configuration language for a number of its tools, including terraform.
 </b></details>
 
 <details>
@@ -2555,6 +2594,7 @@ It's a resource which was successfully created but failed during provisioning. T
 
 <details>
 <summary>What <code>terraform taint</code> does?</summary><br><b>
+<code>terraform taint resource.id</code> manually marks the resource as tainted in the state file. So when you run <code>terraform apply</code> the next time, the resource will be destroyed and recreated.
 </b></details>
 
 <details>
@@ -2751,10 +2791,15 @@ A common answer to this is to use [hadolint](https://github.com/hadolint/hadolin
 <summary>Explain what is Docker compose and what is it used for</summary><br><b>
 	
 Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.
+
+For example, you can use it to set up ELK stack where the services are: elasticsearch, logstash and kibana. Each running in its own container.
 </b></details>
 
 <details>
-<summary>What are the differences between Docker compose, Docker swarm and Kubernetes?</summary><br><b>
+<summary>Describe the process of using Docker Compose</summary><br><br>
+
+* Define the services you would like to run together in a docker-compose.yml file
+* Run `docker-compose up` to run the services
 </b></details>
 
 <details>
@@ -3050,7 +3095,7 @@ The average performance of the above algorithm is O(log n). Best performance can
   * Radix Sort</summary><br><b>
 </b></details>
 
-##### Data Structures & Types
+#### Data Structures & Types
 
 <details>
 <summary>Implement Stack in any language you would like</summary><br><b>
@@ -3058,6 +3103,10 @@ The average performance of the above algorithm is O(log n). Best performance can
 
 <details>
 <summary>Implement Hash table in any language you would like</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Integer Overflow? How is it handled?</summary><br><b>
 </b></details>
 
 <a name="coding-advanced"></a>
@@ -3670,7 +3719,7 @@ some_dict1.update(some_dict2)
 [Solution](coding/python/binary_search.py)
 </b></details>
 
-#### Files
+#### Python Files
 
 <details>
 <summary>How to write to a file?</summary><br><b>
@@ -3694,10 +3743,48 @@ with open('file.txt', 'w') as file:
 </b></details>
 
 <details>
+<summary>Print a random line of a given file</summary><br><b>
+</b></details>
+
+<details>
+<summary>Print every 3rd line of a given file</summary><br><b>
+</b></details>
+
+<details>
+<summary>Print the number of lines in a given file</summary><br><b>
+</b></details>
+
+<details>
+<summary>Print the number of of words in a given file</summary><br><b>
+</b></details>
+
+<details>
 <summary>Can you write a function which will print all the file in a given directory? including sub-directories</summary><br><b>
 </b></details>
 
-#### Regex
+#### Python OS
+
+<details>
+<summary>How to print current working directory?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Given the path <code>/dir1/dir2/file1</code> print the file name (file1)</summary><br><b>
+</b></details>
+
+<details>
+<summary>Given the path <code>/dir1/dir2/file1</code> print the name of the directory where the file resides (dir2)</summary><br><b>
+</b></details>
+
+<details>
+<summary>Given the path <code>/dir1/dir2/file1</code> print the path without the file name (/dir1/dir2)</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you execute shell commands using Python?</summary><br><b>
+</b></details>
+
+#### Python Regex
 
 <details>
 <summary>How do you perform regular expressions related operations in Python? (match patterns, substitute strings, etc.)</summary><br><b>
@@ -4678,6 +4765,11 @@ func main() {
 }
 ```
 </summary><br><b>
+
+Constants in Go can only be declared using constant expressions.
+But `x`, `y` and their sum is variable.
+<br>
+<code>const initializer x + y is not a constant</code>
 </b></details>
 
 <details>
@@ -4701,10 +4793,21 @@ func main() {
 }
 ```
 </summary><br><b>
+
+Go's iota identifier is used in const declarations to simplify definitions of incrementing numbers. Because it can be used in expressions, it provides a generality beyond that of simple enumerations.
+<br>
+`x` and `y` in the first iota group, `z` in the second.
+<br>
+[Iota page in Go Wiki](https://github.com/golang/go/wiki/Iota)
 </b></details>
 
 <details>
 <summary>What _ is used for in Go?</summary><br><b>
+	
+It avoids having to declare all the variables for the returns values.
+It is called the [blank identifier](https://golang.org/doc/effective_go.html#blank).
+<br>
+[answer in SO](https://stackoverflow.com/questions/27764421/what-is-underscore-comma-in-a-go-declaration#answer-27764432)
 </b></details>
 
 <details>
@@ -4725,8 +4828,149 @@ func main() {
 }
 ```
 </summary><br><b>
+
+Since the first iota is declared with the value `3` (` + 3`), the next one has the value `4`
 </b></details>
 
+<details>
+<summary>What will be the output of the following block of code?:
+
+```
+package main
+ 
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+ 
+func main() {
+	var wg sync.WaitGroup
+	
+	wg.Add(1)
+	go func() {
+		time.Sleep(time.Second * 2)
+		fmt.Println("1")
+		wg.Done()
+	}()
+
+	go func() {
+		fmt.Println("2")
+	}()
+
+	wg.Wait()
+	fmt.Println("3")
+}
+```
+</summary><br><b>
+
+Output: 2 1 3
+
+[Aritcle about sync/waitgroup](https://tutorialedge.net/golang/go-waitgroup-tutorial/)
+
+[Golang package sync](https://golang.org/pkg/sync/)
+</b></details>
+
+<details>
+<summary>What will be the output of the following block of code?:
+
+```
+package main
+
+import (
+	"fmt"
+)
+
+func mod1(a []int) {
+	for i := range a {
+		a[i] = 5
+	}
+	
+	fmt.Println("1:", a)
+}
+
+func mod2(a []int) {
+	a = append(a, 125) // !
+	
+	for i := range a {
+		a[i] = 5
+	}
+	
+	fmt.Println("2:", a)
+}
+
+func main() {
+	sl := []int{1, 2, 3, 4}
+	mod1(s1)
+	fmt.Println("1:", s1)
+
+	s2 := []int{1, 2, 3, 4}
+	mod2(s2)
+	fmt.Println("2:", s2)
+}
+```
+</summary><br><b>
+
+Output: <code><br>
+1 [5 5 5 5]<br>
+1 [5 5 5 5]<br>
+2 [5 5 5 5 5]<br>
+2 [1 2 3 4]<br>
+</code>
+
+In `mod1` a is link, and when we're using `a[i]`, we're changing `s1` value to. 
+But in `mod2`, `append` creats new slice, and we're changing only `a` value, not `s2`.
+
+[Aritcle about arrays](https://golangbot.com/arrays-and-slices/),
+[Blog post about `append`](https://blog.golang.org/slices)
+</b></details>
+
+<details>
+<summary>What will be the output of the following block of code?:
+
+```
+package main
+
+import (
+	"container/heap"
+	"fmt"
+)
+
+// An IntHeap is a min-heap of ints.
+type IntHeap []int
+
+func (h IntHeap) Len() int           { return len(h) }
+func (h IntHeap) Less(i, j int) bool { return h[i] < h[j] }
+func (h IntHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+
+func (h *IntHeap) Push(x interface{}) {
+	// Push and Pop use pointer receivers because they modify the slice's length,
+	// not just its contents.
+	*h = append(*h, x.(int))
+}
+
+func (h *IntHeap) Pop() interface{} {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[0 : n-1]
+	return x
+}
+
+func main() {
+	h := &IntHeap{4, 8, 3, 6}
+	heap.Init(h)
+	heap.Push(h, 7)
+  
+  fmt.Println((*h)[0])
+}
+```
+</summary><br><b>
+
+Output: 3
+
+[Golang container/heap package](https://golang.org/pkg/container/heap/)
+</b></details>
 ## Mongo
 
 <a name="mongo-beginner"></a>
@@ -5709,6 +5953,10 @@ The most used projects are the Elasticserach, Logstash and Kibana. Also known as
 5. The user creates a dashboard which composed out of the visualization created earlier
 </b></details>
 
+<details>
+<summary>You are running an app which outputs several log files (without timestamps). What do you do in order to process the information they include and display it in Kibana? you can ask for additional information if required for answering this question</summary><br><b>
+</b></details>
+
 ##### Elasticsearch
 
 <details>
@@ -5839,6 +6087,12 @@ From the official docs:
 From the official docs:
 
 "Kibana is an open source analytics and visualization platform designed to work with Elasticsearch. You use Kibana to search, view, and interact with data stored in Elasticsearch indices. You can easily perform advanced data analysis and visualize your data in a variety of charts, tables, and maps."
+</b></details>
+
+<details>
+<summary>You see in Kibana, after clicking on Discover, "561 hits". What does it mean?</summary><br><b>
+
+Total number of documents matching the search results. If not query used then simply the total number of documents.
 </b></details>
 
 <details>
@@ -5976,7 +6230,29 @@ It's an architecture in which data is and retrieved from a single, non-shared, s
 
 ## General
 
-##### HTTP
+<details>
+<summary>Define or Explain what is an API</summary><br><b>
+
+I like this definition from [here](https://blog.christianposta.com/microservices/api-gateways-are-going-through-an-identity-crisis):
+
+"An explicitly and purposefully defined interface designed to be invoked over a network that enables software developers to get programmatic access to data and functionality within an organization in a controlled and comfortable way."
+</b></details>
+
+#### Jira
+
+<details>
+<summary>Explain/Demonstrate the following types in Jira:
+
+  * Epic
+  * Story
+  * Task</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a project in Jira?</summary><br><b>
+</b></details>
+
+#### HTTP
 
 <details>
 <summary>What is HTTP?</summary><br><b>
@@ -6359,6 +6635,44 @@ A single data source (at least usually) which is stored in a raw format.
 
 <details>
 <summary>What is OLAP (Online Analytical Processing)?</summary><br><b>
+</b></details>
+
+## Regex
+
+Given a text file, perform the following exercises
+
+#### Extract
+
+<details>
+<summary>Extract all the numbers</summary><br><b>
+</b></details>
+
+<details>
+<summary>Extract the first word of each line</summary><br><b>
+
+Bonus: extract the last word of each line
+</b></details>
+
+<details>
+<summary>Extract all the IP addresses</summary><br><b>
+</b></details>
+
+<details>
+<summary>Extract dates in the format of yyyy-mm-dd or yyyy-dd-mm</summary><br><b>
+</b></details>
+
+<details>
+<summary>Extract email addresses</summary><br><b>
+</b></details>
+
+#### Replace
+
+<details>
+<summary>Replace tabs with four spaces</summary><br><b>
+</b></details>
+
+<details>
+<summary>Replace 'red' with 'green'</summary><br><b>
 </b></details>
 
 ## Design
