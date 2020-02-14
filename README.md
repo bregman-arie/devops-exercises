@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **871** questions
+:bar_chart: &nbsp;There are currently **878** questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -400,7 +400,7 @@ You can describe the UI way to add new slaves but better to explain how to do in
 <summary>How would you implement an option of a starting a build from a certain stage and not from the beginning?</summary><br><b>
 </b></details>
 
-##### Jenkins Dev
+#### Jenkins Dev
 
 <details>
 <summary>Do you have experience with developing a Jenkins plugin? Can you describe this experience?</summary><br><b>
@@ -408,6 +408,14 @@ You can describe the UI way to add new slaves but better to explain how to do in
 
 <details>
 <summary>Have you written Jenkins scripts? If yes, what for and how they work?</summary><br><b>
+</b></details>
+
+#### Jenkins Integration
+
+<details>
+<summary>How would you collect logs from Jenkins builds (not master) and display them to user via Kibana? Describe the process, components, etc.</summary><br>
+<img src="images/jenkins/jenkins-to-kibana.png" width="621x;" height="171px;"/>
+</summary><br><b>
 </b></details>
 
 ## Cloud 
@@ -5708,8 +5716,6 @@ HTTP Header Injection vulnerabilities occur when user input is insecurely includ
 <summary>Explain what is Buffer Overflow</summary><br><b>
 
 A buffer overflow (or buffer overrun) occurs when the volume of data exceeds the storage capacity of the memory buffer. As a result, the program attempting to write the data to the buffer overwrites adjacent memory locations.
-
-
 </b></details>
 
 ##### Containers
@@ -6642,6 +6648,7 @@ Below you can find several exercises
 
 * [Writing a Dockerfile and running a container](exercises/write_dockerfile_run_container.md)
 * [Elasticsearch & Kibana on AWS](exercises/elk_kibana_aws.md)
+* [ELK & Filebeat](exercises/eflk.md)
 * [Ansible, Minikube and Docker](exercises/ansible_minikube_docker.md)
 * [Cloud Slack bot](exercises/cloud_slack_bot.md)
 * [Jenkins: writing scripts](exercises/jenkins_scripts.md)
