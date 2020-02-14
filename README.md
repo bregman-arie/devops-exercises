@@ -315,6 +315,11 @@ Note: cross-dependency is when you have two or more changes to separate projects
 
 <details>
 <summary>What is Jenkins? What have you used it for?</summary><br><b>
+
+Jenkins is an open source automation tool written in Java with plugins built for Continuous Integration purpose. Jenkins is used to build and test your software projects continuously making it easier for developers to integrate changes to the project, and making it easier for users to obtain a fresh build. It also allows you to continuously deliver your software by integrating with a large number of testing and deployment technologies.
+
+Jenkins integrates development life-cycle processes of all kinds, including build, document, test, package, stage, deploy, static analysis and much more.
+
 </b></details>
 
 <details>
