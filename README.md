@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **878** questions
+:bar_chart: &nbsp;There are currently **881** questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -413,7 +413,7 @@ You can describe the UI way to add new slaves but better to explain how to do in
 #### Jenkins Integration
 
 <details>
-<summary>How would you collect logs from Jenkins builds (not master) and display them to user via Kibana? Describe the process, components, etc.</summary><br>
+<summary>How would you collect logs from Jenkins builds (not master) and display them to user via Kibana? Describe the process, components, etc.<br>
 <img src="images/jenkins/jenkins-to-kibana.png" width="621x;" height="171px;"/>
 </summary><br><b>
 </b></details>
@@ -1924,6 +1924,14 @@ fork() is used for creating a new process. It does so by cloning the calling pro
 </b></details>
 
 <details>
+<summary>What system call is used for listing files?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What system call is used for creating a new process?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What are the differences between exec() and fork()?</summary><br><b>
 </b></details>
 
@@ -1993,11 +2001,7 @@ These system calls are reading the file <code>/my/file</code> and 5 is the file 
 </b></details>
 
 <details>
-<summary>What system call is used for listing files?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What system call is used for creating a new process?</summary><br><b>
+<summary>Describe three different ways to remove a file (or its content)</summary><br><b>
 </b></details>
 
 <details>
