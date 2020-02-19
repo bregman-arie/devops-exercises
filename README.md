@@ -3249,6 +3249,10 @@ if char == "a" or char == "y" or  char == "o" or char == "e" or char =="u" or ch
 </summary><br><b>
 </b></details>
 
+```
+if lower(input("Insert a character: ")[0]) in "aieou":
+    print("It's a vowel!")
+```
 <details>
 <summary>Explain inheritance and how to use it in Python</summary><br><b>
 
