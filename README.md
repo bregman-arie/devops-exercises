@@ -3247,6 +3247,18 @@ if char == "a" or char == "y" or  char == "o" or char == "e" or char =="u" or ch
     print("It's a vowel!")
 ```
 </summary><br><b>
+
+```
+if lower(input("Insert a character: ")[0]) in "aieou": # Takes care of multiple characters and small/Capital cases
+    print("It's a vowel!")
+```
+OR
+```
+char = input("Insert a character: ") # For readablity
+if lower(char[0]) in "aieou": # Takes care of multiple characters and separate cases
+    print("It's a vowel!")
+```
+
 </b></details>
 
 <details>
