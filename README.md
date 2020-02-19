@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **881** questions
+:bar_chart: &nbsp;There are currently **900** questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -1057,6 +1057,10 @@ Systems keep an ARP look-up table where they store information about what IP add
 </b></details>
 
 <details>
+<summary>What happens if you send a packet that is bigger than the MTU?</summary><br><b>
+</b></details>
+
+<details>
 <summary>True or False?. Ping is using UDP because it doesn't care about reliable connection</summary><br><b>
 </b></details>
 
@@ -1070,14 +1074,6 @@ Systems keep an ARP look-up table where they store information about what IP add
 
 <details>
 <summary>What is NAT? How it works?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is latency?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is bandwidth?</summary><br><b>
 </b></details>
 
 <details>
@@ -1951,6 +1947,10 @@ If wait is not used by a parent process then a child process might become a zomb
 <summary>What execve() does?</summary><br><b>
 
 Executes a program. The program is passed as a filename (or path) and must be a binary executable or a script.
+</b></details>
+
+<details>
+<summary>What is the return value of malloc?</summary><br><b>
 </b></details>
 
 <details>
@@ -3239,6 +3239,17 @@ The reason is that the two created empty list are different objects. `x is y` on
 </b></details>
 
 <details>
+<summary>Improve the following code:
+
+```
+char = input("Insert a character: ")
+if char == "a" or char == "y" or  char == "o" or char == "e" or char =="u" or char == "i":
+    print("It's a vowel!")
+```
+</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain inheritance and how to use it in Python</summary><br><b>
 
 ```
@@ -3516,6 +3527,12 @@ print("{0:.3f}".format(sum(li)/len(li)))
 </b></details>
 
 #### Python Lists
+
+<details>
+<summary>How to add the items of [1, 2, 3] to the list [4, 5, 6]?</summary><br><b>
+x = [4, 5, 6]
+x.extend([1, 2, 3])
+</b></details>
 
 <details>
 <summary>How do you get the maximum and minimum values from a list? How to get the last item from a list?</summary><br><b>
@@ -5956,27 +5973,25 @@ CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipula
 The Elastic Stack consists of:
 
   * Elasticsearch
-  * Elastic Hadoop
   * Kibana
   * Logstash
   * Beats
+  * Elastic Hadoop
   * APM Server
 
 The most used projects are the Elasticserach, Logstash and Kibana. Also known as the ELK stack.
 </b></details>
 
 <details>
-<summary>Describe what happens from the moment the app logged some information until it's displayed to the user in the dashboard when the Elastic stack is used</summary><br><b>  
+<summary>Describe what happens from the moment the app logged some information until it's displayed to the user in a dashboard when the Elastic stack is used</summary><br><b>  
 
-1. The data logged by the application is sent to Elasticsearch
+The process may vary based on the chosen architecture:
+
+1. The data logged by the application is picked by filebeat and sent to logstash
+2. Logstash process the log based on the defined filters. Once done, the output is sent to Elasticsearch
 2. Elasticsearch stores the document it got and the document is indexed for quick future access
-3. Logstash processes the data
-4. The user creates visualizations which uses the index in elasticsearch and more specifically the data there (this is done in Kibana).
-5. The user creates a dashboard which composed out of the visualization created earlier
-</b></details>
-
-<details>
-<summary>You are running an app which outputs several log files (without timestamps). What do you do in order to process the information they include and display it in Kibana? you can ask for additional information if required for answering this question</summary><br><b>
+4. The user creates visualizations in Kibana which based on the indexed data
+5. The user creates a dashboard which composed out of the visualization created in the previous step
 </b></details>
 
 ##### Elasticsearch
@@ -6019,7 +6034,6 @@ As in NoSQL a Document is a JSON object which holds data on a unit in your app. 
 <summary>True or False? Elasticsearch indexes all data in every field and each indexed field has the same data structure for unified and quick query ability</summary><br><b>
 
 False.
-
 From the official docs:
 
 "Each indexed field has a dedicated, optimized data structure. For example, text fields are stored in inverted indices, and numeric and geo fields are stored in BKD trees."
@@ -6057,14 +6071,19 @@ This allows Elasticsearch to scale to an entire cluster of servers.
 
 In a network/cloud environment where failures can be expected any time, it is very useful and highly recommended to have a failover mechanism in case a shard/node somehow goes offline or disappears for whatever reason.
 To this end, Elasticsearch allows you to make one or more copies of your index’s shards into what are called replica shards, or replicas for short.
-
-
 </b></details>
 
 <details>
 <summary>Can you explain Term Frequency & Document Frequency?</summary><br><b>
 
 Term Frequency is how often a term appears in a given document and Document Frequency is how often a term appears in all documents. They both are used for determining the relevance of a term by calculating Term Frequency / Document Frequency.
+</b></details>
+
+<details>
+<summary>You check "Current Phase" under "Index lifecycle management" and you see it's set to "hot". What does it mean?</summary><br><b>
+
+"The index is actively being written to".
+More about the phases [here](https://www.elastic.co/guide/en/elasticsearch/reference/7.6/ilm-policy-definition.html)
 </b></details>
 
 ##### Query DSL
@@ -6098,7 +6117,29 @@ From the official docs:
 </b></details>
 
 <details>
-<summary>What are Logstash Codecs?</summary><br><b>
+<summary>What is grok?</summary><br><b>
+
+A logstash plugin which modifies information in one format and immerse it in another.
+</b></details>
+
+<details>
+<summary>How grok works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What grok patterns are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is `_grokparsefailure?`</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you test or debug grok patterns?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are Logstash Codecs? What codecs are there?</summary><br><b>
 </b></details>
 
 ##### Kibana
@@ -6133,6 +6174,10 @@ Total number of documents matching the search results. If not query used then si
 
 <details>
 <summary>What is Filebeat?</summary><br><b>
+</b></details>
+
+<details>
+<summary>If one is using ELK, is it a must to also use filebeat? In what scenarios it's useful to use filebeat?</summary><br><b>
 </b></details>
 
 <details>
@@ -6236,6 +6281,17 @@ MX (Mail Exchange) Specifies a mail exchange server for the domain, which allows
 According to Martin Kleppmann:
 
 "Many processes running on many machines...only message-passing via an unreliable network with variable delays, and the system may suffer from partial failures, unreliable clocks, and process pauses."
+
+Another definition: "Systems that are physically separated, but logically connected"
+</b></details>
+
+<details>
+<summary>What can cause a system to fail?</summary><br><b>
+
+* Network
+* CPU
+* Memory
+* Disk
 </b></details>
 
 <details>
@@ -6249,9 +6305,34 @@ According to the CAP theorem, it's not possible for a distributed data store to 
 </b></details>
 
 <details>
+<summary>What are the problems with the following design? How to improve it?<br>
+<img src="images/distributed/distributed_design_standby.png" width="500x;" height="350px;"/>
+</summary><br><b>
+1. The transition can take time. In other words, noticeable downtime.
+2. Standby server is a waste of resources - if first application server is running then the standby does nothing
+</b></details>
+
+<details>
+<summary>What are the problems with the following design? How to improve it?<br>
+<img src="images/distributed/distributed_design_lb.png" width="700x;" height="350px;"/>
+</summary><br><b>
+Issues:
+If load balancer dies , we lose the ability to communicate with the application.
+
+Ways to improve:
+* Add another load balancer
+* Use DNS A record for both load balancers
+* Use message queue
+</b></details>
+
+<details>
 <summary>What is "Shared-Nothing" architecture?</summary><br><b>
 
 It's an architecture in which data is and retrieved from a single, non-shared, source usually exclusively connected to one node as opposed to architectures where the request can get to one of many nodes and the data will be retrieved from one shared location (storage, memory, ...).
+</b></details>
+
+<details>
+<summary>Explain the Sidecar Pattern</summary><br><b>
 </b></details>
 
 ## General
@@ -6262,6 +6343,36 @@ It's an architecture in which data is and retrieved from a single, non-shared, s
 I like this definition from [here](https://blog.christianposta.com/microservices/api-gateways-are-going-through-an-identity-crisis):
 
 "An explicitly and purposefully defined interface designed to be invoked over a network that enables software developers to get programmatic access to data and functionality within an organization in a controlled and comfortable way."
+</b></details>
+
+<details>
+<summary>What is latency?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is bandwidth?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is throughput?</summary><br><b>
+</b></details>
+
+<details>
+<summary>When performing a search query, what is more important, latency or throughput? And how to assure that what managing global infrastructure?</summary><br><b>
+
+Latency. To have a good latency, a search query should be forwarded to the closest datacenter.
+</b></details>
+
+<details>
+<summary>When uploading a video, what is more important, latency or throughput? And how to assure that?</summary><br><b>
+
+Throughput. To have a good throughput, the upload stream should be routed to an underutilized link.
+</b></details>
+
+<details>
+<summary>What other considerations (except latency and throughput) are there when forwarding requests?</summary><br><b>
+
+* Keep caches updated (which means the request could be forwarded not to the closest datacenter)
 </b></details>
 
 #### Jira
@@ -6378,6 +6489,10 @@ TODO: explain what is actually a Cookie
 
 <details>
 <summary>What is an Application Load Balancer?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is DNS load balancing? What its advantages? When would you use it?</summary><br><b>
 </b></details>
 
 #### Random
@@ -6583,11 +6698,11 @@ Not only this will tell you what is expected from you, it will also provide big 
 ## Testing
 
 <details>
-<summary>What types of tests would you run for web application?</summary><br><b>
+<summary>What are unit tests?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What are unit tests?</summary><br><b>
+<summary>What types of tests would you run to test a web application?</summary><br><b>
 </b></details>
 
 <details>
@@ -6741,13 +6856,13 @@ Horizontal Scaling is the process of adding more resources that will be able han
 
 <details>
 <summary>How would you update each of the services in the following drawing without having app (foo.com) downtime?<br>
-<img src="images/design/cdn-no-downtime.png" width="200x;" height="300px;"/>
+<img src="images/design/cdn-no-downtime.png" width="300x;" height="400px;"/>
 </summary><br><b>
 </b></details>
 
 <details>
 <summary>What is the problem with the following architecture and how would you fix it?<br>
-<img src="images/design/producers_consumers_issue.png" width="300x;" height="200px;"/>
+<img src="images/design/producers_consumers_issue.png" width="400x;" height="300px;"/>
 </summary><br><b>
 
 The load on the producers or consumers may be high which will then cause them to hang or crash.<br>

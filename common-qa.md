@@ -9,8 +9,8 @@ It is also used sometimes (from what I've been told) to prepare for interviews b
 
 ### My goal is to prepare for a DevOps interview. How to do that?
 
-I've added a couple of suggestions here [here](prepare_for_interview.md)
-Feel free to contribute any ideas and insights
+I've added a couple of suggestions [here](prepare_for_interview.md)<br>
+Feel free to contribute any ideas and insights you have.
 
 ### How do I become a better DevOps Engineer?
 
