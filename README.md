@@ -2,13 +2,15 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **900** questions
+:bar_chart: &nbsp;There are currently **933** questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
 :thought_balloon: &nbsp;If you wonder "How to prepare for a DevOps interview?", you might want to read some of my suggestions [here](prepare_for_interview.md)
 
 :pencil: &nbsp;You can add more questions and exercises by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
+
+:books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
 ****
 
@@ -223,16 +225,14 @@ You should be able to explain those that you mention.
 It can be as simple as one Ansible (or other CM tool) task that runs periodically with Cron. In more advanced cases, perhaps a CI system.
 </b></details>
 
-##### SRE
-
-<details>
-<summary>Compare SRE to DevOps</summary><br><b>
-</b></details>
-
 <details>
 <summary>What is Reliability? How does it fit DevOps?</summary><br><b>
 
 Reliability, when used in DevOps context, is the ability of a system to recover from infrastructure failure or disruption. Part of it is also being able to scale based on your organization or team demands.
+</b></details>
+
+<details>
+<summary>Compare SRE to DevOps</summary><br><b>
 </b></details>
 
 <details>
@@ -250,7 +250,7 @@ One can argue whether it's per company definition or a global one but at least a
 </b></details>
 
 <details>
-<summary>What is a post-mortem meeting? Why is it important?</summary><br><b>
+<summary>What is a post-mortem meeting?</summary><br><b>
 </b></details>
 
 <details>
@@ -267,6 +267,18 @@ One can argue whether it's per company definition or a global one but at least a
 
 <details>
 <summary>What deployment strategies are you familiar with or have used?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You joined a team where everyone developing one project and the practice is to run tests locally on their workstation and push it to the repository if the tests passed. What is the problem with the process as it is now and how to improve it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain test-driven development (TDD)</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain agile software development</summary><br><b>
 </b></details>
 
 <a name="devops-advanced"></a>
@@ -837,13 +849,18 @@ Ethernet simply refers to the most common type of Local Area Network (LAN) used 
 </b></details>
 
 <details>
+<summary>What is TCP/IP?</summary><br><b>
+
+A set of protocols that define how two or more devices can communicate with each other.
+To learn more about TCP/IP, read [here](http://www.penguintutor.com/linux/basic-network-reference)
+</b></details>
+
+<details>
 <summary>What is a MAC address? What is it used for?</summary><br><b>
 
 A MAC address is a unique identification number or code used to identify individual devices on the network.
 
 Packets that are sent on the ethernet are always coming from a MAC address and sent to a MAC address. If a network adapter is receiving a packet, it is comparing the packet’s destination MAC address to the adapter’s own MAC address.
-
-
 
 </b></details>
 
@@ -883,11 +900,6 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
 | C             | 30                 | 2               | 255.255.255.252 | /30           |
 
 ```
-
-### 
-
-
-
 </b></details>
 
 <details>
@@ -905,6 +917,7 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
 - Data link: provides a link between two directly connected nodes (MAC is here)
 - Physical: the electrical and physical spec the data connection (Bits are here)
 
+You can read more about the OSI model in [penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference)
 </b></details>
 
 <details>
@@ -915,8 +928,19 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
   * Cables and electrical signals
   * MAC address
   * IP address
-  * Sessions between applications
+  * Terminate connections
   * 3 way handshake</summary><br><b>
+
+  * Error correction
+  * Packets routing - Network
+  * Cables and electrical signals - Physical
+  * MAC address - Data link
+  * IP address - Network
+  * Terminate connections - Session
+  * 3 way handshake - Transport
+</b></details>
+
+<details>
 </b></details>
 
 <details>
@@ -992,8 +1016,6 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 - A client node sends a SYN data packet over an IP network to a server on the same or an external network. The objective of this packet is to ask/infer if the server is open for new connections.
 - The target server must have open ports that can accept and initiate new connections. When the server receives the SYN packet from the client node, it responds and returns a confirmation receipt – the ACK packet or SYN/ACK packet.
 - The client node receives the SYN/ACK from the server and responds with an ACK packet.
-
-
 </b></details>
 
 <details>
@@ -1003,7 +1025,9 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 <details>
 <summary>What is the difference between TCP and UDP?</summary><br><b>
 	
-TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for streaming services.
+TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for services like streaming.
+
+[Penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference) provides a good explanation.
 </b></details>
 
 <details>
@@ -1125,6 +1149,10 @@ Systems keep an ARP look-up table where they store information about what IP add
 
 <details>
 <summary>What can you tell me about UDP packet format? What about TCP packet format? How is it different?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the exponential backoff algorithm? Where is it used?</summary><br><b>
 </b></details>
 
 <details>
@@ -6401,6 +6429,34 @@ Throughput. To have a good throughput, the upload stream should be routed to an 
 <summary>What is a project in Jira?</summary><br><b>
 </b></details>
 
+#### Kafka
+
+<details>
+<summary>What is Kafka?</summary><br><b>
+</b></details>
+
+<details>
+<summary>In Kafka, how to automatically balance brokers leadership of partitions in a cluster?
+
+  * Enable auto leader election and reduce the imbalance
+percentage ratio
+  * Manually rebalance by using kafkat
+  * Configure group.initial.rebalance.delay.ms to 3000
+  * All of the above
+</summary><br><b>
+</b></details>
+
+#### Cassandra
+
+<details>
+<summary>When running a cassandra cluster, how often do you need to run nodetool repair in order to keep the cluster consistent?
+
+  * Within the columnFamily GC-grace Once a week
+  * Less than the compacted partition minimum bytes
+  * Depended on the compaction strategy
+</summary><br><b>
+</b></details>
+
 #### HTTP
 
 <details>
@@ -6708,6 +6764,14 @@ Not only this will tell you what is expected from you, it will also provide big 
 </b></details>
 
 ## Testing
+
+<details>
+<summary>Explain white-box testing</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain black-box testing</summary><br><b>
+</b></details>
 
 <details>
 <summary>What are unit tests?</summary><br><b>

@@ -19,6 +19,7 @@ I don't have a definitive answer for this question, but what I feel works for me
 
   * Practice - doing DevOps tasks/work is probably the best way to gain experience and knowledge
   * Read - Read blogs, books, ... anything that can enrich you about DevOps
+  * Participate - there are great DevOps communities. I especially like [Reddit DevOps](https://www.reddit.com/r/devops). Visiting there, I learn quite a lot on different topics.
   * Share - This is one of the reasons I created this project. Primary goal was to help others but a secondary goal quickly became to learn more. By asking questions, you actually learn better a certain topic. Try it out, take a certain subject and try to come up with questions you would ask someone to test his/her skills.
 
 ### Why most of the questions don't have answers?
