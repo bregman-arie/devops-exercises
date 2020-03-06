@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **933** questions
+:bar_chart: &nbsp;There are currently **918** questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -189,7 +189,7 @@ which follows the immutable infrastructure paradigm.
 </b></details>
 
 <details>
-<summary>What is caching? How it works? Why is it important?</summary><br><b>
+<summary>What is caching? How does it works? Why is it important?</summary><br><b>
 </b></details>
 
 <details>
@@ -279,6 +279,10 @@ One can argue whether it's per company definition or a global one but at least a
 
 <details>
 <summary>Explain agile software development</summary><br><b>
+</b></details>
+
+<details>
+<summary>Is it right to say implementing or practicing DevOps leads to more secure software?</summary><br><b>
 </b></details>
 
 <a name="devops-advanced"></a>
@@ -483,7 +487,7 @@ The main idea behind serverless computing is that you don't need to manage the c
 It's important to note that:
 
 * Serverless Computing is still using servers. So saying there are no servers in serverless computing is completely wrong
-* Serverless Computing allows you to have different paying model. You basically pay only when your functions are running and not when the VM or containers are running as in other payment models
+* Serverless Computing allows you to have a different paying model. You basically pay only when your functions are running and not when the VM or containers are running as in other payment models
 </b></details>
 
 ## AWS
@@ -995,7 +999,7 @@ A router is a physical or virtual appliance that passes information between two 
 </b></details>
 
 <details>
-<summary>What is a proxy? How it works? What do we need it for?</summary><br><b>
+<summary>What is a proxy? How does it works? What do we need it for?</summary><br><b>
 
 A proxy server acts as a gateway between you and the internet. It’s an intermediary server separating end users from the websites they browse.
 
@@ -1007,7 +1011,7 @@ roxy servers provide varying levels of functionality, security, and privacy depe
 </b></details>
 
 <details>
-<summary>What is TCP? How it works? What is the 3 way handshake?</summary><br><b>
+<summary>What is TCP? How does it works? What is the 3 way handshake?</summary><br><b>
 
 TCP 3-way handshake or three-way handshake is a process which is used in a TCP/IP network to make a connection between server and client.
 
@@ -1043,7 +1047,7 @@ A default gateway serves as an access point or IP router that a networked comput
 </b></details>
 
 <details>
-<summary>What is ARP? How it works?</summary><br><b>
+<summary>What is ARP? How does it works?</summary><br><b>
 
 ARP stands for Address Resolution Protocol. When you try to ping an IP address on your local network, say 192.168.1.1, your system has to turn the IP address 192.168.1.1 into a MAC address. This involves using ARP to resolve the address, hence its name.
 
@@ -1057,11 +1061,11 @@ Systems keep an ARP look-up table where they store information about what IP add
 </b></details>
 
 <details>
-<summary>What is DHCP? How it works?</summary><br><b>
+<summary>What is DHCP? How does it works?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is SSL tunneling? How it works?</summary><br><b>
+<summary>What is SSL tunneling? How does it works?</summary><br><b>
 </b></details>
 
 <details>
@@ -1097,11 +1101,19 @@ Systems keep an ARP look-up table where they store information about what IP add
 </b></details>
 
 <details>
-<summary>What is NAT? How it works?</summary><br><b>
+<summary>What is NAT? How does it works?</summary><br><b>
 </b></details>
 
 <details>
 <summary>Which factors affect network performances</summary><br><b>
+</b></details>
+
+<details>
+<summary>What the terms "Data Plane" and "Control Plane" refer?</summary><br><b>
+
+The exact meaning is usually depends on the context but overall data plane refers to all the functions that forward packets and/or frames from one interface to another while control plane refers to all the functions that make use of routing protocols.
+
+There is also "Management Plane" which refers to monitoring and management functions.
 </b></details>
 
 <a name="network-advanced"></a>
@@ -1124,11 +1136,11 @@ Systems keep an ARP look-up table where they store information about what IP add
 </b></details>
 
 <details>
-<summary>What is GRE? How it works?</summary><br><b>
+<summary>What is GRE? How does it works?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is VXLAN? How it works?</summary><br><b>
+<summary>What is VXLAN? How does it works?</summary><br><b>
 </b></details>
 
 <details>
@@ -1347,7 +1359,7 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
-<summary>You get a call from someone claiming "my system is SLOW". What do yo do?</summary><br><b>
+<summary>You get a call from someone claiming "my system is SLOW". What do you do?</summary><br><b>
 
 * Check with `top` for anything unusual
 * Run `dstat -t` to check if it's related to disk or network.
@@ -1841,7 +1853,7 @@ You can specify one or more of the following:
 ##### Packaging
 
 <details>
-<summary>Do you have experience with packaging? Can you explain how it works?</summary><br><b>
+<summary>Do you have experience with packaging? Can you explain how does it works?</summary><br><b>
 </b></details>
 
 <details>
@@ -2211,7 +2223,7 @@ It's used by one entity until this entity decides to get rid of it. Take for exa
   * Role</summary><br><b>
 
 Task – a call to a specific Ansible module
-Module – the actual unit of code executed by Ansible on your own host or a remote host. Modules are indexed by category (database, file, network, …) and also referred as task plugins.
+Module – the actual unit of code executed by Ansible on your own host or a remote host. Modules are indexed by category (database, file, network, …) and also referred to as task plugins.
 
 Play – One or more tasks executed on a given host(s)
 
@@ -2529,7 +2541,7 @@ Gotenks = 32
 </b></details>
 
 <details>
-<summary>What is Molecule? How it works?</summary><br><b>
+<summary>What is Molecule? How does it works?</summary><br><b>
 </b></details>
 
 <details>
@@ -2542,7 +2554,7 @@ Gotenks = 32
 #### :baby: Beginner
 
 <details>
-<summary>Can you explain what is Terraform? How it works?</summary><br><b>
+<summary>Explain what Terraform is and how does it works</summary><br><b>
 
 Read [here](https://www.terraform.io/intro/index.html#what-is-terraform-)
 </b></details>
@@ -2908,13 +2920,13 @@ Because each container has its own writable container layer, and all changes are
 #### :baby: Beginner
 
 <details>
-<summary>What is Kubernetes? What use cases is it good for?</summary><br><b>
+<summary>What is Kubernetes? Why organizations are using it?</summary><br><b>
 
 Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
 
 To understand what Kubernetes is good for, let's look at some examples:
 
-* You would like to run a certain application in a container on multiple different locations. Sure, if it's 2-3 servers/locations, you can do it by yourself but it can be challenging to scale. Also, running them is not only running the container but also react on different events.
+* You would like to run a certain application in a container on multiple different locations. Sure, if it's 2-3 servers/locations, you can do it by yourself but it can be challenging to scale it up to additional multiple location.
 
 * Performing updates and changes across hundreds of containers
 
@@ -2929,6 +2941,10 @@ To understand what Kubernetes is good for, let's look at some examples:
 <summary>What is a Kubernetes Cluster?</summary><br><b>
 
 A cluster consists of a Master (which coordinates the cluster) and Nodes where the applications are running.
+</b></details>
+
+<details>
+<summary>Describe in detail what the following command does <code>kubectl create deployment kubernetes-httpd --image=httpd</code></summary><br><b>
 </b></details>
 
 <details>
@@ -3042,9 +3058,9 @@ Statements are instructions executed by the interpreter like variable assignment
 </b></details>
 
 <details>
-<summary>Are you familiar with SOLID design principals?</summary><br><b>
+<summary>Are you familiar with SOLID design principles?</summary><br><b>
 
-SOLID design principals are about:
+SOLID design principles are about:
 
 * Make it easier to extend the functionality of the system
 * Make the code more readable and easier to maintain
@@ -3087,7 +3103,7 @@ SOLID is:
 <details>
 <summary>Binary search:
 
-  * How it works?
+  * How does it works?
   * Can you implement it? (in any language you prefer)
   * What is the average performance of the algorithm you wrote?</summary><br><b>
 
@@ -5660,11 +5676,11 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 </b></details>
 
 <details>
-<summary>What is the L2 agent? How it works and what is it responsible for?</summary><br><b>
+<summary>What is the L2 agent? How does it works and what is it responsible for?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is the L3 agent? How it works and what is it responsible for?</summary><br><b>
+<summary>What is the L3 agent? How does it works and what is it responsible for?</summary><br><b>
 </b></details>
 
 <details>
@@ -5699,7 +5715,7 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 #### :baby: Beginner
 
 <details>
-<summary>Can you describe the DevSecOps core principals?</summary><br><b>
+<summary>Can you describe the DevSecOps core principals? (or what is DevSecOps)</summary><br><b>
 </b></details>
 
 <details>
@@ -5707,7 +5723,7 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 </b></details>
 
 <details>
-<summary>What security techniques are you familiar with?</summary><br><b>
+<summary>What security techniques are you familiar with? (or what security techniques you used in the past?)</summary><br><b>
 </b></details>
 
 <details>
@@ -5964,7 +5980,7 @@ CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipula
 #### :baby: Beginner
 
 <details>
-<summary>What is Puppet? How it works?</summary><br><b>
+<summary>What is Puppet? How does it works?</summary><br><b>
 </b></details>
 
 <details>
@@ -6071,6 +6087,13 @@ As in NoSQL a Document is a JSON object which holds data on a unit in your app. 
 </b></details>
 
 <details>
+<summary>You check the health of your elasticsearch cluster and it's red. What does it mean? What can cause the status to be yellow instead of green?</summary><br><b>
+
+Red means some data is unavailable.
+Yellow can be caused by running single node cluster instead of multi-node.
+</b></details>
+
+<details>
 <summary>True or False? Elasticsearch indexes all data in every field and each indexed field has the same data structure for unified and quick query ability</summary><br><b>
 
 False.
@@ -6124,6 +6147,25 @@ Term Frequency is how often a term appears in a given document and Document Freq
 
 "The index is actively being written to".
 More about the phases [here](https://www.elastic.co/guide/en/elasticsearch/reference/7.6/ilm-policy-definition.html)
+</b></details>
+
+<details>
+<summary>What this command does? <code>curl -X PUT "localhost:9200/customer/_doc/1?pretty" -H 'Content-Type: application/json' -d'{ "name": "John Doe" }'</code></summary><br><b>
+
+It creates customer index if it doesn't exists and adds a new document with the field name which is set to "John Dow". Also, if it's the first document it will get the ID 1.
+</b></details>
+
+<details>
+<summary>What will happen if you run the previous command twice? What about running it 100 times?</code></summary><br><b>
+
+1. If name value was different then it would update "name" to the new value
+2. In any case, it bumps version field by one
+</b></details>
+
+<details>
+<summary>What is the Bulk API? What would you use it for?</code></summary><br><b>
+
+Bulk API is used when you need to index multiple documents. For high number of documents it would be significantly faster to use rather than individual requests since there are less network roundtrips.
 </b></details>
 
 ##### Query DSL
@@ -6210,7 +6252,7 @@ Total number of documents matching the search results. If not query used then si
 <summary>Describe in detail how do you create a dashboard in Kibana</summary><br><b>
 </b></details>
 
-##### Beats
+#### Beats
 
 <details>
 <summary>What is Filebeat?</summary><br><b>
@@ -6372,7 +6414,7 @@ It's an architecture in which data is and retrieved from a single, non-shared, s
 </b></details>
 
 <details>
-<summary>Explain the Sidecar Pattern</summary><br><b>
+<summary>Explain the Sidecar Pattern (Or sidecar proxy)</summary><br><b>
 </b></details>
 
 ## General
@@ -6913,7 +6955,16 @@ Bonus: extract the last word of each line
 </b></details>
 
 <details>
-<summary>What are the advantages of micro-services architecture over a monolithic architecture?</summary><br><b>
+<summary>What are the advantages of microoservices architecture over a monolithic architecture?</summary><br><b>
+
+* Each of the services individually fail without escalating into an application-wide outage.
+* Each service can be developed and maintained by a separate team and this team can choose its own tools and coding language
+</b></details>
+
+<details>
+<summary>What's a service mesh?</summary><br><b>
+
+[This article](https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh) provides a great explanation.
 </b></details>
 
 #### Scalability
