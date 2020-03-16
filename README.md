@@ -6325,7 +6325,7 @@ A (Address) Maps a host name to an IP address. When a computer has multiple adap
 <details>
 <summary>What is a AAAA record?</summary><br><b>
 	
-An AAAA Record perform the same function as an A Record, but for an IPv6 Address
+An AAAA Record perform the same function as an A Record, but for an IPv6 Address.
 </b></details>
 
 <details>
