@@ -2125,6 +2125,10 @@ There are many ways to answer that. For those who look for simplicity, the book 
 "responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that"
 </b></details>
 
+<details>
+<summary>What is POSIX?</summary><br><b>
+</b></details>
+
 #### Processes
 
 <details>
