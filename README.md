@@ -6324,11 +6324,12 @@ In general the process is as follows:
 
 
 A (Address) Maps a host name to an IP address. When a computer has multiple adapter cards and IP addresses, it should have multiple address records.
-
 </b></details>
 
 <details>
 <summary>What is a AAAA record?</summary><br><b>
+	
+An AAAA Record performs the same function as an A Record, but for an IPv6 Address.
 </b></details>
 
 <details>
