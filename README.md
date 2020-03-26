@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **918** questions
+:bar_chart: &nbsp;There are currently **950** questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -204,6 +204,10 @@ Stateful applications depend on the storage to save state and data, typically da
 </b></details>
 
 <details>
+<summary>How a web server works?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain "Open Source"</summary><br><b>
 </b></details>
 
@@ -322,6 +326,13 @@ Note: cross-dependency is when you have two or more changes to separate projects
 
 <details>
 <summary>Have you contributed to an open source project? Tell me about this experience</summary><br><b>
+</b></details>
+
+<details>
+<summary>Are you familiar with "The Cathedral and the Bazaar"? Explain each of the models</summary><br><b>
+
+* Cathedral - source code released when software is released
+* Bazaar - source code is always available publicly
 </b></details>
 
 ## Jenkins
@@ -1202,6 +1213,7 @@ An open question. Answer based on your real experience. You can highlight one or
   * touch
   * man
   * nslookup or dig
+  * pwd
   * df</summary><br><b>
 
   * ls - list files and directories. You can highlight common flags like -d, -a, -l, ...
@@ -1213,7 +1225,18 @@ An open question. Answer based on your real experience. You can highlight one or
   * touch - update timestamps but common usage is to create files
   * man - reference manuals
   * nslookup or dig - query nameservers
+  * pwd - print working directory
   * df - provides info regarding file system disk space usage
+</b></details>
+
+<details>
+<summary>What each of the following commands does?
+
+  * cd ~
+  * cd
+  * cd ..
+  * cd .
+  * cd -</summary><br><b>
 </b></details>
 
 <details>
@@ -1282,7 +1305,11 @@ Using the `chmod` command.
 </b></details>
 
 <details>
-<summary>Explain what is setgid, setuid and sticky bit</summary><br><b>
+<summary>Explain what is setgid and setuid</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the purpose of sticky bit?</summary><br><b>
 </b></details>
 
 <details>
@@ -1714,6 +1741,10 @@ The ls executable is built for an incompatible architecture.
 </b></details>
 
 <details>
+<summary>What is escaping? What escape character is used for escaping?</summary><br><b>
+</b></details>
+
+<details>
 <summary>How would you split a 50 lines file into 2 files of 25 lines each?</summary><br><b>
 
 You can use the <code>split</code> command this way: <code>split -l 25 some_file</code>
@@ -1801,14 +1832,20 @@ Technically, yes.
 <summary>Which port is used in each of the following protocols?:
 
   * SSH
+  * SMTP
   * HTTP
   * DNS
   * HTTPS</summary><br><b>
 
   * SSH - 22
+  * SMTP - 35
   * HTTP - 80
   * DNS - 53
   * HTTPS - 443
+</b></details>
+
+<details>
+<summary>What is telnet and why is it a bad idea to use it in production? (or at all)</summary><br><b>
 </b></details>
 
 <details>
@@ -1868,6 +1905,14 @@ You can specify one or more of the following:
 <summary>How to know to which package a file on the system belongs to? Is it a problem if it doesn't belongs to a package?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Where repositories are stored? (based on the distribution you are using)</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an archive? How do you create one in Linux?</summary><br><b>
+</b></details>
+
 ##### Applications and Services
 
 <details>
@@ -1895,10 +1940,18 @@ Upstart: add Upstart init script at /etc/init/service.conf
 <summary>How to print the shared libraries required by a certain program? What is it useful for?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is CUPS?</summary><br><b>
+</b></details>
+
 ##### Users
 
 <details>
 <summary>How do you create users? Where user information is stored?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you change/set the password of a user?</summary><br><b>
 </b></details>
 
 <details>
@@ -1925,12 +1978,31 @@ Re-install the OS IS NOT the right answer :)
 <summary>What is sudo? How do you set it up?</summary><br><b>
 </b></details>
 
-#### Random and perhaps useless :)
+#### Random
 
 <details>
 <summary>Give 5 commands which are two letters long</summary><br><b>
 
 ls, wc, dd, df, du, ps, ip, cp, cd ...
+</b></details>
+
+<details>
+<summary>List three ways to print all the files in the current directory</summary><br><b>
+
+* ls
+* find .
+</b></details>
+
+<details>
+<summary>What is '|'? What is it used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You define x=2 in /etc/bashrc and x=6 ~/.bashrc you then login to the system. What would be the value of x?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "environment variables"</summary><br><b>
 </b></details>
 
 <details>
@@ -1947,6 +2019,14 @@ It's used in commands to mark the end of commands options. One common example is
 
 <details>
 <summary>What the <code>awk</code> command does? Have you used it? What for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What commands you can use for searching files and/or directories?</summary><br><b>
+
+  * find
+  * whereis
+  * locate
 </b></details>
 
 <a name="linux-advanced"></a>
@@ -2110,6 +2190,25 @@ This is a good article about the topic: https://ops.tips/blog/how-linux-creates-
 
 MemFree - The amount of unused physical RAM in your system
 MemAvailable - The amount of available memory for new workloads (without pushing system to use swap) based on MemFree, Active(file), Inactive(file), and SReclaimable.
+</b></details>
+
+#### Distribution
+
+<details>
+<summary>What is a Linux distribution?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What Linux distributions are you familiar with? List at least four?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are the components of a Linux distribution?</summary><br><b>
+
+* Kernel
+* Utilities
+* Services
+* Software/Packages Management
 </b></details>
 
 ## Operating System
@@ -3059,6 +3158,14 @@ Statements are instructions executed by the interpreter like variable assignment
 
 <details>
 <summary>What is Object Oriented Programming? Why is it important?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a compiler?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an interpreter?</summary><br><b>
 </b></details>
 
 <details>
@@ -5182,8 +5289,6 @@ as key-value pair, document-oriented, etc.
 
 /bin/bash is the most common shell used as default shell for user login of the linux system. The shell’s name is an acronym for Bourne-again shell. Bash can execute the vast majority of scripts and thus is widely used because it has more features, is well developed and better syntax.
 
-
-
 </b></details>
 
 <details>
@@ -5238,6 +5343,10 @@ If Python, then using pdb is very useful.
 <summary>How do you get input from the user in shell scripts?</summary><br><b>
 
 Using the keyword <code>read</code> so for example <code>read x</code> will wait for user input and will store it in the variable x.
+</b></details>
+
+<details>
+<summary>What is globbing?</summary><br><b>
 </b></details>
 
 <details>
@@ -5850,7 +5959,7 @@ You can test by using a stored procedure, so the application must be sanitize th
 </b></details>
 
 <details>
-<summary>Describe how do you secure public repositories</summary>
+<summary>Describe how do you secure public repositories</summary><br><b>
 </b></details>
 
 <details>
@@ -6039,13 +6148,40 @@ The Elastic Stack consists of:
   * Elastic Hadoop
   * APM Server
 
-The most used projects are the Elasticserach, Logstash and Kibana. Also known as the ELK stack.
+Elasticserach, Logstash and Kibana are also known as the ELK stack.
 </b></details>
 
 <details>
-<summary>Describe what happens from the moment the app logged some information until it's displayed to the user in a dashboard when the Elastic stack is used</summary><br><b>  
+<summary>Explain what is Elasticsearch</summary><br><b>
 
-The process may vary based on the chosen architecture:
+From the official [docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/documents-indices.html):
+
+"Elasticsearch is a distributed document store. Instead of storing information as rows of columnar data, Elasticsearch stores complex data structures that have been serialized as JSON documents"
+</b></details>
+
+<details>
+<summary>What is Logstash?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what beats are</summary><br><b>
+
+Beats are lightweight data shippers. These data shippers installed on the client where the data resides.
+Examples of beats: Filebeat, Metricbeat, Auditbeat. There are much more.<br>
+</b></details>
+
+<details>
+<summary>What is Kibana?</summary><br><b>
+
+From the official docs:
+
+"Kibana is an open source analytics and visualization platform designed to work with Elasticsearch. You use Kibana to search, view, and interact with data stored in Elasticsearch indices. You can easily perform advanced data analysis and visualize your data in a variety of charts, tables, and maps."
+</b></details>
+
+<details>
+<summary>Describe what happens from the moment an app logged some information until it's displayed to the user in a dashboard when the Elastic stack is used</summary><br><b>  
+
+The process may vary based on the chosen architecture and the processing you may want to apply to the logs. One possible workflow is:
 
 1. The data logged by the application is picked by filebeat and sent to logstash
 2. Logstash process the log based on the defined filters. Once done, the output is sent to Elasticsearch
@@ -6057,11 +6193,39 @@ The process may vary based on the chosen architecture:
 ##### Elasticsearch
 
 <details>
-<summary>Explain what is Elasticsearch</summary><br><b>
+<summary>What is a data node?</summary><br><b>
 
-From the official [docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/documents-indices.html):
+This is where data is stored and also where different processing takes place (e.g. when you search for a data).
+</b></details>
 
-"Elasticsearch is a distributed document store. Instead of storing information as rows of columnar data, Elasticsearch stores complex data structures that have been serialized as JSON documents"
+<details>
+<summary>What is a master node?</summary><br><b>
+
+Par of a master node responsibilites:
+  * Track the status of all the nodes in the cluster
+  * Verify replicas are working and the data is available from every data node.
+  * No hot nodes (no data node that works much harder than other nodes)
+
+While there can be multiple master nodes in reality only of them is the elected master node.
+</b></details>
+
+<details>
+<summary>What is an ingest node?</summary><br><b>
+
+A node which responsible for parsing the data. In case you don't use logstash then this node can recieve data from beats and parse it, similarly to how it can be parsed in Logstash.
+</b></details>
+
+<details>
+<summary>What is Coordinating node?</summary><br><b>
+
+A Coordinating node responsible for routing requests out and in to the cluser (data nodes).
+</b></details>
+
+<details>
+<summary>How data is stored in elasticsearch?</summary><br><b>
+
+* Data is stored in an index
+* The index is spread across the cluster using shards
 </b></details>
 
 <details>
@@ -6073,6 +6237,13 @@ You can choose to have one index to hold all the data of your app or have multip
 The official docs also offer a great explanation (in general, it's really good documentation, as every project should have):
 
 "An index can be thought of as an optimized collection of documents and each document is a collection of fields, which are the key-value pairs that contain your data"
+</b></details>
+
+<details>
+<summary>Explain Shards</summary><br><b>
+
+An index is split into shards and documents are hashed to a particular shard. Each shard may be on a different node in a cluster and each one of the shards is a self contained index.<br>
+This allows Elasticsearch to scale to an entire cluster of servers.
 </b></details>
 
 <details>
@@ -6124,13 +6295,6 @@ From the official docs:
 * You can optimize fields for partial matching
 * You can define custom formats of known fields (e.g. date)
 * You can perform language-specific analysis
-</b></details>
-
-<details>
-<summary>Explain Shards</summary><br><b>
-
-An index is split into shards and documents are hashed to a particular shard. Each shard may be on a different node in a cluster and each one of the shards is a self contained index.<br>
-This allows Elasticsearch to scale to an entire cluster of servers.
 </b></details>
 
 <details>
@@ -6231,17 +6395,21 @@ A logstash plugin which modifies information in one format and immerse it in ano
 ##### Kibana
 
 <details>
-<summary>What is Kibana?</summary><br><b>
+<summary>What can you find under "Discover" in Kibana?</summary><br><b>
 
-From the official docs:
-
-"Kibana is an open source analytics and visualization platform designed to work with Elasticsearch. You use Kibana to search, view, and interact with data stored in Elasticsearch indices. You can easily perform advanced data analysis and visualize your data in a variety of charts, tables, and maps."
+The raw data as it is stored in the index. You can search and filter it.
 </b></details>
 
 <details>
 <summary>You see in Kibana, after clicking on Discover, "561 hits". What does it mean?</summary><br><b>
 
 Total number of documents matching the search results. If not query used then simply the total number of documents.
+</b></details>
+
+<details>
+<summary>What can you find under "Visualize"?</summary><br><b>
+
+"Visualize" is where you can create visual representations for your data (pie charts, graphs, ...)
 </b></details>
 
 <details>
@@ -6423,6 +6591,12 @@ It's an architecture in which data is and retrieved from a single, non-shared, s
 </b></details>
 
 ## General
+
+<details>
+<summary>What is a server?</summary><br><b>
+
+A computer which serves data from itself to the client.
+</b></details>
 
 <details>
 <summary>Define or Explain what is an API</summary><br><b>
