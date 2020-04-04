@@ -152,4 +152,4 @@ If you do, you should also play the interviewer role :)
 
 ### One Last Thing                                
                                                   
-[Good luck](https://youtu.be/Xz-UvQYAmbg?t=29) :)
+[Good luck](https://youtu.be/AFUrG1-BAt4?t=59) :)

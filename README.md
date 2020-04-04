@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **950** questions
+:bar_chart: &nbsp;There are currently **999** questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -329,10 +329,10 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>Are you familiar with "The Cathedral and the Bazaar"? Explain each of the models</summary><br><b>
+<summary>Are you familiar with "The Cathedral and the Bazaar models"? Explain each of the models</summary><br><b>
 
 * Cathedral - source code released when software is released
-* Bazaar - source code is always available publicly
+* Bazaar - source code is always available publicly (e.g. Linux Kernel)
 </b></details>
 
 ## Jenkins
@@ -1209,8 +1209,8 @@ An open question. Answer based on your real experience. You can highlight one or
   * rmdir (can you achieve the same result by using <code>rm</code>?)
   * grep
   * wc
-  * curl
   * touch
+  * whoami
   * man
   * nslookup or dig
   * pwd
@@ -1221,8 +1221,8 @@ An open question. Answer based on your real experience. You can highlight one or
   * rmdir - remove directories but you should mention it's possible to use rm for that
   * grep - print lines that match patterns. Could be nice to mention -v, -r, -E flags
   * wc - print newline, word, and byte counts
-  * curl - tranfer a URL or mention common usage like downloading files, API calls, ...
   * touch - update timestamps but common usage is to create files
+  * whoami - current logged-in user
   * man - reference manuals
   * nslookup or dig - query nameservers
   * pwd - print working directory
@@ -1237,6 +1237,20 @@ An open question. Answer based on your real experience. You can highlight one or
   * cd ..
   * cd .
   * cd -</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to rename the name of a file or a directory?</summary><br><b>
+
+mv command.
+</b></details>
+
+<details>
+<summary>Explain each field in the output of `ls -l` command</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are hidden files/directories? How to list them?</summary><br><b>
 </b></details>
 
 <details>
@@ -1276,9 +1290,9 @@ Alternatively if you are using a distro with systemd it's recommended to use sys
 </b></details>
 
 <details>
-<summary>Have you scheduled tasks in the past? What kind of tasks?</summary><br><b>
+<summary>How to check which commands you executed in the past?</summary><br><b>
 
-Normally you will schedule batch jobs.
+history command or .bash_history file
 </b></details>
 
 ##### Permissions
@@ -1305,11 +1319,23 @@ Using the `chmod` command.
 </b></details>
 
 <details>
+<summary>What this command does? <code>chmod +x some_file</code></summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain what is setgid and setuid</summary><br><b>
 </b></details>
 
 <details>
 <summary>What is the purpose of sticky bit?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What the following commands do?
+
+  * chmod
+  * chown
+  * chgrp</summary><br><b>
 </b></details>
 
 <details>
@@ -1345,10 +1371,6 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 
 <details>
 <summary>Describe how to make a certain process/app a service</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you kill a process in D state?</summary><br><b>
 </b></details>
 
 ##### Debugging (Beginner)
@@ -1429,10 +1451,6 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
-<summary>Wildcards are implemented on user or kernel space?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is KVM?</summary><br><b>
 </b></details>
 
@@ -1452,8 +1470,36 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 <summary>Explain redirection</summary><br><b>
 </b></details>
 
+#### Linux - Globbing, Wildcards
+
+<details>
+<summary>What is Globbing?</summary><br><b>
+</b></details>
+
 <details>
 <summary>What are wildcards? Can you give an example of how to use them?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what will <code>ls [XYZ]</code> match</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what will <code>ls [^XYZ]</code> match</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what will <code>ls [0-5]</code> match</summary><br><b>
+</b></details>
+
+<details>
+<summary>What each of the following matches
+
+  * ?
+  * *</summary><br><b>
+
+  * The ? matches any single character
+  * The * matches zero or more characters
 </b></details>
 
 <details>
@@ -1467,6 +1513,14 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 1. An IP address
 2. The word "error" or "failure"
 3. Lines which end with a number
+</b></details>
+
+<details>
+<summary>What is the difference single and double quotes?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is escaping? What escape character is used for escaping?</summary><br><b>
 </b></details>
 
 <details>
@@ -1605,6 +1659,7 @@ True
   * /tmp
   * /var/log
   * /bin
+  * /home
   * /usr/local
 </b></details>
 
@@ -1674,6 +1729,10 @@ Zombie (z)
 </b></details>
 
 <details>
+<summary>How do you kill a process in D state?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is a zombie process?</summary><br><b>
 
 A process which has finished to run but has not exited.
@@ -1738,10 +1797,6 @@ You can use the commands <code>top</code> and <code>free</code>
 <summary>You run ls and you get "/lib/ld-linux-armhf.so.3 no such file or directory". What is the problem?</summary><br><b>
 
 The ls executable is built for an incompatible architecture.
-</b></details>
-
-<details>
-<summary>What is escaping? What escape character is used for escaping?</summary><br><b>
 </b></details>
 
 <details>
@@ -1854,8 +1909,8 @@ Technically, yes.
 
 <details>
 <summary>How can you send an HTTP request from your shell?</summary><br><b>
-
-Using nc is one way
+<br>
+Using nc is one way<br>
 </b></details>
 
 <details>
@@ -1884,13 +1939,14 @@ One way would be `ping6 ff02::1`
 You can specify one or more of the following:
 
  * <code>dig</code>
+ * <code>host</code>
  * <code>nslookup</code>
 </b></details>
 
 ##### Packaging
 
 <details>
-<summary>Do you have experience with packaging? Can you explain how does it works?</summary><br><b>
+<summary>Do you have experience with packaging? (as in building packages) Can you explain how does it works?</summary><br><b>
 </b></details>
 
 <details>
@@ -1902,7 +1958,7 @@ You can specify one or more of the following:
 </b></details>
 
 <details>
-<summary>How to know to which package a file on the system belongs to? Is it a problem if it doesn't belongs to a package?</summary><br><b>
+<summary>How to know to which package a file on the system belongs to? Is it a problem if it doesn't belongs to any package?</summary><br><b>
 </b></details>
 
 <details>
@@ -1911,6 +1967,17 @@ You can specify one or more of the following:
 
 <details>
 <summary>What is an archive? How do you create one in Linux?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to extract the content of an archive?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Why do we need package managers? Why not simply creating archives and publish them?</summary><br><b>
+
+Package managers allow you to manage packages lifecycle as in installing, removing and update the packages.<br>
+In addition, you can specify in a spec how a certain package will be installed - where to copy the files, which commands to run prior to the installation, post the installation, etc.
 </b></details>
 
 ##### Applications and Services
@@ -1965,7 +2032,15 @@ Upstart: add Upstart init script at /etc/init/service.conf
 <details>
 <summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
 
-  * adduser user_name --shell=/bin/false --no-create-home
+`adduser user_name --shell=/bin/false --no-create-home`
+You can also add a user and then edit /etc/passwd.
+</b></details>
+
+<details>
+<summary>How to switch to another user? How to switch to root?</summary><br><b>
+
+su command.
+Use su - to switch to root
 </b></details>
 
 <details>
@@ -1978,7 +2053,13 @@ Re-install the OS IS NOT the right answer :)
 <summary>What is sudo? How do you set it up?</summary><br><b>
 </b></details>
 
-#### Random
+<details>
+<summary>How to see a list of who logged-in to the system?</summary><br><b>
+
+Using the last command.
+</b></details>
+
+#### Linux - Random
 
 <details>
 <summary>Give 5 commands which are two letters long</summary><br><b>
@@ -1987,10 +2068,17 @@ ls, wc, dd, df, du, ps, ip, cp, cd ...
 </b></details>
 
 <details>
+<summary>How `cd -` works? How does it knows the previous location?</summary><br><b>
+
+$OLDPWD
+</b></details>
+
+<details>
 <summary>List three ways to print all the files in the current directory</summary><br><b>
 
 * ls
 * find .
+* echo *
 </b></details>
 
 <details>
@@ -2002,7 +2090,19 @@ ls, wc, dd, df, du, ps, ip, cp, cd ...
 </b></details>
 
 <details>
-<summary>Explain "environment variables"</summary><br><b>
+<summary>What is the difference between man and info?</summary><br><b>
+
+A good answer can be found [here](https://askubuntu.com/questions/9325/what-is-the-difference-between-man-and-info-documentation)
+</b></details>
+
+<details>
+<summary>Explain "environment variables". How do you list all environment variables?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to create your own environment variables?</summary><br><b>
+
+`X=2` for example. But this will persist to new shells. To have it in new shells as well, use `export X=2`
 </b></details>
 
 <details>
@@ -2025,8 +2125,14 @@ It's used in commands to mark the end of commands options. One common example is
 <summary>What commands you can use for searching files and/or directories?</summary><br><b>
 
   * find
-  * whereis
   * locate
+</b></details>
+
+<details>
+<summary>How can you check what is the path of a certain command?</summary><br><b>
+
+  * whereis
+  * which
 </b></details>
 
 <a name="linux-advanced"></a>
@@ -2035,13 +2141,13 @@ It's used in commands to mark the end of commands options. One common example is
 #### System Calls
 
 <details>
-<summary>Explain the fork system call</summary><br><b>
+<summary>Explain the fork() system call</summary><br><b>
 
 fork() is used for creating a new process. It does so by cloning the calling process but the child process has its own PID and any memory locks, I/O operations and semaphores are not inherited.
 </b></details>
 
 <details>
-<summary>Explain the exec system call</summary><br><b>
+<summary>Explain the exec() system call</summary><br><b>
 </b></details>
 
 <details>
@@ -2071,6 +2177,15 @@ Executes a program. The program is passed as a filename (or path) and must be a 
 
 <details>
 <summary>What is the return value of malloc?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the pipe() system call. What does it used for?</summary><br><b>
+
+[Unix pipe implementation](https://toroid.org/unix-pipe-implementation)
+
+"Pipes provide a unidirectional interprocess communication channel. A pipe has a read end and a write end. Data written to the write end of a pipe can be read from the read end of the pipe.
+A pipe is created using pipe(2), which returns two file descriptors, one referring to the read end of the pipe, the other referring to the write end."
 </b></details>
 
 <details>
@@ -2209,6 +2324,16 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 * Utilities
 * Services
 * Software/Packages Management
+</b></details>
+
+#### Linux Advanced - Misc
+
+<details>
+<summary>Wildcards are implemented on user or kernel space?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Why there are different sections in man? What is the difference between the sections?</summary><br><b>
 </b></details>
 
 ## Operating System
@@ -3893,6 +4018,10 @@ list(zip(nums, letters))
 ```
 </b></details>
 
+<details>
+<summary>What is List Comprehension? Is it better than a typical loop? Why? Can you demonstrate how to use it?</summary><br><b>
+</b></details>
+
 #### Dictionaries
 
 <details>
@@ -4029,10 +4158,6 @@ def get_food(brothers_menu) -> set:
 # One liner way (Using list comprehension)
 set([food for bro in x for food in bro['food']])
 ```
-</b></details>
-
-<details>
-<summary>What is List Comprehension? Is it better than a typical loop? Why? Can you demonstrate how to use it?</summary><br><b>
 </b></details>
 
 #### Python Strings
@@ -5346,19 +5471,34 @@ Using the keyword <code>read</code> so for example <code>read x</code> will wait
 </b></details>
 
 <details>
-<summary>What is globbing?</summary><br><b>
-</b></details>
-
-<details>
 <summary>Explain conditionals and how do you use them</summary><br><b>
 </b></details>
+
+#### Shell Scripting - Loops
 
 <details>
 <summary>What is a loop? What types of loops are you familiar with?</summary><br><b>
 </b></details>
 
 <details>
+<summary>Demonstrate how to use loops</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain <code>continue</code> and <code>break</code>. When do you use them if at all?</summary><br><b>
+</b></details>
+
+
+<details>
+<summary>Running the following bash script, we don't get 2 as a result, why?
+
+```
+x = 2
+echo $x
+```
+</summary><br><b>
+
+Should be `x=2`
 </b></details>
 
 <details>
@@ -5369,15 +5509,11 @@ Using the keyword <code>read</code> so for example <code>read x</code> will wait
 <summary>How do you check variable length?</summary><br><b>
 </b></details>
 
-<details>
-<summary>What is the difference between single and double quotes?</summary><br><b>
-</b></details>
+##### Practical
 
 <details>
 <summary>Write a script which will list the differences between two directories</summary><br><b>
 </b></details>
-
-##### Practical
 
 <details>
 <summary>Write a script to determine whether a host is up or down</summary><br><b>
@@ -5727,6 +5863,36 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 <summary>Tell me what do you know about GCP networking</summary><br><b>
 </b></details>
 
+<details>
+<summary>Explain Cloud Functions</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Cloud Datastore?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What network tags are used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are flow logs? Where are they enabled?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you list buckets?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What Compute metadata key allows you to run code at startup?</summary><br><b>
+
+startap-script
+</b></details>
+
+<details>
+<summary>What the following commands does? `gcloud deployment-manager deployments create`</summary><br><b>
+</b></details>
+
 ## OpenStack
 
 <a name="openstack-beginner"></a>
@@ -5741,17 +5907,48 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 </b></details>
 
 <details>
-<summary>Can you tell me what each of the following components/projects is responsible for?:
+<summary>Can you tell me what each of the following services/projects is responsible for?:
 
   * Nova
   * Neutron
   * Cinder
   * Glance
   * Keystone</summary><br><b>
+
+  * Nova - Manage virtual instances
+  * Cinder - Block Storage
+  * Keystone - Authentication service across the cloud
 </b></details>
 
 <details>
-<summary>Describe in detail how you bring up an instance with an IP you can reach from outside the cloud</summary><br><b>
+<summary>Identify the service/project used for each of the following:
+
+  * Copy or snapshot instances
+  * GUI for viewing and modifying resources
+  * Block Storage
+  * Manage virtual instances
+</summary><br><b>
+
+  * Glance - Copy or snapshot instances
+  * Horizon - GUI for viewing and modifying resources
+  * Cinder - Block Storage
+  * Nova - Manage virtual instances
+</b></details>
+
+<details>
+<summary>What is a tenant/project?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Determine true or false:
+
+  * OpenStack is free to use
+  * The service responsible for networking is Glance
+  * The purpose of tenant/project is to share resources between different projects and users of OpenStack</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe in detail how you bring up an instance with a floating IP</summary><br><b>
 </b></details>
 
 <details>
@@ -5771,10 +5968,61 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 </b></details>
 
 <details>
-<summary>Are you familiar with TripleO? What benefits it has?</summary><br><b>
+<summary>Are you familiar with TripleO? How is it different from Devstack?</summary><br><b>
 </b></details>
 
-##### Networking
+#### OpenStack Compute
+
+<details>
+<summary>Can you describe Nova in detail?</summary><br><b>
+
+  * Used to provision and manage virtual instances
+  * It supports Multi-Tenancy in different levels - logging, end-user control, auditing, etc.
+  * Highly scalable
+  * Authentication can be done using internal system or LDAP
+  * Supports multiple types of block storage
+  * Tries to be hardware and hypervisor agnostice
+</b></details>
+
+<details>
+<summary>What do you know about Nova architecture and components?</summary><br><b>
+
+  * nova-api - the server which serves metadata and compute APIs
+  * the different Nova components communicate by using a queue (Rabbitmq usually) and a database
+  * a request for creating an instance is inspected by nova-scheduler which determines where the instance will be created and running
+  * nova-compute is the component responsible for communicating with the hypervisor for creating the instance and manage its lifecycle
+</b></details>
+
+#### OpenStack Networking (Neutron)
+
+<details>
+<summary>Explain Neutron in detail</summary><br><b>
+
+  * One of the core component of OpenStack and a standalone project
+  * Neutron focused on delivering networking as a service
+  * With Neutron, users can set up networks in the cloud and configure and manage a variety of network services
+  * Neutron interacts with:
+      * Keystone - authorize API calls
+      * Nova - nova communicates with neutron to plug NICs into a network
+      * Horizon - supports networking entities in the dashboard and also provides topology view which includes networking details
+</b></details>
+
+<details>
+<summary>Explain each of the following components:
+
+  * neutron-dhcp-agent
+  * neutron-l3-agent
+  * neutron-metering-agent
+  * neutron-*-agtent
+  * neutron-server</summary><br><b>
+ 
+
+  * neutron-l3-agent - L3/NAT forwarding (provides external network access for VMs for example)
+  * neutron-dhcp-agent - DHCP services
+  * neutron-metering-agent - L3 traffic metering
+  * neutron-*-agtent - manages local vSwitch configuration on each compute (based on chosen plugin)
+  * neutron-server - exposes networking API and passes requests to other plugins if required</summary><br><b>
+</b></details>
 
 <details>
 <summary>What is a provider network?</summary><br><b>
@@ -5808,19 +6056,181 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 <summary>How do you debug OpenStack networking issues? (tools, logs, ...)</summary><br><b>
 </b></details>
 
+#### OpenStack - Keystone
+
+<details>
+<summary>Can you describe the following concepts in regards to Keystone?
+
+  * Role
+  * Tenant/Project
+  * Service
+  * Endpoint
+  * Token</summary><br><b>
+
+  * Role - A list of rights and privileges determining what a user or a project can perform
+  * Tenant/Project - Logical representation of a group of resources isolated from other groups of resources. It can be an account, organization, ...
+  * Service - An endpoint which the user can use for accessing different resources
+  * Endpoint - a network address which can be used to access a certain OpenStack service
+  * Token - Used for access resources while describing which resources can be accessed by using a scope
+</b></details>
+
+<details>
+<summary>What are the properties of a service? In other words, how a service is identified?</summary><br><b>
+
+Using:
+  * Name
+  * ID number
+  * Type
+  * Description
+</b></details>
+
+<details>
+<summary>Explain the following:
+  * PublicURL
+  * InternalURL
+  * AdminURL</summary><br><b>
+
+  * PublicURL - Publicly accessible through public internet
+  * InternalURL - Used for communication between services 
+  * AdminURL - Used for administrative management
+</b></details>
+
+<details>
+<summary>What is a service catalog?
+
+A list of services and their endpoints
+</b></details>
+
 <a name="openstack-advanced"></a>
 #### :baby: Advanced
 
-##### Networking
+#### OpenStack Advanced - Services
 
 <details>
-<summary>Explain BGP dynamic routing</summary>
+<summary>Describe each of the following services
+
+  * Swift
+  * Sahara
+  * Ironic
+  * Aodh 
+  * Ceilometer</summary><br><b>
+
+  * Swift - highly available, distributed, eventually consistent object/blob store
+  * Sahara - Manage Hadoop Clusters
+  * Ironic - Bare Metal Provisioning
+  * Aodh - Alarms Service
+  * Ceilometer - Track and monitor usage
 </b></details>
 
 <details>
-<summary>What is the role of network namespaces in OpenStack?</summary>
+<summary>Identify the service/project used for each of the following:
+
+  * Bare Metal Provisioning
+  * Track and monitor usage
+  * Alarms Service
+  * Manage Hadoop Clusters
+  * highly available, distributed, eventually consistent object/blob store</summary><br><b>
+
+  * Bare Metal Provisioning - Ironic
+  * Track and monitor usage - Ceilometer
+  * Alarms Service - Aodh
+  * Manage Hadoop Clusters
+  * Manage Hadoop Clusters - Sahara
+  * highly available, distributed, eventually consistent object/blob store - Swift
 </b></details>
 
+#### OpenStack Advanced - Keystone
+
+<details>
+<summary>Can you describe Keystone service in detail?</summary><br><b>
+
+  * You can't have OpenStack deployed without Keystone
+  * It Provides identity, policy and token services
+    * The authentication provided is for both users and services
+    * The authorization supported is token-based and user-based.
+  * There is a policy defined based on RBAC stored in a JSON file and each line in that file defines the level of access to apply
+</b></details>
+
+<details>
+<summary>Describe Keystone architecture</summary><br><b>
+
+  * There is a service API and admin API through which Keystone gets requests
+  * Keystone has four backends:
+    * Token Backend - Temporary Tokens for users and services
+    * Policy Backend - Rules management and authorization
+    * Identity Backend - users and groups (either standalone DB, LDAP, ...)
+    * Catalog Backend - Endpoints
+  * It has pluggable environment where you can integrate with:
+    * LDAP
+    * KVS (Key Value Store)
+    * SQL
+    * PAM
+    * Memcached
+</b></details>
+
+<details>
+<summary>Describe the Keystone authentication process</summary><br><b>
+
+  * Keystone gets a call/request and checks whether it's from an authorized user, using username, password and authURL
+  * Once confirmed, Keystone provides a token.
+  * A token contains a list of user's projects so there is no to authenticate every time and a token can submitted instead
+</b></details>
+
+#### OpenStack Advanced - Compute (Nova)
+
+<details>
+<summary>What each of the following does?:
+
+  * nova-api
+  * nova-compuate
+  * nova-conductor
+  * nova-cert
+  * nova-consoleauth
+  * nova-scheduler</summary><br><b>
+
+  * nova-api - responsible for managing requests/calls
+  * nova-compute - responsible for managing instance lifecycle
+  * nova-conductor - Mediates between nova-compute and the database so nova-compute doesn't access it directly
+</b></details>
+
+<details>
+<summary>What types of Nova proxies are you familiar with?</summary><br><b>
+
+  * Nova-novncproxy - Access through VNC connections
+  * Nova-spicehtml5proxy - Access through SPICE 
+  * Nova-xvpvncproxy - Access through a VNC connection
+</b></details>
+
+#### OpenStack Advanced - Networking (Neutron)
+
+<details>
+<summary>Explain BGP dynamic routing</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the role of network namespaces in OpenStack?</summary><br><b>
+</b></details>
+
+#### OpenStack Advanced - Horizon
+
+<details>
+<summary>Can you describe Horizon in detail?</summary><br><b>
+
+  * Django-based project focusing on providing an OpenStack dashboard and the ability to create additional customized dashboards
+  * You can use it to access the different OpenStack services resources - instances, images, networks, ...
+    * By accessing the dashboard, users can use it to list, create, remove and modify the different resources
+  * It's also highly customizable and you can modify or add to it based on your needs
+</b></details>
+
+<details>
+<summary>What can you tell about Horizon architecture?</summary><br><b>
+
+  * API is backward compatible
+  * There are three type of dashboards: user, system and settings
+  * It provides core support for all OpenStack core projects such as Neutron, Nova, etc. (out of the box, no need to install extra packages or plugins)
+  * Anyone can extend the dashboards and add new components
+  * Horizon provides templates and core classes from which one can build its own dashboard
+</b></details>
 
 ## Security
 
@@ -6782,6 +7192,12 @@ TODO: explain what is actually a Cookie
 
 <details>
 <summary>What is DNS load balancing? What its advantages? When would you use it?</summary><br><b>
+</b></details>
+
+#### Licenses
+
+<details>
+<summary>Are you familiar with "Creative Commons"? What do you know about it?</summary><br><b>
 </b></details>
 
 #### Random
