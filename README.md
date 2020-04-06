@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **999** questions
+:bar_chart: &nbsp;There are currently **1013** questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -1376,6 +1376,16 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 ##### Debugging (Beginner)
 
 <details>
+<summary>Where system logs are located?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to follow file's content as it being appended without opening the file every time?</summary><br><b>
+
+tail -f <file_name>
+</b></details>
+
+<details>
 <summary>What are you using for troubleshooting and debugging <b>network</b> issues?</summary><br><b>
 
 <code>dstat -t</code> is great for identifying network and disk issues.
@@ -1516,6 +1526,17 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
+<summary>Which line numbers will be printed when running `grep '\baaa\b'` on the following content:
+
+aaa
+bbb
+ccc.aaa
+aaaaaa</summary><br><b>
+
+lines 1 and 3.
+</b></details>
+
+<details>
 <summary>What is the difference single and double quotes?</summary><br><b>
 </b></details>
 
@@ -1541,7 +1562,7 @@ Each number has different meaning, based on how the application was developed.
 I consider this as a good blog post to read more about it: https://shapeshed.com/unix-exit-codes
 </b></details>
 
-##### Storage & Filesystem (Beginner)
+##### Linux - Storage & Filesystem
 
 <details>
 <summary>What's an inode?</summary><br><b>
@@ -2018,6 +2039,10 @@ Upstart: add Upstart init script at /etc/init/service.conf
 </b></details>
 
 <details>
+<summary>Which file stores information about groups?</summary><br><b>
+</b></details>
+
+<details>
 <summary>How do you change/set the password of a user?</summary><br><b>
 </b></details>
 
@@ -2057,6 +2082,26 @@ Re-install the OS IS NOT the right answer :)
 <summary>How to see a list of who logged-in to the system?</summary><br><b>
 
 Using the last command.
+</b></details>
+
+#### Linux - Hardware
+
+<details>
+<summary>Where can you find information on the processor?</summary><br><b>
+
+/proc/cpuinfo
+</b></details>
+
+<details>
+<summary>How can you print information on the BIOS, motherboard, processor and RAM?</summary><br><b>
+
+dmidecoode
+</b></details>
+
+<details>
+<summary>How can you print all the information on connected block devices in your system?</summary><br><b>
+
+lsblk
 </b></details>
 
 #### Linux - Random
@@ -3238,6 +3283,59 @@ Setting the replicas to 0 will shut down the process. Now start it with `kubectl
 
 <details>
 <summary>Describe how roll-back works</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the control loop? How it works?</summary><br><b>
+
+Explained [here](https://www.youtube.com/watch?v=i9V4oCa5f9I)
+</b></details>
+
+#### Kubernetes Operators
+
+<details>
+<summary>What is an Operator?</summary><br><b>
+
+Explained [here](https://coreos.com/operators)
+
+"An Operator is a method of packaging, deploying and managing a Kubernetes application"
+</b></details>
+
+<details>
+<summary>What components the Operator consists of?</summary><br><b>
+
+1. CRD (custom resource definition)
+2. Controller - Custom control loop which runs against the CRD
+</b></details>
+
+<details>
+<summary>What is the Operator Framework?</summary><br><b>
+
+open source toolkit used to manage k8s native applications, called operators, in an automated and efficient way.
+</b></details>
+
+<details>
+<summary>What components the Operator Framework consists of??</summary><br><b>
+
+1. Operator SDK - allows developers to build operators
+2. Operator Lifecycle Manager - helps to install, update and generally manage the lifecycle of all operators
+3. Operator Metering - Enables usage reporting for operators that provide specialized services
+</b></details>
+
+
+<details>
+<summary>Describe in detail what is the Operator Lifecycle Manager</summary><br><b>
+
+It's part of the Operator Framework, used for managing the lifecycle of operators. It basically extends Kubernetes so a user can use a declarative way to manage operators (installation, upgrade, ...).
+</b></details>
+
+<details>
+<summary>What openshift-operator-lifecycle-manager namespace includes?</summary><br><b>
+
+It includes:
+
+  * catalog-operator - Resolving and installing ClusterServiceVersions the resource they specify.
+  * olm-operator - Deploys applications defined by ClusterServiceVersion resource
 </b></details>
 
 #### Kubernetes Commands
@@ -5369,7 +5467,7 @@ as key-value pair, document-oriented, etc.
 #### :baby: Beginner
 
 <details>
-<summary>What is OpenShift? Did you use it? If yes, how?</summary><br><b>
+<summary>What is OpenShift? What experience do you have with OpenShift?</summary><br><b>
 </b></details>
 
 <details>
@@ -6021,7 +6119,7 @@ startap-script
   * neutron-dhcp-agent - DHCP services
   * neutron-metering-agent - L3 traffic metering
   * neutron-*-agtent - manages local vSwitch configuration on each compute (based on chosen plugin)
-  * neutron-server - exposes networking API and passes requests to other plugins if required</summary><br><b>
+  * neutron-server - exposes networking API and passes requests to other plugins if required
 </b></details>
 
 <details>
@@ -6096,7 +6194,7 @@ Using:
 </b></details>
 
 <details>
-<summary>What is a service catalog?
+<summary>What is a service catalog?</summary><br><b>
 
 A list of services and their endpoints
 </b></details>
