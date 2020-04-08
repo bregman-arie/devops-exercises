@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1013** questions
+:bar_chart: &nbsp;There are currently **1035** questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -64,6 +64,7 @@
     <td align="center"><a href="#databases"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
     <td align="center"><a href="#regex"><img src="images/regex.png" width="75ph;" height="75px;" alt="RegEx"/><br /><b>Regex</b></a><br /><sub><a href="#regex-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>Design</b></a></td>
+    <td align="center"><a href="#hardware"><img src="images/hardware.png" width="110px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
     <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
     <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
   </tr>
@@ -1873,7 +1874,15 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 <summary>Do you have experience with hardening servers? Can you describe the process?</summary><br><b>
 </b></details>
 
-##### Network
+##### Linux - Networking
+
+<details>
+<summary>How to list all interfaces?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to disable an interface?</summary><br><b>
+</b></details>
 
 <details>
 <summary>What is a network namespace? What is it used for?</summary><br><b>
@@ -1896,6 +1905,12 @@ lsof -i -n -P | grep <port_number>
 
 <details>
 <summary>What is a virtual IP? In what situation would you use it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? The MAC address of an interface is assigned/set by the OS</summary><br><b>
+
+False
 </b></details>
 
 <details>
@@ -2032,6 +2047,12 @@ Upstart: add Upstart init script at /etc/init/service.conf
 <summary>What is CUPS?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What types of web servers are you familiar with?</summary><br><b>
+
+Nginx, Apache httpd.
+</b></details>
+
 ##### Users
 
 <details>
@@ -2047,11 +2068,15 @@ Upstart: add Upstart init script at /etc/init/service.conf
 </b></details>
 
 <details>
+<summary>Which file stores users passwords? Is it visible for everyone?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Do you know how to create a new user without using adduser/useradd command?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What information is stored in /etc/passwd?</summary><br><b>
+<summary>What information is stored in /etc/passwd? explain each field</summary><br><b>
 </b></details>
 
 <details>
@@ -2069,6 +2094,10 @@ Use su - to switch to root
 </b></details>
 
 <details>
+<summary>What is the UID the root user? What about a regular user?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What can you do if you lost/forogt the root password?</summary><br><b>
 
 Re-install the OS IS NOT the right answer :)
@@ -2076,6 +2105,10 @@ Re-install the OS IS NOT the right answer :)
 
 <details>
 <summary>What is sudo? How do you set it up?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is /etc/skel?</summary><br><b>
 </b></details>
 
 <details>
@@ -2297,7 +2330,7 @@ These system calls are reading the file <code>/my/file</code> and 5 is the file 
 <summary>You found there is a server with high CPU load but you didn't find a process with high CPU. How is that possible?</summary><br><b>
 </b></details>
 
-##### Linux Networking
+##### Linux Advanced - Networking
 
 <details>
 <summary>When you run <code>ip a</code> you see there is a device called 'lo'. What is it and why do we need it?</summary><br><b>
@@ -6027,7 +6060,7 @@ startap-script
   * Manage virtual instances
 </summary><br><b>
 
-  * Glance - Copy or snapshot instances
+  * Glance - Images Service. Also used for copying or snapshot instances
   * Horizon - GUI for viewing and modifying resources
   * Cinder - Block Storage
   * Nova - Manage virtual instances
@@ -6065,8 +6098,16 @@ startap-script
 <summary>How do you debug OpenStack compute issues? (tools, logs, ...)</summary><br><b>
 </b></details>
 
+#### OpenStack Deployment & TripleO
+
 <details>
-<summary>Are you familiar with TripleO? How is it different from Devstack?</summary><br><b>
+<summary>Have you deployed OpenStack in the past? If yes, can you describe how you did it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Are you familiar with TripleO? How is it different from Devstack or Packstack?</summary><br><b>
+
+You can read about TripleO right [here](https://docs.openstack.org/tripleo-docs/latest)
 </b></details>
 
 #### OpenStack Compute
@@ -6123,6 +6164,20 @@ startap-script
 </b></details>
 
 <details>
+<summary>Explain these network types:
+
+  * Management Network
+  * Guest Network
+  * API Network
+  * External Network</summary><br><b>
+
+  * Management Network - used for internal communication between OpenStack components. Any IP address in this network is accessible only within the datacetner
+  * Guest Network - used for communication between instances/VMs
+  * API Network - used for services API communication. Any IP address in this network is publicly accessible
+  * External Network - used for public communication. Any IP address in this network is accessible by anyone on the internet
+</b></details>
+
+<details>
 <summary>What is a provider network?</summary><br><b>
 </b></details>
 
@@ -6152,6 +6207,80 @@ startap-script
 
 <details>
 <summary>How do you debug OpenStack networking issues? (tools, logs, ...)</summary><br><b>
+</b></details>
+
+#### OpenStack - Glance
+
+<details>
+<summary>Explain Glance in detail</summary><br><b>
+
+  * Glance is the OpenStack image service
+  * It handles requests related to instances disks and images
+  * Glance also used for creating snapshots for quick instances backups
+  * Users can use Glance to create new images or upload existing ones
+</b></details>
+
+<details>
+<summary>Describe Glance architecture</summary><br><b>
+
+  * glance-api - responsible for handling image API calls such as retrieval and storage. It consists of two APIs: 1. registry-api - responsible for internal requests 2. user API - can be accessed publicly
+  * glance-registry - responsible for handling image metadata requests (e.g. size, type, etc). This component is private which means it's not available publicly
+  * metadata definition service - API for custom metadata
+  * database - for storing images metadata
+  * image repository - for storing images. This can be a filesystem, swift object storage, HTTP, etc.
+</b></details>
+
+#### OpenStack - Swift
+
+<details>
+<summary>Explain Swift in detail</summary><br><b>
+
+  * Swift is Object Store service and is an highly available, distributed and consistent store designed for storing a lot of data
+  * Swift is distributing data across multiple servers while writing it to multiple disks
+  * One can choose to add additional servers to scale the cluster. All while swift maintaining integrity of the information and data replications.
+</b></details>
+
+<details>
+<summary>Can users store by default an object of 100GB in size?</summary><br><b>
+
+Not by default. Object Storage API limits the maximum to 5GB per object but it can be adjusted.
+</b></details>
+
+<details>
+<summary>Explain the following in regards to Swift:
+
+  * Container
+  * Account
+  * Object </summary><br><b>
+
+  * Container - Defines a namespace for objects.
+  * Account - Defines a namespace for containers
+  * Object - Data content (e.g. image, document, ...)
+</b></details>
+
+<details>
+<summary>True or False? there can be two objects with the same name in the same container but not in two different containers</summary><br><b>
+
+False. Two objects can have the same name if they are in different containers.
+</b></details>
+
+#### OpenStack - Swift
+
+<details>
+<summary>Explain Cinder in detail</summary><br><b>
+
+  * Cinder is OpenStack Block Storage service
+  * It basically provides used with storage resources they can consume with other services such as Nova
+  * One of the most used implementations of storage supported by Cinder is LVM
+  * From user perspective this is transparent which means the user doesn't know where, behind the scenes, the storage is located or what type of storage is used
+</b></details>
+
+<details>
+<summary>Describe Cinder's components</summary><br><b>
+
+  * cinder-api - receives API requests
+  * cinder-volume - manages attached block devices
+  * cinder-scheduler - responsible for storing volumes
 </b></details>
 
 #### OpenStack - Keystone
@@ -6210,12 +6339,14 @@ A list of services and their endpoints
   * Swift
   * Sahara
   * Ironic
+  * Trove
   * Aodh 
   * Ceilometer</summary><br><b>
 
   * Swift - highly available, distributed, eventually consistent object/blob store
   * Sahara - Manage Hadoop Clusters
   * Ironic - Bare Metal Provisioning
+  * Trove - Database as a service that runs on OpenStack
   * Aodh - Alarms Service
   * Ceilometer - Track and monitor usage
 </b></details>
@@ -6223,12 +6354,14 @@ A list of services and their endpoints
 <details>
 <summary>Identify the service/project used for each of the following:
 
+  * Database as a service which runs on OpenStack
   * Bare Metal Provisioning
   * Track and monitor usage
   * Alarms Service
   * Manage Hadoop Clusters
   * highly available, distributed, eventually consistent object/blob store</summary><br><b>
 
+  * Database as a service which runs on OpenStack - Trove
   * Bare Metal Provisioning - Ironic
   * Track and monitor usage - Ceilometer
   * Alarms Service - Aodh
@@ -7718,6 +7851,30 @@ DNS redirection
 <summary>Explain "Branch by Abstraction" technique</summary><br><b>
 </b></details>
 
+## Hardware
+
+<details>
+<summary>What is a processor?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is RAM?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an embedded system?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you give an example of an embedded system?</summary><br><b>
+
+Raspberry Pi
+</b></details>
+
+<details>
+<summary>What types of storage are there?</summary><br><b>
+</b></details>
+
 ## Exercises
 
 Exercises are all about:
@@ -7729,17 +7886,29 @@ Exercises are all about:
 
 Below you can find several exercises
 
+#### Containers
 * [Writing a Dockerfile and running a container](exercises/write_dockerfile_run_container.md)
+
+#### Jenkins
+
+* [Jenkins: writing scripts](exercises/jenkins_scripts.md)
+* [Jenkins: writing pipelines](exercises/jenkins_pipelines.md)
+
+#### CI
+
+* [CI for open source project](exercises/ci_for_open_source_project.md)
+
+#### Mixed
+
+* [Flask, Containers and CI](exercises/flask_container_ci/README.md)
+* [Flask, Containers and CI 2](exercises/flask_container_ci2/README.md)
+
+#### Misc
+
 * [Elasticsearch & Kibana on AWS](exercises/elk_kibana_aws.md)
 * [ELK & Filebeat](exercises/eflk.md)
 * [Ansible, Minikube and Docker](exercises/ansible_minikube_docker.md)
 * [Cloud Slack bot](exercises/cloud_slack_bot.md)
-* [Jenkins: writing scripts](exercises/jenkins_scripts.md)
-* [Jenkins: writing pipelines](exercises/jenkins_pipelines.md)
-* [CI for open source project](exercises/ci_for_open_source_project.md)
-* [Flask, Containers and CI](exercises/flask_container_ci/README.md)
-* [Flask, Containers and CI 2](exercises/flask_container_ci2/README.md)
-
 
 ## Credits
 
