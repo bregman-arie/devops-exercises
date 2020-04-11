@@ -4,6 +4,8 @@
 
 :bar_chart: &nbsp;There are currently **1035** questions
 
+:busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional daily exercises, articles and more resources on DevOps
+
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
 :thought_balloon: &nbsp;If you wonder "How to prepare for a DevOps interview?", you might want to read some of my suggestions [here](prepare_for_interview.md)
@@ -481,6 +483,8 @@ SAAS
   * Public
   * Hybrid
   * Private</summary><br><b>
+
+  * Hybrid - combination of public and private clouds
 </b></details>
 
 <details>
@@ -709,6 +713,7 @@ A transport solution which was designed for transferring large amounts of data (
 <details>
 <summary>What is the difference between Site-to-Site VPN and Client VPN?</summary><br><b>
 </b></details>
+
 <details>
 <summary>True or False? AWS Inspector can perform both network and host assessments</summary><br><b>
 
@@ -807,6 +812,10 @@ Cost Explorer
 <summary>What would you use to check how many unassociated Elastic IP address you have?</summary><br><b>
 
 Trusted Advisor
+</b></details>
+
+<details>
+<summary>What is the Trusted Advisor?</summary><br><b>
 </b></details>
 
 <details>
@@ -1054,8 +1063,6 @@ TCP establishes a connection between the client and the server to guarantee the 
 <summary>Explain "default gateway"</summary><br><b>
 
 A default gateway serves as an access point or IP router that a networked computer uses to send information to a computer in another network or the internet.
-
-
 </b></details>
 
 <details>
@@ -1064,8 +1071,6 @@ A default gateway serves as an access point or IP router that a networked comput
 ARP stands for Address Resolution Protocol. When you try to ping an IP address on your local network, say 192.168.1.1, your system has to turn the IP address 192.168.1.1 into a MAC address. This involves using ARP to resolve the address, hence its name.
 
 Systems keep an ARP look-up table where they store information about what IP addresses are associated with what MAC addresses. When trying to send a packet to an IP address, the system will first consult this table to see if it already knows the MAC address. If there is a value cached, ARP is not used.
-
-
 </b></details>
 
 <details>
@@ -1209,7 +1214,6 @@ An open question. Answer based on your real experience. You can highlight one or
   * rm 
   * rmdir (can you achieve the same result by using <code>rm</code>?)
   * grep
-  * wc
   * touch
   * whoami
   * man
@@ -1221,7 +1225,6 @@ An open question. Answer based on your real experience. You can highlight one or
   * rm - remove files and directories. You should mention -r for recursive removal
   * rmdir - remove directories but you should mention it's possible to use rm for that
   * grep - print lines that match patterns. Could be nice to mention -v, -r, -E flags
-  * wc - print newline, word, and byte counts
   * touch - update timestamps but common usage is to create files
   * whoami - current logged-in user
   * man - reference manuals
@@ -1685,6 +1688,19 @@ True
   * /usr/local
 </b></details>
 
+<details>
+<summary>What is stored in each of the following logs?</summary><br><b>
+
+  * /var/log/messages
+  * /var/log/boot.log
+</b></details>
+
+<details>
+<summary>True or False? both /tmp and /var/tmp cleared upon system boot</summary><br><b>
+
+False. /tmp is cleared upon system boot while /var/tmp is cleared every a couple of days or not cleared at all (depends on distro).
+</b></details>
+
 #### Processes
 
 <details>
@@ -2146,6 +2162,13 @@ ls, wc, dd, df, du, ps, ip, cp, cd ...
 </b></details>
 
 <details>
+<summary>What ways are there for creating a new empty file?</summary><br><b>
+
+  * touch new_file
+  * echo "" > new_file
+</b></details>
+
+<details>
 <summary>How `cd -` works? How does it knows the previous location?</summary><br><b>
 
 $OLDPWD
@@ -2161,6 +2184,10 @@ $OLDPWD
 
 <details>
 <summary>What is '|'? What is it used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to count the number of lines in a file? What about words?</summary><br><b>
 </b></details>
 
 <details>
@@ -5912,8 +5939,6 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 <summary>Explain availability sets and availability zones</summary><br><b>
 
 An availability set is a logical grouping of VMs that allows Azure to understand how your application is built to provide redundancy and availability. It is recommended that two or more VMs are created within an availability set to provide for a highly available application and to meet the 99.95% Azure SLA.
-
-
 </b></details>
 
 <details>
@@ -5972,6 +5997,37 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 <summary>What components are part of Azure ATP?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Where logs are stored in Azure Monitor?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Azure Site Recovery</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what the advisor does</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain VNet peering</summary><br><b>
+</b></details>
+
+<details>
+<summary>Which protocols are available for configuring health probe</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Azure Active</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a subscription? What types of subscriptions are there?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is a blob storage service</summary><br><b>
+</b></details>
 
 ## GCP
 
@@ -7120,6 +7176,17 @@ In general the process is as follows:
 </b></details>
 
 <details>
+<summary>Explain the resolution sequence of: www.site.com</summary><br><b>
+
+It's resolved in this order:
+
+1) .
+2) .com
+3) site.com
+4) www.site.com
+</b></details>
+
+<details>
 <summary>What types of DNS records are there?</summary><br><b>
 
   * A
@@ -7130,7 +7197,6 @@ In general the process is as follows:
 
 <details>
 <summary>What is a A record?</summary><br><b>
-
 
 A (Address) Maps a host name to an IP address. When a computer has multiple adapter cards and IP addresses, it should have multiple address records.
 </b></details>
@@ -7150,7 +7216,6 @@ While an A record points a domain name to an IP address, a PTR record does the o
 <details>
 <summary>What is a MX record?</summary><br><b>
 MX (Mail Exchange) Specifies a mail exchange server for the domain, which allows mail to be delivered to the correct mail servers in the domain.
-
 </b></details>
 
 <details>
@@ -7429,6 +7494,12 @@ TODO: explain what is actually a Cookie
 
 <details>
 <summary>Are you familiar with "Creative Commons"? What do you know about it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the differences between copyleft and permissive licenses</summary><br><b>
+
+In Copyleft, any derivative work must use the same licensing while in permissive licensing there are no such condition. GPL-3 is an example of copyleft license while BSD is an example of permissive license.
 </b></details>
 
 #### Random
@@ -7854,7 +7925,7 @@ DNS redirection
 ## Hardware
 
 <details>
-<summary>What is a processor?</summary><br><b>
+<summary>What is a CPU?</summary><br><b>
 </b></details>
 
 <details>
