@@ -2,9 +2,9 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1035** questions
+:bar_chart: &nbsp;There are currently **1071** questions
 
-:busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional daily exercises, articles and more resources on DevOps
+:busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) or follow us on [Twitter](https://twitter.com/devopsbit) for additional daily exercises, articles and more resources on DevOps
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -67,6 +67,7 @@
     <td align="center"><a href="#regex"><img src="images/regex.png" width="75ph;" height="75px;" alt="RegEx"/><br /><b>Regex</b></a><br /><sub><a href="#regex-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>Design</b></a></td>
     <td align="center"><a href="#hardware"><img src="images/hardware.png" width="110px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
+    <td align="center"><a href="#big-data"><img src="images/big-data.png" width="110px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
     <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
     <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
   </tr>
@@ -3656,17 +3657,13 @@ You can usually use the function hash() to check an object mutability. If an obj
 </b></details>
 
 <details>
-<summary>In Python, functions are first-class objects. What does it mean?</summary><br><b>
+<summary>What is the result of `"abc"*3`?</summary><br><b>
 
-In general, first class objects in programming languages are objects which can be assigned to variable, used as a return value and can be used as arguments or parameters.<br>
-In python you can treat functions this way. Let's say we have the following function
+abcabcabc
+</b></details>
 
-```
-def my_function():
-    return 5
-```
-
-You can then assign a function to a variables like this `x = my_function` or you can return functions as return values like this `return my_function`
+<details>
+<summary>What is the result of `bool("")`? What about `bool(" ")`?</summary><br><b>
 </b></details>
 
 <details>
@@ -3696,8 +3693,26 @@ char = input("Insert a character: ") # For readablity
 if lower(char[0]) in "aieou": # Takes care of multiple characters and separate cases
     print("It's a vowel!")
 ```
-
 </b></details>
+
+<details>
+<summary>How to define a function with Python?</summary><br><b>
+</b></details>
+
+<details>
+<summary>In Python, functions are first-class objects. What does it mean?</summary><br><b>
+
+In general, first class objects in programming languages are objects which can be assigned to variable, used as a return value and can be used as arguments or parameters.<br>
+In python you can treat functions this way. Let's say we have the following function
+
+```
+def my_function():
+    return 5
+```
+
+You can then assign a function to a variables like this `x = my_function` or you can return functions as return values like this `return my_function`
+</b></details>
+
 
 <details>
 <summary>Explain inheritance and how to use it in Python</summary><br><b>
@@ -3985,6 +4000,12 @@ x.extend([1, 2, 3])
 </b></details>
 
 <details>
+<summary>How to remove the first 3 items from a list?</summary><br><b>
+
+`my_list[0:3] = []`
+</b></details>
+
+<details>
 <summary>How do you get the maximum and minimum values from a list? How to get the last item from a list?</summary><br><b>
 
 ```
@@ -4181,6 +4202,23 @@ list(zip(nums, letters))
 </b></details>
 
 #### Dictionaries
+
+<details>
+<summary>How to create a dictionary?</summary><br><b>
+
+my_dict = dict(x=1, y=2)
+OR
+my_dict = {'x': 1, 'y': 2}
+OR
+my_dict = dict([('x', 1), ('y', 2)])
+</b></details>
+
+<details>
+<summary>How to remove an item from a dictionary?</summary><br><b>
+
+del my_dict['some_key']
+you can also use `my_dict.pop('some_key')` which returns the value of the key.
+</b></details>
 
 <details>
 <summary>How to sort a dictionary by values?</summary><br><b>
@@ -4477,7 +4515,39 @@ the_list.sort(key=lambda x: x[1])
   * filter()</summary><br><b>
 </b></details>
 
-#### Debugging
+#### Python - Slicing
+
+For the following slicing exercises, assume you have the following list: `my_list = [8, 2, 1, 10, 5, 4, 3, 9]`
+
+<details>
+<summary>What is the result of `my_list[0:4]`?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the result of `my_list[5:6]`?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the result of `my_list[5:5]`?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the result of `my_list[::-1]`?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the result of `my_list[::3]`?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the result of `my_list[2:]`?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the result of `my_list[:3]`?</summary><br><b>
+</b></details>
+
+#### Python Debugging
 
 <details>
 <summary>How do you debug Python code?</summary><br><b>
@@ -7538,7 +7608,7 @@ https://idiallo.com/blog/c10k-2016
 
 ## HR
 
-Although the following questions are not DevOps related, they are still quite common and part of the DevOps interview process so it's better to prepare for them as well.
+These are not DevOps related questions as you probably noticed, but since they are part of the DevOps interview process I've decided it might be good to keep them
 
 <details>
 <summary>Tell us little bit about yourself</summary><br><b>
@@ -7587,7 +7657,7 @@ Some ideas (some of them bad and should not be used):
 </b></details>
 
 <details>
-<summary>Give an example of a time you were able to change the view of a team about a particular tool/project/technology</summary><br><b>
+<summary>Give an example of a time when you were able to change the view of a team about a particular tool/project/technology</summary><br><b>
 </b></details>
 
 <details>
@@ -7944,6 +8014,66 @@ Raspberry Pi
 
 <details>
 <summary>What types of storage are there?</summary><br><b>
+</b></details>
+
+## Big Data
+
+<details>
+<summary>Explain what is exactly Big Data</summary><br><b>
+
+As defined by Doug Laney:
+
+* Volume: Extremely large volumes of data
+* Velocity: Real time, batch, streams of data
+* Variety: Various forms of data, structured, semi-structured and unstructured
+* Veracity or Variability: Inconsistent, sometimes inaccurate, varying data
+</b></details>
+
+<details>
+<summary>Explain the different formats of data</summary><br><b>
+
+* Structured - data that has defined format and length (e.g. numbers, words)
+* Semi-structured - Doesn't conform to a specific format but is self-describing (e.g. XML, SWIFT)
+* Unstructured - does not follow a specific format (e.g. images, test messages)
+</b></details>
+
+<details>
+<summary>What is a Data Warehouse?</summary><br><b>
+
+[Wikipedia's explanation on Data Warehouse](https://en.wikipedia.org/wiki/Data_warehouse)
+[Amazon's explanation on Data Warehouse](https://aws.amazon.com/data-warehouse)
+</b></details>
+
+<details>
+<summary>What is Data Lake?</summary><br><b>
+
+[Data Lake - Wikipedia](https://en.wikipedia.org/wiki/Data_lake)
+</b></details>
+
+#### Apache Hadoop
+
+<details>
+<summary>Explain what is Hadoop</summary><br><b>
+
+[Apache Hadoop - Wikipedia](https://en.wikipedia.org/wiki/Apache_Hadoop)
+</b></details>
+
+<details>
+<summary>Explain Hadoop YARN</summary><br><b>
+
+Responsible for managing the compute resources in clusters and scheduling users' applications
+</b></details>
+
+<details>
+<summary>Explain Hadoop MapReduce</summary><br><b>
+
+A programming model for large-scale data processing
+</b></details>
+
+<details>
+<summary>Explain Hadoop Distributed File Systems (HDFS)</summary><br><b>
+
+Distributed file system providing high aggregate bandwidth across the cluster.
 </b></details>
 
 ## Exercises
