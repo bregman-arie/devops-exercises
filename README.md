@@ -7417,6 +7417,7 @@ MX (Mail Exchange) Specifies a mail exchange server for the domain, which allows
 
 <details>
 <summary>Is DNS using TCP or UDP?</summary><br><b>
+DNS uses UDP port 53 for resolving queries either regular or reverse. DNS uses TCP for zone transfer. 
 </b></details>
 
 <details>
