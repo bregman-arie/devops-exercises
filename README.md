@@ -471,11 +471,27 @@ You can describe the UI way to add new slaves but better to explain how to do in
 </b></details>
 
 <details>
-<summary>What types of Cloud Computing are there?</summary><br><b>
+<summary>What types of Cloud Computing services are there?</summary><br><b>
 
 IAAS
 PAAS
 SAAS
+</b></details>
+
+<details>
+<summary>Explain each of the following and give an example:
+
+  * IAAS
+  * PAAS
+  * SAAS</summary><br><b>
+</b></details>
+
+<details>
+<summary>What types of clouds (or cloud deployments) are there?</summary><br><b>
+
+  * Public
+  * Hybrid
+  * Private
 </b></details>
 
 <details>
@@ -527,10 +543,13 @@ Within each region, there are multiple isolated locations known as Availability 
 Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
 </b></details>
 
-#### IAM
+#### AWS IAM
 
 <details>
 <summary>What is IAM? What are some of its features?</summary><br><b>
+
+Full explanation is [here](https://aws.amazon.com/iam)
+In short: it's used for managing users, groups, access policies & roles
 </b></details>
 
 <details>
@@ -540,9 +559,18 @@ True
 </b></details>
 
 <details>
+<summary>Given an example of IAM best practices?</summary><br><b>
+
+* Set up MFA
+* Delete root account access keys
+* Create IAM users instead of using root for daily management
+</b></details>
+
+<details>
 <summary>What are Roles?</summary><br><b>
 
 A way for allowing a service of AWS to use another service of AWS. You assign roles to AWS resources.
+For example, you can make use of a role which allows EC2 service to acesses s3 buckets (read and write).
 </b></details>
 
 <details>
@@ -551,11 +579,33 @@ A way for allowing a service of AWS to use another service of AWS. You assign ro
 Policies documents used to give permissions as to what a user, group or role are able to do. Their format is JSON.
 </b></details>
 
-#### S3
+<details>
+<summary>A user is unable to access an s3 bucket. What might be the problem?</summary><br><b>
+
+There can be several reasons for that. One of them is lack of policy. To solve that, the admin has to attach the user with a policy what allows him to access the s3 bucket.
+</b></details>
+
+<details>
+<summary>What should you use to:
+
+  * Grant access between two services/resources?
+  * Grant user access to resources/services?</summary><br><b>
+
+  * Role
+  * Policy
+</b></details>
+
+<details>
+<summary>What permissions does a new user have?</summary><br><b>
+
+Only a login access.
+</b></details>
+
+#### AWS Storage
  
 <details>
-<summary>Explain what is S3 and what is it used for</summary><br>
-<b>
+<summary>Explain what is AWS S3?</summary><br><b>
+
 S3 stands for 3 S, Simple Storage Service.
 S3 is a object storage service which is fast, scalable and durable. S3 enables customers to upload, download or store any file or object that is up to 5 TB in size. While having a maximum size of 5 GB per file (multipart upload if more than 5 GB in size).
 </b>
@@ -592,20 +642,14 @@ True
 <summary>What is a storage class? What storage classes are you familiar with?</summary><br><b>
 </b></details>
 
-#### EC2
+#### AWS EC2
 
 <details>
-<summary>What is EC2? What is it used for?</summary><br><b>
+<summary>What is EC2?</summary><br><b>
 </b></details>
 
 <details>
 <summary>What EC2 pricing models are there?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to increase RAM for a given EC2 instance?</summary><br><b>
-
-Stop the instance, the type of the instance to match the desired RAM and start the instance.
 </b></details>
 
 <details>
@@ -632,19 +676,19 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 <summary>What are spot instances?</summary><br><b>
 </b></details>
 
-#### CloudFormation
+#### AWS CloudFormation
 
 <details>
 <summary>Explain what is CloudFormation</summary><br><b>
 </b></details>
 
-#### Costs
+#### AWS Costs
 
 <details>
 <summary>Are you familiar with Cost Explorer tool? Have you used it? What for exactly?</summary><br><b>
 </b></details>
 
-#### CloudFront
+#### AWS CloudFront
 
 <details>
 <summary>Explain what is CloudFront and what is it used for</summary><br><b>
@@ -675,7 +719,7 @@ True
 A transport solution which was designed for transferring large amounts of data (petabyte-scale) into and out the AWS cloud.
 </b></details>
 
-##### Load Balancers
+##### AWS Load Balancers
 
 <details>
 <summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
@@ -772,7 +816,43 @@ Great for use cases like two-tier web applications that has a MySQL or Postgresq
 #### AWS Networking
 
 <details>
+<summary>What is AWS Direct Connect?</summary><br><b>
+
+Allows you to connect your corporate network to AWS network.
+</b></details>
+
+<details>
+<summary>What is Route 53?</summary><br><b>
+
+"Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service"
+
+More on Route 53 [here](https://aws.amazon.com/route53)
+</b></details>
+
+<details>
 <summary>What is VPC?</summary><br><b>
+
+"A logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define"
+Read more about it [here](https://aws.amazon.com/vpc).
+</b></details>
+
+<details>
+<summary>True or False? Subnets belong to the same VPC, can be in different availability zones</summary><br><b>
+
+True. Just to clarify, a subnet must reside entirely in one AZ.
+</b></details>
+
+<details>
+<summary>What is an Internet Gateway?</summary><br><b>
+
+"component that allows communication between instances in your VPC and the internet" (AWS docs).
+Read more about it [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
+</b></details>
+
+<details>
+<summary>Multiple Internet Gateways can be attached to one VPC</summary><br><b>
+
+False. Only one internet gateway can be attached to a single VPC.
 </b></details>
 
 <details>
@@ -781,6 +861,11 @@ Great for use cases like two-tier web applications that has a MySQL or Postgresq
 
 <details>
 <summary>Explain Security Groups and Network ACLs</summary><br><b>
+
+* NACL - security layer on the subnet level.
+* Security Group - security layer on the instance level.
+
+Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) and [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
 </b></details>
 
 #### Identify the service or tool
@@ -3445,6 +3530,10 @@ Statements are instructions executed by the interpreter like variable assignment
 </b></details>
 
 <details>
+<summary>Explain Composition</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is a compiler?</summary><br><b>
 </b></details>
 
@@ -3657,9 +3746,33 @@ You can usually use the function hash() to check an object mutability. If an obj
 </b></details>
 
 <details>
-<summary>What is the result of `"abc"*3`?</summary><br><b>
+<summary>What is the result of each of the following?
 
-abcabcabc
+  * 1 > 2
+  * 'b' > 'a'
+  * 1 == 'one'
+  * 2 > 'one'</summary><br><b>
+
+  * False
+  * True
+  * False
+  * TypeError
+</b></details>
+
+<details>
+<summary>What is the result of of each of the following?
+
+  * "abc"*3
+  * "abc"*2.5
+  * "abc"*2.0
+  * "abc"*True
+  * "abc"*False</summary><br><b>
+
+  * abcabcabc
+  * TypeError
+  * TypeError
+  * "abc"
+  * ""
 </b></details>
 
 <details>
@@ -3882,6 +3995,20 @@ while True:
 
 For more details about errors and exceptions follow this [https://docs.python.org/3/tutorial/errors.html](https://docs.python.org/3/tutorial/errors.html)
 
+</b></details>
+
+#### Python Built-in functions
+
+<details>
+<summary>Explain the following built-in functions (their purpose + use case example):
+
+  * repr 
+  * any
+  * all</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between repr function and str?</summary><br><b>
 </b></details>
 
 <details>
@@ -7910,6 +8037,10 @@ Bonus: extract the last word of each line
 #### Architecture
 
 <details>
+<summary>Explain what is "Single point of failure" and give an example</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain "3-Tier Architecture" (including pros and cons)</summary><br><b>
 </b></details>
 
@@ -7935,6 +8066,26 @@ Bonus: extract the last word of each line
 </b></details>
 
 #### Scalability
+
+<details>
+<summary>Explain Scalability</summary><br><b>
+
+The ability easily grow in size and capacity based on demand and usage.
+</b></details>
+
+<details>
+<summary>Explain Elasticity</summary><br><b>
+
+The ability to grow but also to reduce based on what is required
+</b></details>
+
+<details>
+<summary>Explain Fault Tolerance and High Availability</summary><br><b>
+
+Fault Tolerance - The ability to self-heal and return to normal capacity. Also the ability to withstand a failure and remain functional.
+
+High Availability - Being able to access a resource (in some use cases, using different platforms)
+</b></details>
 
 <details>
 <summary>Explain Vertical Scaling</summary><br><b>
@@ -8073,8 +8224,35 @@ A programming model for large-scale data processing
 <details>
 <summary>Explain Hadoop Distributed File Systems (HDFS)</summary><br><b>
 
-Distributed file system providing high aggregate bandwidth across the cluster.
+* Distributed file system providing high aggregate bandwidth across the cluster.
+* For a user it looks like a regular file system structure but behind the scenes it's distributed across multiple machines in a cluster
+* Typical file size is TB and it can scale and supports millions of files
+* It's fault tolerant which means it provides automatic recovery from faults
+* It's best suited for running long batch operations rather than live analysis
 </b></details>
+
+<details>
+<summary>What do you know about HDFS architecture?</summary><br><b>
+
+[HDFS Architecture](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html)
+
+* Master-slave architecture
+* Namenode - master, Datanodes - slaves
+* Files split into blocks
+* Blocks stored on datanodes
+* Namenode controls all metadata
+</b></details>
+
+## Certificates
+
+If you are looking for a way to prepare for a certain exam this is the section for you. Here you'll find a list of certificates, each references to a separate file with focused questions that will help you to prepare to the exam. Good luck :)
+
+Note: in order to make sure you are looking at a relevant source of questions, each certificate name also specifies the year these questions were reviewed or last updated
+
+#### AWS
+
+* [Cloud Practitioner - 2020](certificates/cloud-practitioner.md)
+
 
 ## Exercises
 
