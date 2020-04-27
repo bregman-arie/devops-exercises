@@ -70,7 +70,7 @@ Personally, I really like the following sites
 
 ### How to learn more about Linux?
 
-I gathered a list of resource [here](http://devopsbit.com/resources/linux)
+I gathered a list of resource [here](https://dev.to/abregman/collection-of-linux-resources-3nhk)
 
 For beginners, I recommend [Linux Journey](https://linuxjourney.com)
 If you want to deep dive into operating systems internals, I really recommend [Operating Systems: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP)

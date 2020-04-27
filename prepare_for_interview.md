@@ -10,7 +10,7 @@ Every DevOps Engineer should have a deep understanding of at least one operating
  
 Usually, the followup question is "How extensive should my knowledge be?" Out of all the DevOps skills, I would say this, along with coding, should be your strongest skills. Be familiar with OS processes, debugging tools, filesystem, networking, ... know your operating system, understand how it works, how to manage issues, etc.
 
-Not long ago, I've created a list of Linux resources right [here](http://devopsbit.com/resources/linux). There are some good sites there that you can use for learning more about Linux.
+Not long ago, I've created a list of Linux resources right [here](https://dev.to/abregman/collection-of-linux-resources-3nhk). There are some good sites there that you can use for learning more about Linux.
  
 #### Coding
  

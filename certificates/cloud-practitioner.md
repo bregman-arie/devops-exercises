@@ -75,6 +75,12 @@ Read more about it [here](https://aws.amazon.com/vpc).
 </b></details>
 
 <details>
+<summary>True or False? VPC spans multiple regions</summary><br><b>
+
+False
+</b></details>
+
+<details>
 <summary>True or False? Subnets belong to the same VPC, can be in different availability zones</summary><br><b>
 
 True. Just to clarify, a subnet must reside entirely in one AZ.
@@ -94,6 +100,12 @@ False. Only one internet gateway can be attached to a single VPC.
 </b></details>
 
 <details>
+<summary>True or False? Route Tables used to allow or deny traffic from the internet to AWS instances</summary><br><b>
+
+False.
+</b></details>
+
+<details>
 <summary>Explain Security Groups and Network ACLs</summary><br><b>
 
 * NACL - security layer on the subnet level.
@@ -102,10 +114,58 @@ False. Only one internet gateway can be attached to a single VPC.
 Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) and [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
 </b></details>
 
-#### AWS EC2
+#### AWS Compute
 
 <details>
 <summary>What is EC2?</summary><br><b>
+
+"a web service that provides secure, resizable compute capacity in the cloud".
+Read more [here](https://aws.amazon.com/ec2)
+</b></details>
+
+<details>
+<summary>What is AMI?</summary><br><b>
+
+Amazon Machine Images is "An Amazon Machine Image (AMI) provides the information required to launch an instance".
+Read more [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
+</b></details>
+
+<details>
+<summary>What are the different source for AMIs?</summary><br><b>
+
+* Personal AMIs - AMIs you create
+* AWS Marketplace for AMIs - Paid AMIs usually with bundled with licensed software
+* Community AMIs - Free
+</b></details>
+
+<details>
+<summary>What is instance type?</summary><br><b>
+
+"the instance type that you specify determines the hardware of the host computer used for your instance"
+Read more about instance types [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html)
+</b></details>
+
+<details>
+<summary>What is EBS?</summary><br><b>
+
+"provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices."
+More on EBS [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html)
+</b></details>
+
+<details>
+<summary>What EC2 pricing models are there?</summary><br><b>
+
+On Demand - pay a fixed rate by the hour/second with no commitment. You can provision and terminate it at any given time.
+Reserved - you get capacity reservation, basically purchase an instance for a fixed time of period. The longer, the cheaper.
+Spot - Enables you to bid whatever price you want for instances or pay the spot price.
+Dedicated Hosts - physical EC2 server dedicated for your use.
+</b></details>
+
+<details>
+<summary>What are Security Groups?</summary><br><b>
+
+"A security group acts as a virtual firewall that controls the traffic for one or more instances"
+More on this subject [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)
 </b></details>
 
 #### AWS Storage
@@ -114,18 +174,110 @@ Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec
 <summary>Explain what is AWS S3?</summary><br><b>
 
 S3 stands for 3 S, Simple Storage Service.
-S3 is a object storage service which is fast, scalable and durable. S3 enables customers to upload, download or store any file or object that is up to 5 TB in size. While having a maximum size of 5 GB per file (multipart upload if more than 5 GB in size).
-</b>
-</details>
+S3 is a object storage service which is fast, scalable and durable. S3 enables customers to upload, download or store any file or object that is up to 5 TB in size.
+
+More on S3 [here](https://aws.amazon.com/s3) 
+</b></details>
 
 <details>
 <summary>What is a bucket?</summary><br><b>
-An S3 bucket is a resource which is similar to folders in a file system and allows storing objects, which consist of data and its  meta data.
+
+An S3 bucket is a resource which is similar to folders in a file system and allows storing objects, which consist of data.
 </b></details>
 
 <details>
 <summary>True or False? A bucket name must be globally unique</summary><br><b>
+
 True
+</b></details>
+
+<details>
+<summary>Explain folders and objects in regards to buckets</summary><br><b>
+
+* Folder - any sub folder in an s3 bucket
+* Object - The files which are stored in a bucket
+</b></details>
+
+<details>
+<summary>Explain the following:
+
+  * Object Lifecycles
+  * Object Sharing
+  * Object Versioning</summary><br><b>
+
+  * Object Lifecycles - Transfer objects between storage classes based on defined rules of time periods
+  * Object Sharing - Share objects via a URL link
+  * Object Versioning - Manage multiple versions of an object
+</b></details>
+
+<details>
+<summary>Explain Object Durability and Object Availability</summary><br><b>
+
+Object Durability: The percent over a one-year time period that a file will not be lost
+Object Availability: The percent over a one-year time period that a file will be accessible
+</b></details>
+
+<details>
+<summary>What is a storage class? What storage classes are there?</summary><br><b>
+
+Each object has a storage class assigned to, affecting its availability and durability. This also has effect on costs.
+Storage classes offered today:
+  * Standard:
+    * Used for general, all-purpose storage (mostly storage that needs to be accessed frequently)
+    * The most expensive storage class 
+    * 11x9% durability
+    * 2x9% availability
+    * Default storage class
+
+  * Standard-IA (Infrequent Access)
+    * Long lived, infrequently accessed data but must be available the moment it's being accessed
+    * 11x9% durability
+    * 99.90% availability
+
+  * One Zone-IA (Infrequent Access):
+    * Long-lived, infrequently accessed, non-critical data
+    * Less expensive than Standard and Standard-IA storage classes
+    * 2x9% durability
+    * 99.50% availability
+    
+  * Intelligent-Tiering:
+    * Long-lived data with changing or unknown access patterns. Basically, In this class the data automatically moves to the class most suitable for you based on usage patterns
+    * Price depends on the used class
+    * 11x9% durability
+    * 99.90% availability
+
+  * Glacier: Archive data with retrieval time ranging from minutes to hours
+  * Glacier Deep Archive: Archive data that rarely, if ever, needs to be accessed with retrieval times in hours
+  * Both Glacier and Glacier Deep Archive are:
+    * The most cheap storage classes
+    * have 9x9% durability 
+
+More on storage classes [here](https://aws.amazon.com/s3/storage-classes)
+
+</b></details>
+
+<details>
+<summary>Explain what is Storage Gateway</summary><br><b>
+
+"AWS Storage Gateway is a hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage".
+More on Storage Gateway [here](https://aws.amazon.com/storagegateway)
+</b></details>
+
+<details>
+<summary>Explain the following Storage Gateway deployments types
+
+  * File Gateway
+  * Volume Gateway
+  * Tape Gateway</summary><br><b>
+
+Explained in detail [here](https://aws.amazon.com/storagegateway/faqs)
+</b></details>
+
+<details>
+<summary>What is the difference between stored volumes and cached volumes?</summary><br><b>
+
+Stored Volumes - Data is located at customer's data center and periodically backed up to AWS
+Cached Volumes - Data is stored in AWS cloud and cached at customer's data center for quick access
 </b></details>
 
 #### AWS IAM
