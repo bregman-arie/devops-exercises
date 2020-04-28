@@ -8091,10 +8091,6 @@ A connection leak is a situation where database connection isn't closed after be
 </b></details>
 
 <details>
-<summary>What is a connection leak?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is a Data Warehouse?</summary><br><b>
 
 "A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of organisation's decision-making process"
