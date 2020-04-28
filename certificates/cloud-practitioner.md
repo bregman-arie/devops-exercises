@@ -54,20 +54,6 @@ Edge locations are basically content delivery network which caches data and insu
 #### AWS Networking
 
 <details>
-<summary>What is AWS Direct Connect?</summary><br><b>
-
-Allows you to connect your corporate network to AWS network.
-</b></details>
-
-<details>
-<summary>What is Route 53?</summary><br><b>
-
-"Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service"
-
-More on Route 53 [here](https://aws.amazon.com/route53)
-</b></details>
-
-<details>
 <summary>What is VPC?</summary><br><b>
 
 "A logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define"
@@ -112,6 +98,12 @@ False.
 * Security Group - security layer on the instance level.
 
 Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) and [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
+</b></details>
+
+<details>
+<summary>What is AWS Direct Connect?</summary><br><b>
+
+Allows you to connect your corporate network to AWS network.
 </b></details>
 
 #### AWS Compute
@@ -336,6 +328,184 @@ There can be several reasons for that. One of them is lack of policy. To solve t
 <summary>What permissions does a new user have?</summary><br><b>
 
 Only a login access.
+</b></details>
+
+##### AWS ELB
+
+<details>
+<summary>What is ELB (Elastic Load Balancing)?</summary><br><b>
+
+AWS definition: "Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions."
+
+More on ELB [here](https://aws.amazon.com/elasticloadbalancing)
+</b></details>
+
+<details>
+<summary>What is auto scaling?</summary><br><b>
+
+AWS definition: "AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost"
+
+Read more about auto scaling [here](https://aws.amazon.com/autoscaling)
+</b></details>
+
+<details>
+<summary>True or False? Auto Scaling is about adding resources (such as instances) and not about removing resource</summary><br><b>
+
+False. Auto scaling adjusts capacity and this can mean removing some resources based on usage and performances.
+</b></details>
+
+<details>
+<summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
+
+  * Application LB - layer 7 traffic
+  * Network LB - ultra-high performances or static IP address
+  * Classic LB - low costs, good for test or dev environments
+</b></details>
+
+#### AWS DNS
+
+<details>
+<summary>What is Route 53?</summary><br><b>
+
+"Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service"
+Some of Route 53 features:
+  * Register domain
+  * DNS service - domain name translations
+  * Health checks - verify your app is available
+
+More on Route 53 [here](https://aws.amazon.com/route53)
+</b></details>
+
+#### AWS CloudFront
+
+<details>
+<summary>Explain what is CloudFront</summary><br><b>
+
+AWS definition: "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment."
+
+More on CloudFront [here](https://aws.amazon.com/cloudfront)
+</b></details>
+
+<details>
+<summary>Explain the following
+
+  * Origin
+  * Edge location
+  * Distribution</summary><br><b>
+</b></details>
+
+#### AWS Monitoring & Logging
+
+<details>
+<summary>What is AWS CloudWatch?</summary><br><b>
+
+AWS definition: "Amazon CloudWatch is a monitoring and observability service..."
+
+More on CloudWatch [here](https://aws.amazon.com/cloudwatch)
+</b></details>
+
+<details>
+<summary>What is AWS CloudTrail?</summary><br><b>
+
+AWS definition: "AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account."
+
+Read more on CloudTrail [here](https://aws.amazon.com/cloudtrail)
+</b></details>
+
+<details>
+<summary>What is Simply Notification Service?</summary><br><b>
+
+AWS definition: "a highly available, durable, secure, fully managed pub/sub messaging service that enables you to decouple microservices, distributed systems, and serverless applications."
+
+Read more about it [here](https://aws.amazon.com/sns)
+</b></details>
+
+<details>
+<summary>Explain the following in regards to SNS:
+
+  * Topics
+  * Subscribers
+  * Publishers</summary><br><b>
+
+  * Topics - used for grouping multiple endpoints
+  * Subscribers - the endpoints where topics send messages to 
+  * Publishers - the provider of the message (event, person, ...)
+</b></details>
+
+#### AWS Security 
+
+<details>
+<summary>What is the shared responsibility model? What AWS is responsible for and what the user is responsible for based on the shared responsibility model?</summary><br><b>
+
+The shared responsibility model defines what the customer is responsible for and what AWS is responsible for.
+
+More on the shared responsibility model [here](https://aws.amazon.com/compliance/shared-responsibility-model)
+</b></details>
+
+<details>
+<summary>What is the AWS compliance program?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what each of the following services is used for
+
+  * AWS Inspector
+  * AWS Artifact
+  * AWS GuardDuty
+  * AWS Shield</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS WAF? Give an example of how it can used and describe what resources or services you can use it with</summary><br><b>
+</b></details>
+
+<details>
+<summary>What AWS VPN is used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between Site-to-Site VPN and Client VPN?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? AWS Inspector can perform both network and host assessments</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What is AWS Key Management Service (KMS)?</summary><br><b>
+
+AWS definition: "KMS makes it easy for you to create and manage cryptographic keys and control their use across a wide range of AWS services and in your applications."
+More on KMS [here](https://aws.amazon.com/kms)
+</b></details>
+
+#### AWS Databases
+
+<details>
+<summary>What is AWS RDS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS DynamoDB?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS Redshift and how is it different than RDS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS ElastiCache? For what cases is it used?</summary><br><b>
+
+Amazon Elasticache is a fully managed Redis or Memcached in-memory data store.                                                                       
+It's great for use cases like two-tier web applications where the most frequently accesses data is stored in ElastiCache so response time is optimal.
+</b></details>
+
+<details>
+<summary>What is Amazon Aurora</summary><br><b>
+
+A MySQL & Postgresql based relational database. Also, the default database proposed for the user when using RDS for creating a database.
+Great for use cases like two-tier web applications that has a MySQL or Postgresql database layer and you need automated backups for your application.
 </b></details>
 
 ### Final Note

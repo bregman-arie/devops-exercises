@@ -793,16 +793,14 @@ Cached Volumes - Data is stored in AWS cloud and cached at customer's data cente
 <summary>Explain what is CloudFormation</summary><br><b>
 </b></details>
 
-#### AWS Costs
-
-<details>
-<summary>Are you familiar with Cost Explorer tool? Have you used it? What for exactly?</summary><br><b>
-</b></details>
-
 #### AWS CloudFront
 
 <details>
-<summary>Explain what is CloudFront and what is it used for</summary><br><b>
+<summary>Explain what is CloudFront</summary><br><b>
+
+AWS definition: "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment."
+
+More on CloudFront [here](https://aws.amazon.com/cloudfront)
 </b></details>
 
 <details>
@@ -810,8 +808,7 @@ Cached Volumes - Data is stored in AWS cloud and cached at customer's data cente
 
   * Origin
   * Edge location
-  * Distribution
-</summary><br><b>
+  * Distribution</summary><br><b>
 </b></details>
 
 <details>
@@ -830,7 +827,29 @@ True
 A transport solution which was designed for transferring large amounts of data (petabyte-scale) into and out the AWS cloud.
 </b></details>
 
-##### AWS Load Balancers
+##### AWS ELB
+
+<details>
+<summary>What is ELB (Elastic Load Balancing)?</summary><br><b>
+
+AWS definition: "Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions."
+
+More on ELB [here](https://aws.amazon.com/elasticloadbalancing)
+</b></details>
+
+<details>
+<summary>What is auto scaling?</summary><br><b>
+
+AWS definition: "AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost"
+
+Read more about auto scaling [here](https://aws.amazon.com/autoscaling)
+</b></details>
+
+<details>
+<summary>True or False? Auto Scaling is about adding resources (such as instances) and not about removing resource</summary><br><b>
+
+False. Auto scaling adjusts capacity and this can mean removing some resources based on usage and performances.
+</b></details>
 
 <details>
 <summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
@@ -840,10 +859,14 @@ A transport solution which was designed for transferring large amounts of data (
   * Classic LB - low costs, good for test or dev environments
 </b></details>
 
-##### AWS Security 
+#### AWS Security 
 
 <details>
-<summary>What is the shared responsibility model? In other words, what AWS is responsible for and what the user is responsible for in regards to Security?</summary><br><b>
+<summary>What is the shared responsibility model? What AWS is responsible for and what the user is responsible for based on the shared responsibility model?</summary><br><b>
+
+The shared responsibility model defines what the customer is responsible for and what AWS is responsible for.
+
+More on the shared responsibility model [here](https://aws.amazon.com/compliance/shared-responsibility-model)
 </b></details>
 
 <details>
@@ -855,6 +878,7 @@ A transport solution which was designed for transferring large amounts of data (
 
   * AWS Inspector
   * AWS Artifact
+  * AWS GuardDuty
   * AWS Shield</summary><br><b>
 </b></details>
 
@@ -876,21 +900,25 @@ A transport solution which was designed for transferring large amounts of data (
 True
 </b></details>
 
+<details>
+<summary>What is AWS Key Management Service (KMS)?</summary><br><b>
+
+AWS definition: "KMS makes it easy for you to create and manage cryptographic keys and control their use across a wide range of AWS services and in your applications."
+More on KMS [here](https://aws.amazon.com/kms)
+</b></details>
+
 #### AWS Databases
 
 <details>
-<summary>What is Amazon RDS?</summary><br><b>
+<summary>What is AWS RDS?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What are some features or benefits of using RDS?</summary><br><b>
-
-1. Multi AZ - great for Disaster Recovery
-2. Read Replicas - for better performances
+<summary>What is AWS DynamoDB?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is AWS Redshift and how its different than RDS?</summary><br><b>
+<summary>What is AWS Redshift and how is it different than RDS?</summary><br><b>
 </b></details>
 
 <details>
@@ -903,7 +931,7 @@ True
 </b></details>
 
 <details>
-<summary>What is Amazon ElastiCache? For what cases it used?</summary><br><b>
+<summary>What is AWS ElastiCache? For what cases is it used?</summary><br><b>
 
 Amazon Elasticache is a fully managed Redis or Memcached in-memory data store.                                                                       
 It's great for use cases like two-tier web applications where the most frequently accesses data is stored in ElastiCache so response time is optimal.
@@ -912,7 +940,7 @@ It's great for use cases like two-tier web applications where the most frequentl
 <details>
 <summary>What is Amazon Aurora</summary><br><b>
 
-A MySQL & Postgresql based relational database.
+A MySQL & Postgresql based relational database. Also, the default database proposed for the user when using RDS for creating a database.
 Great for use cases like two-tier web applications that has a MySQL or Postgresql database layer and you need automated backups for your application.
 </b></details>
 
@@ -921,20 +949,6 @@ Great for use cases like two-tier web applications that has a MySQL or Postgresq
 </b></details>
 
 #### AWS Networking
-
-<details>
-<summary>What is AWS Direct Connect?</summary><br><b>
-
-Allows you to connect your corporate network to AWS network.
-</b></details>
-
-<details>
-<summary>What is Route 53?</summary><br><b>
-
-"Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service"
-
-More on Route 53 [here](https://aws.amazon.com/route53)
-</b></details>
 
 <details>
 <summary>What is VPC?</summary><br><b>
@@ -985,6 +999,12 @@ False.
 * Security Group - security layer on the instance level.
 
 Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) and [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
+</b></details>
+
+<details>
+<summary>What is AWS Direct Connect?</summary><br><b>
+
+Allows you to connect your corporate network to AWS network.
 </b></details>
 
 #### Identify the service or tool
@@ -1053,18 +1073,133 @@ AWS Database Migration Service
 AWS CloudTrail
 </b></details>
 
+<details>
+<summary>What would you use for SQL database?</summary><br><b>
+
+AWS RDS
+</b></details>
+
+<details>
+<summary>What would you use for NoSQL database?</summary><br><b>
+
+AWS DynamoDB
+</b></details>
+
+#### AWS DNS
+
+<details>
+<summary>What is Route 53?</summary><br><b>
+
+"Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service..."
+Some of Route 53 features:
+  * Register domain
+  * DNS service - domain name translations
+  * Health checks - verify your app is available
+
+More on Route 53 [here](https://aws.amazon.com/route53)
+</b></details>
+
+#### AWS Monitoring & Logging
+
+<details>
+<summary>What is AWS CloudWatch?</summary><br><b>
+
+AWS definition: "Amazon CloudWatch is a monitoring and observability service..."
+
+More on CloudWatch [here](https://aws.amazon.com/cloudwatch)
+</b></details>
+
+<details>
+<summary>What is AWS CloudTrail?</summary><br><b>
+
+AWS definition: "AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account."
+
+Read more on CloudTrail [here](https://aws.amazon.com/cloudtrail)
+</b></details>
+
+<details>
+<summary>What is Simply Notification Service?</summary><br><b>
+
+AWS definition: "a highly available, durable, secure, fully managed pub/sub messaging service that enables you to decouple microservices, distributed systems, and serverless applications."
+
+Read more about it [here](https://aws.amazon.com/sns)
+</b></details>
+
+<details>
+<summary>Explain the following in regards to SNS:
+
+  * Topics
+  * Subscribers
+  * Publishers</summary><br><b>
+
+  * Topics - used for grouping multiple endpoints
+  * Subscribers - the endpoints where topics send messages to 
+  * Publishers - the provider of the message (event, person, ...)
+</b></details>
+
+#### AWS Billing & Support
+
+<details>
+<summary>What is AWS Organizations?</summary><br><b>
+
+AWS definition: "AWS Organizations helps you centrally govern your environment as you grow and scale your workloads on AWS."
+More on Organizations [here](https://aws.amazon.com/organizations)
+</b></details>
+
+<details>
+<summary>Explain AWS pricing model</summary><br><b>
+
+It mainly works on "pay-as-you-go" meaning you pay only for what are using and when you are using it.
+In s3 you pay for 1. How much data you are storing 2. Making requests (PUT, POST, ...)
+In EC2 it's based on the purchasing option (on-demand, spot, ...), instance type, AMI type and the region used.
+
+More on AWS pricing model [here](https://aws.amazon.com/pricing)
+</b></details>
+
+<details>
+<summary>How one should estimate AWS costs when for example comparing to on-premise solutions?</summary><br><b>
+
+* TCO calculator
+* AWS simple calculator
+* Cost Explorer
+</b></details>
+
+<details>
+<summary>What basic support in AWS includes?</summary><br><b>
+
+* 24x7 customer service
+* Trusted Advisor
+* AWS personal Health Dashoard
+</b></details>
+
 #### AWS Misc
 
 <details>
-<summary>Explain what are the following services and give an use case example for each one them:
+<summary>What is AWS CloudSearch?</summary><br><b>
+</b></details>
 
-  * CloudTrail
-  * CloudWatch
-  * CloudSearch</summary><br><b>
+<details>
+<summary>What is AWS Lightsail?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS Athena?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS EMR?</summary><br><b>
 </b></details>
 
 <details>
 <summary>Explain what is AWS Lambda</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS Quick Starts?</summary><br><b>
+
+AWS definition: "Quick Starts are built by AWS solutions architects and partners to help you deploy popular technologies on AWS, based on AWS best practices for security and high availability."
+
+Read more [here](https://aws.amazon.com/quickstart)
 </b></details>
 
 ## Network
@@ -7083,6 +7218,10 @@ A buffer overflow (or buffer overrun) occurs when the volume of data exceeds the
 
 MAC address flooding attack (CAM table flooding attack) is a type of network attack where an attacker connected to a switch port floods the switch interface with very large number of Ethernet frames with different fake source MAC address.
 
+</b></details>
+
+<details>
+<summary>What is port flooding?</summary><br><b>
 </b></details>
 
 <details>
