@@ -80,7 +80,13 @@ Read more about it [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_I
 </b></details>
 
 <details>
-<summary>Multiple Internet Gateways can be attached to one VPC</summary><br><b>
+<summary>True or False? NACL allow or deny traffic on the subnet level</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? Multiple Internet Gateways can be attached to one VPC</summary><br><b>
 
 False. Only one internet gateway can be attached to a single VPC.
 </b></details>
@@ -135,6 +141,16 @@ Read more [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
 
 "the instance type that you specify determines the hardware of the host computer used for your instance"
 Read more about instance types [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html)
+</b></details>
+
+<details>
+<summary>True or False? The following are instance types available for a user in AWS:
+
+  * Compute optimizied
+  * Network optimizied
+  * Web optimized</summary><br><b>
+
+False. From the above list only compute optimized is available.
 </b></details>
 
 <details>
@@ -246,6 +262,16 @@ Storage classes offered today:
 
 More on storage classes [here](https://aws.amazon.com/s3/storage-classes)
 
+</b></details>
+
+<details>
+<summary>A customer would like to move data which is rarely accessed from standard storage class to the most cheapest class there is. Which storage class should be used?
+
+  * One Zone-IA
+  * Glacier Deep Archive
+  * Intelligent-Tiering</summary><br><b>
+
+Glacier Deep Archive
 </b></details>
 
 <details>
@@ -443,6 +469,12 @@ More on the shared responsibility model [here](https://aws.amazon.com/compliance
 </b></details>
 
 <details>
+<summary>True or False? Based on the shared responsibility model, Amazon is responsible for physical CPUs and security groups on instances</summary><br><b>
+
+False. It is responsible for Hardware in its sites but not for security groups which created and managed by the users.
+</b></details>
+
+<details>
 <summary>What is the AWS compliance program?</summary><br><b>
 </b></details>
 
@@ -474,10 +506,29 @@ True
 </b></details>
 
 <details>
+<summary>What is AWS Acceptable Use Policy?</summary><br><b>
+
+It describes prohibited uses of the web services offered by AWS.
+More on AWS Acceptable Use Policy [here](https://aws.amazon.com/aup)
+</b></details>
+
+<details>
 <summary>What is AWS Key Management Service (KMS)?</summary><br><b>
 
 AWS definition: "KMS makes it easy for you to create and manage cryptographic keys and control their use across a wide range of AWS services and in your applications."
 More on KMS [here](https://aws.amazon.com/kms)
+</b></details>
+
+<details>
+<summary>True or False? A user is not allowed to perform penetration testing on any of the AWS services</summary><br><b>
+
+False. On some services, like EC2, CloudFront and RDS, penetration testing is allowed.
+</b></details>
+
+<details>
+<summary>True or False? DDoS attack is an example of allowed penetration testing activity</summary><br><b>
+
+False.
 </b></details>
 
 #### AWS Databases
@@ -506,6 +557,217 @@ It's great for use cases like two-tier web applications where the most frequentl
 
 A MySQL & Postgresql based relational database. Also, the default database proposed for the user when using RDS for creating a database.
 Great for use cases like two-tier web applications that has a MySQL or Postgresql database layer and you need automated backups for your application.
+</b></details>
+
+#### AWS Serverless Compute
+
+<details>
+<summary>Explain what is AWS Lambda</summary><br><b>
+
+AWS definition: "AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume."
+
+Read more on it [here](https://aws.amazon.com/lambda)
+</b></details>
+
+<details>
+<summary>True or False? In AWS Lambda, you are charged as long as a function exists, regardless of whether it's running or not</summary><br><b>
+
+False. Charges are being made when the code is executed.
+</b></details>
+
+<details>
+<summary>Which of the following set of languages Lambda supports?
+
+  * R, Swift, Rust, Kotlin
+  * Python, Ruby, Go 
+  * Python, Ruby, PHP</summary><br><b>
+
+  * Python, Ruby, Go 
+</b></details>
+
+#### Identify the service or tool
+
+<details>
+<summary>Which service would you use for building a website or web application?</summary><br><b>
+
+Lightsail
+</b></details>
+
+<details>
+<summary>Which tool would you use for choosing between Reserved instances or On-Demand instances?</summary><br><b>
+
+Cost Explorer
+</b></details>
+
+<details>
+<summary>What would you use to check how many unassociated Elastic IP address you have?</summary><br><b>
+
+Trusted Advisor
+</b></details>
+
+<details>
+<summary>What service allows you to transfer large amounts (Petabytes) of data in and out of the AWS cloud?</summary><br><b>
+
+AWS Snowball
+</b></details>
+
+<details>
+<summary>What provides a virtual network dedicated to your AWS account?</summary><br><b>
+
+VPC
+</b></details>
+
+<details>
+<summary>What you would use for having automated backups for an application that has MySQL database layer?</summary><br><b>
+
+Amazon Aurora
+</b></details>
+
+<details>
+<summary>What would you use to migrate on-premise Oracle database to AWS?</summary><br><b>
+
+AWS Database Migration Service
+</b></details>
+
+<details>
+<summary>What would you use to check why certain EC2 instances were terminated?</summary><br><b>
+
+AWS CloudTrail
+</b></details>
+
+<details>
+<summary>What would you use for SQL database?</summary><br><b>
+
+AWS RDS
+</b></details>
+
+<details>
+<summary>What would you use for NoSQL database?</summary><br><b>
+
+AWS DynamoDB
+</b></details>
+
+<details>
+<summary>What would you use for running SQL queries interactively on S3?</summary><br><b>
+
+AWS Athena
+</b></details>
+
+<details>
+<summary>What would you use for adding image and video analysis to your application?</summary><br><b>
+
+AWS Rekognition
+</b></details>
+
+<details>
+<summary>Which service is used for sending notifications?</summary><br><b>
+
+SNS
+</b></details>
+
+<details>
+<summary>Which service would you use for monitoring malicious activity and unauthorized behavior in regards to AWS accounts and workloads?</summary><br><b>
+
+Amazon GuardDuty
+</b></details>
+
+<details>
+<summary>Which service would you use for centrally manage billing, control access, compliance, and security across multiple AWS accounts?</summary><br><b>
+
+AWS Organizations
+</b></details>
+
+<details>
+<summary>Which service would you use for web application protection?</summary><br><b>
+
+AWS WAF
+</b></details>
+
+#### AWS Billing & Support
+
+<details>
+<summary>What is AWS Organizations?</summary><br><b>
+
+AWS definition: "AWS Organizations helps you centrally govern your environment as you grow and scale your workloads on AWS."
+More on Organizations [here](https://aws.amazon.com/organizations)
+</b></details>
+
+<details>
+<summary>Explain AWS pricing model</summary><br><b>
+
+It mainly works on "pay-as-you-go" meaning you pay only for what are using and when you are using it.
+In s3 you pay for 1. How much data you are storing 2. Making requests (PUT, POST, ...)
+In EC2 it's based on the purchasing option (on-demand, spot, ...), instance type, AMI type and the region used.
+
+More on AWS pricing model [here](https://aws.amazon.com/pricing)
+</b></details>
+
+<details>
+<summary>How one should estimate AWS costs when for example comparing to on-premise solutions?</summary><br><b>
+
+* TCO calculator
+* AWS simple calculator
+* Cost Explorer
+</b></details>
+
+<details>
+<summary>What basic support in AWS includes?</summary><br><b>
+
+* 24x7 customer service
+* Trusted Advisor
+* AWS personal Health Dashoard
+</b></details>
+
+<details>
+<summary>Which of the following are AWS accounts types (and are sorted by order)?
+
+  * Basic, Developer, Business, Enterprise
+  * Newbie, Intermediate, Pro, Enterprise
+  * Developer, Basic, Business, Enterprise
+  * Beginner, Pro, Intermediate Enterprise</summary><br><b>
+
+  * Basic, Developer, Business, Enterprise
+</b></details>
+
+<details>
+<summary>True or False? Region is a factor when it comes to EC2 costs/pricing</summary><br><b>
+
+True. You pay differently based on the chosen region.
+</b></details>
+
+#### AWS Misc
+
+<details>
+<summary>What is AWS Lightsail?</summary><br><b>
+
+AWS definition: "Lightsail is an easy-to-use cloud platform that offers you everything needed to build an application or website, plus a cost-effective, monthly plan."
+</b></details>
+
+<details>
+<summary>What is AWS Rekognition?</summary><br><b>
+
+AWS definition: "Amazon Rekognition makes it easy to add image and video analysis to your applications using proven, highly scalable, deep learning technology that requires no machine learning expertise to use."
+
+Learn more [here](https://aws.amazon.com/rekognition)
+</b></details>
+
+<details>
+<summary>What is the Trusted Advisor?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What AWS services are serverless (or have the option to be serverless)?</summary><br><b>
+
+AWS Lambda
+AWS Athena
+</b></details>
+
+<details>
+<summary>What is AWS Athena?</summary><br><b>
+
+"Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL."
+
+Learn more about AWS Athena [here](https://aws.amazon.com/athena)
 </b></details>
 
 ### Final Note

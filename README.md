@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1097** questions
+:bar_chart: &nbsp;There are currently **1139** questions
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) or follow us on [Twitter](https://twitter.com/devopsbit) for additional daily exercises, articles and more resources on DevOps
 
@@ -36,7 +36,7 @@
     <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a><br /><sub><a href="#python-beginner">Beginner :baby:</a></sub><br><sub><a href="#python-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#go"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a><br /><sub><a href="#shell-scripting-beginner">Beginner :baby:</a></sub><br><sub><a href="#shell-scripting-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a><br /><sub><a href="#kubernetes-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
     <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a><br /><sub><a href="#prometheus-beginner">Beginner :baby:</a></sub><br><sub><a href="#prometheus-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a><br /><sub><a href="#mongo-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a><br /><sub><a href="#sql-beginner">Beginner :baby:</a></sub><br><sub><a href="#sql-advanced">Advanced :star:</a></sub></td>
@@ -53,7 +53,7 @@
   </tr>
   <tr>
     <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a><br /><sub><a href="#monitoring-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#elastic"><img src="images/elastic.png" width="110px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a><br /><sub><a href="#elastic-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#elastic"><img src="images/elastic.png" width="110px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
     <td align="center"><a href="#virtualization"><img src="images/virtualization.png" width="75px;" height="75px;" alt="Virtualization"/><br /><b>Virtualization</b></a><br /><sub><a href="#virtualization-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#dns"><img src="images/dns.png" width="75px;" height="75px;" alt="DNS"/><br /><b>DNS</b></a><br /><sub><a href="#dns-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#operating-system"><img src="images/os.png" width="75px;" height="75px;" alt="Operating System"/><br /><b>Operating System</b></a><br /><sub><a href="#operating-system-beginner">Beginner :baby:</a></sub><br><sub></td>
@@ -70,6 +70,9 @@
     <td align="center"><a href="#big-data"><img src="images/big-data.png" width="110px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
     <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
     <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
   </tr>
 </table>
 </center>
@@ -633,6 +636,16 @@ Read more about instance types [here](https://docs.aws.amazon.com/AWSEC2/latest/
 </b></details>
 
 <details>
+<summary>True or False? The following are instance types available for a user in AWS:
+
+  * Compute optimizied
+  * Network optimizied
+  * Web optimized</summary><br><b>
+
+False. From the above list only compute optimized is available.
+</b></details>
+
+<details>
 <summary>What is EBS?</summary><br><b>
 
 "provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices."
@@ -657,6 +670,32 @@ More on this subject [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/
 
 <details>
 <summary>How to migrate an instance to another availability zone?</summary><br><b>
+</b></details>
+
+#### AWS Serverless Compute
+
+<details>
+<summary>Explain what is AWS Lambda</summary><br><b>
+
+AWS definition: "AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume."
+
+Read more on it [here](https://aws.amazon.com/lambda)
+</b></details>
+
+<details>
+<summary>True or False? In AWS Lambda, you are charged as long as a function exists, regardless of whether it's running or not</summary><br><b>
+
+False. Charges are being made when the code is executed.
+</b></details>
+
+<details>
+<summary>Which of the following set of languages Lambda supports?
+
+  * R, Swift, Rust, Kotlin
+  * Python, Ruby, Go 
+  * Python, Ruby, PHP</summary><br><b>
+
+  * Python, Ruby, Go 
 </b></details>
 
 #### AWS Storage
@@ -745,6 +784,16 @@ Storage classes offered today:
 
 More on storage classes [here](https://aws.amazon.com/s3/storage-classes)
 
+</b></details>
+
+<details>
+<summary>A customer would like to move data which is rarely accessed from standard storage class to the most cheapest class there is. Which storage class should be used?
+
+  * One Zone-IA
+  * Glacier Deep Archive
+  * Intelligent-Tiering</summary><br><b>
+
+Glacier Deep Archive
 </b></details>
 
 <details>
@@ -870,6 +919,12 @@ More on the shared responsibility model [here](https://aws.amazon.com/compliance
 </b></details>
 
 <details>
+<summary>True or False? Based on the shared responsibility model, Amazon is responsible for physical CPUs and security groups on instances</summary><br><b>
+
+False. It is responsible for Hardware in its sites but not for security groups which created and managed by the users.
+</b></details>
+
+<details>
 <summary>What is the AWS compliance program?</summary><br><b>
 </b></details>
 
@@ -905,6 +960,25 @@ True
 
 AWS definition: "KMS makes it easy for you to create and manage cryptographic keys and control their use across a wide range of AWS services and in your applications."
 More on KMS [here](https://aws.amazon.com/kms)
+</b></details>
+
+<details>
+<summary>What is AWS Acceptable Use Policy?</summary><br><b>
+
+It describes prohibited uses of the web services offered by AWS.
+More on AWS Acceptable Use Policy [here](https://aws.amazon.com/aup)
+</b></details>
+
+<details>
+<summary>True or False? A user is not allowed to perform penetration testing on any of the AWS services</summary><br><b>
+
+False. On some services, like EC2, CloudFront and RDS, penetration testing is allowed.
+</b></details>
+
+<details>
+<summary>True or False? DDoS attack is an example of allowed penetration testing activity</summary><br><b>
+
+False.
 </b></details>
 
 #### AWS Databases
@@ -977,7 +1051,13 @@ Read more about it [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_I
 </b></details>
 
 <details>
-<summary>Multiple Internet Gateways can be attached to one VPC</summary><br><b>
+<summary>True or False? NACL allow or deny traffic on the subnet level</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? Multiple Internet Gateways can be attached to one VPC</summary><br><b>
 
 False. Only one internet gateway can be attached to a single VPC.
 </b></details>
@@ -1040,10 +1120,6 @@ Trusted Advisor
 </b></details>
 
 <details>
-<summary>What is the Trusted Advisor?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What service allows you to transfer large amounts (Petabytes) of data in and out of the AWS cloud?</summary><br><b>
 
 AWS Snowball
@@ -1083,6 +1159,42 @@ AWS RDS
 <summary>What would you use for NoSQL database?</summary><br><b>
 
 AWS DynamoDB
+</b></details>
+
+<details>
+<summary>What would you use for adding image and video analysis to your application?</summary><br><b>
+
+AWS Rekognition
+</b></details>
+
+<details>
+<summary>Which service is used for sending notifications?</summary><br><b>
+
+SNS
+</b></details>
+
+<details>
+<summary>What would you use for running SQL queries interactively on S3?</summary><br><b>
+
+AWS Athena
+</b></details>
+
+<details>
+<summary>Which service would you use for monitoring malicious activity and unauthorized behavior in regards to AWS accounts and workloads?</summary><br><b>
+
+Amazon GuardDuty
+</b></details>
+
+<details>
+<summary>Which service would you use for centrally manage billing, control access, compliance, and security across multiple AWS accounts?</summary><br><b>
+
+AWS Organizations
+</b></details>
+
+<details>
+<summary>Which service would you use for web application protection?</summary><br><b>
+
+AWS WAF
 </b></details>
 
 #### AWS DNS
@@ -1147,6 +1259,14 @@ More on Organizations [here](https://aws.amazon.com/organizations)
 </b></details>
 
 <details>
+<summary>What are Service Control Policies and to what service they belong?</summary><br><b>
+
+AWS organizations service and the definition by Amazon: "SCPs offer central control over the maximum available permissions for all accounts in your organization, allowing you to ensure your accounts stay within your organization’s access control guidelines."
+
+Learn more [here](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html)
+</b></details>
+
+<details>
 <summary>Explain AWS pricing model</summary><br><b>
 
 It mainly works on "pay-as-you-go" meaning you pay only for what are using and when you are using it.
@@ -1172,6 +1292,23 @@ More on AWS pricing model [here](https://aws.amazon.com/pricing)
 * AWS personal Health Dashoard
 </b></details>
 
+<details>
+<summary>Which of the following are AWS accounts types (and are sorted by order)?
+
+  * Basic, Developer, Business, Enterprise
+  * Newbie, Intermediate, Pro, Enterprise
+  * Developer, Basic, Business, Enterprise
+  * Beginner, Pro, Intermediate Enterprise</summary><br><b>
+
+  * Basic, Developer, Business, Enterprise
+</b></details>
+
+<details>
+<summary>True or False? Region is a factor when it comes to EC2 costs/pricing</summary><br><b>
+
+True. You pay differently based on the chosen region.
+</b></details>
+
 #### AWS Misc
 
 <details>
@@ -1180,18 +1317,28 @@ More on AWS pricing model [here](https://aws.amazon.com/pricing)
 
 <details>
 <summary>What is AWS Lightsail?</summary><br><b>
+
+AWS definition: "Lightsail is an easy-to-use cloud platform that offers you everything needed to build an application or website, plus a cost-effective, monthly plan."
+</b></details>
+
+<details>
+<summary>What is AWS Rekognition?</summary><br><b>
+
+AWS definition: "Amazon Rekognition makes it easy to add image and video analysis to your applications using proven, highly scalable, deep learning technology that requires no machine learning expertise to use."
+
+Learn more [here](https://aws.amazon.com/rekognition)
 </b></details>
 
 <details>
 <summary>What is AWS Athena?</summary><br><b>
+
+"Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL."
+
+Learn more about AWS Athena [here](https://aws.amazon.com/athena)
 </b></details>
 
 <details>
 <summary>What is AWS EMR?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain what is AWS Lambda</summary><br><b>
 </b></details>
 
 <details>
@@ -1200,6 +1347,17 @@ More on AWS pricing model [here](https://aws.amazon.com/pricing)
 AWS definition: "Quick Starts are built by AWS solutions architects and partners to help you deploy popular technologies on AWS, based on AWS best practices for security and high availability."
 
 Read more [here](https://aws.amazon.com/quickstart)
+</b></details>
+
+<details>
+<summary>What is the Trusted Advisor?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What AWS services are serverless (or have the option to be serverless)?</summary><br><b>
+
+AWS Lambda
+AWS Athena
 </b></details>
 
 ## Network
@@ -2920,7 +3078,7 @@ Ansible is:
 <summary>What kind of automation you wouldn't do with Ansible and why?</summary><br><b>
 
 While it's possible to provision resources with Ansible it might not be the best choice for doing so as Ansible doesn't
-save state by default and a task that creates 5 instances, when executed again will create additional 5 instances (unless
+save state by default. So a task that creates 5 instances for example, when executed again will create additional 5 instances (unless
 additional check is implemented).
 </b></details>
 
@@ -3589,8 +3747,7 @@ Because each container has its own writable container layer, and all changes are
 
 ## Kubernetes
 
-<a name="kubernetes-beginner"></a>
-#### :baby: Beginner
+<a name="kubernetes"></a>
 
 <details>
 <summary>What is Kubernetes? Why organizations are using it?</summary><br><b>
@@ -3760,6 +3917,25 @@ It includes:
 
 <details>
 <summary>What is kubconfig? What do you use it for?</summary><br><b>
+</b></details>
+
+#### Submariner
+
+<details>
+<summary>Explain what is Submariner and what is it used for</summary><br><b>
+
+"Submariner enables direct networking between pods and services in different Kubernetes clusters, either on premise or in the cloud."
+
+You can learn more [here](https://submariner-io.github.io)
+</b></details>
+
+<details>
+<summary>What each of the following components does?:
+
+  * Lighthouse
+  * Broker
+  * Gateway Engine
+  * Route Agent</summary><br><b>
 </b></details>
 
 ## Coding
@@ -5355,6 +5531,12 @@ a = f()
 <summary>How yield works exactly?</summary><br><b>
 </b></details>
 
+##### Python Geeks :)
+
+<details>
+<summary>Tell me something about Python that you think most people don't know</summary><br><b>
+</b></details>
+
 ## Monitoring
 
 <a name="monitoring-beginner"></a>
@@ -5374,19 +5556,13 @@ If the issue doesn't require any human intervention, then the problem can be fix
 <details>
 <summary>What types of monitoring outputs are you familiar with and/or used in the past?</summary><br><b>
 
-Alerts
-Tickets
-Logging
+Alerts<br>
+Tickets<br>
+Logging<br>
 </b></details>
 
 <details>
 <summary>What is the different between infrastructure monitoring and application monitoring? (methods, tools, ...)</summary><br><b>
-</b></details>
-
-##### Python Geeks :)
-
-<details>
-<summary>Tell me something about Python that you think most people don't know</summary><br><b>
 </b></details>
 
 ## Prometheus
@@ -7285,9 +7461,6 @@ CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipula
 
 ## Elastic
 
-<a name="elastic-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>What is the Elastic Stack?</summary><br><b>
 
@@ -7590,9 +7763,6 @@ Total number of documents matching the search results. If not query used then si
 <summary>What are filebeat modules?</summary><br><b>
 </b></details>
 
-<a name="elastic-advanced"></a>
-#### :star: Advnaced
-
 <details>
 <summary>Describe how would an architecture of production environment with large amounts of data would be different from a small-scale environment</summary><br><b>
 
@@ -7600,6 +7770,14 @@ There are several possible answers for this question. One of them is as follows:
 
 A small-scale architecture of elastic will consist of the elastic stack as it is. This means we will have beats, logstash, elastcsearch and kibana.<br>
 A production environment with large amounts of data can include some kind of buffering component (e.g. Reddis or RabbitMQ) and also security component such as Nginx.
+</b></details>
+
+#### Elastic Stack
+
+<details>
+<summary>How do you secure an Elastic Stack?</summary><br><b>
+
+You can generate certificates with the provided elastic utils and change configuration to enable security using certificates model.
 </b></details>
 
 ## DNS
@@ -7944,6 +8122,22 @@ TODO: explain what is actually a Cookie
 
 <details>
 <summary>What is DNS load balancing? What its advantages? When would you use it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are sticky sessions?</summary><br><b>
+
+Recommended read:
+  * [Red Hat Article](https://access.redhat.com/solutions/900933)
+</b></details>
+
+<details>
+<summary>What are the cons and pros of sticky sessions?</summary><br><b>
+
+Cons:
+  * Can cause uneven load on instance (since requests routed to the same instances)
+Pros:
+  * Ensures in-proc sessions are not lost when a new request is created
 </b></details>
 
 #### Licenses
@@ -8502,12 +8696,9 @@ A programming model for large-scale data processing
 
 If you are looking for a way to prepare for a certain exam this is the section for you. Here you'll find a list of certificates, each references to a separate file with focused questions that will help you to prepare to the exam. Good luck :)
 
-Note: in order to make sure you are looking at a relevant source of questions, each certificate name also specifies the year these questions were reviewed or last updated
-
 #### AWS
 
-* [Cloud Practitioner - 2020](certificates/cloud-practitioner.md)
-
+* [Cloud Practitioner](certificates/cloud-practitioner.md) (Latest update: 2020)
 
 ## Exercises
 
