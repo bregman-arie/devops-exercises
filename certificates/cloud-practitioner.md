@@ -176,6 +176,12 @@ Dedicated Hosts - physical EC2 server dedicated for your use.
 More on this subject [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)
 </b></details>
 
+<details>
+<summary>What can you attach to an EC2 instance in order to store data?</summary><br><b>
+
+EBS
+</b></details>
+
 #### AWS Storage
  
 <details>
@@ -296,6 +302,14 @@ Explained in detail [here](https://aws.amazon.com/storagegateway/faqs)
 
 Stored Volumes - Data is located at customer's data center and periodically backed up to AWS
 Cached Volumes - Data is stored in AWS cloud and cached at customer's data center for quick access
+</b></details>
+
+<details>
+<summary>What is "Amazon S3 Transfer Acceleration"?</summary><br><b>
+
+AWS definition: "Amazon S3 Transfer Acceleration enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket"
+
+Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html)
 </b></details>
 
 #### AWS IAM
@@ -475,6 +489,14 @@ False. It is responsible for Hardware in its sites but not for security groups w
 </b></details>
 
 <details>
+<summary>Explain "Shared Controls" in regards to the shared responsibility model</summary><br><b>
+
+AWS definition: "apply to both the infrastructure layer and customer layers, but in completely separate contexts or perspectives. In a shared control, AWS provides the requirements for the infrastructure and the customer must provide their own control implementation within their use of AWS services"
+
+Learn more about it [here](https://aws.amazon.com/compliance/shared-responsibility-model)
+</b></details>
+
+<details>
 <summary>What is the AWS compliance program?</summary><br><b>
 </b></details>
 
@@ -543,6 +565,8 @@ False.
 
 <details>
 <summary>What is AWS Redshift and how is it different than RDS?</summary><br><b>
+
+cloud data warehouse
 </b></details>
 
 <details>
@@ -624,9 +648,9 @@ Amazon Aurora
 </b></details>
 
 <details>
-<summary>What would you use to migrate on-premise Oracle database to AWS?</summary><br><b>
+<summary>What would you use to migrate on-premise database to AWS?</summary><br><b>
 
-AWS Database Migration Service
+AWS Database Migration Service (DMS)
 </b></details>
 
 <details>
@@ -681,6 +705,42 @@ AWS Organizations
 <summary>Which service would you use for web application protection?</summary><br><b>
 
 AWS WAF
+</b></details>
+
+<details>
+<summary>You would like to monitor some of your resources in the different services. Which service would you use for that?</summary><br><b>
+
+CloudWatch
+</b></details>
+
+<details>
+<summary>Which service would you use for creating DNS record?</summary><br><b>
+
+Route 53
+</b></details>
+
+<details>
+<summary>Which service would you use if you need messaging queue?</summary><br><b>
+
+Simple Queue Service (SQS)
+</b></details>
+
+<details>
+<summary>Which service would you use if you need managed DDOS protection?</summary><br><b>
+
+AWS Shield
+</b></details>
+
+<details>
+<summary>Which service would you use if you need store frequently used data for low latency access?</summary><br><b>
+
+ElastiCache
+</b></details>
+
+<details>
+<summary>What would you use to transfer files over long distances between a client and an S3 bucket?</summary><br><b>
+
+Amazon S3 Transfer Acceleration
 </b></details>
 
 #### AWS Billing & Support
@@ -763,11 +823,53 @@ AWS Athena
 </b></details>
 
 <details>
+<summary>What is AWS EMR?</summary><br><b>
+
+AWS definition: "big data platform for processing vast amounts of data using open source tools such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto."
+
+Learn more [here](https://aws.amazon.com/emr)
+</b></details>
+
+<details>
 <summary>What is AWS Athena?</summary><br><b>
 
 "Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL."
 
 Learn more about AWS Athena [here](https://aws.amazon.com/athena)
+</b></details>
+
+<details>
+<summary>What is Simple Queue Service (SQS)?</summary><br><b>
+
+AWS definition: "Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications".
+
+Learn more about it [here](https://aws.amazon.com/sqs)
+</b></details>
+
+#### AWS Disaster Recovery
+
+<details>
+<summary>In regards to disaster recovery, what is RTO and RPO?</summary><br><b>
+
+RTO - The maximum acceptable length of time that your application can be offline.
+
+RPO - The maximum acceptable length of time during which data might be lost from your application due to an incident.
+</b></details>
+
+<details>
+<summary>What types of disaster recovery techniques AWS supports?</summary><br><b>
+
+* The Cold Method - Periodically backups and sending the backups off-site<br>
+* Pilot Light - Data is mirrored to an environment which is always running
+* Warm Standby - Running scaled down version of production environment
+* Multi-site - Duplicated environment that is always running
+</b></details>
+
+<details>
+<summary>Which disaster recovery option has the highest downtime and which has the lowest?</summary><br><b>
+
+Lowest - Multi-site
+Highest - The cold method
 </b></details>
 
 ### Final Note

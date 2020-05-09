@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1139** questions
+:bar_chart: &nbsp;There are currently **1157** questions
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) or follow us on [Twitter](https://twitter.com/devopsbit) for additional daily exercises, articles and more resources on DevOps
 
@@ -43,7 +43,7 @@
   </tr>
   <tr>
     <td align="center"><a href="#cloud"><img src="images/cloud.png" width="110px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a><br /><sub><a href="#cloud-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#aws"><img src="images/aws.jpg" width="75px;" height="75px;" alt="aws"/><br /><b>AWS</b></a><br /><sub><a href="#aws-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#aws"><img src="images/aws.png" width="75px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
     <td align="center"><a href="#azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a><br /><sub><a href="#azure-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#gcp"><img src="images/googlecloud.png" width="80px;" height="75px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a><br /><sub><a href="#gcp-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a><br /><sub><a href="#openstack-beginner">Beginner :baby:</a></sub><br><sub><a href="#openstack-advanced">Advanced :star:</a></sub></td>
@@ -528,9 +528,6 @@ It's important to note that:
 
 ## AWS
 
-<a name="aws-beginner"></a>
-#### :baby: Beginner
-
 #### Global Infrastructure
 
 <details>
@@ -670,6 +667,12 @@ More on this subject [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/
 
 <details>
 <summary>How to migrate an instance to another availability zone?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What can you attach to an EC2 instance in order to store data?</summary><br><b>
+
+EBS
 </b></details>
 
 #### AWS Serverless Compute
@@ -821,6 +824,14 @@ Cached Volumes - Data is stored in AWS cloud and cached at customer's data cente
 </b></details>
 
 <details>
+<summary>What is "Amazon S3 Transfer Acceleration"?</summary><br><b>
+
+AWS definition: "Amazon S3 Transfer Acceleration enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket"
+
+Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html)
+</b></details>
+
+<details>
 <summary>Explain data consistency</summary><br><b>
 </b></details>
 
@@ -834,6 +845,33 @@ Cached Volumes - Data is stored in AWS cloud and cached at customer's data cente
 
 <details>
 <summary>What storage options are there for EC2 Instances?</summary><br><b>
+</b></details>
+
+
+#### AWS Disaster Recovery
+
+<details>
+<summary>In regards to disaster recovery, what is RTO and RPO?</summary><br><b>
+
+RTO - The maximum acceptable length of time that your application can be offline.
+
+RPO - The maximum acceptable length of time during which data might be lost from your application due to an incident.
+</b></details>
+
+<details>
+<summary>What types of disaster recovery techniques AWS supports?</summary><br><b>
+
+* The Cold Method - Periodically backups and sending the backups off-site<br>
+* Pilot Light - Data is mirrored to an environment which is always running
+* Warm Standby - Running scaled down version of production environment
+* Multi-site - Duplicated environment that is always running
+</b></details>
+
+<details>
+<summary>Which disaster recovery option has the highest downtime and which has the lowest?</summary><br><b>
+
+Lowest - Multi-site
+Highest - The cold method
 </b></details>
 
 #### AWS CloudFormation
@@ -925,6 +963,14 @@ False. It is responsible for Hardware in its sites but not for security groups w
 </b></details>
 
 <details>
+<summary>Explain "Shared Controls" in regards to the shared responsibility model</summary><br><b>
+
+AWS definition: "apply to both the infrastructure layer and customer layers, but in completely separate contexts or perspectives. In a shared control, AWS provides the requirements for the infrastructure and the customer must provide their own control implementation within their use of AWS services"
+
+Learn more about it [here](https://aws.amazon.com/compliance/shared-responsibility-model)
+</b></details>
+
+<details>
 <summary>What is the AWS compliance program?</summary><br><b>
 </b></details>
 
@@ -935,6 +981,8 @@ False. It is responsible for Hardware in its sites but not for security groups w
   * AWS Artifact
   * AWS GuardDuty
   * AWS Shield</summary><br><b>
+
+  * AWS Shield - AWS definition: "AWS Shield is a managed Distributed Denial of Service (DDoS) protection service that safeguards applications running on AWS."
 </b></details>
 
 <details>
@@ -993,6 +1041,8 @@ False.
 
 <details>
 <summary>What is AWS Redshift and how is it different than RDS?</summary><br><b>
+
+cloud data warehouse
 </b></details>
 
 <details>
@@ -1120,13 +1170,13 @@ Trusted Advisor
 </b></details>
 
 <details>
-<summary>What service allows you to transfer large amounts (Petabytes) of data in and out of the AWS cloud?</summary><br><b>
+<summary>Which service allows you to transfer large amounts (Petabytes) of data in and out of the AWS cloud?</summary><br><b>
 
 AWS Snowball
 </b></details>
 
 <details>
-<summary>What provides a virtual network dedicated to your AWS account?</summary><br><b>
+<summary>Which service provides a virtual network dedicated to your AWS account?</summary><br><b>
 
 VPC
 </b></details>
@@ -1138,9 +1188,9 @@ Amazon Aurora
 </b></details>
 
 <details>
-<summary>What would you use to migrate on-premise Oracle database to AWS?</summary><br><b>
+<summary>What would you use to migrate on-premise database to AWS?</summary><br><b>
 
-AWS Database Migration Service
+AWS Database Migration Service (DMS)
 </b></details>
 
 <details>
@@ -1195,6 +1245,48 @@ AWS Organizations
 <summary>Which service would you use for web application protection?</summary><br><b>
 
 AWS WAF
+</b></details>
+
+<details>
+<summary>You would like to monitor some of your resources in the different services. Which service would you use for that?</summary><br><b>
+
+CloudWatch
+</b></details>
+
+<details>
+<summary>Which service would you use for creating DNS record?</summary><br><b>
+
+Route 53
+</b></details>
+
+<details>
+<summary>Which service would you use if you need messaging queue?</summary><br><b>
+
+Simple Queue Service (SQS)
+</b></details>
+
+<details>
+<summary>Which service would you use if you need managed DDOS protection?</summary><br><b>
+
+AWS Shield
+</b></details>
+
+<details>
+<summary>Which service would you use if you need store frequently used data for low latency access?</summary><br><b>
+
+ElastiCache
+</b></details>
+
+<details>
+<summary>What would you use to transfer files over long distances between a client and an S3 bucket?</summary><br><b>
+
+Amazon S3 Transfer Acceleration
+</b></details>
+
+<details>
+<summary>Which service would you use for distributing incoming requests across multiple?</summary><br><b>
+
+Route 53
 </b></details>
 
 #### AWS DNS
@@ -1339,6 +1431,10 @@ Learn more about AWS Athena [here](https://aws.amazon.com/athena)
 
 <details>
 <summary>What is AWS EMR?</summary><br><b>
+
+AWS definition: "big data platform for processing vast amounts of data using open source tools such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto."
+
+Learn more [here](https://aws.amazon.com/emr)
 </b></details>
 
 <details>
@@ -1358,6 +1454,14 @@ Read more [here](https://aws.amazon.com/quickstart)
 
 AWS Lambda
 AWS Athena
+</b></details>
+
+<details>
+<summary>What is Simple Queue Service (SQS)?</summary><br><b>
+
+AWS definition: "Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications".
+
+Learn more about it [here](https://aws.amazon.com/sqs)
 </b></details>
 
 ## Network
@@ -3756,35 +3860,19 @@ Kubernetes is an open-source system for automating deployment, scaling, and mana
 
 To understand what Kubernetes is good for, let's look at some examples:
 
-* You would like to run a certain application in a container on multiple different locations. Sure, if it's 2-3 servers/locations, you can do it by yourself but it can be challenging to scale it up to additional multiple location.
-
-* Performing updates and changes across hundreds of containers
-
+* You would like to run a certain application in a container on multiple different locations. Sure, if it's 2-3 servers/locations, you can do it by yourself but it can be challenging to scale it up to additional multiple location.<br>
+* Performing updates and changes across hundreds of containers<br>
 * Handle cases where the current load requires to scale up (or down)
-</b></details>
-
-<details>
-<summary>Describe the architecture of Kubernetes</summary><br><b>
 </b></details>
 
 <details>
 <summary>What is a Kubernetes Cluster?</summary><br><b>
 
-A cluster consists of a Master (which coordinates the cluster) and Nodes where the applications are running.
-</b></details>
+Red Hat Definition: "A Kubernetes cluster is a set of node machines for running containerized applications. If you’re running Kubernetes, you’re running a cluster.
 
-<details>
-<summary>Describe in detail what the following command does <code>kubectl create deployment kubernetes-httpd --image=httpd</code></summary><br><b>
-</b></details>
+At a minimum, a cluster contains a worker node and a master node."
 
-<details>
-<summary>What the Master is responsible for?</summary><br><b>
-
-The master coordinates all the workflows in the cluster:
-
-* Scheduling applications
-* Managing desired state
-* Rolling out new updates
+Read more [here](https://www.redhat.com/en/topics/containers/what-is-a-kubernetes-cluster)
 </b></details>
 
 <details>
@@ -3795,19 +3883,70 @@ It's recommended to have at least 3 nodes in Kubernetes production environment.
 </b></details>
 
 <details>
-<summary>Explain what is Kubelet</summary><br><b>
+<summary>What the master node is responsible for?</summary><br><b>
 
-Kubelet is an agent running on each node and responsible for node communication with the master.
+The master coordinates all the workflows in the cluster:
+
+* Scheduling applications
+* Managing desired state
+* Rolling out new updates
+</b></details>
+
+<details>
+<summary>What do we need worker nodes for?</summary><br><b>
+
+The workers are the nodes which run the applications and workloads.
+</b></details>
+
+<details>
+<summary>True or False? Every cluster must have 0 or more master nodes and 1 or more workers</summary><br><b>
+
+False. A Kubernetes cluster consists of at least 1 master and 0 or more workers.
+</b></details>
+
+<details>
+<summary>Explain what is a pod</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are the components of the master node?</summary><br><b>
+
+  * API Server - the Kubernetes API. All cluster components communicate through it
+  * Scheduler - assigns an application with a worker node it can run on
+  * Controller Manager - cluster maintenance (replications, node failures, etc.)
+  * etcd - stores cluster configuration
+</b></details>
+
+<details>
+<summary>What are the components of a worker node?</summary><br><b>
+
+  * Kubelet - an agent responsible for node communication with the master.
+  * Kube-proxy - load balancing traffic between app components
+  * Container runtime - the engine runs the containers (Podman, Docker, ...)
+</b></details>
+
+#### Basic Commands
+
+<details>
+<summary>Which command you run to view your nodes?</code></summary><br><b>
+
+`kubectl get nodes`
+</b></details>
+
+<details>
+<summary>Which command you run to view all pods running on all namespaces?</code></summary><br><b>
+
+`kubectl get pods --all-namespaces`
+</b></details>
+
+<details>
+<summary>Describe in detail what the following command does <code>kubectl create deployment kubernetes-httpd --image=httpd</code></summary><br><b>
 </b></details>
 
 <details>
 <summary>What is Minikube?</summary><br><b>
 
 Minikube is a lightweight Kubernetes implementation. It create a local virtual machine and deploys a simple (single node) cluster.
-</b></details>
-
-<details>
-<summary>Explain what is a Kubernetes pod</summary><br><b>
 </b></details>
 
 <details>
@@ -3912,7 +4051,7 @@ It includes:
 <summary>What the following commands do?
 
   * kubectl get nodes
-  * kubectl </summary><br><b>
+  * kubectl get pods --all-namespaces</summary><br><b>
 </b></details>
 
 <details>
