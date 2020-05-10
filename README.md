@@ -6150,6 +6150,12 @@ startap-script
 <summary>What the following commands does? `gcloud deployment-manager deployments create`</summary><br><b>
 </b></details>
 
+<details>
+<summary>Your customer is moving their corporate applications to Google Cloud Platform. The security team wants detailed visibility of all projects in the organization. You provision the Google Cloud Resource Manager and set up yourself as the org admin. Which Google Cloud Identity and Access Management (Cloud IAM) roles should you give to the security team?</summary><br><b>
+	* Org viewer, project viewer - gives the security team read-only access to everything your company produces; 		anything else gives them the ability to, accidentally or otherwise, change things.
+</b></details>
+
+
 ## OpenStack
 
 <a name="openstack-beginner"></a>
