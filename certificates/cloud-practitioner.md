@@ -182,6 +182,34 @@ More on this subject [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/
 EBS
 </b></details>
 
+<details>
+<summary>What EC2 RI types are there?</summary><br><b>
+
+Standard RI - most significant discount + suited for steady-state usage
+Convertible RI - discount + change attribute of RI + suited for steady-state usage
+Scheduled RI - launch within time windows you reserve
+
+Learn more about EC2 RI [here](https://aws.amazon.com/ec2/pricing/reserved-instances)
+</b></details>
+
+#### AWS Containers
+
+<details>
+<summary>What is Amazon ECS?</summary><br><b>
+
+Amazon definition: "Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service. Customers such as Duolingo, Samsung, GE, and Cook Pad use ECS to run their most sensitive and mission critical applications because of its security, reliability, and scalability."
+
+Learn more [here](https://aws.amazon.com/ecs)
+</b></details>
+
+<details>
+<summary>What is Amazon ECR?</summary><br><b>
+
+Amazon definition: "Amazon Elastic Container Registry (ECR) is a fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images."
+
+Learn more [here](https://aws.amazon.com/ecr)
+</b></details>
+
 #### AWS Storage
  
 <details>
@@ -281,6 +309,12 @@ Glacier Deep Archive
 </b></details>
 
 <details>
+<summary>True or False? Each AWS account can store up to 500 PetaByte of data. Any additional storage will cost double</summary><br><b>
+
+False. Unlimited capacity.
+</b></details>
+
+<details>
 <summary>Explain what is Storage Gateway</summary><br><b>
 
 "AWS Storage Gateway is a hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage".
@@ -310,6 +344,22 @@ Cached Volumes - Data is stored in AWS cloud and cached at customer's data cente
 AWS definition: "Amazon S3 Transfer Acceleration enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket"
 
 Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html)
+</b></details>
+
+<details>
+<summary>What is Amazon EFS?</summary><br><b>
+
+Amazon definition: "Amazon Elastic File System (Amazon EFS) provides a simple, scalable, fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources."
+
+Learn more [here](https://aws.amazon.com/efs)
+</b></details>
+
+<details>
+<summary>What is AWS Snowmobile?</summary><br><b>
+
+"AWS Snowmobile is an Exabyte-scale data transfer service used to move extremely large amounts of data to AWS."
+
+Learn more [here](https://aws.amazon.com/snowmobile)
 </b></details>
 
 #### AWS IAM
@@ -501,12 +551,29 @@ Learn more about it [here](https://aws.amazon.com/compliance/shared-responsibili
 </b></details>
 
 <details>
-<summary>Explain what each of the following services is used for
+<summary>What is AWS Artifact?</summary><br><b>
 
-  * AWS Inspector
-  * AWS Artifact
-  * AWS GuardDuty
-  * AWS Shield</summary><br><b>
+AWS definition: "AWS Artifact is your go-to, central resource for compliance-related information that matters to you. It provides on-demand access to AWS’ security and compliance reports and select online agreements."
+
+Read more about it [here](https://aws.amazon.com/artifact)
+</b></details>
+
+<details>
+<summary>What is AWS Inspector?</summary><br><b>
+
+AWS definition: "Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. Amazon Inspector automatically assesses applications for exposure, vulnerabilities, and deviations from best practices.""
+
+Learn more [here](https://aws.amazon.com/inspector)
+</b></details>
+
+<details>
+<summary>What is AWS Guarduty?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS Shield?</summary><br><b>
+
+AWS definition: "AWS Shield is a managed Distributed Denial of Service (DDoS) protection service that safeguards applications running on AWS."
 </b></details>
 
 <details>
@@ -553,6 +620,22 @@ False. On some services, like EC2, CloudFront and RDS, penetration testing is al
 False.
 </b></details>
 
+<details>
+<summary>What is AWS Config?</summary><br><b>
+
+Amazon definition: "AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources."
+
+Learn more [here](https://aws.amazon.com/config)
+</b></details>
+
+<details>
+<summary>What is AWS CM?</summary><br><b>
+
+Amazon definition: "AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal connected resources."
+
+Learn more [here](https://aws.amazon.com/certificate-manager)
+</b></details>
+
 #### AWS Databases
 
 <details>
@@ -581,6 +664,19 @@ It's great for use cases like two-tier web applications where the most frequentl
 
 A MySQL & Postgresql based relational database. Also, the default database proposed for the user when using RDS for creating a database.
 Great for use cases like two-tier web applications that has a MySQL or Postgresql database layer and you need automated backups for your application.
+</b></details>
+
+<details>
+<summary>What type of storage is used by Amazon RDS?</summary><br><b>
+
+EBS
+</b></details>
+
+<details>
+<summary>Explain Amazon RDS Read Replicas</summary><br><b>
+
+AWS definition: "Amazon RDS Read Replicas provide enhanced performance and durability for RDS database (DB) instances. They make it easy to elastically scale out beyond the capacity constraints of a single DB instance for read-heavy database workloads."
+Read more about [here](https://aws.amazon.com/rds/features/read-replicas)
 </b></details>
 
 #### AWS Serverless Compute
@@ -684,6 +780,19 @@ AWS Rekognition
 </b></details>
 
 <details>
+<summary>Which service would you use for debugging a performance issue with in-development app?</summary><br><b>
+
+AWS X-Ray
+</b></details>
+
+<details>
+<summary>What is AWS X-Ray?</summary><br><b>
+
+AWS definition: "AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture."
+Learn more [here](https://aws.amazon.com/xray)
+</b></details>
+
+<details>
 <summary>Which service is used for sending notifications?</summary><br><b>
 
 SNS
@@ -711,6 +820,12 @@ AWS WAF
 <summary>You would like to monitor some of your resources in the different services. Which service would you use for that?</summary><br><b>
 
 CloudWatch
+</b></details>
+
+<details>
+<summary>Which service would you use for performing security assessment?</summary><br><b>
+
+AWS Inspector
 </b></details>
 
 <details>
@@ -779,6 +894,26 @@ More on AWS pricing model [here](https://aws.amazon.com/pricing)
 </b></details>
 
 <details>
+<summary>How are EC2 instances billed?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Amazon Connect?</summary><br><b>
+
+Amazon definition: "Amazon Connect is an easy to use omnichannel cloud contact center that helps companies provide superior customer service at a lower cost."
+
+Learn more [here](https://aws.amazon.com/connect)
+</b></details>
+
+<details>
+<summary>What are "APN Consulting Partners"?</summary><br><b>
+
+Amazon definition: "APN Consulting Partners are professional services firms that help customers of all types and sizes design, architect, build, migrate, and manage their workloads and applications on AWS, accelerating their journey to the cloud."
+
+Learn more [here](https://aws.amazon.com/partners/consulting)
+</b></details>
+
+<details>
 <summary>Which of the following are AWS accounts types (and are sorted by order)?
 
   * Basic, Developer, Business, Enterprise
@@ -793,6 +928,12 @@ More on AWS pricing model [here](https://aws.amazon.com/pricing)
 <summary>True or False? Region is a factor when it comes to EC2 costs/pricing</summary><br><b>
 
 True. You pay differently based on the chosen region.
+</b></details>
+
+<details>
+<summary>What is "AWS Infrastructure Event Management"?</summary><br><b>
+
+AWS Definition: "AWS Infrastructure Event Management is a structured program available to Enterprise Support customers (and Business Support customers for an additional fee) that helps you plan for large-scale events such as product or application launches, infrastructure migrations, and marketing events."
 </b></details>
 
 #### AWS Misc
@@ -812,7 +953,45 @@ Learn more [here](https://aws.amazon.com/rekognition)
 </b></details>
 
 <details>
+<summary>What is AWS Service Catalog?</summary><br><b>
+
+Amazon definition: "AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS."
+
+Learn more [here](https://aws.amazon.com/servicecatalog)
+</b></details>
+
+<details>
+<summary>What is AWS CAF?</summary><br><b>
+
+Amazon definition: "AWS Professional Services created the AWS Cloud Adoption Framework (AWS CAF) to help organizations design and travel an accelerated path to successful cloud adoption. "
+
+Learn more [here](https://aws.amazon.com/professional-services/CAF)
+</b></details>
+
+<details>
+<summary>What is AWS Cloud9?</summary><br><b>
+
+AWS definition: "AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser"
+</b></details>
+
+<details>
+<summary>What is AWS Application Discovery Service?</summary><br><b>
+
+Amazon definition: "AWS Application Discovery Service helps enterprise customers plan migration projects by gathering information about their on-premises data centers."
+
+Learn more [here](https://aws.amazon.com/application-discovery)
+</b></details>
+
+<details>
 <summary>What is the Trusted Advisor?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the AWS well-architected framework and what pillars it's based on?</summary><br><b>
+
+AWS definition: "The Well-Architected Framework has been developed to help cloud architects build secure, high-performing, resilient, and efficient infrastructure for their applications. Based on five pillars — operational excellence, security, reliability, performance efficiency, and cost optimization"
+
+Learn more [here](https://aws.amazon.com/architecture/well-architected)
 </b></details>
 
 <details>
@@ -836,6 +1015,22 @@ Learn more [here](https://aws.amazon.com/emr)
 "Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL."
 
 Learn more about AWS Athena [here](https://aws.amazon.com/athena)
+</b></details>
+
+<details>
+<summary>What is AWS Elastic Beanstalk?</summary><br><b>
+
+AWS definition: "AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services...You can simply upload your code and Elastic Beanstalk automatically handles the deployment"
+
+Learn more about it [here](https://aws.amazon.com/elasticbeanstalk)
+</b></details>
+
+<details>
+<summary>What is AWS SWF?</summary><br><b>
+
+Amazon definition: "Amazon SWF helps developers build, run, and scale background jobs that have parallel or sequential steps. You can think of Amazon SWF as a fully-managed state tracker and task coordinator in the Cloud."
+
+Learn more on Amazon Simple Workflow Service [here](https://aws.amazon.com/swf)
 </b></details>
 
 <details>
