@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1185** questions
+:bar_chart: &nbsp;There are currently **1203** questions
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) or follow us on [Twitter](https://twitter.com/devopsbit) for additional daily exercises, articles and more resources on DevOps
 
@@ -25,7 +25,7 @@
     <td align="center"><a href="#devops"><img src="images/devops.png" width="70px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a><br /><sub><a href="#devops-beginner">Beginner :baby:</a></sub><br><sub><a href="#devops-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="85px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a><br /><sub><a href="#jenkins-beginner">Beginner :baby:</a></sub><br><sub><a href="#jenkins-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#git"><img src="images/git.png" width="80px;" height="75px;" alt="Git"/><br /><b>Git</b></a><br /><sub><a href="#git-beginner">Beginner :baby:</a></sub><br><sub><a href="#git-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#ansible"><img src="images/ansible.png" width="75px;" height="75px;" alt="Ansible"/><br /><b>Ansible</b></a><br /><sub><a href="#ansible-beginner">Beginner :baby:</a></sub><br><sub><a href="#ansible-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#ansible"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
     <td align="center"><a href="#Network"><img src="images/network.png" width="80x;" height="75px;" alt="Network"/><br /><b>Network</b></a><br /><sub><a href="#network-beginner">Beginner :baby:</a></sub><br><sub><a href="#network-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#linux"><img src="images/linux.png" width="75x;" height="75px;" alt="Linux"/><br /><b>Linux</b></a><br /><sub><a href="#linux-beginner">Beginner :baby:</a></sub><br><sub><a href="#linux-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#terraform"><img src="images/terraform.png" width="70px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a><br /><sub><a href="#terraform-beginner">Beginner :baby:</a></sub><br><sub><a href="#terraform-advanced">Advanced :star:</a></sub></td>
@@ -729,6 +729,14 @@ Amazon definition: "Amazon Elastic Container Registry (ECR) is a fully-managed D
 Learn more [here](https://aws.amazon.com/ecr)
 </b></details>
 
+<details>
+<summary>What is AWS Fargate?</summary><br><b>
+
+Amazon definition: "AWS Fargate is a serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS)."
+
+Learn more [here](https://aws.amazon.com/fargate)
+</b></details>
+
 #### AWS Storage
  
 <details>
@@ -923,12 +931,6 @@ Lowest - Multi-site
 Highest - The cold method
 </b></details>
 
-#### AWS CloudFormation
-
-<details>
-<summary>Explain what is CloudFormation</summary><br><b>
-</b></details>
-
 #### AWS CloudFront
 
 <details>
@@ -1062,6 +1064,14 @@ AWS definition: "AWS Shield is a managed Distributed Denial of Service (DDoS) pr
 </b></details>
 
 <details>
+<summary>What is AWS CloudHSM?</summary><br><b>
+
+Amazon definition: "AWS CloudHSM is a cloud-based hardware security module (HSM) that enables you to easily generate and use your own encryption keys on the AWS Cloud."
+
+Learn more [here](https://aws.amazon.com/cloudhsm)
+</b></details>
+
+<details>
 <summary>True or False? AWS Inspector can perform both network and host assessments</summary><br><b>
 
 True
@@ -1094,15 +1104,21 @@ False.
 </b></details>
 
 <details>
-<summary>What is AWS Config?</summary><br><b>
+<summary>True or False? AWS Access Key is a type of MFA device used for AWS resources protection</summary><br><b>
 
-Amazon definition: "AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources."
-
-Learn more [here](https://aws.amazon.com/config)
+False. Security key is an example of an MFA device.
 </b></details>
 
 <details>
-<summary>What is AWS CM?</summary><br><b>
+<summary>What is Amazon Cognito?</summary><br><b>
+
+Amazon definition: "Amazon Cognito handles user authentication and authorization for your web and mobile apps."
+
+Learn more [here](https://docs.aws.amazon.com/cognito/index.html)
+</b></details>
+
+<details>
+<summary>What is AWS ACM?</summary><br><b>
 
 Amazon definition: "AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal connected resources."
 
@@ -1117,6 +1133,30 @@ Learn more [here](https://aws.amazon.com/certificate-manager)
 
 <details>
 <summary>What is AWS DynamoDB?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "Point-in-Time Recovery" feature in DynamoDB</summary><br><b>
+
+Amazon definition: "You can create on-demand backups of your Amazon DynamoDB tables, or you can enable continuous backups using point-in-time recovery. For more information about on-demand backups, see On-Demand Backup and Restore for DynamoDB."
+
+Learn more [here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PointInTimeRecovery.html)
+</b></details>
+
+<details>
+<summary>Explain "Global Tables" in DynamoDB</summary><br><b>
+
+Amazon definition: "A global table is a collection of one or more replica tables, all owned by a single AWS account."
+
+Learn more [here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html)
+</b></details>
+
+<details>
+<summary>What is DynamoDB Accelerator?</summary><br><b>
+
+Amazon definition: "Amazon DynamoDB Accelerator (DAX) is a fully managed, highly available, in-memory cache for DynamoDB that delivers up to a 10x performance improvement – from milliseconds to microseconds..."
+
+Learn more [here](https://aws.amazon.com/dynamodb/dax)
 </b></details>
 
 <details>
@@ -1146,6 +1186,14 @@ It's great for use cases like two-tier web applications where the most frequentl
 
 A MySQL & Postgresql based relational database. Also, the default database proposed for the user when using RDS for creating a database.
 Great for use cases like two-tier web applications that has a MySQL or Postgresql database layer and you need automated backups for your application.
+</b></details>
+
+<details>
+<summary>What is Amazon DocumentDB?</summary><br><b>
+
+Amazon definition: "Amazon DocumentDB (with MongoDB compatibility) is a fast, scalable, highly available, and fully managed document database service that supports MongoDB workloads. As a document database, Amazon DocumentDB makes it easy to store, query, and index JSON data."
+
+Learn more [here](https://aws.amazon.com/documentdb)
 </b></details>
 
 <details>
@@ -1233,6 +1281,12 @@ Allows you to connect your corporate network to AWS network.
 #### Identify the service or tool
 
 <details>
+<summary>What would you use for automating code/software deployments?</summary><br><b>
+
+AWS CodeDeploy
+</b></details>
+
+<details>
 <summary>What would you use for easily creating similar AWS environments/resources for different customers?</summary><br><b>
 
 CloudFormation
@@ -1311,7 +1365,7 @@ AWS Rekognition
 </b></details>
 
 <details>
-<summary>Which service would you use for debugging a performance issue with in-development app?</summary><br><b>
+<summary>Which service would you use for debugging and improving performances issues with your applications?</summary><br><b>
 
 AWS X-Ray
 </b></details>
@@ -1362,6 +1416,18 @@ AWS Inspector
 <summary>Which service would you use for creating DNS record?</summary><br><b>
 
 Route 53
+</b></details>
+
+<details>
+<summary>What would you use if you need a fully managed document database?</summary><br><b>
+
+Amazon DocumentDB
+</b></details>
+
+<details>
+<summary>Which service would you use to add access control (or sign-up, sign-in forms) to your web/mobile apps?</summary><br><b>
+
+AWS Cognito
 </b></details>
 
 <details>
@@ -1494,6 +1560,10 @@ More on AWS pricing model [here](https://aws.amazon.com/pricing)
 </b></details>
 
 <details>
+<summary>What AWS Pricing Calculator is used for?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is Amazon Connect?</summary><br><b>
 
 Amazon definition: "Amazon Connect is an easy to use omnichannel cloud contact center that helps companies provide superior customer service at a lower cost."
@@ -1532,6 +1602,20 @@ True. You pay differently based on the chosen region.
 AWS Definition: "AWS Infrastructure Event Management is a structured program available to Enterprise Support customers (and Business Support customers for an additional fee) that helps you plan for large-scale events such as product or application launches, infrastructure migrations, and marketing events."
 </b></details>
 
+#### AWS Automation
+
+<details>
+<summary>What is AWS CodeDeploy?</summary><br><b>
+
+Amazon definition: "AWS CodeDeploy is a fully managed deployment service that automates software deployments to a variety of compute services such as Amazon EC2, AWS Fargate, AWS Lambda, and your on-premises servers."
+
+Learn more [here](https://aws.amazon.com/codedeploy)
+</b></details>
+
+<details>
+<summary>Explain what is CloudFormation</summary><br><b>
+</b></details>
+
 #### AWS Misc
 
 <details>
@@ -1553,10 +1637,42 @@ Learn more [here](https://aws.amazon.com/rekognition)
 </b></details>
 
 <details>
+<summary>What AWS Resource Groups used for?</summary><br><b>
+
+Amazon definition: "You can use resource groups to organize your AWS resources. Resource groups make it easier to manage and automate tasks on large numbers of resources at one time. "
+
+Learn more [here](https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html)
+</b></details>
+
+<details>
+<summary>What is AWS Global Accelerator?</summary><br><b>
+
+Amazon definition: "AWS Global Accelerator is a service that improves the availability and performance of your applications with local or global users..."
+
+Learn more [here](https://aws.amazon.com/global-accelerator)
+</b></details>
+
+<details>
+<summary>What is AWS Config?</summary><br><b>
+
+Amazon definition: "AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources."
+
+Learn more [here](https://aws.amazon.com/config)
+</b></details>
+
+<details>
 <summary>What is AWS X-Ray?</summary><br><b>
 
 AWS definition: "AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture."
 Learn more [here](https://aws.amazon.com/xray)
+</b></details>
+
+<details>
+<summary>What is AWS OpsWorks?</summary><br><b>
+
+Amazon definition: "AWS OpsWorks is a configuration management service that provides managed instances of Chef and Puppet."
+
+Learn more about it [here](https://aws.amazon.com/opsworks)
 </b></details>
 
 <details>
@@ -1565,6 +1681,14 @@ Learn more [here](https://aws.amazon.com/xray)
 "Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL."
 
 Learn more about AWS Athena [here](https://aws.amazon.com/athena)
+</b></details>
+
+<details>
+<summary>What is Amazon Cloud Directory?</summary><br><b>
+
+Amazon definition: "Amazon Cloud Directory is a highly available multi-tenant directory-based store in AWS. These directories scale automatically to hundreds of millions of objects as needed for applications."
+
+Learn more [here](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html)
 </b></details>
 
 <details>
@@ -3338,9 +3462,6 @@ It's used by one entity until this entity decides to get rid of it. Take for exa
 
 ## Ansible
 
-<a name="ansible-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>Describe each of the following components in Ansible, including the relationship between them:
 
@@ -3605,9 +3726,6 @@ A full list can be found at the link above. Also, note there is a significant di
 </summary><br><b>
 </b></details>
 
-<a name="ansible-advanced"></a>
-#### :star: Advanced
-
 <details>
 <summary>What are filters? Do you have experience with writing filters?</summary><br><b>
 </b></details>
@@ -3627,6 +3745,10 @@ def cap(self, string):
 
 <details>
 <summary>What are callback plugins? What can you achieve by using callback plugins?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Ansible Collections?</summary><br><b>
 </b></details>
 
 <details>
