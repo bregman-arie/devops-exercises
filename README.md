@@ -8923,6 +8923,13 @@ A single data source (at least usually) which is stored in a raw format.
 <summary>What is OLAP (Online Analytical Processing)?</summary><br><b>
 </b></details>
 
+
+<details>
+<summary>What is an index in a database?</summary><br><b>
+
+A database index is a data structure that improves the speed of operations in a table. Indexes can be created using one or more columns, providing the basis for both rapid random lookups and efficient ordering of access to records.
+</b></details>
+
 ## Regex
 
 Given a text file, perform the following exercises
