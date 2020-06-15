@@ -317,6 +317,12 @@ Glacier Deep Archive
 </b></details>
 
 <details>
+<summary>What Glacier retrieval options are available for the user?</summary><br><b>
+
+Expedited, Standard and Bulk
+</b></details>
+
+<details>
 <summary>True or False? Each AWS account can store up to 500 PetaByte of data. Any additional storage will cost double</summary><br><b>
 
 False. Unlimited capacity.

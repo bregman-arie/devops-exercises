@@ -24,7 +24,7 @@
   <tr>
     <td align="center"><a href="#devops"><img src="images/devops.png" width="70px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a><br /><sub><a href="#devops-beginner">Beginner :baby:</a></sub><br><sub><a href="#devops-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="85px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a><br /><sub><a href="#jenkins-beginner">Beginner :baby:</a></sub><br><sub><a href="#jenkins-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#git"><img src="images/git.png" width="80px;" height="75px;" alt="Git"/><br /><b>Git</b></a><br /><sub><a href="#git-beginner">Beginner :baby:</a></sub><br><sub><a href="#git-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#git"><img src="images/git.png" width="80px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
     <td align="center"><a href="#ansible"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
     <td align="center"><a href="#Network"><img src="images/network.png" width="80x;" height="75px;" alt="Network"/><br /><b>Network</b></a><br /><sub><a href="#network-beginner">Beginner :baby:</a></sub><br><sub><a href="#network-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#linux"><img src="images/linux.png" width="75x;" height="75px;" alt="Linux"/><br /><b>Linux</b></a><br /><sub><a href="#linux-beginner">Beginner :baby:</a></sub><br><sub><a href="#linux-advanced">Advanced :star:</a></sub></td>
@@ -47,7 +47,7 @@
     <td align="center"><a href="#azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a><br /><sub><a href="#azure-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#gcp"><img src="images/googlecloud.png" width="80px;" height="75px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a><br /><sub><a href="#gcp-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a><br /><sub><a href="#openstack-beginner">Beginner :baby:</a></sub><br><sub><a href="#openstack-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a><br /><sub><a href="#security-beginner">Beginner :baby:</a></sub><br><sub><a href="#security-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
     <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a><br /><sub><a href="#puppet-beginner">Beginner :baby:</a></sub><br><sub><a href="#puppet-advanced">Advanced :star:</a></sub></td>
     <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a><br /><sub><a href="#openshift-beginner">Beginner :baby:</a></sub><br><sub></td>
   </tr>
@@ -55,7 +55,7 @@
     <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a><br /><sub><a href="#monitoring-beginner">Beginner :baby:</a></sub><br><sub></td>
     <td align="center"><a href="#elastic"><img src="images/elastic.png" width="110px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
     <td align="center"><a href="#virtualization"><img src="images/virtualization.png" width="75px;" height="75px;" alt="Virtualization"/><br /><b>Virtualization</b></a><br /><sub><a href="#virtualization-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#dns"><img src="images/dns.png" width="75px;" height="75px;" alt="DNS"/><br /><b>DNS</b></a><br /><sub><a href="#dns-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#dns"><img src="images/dns.png" width="75px;" height="75px;" alt="DNS"/><br /><b>DNS</b></a></td>
     <td align="center"><a href="#operating-system"><img src="images/os.png" width="75px;" height="75px;" alt="Operating System"/><br /><b>Operating System</b></a></td>
     <td align="center"><a href="#distributed"><img src="images/distributed.png" width="110px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
     <td align="center"><a href="#general"><img src="images/general.png" width="110px;" height="75px;" alt="General"/><br /><b>General</b></a><br /><sub><a href="#general-beginner">Beginner :baby:</a></sub><br><sub></td>
@@ -65,7 +65,7 @@
     <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
     <td align="center"><a href="#databases"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
     <td align="center"><a href="#regex"><img src="images/regex.png" width="75ph;" height="75px;" alt="RegEx"/><br /><b>Regex</b></a><br /><sub><a href="#regex-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>Design</b></a></td>
+    <td align="center"><a href="#system-design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
     <td align="center"><a href="#hardware"><img src="images/hardware.png" width="110px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
     <td align="center"><a href="#big-data"><img src="images/big-data.png" width="110px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
     <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
@@ -833,6 +833,12 @@ More on storage classes [here](https://aws.amazon.com/s3/storage-classes)
   * Intelligent-Tiering</summary><br><b>
 
 Glacier Deep Archive
+</b></details>
+
+<details>
+<summary>What Glacier retrieval options are available for the user?</summary><br><b>
+
+Expedited, Standard and Bulk
 </b></details>
 
 <details>
@@ -4240,6 +4246,10 @@ False. A Kubernetes cluster consists of at least 1 master and 0 or more workers.
   * Container runtime - the engine runs the containers (Podman, Docker, ...)
 </b></details>
 
+<details>
+<summary>What is kubectl?</summary><br><b>
+</b></details>
+
 #### Basic Commands
 
 <details>
@@ -4252,6 +4262,41 @@ False. A Kubernetes cluster consists of at least 1 master and 0 or more workers.
 <summary>Which command you run to view all pods running on all namespaces?</code></summary><br><b>
 
 `kubectl get pods --all-namespaces`
+</b></details>
+
+<details>
+<summary>How to list all namespaces?</code></summary><br><b>
+
+`kubectl get namespaces`
+</b></details>
+
+<details>
+<summary>How to create a deployment?</code></summary><br><b>
+
+```
+cat << EOF | kubectl create -f -
+> apiVersion: v1
+> kind: Pod
+> metadata:
+>   name: nginx
+> spec:
+>   containers:
+>   - name: nginx
+>     image: nginx
+> EOF
+```
+</b></details>
+
+<details>
+<summary>How to print information on a specific pod?</code></summary><br><b>
+
+`kubectl describe pod pod_name`
+</b></details>
+
+<details>
+<summary>How to delete a pod?</code></summary><br><b>
+
+`kubectl delete pod pod_name`
 </b></details>
 
 <details>
@@ -4333,7 +4378,6 @@ open source toolkit used to manage k8s native applications, called operators, in
 3. Operator Metering - Enables usage reporting for operators that provide specialized services
 </b></details>
 
-
 <details>
 <summary>Describe in detail what is the Operator Lifecycle Manager</summary><br><b>
 
@@ -4347,26 +4391,6 @@ It includes:
 
   * catalog-operator - Resolving and installing ClusterServiceVersions the resource they specify.
   * olm-operator - Deploys applications defined by ClusterServiceVersion resource
-</b></details>
-
-#### Kubernetes Commands
-
-<details>
-<summary>What is kubectl?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you:
-
-  * Check the cluster status?
-  * Check the status of the nodes?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What the following commands do?
-
-  * kubectl get nodes
-  * kubectl get pods --all-namespaces</summary><br><b>
 </b></details>
 
 <details>
@@ -4637,10 +4661,10 @@ You can usually use the function hash() to check an object mutability. If an obj
   * 1 == 'one'
   * 2 > 'one'</summary><br><b>
 
-  * False
-  * True
-  * False
-  * TypeError
+* False
+* True
+* False
+* TypeError
 </b></details>
 
 <details>
@@ -4652,15 +4676,18 @@ You can usually use the function hash() to check an object mutability. If an obj
   * "abc"*True
   * "abc"*False</summary><br><b>
 
-  * abcabcabc
-  * TypeError
-  * TypeError
-  * "abc"
-  * ""
+* abcabcabc
+* TypeError
+* TypeError
+* "abc"
+* ""
 </b></details>
 
 <details>
 <summary>What is the result of `bool("")`? What about `bool(" ")`?</summary><br><b>
+
+bool("") -> evaluates to False
+bool("  ") -> evaluates to True
 </b></details>
 
 <details>
@@ -4681,19 +4708,20 @@ if char == "a" or char == "y" or  char == "o" or char == "e" or char =="u" or ch
 </summary><br><b>
 
 ```
-if lower(input("Insert a character: ")[0]) in "aieou": # Takes care of multiple characters and small/Capital cases
+char = input("Insert a character: ") # For readablity
+if lower(char[0]) in "aieou": # Takes care of multiple characters and separate cases
     print("It's a vowel!")
 ```
 OR
 ```
-char = input("Insert a character: ") # For readablity
-if lower(char[0]) in "aieou": # Takes care of multiple characters and separate cases
+if lower(input("Insert a character: ")[0]) in "aieou": # Takes care of multiple characters and small/Capital cases
     print("It's a vowel!")
 ```
 </b></details>
 
 <details>
 <summary>How to define a function with Python?</summary><br><b>
+Using the `def` keyword
 </b></details>
 
 <details>
@@ -6097,9 +6125,6 @@ Alert manager is responsible for alerts ;)
 
 ## Git
 
-<a name="git-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>What is the difference between <code>git pull</code> and <code>git fetch</code>?</summary><br><b>
 
@@ -6186,6 +6211,10 @@ git checkout HEAD~1 -- /path/of/the/file
 </b></details>
 
 <details>
+<summary>How to squash last two commits?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is the <code>.git</code> directory? What can you find there?</summary><br><b>
 	The <code>.git</code> folder contains all the information that is necessary for your project in version control and all the information about commits, remote repository address, etc. All of them are present in this folder. It also contains a log that stores your commit history so that you can roll back to history.
 
@@ -6234,9 +6263,6 @@ If you would like to also discard the changes you `git reset --hard``
 
 False. If you would like to keep a file on your filesystem, use `git reset <file_name>`
 </b></details>
-
-<a name="git-advanced"></a>
-#### :star: Advanced
 
 <details>
 <summary>Explain Git octopus merge</summary><br><b>
@@ -7050,7 +7076,7 @@ An availability set is a logical grouping of VMs that allows Azure to understand
 <summary>What storage options Azure supports?</summary><br><b>
 </b></details>
 
-#### Security
+#### Azure Security
 
 <details>
 <summary>What is the Azure Security Center? What are some of its features?</summary><br><b>
@@ -7602,9 +7628,6 @@ A list of services and their endpoints
 
 ## Security
 
-<a name="security-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>Can you describe the DevSecOps core principals? (or what is DevSecOps)</summary><br><b>
 </b></details>
@@ -7718,6 +7741,10 @@ You can test by using a stored procedure, so the application must be sanitize th
 
 <details>
 <summary>What is DDoS attack? How do you deal with it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is port scanning? When is it used?</summary><br><b>
 </b></details>
 
 <details>
@@ -7839,9 +7866,6 @@ A buffer overflow (or buffer overrun) occurs when the volume of data exceeds the
 <details>
 <summary>Explain what is Docker Bench</summary><br><b>
 </b></details>
-
-<a name="security-advanced"></a>
-#### :baby: Advanced
 
 <details>
 <summary>Explain MAC flooding attack</summary><br><b>
@@ -8236,9 +8260,6 @@ You can generate certificates with the provided elastic utils and change configu
 
 ## DNS
 
-<a name="dns-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>What is DNS? What is it used for?</summary><br><b>
 
@@ -8307,6 +8328,7 @@ MX (Mail Exchange) Specifies a mail exchange server for the domain, which allows
 
 <details>
 <summary>Is DNS using TCP or UDP?</summary><br><b>
+
 DNS uses UDP port 53 for resolving queries either regular or reverse. DNS uses TCP for zone transfer. 
 </b></details>
 
@@ -8610,6 +8632,10 @@ In Copyleft, any derivative work must use the same licensing while in permissive
 
 <details>
 <summary>How a search engine works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How auto completion works?</summary><br><b>
 </b></details>
 
 <details>
@@ -8935,7 +8961,7 @@ Bonus: extract the last word of each line
 <summary>Replace 'red' with 'green'</summary><br><b>
 </b></details>
 
-## Design
+## System Design
 
 #### Architecture
 
@@ -9044,6 +9070,20 @@ DNS redirection
 
 <details>
 <summary>Explain "Branch by Abstraction" technique</summary><br><b>
+</b></details>
+
+#### Design a system
+
+<details>
+<summary>Can you design a video streaming website?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you design a photo upload website?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How would you build a URL shortener?</summary><br><b>
 </b></details>
 
 ## Hardware
@@ -9180,6 +9220,10 @@ Below you can find several exercises
 #### CI
 
 * [CI for open source project](exercises/ci_for_open_source_project.md)
+
+#### Python 
+
+* [grep before and after](exercises/grep_berfore_and_after.md)
 
 #### Mixed
 
