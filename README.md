@@ -4675,7 +4675,7 @@ The reason is that the two created empty list are different objects. `x is y` on
 
 ```
 char = input("Insert a character: ")
-if char == "a" or char == "y" or  char == "o" or char == "e" or char =="u" or char == "i":
+if char == "a" or char == "o" or char == "e" or char =="u" or char == "i":
     print("It's a vowel!")
 ```
 </summary><br><b>
