@@ -22,57 +22,57 @@
 <center>
 <table>
   <tr>
-    <td align="center"><a href="#devops"><img src="images/devops.png" width="70px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a><br /><sub><a href="#devops-beginner">Beginner :baby:</a></sub><br><sub><a href="#devops-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="85px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a><br /><sub><a href="#jenkins-beginner">Beginner :baby:</a></sub><br><sub><a href="#jenkins-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#devops"><img src="images/devops.png" width="70px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a></td>
+    <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="85px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a></td>
     <td align="center"><a href="#git"><img src="images/git.png" width="80px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
     <td align="center"><a href="#ansible"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
-    <td align="center"><a href="#Network"><img src="images/network.png" width="80x;" height="75px;" alt="Network"/><br /><b>Network</b></a><br /><sub><a href="#network-beginner">Beginner :baby:</a></sub><br><sub><a href="#network-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#linux"><img src="images/linux.png" width="75x;" height="75px;" alt="Linux"/><br /><b>Linux</b></a><br /><sub><a href="#linux-beginner">Beginner :baby:</a></sub><br><sub><a href="#linux-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#terraform"><img src="images/terraform.png" width="70px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a><br /><sub><a href="#terraform-beginner">Beginner :baby:</a></sub><br><sub><a href="#terraform-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#docker"><img src="images/docker.png" width="70px;" height="75px;" alt="Docker"/><br /><b>Docker</b></a><br /><sub><a href="#docker-beginner">Beginner :baby:</a></sub><br><sub><a href="#docker-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#Network"><img src="images/network.png" width="80x;" height="75px;" alt="Network"/><br /><b>Network</b></a></td>
+    <td align="center"><a href="#linux"><img src="images/linux.png" width="75x;" height="75px;" alt="Linux"/><br /><b>Linux</b></a></td>
+    <td align="center"><a href="#terraform"><img src="images/terraform.png" width="70px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
   </tr>
   <tr>
-    <td align="center"><a href="#coding"><img src="images/coding.png" width="75px;" height="75px;" alt="coding"/><br /><b>Coding</b></a><br /><sub><a href="#coding-beginner">Beginner :baby:</a></sub><br><sub><a href="#coding-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a><br /><sub><a href="#python-beginner">Beginner :baby:</a></sub><br><sub><a href="#python-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#go"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a><br /><sub><a href="#shell-scripting-beginner">Beginner :baby:</a></sub><br><sub><a href="#shell-scripting-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#coding"><img src="images/coding.png" width="75px;" height="75px;" alt="coding"/><br /><b>Coding</b></a></td>
+    <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
+    <td align="center"><a href="#go"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a></td>
+    <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
     <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
-    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a><br /><sub><a href="#prometheus-beginner">Beginner :baby:</a></sub><br><sub><a href="#prometheus-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a><br /><sub><a href="#mongo-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a><br /><sub><a href="#sql-beginner">Beginner :baby:</a></sub><br><sub><a href="#sql-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
+    <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a></td>
   </tr>
   <tr>
-    <td align="center"><a href="#cloud"><img src="images/cloud.png" width="110px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a><br /><sub><a href="#cloud-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#cloud"><img src="images/cloud.png" width="110px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a></td>
     <td align="center"><a href="#aws"><img src="images/aws.png" width="75px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
-    <td align="center"><a href="#azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a><br /><sub><a href="#azure-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#gcp"><img src="images/googlecloud.png" width="80px;" height="75px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a><br /><sub><a href="#gcp-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a><br /><sub><a href="#openstack-beginner">Beginner :baby:</a></sub><br><sub><a href="#openstack-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a></td>
+    <td align="center"><a href="#gcp"><img src="images/googlecloud.png" width="80px;" height="75px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
+    <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a></td>
     <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
-    <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a><br /><sub><a href="#puppet-beginner">Beginner :baby:</a></sub><br><sub><a href="#puppet-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a><br /><sub><a href="#openshift-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a></td>
   </tr>
   <tr>
-    <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a><br /><sub><a href="#monitoring-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a></td>
     <td align="center"><a href="#elastic"><img src="images/elastic.png" width="110px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
-    <td align="center"><a href="#virtualization"><img src="images/virtualization.png" width="75px;" height="75px;" alt="Virtualization"/><br /><b>Virtualization</b></a><br /><sub><a href="#virtualization-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#virtualization"><img src="images/virtualization.png" width="75px;" height="75px;" alt="Virtualization"/><br /><b>Virtualization</b></a></td>
     <td align="center"><a href="#dns"><img src="images/dns.png" width="75px;" height="75px;" alt="DNS"/><br /><b>DNS</b></a></td>
     <td align="center"><a href="#operating-system"><img src="images/os.png" width="75px;" height="75px;" alt="Operating System"/><br /><b>Operating System</b></a></td>
     <td align="center"><a href="#distributed"><img src="images/distributed.png" width="110px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
-    <td align="center"><a href="#general"><img src="images/general.png" width="110px;" height="75px;" alt="General"/><br /><b>General</b></a><br /><sub><a href="#general-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
+    <td align="center"><a href="#general"><img src="images/general.png" width="110px;" height="75px;" alt="General"/><br /><b>General</b></a></td>
   </tr>
   <tr>
     <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
     <td align="center"><a href="#databases"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
-    <td align="center"><a href="#regex"><img src="images/regex.png" width="75ph;" height="75px;" alt="RegEx"/><br /><b>Regex</b></a><br /><sub><a href="#regex-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#regex"><img src="images/regex.png" width="75ph;" height="75px;" alt="RegEx"/><br /><b>Regex</b></a></td>
     <td align="center"><a href="#system-design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
     <td align="center"><a href="#hardware"><img src="images/hardware.png" width="110px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
     <td align="center"><a href="#big-data"><img src="images/big-data.png" width="110px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
     <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
-    <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
   </tr>
   <tr>
     <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
+    <td align="center"><a href="#docker"><img src="images/docker.png" width="70px;" height="75px;" alt="Docker"/><br /><b>Docker</b></a></td>
+    <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
+    <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
+    <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
+    <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
   </tr>
 </table>
 </center>
@@ -81,9 +81,6 @@
 <!-- ALL-TOPICS-LIST:END -->
 
 ## DevOps
-
-<a name="devops-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What is DevOps?</summary><br><b>
@@ -296,8 +293,6 @@ One can argue whether it's per company definition or a global one but at least a
 <summary>Is it right to say implementing or practicing DevOps leads to more secure software?</summary><br><b>
 </b></details>
 
-<a name="devops-advanced"></a>
-#### :star: Advanced
 
 <details>
 <summary>Tell me how you perform plan capacity for your CI/CD resources (e.g. servers, storage, etc.)</summary><br><b>
@@ -344,8 +339,6 @@ Note: cross-dependency is when you have two or more changes to separate projects
 
 ## Jenkins
 
-<a name="jenkins-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What is Jenkins? What have you used it for?</summary><br><b>
@@ -413,8 +406,6 @@ Jenkins integrates development life-cycle processes of all kinds, including buil
 You can describe the UI way to add new slaves but better to explain how to do in a way that scales like a script or using dynamic source for slaves like one of the existing clouds.
 </b></details>
 
-<a name="jenkins-advanced"></a>
-#### :star: Advanced
 
 <details>
 <summary>How to acquire multiple slaves for one specific build?</summary><br><b>
@@ -458,9 +449,6 @@ You can describe the UI way to add new slaves but better to explain how to do in
 </b></details>
 
 ## Cloud 
-
-<a name="cloud-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What is Cloud Computing? What is a Cloud Provider?</summary><br><b>
@@ -1788,8 +1776,6 @@ Learn more about it [here](https://aws.amazon.com/sqs)
 
 ## Network
 
-<a name="network-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What is Ethernet?</summary><br><b>
@@ -2057,9 +2043,6 @@ The exact meaning is usually depends on the context but overall data plane refer
 There is also "Management Plane" which refers to monitoring and management functions.
 </b></details>
 
-<a name="network-advanced"></a>
-#### :star: Advanced
-
 <details>
 <summary>Explain Spanning Tree Protocol (STP)</summary><br><b>
 </b></details>
@@ -2115,9 +2098,6 @@ There is also "Management Plane" which refers to monitoring and management funct
 </b></details>
 
 ## Linux
-
-<a name="linux-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What is your experience with Linux?</summary><br><b>
@@ -3170,9 +3150,6 @@ It's used in commands to mark the end of commands options. One common example is
   * which
 </b></details>
 
-<a name="linux-advanced"></a>
-#### :star: Advanced
-
 #### System Calls
 
 <details>
@@ -3451,9 +3428,6 @@ Cache: Cache is usually used when processes reading and writing to the disk to m
 </b></details>
 
 ## Virtualization
-
-<a name="virtualization-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>Explain what is Virtualization</summary><br><b>
@@ -3812,9 +3786,6 @@ Gotenks = 32
 
 ## Terraform
 
-<a name="terraform-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>Explain what Terraform is and how does it works</summary><br><b>
 
@@ -3957,9 +3928,6 @@ Output variables are named values that are sourced from the attributes of a modu
 </b></details>
 
 
-<a name="terraform-advanced"></a>
-#### :star: Advanced
-
 <details>
 <summary>Explain "Remote State". When would you use it and how?</summary><br><b>
   Terraform generates a `terraform.tfstate` json file that describes components/service provisioned on the specified provider. Remote  
@@ -3990,10 +3958,6 @@ Output variables are named values that are sourced from the attributes of a modu
 </b></details>
 
 ## Docker
-
-<a name="docker-beginner"></a>
-
-#### :baby: beginner
 
 <details>
 <summary>What is Docker? What are you using it for?</summary><br><b>
@@ -4156,9 +4120,6 @@ Each layer is only a set of differences from the layer before it. The layers are
 The major difference between a container and an image is the top writable layer. All writes to the container that add new or modify existing data are stored in this writable layer. When the container is deleted, the writable layer is also deleted. The underlying image remains unchanged.
 Because each container has its own writable container layer, and all changes are stored in this container layer, multiple containers can share access to the same underlying image and yet have their own data state.
 </b></details>
-
-<a name="docker-advanced"></a>
-#### :star: Advanced
 
 <details>
 <summary>What best practices are you familiar related to working with containers?</summary><br><b>
@@ -4424,9 +4385,6 @@ You can learn more [here](https://submariner-io.github.io)
 
 ## Coding
 
-<a name="coding-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>What programming language do you prefer to use for DevOps related tasks? Why specifically this one?</summary><br><b>
 </b></details>
@@ -4575,9 +4533,6 @@ The average performance of the above algorithm is O(log n). Best performance can
 <summary>What is Integer Overflow? How is it handled?</summary><br><b>
 </b></details>
 
-<a name="coding-advanced"></a>
-#### :star: Advanced
-
 <details>
 <summary>Name 3 design patterns. Do you know how to implement (= provide an example) these design pattern in any language you'll choose?</summary><br><b>
 </b></details>
@@ -4604,9 +4559,6 @@ def find_triplets_sum_to_zero(li):
 </b></details>
 
 ## Python
-
-<a name="python-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What are some characteristics of the Python programming language?</summary><br><b>
@@ -5825,10 +5777,6 @@ if __name__ == '__main__':
 ```
 </b></details>
 
-
-<a name="python-advanced"></a>
-#### :star: Advanced
-
 <details>
 <summary>What data types are you familiar with that are not Python built-in types but still provided by modules which are part of the standard library?</summary><br><b>
 
@@ -6027,9 +5975,6 @@ a = f()
 
 ## Monitoring
 
-<a name="monitoring-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>Explain monitoring. What is it? What its goal?</summary><br><b>
 </b></details>
@@ -6054,9 +5999,6 @@ Logging<br>
 </b></details>
 
 ## Prometheus
-
-<a name="prometheus-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What is Prometheus? What are some of Prometheus's main features?</summary><br><b>
@@ -6114,8 +6056,6 @@ Alert manager is responsible for alerts ;)
 <summary>What HA in Prometheus means?</summary><br><b>
 </b></details>
 
-<a name="prometheus-advanced"></a>
-#### :star: Advanced
 
 <details>
 <summary>How do you join two metrics?</summary><br><b>
@@ -6283,8 +6223,6 @@ This is a great article about Octopus merge: http://www.freblogg.com/2016/12/git
 
 ## Go
 
-<a name="go-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What are some characteristics of the Go programming language?</summary><br><b>
@@ -6575,10 +6513,8 @@ Output: 3
 
 [Golang container/heap package](https://golang.org/pkg/container/heap/)
 </b></details>
-## Mongo
 
-<a name="mongo-beginner"></a>
-#### :baby: Beginner
+## Mongo
 
 <details>
 <summary>What are the advantages of MongoDB? Or in other words, why choosing MongoDB and not other implementation of NoSQL?</summary><br><b>
@@ -6636,9 +6572,6 @@ as key-value pair, document-oriented, etc.
 
 ## OpenShift
 
-<a name="openshift-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>What is OpenShift? What experience do you have with OpenShift?</summary><br><b>
 </b></details>
@@ -6668,9 +6601,6 @@ as key-value pair, document-oriented, etc.
 </b></details>
 
 ## Shell Scripting
-
-<a name="shell-scripting-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>Tell me about your experience with shell scripting</summary><br><b>
@@ -6824,9 +6754,6 @@ done
 
 </b></details>
 
-<a name="shell-scripting-advanced"></a>
-#### Advanced
-
 <details>
 <summary>Explain the following code:
 
@@ -6859,9 +6786,6 @@ https://superuser.com/a/1060002/167769
 
 
 ## SQL
-
-<a name="sql-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What does SQL stand for?</summary><br><b>
@@ -7013,9 +6937,6 @@ Left Join Orders o <br>
 
 </b></details>
 
-<a name="sql-advanced"></a>
-#### Advanced
-
 <details>
 <summary>Using a with statement, how would you show who ordered cat food, and the total amount of money spent?</summary><br><b>
 
@@ -7040,9 +6961,6 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 ## Azure
-
-<a name="azure-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>Explain Azure's architecture</summary><br><b>
@@ -7144,9 +7062,6 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 
 ## GCP
 
-<a name="gcp-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>Explain GCP's architecture</summary><br><b>
 </b></details>
@@ -7194,9 +7109,6 @@ startap-script
 </b></details>
 
 ## OpenStack
-
-<a name="openstack-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>Tell me about your experience with OpenStack. What do you think are the advantages and disadvantages of OpenStack?</summary><br><b>
@@ -7496,9 +7408,6 @@ Using:
 
 A list of services and their endpoints
 </b></details>
-
-<a name="openstack-advanced"></a>
-#### :baby: Advanced
 
 #### OpenStack Advanced - Services
 
@@ -7901,9 +7810,6 @@ CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipula
 
 ## Puppet
 
-<a name="puppet-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>What is Puppet? How does it works?</summary><br><b>
 </b></details>
@@ -7931,9 +7837,6 @@ CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipula
 <details>
 <summary>What is MCollective?</summary><br><b>
 </b></details>
-
-<a name="puppet-advanced"></a>
-#### :baby: Advanced
 
 <details>
 <summary>Do you have experience with writing modules? Which module have you created and for what?</summary><br><b>
