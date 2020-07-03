@@ -2,9 +2,9 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1203** questions
+:bar_chart: &nbsp;There are currently **1250** questions
 
-:busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) or follow us on [Twitter](https://twitter.com/devopsbit) for additional daily exercises, articles and more resources on DevOps
+:busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
@@ -2537,6 +2537,12 @@ True
 
 <details>
 <summary>What happens when you delete the original file in case of soft link and hard link?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you check what type of filesystem is used in /home?</summary><br><b>
+
+There are many answers for this question. One way is running `df -T`
 </b></details>
 
 <details>
