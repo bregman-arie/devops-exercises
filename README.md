@@ -2159,6 +2159,8 @@ mv command.
 
 <details>
 <summary>What are hidden files/directories? How to list them?</summary><br><b>
+
+`ls -a`
 </b></details>
 
 <details>
@@ -2169,7 +2171,7 @@ Most likely the default/generated $PATH was somehow modified or overridden thus 
 This issue could also happen if bash_profile or any configuration file of your interpreter was wrongly modified, causing erratics behaviours.
 You would solve this by fixing your $PATH variable:
 
-As to fix it there are serveral options:
+As to fix it there are several options:
 
 1. Manually adding what you need to your $PATH <code>PATH="$PATH":/user/bin:/..etc</code> 
 2. You have your weird env variables backed up.
@@ -2194,7 +2196,6 @@ With cron, tasks are scheduled using the following format:
 The tasks are stored in a cron file, you can write in it using <code>crontab -e</code>
 
 Alternatively if you are using a distro with systemd it's recommended to use systemd timers.
-
 </b></details>
 
 <details>
@@ -2470,7 +2471,7 @@ Each number has different meaning, based on how the application was developed.
 I consider this as a good blog post to read more about it: https://shapeshed.com/unix-exit-codes
 </b></details>
 
-##### Linux - Storage & Filesystem
+##### Linux Disk & Filesystem
 
 <details>
 <summary>What's an inode?</summary><br><b>
@@ -2542,6 +2543,8 @@ There are many answers for this question. One way is running `df -T`
 
 <details>
 <summary>How would you check what is the size of a certain directory?</summary><br><b>
+
+`du -sh`
 </b></details>
 
 <details>
@@ -2611,7 +2614,45 @@ There are many answers for this question. One way is running `df -T`
 False. /tmp is cleared upon system boot while /var/tmp is cleared every a couple of days or not cleared at all (depends on distro).
 </b></details>
 
-#### Processes
+#### Linux Performance Analysis
+
+<details>
+<summary>How to check what is the current load average?</summary><br><b>
+
+One can use `uptime` or `top`
+</b></details>
+
+<details>
+<summary>You know how to see the load average, great. but what each part of it means? for example 1.43, 2.34, 2.78</summary><br><b>
+
+[This article](http://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html) summarizes the load average topic in a great way
+</b></details>
+
+<details>
+<summary>How to check process usage?</summary><br><b>
+
+pidstat
+</b></details>
+
+<details>
+<summary>How to check disk I/O?</summary><br><b>
+
+`iostat -xz 1`
+</b></details>
+
+<details>
+<summary>How to check how much free memory a system has? How to check memory consumption by each process?</summary><br><b>
+
+You can use the commands <code>top</code> and <code>free</code>
+</b></details>
+
+<details>
+<summary>How to check TCP stats?</summary><br><b>
+
+sar -n TCP,ETCP 1
+</b></details>
+
+#### Linux Processes
 
 <details>
 <summary>How to run a process in the background and why to do that in the first place?</summary><br><b>
@@ -2733,12 +2774,6 @@ If you mention at any point ps command with arugments, be familiar with what the
 <summary>Find all the files which end with '.yml' and replace the number 1 in 2 in each file</summary><br><b>
 
 find /some_dir -iname \*.yml -print0 | xargs -0 -r sed -i "s/1/2/g"
-</b></details>
-
-<details>
-<summary>How to check how much free memory a system has? How to check memory consumption by each process?</summary><br><b>
-
-You can use the commands <code>top</code> and <code>free</code>
 </b></details>
 
 <details>
@@ -3261,6 +3296,12 @@ These system calls are reading the file <code>/my/file</code> and 5 is the file 
 </b></details>
 
 <details>
+<summary>What is context switch?</summary><br><b>
+
+From [wikipedia](https://en.wikipedia.org/wiki/Context_switch): a context switch is the process of storing the state of a process or thread, so that it can be restored and resume execution at a later point
+</b></details>
+
+<details>
 <summary>You found there is a server with high CPU load but you didn't find a process with high CPU. How is that possible?</summary><br><b>
 </b></details>
 
@@ -3310,13 +3351,25 @@ This is a good article about the topic: https://ops.tips/blog/how-linux-creates-
 <summary>You executed a script and while still running, it got accidentally removed. Is it possible to restore the script while it's still running?</summary><br><b>
 </b></details>
 
-#### Memory
+#### Linux Memory
 
 <details>
 <summary>What is the difference between MemFree and MemAvailable in /proc/meminfo?</summary><br><b>
 
 MemFree - The amount of unused physical RAM in your system
 MemAvailable - The amount of available memory for new workloads (without pushing system to use swap) based on MemFree, Active(file), Inactive(file), and SReclaimable.
+</b></details>
+
+<details>
+<summary>What is virtual memory?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between paging and swapping?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is OOM killer</summary><br><b>
 </b></details>
 
 #### Distribution
@@ -3841,6 +3894,12 @@ HCL stands for Hashicorp Configuration Language. It is the language Hashicorp ma
 <summary>What <code>terraform.tfstate</code> file is used for?</summary><br><b> 
 
 It keeps track of the IDs of created resources so that Terraform knows what it is managing.
+</b></details>
+
+<details>
+<summary>How do you rename an existing resource?</summary><br><b> 
+
+terraform state mv
 </b></details>
 
 <details>
@@ -5025,6 +5084,10 @@ Or
 some_list.sort(reverse=True)
 some_list[:3]
 ```
+</b></details>
+
+<details>
+<summary>How to insert an item to the beginning of a list? What about two items?</summary><br><b>
 </b></details>
 
 <details>
