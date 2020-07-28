@@ -5261,6 +5261,29 @@ list(zip(nums, letters))
 <summary>What is List Comprehension? Is it better than a typical loop? Why? Can you demonstrate how to use it?</summary><br><b>
 </b></details>
 
+<details>
+<summary>You have the following list: <code>[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]</code>
+  Extract all type of foods. Final output should be: {'mushrooms', 'goombas', 'turtles'}</summary><br><b>
+
+```
+brothers_menu =  \
+[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]
+
+# "Classic" Way
+def get_food(brothers_menu) -> set:
+    temp = []
+
+    for brother in brothers_menu:
+        for food in brother['food']:
+            temp.append(food)
+
+    return set(temp)
+
+# One liner way (Using list comprehension)
+set([food for bro in x for food in bro['food']])
+```
+</b></details>
+
 #### Dictionaries
 
 <details>
@@ -5391,29 +5414,6 @@ Using the re module
 
 <details>
 <summary>How to find all the IP addresses in a variable? How to find them in a file?</summary><br><b>
-</b></details>
-
-<details>
-<summary>You have the following list: <code>[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]</code>
-  Extract all type of foods. Final output should be: {'mushrooms', 'goombas', 'turtles'}</summary><br><b>
-
-```
-brothers_menu =  \
-[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]
-
-# "Classic" Way
-def get_food(brothers_menu) -> set:
-    temp = []
-
-    for brother in brothers_menu:
-        for food in brother['food']:
-            temp.append(food)
-
-    return set(temp)
-
-# One liner way (Using list comprehension)
-set([food for bro in x for food in bro['food']])
-```
 </b></details>
 
 #### Python Strings
