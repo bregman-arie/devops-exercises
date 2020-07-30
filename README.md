@@ -8395,6 +8395,10 @@ I like this definition from [here](https://blog.christianposta.com/microservices
 </b></details>
 
 <details>
+<summary>What is a Debuggger and how it works?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is latency?</summary><br><b>
 </b></details>
 
