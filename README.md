@@ -1865,7 +1865,6 @@ You can read more about the OSI model in [penguintutor.com](http://www.penguintu
   * IP address
   * Terminate connections
   * 3 way handshake</summary><br><b>
-
   * Error correction
   * Packets routing - Network
   * Cables and electrical signals - Physical
