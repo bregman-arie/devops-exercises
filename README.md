@@ -327,6 +327,7 @@ This situation might lead to bugs which hard to identify and reproduce.
 
 <details>
 <summary>How to deal with a configuration drift?</summary><br><b>
+	Configuration drift can be avoided with desired state configuration (DSC) implementation. Desired state configuration can be a declarative file that defined how a system should be. There are tools to enforce desired state such a terraform or azure dsc. There are incramental or complete strategies.  
 </b></details>
 
 <details>
