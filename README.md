@@ -368,7 +368,7 @@ Jenkins integrates development life-cycle processes of all kinds, including buil
   * Job
   * Build
   * Plugin
-  * Slave
+  * Slave/Node
   * Executor</summary><br><b>
 </b></details>
 
@@ -401,14 +401,13 @@ Jenkins integrates development life-cycle processes of all kinds, including buil
 </b></details>
 
 <details>
-<summary>Describe how do you add new slaves to Jenkins</summary><br><b>
+<summary>Describe how do you add new nodes (agents) to Jenkins</summary><br><b>
 
-You can describe the UI way to add new slaves but better to explain how to do in a way that scales like a script or using dynamic source for slaves like one of the existing clouds.
+You can describe the UI way to add new nodes but better to explain how to do in a way that scales like a script or using dynamic source for nodes like one of the existing clouds.
 </b></details>
 
-
 <details>
-<summary>How to acquire multiple slaves for one specific build?</summary><br><b>
+<summary>How to acquire multiple nodes for one specific build?</summary><br><b>
 </b></details>
 
 <details>
@@ -2453,12 +2452,6 @@ lines 1 and 3.
 </b></details>
 
 <details>
-<summary>Tell me everything you know about the Linux boot process</summary><br><b>
-
-Another way to ask this: what happens from the moment you turned on the server until you get a prompt
-</b></details>
-
-<details>
 <summary>What is an exit code? What exit codes are you familiar with?</summary><br><b>
 
 An exit code (or return code) represents the code returned by a child process to its
@@ -2468,6 +2461,22 @@ parent process.
 Each number has different meaning, based on how the application was developed.
 
 I consider this as a good blog post to read more about it: https://shapeshed.com/unix-exit-codes
+</b></details>
+
+#### Linux Boot Process
+
+<details>
+<summary>Tell me everything you know about the Linux boot process</summary><br><b>
+
+Another way to ask this: what happens from the moment you turned on the server until you get a prompt
+</b></details>
+
+<details>
+<summary>What is GRUB2?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Secure Boot?</summary><br><b>
 </b></details>
 
 ##### Linux Disk & Filesystem
@@ -2694,6 +2703,10 @@ To view all available signals run `kill -l`
 
 <details>
 <summary>What is a trap?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Every couple of days, a certain process stops running. How can you look into why it's happening?</summary><br><b>
 </b></details>
 
 <details>
@@ -3160,14 +3173,30 @@ A good answer can be found [here](https://askubuntu.com/questions/9325/what-is-t
 It's used in commands to mark the end of commands options. One common example is when used with git to discard local changes: `git checkout -- some_file`
 </b></details>
 
-#### Commands
-
-<details>
-<summary>What the <code>lsof</code> command does? Have you used it? What for?</summary><br><b>
-</b></details>
+#### Linux - AWK
 
 <details>
 <summary>What the <code>awk</code> command does? Have you used it? What for?</summary><br><b>
+
+From Wikipedia: "AWK is domain-specific language designed for text processing and typically used as a data extraction and reporting tool"
+</b></details>
+
+<details>
+<summary>How to print the 4th column in a file?</summary><br><b>
+
+`awk '{print $4}' file`
+</b></details>
+
+<details>
+<summary>How to print every line that is longer than 79 characters?</summary><br><b>
+
+`awk 'length($0) > 79' file`
+</b></details>
+
+#### Linux - Commands
+
+<details>
+<summary>What the <code>lsof</code> command does? Have you used it? What for?</summary><br><b>
 </b></details>
 
 <details>
@@ -4380,6 +4409,8 @@ Explained [here](https://www.youtube.com/watch?v=i9V4oCa5f9I)
 Explained [here](https://coreos.com/operators)
 
 "An Operator is a method of packaging, deploying and managing a Kubernetes application"
+
+There is also this [video tutorial](https://www.youtube.com/watch?v=KBTXBUVNF2I)
 </b></details>
 
 <details>
@@ -7764,8 +7795,10 @@ DNS spoofing occurs when a particular DNS server’s records of “spoofed” or
 <summary>What can you tell me about Stuxnet?</summary><br><b>
 
 Stuxnet is a computer worm that was originally aimed at Iran’s nuclear facilities and has since mutated and spread to other industrial and energy-producing facilities. The original Stuxnet malware attack targeted the programmable logic controllers (PLCs) used to automate machine processes. It generated a flurry of media attention after it was discovered in 2010 because it was the first known virus to be capable of crippling hardware and because it appeared to have been created by the U.S. National Security Agency, the CIA, and Israeli intelligence.
+</b></details>
 
-
+<details>
+<summary>What can you tell me about the BootHole vulnerability?</summary><br><b>
 </b></details>
 
 <details>
@@ -8394,6 +8427,10 @@ I like this definition from [here](https://blog.christianposta.com/microservices
 </b></details>
 
 <details>
+<summary>Tell me about interesting bugs you've found and also fixed</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is a Debuggger and how it works?</summary><br><b>
 </b></details>
 
@@ -8467,6 +8504,16 @@ percentage ratio
   * Less than the compacted partition minimum bytes
   * Depended on the compaction strategy
 </summary><br><b>
+</b></details>
+
+#### Customers and Service Providers
+
+<details>
+<summary>What is SLO (service-level objective)?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is SLA (service-level agreement)?</summary><br><b>
 </b></details>
 
 #### HTTP
@@ -8891,13 +8938,16 @@ A single data source (at least usually) which is stored in a raw format.
 </b></details>
 
 <details>
+<summary>Explain what is a time-series database</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is OLTP (Online transaction processing)?</summary><br><b>
 </b></details>
 
 <details>
 <summary>What is OLAP (Online Analytical Processing)?</summary><br><b>
 </b></details>
-
 
 <details>
 <summary>What is an index in a database?</summary><br><b>
