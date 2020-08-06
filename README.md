@@ -194,6 +194,7 @@ which follows the immutable infrastructure paradigm.
 
 <details>
 <summary>What is caching? How does it works? Why is it important?</summary><br><b>
+	Caching is fast access to frequently used resources which are computationally expensive or IO intensive and do not change often. There can be several layers of cache that can start from CPU caches to distributed cache systems. Common ones are in memory caching and distributed caching. <br/> Caches are typically data structures that contains some data, such as a hashtable or dictionary. However, any data structure can provide caching capabilities, like set, sorted set, sorted dictionary etc. While, caching is used in many applications, they can create subtle bugs if not implemented correctly or used correctly. For example,cache invalidation, expiration or updating is usually quite challenging and hard.
 </b></details>
 
 <details>
@@ -255,6 +256,11 @@ One can argue whether it's per company definition or a global one but at least a
 
 <details>
 <summary>What are MTTF (mean time to failure) and MTTR (mean time to repair)? What these metrics help us to evaluate?</summary><br><b>
+	
+	* MTTF (mean time to failure) other known as uptime, can be defined as how long the system run before if fails. 
+	* MTTR (mean time to recover) on the other hand, is the amount of time it takes to repair a system. 
+	* MTBF (mean time between failues) is the amount of between failures of the system. These errors can be intermittent or fatal.
+	
 </b></details>
 
 <details>
@@ -263,10 +269,12 @@ One can argue whether it's per company definition or a global one but at least a
 
 <details>
 <summary>What is "infrastructure as code"? What implementation of IAC are you familiar with?</summary><br><b>
+	IAC (infrastructure as code) is a declerative approach of defining infrastructure or architecture of a system. Some imlementations are ARM templates for Azure and Terraform that can work across multiple cloud providers. 
 </b></details>
 
 <details>
 <summary>How do you manage build artifacts?</summary><br><b>
+	Build artifacts are usually stored in a repository. They can be used in release pipelines for deployment purposes. Usually there is retention period on the build artifacts. 
 </b></details>
 
 <details>
@@ -275,6 +283,13 @@ One can argue whether it's per company definition or a global one but at least a
 
 <details>
 <summary>What deployment strategies are you familiar with or have used?</summary><br><b>
+	
+	There are several deployment strategies: 
+	* Rolling
+	* Blue green deployment
+	* Canary releases
+	* Recreate strategy
+	
 </b></details>
 
 <details>
@@ -318,6 +333,7 @@ This situation might lead to bugs which hard to identify and reproduce.
 
 <details>
 <summary>How to deal with a configuration drift?</summary><br><b>
+	Configuration drift can be avoided with desired state configuration (DSC) implementation. Desired state configuration can be a declarative file that defined how a system should be. There are tools to enforce desired state such a terraform or azure dsc. There are incramental or complete strategies.  
 </b></details>
 
 <details>
