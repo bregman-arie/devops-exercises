@@ -71,6 +71,7 @@
     <td align="center"><a href="#docker"><img src="images/docker.png" width="70px;" height="75px;" alt="Docker"/><br /><b>Docker</b></a></td>
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
     <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
+    <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
     <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
     <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
   </tr>
@@ -1965,6 +1966,14 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 - A client node sends a SYN data packet over an IP network to a server on the same or an external network. The objective of this packet is to ask/infer if the server is open for new connections.
 - The target server must have open ports that can accept and initiate new connections. When the server receives the SYN packet from the client node, it responds and returns a confirmation receipt – the ACK packet or SYN/ACK packet.
 - The client node receives the SYN/ACK from the server and responds with an ACK packet.
+</b></details>
+
+<details>
+<summary>What is round-trip delay or round-trip time?</summary><br><b>
+
+From [wikipedia](https://en.wikipedia.org/wiki/Round-trip_delay): "the length of time it takes for a signal to be sent plus the length of time it takes for an acknowledgement of that signal to be received"
+
+Bonus question: what is the RTT of LAN?
 </b></details>
 
 <details>
@@ -6709,6 +6718,34 @@ as key-value pair, document-oriented, etc.
 <summary>Explain what is Downward API</summary><br><b>
 </b></details>
 
+## Storage
+
+<details>
+<summary>What is a storage device? What storage devices are there?</summary><br><b>
+
+* Hard Disks
+* SSD
+* USB
+* Magnetic Tape
+</b></details>
+
+<details>
+<summary>Explain the following:
+
+* Block Storage
+* Object Storage
+* File Storage</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Random Seek Time?</summary><br><b>
+
+The time it takes for a disk to reach the place where the data is located and read a single block/sector.
+
+Bones question: What is the random seek time in SSD and Magnetic Disk?
+Answer: Magnetic is about 10ms and SSD is somewhere between 0.08 and 0.16ms
+</b></details>
+
 ## Shell Scripting
 
 <details>
@@ -7093,7 +7130,7 @@ An availability set is a logical grouping of VMs that allows Azure to understand
 <summary>Explain Azure managed disks</summary><br><b>
 </b></details>
 
-#### Network
+#### Azure Network
 
 <details>
 <summary>What's an Azure region?</summary><br><b>
@@ -7103,7 +7140,7 @@ An availability set is a logical grouping of VMs that allows Azure to understand
 <summary>What is the N-tier architecture?</summary><br><b>
 </b></details>
 
-#### Storage
+#### Azure Storage
 
 <details>
 <summary>What storage options Azure supports?</summary><br><b>
@@ -8721,10 +8758,6 @@ These are not DevOps related questions as you probably noticed, but since they a
 </b></details>
 
 <details>
-<summary>Why do you want to work here?</summary><br><b>
-</b></details>
-
-<details>
 <summary>How did you hear about us?</summary><br><b>
 
 Tell them how did you hear about them :D
@@ -8807,6 +8840,24 @@ You can use and elaborate on one or all of the following:
 * Motivation 
 * Autodidact
 * Creativity (be able to support it with some actual examples)
+</b></details>
+
+#### Pointless Questions
+
+<details>
+<summary>Why do you want to work here?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Why are you looking to leave your current place?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are your strengths and weaknesses?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Where do you see yourself in five years?</summary><br><b>
 </b></details>
 
 #### Team Lead
@@ -9042,6 +9093,14 @@ Bonus: extract the last word of each line
 [This article](https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh) provides a great explanation.
 </b></details>
 
+<details>
+<summary>Explain "Loose Coupling"</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a message queue? When is it used?</summary><br><b>
+</b></details>
+
 #### Scalability
 
 <details>
@@ -9071,9 +9130,31 @@ Vertical Scaling is the process of adding resources to increase power of existin
 </b></details>
 
 <details>
+<summary>What are the disadvantages of Vertical Scaling?</summary><br><b>
+
+With vertical scaling alone, the component still remains a single point of failure.
+In addition, it has hardware limit where if you don't have more resources, you might not be able to scale vertically.
+</b></details>
+
+<details>
 <summary>Explain Horizontal Scaling</summary><br><b>
 
 Horizontal Scaling is the process of adding more resources that will be able handle requests as one unit
+</b></details>
+
+<details>
+<summary>What is the disadvange of Horizontal Scaling? What is often required in order to perform Horizontal Scaling?</summary><br><b>
+
+A load balancer. You can add more resources, but if you would like them to be part of the process, you have to serve them the requests/responses.
+Also, data inconsistency is a concern with horizontal scaling.
+</b></details>
+
+<details>
+<summary>Explain Resiliency and what ways are there to make a system more resilient</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "Consistent Hashing"</summary><br><b>
 </b></details>
 
 <details>
