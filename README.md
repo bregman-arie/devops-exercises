@@ -2371,6 +2371,10 @@ tail -f <file_name>
 </b></details>
 
 <details>
+<summary>Can you create files in /proc?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is the difference between CPU load and utilization?</summary><br><b>
 </b></details>
 
@@ -2502,6 +2506,10 @@ Another way to ask this: what happens from the moment you turned on the server u
 
 <details>
 <summary>What is Secure Boot?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What can you find in /boot?</summary><br><b>
 </b></details>
 
 ##### Linux Disk & Filesystem
@@ -3451,6 +3459,12 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 </b></details>
 
 <details>
+<summary>If I plug a new device into a Linux machine, where on the system, a new device entry/file will be created?</summary><br><b>
+
+/dev
+</b></details>
+
+<details>
 <summary>Why there are different sections in man? What is the difference between the sections?</summary><br><b>
 </b></details>
 
@@ -4329,6 +4343,64 @@ False. A Kubernetes cluster consists of at least 1 master and 0 or more workers.
 <summary>What is kubectl?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What are namespaces? Why would someone use namespaces?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? When a namespace is deleted all resources in that namespace are not deleted but moved to another default namespace</summary><br><b>
+
+False. When a namespace is deleted, the resources in that namespace are deleted as well.
+</b></details>
+
+<details>
+<summary>What special namespaces are there?</summary><br><b>
+
+* Default
+* Kube-system
+* Kube-public
+</b></details>
+
+<details>
+<summary>What "Resources Quotas" are used for and how?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain ConfigMaps</summary><br><b>
+
+Separate configuration from pods.
+</b></details>
+
+<details>
+<summary>How to use ConfigMaps?</summary><br><b>
+
+1. Create it (from key&value, a file or an env file)
+2. Attach it. Mount a configmap as a volume
+</b></details>
+
+<details>
+<summary>Explain "Horizontal Pod Autoscaler"</summary><br><b>
+
+Scale the number of pods automatically on observed CPU utilization.
+</b></details>
+
+<details>
+<summary>Explain the "Service" concept</summary><br><b>
+
+"An abstract way to expose an application running on a set of Pods as a network service." - more [here](https://kubernetes.io/docs/concepts/services-networking/service)
+</b></details>
+
+<details>
+<summary>What services types are there?</summary><br><b>
+
+* ClusterIP
+* NodePort
+* LoadBalancer
+* ExternalName
+
+More on this topic [here](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
+</b></details>
+
 #### Basic Commands
 
 <details>
@@ -4347,6 +4419,24 @@ False. A Kubernetes cluster consists of at least 1 master and 0 or more workers.
 <summary>How to list all namespaces?</code></summary><br><b>
 
 `kubectl get namespaces`
+</b></details>
+
+<details>
+<summary>How to view the current namespace?</code></summary><br><b>
+
+kubectl config view | grep namespace
+</b></details>
+
+<details>
+<summary>How to switch to another namespace?</code></summary><br><b>
+
+kubectl config set-context --current --namespace=some-namespace
+</b></details>
+
+<details>
+<summary>How to create a resource quota?</code></summary><br><b>
+
+kubectl create quota some-quota --hard-cpu=2,pods=2
 </b></details>
 
 <details>
@@ -4379,7 +4469,43 @@ cat << EOF | kubectl create -f -
 </b></details>
 
 <details>
+<summary>How to execute the command "ls" in an existing pod?</code></summary><br><b>
+
+kubectl exec some-pod -it -- ls
+</b></details>
+
+<details>
+<summary>How to create a service that exposes a deployment?</code></summary><br><b>
+
+kubectl expose deploy some-deployment --port=80 --target-port=8080
+</b></details>
+
+<details>
+<summary>How to create a pod and a service with one command?</code></summary><br><b>
+
+kubectl run nginx --image=nginx --restart=Never --port 80 --expose
+</b></details>
+
+<details>
 <summary>Describe in detail what the following command does <code>kubectl create deployment kubernetes-httpd --image=httpd</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>How to scale a deployment to 8 replicas?</code></summary><br><b>
+
+kubectl scale deploy some-deployment --replicas=8
+</b></details>
+
+<details>
+<summary>How to get list of resources which are not in a namespace?</code></summary><br><b>
+
+kubectl api-resources --namespaced=false
+</b></details>
+
+<details>
+<summary>How to delete all pods whose status is not "Running"?</code></summary><br><b>
+
+kubectl delete pods --field-selector=status.phase!='Running'
 </b></details>
 
 <details>
@@ -4476,6 +4602,32 @@ It includes:
 
 <details>
 <summary>What is kubconfig? What do you use it for?</summary><br><b>
+</b></details>
+
+#### Kubernetes Secrets
+
+<details>
+<summary>Explain Kubernetes Secrets</summary><br><b>
+
+Secrets let you store and manage sensitive information (passwords, ssh keys, etc.)
+</b></details>
+
+<details>
+<summary>How to create a secret from a key and value?</summary><br><b>
+
+kubectl create secret generic some-secret --from-literal=password='donttellmypassword'
+</b></details>
+
+<details>
+<summary>How to create a secret from a file?</summary><br><b>
+
+kubectl create secret generic some-secret --from-file=/some/file.txt
+</b></details>
+
+#### Kubernetes Misc
+
+<details>
+<summary>Explain what is CronJob and what is it used for</summary><br><b>
 </b></details>
 
 #### Submariner
