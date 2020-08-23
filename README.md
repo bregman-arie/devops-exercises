@@ -4503,6 +4503,10 @@ kubectl run nginx --image=nginx --restart=Never --port 80 --expose
 </b></details>
 
 <details>
+<summary>Why to create kind deployment, if pods can be launched with replicaset ? </summary><br><b>
+</b></details>
+
+<details>
 <summary>How to scale a deployment to 8 replicas?</code></summary><br><b>
 
 kubectl scale deploy some-deployment --replicas=8
