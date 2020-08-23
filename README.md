@@ -1,4 +1,4 @@
-# DevOps Questions & Exercises
+<p align="center"><img src="images/devops_exercises.png"/></p>
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
@@ -4399,6 +4399,18 @@ Scale the number of pods automatically on observed CPU utilization.
 * ExternalName
 
 More on this topic [here](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
+</b></details>
+
+<details>
+<summary>What services types are there?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Liveness probe</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Readiness probe</summary><br><b>
 </b></details>
 
 #### Basic Commands
