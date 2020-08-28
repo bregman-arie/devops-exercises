@@ -3800,7 +3800,32 @@ Variable precedence is about how variables override each other when they set in 
 
 In the context of our question, the order will be extra vars (always override any other variable) -> host facts -> inventory variables -> role defaults (the weakest).
 
-A full list can be found at the link above. Also, note there is a significant difference between Ansible 1.x and 2.x.
+Here is the order of precedence from least to greatest (the last listed variables winning prioritization):
+
+1. command line values (eg “-u user”)
+2. role defaults [[1\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id15)
+3. inventory file or script group vars [[2\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id16)
+4. inventory group_vars/all [[3\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id17)
+5. playbook group_vars/all [[3\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id17)
+6. inventory group_vars/* [[3\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id17)
+7. playbook group_vars/* [[3\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id17)
+8. inventory file or script host vars [[2\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id16)
+9. inventory host_vars/* [[3\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id17)
+10. playbook host_vars/* [[3\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id17)
+11. host facts / cached set_facts [[4\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id18)
+12. play vars
+13. play vars_prompt
+14. play vars_files
+15. role vars (defined in role/vars/main.yml)
+16. block vars (only for tasks in block)
+17. task vars (only for the task)
+18. include_vars
+19. set_facts / registered vars
+20. role (and include_role) params
+21. include params
+22. extra vars (always win precedence)
+
+A full list can be found at  [PlayBook Variables](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#ansible-variable-precedence) . Also, note there is a significant difference between Ansible 1.x and 2.x.
 </b></details>
 
 <details>
@@ -3814,6 +3839,33 @@ A full list can be found at the link above. Also, note there is a significant di
   * It’s a best practice to use indention of 2 spaces instead of 4
   * ‘notify’ used to trigger handlers
   * This “hosts: all:!controllers” means ‘run only on controllers group hosts</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the Diffrence between Forks and Serial & Throttle.</summary><br><b>
+
+`Serial` is like running the playbook for each host in turn, waiting for completion of the complete playbook before moving on to the next host. `forks`=1 means run the first task in a play on one host before running the same task on the next host, so the first task will be run for each host before the next task is touched. Default fork is 5 in ansible.
+
+```
+[defaults]
+forks = 30
+```
+
+```
+- hosts: webservers
+  serial: 1
+  tasks:
+    - name: ...
+```
+
+Ansible also supports `throttle` This keyword limits the number of workers up to the maximum set via the forks setting or serial. This can be useful in restricting tasks that may be CPU-intensive or interact with a rate-limiting API
+
+```
+tasks:
+- command: /path/to/cpu_intensive_command
+  throttle: 1
+```
+
 </b></details>
 
 <details>
