@@ -4128,6 +4128,62 @@ Docker daemon redirects output from container to Docker CLI which redirects it t
 </b></details>
 
 <details>
+<summary>What are `dockerd, docker-containerd, docker-runc, docker-containerd-ctr, docker-containerd-shim` ?</summary><br><b>
+
+dockerd - The Docker daemon itself. The highest level component in your list and also the only 'Docker' product listed. Provides all the nice UX features of Docker.
+
+(docker-)containerd - Also a daemon, listening on a Unix socket, exposes gRPC endpoints. Handles all the low-level container management tasks, storage, image distribution, network attachment, etc...
+
+(docker-)containerd-ctr - A lightweight CLI to directly communicate with containerd. Think of it as how 'docker' is to 'dockerd'.
+
+(docker-)runc - A lightweight binary for actually running containers. Deals with the low-level interfacing with Linux capabilities like cgroups, namespaces, etc...
+
+(docker-)containerd-shim - After runC actually runs the container, it exits (allowing us to not have any long-running processes responsible for our containers). The shim is the component which sits between containerd and runc to facilitate this.
+
+![alt text](https://i.stack.imgur.com/lAtSR.png "Docker Process")
+
+</b></details>
+
+<details>
+<summary>Describe difference between cgroups and namespaces </summary><br><b>
+cgroup: Control Groups provide a mechanism for aggregating/partitioning sets of tasks, and all their future children, into hierarchical groups with specialized behaviour.
+namespace: wraps a global system resource in an abstraction that makes it appear to the processes within the namespace that they have their own isolated instance of the global resource.
+
+In short:
+
+Cgroups = limits how much you can use;
+namespaces = limits what you can see (and therefore use)
+
+Cgroups involve resource metering and limiting:
+memory
+CPU
+block I/O
+network
+
+Namespaces provide processes with their own view of the system
+
+Multiple namespaces: pid,net, mnt, uts, ipc, user
+
+</b></details>
+
+<details>
+<summary>Describe in detail what happens when you run `docker pull image:tag`?</summary><br><b>
+Docker CLI passes your request to Docker daemon. Dockerd Logs shows the process
+
+docker.io/library/busybox:latest resolved to a manifestList object with 9 entries; looking for a unknown/amd64 match
+
+found match for linux/amd64 with media type application/vnd.docker.distribution.manifest.v2+json, digest sha256:400ee2ed939df769d4681023810d2e4fb9479b8401d97003c710d0e20f7c49c6
+
+pulling blob \"sha256:61c5ed1cbdf8e801f3b73d906c61261ad916b2532d6756e7c4fbcacb975299fb Downloaded 61c5ed1cbdf8 to tempfile /var/lib/docker/tmp/GetImageBlob909736690
+
+Applying tar in /var/lib/docker/overlay2/507df36fe373108f19df4b22a07d10de7800f33c9613acb139827ba2645444f7/diff" storage-driver=overlay2
+
+Applied tar sha256:514c3a3e64d4ebf15f482c9e8909d130bcd53bcc452f0225b0a04744de7b8c43 to 507df36fe373108f19df4b22a07d10de7800f33c9613acb139827ba2645444f7, size: 1223534
+
+</b></details>
+
+
+<details>
 <summary>How do you run a container?</summary><br><b>
 	
 docker run
