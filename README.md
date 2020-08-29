@@ -4385,6 +4385,16 @@ Scale the number of pods automatically on observed CPU utilization.
 </b></details>
 
 <details>
+<summary>When you delete a pod, is it deleted instantly? (a moment after running the command)</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to delete a pod instantly?</summary><br><b>
+
+Use "--grace-period=0 --force"
+</b></details>
+
+<details>
 <summary>Explain the "Service" concept</summary><br><b>
 
 "An abstract way to expose an application running on a set of Pods as a network service." - more [here](https://kubernetes.io/docs/concepts/services-networking/service)
@@ -4413,7 +4423,7 @@ More on this topic [here](https://kubernetes.io/docs/concepts/services-networkin
 <summary>Explain Readiness probe</summary><br><b>
 </b></details>
 
-#### Basic Commands
+#### Kubernetes Commands
 
 <details>
 <summary>Which command you run to view your nodes?</code></summary><br><b>
@@ -4525,6 +4535,12 @@ kubectl delete pods --field-selector=status.phase!='Running'
 </b></details>
 
 <details>
+<summary>How to display the resources usages of pods?</code></summary><br><b>
+
+kubectl top pod
+</b></details>
+
+<details>
 <summary>What is Minikube?</summary><br><b>
 
 Minikube is a lightweight Kubernetes implementation. It create a local virtual machine and deploys a simple (single node) cluster.
@@ -4559,7 +4575,19 @@ Setting the replicas to 0 will shut down the process. Now start it with `kubectl
 </b></details>
 
 <details>
+<summary>What happens what pods are using too much memory? (more than its limit)</summary><br><b>
+
+They become candidates to for termination.
+</b></details>
+
+<details>
 <summary>Describe how roll-back works</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? Memory is a compressible resource, meaning that when a container reach the memory limit, it will keep running</summary><br><b>
+
+False. CPU is a compressible resource while memory is a non compressible resource - once a container reached the memory limit, it will be terminated.
 </b></details>
 
 <details>
@@ -4640,10 +4668,79 @@ kubectl create secret generic some-secret --from-literal=password='donttellmypas
 kubectl create secret generic some-secret --from-file=/some/file.txt
 </b></details>
 
+#### Kubernetes Storage
+
+<details>
+<summary>Explain "Persistent Volumes". Why do we need it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What types of persistent volumes are there?</summary><br><b>
+
+* NFS
+* iSCSI
+* CephFS
+* ...
+</b></details>
+
+<details>
+<summary>What is PersistentVolumeClaim?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Storage Classes</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "Dynamic Provisioning" and "Static Provisioning"</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Access Modes</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Reclaim Policy?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What reclaim policies are there?</summary><br><b>
+
+* Retain
+* Recycle
+* Delete
+</b></details>
+
 #### Kubernetes Misc
 
 <details>
 <summary>Explain what is CronJob and what is it used for</summary><br><b>
+</b></details>
+
+<details>
+<summary>What QoS classes are there?</summary><br><b>
+
+* Guaranteed
+* Burstable
+* BestEffort
+</b></details>
+
+<details>
+<summary>Are there any Kuberenets tools you are using?</summary><br><b>
+
+Kubectx, Kubens, ...
+</b></details>
+
+<details>
+<summary>Explain Labels. What are they and why would one use them?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Selectors</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Kubeconfig?</summary><br><b>
 </b></details>
 
 #### Submariner
