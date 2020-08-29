@@ -9,8 +9,8 @@ It is also used sometimes (from what I've been told) to prepare for interviews b
 
 ### My goal is to prepare for a DevOps interview. How to do that?
 
-I've added a couple of suggestions here [here](prepare_for_interview.md)
-Feel free to contribute any ideas and insights
+I've added a couple of suggestions [here](prepare_for_interview.md)<br>
+Feel free to contribute any ideas and insights you have.
 
 ### How do I become a better DevOps Engineer?
 
@@ -19,6 +19,7 @@ I don't have a definitive answer for this question, but what I feel works for me
 
   * Practice - doing DevOps tasks/work is probably the best way to gain experience and knowledge
   * Read - Read blogs, books, ... anything that can enrich you about DevOps
+  * Participate - there are great DevOps communities. I especially like [Reddit DevOps](https://www.reddit.com/r/devops). Visiting there, I learn quite a lot on different topics.
   * Share - This is one of the reasons I created this project. Primary goal was to help others but a secondary goal quickly became to learn more. By asking questions, you actually learn better a certain topic. Try it out, take a certain subject and try to come up with questions you would ask someone to test his/her skills.
 
 ### Why most of the questions don't have answers?
@@ -69,7 +70,7 @@ Personally, I really like the following sites
 
 ### How to learn more about Linux?
 
-I gathered a list of resource [here](http://devopsbit.com/resources/linux)
+I gathered a list of resource [here](https://dev.to/abregman/collection-of-linux-resources-3nhk)
 
 For beginners, I recommend [Linux Journey](https://linuxjourney.com)
 If you want to deep dive into operating systems internals, I really recommend [Operating Systems: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP)
