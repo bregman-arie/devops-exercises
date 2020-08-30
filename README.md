@@ -270,7 +270,7 @@ One can argue whether it's per company definition or a global one but at least a
 
 <details>
 <summary>What is "infrastructure as code"? What implementation of IAC are you familiar with?</summary><br><b>
-	IAC (infrastructure as code) is a declerative approach of defining infrastructure or architecture of a system. Some imlementations are ARM templates for Azure and Terraform that can work across multiple cloud providers. 
+	IAC (infrastructure as code) is a declerative approach of defining infrastructure or architecture of a system. Some implementations are ARM templates for Azure and Terraform that can work across multiple cloud providers. 
 </b></details>
 
 <details>
