@@ -8537,6 +8537,15 @@ From the official docs:
 "In a filter context, a query clause answers the question “Does this document match this query clause?” The answer is a simple Yes or No — no scores are calculated. Filter context is mostly used for filtering structured data"
 </b></details>
 
+<details>
+<summary>Describe how would an architecture of production environment with large amounts of data would be different from a small-scale environment</summary><br><b>
+
+There are several possible answers for this question. One of them is as follows:
+
+A small-scale architecture of elastic will consist of the elastic stack as it is. This means we will have beats, logstash, elastcsearch and kibana.<br>
+A production environment with large amounts of data can include some kind of buffering component (e.g. Reddis or RabbitMQ) and also security component such as Nginx.
+</b></details>
+
 ##### Logstash
 
 <details>
@@ -8605,7 +8614,7 @@ Total number of documents matching the search results. If not query used then si
 <summary>Describe in detail how do you create a dashboard in Kibana</summary><br><b>
 </b></details>
 
-#### Beats
+#### Filebeat
 
 <details>
 <summary>What is Filebeat?</summary><br><b>
@@ -8616,16 +8625,19 @@ Total number of documents matching the search results. If not query used then si
 </b></details>
 
 <details>
-<summary>What are filebeat modules?</summary><br><b>
+<summary>What is a harvester?</summary><br><b>
+
+Read [here](https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html#harvester)
 </b></details>
 
 <details>
-<summary>Describe how would an architecture of production environment with large amounts of data would be different from a small-scale environment</summary><br><b>
+<summary>True or False? a single harvester harvest multiple files, according to the limits set in filebeat.yml</summary><br><b>
 
-There are several possible answers for this question. One of them is as follows:
+False. One harvester harvests one file.
+</b></details>
 
-A small-scale architecture of elastic will consist of the elastic stack as it is. This means we will have beats, logstash, elastcsearch and kibana.<br>
-A production environment with large amounts of data can include some kind of buffering component (e.g. Reddis or RabbitMQ) and also security component such as Nginx.
+<details>
+<summary>What are filebeat modules?</summary><br><b>
 </b></details>
 
 #### Elastic Stack
@@ -8978,7 +8990,7 @@ TODO: explain what is actually a Cookie
 <summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with and which one do you prefer to use?</summary><br><b>
 </b></details>
 
-#### Load Balancers
+#### Load Balancing
 
 <details>
 <summary>What is a load balancer?</summary><br><b> 
