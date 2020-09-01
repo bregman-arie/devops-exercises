@@ -4412,9 +4412,9 @@ False. When a namespace is deleted, the resources in that namespace are deleted 
 <details>
 <summary>What special namespaces are there?</summary><br><b>
 
-* Default
-* Kube-system
-* Kube-public
+* default
+* kube-system
+* kube-public
 </b></details>
 
 <details>
