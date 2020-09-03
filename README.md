@@ -4468,18 +4468,34 @@ More on this topic [here](https://kubernetes.io/docs/concepts/services-networkin
 </b></details>
 
 <details>
-<summary>What services types are there?</summary><br><b>
+<summary> What does being cloud-native mean?</summary><br><br>
+
+
 </b></details>
 
 <details>
-<summary>Explain Liveness probe</summary><br><b>
+<summary> Explain the pet and cattle approach of infrastructure with respect to kubernetes?</summary><br><br>
+
+
 </b></details>
+
+#### Scheduling
 
 <details>
-<summary>Explain Readiness probe</summary><br><b>
+<summary> How does scheduling work in kubernetes?</summary><br><br>
+
+The control plane component kube-scheduler asks the following questions,
+1. What to schedule? It tries to understand the pod-definition specifications 
+2. Which node to schedule? It tries to determine the best node with available resources to spin a pod
+3. Binds the Pod to a given node
+
+View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
 </b></details>
 
-#### Kubernetes Commands
+
+
+
+#### Basic Commands
 
 <details>
 <summary>Which command you run to view your nodes?</code></summary><br><b>
