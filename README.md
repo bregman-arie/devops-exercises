@@ -1,8 +1,8 @@
-# DevOps Questions & Exercises
+<p align="center"><img src="images/devops_exercises.png"/></p>
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1250** questions
+:bar_chart: &nbsp;There are currently **1305** questions
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
 
@@ -4441,6 +4441,16 @@ Scale the number of pods automatically on observed CPU utilization.
 </b></details>
 
 <details>
+<summary>When you delete a pod, is it deleted instantly? (a moment after running the command)</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to delete a pod instantly?</summary><br><b>
+
+Use "--grace-period=0 --force"
+</b></details>
+
+<details>
 <summary>Explain the "Service" concept</summary><br><b>
 
 "An abstract way to expose an application running on a set of Pods as a network service." - more [here](https://kubernetes.io/docs/concepts/services-networking/service)
@@ -4478,11 +4488,15 @@ The control plane component kube-scheduler asks the following questions,
 View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
 </b></details>
 
+<<<<<<< HEAD
 <details>
 <summary> How are labels and selectors used?</summary><br><br>
 </details>
 
 #### Basic Commands
+=======
+#### Kubernetes Commands
+>>>>>>> master
 
 <details>
 <summary>Which command you run to view your nodes?</code></summary><br><b>
@@ -4594,6 +4608,12 @@ kubectl delete pods --field-selector=status.phase!='Running'
 </b></details>
 
 <details>
+<summary>How to display the resources usages of pods?</code></summary><br><b>
+
+kubectl top pod
+</b></details>
+
+<details>
 <summary>What is Minikube?</summary><br><b>
 
 Minikube is a lightweight Kubernetes implementation. It create a local virtual machine and deploys a simple (single node) cluster.
@@ -4628,7 +4648,19 @@ Setting the replicas to 0 will shut down the process. Now start it with `kubectl
 </b></details>
 
 <details>
+<summary>What happens what pods are using too much memory? (more than its limit)</summary><br><b>
+
+They become candidates to for termination.
+</b></details>
+
+<details>
 <summary>Describe how roll-back works</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? Memory is a compressible resource, meaning that when a container reach the memory limit, it will keep running</summary><br><b>
+
+False. CPU is a compressible resource while memory is a non compressible resource - once a container reached the memory limit, it will be terminated.
 </b></details>
 
 <details>
@@ -4709,10 +4741,79 @@ kubectl create secret generic some-secret --from-literal=password='donttellmypas
 kubectl create secret generic some-secret --from-file=/some/file.txt
 </b></details>
 
+#### Kubernetes Storage
+
+<details>
+<summary>Explain "Persistent Volumes". Why do we need it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What types of persistent volumes are there?</summary><br><b>
+
+* NFS
+* iSCSI
+* CephFS
+* ...
+</b></details>
+
+<details>
+<summary>What is PersistentVolumeClaim?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Storage Classes</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "Dynamic Provisioning" and "Static Provisioning"</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Access Modes</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Reclaim Policy?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What reclaim policies are there?</summary><br><b>
+
+* Retain
+* Recycle
+* Delete
+</b></details>
+
 #### Kubernetes Misc
 
 <details>
 <summary>Explain what is CronJob and what is it used for</summary><br><b>
+</b></details>
+
+<details>
+<summary>What QoS classes are there?</summary><br><b>
+
+* Guaranteed
+* Burstable
+* BestEffort
+</b></details>
+
+<details>
+<summary>Are there any Kuberenets tools you are using?</summary><br><b>
+
+Kubectx, Kubens, ...
+</b></details>
+
+<details>
+<summary>Explain Labels. What are they and why would one use them?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Selectors</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Kubeconfig?</summary><br><b>
 </b></details>
 
 #### Submariner
@@ -8453,6 +8554,15 @@ From the official docs:
 "In a filter context, a query clause answers the question “Does this document match this query clause?” The answer is a simple Yes or No — no scores are calculated. Filter context is mostly used for filtering structured data"
 </b></details>
 
+<details>
+<summary>Describe how would an architecture of production environment with large amounts of data would be different from a small-scale environment</summary><br><b>
+
+There are several possible answers for this question. One of them is as follows:
+
+A small-scale architecture of elastic will consist of the elastic stack as it is. This means we will have beats, logstash, elastcsearch and kibana.<br>
+A production environment with large amounts of data can include some kind of buffering component (e.g. Reddis or RabbitMQ) and also security component such as Nginx.
+</b></details>
+
 ##### Logstash
 
 <details>
@@ -8521,7 +8631,7 @@ Total number of documents matching the search results. If not query used then si
 <summary>Describe in detail how do you create a dashboard in Kibana</summary><br><b>
 </b></details>
 
-#### Beats
+#### Filebeat
 
 <details>
 <summary>What is Filebeat?</summary><br><b>
@@ -8532,16 +8642,19 @@ Total number of documents matching the search results. If not query used then si
 </b></details>
 
 <details>
-<summary>What are filebeat modules?</summary><br><b>
+<summary>What is a harvester?</summary><br><b>
+
+Read [here](https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html#harvester)
 </b></details>
 
 <details>
-<summary>Describe how would an architecture of production environment with large amounts of data would be different from a small-scale environment</summary><br><b>
+<summary>True or False? a single harvester harvest multiple files, according to the limits set in filebeat.yml</summary><br><b>
 
-There are several possible answers for this question. One of them is as follows:
+False. One harvester harvests one file.
+</b></details>
 
-A small-scale architecture of elastic will consist of the elastic stack as it is. This means we will have beats, logstash, elastcsearch and kibana.<br>
-A production environment with large amounts of data can include some kind of buffering component (e.g. Reddis or RabbitMQ) and also security component such as Nginx.
+<details>
+<summary>What are filebeat modules?</summary><br><b>
 </b></details>
 
 #### Elastic Stack
@@ -8894,7 +9007,7 @@ TODO: explain what is actually a Cookie
 <summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with and which one do you prefer to use?</summary><br><b>
 </b></details>
 
-#### Load Balancers
+#### Load Balancing
 
 <details>
 <summary>What is a load balancer?</summary><br><b> 
@@ -8926,6 +9039,14 @@ Cons:
   * Can cause uneven load on instance (since requests routed to the same instances)
 Pros:
   * Ensures in-proc sessions are not lost when a new request is created
+</b></details>
+
+<details>
+<summary>Explain the following load balancing techniques:
+
+  * Round Robin
+  * Least Connection
+  * Source IP hash</summary><br><b>
 </b></details>
 
 #### Licenses
@@ -9302,7 +9423,7 @@ Bonus: extract the last word of each line
 #### Architecture
 
 <details>
-<summary>Explain what is "Single point of failure" and give an example</summary><br><b>
+<summary>Explain what is a "Single point of failure" and give an example</summary><br><b>
 </b></details>
 
 <details>
@@ -9419,6 +9540,14 @@ Instead of working in "push mode", the consumers can pull tasks only when they a
 
 <details>
 <summary>How would you scale the architecture from the previous question to hundreds of users?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is "cache"? In what cases would you use it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is distributed cache?</summary><br><b>
 </b></details>
 
 #### Migrations
