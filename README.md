@@ -7631,7 +7631,7 @@ instances in the project.
 </b></details>
 
 <details>
-<summary>Which load balanncing options are available?</summary><b><b>
+<summary>Which load balancing options are available?</summary><b><b>
 
 * Networking load balancing for L4 and HTTP(S) Load Balancing for L7 which are both managed services that do not require
   additional configuration. 
