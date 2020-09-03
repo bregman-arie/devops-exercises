@@ -4457,6 +4457,34 @@ Scale the number of pods automatically on observed CPU utilization.
 More on this topic [here](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
 </b></details>
 
+<details>
+<summary> What does being cloud-native mean?</summary><br><br>
+
+
+</b></details>
+
+<details>
+<summary> Explain the pet and cattle approach of infrastructure with respect to kubernetes?</summary><br><br>
+
+
+</b></details>
+
+#### Scheduling
+
+<details>
+<summary> How does scheduling work in kubernetes?</summary><br><br>
+
+The control plane component kube-scheduler asks the following questions,
+1. What to schedule? It tries to understand the pod-definition specifications 
+2. Which node to schedule? It tries to determine the best node with available resources to spin a pod
+3. Binds the Pod to a given node
+
+View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
+</b></details>
+
+
+
+
 #### Basic Commands
 
 <details>
