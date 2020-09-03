@@ -4459,14 +4459,10 @@ More on this topic [here](https://kubernetes.io/docs/concepts/services-networkin
 
 <details>
 <summary> What does being cloud-native mean?</summary><br><br>
-
-
 </b></details>
 
 <details>
 <summary> Explain the pet and cattle approach of infrastructure with respect to kubernetes?</summary><br><br>
-
-
 </b></details>
 
 #### Scheduling
@@ -4482,8 +4478,9 @@ The control plane component kube-scheduler asks the following questions,
 View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
 </b></details>
 
-
-
+<details>
+<summary> How are labels and selectors used?</summary><br><br>
+</details>
 
 #### Basic Commands
 
