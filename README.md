@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1250** questions
+:bar_chart: &nbsp;There are currently **1305** questions
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
 
@@ -9024,6 +9024,14 @@ Pros:
   * Ensures in-proc sessions are not lost when a new request is created
 </b></details>
 
+<details>
+<summary>Explain the following load balancing techniques:
+
+  * Round Robin
+  * Least Connection
+  * Source IP hash</summary><br><b>
+</b></details>
+
 #### Licenses
 
 <details>
@@ -9398,7 +9406,7 @@ Bonus: extract the last word of each line
 #### Architecture
 
 <details>
-<summary>Explain what is "Single point of failure" and give an example</summary><br><b>
+<summary>Explain what is a "Single point of failure" and give an example</summary><br><b>
 </b></details>
 
 <details>
@@ -9515,6 +9523,14 @@ Instead of working in "push mode", the consumers can pull tasks only when they a
 
 <details>
 <summary>How would you scale the architecture from the previous question to hundreds of users?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is "cache"? In what cases would you use it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is distributed cache?</summary><br><b>
 </b></details>
 
 #### Migrations
