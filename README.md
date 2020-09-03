@@ -7594,7 +7594,8 @@ startap-script
 
 #### Anthos
 
-<details><summary> What is Anthos?</summary><b><b>
+<details>
+<summary> What is Anthos?</summary><b><b>
 It is a managed application platform for organisations like enterprises that require quick modernisation and certain levels 
 of consistency of their legacy applications in a hybrid or multicloud world. From this explanation the core ideas can be drawn from these statements;
 
@@ -7603,6 +7604,47 @@ of consistency of their legacy applications in a hybrid or multicloud world. Fro
 * Enterprises -> these are usually organisations with complex needs 
 * Consistency -> to have the same policies declaratively initiated to be run anywhere securely e.g on-prem, GCP or other-clouds (AWS or Azure)
 </b></details>
+
+<details>
+<summary>List the technical components that make up Anthos?</summary><b><b>
+
+* Infrastructure management - Google Kubernetes Engine (GKE)
+* Cluster management - GKE, Ingress for Anthos
+* Service management - Anthos Service Mesh
+* Policy enforcement - Anthos Config Management, Anthos Enterprise Data Protection, Policy Controller
+* Application deployment - CI/CD tools like Cloud Build, GitLab
+* Application development - Cloud Code
+
+</b></details>
+
+<details>
+<summary>What is the primary computing environment for Anthos to easily manage workload deployment?</summary><b><b>
+
+* Google Kubernetes Engine (GKE)
+</b></details>
+
+<details>
+<summary>How does Anthos handle the control plane and node components for GKE?</summary><b><b>
+
+On GCP the kubernetes api-server is the only control plane component exposed to customers whilst compute engine manages
+instances in the project. 
+</b></details>
+
+<details>
+<summary>Which load balanncing options are available?</summary><b><b>
+
+* Networking load balancing for L4 and HTTP(S) Load Balancing for L7 which are both managed services that do not require
+  additional configuration. 
+* Ingress for Anthos which allows the ability to deploy a load balancer that serves an application across multiple clusters 
+  on GKE
+</b></details>
+
+<details>
+<summary>Can you deploy Anthos on AWS?</summary><b><b>
+
+* Yes, Anthos on AWS is now GA. For more read [here](https://cloud.google.com/anthos/gke/docs/aws)
+</b></details>
+
 
 ## OpenStack
 
