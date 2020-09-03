@@ -4492,10 +4492,7 @@ The control plane component kube-scheduler asks the following questions,
 View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
 </b></details>
 
-
-
-
-#### Basic Commands
+#### Kubernetes Commands
 
 <details>
 <summary>Which command you run to view your nodes?</code></summary><br><b>
