@@ -7592,6 +7592,18 @@ startap-script
 <summary>What the following commands does? `gcloud deployment-manager deployments create`</summary><br><b>
 </b></details>
 
+#### Anthos
+
+<details><summary> What is Anthos?</summary><b><b>
+It is a managed application platform for organisations like enterprises that require quick modernisation and certain levels 
+of consistency of their legacy applications in a hybrid or multicloud world. From this explanation the core ideas can be drawn from these statements;
+
+* Managed -> the customer does not need to worry about the underlying software intergrations, they just enable the API.
+* application platform -> It consists of open source tools like K8s, Knative, Istio and Tekton
+* Enterprises -> these are usually organisations with complex needs 
+* Consistency -> to have the same policies declaratively initiated to be run anywhere securely e.g on-prem, GCP or other-clouds (AWS or Azure)
+</b></details>
+
 ## OpenStack
 
 <details>
