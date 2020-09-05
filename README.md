@@ -4468,11 +4468,22 @@ More on this topic [here](https://kubernetes.io/docs/concepts/services-networkin
 </b></details>
 
 <details>
-<summary> What does being cloud-native mean?</summary><br><br>
+<summary>What services types are there?</summary><br><b>	
 </b></details>
 
 <details>
-<summary> Explain the pet and cattle approach of infrastructure with respect to kubernetes?</summary><br><br>
+<summary>Explain Liveness probe</summary><br><b>
+</b><details>
+
+<details>
+<summary>Explain Readiness probe</summary><br><b>
+</b></details>
+
+<summary> What does being cloud-native mean</summary><br><br>
+</b></details>
+
+<details>
+<summary> Explain the pet and cattle approach of infrastructure with respect to kubernetes</summary><br><br>
 </b></details>
 
 #### Scheduling
@@ -4488,15 +4499,9 @@ The control plane component kube-scheduler asks the following questions,
 View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
 </b></details>
 
-<<<<<<< HEAD
 <details>
 <summary> How are labels and selectors used?</summary><br><br>
 </details>
-
-#### Basic Commands
-=======
-#### Kubernetes Commands
->>>>>>> master
 
 <details>
 <summary>Which command you run to view your nodes?</code></summary><br><b>
@@ -7595,7 +7600,7 @@ startap-script
 #### Anthos
 
 <details>
-<summary> What is Anthos?</summary><b><b>
+<summary> What is Anthos</summary><b><b>
 It is a managed application platform for organisations like enterprises that require quick modernisation and certain levels 
 of consistency of their legacy applications in a hybrid or multicloud world. From this explanation the core ideas can be drawn from these statements;
 
@@ -7606,7 +7611,7 @@ of consistency of their legacy applications in a hybrid or multicloud world. Fro
 </b></details>
 
 <details>
-<summary>List the technical components that make up Anthos?</summary><b><b>
+<summary>List the technical components that make up Anthos</summary><b><b>
 
 * Infrastructure management - Google Kubernetes Engine (GKE)
 * Cluster management - GKE, Ingress for Anthos
