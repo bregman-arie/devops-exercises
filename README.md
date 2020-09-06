@@ -4473,13 +4473,14 @@ More on this topic [here](https://kubernetes.io/docs/concepts/services-networkin
 
 <details>
 <summary>Explain Liveness probe</summary><br><b>
-</b><details>
+</b></details>
 
 <details>
 <summary>Explain Readiness probe</summary><br><b>
 </b></details>
 
-<summary> What does being cloud-native mean</summary><br><br>
+<details>
+<summary> What does being cloud-native mean?</summary><br><br>
 </b></details>
 
 <details>
