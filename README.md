@@ -4480,12 +4480,28 @@ More on this topic [here](https://kubernetes.io/docs/concepts/services-networkin
 </b></details>
 
 <details>
-<summary> What does being cloud-native mean?</summary><br><br>
+<summary>What does being cloud-native mean?</summary><br><br>
 </b></details>
 
 <details>
-<summary> Explain the pet and cattle approach of infrastructure with respect to kubernetes</summary><br><br>
+<summary>Explain the pet and cattle approach of infrastructure with respect to kubernetes</summary><br><br>
 </b></details>
+
+<details>
+<summary>Describe how you one proceeds to run a containerised web app in K8s, which should be reachable from a public URL.</summary><br><br>
+</b></details>
+
+<details>
+<summary>How would you troubleshoot your cluster if some applications are not reachable any more?</summary><br><br>
+</br></details>
+
+<details>
+<summary>Describe what CustomResourceDefinitions there are in the Kubernetes world? What they can be used for?<summary><br><br>
+</br></details>
+
+<details>
+<summary>What is RBAC?</summary><br><br>
+</br></details>
 
 #### Scheduling
 
@@ -7603,7 +7619,7 @@ startap-script
 #### Anthos
 
 <details>
-<summary> What is Anthos</summary><b><b>
+<summary>What is Anthos</summary><b><b>
 It is a managed application platform for organisations like enterprises that require quick modernisation and certain levels 
 of consistency of their legacy applications in a hybrid or multicloud world. From this explanation the core ideas can be drawn from these statements;
 
