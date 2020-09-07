@@ -7619,8 +7619,8 @@ startap-script
 #### Google Kubernetes Engine (GKE)
 
 <details>
-<summary>What is GKE</summary><br><br>
-</br></details>
+<summary>What is GKE</summary><br><b>
+</b></details>
 
 #### Anthos
 
