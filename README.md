@@ -9403,6 +9403,8 @@ Bonus: extract the last word of each line
 
 ## System Design
 
+This section contains only questions on System Design subject. The exercises can be found in [system-design-exercises repository](https://github.com/bregman-arie/system-design-exercises).
+
 #### Architecture
 
 <details>
@@ -9525,12 +9527,40 @@ Instead of working in "push mode", the consumers can pull tasks only when they a
 <summary>How would you scale the architecture from the previous question to hundreds of users?</summary><br><b>
 </b></details>
 
+#### Cache
+
 <details>
-<summary>What is "cache"? In what cases would you use it?</summary><br><b>
+<summary>What is "cache"? In which cases would you use it?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is distributed cache?</summary><br><b>
+<summary>What is "distributed cache"?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a "cache replacement policy"?</summary><br><b>
+
+Take a look [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
+</b></details>
+
+<details>
+<summary>Which cache replacement policies are you familiar with?</summary><br><b>
+
+You can find a list [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
+</b></details>
+
+<details>
+<summary>Explain the following cache policies:
+
+  * FIFO
+  * LIFO
+  * LRU</summary><br><b>
+
+Read about it [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
+</b></details>
+
+<details>
+<summary>Why not writing everything to cache instead of a database/datastore?</summary><br><b>
 </b></details>
 
 #### Migrations
