@@ -7629,7 +7629,7 @@ startap-script
 <details>
 <summary>What is Anthos</summary><br><b>
 It is a managed application platform for organisations like enterprises that require quick modernisation and certain levels 
-of consistency of their legacy applications in a hybrid or multicloud world. From this explanation the core ideas can be drawn from these statements;
+of consistency for their legacy applications in a hybrid or multicloud world. From this explanation the core ideas can be drawn from these statements;
 
 * Managed -> the customer does not need to worry about the underlying software intergrations, they just enable the API.
 * application platform -> It consists of open source tools like K8s, Knative, Istio and Tekton
@@ -7684,7 +7684,6 @@ instances in the project.
 * Network security - Within a created cluster VPC, Anthos GKE leverages a powerful software-defined network that enables simple Pod-toPod communications. Network policies allow locking down ingress and egress connections in a given namespoace. Filtering can also be implemented to incoming load-balanced traffic for services that require external access, by supplying whitelisted CIDR IP ranges. 
 * Workload security - Running workloads run with limited privileges, default Docker AppArmor security policies are applied to all Kubernetes Pods. Workload identity for Anthos GKE aligns with the open source kubernetes service accounts with GCP service account permissions.
 * Audit logging - Adminstrators are given a way to retain, query, process and alert on events of the deployed environments. 
-
 </b></details>
 
 <details>
@@ -7692,14 +7691,12 @@ instances in the project.
 
 * Google Cloud Virtual Private Network (Cloud VPN) - this is for secure networking
 * Google Cloud Key Management Service (Cloud KMS) - for key management
-
 </b></details>
 
 <details>
 <summary>What is Island Mode configuration with regards to networking in Anthos GKE deployed on-prem?</summary><br><b>
 
 * This is when pods can directly talk to each other within a cluster, but cannot be reached from outside the cluster thus forming an "island" within the network that is not connected to the external network.
-
 </b></details>
 
 ## OpenStack
