@@ -7722,7 +7722,7 @@ It follows common modern software development practices which makes cluster conf
 </b></details>
 
 <details>
-<summary>Describe the two main components of Anthos Service Mesh<summary><br><b>
+<summary>Describe the two main components of Anthos Service Mesh</summary><br><b>
 
 1. Data plane - it consists of a set of distributed proxies that mediate all inbound and outbound network traffic between individual services which are configured using a centralised control plane and an open API
 2. Control plane - is a fully managed offering outside of Anthos GKE clusters to simplify management overhead and ensure highest possible availability.
