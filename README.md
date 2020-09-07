@@ -7754,8 +7754,6 @@ Tool and technology integration that makes up Anthos service mesh delivers signf
 * HTTP header-based traffic steering between individual services or versions
 </b></details>
 
-
-
 ## OpenStack
 
 <details>
