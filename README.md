@@ -4468,7 +4468,7 @@ More on this topic [here](https://kubernetes.io/docs/concepts/services-networkin
 </b></details>
 
 <details>
-<summary>What services types are there?</summary><br><b>
+<summary>What services types are there?</summary><br><b>	
 </b></details>
 
 <details>
@@ -4477,6 +4477,47 @@ More on this topic [here](https://kubernetes.io/docs/concepts/services-networkin
 
 <details>
 <summary>Explain Readiness probe</summary><br><b>
+</b></details>
+
+<details>
+<summary>What does being cloud-native mean?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the pet and cattle approach of infrastructure with respect to kubernetes</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe how you one proceeds to run a containerised web app in K8s, which should be reachable from a public URL.</summary><br><b>
+</b></details>
+
+<details>
+<summary>How would you troubleshoot your cluster if some applications are not reachable any more?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe what CustomResourceDefinitions there are in the Kubernetes world? What they can be used for?<summary><br><b>
+</b></details>
+
+<details>
+<summary>What is RBAC?</summary><br><b>
+</b></details>
+
+#### Scheduling
+
+<details>
+<summary> How does scheduling work in kubernetes?</summary><br><b>
+
+The control plane component kube-scheduler asks the following questions,
+1. What to schedule? It tries to understand the pod-definition specifications 
+2. Which node to schedule? It tries to determine the best node with available resources to spin a pod
+3. Binds the Pod to a given node
+
+View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
+</b></details>
+
+<details>
+<summary> How are labels and selectors used?</summary><br><b>
 </b></details>
 
 #### Kubernetes Commands
@@ -7573,6 +7614,105 @@ startap-script
 
 <details>
 <summary>What the following commands does? `gcloud deployment-manager deployments create`</summary><br><b>
+</b></details>
+
+### Google Kubernetes Engine (GKE)
+
+<details>
+<summary>What is GKE</summary><br><b>
+
+* It is the managed kubernetes service on GCP for deploying, managing and scaling containerised applications using Google infrastructure.
+</b></details>
+
+### Anthos
+
+<details>
+<summary>What is Anthos</summary><br><b>
+It is a managed application platform for organisations like enterprises that require quick modernisation and certain levels 
+of consistency for their legacy applications in a hybrid or multicloud world. From this explanation the core ideas can be drawn from these statements;
+
+* Managed -> the customer does not need to worry about the underlying software intergrations, they just enable the API.
+* application platform -> It consists of open source tools like K8s, Knative, Istio and Tekton
+* Enterprises -> these are usually organisations with complex needs 
+* Consistency -> to have the same policies declaratively initiated to be run anywhere securely e.g on-prem, GCP or other-clouds (AWS or Azure)
+</b></details>
+
+<details>
+<summary>List the technical components that make up Anthos</summary><br><b>
+
+* Infrastructure management - Google Kubernetes Engine (GKE)
+* Cluster management - GKE, Ingress for Anthos
+* Service management - Anthos Service Mesh
+* Policy enforcement - Anthos Config Management, Anthos Enterprise Data Protection, Policy Controller
+* Application deployment - CI/CD tools like Cloud Build, GitLab
+* Application development - Cloud Code
+</b></details>
+
+<details>
+<summary>What is the primary computing environment for Anthos to easily manage workload deployment?</summary><br><b>
+
+* Google Kubernetes Engine (GKE)
+</b></details>
+
+<details>
+<summary>How does Anthos handle the control plane and node components for GKE?</summary><br><b>
+
+On GCP the kubernetes api-server is the only control plane component exposed to customers whilst compute engine manages
+instances in the project. 
+</b></details>
+
+<details>
+<summary>Which load balancing options are available?</summary><br><b>
+
+* Networking load balancing for L4 and HTTP(S) Load Balancing for L7 which are both managed services that do not require
+  additional configuration. 
+* Ingress for Anthos which allows the ability to deploy a load balancer that serves an application across multiple clusters 
+  on GKE
+</b></details>
+
+<details>
+<summary>Can you deploy Anthos on AWS?</summary><br><b>
+
+* Yes, Anthos on AWS is now GA. For more read [here](https://cloud.google.com/anthos/gke/docs/aws)
+</b></details>
+
+<details>
+<summary>List and explain the enterprise security capabilities provided by Anthos</summary><br><b>
+
+* Control plane security - GCP manages and maintains the K8s control plane out of the box. The user can secure the api-server by using master authorized networks and private clusters. These allow the user to disable access on the public IP address by assigning a private IP address to the master.
+* Node security - By default workloads are provisioned on Compute engine instances that use Google's Container Optimised OS. This operating system implements a locked-down firewall, limited user accounts with root disabled and a read-only filesystem. There is a further option to enable GKE Sandbox for stronger isolation in multi-tenant deployment scenarions. 
+* Network security - Within a created cluster VPC, Anthos GKE leverages a powerful software-defined network that enables simple Pod-toPod communications. Network policies allow locking down ingress and egress connections in a given namespoace. Filtering can also be implemented to incoming load-balanced traffic for services that require external access, by supplying whitelisted CIDR IP ranges. 
+* Workload security - Running workloads run with limited privileges, default Docker AppArmor security policies are applied to all Kubernetes Pods. Workload identity for Anthos GKE aligns with the open source kubernetes service accounts with GCP service account permissions.
+* Audit logging - Adminstrators are given a way to retain, query, process and alert on events of the deployed environments. 
+</b></details>
+
+<details>
+<summary>How can workloads deployed on Anthos GKE on-prem clusters securely connect to Google Cloud services?</summary><br><b>
+
+* Google Cloud Virtual Private Network (Cloud VPN) - this is for secure networking
+* Google Cloud Key Management Service (Cloud KMS) - for key management
+</b></details>
+
+<details>
+<summary>What is Island Mode configuration with regards to networking in Anthos GKE deployed on-prem?</summary><br><b>
+
+* This is when pods can directly talk to each other within a cluster, but cannot be reached from outside the cluster thus forming an "island" within the network that is not connected to the external network.
+</b></details>
+
+<details>
+<summary>Explain Anthos Config Management</summary><br><b>
+
+It is a core component of the Anthos stack which provides platform, service and security operators with a single, unified approach to multi-cluster management that spans both on-premises and cloud environments. It closely follows K8s best practices, favoring declarative approaches over imperative operations, and actively monitors cluster state and applies the desired state as defined in Git. It includes three key components as follows:
+
+1. An importer that reads from a central Git repository
+2. A component that synchronises stored configuration data into K8s objects
+3. A component that monitors drift between desired and actual cluster configurations with a capability of reconciliation when need rises. 
+</b></details>
+
+<details>
+<summary>How does Anthos Config Management help?</summary><br><b>
+
+It follows common modern software development practices which makes cluster configuration, management and policy changes auditable, revertable, and versionable easily enforcing IT governance and unifying resource management in an organisation. 
 </b></details>
 
 ## OpenStack
