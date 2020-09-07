@@ -7616,13 +7616,15 @@ startap-script
 <summary>What the following commands does? `gcloud deployment-manager deployments create`</summary><br><b>
 </b></details>
 
-#### Google Kubernetes Engine (GKE)
+### Google Kubernetes Engine (GKE)
 
 <details>
 <summary>What is GKE</summary><br><b>
+
+* It is the managed kubernetes service on GCP for deploying, managing and scaling containerised applications using Google infrastructure.
 </b></details>
 
-#### Anthos
+### Anthos
 
 <details>
 <summary>What is Anthos</summary><br><b>
@@ -7644,7 +7646,6 @@ of consistency of their legacy applications in a hybrid or multicloud world. Fro
 * Policy enforcement - Anthos Config Management, Anthos Enterprise Data Protection, Policy Controller
 * Application deployment - CI/CD tools like Cloud Build, GitLab
 * Application development - Cloud Code
-
 </b></details>
 
 <details>
@@ -7680,9 +7681,24 @@ instances in the project.
 
 * Control plane security - GCP manages and maintains the K8s control plane out of the box. The user can secure the api-server by using master authorized networks and private clusters. These allow the user to disable access on the public IP address by assigning a private IP address to the master.
 * Node security - By default workloads are provisioned on Compute engine instances that use Google's Container Optimised OS. This operating system implements a locked-down firewall, limited user accounts with root disabled and a read-only filesystem. There is a further option to enable GKE Sandbox for stronger isolation in multi-tenant deployment scenarions. 
-* Network security - Within a created cluster VPC, Anthos GKE leverages a powerful software-defined network that enables simple Pod-toPod communications. Network policies allow locking down ingress and egress connections in a given namespoace. Filtering can also be imoplemented to incoming load-balanced traffic for services that require external access, by supplying whitelisted CIDR IP ranges. 
+* Network security - Within a created cluster VPC, Anthos GKE leverages a powerful software-defined network that enables simple Pod-toPod communications. Network policies allow locking down ingress and egress connections in a given namespoace. Filtering can also be implemented to incoming load-balanced traffic for services that require external access, by supplying whitelisted CIDR IP ranges. 
 * Workload security - Running workloads run with limited privileges, default Docker AppArmor security policies are applied to all Kubernetes Pods. Workload identity for Anthos GKE aligns with the open source kubernetes service accounts with GCP service account permissions.
 * Audit logging - Adminstrators are given a way to retain, query, process and alert on events of the deployed environments. 
+
+</b></details>
+
+<details>
+<summary>How can workloads deployed on Anthos GKE on-prem clusters securely connect to Google Cloud services?</summary><br><b>
+
+* Google Cloud Virtual Private Network (Cloud VPN) - this is for secure networking
+* Google Cloud Key Management Service (Cloud KMS) - for key management
+
+</b></details>
+
+<details>
+<summary>What is Island Mode configuration with regards to networking in Anthos GKE deployed on-prem?</summary><br><b>
+
+* This is when pods can directly talk to each other within a cluster, but cannot be reached from outside the cluster thus forming an "island" within the network that is not connected to the external network.
 
 </b></details>
 
