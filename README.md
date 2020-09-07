@@ -7699,6 +7699,16 @@ instances in the project.
 * This is when pods can directly talk to each other within a cluster, but cannot be reached from outside the cluster thus forming an "island" within the network that is not connected to the external network.
 </b></details>
 
+<details>
+<summary>Explain Anthos Config Management</summary><br><b>
+
+It is a core component of the Anthos stack which provides platform, service and security operators with a single, unified approach to multi-cluster management that spans both on-premises and cloud environments. It closely follows K8s best practices, favoring declarative approaches over imperative operations, and actively monitors cluster state and applies the desired state as defined in Git. It includes three key components as follows:
+
+1. An importer that reads from a central Git repository
+2. A component that synchronises stored configuration data into K8s objects
+3. A component that monitors drift between desired and actual cluster configurations with a capability of reconciliation when need rises. 
+</b></details>
+
 ## OpenStack
 
 <details>
