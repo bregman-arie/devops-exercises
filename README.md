@@ -4480,33 +4480,33 @@ More on this topic [here](https://kubernetes.io/docs/concepts/services-networkin
 </b></details>
 
 <details>
-<summary>What does being cloud-native mean?</summary><br><br>
+<summary>What does being cloud-native mean?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Explain the pet and cattle approach of infrastructure with respect to kubernetes</summary><br><br>
+<summary>Explain the pet and cattle approach of infrastructure with respect to kubernetes</summary><br><b>
 </b></details>
 
 <details>
-<summary>Describe how you one proceeds to run a containerised web app in K8s, which should be reachable from a public URL.</summary><br><br>
+<summary>Describe how you one proceeds to run a containerised web app in K8s, which should be reachable from a public URL.</summary><br><b>
 </b></details>
 
 <details>
-<summary>How would you troubleshoot your cluster if some applications are not reachable any more?</summary><br><br>
-</br></details>
+<summary>How would you troubleshoot your cluster if some applications are not reachable any more?</summary><br><b>
+</b></details>
 
 <details>
-<summary>Describe what CustomResourceDefinitions there are in the Kubernetes world? What they can be used for?<summary><br><br>
-</br></details>
+<summary>Describe what CustomResourceDefinitions there are in the Kubernetes world? What they can be used for?<summary><br><b>
+</b></details>
 
 <details>
-<summary>What is RBAC?</summary><br><br>
-</br></details>
+<summary>What is RBAC?</summary><br><b>
+</b></details>
 
 #### Scheduling
 
 <details>
-<summary> How does scheduling work in kubernetes?</summary><br><br>
+<summary> How does scheduling work in kubernetes?</summary><br><b>
 
 The control plane component kube-scheduler asks the following questions,
 1. What to schedule? It tries to understand the pod-definition specifications 
@@ -4517,8 +4517,8 @@ View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
 </b></details>
 
 <details>
-<summary> How are labels and selectors used?</summary><br><br>
-</details>
+<summary> How are labels and selectors used?</summary><br><b>
+</b></details>
 
 #### Kubernetes Commands
 
@@ -7616,6 +7616,12 @@ startap-script
 <summary>What the following commands does? `gcloud deployment-manager deployments create`</summary><br><b>
 </b></details>
 
+#### Google Kubernetes Engine (GKE)
+
+<details>
+<summary>What is GKE</summary><br><br>
+</br></details>
+
 #### Anthos
 
 <details>
@@ -7669,6 +7675,16 @@ instances in the project.
 * Yes, Anthos on AWS is now GA. For more read [here](https://cloud.google.com/anthos/gke/docs/aws)
 </b></details>
 
+<details>
+<summary>List and explain the enterprise security capabilities provided by Anthos</summary><b><b>
+
+* Control plane security - GCP manages and maintains the K8s control plane out of the box. The user can secure the api-server by using master authorized networks and private clusters. These allow the user to disable access on the public IP address by assigning a private IP address to the master.
+* Node security - By default workloads are provisioned on Compute engine instances that use Google's Container Optimised OS. This operating system implements a locked-down firewall, limited user accounts with root disabled and a read-only filesystem. There is a further option to enable GKE Sandbox for stronger isolation in multi-tenant deployment scenarions. 
+* Network security - Within a created cluster VPC, Anthos GKE leverages a powerful software-defined network that enables simple Pod-toPod communications. Network policies allow locking down ingress and egress connections in a given namespoace. Filtering can also be imoplemented to incoming load-balanced traffic for services that require external access, by supplying whitelisted CIDR IP ranges. 
+* Workload security - Running workloads run with limited privileges, default Docker AppArmor security policies are applied to all Kubernetes Pods. Workload identity for Anthos GKE aligns with the open source kubernetes service accounts with GCP service account permissions.
+* Audit logging - Adminstrators are given a way to retain, query, process and alert on events of the deployed environments. 
+
+</b></details>
 
 ## OpenStack
 
