@@ -7709,6 +7709,12 @@ It is a core component of the Anthos stack which provides platform, service and 
 3. A component that monitors drift between desired and actual cluster configurations with a capability of reconciliation when need rises. 
 </b></details>
 
+<details>
+<summary>How does Anthos Config Management help?</summary><br><b>
+
+It follows common modern software development practices which makes cluster configuration, management and policy changes auditable, revertable, and versionable easily enforcing IT governance and unifying resource management in an organisation. 
+</b></details>
+
 ## OpenStack
 
 <details>
