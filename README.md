@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1305** questions
+:bar_chart: &nbsp;There are currently **1329** questions and exercises
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
 
@@ -61,7 +61,7 @@
     <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
     <td align="center"><a href="#databases"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
     <td align="center"><a href="#regex"><img src="images/regex.png" width="75ph;" height="75px;" alt="RegEx"/><br /><b>Regex</b></a></td>
-    <td align="center"><a href="#system-design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
+    <td align="center"><a href="https://github.com/bregman-arie/system-design-exercises"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
     <td align="center"><a href="#hardware"><img src="images/hardware.png" width="110px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
     <td align="center"><a href="#big-data"><img src="images/big-data.png" width="110px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
     <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
@@ -4496,7 +4496,7 @@ More on this topic [here](https://kubernetes.io/docs/concepts/services-networkin
 </b></details>
 
 <details>
-<summary>Describe what CustomResourceDefinitions there are in the Kubernetes world? What they can be used for?<summary><br><b>
+<summary>Describe what CustomResourceDefinitions there are in the Kubernetes world? What they can be used for?</summary><br><b>
 </b></details>
 
 <details>
@@ -9543,6 +9543,8 @@ Bonus: extract the last word of each line
 
 ## System Design
 
+This section contains only questions on System Design subject. The exercises can be found in [system-design-exercises repository](https://github.com/bregman-arie/system-design-exercises).
+
 #### Architecture
 
 <details>
@@ -9665,12 +9667,40 @@ Instead of working in "push mode", the consumers can pull tasks only when they a
 <summary>How would you scale the architecture from the previous question to hundreds of users?</summary><br><b>
 </b></details>
 
+#### Cache
+
 <details>
-<summary>What is "cache"? In what cases would you use it?</summary><br><b>
+<summary>What is "cache"? In which cases would you use it?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is distributed cache?</summary><br><b>
+<summary>What is "distributed cache"?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a "cache replacement policy"?</summary><br><b>
+
+Take a look [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
+</b></details>
+
+<details>
+<summary>Which cache replacement policies are you familiar with?</summary><br><b>
+
+You can find a list [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
+</b></details>
+
+<details>
+<summary>Explain the following cache policies:
+
+  * FIFO
+  * LIFO
+  * LRU</summary><br><b>
+
+Read about it [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
+</b></details>
+
+<details>
+<summary>Why not writing everything to cache instead of a database/datastore?</summary><br><b>
 </b></details>
 
 #### Migrations
