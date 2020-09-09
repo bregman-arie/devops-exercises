@@ -140,7 +140,7 @@ A development strategy used by developers to release software automatically into
 <details>
 <summary>What is Continuous Delivery?</summary><br><b>
 
-A development strategy used to frequently deliver code to QA and Ops for testing. This entails having a staging area that has prodcution like features where changes can only be accepted for production after a manual review. Because of this human entanglement there is usually a time lag between release and review making it slower and error prone as compared to continous deployment.
+A development strategy used to frequently deliver code to QA and Ops for testing. This entails having a staging area that has production like features where changes can only be accepted for production after a manual review. Because of this human entanglement there is usually a time lag between release and review making it slower and error prone as compared to continous deployment.
 </b></details>
 
 <details>
