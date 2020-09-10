@@ -136,13 +136,15 @@ Each piece of code (change/patch) is verified, to make the change is safe to mer
 
 A development strategy used by developers to release software automatically into production where any code commit must pass through an automated testing phase. Only when this is successful is the release considered production worthy. This eliminates any human interaction and should be implemented only after production-ready pipelines have been set with real-time monitoring and reporting of deployed assets. If any issues are detected in production it should be easy to rollback to previous working state. 
 
-For more info please read [here](https://www.atlassian.com/continuous-delivery/continuous-deployment)
+For more info please read [here](https://searchitoperations.techtarget.com/definition/continuous-deployment#:~:text=Continuous%20deployment%20is%20a%20strategy,visible%20to%20the%20software's%20users.)
 </b></details>
 
 <details>
 <summary>What is Continuous Delivery?</summary><br><b>
 
 A development strategy used to frequently deliver code to QA and Ops for testing. This entails having a staging area that has production like features where changes can only be accepted for production after a manual review. Because of this human entanglement there is usually a time lag between release and review making it slower and error prone as compared to continous deployment.
+
+For more info please read [here](https://searchitoperations.techtarget.com/definition/continuous-deployment#:~:text=Continuous%20deployment%20is%20a%20strategy,visible%20to%20the%20software's%20users.)
 </b></details>
 
 <details>
