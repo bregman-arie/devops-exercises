@@ -7770,7 +7770,7 @@ Tool and technology integration that makes up Anthos service mesh delivers signf
 <details>
 <summary>What is Cloud Run for Anthos?</summary><br><b>
 
-It is part of the Anthos stack that brings a serverless container experience to Anthos, offering a high-level platform experience on top of K8s clusters. It is built with Knative, an open-source operator an open-source operator for K8s that brings serverless application serving and eventing capabilities. 
+It is part of the Anthos stack that brings a serverless container experience to Anthos, offering a high-level platform experience on top of K8s clusters. It is built with Knative, an open-source operator for K8s that brings serverless application serving and eventing capabilities. 
 </b></details>
 
 <details>
