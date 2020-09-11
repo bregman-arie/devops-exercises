@@ -7648,6 +7648,8 @@ of consistency for their legacy applications in a hybrid or multicloud world. Fr
 * application platform -> It consists of open source tools like K8s, Knative, Istio and Tekton
 * Enterprises -> these are usually organisations with complex needs 
 * Consistency -> to have the same policies declaratively initiated to be run anywhere securely e.g on-prem, GCP or other-clouds (AWS or Azure)
+
+fun fact: Anthos is flower in greek, they grow in the ground (earth) but need rain from the clouds to flourish.
 </b></details>
 
 <details>
