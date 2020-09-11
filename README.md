@@ -7624,6 +7624,11 @@ startap-script
 <summary>What the following commands does? `gcloud deployment-manager deployments create`</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is Cloud Code?</summary><br><b>
+It is a set of tools to help developers write, run and debug GCP kubernetes based applications. It provides built-in support for rapid iteration, debugging and running applications in development and production K8s environments. 
+</b></details>
+
 ### Google Kubernetes Engine (GKE)
 
 <details>
@@ -7761,6 +7766,42 @@ Tool and technology integration that makes up Anthos service mesh delivers signf
 * Fault injection to help build resilient and fault-tolerant deployments
 * HTTP header-based traffic steering between individual services or versions
 </b></details>
+
+<details>
+<summary>What is Cloud Run for Anthos?</summary><br><b>
+
+It is part of the Anthos stack that brings a serverless container experience to Anthos, offering a high-level platform experience on top of K8s clusters. It is built with Knative, an open-source operator an open-source operator for K8s that brings serverless application serving and eventing capabilities. 
+</b></details>
+
+<details>
+<summary>How does Cloud Run for Anthos simplify operations?</summary><br><b>
+
+Platform teams in organisations that wish to offer developers additional tools to test, deploy and run applications can use Knative to enhance this experience on Anthos as Cloud Run. Below are some of the benefits;
+
+* Easy migration from K8s deployments - Without cloud run platform engineers have to configure deployment, service and HorizontalPodAutoscalers objects to a loadbalancer and autoscaling. If application is already serving traffic it becomes hard to change configurations or roll back efficiently. Using Cloud Run all this is managed thus the Knative service manifest describes the application to be autoscaled and loadbalanced
+* Autoscaling - a sudden traffic spike may cause application containers in K8s to crash due to overload thus an efficient automated autoscaling is executed to serve the high volume of traffic
+* Networking - it has built-in load balancing capabilities and policies for traffic splitting between multiple versions of an application. 
+</b></details>
+
+<details>
+<summary>List and explain three high-level out of the box autoscaling primitives offered by Cloud Run for Anthos that do not exist in K8s natively</summary><br><b>
+
+* Rapid, request-based autoscaling - default autoscalers monitor request metrics which allows Cloud Run for Anthos to handle spiky traffic patterns smoothly
+* Concurrency controls - limits such as max in-flight requests per container are enforced to ensure the container does not become overloaded and crash. More containers are added to handle the spiky traffic buffering the requests.
+* Scale to zero - if an application is inactive for a while Cloud Run scales it down to zero to reduce its footprint. Alternatively one can turn off scale-to-zero to prevent cold starts. 
+* Releases and rollouts - supports the notion of the Knatibe API's revisions which describe new versions or different configurations of your application and canary deployments by splitting traffic. 
+* Monitoring - observing and recording metrics such as latency, error rate and requests per second. 
+</b></details>
+
+<details>
+<summary>List some Cloud Run for Anthos use cases</summary><br><b>
+As it does not support stateful applications or sticky sessions, it is suitable for running stateless applications such as:
+
+* Machine learning model predictions e.g Tensorflow serving containers
+* API gateways, API middleware, web front ends and Microservices
+* Event handlers, ETL
+</b></details>
+
 
 ## OpenStack
 
