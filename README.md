@@ -7624,6 +7624,11 @@ startap-script
 <summary>What the following commands does? `gcloud deployment-manager deployments create`</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is Cloud Code?</summary><br><b>
+It is a set of tools to help developers write, run and debug GCP kubernetes based applications. It provides built-in support for rapid iteration, debugging and running applications in development and production K8s environments. 
+</b></details>
+
 ### Google Kubernetes Engine (GKE)
 
 <details>
@@ -7688,8 +7693,8 @@ instances in the project.
 <summary>List and explain the enterprise security capabilities provided by Anthos</summary><br><b>
 
 * Control plane security - GCP manages and maintains the K8s control plane out of the box. The user can secure the api-server by using master authorized networks and private clusters. These allow the user to disable access on the public IP address by assigning a private IP address to the master.
-* Node security - By default workloads are provisioned on Compute engine instances that use Google's Container Optimised OS. This operating system implements a locked-down firewall, limited user accounts with root disabled and a read-only filesystem. There is a further option to enable GKE Sandbox for stronger isolation in multi-tenant deployment scenarions. 
-* Network security - Within a created cluster VPC, Anthos GKE leverages a powerful software-defined network that enables simple Pod-toPod communications. Network policies allow locking down ingress and egress connections in a given namespoace. Filtering can also be implemented to incoming load-balanced traffic for services that require external access, by supplying whitelisted CIDR IP ranges. 
+* Node security - By default workloads are provisioned on Compute engine instances that use Google's Container Optimised OS. This operating system implements a locked-down firewall, limited user accounts with root disabled and a read-only filesystem. There is a further option to enable GKE Sandbox for stronger isolation in multi-tenant deployment scenarios. 
+* Network security - Within a created cluster VPC, Anthos GKE leverages a powerful software-defined network that enables simple Pod-to-Pod communications. Network policies allow locking down ingress and egress connections in a given namespace. Filtering can also be implemented to incoming load-balanced traffic for services that require external access, by supplying whitelisted CIDR IP ranges. 
 * Workload security - Running workloads run with limited privileges, default Docker AppArmor security policies are applied to all Kubernetes Pods. Workload identity for Anthos GKE aligns with the open source kubernetes service accounts with GCP service account permissions.
 * Audit logging - Adminstrators are given a way to retain, query, process and alert on events of the deployed environments. 
 </b></details>
@@ -7726,7 +7731,7 @@ It follows common modern software development practices which makes cluster conf
 <details>
 <summary>What is Anthos Service Mesh?</summary><br><b>
 
-* It is a suite of tools that assist in monitoring and managing deployed services on Anthos of all shapes and sizes whether running in cloud, hybrid or multi-cloud environments. It leverages the APIs and core components from Istio, a highly comfigurable and open-source service mesh platform.
+* It is a suite of tools that assist in monitoring and managing deployed services on Anthos of all shapes and sizes whether running in cloud, hybrid or multi-cloud environments. It leverages the APIs and core components from Istio, a highly configurable and open-source service mesh platform.
 </b></details>
 
 <details>
@@ -7761,6 +7766,42 @@ Tool and technology integration that makes up Anthos service mesh delivers signf
 * Fault injection to help build resilient and fault-tolerant deployments
 * HTTP header-based traffic steering between individual services or versions
 </b></details>
+
+<details>
+<summary>What is Cloud Run for Anthos?</summary><br><b>
+
+It is part of the Anthos stack that brings a serverless container experience to Anthos, offering a high-level platform experience on top of K8s clusters. It is built with Knative, an open-source operator for K8s that brings serverless application serving and eventing capabilities. 
+</b></details>
+
+<details>
+<summary>How does Cloud Run for Anthos simplify operations?</summary><br><b>
+
+Platform teams in organisations that wish to offer developers additional tools to test, deploy and run applications can use Knative to enhance this experience on Anthos as Cloud Run. Below are some of the benefits;
+
+* Easy migration from K8s deployments - Without Cloud Run, platform engineers have to configure deployment, service, and HorizontalPodAutoscalers(HPA) objects to a loadbalancer and autoscaling. If application is already serving traffic it becomes hard to change configurations or roll back efficiently. Using Cloud Run all this is managed thus the Knative service manifest describes the application to be autoscaled and loadbalanced
+* Autoscaling - a sudden traffic spike may cause application containers in K8s to crash due to overload thus an efficient automated autoscaling is executed to serve the high volume of traffic
+* Networking - it has built-in load balancing capabilities and policies for traffic splitting between multiple versions of an application. 
+* Releases and rollouts - supports the notion of the Knatibe API's revisions which describe new versions or different configurations of your application and canary deployments by splitting traffic. 
+* Monitoring - observing and recording metrics such as latency, error rate and requests per second. 
+</b></details>
+
+<details>
+<summary>List and explain three high-level out of the box autoscaling primitives offered by Cloud Run for Anthos that do not exist in K8s natively</summary><br><b>
+
+* Rapid, request-based autoscaling - default autoscalers monitor request metrics which allows Cloud Run for Anthos to handle spiky traffic patterns smoothly
+* Concurrency controls - limits such as max in-flight requests per container are enforced to ensure the container does not become overloaded and crash. More containers are added to handle the spiky traffic, buffering the requests.
+* Scale to zero - if an application is inactive for a while Cloud Run scales it down to zero to reduce its footprint. Alternatively one can turn off scale-to-zero to prevent cold starts. 
+</b></details>
+
+<details>
+<summary>List some Cloud Run for Anthos use cases</summary><br><b>
+As it does not support stateful applications or sticky sessions, it is suitable for running stateless applications such as:
+
+* Machine learning model predictions e.g Tensorflow serving containers
+* API gateways, API middleware, web front ends and Microservices
+* Event handlers, ETL
+</b></details>
+
 
 ## OpenStack
 
