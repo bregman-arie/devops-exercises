@@ -2159,13 +2159,11 @@ An open question. Answer based on your real experience. You can highlight one or
   * cat
   * less
   * history
-  * clear
   * cp
   * mv
   * mkdir
   * find
-  * alias
-  * exit</summary><br><b>
+  * alias</summary><br><b>
 
   * ls - list files and directories. You can highlight common flags like -d, -a, -l, ...
   * rm - remove files and directories. You should mention -r for recursive removal
@@ -2181,13 +2179,11 @@ An open question. Answer based on your real experience. You can highlight one or
   * cat - quickly read a file without opening the file, it only displays the file contents
   * less - view text files larger than a simple output
   * history - get the history of the commands previously entered
-  * clear - easily clear up terminal display when it gets a little bit cluttered
   * cp - make a copy of files and pasting it to a destination
   * mv - moving files and also renaming them
   * mkdir - create a directory if it does not exist already
   * find - searching files
   * alias - shorten repetitive long commands for efficient command line usage
-  * exit - exit from shell
 </b></details>
 
 <details>
