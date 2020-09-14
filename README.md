@@ -2165,9 +2165,7 @@ An open question. Answer based on your real experience. You can highlight one or
   * mkdir
   * find
   * alias
-  * exit
-  
-  </summary><br><b>
+  * exit</summary><br><b>
 
   * ls - list files and directories. You can highlight common flags like -d, -a, -l, ...
   * rm - remove files and directories. You should mention -r for recursive removal
@@ -2179,7 +2177,7 @@ An open question. Answer based on your real experience. You can highlight one or
   * nslookup or dig - query nameservers
   * pwd - print working directory
   * df - provides info regarding file system disk space usage
-  * file - to find out what kind of a file a file is
+  * file - to find out what kind of a file it is
   * cat - quickly read a file without opening the file, it only displays the file contents
   * less - view text files larger than a simple output
   * history - get the history of the commands previously entered
@@ -2224,7 +2222,7 @@ It shows a detailed list of files in a long format. From the left;
 
 <details>
 <summary>What are hidden files/directories? How to list them?</summary><br><b>
-These are files directly not displayed after performing a standard ls direct listing. An example of these files are .bashrc which are used to execute some scripts. Some also store configuration about services on your host like .KUBECONFIG. The command used to lis them is, 
+These are files directly not displayed after performing a standard ls direct listing. An example of these files are .bashrc which are used to execute some scripts. Some also store configuration about services on your host like .KUBECONFIG. The command used to list them is, 
 
 `ls -a`
 </b></details>
@@ -2295,14 +2293,14 @@ Using the `chmod` command.
 
 <details>
 <summary>What this command does? <code>chmod +x some_file</code></summary><br><b>
-It adds execute persmissions to all sets i.e user, group and others
+It adds execute permissions to all sets i.e user, group and others
 </b></details>
 
 <details>
 <summary>Explain what is setgid and setuid</summary><br><b>
 
-* Setuid is a linux file permission that permits a user to run a file or program with the permissions of the owner of that file. This is possible by elevation of current user privileges. 
-* Setgid is a process when executed will run as the group that owns the file.
+* setuid is a linux file permission that permits a user to run a file or program with the permissions of the owner of that file. This is possible by elevation of current user privileges. 
+* setgid is a process when executed will run as the group that owns the file.
 </b></details>
 
 <details>
