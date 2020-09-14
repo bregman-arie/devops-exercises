@@ -7848,7 +7848,6 @@ As it does not support stateful applications or sticky sessions, it is suitable 
 * Event handlers, ETL
 </b></details>
 
-
 ## OpenStack
 
 <details>
