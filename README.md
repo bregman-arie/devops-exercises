@@ -2020,6 +2020,15 @@ Systems keep an ARP look-up table where they store information about what IP add
 
 <details>
 <summary>What is DHCP? How does it works?</summary><br><b>
+
+It stands for Dynamic Host Configuration Protocol, and allocates IP addresses, subnet masks and gateways to hosts. This is how it works:
+
+* A host upon entering a network, broadcasts a message in search of a DHCP server (DHCP DISCOVER)
+* An offer message is sent back by the DHCP server as a packet containing lease time, subnet mask, IP addresses, etc (DHCP OFFER)
+* Depending on which offer accepted, the client sends back a reply broadcast letting all DHCP servers know (DHCP REQUEST)
+* Server sends an acknowledgment (DHCP ACK)
+
+Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 </b></details>
 
 <details>
@@ -2127,6 +2136,25 @@ There is also "Management Plane" which refers to monitoring and management funct
 
 00110011110100011101
 </b></details>
+
+<details>
+<summary>Give examples of protocols found in the application layer</summary><br><b>
+
+* Hypertext Transfer Protocol (HTTP) - used for the webpages on the internet
+* Simple Mail Transfer Protocol (SMTP) - email transmission
+* Telecommunications Network - (TELNET) - terminal emulation to allow client access to telnet server
+* File Transfer Protocol (FTP) - facilitates transfer of files between any two machines
+* Domain Name System (DNS) - domain name translation
+* Dynamic Host Configuration Protocol (DHCP) - allocates IP addresses, subnet masks and gateways to hosts
+* Simple Network Management Protocol (SNMP) - gathers data of devices on the network
+</b></details>
+
+<details>
+<summary>Give examples of protocols found in the network Layer</summary><br><b>
+
+* Internet Protocol (IP) - assists in routing packets from one machine to another
+* Internet Control Message Protocol (ICMP) - lets one know what is going such as error messages and debugging information
+</b><details>
 
 ## Linux
 
