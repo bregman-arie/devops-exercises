@@ -2020,6 +2020,15 @@ Systems keep an ARP look-up table where they store information about what IP add
 
 <details>
 <summary>What is DHCP? How does it works?</summary><br><b>
+
+It stands for Dynamic Host Configuration Protocol, and allocates IP addresses, subnet masks and gateways to hosts. This is how it works:
+
+* A host upon entering a network, broadcasts a message in search of a DHCP server (DHCP DISCOVER)
+* An offer message is sent back by the DHCP server as a packet containing lease time, subnet mask, IP addresses, etc (DHCP OFFER)
+* Depending on which offer accepted, the client sends back a reply broadcast letting all DHCP servers know (DHCP REQUEST)
+* Server sends an acknowledgment (DHCP ACK)
+
+Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 </b></details>
 
 <details>
@@ -2126,6 +2135,36 @@ There is also "Management Plane" which refers to monitoring and management funct
 <summary>Using Hamming code, what would be the code word for the following data word 100111010001101?</summary><br><b>
 
 00110011110100011101
+</b></details>
+
+<details>
+<summary>Give examples of protocols found in the application layer</summary><br><b>
+
+* Hypertext Transfer Protocol (HTTP) - used for the webpages on the internet
+* Simple Mail Transfer Protocol (SMTP) - email transmission
+* Telecommunications Network - (TELNET) - terminal emulation to allow client access to telnet server
+* File Transfer Protocol (FTP) - facilitates transfer of files between any two machines
+* Domain Name System (DNS) - domain name translation
+* Dynamic Host Configuration Protocol (DHCP) - allocates IP addresses, subnet masks and gateways to hosts
+* Simple Network Management Protocol (SNMP) - gathers data of devices on the network
+</b></details>
+
+<details>
+<summary>Give examples of protocols found in the network Layer</summary><br><b>
+
+* Internet Protocol (IP) - assists in routing packets from one machine to another
+* Internet Control Message Protocol (ICMP) - lets one know what is going such as error messages and debugging information
+</b><details>
+
+<details>
+<summary>What is HSTS?</summary><br><b>
+HTTP Strict Transport Security is a web server directive that informs user agents and web browsers how to handle its connection through a response header sent at the very beginning and back to the browser. This forces connections over HTTPS encryption, disregarding any script's call to load any resource in that domain over HTTP. 
+
+Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-use-it#:~:text=HTTP%20Strict%20Transport%20Security%20(HSTS,and%20back%20to%20the%20browser.)
+</b></details>
+
+<details>
+<summary>What is the difference if any between SSL and TLS?</summary><br><b>
 </b></details>
 
 ## Linux
@@ -3003,6 +3042,7 @@ Using nc is one way<br>
 
 <details>
 <summary>What are packet sniffers? Have you used one in the past? If yes, which packet sniffers have you used and for what purpose?</summary><br><b>
+It is a network utility that analyses and may inject tasks into the data-stream travelling over the targeted network.
 </b></details>
 
 <details>
