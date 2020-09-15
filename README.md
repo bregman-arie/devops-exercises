@@ -2164,11 +2164,6 @@ Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-us
 </b></details>
 
 <details>
-<summary>What is a packet sniffer?<summary><br><b>
-It is a network utility that analyses and may inject tasks into the data-stream travelling over the targeted network
-</b></details>
-
-<details>
 <summary>What is the difference if any between SSL and TLS?</summary><br><b>
 </b></details>
 
@@ -3047,6 +3042,7 @@ Using nc is one way<br>
 
 <details>
 <summary>What are packet sniffers? Have you used one in the past? If yes, which packet sniffers have you used and for what purpose?</summary><br><b>
+It is a network utility that analyses and may inject tasks into the data-stream travelling over the targeted network.
 </b></details>
 
 <details>
