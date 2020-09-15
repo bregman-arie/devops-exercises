@@ -2156,6 +2156,22 @@ There is also "Management Plane" which refers to monitoring and management funct
 * Internet Control Message Protocol (ICMP) - lets one know what is going such as error messages and debugging information
 </b><details>
 
+<details>
+<summary>What is HSTS?</summary><br><b>
+HTTP Strict Transport Security is a web server directive that informs user agents and web browsers how to handle its connection through a response header sent at the very beginning and back to the browser. This forces connections over HTTPS encryption, disregarding any script's call to load any resource in that domain over HTTP. 
+
+Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-use-it#:~:text=HTTP%20Strict%20Transport%20Security%20(HSTS,and%20back%20to%20the%20browser.)
+</b></details>
+
+<details>
+<summary>What is a packet sniffer?<summary><br><b>
+It is a network utility that analyses and may inject tasks into the data-stream travelling over the targeted network
+</b></details>
+
+<details>
+<summary>What is the difference if any between SSL and TLS?</summary><br><b>
+</b></details>
+
 ## Linux
 
 <details>
