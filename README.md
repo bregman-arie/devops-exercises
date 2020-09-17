@@ -640,7 +640,8 @@ Read more about instance types [here](https://docs.aws.amazon.com/AWSEC2/latest/
 <summary>True or False? The following are instance types available for a user in AWS:
 
   * Compute optimizied
-  * Network optimizied
+  * 
+  optimizied
   * Web optimized</summary><br><b>
 
 False. From the above list only compute optimized is available.
@@ -2024,6 +2025,10 @@ Systems keep an ARP look-up table where they store information about what IP add
 
 <details>
 <summary>What is IPv6? Why should we consider using it if we have IPv4?</summary><br><b>
+	
+IPv6 is the latest version of the Internet Protocol, which identifies devices across the internet so they can be located. IPv6 was developed by the Internet Engineering Task Force (IETF) to replace IPv4. Launched in 1998, the main and most obvious feature of IPv6 is extending IP addresses from 32 bits to 128 bits, allowing for more growth in the future and relief for the shrinking number of available network addresses.
+
+IPv6 offers a significantly larger pool of addresses by using 128-bit addresses: 340 undecillion (3.4×1038), compared with the 4.3 billion available in 32-bit IPv4 addresses. This extended pool provides scalability, but also introduces additional security by making host scanning and identification more challenging for attackers.
 </b></details>
 
 <details>
