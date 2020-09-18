@@ -20,7 +20,7 @@ class QuestionCount(unittest.TestCase):
         answers = get_answered_questions(question_list)
 
         self.assertEqual(len(question_list), 11)
-        self.assertEqual(answers, 3)
+        self.assertEqual(len(answers), 3)
 
     def test_case_2(self):
         raw_list = open_test_case_file(2)
@@ -28,4 +28,4 @@ class QuestionCount(unittest.TestCase):
         answers = get_answered_questions(question_list)
 
         self.assertEqual(len(question_list), 16)
-        self.assertEqual(answers, 11)
+        self.assertEqual(len(answers), 11)
