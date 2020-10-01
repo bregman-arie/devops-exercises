@@ -4172,20 +4172,20 @@ Output variables are named values that are sourced from the attributes of a modu
 ## Docker
 
 <details>
-<summary>What is Docker? What are you using it for?</summary><br><b>
+<summary>What is Docker? What is it used for?</summary><br><b>
 Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
 </b></details>
 
 <details>
-<summary>How containers are different from VMs?</summary><br><b>
+<summary>How are containers different from virtual machines (VMs)?</summary><br><b>
 
 The primary difference between containers and VMs is that containers allow you to virtualize
 multiple workloads on the operating system while in the case of VMs the hardware is being virtualized to
 run multiple machines each with its own OS.
 
 * Containers don't require an entire guest operating system as VMs
-* It's usually takes a few seconds to set up a container as opposed to VMs which can take minutes or at least more time than containers as there is an entire OS to boot and initialize as opposed to container where you mainly lunch the app itself
-* Docker is one of the technologies allowing you to manage containers - run multiple containers on a host, move containers between hosts, etc.
+* It usually takes a few seconds to set up a container as opposed to VMs which can take minutes or at least more time than containers as there is an entire OS to boot and initialize as opposed to container where you mainly lunch the app itself
+* Containers are isolated from each other, but not as concretely as virtual machines. It is possible for a malicious user to break into the host OS from a container and vice versa.
 </b></details>
 
 <details>
