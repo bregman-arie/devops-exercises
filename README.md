@@ -483,14 +483,15 @@ You can describe the UI way to add new nodes but better to explain how to do in 
 
 * Pay as you go (or consumption-based payment) - you are paying only for what you are using. No upfront payments and payment stops when resources are no longer used.
 * Scalable - resources are scaled down or up based on demand
+* Mobility - Resource can be moved, migrated easily
 </b></details>
 
 <details>
 <summary>What types of Cloud Computing services are there?</summary><br><b>
 
-IAAS
-PAAS
-SAAS
+IAAS - Infrastructure as a Service
+PAAS - Platform as a Service
+SAAS - Software as a Service
 </b></details>
 
 <details>
@@ -499,6 +500,9 @@ SAAS
   * IAAS
   * PAAS
   * SAAS</summary><br><b>
+  * IAAS - Users have control over complete Operating System and need not to worry about the physical resources, which is managed by Cloud Service Provider.
+  * PAAS - CLoud Service Provider takes care of Operating System, Middlewares and users only need to focus on our Data and Application.
+  * SAAS - Users only worry about the code and the Application, Data, OS and all stuffs are managed by Cloud Service Provider.
 </b></details>
 
 <details>
@@ -513,10 +517,11 @@ SAAS
 <summary>Explain each of the following Cloud Computing Deployments:
 
   * Public
-  * Hybrid
-  * Private</summary><br><b>
-
-  * Hybrid - combination of public and private clouds
+  * Private
+  * Hybrid</summary><br><b>
+  * Public - Cloud services having resources that is not shared among customers
+  * Private - Cloud services sharing computing resources among multiple customers
+  * Hybrid - Combination of public and private clouds
 </b></details>
 
 <details>
