@@ -519,8 +519,8 @@ SAAS - Software as a Service
   * Public
   * Private
   * Hybrid</summary><br><b>
-  * Public - Cloud services having resources that is not shared among customers
-  * Private - Cloud services sharing computing resources among multiple customers
+  * Public - Cloud services sharing computing resources among multiple customers
+  * Private - Cloud services having computing resources limited to specific customer or organization, managed by third party or organizations itself
   * Hybrid - Combination of public and private clouds
 </b></details>
 
