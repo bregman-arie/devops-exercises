@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1344** questions
+:bar_chart: &nbsp;There are currently **1353** questions
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
 
@@ -74,6 +74,9 @@
     <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
     <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
     <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="#redis"><img src="images/redis.png" width="75px;" height="75px;" alt="Redis"/><br /><b>Redis</b></a></td>
   </tr>
 </table>
 </center>
@@ -214,6 +217,16 @@ Stateful applications depend on the storage to save state and data, typically da
 </b></details>
 
 <details>
+<summary>What is Reliability? How does it fit DevOps?</summary><br><b>
+
+Reliability, when used in DevOps context, is the ability of a system to recover from infrastructure failure or disruption. Part of it is also being able to scale based on your organization or team demands.
+</b></details>
+
+<details>
+<summary>What "Availability" means? What means are there to track Availability of a service?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Describe the workflow of setting up some type of web server (Apache, IIS, Tomcat, ...)</summary><br><b>
 </b></details>
 
@@ -238,19 +251,17 @@ You should be able to explain those that you mention.
 </b></details>
 
 <details>
-<summary>You need to install periodically the same package on different operating systems (Ubuntu, RHEL, ...). How would you do it?</summary><br><b>
+<summary>You need to install periodically a package (unless it's already exists) on different operating systems (Ubuntu, RHEL, ...). How would you do it?</summary><br><b>
 
-It can be as simple as one Ansible (or other CM tool) task that runs periodically with Cron. In more advanced cases, perhaps a CI system.
+There are multiple ways to answer this question (there is no right and wrong here):
+
+* Simple cron job
+* Pipeline with configuration management technology (such Puppet, Ansible, Chef, etc.)
+...
 </b></details>
 
 <details>
-<summary>What is Reliability? How does it fit DevOps?</summary><br><b>
-
-Reliability, when used in DevOps context, is the ability of a system to recover from infrastructure failure or disruption. Part of it is also being able to scale based on your organization or team demands.
-</b></details>
-
-<details>
-<summary>Compare SRE to DevOps</summary><br><b>
+<summary>What are the differences between SRE and DevOps?</summary><br><b>
 </b></details>
 
 <details>
@@ -272,9 +283,6 @@ One can argue whether it's per company definition or a global one but at least a
 	
 </b></details>
 
-<details>
-<summary>What is a post-mortem meeting?</summary><br><b>
-</b></details>
 
 <details>
 <summary>What is "infrastructure as code"? What implementation of IAC are you familiar with?</summary><br><b>
@@ -314,12 +322,15 @@ One can argue whether it's per company definition or a global one but at least a
 </b></details>
 
 <details>
-<summary>Is it right to say implementing or practicing DevOps leads to more secure software?</summary><br><b>
+<summary>What do you think about the following sentence?: "implementing or practicing DevOps leads to more secure software"</summary><br><b>
 </b></details>
 
+<details>
+<summary>Do you know what is a "post-mortem meeting"? What is your opinion on that?</summary><br><b>
+</b></details>
 
 <details>
-<summary>Tell me how you perform plan capacity for your CI/CD resources (e.g. servers, storage, etc.)</summary><br><b>
+<summary>How do you perform plan capacity for your CI/CD resources? (e.g. servers, storage, etc.)</summary><br><b>
 </b></details>
 
 <details>
@@ -363,7 +374,6 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 ## Jenkins
-
 
 <details>
 <summary>What is Jenkins? What have you used it for?</summary><br><b>
@@ -3402,8 +3412,10 @@ Notes:
 
 <details>
 <summary>What readdir() system call does?</summary><br><b>
+</b></details>
 
-
+<details>
+<summary>What exactly the command <code>alias x=y</code> does?</summary><br><b>
 </b></details>
 
 #### Linux Filesystem & Files
@@ -4474,6 +4486,12 @@ False. A Kubernetes cluster consists of at least 1 master and 0 or more workers.
 </b></details>
 
 <details>
+<summary>True or False? The API server is the only component which communicates directly with etcd</summary><br><b>
+
+True
+</b></details>
+
+<details>
 <summary>What are the components of a worker node?</summary><br><b>
 
   * Kubelet - an agent responsible for node communication with the master.
@@ -4649,15 +4667,15 @@ kubectl create quota some-quota --hard-cpu=2,pods=2
 
 ```
 cat << EOF | kubectl create -f -
-> apiVersion: v1
-> kind: Pod
-> metadata:
->   name: nginx
-> spec:
->   containers:
->   - name: nginx
->     image: nginx
-> EOF
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+EOF
 ```
 </b></details>
 
@@ -4718,9 +4736,15 @@ kubectl delete pods --field-selector=status.phase!='Running'
 </b></details>
 
 <details>
-<summary>How to display the resources usages of pods?</code></summary><br><b>
+<summary>How to display the resources usages of pods?</summary><br><b>
 
 kubectl top pod
+</b></details>
+
+<details>
+<summary>What <code>kubectl get componentstatus</code> does?</summary><br><b>
+
+Outputs the status of each of the control plane components.
 </b></details>
 
 <details>
@@ -5152,7 +5176,7 @@ There are many other characteristics but these are the main ones that every pyth
 </b></details>
 
 <details>
-<summary>What is mutability? Which of the built-in types in Python are mutable? How can you show that a certain data type is mutable?</summary><br><b>
+<summary>What is mutability? Which of the built-in types in Python are mutable?</summary><br><b>
 
 Mutability determines whether you can modify an object of specific type.
 
@@ -5169,8 +5193,6 @@ The immutable data types are:
     Bool
     Tuple
     Frozenset
-
-You can usually use the function hash() to check an object mutability. If an object is hashable, it is immutable (although this does not always work as intended as user defined objects might be mutable and hashable).
 </b></details>
 
 <details>
@@ -5204,7 +5226,7 @@ You can usually use the function hash() to check an object mutability. If an obj
 </b></details>
 
 <details>
-<summary>What is the result of `bool("")`? What about `bool(" ")`?</summary><br><b>
+<summary>What is the result of `bool("")`? What about `bool(" ")`? Explain</summary><br><b>
 
 bool("") -> evaluates to False
 bool("  ") -> evaluates to True
@@ -5241,7 +5263,12 @@ if lower(input("Insert a character: ")[0]) in "aieou": # Takes care of multiple 
 
 <details>
 <summary>How to define a function with Python?</summary><br><b>
-Using the `def` keyword
+Using the `def` keyword. For Examples:
+
+```
+def sum(a, b):
+    return (a + b)
+```
 </b></details>
 
 <details>
@@ -5257,7 +5284,6 @@ def my_function():
 
 You can then assign a function to a variables like this `x = my_function` or you can return functions as return values like this `return my_function`
 </b></details>
-
 
 <details>
 <summary>Explain inheritance and how to use it in Python</summary><br><b>
@@ -5441,6 +5467,14 @@ For more details about errors and exceptions follow this [https://docs.python.or
 
 <details>
 <summary>What is the difference between repr function and str?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the __call__ method?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Do classes has the __call__ method as well? What for?</summary><br><b>
 </b></details>
 
 <details>
@@ -5787,7 +5821,7 @@ set([food for bro in x for food in bro['food']])
 ```
 </b></details>
 
-#### Dictionaries
+#### Python Dictionaries
 
 <details>
 <summary>How to create a dictionary?</summary><br><b>
@@ -5800,7 +5834,7 @@ my_dict = dict([('x', 1), ('y', 2)])
 </b></details>
 
 <details>
-<summary>How to remove an item from a dictionary?</summary><br><b>
+<summary>How to remove a key from a dictionary?</summary><br><b>
 
 del my_dict['some_key']
 you can also use `my_dict.pop('some_key')` which returns the value of the key.
@@ -6270,7 +6304,7 @@ PEP8 is a list of coding conventions and style guidelines for Python
 #### Flask
 
 <details>
-<summary>You wrote you have experience with Django/Flask. Can you describe what is Django/Flask and how you have used it? Why Flask and not Djano? (or vice versa)</summary><br><b>
+<summary>Can you describe what is Django/Flask and how you have used it? Why Flask and not Djano? (or vice versa)</summary><br><b>
 </b></details>
 
 <details>
@@ -6278,7 +6312,11 @@ PEP8 is a list of coding conventions and style guidelines for Python
 </b></details>
 
 <details>
-<summary>How do you manage DB integration?</summary><br><b>
+<summary>What is a blueprint in Flask?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a template?</summary><br><b>
 </b></details>
 
 #### zip
@@ -7144,6 +7182,12 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>Can you explain the difference between OpenShift and Kubernetes?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? OpenShift is a IaaS (infrastructure as a service) solution</summary><br><b>
+
+False. OpenShift is a PaaS (platform as a service) solution.
 </b></details>
 
 <details>
@@ -8584,6 +8628,16 @@ CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipula
 
 </b></details>
 
+#### Security - Threats
+
+<details>
+<summary>Explain "Advanced persistent threat (APT)"</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a "Backdoor" in information security?</summary><br><b>
+</b></details>
+
 ## Puppet
 
 <details>
@@ -9617,6 +9671,14 @@ Not only this will tell you what is expected from you, it will also provide big 
 ## Databases
 
 <details>
+<summary>What is sharding?</summary><br><b>
+
+Sharding is a horizontal partitioning.
+
+Are you able to explain what is it good for?
+</b></details>
+
+<details>
 <summary>What is a connection pool?</summary><br><b>
 
 Connection Pool is a cache of database connections and the reason it's used is to avoid an overhead of establishing a connection for every query done to a database.
@@ -9923,6 +9985,15 @@ Raspberry Pi
 
 <details>
 <summary>What types of storage are there?</summary><br><b>
+</b></details>
+
+## Redis
+
+<details>
+<summary>What is Redis?</summary><br><b>
+
+* In memory data structure store
+* Open Source
 </b></details>
 
 ## Big Data
