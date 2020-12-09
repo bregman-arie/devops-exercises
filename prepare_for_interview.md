@@ -80,7 +80,7 @@ Starting a DevOps project is a good idea because:
 * It will make you practice coding
 * It will be something you can add to your resume and talk about with the interviewer
 * Depends on size and complexity, it can teach you something about design in general
-* Depends on adoption, it can you teach you about managing Open Source projects
+* Depends on adoption, it can teach you about managing Open Source projects
   
 Same here, don't overthink what your project should be about. Just go and build something :)
   
@@ -95,7 +95,7 @@ Better yet, ask a good friend/colleague to challenge you with some questions. Yo
   
 For those who attend technical meetups and conferences, it can be a great opportunity to chat with people from other companies on their interviewing process. But don't start with it, it can be quite awkward. Say at least hello first... (:
   
-Doing so can give you a lot of information on what to expect from an interview at some companies or how to how to better prepare.
+Doing so can give you a lot of information on what to expect from an interview at some companies or how to better prepare.
   
 ### Know your resume
   
