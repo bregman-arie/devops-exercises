@@ -6247,7 +6247,7 @@ for i in range(1, 10):
 </summary><br><b>
 
 ```
-[for i in in range(1, 10)]
+[i for i in range(1, 10)]
 ```
 </b></details>
 
