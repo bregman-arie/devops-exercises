@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1353** questions
+:bar_chart: &nbsp;There are currently **1359** questions
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
 
@@ -106,16 +106,12 @@ Red Hat:
 <details>
 <summary>What are the benefits of DevOps? What it can help us to achieve?</summary><br><b>
 
-You should mention some or all of the following:
-
   * Collaboration
   * Improved delivery
   * Security
   * Speed
   * Scale
   * Reliability
-
-Make sure to elaborate :)
 </b></details>
 
 <details>
@@ -5092,6 +5088,10 @@ SOLID is:
 <summary>Explain big O notation</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is "Duck Typing"?</summary><br><b>
+</b></details>
+
 ##### Common algorithms
 
 <details>
@@ -5916,6 +5916,20 @@ some_dict1.update(some_dict2)
 ```
 </b></details>
 
+
+<details>
+<summary>Convert the string "a.b.c" to the dictionary <code>{'a': {'b': {'c': 1}}}</code></summary><br><b>
+
+```
+output = {}
+string = "a.b.c"
+path = string.split('.')
+target = reduce(lambda d, k: d.setdefault(k, {}), path[:-1], output)
+target[path[-1]] = 1
+print(output)
+```
+</b></details>
+
 ##### Common Algorithms Implementation
 
 <details>
@@ -6299,7 +6313,7 @@ What would be the result of is_int(2) and is_int(False)?
 </summary><br><b>
 </b></details>
 
-##### Data Structures & Types
+#### Python Data Structures & Types
 
 <details>
 <summary>Implement Stack in Python</summary><br><b>
@@ -6309,7 +6323,7 @@ What would be the result of is_int(2) and is_int(False)?
 <summary>Implement Hash table in Python</summary><br><b>
 </b></details>
 
-##### Python Testing
+#### Python Testing
 
 <details>
 <summary>What is your experience with writing tests in Python?</summary><br><b>
@@ -6396,8 +6410,62 @@ list(zip(range(5), range(50), range(-2)))
 ```
 </b></details>
 
-#### Misc
+#### Python Descriptors
 
+<details>
+<summary>Explain Descriptors</summary><br><b>
+
+Read about descriptors [here](https://docs.python.org/3/howto/descriptor.html)
+</b></details>
+
+<details>
+<summary>What would be the result of running <code>a.num2</code> assuming the following code
+
+```
+class B:
+    def __get__(self, obj, objtype=None):
+        reuturn 10
+
+class A:
+    num1 = 2
+    num2 = Five()
+```
+</summary><br><b>
+10
+</b></details>
+
+<details>
+<summary>What would be the result of running <code>some_car = Car("Red", 4)</code> assuming the following code
+
+```
+class Print:
+
+    def __get__(self, obj, objtype=None):
+        value = obj._color
+        print("Color was set to {}".format(valie))
+        return value
+
+    def __set__(self, obj, value):
+        print("The color of the car is {}".format(value))
+        obj._color = value
+
+class Car:
+
+    color = Print()
+
+    def __ini__(self, color, age):
+        self.color = color
+        self.age = age
+```
+</summary><br><b>
+An instance of Car class will be created and the following will be printed: "The color of the car is Red"
+</b></details>
+
+#### Python Misc
+
+<details>
+<summary>How can you spawn multiple processes with Python?</summary><br><b>
+</b></details>
 
 <details>
 <summary>Implement simple calculator for two numbers</summary><br><b>
@@ -6597,10 +6665,6 @@ a = f()
 
 <details>
 <summary>Explain the Buffer Protocol</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain Descriptors</summary><br><b>
 </b></details>
 
 <details>
