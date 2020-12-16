@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1359** questions
+:bar_chart: &nbsp;There are currently **1380** questions
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
 
@@ -74,9 +74,6 @@
     <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
     <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
     <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="#redis"><img src="images/redis.png" width="75px;" height="75px;" alt="Redis"/><br /><b>Redis</b></a></td>
   </tr>
 </table>
 </center>
@@ -151,7 +148,11 @@ For more info please read [here](https://www.atlassian.com/continuous-delivery/c
 </b></details>
 
 <details>
-<summary>What systems and/or tools are you using for the following?:
+<summary>Where do you store CI/CD pipeline? (Application repository, one central repository, ...)? Why?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What systems and/or tools are you using for the following areas/tasks? Why?
 
   * CI/CD
   * Provisioning infrastructure
@@ -3012,14 +3013,25 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 <summary>Do you have experience with hardening servers? Can you describe the process?</summary><br><b>
 </b></details>
 
-##### Linux - Networking
+##### Linux Networking
 
 <details>
-<summary>How to list all interfaces?</summary><br><b>
+<summary>How to list all the interfaces?</summary><br><b>
 </b></details>
 
 <details>
-<summary>How to disable an interface?</summary><br><b>
+<summary>What is the loopback (lo) interface?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What the following commands are used for?
+
+  * ip addr
+  * ip route
+  * ip link
+  * ping
+  * netstat
+  * traceroute</summary><br><b>
 </b></details>
 
 <details>
@@ -3100,6 +3112,25 @@ It is a network utility that analyses and may inject tasks into the data-stream 
 <summary>How to trigger neighbor discovery in IPv6?</summary><br><b>
 
 One way would be `ping6 ff02::1`
+</b></details>
+
+<details>
+<summary>What is network interface bonding and do you know how it's performed in Linux?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What network bonding modes are there?</summary><br><b>
+
+There a couple of modes:
+
+  * balance-rr: round robing bonding
+  * active-backup: a fault tolerance mode where only one is active
+  * balance-tlb: Adaptive transmit load balancing
+  * balance-alb: Adaptive load balancing
+</b></details>
+
+<details>
+<summary>What is a bridge? How it's added in Linux OS?</summary><br><b>
 </b></details>
 
 ##### Linux DNS
@@ -3209,7 +3240,11 @@ Upstart: add Upstart init script at /etc/init/service.conf
 Nginx, Apache httpd.
 </b></details>
 
-##### Users
+##### Linux Users and Groups
+
+<details>
+<summary>What is a "superuser" (or root user)? How is it different from regular users?</summary><br><b>
+</b></details>
 
 <details>
 <summary>How do you create users? Where user information is stored?</summary><br><b>
@@ -3243,7 +3278,7 @@ You can also add a user and then edit /etc/passwd.
 </b></details>
 
 <details>
-<summary>How to switch to another user? How to switch to root?</summary><br><b>
+<summary>How to switch to another user? How to switch to the root user?</summary><br><b>
 
 su command.
 Use su - to switch to root
@@ -3270,7 +3305,16 @@ Re-install the OS IS NOT the right answer :)
 <details>
 <summary>How to see a list of who logged-in to the system?</summary><br><b>
 
-Using the last command.
+Using the `last` command.
+</b></details>
+
+<details>
+<summary>Explain what each of the following commands does:
+
+  * useradd
+  * usermod
+  * whoami
+  * id</summary><br><b>
 </b></details>
 
 #### Linux - Hardware
@@ -6862,6 +6906,16 @@ Alert manager is responsible for alerts ;)
 ## Git
 
 <details>
+<summary>How do you know if directory you are in is a git repository?</summary><br><b>
+
+You can check if there is a ".git" directory.
+</b></details>
+
+<details>
+<summary>How to check if a file is tracked and if not, then track it?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is the difference between <code>git pull</code> and <code>git fetch</code>?</summary><br><b>
 
 Shortly, git pull = git fetch + git merge
@@ -10186,15 +10240,6 @@ Raspberry Pi
 
 <details>
 <summary>What types of storage are there?</summary><br><b>
-</b></details>
-
-## Redis
-
-<details>
-<summary>What is Redis?</summary><br><b>
-
-* In memory data structure store
-* Open Source
 </b></details>
 
 ## Big Data
