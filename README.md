@@ -2194,19 +2194,17 @@ An open question. Answer based on your real experience. You can highlight one or
   * ls
   * rm
   * rmdir (can you achieve the same result by using <code>rm</code>?)
-  * grep
   * touch
   * whoami
   * man
-  * nslookup or dig
   * pwd
   * df
   * file
   * cat
-  * less
-  * history
   * cp
   * mv
+  * grep
+  * nslookup or dig
   * mkdir
   * find
   * alias</summary><br><b>
@@ -2214,19 +2212,17 @@ An open question. Answer based on your real experience. You can highlight one or
   * ls - list files and directories. You can highlight common flags like -d, -a, -l, ...
   * rm - remove files and directories. You should mention -r for recursive removal
   * rmdir - remove directories but you should mention it's possible to use rm for that
-  * grep - print lines that match patterns. Could be nice to mention -v, -r, -E flags
   * touch - update timestamps but common usage is to create files
   * whoami - current logged-in user
   * man - reference manuals
-  * nslookup or dig - query nameservers
   * pwd - print working directory
   * df - provides info regarding file system disk space usage
   * file - to find out what kind of a file it is
   * cat - quickly read a file without opening the file, it only displays the file contents
-  * less - view text files larger than a simple output
-  * history - get the history of the commands previously entered
   * cp - make a copy of files and pasting it to a destination
   * mv - moving files and also renaming them
+  * grep - print lines that match patterns. Could be nice to mention -v, -r, -E flags
+  * nslookup or dig - query nameservers
   * mkdir - create a directory if it does not exist already
   * find - searching files
   * alias - shorten repetitive long commands for efficient command line usage
@@ -2235,6 +2231,7 @@ An open question. Answer based on your real experience. You can highlight one or
 <details>
 <summary>What each of the following commands does?
 
+  * cd /
   * cd ~
   * cd
   * cd ..
@@ -2242,17 +2239,32 @@ An open question. Answer based on your real experience. You can highlight one or
   * cd -</summary><br><b>
   cd or "change directory" helps one to change directory when they want to.
 
-  * cd ~ -> this defaults to your "home directory"
-  * cd -> this defaults to your "home directory"
-  * cd .. -> goes to the directory above your current i.e parent directory
-  * cd . -> this is the directory you currently in
-  * cd - -> takes you the previous directory you were just at
+  * cd / -> change to the root directory
+  * cd ~ -> change to your home directory
+  * cd -> change to your home directory
+  * cd .. -> change to the directory above your current i.e parent directory
+  * cd . -> change to the directory you currently in
+  * cd - -> change to the last visited path
 </b></details>
 
 <details>
 <summary>How to rename the name of a file or a directory?</summary><br><b>
 
 mv command.
+</b></details>
+
+<details>
+<summary>What is stored in each of the following paths?</summary><br><b>
+
+  * /bin, /sbin, /usr/bin and /usr/sbin
+  * /etc
+  * /home
+  * /var
+  * /tmp
+</b></details>
+
+<details>
+<summary>What is special about /tmp when compared to other paths?</summary><br><b>
 </b></details>
 
 <details>
@@ -2267,6 +2279,10 @@ It shows a detailed list of files in a long format. From the left;
 These are files directly not displayed after performing a standard ls direct listing. An example of these files are .bashrc which are used to execute some scripts. Some also store configuration about services on your host like .KUBECONFIG. The command used to list them is,
 
 `ls -a`
+</b></details>
+
+<details>
+<summary>Explain piping. How do you perform piping?</summary><br><b>
 </b></details>
 
 <details>
@@ -2397,7 +2413,7 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 <summary>Describe how to make a certain process/app a service</summary><br><b>
 </b></details>
 
-##### Debugging (Beginner)
+##### Linux Debugging
 
 <details>
 <summary>Where system logs are located?</summary><br><b>
@@ -2474,10 +2490,22 @@ tail -f <file_name>
 <summary>How you measure time execution of a program?</summary><br><b>
 </b></details>
 
-#### Kernel
+#### Linux Kernel
+
+<details>
+<summary>What is a kernel, and what does it do?</summary><br><b>
+
+The kernel is part of the operating system and is responsible for tasks like:
+
+  * Allocating memory
+  * Schedule processes
+  * Control CPU
+</b></details>
 
 <details>
 <summary>How do you find out which Kernel version your system is using?</summary><br><b>
+
+`uname -a` command
 </b></details>
 
 <details>
@@ -2485,12 +2513,29 @@ tail -f <file_name>
 </b></details>
 
 <details>
-<summary>Explain user space and kernel space</summary><br><b>
+<summary>Explain user space vs. kernel space</summary><br><b>
+
+The operating system executes the kernel in protected memory to prevent anyone from changing (and risking it crashing). This is what is known as "Kernel space".
+"User space" is where users executes their commands or applications. It's important to create this separation since we can't rely on user applications to not tamper with the kernel, causing it to crash.
+
+Applications can access system resources and indirectly the kernel space by making what is called "system calls".
+</b></details>
+
+<details>
+<summary>What are system calls? What system calls are you familiar with?</summary><br><b>
+</b></details>
+
+#### Linux Virtualization
+
+<details>
+<summary>What virtualization solutions are available for Linux?</summary><br><b>
 </b></details>
 
 <details>
 <summary>What is KVM?</summary><br><b>
 </b></details>
+
+#### SSH
 
 <details>
 <summary>What is SSH key? How is it used?</summary><br><b>
@@ -2725,16 +2770,6 @@ There are many answers for this question. One way is running `df -T`
 </details>
 
 <details>
-<summary>Explain what is stored in each of the following paths and if there is anything unique about it:</summary><br><b>
-
-  * /tmp
-  * /var/log
-  * /bin
-  * /home
-  * /usr/local
-</b></details>
-
-<details>
 <summary>What is stored in each of the following logs?</summary><br><b>
 
   * /var/log/messages
@@ -2788,11 +2823,17 @@ sar -n TCP,ETCP 1
 #### Linux Processes
 
 <details>
+<summary>how to list all the processes running in your system?</summary><br><b>
+
+`ps -ef`
+</b></details>
+
+<details>
 <summary>How to run a process in the background and why to do that in the first place?</summary><br><b>
 
-You can achieve that by specifying & at end of the command.
+You can achieve that by specifying & at the end of the command.
 As to why, since some commands/processes can take a lot of time to finish
-execution or run forever
+execution or run forever, you may want to run them in the background instead of waiting for them to finish before gaining control again in current session.
 </b></details>
 
 <details>
@@ -2839,7 +2880,10 @@ To view all available signals run `kill -l`
 </b></details>
 
 <details>
-<summary>What are daemons?</summary><br><b>
+<summary>What is a Daemon in Linux?</summary><br><b>
+
+A background process. Most of these processes are waiting for requests or set of conditions to be met before actually running anything.
+Some examples: sshd, crond, rpcbind.
 </b></details>
 
 <details>
@@ -2897,10 +2941,6 @@ If you mention at any point ps command with arugments, be familiar with what the
 
 <details>
 <summary>Can you explain how network process/connection is established and how it's terminated?></summary><br></b>
-</b></details>
-
-<details>
-<summary>What are system calls? What system calls are you familiar with?</summary><br><b>
 </b></details>
 
 <details>
@@ -3065,6 +3105,14 @@ One way would be `ping6 ff02::1`
 ##### Linux DNS
 
 <details>
+<summary>How to check what is the hostname of the system?</summary><br><b>
+
+`cat /etc/hostname`
+
+You can also run `hostnamectl` or `hostname` but that might print only a temporary hostname. The one in the file is the permanent one.
+</b></details>
+
+<details>
 <summary>What the file <code>/etc/resolv.conf</code> is used for? What does it include?</summary><br><b>
 </b></details>
 
@@ -3078,14 +3126,23 @@ You can specify one or more of the following:
  * <code>nslookup</code>
 </b></details>
 
-##### Packaging
+##### Linux Packaging
 
 <details>
 <summary>Do you have experience with packaging? (as in building packages) Can you explain how does it works?</summary><br><b>
 </b></details>
 
 <details>
-<summary>RPM: explain the spec format(what it should and can include)</summary><br><b>
+<summary>How packages installation/removal is performed on the distribution you are using?</summary><br><b>
+
+The answer depends on the distribution being used.
+
+In Fedora/CentOS/RHEL/Rocky it can be done with `rpm` or `dnf` commands.
+In Ubuntu it can be done with the `apt` command.
+</b></details>
+
+<details>
+<summary>RPM: explain the spec format (what it should and can include)</summary><br><b>
 </b></details>
 
 <details>
@@ -3111,7 +3168,7 @@ You can specify one or more of the following:
 <details>
 <summary>Why do we need package managers? Why not simply creating archives and publish them?</summary><br><b>
 
-Package managers allow you to manage packages lifecycle as in installing, removing and update the packages.<br>
+Package managers allow you to manage packages lifecycle as in installing, removing and updating the packages.<br>
 In addition, you can specify in a spec how a certain package will be installed - where to copy the files, which commands to run prior to the installation, post the installation, etc.
 </b></details>
 
@@ -3263,10 +3320,6 @@ $OLDPWD
 * ls
 * find .
 * echo *
-</b></details>
-
-<details>
-<summary>What is '|'? What is it used for?</summary><br><b>
 </b></details>
 
 <details>
@@ -3535,7 +3588,7 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 </b></details>
 
 <details>
-<summary>What Linux distributions are you familiar with? List at least four?</summary><br><b>
+<summary>What Linux distributions are you familiar with?</summary><br><b>
 </b></details>
 
 <details>
@@ -3571,6 +3624,22 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 There are many ways to answer that. For those who look for simplicity, the book "Operating Systems: Three Easy Pieces" offers nice version:
 
 "responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that"
+</b></details>
+
+<details>
+<summary>What is a kernel, and what does it do?</summary><br><b>
+
+The kernel is part of the operating system and is responsible for tasks like:
+
+  * Allocating memory
+  * Schedule processes
+  * Control CPU
+</b></details>
+
+<details>
+<summary>True or False? Some pieces of the code in the kernel are loaded into protected areas of the memory so applications can't overwritten them</summary><br><b>
+
+True
 </b></details>
 
 <details>
@@ -9296,6 +9365,12 @@ I like this definition from [here](https://blog.christianposta.com/microservices
 
 <details>
 <summary>What is a Debuggger and how it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Metadata?</summary><br><b>
+
+Data about data. Basically, it describes the type of information that an underlying data will hold.
 </b></details>
 
 <details>
