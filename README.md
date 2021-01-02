@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1380** questions
+:bar_chart: &nbsp;There are currently **1386** questions
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
 
@@ -68,10 +68,11 @@
   </tr>
   <tr>
     <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
-    <td align="center"><a href="#docker"><img src="images/docker.png" width="70px;" height="75px;" alt="Docker"/><br /><b>Docker</b></a></td>
+    <td align="center"><a href="#containers"><img src="images/containers.png" width="70px;" height="75px;" alt="Containers"/><br /><b>Containers</b></a></td>
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
     <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
     <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
+    <td align="center"><a href="#packer"><img src="images/packer.png" width="75px;" height="75px;" alt="Packer"/><br /><b>Packer</b></a></td>
     <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
     <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
   </tr>
@@ -114,9 +115,9 @@ Red Hat:
 <details>
 <summary>What are the anti-patterns of DevOps?</summary><br><b>
 
-* Not allowing to push in production on Friday :)
-* One specific person is in charge of different tasks. For example there is only one person who is allowed to merge the code of everyone else
+* One person is in charge of different tasks. For example there is only one person who is allowed to merge the code of everyone else
 * Treating production differently from development environment. For example, not implementing security in development environment
+* Not allowing to push to production on Friday ;)
 </b></details>
 
 <details>
@@ -125,6 +126,26 @@ Red Hat:
 A development practice where developers integrate code into a shared repository frequently. It can range from a couple of changes every day or a week to a couple of changes in one hour in larger scales.
 
 Each piece of code (change/patch) is verified, to make the change is safe to merge. Today, it's a common practice to test the change using an automated build that makes sure the code can integrated. It can be one build which runs several tests in different levels (unit, functional, etc.) or several separate builds that all or some has to pass in order for the change to be merged into the repository.
+</b></details>
+
+<details>
+<summary>Can you describe an example of a CI (and/or CD) process starting the moment a developer submitted a change/PR to a repository?</summary><br><b>
+
+There is no one answer for such question as CI processes vary depending on the technologies used and the type of the project to where the change was submitted.
+Such processes can include one or more of the following stages:
+
+* Compile 
+* Build
+* Install
+* Configure
+* Update
+* Test
+
+For example:
+
+A developer submitted a PR to a project. The PR triggered two jobs (or one combined job). One job for lint-testing the change and the second job for building a package using the submitted change and running multiple api/scenario tests. Once all tests passed and the change was approved by a maintainer/core, it's merged/pushed to the repository. If some of the tests failed, the change will not be allowed to merged/pushed to the repository.
+
+A different process can describe how a developer pushes code to a repository, a workflow then triggered to build a container image and push it the registry. Once in the registry, the k8s cluster is applied with the new changes.
 </b></details>
 
 <details>
@@ -144,11 +165,15 @@ For more info please read [here](https://www.atlassian.com/continuous-delivery/c
 </b></details>
 
 <details>
+<summary>Would you prefer a "configuration->deployment" model or "deployment->configuration"?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What CI/CD best practices are you familiar with? Or what do you consider as CI/CD best practice?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Where do you store CI/CD pipeline? (Application repository, one central repository, ...)? Why?</summary><br><b>
+<summary>Where do you store CI/CD pipelines? (Application repository, one central repository, ...)? Why?</summary><br><b>
 </b></details>
 
 <details>
@@ -4343,11 +4368,10 @@ Output variables are named values that are sourced from the attributes of a modu
   It is also common in the community to use a tool called <code>terragrunt</code> to explicitly inject variables between modules.
 </b></details>
 
-## Docker
+## Containers
 
 <details>
-<summary>What is Docker? What is it used for?</summary><br><b>
-Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+<summary>What is a Container? What is it used for?</summary><br><b>
 </b></details>
 
 <details>
@@ -4375,11 +4399,11 @@ You should choose containers when:
 </b></details>
 
 <details>
-<summary>Explain Docker architecture</summary><br><b>
+<summary>Explain Podman or Docker architecture</summary><br><b>
 </b></details>
 
 <details>
-<summary>Describe in detail what happens when you run `docker run hello-world`?</summary><br><b>
+<summary>Describe in detail what happens when you run `podman/docker run hello-world`?</summary><br><b>
 
 Docker CLI passes your request to Docker daemon.
 Docker daemon downloads the image from Docker Hub
@@ -4446,11 +4470,11 @@ Applied tar sha256:514c3a3e64d4ebf15f482c9e8909d130bcd53bcc452f0225b0a04744de7b8
 <details>
 <summary>How do you run a container?</summary><br><b>
 
-docker run
+`podman run` or `docker run`
 </b></details>
 
 <details>
-<summary>What `docker commit` does?. When will you use it?</summary><br><b>
+<summary>What `podman commit` does?. When will you use it?</summary><br><b>
 
 Create a new image from a container’s changes
 </b></details>
@@ -9964,12 +9988,6 @@ A connection leak is a situation where database connection isn't closed after be
 </b></details>
 
 <details>
-<summary>What is a data lake?</summary><br><b>
-
-A single data source (at least usually) which is stored in a raw format.
-</b></details>
-
-<details>
 <summary>Explain what is a time-series database</summary><br><b>
 </b></details>
 
@@ -10256,6 +10274,18 @@ As defined by Doug Laney:
 </b></details>
 
 <details>
+<summary>What is DataOps? How is it related to DevOps?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Data Architecture?</summary><br><b>
+
+An answer from [talend.com](https://www.talend.com/resources/what-is-data-architecture):
+
+"Data architecture is the process of standardizing how organizations collect, store, transform, distribute, and use data. The goal is to deliver relevant data to people who need it, when they need it, and help them make sense of it."
+</b></details>
+
+<details>
 <summary>Explain the different formats of data</summary><br><b>
 
 * Structured - data that has defined format and length (e.g. numbers, words)
@@ -10274,6 +10304,14 @@ As defined by Doug Laney:
 <summary>What is Data Lake?</summary><br><b>
 
 [Data Lake - Wikipedia](https://en.wikipedia.org/wiki/Data_lake)
+</b></details>
+
+<details>
+<summary>Can you explain the difference between a data lake and a data warehouse?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is "Data Versioning"? What models of "Data Versioning" are there?</summary><br><b>
 </b></details>
 
 #### Apache Hadoop
@@ -10316,6 +10354,24 @@ A programming model for large-scale data processing
 * Files split into blocks
 * Blocks stored on datanodes
 * Namenode controls all metadata
+</b></details>
+
+## Packer
+
+<details>
+<summary>What is Packer? What is it used for?</summary><br><b>
+
+In general, Packer automates machine images creation.
+It allows you to focus on configuration prior to deployment while making the images. This allows you start the instances much faster in most cases.
+</b></details>
+
+<details>
+<summary>Packer follows a "configuration->deployment" model or "deployment->configuration"?</summary><br><b>
+
+A configuration->deployment which has some advantages like:
+
+1. Deployment Speed - you configure once prior to deployment instead of configuring every time you deploy. This allows you to start instances/services much quicker.
+2. More immutable infrastructure - with configuration->deployment it's not likely to have very different deployments since most of the configuration is done prior to the deployment. Issues like dependencies errors are handled/discovered prior to deployment in this model.
 </b></details>
 
 ## Certificates
