@@ -521,9 +521,9 @@ You can describe the UI way to add new nodes but better to explain how to do in 
 <details>
 <summary>What types of Cloud Computing services are there?</summary><br><b>
 
-IAAS
-PAAS
-SAAS
+IAAS - Infrastructure as a Service
+PAAS - Platform as a Service
+SAAS - Software as a Service
 </b></details>
 
 <details>
@@ -532,6 +532,9 @@ SAAS
   * IAAS
   * PAAS
   * SAAS</summary><br><b>
+  * IAAS - Users have control over complete Operating System and don't need to worry about the physical resources, which is managed by Cloud Service Provider.
+  * PAAS - CLoud Service Provider takes care of Operating System, Middlewares and users only need to focus on our Data and Application.
+  * SAAS - A cloud based method to provide software to users, software logics running on cloud, can be run on-premises or managed by Cloud Service Provider.
 </b></details>
 
 <details>
@@ -546,10 +549,11 @@ SAAS
 <summary>Explain each of the following Cloud Computing Deployments:
 
   * Public
-  * Hybrid
-  * Private</summary><br><b>
-
-  * Hybrid - combination of public and private clouds
+  * Private
+  * Hybrid</summary><br><b>
+  * Public - Cloud services sharing computing resources among multiple customers
+  * Private - Cloud services having computing resources limited to specific customer or organization, managed by third party or organizations itself
+  * Hybrid - Combination of public and private clouds
 </b></details>
 
 <details>
