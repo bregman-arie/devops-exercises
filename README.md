@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1386** questions
+:bar_chart: &nbsp;There are currently **1402** questions
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
 
@@ -72,7 +72,6 @@
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
     <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
     <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
-    <td align="center"><a href="#packer"><img src="images/packer.png" width="75px;" height="75px;" alt="Packer"/><br /><b>Packer</b></a></td>
     <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
     <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
   </tr>
@@ -6164,6 +6163,10 @@ Using the re module
 #### Python Strings
 
 <details>
+<summary>Find the first repeated character in a string</summary><br><b>
+</b></details>
+
+<details>
 <summary>How to extract the unique characters from a string? for example given the input "itssssssameeeemarioooooo" the output will be "mrtisaoe"</summary><br><b>
 
 ```
@@ -6260,6 +6263,10 @@ def reverse_string(string):
         temp =  char + temp
     return temp
 ```
+</b></details>
+
+<details>
+<summary>Reverse each word in a string (while keeping the order)</summary><br><b>
 </b></details>
 
 <details>
@@ -7440,6 +7447,17 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>Explain this query: <code>db.books.find().sort({x:1})</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between find() and find_one()?</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>How can you export data from Mongo DB?</code></summary><br><b>
+
+* mongoexport
+* programming languages
 </b></details>
 
 ## OpenShift
@@ -9762,14 +9780,7 @@ Relax, there is no wrong or right answer here...I think.
 </b></details>
 
 <details>
-<summary>Where do you see yourself in 5 years?</summary><br><b>
-
-Some ideas (some of them bad and should not be used):
-
-* Senior DevOps
-* Manager
-* Retirement
-* Your manager
+<summary>Where do you see yourself 5 years down the line?</summary><br><b>
 </b></details>
 
 <details>
@@ -10360,6 +10371,70 @@ A programming model for large-scale data processing
 * Namenode controls all metadata
 </b></details>
 
+## Ceph
+
+<details>
+<summary>Explain what is Ceph</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? Ceph favor consistency and correctness over performances</summary><br><b>
+True
+</b></details>
+
+<details>
+<summary>Which services or types of storage Ceph supports?</summary><br><b>
+
+* Object (RGW)
+* Block (RBD)
+* File (CephFS)
+</b></details>
+
+<details>
+<summary>What is RADOS?</summary><br><b>
+
+* Reliable Autonomic Distributed Object Storage
+* Provides low-level data object storage service
+* Strong Consistency
+* Simplifies design and implementation of higher layers (block, file, object)
+</b></details>
+
+<details>
+<summary>Describe RADOS software components</summary><br><b>
+
+* Monitor
+  * Central authority for authentication, data placement, policy
+  * Coordination point for all other cluster components
+  * Protect critical cluster state with Paxos
+* Manager
+  * Aggregates real-time metrics (throughput, disk usage, etc.)
+  * Host for pluggable management functions
+  * 1 active, 1+ standby per cluster
+* OSD (Object Storage Daemon)
+  * Stores data on an HDD or SSD
+  * Services client IO requests
+</b></details>
+
+<details>
+<summary>What is the workflow of retrieving data from Ceph?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the workflow of retrieving data from Ceph?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are "Placement Groups"?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe in the detail the following: Objects -> Pool -> Placement Groups -> OSDs</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is OMAP?</summary><br><b>
+</b></details>
+
 ## Packer
 
 <details>
@@ -10413,9 +10488,10 @@ Below you can find several exercises
 
 * [CI for open source project](exercises/ci_for_open_source_project.md)
 
-#### Python
+#### Programming
 
-* [grep before and after](exercises/grep_berfore_and_after.md)
+* [grep before and after](exercises/programming/grep_berfore_and_after.md)
+* [web scrapper](exercises/programming/web_scraper.md)
 
 #### Mixed
 
@@ -10424,7 +10500,7 @@ Below you can find several exercises
 
 #### Misc
 
-* [Elasticsearch & Kibana on AWS](exercises/elk_kibana_aws.md)
+* [Elasticsearch & Kibana on AWS](exercises/misc/elk_kibana_aws.md)
 * [ELK & Filebeat](exercises/eflk.md)
 * [Ansible, Minikube and Docker](exercises/ansible_minikube_docker.md)
 * [Cloud Slack bot](exercises/cloud_slack_bot.md)
