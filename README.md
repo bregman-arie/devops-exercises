@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1402** questions
+:bar_chart: &nbsp;There are currently **1417** questions
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
 
@@ -2564,14 +2564,40 @@ Applications can access system resources and indirectly the kernel space by maki
 <summary>What is KVM?</summary><br><b>
 </b></details>
 
-#### SSH
+#### Linux SSH
 
 <details>
-<summary>What is SSH key? How is it used?</summary><br><b>
+<summary>What is SSH? How to check if a Linux server is running SSH?</summary><br><b>
+
+[Wikipedia Definition](https://en.wikipedia.org/wiki/SSH_(Secure_Shell)): "SSH or Secure Shell is a cryptographic network protocol for operating network services securely over an unsecured network."
+
+[Hostinger.com Definition](https://www.hostinger.com/tutorials/ssh-tutorial-how-does-ssh-work): "SSH, or Secure Shell, is a remote administration protocol that allows users to control and modify their remote servers over the Internet."
+
+An SSH server will have SSH daemon running. Depends on the distribution, you should be able to check whether the service is running (e.g. systemctl status sshd).
+</b></details>
+
+<details>
+<summary>Why SSH is considered better than telnet?</summary><br><b>
+
+Telnet also allows you to connect to a remote host but as opposed to SSH where the communication is encrypted, in telnet, the data is sent in clear text, so it doesn't considered to be secured because anyone on the network can see what exactly is sent, including passwords.
+</b></details>
+
+<details>
+<summary>What is stored in <code>~/.ssh/known_hosts</code>?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You try to ssh to a server and you get "Host key verification failed". What does it mean?</summary><br><b>
+
+It means that the key of the remote host was changed and doesn't match the one that stored on the machine (in ~/.ssh/known_hosts).
 </b></details>
 
 <details>
 <summary>What is the difference between SSH and SSL?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What <code>ssh-keygen</code> is used for?</summary><br><b>
 </b></details>
 
 <details>
@@ -8696,20 +8722,68 @@ Access control based on user roles (i.e., a collection of access authorizations 
 
 </b></details>
 
+## Security SSH
+
 <details>
-<summary>Explain Symmetric encryption</summary><br><b>
+<summary>What is SSH how does it work?</summary><br><b>
 
-A symmetric encryption is any technique where the same key is used to both encrypt and decrypt the data.
+[Wikipedia Definition](https://en.wikipedia.org/wiki/SSH_(Secure_Shell)): "SSH or Secure Shell is a cryptographic network protocol for operating network services securely over an unsecured network."
 
+[Hostinger.com Definition](https://www.hostinger.com/tutorials/ssh-tutorial-how-does-ssh-work): "SSH, or Secure Shell, is a remote administration protocol that allows users to control and modify their remote servers over the Internet."
+
+[This site](https://www.hostinger.com/tutorials/ssh-tutorial-how-does-ssh-work) explains it in a good way.
 </b></details>
 
 <details>
-<summary>Explain Asymmetric encryption</summary><br><b>
+<summary>What is the role of an SSH key?</summary><br><b>
+</b></details>
+
+## Security Cryptography
+
+<details>
+<summary>Explain Symmetrical encryption</summary><br><b>
+
+A symmetric encryption is any technique where a key is used to both encrypt and decrypt the data/entire communication.
+</b></details>
+
+<details>
+<summary>Explain Asymmetrical encryption</summary><br><b>
 
 A asymmetric encryption is any technique where the there is two different keys that are used for encryption and decryption, these keys are known as public key and private key.
-
 </b></details>
 
+<details>
+<summary>What is "Key Exchange" (or "key establishment") in cryptography?</summary><br><b>
+
+[Wikipedia](https://en.wikipedia.org/wiki/Key_exchange): "Key exchange (also key establishment) is a method in cryptography by which cryptographic keys are exchanged between two parties, allowing use of a cryptographic algorithm."
+</b></details>
+
+<details>
+<summary>True or False? The symmetrical encryption is making use of public and private keys where the private key is used to decrypt the data encrypted with a public key</summary><br><b>
+
+False. This description fits the asymmetrical encryption.
+</b></details>
+
+<details>
+<summary>True or False? The private key can be mathematically computed from a public key</summary><br><b>
+False.
+</b></details>
+
+<details>
+<summary>True or False? In the case of SSH, asymmetrical encryption is not used to the entire SSH session</summary><br><b>
+
+True. It is only used during the key exchange algorithm of symmetric encryption.
+</b></details>
+
+<details>
+<summary>What is Hashing?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How hashes are part of SSH?</summary><br><b>
+
+Hashes used in SSH to verify the authenticity of messages and to verify that nothing tampered with the data received.
+</b></details>
 
 <details>
 <summary>Explain the following:
@@ -8718,6 +8792,12 @@ A asymmetric encryption is any technique where the there is two different keys t
   * Exploits
   * Risk
   * Threat</summary><br><b>
+</b></details>
+
+<details>
+<summary>Are you familiar with "OWASP top 10"?</summary><br><b>
+
+Read about it [here](https://owasp.org/www-project-top-ten)
 </b></details>
 
 <details>
@@ -10433,6 +10513,10 @@ True
 
 <details>
 <summary>What is OMAP?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a metadata server? How it works?</summary><br><b>
 </b></details>
 
 ## Packer
