@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1418** questions
+:bar_chart: &nbsp;There are currently **1435** questions
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
 
@@ -169,8 +169,8 @@ For more info please read [here](https://www.atlassian.com/continuous-delivery/c
 <details>
 <summary>Would you prefer a "configuration->deployment" model or "deployment->configuration"? Why?</summary><br><b>
 
-Both has advantages and disadvantages.
-With "configuration->deployment" model for example, where you configure/build one image to be used by multiple deployments, there is less chance of deployments being different from one another so it has a clear advantage of a consistent environment.
+Both have advantages and disadvantages.
+With "configuration->deployment" model for example, where you build one image to be used by multiple deployments, there is less chance of deployments being different from one another, so it has a clear advantage of a consistent environment.
 </b></details>
 
 <details>
@@ -188,6 +188,7 @@ There are multiple approaches as to where to store the CI/CD pipeline definition
 
 1. App Repository - store them in the same repository of the application they are building or testing
 2. Central Repository - store all organization's/project's CI/CD pipelines in one separate repository
+2. CI repo for every app repo - you separate CI related code from app code but you don't put everything in one place
 </b></details>
 
 <details>
@@ -200,6 +201,7 @@ There are multiple approaches as to where to store the CI/CD pipeline definition
   * Logging
   * Code review
   * Code coverage
+  * Issue Tracking
   * Containers and Containers Orchestration
   * Tests</summary><br><b>
   * CI/CD - Jenkins, Circle CI, Travis, Drone, Argo CD, Zuul
@@ -209,6 +211,7 @@ There are multiple approaches as to where to store the CI/CD pipeline definition
   * Logging - Logstash, Graylog, Fluentd
   * Code review - Gerrit, Review Board
   * Code coverage - Cobertura, Clover, JaCoCo
+  * Issue tracking - Jira, Bugzilla
   * Containers and Containers Orchestration - Docker, Podman, Kubernetes, Nomad
   * Tests - Robot, Serenity, Gauge
 </b></details>
@@ -233,6 +236,28 @@ follow mutable infrastructure paradigm.
 In immutable infrastructure paradigm, every change is actually a new infrastructure. So a change
 to a server will result in a new server instead of updating it. Terraform is an example of technology
 which follows the immutable infrastructure paradigm.
+</b></details>
+
+<details>
+<summary>Explain "Software Distribution"</summary><br><b>
+
+Read [this](https://venam.nixers.net/blog/unix/2020/03/29/distro-pkgs.html) fantastic article on the topic.
+
+From the article: "Thus, software distribution is about the mechanism and the community that takes the burden and decisions to build an assemblage of coherent software that can be shipped."
+</b></details>
+
+<details>
+<summary>Why are there multiple software distributions? What differences can they have?</summary><br><b>
+
+Different distributions can focus on different things like: focus on different environments (server vs. mobile vs. desktop), support specific hardware, specialize in different domains (security, multimedia, ...), etc. Basically, different aspects of the software and what it supports, get different priority in each distribution.
+</b></details>
+
+<details>
+<summary>What is a Software Repository?</summary><br><b>
+
+Wikipedia: "A software repository, or “repo” for short, is a storage location for software packages. Often a table of contents is stored, as well as metadata."
+
+Read more [here](https://en.wikipedia.org/wiki/Software_repository)
 </b></details>
 
 <details>
@@ -4708,7 +4733,7 @@ The master coordinates all the workflows in the cluster:
 </b></details>
 
 <details>
-<summary>What do we need worker nodes for?</summary><br><b>
+<summary>What do we need the worker nodes for?</summary><br><b>
 
 The workers are the nodes which run the applications and workloads.
 </b></details>
@@ -4717,10 +4742,39 @@ The workers are the nodes which run the applications and workloads.
 <summary>True or False? Every cluster must have 0 or more master nodes and 1 or more workers</summary><br><b>
 
 False. A Kubernetes cluster consists of at least 1 master and 0 or more workers.
-</b></details>
+</b></details> 
+
+#### Pod
 
 <details>
 <summary>Explain what is a pod</summary><br><b>
+</b></details>
+
+<details>
+<summary>How many containers can a pod contain?</summary><br><b>
+
+Multiple containers but in most cases it would be one container per pod.
+</b></details>
+
+<details>
+<summary>What does it mean that "pods are ephemeral?</summary><br><b>
+
+It means they would eventually die and pods are unable to heal so it is recommended that you don't create them directly.
+</b></details>
+
+<details>
+<summary>What is a service in Kubernetes?</summary><br><b>
+
+A permanent IP address that can be attached to a pod.
+Even if connected, their lifecycles aren't connected.
+</b></details>
+
+<details>
+<summary>What is the difference between an external and an internal service?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Ingress?</summary><br><b>
 </b></details>
 
 <details>
@@ -4769,13 +4823,28 @@ False. When a namespace is deleted, the resources in that namespace are deleted 
 </b></details>
 
 <details>
+<summary>What Kube Proxy does?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is etcd?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? application data is not stored in etcd</summary><br><b>
+
+True
+</b></details>
+
+<details>
 <summary>What "Resources Quotas" are used for and how?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Explain ConfigMaps</summary><br><b>
+<summary>Explain ConfigMap</summary><br><b>
 
 Separate configuration from pods.
+It's good for cases where you might need to change configuration at some point but you don't want to restart the application or rebuild the image so you create a ConfigMap and connect it to a pod but externally to the pod.
 </b></details>
 
 <details>
@@ -4783,6 +4852,12 @@ Separate configuration from pods.
 
 1. Create it (from key&value, a file or an env file)
 2. Attach it. Mount a configmap as a volume
+</b></details>
+
+<details>
+<summary>Trur or False? Sensitive data, like credentials, should be stored in a ConfigMap</summary><br><b>
+
+False. Use secret.
 </b></details>
 
 <details>
@@ -4961,7 +5036,7 @@ kubectl run nginx --image=nginx --restart=Never --port 80 --expose
 </b></details>
 
 <details>
-<summary>Why to create kind deployment, if pods can be launched with replicaset ? </summary><br><b>
+<summary>Why to create kind deployment, if pods can be launched with replicaset?</summary><br><b>
 </b></details>
 
 <details>
@@ -5102,6 +5177,26 @@ It includes:
 <summary>What is kubconfig? What do you use it for?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is a "Deployment" in Kuberenetes?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you use a Deployment for stateful applications?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain StatefulSet</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the purpose of ReplicaSet?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How a ReplicaSet works?</summary><br><b>
+</b></details>
+
 #### Kubernetes Secrets
 
 <details>
@@ -5139,6 +5234,12 @@ kubectl create secret generic some-secret --from-file=/some/file.txt
 
 <details>
 <summary>What is PersistentVolumeClaim?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? Kubernetes manages data persistence</summary><br><b>
+
+False
 </b></details>
 
 <details>
@@ -5197,6 +5298,12 @@ Kubectx, Kubens, ...
 <summary>What is Kubeconfig?</summary><br><b>
 </b></details>
 
+#### Helm
+
+<details>
+<summary>What is Helm?</summary><br><b>
+</b></details>
+
 #### Submariner
 
 <details>
@@ -5214,6 +5321,12 @@ You can learn more [here](https://submariner-io.github.io)
   * Broker
   * Gateway Engine
   * Route Agent</summary><br><b>
+</b></details>
+
+#### Istio
+
+<details>
+<summary>What is Istio? What is it used for?</summary><br><b>
 </b></details>
 
 ## Coding
