@@ -6323,21 +6323,25 @@ with open('file.txt', 'w') as file:
 </b></details>
 
 <details>
-<summary>Given the path <code>/dir1/dir2/file1</code> print the name of the directory where the file resides (dir2)</summary><br><b>
+<summary>Given the path <code>/dir1/dir2/file1</code>
+
+1. Print the path without the file name (/dir1/dir2)
+2. Print the name of the directory where the file resides (dir2)
+</summary><br><b>
 
     import os
 
+    ## Part 1.
     # os.path.dirname gives path removing the end component. 'file1' in this case.
     dirpath = os.path.dirname('/dir1/dir2/file1')
 
+    print(dirpath)
+
+    ## Part 2.
     dirname = os.path.basename(dirpath)
-    
+
     print(dirname)
 
-</b></details>
-
-<details>
-<summary>Given the path <code>/dir1/dir2/file1</code> print the path without the file name (/dir1/dir2)</summary><br><b>
 </b></details>
 
 <details>
