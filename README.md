@@ -6324,6 +6324,16 @@ with open('file.txt', 'w') as file:
 
 <details>
 <summary>Given the path <code>/dir1/dir2/file1</code> print the name of the directory where the file resides (dir2)</summary><br><b>
+
+    import os
+
+    # os.path.dirname gives path removing the end component. 'file1' in this case.
+    dirpath = os.path.dirname('/dir1/dir2/file1')
+
+    dirname = os.path.basename(dirpath)
+    
+    print(dirname)
+
 </b></details>
 
 <details>
