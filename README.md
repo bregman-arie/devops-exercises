@@ -6297,6 +6297,12 @@ with open('file.txt', 'w') as file:
 
 <details>
 <summary>How to print current working directory?</summary><br><b>
+
+    import os
+
+    current_working_directory = os.getcwd()
+    print(current_working_directory)
+
 </b></details>
 
 <details>
