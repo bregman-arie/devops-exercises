@@ -6300,8 +6300,7 @@ with open('file.txt', 'w') as file:
 
     import os
 
-    current_working_directory = os.getcwd()
-    print(current_working_directory)
+    print(os.getcwd())
 
 </b></details>
 
@@ -6310,15 +6309,10 @@ with open('file.txt', 'w') as file:
 
     import os
 
-    filename = os.path.basename('/dir1/dir2/file1')
+    print(os.path.basename('/dir1/dir2/file1'))
 
     # Another way
-    head, tail = os.path.split('/dir1/dir2/file1')
-    
-    # tail is everything after the final slash
-    filename = tail
-
-    print(filename)
+    print(os.path.split('/dir1/dir2/file1')[1])
 
 </b></details>
 
@@ -6332,15 +6326,12 @@ with open('file.txt', 'w') as file:
     import os
 
     ## Part 1.
-    # os.path.dirname gives path removing the end component. 'file1' in this case.
+    # os.path.dirname gives path removing the end component
     dirpath = os.path.dirname('/dir1/dir2/file1')
-
     print(dirpath)
 
     ## Part 2.
-    dirname = os.path.basename(dirpath)
-
-    print(dirname)
+    print(os.path.basename(dirpath))
 
 </b></details>
 
