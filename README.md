@@ -6307,6 +6307,19 @@ with open('file.txt', 'w') as file:
 
 <details>
 <summary>Given the path <code>/dir1/dir2/file1</code> print the file name (file1)</summary><br><b>
+
+    import os
+
+    filename = os.path.basename('/dir1/dir2/file1')
+
+    # Another way
+    head, tail = os.path.split('/dir1/dir2/file1')
+    
+    # tail is everything after the final slash
+    filename = tail
+
+    print(filename)
+
 </b></details>
 
 <details>
