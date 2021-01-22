@@ -6297,18 +6297,42 @@ with open('file.txt', 'w') as file:
 
 <details>
 <summary>How to print current working directory?</summary><br><b>
+
+    import os
+
+    print(os.getcwd())
+
 </b></details>
 
 <details>
 <summary>Given the path <code>/dir1/dir2/file1</code> print the file name (file1)</summary><br><b>
+
+    import os
+
+    print(os.path.basename('/dir1/dir2/file1'))
+
+    # Another way
+    print(os.path.split('/dir1/dir2/file1')[1])
+
 </b></details>
 
 <details>
-<summary>Given the path <code>/dir1/dir2/file1</code> print the name of the directory where the file resides (dir2)</summary><br><b>
-</b></details>
+<summary>Given the path <code>/dir1/dir2/file1</code>
 
-<details>
-<summary>Given the path <code>/dir1/dir2/file1</code> print the path without the file name (/dir1/dir2)</summary><br><b>
+1. Print the path without the file name (/dir1/dir2)
+2. Print the name of the directory where the file resides (dir2)
+</summary><br><b>
+
+    import os
+
+    ## Part 1.
+    # os.path.dirname gives path removing the end component
+    dirpath = os.path.dirname('/dir1/dir2/file1')
+    print(dirpath)
+
+    ## Part 2.
+    print(os.path.basename(dirpath))
+
 </b></details>
 
 <details>
