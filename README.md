@@ -4,8 +4,6 @@
 
 :bar_chart: &nbsp;There are currently **1435** questions
 
-:busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
-
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
 :thought_balloon: &nbsp;If you wonder "How to prepare for a DevOps interview?", you might want to read some of my suggestions [here](prepare_for_interview.md)
@@ -13,6 +11,8 @@
 :pencil: &nbsp;You can add more questions and exercises by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
+
+:busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
 
 ****
 
@@ -4739,12 +4739,12 @@ The workers are the nodes which run the applications and workloads.
 </b></details>
 
 <details>
-<summary>True or False? Every cluster must have 0 or more master nodes and 1 or more workers</summary><br><b>
+<summary>True or False? Every cluster must have 0 or more master nodes and at least on e worker</summary><br><b>
 
-False. A Kubernetes cluster consists of at least 1 master and 0 or more workers.
+False. A Kubernetes cluster consists of at least 1 master and can have 0 workers (although that wouldn't be very useful...)
 </b></details> 
 
-#### Pod
+#### Kubernetes Pod
 
 <details>
 <summary>Explain what is a pod</summary><br><b>
@@ -4772,6 +4772,28 @@ Even if connected, their lifecycles aren't connected.
 <details>
 <summary>What is the difference between an external and an internal service?</summary><br><b>
 </b></details>
+
+#### Kubernetes Deployment
+
+<details>
+<summary>What is a "Deployment" in Kubernetes?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What happens after you edit a deployment and change the image?</summary><br><b>
+
+The pod will terminate and another, new pod, will be created.
+
+Also, when looking at the replicaset, you'll see the old replica doesn't have any pods and a new replicaset is created.
+</b></details>
+
+<details>
+<summary>What happens when you delete a deployment?</summary><br><b>
+
+The pod related to the deployment will terminate and the replicaset will be removed.
+</b></details>
+
+#### Kubernetes Ingress
 
 <details>
 <summary>What is Ingress?</summary><br><b>
@@ -4967,6 +4989,10 @@ View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
 </b></details>
 
 <details>
+<summary>What <code>kubectl exec</code> does?</code></summary><br><b>
+</b></details>
+
+<details>
 <summary>How to view the current namespace?</code></summary><br><b>
 
 kubectl config view | grep namespace
@@ -4999,6 +5025,20 @@ spec:
     image: nginx
 EOF
 ```
+</b></details>
+
+<details>
+<summary>What the coomand <code>kubectl get pod</code> does?</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>How to edit a deployment?</code></summary><br><b>
+
+kubectl edit deployment some-deployment
+</b></details>
+
+<details>
+<summary>What <code>kubectl apply -f [file]</code> does?</code></summary><br><b>
 </b></details>
 
 <details>
@@ -5058,6 +5098,14 @@ kubectl delete pods --field-selector=status.phase!='Running'
 </b></details>
 
 <details>
+<summary>What <code>kubectl logs [pod-name]</code> command does?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What <code>kubectl describe pod [pod name] does?</code> command does?</summary><br><b>
+</b></details>
+
+<details>
 <summary>How to display the resources usages of pods?</summary><br><b>
 
 kubectl top pod
@@ -5073,10 +5121,6 @@ Outputs the status of each of the control plane components.
 <summary>What is Minikube?</summary><br><b>
 
 Minikube is a lightweight Kubernetes implementation. It create a local virtual machine and deploys a simple (single node) cluster.
-</b></details>
-
-<details>
-<summary>True or False? A pod can manage multiple containers</summary><br><b>
 </b></details>
 
 <details>
@@ -5175,10 +5219,6 @@ It includes:
 
 <details>
 <summary>What is kubconfig? What do you use it for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a "Deployment" in Kuberenetes?</summary><br><b>
 </b></details>
 
 <details>
@@ -7005,12 +7045,6 @@ a = f()
 
 <details>
 <summary>How yield works exactly?</summary><br><b>
-</b></details>
-
-##### Python Geeks :)
-
-<details>
-<summary>Tell me something about Python that you think most people don't know</summary><br><b>
 </b></details>
 
 ## Monitoring

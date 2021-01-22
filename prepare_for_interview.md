@@ -12,11 +12,11 @@ Usually, the followup question is "How extensive should my knowledge be?" Out of
 
 Not long ago, I've created a list of Linux resources right [here](https://dev.to/abregman/collection-of-linux-resources-3nhk). There are some good sites there that you can use for learning more about Linux.
  
-#### Coding
+#### Programming
  
-My personal belief is that any DevOps engineer should know coding, at least to some degree. Having this skill you can automate manual processes, improve some of the open source tools you are using today or build new tools & projects to provide a solution to existing problems. Knowing how to code =  a lot of power.
+My personal belief is that any DevOps engineer should know programming, at least to some degree. Having this skill you can automate manual processes, improve some of the open source tools you are using today or build new tools & projects to provide a solution to existing problems. Knowing how to code =  a lot of power.
 
-When it comes to interviews you'll notice that the level of knowledge very much depends on the company or position you are interviewing for. Some will require you just to be able to write simple scripts while others will deep dive into common algorithms, data structures, etc. It's usually clear from the job requirements or phone interview.
+When it comes to interviews you'll notice that the level of knowledge very much depends on the company or position you are interviewing for. Some will require you just to be able to write simple scripts while others will deep dive into complex algorithms and data structures.
 
 The best way to practice this skill is by doing some actual coding - scripts, online challenges, CLI tools, web applications, ... just code :)
 
