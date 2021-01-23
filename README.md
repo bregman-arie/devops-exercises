@@ -2,17 +2,17 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1435** questions
+:bar_chart: &nbsp;There are currently **1500** questions
+
+:books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
 :thought_balloon: &nbsp;If you wonder "How to prepare for a DevOps interview?", you might want to read some of my suggestions [here](prepare_for_interview.md)
 
-:pencil: &nbsp;You can add more questions and exercises by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
-
-:books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
-
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
+
+:pencil: &nbsp;You can add more questions and exercises by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
 
 ****
 
@@ -477,7 +477,7 @@ Jenkins integrates development life-cycle processes of all kinds, including buil
   * Job
   * Build
   * Plugin
-  * Slave/Node
+  * Slave/Node/Worker
   * Executor</summary><br><b>
 </b></details>
 
@@ -486,7 +486,7 @@ Jenkins integrates development life-cycle processes of all kinds, including buil
 </b></details>
 
 <details>
-<summary>Explain CI/CD and how you implemented it in Jenkins</summary><br><b>
+<summary>Explain CI/CD and how have you implemented it in Jenkins</summary><br><b>
 </b></details>
 
 <details>
@@ -506,10 +506,6 @@ Jenkins integrates development life-cycle processes of all kinds, including buil
 </b></details>
 
 <details>
-<summary>Can you describe some of Jenkins best practices?</summary><br><b>
-</b></details>
-
-<details>
 <summary>Describe how do you add new nodes (agents) to Jenkins</summary><br><b>
 
 You can describe the UI way to add new nodes but better to explain how to do in a way that scales like a script or using dynamic source for nodes like one of the existing clouds.
@@ -520,11 +516,15 @@ You can describe the UI way to add new nodes but better to explain how to do in 
 </b></details>
 
 <details>
+<summary>Whenever a build fails, you would like to notify the team owning the job regarding the failure and provide failure reason. How would you do that?</summary><br><b>
+</b></details>
+
+<details>
 <summary>There are four teams in your organization. How to prioritize the builds of each team? So the jobs of team x will always run before team y for example</summary><br><b>
 </b></details>
 
 <details>
-<summary>If you are managing a dozen of jobs, you can probably use the Jenkins UI. How do you manage the creation and deletion of hundreds of jobs every week/month?</summary><br><b>
+<summary>If you are managing a dozen of jobs, you can probably use the Jenkins UI. But how do you manage the creation and deletion of hundreds of jobs every week/month?</summary><br><b>
 </b></details>
 
 <details>
@@ -546,14 +546,6 @@ You can describe the UI way to add new nodes but better to explain how to do in 
 
 <details>
 <summary>Have you written Jenkins scripts? If yes, what for and how they work?</summary><br><b>
-</b></details>
-
-#### Jenkins Integration
-
-<details>
-<summary>How would you collect logs from Jenkins builds (not master) and display them to user via Kibana? Describe the process, components, etc.<br>
-<img src="images/jenkins/jenkins-to-kibana.png" width="621x;" height="171px;"/>
-</summary><br><b>
 </b></details>
 
 ## Cloud
@@ -4715,6 +4707,8 @@ At a minimum, a cluster contains a worker node and a master node."
 Read more [here](https://www.redhat.com/en/topics/containers/what-is-a-kubernetes-cluster)
 </b></details>
 
+#### Kubernetes Nodes
+
 <details>
 <summary>What is a Node?</summary><br><b>
 
@@ -4739,10 +4733,33 @@ The workers are the nodes which run the applications and workloads.
 </b></details>
 
 <details>
+<summary>Which command you run to view your nodes?</code></summary><br><b>
+
+`kubectl get nodes`
+</b></details>
+
+<details>
 <summary>True or False? Every cluster must have 0 or more master nodes and at least on e worker</summary><br><b>
 
 False. A Kubernetes cluster consists of at least 1 master and can have 0 workers (although that wouldn't be very useful...)
 </b></details> 
+
+<details>
+<summary>What are the components of the master node?</summary><br><b>
+
+  * API Server - the Kubernetes API. All cluster components communicate through it
+  * Scheduler - assigns an application with a worker node it can run on
+  * Controller Manager - cluster maintenance (replications, node failures, etc.)
+  * etcd - stores cluster configuration
+</b></details>
+
+<details>
+<summary>What are the components of a worker node?</summary><br><b>
+
+  * Kubelet - an agent responsible for node communication with the master.
+  * Kube-proxy - load balancing traffic between app components
+  * Container runtime - the engine runs the containers (Podman, Docker, ...)
+</b></details>
 
 #### Kubernetes Pod
 
@@ -4763,20 +4780,27 @@ It means they would eventually die and pods are unable to heal so it is recommen
 </b></details>
 
 <details>
-<summary>What is a service in Kubernetes?</summary><br><b>
+<summary>Which command you run to view all pods running on all namespaces?</code></summary><br><b>
 
-A permanent IP address that can be attached to a pod.
-Even if connected, their lifecycles aren't connected.
+`kubectl get pods --all-namespaces`
 </b></details>
 
 <details>
-<summary>What is the difference between an external and an internal service?</summary><br><b>
+<summary>How to delete a pod?</code></summary><br><b>
+
+`kubectl delete pod pod_name`
 </b></details>
 
 #### Kubernetes Deployment
 
 <details>
 <summary>What is a "Deployment" in Kubernetes?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to edit a deployment?</code></summary><br><b>
+
+kubectl edit deployment some-deployment
 </b></details>
 
 <details>
@@ -4788,9 +4812,41 @@ Also, when looking at the replicaset, you'll see the old replica doesn't have an
 </b></details>
 
 <details>
+<summary>How to delete a deployment?</summary><br><b>
+
+One way is by specifying the deployment name: `kubectl delete deployment [deployment_name]`
+Another way is using the deployment configuration file: `kubectl delete -f deployment.yaml`
+</b></details>
+
+<details>
 <summary>What happens when you delete a deployment?</summary><br><b>
 
 The pod related to the deployment will terminate and the replicaset will be removed.
+</b></details>
+
+#### Kubernetes Service
+
+<details>
+<summary>What is a Service in Kubernetes?</summary><br><b>
+
+A permanent IP address that can be attached to a pod.
+Even if connected, their lifecycles aren't connected.
+</b></details>
+
+<details>
+<summary>How to get information on a certain service?</summary><br><b>
+
+kubctl describe service [service_name]
+</b></details>
+
+<details>
+<summary>How to verify that a certain service forwards the requests to a pod</summary><br><b>
+
+Run `kubectl describe service` and if the IPs from "Endpoints" match any IPs from the output of `kubectl get pod -o wide`
+</b></details>
+
+<details>
+<summary>What is the difference between an external and an internal service?</summary><br><b>
 </b></details>
 
 #### Kubernetes Ingress
@@ -4799,13 +4855,41 @@ The pod related to the deployment will terminate and the replicaset will be remo
 <summary>What is Ingress?</summary><br><b>
 </b></details>
 
-<details>
-<summary>What are the components of the master node?</summary><br><b>
+#### Kubernetes Configuration File
 
-  * API Server - the Kubernetes API. All cluster components communicate through it
-  * Scheduler - assigns an application with a worker node it can run on
-  * Controller Manager - cluster maintenance (replications, node failures, etc.)
-  * etcd - stores cluster configuration
+<details>
+<summary>Which parts a configuration file has?</summary><br><b>
+
+It has three main parts:
+1. Metadata
+2. Specification
+3. Status (this automatically generated and added by Kubernetes)
+</b></details>
+
+<details>
+<summary>What is the format of a configuration file?</summary><br><b>
+
+YAML
+</b></details>
+
+<details>
+<summary>How to get latest configuration of a deployment?</summary><br><b>
+
+`kubectl get deployment [deployment_name] -o yaml`
+</b></details>
+
+#### Kubernetes etcd
+
+<details>
+<summary>Where Kubernetes gets the status data (which is added to the configuration file) from?</summary><br><b>
+
+etcd
+</b></details>
+
+<details>
+<summary>True or False? Etcd holds the current status of any kubernetes component</summary><br><b>
+
+True
 </b></details>
 
 <details>
@@ -4814,13 +4898,7 @@ The pod related to the deployment will terminate and the replicaset will be remo
 True
 </b></details>
 
-<details>
-<summary>What are the components of a worker node?</summary><br><b>
-
-  * Kubelet - an agent responsible for node communication with the master.
-  * Kube-proxy - load balancing traffic between app components
-  * Container runtime - the engine runs the containers (Podman, Docker, ...)
-</b></details>
+#### Kubernetes Misc
 
 <details>
 <summary>What is kubectl?</summary><br><b>
@@ -4971,18 +5049,6 @@ View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
 #### Kubernetes Commands
 
 <details>
-<summary>Which command you run to view your nodes?</code></summary><br><b>
-
-`kubectl get nodes`
-</b></details>
-
-<details>
-<summary>Which command you run to view all pods running on all namespaces?</code></summary><br><b>
-
-`kubectl get pods --all-namespaces`
-</b></details>
-
-<details>
 <summary>How to list all namespaces?</code></summary><br><b>
 
 `kubectl get namespaces`
@@ -5032,12 +5098,6 @@ EOF
 </b></details>
 
 <details>
-<summary>How to edit a deployment?</code></summary><br><b>
-
-kubectl edit deployment some-deployment
-</b></details>
-
-<details>
 <summary>What <code>kubectl apply -f [file]</code> does?</code></summary><br><b>
 </b></details>
 
@@ -5045,12 +5105,6 @@ kubectl edit deployment some-deployment
 <summary>How to print information on a specific pod?</code></summary><br><b>
 
 `kubectl describe pod pod_name`
-</b></details>
-
-<details>
-<summary>How to delete a pod?</code></summary><br><b>
-
-`kubectl delete pod pod_name`
 </b></details>
 
 <details>
