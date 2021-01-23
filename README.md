@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1500** questions
+:bar_chart: &nbsp;There are currently **1475** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -4733,6 +4733,10 @@ The workers are the nodes which run the applications and workloads.
 </b></details>
 
 <details>
+<summary>What is kubectl?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Which command you run to view your nodes?</code></summary><br><b>
 
 `kubectl get nodes`
@@ -4798,6 +4802,23 @@ It means they would eventually die and pods are unable to heal so it is recommen
 </b></details>
 
 <details>
+<summary>How to create a deployment?</code></summary><br><b>
+
+```
+cat << EOF | kubectl create -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+EOF
+```
+</b></details>
+
+<details>
 <summary>How to edit a deployment?</code></summary><br><b>
 
 kubectl edit deployment some-deployment
@@ -4828,9 +4849,20 @@ The pod related to the deployment will terminate and the replicaset will be remo
 
 <details>
 <summary>What is a Service in Kubernetes?</summary><br><b>
+"An abstract way to expose an application running on a set of Pods as a network service." - more [here](https://kubernetes.io/docs/concepts/services-networking/service)
 
-A permanent IP address that can be attached to a pod.
-Even if connected, their lifecycles aren't connected.
+Note: Even if connected to a pod, their lifecycles aren't connected.
+</b></details>
+
+<details>
+<summary>What Service types are there?</summary><br><b>
+
+* ClusterIP
+* NodePort
+* LoadBalancer
+* ExternalName
+
+More on this topic [here](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
 </b></details>
 
 <details>
@@ -4849,10 +4881,49 @@ Run `kubectl describe service` and if the IPs from "Endpoints" match any IPs fro
 <summary>What is the difference between an external and an internal service?</summary><br><b>
 </b></details>
 
+<details>
+<summary>How to turn the following service into an external one?
+
+```
+spec:
+  selector:
+    app: some-app
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
+```
+</summary><br><b>
+
+Adding `type: LoadBalancer` and `nodePort`
+
+```
+spec:
+  selector:
+    app: some-app
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
+      nodePort: 32412
+```
+</b></details>
+
+<details>
+<summary>What would you use to route traffic from outside the Kubernetes cluster to services within a cluster?</summary><br><b>
+
+Ingress
+</b></details>
+
 #### Kubernetes Ingress
 
 <details>
 <summary>What is Ingress?</summary><br><b>
+
+From Kubernetes docs: "Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource."
+
+Read more [here](https://kubernetes.io/docs/concepts/services-networking/ingress/)
 </b></details>
 
 #### Kubernetes Configuration File
@@ -4878,12 +4949,16 @@ YAML
 `kubectl get deployment [deployment_name] -o yaml`
 </b></details>
 
-#### Kubernetes etcd
-
 <details>
 <summary>Where Kubernetes gets the status data (which is added to the configuration file) from?</summary><br><b>
 
 etcd
+</b></details>
+
+#### Kubernetes etcd
+
+<details>
+<summary>What is etcd?</summary><br><b>
 </b></details>
 
 <details>
@@ -4898,14 +4973,28 @@ True
 True
 </b></details>
 
-#### Kubernetes Misc
+<details>
+<summary>True or False? application data is not stored in etcd</summary><br><b>
+
+True
+</b></details>
+
+#### Kubernetes Namespaces
 
 <details>
-<summary>What is kubectl?</summary><br><b>
+<summary>What are namespaces?</summary><br><b>
+
+Namespaces allow you split your cluster into virtual clusters where you can group your applications in a way that makes sense and is completely separated from the other groups (so you can for example create an app with the same name in two different namespaces)
 </b></details>
 
 <details>
-<summary>What are namespaces? Why would someone use namespaces?</summary><br><b>
+<summary>Why to use namespaces? What is the problem with using one default namespace?</summary><br><b>
+
+When using the default namespace alone, it becomes hard over time to get an overview of all the applications you manage in your cluster. Namespaces make it easier to organize the applications into groups that makes sense, like a namespace of all the monitoring applications and a namespace for all the security applications, etc.
+
+Namespaces can also be useful for managing Blue/Green environments where each namespace can include a different version of an app and also share resources that are in other namespaces (namespaces like logging, monitoring, etc.).
+
+Another use case for namespaces is one cluster, multiple teams. When multiple teams use the same cluster, they might end up stepping on each others toes. For example if they end up creating an app with the same name it means one of the teams overriden the app of the other team because there can't be too apps in Kubernetes with the same name (in the same namespace).
 </b></details>
 
 <details>
@@ -4915,138 +5004,20 @@ False. When a namespace is deleted, the resources in that namespace are deleted 
 </b></details>
 
 <details>
-<summary>What special namespaces are there?</summary><br><b>
+<summary>What special namespaces are there by default when creating a Kubernetes cluster?</summary><br><b>
 
 * default
 * kube-system
 * kube-public
+* kube-node-lease
 </b></details>
 
 <details>
-<summary>What Kube Proxy does?</summary><br><b>
+<summary>What can you find in kube-system namespace?</summary><br><b>
+
+* Master and Kubectl processes
+* System processes
 </b></details>
-
-<details>
-<summary>What is etcd?</summary><br><b>
-</b></details>
-
-<details>
-<summary>True or False? application data is not stored in etcd</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>What "Resources Quotas" are used for and how?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain ConfigMap</summary><br><b>
-
-Separate configuration from pods.
-It's good for cases where you might need to change configuration at some point but you don't want to restart the application or rebuild the image so you create a ConfigMap and connect it to a pod but externally to the pod.
-</b></details>
-
-<details>
-<summary>How to use ConfigMaps?</summary><br><b>
-
-1. Create it (from key&value, a file or an env file)
-2. Attach it. Mount a configmap as a volume
-</b></details>
-
-<details>
-<summary>Trur or False? Sensitive data, like credentials, should be stored in a ConfigMap</summary><br><b>
-
-False. Use secret.
-</b></details>
-
-<details>
-<summary>Explain "Horizontal Pod Autoscaler"</summary><br><b>
-
-Scale the number of pods automatically on observed CPU utilization.
-</b></details>
-
-<details>
-<summary>When you delete a pod, is it deleted instantly? (a moment after running the command)</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to delete a pod instantly?</summary><br><b>
-
-Use "--grace-period=0 --force"
-</b></details>
-
-<details>
-<summary>Explain the "Service" concept</summary><br><b>
-
-"An abstract way to expose an application running on a set of Pods as a network service." - more [here](https://kubernetes.io/docs/concepts/services-networking/service)
-</b></details>
-
-<details>
-<summary>What services types are there?</summary><br><b>
-
-* ClusterIP
-* NodePort
-* LoadBalancer
-* ExternalName
-
-More on this topic [here](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
-</b></details>
-
-<details>
-<summary>What services types are there?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain Liveness probe</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain Readiness probe</summary><br><b>
-</b></details>
-
-<details>
-<summary>What does being cloud-native mean?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain the pet and cattle approach of infrastructure with respect to kubernetes</summary><br><b>
-</b></details>
-
-<details>
-<summary>Describe how you one proceeds to run a containerised web app in K8s, which should be reachable from a public URL.</summary><br><b>
-</b></details>
-
-<details>
-<summary>How would you troubleshoot your cluster if some applications are not reachable any more?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Describe what CustomResourceDefinitions there are in the Kubernetes world? What they can be used for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is RBAC?</summary><br><b>
-</b></details>
-
-#### Scheduling
-
-<details>
-<summary> How does scheduling work in kubernetes?</summary><br><b>
-
-The control plane component kube-scheduler asks the following questions,
-1. What to schedule? It tries to understand the pod-definition specifications
-2. Which node to schedule? It tries to determine the best node with available resources to spin a pod
-3. Binds the Pod to a given node
-
-View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
-</b></details>
-
-<details>
-<summary> How are labels and selectors used?</summary><br><b>
-</b></details>
-
-#### Kubernetes Commands
 
 <details>
 <summary>How to list all namespaces?</code></summary><br><b>
@@ -5055,50 +5026,156 @@ View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
 </b></details>
 
 <details>
-<summary>What <code>kubectl exec</code> does?</code></summary><br><b>
+<summary>What kube-public contains?</summary><br><b>
+
+* A configmap, which contains cluster information
+* Publicely accessible data
 </b></details>
 
 <details>
-<summary>How to view the current namespace?</code></summary><br><b>
+<summary>How to get the name of the current namespace?</code></summary><br><b>
 
 kubectl config view | grep namespace
 </b></details>
 
 <details>
-<summary>How to switch to another namespace?</code></summary><br><b>
+<summary>What kube-node-lease contains?</summary><br><b>
 
-kubectl config set-context --current --namespace=some-namespace
+It holds information on hearbeats of nodes. Each node gets an object which holds information about its availability.
 </b></details>
 
 <details>
-<summary>How to create a resource quota?</code></summary><br><b>
+<summary>How to create a namespace?</summary><br><b>
+
+One way is by running `kubectl create namespace [NAMESPACE_NAME]`
+
+Another way is by using namespace configuration file:
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: some-cofngimap
+  namespace: some-namespace
+```
+</b></details>
+
+<details>
+<summary>What default namespace contains?</summary><br><b>
+
+Any resource you create while using Kubernetes.
+</b></details>
+
+<details>
+<summary>True or False? With namespaces you can limit the resources consumed by the users/teams</summary><br><b>
+
+True. With namespaces you can limit CPU, RAM and storage usage.
+</b></details>
+
+<details>
+<summary>How to switch to another namespace? In other words how to change active namespace?</code></summary><br><b>
+
+`kubectl config set-context --current --namespace=some-namespace` and validate with `kubectl config view --minify | grep namespace:`
+
+OR
+
+`kubens some-namespace`
+</b></details>
+
+<details>
+<summary>What is Resource Quota?</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>How to create a Resource Quota?</code></summary><br><b>
 
 kubectl create quota some-quota --hard-cpu=2,pods=2
 </b></details>
 
 <details>
-<summary>How to create a deployment?</code></summary><br><b>
+<summary>Which resources are accessible from different namespaces?</code></summary><br><b>
 
-```
-cat << EOF | kubectl create -f -
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-EOF
-```
+Service.
 </b></details>
 
 <details>
-<summary>What the coomand <code>kubectl get pod</code> does?</code></summary><br><b>
+<summary>Let's say you have three namespaces: x, y and z. In x namespace you have a ConfigMap referencing service in z namespace. Can you reference the ConfigMap in x namespace from y namespace?</code></summary><br><b>
+
+No, you would have to create separate namespace in y namespace.
+</b></details>
+
+<details>
+<summary>Which service and in which namespace the following file is referencing?
+
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: some-configmap
+data:
+  some_url: samurai.jack
+```
+</summary><br><b>
+
+It's referencing the service "samurai" in the namespace called "jack".
+</b></details>
+
+<details>
+<summary>Which components can't be created within a namespace?</code></summary><br><b>
+
+Volume and Node.
+</b></details>
+
+<details>
+<summary>How to list all the components that bound to a namespace?</code></summary><br><b>
+
+`kubectl api-resources --namespaced=true`
+</b></details>
+
+<details>
+<summary>How to create components in a namespace?</code></summary><br><b>
+
+One way is by specifying --namespace like this: `kubectl apply -f my_component.yaml --namespace=some-namespace`
+Another way is by specifying it in the YAML itself:
+
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: some-configmap
+  namespace: some-namespace
+```
+
+and you can verify with: `kubectl get configmap -n some-namespace`
+</b></details>
+
+#### Kubernetes Commands
+
+<details>
+<summary>What <code>kubectl exec</code> does?</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>What <code>kubectl get all</code> does?</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>What the command <code>kubectl get pod</code> does?</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>How to see all the components of a certain application?</code></summary><br><b>
+
+`kubectl get all | grep [APP_NAME]`
 </b></details>
 
 <details>
 <summary>What <code>kubectl apply -f [file]</code> does?</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>What the command <code>kubectl api-resources --namespaced=false</code> does?</code></summary><br><b>
+
+Lists the components that doesn't bound to a namespace.
 </b></details>
 
 <details>
@@ -5223,16 +5300,22 @@ False. CPU is a compressible resource while memory is a non compressible resourc
 Explained [here](https://www.youtube.com/watch?v=i9V4oCa5f9I)
 </b></details>
 
-#### Kubernetes Operators
+#### Kubernetes Operator
 
 <details>
 <summary>What is an Operator?</summary><br><b>
 
-Explained [here](https://coreos.com/operators)
+Explained [here](https://kubernetes.io/docs/concepts/extend-kubernetes/operator)
 
-"An Operator is a method of packaging, deploying and managing a Kubernetes application"
+"Operators are software extensions to Kubernetes that make use of custom resources to manage applications and their components. Operators follow Kubernetes principles, notably the control loop."
+</b></details>
 
-There is also this [video tutorial](https://www.youtube.com/watch?v=KBTXBUVNF2I)
+<details>
+<summary>Why do we need Operators?</summary><br><b>
+
+The process of managing stateful applications in Kubernetes isn't as straightforward as managing stateless applications where reaching the desired status and upgrades are both handled the same way for every replica. In stateful applications, upgrading each replica might require different handling due to the stateful nature of the app, each replica might be in a different status. As a result, we often need a human operator to manage stateful applications. Kubernetes Operator is suppose to assist with this.
+
+This also help with automating a standard process on multiple Kubernetes clusters
 </b></details>
 
 <details>
@@ -5243,13 +5326,28 @@ There is also this [video tutorial](https://www.youtube.com/watch?v=KBTXBUVNF2I)
 </b></details>
 
 <details>
+<summary>How Operator works?</summary><br><b>
+
+It uses the control loop used by Kubernetes in general. It watches for changes in the application state. The difference is that is uses a custom control loop.
+In additions.
+
+In addition, it also makes use of CRD's (Custom Resources Definitions) so basically it extends Kubernetes API.
+</b></details>
+
+<details>
+<summary>True or False? Kubernetes Operator used for stateful applications</summary><br><b>
+
+True
+</b></details>
+
+<details>
 <summary>What is the Operator Framework?</summary><br><b>
 
 open source toolkit used to manage k8s native applications, called operators, in an automated and efficient way.
 </b></details>
 
 <details>
-<summary>What components the Operator Framework consists of??</summary><br><b>
+<summary>What components the Operator Framework consists of?</summary><br><b>
 
 1. Operator SDK - allows developers to build operators
 2. Operator Lifecycle Manager - helps to install, update and generally manage the lifecycle of all operators
@@ -5283,12 +5381,18 @@ It includes:
 <summary>Explain StatefulSet</summary><br><b>
 </b></details>
 
+#### Kubernetes ReplicaSet
+
 <details>
 <summary>What is the purpose of ReplicaSet?</summary><br><b>
 </b></details>
 
 <details>
 <summary>How a ReplicaSet works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What happens when a replica dies?</summary><br><b>
 </b></details>
 
 #### Kubernetes Secrets
@@ -5300,15 +5404,67 @@ Secrets let you store and manage sensitive information (passwords, ssh keys, etc
 </b></details>
 
 <details>
-<summary>How to create a secret from a key and value?</summary><br><b>
+<summary>How to create a Secret from a key and value?</summary><br><b>
 
 kubectl create secret generic some-secret --from-literal=password='donttellmypassword'
 </b></details>
 
 <details>
-<summary>How to create a secret from a file?</summary><br><b>
+<summary>How to create a Secret from a file?</summary><br><b>
 
 kubectl create secret generic some-secret --from-file=/some/file.txt
+</b></details>
+
+<details>
+<summary>What <code>type: Opaque</code> in a secret file means? What other types are there?</summary><br><b>
+
+Opaque is the default type used for key-value pairs.
+</b></details>
+
+<details>
+<summary>True or False? storing data in a Secret component makes it automatically secured</summary><br><b>
+
+False. Some known security mechanisms like "encryption" aren't enabled by default.
+</b></details>
+
+<details>
+<summary>What is the problem with the following Secret file:
+
+```
+apiVersion: v1   
+kind: Secret
+metadata:
+    name: some-secret
+type: Opaque
+data:
+    password: mySecretPassword
+```
+</summary><br><b>
+Password isn't encrypted.
+You should run something like this: `echo -n 'mySecretPassword' | base64` and paste the result to the file instead of using plain-text.
+</b></details>
+
+<details>
+<summary>How to create a Secret from a configuration file?</summary><br><b>
+
+`kubectl apply -f some-secret.yaml`
+</b></details>
+
+<details>
+<summary>What the following in Deployment configuration file means? 
+
+```
+spec:
+  containers:
+    - name: USER_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: some-secret
+          key: password
+```
+</summary><br><b>
+USER_PASSWORD environment variable will store the value from password key in the secret called "some-secret"
+In other words, you reference a value from a Kubernetes Secret.
 </b></details>
 
 #### Kubernetes Storage
@@ -5363,6 +5519,108 @@ False
 #### Kubernetes Misc
 
 <details>
+<summary>You have one Kubernetes cluster and multiple teams that would like to use it. You would like to limit the resources each team consumes in the cluster. Which Kubernetes concept would you use for that?</summary><br><b>
+
+Namespaces will allow to limit resources and also make sure there are no collisions between teams when working in the cluster (like creating an app with the same name).
+</b></details>
+
+<details>
+<summary>What Kube Proxy does?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What "Resources Quotas" are used for and how?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain ConfigMap</summary><br><b>
+
+Separate configuration from pods.
+It's good for cases where you might need to change configuration at some point but you don't want to restart the application or rebuild the image so you create a ConfigMap and connect it to a pod but externally to the pod.
+
+Overall it's good for:
+* Sharing the same configuration between different pods
+* Storing external to the pod configuration
+</b></details>
+
+<details>
+<summary>How to use ConfigMaps?</summary><br><b>
+
+1. Create it (from key&value, a file or an env file)
+2. Attach it. Mount a configmap as a volume
+</b></details>
+
+<details>
+<summary>Trur or False? Sensitive data, like credentials, should be stored in a ConfigMap</summary><br><b>
+
+False. Use secret.
+</b></details>
+
+<details>
+<summary>Explain "Horizontal Pod Autoscaler"</summary><br><b>
+
+Scale the number of pods automatically on observed CPU utilization.
+</b></details>
+
+<details>
+<summary>When you delete a pod, is it deleted instantly? (a moment after running the command)</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to delete a pod instantly?</summary><br><b>
+
+Use "--grace-period=0 --force"
+</b></details>
+
+<details>
+<summary>Explain Liveness probe</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Readiness probe</summary><br><b>
+</b></details>
+
+<details>
+<summary>What does being cloud-native mean?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the pet and cattle approach of infrastructure with respect to kubernetes</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe how you one proceeds to run a containerised web app in K8s, which should be reachable from a public URL.</summary><br><b>
+</b></details>
+
+<details>
+<summary>How would you troubleshoot your cluster if some applications are not reachable any more?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe what CustomResourceDefinitions there are in the Kubernetes world? What they can be used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is RBAC?</summary><br><b>
+</b></details>
+
+<details>
+<summary> How does scheduling work in kubernetes?</summary><br><b>
+
+The control plane component kube-scheduler asks the following questions,
+1. What to schedule? It tries to understand the pod-definition specifications
+2. Which node to schedule? It tries to determine the best node with available resources to spin a pod
+3. Binds the Pod to a given node
+
+View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
+</b></details>
+
+<details>
+<summary> How are labels and selectors used?</summary><br><b>
+</b></details>
+
+
+<details>
 <summary>Explain what is CronJob and what is it used for</summary><br><b>
 </b></details>
 
@@ -5372,12 +5630,6 @@ False
 * Guaranteed
 * Burstable
 * BestEffort
-</b></details>
-
-<details>
-<summary>Are there any Kuberenets tools you are using?</summary><br><b>
-
-Kubectx, Kubens, ...
 </b></details>
 
 <details>
@@ -7161,10 +7413,6 @@ Logging<br>
 </b></details>
 
 <details>
-<summary>Have you set up Prometheus? How did you do it? Describe the process</summary><br><b>
-</b></details>
-
-<details>
 <summary>Can you compare Prometheus to other solutions like InfluxDB for example?</summary><br><b>
 </b></details>
 
@@ -7207,7 +7455,6 @@ Alert manager is responsible for alerts ;)
 <details>
 <summary>What HA in Prometheus means?</summary><br><b>
 </b></details>
-
 
 <details>
 <summary>How do you join two metrics?</summary><br><b>
