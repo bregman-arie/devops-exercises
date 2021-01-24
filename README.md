@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1475** questions
+:bar_chart: &nbsp;There are currently **1500** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -2196,6 +2196,36 @@ There is also "Management Plane" which refers to monitoring and management funct
 </b></details>
 
 <details>
+<summary>What is latency?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is bandwidth?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is throughput?</summary><br><b>
+</b></details>
+
+<details>
+<summary>When performing a search query, what is more important, latency or throughput? And how to assure that what managing global infrastructure?</summary><br><b>
+
+Latency. To have a good latency, a search query should be forwarded to the closest datacenter.
+</b></details>
+
+<details>
+<summary>When uploading a video, what is more important, latency or throughput? And how to assure that?</summary><br><b>
+
+Throughput. To have a good throughput, the upload stream should be routed to an underutilized link.
+</b></details>
+
+<details>
+<summary>What other considerations (except latency and throughput) are there when forwarding requests?</summary><br><b>
+
+* Keep caches updated (which means the request could be forwarded not to the closest datacenter)
+</b></details>
+
+<details>
 <summary>Explain Spine & Leaf</summary><br><b>
 </b></details>
 
@@ -3306,7 +3336,15 @@ Package managers allow you to manage packages lifecycle as in installing, removi
 In addition, you can specify in a spec how a certain package will be installed - where to copy the files, which commands to run prior to the installation, post the installation, etc.
 </b></details>
 
-##### Applications and Services
+#### Linux DNF
+
+<details>
+<summary>How to look for a package that provides the command /usr/bin/git? (the package isn't necessarily installed)</summary><br><b>
+
+dnf provides /usr/bin/git
+</b></details>
+
+##### Linux Applications and Services
 
 <details>
 <summary>What can you find in /etc/services?</summary><br><b>
@@ -4926,6 +4964,110 @@ From Kubernetes docs: "Ingress exposes HTTP and HTTPS routes from outside the cl
 Read more [here](https://kubernetes.io/docs/concepts/services-networking/ingress/)
 </b></details>
 
+<details>
+<summary>Complete the following configuration file to make it Ingress
+
+```
+metadata:
+  name: someapp-ingress
+spec:
+```
+</summary><br><b>
+There are several ways to answer this question.
+
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: someapp-ingress
+spec:
+  rules:
+  - host: my.host
+    http:
+      paths:
+      - backend:
+          serviceName: someapp-internal-service
+          servicePort: 8080
+```
+</b></details>
+
+<details>
+<summary>Explain the meaning of "http", "host" and "backend" directives
+
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: someapp-ingress
+spec:
+  rules:
+  - host: my.host
+    http:
+      paths:
+      - backend:
+          serviceName: someapp-internal-service
+          servicePort: 8080
+```
+</summary><br><b>
+
+host is the entry point of the cluster so basically a valid domain address that maps to cluster's node IP address<br>
+the http line used for specifying that incoming requests will be forwarded to the internal service using http.<br>
+backend is referencing the internal service (serviceName is the name under metadata and servicePort is the port under the ports section).
+</b></details>
+
+<details>
+<summary>What is Ingress Controller?</summary><br><b>
+
+An implementation for Ingress. It's basically another pod (or set of pods) that does evaluates and processes Ingress rules and this it manages all the redirections. 
+
+There are multiple Ingress Controller implementations (the one from Kubernetes is Kubernetes Nginx Ingress Controller).
+</b></details>
+
+<details>
+<summary>What are some use cases for using Ingress?</summary><br><b>
+
+* Multiple sub-domains (multiple host entries, each with its own service)
+* One domain with multiple services (multiple paths where each one is mapped to a different service/application)
+</b></details>
+
+<details>
+<summary>How to list Ingress in your namespace?</summary><br><b>
+
+kubectl get ingress
+</b></details>
+
+<details>
+<summary>What is Ingress Default Backend?</summary><br><b>
+
+It specifies what do with an incoming request to the Kubernetes cluster that isn't mapped to any backend (= no rule to for mapping the request to a service). If the default backend service isn't defined, it's recommended to define so users still see some kind of message instead of nothing or unclear error.
+</b></details>
+
+<details>
+<summary>How to configure a default backend?</summary><br><b>
+
+Create Service resource that specifies the name of the default backend as reflected in `kubectl desrcibe ingress ...` and the port under the ports section.
+</b></details>
+
+<details>
+<summary>How to configure TLS with Ingress?</summary><br><b>
+
+Add tls and secretName entries.
+
+```
+spec:
+  tls:
+  - hosts:
+    - some_app.com
+    secretName: someapp-secret-tls
+````
+</b></details>
+
+<details>
+<summary>True or False? When configuring Ingress with TLS, the Secret component must be in the same namespace as the Ingress component</summary><br><b>
+
+True
+</b></details>
+
 #### Kubernetes Configuration File
 
 <details>
@@ -5648,6 +5790,71 @@ View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
 
 <details>
 <summary>What is Helm?</summary><br><b>
+
+Package manager for Kubernetes. Basically the ability to package YAML files and distribute them to other users.
+</b></details>
+
+<details>
+<summary>Why do we need Helm? What would be the use case for using it?</summary><br><b>
+
+Sometimes when you would like to deploy a certain application to your cluster, you need to create multiple YAML files / Components like: Secret, Service, ConfigMap, etc. This can be tedious task. So it would make sense to ease the process by introducing something that will allow us to share these bundle of YAMLs every time we would like to add an application to our cluster. This something is called Helm.
+</b></details>
+
+<details>
+<summary>Explain "Helm Charts"</summary><br><b>
+
+Helm Charts is a bundle of YAML files. A bundle that you can consume from repositories or create your own and publish it to the repositories.
+</b></details>
+
+<details>
+<summary>It is said that Helm is also Templating Engine. What does it mean?</summary><br><b>
+
+It is useful for scenarios where you have multiple applications and all are similar, so there are minor differences in their configuration files and most values are the same. With Helm you can define a common blueprint for all of them and the values that are not fixed and change can be placeholders. This is called a template file and it looks similar to the following
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {[ .Values.name ]}
+spec:
+  containers:
+  - name: {{ .Values.container.name }}
+  image: {{ .Values.container.image }}
+  port: {{ .Values.container.port }}
+```
+
+The values themselves will in separate file:
+
+```
+name: some-app
+container:
+  name: some-app-container
+  image: some-app-image
+  port: 1991
+```
+</b></details>
+
+<details>
+<summary>What are some use cases for using Helm template file?</summary><br><b>
+
+* Deploy the same application across multiple different environments
+* CI/CD
+</b></details>
+
+<details>
+<summary>Explain the Helm Chart Directory Structure</summary><br><b>
+
+someChart/     -> the name of the chart
+  Chart.yaml   -> meta information on the chart
+  values.yaml  -> values for template files
+  charts/      -> chart dependencies
+  templates/   -> templates files :)
+</b></details>
+
+<details>
+<summary>How do you search for charts?</summary><br><b>
+
+`helm search hub [some_keyword]`
 </b></details>
 
 #### Submariner
@@ -10058,33 +10265,103 @@ Data about data. Basically, it describes the type of information that an underly
 </b></details>
 
 <details>
-<summary>What is latency?</summary><br><b>
+<summary>You can use one of the following formats: JSON, YAML, XML. Which one would you use? Why?</summary><br><b>
+
+I can't answer this for you :)
+</b></details>
+
+#### YAML
+
+<details>
+<summary>What is YAML?</summary><br><b>
+
+Data serialization language used by many technologies today like Kubernetes, Ansible, etc.
 </b></details>
 
 <details>
-<summary>What is bandwidth?</summary><br><b>
+<summary>True or False? Any valid JSON file is also a valid YAML file</summary><br><b>
+
+True. Because YAML is superset of JSON.
 </b></details>
 
 <details>
-<summary>What is throughput?</summary><br><b>
+<summary>What is the format of the following data?
+
+```
+{
+    applications: [
+        {
+            name: "my_app",
+            language: "python",
+            version: 20.17
+        }
+    ]
+}
+```
+</summary><br><b>
+JSON
 </b></details>
 
 <details>
-<summary>When performing a search query, what is more important, latency or throughput? And how to assure that what managing global infrastructure?</summary><br><b>
+<summary>What is the format of the following data?
 
-Latency. To have a good latency, a search query should be forwarded to the closest datacenter.
+```
+applications:
+  - app: "my_app"
+    language: "python"
+    version: 20.17
+```
+</summary><br><b>
+YAML
 </b></details>
 
 <details>
-<summary>When uploading a video, what is more important, latency or throughput? And how to assure that?</summary><br><b>
+<summary>How to write a multi-line string with YAML? What use cases is it good for?</summary><br><b>
 
-Throughput. To have a good throughput, the upload stream should be routed to an underutilized link.
+```
+someMultiLineString: |
+  look mama
+  I can write a multi-line string
+  I love YAML
+```
+
+It's good for use cases like writing a shell script where each line of the script is a different command.
 </b></details>
 
 <details>
-<summary>What other considerations (except latency and throughput) are there when forwarding requests?</summary><br><b>
+<summary>What is the difference between <code>someMultiLineString: |</code> to <code>someMultiLineString: ></code>?</summary><br><b>
 
-* Keep caches updated (which means the request could be forwarded not to the closest datacenter)
+using `>` will make the multi-line string to fold into a single line
+
+```
+someMultiLineString: >
+  This is actually
+  a single line
+  do not let appearances fool you
+```
+</b></details>
+
+<details>
+<summary>What are placeholders in YAML?</summary><br><b>
+
+They allow you reference values instead of directly writing them and it is used like this:
+
+```
+username: {{ my.user_name }}
+```
+</b></details>
+
+<details>
+<summary>How can you define multiple YAML components in one file?</summary><br><b>
+
+Using this: `---`
+For Examples:
+
+```
+document_number: 1
+---
+document_number: 2
+```
 </b></details>
 
 #### Jira
