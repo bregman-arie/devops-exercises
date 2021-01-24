@@ -9,7 +9,7 @@ Puppet logo created by <a href="https://puppet.com">Puppet®</a><br>
 Bash logo created by Prospect One<br>
 OpenStack logo created by and a trademark of The <a href="https://www.openstack.org">OpenStack Foundation®</a><br>
 Linux, Kubernetes and Prometheus logos are trademarks of The Linux Foundation®<br>
-Mongo logo is a trademark of <a href="www.mongodb.com">Mongo®</a><br>
+Mongo logo is a trademark of <a href="http://www.mongodb.com">Mongo®</a><br>
 Distributed logo by <a href="https://www.iconfinder.com/Flatart">Flatart</a><br>
 Challenge icon by Elizabeth Arostegui in Technology Mix
 "Question you ask" (man raising hand) and "Database" icons by [Webalys](https://www.iconfinder.com/webalys)

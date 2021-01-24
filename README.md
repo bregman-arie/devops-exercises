@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1500** questions
+:bar_chart: &nbsp;There are currently **1504** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -5612,7 +5612,21 @@ In other words, you reference a value from a Kubernetes Secret.
 #### Kubernetes Storage
 
 <details>
+<summary>True or False? Kubernetes provides data persistence out of the box, so when you restart a pod, data is saved</summary><br><b>
+
+False
+</b></details>
+
+<details>
 <summary>Explain "Persistent Volumes". Why do we need it?</summary><br><b>
+
+Persistent Volumes allow us to save data so basically they provide storage that doesn't depend on the pod lifecycle.
+</b></details>
+
+<details>
+<summary>True or False? Persistent Volume must be available to all nodes because the pod can restart on any of them</summary><br><b>
+
+True
 </b></details>
 
 <details>
@@ -5855,6 +5869,20 @@ someChart/     -> the name of the chart
 <summary>How do you search for charts?</summary><br><b>
 
 `helm search hub [some_keyword]`
+</b></details>
+
+<details>
+<summary>Is it possible to override values in values.yaml file when installing a chart?</summary><br><b>
+Yes. You can pass another values file:
+`helm install --values=override-values.yaml [CHART_NAME]`
+
+Or directly on the command line: `helm install --set some_key=some_value`
+</b></details>
+
+<details>
+<summary>How Helm supports release management?</summary><br><b>
+
+Helm allows you to upgrade, remove and rollback to previous versions of charts. In version 2 of Helm it was with what is known as "Tiller". In version 3, it was removed due to security concerns.
 </b></details>
 
 #### Submariner
@@ -7634,7 +7662,7 @@ Logging<br>
   * Push Gateway
   * Alert Manager</summary><br><b>
 
-Prometheus server responsible for scraping the storing the data<br>
+Prometheus server is responsible for scraping and storing the data<br>
 Push gateway is used for short-lived jobs<br>
 Alert manager is responsible for alerts ;)
 </b></details>
@@ -7678,9 +7706,9 @@ Alert manager is responsible for alerts ;)
 ## Git
 
 <details>
-<summary>How do you know if directory you are in is a git repository?</summary><br><b>
+<summary>How do you know if a certain directory is a git repository?</summary><br><b>
 
-You can check if there is a ".git" directory.
+You can check if there is a ".git" directory inside it.
 </b></details>
 
 <details>
@@ -7738,7 +7766,7 @@ is currently pointing at.
 <details>
 <summary>You would like to move forth commit to the top. How would you achieve that?</summary><br><b>
 
-Using <code>git rebase></code> command
+Using the `git rebase` command
 </b></details>
 
 <details>
@@ -7761,7 +7789,7 @@ This page explains it the best: https://git-scm.com/docs/merge-strategies
 <details>
 <summary>How can you see which changes have done before committing them?</summary><br><b>
 
-<code>git diff</code>
+`git diff```
 </b></details>
 
 <details>
