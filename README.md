@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1504** questions
+:bar_chart: &nbsp;There are currently **1509** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -31,7 +31,7 @@
     <td align="center"><a href="#terraform"><img src="images/terraform.png" width="70px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
   </tr>
   <tr>
-    <td align="center"><a href="#coding"><img src="images/coding.png" width="75px;" height="75px;" alt="coding"/><br /><b>Coding</b></a></td>
+    <td align="center"><a href="#programming"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Programming</b></a></td>
     <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
     <td align="center"><a href="#go"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a></td>
     <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
@@ -179,6 +179,10 @@ With "configuration->deployment" model for example, where you build one image to
 * Automated process of building, testing and deploying software
 * Commit and test often
 * Testing/Staging environment should be a clone of production environment
+</b></details>
+
+<details>
+<summary>You are given a pipeline and a pool with 3 workers: virtual machine, baremetal and a container. How will you decide on which one of them to run the pipeline?</summary><br><b>
 </b></details>
 
 <details>
@@ -5910,10 +5914,17 @@ You can learn more [here](https://submariner-io.github.io)
 <summary>What is Istio? What is it used for?</summary><br><b>
 </b></details>
 
-## Coding
+## Programming
 
 <details>
 <summary>What programming language do you prefer to use for DevOps related tasks? Why specifically this one?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are static typed (or simply typed) languages?</summary><br><b>
+
+In static typed languages the variable type is known at compile-time instead of at run-time.
+Such languages are: C, C++ and Java
 </b></details>
 
 <details>
@@ -5958,6 +5969,14 @@ SOLID is:
 </b></details>
 
 <details>
+<summary>What is YAGNI? What is your opinion on it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is DRY? What is your opinion on it?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What are the four pillars of object oriented programming?</summary><br><b>
 </b></details>
 
@@ -5971,6 +5990,12 @@ SOLID is:
 
 <details>
 <summary>Explain Dependency Injection</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? In Dynamically typed languages the variable type is known at run-time instead of at compile-time</summary><br><b>
+
+True
 </b></details>
 
 <details>
@@ -6102,8 +6127,6 @@ def find_triplets_sum_to_zero(li):
 5. The python package manager is called PIP "pip installs packages", having more than 200.000 available packages.
 6. Python comes with pip installed and a big standard library that offers the programmer many precooked solutions.
 7. In python **Everything** is an object.
-
-There are many other characteristics but these are the main ones that every python programmer should know.
 ```
 </b></details>
 
@@ -6148,10 +6171,10 @@ The immutable data types are:
   * 1 == 'one'
   * 2 > 'one'</summary><br><b>
 
-* False
-* True
-* False
-* TypeError
+  * False
+  * True
+  * False
+  * TypeError
 </b></details>
 
 <details>
@@ -6173,7 +6196,7 @@ The immutable data types are:
 <details>
 <summary>What is the result of `bool("")`? What about `bool(" ")`? Explain</summary><br><b>
 
-bool("") -> evaluates to False
+bool("") -> evaluates to False<br>
 bool("  ") -> evaluates to True
 </b></details>
 
@@ -6918,6 +6941,14 @@ with open('file.txt', 'w') as file:
 
 <details>
 <summary>How do you execute shell commands using Python?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you join path components? for example <code>/home</code> and <code>luig</code> will result in <code>/home/luigi</code> </summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you remove non-empty directory?</summary><br><b>
 </b></details>
 
 #### Python Regex
@@ -8228,11 +8259,11 @@ as key-value pair, document-oriented, etc.
 ## OpenShift
 
 <details>
-<summary>What is OpenShift? What experience do you have with OpenShift?</summary><br><b>
+<summary>What is OpenShift?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Can you explain the difference between OpenShift and Kubernetes?</summary><br><b>
+<summary>How OpenShift is related to Kubernetes?</summary><br><b>
 </b></details>
 
 <details>
@@ -8242,23 +8273,41 @@ False. OpenShift is a PaaS (platform as a service) solution.
 </b></details>
 
 <details>
-<summary>Define Pods and explain what are stateful pods</summary><br><b>
+<summary>What would be the best way to run and manage multiple OpenShift environments?</summary><br><b>
+
+Federation
+</b></details>
+
+#### OpenShift Federation
+
+<details>
+<summary>What is OpenShift Federation?</summary><br><b>
+
+Management and deployment of services and workloads accross multiple independent clusters from a single API
 </b></details>
 
 <details>
-<summary>What types of build strategies are you familiar with?</summary><br><b>
+<summary>Explain the following in regards to Federation:
+
+  * Multi Cluster
+  * Federated Cluster
+  * Host Cluster
+  * Member Cluster
+</summary><br><b>
+
+  * Multi Cluster - Multiple clusters deployed independently, not being aware of each other
+  * Federated Cluster - Multiple clusters managed by the OpenShift Federation Control Plane
+  * Host Cluster - The cluster that runs the Federation Control Plane
+  * Member Cluster - Cluster that is part of the Federated Cluster and connected to Federation Control Plane
 </b></details>
 
-<details>
-<summary>Explain what are labels and what they are used for</summary><br><b>
-</b></details>
+#### OpenShift Azure
 
 <details>
-<summary>Explain what are annotations and how they are different from labels</summary><br><b>
-</b></details>
+<summary>What is "OpenShift on Azure" and "Azure Red Hat OpenShift"?</summary><br><b>
 
-<details>
-<summary>Explain what is Downward API</summary><br><b>
+OpenShift on Aazure (OCP) is installed and managed by the customer itself as opposed to Azure Red Hat OpenShift (ARO) which is a managed service by Red Hat and Microsoft.
+Also, OCP is purchased from Red Hat and ARO is purchased from Azure.
 </b></details>
 
 ## Storage
@@ -8290,11 +8339,6 @@ Answer: Magnetic is about 10ms and SSD is somewhere between 0.08 and 0.16ms
 </b></details>
 
 ## Shell Scripting
-
-<details>
-<summary>Tell me about your experience with shell scripting</summary><br><b>
-
-</b></details>
 
 <details>
 <summary>What this line in scripts mean?: <code>#!/bin/bash</code></summary><br><b>
@@ -8980,10 +9024,6 @@ As it does not support stateful applications or sticky sessions, it is suitable 
 ## OpenStack
 
 <details>
-<summary>Tell me about your experience with OpenStack. What do you think are the advantages and disadvantages of OpenStack?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What components/projects of OpenStack are you familiar with?</summary><br><b>
 </b></details>
 
@@ -9214,7 +9254,7 @@ Not by default. Object Storage API limits the maximum to 5GB per object but it c
 False. Two objects can have the same name if they are in different containers.
 </b></details>
 
-#### OpenStack - Swift
+#### OpenStack - Cinder
 
 <details>
 <summary>Explain Cinder in detail</summary><br><b>
@@ -10464,13 +10504,13 @@ percentage ratio
 <details>
 <summary>True or False? HTTP is stateful</summary><br><b>
 
-False. Server doesn't maintain state for incoming request.
+False. It doesn't maintain state for incoming request.
 </b></details>
 
 <details>
 <summary>How HTTP request looks like?</summary><br><b>
 
-It consits of:
+It consists of:
 
  * Request line - request type
  * Headers - content info like length, enconding, etc.
@@ -10514,6 +10554,12 @@ TODO: explain what is actually a Cookie
 
 <details>
 <summary>What is HTTP Pipelining?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You get "504 Gateway Timeout" error from an HTTP server. What does it mean?</summary><br><b>
+
+The server didn't receive a response from another server it communicates with in a timely manner.
 </b></details>
 
 <details>
@@ -11397,6 +11443,11 @@ Below you can find several exercises
 * [ELK & Filebeat](exercises/eflk.md)
 * [Ansible, Minikube and Docker](exercises/ansible_minikube_docker.md)
 * [Cloud Slack bot](exercises/cloud_slack_bot.md)
+
+## Other DevOps Projects
+
+<p align="center"><a href="https://github.com/bregman-arie/howtheydevops"><img src="images/how_they_devops.png"/></a></p>
+<p align="center"><a href="https://github.com/bregman-arie/devops-resources"><img src="images/devops_resources.png"/></a></p>
 
 ## Credits
 
