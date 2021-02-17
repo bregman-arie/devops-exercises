@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1509** questions
+:bar_chart: &nbsp;There are currently **1518** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -426,6 +426,16 @@ This situation might lead to bugs which hard to identify and reproduce.
 <details>
 <summary>How to deal with a configuration drift?</summary><br><b>
 	Configuration drift can be avoided with desired state configuration (DSC) implementation. Desired state configuration can be a declarative file that defined how a system should be. There are tools to enforce desired state such a terraform or azure dsc. There are incramental or complete strategies.
+</b></details>
+
+<details>
+<summary>Explain Declarative and Procedural styles. Give examples for each style</summary><br><b>
+
+Declarative - You can write code that specifies the desired end state
+Procedural - You describe the steps to get to the desired end state
+
+Declarative Tools - Terraform, Puppet, CloudFormation
+Procedural Tools - Ansible, Chef
 </b></details>
 
 <details>
@@ -3952,11 +3962,22 @@ Ansible is:
 </b></details>
 
 <details>
+<summary>True or False? Ansible follows the mutable infrastructure paradigm</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>True or False? Ansible uses declarative style to describe the expected end state</summary><br><b>
+False. It uses a procedural style.
+</b></details>
+
+<details>
 <summary>What kind of automation you wouldn't do with Ansible and why?</summary><br><b>
 
-While it's possible to provision resources with Ansible it might not be the best choice for doing so as Ansible doesn't
-save state by default. So a task that creates 5 instances for example, when executed again will create additional 5 instances (unless
-additional check is implemented).
+While it's possible to provision resources with Ansible, some prefer to use tools that follow immutable infrastructure paradigm.
+Ansible doesn't saves state by default. So a task that creates 5 instances for example, when executed again will create additional 5 instances (unless
+additional check is implemented) while other tools will check if 5 instances exist. If only 4 exist, additional instance will be created.
 </b></details>
 
 <details>
@@ -4338,6 +4359,17 @@ The benefits of Terraform over the other tools:
 
   * It follows the immutable infrastructure approach which has benefits like avoiding a configuration drift over time
   * Ansible and Puppet are more procedural (you mention what to execute in each step) and Terraform is declarative since you describe the overall desired state and not per resource or task. You can give the example of going from 1 to 2 servers in each tool. In Terraform you specify 2, in Ansible and puppet you have to only provision 1 additional server so you need to explicitly make sure you provision only another one server.
+</b></details>
+
+<details>
+<summary>True or False? Terraform follows the mutable infrastructure paradigm</summary><br><b>
+
+False. Terraform follows immutable infrastructure paradigm.
+</b></details>
+
+<details>
+<summary>True or False? Terraform uses declarative style to describe the expected end state</summary><br><b>
+True
 </b></details>
 
 <details>
@@ -6010,6 +6042,10 @@ True
 <summary>What is "Duck Typing"?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is "Duck Typing"?</summary><br><b>
+</b></details>
+
 ##### Common algorithms
 
 <details>
@@ -6079,6 +6115,15 @@ The average performance of the above algorithm is O(log n). Best performance can
 
 <details>
 <summary>Implement Stack in any language you would like</summary><br><b>
+</b></details>
+
+<details>
+<summary>Tell me everything you know about Linked Lists</summary><br><b>
+
+  * A linked list is a data structure
+  * It consists of a collection of nodes. Together these nodes represent a sequence
+  * Useful for use cases where you need to insert or remove an element from any position of the linked list
+  * Some programming languages don't have linked lists as a built-in data type (like Python for example) but it can be easily implemented
 </b></details>
 
 <details>
@@ -6161,6 +6206,18 @@ The immutable data types are:
     Bool
     Tuple
     Frozenset
+</b></details>
+
+<details>
+<summary>What is a tuple in Python? What is it used for?</summary><br><b>
+
+A tuple is a built-in data type in Python. It's used for storing multiple items in a single variable.
+</b></details>
+
+<details>
+<summary>List, like a tuple, is also used for storing multiple items. What is then, the difference between a tuple and a list?</summary><br><b>
+
+List, as opposed to a tuple, is a mutable data type. It means we can modify it and at items to it.
 </b></details>
 
 <details>
@@ -7272,6 +7329,45 @@ What would be the result of is_int(2) and is_int(False)?
 #### Python Data Structures & Types
 
 <details>
+<summary>Can you implement linked list in Python?</summary><br><b>
+
+The reason we need to implement in the first place, it's because a linked list isn't part of Python standard library.<br>
+To implement a linked list, we have to implement two concepts: The linked list itself and a node which is used by the linked list.
+
+Let's start with a node. A node has some value and it also points to the next node
+
+```
+class Node(object):
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+```
+
+Now the linked list. An empty linked list has nothing but an empty head.
+
+```
+class LinkedList(object):
+    def __init__(self):
+        self.head = None
+```
+
+Now we can start using the linked list
+
+```
+ll = Linkedlist()
+ll.head = Node(1)
+ll.head.next = Node(2)
+ll.head.next.next = Node(3)
+```
+
+What we have is:
+
+----       -----      ----
+| 1 | ->   | 2 |  ->  | 3 |
+----       -----      -----
+</b></details>
+
+<details>
 <summary>Implement Stack in Python</summary><br><b>
 </b></details>
 
@@ -7625,10 +7721,6 @@ a = f()
 
 <details>
 <summary>Do you have experience with web scraping? Can you describe what have you used and for what?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Can you implement Linked List in Python?</summary><br><b>
 </b></details>
 
 <details>
@@ -10993,9 +11085,9 @@ Bonus: extract the last word of each line
 <summary>Replace 'red' with 'green'</summary><br><b>
 </b></details>
 
-## System Design
+## System Designotebookn
 
-This section contains only questions on System Design subject. The exercises can be found in [system-design-exercises repository](https://github.com/bregman-arie/system-design-exercises).
+This section contains only questions on System Design subject. The exercises can be found in [system-design-notebook repository](https://github.com/bregman-arie/system-design-notebook).
 
 #### Architecture
 
