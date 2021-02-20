@@ -8,11 +8,9 @@
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
-:thought_balloon: &nbsp;If you wonder "How to prepare for a DevOps interview?", you might want to read some of my suggestions [here](prepare_for_interview.md)
+:busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [DevOps community](https://www.facebook.com/groups/538897960007080) where we have discussions and resources on DevOps
 
-:busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [Facebook group](https://www.facebook.com/groups/538897960007080) for additional exercises, articles and more resources on DevOps
-
-:pencil: &nbsp;You can add more questions and exercises by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
+:pencil: &nbsp;You can add more questions and exercises by submitting pull requests :) Read about contribution guidelines [here](CONTRIBUTING.md)
 
 ****
 
@@ -122,32 +120,14 @@ Google:
 * Not allowing someone to push to production on Friday ;)
 </b></details>
 
+#### CI/CD
+
 <details>
 <summary>What is Continuous Integration?</summary><br><b>
 
 A development practice where developers integrate code into a shared repository frequently. It can range from a couple of changes every day or a week to a couple of changes in one hour in larger scales.
 
 Each piece of code (change/patch) is verified, to make the change is safe to merge. Today, it's a common practice to test the change using an automated build that makes sure the code can integrated. It can be one build which runs several tests in different levels (unit, functional, etc.) or several separate builds that all or some has to pass in order for the change to be merged into the repository.
-</b></details>
-
-<details>
-<summary>Can you describe an example of a CI (and/or CD) process starting the moment a developer submitted a change/PR to a repository?</summary><br><b>
-
-There are many answers for such question as CI processes vary depending on the technologies used and the type of the project to where the change was submitted.
-Such processes can include one or more of the following stages:
-
-* Compile 
-* Build
-* Install
-* Configure
-* Update
-* Test
-
-For example:
-
-A developer submitted a pull request to a project. The PR (pull request) triggered two jobs (or one combined job). One job for running lint test on the change and the second job for building a package which includes the submitted change, and running multiple api/scenario tests using that package. Once all tests passed and the change was approved by a maintainer/core, it's merged/pushed to the repository. If some of the tests failed, the change will not be allowed to merged/pushed to the repository.
-
-A complete different CI process can describe how a developer pushes code to a repository, a workflow then triggered to build a container image and push it to the registry. Once in the registry, the k8s cluster is applied with the new changes.
 </b></details>
 
 <details>
@@ -158,19 +138,33 @@ A development strategy used by developers to release software automatically into
 For more info please read [here](https://www.atlassian.com/continuous-delivery/continuous-deployment)
 </b></details>
 
+
+<details>
+<summary>Can you describe an example of a CI (and/or CD) process starting the moment a developer submitted a change/PR to a repository?</summary><br><b>
+
+There are many answers for such a question, as CI processes vary, depending on the technologies used and the type of the project to where the change was submitted.
+Such processes can include one or more of the following stages:
+
+* Compile 
+* Build
+* Install
+* Configure
+* Update
+* Test
+
+An example of one possible answer:
+
+A developer submitted a pull request to a project. The PR (pull request) triggered two jobs (or one combined job). One job for running lint test on the change and the second job for building a package which includes the submitted change, and running multiple api/scenario tests using that package. Once all tests passed and the change was approved by a maintainer/core, it's merged/pushed to the repository. If some of the tests failed, the change will not be allowed to merged/pushed to the repository.
+
+A complete different answer or CI process, can describe how a developer pushes code to a repository, a workflow then triggered to build a container image and push it to the registry. Once in the registry, the k8s cluster is applied with the new changes.
+</b></details>
+
 <details>
 <summary>What is Continuous Delivery?</summary><br><b>
 
 A development strategy used to frequently deliver code to QA and Ops for testing. This entails having a staging area that has production like features where changes can only be accepted for production after a manual review. Because of this human entanglement there is usually a time lag between release and review making it slower and error prone as compared to continous deployment.
 
 For more info please read [here](https://www.atlassian.com/continuous-delivery/continuous-deployment)
-</b></details>
-
-<details>
-<summary>Would you prefer a "configuration->deployment" model or "deployment->configuration"? Why?</summary><br><b>
-
-Both have advantages and disadvantages.
-With "configuration->deployment" model for example, where you build one image to be used by multiple deployments, there is less chance of deployments being different from one another, so it has a clear advantage of a consistent environment.
 </b></details>
 
 <details>
@@ -190,13 +184,20 @@ With "configuration->deployment" model for example, where you build one image to
 
 There are multiple approaches as to where to store the CI/CD pipeline definitions:
 
-1. App Repository - store them in the same repository of the application they are building or testing
-2. Central Repository - store all organization's/project's CI/CD pipelines in one separate repository
-2. CI repo for every app repo - you separate CI related code from app code but you don't put everything in one place
+1. App Repository - store them in the same repository of the application they are building or testing (perhaps the most popular one)
+2. Central Repository - store all organization's/project's CI/CD pipelines in one separate repository (perhaps the best approach when multiple teams test the same set of projects and they end up having many pipelines)
+3. CI repo for every app repo - you separate CI related code from app code but you don't put everything in one place (perhaps the worst option due to the maintenance)
 </b></details>
 
 <details>
-<summary>What systems and/or tools are you using for the following areas/tasks? Why?
+<summary>Would you prefer a "configuration->deployment" model or "deployment->configuration"? Why?</summary><br><b>
+
+Both have advantages and disadvantages.
+With "configuration->deployment" model for example, where you build one image to be used by multiple deployments, there is less chance of deployments being different from one another, so it has a clear advantage of a consistent environment.
+</b></details>
+
+<details>
+<summary>What tooling are you using for the following areas/tasks? Why?
 
   * CI/CD
   * Provisioning infrastructure
@@ -283,7 +284,7 @@ Read more [here](https://en.wikipedia.org/wiki/Software_repository)
 <details>
 <summary>What is caching? How does it works? Why is it important?</summary><br><b>
 
-	Caching is fast access to frequently used resources which are computationally expensive or IO intensive and do not change often. There can be several layers of cache that can start from CPU caches to distributed cache systems. Common ones are in memory caching and distributed caching. <br/> Caches are typically data structures that contains some data, such as a hashtable or dictionary. However, any data structure can provide caching capabilities, like set, sorted set, sorted dictionary etc. While, caching is used in many applications, they can create subtle bugs if not implemented correctly or used correctly. For example,cache invalidation, expiration or updating is usually quite challenging and hard.
+Caching is fast access to frequently used resources which are computationally expensive or IO intensive and do not change often. There can be several layers of cache that can start from CPU caches to distributed cache systems. Common ones are in memory caching and distributed caching. <br/> Caches are typically data structures that contains some data, such as a hashtable or dictionary. However, any data structure can provide caching capabilities, like set, sorted set, sorted dictionary etc. While, caching is used in many applications, they can create subtle bugs if not implemented correctly or used correctly. For example,cache invalidation, expiration or updating is usually quite challenging and hard.
 </b></details>
 
 <details>
@@ -429,13 +430,17 @@ This situation might lead to bugs which hard to identify and reproduce.
 </b></details>
 
 <details>
-<summary>Explain Declarative and Procedural styles. Give examples for each style</summary><br><b>
+<summary>Explain Declarative and Procedural styles. The technologies you are familiar with (or using) are using procedural or declarative style?</summary><br><b>
 
-Declarative - You can write code that specifies the desired end state
+Declarative - You write code that specifies the desired end state
 Procedural - You describe the steps to get to the desired end state
 
 Declarative Tools - Terraform, Puppet, CloudFormation
 Procedural Tools - Ansible, Chef
+
+To better emphasize the difference, consider creating two virtual instances/servers.
+In declarative style, you would specify two servers and the tool will figure out how to reach that state.
+In procedural style, you need to specify the steps to reach the end state of two instances/servers - for example, create a loop and in each iteration of the loop create one instance (running the loop twice of course).
 </b></details>
 
 <details>
@@ -457,9 +462,8 @@ Note: cross-dependency is when you have two or more changes to separate projects
 <details>
 <summary>What SRE team is responsible for?</summary><br><b>
 
-One can argue whether it's per company definition or a global one but at least according to a large companies, like Google for example, the SRE team is responsible for availability, latency, performance, efficiency, change management, monitoring, emergency response, and capacity planning of their services
+Google: "the SRE team is responsible for availability, latency, performance, efficiency, change management, monitoring, emergency response, and capacity planning of their services"
 </b></details>
-
 
 ## Jenkins
 
@@ -483,6 +487,13 @@ Jenkins integrates development life-cycle processes of all kinds, including buil
 
 <details>
 <summary>What are the limitations or disadvantages of Jenkins?</summary><br><b>
+
+This might be considered to be an opinionated answer:
+
+* Old fashioned dashboards with not many options to customize it
+* Containers readiness (this has improved with Jenkins X)
+* By itself, it doesn't have many features. On the other hand, there many plugins created by the community to expand its abilities
+* Managing Jenkins and its piplines as a code can be one hell of a nightmare
 </b></details>
 
 <details>
@@ -493,6 +504,11 @@ Jenkins integrates development life-cycle processes of all kinds, including buil
   * Plugin
   * Slave/Node/Worker
   * Executor</summary><br><b>
+
+  * Job is an automation definition = what and where to execute once the user clicks on "build" 
+  * Build is a running instance of a job. You can have one or more builds at any given point of time (unless limited by confiugration)
+  * A worker is the machine/instance on which the build is running. When a build starts, it "acquires" a worker out of a pool to run on it.
+  * An executor is variable of the worker, defining how many builds can run on that worker in parallel. An executor value of 3 means, that 3 builds can run at any point on that executor (not necessarily of the same job. Any builds)
 </b></details>
 
 <details>
@@ -500,7 +516,7 @@ Jenkins integrates development life-cycle processes of all kinds, including buil
 </b></details>
 
 <details>
-<summary>Explain CI/CD and how have you implemented it in Jenkins</summary><br><b>
+<summary>Have you used Jenkins for CI or CD processes? Can you describe them?</summary><br><b>
 </b></details>
 
 <details>
@@ -508,11 +524,26 @@ Jenkins integrates development life-cycle processes of all kinds, including buil
 </b></details>
 
 <details>
-<summary>How did you report build results to users? What ways are you familiar with for reporting results?</summary><br><b>
+<summary>How did you report build results to users? What ways are there to report the results?</summary><br><b>
+
+You can report via:
+  * Emails
+  * Messaging apps
+  * Dashboards
+
+Each has its own disadvantages and advantages. Emails for example, if sent too often, can be eventually disregarded or ignored.
 </b></details>
 
 <details>
 <summary>You need to run unit tests every time a change submitted to a given project. Describe in details how your pipeline would look like and what will be executed in each stage</summary><br><b>
+
+The pipelines will have multiple stages:
+
+  * Clone the project
+  * Install test dependencies (for example, if I need tox package to run the tests, I will install it in this stage)
+  * Run unit tests
+  * (Optional) report results (For example an email to the users)
+  * Archive the relevant logs/files
 </b></details>
 
 <details>
@@ -1390,7 +1421,7 @@ Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec
 Allows you to connect your corporate network to AWS network.
 </b></details>
 
-#### Identify the service or tool
+#### AWS - Identify the service or tool
 
 <details>
 <summary>What would you use for automating code/software deployments?</summary><br><b>
@@ -3871,8 +3902,8 @@ It would support the following:
 * Program's bytes are loaded into the memory or more specifically, into the address space of the process.
 * Memory is allocated for program's stack (aka run-time stack). The stack also initialized by the OS with data like argv, argc and parameters to main()
 * Memory is allocated for program's heap which is required for data structures like linked lists and hash tables
-* I/O initialization tasks like in Unix/Linux based systems where each process has 3 file descriptors (input, output and error)
-* OS is running the program, strarting from main()
+* I/O initialization tasks are performed, like in Unix/Linux based systems where each process has 3 file descriptors (input, output and error)
+* OS is running the program, starting from main()
 
 Note: The loading of the program's code into the memory done lazily which means the OS loads only partial relevant pieces required for the process to run and not the entire code.
 </b></details>
@@ -6127,6 +6158,29 @@ The average performance of the above algorithm is O(log n). Best performance can
 </b></details>
 
 <details>
+<summary>Describe (no need to implement) how to detect a loop in a Linked List</summary><br><b>
+
+There are multiple ways to detect a loop in a linked list. I'll mention three here:
+
+Worst solution:<br>
+Two pointers where one points to the head and one points to the last node. Each time you advance the last pointer by one and check whether the distance between head pointer to the moved pointer is bigger than the last time you measured the same distance (if not, you have a loop).<br>
+The reason it's probably the worst solution, is because time complexity here is O(n^2)
+
+Decent solution:<br>
+
+Create an hash table and start traversing the linked list. Every time you move, check whether the node you moved to is in the hash table. If it isn't, insert it to the hash table. If you do find at any point the node in the hash table, it means you have a loop. When you reach None/Null, it's the end and you can return "no loop" value.
+This one is very easy to implement (just create a hash table, update it and check whether the node is in the hash table every time you move to the next node) but since the auxiliary space is O(n) because you create a hash table then, it's not the best solution
+
+Good solution:<br>
+Instead of creating a hash table to document which nodes in the linked list you have visited, as in the previous solution, you can modify the Linked List (or the Node to be precise) to have a "visited" attribute. Every time you visit a node, you set "visited" to True.<br>
+Time compleixty is O(n) and Auxiliary space is O(1), so it's a good solution but the only problem, is that you have to modify the Linked List.
+
+Best solution:<br>
+You set two pointers to traverse the linked list from the beginning. You move one pointer by one each time and the other pointer by two. If at any point they meet, you have a loop. This solution is also called "Floyd's Cycle-Finding"<br>
+Time complexity is O(n) and auxiliary space is O(1). Perfect :)
+</b></details>
+
+<details>
 <summary>Implement Hash table in any language you would like</summary><br><b>
 </b></details>
 
@@ -7326,15 +7380,15 @@ What would be the result of is_int(2) and is_int(False)?
 </summary><br><b>
 </b></details>
 
-#### Python Data Structures & Types
+#### Python - Linked List
 
 <details>
-<summary>Can you implement linked list in Python?</summary><br><b>
+<summary>Can you implement a linked list in Python?</summary><br><b>
 
 The reason we need to implement in the first place, it's because a linked list isn't part of Python standard library.<br>
-To implement a linked list, we have to implement two concepts: The linked list itself and a node which is used by the linked list.
+To implement a linked list, we have to implement two structures: The linked list itself and a node which is used by the linked list.
 
-Let's start with a node. A node has some value and it also points to the next node
+Let's start with a node. A node has some value (the data it holds) and a pointer to the next node
 
 ```
 class Node(object):
@@ -7365,14 +7419,49 @@ What we have is:
 ----       -----      ----
 | 1 | ->   | 2 |  ->  | 3 |
 ----       -----      -----
+
+Usually, more methods are implemented, like a push_head() method where you insert a node at the beginning of the linked list
+
+```
+def push_head(self, value):
+    new_node = Node(value)
+    new_node.next = self.head
+    self.head = new_node
+```
 </b></details>
+
+<details>
+<summary>Add a method to the Linked List class to traverse (print every node's data) the linked list</summary><br><b>
+
+def print_list(self):
+    node = self.head
+    while(node):
+        print(node.data)
+        node = node.next
+</b></details>
+
+<details>
+<summary>Write a method to that will return a boolean based on whether there is a loop in a linked list or not</summary><br><b>
+
+Let's use the Floyd's Cycle-Finding algorithm:
+
+```
+def loop_exists(self):
+    one_step_p = self.head
+    two_steps_p = self.head
+    while(one_step_p and two_steps_p and two_steps_p.next):
+        one_step_p = self.head.next
+        two_step_p = self.head.next.next
+        if (one_step_p == two_steps_p):
+            return True 
+    return False
+```
+</b></details>
+
+#### Python - Stack
 
 <details>
 <summary>Implement Stack in Python</summary><br><b>
-</b></details>
-
-<details>
-<summary>Implement Hash table in Python</summary><br><b>
 </b></details>
 
 #### Python Testing
@@ -7393,10 +7482,6 @@ PEP8 is a list of coding conventions and style guidelines for Python
     3. Use commas when making a tuple of one element
     4. Use spaces (and not tabs) for indentation
     5. Use 4 spaces per indentation level
-</b></details>
-
-<details>
-<summary>How would you check if two strings are equal? What about booleans?</summary><br><b>
 </b></details>
 
 <details>
@@ -9549,11 +9634,13 @@ A list of services and their endpoints
 </b></details>
 
 <details>
-<summary>What DevOps security best practices are you familiar with?</summary><br><b>
+<summary>What security techniques are you familiar with? (or what security techniques have you used in the past?)</summary><br><b>
 </b></details>
 
 <details>
-<summary>What security techniques are you familiar with? (or what security techniques you used in the past?)</summary><br><b>
+<summary>What the "Zero Trust" concept means? How Organizations deal with it?</summary><br><b>
+
+[Codefresh definition](https://codefresh.io/security-testing/codefresh-runner-overview): "Zero trust is a security concept that is centered around the idea that organizations should never trust anyone or anything that does not originate from their domains. Organizations seeking zero trust automatically assume that any external services it commissions have security breaches and may leak sensitive information"
 </b></details>
 
 <details>
@@ -9564,15 +9651,13 @@ Authorization is the process of identifying what level of access the service or 
 </b></details>
 
 <details>
-<summary>How do you manage passwords in different tools and platforms?</summary><br><b>
+<summary>How do you manage sensitive information (like passwords) in different tools and platforms?</summary><br><b>
 </b></details>
 
 <details>
 <summary>Explain what is Single Sign-On</summary><br><b>
 
 SSO (Single Sign-on), is a method of access control that enables a user to log in once and gain access to the resources of multiple software systems without being prompted to log in again.
-
-
 </b></details>
 
 <details>
@@ -10685,18 +10770,20 @@ The server didn't receive a response from another server it communicates with in
 </b></details>
 
 <details>
+<summary>At what layers a load balancer can operate?</summary><br><b>
+
+L4 and L7
+</b></details>
+
+<details>
 <summary>What is DNS load balancing? What its advantages? When would you use it?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What are sticky sessions?</summary><br><b>
+<summary>What are sticky sessions? What are their pros and cons?</summary><br><b>
 
 Recommended read:
   * [Red Hat Article](https://access.redhat.com/solutions/900933)
-</b></details>
-
-<details>
-<summary>What are the cons and pros of sticky sessions?</summary><br><b>
 
 Cons:
   * Can cause uneven load on instance (since requests routed to the same instances)
@@ -10705,7 +10792,7 @@ Pros:
 </b></details>
 
 <details>
-<summary>Explain the following load balancing techniques:
+<summary>Explain the following load balancing algorithms:
 
   * Round Robin
   * Least Connection
@@ -11540,6 +11627,7 @@ Below you can find several exercises
 
 <p align="center"><a href="https://github.com/bregman-arie/howtheydevops"><img src="images/how_they_devops.png"/></a></p>
 <p align="center"><a href="https://github.com/bregman-arie/devops-resources"><img src="images/devops_resources.png"/></a></p>
+<p align="center"><a href="https://github.com/bregman-arie/infraverse"><img src="images/infraverse.png"/></a></p>
 
 ## Credits
 
