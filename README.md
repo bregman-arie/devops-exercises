@@ -3140,6 +3140,7 @@ If you mention at any point ps command with arugments, be familiar with what the
 
 <details>
 <summary>What is the init process?</summary><br><b>
+It is the first process executed by the kernel during the booting of a system. It is a daemon process which runs till the system is shutdown. That is why, it is the parent of all the processes
 </b></details>
 
 <details>
