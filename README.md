@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1518** questions
+:bar_chart: &nbsp;There are currently **1519** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -118,6 +118,28 @@ Google:
 * One person is in charge of different tasks. For example there is only one person who is allowed to merge the code of everyone else into the repository
 * Treating production differently from development environment. For example, not implementing security in development environment
 * Not allowing someone to push to production on Friday ;)
+</b></details>
+
+#### Version Control
+
+<details>
+<summary>What is Version Control?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a commit?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a merge?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a merge conflict?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What best practices are you familiar with regarding version control?</summary><br><b>
 </b></details>
 
 #### CI/CD
@@ -661,6 +683,10 @@ It's important to note that:
 
 * Serverless Computing is still using servers. So saying there are no servers in serverless computing is completely wrong
 * Serverless Computing allows you to have a different paying model. You basically pay only when your functions are running and not when the VM or containers are running as in other payment models
+</b></details>
+
+<details>
+<summary>Is there a difference between managed service to SaaS or is it the same thing?</summary><br><b>
 </b></details>
 
 ## AWS
@@ -1956,8 +1982,6 @@ Packets that are sent on the ethernet are always coming from a MAC address and s
 <summary>What is an IP address?</summary><br><b>
 
 An Internet Protocol address (IP address) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.An IP address serves two main functions: host or network interface identification and location addressing.
-
-
 </b></details>
 
 <details>
@@ -1987,7 +2011,11 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
 </b></details>
 
 <details>
-<summary>What is a private IP address? What do we need it for?</summary><br><b>
+<summary>What is a private IP address? In which scenarios/system designs, one should use it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a public IP address? In which scenarios/system designs, one should use it?</summary><br><b>
 </b></details>
 
 <details>
@@ -10762,7 +10790,17 @@ The server didn't receive a response from another server it communicates with in
 </b></details>
 
 <details>
-<summary>What load balancer algorithms are you familiar with?</summary><br><b>
+<summary>What load balancer techniques/algorithms are you familiar with?</summary><br><b>
+
+  * Round Robin
+  * Weighted Round Robin
+  * Least Connection
+  * Weighted Least Connection
+  * Resource Based
+  * Fixed Weighting
+  * Weighted Response Time
+  * Source IP Hash
+  * URL Hash
 </b></details>
 
 <details>
@@ -10792,13 +10830,19 @@ Pros:
 </b></details>
 
 <details>
-<summary>Explain the following load balancing algorithms:
+<summary>Explain each of the following load balancing techniques
 
   * Round Robin
+  * Weighted Round Robin
   * Least Connection
-  * Source IP hash</summary><br><b>
+  * Weighted Least Connection
+  * Resource Based
+  * Fixed Weighting
+  * Weighted Response Time
+  * Source IP Hash
+  * URL Hash
+</summary><br><b>
 </b></details>
-
 
 <details>
 <summary>Explain use case for connection draining?</summary><br><b>
