@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1519** questions
+:bar_chart: &nbsp;There are currently **1537** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -2168,7 +2168,7 @@ Systems keep an ARP look-up table where they store information about what IP add
 </b></details>
 
 <details>
-<summary>What is TTL?</summary><br><b>
+<summary>What is TTL? What does it helps to prevent?</summary><br><b>
 </b></details>
 
 <details>
@@ -2356,8 +2356,8 @@ Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-us
 <summary>What is your experience with Linux?</summary><br><b>
 
 Only you know :)
-Some ideas on what to focus:
 
+For example:
 * Administration
 * Troubleshooting & Debugging
 * Storage
@@ -2369,80 +2369,17 @@ Some ideas on what to focus:
 <details>
 <summary>Explain what each of the following commands does and give an example on how to use it:
 
+  * touch
   * ls
   * rm
-  * rmdir (can you achieve the same result by using <code>rm</code>?)
-  * touch
-  * whoami
-  * man
-  * pwd
-  * df
-  * file
   * cat
   * cp
-  * mv
-  * grep
-  * nslookup or dig
   * mkdir
-  * find
-  * alias</summary><br><b>
-
-  * ls - list files and directories. You can highlight common flags like -d, -a, -l, ...
-  * rm - remove files and directories. You should mention -r for recursive removal
-  * rmdir - remove directories but you should mention it's possible to use rm for that
-  * touch - update timestamps but common usage is to create files
-  * whoami - current logged-in user
-  * man - reference manuals
-  * pwd - print working directory
-  * df - provides info regarding file system disk space usage
-  * file - to find out what kind of a file it is
-  * cat - quickly read a file without opening the file, it only displays the file contents
-  * cp - make a copy of files and pasting it to a destination
-  * mv - moving files and also renaming them
-  * grep - print lines that match patterns. Could be nice to mention -v, -r, -E flags
-  * nslookup or dig - query nameservers
-  * mkdir - create a directory if it does not exist already
-  * find - searching files
-  * alias - shorten repetitive long commands for efficient command line usage
+</summary><br><b>
 </b></details>
 
 <details>
-<summary>What each of the following commands does?
-
-  * cd /
-  * cd ~
-  * cd
-  * cd ..
-  * cd .
-  * cd -</summary><br><b>
-  cd or "change directory" helps one to change directory when they want to.
-
-  * cd / -> change to the root directory
-  * cd ~ -> change to your home directory
-  * cd -> change to your home directory
-  * cd .. -> change to the directory above your current i.e parent directory
-  * cd . -> change to the directory you currently in
-  * cd - -> change to the last visited path
-</b></details>
-
-<details>
-<summary>How to rename the name of a file or a directory?</summary><br><b>
-
-mv command.
-</b></details>
-
-<details>
-<summary>What is stored in each of the following paths?</summary><br><b>
-
-  * /bin, /sbin, /usr/bin and /usr/sbin
-  * /etc
-  * /home
-  * /var
-  * /tmp
-</b></details>
-
-<details>
-<summary>What is special about /tmp directory when compared to other directories?</summary><br><b>
+<summary>Some of the commands in the previous question can be run with the -r/--recursive flag. What does it do?</summary><br><b>
 </b></details>
 
 <details>
@@ -2460,9 +2397,107 @@ These are files directly not displayed after performing a standard ls direct lis
 </b></details>
 
 <details>
+<summary>Explain what each of the following commands does and give an example on how to use it:
+
+  * sed
+  * grep
+  * cut
+  * awk
+</summary><br><b>
+</b></details>
+
+<details>
+<summary>What each of the following commands does?
+
+  * pwd
+  * cd
+  * find
+  * ls
+</summary><br><b>
+</b></details>
+
+<details>
+<summary>What each of the following commands does?
+
+  * cd /
+  * cd ~
+  * cd
+  * cd ..
+  * cd .
+  * cd -
+</summary><br><b>
+
+  * cd / -> change to the root directory
+  * cd ~ -> change to your home directory
+  * cd -> change to your home directory
+  * cd .. -> change to the directory above your current i.e parent directory
+  * cd . -> change to the directory you currently in
+  * cd - -> change to the last visited path
+</b></details>
+
+<details>
+<summary>How to rename the name of a file or a directory?</summary><br><b>
+
+Using the `mv` command.
+</b></details>
+
+<details>
+<summary>Specify which command would you use (and how) for each of the following scenarios 
+
+  * Remove a directory with files
+  * Display the content of a file
+  * Provides access to the file /tmp/x for everyone
+  * Change working directory to user home directory
+  * Replace every occurrence of the word "good" with "great" in the file /tmp/y</summary><br><b>
+</b></details>
+
+<details>
+<summary>How can you check what is the path of a certain command?</summary><br><b>
+
+  * whereis
+  * which
+</b></details>
+
+<details>
+<summary>Explain redirection</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain piping. How do you perform piping?</summary><br><b>
 
 Using a pipe in Linux, allows you to send the output of one to another (also called redirection). For example: `cat /etc/services | wc -l`
+</b></details>
+
+### Linux FHS
+
+<details>
+<summary>In Linux FHS (Filesystem Hierarchy Standard) what is the <code>/</code>?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is stored in each of the following paths?
+
+  * /bin, /sbin, /usr/bin and /usr/sbin
+  * /etc
+  * /home
+  * /var
+  * /tmp</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is special about the /tmp directory when compared to other directories?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What kind of information one can find in /proc?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you create files in /proc?</summary><br><b>
+</b></details>
+
+<details>
+<summary>In which path can you find the system devices (e.g. block storage)?</summary><br><b>
 </b></details>
 
 <details>
@@ -2506,7 +2541,7 @@ Alternatively if you are using a distro with systemd it's recommended to use sys
 history command or .bash_history file
 </b></details>
 
-##### Permissions
+##### Linux Permissions
 
 <details>
 <summary>How to change the permissions of a file?</summary><br><b>
@@ -2558,12 +2593,28 @@ Its a bit that only allows the owner or the root user to delete or modify the fi
 </b></details>
 
 <details>
-<summary>You try to delete a file but it fails. Name at least three different reason as to why it could happen</summary><br><b>
+<summary>What is sudo? How do you set it up?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? In order to install packages on the system one must be the root user or use the sudo command</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>Explain what are ACLs. For what use cases would you recommend to use them?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You try to create a file but it fails. Name at least three different reason as to why it could happen</summary><br><b>
 
 * No more disk space
 * No more inodes
 * No permissions
 </b></details>
+
+#### Linux systemd
 
 <details>
 <summary>What is systemd?</summary><br>
@@ -2653,14 +2704,6 @@ tail -f <file_name>
 
 <details>
 <summary>How to debug binaries?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What kind of information one can find in /proc?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Can you create files in /proc?</summary><br><b>
 </b></details>
 
 <details>
@@ -2754,10 +2797,6 @@ It means that the key of the remote host was changed and doesn't match the one t
 
 <details>
 <summary>What is SSH port forwarding?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain redirection</summary><br><b>
 </b></details>
 
 #### Linux - Globbing, Wildcards
@@ -2917,6 +2956,7 @@ There are many answers for this question. One way is running `df -T`
 
 <details>
 <summary>How to create a
+
   * new empty file
   * a file with text (without using text editor)
   * a file with given size</summary><br><b>
@@ -3144,6 +3184,10 @@ It is the first process executed by the kernel during the booting of a system. I
 </b></details>
 
 <details>
+<summary>Can you describe how processes are being created?</summary><br><b>
+</b></details>
+
+<details>
 <summary>How to change the priority of a process? Why would you want to do that?</summary><br><b>
 </b></details>
 
@@ -3179,6 +3223,7 @@ Kerberos
 File descriptor, also known as file handler, is a unique number which identifies an open file in the operating system.
 
 In Linux (and Unix) the first three file descriptors are:
+
   * 0 - the default data stream for input
   * 1 - the default data stream for output
   * 2 - the default data stream for output related to errors
@@ -3283,7 +3328,8 @@ Technically, yes.
   * SMTP
   * HTTP
   * DNS
-  * HTTPS</summary><br><b>
+  * HTTPS
+</summary><br><b>
 
   * SSH - 22
   * SMTP - 35
@@ -3510,10 +3556,6 @@ Re-install the OS IS NOT the right answer :)
 </b></details>
 
 <details>
-<summary>What is sudo? How do you set it up?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is /etc/skel?</summary><br><b>
 </b></details>
 
@@ -3532,7 +3574,7 @@ Using the `last` command.
   * id</summary><br><b>
 </b></details>
 
-#### Linux - Hardware
+#### Linux Hardware
 
 <details>
 <summary>Where can you find information on the processor?</summary><br><b>
@@ -3631,24 +3673,12 @@ From Wikipedia: "AWK is domain-specific language designed for text processing an
 `awk 'length($0) > 79' file`
 </b></details>
 
-#### Linux - Commands
-
 <details>
 <summary>What the <code>lsof</code> command does? Have you used it? What for?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What commands you can use for searching files and/or directories?</summary><br><b>
-
-  * find
-  * locate
-</b></details>
-
-<details>
-<summary>How can you check what is the path of a certain command?</summary><br><b>
-
-  * whereis
-  * which
+<summary>What is the difference between find and locate?</summary><br><b>
 </b></details>
 
 #### System Calls
@@ -3737,10 +3767,6 @@ There are a couple of ways to do that:
   * dd if=/dev/urandom of=new_file.txt bs=2MB count=1
   * truncate -s 2M new_file.txt
   * fallocate -l 2097152 new_file.txt
-</b></details>
-
-<details>
-<summary>Can you describe how processes are being created?</summary><br><b>
 </b></details>
 
 <details>
@@ -3998,7 +4024,8 @@ It's used by one entity until this entity decides to get rid of it. Take for exa
   * Module
   * Play
   * Playbook
-  * Role</summary><br><b>
+  * Role
+</summary><br><b>
 
 Task – a call to a specific Ansible module
 Module – the actual unit of code executed by Ansible on your own host or a remote host. Modules are indexed by category (database, file, network, …) and also referred to as task plugins.
@@ -10435,7 +10462,13 @@ DNS uses UDP port 53 for resolving queries either regular or reverse. DNS uses T
 </b></details>
 
 <details>
-<summary>What is Round Robin DNS?</summary><br><b>
+<summary>True or False? DNS can be used for load balancing</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>Which techniques a DNS can use for load balancing?</summary><br><b>
 </b></details>
 
 <details>
@@ -10805,6 +10838,13 @@ The server didn't receive a response from another server it communicates with in
 </b></details>
 
 <details>
+<summary>What are the drawbacks of round robin algorithm in load balancing?</summary><br><b>
+
+  * A simple round robin algorithm knows nothing about the load and the spec of each server it forwards the requests to. It is possible, that multiple heavy workloads requests will get to the same server while other servers will got only lightweight requests which will result in one server doing most of the work, maybe even crashing at some point because it unable to handle all the heavy workloads requests by its own.
+  * Each request from the client creates a whole new session. This might be a problem for certain scenarios where you would like to perform multiple operations where the server has to know about the result of operation so basically, being sort of aware of the history it has with the client. In round robin, first request might hit server X, while second request might hit server Y and ask to continue processing the data that was processed on server X already.
+</b></details>
+
+<details>
 <summary>What is an Application Load Balancer?</summary><br><b>
 </b></details>
 
@@ -10812,6 +10852,12 @@ The server didn't receive a response from another server it communicates with in
 <summary>At what layers a load balancer can operate?</summary><br><b>
 
 L4 and L7
+</b></details>
+
+<details>
+<summary>Can you perform load balancing without using a dedicated load balancer instance?</summary><br><b>
+
+Yes, you can use DNS for performing load balancing.
 </b></details>
 
 <details>
