@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1537** questions
+:bar_chart: &nbsp;There are currently **1540** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -78,6 +78,12 @@
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-TOPICS-LIST:END -->
+
+## Linux Master Application
+
+A completely free application for testing your knowledge on Linux
+
+<a href="https://play.google.com/store/apps/details?id=com.codingshell.linuxmaster"><img src="images/linux_master.jpeg"/></a>
 
 ## DevOps
 
@@ -363,20 +369,9 @@ There are multiple ways to answer this question (there is no right and wrong her
 <details>
 <summary>What is Chaos Engineering?</summary><br><b>
 
+Wikipedia: "Chaos engineering is the discipline of experimenting on a software system in production in order to build confidence in the system's capability to withstand turbulent and unexpected conditions"
+
 Read about Chaos Engineering [here](https://en.wikipedia.org/wiki/Chaos_engineering)
-</b></details>
-
-<details>
-<summary>What is an error budget?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are MTTF (mean time to failure) and MTTR (mean time to repair)? What these metrics help us to evaluate?</summary><br><b>
-
-	* MTTF (mean time to failure) other known as uptime, can be defined as how long the system run before if fails.
-	* MTTR (mean time to recover) on the other hand, is the amount of time it takes to repair a system.
-	* MTBF (mean time between failues) is the amount of time between failures of the system. These errors can be intermittent or fatal.
-
 </b></details>
 
 <details>
@@ -475,16 +470,57 @@ Note: cross-dependency is when you have two or more changes to separate projects
 <summary>Have you contributed to an open source project? Tell me about this experience</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is Distributed Tracing?</summary><br><b>
+</b></details>
+
 #### SRE
 
 <details>
 <summary>What are the differences between SRE and DevOps?</summary><br><b>
+
+Google: "One could view DevOps as a generalization of several core SRE principles to a wider range of organizations, management structures, and personnel."
+
+Read more about it [here](https://sre.google/sre-book/introduction)
 </b></details>
 
 <details>
 <summary>What SRE team is responsible for?</summary><br><b>
 
 Google: "the SRE team is responsible for availability, latency, performance, efficiency, change management, monitoring, emergency response, and capacity planning of their services"
+
+Read more about it [here](https://sre.google/sre-book/introduction)
+</b></details>
+
+<details>
+<summary>What is an error budget?</summary><br><b>
+
+Atlassian: "An error budget is the maximum amount of time that a technical system can fail without contractual consequences."
+
+Read more about it [here](https://www.atlassian.com/incident-management/kpis/error-budget)
+</b></details>
+
+<details>
+<summary>What do you think about the following statement: "100% is the only right availability target for a system"</summary><br><b>
+
+Wrong. No system can guarantee 100% availability as no system is safe from experiencing zero downtime.
+Many systems and services will fall somewhere between 99% and 100% uptime (or at least this is how most systems and services should be).
+</b></details>
+
+<details>
+<summary>What are MTTF (mean time to failure) and MTTR (mean time to repair)? What these metrics help us to evaluate?</summary><br><b>
+
+	* MTTF (mean time to failure) other known as uptime, can be defined as how long the system runs before if fails.
+	* MTTR (mean time to recover) on the other hand, is the amount of time it takes to repair a broken system.
+	* MTBF (mean time between failures) is the amount of time between failures of the system.
+</b></details>
+
+<details>
+<summary>What is the role of monitoring in SRE?</summary><br><b>
+
+Google: "Monitoring is one of the primary means by which service owners keep track of a system’s health and availability"
+
+Read more about it [here](https://sre.google/sre-book/introduction)
 </b></details>
 
 ## Jenkins
@@ -2468,7 +2504,19 @@ Using the `mv` command.
 Using a pipe in Linux, allows you to send the output of one to another (also called redirection). For example: `cat /etc/services | wc -l`
 </b></details>
 
-### Linux FHS
+<details>
+<summary>Fix the following commands:
+
+  * sed "s/1/2/g' /tmp/myFile
+  * find . -iname \*.yaml -exec sed -i "s/1/2/g" {} ;
+
+  </summary><br><b>
+</b>
+<code>sed 's/1/2/g' /tmp/myFile</code><br>
+<code> find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \; </code>
+</details>
+
+#### Linux FHS
 
 <details>
 <summary>In Linux FHS (Filesystem Hierarchy Standard) what is the <code>/</code>?</summary><br><b>
@@ -2911,14 +2959,20 @@ related to the file like its size, owner, permissions, etc.
   * File size
   * File name
   * File timestamp</summary><br><b>
+
+File name (it's part of the directory file)
 </b></details>
 
 <details>
 <summary>How to check which disks are currently mounted?</summary><br><b>
+
+Run `mount`
 </b></details>
 
 <details>
-<summary>You run mount command but you get no output. How would you check what mounts you have on your system?</summary><br><b>
+<summary>You run the <code>mount</code> command but you get no output. How would you check what mounts you have on your system?</summary><br><b>
+
+`cat /proc/mounts`
 </b></details>
 
 <details>
@@ -2973,7 +3027,7 @@ There are many answers for this question. One way is running `df -T`
 </b></details>
 
 <details>
-<summary>What do you know about LVM?</summary><br><b>
+<summary>What is LVM?</summary><br><b>
 </b></details>
 
 <details>
@@ -2982,6 +3036,8 @@ There are many answers for this question. One way is running `df -T`
   * PV
   * VG
   * LV</summary><br><b>
+
+
 </b></details>
 
 <details>
@@ -3005,22 +3061,10 @@ There are many answers for this question. One way is running `df -T`
 </b></details>
 
 <details>
-<summary>Fix the following commands:
-
-  * sed "s/1/2/g' /tmp/myFile
-  * find . -iname \*.yaml -exec sed -i "s/1/2/g" {} ;
-
-  </summary><br><b>
-</b>
-<code>sed 's/1/2/g' /tmp/myFile</code><br>
-<code> find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \; </code>
-</details>
-
-<details>
-<summary>What is stored in each of the following logs?</summary><br><b>
+<summary>What is stored in each of the following logs?
 
   * /var/log/messages
-  * /var/log/boot.log
+  * /var/log/boot.log</summary><br><b>
 </b></details>
 
 <details>
@@ -7880,6 +7924,8 @@ a = f()
 
 <details>
 <summary>Explain monitoring. What is it? What its goal?</summary><br><b>
+
+Google: "Monitoring is one of the primary means by which service owners keep track of a system’s health and availability".
 </b></details>
 
 <details>
