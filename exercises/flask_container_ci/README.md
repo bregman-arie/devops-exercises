@@ -13,8 +13,8 @@ If any of the following steps is not working, it is expected from you to fix the
 
 1. Move to `challenges/flask_container_ci` directory, if you are not already there
 1. Run `export FLASK_APP=app/main.py`
-1. To run the app execute `flask run`. If it doesn't works, fix it
-3. Access `http://127.0.0.1:5000`. You should see the following
+1. To run the app execute `flask run`. If it doesn't work, fix it
+3. Access `http://127.0.0.1:5000`. You should see the following:
 
 ```
 {
@@ -31,7 +31,7 @@ If any of the following steps is not working, it is expected from you to fix the
 * /users - all users data 
 * /users/<username> - data on the specific chosen user
 
-5. When accessing /users, the data returned should not include the id of the user, only its name and description. Also, the data should be ordered by users names.
+5. When accessing /users, the data returned should not include the id of the user, only its name and description. Also, the data should be ordered by usernames.
 
 ## Containers
 

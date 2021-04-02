@@ -1,14 +1,16 @@
-# DevOps Questions & Exercises
+<p align="center"><img src="images/devops_exercises.png"/></p>
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **871** questions
+:bar_chart: &nbsp;There are currently **1540** questions
+
+:books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
 
-:thought_balloon: &nbsp;If you wonder "How to prepare for a DevOps interview?", you might want to read some of my suggestions [here](prepare_for_interview.md)
+:busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [DevOps community](https://www.facebook.com/groups/538897960007080) where we have discussions and resources on DevOps
 
-:pencil: &nbsp;You can add more questions and exercises by submitting pull requests :) You can read more about it [here](CONTRIBUTING.md)
+:pencil: &nbsp;You can add more questions and exercises by submitting pull requests :) Read about contribution guidelines [here](CONTRIBUTING.md)
 
 ****
 
@@ -18,51 +20,57 @@
 <center>
 <table>
   <tr>
-    <td align="center"><a href="#devops"><img src="images/devops.png" width="70px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a><br /><sub><a href="#devops-beginner">Beginner :baby:</a></sub><br><sub><a href="#devops-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="85px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a><br /><sub><a href="#jenkins-beginner">Beginner :baby:</a></sub><br><sub><a href="#jenkins-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#git"><img src="images/git.png" width="80px;" height="75px;" alt="Git"/><br /><b>Git</b></a><br /><sub><a href="#git-beginner">Beginner :baby:</a></sub><br><sub><a href="#git-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#ansible"><img src="images/ansible.png" width="65px;" height="75px;" alt="Ansible"/><br /><b>Ansible</b></a><br /><sub><a href="#ansible-beginner">Beginner :baby:</a></sub><br><sub><a href="#ansible-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#Network"><img src="images/network.png" width="80x;" height="75px;" alt="Network"/><br /><b>Network</b></a><br /><sub><a href="#network-beginner">Beginner :baby:</a></sub><br><sub><a href="#network-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#linux"><img src="images/linux.png" width="75x;" height="75px;" alt="Linux"/><br /><b>Linux</b></a><br /><sub><a href="#linux-beginner">Beginner :baby:</a></sub><br><sub><a href="#linux-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#terraform"><img src="images/terraform.png" width="70px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a><br /><sub><a href="#terraform-beginner">Beginner :baby:</a></sub><br><sub><a href="#terraform-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#docker"><img src="images/docker.png" width="70px;" height="75px;" alt="Docker"/><br /><b>Docker</b></a><br /><sub><a href="#docker-beginner">Beginner :baby:</a></sub><br><sub><a href="#docker-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#devops"><img src="images/devops.png" width="70px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a></td>
+    <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="85px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a></td>
+    <td align="center"><a href="#git"><img src="images/git.png" width="80px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
+    <td align="center"><a href="#ansible"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
+    <td align="center"><a href="#Network"><img src="images/network.png" width="80x;" height="75px;" alt="Network"/><br /><b>Network</b></a></td>
+    <td align="center"><a href="#linux"><img src="images/linux.png" width="75x;" height="75px;" alt="Linux"/><br /><b>Linux</b></a></td>
+    <td align="center"><a href="#terraform"><img src="images/terraform.png" width="70px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
   </tr>
   <tr>
-    <td align="center"><a href="#coding"><img src="images/coding.png" width="75px;" height="75px;" alt="coding"/><br /><b>Coding</b></a><br /><sub><a href="#coding-beginner">Beginner :baby:</a></sub><br><sub><a href="#coding-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a><br /><sub><a href="#python-beginner">Beginner :baby:</a></sub><br><sub><a href="#python-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#go"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a><br /><sub><a href="#go-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a><br /><sub><a href="#shell-scripting-beginner">Beginner :baby:</a></sub><br><sub><a href="#shell-scripting-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a><br /><sub><a href="#kubernetes-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a><br /><sub><a href="#prometheus-beginner">Beginner :baby:</a></sub><br><sub><a href="#prometheus-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a><br /><sub><a href="#mongo-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a><br /><sub><a href="#sql-beginner">Beginner :baby:</a></sub><br><sub><a href="#sql-advanced">Advanced :star:</a></sub></td>
+    <td align="center"><a href="#programming"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Programming</b></a></td>
+    <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
+    <td align="center"><a href="#go"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a></td>
+    <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
+    <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
+    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
+    <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a></td>
   </tr>
   <tr>
-    <td align="center"><a href="#cloud"><img src="images/cloud.png" width="110px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a><br /><sub><a href="#cloud-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#aws"><img src="images/aws.jpg" width="75px;" height="75px;" alt="aws"/><br /><b>AWS</b></a><br /><sub><a href="#aws-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a><br /><sub><a href="#azure-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#gcp"><b>Google Cloud Platform</b></a><br /><sub><a href="#gcp-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a><br /><sub><a href="#openstack-beginner">Beginner :baby:</a></sub><br><sub><a href="#openstack-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a><br /><sub><a href="#security-beginner">Beginner :baby:</a></sub><br><sub><a href="#security-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a><br /><sub><a href="#puppet-beginner">Beginner :baby:</a></sub><br><sub><a href="#puppet-advanced">Advanced :star:</a></sub></td>
-    <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a><br /><sub><a href="#openshift-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#cloud"><img src="images/cloud.png" width="110px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a></td>
+    <td align="center"><a href="#aws"><img src="images/aws.png" width="75px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
+    <td align="center"><a href="#azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a></td>
+    <td align="center"><a href="#gcp"><img src="images/googlecloud.png" width="80px;" height="75px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
+    <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a></td>
+    <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
+    <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a></td>
   </tr>
   <tr>
-    <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a><br /><sub><a href="#monitoring-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#elastic"><img src="images/elastic.png" width="110px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a><br /><sub><a href="#elastic-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#virtualization"><b>Virtualization</b></a><br /><sub><a href="#virtualization-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#dns"><b>DNS</b></a><br /><sub><a href="#dns-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#operating-system"><b>Operating System</b></a><br /><sub><a href="#operating-system-beginner">Beginner :baby:</a></sub><br><sub></td>
+    <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a></td>
+    <td align="center"><a href="#elastic"><img src="images/elastic.png" width="110px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
+    <td align="center"><a href="#virtualization"><img src="images/virtualization.png" width="75px;" height="75px;" alt="Virtualization"/><br /><b>Virtualization</b></a></td>
+    <td align="center"><a href="#dns"><img src="images/dns.png" width="75px;" height="75px;" alt="DNS"/><br /><b>DNS</b></a></td>
+    <td align="center"><a href="#operating-system"><img src="images/os.png" width="75px;" height="75px;" alt="Operating System"/><br /><b>Operating System</b></a></td>
     <td align="center"><a href="#distributed"><img src="images/distributed.png" width="110px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
-    <td align="center"><a href="#general"><b>General</b></a><br /><sub><a href="#general-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
+    <td align="center"><a href="#general"><img src="images/general.png" width="110px;" height="75px;" alt="General"/><br /><b>General</b></a></td>
   </tr>
   <tr>
     <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
     <td align="center"><a href="#databases"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
-    <td align="center"><a href="#regex"><b>Regex</b></a><br /><sub><a href="#regex-beginner">Beginner :baby:</a></sub><br><sub></td>
-    <td align="center"><a href="#design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>Design</b></a></td>
+    <td align="center"><a href="#regex"><img src="images/regex.png" width="75ph;" height="75px;" alt="RegEx"/><br /><b>Regex</b></a></td>
+    <td align="center"><a href="https://github.com/bregman-arie/system-design-exercises"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
+    <td align="center"><a href="#hardware"><img src="images/hardware.png" width="110px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
+    <td align="center"><a href="#big-data"><img src="images/big-data.png" width="110px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
     <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
+    <td align="center"><a href="#containers"><img src="images/containers.png" width="70px;" height="75px;" alt="Containers"/><br /><b>Containers</b></a></td>
+    <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
+    <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
+    <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
+    <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
     <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
   </tr>
 </table>
@@ -71,10 +79,13 @@
 <!-- prettier-ignore-end -->
 <!-- ALL-TOPICS-LIST:END -->
 
-## DevOps
+## Linux Master Application
 
-<a name="devops-beginner"></a>
-#### :baby: Beginner
+A completely free application for testing your knowledge on Linux
+
+<a href="https://play.google.com/store/apps/details?id=com.codingshell.linuxmaster"><img src="images/linux_master.jpeg"/></a>
+
+## DevOps
 
 <details>
 <summary>What is DevOps?</summary><br><b>
@@ -91,12 +102,13 @@ Red Hat:
 
 "DevOps describes approaches to speeding up the processes by which an idea (like a new software feature, a request for enhancement, or a bug fix) goes from development to deployment in a production environment where it can provide value to the user. These approaches require that development teams and operations teams communicate frequently and approach their work with empathy for their teammates. Scalability and flexible provisioning are also necessary. With DevOps, those that need power the most, get it—through self service and automation. Developers, usually coding in a standard development environment, work closely with IT operations to speed software builds, tests, and releases—without sacrificing reliability."
 
+Google:
+
+"...The organizational and cultural movement that aims to increase software delivery velocity, improve service reliability, and build shared ownership among software stakeholders"
 </b></details>
 
 <details>
-<summary>What are the benefits of DevOps? What it can help us to achieve?</summary><br><b>
-
-You should mention some or all of the following:
+<summary>What are the benefits of DevOps? What can it help us to achieve?</summary><br><b>
 
   * Collaboration
   * Improved delivery
@@ -104,17 +116,39 @@ You should mention some or all of the following:
   * Speed
   * Scale
   * Reliability
-
-Make sure to elaborate :)
 </b></details>
 
 <details>
 <summary>What are the anti-patterns of DevOps?</summary><br><b>
 
-* Not allowing to push in production on Friday :)
-* One specific person is in charge of different tasks. For example there is only one person who is allowed to merge the code of everyone else
+* One person is in charge of different tasks. For example there is only one person who is allowed to merge the code of everyone else into the repository
 * Treating production differently from development environment. For example, not implementing security in development environment
+* Not allowing someone to push to production on Friday ;)
 </b></details>
+
+#### Version Control
+
+<details>
+<summary>What is Version Control?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a commit?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a merge?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a merge conflict?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What best practices are you familiar with regarding version control?</summary><br><b>
+</b></details>
+
+#### CI/CD
 
 <details>
 <summary>What is Continuous Integration?</summary><br><b>
@@ -126,18 +160,72 @@ Each piece of code (change/patch) is verified, to make the change is safe to mer
 
 <details>
 <summary>What is Continuous Deployment?</summary><br><b>
+
+A development strategy used by developers to release software automatically into production where any code commit must pass through an automated testing phase. Only when this is successful is the release considered production worthy. This eliminates any human interaction and should be implemented only after production-ready pipelines have been set with real-time monitoring and reporting of deployed assets. If any issues are detected in production it should be easy to rollback to previous working state.
+
+For more info please read [here](https://www.atlassian.com/continuous-delivery/continuous-deployment)
+</b></details>
+
+
+<details>
+<summary>Can you describe an example of a CI (and/or CD) process starting the moment a developer submitted a change/PR to a repository?</summary><br><b>
+
+There are many answers for such a question, as CI processes vary, depending on the technologies used and the type of the project to where the change was submitted.
+Such processes can include one or more of the following stages:
+
+* Compile 
+* Build
+* Install
+* Configure
+* Update
+* Test
+
+An example of one possible answer:
+
+A developer submitted a pull request to a project. The PR (pull request) triggered two jobs (or one combined job). One job for running lint test on the change and the second job for building a package which includes the submitted change, and running multiple api/scenario tests using that package. Once all tests passed and the change was approved by a maintainer/core, it's merged/pushed to the repository. If some of the tests failed, the change will not be allowed to merged/pushed to the repository.
+
+A complete different answer or CI process, can describe how a developer pushes code to a repository, a workflow then triggered to build a container image and push it to the registry. Once in the registry, the k8s cluster is applied with the new changes.
 </b></details>
 
 <details>
 <summary>What is Continuous Delivery?</summary><br><b>
+
+A development strategy used to frequently deliver code to QA and Ops for testing. This entails having a staging area that has production like features where changes can only be accepted for production after a manual review. Because of this human entanglement there is usually a time lag between release and review making it slower and error prone as compared to continous deployment.
+
+For more info please read [here](https://www.atlassian.com/continuous-delivery/continuous-deployment)
 </b></details>
 
 <details>
 <summary>What CI/CD best practices are you familiar with? Or what do you consider as CI/CD best practice?</summary><br><b>
+
+* Automated process of building, testing and deploying software
+* Commit and test often
+* Testing/Staging environment should be a clone of production environment
 </b></details>
 
 <details>
-<summary>What systems and/or tools are you using for the following?:
+<summary>You are given a pipeline and a pool with 3 workers: virtual machine, baremetal and a container. How will you decide on which one of them to run the pipeline?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Where do you store CI/CD pipelines? Why?</summary><br><b>
+
+There are multiple approaches as to where to store the CI/CD pipeline definitions:
+
+1. App Repository - store them in the same repository of the application they are building or testing (perhaps the most popular one)
+2. Central Repository - store all organization's/project's CI/CD pipelines in one separate repository (perhaps the best approach when multiple teams test the same set of projects and they end up having many pipelines)
+3. CI repo for every app repo - you separate CI related code from app code but you don't put everything in one place (perhaps the worst option due to the maintenance)
+</b></details>
+
+<details>
+<summary>Would you prefer a "configuration->deployment" model or "deployment->configuration"? Why?</summary><br><b>
+
+Both have advantages and disadvantages.
+With "configuration->deployment" model for example, where you build one image to be used by multiple deployments, there is less chance of deployments being different from one another, so it has a clear advantage of a consistent environment.
+</b></details>
+
+<details>
+<summary>What tooling are you using for the following areas/tasks? Why?
 
   * CI/CD
   * Provisioning infrastructure
@@ -146,14 +234,18 @@ Each piece of code (change/patch) is verified, to make the change is safe to mer
   * Logging
   * Code review
   * Code coverage
+  * Issue Tracking
+  * Containers and Containers Orchestration
   * Tests</summary><br><b>
-  * CI/CD - Jenkins, Circle CI, Travis
+  * CI/CD - Jenkins, Circle CI, Travis, Drone, Argo CD, Zuul
   * Provisioning infrastructure - Terraform, CloudFormation
   * Configuration Management - Ansible, Puppet, Chef
   * Monitoring & alerting - Prometheus, Nagios
   * Logging - Logstash, Graylog, Fluentd
   * Code review - Gerrit, Review Board
   * Code coverage - Cobertura, Clover, JaCoCo
+  * Issue tracking - Jira, Bugzilla
+  * Containers and Containers Orchestration - Docker, Podman, Kubernetes, Nomad
   * Tests - Robot, Serenity, Gauge
 </b></details>
 
@@ -161,9 +253,10 @@ Each piece of code (change/patch) is verified, to make the change is safe to mer
 <summary>What are you taking into consideration when choosing a tool/technology?</summary><br><b>
 
 In your answer you can mention one or more of the following:
-  * mature vs. cutting edge
+  * mature/stable vs. cutting edge
   * community size
   * architecture aspects - agent vs. agentless, master vs. masterless, etc.
+  * learning curve
 </b></details>
 
 <details>
@@ -179,15 +272,47 @@ which follows the immutable infrastructure paradigm.
 </b></details>
 
 <details>
-<summary>What ways are you familiar with to deliver a software? What are the advantages and disadvantages of each method?</summary><br><b>
+<summary>Explain "Software Distribution"</summary><br><b>
 
-  * Archive - collect all your app files into one archive (e.g. tar) and deliver it to the user.
-  * Package - depends on the OS, you can use your OS package format (e.g. in RHEL/Fefodra it's RPM) to deliver your software with a way to install, uninstall and update it using the standard packager commands
-  * Images - Either VM or container images where your package is included with everything it needs in order to run successfully.
+Read [this](https://venam.nixers.net/blog/unix/2020/03/29/distro-pkgs.html) fantastic article on the topic.
+
+From the article: "Thus, software distribution is about the mechanism and the community that takes the burden and decisions to build an assemblage of coherent software that can be shipped."
 </b></details>
 
 <details>
-<summary>What is caching? How it works? Why is it important?</summary><br><b>
+<summary>Why are there multiple software distributions? What differences can they have?</summary><br><b>
+
+Different distributions can focus on different things like: focus on different environments (server vs. mobile vs. desktop), support specific hardware, specialize in different domains (security, multimedia, ...), etc. Basically, different aspects of the software and what it supports, get different priority in each distribution.
+</b></details>
+
+<details>
+<summary>What is a Software Repository?</summary><br><b>
+
+Wikipedia: "A software repository, or “repo” for short, is a storage location for software packages. Often a table of contents is stored, as well as metadata."
+
+Read more [here](https://en.wikipedia.org/wiki/Software_repository)
+</b></details>
+
+<details>
+<summary>What ways are there to distribute software? What are the advantages and disadvantages of each method?</summary><br><b>
+
+  * Source - Maintain build script within version control system so that user can build your app after cloning repository. Advantage: User can quickly checkout different versions of application. Disadvantage: requires build tools installed on users machine.
+  * Archive - collect all your app files into one archive (e.g. tar) and deliver it to the user. Advantage: User gets everything he needs in one file. Disadvantage: Requires repeating the same procedure when updating, not good if there are a lot of dependencies.
+  * Package - depends on the OS, you can use your OS package format (e.g. in RHEL/Fefodra it's RPM) to deliver your software with a way to install, uninstall and update it using the standard packager commands. Advantages: Package manager takes care of support for installation, uninstallation, updating and dependency management. Disadvantage: Requires managing package repository.
+  * Images - Either VM or container images where your package is included with everything it needs in order to run successfully. Advantage: everything is preinstalled, it has high degree of environment isolation. Disadvantage: Requires knowledge of building and optimizing images.
+</b></details>
+
+<details>
+<summary>Are you familiar with "The Cathedral and the Bazaar models"? Explain each of the models</summary><br><b>
+
+* Cathedral - source code released when software is released
+* Bazaar - source code is always available publicly (e.g. Linux Kernel)
+</b></details>
+
+<details>
+<summary>What is caching? How does it works? Why is it important?</summary><br><b>
+
+Caching is fast access to frequently used resources which are computationally expensive or IO intensive and do not change often. There can be several layers of cache that can start from CPU caches to distributed cache systems. Common ones are in memory caching and distributed caching. <br/> Caches are typically data structures that contains some data, such as a hashtable or dictionary. However, any data structure can provide caching capabilities, like set, sorted set, sorted dictionary etc. While, caching is used in many applications, they can create subtle bugs if not implemented correctly or used correctly. For example,cache invalidation, expiration or updating is usually quite challenging and hard.
 </b></details>
 
 <details>
@@ -198,7 +323,21 @@ Stateful applications depend on the storage to save state and data, typically da
 </b></details>
 
 <details>
+<summary>What is Reliability? How does it fit DevOps?</summary><br><b>
+
+Reliability, when used in DevOps context, is the ability of a system to recover from infrastructure failure or disruption. Part of it is also being able to scale based on your organization or team demands.
+</b></details>
+
+<details>
+<summary>What "Availability" means? What means are there to track Availability of a service?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Describe the workflow of setting up some type of web server (Apache, IIS, Tomcat, ...)</summary><br><b>
+</b></details>
+
+<details>
+<summary>How a web server works?</summary><br><b>
 </b></details>
 
 <details>
@@ -218,47 +357,31 @@ You should be able to explain those that you mention.
 </b></details>
 
 <details>
-<summary>You need to install periodically the same package on different operating systems (Ubuntu, RHEL, ...). How would you do it?</summary><br><b>
+<summary>You need to install periodically a package (unless it's already exists) on different operating systems (Ubuntu, RHEL, ...). How would you do it?</summary><br><b>
 
-It can be as simple as one Ansible (or other CM tool) task that runs periodically with Cron. In more advanced cases, perhaps a CI system.
-</b></details>
+There are multiple ways to answer this question (there is no right and wrong here):
 
-##### SRE
-
-<details>
-<summary>Compare SRE to DevOps</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is Reliability? How does it fit DevOps?</summary><br><b>
-
-Reliability, when used in DevOps context, is the ability of a system to recover from infrastructure failure or disruption. Part of it is also being able to scale based on your organization or team demands.
+* Simple cron job
+* Pipeline with configuration management technology (such Puppet, Ansible, Chef, etc.)
+...
 </b></details>
 
 <details>
-<summary>What SRE team is responsible for?</summary><br><b>
+<summary>What is Chaos Engineering?</summary><br><b>
 
-One can argue whether it's per company definition or a global one but at least according to a large companies, like Google for example, the SRE team is responsible for availability, latency, performance, efficiency, change management, monitoring, emergency response, and capacity planning of their services
-</b></details>
+Wikipedia: "Chaos engineering is the discipline of experimenting on a software system in production in order to build confidence in the system's capability to withstand turbulent and unexpected conditions"
 
-<details>
-<summary>What is an error budget?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are MTTF (mean time to failure) and MTTR (mean time to repair)? What these metrics help us to evaluate?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a post-mortem meeting? Why is it important?</summary><br><b>
+Read about Chaos Engineering [here](https://en.wikipedia.org/wiki/Chaos_engineering)
 </b></details>
 
 <details>
 <summary>What is "infrastructure as code"? What implementation of IAC are you familiar with?</summary><br><b>
+	IAC (infrastructure as code) is a declerative approach of defining infrastructure or architecture of a system. Some implementations are ARM templates for Azure and Terraform that can work across multiple cloud providers.
 </b></details>
 
 <details>
 <summary>How do you manage build artifacts?</summary><br><b>
+	Build artifacts are usually stored in a repository. They can be used in release pipelines for deployment purposes. Usually there is retention period on the build artifacts.
 </b></details>
 
 <details>
@@ -267,13 +390,37 @@ One can argue whether it's per company definition or a global one but at least a
 
 <details>
 <summary>What deployment strategies are you familiar with or have used?</summary><br><b>
+
+	There are several deployment strategies:
+	* Rolling
+	* Blue green deployment
+	* Canary releases
+	* Recreate strategy
+
 </b></details>
 
-<a name="devops-advanced"></a>
-#### :star: Advanced
+<details>
+<summary>You joined a team where everyone developing one project and the practice is to run tests locally on their workstation and push it to the repository if the tests passed. What is the problem with the process as it is now and how to improve it?</summary><br><b>
+</b></details>
 
 <details>
-<summary>Tell me how you perform plan capacity for your CI/CD resources (e.g. servers, storage, etc.)</summary><br><b>
+<summary>Explain test-driven development (TDD)</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain agile software development</summary><br><b>
+</b></details>
+
+<details>
+<summary>What do you think about the following sentence?: "implementing or practicing DevOps leads to more secure software"</summary><br><b>
+</b></details>
+
+<details>
+<summary>Do you know what is a "post-mortem meeting"? What is your opinion on that?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you perform plan capacity for your CI/CD resources? (e.g. servers, storage, etc.)</summary><br><b>
 </b></details>
 
 <details>
@@ -296,6 +443,21 @@ This situation might lead to bugs which hard to identify and reproduce.
 
 <details>
 <summary>How to deal with a configuration drift?</summary><br><b>
+	Configuration drift can be avoided with desired state configuration (DSC) implementation. Desired state configuration can be a declarative file that defined how a system should be. There are tools to enforce desired state such a terraform or azure dsc. There are incramental or complete strategies.
+</b></details>
+
+<details>
+<summary>Explain Declarative and Procedural styles. The technologies you are familiar with (or using) are using procedural or declarative style?</summary><br><b>
+
+Declarative - You write code that specifies the desired end state
+Procedural - You describe the steps to get to the desired end state
+
+Declarative Tools - Terraform, Puppet, CloudFormation
+Procedural Tools - Ansible, Chef
+
+To better emphasize the difference, consider creating two virtual instances/servers.
+In declarative style, you would specify two servers and the tool will figure out how to reach that state.
+In procedural style, you need to specify the steps to reach the end state of two instances/servers - for example, create a loop and in each iteration of the loop create one instance (running the loop twice of course).
 </b></details>
 
 <details>
@@ -308,13 +470,68 @@ Note: cross-dependency is when you have two or more changes to separate projects
 <summary>Have you contributed to an open source project? Tell me about this experience</summary><br><b>
 </b></details>
 
-## Jenkins
+<details>
+<summary>What is Distributed Tracing?</summary><br><b>
+</b></details>
 
-<a name="jenkins-beginner"></a>
-#### :baby: Beginner
+#### SRE
+
+<details>
+<summary>What are the differences between SRE and DevOps?</summary><br><b>
+
+Google: "One could view DevOps as a generalization of several core SRE principles to a wider range of organizations, management structures, and personnel."
+
+Read more about it [here](https://sre.google/sre-book/introduction)
+</b></details>
+
+<details>
+<summary>What SRE team is responsible for?</summary><br><b>
+
+Google: "the SRE team is responsible for availability, latency, performance, efficiency, change management, monitoring, emergency response, and capacity planning of their services"
+
+Read more about it [here](https://sre.google/sre-book/introduction)
+</b></details>
+
+<details>
+<summary>What is an error budget?</summary><br><b>
+
+Atlassian: "An error budget is the maximum amount of time that a technical system can fail without contractual consequences."
+
+Read more about it [here](https://www.atlassian.com/incident-management/kpis/error-budget)
+</b></details>
+
+<details>
+<summary>What do you think about the following statement: "100% is the only right availability target for a system"</summary><br><b>
+
+Wrong. No system can guarantee 100% availability as no system is safe from experiencing zero downtime.
+Many systems and services will fall somewhere between 99% and 100% uptime (or at least this is how most systems and services should be).
+</b></details>
+
+<details>
+<summary>What are MTTF (mean time to failure) and MTTR (mean time to repair)? What these metrics help us to evaluate?</summary><br><b>
+
+	* MTTF (mean time to failure) other known as uptime, can be defined as how long the system runs before if fails.
+	* MTTR (mean time to recover) on the other hand, is the amount of time it takes to repair a broken system.
+	* MTBF (mean time between failures) is the amount of time between failures of the system.
+</b></details>
+
+<details>
+<summary>What is the role of monitoring in SRE?</summary><br><b>
+
+Google: "Monitoring is one of the primary means by which service owners keep track of a system’s health and availability"
+
+Read more about it [here](https://sre.google/sre-book/introduction)
+</b></details>
+
+## Jenkins
 
 <details>
 <summary>What is Jenkins? What have you used it for?</summary><br><b>
+
+Jenkins is an open source automation tool written in Java with plugins built for Continuous Integration purpose. Jenkins is used to build and test your software projects continuously making it easier for developers to integrate changes to the project, and making it easier for users to obtain a fresh build. It also allows you to continuously deliver your software by integrating with a large number of testing and deployment technologies.
+
+Jenkins integrates development life-cycle processes of all kinds, including build, document, test, package, stage, deploy, static analysis and much more.
+
 </b></details>
 
 <details>
@@ -328,6 +545,13 @@ Note: cross-dependency is when you have two or more changes to separate projects
 
 <details>
 <summary>What are the limitations or disadvantages of Jenkins?</summary><br><b>
+
+This might be considered to be an opinionated answer:
+
+* Old fashioned dashboards with not many options to customize it
+* Containers readiness (this has improved with Jenkins X)
+* By itself, it doesn't have many features. On the other hand, there many plugins created by the community to expand its abilities
+* Managing Jenkins and its piplines as a code can be one hell of a nightmare
 </b></details>
 
 <details>
@@ -336,8 +560,13 @@ Note: cross-dependency is when you have two or more changes to separate projects
   * Job
   * Build
   * Plugin
-  * Slave
+  * Slave/Node/Worker
   * Executor</summary><br><b>
+
+  * Job is an automation definition = what and where to execute once the user clicks on "build" 
+  * Build is a running instance of a job. You can have one or more builds at any given point of time (unless limited by confiugration)
+  * A worker is the machine/instance on which the build is running. When a build starts, it "acquires" a worker out of a pool to run on it.
+  * An executor is variable of the worker, defining how many builds can run on that worker in parallel. An executor value of 3 means, that 3 builds can run at any point on that executor (not necessarily of the same job. Any builds)
 </b></details>
 
 <details>
@@ -345,7 +574,7 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>Explain CI/CD and how you implemented it in Jenkins</summary><br><b>
+<summary>Have you used Jenkins for CI or CD processes? Can you describe them?</summary><br><b>
 </b></details>
 
 <details>
@@ -353,11 +582,26 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>How did you report build results to users? What ways are you familiar with for reporting results?</summary><br><b>
+<summary>How did you report build results to users? What ways are there to report the results?</summary><br><b>
+
+You can report via:
+  * Emails
+  * Messaging apps
+  * Dashboards
+
+Each has its own disadvantages and advantages. Emails for example, if sent too often, can be eventually disregarded or ignored.
 </b></details>
 
 <details>
 <summary>You need to run unit tests every time a change submitted to a given project. Describe in details how your pipeline would look like and what will be executed in each stage</summary><br><b>
+
+The pipelines will have multiple stages:
+
+  * Clone the project
+  * Install test dependencies (for example, if I need tox package to run the tests, I will install it in this stage)
+  * Run unit tests
+  * (Optional) report results (For example an email to the users)
+  * Archive the relevant logs/files
 </b></details>
 
 <details>
@@ -365,20 +609,17 @@ Note: cross-dependency is when you have two or more changes to separate projects
 </b></details>
 
 <details>
-<summary>Can you describe some of Jenkins best practices?</summary><br><b>
+<summary>Describe how do you add new nodes (agents) to Jenkins</summary><br><b>
+
+You can describe the UI way to add new nodes but better to explain how to do in a way that scales like a script or using dynamic source for nodes like one of the existing clouds.
 </b></details>
 
 <details>
-<summary>Describe how do you add new slaves to Jenkins</summary><br><b>
-
-You can describe the UI way to add new slaves but better to explain how to do in a way that scales like a script or using dynamic source for slaves like one of the existing clouds.
+<summary>How to acquire multiple nodes for one specific build?</summary><br><b>
 </b></details>
 
-<a name="jenkins-advanced"></a>
-#### :star: Advanced
-
 <details>
-<summary>How to acquire multiple slaves for one specific build?</summary><br><b>
+<summary>Whenever a build fails, you would like to notify the team owning the job regarding the failure and provide failure reason. How would you do that?</summary><br><b>
 </b></details>
 
 <details>
@@ -386,7 +627,7 @@ You can describe the UI way to add new slaves but better to explain how to do in
 </b></details>
 
 <details>
-<summary>If you are managing a dozen of jobs, you can probably use the Jenkins UI. How do you manage the creation and deletion of hundreds of jobs every week/month?</summary><br><b>
+<summary>If you are managing a dozen of jobs, you can probably use the Jenkins UI. But how do you manage the creation and deletion of hundreds of jobs every week/month?</summary><br><b>
 </b></details>
 
 <details>
@@ -400,7 +641,7 @@ You can describe the UI way to add new slaves but better to explain how to do in
 <summary>How would you implement an option of a starting a build from a certain stage and not from the beginning?</summary><br><b>
 </b></details>
 
-##### Jenkins Dev
+#### Jenkins Dev
 
 <details>
 <summary>Do you have experience with developing a Jenkins plugin? Can you describe this experience?</summary><br><b>
@@ -410,10 +651,7 @@ You can describe the UI way to add new slaves but better to explain how to do in
 <summary>Have you written Jenkins scripts? If yes, what for and how they work?</summary><br><b>
 </b></details>
 
-## Cloud 
-
-<a name="cloud-beginner"></a>
-#### :baby: Beginner
+## Cloud
 
 <details>
 <summary>What is Cloud Computing? What is a Cloud Provider?</summary><br><b>
@@ -427,19 +665,41 @@ You can describe the UI way to add new slaves but better to explain how to do in
 </b></details>
 
 <details>
-<summary>What types of Cloud Computing are there?</summary><br><b>
+<summary>What types of Cloud Computing services are there?</summary><br><b>
 
-IAAS
-PAAS
-SAAS
+IAAS - Infrastructure as a Service
+PAAS - Platform as a Service
+SAAS - Software as a Service
+</b></details>
+
+<details>
+<summary>Explain each of the following and give an example:
+
+  * IAAS
+  * PAAS
+  * SAAS</summary><br><b>
+  * IAAS - Users have control over complete Operating System and don't need to worry about the physical resources, which is managed by Cloud Service Provider.
+  * PAAS - CLoud Service Provider takes care of Operating System, Middlewares and users only need to focus on our Data and Application.
+  * SAAS - A cloud based method to provide software to users, software logics running on cloud, can be run on-premises or managed by Cloud Service Provider.
+</b></details>
+
+<details>
+<summary>What types of clouds (or cloud deployments) are there?</summary><br><b>
+
+  * Public
+  * Hybrid
+  * Private
 </b></details>
 
 <details>
 <summary>Explain each of the following Cloud Computing Deployments:
 
   * Public
-  * Hybrid
-  * Private</summary><br><b>
+  * Private
+  * Hybrid</summary><br><b>
+  * Public - Cloud services sharing computing resources among multiple customers
+  * Private - Cloud services having computing resources limited to specific customer or organization, managed by third party or organizations itself
+  * Hybrid - Combination of public and private clouds
 </b></details>
 
 <details>
@@ -458,13 +718,14 @@ The main idea behind serverless computing is that you don't need to manage the c
 It's important to note that:
 
 * Serverless Computing is still using servers. So saying there are no servers in serverless computing is completely wrong
-* Serverless Computing allows you to have different paying model. You basically pay only when your functions are running and not when the VM or containers are running as in other payment models
+* Serverless Computing allows you to have a different paying model. You basically pay only when your functions are running and not when the VM or containers are running as in other payment models
+</b></details>
+
+<details>
+<summary>Is there a difference between managed service to SaaS or is it the same thing?</summary><br><b>
 </b></details>
 
 ## AWS
-
-<a name="aws-beginner"></a>
-#### :baby: Beginner
 
 #### Global Infrastructure
 
@@ -481,10 +742,13 @@ Within each region, there are multiple isolated locations known as Availability 
 Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
 </b></details>
 
-#### IAM
+#### AWS IAM
 
 <details>
 <summary>What is IAM? What are some of its features?</summary><br><b>
+
+Full explanation is [here](https://aws.amazon.com/iam)
+In short: it's used for managing users, groups, access policies & roles
 </b></details>
 
 <details>
@@ -494,9 +758,18 @@ True
 </b></details>
 
 <details>
+<summary>Given an example of IAM best practices?</summary><br><b>
+
+* Set up MFA
+* Delete root account access keys
+* Create IAM users instead of using root for daily management
+</b></details>
+
+<details>
 <summary>What are Roles?</summary><br><b>
 
 A way for allowing a service of AWS to use another service of AWS. You assign roles to AWS resources.
+For example, you can make use of a role which allows EC2 service to acesses s3 buckets (read and write).
 </b></details>
 
 <details>
@@ -505,77 +778,90 @@ A way for allowing a service of AWS to use another service of AWS. You assign ro
 Policies documents used to give permissions as to what a user, group or role are able to do. Their format is JSON.
 </b></details>
 
-#### S3
- 
 <details>
-<summary>Explain what is S3 and what is it used for</summary><br>
-<b>
-S3 stands for 3 S, Simple Storage Service.
-S3 is a object storage service which is fast, scalable and durable. S3 enables customers to upload, download or store any file or object that is up to 5 TB in size. While having a maximum size of 5 GB per file (multipart upload if more than 5 GB in size).
-</b>
-</details>
+<summary>A user is unable to access an s3 bucket. What might be the problem?</summary><br><b>
 
-<details>
-<summary>What is a bucket?</summary><br><b>
-An S3 bucket is a resource which is similar to folders in a file system and allows storing objects, which consist of data and its  meta data.
+There can be several reasons for that. One of them is lack of policy. To solve that, the admin has to attach the user with a policy what allows him to access the s3 bucket.
 </b></details>
 
 <details>
-<summary>True or False? A bucket name must be globally unique</summary><br><b>
-True
+<summary>What should you use to:
+
+  * Grant access between two services/resources?
+  * Grant user access to resources/services?</summary><br><b>
+
+  * Role
+  * Policy
 </b></details>
 
 <details>
-<summary>What objects in S3 consists of?
-  * Another way to ask it: explain key, value, version id and meta data in context of objects</summary><br><b>
+<summary>What permissions does a new user have?</summary><br><b>
+
+Only a login access.
+</b></details>
+
+#### AWS Compute
+
+<details>
+<summary>What is EC2?</summary><br><b>
+
+"a web service that provides secure, resizable compute capacity in the cloud".
+Read more [here](https://aws.amazon.com/ec2)
 </b></details>
 
 <details>
-<summary>Explain data consistency</summary><br><b>
+<summary>What is AMI?</summary><br><b>
+
+Amazon Machine Images is "An Amazon Machine Image (AMI) provides the information required to launch an instance".
+Read more [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
 </b></details>
 
 <details>
-<summary>Can you host dynamic websites on S3?. What about static websites?</summary><br><b>
+<summary>What are the different source for AMIs?</summary><br><b>
+
+* Personal AMIs - AMIs you create
+* AWS Marketplace for AMIs - Paid AMIs usually with bundled with licensed software
+* Community AMIs - Free
 </b></details>
 
 <details>
-<summary>What security measures have you taken in context of S3?</summary><br><b>
+<summary>What is instance type?</summary><br><b>
+
+"the instance type that you specify determines the hardware of the host computer used for your instance"
+Read more about instance types [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html)
 </b></details>
 
 <details>
-<summary>What is a storage class? What storage classes are you familiar with?</summary><br><b>
+<summary>True or False? The following are instance types available for a user in AWS:
+
+  * Compute optimizied
+  * Network optimizied
+  * Web optimized</summary><br><b>
+
+False. From the above list only compute optimized is available.
 </b></details>
 
-#### EC2
-
 <details>
-<summary>What is EC2? What is it used for?</summary><br><b>
+<summary>What is EBS?</summary><br><b>
+
+"provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices."
+More on EBS [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html)
 </b></details>
 
 <details>
 <summary>What EC2 pricing models are there?</summary><br><b>
-</b></details>
 
-<details>
-<summary>How to increase RAM for a given EC2 instance?</summary><br><b>
-
-Stop the instance, the type of the instance to match the desired RAM and start the instance.
-</b></details>
-
-<details>
-<summary>What is an AMI?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How many storage options are there for EC2 Instances?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What happens when an EC2 instance is stopped or terminated?</summary><br><b>
+On Demand - pay a fixed rate by the hour/second with no commitment. You can provision and terminate it at any given time.
+Reserved - you get capacity reservation, basically purchase an instance for a fixed time of period. The longer, the cheaper.
+Spot - Enables you to bid whatever price you want for instances or pay the spot price.
+Dedicated Hosts - physical EC2 server dedicated for your use.
 </b></details>
 
 <details>
 <summary>What are Security Groups?</summary><br><b>
+
+"A security group acts as a virtual firewall that controls the traffic for one or more instances"
+More on this subject [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)
 </b></details>
 
 <details>
@@ -583,25 +869,281 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 </b></details>
 
 <details>
-<summary>What are spot instances?</summary><br><b>
+<summary>What can you attach to an EC2 instance in order to store data?</summary><br><b>
+
+EBS
 </b></details>
 
-#### CloudFormation
-
 <details>
-<summary>Explain what is CloudFormation</summary><br><b>
+<summary>What EC2 RI types are there?</summary><br><b>
+
+Standard RI - most significant discount + suited for steady-state usage
+Convertible RI - discount + change attribute of RI + suited for steady-state usage
+Scheduled RI - launch within time windows you reserve
+
+Learn more about EC2 RI [here](https://aws.amazon.com/ec2/pricing/reserved-instances)
 </b></details>
 
-#### Costs
+#### AWS Serverless Compute
 
 <details>
-<summary>Are you familiar with Cost Explorer tool? Have you used it? What for exactly?</summary><br><b>
+<summary>Explain what is AWS Lambda</summary><br><b>
+
+AWS definition: "AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume."
+
+Read more on it [here](https://aws.amazon.com/lambda)
 </b></details>
 
-#### CloudFront
+<details>
+<summary>True or False? In AWS Lambda, you are charged as long as a function exists, regardless of whether it's running or not</summary><br><b>
+
+False. Charges are being made when the code is executed.
+</b></details>
 
 <details>
-<summary>Explain what is CloudFront and what is it used for</summary><br><b>
+<summary>Which of the following set of languages Lambda supports?
+
+  * R, Swift, Rust, Kotlin
+  * Python, Ruby, Go
+  * Python, Ruby, PHP</summary><br><b>
+
+  * Python, Ruby, Go
+</b></details>
+
+#### AWS Containers
+
+<details>
+<summary>What is Amazon ECS?</summary><br><b>
+
+Amazon definition: "Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service. Customers such as Duolingo, Samsung, GE, and Cook Pad use ECS to run their most sensitive and mission critical applications because of its security, reliability, and scalability."
+
+Learn more [here](https://aws.amazon.com/ecs)
+</b></details>
+
+<details>
+<summary>What is Amazon ECR?</summary><br><b>
+
+Amazon definition: "Amazon Elastic Container Registry (ECR) is a fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images."
+
+Learn more [here](https://aws.amazon.com/ecr)
+</b></details>
+
+<details>
+<summary>What is AWS Fargate?</summary><br><b>
+
+Amazon definition: "AWS Fargate is a serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS)."
+
+Learn more [here](https://aws.amazon.com/fargate)
+</b></details>
+
+#### AWS Storage
+
+<details>
+<summary>Explain what is AWS S3?</summary><br><b>
+
+S3 stands for 3 S, Simple Storage Service.
+S3 is a object storage service which is fast, scalable and durable. S3 enables customers to upload, download or store any file or object that is up to 5 TB in size.
+
+More on S3 [here](https://aws.amazon.com/s3)
+</b></details>
+
+<details>
+<summary>What is a bucket?</summary><br><b>
+
+An S3 bucket is a resource which is similar to folders in a file system and allows storing objects, which consist of data.
+</b></details>
+
+<details>
+<summary>True or False? A bucket name must be globally unique</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>Explain folders and objects in regards to buckets</summary><br><b>
+
+* Folder - any sub folder in an s3 bucket
+* Object - The files which are stored in a bucket
+</b></details>
+
+<details>
+<summary>Explain the following:
+
+  * Object Lifecycles
+  * Object Sharing
+  * Object Versioning</summary><br><b>
+
+  * Object Lifecycles - Transfer objects between storage classes based on defined rules of time periods
+  * Object Sharing - Share objects via a URL link
+  * Object Versioning - Manage multiple versions of an object
+</b></details>
+
+<details>
+<summary>Explain Object Durability and Object Availability</summary><br><b>
+
+Object Durability: The percent over a one-year time period that a file will not be lost
+Object Availability: The percent over a one-year time period that a file will be accessible
+</b></details>
+
+<details>
+<summary>What is a storage class? What storage classes are there?</summary><br><b>
+
+Each object has a storage class assigned to, affecting its availability and durability. This also has effect on costs.
+Storage classes offered today:
+  * Standard:
+    * Used for general, all-purpose storage (mostly storage that needs to be accessed frequently)
+    * The most expensive storage class
+    * 11x9% durability
+    * 2x9% availability
+    * Default storage class
+
+  * Standard-IA (Infrequent Access)
+    * Long lived, infrequently accessed data but must be available the moment it's being accessed
+    * 11x9% durability
+    * 99.90% availability
+
+  * One Zone-IA (Infrequent Access):
+    * Long-lived, infrequently accessed, non-critical data
+    * Less expensive than Standard and Standard-IA storage classes
+    * 2x9% durability
+    * 99.50% availability
+
+  * Intelligent-Tiering:
+    * Long-lived data with changing or unknown access patterns. Basically, In this class the data automatically moves to the class most suitable for you based on usage patterns
+    * Price depends on the used class
+    * 11x9% durability
+    * 99.90% availability
+
+  * Glacier: Archive data with retrieval time ranging from minutes to hours
+  * Glacier Deep Archive: Archive data that rarely, if ever, needs to be accessed with retrieval times in hours
+  * Both Glacier and Glacier Deep Archive are:
+    * The most cheap storage classes
+    * have 9x9% durability
+
+More on storage classes [here](https://aws.amazon.com/s3/storage-classes)
+
+</b></details>
+
+<details>
+<summary>A customer would like to move data which is rarely accessed from standard storage class to the most cheapest class there is. Which storage class should be used?
+
+  * One Zone-IA
+  * Glacier Deep Archive
+  * Intelligent-Tiering</summary><br><b>
+
+Glacier Deep Archive
+</b></details>
+
+<details>
+<summary>What Glacier retrieval options are available for the user?</summary><br><b>
+
+Expedited, Standard and Bulk
+</b></details>
+
+<details>
+<summary>True or False? Each AWS account can store up to 500 PetaByte of data. Any additional storage will cost double</summary><br><b>
+
+False. Unlimited capacity.
+</b></details>
+
+<details>
+<summary>Explain what is Storage Gateway</summary><br><b>
+
+"AWS Storage Gateway is a hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage".
+More on Storage Gateway [here](https://aws.amazon.com/storagegateway)
+</b></details>
+
+<details>
+<summary>Explain the following Storage Gateway deployments types
+
+  * File Gateway
+  * Volume Gateway
+  * Tape Gateway</summary><br><b>
+
+Explained in detail [here](https://aws.amazon.com/storagegateway/faqs)
+</b></details>
+
+<details>
+<summary>What is the difference between stored volumes and cached volumes?</summary><br><b>
+
+Stored Volumes - Data is located at customer's data center and periodically backed up to AWS
+Cached Volumes - Data is stored in AWS cloud and cached at customer's data center for quick access
+</b></details>
+
+<details>
+<summary>What is "Amazon S3 Transfer Acceleration"?</summary><br><b>
+
+AWS definition: "Amazon S3 Transfer Acceleration enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket"
+
+Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html)
+</b></details>
+
+<details>
+<summary>Explain data consistency</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you host dynamic websites on S3? What about static websites?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What security measures have you taken in context of S3?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What storage options are there for EC2 Instances?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Amazon EFS?</summary><br><b>
+
+Amazon definition: "Amazon Elastic File System (Amazon EFS) provides a simple, scalable, fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources."
+
+Learn more [here](https://aws.amazon.com/efs)
+</b></details>
+
+<details>
+<summary>What is AWS Snowmobile?</summary><br><b>
+
+"AWS Snowmobile is an Exabyte-scale data transfer service used to move extremely large amounts of data to AWS."
+
+Learn more [here](https://aws.amazon.com/snowmobile)
+</b></details>
+
+#### AWS Disaster Recovery
+
+<details>
+<summary>In regards to disaster recovery, what is RTO and RPO?</summary><br><b>
+
+RTO - The maximum acceptable length of time that your application can be offline.
+
+RPO - The maximum acceptable length of time during which data might be lost from your application due to an incident.
+</b></details>
+
+<details>
+<summary>What types of disaster recovery techniques AWS supports?</summary><br><b>
+
+* The Cold Method - Periodically backups and sending the backups off-site<br>
+* Pilot Light - Data is mirrored to an environment which is always running
+* Warm Standby - Running scaled down version of production environment
+* Multi-site - Duplicated environment that is always running
+</b></details>
+
+<details>
+<summary>Which disaster recovery option has the highest downtime and which has the lowest?</summary><br><b>
+
+Lowest - Multi-site
+Highest - The cold method
+</b></details>
+
+#### AWS CloudFront
+
+<details>
+<summary>Explain what is CloudFront</summary><br><b>
+
+AWS definition: "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment."
+
+More on CloudFront [here](https://aws.amazon.com/cloudfront)
 </b></details>
 
 <details>
@@ -609,8 +1151,7 @@ Stop the instance, the type of the instance to match the desired RAM and start t
 
   * Origin
   * Edge location
-  * Distribution
-</summary><br><b>
+  * Distribution</summary><br><b>
 </b></details>
 
 <details>
@@ -629,7 +1170,29 @@ True
 A transport solution which was designed for transferring large amounts of data (petabyte-scale) into and out the AWS cloud.
 </b></details>
 
-##### Load Balancers
+##### AWS ELB
+
+<details>
+<summary>What is ELB (Elastic Load Balancing)?</summary><br><b>
+
+AWS definition: "Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions."
+
+More on ELB [here](https://aws.amazon.com/elasticloadbalancing)
+</b></details>
+
+<details>
+<summary>What is auto scaling?</summary><br><b>
+
+AWS definition: "AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost"
+
+Read more about auto scaling [here](https://aws.amazon.com/autoscaling)
+</b></details>
+
+<details>
+<summary>True or False? Auto Scaling is about adding resources (such as instances) and not about removing resource</summary><br><b>
+
+False. Auto scaling adjusts capacity and this can mean removing some resources based on usage and performances.
+</b></details>
 
 <details>
 <summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
@@ -639,10 +1202,28 @@ A transport solution which was designed for transferring large amounts of data (
   * Classic LB - low costs, good for test or dev environments
 </b></details>
 
-##### AWS Security 
+#### AWS Security
 
 <details>
-<summary>What is the shared responsibility model? In other words, what AWS is responsible for and what the user is responsible for in regards to Security?</summary><br><b>
+<summary>What is the shared responsibility model? What AWS is responsible for and what the user is responsible for based on the shared responsibility model?</summary><br><b>
+
+The shared responsibility model defines what the customer is responsible for and what AWS is responsible for.
+
+More on the shared responsibility model [here](https://aws.amazon.com/compliance/shared-responsibility-model)
+</b></details>
+
+<details>
+<summary>True or False? Based on the shared responsibility model, Amazon is responsible for physical CPUs and security groups on instances</summary><br><b>
+
+False. It is responsible for Hardware in its sites but not for security groups which created and managed by the users.
+</b></details>
+
+<details>
+<summary>Explain "Shared Controls" in regards to the shared responsibility model</summary><br><b>
+
+AWS definition: "apply to both the infrastructure layer and customer layers, but in completely separate contexts or perspectives. In a shared control, AWS provides the requirements for the infrastructure and the customer must provide their own control implementation within their use of AWS services"
+
+Learn more about it [here](https://aws.amazon.com/compliance/shared-responsibility-model)
 </b></details>
 
 <details>
@@ -650,11 +1231,29 @@ A transport solution which was designed for transferring large amounts of data (
 </b></details>
 
 <details>
-<summary>Explain what each of the following services is used for
+<summary>What is AWS Artifact?</summary><br><b>
 
-  * AWS Inspector
-  * AWS Artifact
-  * AWS Shield</summary><br><b>
+AWS definition: "AWS Artifact is your go-to, central resource for compliance-related information that matters to you. It provides on-demand access to AWS’ security and compliance reports and select online agreements."
+
+Read more about it [here](https://aws.amazon.com/artifact)
+</b></details>
+
+<details>
+<summary>What is AWS Inspector?</summary><br><b>
+
+AWS definition: "Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. Amazon Inspector automatically assesses applications for exposure, vulnerabilities, and deviations from best practices.""
+
+Learn more [here](https://aws.amazon.com/inspector)
+</b></details>
+
+<details>
+<summary>What is AWS Guarduty?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS Shield?</summary><br><b>
+
+AWS definition: "AWS Shield is a managed Distributed Denial of Service (DDoS) protection service that safeguards applications running on AWS."
 </b></details>
 
 <details>
@@ -668,27 +1267,107 @@ A transport solution which was designed for transferring large amounts of data (
 <details>
 <summary>What is the difference between Site-to-Site VPN and Client VPN?</summary><br><b>
 </b></details>
+
+<details>
+<summary>What is AWS CloudHSM?</summary><br><b>
+
+Amazon definition: "AWS CloudHSM is a cloud-based hardware security module (HSM) that enables you to easily generate and use your own encryption keys on the AWS Cloud."
+
+Learn more [here](https://aws.amazon.com/cloudhsm)
+</b></details>
+
 <details>
 <summary>True or False? AWS Inspector can perform both network and host assessments</summary><br><b>
 
 True
 </b></details>
 
+<details>
+<summary>What is AWS Key Management Service (KMS)?</summary><br><b>
+
+AWS definition: "KMS makes it easy for you to create and manage cryptographic keys and control their use across a wide range of AWS services and in your applications."
+More on KMS [here](https://aws.amazon.com/kms)
+</b></details>
+
+<details>
+<summary>What is AWS Acceptable Use Policy?</summary><br><b>
+
+It describes prohibited uses of the web services offered by AWS.
+More on AWS Acceptable Use Policy [here](https://aws.amazon.com/aup)
+</b></details>
+
+<details>
+<summary>True or False? A user is not allowed to perform penetration testing on any of the AWS services</summary><br><b>
+
+False. On some services, like EC2, CloudFront and RDS, penetration testing is allowed.
+</b></details>
+
+<details>
+<summary>True or False? DDoS attack is an example of allowed penetration testing activity</summary><br><b>
+
+False.
+</b></details>
+
+<details>
+<summary>True or False? AWS Access Key is a type of MFA device used for AWS resources protection</summary><br><b>
+
+False. Security key is an example of an MFA device.
+</b></details>
+
+<details>
+<summary>What is Amazon Cognito?</summary><br><b>
+
+Amazon definition: "Amazon Cognito handles user authentication and authorization for your web and mobile apps."
+
+Learn more [here](https://docs.aws.amazon.com/cognito/index.html)
+</b></details>
+
+<details>
+<summary>What is AWS ACM?</summary><br><b>
+
+Amazon definition: "AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal connected resources."
+
+Learn more [here](https://aws.amazon.com/certificate-manager)
+</b></details>
+
 #### AWS Databases
 
 <details>
-<summary>What is Amazon RDS?</summary><br><b>
+<summary>What is AWS RDS?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What are some features or benefits of using RDS?</summary><br><b>
-
-1. Multi AZ - great for Disaster Recovery
-2. Read Replicas - for better performances
+<summary>What is AWS DynamoDB?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is AWS Redshift and how its different than RDS?</summary><br><b>
+<summary>Explain "Point-in-Time Recovery" feature in DynamoDB</summary><br><b>
+
+Amazon definition: "You can create on-demand backups of your Amazon DynamoDB tables, or you can enable continuous backups using point-in-time recovery. For more information about on-demand backups, see On-Demand Backup and Restore for DynamoDB."
+
+Learn more [here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PointInTimeRecovery.html)
+</b></details>
+
+<details>
+<summary>Explain "Global Tables" in DynamoDB</summary><br><b>
+
+Amazon definition: "A global table is a collection of one or more replica tables, all owned by a single AWS account."
+
+Learn more [here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html)
+</b></details>
+
+<details>
+<summary>What is DynamoDB Accelerator?</summary><br><b>
+
+Amazon definition: "Amazon DynamoDB Accelerator (DAX) is a fully managed, highly available, in-memory cache for DynamoDB that delivers up to a 10x performance improvement – from milliseconds to microseconds..."
+
+Learn more [here](https://aws.amazon.com/dynamodb/dax)
+</b></details>
+
+<details>
+<summary>What is AWS Redshift and how is it different than RDS?</summary><br><b>
+
+cloud data warehouse
 </b></details>
 
 <details>
@@ -701,31 +1380,82 @@ True
 </b></details>
 
 <details>
-<summary>What is EBS?</summary><br><b>
-</b></details>
+<summary>What is AWS ElastiCache? For what cases is it used?</summary><br><b>
 
-<details>
-<summary>What is Amazon ElastiCache? For what cases it used?</summary><br><b>
-
-Amazon Elasticache is a fully managed Redis or Memcached in-memory data store.                                                                       
+Amazon Elasticache is a fully managed Redis or Memcached in-memory data store.
 It's great for use cases like two-tier web applications where the most frequently accesses data is stored in ElastiCache so response time is optimal.
 </b></details>
 
 <details>
 <summary>What is Amazon Aurora</summary><br><b>
 
-A MySQL & Postgresql based relational database.
+A MySQL & Postgresql based relational database. Also, the default database proposed for the user when using RDS for creating a database.
 Great for use cases like two-tier web applications that has a MySQL or Postgresql database layer and you need automated backups for your application.
+</b></details>
+
+<details>
+<summary>What is Amazon DocumentDB?</summary><br><b>
+
+Amazon definition: "Amazon DocumentDB (with MongoDB compatibility) is a fast, scalable, highly available, and fully managed document database service that supports MongoDB workloads. As a document database, Amazon DocumentDB makes it easy to store, query, and index JSON data."
+
+Learn more [here](https://aws.amazon.com/documentdb)
 </b></details>
 
 <details>
 <summary>What "AWS Database Migration Service" is used for?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What type of storage is used by Amazon RDS?</summary><br><b>
+
+EBS
+</b></details>
+
+<details>
+<summary>Explain Amazon RDS Read Replicas</summary><br><b>
+
+AWS definition: "Amazon RDS Read Replicas provide enhanced performance and durability for RDS database (DB) instances. They make it easy to elastically scale out beyond the capacity constraints of a single DB instance for read-heavy database workloads."
+Read more about [here](https://aws.amazon.com/rds/features/read-replicas)
+</b></details>
+
 #### AWS Networking
 
 <details>
 <summary>What is VPC?</summary><br><b>
+
+"A logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define"
+Read more about it [here](https://aws.amazon.com/vpc).
+</b></details>
+
+<details>
+<summary>True or False? VPC spans multiple regions</summary><br><b>
+
+False
+</b></details>
+
+<details>
+<summary>True or False? Subnets belong to the same VPC, can be in different availability zones</summary><br><b>
+
+True. Just to clarify, a single subnet resides entirely in one AZ.
+</b></details>
+
+<details>
+<summary>What is an Internet Gateway?</summary><br><b>
+
+"component that allows communication between instances in your VPC and the internet" (AWS docs).
+Read more about it [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
+</b></details>
+
+<details>
+<summary>True or False? NACL allow or deny traffic on the subnet level</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? Multiple Internet Gateways can be attached to one VPC</summary><br><b>
+
+False. Only one internet gateway can be attached to a single VPC.
 </b></details>
 
 <details>
@@ -733,10 +1463,33 @@ Great for use cases like two-tier web applications that has a MySQL or Postgresq
 </b></details>
 
 <details>
-<summary>Explain Security Groups and Network ACLs</summary><br><b>
+<summary>True or False? Route Tables used to allow or deny traffic from the internet to AWS instances</summary><br><b>
+
+False.
 </b></details>
 
-#### Identify the service or tool
+<details>
+<summary>Explain Security Groups and Network ACLs</summary><br><b>
+
+* NACL - security layer on the subnet level.
+* Security Group - security layer on the instance level.
+
+Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) and [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
+</b></details>
+
+<details>
+<summary>What is AWS Direct Connect?</summary><br><b>
+
+Allows you to connect your corporate network to AWS network.
+</b></details>
+
+#### AWS - Identify the service or tool
+
+<details>
+<summary>What would you use for automating code/software deployments?</summary><br><b>
+
+AWS CodeDeploy
+</b></details>
 
 <details>
 <summary>What would you use for easily creating similar AWS environments/resources for different customers?</summary><br><b>
@@ -769,13 +1522,13 @@ Trusted Advisor
 </b></details>
 
 <details>
-<summary>What service allows you to transfer large amounts (Petabytes) of data in and out of the AWS cloud?</summary><br><b>
+<summary>Which service allows you to transfer large amounts (Petabytes) of data in and out of the AWS cloud?</summary><br><b>
 
 AWS Snowball
 </b></details>
 
 <details>
-<summary>What provides a virtual network dedicated to your AWS account?</summary><br><b>
+<summary>Which service provides a virtual network dedicated to your AWS account?</summary><br><b>
 
 VPC
 </b></details>
@@ -787,9 +1540,9 @@ Amazon Aurora
 </b></details>
 
 <details>
-<summary>What would you use to migrate on-premise Oracle database to AWS?</summary><br><b>
+<summary>What would you use to migrate on-premise database to AWS?</summary><br><b>
 
-AWS Database Migration Service
+AWS Database Migration Service (DMS)
 </b></details>
 
 <details>
@@ -798,24 +1551,442 @@ AWS Database Migration Service
 AWS CloudTrail
 </b></details>
 
-#### AWS Misc
-
 <details>
-<summary>Explain what are the following services and give an use case example for each one them:
+<summary>What would you use for SQL database?</summary><br><b>
 
-  * CloudTrail
-  * CloudWatch
-  * CloudSearch</summary><br><b>
+AWS RDS
 </b></details>
 
 <details>
-<summary>Explain what is AWS Lambda</summary><br><b>
+<summary>What would you use for NoSQL database?</summary><br><b>
+
+AWS DynamoDB
+</b></details>
+
+<details>
+<summary>What would you use for adding image and video analysis to your application?</summary><br><b>
+
+AWS Rekognition
+</b></details>
+
+<details>
+<summary>Which service would you use for debugging and improving performances issues with your applications?</summary><br><b>
+
+AWS X-Ray
+</b></details>
+
+<details>
+<summary>Which service is used for sending notifications?</summary><br><b>
+
+SNS
+</b></details>
+
+<details>
+<summary>What would you use for running SQL queries interactively on S3?</summary><br><b>
+
+AWS Athena
+</b></details>
+
+<details>
+<summary>Which service would you use for monitoring malicious activity and unauthorized behavior in regards to AWS accounts and workloads?</summary><br><b>
+
+Amazon GuardDuty
+</b></details>
+
+<details>
+<summary>Which service would you use for centrally manage billing, control access, compliance, and security across multiple AWS accounts?</summary><br><b>
+
+AWS Organizations
+</b></details>
+
+<details>
+<summary>Which service would you use for web application protection?</summary><br><b>
+
+AWS WAF
+</b></details>
+
+<details>
+<summary>You would like to monitor some of your resources in the different services. Which service would you use for that?</summary><br><b>
+
+CloudWatch
+</b></details>
+
+<details>
+<summary>Which service would you use for performing security assessment?</summary><br><b>
+
+AWS Inspector
+</b></details>
+
+<details>
+<summary>Which service would you use for creating DNS record?</summary><br><b>
+
+Route 53
+</b></details>
+
+<details>
+<summary>What would you use if you need a fully managed document database?</summary><br><b>
+
+Amazon DocumentDB
+</b></details>
+
+<details>
+<summary>Which service would you use to add access control (or sign-up, sign-in forms) to your web/mobile apps?</summary><br><b>
+
+AWS Cognito
+</b></details>
+
+<details>
+<summary>Which service would you use if you need messaging queue?</summary><br><b>
+
+Simple Queue Service (SQS)
+</b></details>
+
+<details>
+<summary>Which service would you use if you need managed DDOS protection?</summary><br><b>
+
+AWS Shield
+</b></details>
+
+<details>
+<summary>Which service would you use if you need store frequently used data for low latency access?</summary><br><b>
+
+ElastiCache
+</b></details>
+
+<details>
+<summary>What would you use to transfer files over long distances between a client and an S3 bucket?</summary><br><b>
+
+Amazon S3 Transfer Acceleration
+</b></details>
+
+<details>
+<summary>Which service would you use for distributing incoming requests across multiple?</summary><br><b>
+
+Route 53
+</b></details>
+
+#### AWS DNS
+
+<details>
+<summary>What is Route 53?</summary><br><b>
+
+"Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service..."
+Some of Route 53 features:
+  * Register domain
+  * DNS service - domain name translations
+  * Health checks - verify your app is available
+
+More on Route 53 [here](https://aws.amazon.com/route53)
+</b></details>
+
+#### AWS Monitoring & Logging
+
+<details>
+<summary>What is AWS CloudWatch?</summary><br><b>
+
+AWS definition: "Amazon CloudWatch is a monitoring and observability service..."
+
+More on CloudWatch [here](https://aws.amazon.com/cloudwatch)
+</b></details>
+
+<details>
+<summary>What is AWS CloudTrail?</summary><br><b>
+
+AWS definition: "AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account."
+
+Read more on CloudTrail [here](https://aws.amazon.com/cloudtrail)
+</b></details>
+
+<details>
+<summary>What is Simply Notification Service?</summary><br><b>
+
+AWS definition: "a highly available, durable, secure, fully managed pub/sub messaging service that enables you to decouple microservices, distributed systems, and serverless applications."
+
+Read more about it [here](https://aws.amazon.com/sns)
+</b></details>
+
+<details>
+<summary>Explain the following in regards to SNS:
+
+  * Topics
+  * Subscribers
+  * Publishers</summary><br><b>
+
+  * Topics - used for grouping multiple endpoints
+  * Subscribers - the endpoints where topics send messages to
+  * Publishers - the provider of the message (event, person, ...)
+</b></details>
+
+#### AWS Billing & Support
+
+<details>
+<summary>What is AWS Organizations?</summary><br><b>
+
+AWS definition: "AWS Organizations helps you centrally govern your environment as you grow and scale your workloads on AWS."
+More on Organizations [here](https://aws.amazon.com/organizations)
+</b></details>
+
+<details>
+<summary>What are Service Control Policies and to what service they belong?</summary><br><b>
+
+AWS organizations service and the definition by Amazon: "SCPs offer central control over the maximum available permissions for all accounts in your organization, allowing you to ensure your accounts stay within your organization’s access control guidelines."
+
+Learn more [here](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html)
+</b></details>
+
+<details>
+<summary>Explain AWS pricing model</summary><br><b>
+
+It mainly works on "pay-as-you-go" meaning you pay only for what are using and when you are using it.
+In s3 you pay for 1. How much data you are storing 2. Making requests (PUT, POST, ...)
+In EC2 it's based on the purchasing option (on-demand, spot, ...), instance type, AMI type and the region used.
+
+More on AWS pricing model [here](https://aws.amazon.com/pricing)
+</b></details>
+
+<details>
+<summary>How one should estimate AWS costs when for example comparing to on-premise solutions?</summary><br><b>
+
+* TCO calculator
+* AWS simple calculator
+* Cost Explorer
+</b></details>
+
+<details>
+<summary>What basic support in AWS includes?</summary><br><b>
+
+* 24x7 customer service
+* Trusted Advisor
+* AWS personal Health Dashoard
+</b></details>
+
+<details>
+<summary>How are EC2 instances billed?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What AWS Pricing Calculator is used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Amazon Connect?</summary><br><b>
+
+Amazon definition: "Amazon Connect is an easy to use omnichannel cloud contact center that helps companies provide superior customer service at a lower cost."
+
+Learn more [here](https://aws.amazon.com/connect)
+</b></details>
+
+<details>
+<summary>What are "APN Consulting Partners"?</summary><br><b>
+
+Amazon definition: "APN Consulting Partners are professional services firms that help customers of all types and sizes design, architect, build, migrate, and manage their workloads and applications on AWS, accelerating their journey to the cloud."
+
+Learn more [here](https://aws.amazon.com/partners/consulting)
+</b></details>
+
+<details>
+<summary>Which of the following are AWS accounts types (and are sorted by order)?
+
+  * Basic, Developer, Business, Enterprise
+  * Newbie, Intermediate, Pro, Enterprise
+  * Developer, Basic, Business, Enterprise
+  * Beginner, Pro, Intermediate Enterprise</summary><br><b>
+
+  * Basic, Developer, Business, Enterprise
+</b></details>
+
+<details>
+<summary>True or False? Region is a factor when it comes to EC2 costs/pricing</summary><br><b>
+
+True. You pay differently based on the chosen region.
+</b></details>
+
+<details>
+<summary>What is "AWS Infrastructure Event Management"?</summary><br><b>
+
+AWS Definition: "AWS Infrastructure Event Management is a structured program available to Enterprise Support customers (and Business Support customers for an additional fee) that helps you plan for large-scale events such as product or application launches, infrastructure migrations, and marketing events."
+</b></details>
+
+#### AWS Automation
+
+<details>
+<summary>What is AWS CodeDeploy?</summary><br><b>
+
+Amazon definition: "AWS CodeDeploy is a fully managed deployment service that automates software deployments to a variety of compute services such as Amazon EC2, AWS Fargate, AWS Lambda, and your on-premises servers."
+
+Learn more [here](https://aws.amazon.com/codedeploy)
+</b></details>
+
+<details>
+<summary>Explain what is CloudFormation</summary><br><b>
+</b></details>
+
+#### AWS Misc
+
+<details>
+<summary>What is AWS CloudSearch?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS Lightsail?</summary><br><b>
+
+AWS definition: "Lightsail is an easy-to-use cloud platform that offers you everything needed to build an application or website, plus a cost-effective, monthly plan."
+</b></details>
+
+<details>
+<summary>What is AWS Rekognition?</summary><br><b>
+
+AWS definition: "Amazon Rekognition makes it easy to add image and video analysis to your applications using proven, highly scalable, deep learning technology that requires no machine learning expertise to use."
+
+Learn more [here](https://aws.amazon.com/rekognition)
+</b></details>
+
+<details>
+<summary>What AWS Resource Groups used for?</summary><br><b>
+
+Amazon definition: "You can use resource groups to organize your AWS resources. Resource groups make it easier to manage and automate tasks on large numbers of resources at one time. "
+
+Learn more [here](https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html)
+</b></details>
+
+<details>
+<summary>What is AWS Global Accelerator?</summary><br><b>
+
+Amazon definition: "AWS Global Accelerator is a service that improves the availability and performance of your applications with local or global users..."
+
+Learn more [here](https://aws.amazon.com/global-accelerator)
+</b></details>
+
+<details>
+<summary>What is AWS Config?</summary><br><b>
+
+Amazon definition: "AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources."
+
+Learn more [here](https://aws.amazon.com/config)
+</b></details>
+
+<details>
+<summary>What is AWS X-Ray?</summary><br><b>
+
+AWS definition: "AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture."
+Learn more [here](https://aws.amazon.com/xray)
+</b></details>
+
+<details>
+<summary>What is AWS OpsWorks?</summary><br><b>
+
+Amazon definition: "AWS OpsWorks is a configuration management service that provides managed instances of Chef and Puppet."
+
+Learn more about it [here](https://aws.amazon.com/opsworks)
+</b></details>
+
+<details>
+<summary>What is AWS Athena?</summary><br><b>
+
+"Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL."
+
+Learn more about AWS Athena [here](https://aws.amazon.com/athena)
+</b></details>
+
+<details>
+<summary>What is Amazon Cloud Directory?</summary><br><b>
+
+Amazon definition: "Amazon Cloud Directory is a highly available multi-tenant directory-based store in AWS. These directories scale automatically to hundreds of millions of objects as needed for applications."
+
+Learn more [here](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html)
+</b></details>
+
+<details>
+<summary>What is AWS Elastic Beanstalk?</summary><br><b>
+
+AWS definition: "AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services...You can simply upload your code and Elastic Beanstalk automatically handles the deployment"
+
+Learn more about it [here](https://aws.amazon.com/elasticbeanstalk)
+</b></details>
+
+<details>
+<summary>What is AWS SWF?</summary><br><b>
+
+Amazon definition: "Amazon SWF helps developers build, run, and scale background jobs that have parallel or sequential steps. You can think of Amazon SWF as a fully-managed state tracker and task coordinator in the Cloud."
+
+Learn more on Amazon Simple Workflow Service [here](https://aws.amazon.com/swf)
+</b></details>
+
+<details>
+<summary>What is AWS EMR?</summary><br><b>
+
+AWS definition: "big data platform for processing vast amounts of data using open source tools such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto."
+
+Learn more [here](https://aws.amazon.com/emr)
+</b></details>
+
+<details>
+<summary>What is AWS Quick Starts?</summary><br><b>
+
+AWS definition: "Quick Starts are built by AWS solutions architects and partners to help you deploy popular technologies on AWS, based on AWS best practices for security and high availability."
+
+Read more [here](https://aws.amazon.com/quickstart)
+</b></details>
+
+<details>
+<summary>What is the Trusted Advisor?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS Service Catalog?</summary><br><b>
+
+Amazon definition: "AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS."
+
+Learn more [here](https://aws.amazon.com/servicecatalog)
+</b></details>
+
+<details>
+<summary>What is AWS CAF?</summary><br><b>
+
+Amazon definition: "AWS Professional Services created the AWS Cloud Adoption Framework (AWS CAF) to help organizations design and travel an accelerated path to successful cloud adoption. "
+
+Learn more [here](https://aws.amazon.com/professional-services/CAF)
+</b></details>
+
+<details>
+<summary>What is AWS Cloud9?</summary><br><b>
+
+AWS definition: "AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser"
+</b></details>
+
+<details>
+<summary>What is AWS Application Discovery Service?</summary><br><b>
+
+Amazon definition: "AWS Application Discovery Service helps enterprise customers plan migration projects by gathering information about their on-premises data centers."
+
+Learn more [here](https://aws.amazon.com/application-discovery)
+</b></details>
+
+<details>
+<summary>What is the AWS well-architected framework and what pillars it's based on?</summary><br><b>
+
+AWS definition: "The Well-Architected Framework has been developed to help cloud architects build secure, high-performing, resilient, and efficient infrastructure for their applications. Based on five pillars — operational excellence, security, reliability, performance efficiency, and cost optimization"
+
+Learn more [here](https://aws.amazon.com/architecture/well-architected)
+</b></details>
+
+<details>
+<summary>What AWS services are serverless (or have the option to be serverless)?</summary><br><b>
+
+AWS Lambda
+AWS Athena
+</b></details>
+
+<details>
+<summary>What is Simple Queue Service (SQS)?</summary><br><b>
+
+AWS definition: "Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications".
+
+Learn more about it [here](https://aws.amazon.com/sqs)
 </b></details>
 
 ## Network
 
-<a name="network-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What is Ethernet?</summary><br><b>
@@ -824,13 +1995,18 @@ Ethernet simply refers to the most common type of Local Area Network (LAN) used 
 </b></details>
 
 <details>
+<summary>What is TCP/IP?</summary><br><b>
+
+A set of protocols that define how two or more devices can communicate with each other.
+To learn more about TCP/IP, read [here](http://www.penguintutor.com/linux/basic-network-reference)
+</b></details>
+
+<details>
 <summary>What is a MAC address? What is it used for?</summary><br><b>
 
 A MAC address is a unique identification number or code used to identify individual devices on the network.
 
 Packets that are sent on the ethernet are always coming from a MAC address and sent to a MAC address. If a network adapter is receiving a packet, it is comparing the packet’s destination MAC address to the adapter’s own MAC address.
-
-
 
 </b></details>
 
@@ -842,8 +2018,6 @@ Packets that are sent on the ethernet are always coming from a MAC address and s
 <summary>What is an IP address?</summary><br><b>
 
 An Internet Protocol address (IP address) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.An IP address serves two main functions: host or network interface identification and location addressing.
-
-
 </b></details>
 
 <details>
@@ -870,15 +2044,14 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
 | C             | 30                 | 2               | 255.255.255.252 | /30           |
 
 ```
-
-### 
-
-
-
 </b></details>
 
 <details>
-<summary>What is a private IP address? What do we need it for?</summary><br><b>
+<summary>What is a private IP address? In which scenarios/system designs, one should use it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a public IP address? In which scenarios/system designs, one should use it?</summary><br><b>
 </b></details>
 
 <details>
@@ -892,6 +2065,7 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
 - Data link: provides a link between two directly connected nodes (MAC is here)
 - Physical: the electrical and physical spec the data connection (Bits are here)
 
+You can read more about the OSI model in [penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference)
 </b></details>
 
 <details>
@@ -902,8 +2076,18 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
   * Cables and electrical signals
   * MAC address
   * IP address
-  * Sessions between applications
+  * Terminate connections
   * 3 way handshake</summary><br><b>
+  * Error correction
+  * Packets routing - Network
+  * Cables and electrical signals - Physical
+  * MAC address - Data link
+  * IP address - Network
+  * Terminate connections - Session
+  * 3 way handshake - Transport
+</b></details>
+
+<details>
 </b></details>
 
 <details>
@@ -952,13 +2136,13 @@ A router is a physical or virtual appliance that passes information between two 
 <details>
 <summary>What is NAT?</summary><br><b>
 
- Network Address Translation (NAT) is a process in which one or more local IP address is translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts. 
+ Network Address Translation (NAT) is a process in which one or more local IP address is translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts.
 
 
 </b></details>
 
 <details>
-<summary>What is a proxy? How it works? What do we need it for?</summary><br><b>
+<summary>What is a proxy? How does it works? What do we need it for?</summary><br><b>
 
 A proxy server acts as a gateway between you and the internet. It’s an intermediary server separating end users from the websites they browse.
 
@@ -970,7 +2154,7 @@ roxy servers provide varying levels of functionality, security, and privacy depe
 </b></details>
 
 <details>
-<summary>What is TCP? How it works? What is the 3 way handshake?</summary><br><b>
+<summary>What is TCP? How does it works? What is the 3 way handshake?</summary><br><b>
 
 TCP 3-way handshake or three-way handshake is a process which is used in a TCP/IP network to make a connection between server and client.
 
@@ -979,8 +2163,14 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 - A client node sends a SYN data packet over an IP network to a server on the same or an external network. The objective of this packet is to ask/infer if the server is open for new connections.
 - The target server must have open ports that can accept and initiate new connections. When the server receives the SYN packet from the client node, it responds and returns a confirmation receipt – the ACK packet or SYN/ACK packet.
 - The client node receives the SYN/ACK from the server and responds with an ACK packet.
+</b></details>
 
+<details>
+<summary>What is round-trip delay or round-trip time?</summary><br><b>
 
+From [wikipedia](https://en.wikipedia.org/wiki/Round-trip_delay): "the length of time it takes for a signal to be sent plus the length of time it takes for an acknowledgement of that signal to be received"
+
+Bonus question: what is the RTT of LAN?
 </b></details>
 
 <details>
@@ -989,8 +2179,10 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 
 <details>
 <summary>What is the difference between TCP and UDP?</summary><br><b>
-	
-TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for streaming services.
+
+TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for services like streaming.
+
+[Penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference) provides a good explanation.
 </b></details>
 
 <details>
@@ -1001,30 +2193,35 @@ TCP establishes a connection between the client and the server to guarantee the 
 <summary>Explain "default gateway"</summary><br><b>
 
 A default gateway serves as an access point or IP router that a networked computer uses to send information to a computer in another network or the internet.
-
-
 </b></details>
 
 <details>
-<summary>What is ARP? How it works?</summary><br><b>
+<summary>What is ARP? How does it works?</summary><br><b>
 
 ARP stands for Address Resolution Protocol. When you try to ping an IP address on your local network, say 192.168.1.1, your system has to turn the IP address 192.168.1.1 into a MAC address. This involves using ARP to resolve the address, hence its name.
 
 Systems keep an ARP look-up table where they store information about what IP addresses are associated with what MAC addresses. When trying to send a packet to an IP address, the system will first consult this table to see if it already knows the MAC address. If there is a value cached, ARP is not used.
-
-
 </b></details>
 
 <details>
-<summary>What is TTL?</summary><br><b>
+<summary>What is TTL? What does it helps to prevent?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is DHCP? How it works?</summary><br><b>
+<summary>What is DHCP? How does it works?</summary><br><b>
+
+It stands for Dynamic Host Configuration Protocol, and allocates IP addresses, subnet masks and gateways to hosts. This is how it works:
+
+* A host upon entering a network, broadcasts a message in search of a DHCP server (DHCP DISCOVER)
+* An offer message is sent back by the DHCP server as a packet containing lease time, subnet mask, IP addresses, etc (DHCP OFFER)
+* Depending on which offer accepted, the client sends back a reply broadcast letting all DHCP servers know (DHCP REQUEST)
+* Server sends an acknowledgment (DHCP ACK)
+
+Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 </b></details>
 
 <details>
-<summary>What is SSL tunneling? How it works?</summary><br><b>
+<summary>What is SSL tunneling? How does it works?</summary><br><b>
 </b></details>
 
 <details>
@@ -1044,6 +2241,10 @@ Systems keep an ARP look-up table where they store information about what IP add
 </b></details>
 
 <details>
+<summary>What happens if you send a packet that is bigger than the MTU?</summary><br><b>
+</b></details>
+
+<details>
 <summary>True or False?. Ping is using UDP because it doesn't care about reliable connection</summary><br><b>
 </b></details>
 
@@ -1056,23 +2257,20 @@ Systems keep an ARP look-up table where they store information about what IP add
 </b></details>
 
 <details>
-<summary>What is NAT? How it works?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is latency?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is bandwidth?</summary><br><b>
+<summary>What is NAT? How does it works?</summary><br><b>
 </b></details>
 
 <details>
 <summary>Which factors affect network performances</summary><br><b>
 </b></details>
 
-<a name="network-advanced"></a>
-#### :star: Advanced
+<details>
+<summary>What the terms "Data Plane" and "Control Plane" refer?</summary><br><b>
+
+The exact meaning is usually depends on the context but overall data plane refers to all the functions that forward packets and/or frames from one interface to another while control plane refers to all the functions that make use of routing protocols.
+
+There is also "Management Plane" which refers to monitoring and management functions.
+</b></details>
 
 <details>
 <summary>Explain Spanning Tree Protocol (STP)</summary><br><b>
@@ -1091,11 +2289,11 @@ Systems keep an ARP look-up table where they store information about what IP add
 </b></details>
 
 <details>
-<summary>What is GRE? How it works?</summary><br><b>
+<summary>What is GRE? How does it works?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is VXLAN? How it works?</summary><br><b>
+<summary>What is VXLAN? How does it works?</summary><br><b>
 </b></details>
 
 <details>
@@ -1104,6 +2302,36 @@ Systems keep an ARP look-up table where they store information about what IP add
 
 <details>
 <summary>Explain OSPF</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is latency?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is bandwidth?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is throughput?</summary><br><b>
+</b></details>
+
+<details>
+<summary>When performing a search query, what is more important, latency or throughput? And how to assure that what managing global infrastructure?</summary><br><b>
+
+Latency. To have a good latency, a search query should be forwarded to the closest datacenter.
+</b></details>
+
+<details>
+<summary>When uploading a video, what is more important, latency or throughput? And how to assure that?</summary><br><b>
+
+Throughput. To have a good throughput, the upload stream should be routed to an underutilized link.
+</b></details>
+
+<details>
+<summary>What other considerations (except latency and throughput) are there when forwarding requests?</summary><br><b>
+
+* Keep caches updated (which means the request could be forwarded not to the closest datacenter)
 </b></details>
 
 <details>
@@ -1119,21 +2347,54 @@ Systems keep an ARP look-up table where they store information about what IP add
 </b></details>
 
 <details>
+<summary>What is the exponential backoff algorithm? Where is it used?</summary><br><b>
+</b></details>
+
+<details>
 <summary>Using Hamming code, what would be the code word for the following data word 100111010001101?</summary><br><b>
 
 00110011110100011101
 </b></details>
 
-## Linux
+<details>
+<summary>Give examples of protocols found in the application layer</summary><br><b>
 
-<a name="linux-beginner"></a>
-#### :baby: Beginner
+* Hypertext Transfer Protocol (HTTP) - used for the webpages on the internet
+* Simple Mail Transfer Protocol (SMTP) - email transmission
+* Telecommunications Network - (TELNET) - terminal emulation to allow client access to telnet server
+* File Transfer Protocol (FTP) - facilitates transfer of files between any two machines
+* Domain Name System (DNS) - domain name translation
+* Dynamic Host Configuration Protocol (DHCP) - allocates IP addresses, subnet masks and gateways to hosts
+* Simple Network Management Protocol (SNMP) - gathers data of devices on the network
+</b></details>
+
+<details>
+<summary>Give examples of protocols found in the network Layer</summary><br><b>
+
+* Internet Protocol (IP) - assists in routing packets from one machine to another
+* Internet Control Message Protocol (ICMP) - lets one know what is going such as error messages and debugging information
+</b></details>
+
+<details>
+<summary>What is HSTS?</summary><br><b>
+HTTP Strict Transport Security is a web server directive that informs user agents and web browsers how to handle its connection through a response header sent at the very beginning and back to the browser. This forces connections over HTTPS encryption, disregarding any script's call to load any resource in that domain over HTTP.
+
+Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-use-it#:~:text=HTTP%20Strict%20Transport%20Security%20(HSTS,and%20back%20to%20the%20browser.)
+</b></details>
+
+<details>
+<summary>What is the difference if any between SSL and TLS?</summary><br><b>
+</b></details>
+
+## Linux
 
 <details>
 <summary>What is your experience with Linux?</summary><br><b>
 
-An open question. Answer based on your real experience. You can highlight one or more of the following:
+Only you know :)
 
+For example:
+* Administration
 * Troubleshooting & Debugging
 * Storage
 * Networking
@@ -1144,27 +2405,147 @@ An open question. Answer based on your real experience. You can highlight one or
 <details>
 <summary>Explain what each of the following commands does and give an example on how to use it:
 
-  * ls
-  * rm 
-  * rmdir (can you achieve the same result by using <code>rm</code>?)
-  * grep
-  * wc
-  * curl
   * touch
-  * man
-  * nslookup or dig
-  * df</summary><br><b>
+  * ls
+  * rm
+  * cat
+  * cp
+  * mkdir
+</summary><br><b>
+</b></details>
 
-  * ls - list files and directories. You can highlight common flags like -d, -a, -l, ...
-  * rm - remove files and directories. You should mention -r for recursive removal
-  * rmdir - remove directories but you should mention it's possible to use rm for that
-  * grep - print lines that match patterns. Could be nice to mention -v, -r, -E flags
-  * wc - print newline, word, and byte counts
-  * curl - tranfer a URL or mention common usage like downloading files, API calls, ...
-  * touch - update timestamps but common usage is to create files
-  * man - reference manuals
-  * nslookup or dig - query nameservers
-  * df - provides info regarding file system disk space usage
+<details>
+<summary>Some of the commands in the previous question can be run with the -r/--recursive flag. What does it do?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain each field in the output of `ls -l` command</summary><br><b>
+It shows a detailed list of files in a long format. From the left:
+
+* file permissions, number of links, owner name, owner group, file size, timestamp of last modification and directory/file name
+</b></details>
+
+<details>
+<summary>What are hidden files/directories? How to list them?</summary><br><b>
+These are files directly not displayed after performing a standard ls direct listing. An example of these files are .bashrc which are used to execute some scripts. Some also store configuration about services on your host like .KUBECONFIG. The command used to list them is,
+
+`ls -a`
+</b></details>
+
+<details>
+<summary>Explain what each of the following commands does and give an example on how to use it:
+
+  * sed
+  * grep
+  * cut
+  * awk
+</summary><br><b>
+</b></details>
+
+<details>
+<summary>What each of the following commands does?
+
+  * pwd
+  * cd
+  * find
+  * ls
+</summary><br><b>
+</b></details>
+
+<details>
+<summary>What each of the following commands does?
+
+  * cd /
+  * cd ~
+  * cd
+  * cd ..
+  * cd .
+  * cd -
+</summary><br><b>
+
+  * cd / -> change to the root directory
+  * cd ~ -> change to your home directory
+  * cd -> change to your home directory
+  * cd .. -> change to the directory above your current i.e parent directory
+  * cd . -> change to the directory you currently in
+  * cd - -> change to the last visited path
+</b></details>
+
+<details>
+<summary>How to rename the name of a file or a directory?</summary><br><b>
+
+Using the `mv` command.
+</b></details>
+
+<details>
+<summary>Specify which command would you use (and how) for each of the following scenarios 
+
+  * Remove a directory with files
+  * Display the content of a file
+  * Provides access to the file /tmp/x for everyone
+  * Change working directory to user home directory
+  * Replace every occurrence of the word "good" with "great" in the file /tmp/y</summary><br><b>
+</b></details>
+
+<details>
+<summary>How can you check what is the path of a certain command?</summary><br><b>
+
+  * whereis
+  * which
+</b></details>
+
+<details>
+<summary>Explain redirection</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain piping. How do you perform piping?</summary><br><b>
+
+Using a pipe in Linux, allows you to send the output of one to another (also called redirection). For example: `cat /etc/services | wc -l`
+</b></details>
+
+<details>
+<summary>Fix the following commands:
+
+  * sed "s/1/2/g' /tmp/myFile
+  * find . -iname \*.yaml -exec sed -i "s/1/2/g" {} ;
+
+  </summary><br><b>
+</b>
+<code>sed 's/1/2/g' /tmp/myFile</code><br>
+<code> find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \; </code>
+</details>
+
+#### Linux FHS
+
+<details>
+<summary>In Linux FHS (Filesystem Hierarchy Standard) what is the <code>/</code>?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is stored in each of the following paths?
+
+  * /bin, /sbin, /usr/bin and /usr/sbin
+  * /etc
+  * /home
+  * /var
+  * /tmp</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is special about the /tmp directory when compared to other directories?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What kind of information one can find in /proc?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you create files in /proc?</summary><br><b>
+</b></details>
+
+<details>
+<summary>In which path can you find the system devices (e.g. block storage)?</summary><br><b>
 </b></details>
 
 <details>
@@ -1175,9 +2556,9 @@ Most likely the default/generated $PATH was somehow modified or overridden thus 
 This issue could also happen if bash_profile or any configuration file of your interpreter was wrongly modified, causing erratics behaviours.
 You would solve this by fixing your $PATH variable:
 
-As to fix it there are serveral options:
+As to fix it there are several options:
 
-1. Manually adding what you need to your $PATH <code>PATH="$PATH":/user/bin:/..etc</code> 
+1. Manually adding what you need to your $PATH <code>PATH="$PATH":/user/bin:/..etc</code>
 2. You have your weird env variables backed up.
 3. You would look for your distro default $PATH variable, copy paste using method #1
 
@@ -1200,22 +2581,20 @@ With cron, tasks are scheduled using the following format:
 The tasks are stored in a cron file, you can write in it using <code>crontab -e</code>
 
 Alternatively if you are using a distro with systemd it's recommended to use systemd timers.
-
 </b></details>
 
 <details>
-<summary>Have you scheduled tasks in the past? What kind of tasks?</summary><br><b>
+<summary>How to check which commands you executed in the past?</summary><br><b>
 
-Normally you will schedule batch jobs.
+history command or .bash_history file
 </b></details>
 
-##### Permissions
+##### Linux Permissions
 
 <details>
 <summary>How to change the permissions of a file?</summary><br><b>
 
 Using the `chmod` command.
-
 </b></details>
 
 <details>
@@ -1233,16 +2612,57 @@ Using the `chmod` command.
 </b></details>
 
 <details>
-<summary>Explain what is setgid, setuid and sticky bit</summary><br><b>
+<summary>What this command does? <code>chmod +x some_file</code></summary><br><b>
+It adds execute permissions to all sets i.e user, group and others
 </b></details>
 
 <details>
-<summary>You try to delete a file but it fails. Name at least three different reason as to why it could happen</summary><br><b>
+<summary>Explain what is setgid and setuid</summary><br><b>
+
+* setuid is a linux file permission that permits a user to run a file or program with the permissions of the owner of that file. This is possible by elevation of current user privileges.
+* setgid is a process when executed will run as the group that owns the file.
+</b></details>
+
+<details>
+<summary>What is the purpose of sticky bit?</summary><br><b>
+Its a bit that only allows the owner or the root user to delete or modify the file.
+</b></details>
+
+<details>
+<summary>What the following commands do?
+
+  * chmod
+  * chown
+  * chgrp</summary><br><b>
+
+  * chmod - changes access permissions to files system objects
+  * chown - changes the owner of file system files and directories
+  * chgrp - changes the group associated with a file system object
+</b></details>
+
+<details>
+<summary>What is sudo? How do you set it up?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? In order to install packages on the system one must be the root user or use the sudo command</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>Explain what are ACLs. For what use cases would you recommend to use them?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You try to create a file but it fails. Name at least three different reason as to why it could happen</summary><br><b>
 
 * No more disk space
-* No more indoes
+* No more inodes
 * No permissions
 </b></details>
+
+#### Linux systemd
 
 <details>
 <summary>What is systemd?</summary><br>
@@ -1271,11 +2691,19 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 <summary>Describe how to make a certain process/app a service</summary><br><b>
 </b></details>
 
+##### Linux Debugging
+
 <details>
-<summary>How do you kill a process in D state?</summary><br><b>
+<summary>Where system logs are located?</summary><br><b>
+
+/var/log
 </b></details>
 
-##### Debugging (Beginner)
+<details>
+<summary>How to follow file's content as it being appended without opening the file every time?</summary><br><b>
+
+tail -f <file_name>
+</b></details>
 
 <details>
 <summary>What are you using for troubleshooting and debugging <b>network</b> issues?</summary><br><b>
@@ -1310,7 +2738,7 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
-<summary>You get a call from someone claiming "my system is SLOW". What do yo do?</summary><br><b>
+<summary>You get a call from someone claiming "my system is SLOW". What do you do?</summary><br><b>
 
 * Check with `top` for anything unusual
 * Run `dstat -t` to check if it's related to disk or network.
@@ -1327,10 +2755,6 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
-<summary>What kind of information one can find in /proc?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is the difference between CPU load and utilization?</summary><br><b>
 </b></details>
 
@@ -1338,10 +2762,22 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 <summary>How you measure time execution of a program?</summary><br><b>
 </b></details>
 
-#### Kernel
+#### Linux Kernel
+
+<details>
+<summary>What is a kernel, and what does it do?</summary><br><b>
+
+The kernel is part of the operating system and is responsible for tasks like:
+
+  * Allocating memory
+  * Schedule processes
+  * Control CPU
+</b></details>
 
 <details>
 <summary>How do you find out which Kernel version your system is using?</summary><br><b>
+
+`uname -a` command
 </b></details>
 
 <details>
@@ -1349,19 +2785,54 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
-<summary>Explain user space and kernel space</summary><br><b>
+<summary>Explain user space vs. kernel space</summary><br><b>
+
+The operating system executes the kernel in protected memory to prevent anyone from changing (and risking it crashing). This is what is known as "Kernel space".
+"User space" is where users executes their commands or applications. It's important to create this separation since we can't rely on user applications to not tamper with the kernel, causing it to crash.
+
+Applications can access system resources and indirectly the kernel space by making what is called "system calls".
 </b></details>
 
 <details>
-<summary>Wildcards are implemented on user or kernel space?</summary><br><b>
+<summary>What are system calls? What system calls are you familiar with?</summary><br><b>
+</b></details>
+
+#### Linux Virtualization
+
+<details>
+<summary>What virtualization solutions are available for Linux?</summary><br><b>
 </b></details>
 
 <details>
 <summary>What is KVM?</summary><br><b>
 </b></details>
 
+#### Linux SSH
+
 <details>
-<summary>What is SSH key? How is it used?</summary><br><b>
+<summary>What is SSH? How to check if a Linux server is running SSH?</summary><br><b>
+
+[Wikipedia Definition](https://en.wikipedia.org/wiki/SSH_(Secure_Shell)): "SSH or Secure Shell is a cryptographic network protocol for operating network services securely over an unsecured network."
+
+[Hostinger.com Definition](https://www.hostinger.com/tutorials/ssh-tutorial-how-does-ssh-work): "SSH, or Secure Shell, is a remote administration protocol that allows users to control and modify their remote servers over the Internet."
+
+An SSH server will have SSH daemon running. Depends on the distribution, you should be able to check whether the service is running (e.g. systemctl status sshd).
+</b></details>
+
+<details>
+<summary>Why SSH is considered better than telnet?</summary><br><b>
+
+Telnet also allows you to connect to a remote host but as opposed to SSH where the communication is encrypted, in telnet, the data is sent in clear text, so it doesn't considered to be secured because anyone on the network can see what exactly is sent, including passwords.
+</b></details>
+
+<details>
+<summary>What is stored in <code>~/.ssh/known_hosts</code>?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You try to ssh to a server and you get "Host key verification failed". What does it mean?</summary><br><b>
+
+It means that the key of the remote host was changed and doesn't match the one that stored on the machine (in ~/.ssh/known_hosts).
 </b></details>
 
 <details>
@@ -1369,15 +2840,43 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
-<summary>What is SSH port forwarding?</summary><br><b>
+<summary>What <code>ssh-keygen</code> is used for?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Explain redirection</summary><br><b>
+<summary>What is SSH port forwarding?</summary><br><b>
+</b></details>
+
+#### Linux - Globbing, Wildcards
+
+<details>
+<summary>What is Globbing?</summary><br><b>
 </b></details>
 
 <details>
 <summary>What are wildcards? Can you give an example of how to use them?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what will <code>ls [XYZ]</code> match</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what will <code>ls [^XYZ]</code> match</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what will <code>ls [0-5]</code> match</summary><br><b>
+</b></details>
+
+<details>
+<summary>What each of the following matches
+
+  * ?
+  * *</summary><br><b>
+
+  * The ? matches any single character
+  * The * matches zero or more characters
 </b></details>
 
 <details>
@@ -1394,9 +2893,22 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b></details>
 
 <details>
-<summary>Tell me everything you know about the Linux boot process</summary><br><b>
+<summary>Which line numbers will be printed when running `grep '\baaa\b'` on the following content:
 
-Another way to ask this: what happens from the moment you turned on the server until you get a prompt
+aaa
+bbb
+ccc.aaa
+aaaaaa</summary><br><b>
+
+lines 1 and 3.
+</b></details>
+
+<details>
+<summary>What is the difference single and double quotes?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is escaping? What escape character is used for escaping?</summary><br><b>
 </b></details>
 
 <details>
@@ -1411,14 +2923,34 @@ Each number has different meaning, based on how the application was developed.
 I consider this as a good blog post to read more about it: https://shapeshed.com/unix-exit-codes
 </b></details>
 
-##### Storage & Filesystem (Beginner)
+#### Linux Boot Process
+
+<details>
+<summary>Tell me everything you know about the Linux boot process</summary><br><b>
+
+Another way to ask this: what happens from the moment you turned on the server until you get a prompt
+</b></details>
+
+<details>
+<summary>What is GRUB2?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Secure Boot?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What can you find in /boot?</summary><br><b>
+</b></details>
+
+##### Linux Disk & Filesystem
 
 <details>
 <summary>What's an inode?</summary><br><b>
 
 For each file (and directory) in Linux there is an inode, a data structure which stores meta data
 related to the file like its size, owner, permissions, etc.
-</b></details> 
+</b></details>
 
 <details>
 <summary>Which of the following is not included in inode:
@@ -1427,14 +2959,20 @@ related to the file like its size, owner, permissions, etc.
   * File size
   * File name
   * File timestamp</summary><br><b>
+
+File name (it's part of the directory file)
 </b></details>
 
 <details>
 <summary>How to check which disks are currently mounted?</summary><br><b>
+
+Run `mount`
 </b></details>
 
 <details>
-<summary>You run mount command but you get no output. How would you check what mounts you have on your system?</summary><br><b>
+<summary>You run the <code>mount</code> command but you get no output. How would you check what mounts you have on your system?</summary><br><b>
+
+`cat /proc/mounts`
 </b></details>
 
 <details>
@@ -1461,12 +2999,19 @@ True
 </b></details>
 
 <details>
+<summary>Can you check what type of filesystem is used in /home?</summary><br><b>
+
+There are many answers for this question. One way is running `df -T`
+</b></details>
+
+<details>
 <summary>What is a swap partition? What is it used for?</summary><br><b>
 </b></details>
 
 <details>
 <summary>How to create a
-  * new empty file 
+
+  * new empty file
   * a file with text (without using text editor)
   * a file with given size</summary><br><b>
 </b></details>
@@ -1477,10 +3022,12 @@ True
 
 <details>
 <summary>How would you check what is the size of a certain directory?</summary><br><b>
+
+`du -sh`
 </b></details>
 
 <details>
-<summary>What do you know about LVM?</summary><br><b>
+<summary>What is LVM?</summary><br><b>
 </b></details>
 
 <details>
@@ -1489,6 +3036,8 @@ True
   * PV
   * VG
   * LV</summary><br><b>
+
+
 </b></details>
 
 <details>
@@ -1512,34 +3061,70 @@ True
 </b></details>
 
 <details>
-<summary>Fix the following commands:
+<summary>What is stored in each of the following logs?
 
-  * sed "s/1/2/g' /tmp/myFile
-  * find . -iname \*.yaml -exec sed -i "s/1/2/g" {} ;
-  
-  </summary><br><b>
-</b>
-<code>sed 's/1/2/g' /tmp/myFile</code><br>
-<code> find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \; </code>
-</details>
-
-<details>
-<summary>Explain what is stored in each of the following paths and if there is anything unique about it:</summary><br><b>
-
-  * /tmp
-  * /var/log
-  * /bin
-  * /usr/local
+  * /var/log/messages
+  * /var/log/boot.log</summary><br><b>
 </b></details>
 
-#### Processes
+<details>
+<summary>True or False? both /tmp and /var/tmp cleared upon system boot</summary><br><b>
+
+False. /tmp is cleared upon system boot while /var/tmp is cleared every a couple of days or not cleared at all (depends on distro).
+</b></details>
+
+#### Linux Performance Analysis
+
+<details>
+<summary>How to check what is the current load average?</summary><br><b>
+
+One can use `uptime` or `top`
+</b></details>
+
+<details>
+<summary>You know how to see the load average, great. but what each part of it means? for example 1.43, 2.34, 2.78</summary><br><b>
+
+[This article](http://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html) summarizes the load average topic in a great way
+</b></details>
+
+<details>
+<summary>How to check process usage?</summary><br><b>
+
+pidstat
+</b></details>
+
+<details>
+<summary>How to check disk I/O?</summary><br><b>
+
+`iostat -xz 1`
+</b></details>
+
+<details>
+<summary>How to check how much free memory a system has? How to check memory consumption by each process?</summary><br><b>
+
+You can use the commands <code>top</code> and <code>free</code>
+</b></details>
+
+<details>
+<summary>How to check TCP stats?</summary><br><b>
+
+sar -n TCP,ETCP 1
+</b></details>
+
+#### Linux Processes
+
+<details>
+<summary>how to list all the processes running in your system?</summary><br><b>
+
+`ps -ef`
+</b></details>
 
 <details>
 <summary>How to run a process in the background and why to do that in the first place?</summary><br><b>
 
-You can achieve that by specifying & at end of the command.
+You can achieve that by specifying & at the end of the command.
 As to why, since some commands/processes can take a lot of time to finish
-execution or run forever
+execution or run forever, you may want to run them in the background instead of waiting for them to finish before gaining control again in current session.
 </b></details>
 
 <details>
@@ -1578,11 +3163,18 @@ To view all available signals run `kill -l`
 </b></details>
 
 <details>
+<summary>Every couple of days, a certain process stops running. How can you look into why it's happening?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What happens when you press ctrl + c?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What are daemons?</summary><br><b>
+<summary>What is a Daemon in Linux?</summary><br><b>
+
+A background process. Most of these processes are waiting for requests or set of conditions to be met before actually running anything.
+Some examples: sshd, crond, rpcbind.
 </b></details>
 
 <details>
@@ -1595,6 +3187,10 @@ Stopped (T)
 Dead (x)
 Zombie (z)
 </pre>
+</b></details>
+
+<details>
+<summary>How do you kill a process in D state?</summary><br><b>
 </b></details>
 
 <details>
@@ -1628,6 +3224,11 @@ If you mention at any point ps command with arugments, be familiar with what the
 
 <details>
 <summary>What is the init process?</summary><br><b>
+It is the first process executed by the kernel during the booting of a system. It is a daemon process which runs till the system is shutdown. That is why, it is the parent of all the processes
+</b></details>
+
+<details>
+<summary>Can you describe how processes are being created?</summary><br><b>
 </b></details>
 
 <details>
@@ -1639,10 +3240,6 @@ If you mention at any point ps command with arugments, be familiar with what the
 </b></details>
 
 <details>
-<summary>What are system calls? What system calls are you familiar with?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What <code>strace</code> does? What about <code>ltrace</code>?</summary><br><b>
 </b></details>
 
@@ -1650,12 +3247,6 @@ If you mention at any point ps command with arugments, be familiar with what the
 <summary>Find all the files which end with '.yml' and replace the number 1 in 2 in each file</summary><br><b>
 
 find /some_dir -iname \*.yml -print0 | xargs -0 -r sed -i "s/1/2/g"
-</b></details>
-
-<details>
-<summary>How to check how much free memory a system has? How to check memory consumption by each process?</summary><br><b>
-
-You can use the commands <code>top</code> and <code>free</code>
 </b></details>
 
 <details>
@@ -1676,6 +3267,7 @@ Kerberos
 File descriptor, also known as file handler, is a unique number which identifies an open file in the operating system.
 
 In Linux (and Unix) the first three file descriptors are:
+
   * 0 - the default data stream for input
   * 1 - the default data stream for output
   * 2 - the default data stream for output related to errors
@@ -1717,7 +3309,26 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 <summary>Do you have experience with hardening servers? Can you describe the process?</summary><br><b>
 </b></details>
 
-##### Network
+##### Linux Networking
+
+<details>
+<summary>How to list all the interfaces?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the loopback (lo) interface?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What the following commands are used for?
+
+  * ip addr
+  * ip route
+  * ip link
+  * ping
+  * netstat
+  * traceroute</summary><br><b>
+</b></details>
 
 <details>
 <summary>What is a network namespace? What is it used for?</summary><br><b>
@@ -1743,6 +3354,12 @@ lsof -i -n -P | grep <port_number>
 </b></details>
 
 <details>
+<summary>True or False? The MAC address of an interface is assigned/set by the OS</summary><br><b>
+
+False
+</b></details>
+
+<details>
 <summary>Can you have more than one default gateway in a given system?</summary><br><b>
 
 Technically, yes.
@@ -1752,14 +3369,21 @@ Technically, yes.
 <summary>Which port is used in each of the following protocols?:
 
   * SSH
+  * SMTP
   * HTTP
   * DNS
-  * HTTPS</summary><br><b>
+  * HTTPS
+</summary><br><b>
 
   * SSH - 22
+  * SMTP - 35
   * HTTP - 80
   * DNS - 53
   * HTTPS - 443
+</b></details>
+
+<details>
+<summary>What is telnet and why is it a bad idea to use it in production? (or at all)</summary><br><b>
 </b></details>
 
 <details>
@@ -1768,12 +3392,13 @@ Technically, yes.
 
 <details>
 <summary>How can you send an HTTP request from your shell?</summary><br><b>
-
-Using nc is one way
+<br>
+Using nc is one way<br>
 </b></details>
 
 <details>
 <summary>What are packet sniffers? Have you used one in the past? If yes, which packet sniffers have you used and for what purpose?</summary><br><b>
+It is a network utility that analyses and may inject tasks into the data-stream travelling over the targeted network.
 </b></details>
 
 <details>
@@ -1786,7 +3411,34 @@ Using nc is one way
 One way would be `ping6 ff02::1`
 </b></details>
 
+<details>
+<summary>What is network interface bonding and do you know how it's performed in Linux?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What network bonding modes are there?</summary><br><b>
+
+There a couple of modes:
+
+  * balance-rr: round robing bonding
+  * active-backup: a fault tolerance mode where only one is active
+  * balance-tlb: Adaptive transmit load balancing
+  * balance-alb: Adaptive load balancing
+</b></details>
+
+<details>
+<summary>What is a bridge? How it's added in Linux OS?</summary><br><b>
+</b></details>
+
 ##### Linux DNS
+
+<details>
+<summary>How to check what is the hostname of the system?</summary><br><b>
+
+`cat /etc/hostname`
+
+You can also run `hostnamectl` or `hostname` but that might print only a temporary hostname. The one in the file is the permanent one.
+</b></details>
 
 <details>
 <summary>What the file <code>/etc/resolv.conf</code> is used for? What does it include?</summary><br><b>
@@ -1798,17 +3450,27 @@ One way would be `ping6 ff02::1`
 You can specify one or more of the following:
 
  * <code>dig</code>
+ * <code>host</code>
  * <code>nslookup</code>
 </b></details>
 
-##### Packaging
+##### Linux Packaging
 
 <details>
-<summary>Do you have experience with packaging? Can you explain how it works?</summary><br><b>
+<summary>Do you have experience with packaging? (as in building packages) Can you explain how does it works?</summary><br><b>
 </b></details>
 
 <details>
-<summary>RPM: explain the spec format(what it should and can include)</summary><br><b>
+<summary>How packages installation/removal is performed on the distribution you are using?</summary><br><b>
+
+The answer depends on the distribution being used.
+
+In Fedora/CentOS/RHEL/Rocky it can be done with `rpm` or `dnf` commands.
+In Ubuntu it can be done with the `apt` command.
+</b></details>
+
+<details>
+<summary>RPM: explain the spec format (what it should and can include)</summary><br><b>
 </b></details>
 
 <details>
@@ -1816,10 +3478,37 @@ You can specify one or more of the following:
 </b></details>
 
 <details>
-<summary>How to know to which package a file on the system belongs to? Is it a problem if it doesn't belongs to a package?</summary><br><b>
+<summary>How to know to which package a file on the system belongs to? Is it a problem if it doesn't belongs to any package?</summary><br><b>
 </b></details>
 
-##### Applications and Services
+<details>
+<summary>Where repositories are stored? (based on the distribution you are using)</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an archive? How do you create one in Linux?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to extract the content of an archive?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Why do we need package managers? Why not simply creating archives and publish them?</summary><br><b>
+
+Package managers allow you to manage packages lifecycle as in installing, removing and updating the packages.<br>
+In addition, you can specify in a spec how a certain package will be installed - where to copy the files, which commands to run prior to the installation, post the installation, etc.
+</b></details>
+
+#### Linux DNF
+
+<details>
+<summary>How to look for a package that provides the command /usr/bin/git? (the package isn't necessarily installed)</summary><br><b>
+
+dnf provides /usr/bin/git
+</b></details>
+
+##### Linux Applications and Services
 
 <details>
 <summary>What can you find in /etc/services?</summary><br><b>
@@ -1846,10 +3535,36 @@ Upstart: add Upstart init script at /etc/init/service.conf
 <summary>How to print the shared libraries required by a certain program? What is it useful for?</summary><br><b>
 </b></details>
 
-##### Users
+<details>
+<summary>What is CUPS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What types of web servers are you familiar with?</summary><br><b>
+
+Nginx, Apache httpd.
+</b></details>
+
+##### Linux Users and Groups
+
+<details>
+<summary>What is a "superuser" (or root user)? How is it different from regular users?</summary><br><b>
+</b></details>
 
 <details>
 <summary>How do you create users? Where user information is stored?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Which file stores information about groups?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you change/set the password of a user?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Which file stores users passwords? Is it visible for everyone?</summary><br><b>
 </b></details>
 
 <details>
@@ -1857,13 +3572,25 @@ Upstart: add Upstart init script at /etc/init/service.conf
 </b></details>
 
 <details>
-<summary>What information is stored in /etc/passwd?</summary><br><b>
+<summary>What information is stored in /etc/passwd? explain each field</summary><br><b>
 </b></details>
 
 <details>
 <summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
 
-  * adduser user_name --shell=/bin/false --no-create-home
+`adduser user_name --shell=/bin/false --no-create-home`
+You can also add a user and then edit /etc/passwd.
+</b></details>
+
+<details>
+<summary>How to switch to another user? How to switch to the root user?</summary><br><b>
+
+su command.
+Use su - to switch to root
+</b></details>
+
+<details>
+<summary>What is the UID the root user? What about a regular user?</summary><br><b>
 </b></details>
 
 <details>
@@ -1873,10 +3600,45 @@ Re-install the OS IS NOT the right answer :)
 </b></details>
 
 <details>
-<summary>What is sudo? How do you set it up?</summary><br><b>
+<summary>What is /etc/skel?</summary><br><b>
 </b></details>
 
-#### Random and perhaps useless :)
+<details>
+<summary>How to see a list of who logged-in to the system?</summary><br><b>
+
+Using the `last` command.
+</b></details>
+
+<details>
+<summary>Explain what each of the following commands does:
+
+  * useradd
+  * usermod
+  * whoami
+  * id</summary><br><b>
+</b></details>
+
+#### Linux Hardware
+
+<details>
+<summary>Where can you find information on the processor?</summary><br><b>
+
+/proc/cpuinfo
+</b></details>
+
+<details>
+<summary>How can you print information on the BIOS, motherboard, processor and RAM?</summary><br><b>
+
+dmidecoode
+</b></details>
+
+<details>
+<summary>How can you print all the information on connected block devices in your system?</summary><br><b>
+
+lsblk
+</b></details>
+
+#### Linux - Random
 
 <details>
 <summary>Give 5 commands which are two letters long</summary><br><b>
@@ -1885,34 +3647,102 @@ ls, wc, dd, df, du, ps, ip, cp, cd ...
 </b></details>
 
 <details>
+<summary>What ways are there for creating a new empty file?</summary><br><b>
+
+  * touch new_file
+  * echo "" > new_file
+</b></details>
+
+<details>
+<summary>How `cd -` works? How does it knows the previous location?</summary><br><b>
+
+$OLDPWD
+</b></details>
+
+<details>
+<summary>List three ways to print all the files in the current directory</summary><br><b>
+
+* ls
+* find .
+* echo *
+</b></details>
+
+<details>
+<summary>How to count the number of lines in a file? What about words?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You define x=2 in /etc/bashrc and x=6 ~/.bashrc you then login to the system. What would be the value of x?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between man and info?</summary><br><b>
+
+A good answer can be found [here](https://askubuntu.com/questions/9325/what-is-the-difference-between-man-and-info-documentation)
+</b></details>
+
+<details>
+<summary>Explain "environment variables". How do you list all environment variables?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to create your own environment variables?</summary><br><b>
+
+`X=2` for example. But this will persist to new shells. To have it in new shells as well, use `export X=2`
+</b></details>
+
+<details>
 <summary>What a double dash (--) mean?</summary><br><b>
 
 It's used in commands to mark the end of commands options. One common example is when used with git to discard local changes: `git checkout -- some_file`
 </b></details>
 
-#### Commands
+#### Linux - AWK
+
+<details>
+<summary>What the <code>awk</code> command does? Have you used it? What for?</summary><br><b>
+
+From Wikipedia: "AWK is domain-specific language designed for text processing and typically used as a data extraction and reporting tool"
+</b></details>
+
+<details>
+<summary>How to print the 4th column in a file?</summary><br><b>
+
+`awk '{print $4}' file`
+</b></details>
+
+<details>
+<summary>How to print every line that is longer than 79 characters?</summary><br><b>
+
+`awk 'length($0) > 79' file`
+</b></details>
 
 <details>
 <summary>What the <code>lsof</code> command does? Have you used it? What for?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What the <code>awk</code> command does? Have you used it? What for?</summary><br><b>
+<summary>What is the difference between find and locate?</summary><br><b>
 </b></details>
-
-<a name="linux-advanced"></a>
-#### :star: Advanced
 
 #### System Calls
 
 <details>
-<summary>Explain the fork system call</summary><br><b>
+<summary>Explain the fork() system call</summary><br><b>
 
 fork() is used for creating a new process. It does so by cloning the calling process but the child process has its own PID and any memory locks, I/O operations and semaphores are not inherited.
 </b></details>
 
 <details>
-<summary>Explain the exec system call</summary><br><b>
+<summary>Explain the exec() system call</summary><br><b>
+</b></details>
+
+<details>
+<summary>What system call is used for listing files?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What system call is used for creating a new process?</summary><br><b>
 </b></details>
 
 <details>
@@ -1930,6 +3760,19 @@ If wait is not used by a parent process then a child process might become a zomb
 <summary>What execve() does?</summary><br><b>
 
 Executes a program. The program is passed as a filename (or path) and must be a binary executable or a script.
+</b></details>
+
+<details>
+<summary>What is the return value of malloc?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the pipe() system call. What does it used for?</summary><br><b>
+
+[Unix pipe implementation](https://toroid.org/unix-pipe-implementation)
+
+"Pipes provide a unidirectional interprocess communication channel. A pipe has a read end and a write end. Data written to the write end of a pipe can be read from the read end of the pipe.
+A pipe is created using pipe(2), which returns two file descriptors, one referring to the read end of the pipe, the other referring to the write end."
 </b></details>
 
 <details>
@@ -1952,8 +3795,10 @@ Notes:
 
 <details>
 <summary>What readdir() system call does?</summary><br><b>
+</b></details>
 
-
+<details>
+<summary>What exactly the command <code>alias x=y</code> does?</summary><br><b>
 </b></details>
 
 #### Linux Filesystem & Files
@@ -1962,14 +3807,10 @@ Notes:
 <summary>How to create a file of a certain size?</summary><br><b>
 
 There are a couple of ways to do that:
-  
+
   * dd if=/dev/urandom of=new_file.txt bs=2MB count=1
   * truncate -s 2M new_file.txt
   * fallocate -l 2097152 new_file.txt
-</b></details>
-
-<details>
-<summary>Can you describe how processes are being created?</summary><br><b>
 </b></details>
 
 <details>
@@ -1985,11 +3826,7 @@ These system calls are reading the file <code>/my/file</code> and 5 is the file 
 </b></details>
 
 <details>
-<summary>What system call is used for listing files?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What system call is used for creating a new process?</summary><br><b>
+<summary>Describe three different ways to remove a file (or its content)</summary><br><b>
 </b></details>
 
 <details>
@@ -1997,10 +3834,16 @@ These system calls are reading the file <code>/my/file</code> and 5 is the file 
 </b></details>
 
 <details>
+<summary>What is context switch?</summary><br><b>
+
+From [wikipedia](https://en.wikipedia.org/wiki/Context_switch): a context switch is the process of storing the state of a process or thread, so that it can be restored and resume execution at a later point
+</b></details>
+
+<details>
 <summary>You found there is a server with high CPU load but you didn't find a process with high CPU. How is that possible?</summary><br><b>
 </b></details>
 
-##### Linux Networking
+##### Linux Advanced - Networking
 
 <details>
 <summary>When you run <code>ip a</code> you see there is a device called 'lo'. What is it and why do we need it?</summary><br><b>
@@ -2046,7 +3889,7 @@ This is a good article about the topic: https://ops.tips/blog/how-linux-creates-
 <summary>You executed a script and while still running, it got accidentally removed. Is it possible to restore the script while it's still running?</summary><br><b>
 </b></details>
 
-#### Memory
+#### Linux Memory
 
 <details>
 <summary>What is the difference between MemFree and MemAvailable in /proc/meminfo?</summary><br><b>
@@ -2055,10 +3898,54 @@ MemFree - The amount of unused physical RAM in your system
 MemAvailable - The amount of available memory for new workloads (without pushing system to use swap) based on MemFree, Active(file), Inactive(file), and SReclaimable.
 </b></details>
 
-## Operating System
+<details>
+<summary>What is virtual memory?</summary><br><b>
+</b></details>
 
-<a name="operating-system-beginner"></a>
-#### :baby: Beginner
+<details>
+<summary>What is the difference between paging and swapping?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is OOM killer</summary><br><b>
+</b></details>
+
+#### Distribution
+
+<details>
+<summary>What is a Linux distribution?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What Linux distributions are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are the components of a Linux distribution?</summary><br><b>
+
+* Kernel
+* Utilities
+* Services
+* Software/Packages Management
+</b></details>
+
+#### Linux Advanced - Misc
+
+<details>
+<summary>Wildcards are implemented on user or kernel space?</summary><br><b>
+</b></details>
+
+<details>
+<summary>If I plug a new device into a Linux machine, where on the system, a new device entry/file will be created?</summary><br><b>
+
+/dev
+</b></details>
+
+<details>
+<summary>Why there are different sections in man? What is the difference between the sections?</summary><br><b>
+</b></details>
+
+## Operating System
 
 <details>
 <summary>What is an operating system?</summary><br><b>
@@ -2066,6 +3953,26 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 There are many ways to answer that. For those who look for simplicity, the book "Operating Systems: Three Easy Pieces" offers nice version:
 
 "responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that"
+</b></details>
+
+<details>
+<summary>What is a kernel, and what does it do?</summary><br><b>
+
+The kernel is part of the operating system and is responsible for tasks like:
+
+  * Allocating memory
+  * Schedule processes
+  * Control CPU
+</b></details>
+
+<details>
+<summary>True or False? Some pieces of the code in the kernel are loaded into protected areas of the memory so applications can't overwritten them</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What is POSIX?</summary><br><b>
 </b></details>
 
 #### Processes
@@ -2081,7 +3988,7 @@ A process is a running program. A program is one or more instructions and the pr
 
 It would support the following:
 
-* Create - allow to create new processes 
+* Create - allow to create new processes
 * Delete - allow to remove/destroy processes
 * State - allow to check the state of the process, whether it's running, stopped, waiting, etc.
 * Stop - allow to stop a running process
@@ -2094,8 +4001,8 @@ It would support the following:
 * Program's bytes are loaded into the memory or more specifically, into the address space of the process.
 * Memory is allocated for program's stack (aka run-time stack). The stack also initialized by the OS with data like argv, argc and parameters to main()
 * Memory is allocated for program's heap which is required for data structures like linked lists and hash tables
-* I/O initialization tasks like in Unix/Linux based systems where each process has 3 file descriptors (input, output and error)
-* OS is running the program, strarting from main()
+* I/O initialization tasks are performed, like in Unix/Linux based systems where each process has 3 file descriptors (input, output and error)
+* OS is running the program, starting from main()
 
 Note: The loading of the program's code into the memory done lazily which means the OS loads only partial relevant pieces required for the process to run and not the entire code.
 </b></details>
@@ -2114,6 +4021,10 @@ False. It was true in the past but today's operating systems perform lazy loadin
 * Blocked - it's waiting for some operation to complete. For example I/O disk request
 </b></details>
 
+<details>
+<summary>What is Inter Process Communication (IPC)?</summary><br><b>
+</b></details>
+
 #### Concurrency
 
 <details>
@@ -2130,9 +4041,6 @@ Cache: Cache is usually used when processes reading and writing to the disk to m
 </b></details>
 
 ## Virtualization
-
-<a name="virtualization-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>Explain what is Virtualization</summary><br><b>
@@ -2153,9 +4061,6 @@ It's used by one entity until this entity decides to get rid of it. Take for exa
 
 ## Ansible
 
-<a name="ansible-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>Describe each of the following components in Ansible, including the relationship between them:
 
@@ -2163,10 +4068,11 @@ It's used by one entity until this entity decides to get rid of it. Take for exa
   * Module
   * Play
   * Playbook
-  * Role</summary><br><b>
+  * Role
+</summary><br><b>
 
 Task – a call to a specific Ansible module
-Module – the actual unit of code executed by Ansible on your own host or a remote host. Modules are indexed by category (database, file, network, …) and also referred as task plugins.
+Module – the actual unit of code executed by Ansible on your own host or a remote host. Modules are indexed by category (database, file, network, …) and also referred to as task plugins.
 
 Play – One or more tasks executed on a given host(s)
 
@@ -2187,11 +4093,22 @@ Ansible is:
 </b></details>
 
 <details>
+<summary>True or False? Ansible follows the mutable infrastructure paradigm</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>True or False? Ansible uses declarative style to describe the expected end state</summary><br><b>
+False. It uses a procedural style.
+</b></details>
+
+<details>
 <summary>What kind of automation you wouldn't do with Ansible and why?</summary><br><b>
 
-While it's possible to provision resources with Ansible it might not be the best choice for doing so as Ansible doesn't
-save state by default and a task that creates 5 instances, when executed again will create additional 5 instances (unless
-additional check is implemented).
+While it's possible to provision resources with Ansible, some prefer to use tools that follow immutable infrastructure paradigm.
+Ansible doesn't saves state by default. So a task that creates 5 instances for example, when executed again will create additional 5 instances (unless
+additional check is implemented) while other tools will check if 5 instances exist. If only 4 exist, additional instance will be created.
 </b></details>
 
 <details>
@@ -2259,7 +4176,7 @@ spun up and shut down, without you tracking every change in these sources.
 ---
 - name: Print information about my host
   hosts: localhost
-  gather_facts: 'no'                                                                                                                                                                           
+  gather_facts: 'no'
   tasks:
       - name: Print hostname
         debug:
@@ -2312,7 +4229,7 @@ When given a written code, always inspect it thoroughly. If your answer is “th
   vars:
       mario_file: /tmp/mario
       package_list:
-          - 'zlib' 
+          - 'zlib'
           - 'vim'
   tasks:
       - name: Check for mario file
@@ -2354,13 +4271,13 @@ When given a written code, always inspect it thoroughly. If your answer is “th
 The playbook to deploy the system_info file
 
 ```
---- 
+---
 - name: Deploy /tmp/system_info file
   hosts: all:!controllers
-  tasks: 
+  tasks:
       - name: Deploy /tmp/system_info
         template:
-            src: system_info.j2 
+            src: system_info.j2
             dest: /tmp/system_info
 ```
 
@@ -2388,7 +4305,32 @@ Variable precedence is about how variables override each other when they set in 
 
 In the context of our question, the order will be extra vars (always override any other variable) -> host facts -> inventory variables -> role defaults (the weakest).
 
-A full list can be found at the link above. Also, note there is a significant difference between Ansible 1.x and 2.x.
+Here is the order of precedence from least to greatest (the last listed variables winning prioritization):
+
+1. command line values (eg “-u user”)
+2. role defaults [[1\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id15)
+3. inventory file or script group vars [[2\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id16)
+4. inventory group_vars/all [[3\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id17)
+5. playbook group_vars/all [[3\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id17)
+6. inventory group_vars/* [[3\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id17)
+7. playbook group_vars/* [[3\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id17)
+8. inventory file or script host vars [[2\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id16)
+9. inventory host_vars/* [[3\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id17)
+10. playbook host_vars/* [[3\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id17)
+11. host facts / cached set_facts [[4\]](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#id18)
+12. play vars
+13. play vars_prompt
+14. play vars_files
+15. role vars (defined in role/vars/main.yml)
+16. block vars (only for tasks in block)
+17. task vars (only for the task)
+18. include_vars
+19. set_facts / registered vars
+20. role (and include_role) params
+21. include params
+22. extra vars (always win precedence)
+
+A full list can be found at  [PlayBook Variables](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#ansible-variable-precedence) . Also, note there is a significant difference between Ansible 1.x and 2.x.
 </b></details>
 
 <details>
@@ -2402,6 +4344,33 @@ A full list can be found at the link above. Also, note there is a significant di
   * It’s a best practice to use indention of 2 spaces instead of 4
   * ‘notify’ used to trigger handlers
   * This “hosts: all:!controllers” means ‘run only on controllers group hosts</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the Diffrence between Forks and Serial & Throttle.</summary><br><b>
+
+`Serial` is like running the playbook for each host in turn, waiting for completion of the complete playbook before moving on to the next host. `forks`=1 means run the first task in a play on one host before running the same task on the next host, so the first task will be run for each host before the next task is touched. Default fork is 5 in ansible.
+
+```
+[defaults]
+forks = 30
+```
+
+```
+- hosts: webservers
+  serial: 1
+  tasks:
+    - name: ...
+```
+
+Ansible also supports `throttle` This keyword limits the number of workers up to the maximum set via the forks setting or serial. This can be useful in restricting tasks that may be CPU-intensive or interact with a rate-limiting API
+
+```
+tasks:
+- command: /path/to/cpu_intensive_command
+  throttle: 1
+```
+
 </b></details>
 
 <details>
@@ -2419,9 +4388,6 @@ A full list can be found at the link above. Also, note there is a significant di
   * Loops
 </summary><br><b>
 </b></details>
-
-<a name="ansible-advanced"></a>
-#### :star: Advanced
 
 <details>
 <summary>What are filters? Do you have experience with writing filters?</summary><br><b>
@@ -2442,6 +4408,10 @@ def cap(self, string):
 
 <details>
 <summary>What are callback plugins? What can you achieve by using callback plugins?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Ansible Collections?</summary><br><b>
 </b></details>
 
 <details>
@@ -2484,7 +4454,7 @@ Gotenks = 32
 </b></details>
 
 <details>
-<summary>What is Molecule? How it works?</summary><br><b>
+<summary>What is Molecule? How does it works?</summary><br><b>
 </b></details>
 
 <details>
@@ -2493,11 +4463,8 @@ Gotenks = 32
 
 ## Terraform
 
-<a name="terraform-beginner"></a>
-#### :baby: Beginner
-
 <details>
-<summary>Can you explain what is Terraform? How it works?</summary><br><b>
+<summary>Explain what Terraform is and how does it works</summary><br><b>
 
 Read [here](https://www.terraform.io/intro/index.html#what-is-terraform-)
 </b></details>
@@ -2526,6 +4493,17 @@ The benefits of Terraform over the other tools:
 </b></details>
 
 <details>
+<summary>True or False? Terraform follows the mutable infrastructure paradigm</summary><br><b>
+
+False. Terraform follows immutable infrastructure paradigm.
+</b></details>
+
+<details>
+<summary>True or False? Terraform uses declarative style to describe the expected end state</summary><br><b>
+True
+</b></details>
+
+<details>
 <summary>Explain what is "Terraform configuration"</summary><br><b>
 A configuration is a root module along with a tree of child modules that are called as dependencies from the root module.
 </b></details>
@@ -2539,27 +4517,33 @@ HCL stands for Hashicorp Configuration Language. It is the language Hashicorp ma
 <summary>Explain each of the following:
 
   * Provider
-  * Resource 
-  * Provisioner 
+  * Resource
+  * Provisioner
 </summary><br><b>
-  * Provider is any cloud based technology - github, aws, postgresql etc - which one can make an API call to with its unique terraform provider binary to provision available services and components.<br>  
+  * Provider is any cloud based technology - github, aws, postgresql etc - which one can make an API call to with its unique terraform provider binary to provision available services and components.<br>
   * Resources are the services and components you provision on these platforms.<br>
   * Provisioner in terraform's lingo specifically refers to configuration tools like ansible or salt-stack which are used in combination with terraform to orchestrate a system.
 </b></details>
 
 <details>
-<summary>What <code>terraform.tfstate</code> file is used for?</summary><br><b> 
+<summary>What <code>terraform.tfstate</code> file is used for?</summary><br><b>
 
 It keeps track of the IDs of created resources so that Terraform knows what it is managing.
 </b></details>
 
 <details>
+<summary>How do you rename an existing resource?</summary><br><b>
+
+terraform state mv
+</b></details>
+
+<details>
 <summary>Explain what the following commands do:
 
-  * <code>terraform init</code> 
-  * <code>terraform plan</code>	
-  * <code>terraform validate</code> 
-  * <code>terraform apply</code> 
+  * <code>terraform init</code>
+  * <code>terraform plan</code>
+  * <code>terraform validate</code>
+  * <code>terraform apply</code>
 </summary><br><b>
 
 <code>terraform init</code> scans your code to figure which providers are you using and download them.
@@ -2638,19 +4622,16 @@ Output variables are named values that are sourced from the attributes of a modu
 </b></details>
 
 
-<a name="terraform-advanced"></a>
-#### :star: Advanced
-
 <details>
 <summary>Explain "Remote State". When would you use it and how?</summary><br><b>
-  Terraform generates a `terraform.tfstate` json file that describes components/service provisioned on the specified provider. Remote  
+  Terraform generates a `terraform.tfstate` json file that describes components/service provisioned on the specified provider. Remote
   State stores this file in a remote storage media to enable collaboration amongst team.
 </b></details>
 
 <details>
 <summary>Explain "State Locking"</summary><br><b>
-  State locking is a mechanism that blocks an operations against a specific state file from multiple callers so as to avoid conflicting operations from different team members. Once the first caller's operation's lock is released the other team member may go ahead to   
-  carryout his own operation. Nevertheless Terraform will first check the state file to see if the desired resource already exist and 
+  State locking is a mechanism that blocks an operations against a specific state file from multiple callers so as to avoid conflicting operations from different team members. Once the first caller's operation's lock is released the other team member may go ahead to
+  carryout his own operation. Nevertheless Terraform will first check the state file to see if the desired resource already exist and
   if not it goes ahead to create it.
 </b></details>
 
@@ -2670,27 +4651,22 @@ Output variables are named values that are sourced from the attributes of a modu
   It is also common in the community to use a tool called <code>terragrunt</code> to explicitly inject variables between modules.
 </b></details>
 
-## Docker
-
-<a name="docker-beginner"></a>
-
-#### :baby: beginner
+## Containers
 
 <details>
-<summary>What is Docker? What are you using it for?</summary><br><b>
-Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+<summary>What is a Container? What is it used for?</summary><br><b>
 </b></details>
 
 <details>
-<summary>How containers are different from VMs?</summary><br><b>
+<summary>How are containers different from virtual machines (VMs)?</summary><br><b>
 
 The primary difference between containers and VMs is that containers allow you to virtualize
 multiple workloads on the operating system while in the case of VMs the hardware is being virtualized to
 run multiple machines each with its own OS.
 
 * Containers don't require an entire guest operating system as VMs
-* It's usually takes a few seconds to set up a container as opposed to VMs which can take minutes or at least more time than containers as there is an entire OS to boot and initialize as opposed to container where you mainly lunch the app itself
-* Docker is one of the technologies allowing you to manage containers - run multiple containers on a host, move containers between hosts, etc.
+* It usually takes a few seconds to set up a container as opposed to VMs which can take minutes or at least more time than containers as there is an entire OS to boot and initialize as opposed to container where you mainly lunch the app itself
+* Containers are isolated from each other, but not as concretely as virtual machines. It is possible for a malicious user to break into the host OS from a container and vice versa.
 </b></details>
 
 <details>
@@ -2706,11 +4682,11 @@ You should choose containers when:
 </b></details>
 
 <details>
-<summary>Explain Docker architecture</summary><br><b>
+<summary>Explain Podman or Docker architecture</summary><br><b>
 </b></details>
 
 <details>
-<summary>Describe in detail what happens when you run `docker run hello-world`?</summary><br><b>
+<summary>Describe in detail what happens when you run `podman/docker run hello-world`?</summary><br><b>
 
 Docker CLI passes your request to Docker daemon.
 Docker daemon downloads the image from Docker Hub
@@ -2719,14 +4695,70 @@ Docker daemon redirects output from container to Docker CLI which redirects it t
 </b></details>
 
 <details>
-<summary>How do you run a container?</summary><br><b>
-	
-docker run
+<summary>What are `dockerd, docker-containerd, docker-runc, docker-containerd-ctr, docker-containerd-shim` ?</summary><br><b>
+
+dockerd - The Docker daemon itself. The highest level component in your list and also the only 'Docker' product listed. Provides all the nice UX features of Docker.
+
+(docker-)containerd - Also a daemon, listening on a Unix socket, exposes gRPC endpoints. Handles all the low-level container management tasks, storage, image distribution, network attachment, etc...
+
+(docker-)containerd-ctr - A lightweight CLI to directly communicate with containerd. Think of it as how 'docker' is to 'dockerd'.
+
+(docker-)runc - A lightweight binary for actually running containers. Deals with the low-level interfacing with Linux capabilities like cgroups, namespaces, etc...
+
+(docker-)containerd-shim - After runC actually runs the container, it exits (allowing us to not have any long-running processes responsible for our containers). The shim is the component which sits between containerd and runc to facilitate this.
+
+![alt text](https://i.stack.imgur.com/lAtSR.png "Docker Process")
+
 </b></details>
 
 <details>
-<summary>What `docker commit` does?. When will you use it?</summary><br><b>
-	
+<summary>Describe difference between cgroups and namespaces </summary><br><b>
+cgroup: Control Groups provide a mechanism for aggregating/partitioning sets of tasks, and all their future children, into hierarchical groups with specialized behaviour.
+namespace: wraps a global system resource in an abstraction that makes it appear to the processes within the namespace that they have their own isolated instance of the global resource.
+
+In short:
+
+Cgroups = limits how much you can use;
+namespaces = limits what you can see (and therefore use)
+
+Cgroups involve resource metering and limiting:
+memory
+CPU
+block I/O
+network
+
+Namespaces provide processes with their own view of the system
+
+Multiple namespaces: pid,net, mnt, uts, ipc, user
+
+</b></details>
+
+<details>
+<summary>Describe in detail what happens when you run `docker pull image:tag`?</summary><br><b>
+Docker CLI passes your request to Docker daemon. Dockerd Logs shows the process
+
+docker.io/library/busybox:latest resolved to a manifestList object with 9 entries; looking for a unknown/amd64 match
+
+found match for linux/amd64 with media type application/vnd.docker.distribution.manifest.v2+json, digest sha256:400ee2ed939df769d4681023810d2e4fb9479b8401d97003c710d0e20f7c49c6
+
+pulling blob \"sha256:61c5ed1cbdf8e801f3b73d906c61261ad916b2532d6756e7c4fbcacb975299fb Downloaded 61c5ed1cbdf8 to tempfile /var/lib/docker/tmp/GetImageBlob909736690
+
+Applying tar in /var/lib/docker/overlay2/507df36fe373108f19df4b22a07d10de7800f33c9613acb139827ba2645444f7/diff" storage-driver=overlay2
+
+Applied tar sha256:514c3a3e64d4ebf15f482c9e8909d130bcd53bcc452f0225b0a04744de7b8c43 to 507df36fe373108f19df4b22a07d10de7800f33c9613acb139827ba2645444f7, size: 1223534
+
+</b></details>
+
+
+<details>
+<summary>How do you run a container?</summary><br><b>
+
+`podman run` or `docker run`
+</b></details>
+
+<details>
+<summary>What `podman commit` does?. When will you use it?</summary><br><b>
+
 Create a new image from a container’s changes
 </b></details>
 
@@ -2751,7 +4783,7 @@ Create a new image from a container’s changes
 
 <details>
 <summary>How do you remove old, non running, containers?</summary><br><b>
-	
+
 1. To remove one or more Docker images use the docker container rm command followed by the ID of the containers you want to remove.
 2. The docker system prune command will remove all stopped containers, all dangling images, and all unused networks
 3. docker rm $(docker ps -a -q) - This command will delete all stopped containers. The command docker ps -a -q will return all existing container IDs and pass them to the rm command which will delete them. Any running containers will not be deleted.
@@ -2761,13 +4793,13 @@ Create a new image from a container’s changes
 
 <details>
 <summary>What is Dockerfile</summary><br><b>
-	
+
 Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image.
 </b></details>
 
 <details>
 <summary>What is the difference between ADD and COPY in Dockerfile?</summary><br><b>
-	
+
 COPY takes in a src and destination. It only lets you copy in a local file or directory from your host (the machine building the Docker image) into the Docker image itself.
 ADD lets you do that too, but it also supports 2 other sources. First, you can use a URL instead of a local file / directory. Secondly, you can extract a tar file from the source directly into the destination.
 Although ADD and COPY are functionally similar, generally speaking, COPY is preferred. That’s because it’s more transparent than ADD. COPY only supports the basic copying of local files into the container, while ADD has some features (like local-only tar extraction and remote URL support) that are not immediately obvious.
@@ -2775,7 +4807,7 @@ Although ADD and COPY are functionally similar, generally speaking, COPY is pref
 
 <details>
 <summary>What is the difference between CMD and RUN in Dockerfile?</summary><br><b>
-	
+
 RUN lets you execute commands inside of your Docker image. These commands get executed once at build time and get written into your Docker image as a new layer.
 CMD is the command the container executes by default when you launch the built image. A Dockerfile can only have one CMD.
 You could say that CMD is a Docker run-time operation, meaning it’s not something that gets executed at build time. It happens when you run an image. A running image is called a container.
@@ -2789,7 +4821,7 @@ A common answer to this is to use [hadolint](https://github.com/hadolint/hadolin
 
 <details>
 <summary>Explain what is Docker compose and what is it used for</summary><br><b>
-	
+
 Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.
 
 For example, you can use it to set up ELK stack where the services are: elasticsearch, logstash and kibana. Each running in its own container.
@@ -2807,6 +4839,14 @@ For example, you can use it to set up ELK stack where the services are: elastics
 </b></details>
 
 <details>
+<summary>Where can you store Docker images?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Docker Hub?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is the difference between Docker Hub and Docker cloud?</summary><br><b>
 
 Docker Hub is a native Docker registry service which allows you to run pull
@@ -2818,21 +4858,17 @@ Swarm management which means you can create new swarms in Docker Cloud.
 </b></details>
 
 <details>
-<summary>Where Docker images are stored?</summary><br><b>
-In DockerHub
+<summary>What is Docker Repository?</summary><br><b>
 </b></details>
 
 <details>
 <summary>Explain image layers</summary><br><b>
-	
+
 A Docker image is built up from a series of layers. Each layer represents an instruction in the image’s Dockerfile. Each layer except the very last one is read-only.
-Each layer is only a set of differences from the layer before it. The layers are stacked on top of each other. When you create a new container, you add a new writable layer on top of the underlying layers. This layer is often called the “container layer”. All changes made to the running container, such as writing new files, modifying existing files, and deleting files, are written to this thin writable container layer. 
+Each layer is only a set of differences from the layer before it. The layers are stacked on top of each other. When you create a new container, you add a new writable layer on top of the underlying layers. This layer is often called the “container layer”. All changes made to the running container, such as writing new files, modifying existing files, and deleting files, are written to this thin writable container layer.
 The major difference between a container and an image is the top writable layer. All writes to the container that add new or modify existing data are stored in this writable layer. When the container is deleted, the writable layer is also deleted. The underlying image remains unchanged.
 Because each container has its own writable container layer, and all changes are stored in this container layer, multiple containers can share access to the same underlying image and yet have their own data state.
 </b></details>
-
-<a name="docker-advanced"></a>
-#### :star: Advanced
 
 <details>
 <summary>What best practices are you familiar related to working with containers?</summary><br><b>
@@ -2852,42 +4888,31 @@ Because each container has its own writable container layer, and all changes are
 
 ## Kubernetes
 
-<a name="kubernetes-beginner"></a>
-#### :baby: Beginner
+<a name="kubernetes"></a>
 
 <details>
-<summary>What is Kubernetes? What use cases is it good for?</summary><br><b>
+<summary>What is Kubernetes? Why organizations are using it?</summary><br><b>
 
 Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
 
 To understand what Kubernetes is good for, let's look at some examples:
 
-* You would like to run a certain application in a container on multiple different locations. Sure, if it's 2-3 servers/locations, you can do it by yourself but it can be challenging to scale. Also, running them is not only running the container but also react on different events.
-
-* Performing updates and changes across hundreds of containers
-
+* You would like to run a certain application in a container on multiple different locations. Sure, if it's 2-3 servers/locations, you can do it by yourself but it can be challenging to scale it up to additional multiple location.<br>
+* Performing updates and changes across hundreds of containers<br>
 * Handle cases where the current load requires to scale up (or down)
-</b></details>
-
-<details>
-<summary>Describe the architecture of Kubernetes</summary><br><b>
 </b></details>
 
 <details>
 <summary>What is a Kubernetes Cluster?</summary><br><b>
 
-A cluster consists of a Master (which coordinates the cluster) and Nodes where the applications are running.
+Red Hat Definition: "A Kubernetes cluster is a set of node machines for running containerized applications. If you’re running Kubernetes, you’re running a cluster.
+
+At a minimum, a cluster contains a worker node and a master node."
+
+Read more [here](https://www.redhat.com/en/topics/containers/what-is-a-kubernetes-cluster)
 </b></details>
 
-<details>
-<summary>What the Master is responsible for?</summary><br><b>
-
-The master coordinates all the workflows in the cluster:
-
-* Scheduling applications
-* Managing desired state
-* Rolling out new updates
-</b></details>
+#### Kubernetes Nodes
 
 <details>
 <summary>What is a Node?</summary><br><b>
@@ -2897,23 +4922,645 @@ It's recommended to have at least 3 nodes in Kubernetes production environment.
 </b></details>
 
 <details>
-<summary>Explain what is Kubelet</summary><br><b>
+<summary>What the master node is responsible for?</summary><br><b>
 
-Kubelet is an agent running on each node and responsible for node communication with the master.
+The master coordinates all the workflows in the cluster:
+
+* Scheduling applications
+* Managing desired state
+* Rolling out new updates
+</b></details>
+
+<details>
+<summary>What do we need the worker nodes for?</summary><br><b>
+
+The workers are the nodes which run the applications and workloads.
+</b></details>
+
+<details>
+<summary>What is kubectl?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Which command you run to view your nodes?</code></summary><br><b>
+
+`kubectl get nodes`
+</b></details>
+
+<details>
+<summary>True or False? Every cluster must have 0 or more master nodes and at least on e worker</summary><br><b>
+
+False. A Kubernetes cluster consists of at least 1 master and can have 0 workers (although that wouldn't be very useful...)
+</b></details> 
+
+<details>
+<summary>What are the components of the master node?</summary><br><b>
+
+  * API Server - the Kubernetes API. All cluster components communicate through it
+  * Scheduler - assigns an application with a worker node it can run on
+  * Controller Manager - cluster maintenance (replications, node failures, etc.)
+  * etcd - stores cluster configuration
+</b></details>
+
+<details>
+<summary>What are the components of a worker node?</summary><br><b>
+
+  * Kubelet - an agent responsible for node communication with the master.
+  * Kube-proxy - load balancing traffic between app components
+  * Container runtime - the engine runs the containers (Podman, Docker, ...)
+</b></details>
+
+#### Kubernetes Pod
+
+<details>
+<summary>Explain what is a pod</summary><br><b>
+</b></details>
+
+<details>
+<summary>How many containers can a pod contain?</summary><br><b>
+
+Multiple containers but in most cases it would be one container per pod.
+</b></details>
+
+<details>
+<summary>What does it mean that "pods are ephemeral?</summary><br><b>
+
+It means they would eventually die and pods are unable to heal so it is recommended that you don't create them directly.
+</b></details>
+
+<details>
+<summary>Which command you run to view all pods running on all namespaces?</code></summary><br><b>
+
+`kubectl get pods --all-namespaces`
+</b></details>
+
+<details>
+<summary>How to delete a pod?</code></summary><br><b>
+
+`kubectl delete pod pod_name`
+</b></details>
+
+#### Kubernetes Deployment
+
+<details>
+<summary>What is a "Deployment" in Kubernetes?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to create a deployment?</code></summary><br><b>
+
+```
+cat << EOF | kubectl create -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+EOF
+```
+</b></details>
+
+<details>
+<summary>How to edit a deployment?</code></summary><br><b>
+
+kubectl edit deployment some-deployment
+</b></details>
+
+<details>
+<summary>What happens after you edit a deployment and change the image?</summary><br><b>
+
+The pod will terminate and another, new pod, will be created.
+
+Also, when looking at the replicaset, you'll see the old replica doesn't have any pods and a new replicaset is created.
+</b></details>
+
+<details>
+<summary>How to delete a deployment?</summary><br><b>
+
+One way is by specifying the deployment name: `kubectl delete deployment [deployment_name]`
+Another way is using the deployment configuration file: `kubectl delete -f deployment.yaml`
+</b></details>
+
+<details>
+<summary>What happens when you delete a deployment?</summary><br><b>
+
+The pod related to the deployment will terminate and the replicaset will be removed.
+</b></details>
+
+#### Kubernetes Service
+
+<details>
+<summary>What is a Service in Kubernetes?</summary><br><b>
+"An abstract way to expose an application running on a set of Pods as a network service." - more [here](https://kubernetes.io/docs/concepts/services-networking/service)
+
+Note: Even if connected to a pod, their lifecycles aren't connected.
+</b></details>
+
+<details>
+<summary>What Service types are there?</summary><br><b>
+
+* ClusterIP
+* NodePort
+* LoadBalancer
+* ExternalName
+
+More on this topic [here](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
+</b></details>
+
+<details>
+<summary>How to get information on a certain service?</summary><br><b>
+
+kubctl describe service [service_name]
+</b></details>
+
+<details>
+<summary>How to verify that a certain service forwards the requests to a pod</summary><br><b>
+
+Run `kubectl describe service` and if the IPs from "Endpoints" match any IPs from the output of `kubectl get pod -o wide`
+</b></details>
+
+<details>
+<summary>What is the difference between an external and an internal service?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to turn the following service into an external one?
+
+```
+spec:
+  selector:
+    app: some-app
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
+```
+</summary><br><b>
+
+Adding `type: LoadBalancer` and `nodePort`
+
+```
+spec:
+  selector:
+    app: some-app
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
+      nodePort: 32412
+```
+</b></details>
+
+<details>
+<summary>What would you use to route traffic from outside the Kubernetes cluster to services within a cluster?</summary><br><b>
+
+Ingress
+</b></details>
+
+#### Kubernetes Ingress
+
+<details>
+<summary>What is Ingress?</summary><br><b>
+
+From Kubernetes docs: "Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource."
+
+Read more [here](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+</b></details>
+
+<details>
+<summary>Complete the following configuration file to make it Ingress
+
+```
+metadata:
+  name: someapp-ingress
+spec:
+```
+</summary><br><b>
+There are several ways to answer this question.
+
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: someapp-ingress
+spec:
+  rules:
+  - host: my.host
+    http:
+      paths:
+      - backend:
+          serviceName: someapp-internal-service
+          servicePort: 8080
+```
+</b></details>
+
+<details>
+<summary>Explain the meaning of "http", "host" and "backend" directives
+
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: someapp-ingress
+spec:
+  rules:
+  - host: my.host
+    http:
+      paths:
+      - backend:
+          serviceName: someapp-internal-service
+          servicePort: 8080
+```
+</summary><br><b>
+
+host is the entry point of the cluster so basically a valid domain address that maps to cluster's node IP address<br>
+the http line used for specifying that incoming requests will be forwarded to the internal service using http.<br>
+backend is referencing the internal service (serviceName is the name under metadata and servicePort is the port under the ports section).
+</b></details>
+
+<details>
+<summary>What is Ingress Controller?</summary><br><b>
+
+An implementation for Ingress. It's basically another pod (or set of pods) that does evaluates and processes Ingress rules and this it manages all the redirections. 
+
+There are multiple Ingress Controller implementations (the one from Kubernetes is Kubernetes Nginx Ingress Controller).
+</b></details>
+
+<details>
+<summary>What are some use cases for using Ingress?</summary><br><b>
+
+* Multiple sub-domains (multiple host entries, each with its own service)
+* One domain with multiple services (multiple paths where each one is mapped to a different service/application)
+</b></details>
+
+<details>
+<summary>How to list Ingress in your namespace?</summary><br><b>
+
+kubectl get ingress
+</b></details>
+
+<details>
+<summary>What is Ingress Default Backend?</summary><br><b>
+
+It specifies what do with an incoming request to the Kubernetes cluster that isn't mapped to any backend (= no rule to for mapping the request to a service). If the default backend service isn't defined, it's recommended to define so users still see some kind of message instead of nothing or unclear error.
+</b></details>
+
+<details>
+<summary>How to configure a default backend?</summary><br><b>
+
+Create Service resource that specifies the name of the default backend as reflected in `kubectl desrcibe ingress ...` and the port under the ports section.
+</b></details>
+
+<details>
+<summary>How to configure TLS with Ingress?</summary><br><b>
+
+Add tls and secretName entries.
+
+```
+spec:
+  tls:
+  - hosts:
+    - some_app.com
+    secretName: someapp-secret-tls
+````
+</b></details>
+
+<details>
+<summary>True or False? When configuring Ingress with TLS, the Secret component must be in the same namespace as the Ingress component</summary><br><b>
+
+True
+</b></details>
+
+#### Kubernetes Configuration File
+
+<details>
+<summary>Which parts a configuration file has?</summary><br><b>
+
+It has three main parts:
+1. Metadata
+2. Specification
+3. Status (this automatically generated and added by Kubernetes)
+</b></details>
+
+<details>
+<summary>What is the format of a configuration file?</summary><br><b>
+
+YAML
+</b></details>
+
+<details>
+<summary>How to get latest configuration of a deployment?</summary><br><b>
+
+`kubectl get deployment [deployment_name] -o yaml`
+</b></details>
+
+<details>
+<summary>Where Kubernetes gets the status data (which is added to the configuration file) from?</summary><br><b>
+
+etcd
+</b></details>
+
+#### Kubernetes etcd
+
+<details>
+<summary>What is etcd?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? Etcd holds the current status of any kubernetes component</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? The API server is the only component which communicates directly with etcd</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? application data is not stored in etcd</summary><br><b>
+
+True
+</b></details>
+
+#### Kubernetes Namespaces
+
+<details>
+<summary>What are namespaces?</summary><br><b>
+
+Namespaces allow you split your cluster into virtual clusters where you can group your applications in a way that makes sense and is completely separated from the other groups (so you can for example create an app with the same name in two different namespaces)
+</b></details>
+
+<details>
+<summary>Why to use namespaces? What is the problem with using one default namespace?</summary><br><b>
+
+When using the default namespace alone, it becomes hard over time to get an overview of all the applications you manage in your cluster. Namespaces make it easier to organize the applications into groups that makes sense, like a namespace of all the monitoring applications and a namespace for all the security applications, etc.
+
+Namespaces can also be useful for managing Blue/Green environments where each namespace can include a different version of an app and also share resources that are in other namespaces (namespaces like logging, monitoring, etc.).
+
+Another use case for namespaces is one cluster, multiple teams. When multiple teams use the same cluster, they might end up stepping on each others toes. For example if they end up creating an app with the same name it means one of the teams overriden the app of the other team because there can't be too apps in Kubernetes with the same name (in the same namespace).
+</b></details>
+
+<details>
+<summary>True or False? When a namespace is deleted all resources in that namespace are not deleted but moved to another default namespace</summary><br><b>
+
+False. When a namespace is deleted, the resources in that namespace are deleted as well.
+</b></details>
+
+<details>
+<summary>What special namespaces are there by default when creating a Kubernetes cluster?</summary><br><b>
+
+* default
+* kube-system
+* kube-public
+* kube-node-lease
+</b></details>
+
+<details>
+<summary>What can you find in kube-system namespace?</summary><br><b>
+
+* Master and Kubectl processes
+* System processes
+</b></details>
+
+<details>
+<summary>How to list all namespaces?</code></summary><br><b>
+
+`kubectl get namespaces`
+</b></details>
+
+<details>
+<summary>What kube-public contains?</summary><br><b>
+
+* A configmap, which contains cluster information
+* Publicely accessible data
+</b></details>
+
+<details>
+<summary>How to get the name of the current namespace?</code></summary><br><b>
+
+kubectl config view | grep namespace
+</b></details>
+
+<details>
+<summary>What kube-node-lease contains?</summary><br><b>
+
+It holds information on hearbeats of nodes. Each node gets an object which holds information about its availability.
+</b></details>
+
+<details>
+<summary>How to create a namespace?</summary><br><b>
+
+One way is by running `kubectl create namespace [NAMESPACE_NAME]`
+
+Another way is by using namespace configuration file:
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: some-cofngimap
+  namespace: some-namespace
+```
+</b></details>
+
+<details>
+<summary>What default namespace contains?</summary><br><b>
+
+Any resource you create while using Kubernetes.
+</b></details>
+
+<details>
+<summary>True or False? With namespaces you can limit the resources consumed by the users/teams</summary><br><b>
+
+True. With namespaces you can limit CPU, RAM and storage usage.
+</b></details>
+
+<details>
+<summary>How to switch to another namespace? In other words how to change active namespace?</code></summary><br><b>
+
+`kubectl config set-context --current --namespace=some-namespace` and validate with `kubectl config view --minify | grep namespace:`
+
+OR
+
+`kubens some-namespace`
+</b></details>
+
+<details>
+<summary>What is Resource Quota?</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>How to create a Resource Quota?</code></summary><br><b>
+
+kubectl create quota some-quota --hard-cpu=2,pods=2
+</b></details>
+
+<details>
+<summary>Which resources are accessible from different namespaces?</code></summary><br><b>
+
+Service.
+</b></details>
+
+<details>
+<summary>Let's say you have three namespaces: x, y and z. In x namespace you have a ConfigMap referencing service in z namespace. Can you reference the ConfigMap in x namespace from y namespace?</code></summary><br><b>
+
+No, you would have to create separate namespace in y namespace.
+</b></details>
+
+<details>
+<summary>Which service and in which namespace the following file is referencing?
+
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: some-configmap
+data:
+  some_url: samurai.jack
+```
+</summary><br><b>
+
+It's referencing the service "samurai" in the namespace called "jack".
+</b></details>
+
+<details>
+<summary>Which components can't be created within a namespace?</code></summary><br><b>
+
+Volume and Node.
+</b></details>
+
+<details>
+<summary>How to list all the components that bound to a namespace?</code></summary><br><b>
+
+`kubectl api-resources --namespaced=true`
+</b></details>
+
+<details>
+<summary>How to create components in a namespace?</code></summary><br><b>
+
+One way is by specifying --namespace like this: `kubectl apply -f my_component.yaml --namespace=some-namespace`
+Another way is by specifying it in the YAML itself:
+
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: some-configmap
+  namespace: some-namespace
+```
+
+and you can verify with: `kubectl get configmap -n some-namespace`
+</b></details>
+
+#### Kubernetes Commands
+
+<details>
+<summary>What <code>kubectl exec</code> does?</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>What <code>kubectl get all</code> does?</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>What the command <code>kubectl get pod</code> does?</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>How to see all the components of a certain application?</code></summary><br><b>
+
+`kubectl get all | grep [APP_NAME]`
+</b></details>
+
+<details>
+<summary>What <code>kubectl apply -f [file]</code> does?</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>What the command <code>kubectl api-resources --namespaced=false</code> does?</code></summary><br><b>
+
+Lists the components that doesn't bound to a namespace.
+</b></details>
+
+<details>
+<summary>How to print information on a specific pod?</code></summary><br><b>
+
+`kubectl describe pod pod_name`
+</b></details>
+
+<details>
+<summary>How to execute the command "ls" in an existing pod?</code></summary><br><b>
+
+kubectl exec some-pod -it -- ls
+</b></details>
+
+<details>
+<summary>How to create a service that exposes a deployment?</code></summary><br><b>
+
+kubectl expose deploy some-deployment --port=80 --target-port=8080
+</b></details>
+
+<details>
+<summary>How to create a pod and a service with one command?</code></summary><br><b>
+
+kubectl run nginx --image=nginx --restart=Never --port 80 --expose
+</b></details>
+
+<details>
+<summary>Describe in detail what the following command does <code>kubectl create deployment kubernetes-httpd --image=httpd</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>Why to create kind deployment, if pods can be launched with replicaset?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to scale a deployment to 8 replicas?</code></summary><br><b>
+
+kubectl scale deploy some-deployment --replicas=8
+</b></details>
+
+<details>
+<summary>How to get list of resources which are not in a namespace?</code></summary><br><b>
+
+kubectl api-resources --namespaced=false
+</b></details>
+
+<details>
+<summary>How to delete all pods whose status is not "Running"?</code></summary><br><b>
+
+kubectl delete pods --field-selector=status.phase!='Running'
+</b></details>
+
+<details>
+<summary>What <code>kubectl logs [pod-name]</code> command does?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What <code>kubectl describe pod [pod name] does?</code> command does?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to display the resources usages of pods?</summary><br><b>
+
+kubectl top pod
+</b></details>
+
+<details>
+<summary>What <code>kubectl get componentstatus</code> does?</summary><br><b>
+
+Outputs the status of each of the control plane components.
 </b></details>
 
 <details>
 <summary>What is Minikube?</summary><br><b>
 
 Minikube is a lightweight Kubernetes implementation. It create a local virtual machine and deploys a simple (single node) cluster.
-</b></details>
-
-<details>
-<summary>Explain what is a Kubernetes pod</summary><br><b>
-</b></details>
-
-<details>
-<summary>True or False? A pod can manage multiple containers</summary><br><b>
 </b></details>
 
 <details>
@@ -2941,40 +5588,506 @@ Setting the replicas to 0 will shut down the process. Now start it with `kubectl
 </b></details>
 
 <details>
+<summary>What happens what pods are using too much memory? (more than its limit)</summary><br><b>
+
+They become candidates to for termination.
+</b></details>
+
+<details>
 <summary>Describe how roll-back works</summary><br><b>
 </b></details>
 
-#### Kubernetes Commands
-
 <details>
-<summary>What is kubectl?</summary><br><b>
+<summary>True or False? Memory is a compressible resource, meaning that when a container reach the memory limit, it will keep running</summary><br><b>
+
+False. CPU is a compressible resource while memory is a non compressible resource - once a container reached the memory limit, it will be terminated.
 </b></details>
 
 <details>
-<summary>How do you:
+<summary>What is the control loop? How it works?</summary><br><b>
 
-  * Check the cluster status?
-  * Check the status of the nodes?</summary><br><b>
+Explained [here](https://www.youtube.com/watch?v=i9V4oCa5f9I)
+</b></details>
+
+#### Kubernetes Operator
+
+<details>
+<summary>What is an Operator?</summary><br><b>
+
+Explained [here](https://kubernetes.io/docs/concepts/extend-kubernetes/operator)
+
+"Operators are software extensions to Kubernetes that make use of custom resources to manage applications and their components. Operators follow Kubernetes principles, notably the control loop."
 </b></details>
 
 <details>
-<summary>What the following commands do?
+<summary>Why do we need Operators?</summary><br><b>
 
-  * kubectl get nodes
-  * kubectl </summary><br><b>
+The process of managing stateful applications in Kubernetes isn't as straightforward as managing stateless applications where reaching the desired status and upgrades are both handled the same way for every replica. In stateful applications, upgrading each replica might require different handling due to the stateful nature of the app, each replica might be in a different status. As a result, we often need a human operator to manage stateful applications. Kubernetes Operator is suppose to assist with this.
+
+This also help with automating a standard process on multiple Kubernetes clusters
+</b></details>
+
+<details>
+<summary>What components the Operator consists of?</summary><br><b>
+
+1. CRD (custom resource definition)
+2. Controller - Custom control loop which runs against the CRD
+</b></details>
+
+<details>
+<summary>How Operator works?</summary><br><b>
+
+It uses the control loop used by Kubernetes in general. It watches for changes in the application state. The difference is that is uses a custom control loop.
+In additions.
+
+In addition, it also makes use of CRD's (Custom Resources Definitions) so basically it extends Kubernetes API.
+</b></details>
+
+<details>
+<summary>True or False? Kubernetes Operator used for stateful applications</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What is the Operator Framework?</summary><br><b>
+
+open source toolkit used to manage k8s native applications, called operators, in an automated and efficient way.
+</b></details>
+
+<details>
+<summary>What components the Operator Framework consists of?</summary><br><b>
+
+1. Operator SDK - allows developers to build operators
+2. Operator Lifecycle Manager - helps to install, update and generally manage the lifecycle of all operators
+3. Operator Metering - Enables usage reporting for operators that provide specialized services
+</b></details>
+
+<details>
+<summary>Describe in detail what is the Operator Lifecycle Manager</summary><br><b>
+
+It's part of the Operator Framework, used for managing the lifecycle of operators. It basically extends Kubernetes so a user can use a declarative way to manage operators (installation, upgrade, ...).
+</b></details>
+
+<details>
+<summary>What openshift-operator-lifecycle-manager namespace includes?</summary><br><b>
+
+It includes:
+
+  * catalog-operator - Resolving and installing ClusterServiceVersions the resource they specify.
+  * olm-operator - Deploys applications defined by ClusterServiceVersion resource
 </b></details>
 
 <details>
 <summary>What is kubconfig? What do you use it for?</summary><br><b>
 </b></details>
 
-## Coding
+<details>
+<summary>Can you use a Deployment for stateful applications?</summary><br><b>
+</b></details>
 
-<a name="coding-beginner"></a>
-#### :baby: Beginner
+<details>
+<summary>Explain StatefulSet</summary><br><b>
+</b></details>
+
+#### Kubernetes ReplicaSet
+
+<details>
+<summary>What is the purpose of ReplicaSet?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How a ReplicaSet works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What happens when a replica dies?</summary><br><b>
+</b></details>
+
+#### Kubernetes Secrets
+
+<details>
+<summary>Explain Kubernetes Secrets</summary><br><b>
+
+Secrets let you store and manage sensitive information (passwords, ssh keys, etc.)
+</b></details>
+
+<details>
+<summary>How to create a Secret from a key and value?</summary><br><b>
+
+kubectl create secret generic some-secret --from-literal=password='donttellmypassword'
+</b></details>
+
+<details>
+<summary>How to create a Secret from a file?</summary><br><b>
+
+kubectl create secret generic some-secret --from-file=/some/file.txt
+</b></details>
+
+<details>
+<summary>What <code>type: Opaque</code> in a secret file means? What other types are there?</summary><br><b>
+
+Opaque is the default type used for key-value pairs.
+</b></details>
+
+<details>
+<summary>True or False? storing data in a Secret component makes it automatically secured</summary><br><b>
+
+False. Some known security mechanisms like "encryption" aren't enabled by default.
+</b></details>
+
+<details>
+<summary>What is the problem with the following Secret file:
+
+```
+apiVersion: v1   
+kind: Secret
+metadata:
+    name: some-secret
+type: Opaque
+data:
+    password: mySecretPassword
+```
+</summary><br><b>
+Password isn't encrypted.
+You should run something like this: `echo -n 'mySecretPassword' | base64` and paste the result to the file instead of using plain-text.
+</b></details>
+
+<details>
+<summary>How to create a Secret from a configuration file?</summary><br><b>
+
+`kubectl apply -f some-secret.yaml`
+</b></details>
+
+<details>
+<summary>What the following in Deployment configuration file means? 
+
+```
+spec:
+  containers:
+    - name: USER_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: some-secret
+          key: password
+```
+</summary><br><b>
+USER_PASSWORD environment variable will store the value from password key in the secret called "some-secret"
+In other words, you reference a value from a Kubernetes Secret.
+</b></details>
+
+#### Kubernetes Storage
+
+<details>
+<summary>True or False? Kubernetes provides data persistence out of the box, so when you restart a pod, data is saved</summary><br><b>
+
+False
+</b></details>
+
+<details>
+<summary>Explain "Persistent Volumes". Why do we need it?</summary><br><b>
+
+Persistent Volumes allow us to save data so basically they provide storage that doesn't depend on the pod lifecycle.
+</b></details>
+
+<details>
+<summary>True or False? Persistent Volume must be available to all nodes because the pod can restart on any of them</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What types of persistent volumes are there?</summary><br><b>
+
+* NFS
+* iSCSI
+* CephFS
+* ...
+</b></details>
+
+<details>
+<summary>What is PersistentVolumeClaim?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? Kubernetes manages data persistence</summary><br><b>
+
+False
+</b></details>
+
+<details>
+<summary>Explain Storage Classes</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "Dynamic Provisioning" and "Static Provisioning"</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Access Modes</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Reclaim Policy?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What reclaim policies are there?</summary><br><b>
+
+* Retain
+* Recycle
+* Delete
+</b></details>
+
+#### Kubernetes Misc
+
+<details>
+<summary>You have one Kubernetes cluster and multiple teams that would like to use it. You would like to limit the resources each team consumes in the cluster. Which Kubernetes concept would you use for that?</summary><br><b>
+
+Namespaces will allow to limit resources and also make sure there are no collisions between teams when working in the cluster (like creating an app with the same name).
+</b></details>
+
+<details>
+<summary>What Kube Proxy does?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What "Resources Quotas" are used for and how?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain ConfigMap</summary><br><b>
+
+Separate configuration from pods.
+It's good for cases where you might need to change configuration at some point but you don't want to restart the application or rebuild the image so you create a ConfigMap and connect it to a pod but externally to the pod.
+
+Overall it's good for:
+* Sharing the same configuration between different pods
+* Storing external to the pod configuration
+</b></details>
+
+<details>
+<summary>How to use ConfigMaps?</summary><br><b>
+
+1. Create it (from key&value, a file or an env file)
+2. Attach it. Mount a configmap as a volume
+</b></details>
+
+<details>
+<summary>Trur or False? Sensitive data, like credentials, should be stored in a ConfigMap</summary><br><b>
+
+False. Use secret.
+</b></details>
+
+<details>
+<summary>Explain "Horizontal Pod Autoscaler"</summary><br><b>
+
+Scale the number of pods automatically on observed CPU utilization.
+</b></details>
+
+<details>
+<summary>When you delete a pod, is it deleted instantly? (a moment after running the command)</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to delete a pod instantly?</summary><br><b>
+
+Use "--grace-period=0 --force"
+</b></details>
+
+<details>
+<summary>Explain Liveness probe</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Readiness probe</summary><br><b>
+</b></details>
+
+<details>
+<summary>What does being cloud-native mean?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the pet and cattle approach of infrastructure with respect to kubernetes</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe how you one proceeds to run a containerised web app in K8s, which should be reachable from a public URL.</summary><br><b>
+</b></details>
+
+<details>
+<summary>How would you troubleshoot your cluster if some applications are not reachable any more?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe what CustomResourceDefinitions there are in the Kubernetes world? What they can be used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is RBAC?</summary><br><b>
+</b></details>
+
+<details>
+<summary> How does scheduling work in kubernetes?</summary><br><b>
+
+The control plane component kube-scheduler asks the following questions,
+1. What to schedule? It tries to understand the pod-definition specifications
+2. Which node to schedule? It tries to determine the best node with available resources to spin a pod
+3. Binds the Pod to a given node
+
+View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
+</b></details>
+
+<details>
+<summary> How are labels and selectors used?</summary><br><b>
+</b></details>
+
+
+<details>
+<summary>Explain what is CronJob and what is it used for</summary><br><b>
+</b></details>
+
+<details>
+<summary>What QoS classes are there?</summary><br><b>
+
+* Guaranteed
+* Burstable
+* BestEffort
+</b></details>
+
+<details>
+<summary>Explain Labels. What are they and why would one use them?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Selectors</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Kubeconfig?</summary><br><b>
+</b></details>
+
+#### Helm
+
+<details>
+<summary>What is Helm?</summary><br><b>
+
+Package manager for Kubernetes. Basically the ability to package YAML files and distribute them to other users.
+</b></details>
+
+<details>
+<summary>Why do we need Helm? What would be the use case for using it?</summary><br><b>
+
+Sometimes when you would like to deploy a certain application to your cluster, you need to create multiple YAML files / Components like: Secret, Service, ConfigMap, etc. This can be tedious task. So it would make sense to ease the process by introducing something that will allow us to share these bundle of YAMLs every time we would like to add an application to our cluster. This something is called Helm.
+</b></details>
+
+<details>
+<summary>Explain "Helm Charts"</summary><br><b>
+
+Helm Charts is a bundle of YAML files. A bundle that you can consume from repositories or create your own and publish it to the repositories.
+</b></details>
+
+<details>
+<summary>It is said that Helm is also Templating Engine. What does it mean?</summary><br><b>
+
+It is useful for scenarios where you have multiple applications and all are similar, so there are minor differences in their configuration files and most values are the same. With Helm you can define a common blueprint for all of them and the values that are not fixed and change can be placeholders. This is called a template file and it looks similar to the following
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {[ .Values.name ]}
+spec:
+  containers:
+  - name: {{ .Values.container.name }}
+  image: {{ .Values.container.image }}
+  port: {{ .Values.container.port }}
+```
+
+The values themselves will in separate file:
+
+```
+name: some-app
+container:
+  name: some-app-container
+  image: some-app-image
+  port: 1991
+```
+</b></details>
+
+<details>
+<summary>What are some use cases for using Helm template file?</summary><br><b>
+
+* Deploy the same application across multiple different environments
+* CI/CD
+</b></details>
+
+<details>
+<summary>Explain the Helm Chart Directory Structure</summary><br><b>
+
+someChart/     -> the name of the chart
+  Chart.yaml   -> meta information on the chart
+  values.yaml  -> values for template files
+  charts/      -> chart dependencies
+  templates/   -> templates files :)
+</b></details>
+
+<details>
+<summary>How do you search for charts?</summary><br><b>
+
+`helm search hub [some_keyword]`
+</b></details>
+
+<details>
+<summary>Is it possible to override values in values.yaml file when installing a chart?</summary><br><b>
+Yes. You can pass another values file:
+`helm install --values=override-values.yaml [CHART_NAME]`
+
+Or directly on the command line: `helm install --set some_key=some_value`
+</b></details>
+
+<details>
+<summary>How Helm supports release management?</summary><br><b>
+
+Helm allows you to upgrade, remove and rollback to previous versions of charts. In version 2 of Helm it was with what is known as "Tiller". In version 3, it was removed due to security concerns.
+</b></details>
+
+#### Submariner
+
+<details>
+<summary>Explain what is Submariner and what is it used for</summary><br><b>
+
+"Submariner enables direct networking between pods and services in different Kubernetes clusters, either on premise or in the cloud."
+
+You can learn more [here](https://submariner-io.github.io)
+</b></details>
+
+<details>
+<summary>What each of the following components does?:
+
+  * Lighthouse
+  * Broker
+  * Gateway Engine
+  * Route Agent</summary><br><b>
+</b></details>
+
+#### Istio
+
+<details>
+<summary>What is Istio? What is it used for?</summary><br><b>
+</b></details>
+
+## Programming
 
 <details>
 <summary>What programming language do you prefer to use for DevOps related tasks? Why specifically this one?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are static typed (or simply typed) languages?</summary><br><b>
+
+In static typed languages the variable type is known at compile-time instead of at run-time.
+Such languages are: C, C++ and Java
 </b></details>
 
 <details>
@@ -2990,9 +6103,21 @@ Statements are instructions executed by the interpreter like variable assignment
 </b></details>
 
 <details>
-<summary>Are you familiar with SOLID design principals?</summary><br><b>
+<summary>Explain Composition</summary><br><b>
+</b></details>
 
-SOLID design principals are about:
+<details>
+<summary>What is a compiler?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an interpreter?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Are you familiar with SOLID design principles?</summary><br><b>
+
+SOLID design principles are about:
 
 * Make it easier to extend the functionality of the system
 * Make the code more readable and easier to maintain
@@ -3002,8 +6127,16 @@ SOLID is:
 * Single Responsibility - A class should only have a single responsibility
 * Open-Closed - An entity should be open for extension, but closed for modification. What this practically means is that you should extend functionality by adding a new code and not by modifying it. Your system should be separated into components so it can be easily extended without breaking everything.
 * Liskov Substitution - Any derived class should be able to substitute the its parent without altering its corrections. Practically, every part of the code will get the expected result no matter which part is using it
-* Interface segregation - A client should never depend on anything it doesn't uses 
+* Interface segregation - A client should never depend on anything it doesn't uses
 * Dependency Inversion - High level modules should depend on abstractions, not low level modules
+</b></details>
+
+<details>
+<summary>What is YAGNI? What is your opinion on it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is DRY? What is your opinion on it?</summary><br><b>
 </b></details>
 
 <details>
@@ -3023,6 +6156,12 @@ SOLID is:
 </b></details>
 
 <details>
+<summary>True or False? In Dynamically typed languages the variable type is known at run-time instead of at compile-time</summary><br><b>
+
+True
+</b></details>
+
+<details>
 <summary>Explain what are design patterns and describe three of them in detail</summary><br><b>
 </b></details>
 
@@ -3030,16 +6169,24 @@ SOLID is:
 <summary>Explain big O notation</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is "Duck Typing"?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is "Duck Typing"?</summary><br><b>
+</b></details>
+
 ##### Common algorithms
 
 <details>
 <summary>Binary search:
 
-  * How it works?
+  * How does it works?
   * Can you implement it? (in any language you prefer)
   * What is the average performance of the algorithm you wrote?</summary><br><b>
 
-It's a search algorithm used with sorted arrays/lists to find a target value by dividing the array each iteration and comparing the middle value to the target value. If the middle value is smaller than target value, then the target value is searched in the right part of the divided array, else in the left side. This continues until the value is found (or the array divided max times) 
+It's a search algorithm used with sorted arrays/lists to find a target value by dividing the array each iteration and comparing the middle value to the target value. If the middle value is smaller than target value, then the target value is searched in the right part of the divided array, else in the left side. This continues until the value is found (or the array divided max times)
 
 [python implementation](coding/python/binary_search.py)
 
@@ -3102,15 +6249,44 @@ The average performance of the above algorithm is O(log n). Best performance can
 </b></details>
 
 <details>
+<summary>Tell me everything you know about Linked Lists</summary><br><b>
+
+  * A linked list is a data structure
+  * It consists of a collection of nodes. Together these nodes represent a sequence
+  * Useful for use cases where you need to insert or remove an element from any position of the linked list
+  * Some programming languages don't have linked lists as a built-in data type (like Python for example) but it can be easily implemented
+</b></details>
+
+<details>
+<summary>Describe (no need to implement) how to detect a loop in a Linked List</summary><br><b>
+
+There are multiple ways to detect a loop in a linked list. I'll mention three here:
+
+Worst solution:<br>
+Two pointers where one points to the head and one points to the last node. Each time you advance the last pointer by one and check whether the distance between head pointer to the moved pointer is bigger than the last time you measured the same distance (if not, you have a loop).<br>
+The reason it's probably the worst solution, is because time complexity here is O(n^2)
+
+Decent solution:<br>
+
+Create an hash table and start traversing the linked list. Every time you move, check whether the node you moved to is in the hash table. If it isn't, insert it to the hash table. If you do find at any point the node in the hash table, it means you have a loop. When you reach None/Null, it's the end and you can return "no loop" value.
+This one is very easy to implement (just create a hash table, update it and check whether the node is in the hash table every time you move to the next node) but since the auxiliary space is O(n) because you create a hash table then, it's not the best solution
+
+Good solution:<br>
+Instead of creating a hash table to document which nodes in the linked list you have visited, as in the previous solution, you can modify the Linked List (or the Node to be precise) to have a "visited" attribute. Every time you visit a node, you set "visited" to True.<br>
+Time compleixty is O(n) and Auxiliary space is O(1), so it's a good solution but the only problem, is that you have to modify the Linked List.
+
+Best solution:<br>
+You set two pointers to traverse the linked list from the beginning. You move one pointer by one each time and the other pointer by two. If at any point they meet, you have a loop. This solution is also called "Floyd's Cycle-Finding"<br>
+Time complexity is O(n) and auxiliary space is O(1). Perfect :)
+</b></details>
+
+<details>
 <summary>Implement Hash table in any language you would like</summary><br><b>
 </b></details>
 
 <details>
 <summary>What is Integer Overflow? How is it handled?</summary><br><b>
 </b></details>
-
-<a name="coding-advanced"></a>
-#### :star: Advanced
 
 <details>
 <summary>Name 3 design patterns. Do you know how to implement (= provide an example) these design pattern in any language you'll choose?</summary><br><b>
@@ -3139,9 +6315,6 @@ def find_triplets_sum_to_zero(li):
 
 ## Python
 
-<a name="python-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>What are some characteristics of the Python programming language?</summary><br><b>
 
@@ -3153,8 +6326,6 @@ def find_triplets_sum_to_zero(li):
 5. The python package manager is called PIP "pip installs packages", having more than 200.000 available packages.
 6. Python comes with pip installed and a big standard library that offers the programmer many precooked solutions.
 7. In python **Everything** is an object.
-
-There are many other characteristics but these are the main ones that every python programmer should know.
 ```
 </b></details>
 
@@ -3172,7 +6343,7 @@ There are many other characteristics but these are the main ones that every pyth
 </b></details>
 
 <details>
-<summary>What is mutability? Which of the built-in types in Python are mutable? How can you show that a certain data type is mutable?</summary><br><b>
+<summary>What is mutability? Which of the built-in types in Python are mutable?</summary><br><b>
 
 Mutability determines whether you can modify an object of specific type.
 
@@ -3181,7 +6352,7 @@ The mutable data types are:
     List
     Dictionary
     Set
-    
+
 The immutable data types are:
 
     Numbers (int, float, ...)
@@ -3189,8 +6360,94 @@ The immutable data types are:
     Bool
     Tuple
     Frozenset
+</b></details>
 
-You can usually use the function hash() to check an object mutability. If an object is hashable, it is immutable (although this does not always work as intended as user defined objects might be mutable and hashable).
+<details>
+<summary>What is a tuple in Python? What is it used for?</summary><br><b>
+
+A tuple is a built-in data type in Python. It's used for storing multiple items in a single variable.
+</b></details>
+
+<details>
+<summary>List, like a tuple, is also used for storing multiple items. What is then, the difference between a tuple and a list?</summary><br><b>
+
+List, as opposed to a tuple, is a mutable data type. It means we can modify it and at items to it.
+</b></details>
+
+<details>
+<summary>What is the result of each of the following?
+
+  * 1 > 2
+  * 'b' > 'a'
+  * 1 == 'one'
+  * 2 > 'one'</summary><br><b>
+
+  * False
+  * True
+  * False
+  * TypeError
+</b></details>
+
+<details>
+<summary>What is the result of of each of the following?
+
+  * "abc"*3
+  * "abc"*2.5
+  * "abc"*2.0
+  * "abc"*True
+  * "abc"*False</summary><br><b>
+
+* abcabcabc
+* TypeError
+* TypeError
+* "abc"
+* ""
+</b></details>
+
+<details>
+<summary>What is the result of `bool("")`? What about `bool(" ")`? Explain</summary><br><b>
+
+bool("") -> evaluates to False<br>
+bool("  ") -> evaluates to True
+</b></details>
+
+<details>
+<summary>What is the result of running <code>[] is not []</code>? explain the result</summary><br><b>
+
+It evaluates to True.<br>
+The reason is that the two created empty list are different objects. `x is y` only evaluates to true when x and y are the same object.
+</b></details>
+
+<details>
+<summary>Improve the following code:
+
+```
+char = input("Insert a character: ")
+if char == "a" or char == "o" or char == "e" or char =="u" or char == "i":
+    print("It's a vowel!")
+```
+</summary><br><b>
+
+```
+char = input("Insert a character: ") # For readablity
+if lower(char[0]) in "aieou": # Takes care of multiple characters and separate cases
+    print("It's a vowel!")
+```
+OR
+```
+if lower(input("Insert a character: ")[0]) in "aieou": # Takes care of multiple characters and small/Capital cases
+    print("It's a vowel!")
+```
+</b></details>
+
+<details>
+<summary>How to define a function with Python?</summary><br><b>
+Using the `def` keyword. For Examples:
+
+```
+def sum(a, b):
+    return (a + b)
+```
 </b></details>
 
 <details>
@@ -3205,13 +6462,6 @@ def my_function():
 ```
 
 You can then assign a function to a variables like this `x = my_function` or you can return functions as return values like this `return my_function`
-</b></details>
-
-<details>
-<summary>What is the result of running <code>[] is not []</code>? explain the result</summary><br><b>
-
-It evaluates to True.<br>
-The reason is that the two created empty list are different objects. `x is y` only evaluates to true when x and y are the same object.
 </b></details>
 
 <details>
@@ -3305,31 +6555,31 @@ class MyClass(object):
 Generally, every compiling process have a two steps.
     - Analysis
     - Code Generation.
-    
+
     Analysis can be broken into:
         1. Lexical analysis   (Tokenizes source code)
         2. Syntactic analysis (Check whether the tokens are legal or not, tldr, if syntax is correct)
-           
+
                for i in 'foo'
                           ^
              SyntaxError: invalid syntax
-        
+
         We missed ':'
-        
-        
+
+
         3. Semantic analysis  (Contextual analysis, legal syntax can still trigger errors, did you try to divide by 0,
           hash a mutable object or use an undeclared function?)
-          
+
                  1/0
                 ZeroDivisionError: division by zero
-        
+
     These three analysis steps are the responsible for error handlings.
-    
+
     The second step would be responsible for errors, mostly syntax errors, the most common error.
     The third step would be responsible for Exceptions.
-    
+
     As we have seen, Exceptions are semantic errors, there are many builtin Exceptions:
-        
+
         ImportError
         ValueError
         KeyError
@@ -3337,33 +6587,33 @@ Generally, every compiling process have a two steps.
         IndentationError
         IndexError
         ...
-    
+
     You can also have user defined Exceptions that have to inherit from the `Exception` class, directly or indirectly.
 
     Basic example:
-        
+
     class DividedBy2Error(Exception):
         def __init__(self, message):
             self.message = message
-    
-    
+
+
     def division(dividend,divisor):
         if divisor == 2:
             raise DividedBy2Error('I dont want you to divide by 2!')
         return dividend / divisor
-    
+
     division(100, 2)
-    
+
     >>> __main__.DividedBy2Error: I dont want you to divide by 2!
 ```
 </b></details>
 
 <details>
 <summary>Explain Exception Handling and how to use it in Python</summary><br><b>
-	
+
 **Exceptions:** Errors detected during execution are called Exceptions.
 
-**Handling Exception:** When an error occurs, or exception as we call it, Python will normally stop and generate an error message.</br> 
+**Handling Exception:** When an error occurs, or exception as we call it, Python will normally stop and generate an error message.</br>
 Exceptions can be handled using `try` and `except` statement in python.
 
 **Example:** Following example asks the user for input until a valid integer has been entered. </br>
@@ -3384,6 +6634,28 @@ For more details about errors and exceptions follow this [https://docs.python.or
 
 </b></details>
 
+#### Python Built-in functions
+
+<details>
+<summary>Explain the following built-in functions (their purpose + use case example):
+
+  * repr
+  * any
+  * all</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between repr function and str?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the __call__ method?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Do classes has the __call__ method as well? What for?</summary><br><b>
+</b></details>
+
 <details>
 <summary>What _ is used for in Python?</summary><br><b>
 
@@ -3399,7 +6671,7 @@ For more details about errors and exceptions follow this [https://docs.python.or
 <details>
 <summary>What is Lambda? How is it used?</summary><br><b>
 
-A <code>lambda</code> expression is an 'anonymous' function, the differnce from a normal defined function using the keyword `def`` is the syntax and ussage.
+A <code>lambda</code> expression is an 'anonymous' function, the difference from a normal defined function using the keyword `def`` is the syntax and usage.
 
 The syntax is:
 
@@ -3427,7 +6699,7 @@ print(addition(10, 20))
 square = lambda x : x ** 2
 print(square(5))
 ```
-Generally it is considered a bad practice under PEP 8 to asign a lambda expresion, they are meant to be used as parameters and inside of other defined functions.
+Generally it is considered a bad practice under PEP 8 to assign a lambda expresion, they are meant to be used as parameters and inside of other defined functions.
 
 </b></details>
 
@@ -3460,7 +6732,7 @@ x, y = y, x
 <details>
 <summary>Explain the following object's magic variables:
 
-  * __dict__ 
+  * __dict__
 </summary><br><b>
 </b></details>
 
@@ -3494,6 +6766,18 @@ print("{0:.3f}".format(sum(li)/len(li)))
 #### Python Lists
 
 <details>
+<summary>How to add the items of [1, 2, 3] to the list [4, 5, 6]?</summary><br><b>
+x = [4, 5, 6]
+x.extend([1, 2, 3])
+</b></details>
+
+<details>
+<summary>How to remove the first 3 items from a list?</summary><br><b>
+
+`my_list[0:3] = []`
+</b></details>
+
+<details>
 <summary>How do you get the maximum and minimum values from a list? How to get the last item from a list?</summary><br><b>
 
 ```
@@ -3516,6 +6800,10 @@ Or
 some_list.sort(reverse=True)
 some_list[:3]
 ```
+</b></details>
+
+<details>
+<summary>How to insert an item to the beginning of a list? What about two items?</summary><br><b>
 </b></details>
 
 <details>
@@ -3555,7 +6843,7 @@ nested_li = [['1', '2', '3'], ['4', '5', '6']]
 <summary>How to merge two sorted lists into one sorted list?</summary><br><b>
 
 ```
-sorted(li1 + li2) 
+sorted(li1 + li2)
 ```
 
 Another way:
@@ -3572,7 +6860,7 @@ while i < len(li1) and j < len(li2):
         merged_li.append(li2[j])
         j += 1
 
-merged_li = merged_li + merged_li[i:] + merged_li[j:] 
+merged_li = merged_li + merged_li[i:] + merged_li[j:]
 ```
 </b></details>
 
@@ -3626,7 +6914,7 @@ def is_unique4(l:list) -> bool:
 
 ```
 def my_func(li = []):
-    li.append("hmm")  
+    li.append("hmm")
     print(li)
 ```
 
@@ -3685,7 +6973,51 @@ list(zip(nums, letters))
 ```
 </b></details>
 
-#### Dictionaries
+<details>
+<summary>What is List Comprehension? Is it better than a typical loop? Why? Can you demonstrate how to use it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You have the following list: <code>[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]</code>
+  Extract all type of foods. Final output should be: {'mushrooms', 'goombas', 'turtles'}</summary><br><b>
+
+```
+brothers_menu =  \
+[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]
+
+# "Classic" Way
+def get_food(brothers_menu) -> set:
+    temp = []
+
+    for brother in brothers_menu:
+        for food in brother['food']:
+            temp.append(food)
+
+    return set(temp)
+
+# One liner way (Using list comprehension)
+set([food for bro in x for food in bro['food']])
+```
+</b></details>
+
+#### Python Dictionaries
+
+<details>
+<summary>How to create a dictionary?</summary><br><b>
+
+my_dict = dict(x=1, y=2)
+OR
+my_dict = {'x': 1, 'y': 2}
+OR
+my_dict = dict([('x', 1), ('y', 2)])
+</b></details>
+
+<details>
+<summary>How to remove a key from a dictionary?</summary><br><b>
+
+del my_dict['some_key']
+you can also use `my_dict.pop('some_key')` which returns the value of the key.
+</b></details>
 
 <details>
 <summary>How to sort a dictionary by values?</summary><br><b>
@@ -3708,6 +7040,20 @@ dict(sorted(some_dictionary.items()))
 
 ```
 some_dict1.update(some_dict2)
+```
+</b></details>
+
+
+<details>
+<summary>Convert the string "a.b.c" to the dictionary <code>{'a': {'b': {'c': 1}}}</code></summary><br><b>
+
+```
+output = {}
+string = "a.b.c"
+path = string.split('.')
+target = reduce(lambda d, k: d.setdefault(k, {}), path[:-1], output)
+target[path[-1]] = 1
+print(output)
 ```
 </b></details>
 
@@ -3766,22 +7112,54 @@ with open('file.txt', 'w') as file:
 
 <details>
 <summary>How to print current working directory?</summary><br><b>
+
+    import os
+
+    print(os.getcwd())
+
 </b></details>
 
 <details>
 <summary>Given the path <code>/dir1/dir2/file1</code> print the file name (file1)</summary><br><b>
+
+    import os
+
+    print(os.path.basename('/dir1/dir2/file1'))
+
+    # Another way
+    print(os.path.split('/dir1/dir2/file1')[1])
+
 </b></details>
 
 <details>
-<summary>Given the path <code>/dir1/dir2/file1</code> print the name of the directory where the file resides (dir2)</summary><br><b>
-</b></details>
+<summary>Given the path <code>/dir1/dir2/file1</code>
 
-<details>
-<summary>Given the path <code>/dir1/dir2/file1</code> print the path without the file name (/dir1/dir2)</summary><br><b>
+1. Print the path without the file name (/dir1/dir2)
+2. Print the name of the directory where the file resides (dir2)
+</summary><br><b>
+
+    import os
+
+    ## Part 1.
+    # os.path.dirname gives path removing the end component
+    dirpath = os.path.dirname('/dir1/dir2/file1')
+    print(dirpath)
+
+    ## Part 2.
+    print(os.path.basename(dirpath))
+
 </b></details>
 
 <details>
 <summary>How do you execute shell commands using Python?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you join path components? for example <code>/home</code> and <code>luig</code> will result in <code>/home/luigi</code> </summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you remove non-empty directory?</summary><br><b>
 </b></details>
 
 #### Python Regex
@@ -3800,34 +7178,11 @@ Using the re module
 <summary>How to find all the IP addresses in a variable? How to find them in a file?</summary><br><b>
 </b></details>
 
-<details>
-<summary>You have the following list: <code>[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]</code>
-  Extract all type of foods. Final output should be: {'mushrooms', 'goombas', 'turtles'}</summary><br><b>
-
-```
-brothers_menu =  \
-[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]
-
-# "Classic" Way
-def get_food(brothers_menu) -> set:
-    temp = []
-
-    for brother in brothers_menu:
-        for food in brother['food']:
-            temp.append(food)
-
-    return set(temp)
-
-# One liner way (Using list comprehension)
-set([food for bro in x for food in bro['food']])
-```
-</b></details>
-
-<details>
-<summary>What is List Comprehension? Is it better than a typical loop? Why? Can you demonstrate how to use it?</summary><br><b>
-</b></details>
-
 #### Python Strings
+
+<details>
+<summary>Find the first repeated character in a string</summary><br><b>
+</b></details>
 
 <details>
 <summary>How to extract the unique characters from a string? for example given the input "itssssssameeeemarioooooo" the output will be "mrtisaoe"</summary><br><b>
@@ -3910,7 +7265,7 @@ Detailed answer can be found here: http://codingshell.com/python-all-string-perm
 <details>
 <summary>How to reverse a string? (e.g. pizza -> azzip)</summary><br><b>
 
-The correct way is: 
+The correct way is:
 
 ```
 my_string[::-1]
@@ -3926,6 +7281,10 @@ def reverse_string(string):
         temp =  char + temp
     return temp
 ```
+</b></details>
+
+<details>
+<summary>Reverse each word in a string (while keeping the order)</summary><br><b>
 </b></details>
 
 <details>
@@ -3986,7 +7345,39 @@ the_list.sort(key=lambda x: x[1])
   * filter()</summary><br><b>
 </b></details>
 
-#### Debugging
+#### Python - Slicing
+
+For the following slicing exercises, assume you have the following list: `my_list = [8, 2, 1, 10, 5, 4, 3, 9]`
+
+<details>
+<summary>What is the result of `my_list[0:4]`?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the result of `my_list[5:6]`?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the result of `my_list[5:5]`?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the result of `my_list[::-1]`?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the result of `my_list[::3]`?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the result of `my_list[2:]`?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the result of `my_list[:3]`?</summary><br><b>
+</b></details>
+
+#### Python Debugging
 
 <details>
 <summary>How do you debug Python code?</summary><br><b>
@@ -4004,12 +7395,12 @@ pdb :D
 
 Short answer is: It returns a None object.
 
-We could go a bit deeper and explain the difference between 
+We could go a bit deeper and explain the difference between
 
 ```
 def a ():
     return
-    
+
 >>> None
 ```
 
@@ -4018,7 +7409,7 @@ And
 ```
 def a ():
     pass
-    
+
 >>> None
 ```
 Or we could be asked this as a following question, since they both give the same result.
@@ -4048,14 +7439,14 @@ Disassembly of <code object b at 0x0000029C4D3C2ED0, file "<dis>", line 5>:
 ```
 
 An empty <code> return</code> is exactly the same as <code>return None</code> and functions without any explicit return
-will always return None regardless of the operations, therefore 
+will always return None regardless of the operations, therefore
 
 
 ```
 def sum(a, b):
     global c
     c = a + b
-    
+
 >>> None
 ```
 </b></details>
@@ -4071,7 +7462,7 @@ for i in range(1, 10):
 </summary><br><b>
 
 ```
-[for i in in range(1, 10)]
+[i for i in range(1, 10)]
 ```
 </b></details>
 
@@ -4089,17 +7480,91 @@ What would be the result of is_int(2) and is_int(False)?
 </summary><br><b>
 </b></details>
 
-##### Data Structures & Types
+#### Python - Linked List
+
+<details>
+<summary>Can you implement a linked list in Python?</summary><br><b>
+
+The reason we need to implement in the first place, it's because a linked list isn't part of Python standard library.<br>
+To implement a linked list, we have to implement two structures: The linked list itself and a node which is used by the linked list.
+
+Let's start with a node. A node has some value (the data it holds) and a pointer to the next node
+
+```
+class Node(object):
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+```
+
+Now the linked list. An empty linked list has nothing but an empty head.
+
+```
+class LinkedList(object):
+    def __init__(self):
+        self.head = None
+```
+
+Now we can start using the linked list
+
+```
+ll = Linkedlist()
+ll.head = Node(1)
+ll.head.next = Node(2)
+ll.head.next.next = Node(3)
+```
+
+What we have is:
+
+----       -----      ----
+| 1 | ->   | 2 |  ->  | 3 |
+----       -----      -----
+
+Usually, more methods are implemented, like a push_head() method where you insert a node at the beginning of the linked list
+
+```
+def push_head(self, value):
+    new_node = Node(value)
+    new_node.next = self.head
+    self.head = new_node
+```
+</b></details>
+
+<details>
+<summary>Add a method to the Linked List class to traverse (print every node's data) the linked list</summary><br><b>
+
+def print_list(self):
+    node = self.head
+    while(node):
+        print(node.data)
+        node = node.next
+</b></details>
+
+<details>
+<summary>Write a method to that will return a boolean based on whether there is a loop in a linked list or not</summary><br><b>
+
+Let's use the Floyd's Cycle-Finding algorithm:
+
+```
+def loop_exists(self):
+    one_step_p = self.head
+    two_steps_p = self.head
+    while(one_step_p and two_steps_p and two_steps_p.next):
+        one_step_p = self.head.next
+        two_step_p = self.head.next.next
+        if (one_step_p == two_steps_p):
+            return True 
+    return False
+```
+</b></details>
+
+#### Python - Stack
 
 <details>
 <summary>Implement Stack in Python</summary><br><b>
 </b></details>
 
-<details>
-<summary>Implement Hash table in Python</summary><br><b>
-</b></details>
-
-##### Python Testing
+#### Python Testing
 
 <details>
 <summary>What is your experience with writing tests in Python?</summary><br><b>
@@ -4117,10 +7582,6 @@ PEP8 is a list of coding conventions and style guidelines for Python
     3. Use commas when making a tuple of one element
     4. Use spaces (and not tabs) for indentation
     5. Use 4 spaces per indentation level
-</b></details>
-
-<details>
-<summary>How would you check if two strings are equal? What about booleans?</summary><br><b>
 </b></details>
 
 <details>
@@ -4146,7 +7607,7 @@ PEP8 is a list of coding conventions and style guidelines for Python
 #### Flask
 
 <details>
-<summary>You wrote you have experience with Django/Flask. Can you describe what is Django/Flask and how you have used it? Why Flask and not Djano? (or vice versa)</summary><br><b>
+<summary>Can you describe what is Django/Flask and how you have used it? Why Flask and not Djano? (or vice versa)</summary><br><b>
 </b></details>
 
 <details>
@@ -4154,7 +7615,11 @@ PEP8 is a list of coding conventions and style guidelines for Python
 </b></details>
 
 <details>
-<summary>How do you manage DB integration?</summary><br><b>
+<summary>What is a blueprint in Flask?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a template?</summary><br><b>
 </b></details>
 
 #### zip
@@ -4182,8 +7647,62 @@ list(zip(range(5), range(50), range(-2)))
 ```
 </b></details>
 
-#### Misc
+#### Python Descriptors
 
+<details>
+<summary>Explain Descriptors</summary><br><b>
+
+Read about descriptors [here](https://docs.python.org/3/howto/descriptor.html)
+</b></details>
+
+<details>
+<summary>What would be the result of running <code>a.num2</code> assuming the following code
+
+```
+class B:
+    def __get__(self, obj, objtype=None):
+        reuturn 10
+
+class A:
+    num1 = 2
+    num2 = Five()
+```
+</summary><br><b>
+10
+</b></details>
+
+<details>
+<summary>What would be the result of running <code>some_car = Car("Red", 4)</code> assuming the following code
+
+```
+class Print:
+
+    def __get__(self, obj, objtype=None):
+        value = obj._color
+        print("Color was set to {}".format(valie))
+        return value
+
+    def __set__(self, obj, value):
+        print("The color of the car is {}".format(value))
+        obj._color = value
+
+class Car:
+
+    color = Print()
+
+    def __ini__(self, color, age):
+        self.color = color
+        self.age = age
+```
+</summary><br><b>
+An instance of Car class will be created and the following will be printed: "The color of the car is Red"
+</b></details>
+
+#### Python Misc
+
+<details>
+<summary>How can you spawn multiple processes with Python?</summary><br><b>
+</b></details>
 
 <details>
 <summary>Implement simple calculator for two numbers</summary><br><b>
@@ -4191,8 +7710,8 @@ list(zip(range(5), range(50), range(-2)))
 ```
 def add(num1, num2):
     return num1 + num2
-        
-        
+
+
 def sub(num1, num2):
     return num1 - num2
 
@@ -4204,11 +7723,11 @@ def mul(num1, num2):
 def div(num1, num2):
     return num1 / num2
 
-operators = { 
+operators = {
     '+': add,
     '-': sub,
     '*': mul,
-    '/': div 
+    '/': div
 }
 
 if __name__ == '__main__':
@@ -4218,10 +7737,6 @@ if __name__ == '__main__':
     print(operators[operator](num1, num2))
 ```
 </b></details>
-
-
-<a name="python-advanced"></a>
-#### :star: Advanced
 
 <details>
 <summary>What data types are you familiar with that are not Python built-in types but still provided by modules which are part of the standard library?</summary><br><b>
@@ -4241,7 +7756,7 @@ def wee(word):
 
 def oh(f):
     return f + "Ohh"
-    
+
 >>> oh(wee("Wee"))
 <<< Wee Ohh
 ```
@@ -4390,15 +7905,7 @@ a = f()
 </b></details>
 
 <details>
-<summary>Explain Descriptors</summary><br><b>
-</b></details>
-
-<details>
 <summary>Do you have experience with web scraping? Can you describe what have you used and for what?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Can you implement Linked List in Python?</summary><br><b>
 </b></details>
 
 <details>
@@ -4415,11 +7922,10 @@ a = f()
 
 ## Monitoring
 
-<a name="monitoring-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>Explain monitoring. What is it? What its goal?</summary><br><b>
+
+Google: "Monitoring is one of the primary means by which service owners keep track of a system’s health and availability".
 </b></details>
 
 <details>
@@ -4432,25 +7938,16 @@ If the issue doesn't require any human intervention, then the problem can be fix
 <details>
 <summary>What types of monitoring outputs are you familiar with and/or used in the past?</summary><br><b>
 
-Alerts
-Tickets
-Logging
+Alerts<br>
+Tickets<br>
+Logging<br>
 </b></details>
 
 <details>
 <summary>What is the different between infrastructure monitoring and application monitoring? (methods, tools, ...)</summary><br><b>
 </b></details>
 
-##### Python Geeks :)
-
-<details>
-<summary>Tell me something about Python that you think most people don't know</summary><br><b>
-</b></details>
-
 ## Prometheus
-
-<a name="prometheus-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What is Prometheus? What are some of Prometheus's main features?</summary><br><b>
@@ -4458,10 +7955,6 @@ Logging
 
 <details>
 <summary>Describe Prometheus architecture and components</summary><br><b>
-</b></details>
-
-<details>
-<summary>Have you set up Prometheus? How did you do it? Describe the process</summary><br><b>
 </b></details>
 
 <details>
@@ -4479,7 +7972,7 @@ Logging
   * Push Gateway
   * Alert Manager</summary><br><b>
 
-Prometheus server responsible for scraping the storing the data<br>
+Prometheus server is responsible for scraping and storing the data<br>
 Push gateway is used for short-lived jobs<br>
 Alert manager is responsible for alerts ;)
 </b></details>
@@ -4508,9 +8001,6 @@ Alert manager is responsible for alerts ;)
 <summary>What HA in Prometheus means?</summary><br><b>
 </b></details>
 
-<a name="prometheus-advanced"></a>
-#### :star: Advanced
-
 <details>
 <summary>How do you join two metrics?</summary><br><b>
 </b></details>
@@ -4525,8 +8015,15 @@ Alert manager is responsible for alerts ;)
 
 ## Git
 
-<a name="git-beginner"></a>
-#### :baby: Beginner
+<details>
+<summary>How do you know if a certain directory is a git repository?</summary><br><b>
+
+You can check if there is a ".git" directory inside it.
+</b></details>
+
+<details>
+<summary>How to check if a file is tracked and if not, then track it?</summary><br><b>
+</b></details>
 
 <details>
 <summary>What is the difference between <code>git pull</code> and <code>git fetch</code>?</summary><br><b>
@@ -4579,7 +8076,7 @@ is currently pointing at.
 <details>
 <summary>You would like to move forth commit to the top. How would you achieve that?</summary><br><b>
 
-Using <code>git rebase></code> command
+Using the `git rebase` command
 </b></details>
 
 <details>
@@ -4602,7 +8099,7 @@ This page explains it the best: https://git-scm.com/docs/merge-strategies
 <details>
 <summary>How can you see which changes have done before committing them?</summary><br><b>
 
-<code>git diff</code>
+`git diff```
 </b></details>
 
 <details>
@@ -4611,6 +8108,10 @@ This page explains it the best: https://git-scm.com/docs/merge-strategies
 ```
 git checkout HEAD~1 -- /path/of/the/file
 ```
+</b></details>
+
+<details>
+<summary>How to squash last two commits?</summary><br><b>
 </b></details>
 
 <details>
@@ -4663,35 +8164,30 @@ If you would like to also discard the changes you `git reset --hard``
 False. If you would like to keep a file on your filesystem, use `git reset <file_name>`
 </b></details>
 
-<a name="git-advanced"></a>
-#### :star: Advanced
-
 <details>
 <summary>Explain Git octopus merge</summary><br><b>
 
 Probably good to mention that it's:
 
   * It's good for cases of merging more than one branch (and also the default of such use cases)
-  * It's primarily meant for bundling topic branches together 
+  * It's primarily meant for bundling topic branches together
 
 This is a great article about Octopus merge: http://www.freblogg.com/2016/12/git-octopus-merge.html
 </b></details>
 
 ## Go
 
-<a name="go-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What are some characteristics of the Go programming language?</summary><br><b>
 
   * Strong and static typing - the type of the variables can't be changed over time and they have to be defined at compile time
-  * Simplicity 
+  * Simplicity
   * Fast compile times
   * Built-in concurrency
   * Garbage collected
   * Platform independent
-  * Compile to standalone binary - anything you need to run your app will be compiled into one binary. Very useful for version management in run-time. 
+  * Compile to standalone binary - anything you need to run your app will be compiled into one binary. Very useful for version management in run-time.
 
 Go also has good community.
 </b></details>
@@ -4803,7 +8299,7 @@ Go's iota identifier is used in const declarations to simplify definitions of in
 
 <details>
 <summary>What _ is used for in Go?</summary><br><b>
-	
+
 It avoids having to declare all the variables for the returns values.
 It is called the [blank identifier](https://golang.org/doc/effective_go.html#blank).
 <br>
@@ -4832,10 +8328,147 @@ func main() {
 Since the first iota is declared with the value `3` (` + 3`), the next one has the value `4`
 </b></details>
 
-## Mongo
+<details>
+<summary>What will be the output of the following block of code?:
 
-<a name="mongo-beginner"></a>
-#### :baby: Beginner
+```
+package main
+
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+func main() {
+	var wg sync.WaitGroup
+
+	wg.Add(1)
+	go func() {
+		time.Sleep(time.Second * 2)
+		fmt.Println("1")
+		wg.Done()
+	}()
+
+	go func() {
+		fmt.Println("2")
+	}()
+
+	wg.Wait()
+	fmt.Println("3")
+}
+```
+</summary><br><b>
+
+Output: 2 1 3
+
+[Aritcle about sync/waitgroup](https://tutorialedge.net/golang/go-waitgroup-tutorial/)
+
+[Golang package sync](https://golang.org/pkg/sync/)
+</b></details>
+
+<details>
+<summary>What will be the output of the following block of code?:
+
+```
+package main
+
+import (
+	"fmt"
+)
+
+func mod1(a []int) {
+	for i := range a {
+		a[i] = 5
+	}
+
+	fmt.Println("1:", a)
+}
+
+func mod2(a []int) {
+	a = append(a, 125) // !
+
+	for i := range a {
+		a[i] = 5
+	}
+
+	fmt.Println("2:", a)
+}
+
+func main() {
+	sl := []int{1, 2, 3, 4}
+	mod1(s1)
+	fmt.Println("1:", s1)
+
+	s2 := []int{1, 2, 3, 4}
+	mod2(s2)
+	fmt.Println("2:", s2)
+}
+```
+</summary><br><b>
+
+Output: <code><br>
+1 [5 5 5 5]<br>
+1 [5 5 5 5]<br>
+2 [5 5 5 5 5]<br>
+2 [1 2 3 4]<br>
+</code>
+
+In `mod1` a is link, and when we're using `a[i]`, we're changing `s1` value to.
+But in `mod2`, `append` creats new slice, and we're changing only `a` value, not `s2`.
+
+[Aritcle about arrays](https://golangbot.com/arrays-and-slices/),
+[Blog post about `append`](https://blog.golang.org/slices)
+</b></details>
+
+<details>
+<summary>What will be the output of the following block of code?:
+
+```
+package main
+
+import (
+	"container/heap"
+	"fmt"
+)
+
+// An IntHeap is a min-heap of ints.
+type IntHeap []int
+
+func (h IntHeap) Len() int           { return len(h) }
+func (h IntHeap) Less(i, j int) bool { return h[i] < h[j] }
+func (h IntHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+
+func (h *IntHeap) Push(x interface{}) {
+	// Push and Pop use pointer receivers because they modify the slice's length,
+	// not just its contents.
+	*h = append(*h, x.(int))
+}
+
+func (h *IntHeap) Pop() interface{} {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[0 : n-1]
+	return x
+}
+
+func main() {
+	h := &IntHeap{4, 8, 3, 6}
+	heap.Init(h)
+	heap.Push(h, 7)
+
+  fmt.Println((*h)[0])
+}
+```
+</summary><br><b>
+
+Output: 3
+
+[Golang container/heap package](https://golang.org/pkg/container/heap/)
+</b></details>
+
+## Mongo
 
 <details>
 <summary>What are the advantages of MongoDB? Or in other words, why choosing MongoDB and not other implementation of NoSQL?</summary><br><b>
@@ -4852,7 +8485,7 @@ MongoDB advantages are as followings:
 <summary>What is the difference between SQL and NoSQL?</summary><br><b>
 
 The main difference is that SQL databases are structured (data is stored in the form of
-tables with rows and columns - like an excel spreadsheet table) while NoSQL is 
+tables with rows and columns - like an excel spreadsheet table) while NoSQL is
 unstructured, and the data storage can vary depending on how the NoSQL DB is set up, such
 as key-value pair, document-oriented, etc.
 </b></details>
@@ -4891,58 +8524,108 @@ as key-value pair, document-oriented, etc.
 <summary>Explain this query: <code>db.books.find().sort({x:1})</code></summary><br><b>
 </b></details>
 
+<details>
+<summary>What is the difference between find() and find_one()?</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>How can you export data from Mongo DB?</code></summary><br><b>
+
+* mongoexport
+* programming languages
+</b></details>
+
 ## OpenShift
 
-<a name="openshift-beginner"></a>
-#### :baby: Beginner
-
 <details>
-<summary>What is OpenShift? Did you use it? If yes, how?</summary><br><b>
+<summary>What is OpenShift?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Can you explain the difference between OpenShift and Kubernetes?</summary><br><b>
+<summary>How OpenShift is related to Kubernetes?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Define Pods and explain what are stateful pods</summary><br><b>
+<summary>True or False? OpenShift is a IaaS (infrastructure as a service) solution</summary><br><b>
+
+False. OpenShift is a PaaS (platform as a service) solution.
 </b></details>
 
 <details>
-<summary>What types of build strategies are you familiar with?</summary><br><b>
+<summary>What would be the best way to run and manage multiple OpenShift environments?</summary><br><b>
+
+Federation
+</b></details>
+
+#### OpenShift Federation
+
+<details>
+<summary>What is OpenShift Federation?</summary><br><b>
+
+Management and deployment of services and workloads accross multiple independent clusters from a single API
 </b></details>
 
 <details>
-<summary>Explain what are labels and what they are used for</summary><br><b>
+<summary>Explain the following in regards to Federation:
+
+  * Multi Cluster
+  * Federated Cluster
+  * Host Cluster
+  * Member Cluster
+</summary><br><b>
+
+  * Multi Cluster - Multiple clusters deployed independently, not being aware of each other
+  * Federated Cluster - Multiple clusters managed by the OpenShift Federation Control Plane
+  * Host Cluster - The cluster that runs the Federation Control Plane
+  * Member Cluster - Cluster that is part of the Federated Cluster and connected to Federation Control Plane
+</b></details>
+
+#### OpenShift Azure
+
+<details>
+<summary>What is "OpenShift on Azure" and "Azure Red Hat OpenShift"?</summary><br><b>
+
+OpenShift on Aazure (OCP) is installed and managed by the customer itself as opposed to Azure Red Hat OpenShift (ARO) which is a managed service by Red Hat and Microsoft.
+Also, OCP is purchased from Red Hat and ARO is purchased from Azure.
+</b></details>
+
+## Storage
+
+<details>
+<summary>What is a storage device? What storage devices are there?</summary><br><b>
+
+* Hard Disks
+* SSD
+* USB
+* Magnetic Tape
 </b></details>
 
 <details>
-<summary>Explain what are annotations and how they are different from labels</summary><br><b>
+<summary>Explain the following:
+
+* Block Storage
+* Object Storage
+* File Storage</summary><br><b>
 </b></details>
 
 <details>
-<summary>Explain what is Downward API</summary><br><b>
+<summary>What is Random Seek Time?</summary><br><b>
+
+The time it takes for a disk to reach the place where the data is located and read a single block/sector.
+
+Bones question: What is the random seek time in SSD and Magnetic Disk?
+Answer: Magnetic is about 10ms and SSD is somewhere between 0.08 and 0.16ms
 </b></details>
 
 ## Shell Scripting
-
-<a name="shell-scripting-beginner"></a>
-#### :baby: Beginner
-
-<details>
-<summary>Tell me about your experience with shell scripting</summary><br><b>
-
-</b></details>
 
 <details>
 <summary>What this line in scripts mean?: <code>#!/bin/bash</code></summary><br><b>
 
 
-`#!/bin/bash` is She-bang 
+`#!/bin/bash` is She-bang
 
 /bin/bash is the most common shell used as default shell for user login of the linux system. The shell’s name is an acronym for Bourne-again shell. Bash can execute the vast majority of scripts and thus is widely used because it has more features, is well developed and better syntax.
-
-
 
 </b></details>
 
@@ -4952,7 +8635,7 @@ as key-value pair, document-oriented, etc.
 Few example:
 
   * Comments on how to run it and/or what it does
-  * Adding "set -e" since I want the script to exit if a certain command failed 
+  * Adding "set -e" since I want the script to exit if a certain command failed
 
 You can have an entirely different answer. It's based only on your experience.
 </b></details>
@@ -5004,12 +8687,31 @@ Using the keyword <code>read</code> so for example <code>read x</code> will wait
 <summary>Explain conditionals and how do you use them</summary><br><b>
 </b></details>
 
+#### Shell Scripting - Loops
+
 <details>
 <summary>What is a loop? What types of loops are you familiar with?</summary><br><b>
 </b></details>
 
 <details>
+<summary>Demonstrate how to use loops</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain <code>continue</code> and <code>break</code>. When do you use them if at all?</summary><br><b>
+</b></details>
+
+
+<details>
+<summary>Running the following bash script, we don't get 2 as a result, why?
+
+```
+x = 2
+echo $x
+```
+</summary><br><b>
+
+Should be `x=2`
 </b></details>
 
 <details>
@@ -5020,15 +8722,11 @@ Using the keyword <code>read</code> so for example <code>read x</code> will wait
 <summary>How do you check variable length?</summary><br><b>
 </b></details>
 
-<details>
-<summary>What is the difference between single and double quotes?</summary><br><b>
-</b></details>
+##### Practical
 
 <details>
 <summary>Write a script which will list the differences between two directories</summary><br><b>
 </b></details>
-
-##### Practical
 
 <details>
 <summary>Write a script to determine whether a host is up or down</summary><br><b>
@@ -5043,7 +8741,7 @@ ping -c 3 $SERVERIP > /dev/null 2>&1
 if [ $? -ne 0 ]
 then
    # Use mailer here:
-   mailx -s "Server $SERVERIP is down" -t "$NOTIFYEMAIL" < /dev/null 
+   mailx -s "Server $SERVERIP is down" -t "$NOTIFYEMAIL" < /dev/null
 fi
 ```
 
@@ -5068,9 +8766,6 @@ done
 
 </b></details>
 
-<a name="shell-scripting-advanced"></a>
-#### Advanced
-
 <details>
 <summary>Explain the following code:
 
@@ -5093,19 +8788,16 @@ A short way of using if/else. An example:
 
 <details>
 <summary>What does the following code do and when would you use it?
-	
+
 <code>diff <(ls /tmp) <(ls /var/tmp)</code>
 
 </summary><br>
-It is called 'process substitution'. It provides a way to pass the output of a command to another command when using a pipe <code>|</code> is not possible. It can be used when a command does not support <code>STDIN</code> or you need the output of multiple commands. 
+It is called 'process substitution'. It provides a way to pass the output of a command to another command when using a pipe <code>|</code> is not possible. It can be used when a command does not support <code>STDIN</code> or you need the output of multiple commands.
 https://superuser.com/a/1060002/167769
 </details>
 
 
 ## SQL
-
-<a name="sql-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What does SQL stand for?</summary><br><b>
@@ -5118,7 +8810,7 @@ Structured Query Language
 <summary>How is SQL Different from NoSQL</summary><br><b>
 
 The main difference is that SQL databases are structured (data is stored in the form of
-tables with rows and columns - like an excel spreadsheet table) while NoSQL is 
+tables with rows and columns - like an excel spreadsheet table) while NoSQL is
 unstructured, and the data storage can vary depending on how the NoSQL DB is set up, such
 as key-value pair, document-oriented, etc.
 </b></details>
@@ -5128,11 +8820,11 @@ as key-value pair, document-oriented, etc.
 
 ACID stands for Atomicity, Consistency, Isolation, Durability. In order to be ACID compliant, the database much meet each of the four criteria
 
-**Atomicity** - When a change occurs to the database, it should either succeed or fail as a whole. 
+**Atomicity** - When a change occurs to the database, it should either succeed or fail as a whole.
 
-For example, if you were to update a table, the update should completely execute. If it only partially executes, the 
+For example, if you were to update a table, the update should completely execute. If it only partially executes, the
 update is considered failed as a whole, and will not go through - the DB will revert back to it's original
-state before the update occurred. It should also be mentioned that Atomicity ensures that each 
+state before the update occurred. It should also be mentioned that Atomicity ensures that each
 transaction is completed as it's own stand alone "unit" - if any part fails, the whole statement fails.
 
 **Consistency** - any change made to the database should bring it from one valid state into the next.
@@ -5150,10 +8842,10 @@ time you executed your query, 15 of the 20 changes had gone through, but 5 were 
 only see the 15 changes that had completed - you wouldn't see the database mid-update as the change goes through.
 
 **Durability** - Once a change is committed, it will remain committed regardless of what happens
-(power failure, system crash, etc.). This means that all completed transactions 
-must be recorded in non-volatile memory. 
+(power failure, system crash, etc.). This means that all completed transactions
+must be recorded in non-volatile memory.
 
-Note that SQL is by nature ACID compliant. Certain NoSQL DB's can be ACID compliant depending on 
+Note that SQL is by nature ACID compliant. Certain NoSQL DB's can be ACID compliant depending on
 how they operate, but as a general rule of thumb, NoSQL DB's are not considered ACID compliant
 </details>
 
@@ -5163,8 +8855,8 @@ how they operate, but as a general rule of thumb, NoSQL DB's are not considered 
 SQL - Best used when data integrity is crucial. SQL is typically implemented with many
 businesses and areas within the finance field due to it's ACID compliance.
 
-NoSQL - Great if you need to scale things quickly. NoSQL was designed with web applications 
-in mind, so it works great if you need to quickly spread the same information around to 
+NoSQL - Great if you need to scale things quickly. NoSQL was designed with web applications
+in mind, so it works great if you need to quickly spread the same information around to
 multiple servers
 
 Additionally, since NoSQL does not adhere to the strict table with columns and rows structure
@@ -5175,14 +8867,14 @@ that Relational Databases require, you can store different data types together.
 <summary>What is a Cartesian Product?</summary><br>
 
 A Cartesian product is when all rows from the first table are joined to all rows in the second
-table. This can be done implicitly by not defining a key to join, or explicitly by 
+table. This can be done implicitly by not defining a key to join, or explicitly by
 calling a CROSS JOIN on two tables, such as below:
 
 Select * from customers **CROSS JOIN** orders;
 
 Note that a Cartesian product can also be a bad thing - when performing a join
 on two tables in which both do not have unique keys, this could cause the returned information
-to be incorrect. 
+to be incorrect.
 </details>
 
 ##### SQL Specific Questions
@@ -5257,9 +8949,6 @@ Left Join Orders o <br>
 
 </b></details>
 
-<a name="sql-advanced"></a>
-#### Advanced
-
 <details>
 <summary>Using a with statement, how would you show who ordered cat food, and the total amount of money spent?</summary><br><b>
 
@@ -5275,8 +8964,8 @@ Inner JOIN cat_food f <br>
   ON c.Customer_ID = f.Customer_ID <br>
 where c.Customer_ID in (Select Customer_ID from cat_food);
 
-Although this was a simple statement, the "with" clause really shines when 
-a complex query needs to be run on a table before joining to another. With statements are nice, 
+Although this was a simple statement, the "with" clause really shines when
+a complex query needs to be run on a table before joining to another. With statements are nice,
 because you create a pseudo temp when running your query, instead of creating a whole new table.
 
 The Sum of all the purchases of cat food weren't readily available, so we used a with statement to create
@@ -5284,9 +8973,6 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 </b></details>
 
 ## Azure
-
-<a name="azure-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>Explain Azure's architecture</summary><br><b>
@@ -5296,8 +8982,6 @@ the pseudo table to retrieve the sum of the prices spent by each customer, then 
 <summary>Explain availability sets and availability zones</summary><br><b>
 
 An availability set is a logical grouping of VMs that allows Azure to understand how your application is built to provide redundancy and availability. It is recommended that two or more VMs are created within an availability set to provide for a highly available application and to meet the 99.95% Azure SLA.
-
-
 </b></details>
 
 <details>
@@ -5312,7 +8996,7 @@ An availability set is a logical grouping of VMs that allows Azure to understand
 <summary>Explain Azure managed disks</summary><br><b>
 </b></details>
 
-#### Network
+#### Azure Network
 
 <details>
 <summary>What's an Azure region?</summary><br><b>
@@ -5322,13 +9006,13 @@ An availability set is a logical grouping of VMs that allows Azure to understand
 <summary>What is the N-tier architecture?</summary><br><b>
 </b></details>
 
-#### Storage
+#### Azure Storage
 
 <details>
 <summary>What storage options Azure supports?</summary><br><b>
 </b></details>
 
-#### Security
+#### Azure Security
 
 <details>
 <summary>What is the Azure Security Center? What are some of its features?</summary><br><b>
@@ -5356,11 +9040,39 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 <summary>What components are part of Azure ATP?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Where logs are stored in Azure Monitor?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Azure Site Recovery</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what the advisor does</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain VNet peering</summary><br><b>
+</b></details>
+
+<details>
+<summary>Which protocols are available for configuring health probe</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Azure Active</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a subscription? What types of subscriptions are there?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is a blob storage service</summary><br><b>
+</b></details>
 
 ## GCP
-
-<a name="gcp-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>Explain GCP's architecture</summary><br><b>
@@ -5378,31 +9090,265 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 <summary>Tell me what do you know about GCP networking</summary><br><b>
 </b></details>
 
-## OpenStack
-
-<a name="openstack-beginner"></a>
-#### :baby: Beginner
+<details>
+<summary>Explain Cloud Functions</summary><br><b>
+</b></details>
 
 <details>
-<summary>Tell me about your experience with OpenStack. What do you think are the advantages and disadvantages of OpenStack?</summary><br><b>
+<summary>What is Cloud Datastore?</summary><br><b>
 </b></details>
+
+<details>
+<summary>What network tags are used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are flow logs? Where are they enabled?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you list buckets?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What Compute metadata key allows you to run code at startup?</summary><br><b>
+
+startap-script
+</b></details>
+
+<details>
+<summary>What the following commands does? `gcloud deployment-manager deployments create`</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Cloud Code?</summary><br><b>
+It is a set of tools to help developers write, run and debug GCP kubernetes based applications. It provides built-in support for rapid iteration, debugging and running applications in development and production K8s environments.
+</b></details>
+
+### Google Kubernetes Engine (GKE)
+
+<details>
+<summary>What is GKE</summary><br><b>
+
+* It is the managed kubernetes service on GCP for deploying, managing and scaling containerised applications using Google infrastructure.
+</b></details>
+
+### Anthos
+
+<details>
+<summary>What is Anthos</summary><br><b>
+It is a managed application platform for organisations like enterprises that require quick modernisation and certain levels
+of consistency for their legacy applications in a hybrid or multicloud world. From this explanation the core ideas can be drawn from these statements;
+
+* Managed -> the customer does not need to worry about the underlying software intergrations, they just enable the API.
+* application platform -> It consists of open source tools like K8s, Knative, Istio and Tekton
+* Enterprises -> these are usually organisations with complex needs
+* Consistency -> to have the same policies declaratively initiated to be run anywhere securely e.g on-prem, GCP or other-clouds (AWS or Azure)
+
+fun fact: Anthos is flower in greek, they grow in the ground (earth) but need rain from the clouds to flourish.
+</b></details>
+
+<details>
+<summary>List the technical components that make up Anthos</summary><br><b>
+
+* Infrastructure management - Google Kubernetes Engine (GKE)
+* Cluster management - GKE, Ingress for Anthos
+* Service management - Anthos Service Mesh
+* Policy enforcement - Anthos Config Management, Anthos Enterprise Data Protection, Policy Controller
+* Application deployment - CI/CD tools like Cloud Build, GitLab
+* Application development - Cloud Code
+</b></details>
+
+<details>
+<summary>What is the primary computing environment for Anthos to easily manage workload deployment?</summary><br><b>
+
+* Google Kubernetes Engine (GKE)
+</b></details>
+
+<details>
+<summary>How does Anthos handle the control plane and node components for GKE?</summary><br><b>
+
+On GCP the kubernetes api-server is the only control plane component exposed to customers whilst compute engine manages
+instances in the project.
+</b></details>
+
+<details>
+<summary>Which load balancing options are available?</summary><br><b>
+
+* Networking load balancing for L4 and HTTP(S) Load Balancing for L7 which are both managed services that do not require
+  additional configuration.
+* Ingress for Anthos which allows the ability to deploy a load balancer that serves an application across multiple clusters
+  on GKE
+</b></details>
+
+<details>
+<summary>Can you deploy Anthos on AWS?</summary><br><b>
+
+* Yes, Anthos on AWS is now GA. For more read [here](https://cloud.google.com/anthos/gke/docs/aws)
+</b></details>
+
+<details>
+<summary>List and explain the enterprise security capabilities provided by Anthos</summary><br><b>
+
+* Control plane security - GCP manages and maintains the K8s control plane out of the box. The user can secure the api-server by using master authorized networks and private clusters. These allow the user to disable access on the public IP address by assigning a private IP address to the master.
+* Node security - By default workloads are provisioned on Compute engine instances that use Google's Container Optimised OS. This operating system implements a locked-down firewall, limited user accounts with root disabled and a read-only filesystem. There is a further option to enable GKE Sandbox for stronger isolation in multi-tenant deployment scenarios.
+* Network security - Within a created cluster VPC, Anthos GKE leverages a powerful software-defined network that enables simple Pod-to-Pod communications. Network policies allow locking down ingress and egress connections in a given namespace. Filtering can also be implemented to incoming load-balanced traffic for services that require external access, by supplying whitelisted CIDR IP ranges.
+* Workload security - Running workloads run with limited privileges, default Docker AppArmor security policies are applied to all Kubernetes Pods. Workload identity for Anthos GKE aligns with the open source kubernetes service accounts with GCP service account permissions.
+* Audit logging - Adminstrators are given a way to retain, query, process and alert on events of the deployed environments.
+</b></details>
+
+<details>
+<summary>How can workloads deployed on Anthos GKE on-prem clusters securely connect to Google Cloud services?</summary><br><b>
+
+* Google Cloud Virtual Private Network (Cloud VPN) - this is for secure networking
+* Google Cloud Key Management Service (Cloud KMS) - for key management
+</b></details>
+
+<details>
+<summary>What is Island Mode configuration with regards to networking in Anthos GKE deployed on-prem?</summary><br><b>
+
+* This is when pods can directly talk to each other within a cluster, but cannot be reached from outside the cluster thus forming an "island" within the network that is not connected to the external network.
+</b></details>
+
+<details>
+<summary>Explain Anthos Config Management</summary><br><b>
+
+It is a core component of the Anthos stack which provides platform, service and security operators with a single, unified approach to multi-cluster management that spans both on-premises and cloud environments. It closely follows K8s best practices, favoring declarative approaches over imperative operations, and actively monitors cluster state and applies the desired state as defined in Git. It includes three key components as follows:
+
+1. An importer that reads from a central Git repository
+2. A component that synchronises stored configuration data into K8s objects
+3. A component that monitors drift between desired and actual cluster configurations with a capability of reconciliation when need rises.
+</b></details>
+
+<details>
+<summary>How does Anthos Config Management help?</summary><br><b>
+
+It follows common modern software development practices which makes cluster configuration, management and policy changes auditable, revertable, and versionable easily enforcing IT governance and unifying resource management in an organisation.
+</b></details>
+
+<details>
+<summary>What is Anthos Service Mesh?</summary><br><b>
+
+* It is a suite of tools that assist in monitoring and managing deployed services on Anthos of all shapes and sizes whether running in cloud, hybrid or multi-cloud environments. It leverages the APIs and core components from Istio, a highly configurable and open-source service mesh platform.
+</b></details>
+
+<details>
+<summary>Describe the two main components of Anthos Service Mesh</summary><br><b>
+
+1. Data plane - it consists of a set of distributed proxies that mediate all inbound and outbound network traffic between individual services which are configured using a centralised control plane and an open API
+2. Control plane - is a fully managed offering outside of Anthos GKE clusters to simplify management overhead and ensure highest possible availability.
+</b></details>
+
+<details>
+<summary>What are the components of the managed control plane of Anthos Service Mesh?</summary><br><b>
+
+1. Traffic Director - it is GCP's fully managed service mesh traffic control plane, responsible for translating Istio API objects into configuration information for the distributed proxies, as well as directing service mesh ingress and egress traffic
+2. Managed CA - is a centralised certificate authority responsible for providing SSL certificates to each of the distributed proxies, authentication information and distributing secrets
+3. Operations tooling - formerly stackdriver, provides a managed ingestion point for observability and telemetry, specifically monitoring, tracing and logging data generated by each of the proxies. This powers the observability dashboard for operators to visually inspect their services and service dependencies assisting in the implementation of SRE best practices for monitoring SLIs and establishing SLOs.
+</b></details>
+
+<details>
+<summary>How does Anthos Service Mesh help?</summary><br><b>
+Tool and technology integration that makes up Anthos service mesh delivers signficant operational benefits to Anthos environments, with minimal additional overhead such as follows:
+
+* Uniform observability - the data plane reports service to service communication back to the control plane generating a service dependency graph. Traffic inspection by the proxy inserts headers to facilitate distributed tracing, capturing and reporting service logs together with service-level metrics (i.e latency, errors, availability).
+* Operational agility - fine-grained controls for managing the flow of inter-mesh (north-south) and intra-mesh (east-west) traffic are provided.
+* Policy-driven security - policies can be enforced consistently across diverse protocols and runtimes as service communications are secured by default.
+</b></details>
+
+<details>
+<summary>List possible use cases of traffic controls that can be implemented within Anthos Service Mesh</summary><br><b>
+
+* Traffic splitting across differing service versions for canary or A/B testing
+* Circuit breaking to prevent cascading failures
+* Fault injection to help build resilient and fault-tolerant deployments
+* HTTP header-based traffic steering between individual services or versions
+</b></details>
+
+<details>
+<summary>What is Cloud Run for Anthos?</summary><br><b>
+
+It is part of the Anthos stack that brings a serverless container experience to Anthos, offering a high-level platform experience on top of K8s clusters. It is built with Knative, an open-source operator for K8s that brings serverless application serving and eventing capabilities.
+</b></details>
+
+<details>
+<summary>How does Cloud Run for Anthos simplify operations?</summary><br><b>
+
+Platform teams in organisations that wish to offer developers additional tools to test, deploy and run applications can use Knative to enhance this experience on Anthos as Cloud Run. Below are some of the benefits;
+
+* Easy migration from K8s deployments - Without Cloud Run, platform engineers have to configure deployment, service, and HorizontalPodAutoscalers(HPA) objects to a loadbalancer and autoscaling. If application is already serving traffic it becomes hard to change configurations or roll back efficiently. Using Cloud Run all this is managed thus the Knative service manifest describes the application to be autoscaled and loadbalanced
+* Autoscaling - a sudden traffic spike may cause application containers in K8s to crash due to overload thus an efficient automated autoscaling is executed to serve the high volume of traffic
+* Networking - it has built-in load balancing capabilities and policies for traffic splitting between multiple versions of an application.
+* Releases and rollouts - supports the notion of the Knatibe API's revisions which describe new versions or different configurations of your application and canary deployments by splitting traffic.
+* Monitoring - observing and recording metrics such as latency, error rate and requests per second.
+</b></details>
+
+<details>
+<summary>List and explain three high-level out of the box autoscaling primitives offered by Cloud Run for Anthos that do not exist in K8s natively</summary><br><b>
+
+* Rapid, request-based autoscaling - default autoscalers monitor request metrics which allows Cloud Run for Anthos to handle spiky traffic patterns smoothly
+* Concurrency controls - limits such as max in-flight requests per container are enforced to ensure the container does not become overloaded and crash. More containers are added to handle the spiky traffic, buffering the requests.
+* Scale to zero - if an application is inactive for a while Cloud Run scales it down to zero to reduce its footprint. Alternatively one can turn off scale-to-zero to prevent cold starts.
+</b></details>
+
+<details>
+<summary>List some Cloud Run for Anthos use cases</summary><br><b>
+As it does not support stateful applications or sticky sessions, it is suitable for running stateless applications such as:
+
+* Machine learning model predictions e.g Tensorflow serving containers
+* API gateways, API middleware, web front ends and Microservices
+* Event handlers, ETL
+</b></details>
+
+## OpenStack
 
 <details>
 <summary>What components/projects of OpenStack are you familiar with?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Can you tell me what each of the following components/projects is responsible for?:
+<summary>Can you tell me what each of the following services/projects is responsible for?:
 
   * Nova
   * Neutron
   * Cinder
   * Glance
   * Keystone</summary><br><b>
+
+  * Nova - Manage virtual instances
+  * Cinder - Block Storage
+  * Keystone - Authentication service across the cloud
 </b></details>
 
 <details>
-<summary>Describe in detail how you bring up an instance with an IP you can reach from outside the cloud</summary><br><b>
+<summary>Identify the service/project used for each of the following:
+
+  * Copy or snapshot instances
+  * GUI for viewing and modifying resources
+  * Block Storage
+  * Manage virtual instances
+</summary><br><b>
+
+  * Glance - Images Service. Also used for copying or snapshot instances
+  * Horizon - GUI for viewing and modifying resources
+  * Cinder - Block Storage
+  * Nova - Manage virtual instances
+</b></details>
+
+<details>
+<summary>What is a tenant/project?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Determine true or false:
+
+  * OpenStack is free to use
+  * The service responsible for networking is Glance
+  * The purpose of tenant/project is to share resources between different projects and users of OpenStack</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe in detail how you bring up an instance with a floating IP</summary><br><b>
 </b></details>
 
 <details>
@@ -5421,11 +9367,84 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 <summary>How do you debug OpenStack compute issues? (tools, logs, ...)</summary><br><b>
 </b></details>
 
+#### OpenStack Deployment & TripleO
+
 <details>
-<summary>Are you familiar with TripleO? What benefits it has?</summary><br><b>
+<summary>Have you deployed OpenStack in the past? If yes, can you describe how you did it?</summary><br><b>
 </b></details>
 
-##### Networking
+<details>
+<summary>Are you familiar with TripleO? How is it different from Devstack or Packstack?</summary><br><b>
+
+You can read about TripleO right [here](https://docs.openstack.org/tripleo-docs/latest)
+</b></details>
+
+#### OpenStack Compute
+
+<details>
+<summary>Can you describe Nova in detail?</summary><br><b>
+
+  * Used to provision and manage virtual instances
+  * It supports Multi-Tenancy in different levels - logging, end-user control, auditing, etc.
+  * Highly scalable
+  * Authentication can be done using internal system or LDAP
+  * Supports multiple types of block storage
+  * Tries to be hardware and hypervisor agnostice
+</b></details>
+
+<details>
+<summary>What do you know about Nova architecture and components?</summary><br><b>
+
+  * nova-api - the server which serves metadata and compute APIs
+  * the different Nova components communicate by using a queue (Rabbitmq usually) and a database
+  * a request for creating an instance is inspected by nova-scheduler which determines where the instance will be created and running
+  * nova-compute is the component responsible for communicating with the hypervisor for creating the instance and manage its lifecycle
+</b></details>
+
+#### OpenStack Networking (Neutron)
+
+<details>
+<summary>Explain Neutron in detail</summary><br><b>
+
+  * One of the core component of OpenStack and a standalone project
+  * Neutron focused on delivering networking as a service
+  * With Neutron, users can set up networks in the cloud and configure and manage a variety of network services
+  * Neutron interacts with:
+      * Keystone - authorize API calls
+      * Nova - nova communicates with neutron to plug NICs into a network
+      * Horizon - supports networking entities in the dashboard and also provides topology view which includes networking details
+</b></details>
+
+<details>
+<summary>Explain each of the following components:
+
+  * neutron-dhcp-agent
+  * neutron-l3-agent
+  * neutron-metering-agent
+  * neutron-*-agtent
+  * neutron-server</summary><br><b>
+
+
+  * neutron-l3-agent - L3/NAT forwarding (provides external network access for VMs for example)
+  * neutron-dhcp-agent - DHCP services
+  * neutron-metering-agent - L3 traffic metering
+  * neutron-*-agtent - manages local vSwitch configuration on each compute (based on chosen plugin)
+  * neutron-server - exposes networking API and passes requests to other plugins if required
+</b></details>
+
+<details>
+<summary>Explain these network types:
+
+  * Management Network
+  * Guest Network
+  * API Network
+  * External Network</summary><br><b>
+
+  * Management Network - used for internal communication between OpenStack components. Any IP address in this network is accessible only within the datacetner
+  * Guest Network - used for communication between instances/VMs
+  * API Network - used for services API communication. Any IP address in this network is publicly accessible
+  * External Network - used for public communication. Any IP address in this network is accessible by anyone on the internet
+</b></details>
 
 <details>
 <summary>What is a provider network?</summary><br><b>
@@ -5440,11 +9459,11 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 </b></details>
 
 <details>
-<summary>What is the L2 agent? How it works and what is it responsible for?</summary><br><b>
+<summary>What is the L2 agent? How does it works and what is it responsible for?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is the L3 agent? How it works and what is it responsible for?</summary><br><b>
+<summary>What is the L3 agent? How does it works and what is it responsible for?</summary><br><b>
 </b></details>
 
 <details>
@@ -5459,35 +9478,271 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 <summary>How do you debug OpenStack networking issues? (tools, logs, ...)</summary><br><b>
 </b></details>
 
-<a name="openstack-advanced"></a>
-#### :baby: Advanced
-
-##### Networking
+#### OpenStack - Glance
 
 <details>
-<summary>Explain BGP dynamic routing</summary>
+<summary>Explain Glance in detail</summary><br><b>
+
+  * Glance is the OpenStack image service
+  * It handles requests related to instances disks and images
+  * Glance also used for creating snapshots for quick instances backups
+  * Users can use Glance to create new images or upload existing ones
 </b></details>
 
 <details>
-<summary>What is the role of network namespaces in OpenStack?</summary>
+<summary>Describe Glance architecture</summary><br><b>
+
+  * glance-api - responsible for handling image API calls such as retrieval and storage. It consists of two APIs: 1. registry-api - responsible for internal requests 2. user API - can be accessed publicly
+  * glance-registry - responsible for handling image metadata requests (e.g. size, type, etc). This component is private which means it's not available publicly
+  * metadata definition service - API for custom metadata
+  * database - for storing images metadata
+  * image repository - for storing images. This can be a filesystem, swift object storage, HTTP, etc.
 </b></details>
 
+#### OpenStack - Swift
+
+<details>
+<summary>Explain Swift in detail</summary><br><b>
+
+  * Swift is Object Store service and is an highly available, distributed and consistent store designed for storing a lot of data
+  * Swift is distributing data across multiple servers while writing it to multiple disks
+  * One can choose to add additional servers to scale the cluster. All while swift maintaining integrity of the information and data replications.
+</b></details>
+
+<details>
+<summary>Can users store by default an object of 100GB in size?</summary><br><b>
+
+Not by default. Object Storage API limits the maximum to 5GB per object but it can be adjusted.
+</b></details>
+
+<details>
+<summary>Explain the following in regards to Swift:
+
+  * Container
+  * Account
+  * Object </summary><br><b>
+
+  * Container - Defines a namespace for objects.
+  * Account - Defines a namespace for containers
+  * Object - Data content (e.g. image, document, ...)
+</b></details>
+
+<details>
+<summary>True or False? there can be two objects with the same name in the same container but not in two different containers</summary><br><b>
+
+False. Two objects can have the same name if they are in different containers.
+</b></details>
+
+#### OpenStack - Cinder
+
+<details>
+<summary>Explain Cinder in detail</summary><br><b>
+
+  * Cinder is OpenStack Block Storage service
+  * It basically provides used with storage resources they can consume with other services such as Nova
+  * One of the most used implementations of storage supported by Cinder is LVM
+  * From user perspective this is transparent which means the user doesn't know where, behind the scenes, the storage is located or what type of storage is used
+</b></details>
+
+<details>
+<summary>Describe Cinder's components</summary><br><b>
+
+  * cinder-api - receives API requests
+  * cinder-volume - manages attached block devices
+  * cinder-scheduler - responsible for storing volumes
+</b></details>
+
+#### OpenStack - Keystone
+
+<details>
+<summary>Can you describe the following concepts in regards to Keystone?
+
+  * Role
+  * Tenant/Project
+  * Service
+  * Endpoint
+  * Token</summary><br><b>
+
+  * Role - A list of rights and privileges determining what a user or a project can perform
+  * Tenant/Project - Logical representation of a group of resources isolated from other groups of resources. It can be an account, organization, ...
+  * Service - An endpoint which the user can use for accessing different resources
+  * Endpoint - a network address which can be used to access a certain OpenStack service
+  * Token - Used for access resources while describing which resources can be accessed by using a scope
+</b></details>
+
+<details>
+<summary>What are the properties of a service? In other words, how a service is identified?</summary><br><b>
+
+Using:
+  * Name
+  * ID number
+  * Type
+  * Description
+</b></details>
+
+<details>
+<summary>Explain the following:
+  * PublicURL
+  * InternalURL
+  * AdminURL</summary><br><b>
+
+  * PublicURL - Publicly accessible through public internet
+  * InternalURL - Used for communication between services
+  * AdminURL - Used for administrative management
+</b></details>
+
+<details>
+<summary>What is a service catalog?</summary><br><b>
+
+A list of services and their endpoints
+</b></details>
+
+#### OpenStack Advanced - Services
+
+<details>
+<summary>Describe each of the following services
+
+  * Swift
+  * Sahara
+  * Ironic
+  * Trove
+  * Aodh
+  * Ceilometer</summary><br><b>
+
+  * Swift - highly available, distributed, eventually consistent object/blob store
+  * Sahara - Manage Hadoop Clusters
+  * Ironic - Bare Metal Provisioning
+  * Trove - Database as a service that runs on OpenStack
+  * Aodh - Alarms Service
+  * Ceilometer - Track and monitor usage
+</b></details>
+
+<details>
+<summary>Identify the service/project used for each of the following:
+
+  * Database as a service which runs on OpenStack
+  * Bare Metal Provisioning
+  * Track and monitor usage
+  * Alarms Service
+  * Manage Hadoop Clusters
+  * highly available, distributed, eventually consistent object/blob store</summary><br><b>
+
+  * Database as a service which runs on OpenStack - Trove
+  * Bare Metal Provisioning - Ironic
+  * Track and monitor usage - Ceilometer
+  * Alarms Service - Aodh
+  * Manage Hadoop Clusters
+  * Manage Hadoop Clusters - Sahara
+  * highly available, distributed, eventually consistent object/blob store - Swift
+</b></details>
+
+#### OpenStack Advanced - Keystone
+
+<details>
+<summary>Can you describe Keystone service in detail?</summary><br><b>
+
+  * You can't have OpenStack deployed without Keystone
+  * It Provides identity, policy and token services
+    * The authentication provided is for both users and services
+    * The authorization supported is token-based and user-based.
+  * There is a policy defined based on RBAC stored in a JSON file and each line in that file defines the level of access to apply
+</b></details>
+
+<details>
+<summary>Describe Keystone architecture</summary><br><b>
+
+  * There is a service API and admin API through which Keystone gets requests
+  * Keystone has four backends:
+    * Token Backend - Temporary Tokens for users and services
+    * Policy Backend - Rules management and authorization
+    * Identity Backend - users and groups (either standalone DB, LDAP, ...)
+    * Catalog Backend - Endpoints
+  * It has pluggable environment where you can integrate with:
+    * LDAP
+    * KVS (Key Value Store)
+    * SQL
+    * PAM
+    * Memcached
+</b></details>
+
+<details>
+<summary>Describe the Keystone authentication process</summary><br><b>
+
+  * Keystone gets a call/request and checks whether it's from an authorized user, using username, password and authURL
+  * Once confirmed, Keystone provides a token.
+  * A token contains a list of user's projects so there is no to authenticate every time and a token can submitted instead
+</b></details>
+
+#### OpenStack Advanced - Compute (Nova)
+
+<details>
+<summary>What each of the following does?:
+
+  * nova-api
+  * nova-compuate
+  * nova-conductor
+  * nova-cert
+  * nova-consoleauth
+  * nova-scheduler</summary><br><b>
+
+  * nova-api - responsible for managing requests/calls
+  * nova-compute - responsible for managing instance lifecycle
+  * nova-conductor - Mediates between nova-compute and the database so nova-compute doesn't access it directly
+</b></details>
+
+<details>
+<summary>What types of Nova proxies are you familiar with?</summary><br><b>
+
+  * Nova-novncproxy - Access through VNC connections
+  * Nova-spicehtml5proxy - Access through SPICE
+  * Nova-xvpvncproxy - Access through a VNC connection
+</b></details>
+
+#### OpenStack Advanced - Networking (Neutron)
+
+<details>
+<summary>Explain BGP dynamic routing</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the role of network namespaces in OpenStack?</summary><br><b>
+</b></details>
+
+#### OpenStack Advanced - Horizon
+
+<details>
+<summary>Can you describe Horizon in detail?</summary><br><b>
+
+  * Django-based project focusing on providing an OpenStack dashboard and the ability to create additional customized dashboards
+  * You can use it to access the different OpenStack services resources - instances, images, networks, ...
+    * By accessing the dashboard, users can use it to list, create, remove and modify the different resources
+  * It's also highly customizable and you can modify or add to it based on your needs
+</b></details>
+
+<details>
+<summary>What can you tell about Horizon architecture?</summary><br><b>
+
+  * API is backward compatible
+  * There are three type of dashboards: user, system and settings
+  * It provides core support for all OpenStack core projects such as Neutron, Nova, etc. (out of the box, no need to install extra packages or plugins)
+  * Anyone can extend the dashboards and add new components
+  * Horizon provides templates and core classes from which one can build its own dashboard
+</b></details>
 
 ## Security
 
-<a name="security-beginner"></a>
-#### :baby: Beginner
-
 <details>
-<summary>Can you describe the DevSecOps core principals?</summary><br><b>
+<summary>Can you describe the DevSecOps core principals? (or what is DevSecOps)</summary><br><b>
 </b></details>
 
 <details>
-<summary>What DevOps security best practices are you familiar with?</summary><br><b>
+<summary>What security techniques are you familiar with? (or what security techniques have you used in the past?)</summary><br><b>
 </b></details>
 
 <details>
-<summary>What security techniques are you familiar with?</summary><br><b>
+<summary>What the "Zero Trust" concept means? How Organizations deal with it?</summary><br><b>
+
+[Codefresh definition](https://codefresh.io/security-testing/codefresh-runner-overview): "Zero trust is a security concept that is centered around the idea that organizations should never trust anyone or anything that does not originate from their domains. Organizations seeking zero trust automatically assume that any external services it commissions have security breaches and may leak sensitive information"
 </b></details>
 
 <details>
@@ -5498,15 +9753,13 @@ Authorization is the process of identifying what level of access the service or 
 </b></details>
 
 <details>
-<summary>How do you manage passwords in different tools and platforms?</summary><br><b>
+<summary>How do you manage sensitive information (like passwords) in different tools and platforms?</summary><br><b>
 </b></details>
 
 <details>
 <summary>Explain what is Single Sign-On</summary><br><b>
 
 SSO (Single Sign-on), is a method of access control that enables a user to log in once and gain access to the resources of multiple software systems without being prompted to log in again.
-
-
 </b></details>
 
 <details>
@@ -5527,20 +9780,68 @@ Access control based on user roles (i.e., a collection of access authorizations 
 
 </b></details>
 
+## Security SSH
+
 <details>
-<summary>Explain Symmetric encryption</summary><br><b>
+<summary>What is SSH how does it work?</summary><br><b>
 
-A symmetric encryption is any technique where the same key is used to both encrypt and decrypt the data. 
+[Wikipedia Definition](https://en.wikipedia.org/wiki/SSH_(Secure_Shell)): "SSH or Secure Shell is a cryptographic network protocol for operating network services securely over an unsecured network."
 
+[Hostinger.com Definition](https://www.hostinger.com/tutorials/ssh-tutorial-how-does-ssh-work): "SSH, or Secure Shell, is a remote administration protocol that allows users to control and modify their remote servers over the Internet."
+
+[This site](https://www.hostinger.com/tutorials/ssh-tutorial-how-does-ssh-work) explains it in a good way.
 </b></details>
 
 <details>
-<summary>Explain Asymmetric encryption</summary><br><b>
+<summary>What is the role of an SSH key?</summary><br><b>
+</b></details>
+
+## Security Cryptography
+
+<details>
+<summary>Explain Symmetrical encryption</summary><br><b>
+
+A symmetric encryption is any technique where a key is used to both encrypt and decrypt the data/entire communication.
+</b></details>
+
+<details>
+<summary>Explain Asymmetrical encryption</summary><br><b>
 
 A asymmetric encryption is any technique where the there is two different keys that are used for encryption and decryption, these keys are known as public key and private key.
-
 </b></details>
 
+<details>
+<summary>What is "Key Exchange" (or "key establishment") in cryptography?</summary><br><b>
+
+[Wikipedia](https://en.wikipedia.org/wiki/Key_exchange): "Key exchange (also key establishment) is a method in cryptography by which cryptographic keys are exchanged between two parties, allowing use of a cryptographic algorithm."
+</b></details>
+
+<details>
+<summary>True or False? The symmetrical encryption is making use of public and private keys where the private key is used to decrypt the data encrypted with a public key</summary><br><b>
+
+False. This description fits the asymmetrical encryption.
+</b></details>
+
+<details>
+<summary>True or False? The private key can be mathematically computed from a public key</summary><br><b>
+False.
+</b></details>
+
+<details>
+<summary>True or False? In the case of SSH, asymmetrical encryption is not used to the entire SSH session</summary><br><b>
+
+True. It is only used during the key exchange algorithm of symmetric encryption.
+</b></details>
+
+<details>
+<summary>What is Hashing?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How hashes are part of SSH?</summary><br><b>
+
+Hashes used in SSH to verify the authenticity of messages and to verify that nothing tampered with the data received.
+</b></details>
 
 <details>
 <summary>Explain the following:
@@ -5552,12 +9853,18 @@ A asymmetric encryption is any technique where the there is two different keys t
 </b></details>
 
 <details>
+<summary>Are you familiar with "OWASP top 10"?</summary><br><b>
+
+Read about it [here](https://owasp.org/www-project-top-ten)
+</b></details>
+
+<details>
 <summary>What is XSS?</summary><br><b>
 
 Cross Site Scripting (XSS) is an type of a attack when the attacker inserts browser executable code within a HTTP response. Now the injected attack is not stored in the web application, it will only affact the users who open the maliciously crafted link or third-party web page. A successful attack allows the attacker to access any cookies, session tokens, or other sensitive information retained by the browser and used with that site 
 
 You can test by detecting user-defined variables and how to input them. This includes hidden or non-obvious inputs such as HTTP parameters, POST data, hidden form field values, and predefined radio or selection values. You then analyze each found vector to see if their are potential vulnerabilities, then when found you craft input data with each input vector. Then you test the crafted input and see if it works.
-	
+
 </b></details>
 
 <details>
@@ -5594,6 +9901,10 @@ You can test by using a stored procedure, so the application must be sanitize th
 </b></details>
 
 <details>
+<summary>What is port scanning? When is it used?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is the difference between asynchronous and synchronous encryption?</summary><br><b>
 </b></details>
 
@@ -5610,7 +9921,7 @@ You can test by using a stored procedure, so the application must be sanitize th
 </b></details>
 
 <details>
-<summary>Describe how do you secure public repositories</summary>
+<summary>Describe how do you secure public repositories</summary><br><b>
 </b></details>
 
 <details>
@@ -5623,7 +9934,7 @@ You can test by using a stored procedure, so the application must be sanitize th
 DNS spoofing occurs when a particular DNS server’s records of “spoofed” or altered maliciously to redirect traffic to the attacker. This redirection of traffic allows the attacker to spread malware, steal data, etc.
 
 **Prevention**
-- Use encrypted data transfer protocols - Using end-to-end encryption vian SSL/TLS will help decrease the chance that a website / its visitors are compromised by DNS spoofing. 
+- Use encrypted data transfer protocols - Using end-to-end encryption vian SSL/TLS will help decrease the chance that a website / its visitors are compromised by DNS spoofing.
 - Use DNSSEC - DNSSEC, or Domain Name System Security Extensions, uses digitally signed DNS records to help determine data authenticity.
 - Implement DNS spoofing detection mechanisms - it’s important to implement DNS spoofing detection software. Products such as XArp help product against ARP cache poisoning by inspecting the data that comes through before transmitting it.
 
@@ -5633,8 +9944,10 @@ DNS spoofing occurs when a particular DNS server’s records of “spoofed” or
 <summary>What can you tell me about Stuxnet?</summary><br><b>
 
 Stuxnet is a computer worm that was originally aimed at Iran’s nuclear facilities and has since mutated and spread to other industrial and energy-producing facilities. The original Stuxnet malware attack targeted the programmable logic controllers (PLCs) used to automate machine processes. It generated a flurry of media attention after it was discovered in 2010 because it was the first known virus to be capable of crippling hardware and because it appeared to have been created by the U.S. National Security Agency, the CIA, and Israeli intelligence.
+</b></details>
 
-
+<details>
+<summary>What can you tell me about the BootHole vulnerability?</summary><br><b>
 </b></details>
 
 <details>
@@ -5667,7 +9980,7 @@ Spectre is an attack method which allows a hacker to “read over the shoulder�
 Cross-Site Request Forgery (CSRF) is an attack that makes the end user to initate a unwanted action on the web application in which the user has a authenticated session, the attacker may user an email and force the end user to click on the link and that then execute malicious actions. When an CSRF attack is successful it will compromise the end user data 
 
 You can use OWASP ZAP to analyze a "request", and if it appears that there no protection against cross-site request forgery when the Security Level is set to 0 (the value of csrf-token is SecurityIsDisabled.) One can use data from this request to prepare a CSRF attack by using OWASP ZAP
-	
+
 </b></details>
 
 <details>
@@ -5701,8 +10014,6 @@ HTTP Header Injection vulnerabilities occur when user input is insecurely includ
 <summary>Explain what is Buffer Overflow</summary><br><b>
 
 A buffer overflow (or buffer overrun) occurs when the volume of data exceeds the storage capacity of the memory buffer. As a result, the program attempting to write the data to the buffer overwrites adjacent memory locations.
-
-
 </b></details>
 
 ##### Containers
@@ -5715,14 +10026,15 @@ A buffer overflow (or buffer overrun) occurs when the volume of data exceeds the
 <summary>Explain what is Docker Bench</summary><br><b>
 </b></details>
 
-<a name="security-advanced"></a>
-#### :baby: Advanced
-
 <details>
 <summary>Explain MAC flooding attack</summary><br><b>
 
 MAC address flooding attack (CAM table flooding attack) is a type of network attack where an attacker connected to a switch port floods the switch interface with very large number of Ethernet frames with different fake source MAC address.
 
+</b></details>
+
+<details>
+<summary>What is port flooding?</summary><br><b>
 </b></details>
 
 <details>
@@ -5736,17 +10048,24 @@ MAC address flooding attack (CAM table flooding attack) is a type of network att
 <details>
 <summary>What is Cache Poisoned Denial of Service?</summary><br><b>
 
-CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipulating certain header requests, the attacker forces the origin server to return a Bad Request error which is stored in the CDN’s cache. Thus, every request that comes after the attack will get an error page. 
+CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipulating certain header requests, the attacker forces the origin server to return a Bad Request error which is stored in the CDN’s cache. Thus, every request that comes after the attack will get an error page.
 
+</b></details>
+
+#### Security - Threats
+
+<details>
+<summary>Explain "Advanced persistent threat (APT)"</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a "Backdoor" in information security?</summary><br><b>
 </b></details>
 
 ## Puppet
 
-<a name="puppet-beginner"></a>
-#### :baby: Beginner
-
 <details>
-<summary>What is Puppet? How it works?</summary><br><b>
+<summary>What is Puppet? How does it works?</summary><br><b>
 </b></details>
 
 <details>
@@ -5773,9 +10092,6 @@ CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipula
 <summary>What is MCollective?</summary><br><b>
 </b></details>
 
-<a name="puppet-advanced"></a>
-#### :baby: Advanced
-
 <details>
 <summary>Do you have experience with writing modules? Which module have you created and for what?</summary><br><b>
 </b></details>
@@ -5786,39 +10102,20 @@ CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipula
 
 ## Elastic
 
-<a name="elastic-beginner"></a>
-#### :baby: Beginner
-
 <details>
 <summary>What is the Elastic Stack?</summary><br><b>
 
 The Elastic Stack consists of:
 
   * Elasticsearch
-  * Elastic Hadoop
   * Kibana
   * Logstash
   * Beats
+  * Elastic Hadoop
   * APM Server
 
-The most used projects are the Elasticserach, Logstash and Kibana. Also known as the ELK stack.
+Elasticserach, Logstash and Kibana are also known as the ELK stack.
 </b></details>
-
-<details>
-<summary>Describe what happens from the moment the app logged some information until it's displayed to the user in the dashboard when the Elastic stack is used</summary><br><b>  
-
-1. The data logged by the application is sent to Elasticsearch
-2. Elasticsearch stores the document it got and the document is indexed for quick future access
-3. Logstash processes the data
-4. The user creates visualizations which uses the index in elasticsearch and more specifically the data there (this is done in Kibana).
-5. The user creates a dashboard which composed out of the visualization created earlier
-</b></details>
-
-<details>
-<summary>You are running an app which outputs several log files (without timestamps). What do you do in order to process the information they include and display it in Kibana? you can ask for additional information if required for answering this question</summary><br><b>
-</b></details>
-
-##### Elasticsearch
 
 <details>
 <summary>Explain what is Elasticsearch</summary><br><b>
@@ -5826,6 +10123,75 @@ The most used projects are the Elasticserach, Logstash and Kibana. Also known as
 From the official [docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/documents-indices.html):
 
 "Elasticsearch is a distributed document store. Instead of storing information as rows of columnar data, Elasticsearch stores complex data structures that have been serialized as JSON documents"
+</b></details>
+
+<details>
+<summary>What is Logstash?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what beats are</summary><br><b>
+
+Beats are lightweight data shippers. These data shippers installed on the client where the data resides.
+Examples of beats: Filebeat, Metricbeat, Auditbeat. There are much more.<br>
+</b></details>
+
+<details>
+<summary>What is Kibana?</summary><br><b>
+
+From the official docs:
+
+"Kibana is an open source analytics and visualization platform designed to work with Elasticsearch. You use Kibana to search, view, and interact with data stored in Elasticsearch indices. You can easily perform advanced data analysis and visualize your data in a variety of charts, tables, and maps."
+</b></details>
+
+<details>
+<summary>Describe what happens from the moment an app logged some information until it's displayed to the user in a dashboard when the Elastic stack is used</summary><br><b>
+
+The process may vary based on the chosen architecture and the processing you may want to apply to the logs. One possible workflow is:
+
+1. The data logged by the application is picked by filebeat and sent to logstash
+2. Logstash process the log based on the defined filters. Once done, the output is sent to Elasticsearch
+2. Elasticsearch stores the document it got and the document is indexed for quick future access
+4. The user creates visualizations in Kibana which based on the indexed data
+5. The user creates a dashboard which composed out of the visualization created in the previous step
+</b></details>
+
+##### Elasticsearch
+
+<details>
+<summary>What is a data node?</summary><br><b>
+
+This is where data is stored and also where different processing takes place (e.g. when you search for a data).
+</b></details>
+
+<details>
+<summary>What is a master node?</summary><br><b>
+
+Par of a master node responsibilites:
+  * Track the status of all the nodes in the cluster
+  * Verify replicas are working and the data is available from every data node.
+  * No hot nodes (no data node that works much harder than other nodes)
+
+While there can be multiple master nodes in reality only of them is the elected master node.
+</b></details>
+
+<details>
+<summary>What is an ingest node?</summary><br><b>
+
+A node which responsible for parsing the data. In case you don't use logstash then this node can recieve data from beats and parse it, similarly to how it can be parsed in Logstash.
+</b></details>
+
+<details>
+<summary>What is Coordinating node?</summary><br><b>
+
+A Coordinating node responsible for routing requests out and in to the cluser (data nodes).
+</b></details>
+
+<details>
+<summary>How data is stored in elasticsearch?</summary><br><b>
+
+* Data is stored in an index
+* The index is spread across the cluster using shards
 </b></details>
 
 <details>
@@ -5837,6 +10203,13 @@ You can choose to have one index to hold all the data of your app or have multip
 The official docs also offer a great explanation (in general, it's really good documentation, as every project should have):
 
 "An index can be thought of as an optimized collection of documents and each document is a collection of fields, which are the key-value pairs that contain your data"
+</b></details>
+
+<details>
+<summary>Explain Shards</summary><br><b>
+
+An index is split into shards and documents are hashed to a particular shard. Each shard may be on a different node in a cluster and each one of the shards is a self contained index.<br>
+This allows Elasticsearch to scale to an entire cluster of servers.
 </b></details>
 
 <details>
@@ -5855,10 +10228,16 @@ As in NoSQL a Document is a JSON object which holds data on a unit in your app. 
 </b></details>
 
 <details>
+<summary>You check the health of your elasticsearch cluster and it's red. What does it mean? What can cause the status to be yellow instead of green?</summary><br><b>
+
+Red means some data is unavailable.
+Yellow can be caused by running single node cluster instead of multi-node.
+</b></details>
+
+<details>
 <summary>True or False? Elasticsearch indexes all data in every field and each indexed field has the same data structure for unified and quick query ability</summary><br><b>
 
 False.
-
 From the official docs:
 
 "Each indexed field has a dedicated, optimized data structure. For example, text fields are stored in inverted indices, and numeric and geo fields are stored in BKD trees."
@@ -5885,25 +10264,42 @@ From the official docs:
 </b></details>
 
 <details>
-<summary>Explain Shards</summary><br><b>
-
-An index is split into shards and documents are hashed to a particular shard. Each shard may be on a different node in a cluster and each one of the shards is a self contained index.<br>
-This allows Elasticsearch to scale to an entire cluster of servers.
-</b></details>
-
-<details>
 <summary>Explain Replicas</summary><br><b>
 
 In a network/cloud environment where failures can be expected any time, it is very useful and highly recommended to have a failover mechanism in case a shard/node somehow goes offline or disappears for whatever reason.
 To this end, Elasticsearch allows you to make one or more copies of your index’s shards into what are called replica shards, or replicas for short.
-
-
 </b></details>
 
 <details>
 <summary>Can you explain Term Frequency & Document Frequency?</summary><br><b>
 
 Term Frequency is how often a term appears in a given document and Document Frequency is how often a term appears in all documents. They both are used for determining the relevance of a term by calculating Term Frequency / Document Frequency.
+</b></details>
+
+<details>
+<summary>You check "Current Phase" under "Index lifecycle management" and you see it's set to "hot". What does it mean?</summary><br><b>
+
+"The index is actively being written to".
+More about the phases [here](https://www.elastic.co/guide/en/elasticsearch/reference/7.6/ilm-policy-definition.html)
+</b></details>
+
+<details>
+<summary>What this command does? <code>curl -X PUT "localhost:9200/customer/_doc/1?pretty" -H 'Content-Type: application/json' -d'{ "name": "John Doe" }'</code></summary><br><b>
+
+It creates customer index if it doesn't exists and adds a new document with the field name which is set to "John Dow". Also, if it's the first document it will get the ID 1.
+</b></details>
+
+<details>
+<summary>What will happen if you run the previous command twice? What about running it 100 times?</code></summary><br><b>
+
+1. If name value was different then it would update "name" to the new value
+2. In any case, it bumps version field by one
+</b></details>
+
+<details>
+<summary>What is the Bulk API? What would you use it for?</code></summary><br><b>
+
+Bulk API is used when you need to index multiple documents. For high number of documents it would be significantly faster to use rather than individual requests since there are less network roundtrips.
 </b></details>
 
 ##### Query DSL
@@ -5926,6 +10322,15 @@ From the official docs:
 "In a filter context, a query clause answers the question “Does this document match this query clause?” The answer is a simple Yes or No — no scores are calculated. Filter context is mostly used for filtering structured data"
 </b></details>
 
+<details>
+<summary>Describe how would an architecture of production environment with large amounts of data would be different from a small-scale environment</summary><br><b>
+
+There are several possible answers for this question. One of them is as follows:
+
+A small-scale architecture of elastic will consist of the elastic stack as it is. This means we will have beats, logstash, elastcsearch and kibana.<br>
+A production environment with large amounts of data can include some kind of buffering component (e.g. Reddis or RabbitMQ) and also security component such as Nginx.
+</b></details>
+
 ##### Logstash
 
 <details>
@@ -5937,23 +10342,49 @@ From the official docs:
 </b></details>
 
 <details>
-<summary>What are Logstash Codecs?</summary><br><b>
+<summary>What is grok?</summary><br><b>
+
+A logstash plugin which modifies information in one format and immerse it in another.
+</b></details>
+
+<details>
+<summary>How grok works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What grok patterns are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is `_grokparsefailure?`</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you test or debug grok patterns?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are Logstash Codecs? What codecs are there?</summary><br><b>
 </b></details>
 
 ##### Kibana
 
 <details>
-<summary>What is Kibana?</summary><br><b>
+<summary>What can you find under "Discover" in Kibana?</summary><br><b>
 
-From the official docs:
-
-"Kibana is an open source analytics and visualization platform designed to work with Elasticsearch. You use Kibana to search, view, and interact with data stored in Elasticsearch indices. You can easily perform advanced data analysis and visualize your data in a variety of charts, tables, and maps."
+The raw data as it is stored in the index. You can search and filter it.
 </b></details>
 
 <details>
 <summary>You see in Kibana, after clicking on Discover, "561 hits". What does it mean?</summary><br><b>
 
 Total number of documents matching the search results. If not query used then simply the total number of documents.
+</b></details>
+
+<details>
+<summary>What can you find under "Visualize"?</summary><br><b>
+
+"Visualize" is where you can create visual representations for your data (pie charts, graphs, ...)
 </b></details>
 
 <details>
@@ -5968,28 +10399,41 @@ Total number of documents matching the search results. If not query used then si
 <summary>Describe in detail how do you create a dashboard in Kibana</summary><br><b>
 </b></details>
 
-##### Beats
+#### Filebeat
 
 <details>
 <summary>What is Filebeat?</summary><br><b>
 </b></details>
 
-<a name="elastic-advanced"></a>
-#### :star: Advnaced
+<details>
+<summary>If one is using ELK, is it a must to also use filebeat? In what scenarios it's useful to use filebeat?</summary><br><b>
+</b></details>
 
 <details>
-<summary>Describe how would an architecture of production environment with large amounts of data would be different from a small-scale environment</summary><br><b>
+<summary>What is a harvester?</summary><br><b>
 
-There are several possible answers for this question. One of them is as follows:
+Read [here](https://www.elastic.co/guide/en/beats/filebeat/current/how-filebeat-works.html#harvester)
+</b></details>
 
-A small-scale architecture of elastic will consist of the elastic stack as it is. This means we will have beats, logstash, elastcsearch and kibana.<br>
-A production environment with large amounts of data can include some kind of buffering component (e.g. Reddis or RabbitMQ) and also security component such as Nginx.
+<details>
+<summary>True or False? a single harvester harvest multiple files, according to the limits set in filebeat.yml</summary><br><b>
+
+False. One harvester harvests one file.
+</b></details>
+
+<details>
+<summary>What are filebeat modules?</summary><br><b>
+</b></details>
+
+#### Elastic Stack
+
+<details>
+<summary>How do you secure an Elastic Stack?</summary><br><b>
+
+You can generate certificates with the provided elastic utils and change configuration to enable security using certificates model.
 </b></details>
 
 ## DNS
-
-<a name="dns-beginner"></a>
-#### :baby: Beginner
 
 <details>
 <summary>What is DNS? What is it used for?</summary><br><b>
@@ -6015,6 +10459,17 @@ In general the process is as follows:
 </b></details>
 
 <details>
+<summary>Explain the resolution sequence of: www.site.com</summary><br><b>
+
+It's resolved in this order:
+
+1) .
+2) .com
+3) site.com
+4) www.site.com
+</b></details>
+
+<details>
 <summary>What types of DNS records are there?</summary><br><b>
 
   * A
@@ -6026,13 +10481,13 @@ In general the process is as follows:
 <details>
 <summary>What is a A record?</summary><br><b>
 
-
 A (Address) Maps a host name to an IP address. When a computer has multiple adapter cards and IP addresses, it should have multiple address records.
-
 </b></details>
 
 <details>
 <summary>What is a AAAA record?</summary><br><b>
+
+An AAAA Record performs the same function as an A Record, but for an IPv6 Address.
 </b></details>
 
 <details>
@@ -6044,15 +10499,22 @@ While an A record points a domain name to an IP address, a PTR record does the o
 <details>
 <summary>What is a MX record?</summary><br><b>
 MX (Mail Exchange) Specifies a mail exchange server for the domain, which allows mail to be delivered to the correct mail servers in the domain.
-
 </b></details>
 
 <details>
 <summary>Is DNS using TCP or UDP?</summary><br><b>
+
+DNS uses UDP port 53 for resolving queries either regular or reverse. DNS uses TCP for zone transfer.
 </b></details>
 
 <details>
-<summary>What is Round Robin DNS?</summary><br><b>
+<summary>True or False? DNS can be used for load balancing</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>Which techniques a DNS can use for load balancing?</summary><br><b>
 </b></details>
 
 <details>
@@ -6071,6 +10533,17 @@ MX (Mail Exchange) Specifies a mail exchange server for the domain, which allows
 According to Martin Kleppmann:
 
 "Many processes running on many machines...only message-passing via an unreliable network with variable delays, and the system may suffer from partial failures, unreliable clocks, and process pauses."
+
+Another definition: "Systems that are physically separated, but logically connected"
+</b></details>
+
+<details>
+<summary>What can cause a system to fail?</summary><br><b>
+
+* Network
+* CPU
+* Memory
+* Disk
 </b></details>
 
 <details>
@@ -6080,7 +10553,28 @@ According to the CAP theorem, it's not possible for a distributed data store to 
 
 * Availability: Every request receives a response (it doesn't has to be the most recent data)
 * Consistency: Every request receives a response with the latest/most recent data
-* Partition tolerance: Even if some the data is lost/dropped, the system keeps running 
+* Partition tolerance: Even if some the data is lost/dropped, the system keeps running
+</b></details>
+
+<details>
+<summary>What are the problems with the following design? How to improve it?<br>
+<img src="images/distributed/distributed_design_standby.png" width="500x;" height="350px;"/>
+</summary><br><b>
+1. The transition can take time. In other words, noticeable downtime.
+2. Standby server is a waste of resources - if first application server is running then the standby does nothing
+</b></details>
+
+<details>
+<summary>What are the problems with the following design? How to improve it?<br>
+<img src="images/distributed/distributed_design_lb.png" width="700x;" height="350px;"/>
+</summary><br><b>
+Issues:
+If load balancer dies , we lose the ability to communicate with the application.
+
+Ways to improve:
+* Add another load balancer
+* Use DNS A record for both load balancers
+* Use message queue
 </b></details>
 
 <details>
@@ -6089,7 +10583,17 @@ According to the CAP theorem, it's not possible for a distributed data store to 
 It's an architecture in which data is and retrieved from a single, non-shared, source usually exclusively connected to one node as opposed to architectures where the request can get to one of many nodes and the data will be retrieved from one shared location (storage, memory, ...).
 </b></details>
 
+<details>
+<summary>Explain the Sidecar Pattern (Or sidecar proxy)</summary><br><b>
+</b></details>
+
 ## General
+
+<details>
+<summary>What is a server?</summary><br><b>
+
+A computer which serves data from itself to the client.
+</b></details>
 
 <details>
 <summary>Define or Explain what is an API</summary><br><b>
@@ -6097,6 +10601,120 @@ It's an architecture in which data is and retrieved from a single, non-shared, s
 I like this definition from [here](https://blog.christianposta.com/microservices/api-gateways-are-going-through-an-identity-crisis):
 
 "An explicitly and purposefully defined interface designed to be invoked over a network that enables software developers to get programmatic access to data and functionality within an organization in a controlled and comfortable way."
+</b></details>
+
+<details>
+<summary>Tell me about interesting bugs you've found and also fixed</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a Debuggger and how it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Metadata?</summary><br><b>
+
+Data about data. Basically, it describes the type of information that an underlying data will hold.
+</b></details>
+
+<details>
+<summary>You can use one of the following formats: JSON, YAML, XML. Which one would you use? Why?</summary><br><b>
+
+I can't answer this for you :)
+</b></details>
+
+#### YAML
+
+<details>
+<summary>What is YAML?</summary><br><b>
+
+Data serialization language used by many technologies today like Kubernetes, Ansible, etc.
+</b></details>
+
+<details>
+<summary>True or False? Any valid JSON file is also a valid YAML file</summary><br><b>
+
+True. Because YAML is superset of JSON.
+</b></details>
+
+<details>
+<summary>What is the format of the following data?
+
+```
+{
+    applications: [
+        {
+            name: "my_app",
+            language: "python",
+            version: 20.17
+        }
+    ]
+}
+```
+</summary><br><b>
+JSON
+</b></details>
+
+<details>
+<summary>What is the format of the following data?
+
+```
+applications:
+  - app: "my_app"
+    language: "python"
+    version: 20.17
+```
+</summary><br><b>
+YAML
+</b></details>
+
+<details>
+<summary>How to write a multi-line string with YAML? What use cases is it good for?</summary><br><b>
+
+```
+someMultiLineString: |
+  look mama
+  I can write a multi-line string
+  I love YAML
+```
+
+It's good for use cases like writing a shell script where each line of the script is a different command.
+</b></details>
+
+<details>
+<summary>What is the difference between <code>someMultiLineString: |</code> to <code>someMultiLineString: ></code>?</summary><br><b>
+
+using `>` will make the multi-line string to fold into a single line
+
+```
+someMultiLineString: >
+  This is actually
+  a single line
+  do not let appearances fool you
+```
+</b></details>
+
+<details>
+<summary>What are placeholders in YAML?</summary><br><b>
+
+They allow you reference values instead of directly writing them and it is used like this:
+
+```
+username: {{ my.user_name }}
+```
+</b></details>
+
+<details>
+<summary>How can you define multiple YAML components in one file?</summary><br><b>
+
+Using this: `---`
+For Examples:
+
+```
+document_number: 1
+---
+document_number: 2
+```
 </b></details>
 
 #### Jira
@@ -6111,6 +10729,44 @@ I like this definition from [here](https://blog.christianposta.com/microservices
 
 <details>
 <summary>What is a project in Jira?</summary><br><b>
+</b></details>
+
+#### Kafka
+
+<details>
+<summary>What is Kafka?</summary><br><b>
+</b></details>
+
+<details>
+<summary>In Kafka, how to automatically balance brokers leadership of partitions in a cluster?
+
+  * Enable auto leader election and reduce the imbalance
+percentage ratio
+  * Manually rebalance by using kafkat
+  * Configure group.initial.rebalance.delay.ms to 3000
+  * All of the above
+</summary><br><b>
+</b></details>
+
+#### Cassandra
+
+<details>
+<summary>When running a cassandra cluster, how often do you need to run nodetool repair in order to keep the cluster consistent?
+
+  * Within the columnFamily GC-grace Once a week
+  * Less than the compacted partition minimum bytes
+  * Depended on the compaction strategy
+</summary><br><b>
+</b></details>
+
+#### Customers and Service Providers
+
+<details>
+<summary>What is SLO (service-level objective)?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is SLA (service-level agreement)?</summary><br><b>
 </b></details>
 
 #### HTTP
@@ -6133,13 +10789,13 @@ I like this definition from [here](https://blog.christianposta.com/microservices
 <details>
 <summary>True or False? HTTP is stateful</summary><br><b>
 
-False. Server doesn't maintain state for incoming request.
+False. It doesn't maintain state for incoming request.
 </b></details>
 
 <details>
 <summary>How HTTP request looks like?</summary><br><b>
 
-It consits of:
+It consists of:
 
  * Request line - request type
  * Headers - content info like length, enconding, etc.
@@ -6182,43 +10838,133 @@ TODO: explain what is actually a Cookie
 </b></details>
 
 <details>
-<summary>What is HTTP Pipelining?</summary><br><b> 
+<summary>What is HTTP Pipelining?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is a proxy?</summary><br><b> 
+<summary>You get "504 Gateway Timeout" error from an HTTP server. What does it mean?</summary><br><b>
+
+The server didn't receive a response from another server it communicates with in a timely manner.
 </b></details>
 
 <details>
-<summary>What is a reverse proxy?</summary><br><b> 
+<summary>What is a proxy?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is CDN?</summary><br><b> 
+<summary>What is a reverse proxy?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is CDN?</summary><br><b>
 </b></details>
 
 <details>
 <summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with and which one do you prefer to use?</summary><br><b>
 </b></details>
 
-#### Load Balancers
+#### Load Balancing
 
 <details>
-<summary>What is a load balancer?</summary><br><b> 
+<summary>What is a load balancer?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What load balancer algorithms are you familiar with?</summary><br><b>
+<summary>What load balancer techniques/algorithms are you familiar with?</summary><br><b>
+
+  * Round Robin
+  * Weighted Round Robin
+  * Least Connection
+  * Weighted Least Connection
+  * Resource Based
+  * Fixed Weighting
+  * Weighted Response Time
+  * Source IP Hash
+  * URL Hash
+</b></details>
+
+<details>
+<summary>What are the drawbacks of round robin algorithm in load balancing?</summary><br><b>
+
+  * A simple round robin algorithm knows nothing about the load and the spec of each server it forwards the requests to. It is possible, that multiple heavy workloads requests will get to the same server while other servers will got only lightweight requests which will result in one server doing most of the work, maybe even crashing at some point because it unable to handle all the heavy workloads requests by its own.
+  * Each request from the client creates a whole new session. This might be a problem for certain scenarios where you would like to perform multiple operations where the server has to know about the result of operation so basically, being sort of aware of the history it has with the client. In round robin, first request might hit server X, while second request might hit server Y and ask to continue processing the data that was processed on server X already.
 </b></details>
 
 <details>
 <summary>What is an Application Load Balancer?</summary><br><b>
 </b></details>
 
+<details>
+<summary>At what layers a load balancer can operate?</summary><br><b>
+
+L4 and L7
+</b></details>
+
+<details>
+<summary>Can you perform load balancing without using a dedicated load balancer instance?</summary><br><b>
+
+Yes, you can use DNS for performing load balancing.
+</b></details>
+
+<details>
+<summary>What is DNS load balancing? What its advantages? When would you use it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are sticky sessions? What are their pros and cons?</summary><br><b>
+
+Recommended read:
+  * [Red Hat Article](https://access.redhat.com/solutions/900933)
+
+Cons:
+  * Can cause uneven load on instance (since requests routed to the same instances)
+Pros:
+  * Ensures in-proc sessions are not lost when a new request is created
+</b></details>
+
+<details>
+<summary>Explain each of the following load balancing techniques
+
+  * Round Robin
+  * Weighted Round Robin
+  * Least Connection
+  * Weighted Least Connection
+  * Resource Based
+  * Fixed Weighting
+  * Weighted Response Time
+  * Source IP Hash
+  * URL Hash
+</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain use case for connection draining?</summary><br><b>
+To ensure that a Classic Load Balancer stops sending requests to instances that are de-registering or unhealthy, while keeping the existing connections open, use connection draining. This enables the load balancer to complete in-flight requests made to instances that are de-registering or unhealthy.
+
+The maximum timeout value can be set between 1 and 3,600 seconds on both GCP and AWS.
+
+</b></details>
+
+#### Licenses
+
+<details>
+<summary>Are you familiar with "Creative Commons"? What do you know about it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the differences between copyleft and permissive licenses</summary><br><b>
+
+In Copyleft, any derivative work must use the same licensing while in permissive licensing there are no such condition. GPL-3 is an example of copyleft license while BSD is an example of permissive license.
+</b></details>
+
 #### Random
 
 <details>
 <summary>How a search engine works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How auto completion works?</summary><br><b>
 </b></details>
 
 <details>
@@ -6251,7 +10997,7 @@ https://idiallo.com/blog/c10k-2016
 
 ## HR
 
-Although the following questions are not DevOps related, they are still quite common and part of the DevOps interview process so it's better to prepare for them as well.
+These are not DevOps related questions as you probably noticed, but since they are part of the DevOps interview process I've decided it might be good to keep them
 
 <details>
 <summary>Tell us little bit about yourself</summary><br><b>
@@ -6263,10 +11009,6 @@ Although the following questions are not DevOps related, they are still quite co
 
 <details>
 <summary>What was most challenging part in the project you worked on?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Why do you want to work here?</summary><br><b>
 </b></details>
 
 <details>
@@ -6289,18 +11031,11 @@ Relax, there is no wrong or right answer here...I think.
 </b></details>
 
 <details>
-<summary>Where do you see yourself in 5 years?</summary><br><b>
-
-Some ideas (some of them bad and should not be used):
-
-* Senior DevOps
-* Manager
-* Retirement
-* Your manager
+<summary>Where do you see yourself 5 years down the line?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Give an example of a time you were able to change the view of a team about a particular tool/project/technology</summary><br><b>
+<summary>Give an example of a time when you were able to change the view of a team about a particular tool/project/technology</summary><br><b>
 </b></details>
 
 <details>
@@ -6349,9 +11084,27 @@ You know the best :)
 You can use and elaborate on one or all of the following:
 
 * Passion
-* Motivation 
+* Motivation
 * Autodidact
 * Creativity (be able to support it with some actual examples)
+</b></details>
+
+#### Pointless Questions
+
+<details>
+<summary>Why do you want to work here?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Why are you looking to leave your current place?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are your strengths and weaknesses?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Where do you see yourself in five years?</summary><br><b>
 </b></details>
 
 #### Team Lead
@@ -6378,18 +11131,22 @@ These are only a suggestion, use them carefully. Not every interviewer will be a
 <details>
 <summary>What is the current level of technical debt you are dealing with?</summary><br><b>
 
-Be careful when asking this question - all companies, regardless of size, have some level of tech debt. 
+Be careful when asking this question - all companies, regardless of size, have some level of tech debt.
 Phrase the question in the light that all companies have the deal with this, but you want to see the current
 pain points they are dealing with <br>
 
-This is a great way to figure how managers deal with unplanned work, and how good they are at 
+This is a great way to figure how managers deal with unplanned work, and how good they are at
 setting expectations with projects.
+</b></details>
+
+<details>
+<summary>Why I should NOT join you? (or 'what you don't like about working here?')</summary><br><b>
 </b></details>
 
 <details>
 <summary>What was your favorite project you've worked on?</summary><br><b>
 
-This can give you insights in some of the cool projects a company is working on, and if 
+This can give you insights in some of the cool projects a company is working on, and if
 you would enjoy working on projects like these. This is also a good way to see if
 the managers are allowing employees to learn and grow with projects outside of the
 normal work you'd do.
@@ -6414,11 +11171,19 @@ Not only this will tell you what is expected from you, it will also provide big 
 ## Testing
 
 <details>
-<summary>What types of tests would you run for web application?</summary><br><b>
+<summary>Explain white-box testing</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain black-box testing</summary><br><b>
 </b></details>
 
 <details>
 <summary>What are unit tests?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What types of tests would you run to test a web application?</summary><br><b>
 </b></details>
 
 <details>
@@ -6451,6 +11216,14 @@ Not only this will tell you what is expected from you, it will also provide big 
 ## Databases
 
 <details>
+<summary>What is sharding?</summary><br><b>
+
+Sharding is a horizontal partitioning.
+
+Are you able to explain what is it good for?
+</b></details>
+
+<details>
 <summary>What is a connection pool?</summary><br><b>
 
 Connection Pool is a cache of database connections and the reason it's used is to avoid an overhead of establishing a connection for every query done to a database.
@@ -6475,19 +11248,13 @@ A connection leak is a situation where database connection isn't closed after be
 </b></details>
 
 <details>
-<summary>What is a connection leak?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is a Data Warehouse?</summary><br><b>
 
 "A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of organisation's decision-making process"
 </b></details>
 
 <details>
-<summary>What is a data lake?</summary><br><b>
-
-A single data source (at least usually) which is stored in a raw format.
+<summary>Explain what is a time-series database</summary><br><b>
 </b></details>
 
 <details>
@@ -6496,6 +11263,12 @@ A single data source (at least usually) which is stored in a raw format.
 
 <details>
 <summary>What is OLAP (Online Analytical Processing)?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an index in a database?</summary><br><b>
+
+A database index is a data structure that improves the speed of operations in a table. Indexes can be created using one or more columns, providing the basis for both rapid random lookups and efficient ordering of access to records.
 </b></details>
 
 ## Regex
@@ -6536,9 +11309,15 @@ Bonus: extract the last word of each line
 <summary>Replace 'red' with 'green'</summary><br><b>
 </b></details>
 
-## Design
+## System Designotebookn
+
+This section contains only questions on System Design subject. The exercises can be found in [system-design-notebook repository](https://github.com/bregman-arie/system-design-notebook).
 
 #### Architecture
+
+<details>
+<summary>Explain what is a "Single point of failure" and give an example</summary><br><b>
+</b></details>
 
 <details>
 <summary>Explain "3-Tier Architecture" (including pros and cons)</summary><br><b>
@@ -6553,15 +11332,59 @@ Bonus: extract the last word of each line
 </b></details>
 
 <details>
-<summary>What are the advantages of micro-services architecture over a monolithic architecture?</summary><br><b>
+<summary>What are the advantages of microoservices architecture over a monolithic architecture?</summary><br><b>
+
+* Each of the services individually fail without escalating into an application-wide outage.
+* Each service can be developed and maintained by a separate team and this team can choose its own tools and coding language
+</b></details>
+
+<details>
+<summary>What's a service mesh?</summary><br><b>
+
+[This article](https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh) provides a great explanation.
+</b></details>
+
+<details>
+<summary>Explain "Loose Coupling"</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a message queue? When is it used?</summary><br><b>
 </b></details>
 
 #### Scalability
 
 <details>
+<summary>Explain Scalability</summary><br><b>
+
+The ability easily grow in size and capacity based on demand and usage.
+</b></details>
+
+<details>
+<summary>Explain Elasticity</summary><br><b>
+
+The ability to grow but also to reduce based on what is required
+</b></details>
+
+<details>
+<summary>Explain Fault Tolerance and High Availability</summary><br><b>
+
+Fault Tolerance - The ability to self-heal and return to normal capacity. Also the ability to withstand a failure and remain functional.
+
+High Availability - Being able to access a resource (in some use cases, using different platforms)
+</b></details>
+
+<details>
 <summary>Explain Vertical Scaling</summary><br><b>
 
 Vertical Scaling is the process of adding resources to increase power of existing servers. For example, adding more CPUs, adding more RAM, etc.
+</b></details>
+
+<details>
+<summary>What are the disadvantages of Vertical Scaling?</summary><br><b>
+
+With vertical scaling alone, the component still remains a single point of failure.
+In addition, it has hardware limit where if you don't have more resources, you might not be able to scale vertically.
 </b></details>
 
 <details>
@@ -6571,14 +11394,29 @@ Horizontal Scaling is the process of adding more resources that will be able han
 </b></details>
 
 <details>
+<summary>What is the disadvange of Horizontal Scaling? What is often required in order to perform Horizontal Scaling?</summary><br><b>
+
+A load balancer. You can add more resources, but if you would like them to be part of the process, you have to serve them the requests/responses.
+Also, data inconsistency is a concern with horizontal scaling.
+</b></details>
+
+<details>
+<summary>Explain Resiliency and what ways are there to make a system more resilient</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "Consistent Hashing"</summary><br><b>
+</b></details>
+
+<details>
 <summary>How would you update each of the services in the following drawing without having app (foo.com) downtime?<br>
-<img src="images/design/cdn-no-downtime.png" width="200x;" height="300px;"/>
+<img src="images/design/cdn-no-downtime.png" width="300x;" height="400px;"/>
 </summary><br><b>
 </b></details>
 
 <details>
 <summary>What is the problem with the following architecture and how would you fix it?<br>
-<img src="images/design/producers_consumers_issue.png" width="300x;" height="200px;"/>
+<img src="images/design/producers_consumers_issue.png" width="400x;" height="300px;"/>
 </summary><br><b>
 
 The load on the producers or consumers may be high which will then cause them to hang or crash.<br>
@@ -6597,6 +11435,42 @@ Instead of working in "push mode", the consumers can pull tasks only when they a
 <summary>How would you scale the architecture from the previous question to hundreds of users?</summary><br><b>
 </b></details>
 
+#### Cache
+
+<details>
+<summary>What is "cache"? In which cases would you use it?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is "distributed cache"?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a "cache replacement policy"?</summary><br><b>
+
+Take a look [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
+</b></details>
+
+<details>
+<summary>Which cache replacement policies are you familiar with?</summary><br><b>
+
+You can find a list [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
+</b></details>
+
+<details>
+<summary>Explain the following cache policies:
+
+  * FIFO
+  * LIFO
+  * LRU</summary><br><b>
+
+Read about it [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
+</b></details>
+
+<details>
+<summary>Why not writing everything to cache instead of a database/datastore?</summary><br><b>
+</b></details>
+
 #### Migrations
 
 <details>
@@ -6605,14 +11479,246 @@ Instead of working in "push mode", the consumers can pull tasks only when they a
 You can mention:
 
 roll-back & roll-forward
-cut over 
-dress rehearsals 
+cut over
+dress rehearsals
 DNS redirection
 </b></details>
 
 <details>
 <summary>Explain "Branch by Abstraction" technique</summary><br><b>
 </b></details>
+
+#### Design a system
+
+<details>
+<summary>Can you design a video streaming website?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you design a photo upload website?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How would you build a URL shortener?</summary><br><b>
+</b></details>
+
+## Hardware
+
+<details>
+<summary>What is a CPU?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is RAM?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an embedded system?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you give an example of an embedded system?</summary><br><b>
+
+Raspberry Pi
+</b></details>
+
+<details>
+<summary>What types of storage are there?</summary><br><b>
+</b></details>
+
+## Big Data
+
+<details>
+<summary>Explain what is exactly Big Data</summary><br><b>
+
+As defined by Doug Laney:
+
+* Volume: Extremely large volumes of data
+* Velocity: Real time, batch, streams of data
+* Variety: Various forms of data, structured, semi-structured and unstructured
+* Veracity or Variability: Inconsistent, sometimes inaccurate, varying data
+</b></details>
+
+<details>
+<summary>What is DataOps? How is it related to DevOps?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Data Architecture?</summary><br><b>
+
+An answer from [talend.com](https://www.talend.com/resources/what-is-data-architecture):
+
+"Data architecture is the process of standardizing how organizations collect, store, transform, distribute, and use data. The goal is to deliver relevant data to people who need it, when they need it, and help them make sense of it."
+</b></details>
+
+<details>
+<summary>Explain the different formats of data</summary><br><b>
+
+* Structured - data that has defined format and length (e.g. numbers, words)
+* Semi-structured - Doesn't conform to a specific format but is self-describing (e.g. XML, SWIFT)
+* Unstructured - does not follow a specific format (e.g. images, test messages)
+</b></details>
+
+<details>
+<summary>What is a Data Warehouse?</summary><br><b>
+
+[Wikipedia's explanation on Data Warehouse](https://en.wikipedia.org/wiki/Data_warehouse)
+[Amazon's explanation on Data Warehouse](https://aws.amazon.com/data-warehouse)
+</b></details>
+
+<details>
+<summary>What is Data Lake?</summary><br><b>
+
+[Data Lake - Wikipedia](https://en.wikipedia.org/wiki/Data_lake)
+</b></details>
+
+<details>
+<summary>Can you explain the difference between a data lake and a data warehouse?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is "Data Versioning"? What models of "Data Versioning" are there?</summary><br><b>
+</b></details>
+
+#### Apache Hadoop
+
+<details>
+<summary>Explain what is Hadoop</summary><br><b>
+
+[Apache Hadoop - Wikipedia](https://en.wikipedia.org/wiki/Apache_Hadoop)
+</b></details>
+
+<details>
+<summary>Explain Hadoop YARN</summary><br><b>
+
+Responsible for managing the compute resources in clusters and scheduling users' applications
+</b></details>
+
+<details>
+<summary>Explain Hadoop MapReduce</summary><br><b>
+
+A programming model for large-scale data processing
+</b></details>
+
+<details>
+<summary>Explain Hadoop Distributed File Systems (HDFS)</summary><br><b>
+
+* Distributed file system providing high aggregate bandwidth across the cluster.
+* For a user it looks like a regular file system structure but behind the scenes it's distributed across multiple machines in a cluster
+* Typical file size is TB and it can scale and supports millions of files
+* It's fault tolerant which means it provides automatic recovery from faults
+* It's best suited for running long batch operations rather than live analysis
+</b></details>
+
+<details>
+<summary>What do you know about HDFS architecture?</summary><br><b>
+
+[HDFS Architecture](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html)
+
+* Master-slave architecture
+* Namenode - master, Datanodes - slaves
+* Files split into blocks
+* Blocks stored on datanodes
+* Namenode controls all metadata
+</b></details>
+
+## Ceph
+
+<details>
+<summary>Explain what is Ceph</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? Ceph favor consistency and correctness over performances</summary><br><b>
+True
+</b></details>
+
+<details>
+<summary>Which services or types of storage Ceph supports?</summary><br><b>
+
+* Object (RGW)
+* Block (RBD)
+* File (CephFS)
+</b></details>
+
+<details>
+<summary>What is RADOS?</summary><br><b>
+
+* Reliable Autonomic Distributed Object Storage
+* Provides low-level data object storage service
+* Strong Consistency
+* Simplifies design and implementation of higher layers (block, file, object)
+</b></details>
+
+<details>
+<summary>Describe RADOS software components</summary><br><b>
+
+* Monitor
+  * Central authority for authentication, data placement, policy
+  * Coordination point for all other cluster components
+  * Protect critical cluster state with Paxos
+* Manager
+  * Aggregates real-time metrics (throughput, disk usage, etc.)
+  * Host for pluggable management functions
+  * 1 active, 1+ standby per cluster
+* OSD (Object Storage Daemon)
+  * Stores data on an HDD or SSD
+  * Services client IO requests
+</b></details>
+
+<details>
+<summary>What is the workflow of retrieving data from Ceph?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the workflow of retrieving data from Ceph?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are "Placement Groups"?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe in the detail the following: Objects -> Pool -> Placement Groups -> OSDs</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is OMAP?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a metadata server? How it works?</summary><br><b>
+</b></details>
+
+## Packer
+
+<details>
+<summary>What is Packer? What is it used for?</summary><br><b>
+
+In general, Packer automates machine images creation.
+It allows you to focus on configuration prior to deployment while making the images. This allows you start the instances much faster in most cases.
+</b></details>
+
+<details>
+<summary>Packer follows a "configuration->deployment" model or "deployment->configuration"?</summary><br><b>
+
+A configuration->deployment which has some advantages like:
+
+1. Deployment Speed - you configure once prior to deployment instead of configuring every time you deploy. This allows you to start instances/services much quicker.
+2. More immutable infrastructure - with configuration->deployment it's not likely to have very different deployments since most of the configuration is done prior to the deployment. Issues like dependencies errors are handled/discovered prior to deployment in this model.
+</b></details>
+
+## Certificates
+
+If you are looking for a way to prepare for a certain exam this is the section for you. Here you'll find a list of certificates, each references to a separate file with focused questions that will help you to prepare to the exam. Good luck :)
+
+#### AWS
+
+* [Cloud Practitioner](certificates/cloud-practitioner.md) (Latest update: 2020)
+
+#### Kubernetes
+
+* [Certified Kubernetes Administrator (CKA)](certificates/cka.md) (Latest update: 2020)
 
 ## Exercises
 
@@ -6625,16 +11731,40 @@ Exercises are all about:
 
 Below you can find several exercises
 
+#### Containers
 * [Writing a Dockerfile and running a container](exercises/write_dockerfile_run_container.md)
-* [Elasticsearch & Kibana on AWS](exercises/elk_kibana_aws.md)
-* [Ansible, Minikube and Docker](exercises/ansible_minikube_docker.md)
-* [Cloud Slack bot](exercises/cloud_slack_bot.md)
+
+#### Jenkins
+
 * [Jenkins: writing scripts](exercises/jenkins_scripts.md)
 * [Jenkins: writing pipelines](exercises/jenkins_pipelines.md)
+
+#### CI
+
 * [CI for open source project](exercises/ci_for_open_source_project.md)
+
+#### Programming
+
+* [grep before and after](exercises/programming/grep_berfore_and_after.md)
+* [web scrapper](exercises/programming/web_scraper.md)
+
+#### Mixed
+
 * [Flask, Containers and CI](exercises/flask_container_ci/README.md)
 * [Flask, Containers and CI 2](exercises/flask_container_ci2/README.md)
 
+#### Misc
+
+* [Elasticsearch & Kibana on AWS](exercises/misc/elk_kibana_aws.md)
+* [ELK & Filebeat](exercises/eflk.md)
+* [Ansible, Minikube and Docker](exercises/ansible_minikube_docker.md)
+* [Cloud Slack bot](exercises/cloud_slack_bot.md)
+
+## Other DevOps Projects
+
+<p align="center"><a href="https://github.com/bregman-arie/howtheydevops"><img src="images/how_they_devops.png"/></a></p>
+<p align="center"><a href="https://github.com/bregman-arie/devops-resources"><img src="images/devops_resources.png"/></a></p>
+<p align="center"><a href="https://github.com/bregman-arie/infraverse"><img src="images/infraverse.png"/></a></p>
 
 ## Credits
 

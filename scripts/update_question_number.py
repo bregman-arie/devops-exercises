@@ -21,7 +21,9 @@ file_list = [line.rstrip() for line in file]
 question_list = get_question_list(file_list)
 question_count = len(question_list)
 total_count = question_count + get_challenges_count()
-
+print(question_count)
+print(get_challenges_count())
+print(total_count)
 for line in file:
     if LINE_FLAG in line:
         file[file.index(line)] = b':bar_chart: &nbsp;There are currently **%s** questions\r\n' %\

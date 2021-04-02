@@ -41,7 +41,8 @@ def get_question_list(file_list: List[bytes]) -> list:
 
 def get_answered_questions(question_list: List[List[bytes]]) -> list:
     """Dont let the type hint confuse you, problem of not using classes.
-     It needs the result of get_question_list(file_list)
+
+     It takes the result of get_question_list(file_list)
 
      Returns a list of questions that are answered.
      """
@@ -63,7 +64,7 @@ def get_answered_questions(question_list: List[List[bytes]]) -> list:
 
 
 def get_challenges_count() -> int:
-    challenges_path = pathlib.Path(__file__).parent.parent.joinpath('challenges').glob('*.md')
+    challenges_path = pathlib.Path(__file__).parent.parent.joinpath('exercises').glob('*.md')
     return len(list(challenges_path))
 
 
