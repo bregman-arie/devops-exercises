@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1540** questions
+:bar_chart: &nbsp;There are currently **1553** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -59,7 +59,7 @@
     <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
     <td align="center"><a href="#databases"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
     <td align="center"><a href="#regex"><img src="images/regex.png" width="75ph;" height="75px;" alt="RegEx"/><br /><b>Regex</b></a></td>
-    <td align="center"><a href="https://github.com/bregman-arie/system-design-exercises"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
+    <td align="center"><a href="#system-design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
     <td align="center"><a href="#hardware"><img src="images/hardware.png" width="110px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
     <td align="center"><a href="#big-data"><img src="images/big-data.png" width="110px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
     <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
@@ -78,12 +78,6 @@
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 <!-- ALL-TOPICS-LIST:END -->
-
-## Linux Master Application
-
-A completely free application for testing your knowledge on Linux
-
-<a href="https://play.google.com/store/apps/details?id=com.codingshell.linuxmaster"><img src="images/linux_master.jpeg"/></a>
 
 ## DevOps
 
@@ -474,6 +468,14 @@ Note: cross-dependency is when you have two or more changes to separate projects
 <summary>What is Distributed Tracing?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is GitOps?</summary><br><b>
+
+GitLab: "GitOps is an operational framework that takes DevOps best practices used for application development such as version control, collaboration, compliance, and CI/CD tooling, and applies them to infrastructure automation".
+
+Read more [here](https://about.gitlab.com/topics/gitops)
+</b></details>
+
 #### SRE
 
 <details>
@@ -719,6 +721,10 @@ It's important to note that:
 
 * Serverless Computing is still using servers. So saying there are no servers in serverless computing is completely wrong
 * Serverless Computing allows you to have a different paying model. You basically pay only when your functions are running and not when the VM or containers are running as in other payment models
+</b></details>
+
+<details>
+<summary>Can we replace any type of computing on servers with serverless?</summary><br><b>
 </b></details>
 
 <details>
@@ -3945,6 +3951,12 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 <summary>Why there are different sections in man? What is the difference between the sections?</summary><br><b>
 </b></details>
 
+#### Linux Master Application
+
+A completely free application for testing your knowledge on Linux
+
+<a href="https://play.google.com/store/apps/details?id=com.codingshell.linuxmaster"><img src="images/linux_master.jpeg"/></a>
+
 ## Operating System
 
 <details>
@@ -4044,6 +4056,42 @@ Cache: Cache is usually used when processes reading and writing to the disk to m
 
 <details>
 <summary>Explain what is Virtualization</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a hypervisor?</summary><br><b>
+
+Red Hat: "A hypervisor is software that creates and runs virtual machines (VMs). A hypervisor, sometimes called a virtual machine monitor (VMM), isolates the hypervisor operating system and resources from the virtual machines and enables the creation and management of those VMs."
+
+Read more [here](https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor)
+</b></details>
+
+<details>
+<summary>What types of hypervisors are there?</summary><br><b>
+
+Hosted hypervisors and bare-metal hypervisors.
+</b></details>
+
+<details>
+<summary>What are the advantages and disadvantges of bare-metal hypervisor over a hosted hypervisor?</summary><br><b>
+
+Due to having its own drivers and a direct access to hardware components, a baremetal hypervisor will often have better performances along with stability and scalability.
+
+On the other hand, there will probably be some limitation regarding loading (any) drivers so a hosted hypervisor will usually benefit from having a better hardware compatibility.
+</b></details>
+
+<details>
+<summary>What types of virtualization are there?</summary><br><b>
+
+Operating system virtualization
+Network functions virtualization
+Desktop virtualization
+</b></details>
+
+<details>
+<summary>Is containerization is a type of Virtualization?</summary><br><b>
+
+Yes, it's a operating-system-level virtualization, where the kernel is shared and allows to use multiple isolated user-spaces instances.
 </b></details>
 
 <details>
@@ -4663,8 +4711,9 @@ Output variables are named values that are sourced from the attributes of a modu
 The primary difference between containers and VMs is that containers allow you to virtualize
 multiple workloads on the operating system while in the case of VMs the hardware is being virtualized to
 run multiple machines each with its own OS.
+You can also think about it as containers are for OS-level virtualization while VMs are for hardware virtualization.
 
-* Containers don't require an entire guest operating system as VMs
+* Containers don't require an entire guest operating system as VMs. Containers share the system's kernel as opposed to VMs
 * It usually takes a few seconds to set up a container as opposed to VMs which can take minutes or at least more time than containers as there is an entire OS to boot and initialize as opposed to container where you mainly lunch the app itself
 * Containers are isolated from each other, but not as concretely as virtual machines. It is possible for a malicious user to break into the host OS from a container and vice versa.
 </b></details>
@@ -4977,6 +5026,12 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
 </b></details>
 
 <details>
+<summary>Deploy a pod called "my-pod" using the nginx:alpine image</summary><br><b>
+
+`kubectl run my-pod --image=nginx:alpine --restart=Never`
+</b></details>
+
+<details>
 <summary>How many containers can a pod contain?</summary><br><b>
 
 Multiple containers but in most cases it would be one container per pod.
@@ -5050,13 +5105,25 @@ Another way is using the deployment configuration file: `kubectl delete -f deplo
 The pod related to the deployment will terminate and the replicaset will be removed.
 </b></details>
 
+<details>
+<summary>How make an app accessible on private or external network?</summary><br><b>
+
+Using a Service.
+</b></details>
+
 #### Kubernetes Service
 
 <details>
 <summary>What is a Service in Kubernetes?</summary><br><b>
-"An abstract way to expose an application running on a set of Pods as a network service." - more [here](https://kubernetes.io/docs/concepts/services-networking/service)
+"An abstract way to expose an application running on a set of Pods as a network service." - read more [here](https://kubernetes.io/docs/concepts/services-networking/service)
 
-Note: Even if connected to a pod, their lifecycles aren't connected.
+In simpler words, it allows you to expose the service by attaching permanent IP address for example to a certain pod.
+</b></details>
+
+<details>
+<summary>True or False? The lifecycle of Pods and Services isn't connected so when a pod dies, the service still stays </summary><br><b>
+
+True
 </b></details>
 
 <details>
@@ -9732,7 +9799,7 @@ A list of services and their endpoints
 ## Security
 
 <details>
-<summary>Can you describe the DevSecOps core principals? (or what is DevSecOps)</summary><br><b>
+<summary>What is DevSecOps? What its core principals?</summary><br><b>
 </b></details>
 
 <details>
@@ -9780,7 +9847,13 @@ Access control based on user roles (i.e., a collection of access authorizations 
 
 </b></details>
 
-## Security SSH
+## Security - Web
+
+<details>
+<summary>What is Nonce?</summary><br><b>
+</b></details>
+
+## Security - SSH
 
 <details>
 <summary>What is SSH how does it work?</summary><br><b>
@@ -11309,11 +11382,7 @@ Bonus: extract the last word of each line
 <summary>Replace 'red' with 'green'</summary><br><b>
 </b></details>
 
-## System Designotebookn
-
-This section contains only questions on System Design subject. The exercises can be found in [system-design-notebook repository](https://github.com/bregman-arie/system-design-notebook).
-
-#### Architecture
+#### System Design
 
 <details>
 <summary>Explain what is a "Single point of failure" and give an example</summary><br><b>
@@ -11398,6 +11467,10 @@ Horizontal Scaling is the process of adding more resources that will be able han
 
 A load balancer. You can add more resources, but if you would like them to be part of the process, you have to serve them the requests/responses.
 Also, data inconsistency is a concern with horizontal scaling.
+</b></details>
+
+<details>
+<summary>Explain when in which use cases will you use vertical scaling and in which use cases you will use horizontal scaling</summary><br><b>
 </b></details>
 
 <details>
@@ -11502,6 +11575,12 @@ DNS redirection
 <summary>How would you build a URL shortener?</summary><br><b>
 </b></details>
 
+#### More System Design Questions
+
+Additional exercises can be found in [system-design-notebook repository](https://github.com/bregman-arie/system-design-notebook).
+
+<p align="center"><a href="https://github.com/bregman-arie/system-design-notebook"><img src="images/system_design_notebook.png"/></a></p>
+
 ## Hardware
 
 <details>
@@ -11578,6 +11657,10 @@ An answer from [talend.com](https://www.talend.com/resources/what-is-data-archit
 
 <details>
 <summary>What is "Data Versioning"? What models of "Data Versioning" are there?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is ETL?</summary><br><b>
 </b></details>
 
 #### Apache Hadoop
