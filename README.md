@@ -124,22 +124,40 @@ Google:
 
 <details>
 <summary>What is Version Control?</summary><br><b>
+	
+* Version control is the sytem of tracking and managing changes to software code.
+* It helps software teams to manage changes to source code over time.
+* Version control also helps developers move faster and allows software teams to preserve efficiency and agility as the team scales to include more developers.
 </b></details>
 
 <details>
 <summary>What is a commit?</summary><br><b>
+	
+* In Git, a commit is a snapshot of your repo at a specific point in time.
+* The git commit command will save all staged changes, along with a brief description from the user, in a “commit” to the local repository.
 </b></details>
 
 <details>
 <summary>What is a merge?</summary><br><b>
+
+* Merging is Git's way of putting a forked history back together again. The git merge command lets you take the independent lines of development created by git branch and integrate them into a single branch.
 </b></details>
 
 <details>
 <summary>What is a merge conflict?</summary><br><b>
+
+* A merge conflict is an event that occurs when Git is unable to automatically resolve differences in code between two commits. When all the changes in the code occur on different lines or in different files, Git will successfully merge commits without your help.
 </b></details>
 
 <details>
 <summary>What best practices are you familiar with regarding version control?</summary><br><b>
+	
+* Use a descriptive commit message
+* Make each commit a logical unit
+* Incorporate others' changes frequently
+* Share your changes frequently
+* Coordinate with your co-workers
+* Don't commit generated files
 </b></details>
 
 #### CI/CD
