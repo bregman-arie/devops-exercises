@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1553** questions
+:bar_chart: &nbsp;There are currently **1575** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -559,16 +559,15 @@ This might be considered to be an opinionated answer:
 <details>
 <summary>Explain the following:
 
-  * Job
-  * Build
-  * Plugin
-  * Slave/Node/Worker
-  * Executor</summary><br><b>
-
-  * Job is an automation definition = what and where to execute once the user clicks on "build" 
-  * Build is a running instance of a job. You can have one or more builds at any given point of time (unless limited by confiugration)
-  * A worker is the machine/instance on which the build is running. When a build starts, it "acquires" a worker out of a pool to run on it.
-  * An executor is variable of the worker, defining how many builds can run on that worker in parallel. An executor value of 3 means, that 3 builds can run at any point on that executor (not necessarily of the same job. Any builds)
+- Job
+- Build
+- Plugin
+- Node or Worker
+- Executor</summary><br><b>
+- Job is an automation definition = what and where to execute once the user clicks on "build" 
+- Build is a running instance of a job. You can have one or more builds at any given point of time (unless limited by confiugration)
+- A worker is the machine/instance on which the build is running. When a build starts, it "acquires" a worker out of a pool to run on it.
+- An executor is variable of the worker, defining how many builds can run on that worker in parallel. An executor value of 3 means, that 3 builds can run at any point on that executor (not necessarily of the same job. Any builds)
 </b></details>
 
 <details>
@@ -741,11 +740,29 @@ It's important to note that:
   * Availability zone
   * Region
   * Edge location</summary><br><b>
-AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independent of one another.<br>
+AWS regions are data centers hosted across different geographical locations worldwide.<br>
 
 Within each region, there are multiple isolated locations known as Availability Zones. Multiple availability zones ensure high availability in case one of them goes down.<br>
 
 Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
+</b></details>
+
+<details>
+<summary>True or False? Each AWS region is designed to be completely isolated from the other AWS regions </summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>Do you agree with the statement "AWS region should be chosen based on proximity alone"?</summary><br><b>
+
+Note: opinionated answer.
+
+No. There are a couple of factors to consider when choosing a region (order doesn't mean anything):
+
+1. Cost - regions vary in cost and AWS Price List API can assist in calculating the difference in cost between the different regions.
+2. Speed
+3. Features
 </b></details>
 
 #### AWS IAM
@@ -909,11 +926,11 @@ False. Charges are being made when the code is executed.
 <details>
 <summary>Which of the following set of languages Lambda supports?
 
-  * R, Swift, Rust, Kotlin
-  * Python, Ruby, Go
-  * Python, Ruby, PHP</summary><br><b>
+- R, Swift, Rust, Kotlin
+- Python, Ruby, Go
+- Python, Ruby, PHP</summary><br><b>
 
-  * Python, Ruby, Go
+- Python, Ruby, Go
 </b></details>
 
 #### AWS Containers
@@ -3905,10 +3922,6 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 </b></details>
 
 <details>
-<summary>What is virtual memory?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is the difference between paging and swapping?</summary><br><b>
 </b></details>
 
@@ -3935,7 +3948,7 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 * Software/Packages Management
 </b></details>
 
-#### Linux Advanced - Misc
+#### Linux Misc
 
 <details>
 <summary>Wildcards are implemented on user or kernel space?</summary><br><b>
@@ -3949,6 +3962,18 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 
 <details>
 <summary>Why there are different sections in man? What is the difference between the sections?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is User-mode Linux?</summary><br><b>
+</b></details>
+
+#### Linux Nerds
+
+<details>
+<summary>Under which license Linux is distributed? </summary><br><b>
+
+GPL v2
 </b></details>
 
 #### Linux Master Application
@@ -3965,6 +3990,18 @@ A completely free application for testing your knowledge on Linux
 There are many ways to answer that. For those who look for simplicity, the book "Operating Systems: Three Easy Pieces" offers nice version:
 
 "responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that"
+</b></details>
+
+<details>
+<summary>What is "virtual memory" and what purpose it serves?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is demand paging?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is copy-on-write or shadowing?</summary><br><b>
 </b></details>
 
 <details>
@@ -6833,9 +6870,29 @@ print("{0:.3f}".format(sum(li)/len(li)))
 #### Python Lists
 
 <details>
+<summary>How to add the number 2 to the list <code>x = [1, 2, 3]</code></summary><br><b>
+
+`x.append(2)`
+</b></details>
+
+<details>
+<summary>How to check how many items a list contains?</summary><br><b>
+
+`len(sone_list)`
+</b></details>
+
+<details>
+<summary>How to get the last element of a list?</summary><br><b>
+
+`some_list[-1]`
+</b></details>
+
+<details>
 <summary>How to add the items of [1, 2, 3] to the list [4, 5, 6]?</summary><br><b>
 x = [4, 5, 6]
 x.extend([1, 2, 3])
+
+Don't use `append` unless you would like the list as one item.
 </b></details>
 
 <details>
@@ -6845,12 +6902,11 @@ x.extend([1, 2, 3])
 </b></details>
 
 <details>
-<summary>How do you get the maximum and minimum values from a list? How to get the last item from a list?</summary><br><b>
+<summary>How do you get the maximum and minimum values from a list?</summary><br><b>
 
 ```
 Maximum: max(some_list)
 Minimum: min(some_list)
-Last item: some_list[-1]
 ```
 </b></details>
 
@@ -6992,6 +7048,42 @@ If we call it 3 times, what would be the result each call?
 ['hmm']
 ['hmm', 'hmm']
 ['hmm', 'hmm', 'hmm']
+```
+</b></details>
+
+
+<details>
+<summary>How to iterate over a list?</summary><br><b>
+
+```
+for item in some_list:
+    print(item)
+```
+</b></details>
+
+<details>
+<summary>How to iterate over a list with indexes?</summary><br><b>
+
+```
+for i, item in enumerate(some_list):
+    print(i)
+```
+</b></details>
+
+<details>
+<summary>How to start list iteration from 2nd index?</summary><br><b>
+
+Using range like this
+
+```
+for i in range(1, len(some_list)):
+    some_list[i]
+```
+
+Another way is using slicing
+
+```
+for i in some_list[1:]:
 ```
 </b></details>
 
@@ -7360,6 +7452,14 @@ def reverse_string(string):
 mario
 </b></details>
 
+#### Python Iterators
+
+<details>
+<summary>What is an iterator?</summary><br><b>
+</b></details>
+
+#### Python Misc
+
 <details>
 <summary>Explain data serialization and how do you perform it with Python</summary><br><b>
 </b></details>
@@ -7369,11 +7469,19 @@ mario
 </b></details>
 
 <details>
-<summary>What is an iterator?</summary><br><b>
+<summary>What is a generator? Why using generators?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is a generator? Why using generators?</summary><br><b>
+<summary>What would be the output of the following block?
+
+```
+for i in range(3, 3):
+   print(i)
+```
+</summary><br><b>
+
+No output :)
 </b></details>
 
 <details>
@@ -10936,10 +11044,19 @@ The server didn't receive a response from another server it communicates with in
 <summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with and which one do you prefer to use?</summary><br><b>
 </b></details>
 
-#### Load Balancing
+#### Load Balancers
 
 <details>
 <summary>What is a load balancer?</summary><br><b>
+
+A load balancer accepts (or denies) incoming network traffic from a client, and based on some criteria (application related, network, etc.) it distributes those communications out to servers (at least one).
+</b></details>
+
+<details>
+<summary>What benefits load balancers provide?</summary><br><b>
+
+* Scalability - using a load balancer, you can possibly add more servers in the backend to handle more requests/traffic from the clients, as opposed to using one server.
+* Redundancy - if one server in the backend dies, the load balancer will keep forwarding the traffic/requests to the second server so users won't even notice one of the servers in the backend is down.
 </b></details>
 
 <details>
@@ -10965,6 +11082,10 @@ The server didn't receive a response from another server it communicates with in
 
 <details>
 <summary>What is an Application Load Balancer?</summary><br><b>
+</b></details>
+
+<details>
+<summary>In which scenarios would you use ALB?</summary><br><b>
 </b></details>
 
 <details>
