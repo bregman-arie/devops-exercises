@@ -32,7 +32,7 @@
     <td align="center"><a href="#programming"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Programming</b></a></td>
     <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
     <td align="center"><a href="#go"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a></td>
-    <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
+    <td align="center"><a href="#scripts"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Scripts</b></a></td>
     <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
     <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
     <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a></td>
@@ -2630,7 +2630,7 @@ Alternatively if you are using a distro with systemd it's recommended to use sys
 history command or .bash_history file
 </b></details>
 
-##### Linux Permissions
+#### Linux Permissions
 
 <details>
 <summary>How to change the permissions of a file?</summary><br><b>
@@ -2702,6 +2702,109 @@ True
 * No more inodes
 * No permissions
 </b></details>
+
+#### Linux Shell Scripting
+
+<details>
+<summary>What this line in scripts mean?: <code>#!/bin/bash</code></summary><br><b>
+
+
+`#!/bin/bash` is She-bang
+
+/bin/bash is the most common shell used as default shell for user login of the linux system. The shell’s name is an acronym for Bourne-again shell. Bash can execute the vast majority of scripts and thus is widely used because it has more features, is well developed and better syntax.
+
+</b></details>
+
+<details>
+<summary>True or False?: when a certain command/line fails, the script, by default, will exit and will no keep running</summary><br><b>
+
+Depends on the language and settings used.
+When a script written in Bash fails to run a certain command it will keep running and will execute all other commands mentioned after the command which failed.
+Most of the time we would actually want the opposite to happen. In order to make Bash exist when a specific command fails, use 'set -e' in your script.
+</b></details>
+
+<details>
+<summary>Explain what would be the result of each command:
+
+  * <code>echo $0</code>
+  * <code>echo $?</code>
+  * <code>echo $$</code>
+  * <code>echo $@</code>
+  * <code>echo $#</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you debug shell scripts?</summary><br><b>
+
+Answer depends on the language you are using for writing your scripts. If Bash is used for example then:
+
+  * Adding -x to the script I'm running in Bash
+  * Old good way of adding echo statements
+
+If Python, then using pdb is very useful.
+</b></details>
+
+<details>
+<summary>How do you get input from the user in shell scripts?</summary><br><b>
+
+Using the keyword <code>read</code> so for example <code>read x</code> will wait for user input and will store it in the variable x.
+</b></details>
+
+<details>
+<summary>Explain <code>continue</code> and <code>break</code>. When do you use them if at all?</summary><br><b>
+</b></details>
+
+
+<details>
+<summary>Running the following bash script, we don't get 2 as a result, why?
+
+```
+x = 2
+echo $x
+```
+</summary><br><b>
+
+Should be `x=2`
+</b></details>
+
+<details>
+<summary>How to store the output of a command in a variable?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you check variable length?</summary><br><b>
+</b></details>
+
+
+<details>
+<summary>Explain the following code:
+
+<code>:(){ :|:& };:</code>
+
+</summary><br><b>
+</b></details>
+
+<details>
+<summary>Can you give an example to some Bash best practices?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the ternary operator? How do you use it in bash?</summary><br><b>
+
+A short way of using if/else. An example:
+
+[[ $a = 1 ]] && b="yes, equal" || b="nope"
+</b></details>
+
+<details>
+<summary>What does the following code do and when would you use it?
+
+<code>diff <(ls /tmp) <(ls /var/tmp)</code>
+
+</summary><br>
+It is called 'process substitution'. It provides a way to pass the output of a command to another command when using a pipe <code>|</code> is not possible. It can be used when a command does not support <code>STDIN</code> or you need the output of multiple commands.
+https://superuser.com/a/1060002/167769
+</details>
 
 #### Linux systemd
 
@@ -7285,6 +7388,17 @@ with open('file.txt', 'w') as file:
 <summary>Can you write a function which will print all the file in a given directory? including sub-directories</summary><br><b>
 </b></details>
 
+<details>
+<summary>Write a dictionary (variable) to a file</summary><br><b>
+
+```
+import json
+
+with open('file.json', 'w') as f:
+    f.write(json.dumps(dict_var))
+```
+</b></details>
+
 #### Python OS
 
 <details>
@@ -8810,17 +8924,7 @@ Bones question: What is the random seek time in SSD and Magnetic Disk?
 Answer: Magnetic is about 10ms and SSD is somewhere between 0.08 and 0.16ms
 </b></details>
 
-## Shell Scripting
-
-<details>
-<summary>What this line in scripts mean?: <code>#!/bin/bash</code></summary><br><b>
-
-
-`#!/bin/bash` is She-bang
-
-/bin/bash is the most common shell used as default shell for user login of the linux system. The shell’s name is an acronym for Bourne-again shell. Bash can execute the vast majority of scripts and thus is widely used because it has more features, is well developed and better syntax.
-
-</b></details>
+## Scripts
 
 <details>
 <summary>What do you tend to include in every script you write?</summary><br><b>
@@ -8828,21 +8932,13 @@ Answer: Magnetic is about 10ms and SSD is somewhere between 0.08 and 0.16ms
 Few example:
 
   * Comments on how to run it and/or what it does
-  * Adding "set -e" since I want the script to exit if a certain command failed
+  * If a shell script, adding "set -e" since I want the script to exit if a certain command failed
 
-You can have an entirely different answer. It's based only on your experience.
+You can have an entirely different answer. It's based only on your experience and preferences.
 </b></details>
 
 <details>
-<summary>True or False?: when a certain command/line fails, the script, by default, will exit and will no keep running</summary><br><b>
-
-Depends on the language and settings used.
-When a script written in Bash fails to run a certain command it will keep running and will execute all other commands mentioned after the command which failed.
-Most of the time we would actually want the opposite to happen. In order to make Bash exist when a specific command fails, use 'set -e' in your script.
-</b></details>
-
-<details>
-<summary>Today we have tools and technologies like Ansible. Why would someone still use shell scripting?</summary><br><b>
+<summary>Today we have tools and technologies like Ansible. Why would someone still use scripting?</summary><br><b>
 
   * Speed
   * The module we need doesn't exist
@@ -8850,37 +8946,10 @@ Most of the time we would actually want the opposite to happen. In order to make
 </b></details>
 
 <details>
-<summary>Explain what would be the result of each command:
-
-  * <code>echo $0</code>
-  * <code>echo $?</code>
-  * <code>echo $$</code>
-  * <code>echo $@</code>
-  * <code>echo $#</code></summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you debug shell scripts?</summary><br><b>
-
-Answer depends on the language you are using for writing your scripts. If Bash is used for example then:
-
-  * Adding -x to the script I'm running in Bash
-  * Old good way of adding echo statements
-
-If Python, then using pdb is very useful.
-</b></details>
-
-<details>
-<summary>How do you get input from the user in shell scripts?</summary><br><b>
-
-Using the keyword <code>read</code> so for example <code>read x</code> will wait for user input and will store it in the variable x.
-</b></details>
-
-<details>
 <summary>Explain conditionals and how do you use them</summary><br><b>
 </b></details>
 
-#### Shell Scripting - Loops
+#### Scripts - Loops
 
 <details>
 <summary>What is a loop? What types of loops are you familiar with?</summary><br><b>
@@ -8890,32 +8959,9 @@ Using the keyword <code>read</code> so for example <code>read x</code> will wait
 <summary>Demonstrate how to use loops</summary><br><b>
 </b></details>
 
-<details>
-<summary>Explain <code>continue</code> and <code>break</code>. When do you use them if at all?</summary><br><b>
-</b></details>
+#### Writing Scripts
 
-
-<details>
-<summary>Running the following bash script, we don't get 2 as a result, why?
-
-```
-x = 2
-echo $x
-```
-</summary><br><b>
-
-Should be `x=2`
-</b></details>
-
-<details>
-<summary>How to store the output of a command in a variable?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you check variable length?</summary><br><b>
-</b></details>
-
-##### Practical
+Note: write them in any language you prefer
 
 <details>
 <summary>Write a script which will list the differences between two directories</summary><br><b>
@@ -8937,7 +8983,6 @@ then
    mailx -s "Server $SERVERIP is down" -t "$NOTIFYEMAIL" < /dev/null
 fi
 ```
-
 </b></details>
 
 <details>
@@ -8960,35 +9005,14 @@ done
 </b></details>
 
 <details>
-<summary>Explain the following code:
+<summary>Write a script that simulates an elevator</summary><br><b>
 
-<code>:(){ :|:& };:</code>
+Hints:
 
-</summary><br><b>
+* Think what properties an elevator has (direction, position, ...)
+* Don't forget to use constraints and conditionals (can the elevator move down/up in any case?)
+* It might be more comfortable to implement it with a language that supports OOP
 </b></details>
-
-<details>
-<summary>Can you give an example to some Bash best practices?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the ternary operator? How do you use it in bash?</summary><br><b>
-
-A short way of using if/else. An example:
-
-[[ $a = 1 ]] && b="yes, equal" || b="nope"
-</b></details>
-
-<details>
-<summary>What does the following code do and when would you use it?
-
-<code>diff <(ls /tmp) <(ls /var/tmp)</code>
-
-</summary><br>
-It is called 'process substitution'. It provides a way to pass the output of a command to another command when using a pipe <code>|</code> is not possible. It can be used when a command does not support <code>STDIN</code> or you need the output of multiple commands.
-https://superuser.com/a/1060002/167769
-</details>
-
 
 ## SQL
 
