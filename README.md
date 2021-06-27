@@ -84,6 +84,8 @@
 <details>
 <summary>What is DevOps?</summary><br><b>
 
+You can answer it by describing what DevOps means to you and/or rely on how companies define it. I've put here a couple of examples.
+
 Amazon:
 
 "DevOps is the combination of cultural philosophies, practices, and tools that increases an organization’s ability to deliver applications and services at high velocity: evolving and improving products at a faster pace than organizations using traditional software development and infrastructure management processes. This speed enables organizations to better serve their customers and compete more effectively in the market."
@@ -115,9 +117,78 @@ Google:
 <details>
 <summary>What are the anti-patterns of DevOps?</summary><br><b>
 
-* One person is in charge of different tasks. For example there is only one person who is allowed to merge the code of everyone else into the repository
+A couple of examples:
+
+* One person is in charge of specific tasks. For example there is only one person who is allowed to merge the code of everyone else into the repository.
 * Treating production differently from development environment. For example, not implementing security in development environment
 * Not allowing someone to push to production on Friday ;)
+</b></details>
+
+<details>
+<summary>How would you describe a successful DevOps engineer or a team?</summary><br><b>
+
+The answer can focus on:
+
+* Collaboration
+* Communication
+* Set up and improve workflows and processes (related to testing, delivery, ...)
+* Dealing with issues
+
+Things to think about:
+
+* What DevOps teams or engineers should NOT focus on or do?
+* Do DevOps teams or engineers have to be innovative or practice innovation as part of their role?
+</b></details>
+
+#### Tooling
+
+<details>
+<summary>What are you taking into consideration when choosing a tool/technology?</summary><br><b>
+
+A few ideas to think about:
+
+  * mature/stable vs. cutting edge
+  * community size
+  * architecture aspects - agent vs. agentless, master vs. masterless, etc.
+  * learning curve
+</b></details>
+
+<details>
+<summary>Can you describe which tool or platform you chose to use in some of the following areas and how?
+
+  * CI/CD
+  * Provisioning infrastructure
+  * Configuration Management
+  * Monitoring & alerting
+  * Logging
+  * Code review
+  * Code coverage
+  * Issue Tracking
+  * Containers and Containers Orchestration
+  * Tests</summary><br><b>
+
+This is a more practical version of the previous question where you might be asked additional specific questions on the technology you chose
+
+  * CI/CD - Jenkins, Circle CI, Travis, Drone, Argo CD, Zuul
+  * Provisioning infrastructure - Terraform, CloudFormation
+  * Configuration Management - Ansible, Puppet, Chef
+  * Monitoring & alerting - Prometheus, Nagios
+  * Logging - Logstash, Graylog, Fluentd
+  * Code review - Gerrit, Review Board
+  * Code coverage - Cobertura, Clover, JaCoCo
+  * Issue tracking - Jira, Bugzilla
+  * Containers and Containers Orchestration - Docker, Podman, Kubernetes, Nomad
+  * Tests - Robot, Serenity, Gauge
+</b></details>
+
+<details>
+<summary>A team member of yours, suggests to replace the current CI/CD platform used by the organization with a new one. How would you reply?</summary><br><b>
+
+Things to think about:
+
+* What we gain from doing so? Are there new features in the new platform? Does the new platform deals with some of the limitations presented in the current platform?
+* What this suggestion is based on? In other words, did he/she tried out the new platform? Was there extensive technical research?
+* What does the switch from one platform to another will require from the organization? For example, training users who use the platform? How much time the team has to invest in such move?
 </b></details>
 
 #### Version Control
@@ -234,41 +305,6 @@ There are multiple approaches as to where to store the CI/CD pipeline definition
 
 Both have advantages and disadvantages.
 With "configuration->deployment" model for example, where you build one image to be used by multiple deployments, there is less chance of deployments being different from one another, so it has a clear advantage of a consistent environment.
-</b></details>
-
-<details>
-<summary>What tooling are you using for the following areas/tasks? Why?
-
-  * CI/CD
-  * Provisioning infrastructure
-  * Configuration Management
-  * Monitoring & alerting
-  * Logging
-  * Code review
-  * Code coverage
-  * Issue Tracking
-  * Containers and Containers Orchestration
-  * Tests</summary><br><b>
-  * CI/CD - Jenkins, Circle CI, Travis, Drone, Argo CD, Zuul
-  * Provisioning infrastructure - Terraform, CloudFormation
-  * Configuration Management - Ansible, Puppet, Chef
-  * Monitoring & alerting - Prometheus, Nagios
-  * Logging - Logstash, Graylog, Fluentd
-  * Code review - Gerrit, Review Board
-  * Code coverage - Cobertura, Clover, JaCoCo
-  * Issue tracking - Jira, Bugzilla
-  * Containers and Containers Orchestration - Docker, Podman, Kubernetes, Nomad
-  * Tests - Robot, Serenity, Gauge
-</b></details>
-
-<details>
-<summary>What are you taking into consideration when choosing a tool/technology?</summary><br><b>
-
-In your answer you can mention one or more of the following:
-  * mature/stable vs. cutting edge
-  * community size
-  * architecture aspects - agent vs. agentless, master vs. masterless, etc.
-  * learning curve
 </b></details>
 
 <details>
@@ -750,7 +786,7 @@ It's important to note that:
 
 ## AWS
 
-#### Global Infrastructure
+#### AWS Global Infrastructure
 
 <details>
 <summary>Explain the following
@@ -1863,6 +1899,10 @@ Learn more [here](https://aws.amazon.com/codedeploy)
 </b></details>
 
 #### AWS Misc
+
+<details>
+<summary>Which AWS service you have experience with that you think is not very common?</summary><br><b>
+</b></details>
 
 <details>
 <summary>What is AWS CloudSearch?</summary><br><b>
@@ -6064,7 +6104,25 @@ False
 * Delete
 </b></details>
 
+#### Kubernetes Access Control
+
+<details>
+<summary>What is RBAC?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the <code>Role</code> and <code>RoleBinding"</code> objects</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between <code>Role</code> and <code>ClusterRole</code> objects?</summary><br><b>
+</b></details>
+
 #### Kubernetes Misc
+
+<details>
+<summary>Explain what Kubernetes Service Discovery means</summary><br><b>
+</b></details>
 
 <details>
 <summary>You have one Kubernetes cluster and multiple teams that would like to use it. You would like to limit the resources each team consumes in the cluster. Which Kubernetes concept would you use for that?</summary><br><b>
@@ -6146,10 +6204,6 @@ Use "--grace-period=0 --force"
 
 <details>
 <summary>Describe what CustomResourceDefinitions there are in the Kubernetes world? What they can be used for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is RBAC?</summary><br><b>
 </b></details>
 
 <details>
@@ -7469,6 +7523,18 @@ Using the re module
 
 <details>
 <summary>Find the first repeated character in a string</summary><br><b>
+
+While you iterate through the characters, store them in a dictionary and check for every character whether it's already in the dictionary.
+
+```
+def firstRepeatedCharacter(str):
+    chars = {}
+    for ch in str:
+        if ch in chars:
+            return ch
+        else:
+            chars[ch] = 0
+```
 </b></details>
 
 <details>
@@ -8937,15 +9003,17 @@ You can have an entirely different answer. It's based only on your experience an
 <summary>Today we have tools and technologies like Ansible. Why would someone still use scripting?</summary><br><b>
 
   * Speed
-  * The module we need doesn't exist
+  * Flexibility
+  * The module we need doesn't exist (perhaps a weak point because most CM technologies allow to use what is known as "shell" module)
   * We are delivering the scripts to customers who don't have access to the public network and don't necessarily have Ansible installed on their systems.
 </b></details>
+
+
+#### Scripts Fundamentals
 
 <details>
 <summary>Explain conditionals and how do you use them</summary><br><b>
 </b></details>
-
-#### Scripts - Loops
 
 <details>
 <summary>What is a loop? What types of loops are you familiar with?</summary><br><b>
@@ -8997,17 +9065,6 @@ do
     fi
 done
 ```
-
-</b></details>
-
-<details>
-<summary>Write a script that simulates an elevator</summary><br><b>
-
-Hints:
-
-* Think what properties an elevator has (direction, position, ...)
-* Don't forget to use constraints and conditionals (can the elevator move down/up in any case?)
-* It might be more comfortable to implement it with a language that supports OOP
 </b></details>
 
 ## SQL
@@ -11981,9 +12038,10 @@ Below you can find several exercises
 * [Jenkins: writing scripts](exercises/jenkins_scripts.md)
 * [Jenkins: writing pipelines](exercises/jenkins_pipelines.md)
 
-#### CI
+#### CI/CD
 
 * [CI for open source project](exercises/ci_for_open_source_project.md)
+* [Write a pipeline - Docker image and K8](exercises/pipeline_deploy_image_to_k8.md)
 
 #### Programming
 
