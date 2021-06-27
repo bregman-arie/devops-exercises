@@ -6398,10 +6398,6 @@ True
 <summary>What is "Duck Typing"?</summary><br><b>
 </b></details>
 
-<details>
-<summary>What is "Duck Typing"?</summary><br><b>
-</b></details>
-
 ##### Common algorithms
 
 <details>
