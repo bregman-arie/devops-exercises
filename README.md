@@ -3497,10 +3497,16 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 
 <details>
 <summary>How to list all the interfaces?</summary><br><b>
+
+```
+ip link show
+```
 </b></details>
 
 <details>
 <summary>What is the loopback (lo) interface?</summary><br><b>
+
+The loopback interface is a special, virtual network interface that your computer uses to communicate with itself. It is used mainly for diagnostics and troubleshooting, and to connect to servers running on the local machine.
 </b></details>
 
 <details>
@@ -3568,6 +3574,9 @@ Technically, yes.
 
 <details>
 <summary>What is telnet and why is it a bad idea to use it in production? (or at all)</summary><br><b>
+
+Telnet is a type of client-server protocol that can be used to open a command line on a remote computer, typically a server.
+By default, all the data sent and received via telnet is transmitted in clear/plain text, therefore it should not be used as it does not encrypt any data between the client and the server.
 </b></details>
 
 <details>
