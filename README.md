@@ -2492,7 +2492,6 @@ For example:
   * cat
   * cp
   * mkdir
-  * yes
 </summary><br><b>
 </b></details>
 
