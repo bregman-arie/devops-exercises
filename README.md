@@ -2492,6 +2492,7 @@ For example:
   * cat
   * cp
   * mkdir
+  * yes
 </summary><br><b>
 </b></details>
 
@@ -2511,6 +2512,13 @@ It shows a detailed list of files in a long format. From the left:
 These are files directly not displayed after performing a standard ls direct listing. An example of these files are .bashrc which are used to execute some scripts. Some also store configuration about services on your host like .KUBECONFIG. The command used to list them is,
 
 `ls -a`
+</b></details>
+
+<details>
+<summary>What do > and < do in terms of input and output for programs?</summary><br><b>
+They take in input (<) and output for a given file (>) using stdin and stdout.
+
+`myProgram < input.txt > executionOutput.txt`
 </b></details>
 
 <details>
