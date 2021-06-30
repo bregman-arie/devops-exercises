@@ -2514,6 +2514,13 @@ These are files directly not displayed after performing a standard ls direct lis
 </b></details>
 
 <details>
+<summary>What do > and < do in terms of input and output for programs?</summary><br><b>
+They take in input (<) and output for a given file (>) using stdin and stdout.
+
+`myProgram < input.txt > executionOutput.txt`
+</b></details>
+
+<details>
 <summary>Explain what each of the following commands does and give an example on how to use it:
 
   * sed
