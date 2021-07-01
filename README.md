@@ -710,6 +710,16 @@ You can describe the UI way to add new nodes but better to explain how to do in 
 
 <details>
 <summary>What is Cloud Computing? What is a Cloud Provider?</summary><br><b>
+
+Cloud computing refers to the delivery of on-demand computing services 
+over the internet on a pay-as-you-go basis.
+
+In simple words, Cloud computing is a service that lets you use any computing
+service such as a server, storage, networking, databases, and intelligence, 
+right through your browser without owning anything. You can do anything you 
+can think of unless it doesn’t require you to stay close to your hardware.
+
+Cloud service providers are companies that establish public clouds, manage private clouds, or offer on-demand cloud computing components (also known as cloud computing services) like Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS), and Software-as-a-Service(SaaS). Cloud services can reduce business process costs when compared to on-premise IT.
 </b></details>
 
 <details>
@@ -1537,6 +1547,8 @@ False. Only one internet gateway can be attached to a single VPC.
 
 <details>
 <summary>What is an Elastic IP address?</summary><br><b>
+An Elastic IP address is a reserved public IP address that you can assign to any EC2 instance in a particular region, until you choose to release it.
+When you associate an Elastic IP address with an EC2 instance, it replaces the default public IP address. If an external hostname was allocated to the instance from your launch settings, it will also replace this hostname; otherwise, it will create one for the instance. The Elastic IP address remains in place through events that normally cause the address to change, such as stopping or restarting the instance.
 </b></details>
 
 <details>
@@ -2093,6 +2105,9 @@ Packets that are sent on the ethernet are always coming from a MAC address and s
 
 <details>
 <summary>When is this MAC address used?: ff:ff:ff:ff:ff:ff</summary><br><b>
+
+
+When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. It needs to be used in order for all devices to receive your packet at the datalink layer.
 </b></details>
 
 <details>
@@ -2338,7 +2353,10 @@ Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 </b></details>
 
 <details>
-<summary>What is NAT? How does it works?</summary><br><b>
+<summary>What is NAT? How does it work?</summary><br><b>
+
+NAT stands for network address translation. It’s a way to map multiple local private addresses to a public one before transferring the information. Organizations that want multiple devices to employ a single IP address use NAT, as do most home routers.
+For example, your computer's private IP could be 192.168.1.100, but your router maps the traffic to it's public IP (e.g. 1.1.1.1). Any device on the internet would see the traffic coming from your public IP (1.1.1.1) instead of your private IP (192.168.1.100).
 </b></details>
 
 <details>
