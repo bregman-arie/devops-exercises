@@ -2640,6 +2640,8 @@ Using a pipe in Linux, allows you to send the output of one to another (also cal
 
 <details>
 <summary>What is special about the /tmp directory when compared to other directories?</summary><br><b>
+
+`/tmp` folder get cleaned automatically, usually upon reboot.
 </b></details>
 
 <details>
@@ -11835,14 +11837,20 @@ Additional exercises can be found in [system-design-notebook repository](https:/
 
 <details>
 <summary>What is a CPU?</summary><br><b>
+
+A central processing unit (CPU) performs basic arithmetic, logic, controlling, and input/output (I/O) operations specified by the instructions in the program. This contrasts with external components such as main memory and I/O circuitry, and specialized processors such as graphics processing units (GPUs).
 </b></details>
 
 <details>
 <summary>What is RAM?</summary><br><b>
+
+RAM (Random Access Memory) is the hardware in a computing device where the operating system (OS), application programs and data in current use are kept so they can be quickly reached by the device's processor. RAM is the main memory in a computer. It is much faster to read from and write to than other kinds of storage, such as a hard disk drive (HDD), solid-state drive (SSD) or optical drive.
 </b></details>
 
 <details>
 <summary>What is an embedded system?</summary><br><b>
+
+An embedded system is a computer system - a combination of a computer processor, computer memory, and input/output peripheral devices—that has a dedicated function within a larger mechanical or electronic system. It is embedded as part of a complete device often including electrical or electronic hardware and mechanical parts. 
 </b></details>
 
 <details>
@@ -11870,6 +11878,9 @@ As defined by Doug Laney:
 
 <details>
 <summary>What is DataOps? How is it related to DevOps?</summary><br><b>
+
+ DataOps seeks to reduce the end-to-end cycle time of data analytics, from the origin of ideas to the literal creation of charts, graphs and models that create value. 
+ DataOps combines Agile development, DevOps and statistical process controls and applies them to data analytics.
 </b></details>
 
 <details>
