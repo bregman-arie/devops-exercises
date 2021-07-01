@@ -661,6 +661,8 @@ The pipelines will have multiple stages:
 
 <details>
 <summary>How to secure Jenkins?</summary><br><b>
+
+ [Jenkins documentation](https://www.jenkins.io/doc/book/security/securing-jenkins/) provides some basic intro for securing your Jenkins server.
 </b></details>
 
 <details>
@@ -710,6 +712,16 @@ You can describe the UI way to add new nodes but better to explain how to do in 
 
 <details>
 <summary>What is Cloud Computing? What is a Cloud Provider?</summary><br><b>
+
+Cloud computing refers to the delivery of on-demand computing services 
+over the internet on a pay-as-you-go basis.
+
+In simple words, Cloud computing is a service that lets you use any computing
+service such as a server, storage, networking, databases, and intelligence, 
+right through your browser without owning anything. You can do anything you 
+can think of unless it doesn’t require you to stay close to your hardware.
+
+Cloud service providers are companies that establish public clouds, manage private clouds, or offer on-demand cloud computing components (also known as cloud computing services) like Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS), and Software-as-a-Service(SaaS). Cloud services can reduce business process costs when compared to on-premise IT.
 </b></details>
 
 <details>
@@ -1537,6 +1549,8 @@ False. Only one internet gateway can be attached to a single VPC.
 
 <details>
 <summary>What is an Elastic IP address?</summary><br><b>
+An Elastic IP address is a reserved public IP address that you can assign to any EC2 instance in a particular region, until you choose to release it.
+When you associate an Elastic IP address with an EC2 instance, it replaces the default public IP address. If an external hostname was allocated to the instance from your launch settings, it will also replace this hostname; otherwise, it will create one for the instance. The Elastic IP address remains in place through events that normally cause the address to change, such as stopping or restarting the instance.
 </b></details>
 
 <details>
@@ -2093,6 +2107,9 @@ Packets that are sent on the ethernet are always coming from a MAC address and s
 
 <details>
 <summary>When is this MAC address used?: ff:ff:ff:ff:ff:ff</summary><br><b>
+
+
+When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. It needs to be used in order for all devices to receive your packet at the datalink layer.
 </b></details>
 
 <details>
@@ -2338,7 +2355,10 @@ Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 </b></details>
 
 <details>
-<summary>What is NAT? How does it works?</summary><br><b>
+<summary>What is NAT? How does it work?</summary><br><b>
+
+NAT stands for network address translation. It’s a way to map multiple local private addresses to a public one before transferring the information. Organizations that want multiple devices to employ a single IP address use NAT, as do most home routers.
+For example, your computer's private IP could be 192.168.1.100, but your router maps the traffic to it's public IP (e.g. 1.1.1.1). Any device on the internet would see the traffic coming from your public IP (1.1.1.1) instead of your private IP (192.168.1.100).
 </b></details>
 
 <details>
@@ -2622,6 +2642,8 @@ Using a pipe in Linux, allows you to send the output of one to another (also cal
 
 <details>
 <summary>What is special about the /tmp directory when compared to other directories?</summary><br><b>
+
+`/tmp` folder get cleaned automatically, usually upon reboot.
 </b></details>
 
 <details>
@@ -4269,7 +4291,9 @@ Cache: Cache is usually used when processes reading and writing to the disk to m
 ## Virtualization
 
 <details>
-<summary>Explain what is Virtualization</summary><br><b>
+<summary>What is Virtualization?</summary><br><b>
+
+Virtualization uses software to create an abstraction layer over computer hardware that allows the hardware elements of a single computer—processors, memory, storage and more - to be divided into multiple virtual computers, commonly called virtual machines (VMs).
 </b></details>
 
 <details>
@@ -4873,10 +4897,14 @@ Output variables are named values that are sourced from the attributes of a modu
 
 <details>
 <summary>Explain Modules</summary>
+
+A Terraform module is a set of Terraform configuration files in a single directory. Modules are small, reusable Terraform configurations that let you manage a group of related resources as if they were a single resource. Even a simple configuration consisting of a single directory with one or more .tf files is a module. When you run Terraform commands directly from such a directory, it is considered the root module. So in this sense, every Terraform configuration is part of a module.
 </b></details>
 
 <details>
 <summary>What is the Terraform Registry?</summary><br><b>
+
+The Terraform Registry provides a centralized location for official and community-managed providers and modules.
 </b></details>
 
 <details>
@@ -4917,14 +4945,15 @@ Output variables are named values that are sourced from the attributes of a modu
 
 <details>
 <summary>What is a Container? What is it used for?</summary><br><b>
+
+Containers are a form of operating system virtualization. A single container might be used to run anything from a small microservice or software process to a larger application. Inside a container are all the necessary executables, binary code, libraries, and configuration files, making them easy to ship and run with same expected results on different machines.
 </b></details>
 
 <details>
 <summary>How are containers different from virtual machines (VMs)?</summary><br><b>
 
 The primary difference between containers and VMs is that containers allow you to virtualize
-multiple workloads on the operating system while in the case of VMs the hardware is being virtualized to
-run multiple machines each with its own OS.
+multiple workloads on the operating system while in the case of VMs the hardware is being virtualized to run multiple machines each with its own OS.
 You can also think about it as containers are for OS-level virtualization while VMs are for hardware virtualization.
 
 * Containers don't require an entire guest operating system as VMs. Containers share the system's kernel as opposed to VMs
@@ -11817,14 +11846,20 @@ Additional exercises can be found in [system-design-notebook repository](https:/
 
 <details>
 <summary>What is a CPU?</summary><br><b>
+
+A central processing unit (CPU) performs basic arithmetic, logic, controlling, and input/output (I/O) operations specified by the instructions in the program. This contrasts with external components such as main memory and I/O circuitry, and specialized processors such as graphics processing units (GPUs).
 </b></details>
 
 <details>
 <summary>What is RAM?</summary><br><b>
+
+RAM (Random Access Memory) is the hardware in a computing device where the operating system (OS), application programs and data in current use are kept so they can be quickly reached by the device's processor. RAM is the main memory in a computer. It is much faster to read from and write to than other kinds of storage, such as a hard disk drive (HDD), solid-state drive (SSD) or optical drive.
 </b></details>
 
 <details>
 <summary>What is an embedded system?</summary><br><b>
+
+An embedded system is a computer system - a combination of a computer processor, computer memory, and input/output peripheral devices—that has a dedicated function within a larger mechanical or electronic system. It is embedded as part of a complete device often including electrical or electronic hardware and mechanical parts. 
 </b></details>
 
 <details>
@@ -11852,6 +11887,9 @@ As defined by Doug Laney:
 
 <details>
 <summary>What is DataOps? How is it related to DevOps?</summary><br><b>
+
+ DataOps seeks to reduce the end-to-end cycle time of data analytics, from the origin of ideas to the literal creation of charts, graphs and models that create value. 
+ DataOps combines Agile development, DevOps and statistical process controls and applies them to data analytics.
 </b></details>
 
 <details>
