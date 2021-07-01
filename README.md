@@ -661,6 +661,8 @@ The pipelines will have multiple stages:
 
 <details>
 <summary>How to secure Jenkins?</summary><br><b>
+
+ [Jenkins documentation](https://www.jenkins.io/doc/book/security/securing-jenkins/) provides some basic intro for securing your Jenkins server.
 </b></details>
 
 <details>
@@ -4289,7 +4291,9 @@ Cache: Cache is usually used when processes reading and writing to the disk to m
 ## Virtualization
 
 <details>
-<summary>Explain what is Virtualization</summary><br><b>
+<summary>What is Virtualization?</summary><br><b>
+
+Virtualization uses software to create an abstraction layer over computer hardware that allows the hardware elements of a single computer—processors, memory, storage and more - to be divided into multiple virtual computers, commonly called virtual machines (VMs).
 </b></details>
 
 <details>
@@ -4893,10 +4897,14 @@ Output variables are named values that are sourced from the attributes of a modu
 
 <details>
 <summary>Explain Modules</summary>
+
+A Terraform module is a set of Terraform configuration files in a single directory. Modules are small, reusable Terraform configurations that let you manage a group of related resources as if they were a single resource. Even a simple configuration consisting of a single directory with one or more .tf files is a module. When you run Terraform commands directly from such a directory, it is considered the root module. So in this sense, every Terraform configuration is part of a module.
 </b></details>
 
 <details>
 <summary>What is the Terraform Registry?</summary><br><b>
+
+The Terraform Registry provides a centralized location for official and community-managed providers and modules.
 </b></details>
 
 <details>
@@ -4937,14 +4945,15 @@ Output variables are named values that are sourced from the attributes of a modu
 
 <details>
 <summary>What is a Container? What is it used for?</summary><br><b>
+
+Containers are a form of operating system virtualization. A single container might be used to run anything from a small microservice or software process to a larger application. Inside a container are all the necessary executables, binary code, libraries, and configuration files, making them easy to ship and run with same expected results on different machines.
 </b></details>
 
 <details>
 <summary>How are containers different from virtual machines (VMs)?</summary><br><b>
 
 The primary difference between containers and VMs is that containers allow you to virtualize
-multiple workloads on the operating system while in the case of VMs the hardware is being virtualized to
-run multiple machines each with its own OS.
+multiple workloads on the operating system while in the case of VMs the hardware is being virtualized to run multiple machines each with its own OS.
 You can also think about it as containers are for OS-level virtualization while VMs are for hardware virtualization.
 
 * Containers don't require an entire guest operating system as VMs. Containers share the system's kernel as opposed to VMs
