@@ -81,7 +81,7 @@ I listed some roadmaps in [devops-resources](https://github.com/bregman-arie/dev
 
 ### Why some questions repeat themselves?
 
-If you see two identical questions, that's a bug.
+If you see two identical questions, that's a bug.<br>
 If you see two similar questions, that's a feature :D (= it's intentional)
 
 For example:
@@ -89,4 +89,4 @@ For example:
 1. What is horizontal scaling?
 2. The act of adding additional instances to the pool to handle scaling is called ________ scaling
 
-You are right, both ask about horizontal scaling but first of all but, it's done from a different angel every time and in addition, I do believe repetition helps you to learn something better in a way where you are not fixed on one way it's asked.
+You are right, both ask about horizontal scaling but it's done from a different angel in every question and in addition, I do believe repetition helps you to learn something in a way where you are not fixed on the way it's asked, rather you understand the concept itself.
