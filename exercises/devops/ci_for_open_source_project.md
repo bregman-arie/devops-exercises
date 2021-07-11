@@ -9,4 +9,4 @@
 
 ### Bonus
 
-Containerize the app of the project you forked using any containerization technology you want.
+Containerize the app of the project you forked using any containerization technology you would like.

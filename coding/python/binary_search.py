@@ -2,9 +2,10 @@
 
 import random
 
+
 def binary_search(arr, lb, ub, target):
     """
-    A Binary Search Example which has O(log n) time complexity. 
+    A Binary Search Example which has O(log n) time complexity.
     """
     if lb <= ub:
         mid = ub + lb // 2
@@ -16,6 +17,7 @@ def binary_search(arr, lb, ub, target):
             return binary_search(arr, lb, mid - 1, target)
     else:
         return -1
+
 
 if __name__ == '__main__':
     rand_num_li = sorted([random.randint(1, 50) for _ in range(10)])

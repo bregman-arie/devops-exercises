@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1600** questions
+:bar_chart: &nbsp;There are currently **1571** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -26,7 +26,7 @@
     <td align="center"><a href="#ansible"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
     <td align="center"><a href="#Network"><img src="images/network.png" width="80x;" height="75px;" alt="Network"/><br /><b>Network</b></a></td>
     <td align="center"><a href="#linux"><img src="images/linux.png" width="75x;" height="75px;" alt="Linux"/><br /><b>Linux</b></a></td>
-    <td align="center"><a href="#terraform"><img src="images/terraform.png" width="70px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
+
   </tr>
   <tr>
     <td align="center"><a href="#programming"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Programming</b></a></td>
@@ -35,7 +35,6 @@
     <td align="center"><a href="#scripts"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Scripts</b></a></td>
     <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
     <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
-    <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a></td>
   </tr>
   <tr>
     <td align="center"><a href="#cloud"><img src="images/cloud.png" width="110px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a></td>
@@ -44,16 +43,14 @@
     <td align="center"><a href="#gcp"><img src="images/googlecloud.png" width="80px;" height="75px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
     <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a></td>
     <td align="center"><a href="#security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
-    <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a></td>
   </tr>
   <tr>
+    <td align="center"><a href="#operating-system"><img src="images/os.png" width="75px;" height="75px;" alt="Operating System"/><br /><b>Operating System</b></a></td>
     <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a></td>
     <td align="center"><a href="#elastic"><img src="images/elastic.png" width="110px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
     <td align="center"><a href="#virtualization"><img src="images/virtualization.png" width="75px;" height="75px;" alt="Virtualization"/><br /><b>Virtualization</b></a></td>
     <td align="center"><a href="#dns"><img src="images/dns.png" width="75px;" height="75px;" alt="DNS"/><br /><b>DNS</b></a></td>
-    <td align="center"><a href="#operating-system"><img src="images/os.png" width="75px;" height="75px;" alt="Operating System"/><br /><b>Operating System</b></a></td>
-    <td align="center"><a href="#distributed"><img src="images/distributed.png" width="110px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
-    <td align="center"><a href="#general"><img src="images/general.png" width="110px;" height="75px;" alt="General"/><br /><b>General</b></a></td>
+    <td align="center"><a href="#Misc"><img src="images/general.png" width="110px;" height="75px;" alt="Misc"/><br /><b>Misc</b></a></td>
   </tr>
   <tr>
     <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
@@ -62,7 +59,6 @@
     <td align="center"><a href="#system-design"><img src="images/design.png" width="110px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
     <td align="center"><a href="#hardware"><img src="images/hardware.png" width="110px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
     <td align="center"><a href="#big-data"><img src="images/big-data.png" width="110px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
-    <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you ask</b></a></td>
   </tr>
   <tr>
     <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
@@ -71,7 +67,13 @@
     <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
     <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
     <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
-    <td align="center"><a href="#exercises"><img src="images/exercises.png" width="110px;" height="75px;" alt="Exercises"/><br /><b>Exercises</b></a></td>
+  </tr>
+  <tr>
+      <td align="center"><a href="#terraform"><img src="images/terraform.png" width="70px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
+      <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a></td>
+      <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a></td>
+      <td align="center"><a href="#distributed"><img src="images/distributed.png" width="110px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
+      <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you can ask</b></a></td>
   </tr>
 </table>
 </center>
@@ -80,6 +82,14 @@
 <!-- ALL-TOPICS-LIST:END -->
 
 ## DevOps
+
+### DevOps Exercises
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Set up a CI pipeline | CI | [Exercise](exercises/devops/ci_for_open_source_project.md) | | |
+
+### DevOps Self Assessment
 
 <details>
 <summary>What is DevOps?</summary><br><b>
@@ -581,6 +591,15 @@ Read more about it [here](https://sre.google/sre-book/introduction)
 
 ## Jenkins
 
+### Jenkins Exercises
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Remove Jobs | Scripts - Jobs | [Exercise](exercises/jenkins/remove_jobs.md) | [Solution](exercises/jenkins/solutions/remove_jobs_solution.groovy) | |
+| Remove Builds | Scripts - Builds | [Exercise](exercises/jenkins/remove_builds.md) | [Solution](exercises/jenkins/solutions/remove_builds_solution.groovy) | |
+
+### Jenkins Self Assessment
+
 <details>
 <summary>What is Jenkins? What have you used it for?</summary><br><b>
 
@@ -876,8 +895,8 @@ There can be several reasons for that. One of them is lack of policy. To solve t
 <details>
 <summary>What should you use to:
 
-  * Grant access between two services/resources?
-  * Grant user access to resources/services?</summary><br><b>
+  - Grant access between two services/resources?
+  - Grant user access to resources/services?</summary><br><b>
 
   * Role
   * Policy
@@ -994,7 +1013,8 @@ False. Charges are being made when the code is executed.
 
 - R, Swift, Rust, Kotlin
 - Python, Ruby, Go
-- Python, Ruby, PHP</summary><br><b>
+- Python, Ruby, PHP
+</summary><br><b>
 
 - Python, Ruby, Go
 </b></details>
@@ -1058,9 +1078,9 @@ True
 <details>
 <summary>Explain the following:
 
-  * Object Lifecycles
-  * Object Sharing
-  * Object Versioning</summary><br><b>
+  - Object Lifecycles
+  - Object Sharing
+  - Object Versioning</summary><br><b>
 
   * Object Lifecycles - Transfer objects between storage classes based on defined rules of time periods
   * Object Sharing - Share objects via a URL link
@@ -1799,9 +1819,9 @@ Read more about it [here](https://aws.amazon.com/sns)
 <details>
 <summary>Explain the following in regards to SNS:
 
-  * Topics
-  * Subscribers
-  * Publishers</summary><br><b>
+  - Topics
+  - Subscribers
+  - Publishers</summary><br><b>
 
   * Topics - used for grouping multiple endpoints
   * Subscribers - the endpoints where topics send messages to
@@ -1878,12 +1898,13 @@ Learn more [here](https://aws.amazon.com/partners/consulting)
 <details>
 <summary>Which of the following are AWS accounts types (and are sorted by order)?
 
-  * Basic, Developer, Business, Enterprise
-  * Newbie, Intermediate, Pro, Enterprise
-  * Developer, Basic, Business, Enterprise
-  * Beginner, Pro, Intermediate Enterprise</summary><br><b>
+  - Basic, Developer, Business, Enterprise
+  - Newbie, Intermediate, Pro, Enterprise
+  - Developer, Basic, Business, Enterprise
+  - Beginner, Pro, Intermediate Enterprise
+  </summary><br><b>
 
-  * Basic, Developer, Business, Enterprise
+  - Basic, Developer, Business, Enterprise
 </b></details>
 
 <details>
@@ -2489,6 +2510,14 @@ Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-us
 
 ## Linux
 
+#### Linux Master Application
+
+A completely free application for testing your knowledge on Linux
+
+<a href="https://play.google.com/store/apps/details?id=com.codingshell.linuxmaster"><img src="images/linux_master.jpeg"/></a>
+
+### Linux Self Assessment
+
 <details>
 <summary>What is your experience with Linux?</summary><br><b>
 
@@ -2741,9 +2770,9 @@ Its a bit that only allows the owner or the root user to delete or modify the fi
 <details>
 <summary>What the following commands do?
 
-  * chmod
-  * chown
-  * chgrp</summary><br><b>
+  - chmod
+  - chown
+  - chgrp</summary><br><b>
 
   * chmod - changes access permissions to files system objects
   * chown - changes the owner of file system files and directories
@@ -3085,8 +3114,8 @@ It means that the key of the remote host was changed and doesn't match the one t
 <details>
 <summary>What each of the following matches
 
-  * ?
-  * *</summary><br><b>
+  - ?
+  - *</summary><br><b>
 
   * The ? matches any single character
   * The * matches zero or more characters
@@ -4175,12 +4204,6 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 GPL v2
 </b></details>
 
-#### Linux Master Application
-
-A completely free application for testing your knowledge on Linux
-
-<a href="https://play.google.com/store/apps/details?id=com.codingshell.linuxmaster"><img src="images/linux_master.jpeg"/></a>
-
 ## Operating System
 
 <details>
@@ -4943,6 +4966,15 @@ The Terraform Registry provides a centralized location for official and communit
 
 ## Containers
 
+### Containers Exercises
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+|My First Dockerfile|Dockerfile|[Link](exercises/write_dockerfile_run_container.md)|[Link](exercises/write_dockerfile_run_container.md)
+
+
+### Containers Self Assesment
+
 <details>
 <summary>What is a Container? What is it used for?</summary><br><b>
 
@@ -5182,6 +5214,16 @@ Because each container has its own writable container layer, and all changes are
 
 <a name="kubernetes"></a>
 
+### Kubernetes Exercises
+
+#### Developer & Regular User Path
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+|My First Pod|Dockerfile|WIP|WIP
+
+### Kubernetes Self Assesment
+
 <details>
 <summary>What is Kubernetes? Why organizations are using it?</summary><br><b>
 
@@ -5202,6 +5244,10 @@ Red Hat Definition: "A Kubernetes cluster is a set of node machines for running 
 At a minimum, a cluster contains a worker node and a master node."
 
 Read more [here](https://www.redhat.com/en/topics/containers/what-is-a-kubernetes-cluster)
+</b></details>
+
+<details>
+<summary>When or why NOT to use Kubernetes?</summary><br><b>
 </b></details>
 
 #### Kubernetes Nodes
@@ -6865,6 +6911,8 @@ class MyClass(object):
 ```
 </b></details>
 
+#### Python - Exceptions
+
 <details>
 <summary>What is an error? What is an exception? What types of exceptions are you familiar with?</summary><br><b>
 
@@ -6952,6 +7000,20 @@ while True:
 
 For more details about errors and exceptions follow this [https://docs.python.org/3/tutorial/errors.html](https://docs.python.org/3/tutorial/errors.html)
 
+</b></details>
+
+<details>
+<summary>What is the result of running the following function?
+
+```
+def true_or_false():
+    try:
+        return True
+    finally:
+        return False
+```
+</summary><br><b>
+False
 </b></details>
 
 #### Python Built-in functions
@@ -8428,6 +8490,11 @@ Alert manager is responsible for alerts ;)
 </b></details>
 
 ## Git
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| My first Commit | Commit | [Exercise](exercises/git/commit_01.md) | [Solution](exercises/git/solutions/commit_01_solution.md) | |
+| Time to Branch | Branch | [Exercise](exercises/git/branch_01.md) | [Solution](exercises/git/solutions/branch_01_solution.md) | |
 
 <details>
 <summary>How do you know if a certain directory is a git repository?</summary><br><b>
@@ -10908,10 +10975,10 @@ It's an architecture in which data is and retrieved from a single, non-shared, s
 <summary>Explain the Sidecar Pattern (Or sidecar proxy)</summary><br><b>
 </b></details>
 
-## General
+## Misc
 
 <details>
-<summary>What is a server?</summary><br><b>
+<summary>What is a server? What is a client?</summary><br><b>
 
 A computer which serves data from itself to the client.
 </b></details>
@@ -10922,6 +10989,13 @@ A computer which serves data from itself to the client.
 I like this definition from [here](https://blog.christianposta.com/microservices/api-gateways-are-going-through-an-identity-crisis):
 
 "An explicitly and purposefully defined interface designed to be invoked over a network that enables software developers to get programmatic access to data and functionality within an organization in a controlled and comfortable way."
+</b></details>
+
+<details>
+<summary>What is Automation? How it's related or different from Orchestration?</summary><br><b>
+
+Automation is the act of automating tasks to reduce human intervention or interaction in regards to IT technology and systems.<br>
+While automation focuses on a task level, Orchestration is the process of automating processes and/or workflows which consists of multiple tasks that usually across multiple systems.
 </b></details>
 
 <details>
@@ -11558,6 +11632,13 @@ Are you able to explain what is it good for?
 </b></details>
 
 <details>
+<summary>You find out your database became a bottleneck and users experience issues accessing data. How can you deal with such situation?</summary><br><b>
+
+Not much information provided as to why it became a bottleneck and what is current architecture, so one general approach could be<br>
+to reduce the load on your database by moving frequently-accessed data to in-memory structure.
+</b></details>
+
+<details>
 <summary>What is a connection pool?</summary><br><b>
 
 Connection Pool is a cache of database connections and the reason it's used is to avoid an overhead of establishing a connection for every query done to a database.
@@ -12072,47 +12153,6 @@ If you are looking for a way to prepare for a certain exam this is the section f
 #### Kubernetes
 
 * [Certified Kubernetes Administrator (CKA)](certificates/cka.md) (Latest update: 2020)
-
-## Exercises
-
-Exercises are all about:
-
-  * Setting up environments
-  * Writing scripts
-  * Designing and/or developing infrastructure apps
-  * Fixing existing applications
-
-Below you can find several exercises
-
-#### Containers
-* [Writing a Dockerfile and running a container](exercises/write_dockerfile_run_container.md)
-
-#### Jenkins
-
-* [Jenkins: writing scripts](exercises/jenkins_scripts.md)
-* [Jenkins: writing pipelines](exercises/jenkins_pipelines.md)
-
-#### CI/CD
-
-* [CI for open source project](exercises/ci_for_open_source_project.md)
-* [Write a pipeline - Docker image and K8](exercises/pipeline_deploy_image_to_k8.md)
-
-#### Programming
-
-* [grep before and after](exercises/programming/grep_berfore_and_after.md)
-* [web scrapper](exercises/programming/web_scraper.md)
-
-#### Mixed
-
-* [Flask, Containers and CI](exercises/flask_container_ci/README.md)
-* [Flask, Containers and CI 2](exercises/flask_container_ci2/README.md)
-
-#### Misc
-
-* [Elasticsearch & Kibana on AWS](exercises/misc/elk_kibana_aws.md)
-* [ELK & Filebeat](exercises/eflk.md)
-* [Ansible, Minikube and Docker](exercises/ansible_minikube_docker.md)
-* [Cloud Slack bot](exercises/cloud_slack_bot.md)
 
 ## Other DevOps Projects
 
