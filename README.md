@@ -8370,6 +8370,26 @@ a = f()
 
 <details>
 <summary>You wrote a class to represent a car. How would you compare two cars instances if two cars are equal if they have the same model and color?</summary><br><b>
+
+```
+class Car:
+    def __init__(self, model, color):
+        self.model = model
+        self.color = color
+
+    def __eq__(self, other):
+        if not isinstance(other, Car):
+            return NotImplemented
+        return self.model == other.model and self.color == other.color
+
+>> a = Car('model_1', 'red')
+>> b = Car('model_2', 'green')
+>> c = Car('model_1', 'red')
+>> a == b
+False
+>> a == c
+True
+```
 </b></details>
 
 <details>
