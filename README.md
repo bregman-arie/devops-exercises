@@ -73,7 +73,7 @@
       <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a></td>
       <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a></td>
       <td align="center"><a href="#distributed"><img src="images/distributed.png" width="110px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
-      <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="110px;" height="75px;" alt="you"/><br /><b>Questions you can ask</b></a></td>
+      <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="90px;" height="75px;" alt="you"/><br /><b>Questions you can ask</b></a></td>
   </tr>
 </table>
 </center>
@@ -5220,7 +5220,9 @@ Because each container has its own writable container layer, and all changes are
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-|My First Pod|Dockerfile|WIP|WIP
+| My First Pod | Pods | [Exercise](exercises/kubernetes/pods_01.md) | [Solution](exercises/kubernetes/solutions/pods_01_solution.md)
+| Creating a service | Service | [Exercise](exercises/kubernetes/services_01.md) | [Solution](exercises/kubernetes/solutions/services_01_solution.md)
+
 
 ### Kubernetes Self Assesment
 
@@ -6342,13 +6344,15 @@ View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
 <details>
 <summary>What is Helm?</summary><br><b>
 
-Package manager for Kubernetes. Basically the ability to package YAML files and distribute them to other users.
+Package manager for Kubernetes. Basically the ability to package YAML files and distribute them to other users and apply them in different clusters.
 </b></details>
 
 <details>
 <summary>Why do we need Helm? What would be the use case for using it?</summary><br><b>
 
-Sometimes when you would like to deploy a certain application to your cluster, you need to create multiple YAML files / Components like: Secret, Service, ConfigMap, etc. This can be tedious task. So it would make sense to ease the process by introducing something that will allow us to share these bundle of YAMLs every time we would like to add an application to our cluster. This something is called Helm.
+Sometimes when you would like to deploy a certain application to your cluster, you need to create multiple YAML files/components like: Secret, Service, ConfigMap, etc. This can be tedious task. So it would make sense to ease the process by introducing something that will allow us to share these bundle of YAMLs every time we would like to add an application to our cluster. This something is called Helm.
+
+A common scenario is having multiple Kubernetes clusters (prod, dev, staging). Instead of individually applying different YAMLs in each cluster, it makes more sense to create one Chart and install it in every cluster.
 </b></details>
 
 <details>
@@ -11724,7 +11728,7 @@ Bonus: extract the last word of each line
 <summary>Replace 'red' with 'green'</summary><br><b>
 </b></details>
 
-#### System Design
+## System Design
 
 <details>
 <summary>Explain what is a "Single point of failure" and give an example</summary><br><b>
