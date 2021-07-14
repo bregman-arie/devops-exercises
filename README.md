@@ -5352,6 +5352,11 @@ It means they would eventually die and pods are unable to heal so it is recommen
 
 <details>
 <summary>What is a "Deployment" in Kubernetes?</summary><br><b>
+
+A Kubernetes Deployment is used to tell Kubernetes how to create or modify instances of the pods that hold a containerized application.
+Deployments can scale the number of replica pods, enable rollout of updated code in a controlled manner, or roll back to an earlier deployment version if necessary. 
+
+A Deployment is a declarative statement for the desired state for Pods and Replica Sets.
 </b></details>
 
 <details>
