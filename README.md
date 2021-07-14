@@ -3624,7 +3624,7 @@ Technically, yes.
 </summary><br><b>
 
   * SSH - 22
-  * SMTP - 35
+  * SMTP - 25
   * HTTP - 80
   * DNS - 53
   * HTTPS - 443
