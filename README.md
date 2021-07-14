@@ -5314,6 +5314,8 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
 
 <details>
 <summary>Explain what is a pod</summary><br><b>
+
+A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers. Pods are the smallest deployable units of computing that you can create and manage in Kubernetes. 
 </b></details>
 
 <details>
