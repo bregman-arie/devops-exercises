@@ -5281,6 +5281,7 @@ The workers are the nodes which run the applications and workloads.
 <summary>What is kubectl?</summary><br><b>
 </b></details>
 
+Kubectl is the Kubernetes command line tool that allows you to run commands against Kubernetes clusters. For example, you can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
 <details>
 <summary>Which command you run to view your nodes?</code></summary><br><b>
 
