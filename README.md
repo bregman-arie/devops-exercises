@@ -3624,7 +3624,7 @@ Technically, yes.
 </summary><br><b>
 
   * SSH - 22
-  * SMTP - 35
+  * SMTP - 25
   * HTTP - 80
   * DNS - 53
   * HTTPS - 443
@@ -5281,6 +5281,7 @@ The workers are the nodes which run the applications and workloads.
 <summary>What is kubectl?</summary><br><b>
 </b></details>
 
+Kubectl is the Kubernetes command line tool that allows you to run commands against Kubernetes clusters. For example, you can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
 <details>
 <summary>Which command you run to view your nodes?</code></summary><br><b>
 
@@ -5314,6 +5315,8 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
 
 <details>
 <summary>Explain what is a pod</summary><br><b>
+
+A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers. Pods are the smallest deployable units of computing that you can create and manage in Kubernetes. 
 </b></details>
 
 <details>
@@ -5350,6 +5353,11 @@ It means they would eventually die and pods are unable to heal so it is recommen
 
 <details>
 <summary>What is a "Deployment" in Kubernetes?</summary><br><b>
+
+A Kubernetes Deployment is used to tell Kubernetes how to create or modify instances of the pods that hold a containerized application.
+Deployments can scale the number of replica pods, enable rollout of updated code in a controlled manner, or roll back to an earlier deployment version if necessary. 
+
+A Deployment is a declarative statement for the desired state for Pods and Replica Sets.
 </b></details>
 
 <details>
