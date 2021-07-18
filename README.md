@@ -5346,10 +5346,14 @@ It means they would eventually die and pods are unable to heal so it is recommen
 `kubectl delete pod pod_name`
 </b></details>
 
-#### Kubernetes Deployment
+#### Kubernetes - Deployment
 
 <details>
 <summary>What is a "Deployment" in Kubernetes?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe the process of a deployment in high level</summary><br><b>
 </b></details>
 
 <details>
@@ -8444,13 +8448,19 @@ Logging<br>
 </b></details>
 
 <details>
-<summary>What is the different between infrastructure monitoring and application monitoring? (methods, tools, ...)</summary><br><b>
+<summary>What is the difference between infrastructure monitoring and application monitoring? (methods, tools, ...)</summary><br><b>
 </b></details>
 
 ## Prometheus
 
 <details>
 <summary>What is Prometheus? What are some of Prometheus's main features?</summary><br><b>
+</b></details>
+
+<details>
+<summary>In what scenarios it might be better to NOT use Prometheus?</summary><br><b>
+
+From Prometheus documentation: "if you need 100% accuracy, such as for per-request billing".
 </b></details>
 
 <details>
@@ -9054,6 +9064,12 @@ as key-value pair, document-oriented, etc.
 <summary>True or False? OpenShift is a IaaS (infrastructure as a service) solution</summary><br><b>
 
 False. OpenShift is a PaaS (platform as a service) solution.
+</b></details>
+
+## OpenShift - Images
+
+<details>
+<summary>What is an image stream?</summary><br><b>
 </b></details>
 
 <details>
@@ -11836,7 +11852,7 @@ Also, data inconsistency is a concern with horizontal scaling.
 </b></details>
 
 <details>
-<summary>Explain when in which use cases will you use vertical scaling and in which use cases you will use horizontal scaling</summary><br><b>
+<summary>Explain in which use cases will you use vertical scaling and in which use cases you will use horizontal scaling</summary><br><b>
 </b></details>
 
 <details>
