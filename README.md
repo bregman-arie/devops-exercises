@@ -2542,10 +2542,28 @@ For example:
   * cp
   * mkdir
 </summary><br><b>
+
+  * touch - update file's timestamp. More commonly used for creating files
+  * ls - listing files and directories
+  * rm - remove files and directories
+  * cat - create, view and concatenate files
+  * cp - copy files and directories
+  * mkdir - create directories
 </b></details>
 
 <details>
-<summary>Some of the commands in the previous question can be run with the -r/--recursive flag. What does it do?</summary><br><b>
+<summary>Some of the commands in the previous question can be run with the -r/-R flag. What does it do? Give an example when to use it</summary><br><b>
+
+The -r (or -R in some commands) flag allows user to run a certain command recursively. For example, listing all the files under the following tree is possible when done recursively (`ls -R`):
+
+/dir1/
+  dir2/
+    file1
+    file2
+  dir3/
+    file3
+
+To list all the files, one can run `ls -R /dir1`
 </b></details>
 
 <details>
@@ -3234,6 +3252,12 @@ False
 <summary>True or False? You can create a soft link between different filesystems</summary><br><b>
 
 True
+</b></details>
+
+<details>
+<summary>True or False? Directories always have by minimum 2 links</summary><br><b>
+
+True.
 </b></details>
 
 <details>
@@ -4837,7 +4861,7 @@ HCL stands for Hashicorp Configuration Language. It is the language Hashicorp ma
 <details>
 <summary>What <code>terraform.tfstate</code> file is used for?</summary><br><b>
 
-It keeps track of the IDs of created resources so that Terraform knows what it is managing.
+It keeps track of the IDs of created resources so that Terraform knows what it's managing.
 </b></details>
 
 <details>
@@ -9062,16 +9086,30 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>What is OpenShift?</summary><br><b>
+
+OpenShift is a container orchestration platform based on Kubernetes.<br>
+It can be used for deploying applications while having minimal management overhead.
 </b></details>
 
 <details>
 <summary>How OpenShift is related to Kubernetes?</summary><br><b>
+
+It's built on top of Kubernetes while defining its own custom resources in addition to the built ones.
 </b></details>
 
 <details>
 <summary>True or False? OpenShift is a IaaS (infrastructure as a service) solution</summary><br><b>
 
 False. OpenShift is a PaaS (platform as a service) solution.
+</b></details>
+
+## OpenShift - Architecture
+
+<details>
+<summary>What types of nodes OpenShift has?</summary><br><b>
+
+- Workers: Where the end-user applications are running
+- Masters: Responsible for managing the cluster
 </b></details>
 
 ## OpenShift - Images
@@ -10180,6 +10218,10 @@ A list of services and their endpoints
 
 Authentication is the process of identifying whether a service or a person is who they claim to be.
 Authorization is the process of identifying what level of access the service or the person have (after authentication was done)
+</b></details>
+
+<details>
+<summary>What it means to be "FIPS compliant"?</summary><br><b>
 </b></details>
 
 <details>
