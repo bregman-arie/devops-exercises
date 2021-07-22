@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1571** questions
+:bar_chart: &nbsp;There are currently **1600** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -2541,6 +2541,8 @@ For example:
   * cat
   * cp
   * mkdir
+  * pwd
+  * cd
 </summary><br><b>
 
   * touch - update file's timestamp. More commonly used for creating files
@@ -2549,6 +2551,27 @@ For example:
   * cat - create, view and concatenate files
   * cp - copy files and directories
   * mkdir - create directories
+  * pwd - print current working directory (= at what path the user currently located)
+  * cd - change directory
+</b></details>
+
+<details>
+<summary>What each of the following commands does?
+
+  * cd /
+  * cd ~
+  * cd
+  * cd ..
+  * cd .
+  * cd -
+</summary><br><b>
+
+  * cd / -> change to the root directory
+  * cd ~ -> change to your home directory
+  * cd -> change to your home directory
+  * cd .. -> change to the directory above your current i.e parent directory
+  * cd . -> change to the directory you currently in
+  * cd - -> change to the last visited path
 </b></details>
 
 <details>
@@ -2575,9 +2598,7 @@ It shows a detailed list of files in a long format. From the left:
 
 <details>
 <summary>What are hidden files/directories? How to list them?</summary><br><b>
-These are files directly not displayed after performing a standard ls direct listing. An example of these files are .bashrc which are used to execute some scripts. Some also store configuration about services on your host like .KUBECONFIG. The command used to list them is,
-
-`ls -a`
+These are files directly not displayed after performing a standard ls direct listing. An example of these files are .bashrc which are used to execute some scripts. Some also store configuration about services on your host like .KUBECONFIG. The command used to list them is, `ls -a`
 </b></details>
 
 <details>
@@ -2595,35 +2616,6 @@ They take in input (<) and output for a given file (>) using stdin and stdout.
   * cut
   * awk
 </summary><br><b>
-</b></details>
-
-<details>
-<summary>What each of the following commands does?
-
-  * pwd
-  * cd
-  * find
-  * ls
-</summary><br><b>
-</b></details>
-
-<details>
-<summary>What each of the following commands does?
-
-  * cd /
-  * cd ~
-  * cd
-  * cd ..
-  * cd .
-  * cd -
-</summary><br><b>
-
-  * cd / -> change to the root directory
-  * cd ~ -> change to your home directory
-  * cd -> change to your home directory
-  * cd .. -> change to the directory above your current i.e parent directory
-  * cd . -> change to the directory you currently in
-  * cd - -> change to the last visited path
 </b></details>
 
 <details>
@@ -4009,6 +4001,19 @@ fork() is used for creating a new process. It does so by cloning the calling pro
 </b></details>
 
 <details>
+<summary>What is the return value of fork()?</summary><br><b>
+
+  - On success, the PID of the child process in parent and 0 in child process
+  - On error, -1 in the parent
+</b></details>
+
+<details>
+<summary>Name one reason for fork() to fail</summary><br><b>
+
+Not enough memory to create a new process
+</b></details>
+
+<details>
 <summary>Explain the exec() system call</summary><br><b>
 </b></details>
 
@@ -4230,13 +4235,98 @@ GPL v2
 
 ## Operating System
 
+### Operating System Exercises
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+|Fork 101|Fork|[Link](exercises/os/fork_101.md)|[Link](exercises/os/solutions/fork_101_solution.md)
+|Fork 102|Fork|[Link](exercises/os/fork_102.md)|[Link](exercises/os/solutions/fork_102_solution.md)
+
+### Operating System - Self Assessment
+
 <details>
 <summary>What is an operating system?</summary><br><b>
 
 There are many ways to answer that. For those who look for simplicity, the book "Operating Systems: Three Easy Pieces" offers nice version:
 
-"responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that"
+"responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that".
 </b></details>
+
+#### Operating System - Process
+
+<details>
+<summary>Can you explain what is a process?</summary><br><b>
+
+A process is a running program. A program is one or more instructions and the program (or process) is executed by the operating system.
+</b></details>
+
+<details>
+<summary>If you had to design an API for processes in an operating system, what would this API look like?</summary><br><b>
+
+It would support the following:
+
+* Create - allow to create new processes
+* Delete - allow to remove/destroy processes
+* State - allow to check the state of the process, whether it's running, stopped, waiting, etc.
+* Stop - allow to stop a running process
+</b></details>
+
+<details>
+<summary>How a process is created?</summary><br><b>
+
+* The OS is reading program's code and any additional relevant data
+* Program's code is loaded into the memory or more specifically, into the address space of the process.
+* Memory is allocated for program's stack (aka run-time stack). The stack also initialized by the OS with data like argv, argc and parameters to main()
+* Memory is allocated for program's heap which is required for dynamically allocated data like the data structures linked lists and hash tables
+* I/O initialization tasks are performed, like in Unix/Linux based systems where each process has 3 file descriptors (input, output and error)
+* OS is running the program, starting from main()
+</b></details>
+
+<details>
+<summary>True or False? The loading of the program into the memory is done eagerly (all at once)</summary><br><b>
+
+False. It was true in the past but today's operating systems perform lazy loading which means only the relevant pieces required for the process to run are loaded first.
+</b></details>
+
+<details>
+<summary>What are different states of a process?</summary><br><b>
+
+* Running - it's executing instructions
+* Ready - it's ready to run but for different reasons it's on hold
+* Blocked - it's waiting for some operation to complete. For example I/O disk request
+</b></details>
+
+<details>
+<summary>What are some reasons for a process to become blocked?</summary><br><b>
+
+  - I/O operations (e.g. Reading from a disk)
+  - Waiting for a packet from a network
+</b></details>
+
+<details>
+<summary>What is Inter Process Communication (IPC)?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is "time sharing"?</summary><br><b>
+
+Even when using a system with one physical CPU, it's possible to allow multiple users to work on it and run programs. This is possible with time sharing where computing resources are shared in a way it seems to the user the system has multiple CPUs but in fact it's simply one CPU shared by applying multiprogramming and multi-tasking.
+</b></details>
+
+<details>
+<summary>What is "space sharing"?</summary><br><b>
+
+Somewhat the opposite of time sharing. While in time sharing a resource is used for a while by one entity and then the same resource can be used by another resource, in space sharing the space is shared by multiple entities but in a way where it's not being transferred between them.<br>
+It's used by one entity until this entity decides to get rid of it. Take for example storage. In storage, a file is yours until you decide to delete it.
+</b></details>
+
+<details>
+<summary>What component determines which process runs at a given moment in time?</summary><br><b>
+
+CPU scheduler
+</b></details>
+
+#### Operating System - Memory
 
 <details>
 <summary>What is "virtual memory" and what purpose it serves?</summary><br><b>
@@ -4270,63 +4360,9 @@ True
 <summary>What is POSIX?</summary><br><b>
 </b></details>
 
-#### Processes
-
-<details>
-<summary>Can you explain what is a process?</summary><br><b>
-
-A process is a running program. A program is one or more instructions and the program (or process) is executed by the operating system.
-</b></details>
-
-<details>
-<summary>If you had to design an API for processes in an operating system, what would this API look like?</summary><br><b>
-
-It would support the following:
-
-* Create - allow to create new processes
-* Delete - allow to remove/destroy processes
-* State - allow to check the state of the process, whether it's running, stopped, waiting, etc.
-* Stop - allow to stop a running process
-</b></details>
-
-<details>
-<summary>How a process is created?</summary><br><b>
-
-* The OS is reading program's code and any additional relevant data
-* Program's bytes are loaded into the memory or more specifically, into the address space of the process.
-* Memory is allocated for program's stack (aka run-time stack). The stack also initialized by the OS with data like argv, argc and parameters to main()
-* Memory is allocated for program's heap which is required for data structures like linked lists and hash tables
-* I/O initialization tasks are performed, like in Unix/Linux based systems where each process has 3 file descriptors (input, output and error)
-* OS is running the program, starting from main()
-
-Note: The loading of the program's code into the memory done lazily which means the OS loads only partial relevant pieces required for the process to run and not the entire code.
-</b></details>
-
-<details>
-<summary>True or False? The loading of the program into the memory is done eagerly (all at once)</summary><br><b>
-
-False. It was true in the past but today's operating systems perform lazy loading which means only the relevant pieces required for the process to run are loaded first.
-</b></details>
-
-<details>
-<summary>What are different states of a process?</summary><br><b>
-
-* Running - it's executing instructions
-* Ready - it's ready to run but for different reasons it's on hold
-* Blocked - it's waiting for some operation to complete. For example I/O disk request
-</b></details>
-
-<details>
-<summary>What is Inter Process Communication (IPC)?</summary><br><b>
-</b></details>
-
-#### Concurrency
-
 <details>
 <summary>Explain what is Semaphore and what its role in operating systems</summary><br><b>
 </b></details>
-
-#### Memory
 
 <details>
 <summary>What is cache? What is buffer?</summary><br><b>
@@ -4377,19 +4413,6 @@ Desktop virtualization
 <summary>Is containerization is a type of Virtualization?</summary><br><b>
 
 Yes, it's a operating-system-level virtualization, where the kernel is shared and allows to use multiple isolated user-spaces instances.
-</b></details>
-
-<details>
-<summary>What is "time sharing"?</summary><br><b>
-
-Even when using a system with one physical CPU, it's possible to allow multiple users to work on it and run programs. This is possible with time sharing where computing resources are shared in a way it seems to the user the system has multiple CPUs but in fact it's simply one CPU shared by applying multiprogramming and multi-tasking.
-</b></details>
-
-<details>
-<summary>What is "space sharing"?</summary><br><b>
-
-Somewhat the opposite of time sharing. While in time sharing a resource is used for a while by one entity and then the same resource can be used by another resource, in space sharing the space is shared by multiple entities but in a way it's not being transfered between them.<br>
-It's used by one entity until this entity decides to get rid of it. Take for example storage. In storage, a file is your until you decide to delete it.
 </b></details>
 
 ## Ansible
@@ -5373,6 +5396,12 @@ It means they would eventually die and pods are unable to heal so it is recommen
 `kubectl delete pod pod_name`
 </b></details>
 
+<details>
+<summary>How to find out on which node a certain pod is running?</summary><br><b>
+
+`kubectl get po -o wide`
+</b></details>
+
 #### Kubernetes - Deployment
 
 <details>
@@ -5682,7 +5711,7 @@ True
 True
 </b></details>
 
-#### Kubernetes Namespaces
+#### Kubernetes - Namespaces
 
 <details>
 <summary>What are namespaces?</summary><br><b>
@@ -6239,7 +6268,7 @@ False
 * Delete
 </b></details>
 
-#### Kubernetes Access Control
+#### Kubernetes - Access Control
 
 <details>
 <summary>What is RBAC?</summary><br><b>
@@ -6251,6 +6280,34 @@ False
 
 <details>
 <summary>What is the difference between <code>Role</code> and <code>ClusterRole</code> objects?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what are "Service Accounts" and in which scenario would use create/use one</summary><br><b>
+
+[Kubernetes.io](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account): "A service account provides an identity for processes that run in a Pod."
+
+An example of when to use one:
+You define a pipeline that needs to build and push an image. In order to have sufficient permissions to build an push an image, that pipeline would require a service account with sufficient permissions.
+</b></details>
+
+<details>
+<summary>What happens you create a pod and you DON'T specify a service account?</summary><br><b>
+
+The pod is automatically assigned with the default service account (in the namespace where the pod is running).
+</b></details>
+
+<details>
+<summary>Explain how Service Accounts are different from User Accounts</summary><br><b>
+
+  - User accounts are global while Service accounts unique per namespace
+  - User accounts are meant for humans or client processes while Service accounts are for processes which run in pods
+</b></details>
+
+<details>
+<summary>How to list Service Accounts?</summary><br><b>
+
+`kubectl get serviceaccounts`
 </b></details>
 
 #### Kubernetes Misc
@@ -9118,6 +9175,18 @@ False. OpenShift is a PaaS (platform as a service) solution.
 - Masters: Responsible for managing the cluster
 </b></details>
 
+<details>
+<summary>Which component responsible for determining pod placement?</summary><br><b>
+
+The Scheduler.
+</b></details>
+
+<details>
+<summary>What else the scheduler responsible for except pod placement?</summary><br><b>
+
+Application high availability by spreading pod replicas between worker nodes
+</b></details>
+
 ## OpenShift - Images
 
 <details>
@@ -9130,7 +9199,7 @@ False. OpenShift is a PaaS (platform as a service) solution.
 Federation
 </b></details>
 
-#### OpenShift Federation
+#### OpenShift - Federation
 
 <details>
 <summary>What is OpenShift Federation?</summary><br><b>
@@ -9153,16 +9222,7 @@ Management and deployment of services and workloads accross multiple independent
   * Member Cluster - Cluster that is part of the Federated Cluster and connected to Federation Control Plane
 </b></details>
 
-#### OpenShift Azure
-
-<details>
-<summary>What is "OpenShift on Azure" and "Azure Red Hat OpenShift"?</summary><br><b>
-
-OpenShift on Aazure (OCP) is installed and managed by the customer itself as opposed to Azure Red Hat OpenShift (ARO) which is a managed service by Red Hat and Microsoft.
-Also, OCP is purchased from Red Hat and ARO is purchased from Azure.
-</b></details>
-
-## Storage
+## OpenShift - Storage
 
 <details>
 <summary>What is a storage device? What storage devices are there?</summary><br><b>
@@ -9174,20 +9234,102 @@ Also, OCP is purchased from Red Hat and ARO is purchased from Azure.
 </b></details>
 
 <details>
-<summary>Explain the following:
-
-* Block Storage
-* Object Storage
-* File Storage</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is Random Seek Time?</summary><br><b>
 
 The time it takes for a disk to reach the place where the data is located and read a single block/sector.
 
 Bones question: What is the random seek time in SSD and Magnetic Disk?
 Answer: Magnetic is about 10ms and SSD is somewhere between 0.08 and 0.16ms
+</b></details>
+
+#### OpenShift - Pods
+
+<details>
+<summary>What happens when a pod fails or exit due to container crash</summary><br><b>
+
+Master node automatically restarts the pod unless it fails too often.
+</b></details>
+
+<details>
+<summary>What happens when a pod fails too often?</summary><br><b>
+
+It's marked as bad by the master node and temporarly not restarted anymore.
+</b></details>
+
+<details>
+<summary>How to find out on which node a certain pod is running?</summary><br><b>
+
+`oc get po -o wide`
+</b></details>
+
+#### OpenShift - Services
+
+<details>
+<summary>Explain Services and their benefits</summary><br><b>
+
+  - Services in OpenShift define access policy to one or more set of pods.<br>
+  - They are connecting applications together by enabling communication between them
+  - They provide permanent internal IP addresses and hostnames for applications
+  - They are able to provide basic internal load balancing
+</b></details>
+
+#### OpenShift - Labels
+
+<details>
+<summary>Explain labels. What are they? When do you use them?</summary><br><b>
+
+  - Labels are used to group or select API objects
+  - They are simple key-value pairs and can be included in metadata of some objects
+  - A common use case: group pods, services, deployments, ... all related to a certain application
+</b></details>
+
+#### OpenShift - Service Accounts
+
+<details>
+<summary>How to list Service Accounts?</summary><br><b>
+
+`oc get serviceaccounts`
+</b></details>
+
+#### OpenShift - Networking
+
+<details>
+<summary>What is a Route?</summary><br><b>
+
+A route is exposing a service by giving it hostname which is externally reachable
+</b></details>
+
+<details>
+<summary>What Route is consists of?</summary><br><b>
+
+  - name
+  - service selector
+  - (optional) security configuration
+</b></details>
+
+<details>
+<summary>True or False? Router container can run only on the Master node</summary><br><b>
+
+False. It can run on any node.
+</b></details>
+
+<details>
+<summary>Given an example of how a router is used</summary><br><b>
+
+1. Client is using an address of application running on OpenShift
+2. DNS resolves to host running the router
+3. Router checks whether route exists
+4. Router proxies the request to the internal pod 
+</b></details>
+
+#### OpenShift - Misc
+
+<details>
+<summary>What is Replication Controller?</summary><br><b>
+
+Replication Controller responsible for ensuring the specified number of pods is running at all times.<br>
+If more pods are running than needed -> it deletes some of them<br>
+If not enough pods are running -> it creates more
 </b></details>
 
 ## Scripts
@@ -9211,7 +9353,6 @@ You can have an entirely different answer. It's based only on your experience an
   * The module we need doesn't exist (perhaps a weak point because most CM technologies allow to use what is known as "shell" module)
   * We are delivering the scripts to customers who don't have access to the public network and don't necessarily have Ansible installed on their systems.
 </b></details>
-
 
 #### Scripts Fundamentals
 
