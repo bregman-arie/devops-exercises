@@ -8465,6 +8465,15 @@ Logging<br>
 
 <details>
 <summary>What is Prometheus? What are some of Prometheus's main features?</summary><br><b>
+
+Prometheus is an open-source systems monitoring and alerting toolkit. Prometheus's main features are:
+* A multi-dimensional data model with time series data identified by metric name and key/value pairs
+* PromQL, a flexible query language to leverage this dimensionality
+* No reliance on distributed storage; single server nodes are autonomous
+* Time series collection happens via a pull model over HTTP
+* Pushing time series is supported via an intermediary gateway
+* Targets are discovered via service discovery or static configuration
+* Multiple modes of graphing and dashboarding support
 </b></details>
 
 <details>
