@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1600** questions
+:bar_chart: &nbsp;There are currently **1657** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -88,6 +88,7 @@
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Set up a CI pipeline | CI | [Exercise](exercises/devops/ci_for_open_source_project.md) | | |
+| Deploy to Kubernetes | Deployment | [Exercise](exercises/devops/deploy_to_kubernetes.md) | | |
 
 ### DevOps Self Assessment
 
@@ -291,9 +292,13 @@ For more info please read [here](https://www.atlassian.com/continuous-delivery/c
 <details>
 <summary>What CI/CD best practices are you familiar with? Or what do you consider as CI/CD best practice?</summary><br><b>
 
-* Automated process of building, testing and deploying software
-* Commit and test often
-* Testing/Staging environment should be a clone of production environment
+* Commit and test often.
+* Testing/Staging environment should be a clone of production environment.
+* Clean up your environments (e.g. your CI/CD pipelines may create a lot of resources. They should also take care of cleaning up everything they create)
+* The CI/CD pipelines should provide the same results when executed locally or remotely
+* Treat CI/CD as another application in your organization. Not as a glue code.
+* On demand environments instead of pre-allocated resources for CI/CD purposes
+* Stages/Steps/Tasks of pipelines should be shared between applications or microservices (don't re-invent common tasks like "cloning a project")
 </b></details>
 
 <details>
@@ -308,6 +313,7 @@ There are multiple approaches as to where to store the CI/CD pipeline definition
 1. App Repository - store them in the same repository of the application they are building or testing (perhaps the most popular one)
 2. Central Repository - store all organization's/project's CI/CD pipelines in one separate repository (perhaps the best approach when multiple teams test the same set of projects and they end up having many pipelines)
 3. CI repo for every app repo - you separate CI related code from app code but you don't put everything in one place (perhaps the worst option due to the maintenance)
+4. The platform where the CI/CD pipelines are being executed (e.g. Kubernetes Cluster in case of Tekton/OpenShift Pipelines).
 </b></details>
 
 <details>
@@ -329,6 +335,8 @@ to a server will result in a new server instead of updating it. Terraform is an 
 which follows the immutable infrastructure paradigm.
 </b></details>
 
+#### Software Distribution
+
 <details>
 <summary>Explain "Software Distribution"</summary><br><b>
 
@@ -338,7 +346,7 @@ From the article: "Thus, software distribution is about the mechanism and the co
 </b></details>
 
 <details>
-<summary>Why are there multiple software distributions? What differences can they have?</summary><br><b>
+<summary>Why are there multiple software distributions? What differences they can have?</summary><br><b>
 
 Different distributions can focus on different things like: focus on different environments (server vs. mobile vs. desktop), support specific hardware, specialize in different domains (security, multimedia, ...), etc. Basically, different aspects of the software and what it supports, get different priority in each distribution.
 </b></details>
@@ -434,12 +442,23 @@ Read about Chaos Engineering [here](https://en.wikipedia.org/wiki/Chaos_engineer
 
 <details>
 <summary>What is "infrastructure as code"? What implementation of IAC are you familiar with?</summary><br><b>
-	IAC (infrastructure as code) is a declerative approach of defining infrastructure or architecture of a system. Some implementations are ARM templates for Azure and Terraform that can work across multiple cloud providers.
+
+IAC (infrastructure as code) is a declerative approach of defining infrastructure or architecture of a system. Some implementations are ARM templates for Azure and Terraform that can work across multiple cloud providers.
+</b></details>
+
+<details>
+<summary>What benefits infrastructure-as-code has?</summary><br><b>
+
+- fully automated process of provisioning, modifying and deleting your infrastructure
+- version control for your infrastructure which allows you to quickly rollback to previous versions
+- validate infrastructure quality and stability with automated tests and code reviews
+- makes infrastructure tasks less repetitive
 </b></details>
 
 <details>
 <summary>How do you manage build artifacts?</summary><br><b>
-	Build artifacts are usually stored in a repository. They can be used in release pipelines for deployment purposes. Usually there is retention period on the build artifacts.
+
+Build artifacts are usually stored in a repository. They can be used in release pipelines for deployment purposes. Usually there is retention period on the build artifacts.
 </b></details>
 
 <details>
@@ -595,6 +614,7 @@ Read more about it [here](https://sre.google/sre-book/introduction)
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
+| Jobs 101 | Jobs | [Exercise](exercises/jenkins/jobs_101.md) | | |
 | Remove Jobs | Scripts - Jobs | [Exercise](exercises/jenkins/remove_jobs.md) | [Solution](exercises/jenkins/solutions/remove_jobs_solution.groovy) | |
 | Remove Builds | Scripts - Builds | [Exercise](exercises/jenkins/remove_builds.md) | [Solution](exercises/jenkins/solutions/remove_builds_solution.groovy) | |
 
@@ -710,7 +730,11 @@ You can describe the UI way to add new nodes but better to explain how to do in 
 <summary>What are some of Jenkins limitations?</summary><br><b>
 
   * Testing cross-dependencies (changes from multiple projects together)
-  * Starting builds from any stage (although cloudbees implemented something called checkpoints)
+  * Starting builds from any stage (although Cloudbees implemented something called checkpoints)
+</b></details>
+
+<details>
+<summary>What is the different between a scripted pipeline to declarative pipeline? Which type are you using?</summary><br><b>
 </b></details>
 
 <details>
@@ -815,9 +839,23 @@ It's important to note that:
 <summary>Is there a difference between managed service to SaaS or is it the same thing?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is auto scaling?</summary><br><b>
+
+AWS definition: "AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost"
+
+Read more about auto scaling [here](https://aws.amazon.com/autoscaling)
+</b></details>
+
+<details>
+<summary>True or False? Auto Scaling is about adding resources (such as instances) and not about removing resource</summary><br><b>
+
+False. Auto scaling adjusts capacity and this can mean removing some resources based on usage and performances.
+</b></details>
+
 ## AWS
 
-#### AWS Global Infrastructure
+#### AWS - Global Infrastructure
 
 <details>
 <summary>Explain the following
@@ -1290,20 +1328,6 @@ More on ELB [here](https://aws.amazon.com/elasticloadbalancing)
 </b></details>
 
 <details>
-<summary>What is auto scaling?</summary><br><b>
-
-AWS definition: "AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost"
-
-Read more about auto scaling [here](https://aws.amazon.com/autoscaling)
-</b></details>
-
-<details>
-<summary>True or False? Auto Scaling is about adding resources (such as instances) and not about removing resource</summary><br><b>
-
-False. Auto scaling adjusts capacity and this can mean removing some resources based on usage and performances.
-</b></details>
-
-<details>
 <summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
 
   * Application LB - layer 7 traffic
@@ -1559,6 +1583,12 @@ Read more about it [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_I
 <summary>True or False? NACL allow or deny traffic on the subnet level</summary><br><b>
 
 True
+</b></details>
+
+<details>
+<summary>What is VPC peering?</summary><br><b>
+
+[docs.aws](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html): "A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them using private IPv4 addresses or IPv6 addresses."
 </b></details>
 
 <details>
@@ -2103,7 +2133,6 @@ Learn more about it [here](https://aws.amazon.com/sqs)
 
 ## Network
 
-
 <details>
 <summary>What is Ethernet?</summary><br><b>
 
@@ -2508,6 +2537,21 @@ Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-us
 <summary>What is the difference if any between SSL and TLS?</summary><br><b>
 </b></details>
 
+#### Network - Misc
+
+<details>
+<summary>What is the Internet? Is it the same as the World Wide Web?</summary><br><b>
+
+The internet refers to network of networks, transferring huge amounts of data around the globe.<br>
+The World Wide Web is an application running on millions of server, on top of the internet, accessed through what is know as the web browser
+</b></details>
+
+<details>
+<summary>What is the ISP?</summary><br><b>
+
+ISP (Internet Service Provider) is the local internet company provider.
+</b></details>
+
 ## Linux
 
 #### Linux Master Application
@@ -2575,7 +2619,7 @@ For example:
 </b></details>
 
 <details>
-<summary>Some of the commands in the previous question can be run with the -r/-R flag. What does it do? Give an example when to use it</summary><br><b>
+<summary>Some of the commands in the previous question can be run with the -r/-R flag. What does it do? Give an example to when you would use it</summary><br><b>
 
 The -r (or -R in some commands) flag allows user to run a certain command recursively. For example, listing all the files under the following tree is possible when done recursively (`ls -R`):
 
@@ -2598,6 +2642,7 @@ It shows a detailed list of files in a long format. From the left:
 
 <details>
 <summary>What are hidden files/directories? How to list them?</summary><br><b>
+
 These are files directly not displayed after performing a standard ls direct listing. An example of these files are .bashrc which are used to execute some scripts. Some also store configuration about services on your host like .KUBECONFIG. The command used to list them is, `ls -a`
 </b></details>
 
@@ -2616,6 +2661,8 @@ They take in input (<) and output for a given file (>) using stdin and stdout.
   * cut
   * awk
 </summary><br><b>
+
+  - sed: a stream editor. Can be used for various purposes like replacing a word in a file: `sed -i s/salad/burger/g`
 </b></details>
 
 <details>
@@ -2632,6 +2679,12 @@ Using the `mv` command.
   * Provides access to the file /tmp/x for everyone
   * Change working directory to user home directory
   * Replace every occurrence of the word "good" with "great" in the file /tmp/y</summary><br><b>
+
+  - `rm -rf dir`
+  - `cat or less`
+  - `chmod 777 /tmp/x`
+  - `cd ~`
+  - `sed -i s/good/great/g /tmp/y`
 </b></details>
 
 <details>
@@ -2648,7 +2701,7 @@ Using the `mv` command.
 <details>
 <summary>Explain piping. How do you perform piping?</summary><br><b>
 
-Using a pipe in Linux, allows you to send the output of one to another (also called redirection). For example: `cat /etc/services | wc -l`
+Using a pipe in Linux, allows you to send the output of one command to the input of another command. For example: `cat /etc/services | wc -l`
 </b></details>
 
 <details>
@@ -2667,6 +2720,8 @@ Using a pipe in Linux, allows you to send the output of one to another (also cal
 
 <details>
 <summary>In Linux FHS (Filesystem Hierarchy Standard) what is the <code>/</code>?</summary><br><b>
+
+The root of the filesystem. The beginning of the tree.
 </b></details>
 
 <details>
@@ -2677,12 +2732,18 @@ Using a pipe in Linux, allows you to send the output of one to another (also cal
   * /home
   * /var
   * /tmp</summary><br><b>
+
+  * binaries
+  * configuration files
+  * home directories of the different users
+  * files that tend to change and be modified like logs
+  * temporary files
 </b></details>
 
 <details>
 <summary>What is special about the /tmp directory when compared to other directories?</summary><br><b>
 
-`/tmp` folder get cleaned automatically, usually upon reboot.
+`/tmp` folder is cleaned automatically, usually upon reboot.
 </b></details>
 
 <details>
@@ -3043,10 +3104,6 @@ The operating system executes the kernel in protected memory to prevent anyone f
 "User space" is where users executes their commands or applications. It's important to create this separation since we can't rely on user applications to not tamper with the kernel, causing it to crash.
 
 Applications can access system resources and indirectly the kernel space by making what is called "system calls".
-</b></details>
-
-<details>
-<summary>What are system calls? What system calls are you familiar with?</summary><br><b>
 </b></details>
 
 #### Linux Virtualization
@@ -3905,6 +3962,12 @@ dmidecoode
 lsblk
 </b></details>
 
+<details>
+<summary>True or False? In user space, applications don't have full access to hardware resources</summary><br><b>
+
+True. Only in kernel space they have full access to hardware resources.
+</b></details>
+
 #### Linux - Random
 
 <details>
@@ -3992,7 +4055,25 @@ From Wikipedia: "AWK is domain-specific language designed for text processing an
 <summary>What is the difference between find and locate?</summary><br><b>
 </b></details>
 
-#### System Calls
+<details>
+<summary>How a user process performs a privileged operation, such as reading from the disk?</summary><br><b>
+
+Using system calls
+</b></details>
+
+#### Linux - System Calls
+
+<details>
+<summary>What is a system call? What system calls are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How a program executes a system call?</summary><br><b>
+
+- A program executes a trap instruction. The instruction jump into the kernel while raising the privileged level to kernel space.
+- Once in kernel space, it can perform any privileged operation
+- Once it's finished, it calls a "return-from-trap" instruction which returns to user space while reducing back the privilege level to user space.
+</b></details>
 
 <details>
 <summary>Explain the fork() system call</summary><br><b>
@@ -4014,7 +4095,43 @@ Not enough memory to create a new process
 </b></details>
 
 <details>
+<summary>Why do we need the wait() system call?</summary><br><b>
+
+wait() is used by a parent process to wait for the child process to finish execution.
+If wait is not used by a parent process then a child process might become a zombie process.
+</b></details>
+
+<details>
+<summary>How the kernel notifies the parent process about child process termination?</summary><br><b>
+
+The kernel notifies the parent by sending the SIGCHLD to the parent.
+</b></details>
+
+<details>
+<summary>How the waitpid() is different from wait()?</summary><br><b>
+
+The waitpid() is a non-blocking version of the wait() function.<br>
+It also supports using library routine (e.g. system()) to wait a child process without messing up with other children processes for which the process has not waited.
+</b></details>
+
+<details>
+<summary>True or False? The wait() system call won't return until the child process has run and exited</summary><br><b>
+
+True in most cases though there are cases where wait() returns before the child exits.
+</b></details>
+
+<details>
 <summary>Explain the exec() system call</summary><br><b>
+
+It transforms the current running program into another program.<br>
+Given the name of an executable and some arguments, it loads the code and static data from the specified executable and overwrites its current code segment and current static code data. After initializing its memory space (like stack and heap) the OS runs the program passing any arguments as the argv of that process.
+</b></details>
+
+<details>
+<summary>True or False? A successful call to exec() never returns</summary><br><b>
+
+True<br>
+Since a succesful exec replace the current process, it can't return anything to the process that made the call.
 </b></details>
 
 <details>
@@ -4022,18 +4139,9 @@ Not enough memory to create a new process
 </b></details>
 
 <details>
-<summary>What system call is used for creating a new process?</summary><br><b>
-</b></details>
+<summary>What system calls are used for creating a new process?</summary><br><b>
 
-<details>
-<summary>What are the differences between exec() and fork()?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Why do we need the wait system call?</summary><br><b>
-
-wait() is used by a parent process to wait for the child process to finish execution.
-If wait is not used by a parent process then a child process might become a zombie process.
+fork(), exec() and the wait() system call is also included in this workflow.
 </b></details>
 
 <details>
@@ -4079,6 +4187,18 @@ Notes:
 
 <details>
 <summary>What exactly the command <code>alias x=y</code> does?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Why running a new program is done using the fork() and exec() system calls? why a different API wasn't developed where there is one call to run a new program?</summary><br><b>
+
+This way provides a lot of flexibility. It allows the shell for example, to run code after the call to fork() but before the call to exec(). Such code can be used to alter the environment of the program it about to run.
+</b></details>
+
+<details>
+<summary>Describe shortly what happens when you execute a command in the shell</summary><br><b>
+
+The shell figures out, using the PATH variable, where the executable of the command resides in the filesystem. It then calls fork() to create a new child process for running the command. Once the fork was executed successfully, it calls a variant of exec() to execute the command and finally, waits the command to finish using wait(). When the child completes, the shell returns from wait() and prints out the prompt again.
 </b></details>
 
 #### Linux Filesystem & Files
@@ -4247,7 +4367,7 @@ GPL v2
 <details>
 <summary>What is an operating system?</summary><br><b>
 
-There are many ways to answer that. For those who look for simplicity, the book "Operating Systems: Three Easy Pieces" offers nice version:
+From the book "Operating Systems: Three Easy Pieces":
 
 "responsible for making it easy to run programs (even allowing you to seemingly run many at the same time), allowing programs to share memory, enabling programs to interact with devices, and other fun stuff like that".
 </b></details>
@@ -4417,6 +4537,15 @@ Yes, it's a operating-system-level virtualization, where the kernel is shared an
 
 ## Ansible
 
+### Ansible Exercises
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| My First Task | Tasks | [Exercise](exercises/ansible/my_first_task.md) | [Solution](exercises/ansible/solutions/my_first_task.md)
+| My First Playbook | Playbooks | [Exercise](exercises/ansible/my_first_playbook.md) | [Solution](exercises/ansible/solutions/my_first_playbook.md)
+
+### Ansible Self Assesment
+
 <details>
 <summary>Describe each of the following components in Ansible, including the relationship between them:
 
@@ -4438,7 +4567,7 @@ Role – Ansible roles allows you to group resources based on certain functional
 </b></details>
 
 <details>
-<summary>How Ansible is different from other Automation tools?</summary><br><b>
+<summary>How Ansible is different from other automation tools? (e.g. Chef, Puppet, etc.)</summary><br><b>
 
 Ansible is:
 
@@ -4449,13 +4578,19 @@ Ansible is:
 </b></details>
 
 <details>
+<summary>What are collections in Ansible?</summary><br><b>
+</b></details>
+
+<details>
 <summary>True or False? Ansible follows the mutable infrastructure paradigm</summary><br><b>
 
-True.
+True. In immutable infrastructure approach, you'll replace infrastructure instead of modifying it.<br>
+Ansible rather follows the mutable infrastructure paradigm where it allows you to change the configuration of different components, but this approach is not perfect and has its own disadvantges like "configuration drift" where different components may reach different state for different reasons.
 </b></details>
 
 <details>
 <summary>True or False? Ansible uses declarative style to describe the expected end state</summary><br><b>
+
 False. It uses a procedural style.
 </b></details>
 
@@ -4464,8 +4599,17 @@ False. It uses a procedural style.
 
 While it's possible to provision resources with Ansible, some prefer to use tools that follow immutable infrastructure paradigm.
 Ansible doesn't saves state by default. So a task that creates 5 instances for example, when executed again will create additional 5 instances (unless
-additional check is implemented) while other tools will check if 5 instances exist. If only 4 exist, additional instance will be created.
+additional check is implemented) while other tools will check if 5 instances exist. If only 4 exist (by checking the state file for example), additional instance will be created.
 </b></details>
+
+<details>
+<summary>How do you list all modules and how can you see details on a specific module?</summary><br><br>
+
+1. Ansible online docs
+2. `ansible-doc -l` for list of modules and `ansible [module_name]` for detailed information on a specific module
+</b></details>
+
+#### Ansible - Inventory
 
 <details>
 <summary>What is an inventory file and how do you define one?</summary><br><b>
@@ -4495,34 +4639,48 @@ You should use one when using external sources and especially when the hosts in 
 spun up and shut down, without you tracking every change in these sources.
 </b></details>
 
-<details>
-<summary>How do you list all modules and how can you see details on a specific module?</summary><br><br>
-
-1. Ansible online docs
-2. `ansible-doc -l` for list of modules and `ansible [module_name]` for detailed information on a specific module
-</b></details>
+#### Ansible - Variables
 
 <details>
-<summary>Write a task to create the directory ‘/tmp/new_directory’</summary><br><b>
+<summary>Modify the following task to use a variable instead of the value "zlib" and have "zlib" as the default in case the variable is not defined
 
 ```
-- name: Create a new directory
-  file:
-    path: "/tmp/new_directory"
-    state: directory
+- name: Install a package
+  package:
+    name: "zlib"
+    state: present
+```
+</summary><br><b>
+
+```
+- name: Install a package
+  package:
+    name: "{{ package_name|default('zlib') }}"
+    state: present
 ```
 </b></details>
 
 <details>
-<summary>You want to run Ansible playbook only on specific minor version of your OS, how would you achieve that?</summary><br><b>
-</b></details>
+<summary>How to make the variable "use_var" optional?
 
-<details>
-<summary>What the "become" directive used for in Ansible?</summary><br><b>
-</b></details>
+```
+- name: Install a package
+  package:
+    name: "zlib"
+    state: present
+    use: "{{ use_var }}"
+```
+</summary><br><b>
 
-<details>
-<summary>What are facts? How to see all the facts of a certain host?</summary><br><b>
+
+With "default(omit)"
+```
+- name: Install a package
+  package:
+    name: "zlib"
+    state: present
+    use: "{{ use_var|default(omit) }}"
+```
 </b></details>
 
 <details>
@@ -4540,6 +4698,18 @@ spun up and shut down, without you tracking every change in these sources.
 ```
 
 When given a written code, always inspect it thoroughly. If your answer is “this will fail” then you are right. We are using a fact (ansible_hostname), which is a gathered piece of information from the host we are running on. But in this case, we disabled facts gathering (gather_facts: no) so the variable would be undefined which will result in failure.
+</b></details>
+
+<details>
+<summary>You want to run Ansible playbook only on specific minor version of your OS, how would you achieve that?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What the "become" directive used for in Ansible?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are facts? How to see all the facts of a certain host?</summary><br><b>
 </b></details>
 
 <details>
@@ -4822,20 +4992,11 @@ Gotenks = 32
 <details>
 <summary>Explain what Terraform is and how does it works</summary><br><b>
 
-Read [here](https://www.terraform.io/intro/index.html#what-is-terraform-)
+[Terraform.io](https://www.terraform.io/intro/index.html#what-is-terraform-): "Terraform is an infrastructure as code (IaC) tool that allows you to build, change, and version infrastructure safely and efficiently."<br>
 </b></details>
 
 <details>
-<summary>What benefits infrastructure-as-code has?</summary><br><b>
-
-- fully automated process of provisioning, modifying and deleting your infrastructure
-- version control for your infrastructure which allows you to quickly rollback to previous versions
-- validate infrastructure quality and stability with automated tests and code reviews
-- makes infrastructure tasks less repetitive
-</b></details>
-
-<details>
-<summary>Why Terraform and not other technologies? (e.g. Ansible, Puppet, CloufFormation)</summary><br><b>
+<summary>Why one would prefer using Terraform and not other technologies? (e.g. Ansible, Puppet, CloufFormation)</summary><br><b>
 
 A common *wrong* answer is to say that Ansible and Puppet are configuration management tools
 and Terraform is a provisioning tool. While technically true, it doesn't mean Ansible and Puppet can't
@@ -4846,6 +5007,15 @@ The benefits of Terraform over the other tools:
 
   * It follows the immutable infrastructure approach which has benefits like avoiding a configuration drift over time
   * Ansible and Puppet are more procedural (you mention what to execute in each step) and Terraform is declarative since you describe the overall desired state and not per resource or task. You can give the example of going from 1 to 2 servers in each tool. In Terraform you specify 2, in Ansible and puppet you have to only provision 1 additional server so you need to explicitly make sure you provision only another one server.
+</b></details>
+
+<details>
+<summary>How do you structure your Terraform projects?</summary><br><b>
+
+terraform_directory
+   providers.tf -> List providers (source, version, etc.)
+   variables.tf -> any variable used in other files such as main.tf
+   main.tf -> Lists the resources
 </b></details>
 
 <details>
@@ -4860,37 +5030,14 @@ True
 </b></details>
 
 <details>
-<summary>Explain what is "Terraform configuration"</summary><br><b>
-A configuration is a root module along with a tree of child modules that are called as dependencies from the root module.
-</b></details>
-
-<details>
 <summary>What is HCL?</summary><br><b>
 HCL stands for Hashicorp Configuration Language. It is the language Hashicorp made to use as the configuration language for a number of its tools, including terraform.
 </b></details>
 
 <details>
-<summary>Explain each of the following:
+<summary>Explain what is "Terraform configuration"</summary><br><b>
 
-  * Provider
-  * Resource
-  * Provisioner
-</summary><br><b>
-  * Provider is any cloud based technology - github, aws, postgresql etc - which one can make an API call to with its unique terraform provider binary to provision available services and components.<br>
-  * Resources are the services and components you provision on these platforms.<br>
-  * Provisioner in terraform's lingo specifically refers to configuration tools like ansible or salt-stack which are used in combination with terraform to orchestrate a system.
-</b></details>
-
-<details>
-<summary>What <code>terraform.tfstate</code> file is used for?</summary><br><b>
-
-It keeps track of the IDs of created resources so that Terraform knows what it's managing.
-</b></details>
-
-<details>
-<summary>How do you rename an existing resource?</summary><br><b>
-
-terraform state mv
+A configuration is a root module along with a tree of child modules that are called as dependencies from the root module.
 </b></details>
 
 <details>
@@ -4908,6 +5055,202 @@ terraform state mv
 <code>terraform apply</code> will provision the resources specified in the .tf files.
 </b></details>
 
+#### Terraform - Resources
+
+<details>
+<summary>What is a "resource"?</summary><br><b>
+
+HashiCorp: "Terraform uses resource blocks to manage infrastructure, such as virtual networks, compute instances, or higher-level components such as DNS records. Resource blocks represent one or more infrastructure objects in your Terraform configuration."
+</b></details>
+
+<details>
+<summary>Explain each part of the following line: `resource "aws_instance" "web_server" {...}`</summary><br><b>
+
+  - resource: keyword for defining a resource
+  - "aws_instance": the type of the resource
+  - "web_server": the name of the resource
+</b></details>
+
+<details>
+<summary>What is the ID of the following resource: `resource "aws_instance" "web_server" {...}`</summary><br><b>
+
+`aws_instance.web_server`
+</b></details>
+
+<details>
+<summary>True or False? Resource ID must be unique within a workspace</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>Explain each of the following in regards to resources
+
+  - Arguments
+  - Attributes
+  - Meta-arguments</summary><br><b>
+  
+  - Arguments: resource specific configurations
+  - Attributes: values exposed by the resource in a form of `resource_type.resource_name.attribute_name`. They are set by the provider or API usually.
+  - Meta-arguments: Functions of Terraform to change resource's behaviour
+</b></details>
+
+#### Terraform - Providers
+
+<details>
+<summary>Explain what is a "provider"</summary><br><b>
+
+[terraform.io](https://www.terraform.io/docs/language/providers/index.html): "Terraform relies on plugins called "providers" to interact with cloud providers, SaaS providers, and other APIs...Each provider adds a set of resource types and/or data sources that Terraform can manage. Every resource type is implemented by a provider; without providers, Terraform can't manage any kind of infrastructure."
+</b></details>
+
+<details>
+<summary>What is the name of the provider in this case: `resource "libvirt_domain" "instance" {...}`</summary><br><b>
+
+libvirt
+</b></details>
+
+#### Terraform - Variables
+
+<details>
+<summary>What are Input Variables in Terraform? Why one should use them?</summary><br><b>
+
+Input variables serve as parameters to the module in Terraform. They allow you for example to define once the value of a variable and use that variable in different places in the module so next time you would want to change the value, you will change it in one place instead of changing the value in different places in the module.
+</b></details>
+
+<details>
+<summary>How to define variables?</summary><br><b>
+
+```
+variable "app_id" {
+  type = string
+  description = "The id of application"
+  default = "some_value"
+}
+```
+
+Usually they are defined in their own file (vars.tf for example).
+</b></details>
+
+<details>
+<summary>How variables are used in modules?</summary><br><b>
+
+They are referenced with `var.VARIABLE_NAME`
+
+vars.tf:
+
+```
+variable "memory" {
+  type = string
+  default "8192"
+}
+
+variable "cpu" {
+  type = string
+  default = "4"
+}
+```
+
+main.tf:
+
+```
+resource "libvirt_domain" "vm1" {
+   name = "vm1"
+   memory = var.memory
+   cpu = var.cpu
+}
+```
+</b></details>
+
+<details>
+<summary>How would you enforce users that use your variables to provide values with certain constraints? For example, a number greater than 1</summary><br><b>
+
+Using `validation` block
+
+```
+variable "some_var" {
+  type = number
+  
+  validation {
+    condition = var.some_var > 1
+    error_message = "you have to specify a number greater than 1"
+  }
+
+}
+```
+</b></details>
+
+<details>
+<summary>What is the effect of setting variable as "sensitive"?</summary><br><b>
+
+It doesn't show its value when you run `terraform apply` or `terraform plan` but eventually it's still recorded in the state file.
+</b></details>
+
+<details>
+<summary>True or Fales? If an expression's result depends on a sensitive variable, it will be treated as sensitive as well</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>The same variable is defined in the following places:
+
+  - The file `terraform.tfvars`
+  - Environment variable
+  - Using `-var` or `-var-file`
+  
+According to varaible precedence, which source will be used first?</summary><br><b>
+
+The order is:
+
+  - Environment variable
+  - The file `terraform.tfvars`
+  - Using `-var` or `-var-file`
+</b></details>
+
+<details>
+<summary>What other way is there to define lots of variables in more "simplified" way?</summary><br><b>
+
+Using `.tfvars` file which contains variable consists of simple variable names assignments this way:
+
+```
+x = 2
+y = "mario"
+z = "luigi"
+```
+</b></details>
+
+#### Terraform - State
+
+<details>
+<summary>What <code>terraform.tfstate</code> file is used for?</summary><br><b>
+
+It keeps track of the IDs of created resources so that Terraform knows what it's managing.
+</b></details>
+
+<details>
+<summary>How do you rename an existing resource?</summary><br><b>
+
+terraform state mv
+</b></details>
+
+<details>
+<summary>Why does it matter where you store the tfstate file? Where would you store it?</summary><br><b>
+
+  - tfstate contains credentials in plain text. You don't want to put it in publicly shared location
+  - tfstate shouldn't be modified concurrently so putting it in a shared location available for everyone with "write" permissions might lead to issues. (Terraform remote state doesn't has this problem).
+  - tfstate is in important file. As such, it might be better to put it in a location that has regular backups.
+
+As such, tfstate shouldn't be stored in git repositories. secured storage such as secured buckets, is a better option.
+</b></details>
+
+<details>
+<summary>Mention some best practices related to tfstate</summary><br><b>
+
+  - Don't edit it manually. tfstate was designed to be manipulated by terraform and not by users directly.
+  - Store it in secured location (since it can include credentials and sensitive data in general)
+  - Backup it regularly so you can roll-back easily when needed 
+</b></details>
+
 <details>
 <summary>How to write down a variable which changes by an external source or during <code>terraform apply</code>?</summary><br><b>
 
@@ -4915,11 +5258,17 @@ You use it this way: <code>variable “my_var” {}</code>
 </b></details>
 
 <details>
-<summary>Give an example of several Terraform best practices</summary><br><b>
+<summary>You've deployed a virtual machine with Terraform and you would like to pass data to it (or execute some commands). Which concept of Terraform would you use?</summary><br><b>
+
+[Provisioners](https://www.terraform.io/docs/language/resources/provisioners)
 </b></details>
 
+#### Terraform - Provisioners
+
 <details>
-<summary>Explain how implicit and explicit dependencies work in Terraform</summary><br><b>
+<summary>What are "Provisioners"? What they are used for?</summary><br><b>
+
+Provisioners used to execute actions on local or remote machine. It's extremely useful in case you provisioned an instance and you want to make a couple of changes in the machine you've created without manually ssh into it after Terraform finished to run and manually run them.
 </b></details>
 
 <details>
@@ -5263,13 +5612,12 @@ Because each container has its own writable container layer, and all changes are
 
 ### Kubernetes Exercises
 
-#### Developer & Regular User Path
+#### Developer & "Regular" User Path
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | My First Pod | Pods | [Exercise](exercises/kubernetes/pods_01.md) | [Solution](exercises/kubernetes/solutions/pods_01_solution.md)
 | Creating a service | Service | [Exercise](exercises/kubernetes/services_01.md) | [Solution](exercises/kubernetes/solutions/services_01_solution.md)
-
 
 ### Kubernetes Self Assesment
 
@@ -5296,7 +5644,17 @@ Read more [here](https://www.redhat.com/en/topics/containers/what-is-a-kubernete
 </b></details>
 
 <details>
+<summary>Do you have experience with deploying a Kubernetes cluster? If so, can you describe the process in high-level?</summary><br><b>
+
+1. Create multiple instances you will use as Kubernetes nodes/workers. Create also an instance to act as the Master. The instances can be part of the cloud or virtual machines on physical hosts.
+2. <TODO>
+</b></details>
+
+<details>
 <summary>When or why NOT to use Kubernetes?</summary><br><b>
+
+  - If you deploy applications using container and you need to manage scaling, rolling out updates, etc. You should use Kubernetes
+  - If you manage low level infrastructure or baremetals, Kubernetes is probably not what you need or want
 </b></details>
 
 #### Kubernetes Nodes
@@ -5326,9 +5684,10 @@ The workers are the nodes which run the applications and workloads.
 
 <details>
 <summary>What is kubectl?</summary><br><b>
-</b></details>
 
 Kubectl is the Kubernetes command line tool that allows you to run commands against Kubernetes clusters. For example, you can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
+</b></details>
+
 <details>
 <summary>Which command you run to view your nodes?</code></summary><br><b>
 
@@ -5358,7 +5717,7 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
   * Container runtime - the engine runs the containers (Podman, Docker, ...)
 </b></details>
 
-#### Kubernetes Pod
+#### Kubernetes - Pod
 
 <details>
 <summary>Explain what is a pod</summary><br><b>
@@ -5375,7 +5734,7 @@ A Pod is a group of one or more containers, with shared storage and network reso
 <details>
 <summary>How many containers can a pod contain?</summary><br><b>
 
-Multiple containers but in most cases it would be one container per pod.
+Multiple containers but in most cases it would probably be one container per pod.
 </b></details>
 
 <details>
@@ -5385,7 +5744,19 @@ It means they would eventually die and pods are unable to heal so it is recommen
 </b></details>
 
 <details>
-<summary>Which command you run to view all pods running on all namespaces?</code></summary><br><b>
+<summary>True or False? By default, pods are isolated. This means they are unable to receive traffic from any source</summary><br><b>
+
+False. By default, pods are non-isolated = pods accent traffic from any source.
+</b></details>
+
+<details>
+<summary>How to list the pods in the current namespace?</code></summary><br><b>
+
+`kubectl get po`
+</b></details>
+
+<details>
+<summary>How view all the pods running in all the namespaces?</code></summary><br><b>
 
 `kubectl get pods --all-namespaces`
 </b></details>
@@ -5411,10 +5782,6 @@ A Kubernetes Deployment is used to tell Kubernetes how to create or modify i
 Deployments can scale the number of replica pods, enable rollout of updated code in a controlled manner, or roll back to an earlier deployment version if necessary. 
 
 A Deployment is a declarative statement for the desired state for Pods and Replica Sets.
-</b></details>
-
-<details>
-<summary>Describe the process of a deployment in high level</summary><br><b>
 </b></details>
 
 <details>
@@ -5467,7 +5834,7 @@ The pod related to the deployment will terminate and the replicaset will be remo
 Using a Service.
 </b></details>
 
-#### Kubernetes Service
+#### Kubernetes - Service
 
 <details>
 <summary>What is a Service in Kubernetes?</summary><br><b>
@@ -5544,7 +5911,7 @@ spec:
 Ingress
 </b></details>
 
-#### Kubernetes Ingress
+#### Kubernetes - Ingress
 
 <details>
 <summary>What is Ingress?</summary><br><b>
@@ -5658,7 +6025,42 @@ spec:
 True
 </b></details>
 
-#### Kubernetes Configuration File
+<details>
+<summary>Which Kubernetes concept would you use to control traffic flow at the IP address or port level? </summary><br><b>
+
+Network Policies
+</b></details>
+
+#### Kubernetes - Network Policies
+
+<details>
+<summary>Explain Network Policies</summary><br><b>
+
+[kubernetes.io](https://kubernetes.io/docs/concepts/services-networking/network-policies): "NetworkPolicies are an application-centric construct which allow you to specify how a pod is allowed to communicate with various network "entities"..."
+
+In simpler words, Network Policies specify how pods are allowed/disallowed to communicate with each other and/or other network endpoints.
+</b></details>
+
+<details>
+<summary>What are some use cases for using Network Policies?</summary><br><b>
+
+  - Security:  You want to prevent from everyone to communicate with a certain pod for security reasons
+  - Controling network traffic: You would like to deny network flow between two specific nodes
+</b></details>
+
+<details>
+<summary>True or False? If no network policies are applied to a pod, then no connections to or from it are allowed</summary><br><b>
+
+False. By default pods are non-isolated.
+</b></details>
+
+<details>
+<summary>In case of two pods, if there is an egress policy on the source denining traffic and ingress policy on the destination that allows traffic then, traffic will be allowed or denied?</summary><br><b>
+
+Denied. Both source and destination policies has to allow traffic for it to be allowed.
+</b></details>
+
+#### Kubernetes - Configuration File
 
 <details>
 <summary>Which parts a configuration file has?</summary><br><b>
@@ -6784,6 +7186,17 @@ def find_triplets_sum_to_zero(li):
 
 ## Python
 
+### Python Exercises
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Identify the data type | Data Types | [Exercise](exercises/python/data_types.md) | [Solution](exercises/python/solutions/data_types_solution.md)
+| Identify the data type - Advanced | Data Types | [Exercise](exercises/python/advanced_data_types.md) | [Solution](exercises/python/solutions/advanced_data_types_solution.md)
+| Reverse String | Strings | [Exercise](exercises/python/reverse_string.md) | [Solution](exercises/python/solutions/reverse_string.md)
+| Compress String | Strings | [Exercise](exercises/python/compress_string.md) | [Solution](exercises/python/solutions/compress_string.md)
+
+### Python Self Assessment
+
 <details>
 <summary>What are some characteristics of the Python programming language?</summary><br><b>
 
@@ -6831,17 +7244,7 @@ The immutable data types are:
     Frozenset
 </b></details>
 
-<details>
-<summary>What is a tuple in Python? What is it used for?</summary><br><b>
-
-A tuple is a built-in data type in Python. It's used for storing multiple items in a single variable.
-</b></details>
-
-<details>
-<summary>List, like a tuple, is also used for storing multiple items. What is then, the difference between a tuple and a list?</summary><br><b>
-
-List, as opposed to a tuple, is a mutable data type. It means we can modify it and at items to it.
-</b></details>
+#### Python - Booleans
 
 <details>
 <summary>What is the result of each of the following?
@@ -6858,6 +7261,34 @@ List, as opposed to a tuple, is a mutable data type. It means we can modify it a
 </b></details>
 
 <details>
+<summary>What is the result of `bool("")`? What about `bool(" ")`? Explain</summary><br><b>
+
+bool("") -> evaluates to False<br>
+bool("  ") -> evaluates to True
+</b></details>
+
+<details>
+<summary>What is the result of running <code>[] is not []</code>? explain the result</summary><br><b>
+
+It evaluates to True.<br>
+The reason is that the two created empty list are different objects. `x is y` only evaluates to true when x and y are the same object.
+</b></details>
+
+<details>
+<summary>What is the result of running <code>True-True</code>?</summary><br><b>
+
+0
+</b></details>
+
+#### Python - Strings
+
+<details>
+<summary>True or False? String is an immutable data type in Python</summary><br><b>
+
+True
+</b></details>
+
+<details>
 <summary>What is the result of of each of the following?
 
   * "abc"*3
@@ -6871,20 +7302,6 @@ List, as opposed to a tuple, is a mutable data type. It means we can modify it a
 * TypeError
 * "abc"
 * ""
-</b></details>
-
-<details>
-<summary>What is the result of `bool("")`? What about `bool(" ")`? Explain</summary><br><b>
-
-bool("") -> evaluates to False<br>
-bool("  ") -> evaluates to True
-</b></details>
-
-<details>
-<summary>What is the result of running <code>[] is not []</code>? explain the result</summary><br><b>
-
-It evaluates to True.<br>
-The reason is that the two created empty list are different objects. `x is y` only evaluates to true when x and y are the same object.
 </b></details>
 
 <details>
@@ -6909,6 +7326,8 @@ if lower(input("Insert a character: ")[0]) in "aieou": # Takes care of multiple 
 ```
 </b></details>
 
+#### Python - Functions
+
 <details>
 <summary>How to define a function with Python?</summary><br><b>
 Using the `def` keyword. For Examples:
@@ -6932,6 +7351,8 @@ def my_function():
 
 You can then assign a function to a variables like this `x = my_function` or you can return functions as return values like this `return my_function`
 </b></details>
+
+#### Python - OOP
 
 <details>
 <summary>Explain inheritance and how to use it in Python</summary><br><b>
@@ -7248,7 +7669,19 @@ print("{0:.3f}".format(sum(li)/len(li)))
 ```
 </b></details>
 
-#### Python Lists
+#### Python - Lists
+
+<details>
+<summary>What is a tuple in Python? What is it used for?</summary><br><b>
+
+A tuple is a built-in data type in Python. It's used for storing multiple items in a single variable.
+</b></details>
+
+<details>
+<summary>List, like a tuple, is also used for storing multiple items. What is then, the difference between a tuple and a list?</summary><br><b>
+
+List, as opposed to a tuple, is a mutable data type. It means we can modify it and at items to it.
+</b></details>
 
 <details>
 <summary>How to add the number 2 to the list <code>x = [1, 2, 3]</code></summary><br><b>
@@ -7540,7 +7973,7 @@ set([food for bro in x for food in bro['food']])
 ```
 </b></details>
 
-#### Python Dictionaries
+#### Python - Dictionaries
 
 <details>
 <summary>How to create a dictionary?</summary><br><b>
@@ -7826,24 +8259,9 @@ Detailed answer can be found here: http://codingshell.com/python-all-string-perm
 </b></details>
 
 <details>
-<summary>How to reverse a string? (e.g. pizza -> azzip)</summary><br><b>
+<summary>If <code>x = "pizza"</code>, what would be the result of <code>x[::-1]</code>?</summary><br><b>
 
-The correct way is:
-
-```
-my_string[::-1]
-```
-
-A more visual way is:<br>
-<i>Careful: this is very slow</i>
-
-```
-def reverse_string(string):
-    temp = ""
-    for char in string:
-        temp =  char + temp
-    return temp
-```
+It will reverse the string, so x would be equal to `azzip`.
 </b></details>
 
 <details>
@@ -8787,7 +9205,6 @@ This is a great article about Octopus merge: http://www.freblogg.com/2016/12/git
 
 ## Go
 
-
 <details>
 <summary>What are some characteristics of the Go programming language?</summary><br><b>
 
@@ -9147,6 +9564,14 @@ as key-value pair, document-oriented, etc.
 
 ## OpenShift
 
+### OpenShift Exercises
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| My First Project | Projects | [Exercise](exercises/openshift/projects_101.md) | [Solution](exercises/openshift/solutions/projects_101.md)
+
+### OpenShift Self Assessment
+
 <details>
 <summary>What is OpenShift?</summary><br><b>
 
@@ -9185,6 +9610,21 @@ The Scheduler.
 <summary>What else the scheduler responsible for except pod placement?</summary><br><b>
 
 Application high availability by spreading pod replicas between worker nodes
+</b></details>
+
+## OpenShift - Projects
+
+<details>
+<summary>What is a project in OpenShift?</summary><br><b>
+
+A project in OpenShift is a Kubernetes namespace with annotations.<br>
+In simpler words, think about it as an isolated environment for users to manage and organize their resources (like Pods, Deployments, Service, etc.).
+</b></details>
+
+<details>
+<summary>How to list all projects? What the "STATUS" column means in projects list output?</summary><br><b>
+
+`oc get projects` will list all projects. The "STATUS" column can be used to see which projects are currently active.
 </b></details>
 
 ## OpenShift - Images
@@ -9322,6 +9762,26 @@ False. It can run on any node.
 4. Router proxies the request to the internal pod 
 </b></details>
 
+#### OpenShift - Security
+
+<details>
+<summary>What are "Security Context Constraints"?</summary><br><b>
+
+From [OpenShift Docs](https://docs.openshift.com/container-platform/4.7/authentication/managing-security-context-constraints.html): "Similar to the way that RBAC resources control user access, administrators can use security context constraints (SCCs) to control permissions for pods".
+</b></details>
+
+<details>
+<summary>How to add the ability for the user `user1` to view the project `wonderland` assuming you are authorized to do so</summary><br><b>
+
+oc adm policy add-role-to-user view user1 -n wonderland
+</b></details>
+
+<details>
+<summary>How to check what is the current context?</summary><br><b>
+
+`oc whoami --show-context`
+</b></details>
+
 #### OpenShift - Misc
 
 <details>
@@ -9414,11 +9874,19 @@ done
 
 ## SQL
 
+### SQL Exercises
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Functions vs. Comparisons | Query Improvements | [Exercise](exercises/sql/improve_query.md) | [Solution](exercises/sql/solutions/improve_query.md)
+
+### SQL Self Assessment
+
 <details>
-<summary>What does SQL stand for?</summary><br><b>
+<summary>What is SQL?</summary><br><b>
 
-Structured Query Language
-
+SQL (Structured Query Language) is a standard language for relational databases (like MySQL, MariaDB, ...).<br>
+It's used for reading, updating, removing and creating data in a relational database.
 </b></details>
 
 <details>
@@ -9429,40 +9897,6 @@ tables with rows and columns - like an excel spreadsheet table) while NoSQL is
 unstructured, and the data storage can vary depending on how the NoSQL DB is set up, such
 as key-value pair, document-oriented, etc.
 </b></details>
-
-<details>
-<summary>What does it mean when a database is ACID compliant?</summary><br>
-
-ACID stands for Atomicity, Consistency, Isolation, Durability. In order to be ACID compliant, the database much meet each of the four criteria
-
-**Atomicity** - When a change occurs to the database, it should either succeed or fail as a whole.
-
-For example, if you were to update a table, the update should completely execute. If it only partially executes, the
-update is considered failed as a whole, and will not go through - the DB will revert back to it's original
-state before the update occurred. It should also be mentioned that Atomicity ensures that each
-transaction is completed as it's own stand alone "unit" - if any part fails, the whole statement fails.
-
-**Consistency** - any change made to the database should bring it from one valid state into the next.
-
-For example, if you make a change to the DB, it shouldn't corrupt it. Consistency is upheld by checks and constraints that
-are pre-defined in the DB. For example, if you tried to change a value from a string to an int when the column
-should be of datatype string, a consistent DB would not allow this transaction to go through, and the action would
-not be executed
-
-**Isolation** - this ensures that a database will never be seen "mid-update" - as multiple transactions are running at
-the same time, it should still leave the DB in the same state as if the transactions were being run sequentially.
-
-For example, let's say that 20 other people were making changes to the database at the same time. At the
-time you executed your query, 15 of the 20 changes had gone through, but 5 were still in progress. You should
-only see the 15 changes that had completed - you wouldn't see the database mid-update as the change goes through.
-
-**Durability** - Once a change is committed, it will remain committed regardless of what happens
-(power failure, system crash, etc.). This means that all completed transactions
-must be recorded in non-volatile memory.
-
-Note that SQL is by nature ACID compliant. Certain NoSQL DB's can be ACID compliant depending on
-how they operate, but as a general rule of thumb, NoSQL DB's are not considered ACID compliant
-</details>
 
 <details>
 <summary>When is it best to use SQL? NoSQL?</summary><br><b>
@@ -9478,21 +9912,7 @@ Additionally, since NoSQL does not adhere to the strict table with columns and r
 that Relational Databases require, you can store different data types together.
 </b></details>
 
-<details>
-<summary>What is a Cartesian Product?</summary><br>
-
-A Cartesian product is when all rows from the first table are joined to all rows in the second
-table. This can be done implicitly by not defining a key to join, or explicitly by
-calling a CROSS JOIN on two tables, such as below:
-
-Select * from customers **CROSS JOIN** orders;
-
-Note that a Cartesian product can also be a bad thing - when performing a join
-on two tables in which both do not have unique keys, this could cause the returned information
-to be incorrect.
-</details>
-
-##### SQL Specific Questions
+##### Practical SQL - Basics
 
 For these questions, we will be using the Customers and Orders tables shown below:
 
@@ -9585,6 +10005,29 @@ because you create a pseudo temp when running your query, instead of creating a 
 
 The Sum of all the purchases of cat food weren't readily available, so we used a with statement to create
 the pseudo table to retrieve the sum of the prices spent by each customer, then join the table normally.
+</b></details>
+
+<details>
+<summary>Which of the following queries would you use?
+
+```
+SELECT count(*)                             SELECT count(*)
+FROM shawarma_purchases                     FROM shawarma_purchases
+WHERE                               vs.     WHERE
+  YEAR(purchased_at) == '2017'              purchased_at >= '2017-01-01' AND
+                                            purchased_at <= '2017-31-12'
+```
+</summary><br><b>
+
+```
+SELECT count(*)
+FROM shawarma_purchases
+WHERE
+  purchased_at >= '2017-01-01' AND
+  purchased_at <= '2017-31-12'
+```
+
+When you use a function (`YEAR(purchased_at)`) it has to scan the whole database as opposed to using indexes and basically the column as it is, in its natural state.
 </b></details>
 
 ## Azure
@@ -10062,6 +10505,22 @@ You can read about TripleO right [here](https://docs.openstack.org/tripleo-docs/
 </b></details>
 
 <details>
+<summary>In which order should you remove the following entities:
+
+  - Network
+  - Port
+  - Router
+  - Subnet</summary><br><b>
+
+  - Port
+  - Subnet
+  - Router
+  - Network
+
+There are many reasons for that. One for example: you can't remove router if there are active ports assigned to it.
+</b></details>
+
+<details>
 <summary>What is a provider network?</summary><br><b>
 </b></details>
 
@@ -10133,13 +10592,13 @@ Not by default. Object Storage API limits the maximum to 5GB per object but it c
 <details>
 <summary>Explain the following in regards to Swift:
 
-  * Container
-  * Account
-  * Object </summary><br><b>
+  - Container
+  - Account
+  - Object</summary><br><b>
 
-  * Container - Defines a namespace for objects.
-  * Account - Defines a namespace for containers
-  * Object - Data content (e.g. image, document, ...)
+  - Container - Defines a namespace for objects.
+  - Account - Defines a namespace for containers
+  - Object - Data content (e.g. image, document, ...)
 </b></details>
 
 <details>
@@ -10172,38 +10631,38 @@ False. Two objects can have the same name if they are in different containers.
 <details>
 <summary>Can you describe the following concepts in regards to Keystone?
 
-  * Role
-  * Tenant/Project
-  * Service
-  * Endpoint
-  * Token</summary><br><b>
+  - Role
+  - Tenant/Project
+  - Service
+  - Endpoint
+  - Token</summary><br><b>
 
-  * Role - A list of rights and privileges determining what a user or a project can perform
-  * Tenant/Project - Logical representation of a group of resources isolated from other groups of resources. It can be an account, organization, ...
-  * Service - An endpoint which the user can use for accessing different resources
-  * Endpoint - a network address which can be used to access a certain OpenStack service
-  * Token - Used for access resources while describing which resources can be accessed by using a scope
+  - Role - A list of rights and privileges determining what a user or a project can perform
+  - Tenant/Project - Logical representation of a group of resources isolated from other groups of resources. It can be an account, organization, ...
+  - Service - An endpoint which the user can use for accessing different resources
+  - Endpoint - a network address which can be used to access a certain OpenStack service
+  - Token - Used for access resources while describing which resources can be accessed by using a scope
 </b></details>
 
 <details>
 <summary>What are the properties of a service? In other words, how a service is identified?</summary><br><b>
 
 Using:
-  * Name
-  * ID number
-  * Type
-  * Description
+  - Name
+  - ID number
+  - Type
+  - Description
 </b></details>
 
 <details>
 <summary>Explain the following:
-  * PublicURL
-  * InternalURL
-  * AdminURL</summary><br><b>
+  - PublicURL
+  - InternalURL
+  - AdminURL</summary><br><b>
 
-  * PublicURL - Publicly accessible through public internet
-  * InternalURL - Used for communication between services
-  * AdminURL - Used for administrative management
+  - PublicURL - Publicly accessible through public internet
+  - InternalURL - Used for communication between services
+  - AdminURL - Used for administrative management
 </b></details>
 
 <details>
@@ -11068,6 +11527,18 @@ As you know computer networking is done with IP addresses (layer 3 of the OSI mo
 </b></details>
 
 <details>
+<summary>What is DNS resolution?</summary><br><b>
+
+The process of translating IP addresses to domain names.
+</b></details>
+
+<details>
+<summary>What is a DNS record?</summary><br><b>
+
+A mapping between domain name and an IP address.
+</b></details>
+
+<details>
 <summary>How DNS works?</summary><br><b>
 
 In general the process is as follows:
@@ -11215,9 +11686,24 @@ It's an architecture in which data is and retrieved from a single, non-shared, s
 ## Misc
 
 <details>
-<summary>What is a server? What is a client?</summary><br><b>
+<summary>What happens when you type in a URL in an address bar in a browser?</summary><br><b>
 
-A computer which serves data from itself to the client.
+1. The browser searches for the record of the domain name IP address in the DNS in the following order:
+  * Browser cache
+  * Operating system cache
+  * The DNS server configured on the user's system (can be ISP DNS, public DNS, ...)
+
+2. If it couldn't find a DNS record locally, a full DNS resolution is started.
+
+3. It connects to the server using the TCP protocol
+
+4. The browser sends an HTTP request to the server
+
+5. The server sends an HTTP response back to the browser
+
+6. The browser renders the response (e.g. HTML)
+
+7. The browser then sends subsequent requests as needed to the server to get the embedded links, javascript, images in the HTML and then steps 3 to 5 are repeated.
 </b></details>
 
 <details>
@@ -11664,7 +12150,11 @@ Relax, there is no wrong or right answer here...I think.
 </b></details>
 
 <details>
-<summary>How would you describe a good leadership? What makes a good boss for you?</summary><br><b>
+<summary>How would you describe a good leadership?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Describe yourself in one word</summary><br><b>
 </b></details>
 
 <details>
@@ -11859,6 +12349,40 @@ Not only this will tell you what is expected from you, it will also provide big 
 </b></details>
 
 ## Databases
+
+<details>
+<summary>What does it mean when a database is ACID compliant?</summary><br>
+
+ACID stands for Atomicity, Consistency, Isolation, Durability. In order to be ACID compliant, the database much meet each of the four criteria
+
+**Atomicity** - When a change occurs to the database, it should either succeed or fail as a whole.
+
+For example, if you were to update a table, the update should completely execute. If it only partially executes, the
+update is considered failed as a whole, and will not go through - the DB will revert back to it's original
+state before the update occurred. It should also be mentioned that Atomicity ensures that each
+transaction is completed as it's own stand alone "unit" - if any part fails, the whole statement fails.
+
+**Consistency** - any change made to the database should bring it from one valid state into the next.
+
+For example, if you make a change to the DB, it shouldn't corrupt it. Consistency is upheld by checks and constraints that
+are pre-defined in the DB. For example, if you tried to change a value from a string to an int when the column
+should be of datatype string, a consistent DB would not allow this transaction to go through, and the action would
+not be executed
+
+**Isolation** - this ensures that a database will never be seen "mid-update" - as multiple transactions are running at
+the same time, it should still leave the DB in the same state as if the transactions were being run sequentially.
+
+For example, let's say that 20 other people were making changes to the database at the same time. At the
+time you executed your query, 15 of the 20 changes had gone through, but 5 were still in progress. You should
+only see the 15 changes that had completed - you wouldn't see the database mid-update as the change goes through.
+
+**Durability** - Once a change is committed, it will remain committed regardless of what happens
+(power failure, system crash, etc.). This means that all completed transactions
+must be recorded in non-volatile memory.
+
+Note that SQL is by nature ACID compliant. Certain NoSQL DB's can be ACID compliant depending on
+how they operate, but as a general rule of thumb, NoSQL DB's are not considered ACID compliant
+</details>
 
 <details>
 <summary>What is sharding?</summary><br><b>

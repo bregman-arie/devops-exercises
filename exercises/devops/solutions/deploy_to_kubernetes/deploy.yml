@@ -1,0 +1,42 @@
+- name: Apply Kubernetes YAMLs
+  hosts: kubernetes
+  tasks:
+    - name: Ensure SSL related directories exist
+      file:
+        path: "{{ item }}"
+        state: directory
+      loop:
+        - "/etc/ssl/crt"
+        - "/etc/ssl/csr"
+        - "/etc/ssl/private"
+
+    - name: Generate an OpenSSL private key.
+      openssl_privatekey:
+        path: /etc/ssl/private/privkey.pem
+
+    - name: generate openssl certficate signing requests
+      openssl_csr:
+        path: /etc/ssl/csr/hello-world.app.csr
+        privatekey_path: /etc/ssl/private/privkey.pem
+        common_name: hello-world.app
+
+    - name: Generate a Self Signed OpenSSL certificate
+      openssl_certificate:
+        path: /etc/ssl/crt/hello-world.app.crt
+        privatekey_path: /etc/ssl/private/privkey.pem
+        csr_path: /etc/ssl/csr/hello-world.app.csr
+        provider: selfsigned
+
+    - name: Create k8s secret
+      command: "kubectl create secret tls tls-secret --cert=/etc/ssl/crt/hello-world.app.crt --key=/etc/ssl/private/privkey.pem"
+      register: result
+      failed_when:
+        - result.rc == 2
+          
+    - name: Deploy web app
+      k8s:
+        state: present
+        definition: "{{ lookup('file', './helloworld.yml') }}"
+        kubeconfig: '/home/abregman/.kube/config'
+        namespace: 'default'
+        wait: true
