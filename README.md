@@ -88,7 +88,7 @@
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Set up a CI pipeline | CI | [Exercise](exercises/devops/ci_for_open_source_project.md) | | |
-| Deploy to Kubernetes | Deployment | [Exercise](exercises/devops/deploy_to_kubernetes.md) | | |
+| Deploy to Kubernetes | Deployment | [Exercise](exercises/devops/deploy_to_kubernetes.md) | [Solution](exercises/devops/solutions/deploy_to_kubernetes/README.md) | |
 
 ### DevOps Self Assessment
 
@@ -2727,11 +2727,11 @@ The root of the filesystem. The beginning of the tree.
 <details>
 <summary>What is stored in each of the following paths?
 
-  * /bin, /sbin, /usr/bin and /usr/sbin
-  * /etc
-  * /home
-  * /var
-  * /tmp</summary><br><b>
+  - /bin, /sbin, /usr/bin and /usr/sbin
+  - /etc
+  - /home
+  - /var
+  - /tmp</summary><br><b>
 
   * binaries
   * configuration files
@@ -4577,9 +4577,6 @@ Ansible is:
 * Focus on simpleness and ease-of-use
 </b></details>
 
-<details>
-<summary>What are collections in Ansible?</summary><br><b>
-</b></details>
 
 <details>
 <summary>True or False? Ansible follows the mutable infrastructure paradigm</summary><br><b>
@@ -4599,7 +4596,7 @@ False. It uses a procedural style.
 
 While it's possible to provision resources with Ansible, some prefer to use tools that follow immutable infrastructure paradigm.
 Ansible doesn't saves state by default. So a task that creates 5 instances for example, when executed again will create additional 5 instances (unless
-additional check is implemented) while other tools will check if 5 instances exist. If only 4 exist (by checking the state file for example), additional instance will be created.
+additional check is implemented or explicit names are provided) while other tools might check if 5 instances exist. If only 4 exist (by checking the state file for example), one additional instance will be created to reach the end goal of 5 instances.
 </b></details>
 
 <details>
@@ -4698,6 +4695,24 @@ With "default(omit)"
 ```
 
 When given a written code, always inspect it thoroughly. If your answer is “this will fail” then you are right. We are using a fact (ansible_hostname), which is a gathered piece of information from the host we are running on. But in this case, we disabled facts gathering (gather_facts: no) so the variable would be undefined which will result in failure.
+</b></details>
+
+<details>
+<summary>When the value '2017'' will be used in this case: `{{ lookup('env', 'BEST_YEAR') | default('2017', true) }}`?</summary><br><b>
+
+when the environment variable 'BEST_YEAR' is empty or false.
+</b></details>
+
+<details>
+<summary>If the value of certain variable is 1, you would like to use the value "one", otherwise, use "two". How would you do it?</summary><br><b>
+
+`{{ (certain_variable == 1) | ternary("one", "two") }}`
+</b></details>
+
+<details>
+<summary>The value of a certain variable you use is the string "True". You would like the value to be a boolean. How would you cast it?</summary><br><b>
+
+`{{ some_string_var | bool }}`
 </b></details>
 
 <details>
@@ -4973,6 +4988,45 @@ Gotenks = 32
 ```
 </b></details>
 
+
+#### Ansible - Execution and Strategy
+
+<details>
+<summary>True or False? By default, Ansible will execute all the tasks in play on a single host before proceeding to the next host</summary><br><b>
+
+False. Ansible will execute a single task on all hosts before moving to the next task in a play. As for today, it uses 5 forks by default.<br>
+This behaviour is described as "strategy" in Ansible and it's configurable.
+</b></details>
+
+<details>
+<summary>What is a "strategy" in Ansible? What is the default strategy?</summary><br><b>
+
+A strategy in Ansible describes how Ansible will execute the different tasks on the hosts. By default Ansible is using the "Linear strategy" which defines that each task will run on all hosts before proceeding to the next task.
+</b></details>
+
+<details>
+<summary>What strategies are you familiar with in Ansible?</summary><br><b>
+
+  - Linear: the default strategy in Ansible. Run each task on all hosts before proceeding.
+  - Free: For each host, run all the tasks until the end of the play as soon as possible
+  - Debug: Run tasks in an interactive way
+</b></details>
+
+<details>
+<summary>What the <code>serial</code> keyword is used for?</summary><br><b>
+
+It's used to specify the number (or percentage) of hosts to run the full play on, before moving to next number of hosts in the group.
+
+For example:
+```
+- name: Some play
+  hosts: databases
+  serial: 4
+```
+
+If your group has 8 hosts. It will run the whole play on 4 hosts and then the same play on another 4 hosts.
+</b></details>
+
 #### Ansible Testing
 
 <details>
@@ -4985,6 +5039,20 @@ Gotenks = 32
 
 <details>
 <summary>You run Ansibe tests and you get "idempotence test failed". What does it mean? Why idempotence is important?</summary><br><b>
+</b></details>
+
+#### Ansible - Debugging
+
+<details>
+<summary>How to find out the data type of a certain variable in one of the playbooks?</summary><br><b>
+
+"{{ some_var | type_debug }}"
+</b></details>
+
+#### Ansible - Collections
+
+<details>
+<summary>What are collections in Ansible?</summary><br><b>
 </b></details>
 
 ## Terraform
@@ -5086,9 +5154,9 @@ True
 <details>
 <summary>Explain each of the following in regards to resources
 
-  - Arguments
-  - Attributes
-  - Meta-arguments</summary><br><b>
+  * Arguments
+  * Attributes
+  * Meta-arguments</summary><br><b>
   
   - Arguments: resource specific configurations
   - Attributes: values exposed by the resource in a form of `resource_type.resource_name.attribute_name`. They are set by the provider or API usually.
@@ -5657,7 +5725,7 @@ Read more [here](https://www.redhat.com/en/topics/containers/what-is-a-kubernete
   - If you manage low level infrastructure or baremetals, Kubernetes is probably not what you need or want
 </b></details>
 
-#### Kubernetes Nodes
+#### Kubernetes Architecture
 
 <details>
 <summary>What is a Node?</summary><br><b>
@@ -5679,7 +5747,7 @@ The master coordinates all the workflows in the cluster:
 <details>
 <summary>What do we need the worker nodes for?</summary><br><b>
 
-The workers are the nodes which run the applications and workloads.
+The workers are the nodes which run the applications and workloads (Pods and containers).
 </b></details>
 
 <details>
@@ -5689,13 +5757,13 @@ Kubectl is the Kubernetes command line tool that allows you to run commands agai
 </b></details>
 
 <details>
-<summary>Which command you run to view your nodes?</code></summary><br><b>
+<summary>Which command will list the nodes of the cluster?</code></summary><br><b>
 
 `kubectl get nodes`
 </b></details>
 
 <details>
-<summary>True or False? Every cluster must have 0 or more master nodes and at least on e worker</summary><br><b>
+<summary>True or False? Every cluster must have 0 or more master nodes and at least 1 worker</summary><br><b>
 
 False. A Kubernetes cluster consists of at least 1 master and can have 0 workers (although that wouldn't be very useful...)
 </b></details> 
@@ -5717,28 +5785,55 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
   * Container runtime - the engine runs the containers (Podman, Docker, ...)
 </b></details>
 
-#### Kubernetes - Pod
+<details>
+<summary>Place the components on the right side of the image in the right place in the drawing<br>
+<img src="images/kubernetes/kubernetes_components.png"/>
+</summary><br><b>
+<img src="images/kubernetes/kubernetes_components_solution.png"/>
+</b></details>
+
+#### Kubernetes - Pods
 
 <details>
-<summary>Explain what is a pod</summary><br><b>
+<summary>Explain what is a Pod</summary><br><b>
 
-A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers. Pods are the smallest deployable units of computing that you can create and manage in Kubernetes. 
+A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers.
+
+Pods are the smallest deployable units of computing that you can create and manage in Kubernetes. 
 </b></details>
 
 <details>
 <summary>Deploy a pod called "my-pod" using the nginx:alpine image</summary><br><b>
 
 `kubectl run my-pod --image=nginx:alpine --restart=Never`
+
+If you are a Kubernetes beginner you should know that this is not a common way to run Pods. The common way is to run a Deployment which in turn runs Pod(s).
 </b></details>
 
 <details>
 <summary>How many containers can a pod contain?</summary><br><b>
 
-Multiple containers but in most cases it would probably be one container per pod.
+A pod can include multiple containers but in most cases it would probably be one container per pod.
 </b></details>
 
 <details>
-<summary>What does it mean that "pods are ephemeral?</summary><br><b>
+<summary>What use cases exist for running multiple containers in a single pod?</summary><br><b>
+
+A web application with separate (= in their own containers) logging and monitoring components/adapters.
+</b></details>
+
+<details>
+<summary>What are the possible Pod phases?</summary><br><b>
+
+  * Running - The Pod bound to a node and at least one container is running
+  * Failed - At least one container in the Pod terminated with a failure
+  * Succeeded - Every container in the Pod terminated with success
+  * Unknown - Pod's state could not be obtained
+  * Pending - Containers are not yet running (Perhaps images are still being downloaded or the pod wasn't scheduled yet)
+</b></details>
+
+<details>
+<summary>What does it mean when one says "pods are ephemeral"?</summary><br><b>
 
 It means they would eventually die and pods are unable to heal so it is recommended that you don't create them directly.
 </b></details>
@@ -5746,7 +5841,13 @@ It means they would eventually die and pods are unable to heal so it is recommen
 <details>
 <summary>True or False? By default, pods are isolated. This means they are unable to receive traffic from any source</summary><br><b>
 
-False. By default, pods are non-isolated = pods accent traffic from any source.
+False. By default, pods are non-isolated = pods accept traffic from any source.
+</b></details>
+
+<details>
+<summary>True or False? The "Pending" phase means the Pod was not yet accepted by the Kubernetes cluster so the scheduler can't run it unless it's accepted</summary><br><b>
+
+False. "Pending" is after the Pod was accepted by the cluster, but the container can't run for different reasons like images not yet downloaded.
 </b></details>
 
 <details>
@@ -5773,7 +5874,60 @@ False. By default, pods are non-isolated = pods accent traffic from any source.
 `kubectl get po -o wide`
 </b></details>
 
-#### Kubernetes - Deployment
+<details>
+<summary>What are "Static Pods"?</summary><br><b>
+
+* Managed directly by Kubelet on specific node
+* API server is not observing static Pods
+* For each static Pod there is a mirror Pod on kubernetes API server but it can't be managed from there
+
+Read more about it [here](https://kubernetes.io/docs/tasks/configure-pod-container/static-pod)
+</b></details>
+
+<details>
+<summary>What happens when you run a Pod?</summary><br><b>
+
+1. Kubectl sends a request to the API server to create the Pod
+2. The Scheduler detects that there is an unassigned Pod (by monitoring the API server)
+3. The Scheduler chooses a node to assign the Pod to
+4. The Scheduler updates the API server about which node it chose
+5. Kubelet (which also monitors the API server) notices there is a Pod assigned to the same node on which it runs and that Pod isn't running
+6. Kubelet sends request to the container engine (e.g. Docker) to create and run the containers
+7. An update is sent by Kubelet to the API server (notifying it that the Pod is running)
+</b></details>
+
+<details>
+<summary>How to confirm a container is running after running the command <code>kubectl run web --image nginxinc/nginx-unprivileged</code></summary><br><b>
+
+* When you run `kubectl describe pods <POD_NAME>` it will tell whether the container is running:
+`Status:       Running`
+* Run a command inside the container: `kubectl exec web -- ls`
+</b></details>
+
+<details>
+<summary>After running <code>kubectl run database --image mongo</code> you see the status is "CrashLoopBackOff". What could possibly went wrong and what do you do to confirm?</summary><br><b>
+
+"CrashLoopBackOff" means the Pod is starting, crashing, starting...and so it repeats itself.<br>
+
+One of the ways to check why it happened it to run `kubectl describe po <POD_NAME>` and having a look at the exit code
+
+```
+ Last State:     Terminated
+   Reason:       Error
+   Exit Code:    100
+```
+
+Another way to look into it, is to run `kubectl logs <POD_NAME>`. This will provide us with the logs from the containers running in that Pod.
+</b></details>
+
+<details>
+<summary>What does the "ErrImagePull" status of a Pod means?</summary><br><b>
+
+It wasn't able to pull the image specified for running the container(s). This can happen if the client didn't authenticated for example.<br>
+More details can be obtained with `kubectl describe po <POD_NAME>`.
+</b></details>
+
+#### Kubernetes - Deployments
 
 <details>
 <summary>What is a "Deployment" in Kubernetes?</summary><br><b>
@@ -7249,10 +7403,10 @@ The immutable data types are:
 <details>
 <summary>What is the result of each of the following?
 
-  * 1 > 2
-  * 'b' > 'a'
+  - 1 > 2
+  - 'b' > 'a'
   * 1 == 'one'
-  * 2 > 'one'</summary><br><b>
+  - 2 > 'one'</summary><br><b>
 
   * False
   * True
@@ -7291,11 +7445,11 @@ True
 <details>
 <summary>What is the result of of each of the following?
 
-  * "abc"*3
-  * "abc"*2.5
-  * "abc"*2.0
-  * "abc"*True
-  * "abc"*False</summary><br><b>
+  - "abc"*3
+  - "abc"*2.5
+  - "abc"*2.0
+  - "abc"*True
+  - "abc"*False</summary><br><b>
 
 * abcabcabc
 * TypeError
@@ -10367,11 +10521,11 @@ As it does not support stateful applications or sticky sessions, it is suitable 
 <details>
 <summary>Can you tell me what each of the following services/projects is responsible for?:
 
-  * Nova
-  * Neutron
-  * Cinder
-  * Glance
-  * Keystone</summary><br><b>
+  - Nova
+  - Neutron
+  - Cinder
+  - Glance
+  - Keystone</summary><br><b>
 
   * Nova - Manage virtual instances
   * Cinder - Block Storage
@@ -10476,11 +10630,11 @@ You can read about TripleO right [here](https://docs.openstack.org/tripleo-docs/
 <details>
 <summary>Explain each of the following components:
 
-  * neutron-dhcp-agent
-  * neutron-l3-agent
-  * neutron-metering-agent
-  * neutron-*-agtent
-  * neutron-server</summary><br><b>
+  - neutron-dhcp-agent
+  - neutron-l3-agent
+  - neutron-metering-agent
+  - neutron-*-agtent
+  - neutron-server</summary><br><b>
 
 
   * neutron-l3-agent - L3/NAT forwarding (provides external network access for VMs for example)
@@ -10493,10 +10647,10 @@ You can read about TripleO right [here](https://docs.openstack.org/tripleo-docs/
 <details>
 <summary>Explain these network types:
 
-  * Management Network
-  * Guest Network
-  * API Network
-  * External Network</summary><br><b>
+  - Management Network
+  - Guest Network
+  - API Network
+  - External Network</summary><br><b>
 
   * Management Network - used for internal communication between OpenStack components. Any IP address in this network is accessible only within the datacetner
   * Guest Network - used for communication between instances/VMs
@@ -10507,10 +10661,10 @@ You can read about TripleO right [here](https://docs.openstack.org/tripleo-docs/
 <details>
 <summary>In which order should you remove the following entities:
 
-  - Network
-  - Port
-  - Router
-  - Subnet</summary><br><b>
+  * Network
+  * Port
+  * Router
+  * Subnet</summary><br><b>
 
   - Port
   - Subnet
@@ -10592,9 +10746,10 @@ Not by default. Object Storage API limits the maximum to 5GB per object but it c
 <details>
 <summary>Explain the following in regards to Swift:
 
-  - Container
-  - Account
-  - Object</summary><br><b>
+  * Container
+  * Account
+  * Object
+</summary><br><b>
 
   - Container - Defines a namespace for objects.
   - Account - Defines a namespace for containers
@@ -10635,7 +10790,8 @@ False. Two objects can have the same name if they are in different containers.
   - Tenant/Project
   - Service
   - Endpoint
-  - Token</summary><br><b>
+  - Token
+</summary><br><b>
 
   - Role - A list of rights and privileges determining what a user or a project can perform
   - Tenant/Project - Logical representation of a group of resources isolated from other groups of resources. It can be an account, organization, ...
@@ -10681,7 +10837,8 @@ A list of services and their endpoints
   * Ironic
   * Trove
   * Aodh
-  * Ceilometer</summary><br><b>
+  * Ceilometer
+</summary><br><b>
 
   * Swift - highly available, distributed, eventually consistent object/blob store
   * Sahara - Manage Hadoop Clusters
@@ -10699,7 +10856,8 @@ A list of services and their endpoints
   * Track and monitor usage
   * Alarms Service
   * Manage Hadoop Clusters
-  * highly available, distributed, eventually consistent object/blob store</summary><br><b>
+  * highly available, distributed, eventually consistent object/blob store
+</summary><br><b>
 
   * Database as a service which runs on OpenStack - Trove
   * Bare Metal Provisioning - Ironic
@@ -10757,7 +10915,8 @@ A list of services and their endpoints
   * nova-conductor
   * nova-cert
   * nova-consoleauth
-  * nova-scheduler</summary><br><b>
+  * nova-scheduler
+</summary><br><b>
 
   * nova-api - responsible for managing requests/calls
   * nova-compute - responsible for managing instance lifecycle
