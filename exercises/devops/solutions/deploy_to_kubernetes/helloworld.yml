@@ -1,0 +1,65 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-blue-whale
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-world-app
+      version: blue
+  template:
+    metadata:
+      name: hello-blue-whale-pod
+      labels:
+        app: hello-world-app
+        version: blue
+    spec:
+      containers:
+      - name: hello-whale-container
+        image: abregman2/helloworld:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world
+  labels:
+    app: hello-world-app
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: hello-world-app
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+  annotations:
+      cert-manager.io/cluster-issuer: selfsigned-issuer
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      kubernetes.io/ingress.class: nginx
+spec:
+  tls:
+  - hosts:
+      - hello-world.app
+    secretName: shhh
+  rules:
+    - host: hello-world.app
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hello-world
+                port:
+                  number: 80
