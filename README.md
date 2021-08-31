@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1657** questions
+:bar_chart: &nbsp;There are currently **1701** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -855,6 +855,17 @@ False. Auto scaling adjusts capacity and this can mean removing some resources b
 
 ## AWS
 
+### AWS Exercises
+
+#### AWS Lambda
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Hello Function | Lambda | [Exercise](exercises/aws/hello_function.md) | [Solution](exercises/aws/solutions/hello_function.md) | |
+| URL Function | Lambda | [Exercise](exercises/aws/url_function.md) | [Solution](exercises/aws/solutions/url_function.md) | |
+
+### AWS Self Assessment
+
 #### AWS - Global Infrastructure
 
 <details>
@@ -946,7 +957,7 @@ There can be several reasons for that. One of them is lack of policy. To solve t
 Only a login access.
 </b></details>
 
-#### AWS Compute
+#### AWS - Compute
 
 <details>
 <summary>What is EC2?</summary><br><b>
@@ -1030,7 +1041,13 @@ Scheduled RI - launch within time windows you reserve
 Learn more about EC2 RI [here](https://aws.amazon.com/ec2/pricing/reserved-instances)
 </b></details>
 
-#### AWS Serverless Compute
+<details>
+<summary>You would like to invoke a function every time you enter a URL in the browser. Which service would you use for that?</summary><br><b>
+
+AWS Lambda
+</b></details>
+
+#### AWS - Lambda
 
 <details>
 <summary>Explain what is AWS Lambda</summary><br><b>
@@ -1055,6 +1072,12 @@ False. Charges are being made when the code is executed.
 </summary><br><b>
 
 - Python, Ruby, Go
+</b></details>
+
+<details>
+<summary>True or False? Basic lambda permissions allow you only to upload logs to Amazon CloudWatch Logs</summary><br><b>
+
+True
 </b></details>
 
 #### AWS Containers
@@ -1669,6 +1692,12 @@ AWS Snowball
 </b></details>
 
 <details>
+<summary>Which service would you use if you need a data warehouse?</summary><br><b>
+
+AWS RedShift
+</b></details>
+
+<details>
 <summary>Which service provides a virtual network dedicated to your AWS account?</summary><br><b>
 
 VPC
@@ -1726,6 +1755,12 @@ SNS
 <summary>What would you use for running SQL queries interactively on S3?</summary><br><b>
 
 AWS Athena
+</b></details>
+
+<details>
+<summary>What would you use for preparing and combining data for analytics or ML?</summary><br><b>
+
+AWS Glue
 </b></details>
 
 <details>
@@ -1804,6 +1839,19 @@ Amazon S3 Transfer Acceleration
 <summary>Which service would you use for distributing incoming requests across multiple?</summary><br><b>
 
 Route 53
+</b></details>
+
+<details>
+<summary>Which services are involved in getting a custom string (based on the input) when inserting a URL in the browser?</summary><br><b>
+
+Lambda - to define a function that gets an input and returns a certain string<br>
+API Gateway - to define the URL trigger (= when you insert the URL, the function is invoked).
+</b></details>
+
+<details>
+<summary>Which service would you use for data or events streaming?</summary><br><b>
+
+Kinesis
 </b></details>
 
 #### AWS DNS
@@ -4956,6 +5004,10 @@ def cap(self, string):
 </b></details>
 
 <details>
+<summary>What is the difference between `include_task` and `import_task`?</summary><br><b>
+</b></details>
+
+<details>
 <summary>File '/tmp/exercise' includes the following content
 
 ```
@@ -5317,6 +5369,22 @@ As such, tfstate shouldn't be stored in git repositories. secured storage such a
   - Don't edit it manually. tfstate was designed to be manipulated by terraform and not by users directly.
   - Store it in secured location (since it can include credentials and sensitive data in general)
   - Backup it regularly so you can roll-back easily when needed 
+  - Store it in remote shared storage. This is especially needed when working in a team and the state can be updated by any of the team members
+  - Enabled versioning if the storage where you store the state file, supports it. Versioning is great for backups and roll-backs in case of an issue.
+</b></details>
+
+<details>
+<summary>How and why concurrent edits of the state file should be avoided?</summary><br><b>
+
+If there are two users or processes concurrently editing the state file it can result in invalid state file that doesn't actually represents the state of resources.<br>
+
+To avoid that, Terraform can apply state locking if the backend supports that. For example, AWS s3 supports state locking and consistency via DynamoDB. Often, if the backend support it, Terraform will make use of state locking automatically so nothing is required from the user to activate it.
+</b></details>
+
+<details>
+<summary>Describe how you manage state file(s) when you have multiple environments (e.g. development, staging and production)</summary><br><b>
+
+There is no right or wrong here, but it seems that the overall preferred way is to have a dedicated state file per environment.
 </b></details>
 
 <details>
@@ -5435,7 +5503,6 @@ The Terraform Registry provides a centralized location for official and communit
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 |My First Dockerfile|Dockerfile|[Link](exercises/write_dockerfile_run_container.md)|[Link](exercises/write_dockerfile_run_container.md)
-
 
 ### Containers Self Assesment
 
@@ -5685,6 +5752,7 @@ Because each container has its own writable container layer, and all changes are
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | My First Pod | Pods | [Exercise](exercises/kubernetes/pods_01.md) | [Solution](exercises/kubernetes/solutions/pods_01_solution.md)
+| "Killing" Containers | Pods | [Exercise](exercises/kubernetes/killing_containers.md) | [Solution](exercises/kubernetes/solutions/killing_containers.md)
 | Creating a service | Service | [Exercise](exercises/kubernetes/services_01.md) | [Solution](exercises/kubernetes/solutions/services_01_solution.md)
 
 ### Kubernetes Self Assesment
@@ -5705,7 +5773,6 @@ To understand what Kubernetes is good for, let's look at some examples:
 <summary>What is a Kubernetes Cluster?</summary><br><b>
 
 Red Hat Definition: "A Kubernetes cluster is a set of node machines for running containerized applications. If you’re running Kubernetes, you’re running a cluster.
-
 At a minimum, a cluster contains a worker node and a master node."
 
 Read more [here](https://www.redhat.com/en/topics/containers/what-is-a-kubernetes-cluster)
@@ -5730,8 +5797,8 @@ Read more [here](https://www.redhat.com/en/topics/containers/what-is-a-kubernete
 <details>
 <summary>What is a Node?</summary><br><b>
 
-A node is a virtual machine or a physical server that serves as a worker for running the applications.
-It's recommended to have at least 3 nodes in Kubernetes production environment.
+A node is a virtual or a physical machine that serves as a worker for running the applications.<br>
+It's recommended to have at least 3 nodes in a production environment.
 </b></details>
 
 <details>
@@ -5742,12 +5809,6 @@ The master coordinates all the workflows in the cluster:
 * Scheduling applications
 * Managing desired state
 * Rolling out new updates
-</b></details>
-
-<details>
-<summary>What do we need the worker nodes for?</summary><br><b>
-
-The workers are the nodes which run the applications and workloads (Pods and containers).
 </b></details>
 
 <details>
@@ -5797,8 +5858,7 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
 <details>
 <summary>Explain what is a Pod</summary><br><b>
 
-A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers.
-
+A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers.<br>
 Pods are the smallest deployable units of computing that you can create and manage in Kubernetes. 
 </b></details>
 
@@ -5807,7 +5867,15 @@ Pods are the smallest deployable units of computing that you can create and mana
 
 `kubectl run my-pod --image=nginx:alpine --restart=Never`
 
-If you are a Kubernetes beginner you should know that this is not a common way to run Pods. The common way is to run a Deployment which in turn runs Pod(s).
+If you are a Kubernetes beginner you should know that this is not a common way to run Pods. The common way is to run a Deployment which in turn runs Pod(s).<br>
+In addition, Pods and/or Deployments are usually defined in files rather than executed directly using only the CLI arguments.
+</b></details>
+
+<details>
+<summary>What are your thoughts on "Pods are not meant to be created directly"?</summary><br><b>
+
+Pods are usually indeed not created directly. You'll notice that Pods are usually created as part of another entities such as Deployments or ReplicaSets.<br>
+If a Pod dies, Kubernetes will not bring it back. This is why it's more useful for example to define ReplicaSets that will make sure that a given number of Pods will always run, even after a certain Pod dies.
 </b></details>
 
 <details>
@@ -5819,7 +5887,8 @@ A pod can include multiple containers but in most cases it would probably be one
 <details>
 <summary>What use cases exist for running multiple containers in a single pod?</summary><br><b>
 
-A web application with separate (= in their own containers) logging and monitoring components/adapters.
+A web application with separate (= in their own containers) logging and monitoring components/adapters is one examples.<br>
+A CI/CD pipeline (using Tekton for example) can run multiple containers in one Pod if a Task contains multiple commands.
 </b></details>
 
 <details>
@@ -5830,12 +5899,6 @@ A web application with separate (= in their own containers) logging and monitori
   * Succeeded - Every container in the Pod terminated with success
   * Unknown - Pod's state could not be obtained
   * Pending - Containers are not yet running (Perhaps images are still being downloaded or the pod wasn't scheduled yet)
-</b></details>
-
-<details>
-<summary>What does it mean when one says "pods are ephemeral"?</summary><br><b>
-
-It means they would eventually die and pods are unable to heal so it is recommended that you don't create them directly.
 </b></details>
 
 <details>
@@ -5863,6 +5926,12 @@ False. "Pending" is after the Pod was accepted by the cluster, but the container
 </b></details>
 
 <details>
+<summary>True or False? A single Pod can be split across multiple nodes</code></summary><br><b>
+
+False. A single Pod can run on a single node.
+</b></details>
+
+<details>
 <summary>How to delete a pod?</code></summary><br><b>
 
 `kubectl delete pod pod_name`
@@ -5882,6 +5951,12 @@ False. "Pending" is after the Pod was accepted by the cluster, but the container
 * For each static Pod there is a mirror Pod on kubernetes API server but it can't be managed from there
 
 Read more about it [here](https://kubernetes.io/docs/tasks/configure-pod-container/static-pod)
+</b></details>
+
+<details>
+<summary>True or False? A volume defined in Pod can be accessed by all the containers of that Pod</summary><br><b>
+
+True.
 </b></details>
 
 <details>
@@ -5908,6 +5983,7 @@ Read more about it [here](https://kubernetes.io/docs/tasks/configure-pod-contain
 <summary>After running <code>kubectl run database --image mongo</code> you see the status is "CrashLoopBackOff". What could possibly went wrong and what do you do to confirm?</summary><br><b>
 
 "CrashLoopBackOff" means the Pod is starting, crashing, starting...and so it repeats itself.<br>
+There are many different reasons to get this error - lack of permissions, init-container misconfiguration, persistent volume connection issue, etc.
 
 One of the ways to check why it happened it to run `kubectl describe po <POD_NAME>` and having a look at the exit code
 
@@ -5917,7 +5993,40 @@ One of the ways to check why it happened it to run `kubectl describe po <POD_NAM
    Exit Code:    100
 ```
 
-Another way to look into it, is to run `kubectl logs <POD_NAME>`. This will provide us with the logs from the containers running in that Pod.
+Another way to check what's going on, is to run `kubectl logs <POD_NAME>`. This will provide us with the logs from the containers running in that Pod.
+</b></details>
+
+<details>
+<summary>Explain the purpose of the following lines
+
+```
+livenessProbe:
+  exec:
+    command:
+    - cat
+    - /appStatus
+  initialDelaySeconds: 10
+  periodSeconds: 5
+```
+</summary><br><b>
+
+These lines make use of `liveness probe`. It's used to restart a container when it reaches a non-desired state.<br>
+In this case, if the command `cat /appStatus` fails, Kubernetes will kill the container and will apply the restart policy. The `initialDelaySeconds: 10` means that Kubelet will wait 10 seconds before running the command/probe for the first time. From that point on, it will run it every 5 seconds, as defined with `periodSeconds`
+</b></details>
+
+<details>
+<summary>Explain the purpose of the following lines
+
+```
+readinessProbe:
+      tcpSocket:
+        port: 2017
+      initialDelaySeconds: 15
+      periodSeconds: 20
+```
+</summary><br><b>
+
+They define a readiness probe where the Pod will not be marked as "Ready" before it will be possible to connect to port 2017 of the container. The first check/probe will start after 15 seconds from the moment the container started to run and will continue to run the check/probe every 20 seconds until it will manage to connect to the defined port.
 </b></details>
 
 <details>
@@ -5925,6 +6034,38 @@ Another way to look into it, is to run `kubectl logs <POD_NAME>`. This will prov
 
 It wasn't able to pull the image specified for running the container(s). This can happen if the client didn't authenticated for example.<br>
 More details can be obtained with `kubectl describe po <POD_NAME>`.
+</b></details>
+
+<details>
+<summary>What happens when you delete a Pod?</summary><br><b>
+
+1. The `TERM` signal is sent to kill the main processes inside the containers of the given Pod
+2. Each container is given a period of 30 seconds to shut down the processes gracefully
+3. If the grace period expires, the `KILL` signal is used to kill the processes forcefully and the containers as well
+</b></details>
+
+<details>
+<summary>Explain liveness probes</summary><br><b>
+
+Liveness probes is a useful mechanism used for restarting the container when a certain check/probe, the user has defined, fails.<br>
+For example, the user can define that the command `cat /app/status` will run every X seconds and the moment this command fails, the container will be restarted.
+
+You can read more about it in [kubernetes.io](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes)
+</b></details>
+
+<details>
+<summary>Explain readiness probes</summary><br><b>
+
+readiness probes used by Kubelet to know when a container is ready to start running, accepting traffic.<br>
+For example, a readiness probe can be to connect port 8080 on a container. Once Kubelet manages to connect it, the Pod is marked as ready
+
+You can read more about it in [kubernetes.io](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes)
+</b></details>
+
+<details>
+<summary>How readiness probe status affect Services when they are combined?</summary><br><b>
+
+Only containers whose state set to Success will be able to receive requests sent to the Service.
 </b></details>
 
 #### Kubernetes - Deployments
@@ -6183,6 +6324,67 @@ True
 <summary>Which Kubernetes concept would you use to control traffic flow at the IP address or port level? </summary><br><b>
 
 Network Policies
+</b></details>
+
+<details>
+<summary>What the following block of lines does?
+
+```
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: backend
+  template:
+    metadata:
+      labels:
+        type: backend
+    spec:
+      containers:
+      - name: httpd-yup
+        image: httpd
+```
+</summary><br><b>
+
+It defines a replicaset for Pods whose type is set to "backend" so at any given point of time there will be 2 concurrent Pods running.
+</b></details>
+
+#### Kubernetes - ReplicaSets
+
+<details>
+<summary>What is the purpose of ReplicaSet?</summary><br><b>
+
+A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
+</b></details>
+
+<details>
+<summary>How a ReplicaSet works?</summary><br><b>
+
+A ReplicaSet is defined with fields, including a selector that specifies how to identify Pods it can acquire, a number of replicas indicating how many Pods it should be maintaining, and a pod template specifying the data of new Pods it should create to meet the number of replicas criteria. 
+
+A ReplicaSet then fulfills its purpose by creating and deleting Pods as needed to reach the desired number. When a ReplicaSet needs to create new Pods, it uses its Pod template.
+</b></details>
+
+<details>
+<summary>What happens when a replica dies?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the default number of replicas if not specified?</summary><br><b>
+
+1
+</b></details>
+
+<details>
+<summary>How to list all the ReplicaSets?</summary><br><b>
+
+kubectl get rs
+</b></details>
+
+<details>
+<summary>What happens when for example the value of replicas is 2 but there are more than 2 Pods running that match the selector?</summary><br><b>
+
+It will terminate some of them in order to reach a state where only 2 Pods are running.
 </b></details>
 
 #### Kubernetes - Network Policies
@@ -6669,27 +6871,7 @@ It includes:
 <summary>Explain StatefulSet</summary><br><b>
 </b></details>
 
-#### Kubernetes ReplicaSet
-
-<details>
-<summary>What is the purpose of ReplicaSet?</summary><br><b>
-
-A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
-</b></details>
-
-<details>
-<summary>How a ReplicaSet works?</summary><br><b>
-
-A ReplicaSet is defined with fields, including a selector that specifies how to identify Pods it can acquire, a number of replicas indicating how many Pods it should be maintaining, and a pod template specifying the data of new Pods it should create to meet the number of replicas criteria. 
-
-A ReplicaSet then fulfills its purpose by creating and deleting Pods as needed to reach the desired number. When a ReplicaSet needs to create new Pods, it uses its Pod template.
-</b></details>
-
-<details>
-<summary>What happens when a replica dies?</summary><br><b>
-</b></details>
-
-#### Kubernetes Secrets
+#### Kubernetes - Secrets
 
 <details>
 <summary>Explain Kubernetes Secrets</summary><br><b>
@@ -6761,7 +6943,7 @@ USER_PASSWORD environment variable will store the value from password key in the
 In other words, you reference a value from a Kubernetes Secret.
 </b></details>
 
-#### Kubernetes Storage
+#### Kubernetes - Volumes
 
 <details>
 <summary>True or False? Kubernetes provides data persistence out of the box, so when you restart a pod, data is saved</summary><br><b>
@@ -6795,6 +6977,10 @@ True
 </b></details>
 
 <details>
+<summary>Explain Volume Snapshots</summary><br><b>
+</b></details>
+
+<details>
 <summary>True or False? Kubernetes manages data persistence</summary><br><b>
 
 False
@@ -6810,6 +6996,18 @@ False
 
 <details>
 <summary>Explain Access Modes</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is CSI Volume Cloning?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain "Ephemeral Volumes"</summary><br><b>
+</b></details>
+
+<details>
+<summary>What types of ephemeral volumes Kubernetes supports?</summary><br><b>
 </b></details>
 
 <details>
@@ -6866,7 +7064,7 @@ The pod is automatically assigned with the default service account (in the names
 `kubectl get serviceaccounts`
 </b></details>
 
-#### Kubernetes Misc
+#### Kubernetes - Misc
 
 <details>
 <summary>Explain what Kubernetes Service Discovery means</summary><br><b>
@@ -6918,20 +7116,6 @@ Scale the number of pods automatically on observed CPU utilization.
 
 <details>
 <summary>When you delete a pod, is it deleted instantly? (a moment after running the command)</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to delete a pod instantly?</summary><br><b>
-
-Use "--grace-period=0 --force"
-</b></details>
-
-<details>
-<summary>Explain Liveness probe</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain Readiness probe</summary><br><b>
 </b></details>
 
 <details>
@@ -9196,6 +9380,7 @@ Alert manager is responsible for alerts ;)
 |--------|--------|------|----|----|
 | My first Commit | Commit | [Exercise](exercises/git/commit_01.md) | [Solution](exercises/git/solutions/commit_01_solution.md) | |
 | Time to Branch | Branch | [Exercise](exercises/git/branch_01.md) | [Solution](exercises/git/solutions/branch_01_solution.md) | |
+| Squashing Commits | Commit | [Exercise](exercises/git/squashing_commits.md) | [Solution](exercises/git/solutions/squashing_commits.md) | |
 
 <details>
 <summary>How do you know if a certain directory is a git repository?</summary><br><b>
@@ -9779,6 +9964,12 @@ In simpler words, think about it as an isolated environment for users to manage 
 <summary>How to list all projects? What the "STATUS" column means in projects list output?</summary><br><b>
 
 `oc get projects` will list all projects. The "STATUS" column can be used to see which projects are currently active.
+</b></details>
+
+<details>
+<summary>You have a new team member and you would like to assign to him the "admin" role on your project in OpenShift. How to achieve that?</summary><br><b>
+
+`oc adm policy add-role-to-user <role> <user> -n <project>`
 </b></details>
 
 ## OpenShift - Images
@@ -11017,13 +11208,13 @@ Access control based on user roles (i.e., a collection of access authorizations 
 
 </b></details>
 
-## Security - Web
+#### Security - Web
 
 <details>
 <summary>What is Nonce?</summary><br><b>
 </b></details>
 
-## Security - SSH
+#### Security - SSH
 
 <details>
 <summary>What is SSH how does it work?</summary><br><b>
@@ -11039,7 +11230,7 @@ Access control based on user roles (i.e., a collection of access authorizations 
 <summary>What is the role of an SSH key?</summary><br><b>
 </b></details>
 
-## Security Cryptography
+#### Security - Cryptography
 
 <details>
 <summary>Explain Symmetrical encryption</summary><br><b>
