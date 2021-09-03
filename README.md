@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1701** questions
+:bar_chart: &nbsp;There are currently **1712** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -2669,7 +2669,7 @@ For example:
 <details>
 <summary>Some of the commands in the previous question can be run with the -r/-R flag. What does it do? Give an example to when you would use it</summary><br><b>
 
-The -r (or -R in some commands) flag allows user to run a certain command recursively. For example, listing all the files under the following tree is possible when done recursively (`ls -R`):
+The -r (or -R in some commands) flag allows the user to run a certain command recursively. For example, listing all the files under the following tree is possible when done recursively (`ls -R`):
 
 /dir1/
   dir2/
@@ -2747,6 +2747,18 @@ Using the `mv` command.
 </b></details>
 
 <details>
+<summary>What is the difference between these two commands? Will it result in the same output?
+
+```
+echo hello world
+echo "hello world"
+```
+</summary><br><b>
+
+The echo command receives two separate arguments in the first execution and in the second execution it gets one argument which is the string "hello world". The output will be the same.
+</b></details>
+
+<details>
 <summary>Explain piping. How do you perform piping?</summary><br><b>
 
 Using a pipe in Linux, allows you to send the output of one command to the input of another command. For example: `cat /etc/services | wc -l`
@@ -2757,12 +2769,19 @@ Using a pipe in Linux, allows you to send the output of one command to the input
 
   * sed "s/1/2/g' /tmp/myFile
   * find . -iname \*.yaml -exec sed -i "s/1/2/g" {} ;
+</summary><br><b>
 
-  </summary><br><b>
-</b>
-<code>sed 's/1/2/g' /tmp/myFile</code><br>
-<code> find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \; </code>
-</details>
+```
+sed 's/1/2/g' /tmp/myFile  # sed "s/1/2/g" is also fine
+find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \;
+```
+</b></details>
+
+<details>
+<summary>Generate 8 digit random number</summary><br><b>
+
+shuf -i 9999999-99999999 -n 1
+</b></details>
 
 #### Linux FHS
 
@@ -2847,7 +2866,7 @@ Alternatively if you are using a distro with systemd it's recommended to use sys
 history command or .bash_history file
 </b></details>
 
-#### Linux Permissions
+#### Linux - Permissions
 
 <details>
 <summary>How to change the permissions of a file?</summary><br><b>
@@ -2920,7 +2939,7 @@ True
 * No permissions
 </b></details>
 
-#### Linux Shell Scripting
+#### Linux - Shell Scripting
 
 <details>
 <summary>What this line in scripts mean?: <code>#!/bin/bash</code></summary><br><b>
@@ -3023,7 +3042,7 @@ It is called 'process substitution'. It provides a way to pass the output of a c
 https://superuser.com/a/1060002/167769
 </details>
 
-#### Linux systemd
+#### Linux - systemd
 
 <details>
 <summary>What is systemd?</summary><br>
@@ -3052,7 +3071,7 @@ Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 <summary>Describe how to make a certain process/app a service</summary><br><b>
 </b></details>
 
-##### Linux Debugging
+##### Linux - Troubleshooting & Debugging
 
 <details>
 <summary>Where system logs are located?</summary><br><b>
@@ -3154,7 +3173,57 @@ The operating system executes the kernel in protected memory to prevent anyone f
 Applications can access system resources and indirectly the kernel space by making what is called "system calls".
 </b></details>
 
-#### Linux Virtualization
+#### Linux - Namespaces
+
+<details>
+<summary>What types of namespaces are there in Linux?</summary><br><b>
+
+  - Process ID namespaces: these namespaces include independent set of process IDs
+  - Mount namespaces: Isolation and control of mountpoints
+  - Network namespaces: Isolates system networking resources such as routing table, interfaces, ARP table, etc.
+  - UTS namespaces: Isolate host and domains
+  - IPC namespaces: Isolates interprocess communications
+  - User namespaces: Isolate user and group IDs
+  - Time namespaces: Isolates time machine
+</b></details>
+
+<details>
+<summary>True or False? In every PID (Process ID) namespace the first process assigned with the process id number 1</summary><br><b>
+
+True. Inside the namespace it's PID 1 while to the parent namespace the PID is a different one.
+</b></details>
+
+<details>
+<summary>True or False? In a child PID namespace all processes are aware of parent PID namespace and processes and the parent PID namespace has no visibility of child PID namespace processes</summary><br><b>
+
+False. The opposite is true. Parent PID namespace is aware and has visibility of processes in child PID namespace and child PID namespace has no visibility as to what is going on in the parent PID namespace.
+</b></details>
+
+<details>
+<summary>True or False? By default, when creating two separate network namespaces, a ping from one namespace to another will work fine</summary><br><b>
+
+False. Network namespace has its own interfaces and routing table. There is no way (without creating a bridge for example) for one network namespace to reach another.
+</b></details>
+
+<details>
+<summary>True or False? With UTS namespaces, processes may appear as if they run on different hosts and domains while running on the same host</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? It's not possible to have a root user with ID 0 in child user namespaces</summary><br><b>
+
+False. In every child user namespace, it's possible to have a separate root user with uid of 0.
+</b></details>
+
+<details>
+<summary>What time namespaces are used for?</summary><br><b>
+
+In time namespaces processes can use different system time.
+</b></details>
+
+#### Linux - Virtualization
 
 <details>
 <summary>What virtualization solutions are available for Linux?</summary><br><b>
@@ -5521,7 +5590,6 @@ You can also think about it as containers are for OS-level virtualization while 
 
 * Containers don't require an entire guest operating system as VMs. Containers share the system's kernel as opposed to VMs
 * It usually takes a few seconds to set up a container as opposed to VMs which can take minutes or at least more time than containers as there is an entire OS to boot and initialize as opposed to container where you mainly lunch the app itself
-* Containers are isolated from each other, but not as concretely as virtual machines. It is possible for a malicious user to break into the host OS from a container and vice versa.
 </b></details>
 
 <details>
@@ -5536,8 +5604,20 @@ You should choose containers when:
   * Running multiple versions or instances of a single application
 </b></details>
 
+#### Containers - Architecture
+
 <details>
-<summary>Explain Podman or Docker architecture</summary><br><b>
+<summary>How container achieve isolation from the rest of the system?</summary><br><b>
+
+Through the use of namespaces. Linux kernel has several types of namespaces:
+
+  - Process ID namespaces: these namespaces include independent set of process IDs
+  - Mount namespaces: Isolation and control of mountpoints
+  - Network namespaces: Isolates system networking resources such as routing table, interfaces, ARP table, etc.
+  - UTS namespaces: Isolate host and domains
+  - IPC namespaces: Isolates interprocess communications
+  - User namespaces: Isolate user and group IDs
+  - Time namespaces: Isolates time machine
 </b></details>
 
 <details>
@@ -5604,7 +5684,6 @@ Applied tar sha256:514c3a3e64d4ebf15f482c9e8909d130bcd53bcc452f0225b0a04744de7b8
 
 </b></details>
 
-
 <details>
 <summary>How do you run a container?</summary><br><b>
 
@@ -5633,7 +5712,8 @@ Create a new image from a container’s changes
   * docker ps
   * docker pull
   * docker build
-  * docker commit</summary><br><b>
+  * docker commit
+</summary><br><b>
 </b></details>
 
 <details>
@@ -5753,7 +5833,8 @@ Because each container has its own writable container layer, and all changes are
 |--------|--------|------|----|----|
 | My First Pod | Pods | [Exercise](exercises/kubernetes/pods_01.md) | [Solution](exercises/kubernetes/solutions/pods_01_solution.md)
 | "Killing" Containers | Pods | [Exercise](exercises/kubernetes/killing_containers.md) | [Solution](exercises/kubernetes/solutions/killing_containers.md)
-| Creating a service | Service | [Exercise](exercises/kubernetes/services_01.md) | [Solution](exercises/kubernetes/solutions/services_01_solution.md)
+| Creating a Service | Service | [Exercise](exercises/kubernetes/services_01.md) | [Solution](exercises/kubernetes/solutions/services_01_solution.md)
+| Creating a ReplicaSet | ReplicaSet | [Exercise](exercises/kubernetes/replicaset_01.md) | [Solution](exercises/kubernetes/solutions/replicaset_01_solution.md)
 
 ### Kubernetes Self Assesment
 
@@ -6385,6 +6466,16 @@ kubectl get rs
 <summary>What happens when for example the value of replicas is 2 but there are more than 2 Pods running that match the selector?</summary><br><b>
 
 It will terminate some of them in order to reach a state where only 2 Pods are running.
+</b></details>
+
+<details>
+<summary>What the following output of <code>kubectl get rs</code> means?
+
+NAME                    DESIRED   CURRENT   READY   AGE
+web                     2         2         0       2m23s
+</summary><br><b>
+
+The replicaset `web` has 2 replicas. It seems that containers are not yet running is the value of READY is 0. It might due to natural reasons or due to an error. Running `kubectl describe po POD_NAME` or `kubectl logs POD_NAME` can give us more information.
 </b></details>
 
 #### Kubernetes - Network Policies
