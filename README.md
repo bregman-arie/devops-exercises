@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1712** questions
+:bar_chart: &nbsp;There are currently **1726** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -2011,7 +2011,7 @@ Learn more [here](https://aws.amazon.com/codedeploy)
 <summary>Explain what is CloudFormation</summary><br><b>
 </b></details>
 
-#### AWS Misc
+#### AWS - Misc
 
 <details>
 <summary>Which AWS service you have experience with that you think is not very common?</summary><br><b>
@@ -2778,9 +2778,44 @@ find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \;
 </b></details>
 
 <details>
-<summary>Generate 8 digit random number</summary><br><b>
+<summary>How to check which commands you executed in the past?</summary><br><b>
 
-shuf -i 9999999-99999999 -n 1
+history command or .bash_history file
+</b></details>
+
+<details>
+<summary>Running the command <code>df</code> you get "command not found". What could be wrong and how to fix it?</summary><br><b>
+</b>
+<p><b>
+Most likely the default/generated $PATH was somehow modified or overridden thus not containing <code>/bin/</code> where df would normally go.
+This issue could also happen if bash_profile or any configuration file of your interpreter was wrongly modified, causing erratics behaviours.
+You would solve this by fixing your $PATH variable:
+
+As to fix it there are several options:
+
+1. Manually adding what you need to your $PATH <code>PATH="$PATH":/user/bin:/..etc</code>
+2. You have your weird env variables backed up.
+3. You would look for your distro default $PATH variable, copy paste using method #1
+
+Note: There are many ways of getting errors like this: if bash_profile or any configuration file of your interpreter was wrongly modified; causing erratics behaviours,
+permissions issues, bad compiled software (if you compiled it by yourself)... there is no answer that will be true 100% of the time.
+</b>
+</p>
+</details>
+
+<details>
+<summary>How do you schedule tasks periodically?</summary><br><b>
+
+You can use the commands <code>cron</code> and <code>at</code>.
+With cron, tasks are scheduled using the following format:
+
+<code>*/30 * * * * bash myscript.sh</code> Executes the script every 30 minutes.
+
+<minute> <hour> <day of month> <month> <day of week> <command to execute>
+
+The tasks are stored in a cron file, you can write in it using <code>crontab -e</code>
+
+Alternatively if you are using a distro with systemd it's recommended to use systemd timers.
 </b></details>
 
 #### Linux FHS
@@ -2823,47 +2858,6 @@ The root of the filesystem. The beginning of the tree.
 
 <details>
 <summary>In which path can you find the system devices (e.g. block storage)?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Running the command <code>df</code> you get "command not found". What could be wrong and how to fix it?</summary><br><b>
-</b>
-<p><b>
-Most likely the default/generated $PATH was somehow modified or overridden thus not containing <code>/bin/</code> where df would normally go.
-This issue could also happen if bash_profile or any configuration file of your interpreter was wrongly modified, causing erratics behaviours.
-You would solve this by fixing your $PATH variable:
-
-As to fix it there are several options:
-
-1. Manually adding what you need to your $PATH <code>PATH="$PATH":/user/bin:/..etc</code>
-2. You have your weird env variables backed up.
-3. You would look for your distro default $PATH variable, copy paste using method #1
-
-Note: There are many ways of getting errors like this: if bash_profile or any configuration file of your interpreter was wrongly modified; causing erratics behaviours,
-permissions issues, bad compiled software (if you compiled it by yourself)... there is no answer that will be true 100% of the time.
-</b>
-</p>
-</details>
-
-<details>
-<summary>How do you schedule tasks periodically?</summary><br><b>
-
-You can use the commands <code>cron</code> and <code>at</code>.
-With cron, tasks are scheduled using the following format:
-
-<code>*/30 * * * * bash myscript.sh</code> Executes the script every 30 minutes.
-
-<minute> <hour> <day of month> <month> <day of week> <command to execute>
-
-The tasks are stored in a cron file, you can write in it using <code>crontab -e</code>
-
-Alternatively if you are using a distro with systemd it's recommended to use systemd timers.
-</b></details>
-
-<details>
-<summary>How to check which commands you executed in the past?</summary><br><b>
-
-history command or .bash_history file
 </b></details>
 
 #### Linux - Permissions
@@ -3011,6 +3005,11 @@ Should be `x=2`
 <summary>How do you check variable length?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Generate 8 digit random number</summary><br><b>
+
+shuf -i 9999999-99999999 -n 1
+</b></details>
 
 <details>
 <summary>Explain the following code:
@@ -3173,67 +3172,7 @@ The operating system executes the kernel in protected memory to prevent anyone f
 Applications can access system resources and indirectly the kernel space by making what is called "system calls".
 </b></details>
 
-#### Linux - Namespaces
-
-<details>
-<summary>What types of namespaces are there in Linux?</summary><br><b>
-
-  - Process ID namespaces: these namespaces include independent set of process IDs
-  - Mount namespaces: Isolation and control of mountpoints
-  - Network namespaces: Isolates system networking resources such as routing table, interfaces, ARP table, etc.
-  - UTS namespaces: Isolate host and domains
-  - IPC namespaces: Isolates interprocess communications
-  - User namespaces: Isolate user and group IDs
-  - Time namespaces: Isolates time machine
-</b></details>
-
-<details>
-<summary>True or False? In every PID (Process ID) namespace the first process assigned with the process id number 1</summary><br><b>
-
-True. Inside the namespace it's PID 1 while to the parent namespace the PID is a different one.
-</b></details>
-
-<details>
-<summary>True or False? In a child PID namespace all processes are aware of parent PID namespace and processes and the parent PID namespace has no visibility of child PID namespace processes</summary><br><b>
-
-False. The opposite is true. Parent PID namespace is aware and has visibility of processes in child PID namespace and child PID namespace has no visibility as to what is going on in the parent PID namespace.
-</b></details>
-
-<details>
-<summary>True or False? By default, when creating two separate network namespaces, a ping from one namespace to another will work fine</summary><br><b>
-
-False. Network namespace has its own interfaces and routing table. There is no way (without creating a bridge for example) for one network namespace to reach another.
-</b></details>
-
-<details>
-<summary>True or False? With UTS namespaces, processes may appear as if they run on different hosts and domains while running on the same host</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>True or False? It's not possible to have a root user with ID 0 in child user namespaces</summary><br><b>
-
-False. In every child user namespace, it's possible to have a separate root user with uid of 0.
-</b></details>
-
-<details>
-<summary>What time namespaces are used for?</summary><br><b>
-
-In time namespaces processes can use different system time.
-</b></details>
-
-#### Linux - Virtualization
-
-<details>
-<summary>What virtualization solutions are available for Linux?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is KVM?</summary><br><b>
-</b></details>
-
-#### Linux SSH
+#### Linux - SSH
 
 <details>
 <summary>What is SSH? How to check if a Linux server is running SSH?</summary><br><b>
@@ -4085,63 +4024,64 @@ lsblk
 True. Only in kernel space they have full access to hardware resources.
 </b></details>
 
-#### Linux - Random
+#### Linux - Namespaces
 
 <details>
-<summary>Give 5 commands which are two letters long</summary><br><b>
+<summary>What types of namespaces are there in Linux?</summary><br><b>
 
-ls, wc, dd, df, du, ps, ip, cp, cd ...
+  - Process ID namespaces: these namespaces include independent set of process IDs
+  - Mount namespaces: Isolation and control of mountpoints
+  - Network namespaces: Isolates system networking resources such as routing table, interfaces, ARP table, etc.
+  - UTS namespaces: Isolate host and domains
+  - IPC namespaces: Isolates interprocess communications
+  - User namespaces: Isolate user and group IDs
+  - Time namespaces: Isolates time machine
 </b></details>
 
 <details>
-<summary>What ways are there for creating a new empty file?</summary><br><b>
+<summary>True or False? In every PID (Process ID) namespace the first process assigned with the process id number 1</summary><br><b>
 
-  * touch new_file
-  * echo "" > new_file
+True. Inside the namespace it's PID 1 while to the parent namespace the PID is a different one.
 </b></details>
 
 <details>
-<summary>How `cd -` works? How does it knows the previous location?</summary><br><b>
+<summary>True or False? In a child PID namespace all processes are aware of parent PID namespace and processes and the parent PID namespace has no visibility of child PID namespace processes</summary><br><b>
 
-$OLDPWD
+False. The opposite is true. Parent PID namespace is aware and has visibility of processes in child PID namespace and child PID namespace has no visibility as to what is going on in the parent PID namespace.
 </b></details>
 
 <details>
-<summary>List three ways to print all the files in the current directory</summary><br><b>
+<summary>True or False? By default, when creating two separate network namespaces, a ping from one namespace to another will work fine</summary><br><b>
 
-* ls
-* find .
-* echo *
+False. Network namespace has its own interfaces and routing table. There is no way (without creating a bridge for example) for one network namespace to reach another.
 </b></details>
 
 <details>
-<summary>How to count the number of lines in a file? What about words?</summary><br><b>
+<summary>True or False? With UTS namespaces, processes may appear as if they run on different hosts and domains while running on the same host</summary><br><b>
+
+True
 </b></details>
 
 <details>
-<summary>You define x=2 in /etc/bashrc and x=6 ~/.bashrc you then login to the system. What would be the value of x?</summary><br><b>
+<summary>True or False? It's not possible to have a root user with ID 0 in child user namespaces</summary><br><b>
+
+False. In every child user namespace, it's possible to have a separate root user with uid of 0.
 </b></details>
 
 <details>
-<summary>What is the difference between man and info?</summary><br><b>
+<summary>What time namespaces are used for?</summary><br><b>
 
-A good answer can be found [here](https://askubuntu.com/questions/9325/what-is-the-difference-between-man-and-info-documentation)
+In time namespaces processes can use different system time.
+</b></details>
+
+#### Linux - Virtualization
+
+<details>
+<summary>What virtualization solutions are available for Linux?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Explain "environment variables". How do you list all environment variables?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to create your own environment variables?</summary><br><b>
-
-`X=2` for example. But this will persist to new shells. To have it in new shells as well, use `export X=2`
-</b></details>
-
-<details>
-<summary>What a double dash (--) mean?</summary><br><b>
-
-It's used in commands to mark the end of commands options. One common example is when used with git to discard local changes: `git checkout -- some_file`
+<summary>What is KVM?</summary><br><b>
 </b></details>
 
 #### Linux - AWK
@@ -4442,7 +4382,68 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 * Software/Packages Management
 </b></details>
 
-#### Linux Misc
+#### Linux - Misc
+
+<details>
+<summary>Name 5 commands which are two letters long</summary><br><b>
+
+ls, wc, dd, df, du, ps, ip, cp, cd ...
+</b></details>
+
+<details>
+<summary>What ways are there for creating a new empty file?</summary><br><b>
+
+  * touch new_file
+  * echo "" > new_file
+</b></details>
+
+<details>
+<summary>How `cd -` works? How does it knows the previous location?</summary><br><b>
+
+$OLDPWD
+</b></details>
+
+<details>
+<summary>List three ways to print all the files in the current directory</summary><br><b>
+
+* ls
+* find .
+* echo *
+</b></details>
+
+<details>
+<summary>How to count the number of lines in a file? What about words?</summary><br><b>
+</b></details>
+
+<details>
+<summary>You define x=2 in /etc/bashrc and x=6 ~/.bashrc you then login to the system. What would be the value of x?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between man and info?</summary><br><b>
+
+A good answer can be found [here](https://askubuntu.com/questions/9325/what-is-the-difference-between-man-and-info-documentation)
+</b></details>
+
+<details>
+<summary>Explain "environment variables". How do you list all environment variables?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a TTY device?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to create your own environment variables?</summary><br><b>
+
+`X=2` for example. But this will persist to new shells. To have it in new shells as well, use `export X=2`
+</b></details>
+
+<details>
+<summary>What a double dash (--) mean?</summary><br><b>
+
+It's used in commands to mark the end of commands options. One common example is when used with git to discard local changes: `git checkout -- some_file`
+</b></details>
 
 <details>
 <summary>Wildcards are implemented on user or kernel space?</summary><br><b>
@@ -4461,8 +4462,6 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 <details>
 <summary>What is User-mode Linux?</summary><br><b>
 </b></details>
-
-#### Linux Nerds
 
 <details>
 <summary>Under which license Linux is distributed? </summary><br><b>
@@ -5588,8 +5587,9 @@ The primary difference between containers and VMs is that containers allow you t
 multiple workloads on the operating system while in the case of VMs the hardware is being virtualized to run multiple machines each with its own OS.
 You can also think about it as containers are for OS-level virtualization while VMs are for hardware virtualization.
 
-* Containers don't require an entire guest operating system as VMs. Containers share the system's kernel as opposed to VMs
-* It usually takes a few seconds to set up a container as opposed to VMs which can take minutes or at least more time than containers as there is an entire OS to boot and initialize as opposed to container where you mainly lunch the app itself
+* Containers don't require an entire guest operating system as VMs. Containers share the system's kernel as opposed to VMs. They isolate themselves via the use of namespaces and cgroups
+* It usually takes a few seconds to set up a container as opposed to VMs which can take minutes or at least more time than containers as there is an entire OS to boot and initialize as opposed to containers which has share of the underlying OS
+* Virtual machines considered to be more secured than containers
 </b></details>
 
 <details>
@@ -5609,7 +5609,7 @@ You should choose containers when:
 <details>
 <summary>How container achieve isolation from the rest of the system?</summary><br><b>
 
-Through the use of namespaces. Linux kernel has several types of namespaces:
+Through the use of namespaces and cgroups. Linux kernel has several types of namespaces:
 
   - Process ID namespaces: these namespaces include independent set of process IDs
   - Mount namespaces: Isolation and control of mountpoints
@@ -5835,6 +5835,8 @@ Because each container has its own writable container layer, and all changes are
 | "Killing" Containers | Pods | [Exercise](exercises/kubernetes/killing_containers.md) | [Solution](exercises/kubernetes/solutions/killing_containers.md)
 | Creating a Service | Service | [Exercise](exercises/kubernetes/services_01.md) | [Solution](exercises/kubernetes/solutions/services_01_solution.md)
 | Creating a ReplicaSet | ReplicaSet | [Exercise](exercises/kubernetes/replicaset_01.md) | [Solution](exercises/kubernetes/solutions/replicaset_01_solution.md)
+| Operating ReplicaSets | ReplicaSet | [Exercise](exercises/kubernetes/replicaset_02.md) | [Solution](exercises/kubernetes/solutions/replicaset_02_solution.md)
+| ReplicaSets Selectors | ReplicaSet | [Exercise](exercises/kubernetes/replicaset_03.md) | [Solution](exercises/kubernetes/solutions/replicaset_03_solution.md)
 
 ### Kubernetes Self Assesment
 
@@ -5869,11 +5871,36 @@ Read more [here](https://www.redhat.com/en/topics/containers/what-is-a-kubernete
 <details>
 <summary>When or why NOT to use Kubernetes?</summary><br><b>
 
-  - If you deploy applications using container and you need to manage scaling, rolling out updates, etc. You should use Kubernetes
+  - If you deploy applications using containers and you need to manage scaling, rolling out updates, etc. You probably want to use Kubernetes
   - If you manage low level infrastructure or baremetals, Kubernetes is probably not what you need or want
 </b></details>
 
-#### Kubernetes Architecture
+<details>
+<summary>What Kubernetes objects are there?</summary><br><b>
+
+  * Pod
+  * Service
+  * ReplicationController
+  * ReplicaSet
+  * DaemonSet
+  * Namespace
+  * ConfigMap
+  ...
+</b></details>
+
+<details>
+<summary>What fields are mandatory with any Kubernetes object?</summary><br><b>
+
+metadata, kind and apiVersion
+</b></details>
+
+<details>
+<summary>What is kubectl?</summary><br><b>
+
+Kubectl is the Kubernetes command line tool that allows you to run commands against Kubernetes clusters. For example, you can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
+</b></details>
+
+#### Kubernetes - Cluster
 
 <details>
 <summary>What is a Node?</summary><br><b>
@@ -5890,12 +5917,6 @@ The master coordinates all the workflows in the cluster:
 * Scheduling applications
 * Managing desired state
 * Rolling out new updates
-</b></details>
-
-<details>
-<summary>What is kubectl?</summary><br><b>
-
-Kubectl is the Kubernetes command line tool that allows you to run commands against Kubernetes clusters. For example, you can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
 </b></details>
 
 <details>
@@ -6210,13 +6231,13 @@ The pod related to the deployment will terminate and the replicaset will be remo
 Using a Service.
 </b></details>
 
-#### Kubernetes - Service
+#### Kubernetes - Services
 
 <details>
 <summary>What is a Service in Kubernetes?</summary><br><b>
-"An abstract way to expose an application running on a set of Pods as a network service." - read more [here](https://kubernetes.io/docs/concepts/services-networking/service)
 
-In simpler words, it allows you to expose the service by attaching permanent IP address for example to a certain pod.
+"An abstract way to expose an application running on a set of Pods as a network service." - read more [here](https://kubernetes.io/docs/concepts/services-networking/service)<br>
+In simpler words, it allows you to add an internal or external connectivity to a certain application running in a container.
 </b></details>
 
 <details>
@@ -6237,19 +6258,32 @@ More on this topic [here](https://kubernetes.io/docs/concepts/services-networkin
 </b></details>
 
 <details>
+<summary>What is the default service type in Kubernetes and what is it used for?</summary><br><b>
+
+The default is ClusterIP and it's used for exposing a port internally. It's useful when you want to enable internal communication between Pods and prevent any external access.
+</b></details>
+
+<details>
 <summary>How to get information on a certain service?</summary><br><b>
 
-kubctl describe service [service_name]
+kubctl describe service <SERVICE_NAME>
 </b></details>
 
 <details>
-<summary>How to verify that a certain service forwards the requests to a pod</summary><br><b>
+<summary>What the following command does?
+
+```
+kubectl expose rs some-replicaset --name=replicaset-svc --target-port=2017 --type=NodePort
+```
+</summary><br><b>
+
+It exposes a ReplicaSet by creating a service called 'replicaset-svc'. The exposed port is 2017 and the service type is NodePort which means it will be reachable externally.
+</b></details>
+
+<details>
+<summary>How to verify that a certain service configured to forward the requests to a given pod</summary><br><b>
 
 Run `kubectl describe service` and if the IPs from "Endpoints" match any IPs from the output of `kubectl get pod -o wide`
-</b></details>
-
-<details>
-<summary>What is the difference between an external and an internal service?</summary><br><b>
 </b></details>
 
 <details>
@@ -6435,37 +6469,53 @@ It defines a replicaset for Pods whose type is set to "backend" so at any given 
 <details>
 <summary>What is the purpose of ReplicaSet?</summary><br><b>
 
-A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
+[kubernetes.io](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset): "A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods."
+
+In simpler words, a ReplicaSet will ensure the specified number of Pods replicas is running for a selected Pod. If there are more Pods than defined in the ReplicaSet, some will be removed. If there are less than what is defined in the ReplicaSet then, then more replicas will be added.
 </b></details>
 
 <details>
-<summary>How a ReplicaSet works?</summary><br><b>
+<summary>What will happen when a Pod, created by ReplicaSet, is deleted directly with <code>kubectl delete po ...</code>?</summary><br><b>
 
-A ReplicaSet is defined with fields, including a selector that specifies how to identify Pods it can acquire, a number of replicas indicating how many Pods it should be maintaining, and a pod template specifying the data of new Pods it should create to meet the number of replicas criteria. 
-
-A ReplicaSet then fulfills its purpose by creating and deleting Pods as needed to reach the desired number. When a ReplicaSet needs to create new Pods, it uses its Pod template.
+The ReplicaSet will create a new Pod in order to reach the desired number of replicas.
 </b></details>
 
 <details>
-<summary>What happens when a replica dies?</summary><br><b>
+<summary>True or False? If a ReplicaSet defines 2 replicas but there 3 Pods running matching the ReplicaSet selector, it will do nothing</summary><br><b>
+
+False. It will terminate one of the Pods to reach the desired state of 2 replicas.
 </b></details>
 
 <details>
-<summary>What is the default number of replicas if not specified?</summary><br><b>
+<summary>Describe the sequence of events in case of creating a ReplicaSet</summary><br><b>
 
-1
+* The client (e.g. kubectl) sends a request to the API server to create a ReplicaSet
+* The Controller detects there is a new event requesting for a ReplicaSet
+* The controller creates new Pod definitions (the exact number depends on what is defined in the ReplicaSet definition)
+* The scheduler detects unassigned Pods and decides to which nodes to assign the Pods. This information sent to the API server
+* Kubelet detects that two Pods were assigned to the node it's running on (as it constantly watching the API server)
+* Kubelet sends requests to the container engine, to create the containers that are part of the Pod
+* Kubelet sends a request to the API server to notify it the Pods were created
 </b></details>
 
 <details>
-<summary>How to list all the ReplicaSets?</summary><br><b>
+<summary>How to list ReplicaSets in the current namespace?</summary><br><b>
 
 kubectl get rs
 </b></details>
 
 <details>
-<summary>What happens when for example the value of replicas is 2 but there are more than 2 Pods running that match the selector?</summary><br><b>
+<summary>Is it possible to delete ReplicaSet without deleting the Pods it created?</summary><br><b>
 
-It will terminate some of them in order to reach a state where only 2 Pods are running.
+Yes, with `--cascase=false`.
+
+`kubectl delete -f rs.yaml --cascade=false`
+</b></details>
+
+<details>
+<summary>What is the default number of replicas if not explicitly specified?</summary><br><b>
+
+1
 </b></details>
 
 <details>
@@ -6475,7 +6525,52 @@ NAME                    DESIRED   CURRENT   READY   AGE
 web                     2         2         0       2m23s
 </summary><br><b>
 
-The replicaset `web` has 2 replicas. It seems that containers are not yet running is the value of READY is 0. It might due to natural reasons or due to an error. Running `kubectl describe po POD_NAME` or `kubectl logs POD_NAME` can give us more information.
+The replicaset `web` has 2 replicas. It seems that the containers inside the Pod(s) are not yet running since the value of READY is 0. It might be normal since it takes time for some containers to start running and it might be due to an error. Running `kubectl describe po POD_NAME` or `kubectl logs POD_NAME` can give us more information.
+</b></details>
+
+<details>
+<summary>You run <code>kubectl get rs</code> and while DESIRED is set to 2, you see that READY is set to 0. What are some possible reasons for it to be 0?</summary><br><b>
+
+  * Images are still being pulled
+  * There is an error and the containers can't reach the state "Running"
+</b></details>
+
+<details>
+<summary>True or False? Pods specified by the selector field of ReplicaSet must be created by the ReplicaSet itself</summary><br><b>
+
+False. The Pods can be already running and initially they can be created by any object. It doesn't matter for the ReplicaSet and not a requirement for it to acquire and monitor them.
+</b></details>
+
+<details>
+<summary>True or False? In case of a ReplicaSet, if Pods specified in the selector field don't exists, the ReplicaSet will wait for them to run before doing anything</summary><br><b>
+
+False. It will take care of running the missing Pods.
+</b></details>
+
+<details>
+<summary>In case of a ReplicaSet, Which field is mandatory in the spec section?</summary><br><b>
+
+The field `template` in spec section is mandatory. It's used by the ReplicaSet to create new Pods when needed.
+</b></details>
+
+<details>
+<summary>You've created a ReplicaSet, how to check whether the ReplicaSet found matching Pods or it created new Pods?</summary><br><b>
+
+`kubectl describe rs <ReplicaSet Name>`
+
+It will be visible under `Events` (the very last lines)
+</b></details>
+
+<details>
+<summary>True or False? Deleting a ReplicaSet will delete the Pods it created</summary><br><b>
+
+True (and not only the Pods but anything else it created).
+</b></details>
+
+<details>
+<summary>True or False? Removing the label from a Pod that is used by ReplicaSet to match Pods, will cause the ReplicaSet to create a new Pod</summary><br><b>
+
+True. When the label, used by a ReplicaSet in the selector field, removed from a Pod, that Pod no longer controlled by the ReplicaSet and the ReplicaSet will create a new Pod to compensate for the one it "lost".
 </b></details>
 
 #### Kubernetes - Network Policies
