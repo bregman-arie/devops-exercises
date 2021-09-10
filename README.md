@@ -5483,7 +5483,6 @@ You use it this way: <code>variable “my_var” {}</code>
 <details>
 <summary>You've deployed a virtual machine with Terraform and you would like to pass data to it (or execute some commands). Which concept of Terraform would you use?</summary><br><b>
 
-
 [Provisioners](https://www.terraform.io/docs/language/resources/provisioners)
 </b></details>
 
