@@ -5432,6 +5432,25 @@ As such, tfstate shouldn't be stored in git repositories. secured storage such a
 </b></details>
 
 <details>
+<summary>Which command is responsible for creating state file?</summary><br><b>
+
+  - terraform apply file.terraform
+  - Above command will create tfstate file in the working folder.
+</b></details>
+
+<details>
+<summary>By default where does the state get stored?</summary><br><b>
+
+  - The state is stored by default in a local file named terraform.tfstate.
+</b></details>
+
+<details>
+<summary>Can we store tfstate file at remote location? If yes, then in which condition you will do this?</summary><br><b>
+
+  - Yes, It can also be stored remotely, which works better in a team environment. Given condition that remote location is not publicly accessible since tfstate file contain sensitive information as well. Access to this remote location must be only shared with team members.
+</b></details>
+
+<details>
 <summary>Mention some best practices related to tfstate</summary><br><b>
 
   - Don't edit it manually. tfstate was designed to be manipulated by terraform and not by users directly.
