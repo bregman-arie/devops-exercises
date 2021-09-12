@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1726** questions
+:bar_chart: &nbsp;There are currently **1750** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -5575,16 +5575,28 @@ The Terraform Registry provides a centralized location for official and communit
 ### Containers Self Assesment
 
 <details>
-<summary>What is a Container? What is it used for?</summary><br><b>
+<summary>What is a Container?</summary><br><b>
 
-Containers are a form of operating system virtualization. A single container might be used to run anything from a small microservice or software process to a larger application. Inside a container are all the necessary executables, binary code, libraries, and configuration files, making them easy to ship and run with same expected results on different machines.
+This can be tricky to answer since there are many ways to create a containers:
+
+  - Docker
+  - systemd-nspawn
+  - LXC
+
+If to focus on OCI (Open Container Initiative) based containers, it offers the following [definition](https://github.com/opencontainers/runtime-spec/blob/master/glossary.md#container): "An environment for executing processes with configurable isolation and resource limitations. For example, namespaces, resource limits, and mounts are all part of the container environment."
+</b></details>
+
+<details>
+<summary>Why containers are needed?</summary><br><b>
+
+OCI provides a good [explanation](https://github.com/opencontainers/runtime-spec/blob/master/principles.md#the-5-principles-of-standard-containers): "Define a unit of software delivery called a Standard Container. The goal of a Standard Container is to encapsulate a software component and all its dependencies in a format that is self-describing and portable, so that any compliant runtime can run it without extra dependencies, regardless of the underlying machine and the contents of the container."
 </b></details>
 
 <details>
 <summary>How are containers different from virtual machines (VMs)?</summary><br><b>
 
 The primary difference between containers and VMs is that containers allow you to virtualize
-multiple workloads on the operating system while in the case of VMs the hardware is being virtualized to run multiple machines each with its own OS.
+multiple workloads on a single operating system while in the case of VMs, the hardware is being virtualized to run multiple machines each with its own guest OS.
 You can also think about it as containers are for OS-level virtualization while VMs are for hardware virtualization.
 
 * Containers don't require an entire guest operating system as VMs. Containers share the system's kernel as opposed to VMs. They isolate themselves via the use of namespaces and cgroups
@@ -5596,12 +5608,24 @@ You can also think about it as containers are for OS-level virtualization while 
 <summary>In which scenarios would you use containers and in which you would prefer to use VMs?</summary><br><b>
 
 You should choose VMs when:
-  * you need run an application which requires all the resources and functionalities of an OS
-  * you need full isolation and security
+  * You need run an application which requires all the resources and functionalities of an OS
+  * You need full isolation and security
 
 You should choose containers when:
-  * you need a lightweight solution
+  * You need a lightweight solution
   * Running multiple versions or instances of a single application
+</b></details>
+
+<details>
+<summary>What is the OCI?</summary><br><b>
+
+OCI (Open Container Initiative) is an open governance established in 2015 to standardize container creation - format, runtime, etc. At that time there were a number of parties involved and the most prominent one was Docker.
+</b></details>
+
+<details>
+<summary>Which operations OCI based containers must support?</summary><br><b>
+
+Create, Kill, Delete, Start and Query State.
 </b></details>
 
 #### Containers - Architecture
@@ -6573,6 +6597,33 @@ True (and not only the Pods but anything else it created).
 True. When the label, used by a ReplicaSet in the selector field, removed from a Pod, that Pod no longer controlled by the ReplicaSet and the ReplicaSet will create a new Pod to compensate for the one it "lost".
 </b></details>
 
+<details>
+<summary>How to scale a deployment to 8 replicas?</code></summary><br><b>
+
+kubectl scale deploy <DEPLOYMENT_NAME> --replicas=8
+</b></details>
+
+#### Kubernetes - Storage
+
+<details>
+<summary>What is a volume in regards to Kubernetes?</summary><br><b>
+
+A directory accessible by the containers inside a certain Pod. The mechanism responsible for creating the directory and managing it, ... is mainly depends on the volume type.
+</b></details>
+
+<details>
+<summary>Which problems volumes in Kubernetes solve?</summary><br><b>
+
+1. Sharing files between containers running in the same Pod
+2. Storage in containers is ephemeral - it usually doesn't last for long. For example, when a container crashes, you lose all on-disk data.
+</b></details>
+
+<details>
+<summary>Explain ephemeral volume types vs. persistent volumes in regards to Pods</summary><br><b>
+
+Ephemeral volume types have the lifetime of a pod as opposed to persistent volumes which exist beyond the lifetime of a Pod.
+</b></details>
+
 #### Kubernetes - Network Policies
 
 <details>
@@ -6824,42 +6875,6 @@ metadata:
 and you can verify with: `kubectl get configmap -n some-namespace`
 </b></details>
 
-#### Kubernetes Commands
-
-<details>
-<summary>What <code>kubectl exec</code> does?</code></summary><br><b>
-</b></details>
-
-<details>
-<summary>What <code>kubectl get all</code> does?</code></summary><br><b>
-</b></details>
-
-<details>
-<summary>What the command <code>kubectl get pod</code> does?</code></summary><br><b>
-</b></details>
-
-<details>
-<summary>How to see all the components of a certain application?</code></summary><br><b>
-
-`kubectl get all | grep [APP_NAME]`
-</b></details>
-
-<details>
-<summary>What <code>kubectl apply -f [file]</code> does?</code></summary><br><b>
-</b></details>
-
-<details>
-<summary>What the command <code>kubectl api-resources --namespaced=false</code> does?</code></summary><br><b>
-
-Lists the components that doesn't bound to a namespace.
-</b></details>
-
-<details>
-<summary>How to print information on a specific pod?</code></summary><br><b>
-
-`kubectl describe pod pod_name`
-</b></details>
-
 <details>
 <summary>How to execute the command "ls" in an existing pod?</code></summary><br><b>
 
@@ -6884,12 +6899,6 @@ kubectl run nginx --image=nginx --restart=Never --port 80 --expose
 
 <details>
 <summary>Why to create kind deployment, if pods can be launched with replicaset?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to scale a deployment to 8 replicas?</code></summary><br><b>
-
-kubectl scale deploy some-deployment --replicas=8
 </b></details>
 
 <details>
@@ -6976,7 +6985,7 @@ False. CPU is a compressible resource while memory is a non compressible resourc
 Explained [here](https://www.youtube.com/watch?v=i9V4oCa5f9I)
 </b></details>
 
-#### Kubernetes Operator
+#### Kubernetes - Operators
 
 <details>
 <summary>What is an Operator?</summary><br><b>
@@ -7248,6 +7257,16 @@ The pod is automatically assigned with the default service account (in the names
 <summary>How to list Service Accounts?</summary><br><b>
 
 `kubectl get serviceaccounts`
+</b></details>
+
+#### Kubernetes - Patterns
+
+<details>
+<summary>Which containers pattern is used in the following drawing?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the sidecar container pattern</summary><br><b>
 </b></details>
 
 #### Kubernetes - Misc
@@ -7570,6 +7589,10 @@ True
 
 <details>
 <summary>What is "Duck Typing"?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain string interpolation</summary><br><b>
 </b></details>
 
 ##### Common algorithms
@@ -12371,7 +12394,17 @@ document_number: 2
 ```
 </b></details>
 
-#### Jira
+#### Customers and Service Providers
+
+<details>
+<summary>What is SLO (service-level objective)?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is SLA (service-level agreement)?</summary><br><b>
+</b></details>
+
+## Jira
 
 <details>
 <summary>Explain/Demonstrate the following types in Jira:
@@ -12385,7 +12418,7 @@ document_number: 2
 <summary>What is a project in Jira?</summary><br><b>
 </b></details>
 
-#### Kafka
+## Kafka
 
 <details>
 <summary>What is Kafka?</summary><br><b>
@@ -12402,7 +12435,7 @@ percentage ratio
 </summary><br><b>
 </b></details>
 
-#### Cassandra
+## Cassandra
 
 <details>
 <summary>When running a cassandra cluster, how often do you need to run nodetool repair in order to keep the cluster consistent?
@@ -12413,17 +12446,7 @@ percentage ratio
 </summary><br><b>
 </b></details>
 
-#### Customers and Service Providers
-
-<details>
-<summary>What is SLO (service-level objective)?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is SLA (service-level agreement)?</summary><br><b>
-</b></details>
-
-#### HTTP
+## HTTP
 
 <details>
 <summary>What is HTTP?</summary><br><b>
@@ -13024,7 +13047,7 @@ Bonus: extract the last word of each line
 ## System Design
 
 <details>
-<summary>Explain what is a "Single point of failure" and give an example</summary><br><b>
+<summary>Explain what is a "Single point of failure"?</summary><br><b>
 </b></details>
 
 <details>
