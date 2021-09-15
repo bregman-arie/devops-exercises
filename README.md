@@ -5591,14 +5591,15 @@ Terraform import is used to import existing infrastucture. It allows you to brin
 
 <details>
 <summary>How do you import existing resource using Terraform import?</summary><br><b>
-1. Identify which resource you want to import
-2. Write terraform code matching configuration of that resource
-3. Run terraform command <code>terraform import RESOURCE ID</code>
+
+1. Identify which resource you want to import.
+2. Write terraform code matching configuration of that resource.
+3. Run terraform command <code>terraform import RESOURCE ID</code><br>
 
 eg. Let's say you want to import an aws instance. Then you'll perform following:
 1. Identify that aws instance in console
 2. Refer to it's configuration and write Terraform code which will look something like:
-<code>
+```
 resource "aws_instance" "tf_aws_instance" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
@@ -5607,7 +5608,7 @@ resource "aws_instance" "tf_aws_instance" {
     Name = "import-me"
   }
 }
-</code>
+```
 3. Run terraform command <code>terraform import aws_instance.tf_aws_instance i-12345678</code>
 </b></details>
 
