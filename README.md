@@ -5583,6 +5583,12 @@ The Terraform Registry provides a centralized location for official and communit
   It is also common in the community to use a tool called <code>terragrunt</code> to explicitly inject variables between modules.
 </b></details>
 
+<details>
+<summary>What is Terraform import?</summary><br><b>
+
+Terraform import is used to import existing infrastucture. It allows you to bring resources created by some other means (eg. manually launched cloud resources) and bring it under Terraform management. 
+</b></details>
+
 ## Containers
 
 ### Containers Exercises
