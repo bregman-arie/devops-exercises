@@ -459,6 +459,7 @@ IAC (infrastructure as code) is a declerative approach of defining infrastructur
 <summary>How do you manage build artifacts?</summary><br><b>
 
 Build artifacts are usually stored in a repository. They can be used in release pipelines for deployment purposes. Usually there is retention period on the build artifacts.
+Artifacts can be stored to s3 bucket in AWS
 </b></details>
 
 <details>
