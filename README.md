@@ -4719,7 +4719,7 @@ additional check is implemented or explicit names are provided) while other tool
 <summary>How do you list all modules and how can you see details on a specific module?</summary><br><br>
 
 1. Ansible online docs
-2. `ansible-doc -l` for list of modules and `ansible [module_name]` for detailed information on a specific module
+2. `ansible-doc -l` for list of modules and `ansible-doc [module_name]` for detailed information on a specific module
 </b></details>
 
 #### Ansible - Inventory
