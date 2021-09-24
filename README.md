@@ -4659,6 +4659,7 @@ Yes, it's a operating-system-level virtualization, where the kernel is shared an
 |--------|--------|------|----|----|
 | My First Task | Tasks | [Exercise](exercises/ansible/my_first_task.md) | [Solution](exercises/ansible/solutions/my_first_task.md)
 | My First Playbook | Playbooks | [Exercise](exercises/ansible/my_first_playbook.md) | [Solution](exercises/ansible/solutions/my_first_playbook.md)
+| Upgrade and Update Task | Tasks | [Exercise](exercises/ansible/update_upgrade_task.md) | [Solution](exercises/ansible/solutions/update_upgrade_task.md)	
 
 ### Ansible Self Assesment
 
