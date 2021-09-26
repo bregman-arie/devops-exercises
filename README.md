@@ -7278,6 +7278,12 @@ The pod is automatically assigned with the default service account (in the names
 `kubectl get serviceaccounts`
 </b></details>
 
+<details>
+<summary>Explain "Security Context"</summary><br><b>
+
+[kubernetes.io](https://kubernetes.io/docs/tasks/configure-pod-container/security-context): "A security context defines privilege and access control settings for a Pod or Container."
+</b></details>
+
 #### Kubernetes - Patterns
 
 <details>
