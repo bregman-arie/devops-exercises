@@ -27,7 +27,7 @@ kubectl get ns
 <details>
 <summary>List all the pods in the namespace 'neverland'</code></summary><br><b>
 
-kubectl get ns -n neverland
+kubectl get po -n neverland
 </b></details>
 
 <details>
