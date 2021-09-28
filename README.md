@@ -10390,6 +10390,37 @@ oc adm policy add-role-to-user view user1 -n wonderland
 `oc whoami --show-context`
 </b></details>
 
+#### OpenShift - Serverless
+
+<details>
+<summary>What is OpenShift Serverless?</summary><br><b>
+
+  - In general 'serverless' is a cloud computing model where scaling and provisioning is taken care for application developers, so they can focus on the development aspect rather infrastructure related tasks
+  - OpenShift Serverless allows you to dynamically scale your applications and provides the ability to build event-driven applications, whether the sources are on Kubernetes, the cloud or on-premise solutions
+  - OpenShift Serverless is based on the Knative project.
+</b></details>
+
+<details>
+<summary>What are some of the event sources you can use with OpenShift Serverless?</summary><br><b>
+
+  * Kafka
+  * Kubernetes APIs
+  * AWS Kinesis
+  * AWS SQS
+  * JIRA
+  * Slack
+
+More are supported and provided with OpenShift.
+</b></details>
+
+<details>
+<summary>Explain serverless functions</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between Serverless Containers and Serverless functions?</summary><br><b>
+</b></details>
+
 #### OpenShift - Misc
 
 <details>
@@ -12352,6 +12383,18 @@ Data about data. Basically, it describes the type of information that an underly
 <summary>You can use one of the following formats: JSON, YAML, XML. Which one would you use? Why?</summary><br><b>
 
 I can't answer this for you :)
+</b></details>
+
+<details>
+<summary>What's KPI?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What's OKR?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What's the difference between KPI and OKR?</summary><br><b>
 </b></details>
 
 #### YAML
