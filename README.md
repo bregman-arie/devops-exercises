@@ -9998,7 +9998,7 @@ func mod2(a []int) {
 }
 
 func main() {
-	sl := []int{1, 2, 3, 4}
+	s1 := []int{1, 2, 3, 4}
 	mod1(s1)
 	fmt.Println("1:", s1)
 
