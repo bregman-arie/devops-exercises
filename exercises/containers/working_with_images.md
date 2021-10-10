@@ -6,7 +6,7 @@ Learn how to work with containers images
 
 ### Requirements
 
-Make sure Podman, Docker (or any other containers engine) is installed on your system
+Make sure Podman or Docker (or any other containers engine) is installed on your system
 
 ### Instructions
 

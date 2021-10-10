@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1750** questions
+:bar_chart: &nbsp;There are currently **1800** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -3680,7 +3680,7 @@ This is a great article on the topic: https://www.computerhope.com/jargon/f/file
 <summary>Do you have experience with hardening servers? Can you describe the process?</summary><br><b>
 </b></details>
 
-##### Linux Networking
+##### Linux - Networking
 
 <details>
 <summary>How to list all the interfaces?</summary><br><b>
@@ -3834,7 +3834,7 @@ You can specify one or more of the following:
  * <code>nslookup</code>
 </b></details>
 
-##### Linux Packaging
+##### Linux - Packaging
 
 <details>
 <summary>Do you have experience with packaging? (as in building packages) Can you explain how does it works?</summary><br><b>
@@ -4022,6 +4022,26 @@ lsblk
 <summary>True or False? In user space, applications don't have full access to hardware resources</summary><br><b>
 
 True. Only in kernel space they have full access to hardware resources.
+</b></details>
+
+#### Linux - Security
+
+<details>
+<summary>How do you create a private key for a CA (certificate authority)?</summary><br><b>
+
+One way is using openssl this way:
+
+`openssl genrsa -aes256 -out ca-private-key.pem 4096`
+</b></details>
+
+<details>
+<summary>How do you create a public key for a CA (certificate authority)?</summary><br><b>
+
+`openssl req -new -x509 -days 730 -key [private key file name] -sha256 -out ca.pem`
+
+If using the private key from the previous question then the command would be:
+
+`openssl req -new -x509 -days 730 -key ca-private-key.pem -sha256 -out ca.pem`
 </b></details>
 
 #### Linux - Namespaces
@@ -5626,8 +5646,9 @@ resource "aws_instance" "tf_aws_instance" {
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-|My First Dockerfile|Dockerfile|[Exercise](exercises/write_dockerfile_run_container.md)|[Solution](exercises/write_dockerfile_run_container.md)
+|Running Containers|Intro|[Exercise](exercises/containers/running_containers.md)|[Solution](exercises/containers/solutions/running_containers.md)
 |Working with Images|Image|[Exercise](exercises/containers/working_with_images.md)|[Solution](exercises/containers/solutions/working_with_images.md)
+|My First Dockerfile|Dockerfile|[Exercise](exercises/write_dockerfile_run_container.md)|[Solution](exercises/write_dockerfile_run_container.md)
 
 ### Containers Self Assesment
 
@@ -5644,7 +5665,7 @@ If to focus on OCI (Open Container Initiative) based containers, it offers the f
 </b></details>
 
 <details>
-<summary>Why containers are needed?</summary><br><b>
+<summary>Why containers are needed? What is their goal?</summary><br><b>
 
 OCI provides a good [explanation](https://github.com/opencontainers/runtime-spec/blob/master/principles.md#the-5-principles-of-standard-containers): "Define a unit of software delivery called a Standard Container. The goal of a Standard Container is to encapsulate a software component and all its dependencies in a format that is self-describing and portable, so that any compliant runtime can run it without extra dependencies, regardless of the underlying machine and the contents of the container."
 </b></details>
@@ -5689,6 +5710,132 @@ Specifications published by OCI:
 <summary>Which operations OCI based containers must support?</summary><br><b>
 
 Create, Kill, Delete, Start and Query State.
+</b></details>
+
+#### Containers - Basic Commands
+
+<details>
+<summary>How to list all the containers on a given host?</summary><br><b>
+
+`podman container ls` or `docker container ls` (depends on which containers technology you are using)
+</b></details>
+
+<details>
+<summary>How to attach your shell to a terminal of a running container?</summary><br><b>
+
+`podman container exec -it [container id/name] bash`
+
+This can be done in advance while running the container: `podman container run -it [image:tag] /bin/bash`
+</b></details>
+
+<details>
+<summary>True or False? You can remove a running container if it doesn't running anything</summary><br><b>
+
+False. You have to stop the container before removing it.
+</b></details>
+
+<details>
+<summary>How to stop and remove a container?</summary><br><b>
+
+`podman container stop [contatiner id/name] && podman container rm [container id/name]`
+</b></details>
+
+#### Containers - Images
+
+<details>
+<summary>What is a container image?</summary><br><b>
+
+An image of a container contains the application, its dependencies and the operating system where the application is executed.<br>
+TODO: add more details
+</b></details>
+
+<details>
+<summary>How to list the container images on certain host?</summary><br><b>
+
+`podman image ls`<br>
+`docker image ls`
+
+Depends on which containers technology you use.
+</b></details>
+
+<details>
+<summary>How to retrieve the latest ubuntu image?</summary><br><b>
+
+`docker image pull ubuntu:latest`
+</b></details>
+
+<details>
+<summary>Where pulled images are stored?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Where can you store Docker images?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is Docker Hub?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to push an image to Docker Hub?</summary><br><b>
+
+`docker image push [username]/[image name]:[tag]`
+
+For example:
+
+`docker image mario/web_app:latest`
+</b></details>
+
+<details>
+<summary>How to view image's layers?</summary><br><b>
+
+`docker image inspect [image name]:[tag]`
+</b></details>
+
+#### Containers - Volume
+
+<details>
+<summary>How to create a new volume?</summary><br><b>
+
+`docker volume create some_volume`
+</b></details>
+
+#### Containers - Dockerfile
+
+<details>
+<summary>What is Dockerfile</summary><br><b>
+
+Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image.
+</b></details>
+
+<details>
+<summary>What is the difference between ADD and COPY in Dockerfile?</summary><br><b>
+
+COPY takes in a src and destination. It only lets you copy in a local file or directory from your host (the machine building the Docker image) into the Docker image itself.
+ADD lets you do that too, but it also supports 2 other sources. First, you can use a URL instead of a local file / directory. Secondly, you can extract a tar file from the source directly into the destination.
+Although ADD and COPY are functionally similar, generally speaking, COPY is preferred. That’s because it’s more transparent than ADD. COPY only supports the basic copying of local files into the container, while ADD has some features (like local-only tar extraction and remote URL support) that are not immediately obvious.
+</b></details>
+
+<details>
+<summary>What is the difference between CMD and RUN in Dockerfile?</summary><br><b>
+
+RUN lets you execute commands inside of your Docker image. These commands get executed once at build time and get written into your Docker image as a new layer.
+CMD is the command the container executes by default when you launch the built image. A Dockerfile can only have one CMD.
+You could say that CMD is a Docker run-time operation, meaning it’s not something that gets executed at build time. It happens when you run an image. A running image is called a container.
+</b></details>
+
+<details>
+<summary>How to create a new image using a Dockerfile?</summary><br><b>
+
+The following command is executed from within the directory where Dockefile resides:
+
+`podman image build -t some_app:latest .`
+</b></details>
+
+<details>
+<summary>Do you perform any checks or testing related to your Dockerfile?</summary><br><b>
+
+One option is to use [hadolint](https://github.com/hadolint/hadolint) project which is a linter based on Dockerfile best practices.
 </b></details>
 
 #### Containers - Architecture
@@ -5744,8 +5891,16 @@ Multiple namespaces: pid,net, mnt, uts, ipc, user
 <summary>Which components/layers compose the Docker technology?</summary><br><b>
 
 1. Runtime - responsible for starting and stopping containers
-2. Daemon/Engine - implements the runtime, API, ...
+2. Daemon - manages images (including build), authentication, security, networking (part of it)
 3. Orchestrator
+</b></details>
+
+<details>
+<summary>What components are part of the Docker engine?</summary><br><b>
+
+  - Docker daemon
+  - containerd
+  - runc
 </b></details>
 
 <details>
@@ -5754,16 +5909,20 @@ Multiple namespaces: pid,net, mnt, uts, ipc, user
   - The low level runtime is called runc
   - It manages every container running on Docker host
   - Its purpose is to interact with the underlying OS to start and stop containers
-  - Its reference implementation is of the OCI (Open Containers Initiative)
+  - Its reference implementation is of the OCI (Open Containers Initiative) container-runtime-spec
+  - It's a small CLI wrapper for libcontainer
 </b></details>
 
 <details>
 <summary>What is the high-level runtime?</summary><br><b>
 
   - The high level runtime is called containerd
-  - It manages the whole lifecycle of a container - network interfaces, pulling images, ...
+  - It was developed by Docker Inc and at some point donated to CNCF
+  - It manages the whole lifecycle of a container - start, stop, remove and pause
+  - It take care of setting up network interfaces, volume, pushing and pulling images, ...
   - It manages the lower level runtime (runc) instances
   - It's used both by Docker and Kubernetes as a container runtime
+  - It sits between Docker daemon and runc at the OCI layer
 
 Note: running `ps -ef | grep -i containerd` on a system with Docker installed and running, you should see a process of containerd
 </b></details>
@@ -5791,9 +5950,42 @@ Applied tar sha256:514c3a3e64d4ebf15f482c9e8909d130bcd53bcc452f0225b0a04744de7b8
 </b></details>
 
 <details>
-<summary>How do you run a container?</summary><br><b>
+<summary>Describe in detail what happens when you run a container</summary><br><b>
 
-`podman run` or `docker run`
+1. The Docker client converts the run command into an API payload
+2. It then POST the payload to the API endpoint exposed by the Docker daemon
+3. When the daemon receives the command to create a new container, it makes a call to containerd via gRPC
+4. containerd converts the required image into an OCI bundle and tells runc to use that bundle for creating the container
+5. runc interfaces with the OS kernel to pull together the different constructs (namespace, cgroups, etc.) used for creating the container
+6. Container process is started as a child-process of runc
+7. Once it starts, runc exists
+</b></details>
+
+<details>
+<summary>True or False? Killing the Docker daemon will kill all the running containers</summary><br><b>
+
+False. While this was true at some point, today the container runtime isn't part of the daemon (it's part of containerd and runc) so stopping or killing the daemon will not affect running containers.
+</b></details>
+
+<details>
+<summary>True or False? containerd forks a new instance runc for every container it creates</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? Running a dozen of containers will result in having a dozen of runc processes</summary><br><b>
+
+False. Once a container is created, the parent runc process exists.
+</b></details>
+
+<details>
+<summary>What is shim in regards to Docker?</summary><br><b>
+
+shim is the process that becomes the container's parent when runc process exists. It's responsible for:
+
+  - Reporting exit code back to the Docker daemon
+  - Making sure the container doesn't terminate if the daemon is being restarted. It does so by keeping the stdout and stdin open
 </b></details>
 
 <details>
@@ -5836,60 +6028,6 @@ Create a new image from a container’s changes
 Via the local socket at `/var/run/docker.sock`
 </b></details>
 
-#### Containers - Images
-
-<details>
-<summary>What is a container image?</summary><br><b>
-
-An image of a container contains the application, its dependencies and the operating system where the application is executed.<br>
-TODO: add more details
-</b></details>
-
-<details>
-<summary>How to list the container images on certain host?</summary><br><b>
-
-`podman image ls`<br>
-`docker image ls`
-
-Depends on which containers technology you use.
-</b></details>
-
-<details>
-<summary>How to retrieve the latest ubuntu image?</summary><br><b>
-
-`docker image pull ubuntu:latest`
-</b></details>
-
-#### Containers - Dockerfile
-
-<details>
-<summary>What is Dockerfile</summary><br><b>
-
-Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image.
-</b></details>
-
-<details>
-<summary>What is the difference between ADD and COPY in Dockerfile?</summary><br><b>
-
-COPY takes in a src and destination. It only lets you copy in a local file or directory from your host (the machine building the Docker image) into the Docker image itself.
-ADD lets you do that too, but it also supports 2 other sources. First, you can use a URL instead of a local file / directory. Secondly, you can extract a tar file from the source directly into the destination.
-Although ADD and COPY are functionally similar, generally speaking, COPY is preferred. That’s because it’s more transparent than ADD. COPY only supports the basic copying of local files into the container, while ADD has some features (like local-only tar extraction and remote URL support) that are not immediately obvious.
-</b></details>
-
-<details>
-<summary>What is the difference between CMD and RUN in Dockerfile?</summary><br><b>
-
-RUN lets you execute commands inside of your Docker image. These commands get executed once at build time and get written into your Docker image as a new layer.
-CMD is the command the container executes by default when you launch the built image. A Dockerfile can only have one CMD.
-You could say that CMD is a Docker run-time operation, meaning it’s not something that gets executed at build time. It happens when you run an image. A running image is called a container.
-</b></details>
-
-<details>
-<summary>Do you perform any checks or testing related to your Dockerfile?</summary><br><b>
-
-A common answer to this is to use [hadolint](https://github.com/hadolint/hadolint) project which is a linter based on Dockerfile best practices.
-</b></details>
-
 <details>
 <summary>Explain what is Docker compose and what is it used for</summary><br><b>
 
@@ -5907,14 +6045,6 @@ For example, you can use it to set up ELK stack where the services are: elastics
 
 <details>
 <summary>Explain Docker interlock</summary><br><b>
-</b></details>
-
-<details>
-<summary>Where can you store Docker images?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is Docker Hub?</summary><br><b>
 </b></details>
 
 <details>
@@ -5955,6 +6085,15 @@ Because each container has its own writable container layer, and all changes are
 
 <details>
 <summary>How do you copy files from Docker container to the host and vice versa?</summary><br><b>
+</b></details>
+
+#### Containers - Docker in Production
+
+<details>
+<summary>True or False? It's recommended for production environments that Docker client and server will communicate over network using HTTP socket</summary><br><b>
+
+False. Communication between client and server shouldn't be done over HTTP since it's insecure. It's better to enforce the daemon to only accept network connection that are secured with TLS.<br>
+Basically, the Docker daemon will only accept secured connections with certificates from trusted CA.
 </b></details>
 
 ## Kubernetes
@@ -11807,6 +11946,10 @@ Authorization is the process of identifying what level of access the service or 
 </b></details>
 
 <details>
+<summary>What is a Certificate Authority?</summary><br><b>
+</b></details>
+
+<details>
 <summary>How do you manage sensitive information (like passwords) in different tools and platforms?</summary><br><b>
 </b></details>
 
@@ -12709,6 +12852,10 @@ From [swagger.io](https://swagger.io/resources/articles/difference-between-api-d
 False. From [swagger.io](https://swagger.io/resources/articles/difference-between-api-documentation-specification):
 
 "An API definition is similar to an API specification in that it provides an understanding of how an API is organized and how the API functions. But the API definition is aimed at machine consumption instead of human consumption of APIs."
+</b></details>
+
+<details>
+<summary>What is a Payload in API?</summary><br><b>
 </b></details>
 
 <details>
