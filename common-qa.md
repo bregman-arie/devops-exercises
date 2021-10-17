@@ -1,24 +1,24 @@
-## Q&A
+## FAQ
 
-The questions I've been asked at least once.
+Most frequently asked questions.
 
 ### What is the purpose of repository?
 
-Learning
+Learning, of course.
 
-### My goal is to prepare for a DevOps interview. How to do that?
+### My goal is to prepare for a DevOps interviews. How to do that?
 
 I've added a couple of suggestions [here](prepare_for_interview.md)<br>
-Overall, this repository should help you learn some concepts but don't assume at any point that your interview will consist of questions included in this repository.
+Overall, this repository should help you learn some concepts but, don't assume at any point that your interview will include similar questions to those that included in this repository.
 
 ### How do I become a better DevOps Engineer?
 
 That's a great question.<br>
 I don't have a definitive answer for this question, but try the following:
 
-  * Practice - doing DevOps tasks/work should be the primary way to become a DevOps engineer (obvisouly)
-  * Read - Read blogs, books, ... anything that can enrich you about DevOps
-  * Participate - there are great DevOps communities. I especially like [Reddit DevOps](https://www.reddit.com/r/devops). Visiting there, I learn quite a lot on different topics.
+  * Practice - Practicing DevOps practically should be the primary way used to become a DevOps engineer
+  * Read - Read blogs, books, ... anything that can enrich your knowledge about DevOps or related DevOps topics
+  * Participate - there are great DevOps communities. I personally like [Reddit DevOps community](https://www.reddit.com/r/devops). Visiting there, I learn quite a lot on different topics.
   * Share - This is one of the reasons I created this project. Primary goal was to help others but a secondary goal quickly became to learn more. By asking questions, you actually learn better a certain topic. Try it out, take a certain subject and try to come up with questions you would ask someone to test his/her skills.
 
 ### Why most of the questions don't have answers?
@@ -33,7 +33,8 @@ Because we need more contributors ;)
 
 ### Where the questions and answers are coming from?
 
-Well, from everywhere - past experience, colleagues, contributors, ... but please note we do not allow copying interview questions from interview questions sites to here. There are people who worked hard on adding those to their sites and we respect that.
+Well, from everywhere - past experience, colleagues, contributors, ... but please note we do not allow copying interview questions from interview questions sites to here. There are people who worked hard on adding those to their sites and we respect that.<br>
+As an evidence, we did deny pull requests with copied content from other sites.
 
 ### What are the top DevOps skills required for being a DevOps Engineer?
 
@@ -46,12 +47,12 @@ It's a hard question and the reason is that if you'll ask 20 different people, y
 
 ### I feel like there are some questions that shouldn't be included in this project
 
-Is that a question? :)
+Is that a question? :)<br>
 If you don't like some of the questions or think that some questions should be removed you can open an issue or submit a PR and we can discuss it there. We don't have rules against deleting questions (for now :P)
 
 ### Can I copy the questions from here to my site?
 
-You can but:
+You can (although I have no idea why would you want to), but:
 
 * Not without attribution. Many people worked hard on adding these questions and they deserve a proper credit for their work
 * Not if you plan to make money out of it. Directly or indirectly (e.g. ADS) as this is a free content and we would like it to stay this way :)
@@ -64,8 +65,8 @@ I'll simply imagine you didn't ask that on an open source project... :)
 
 ### Why can't I add installation questions?
 
-In most cases, I prefer questions added to this repository will have certain educational value for the user. Either regarding a certain concept or even a very general question, but one that will make you research on a certain topic and will make you more familiar with it.
-I see little to none value in what is known as "Installation Questions". Let's say I ask you "how to install Jenkins?". Should I conclude from your answer that you are familiar with Jenkins? Is there a value in knowing how to install Jenkins? In my opinion, no.
+In general, I prefer questions added to this repository will have certain educational value for the user. Either regarding a certain concept or even a very general question, but one that will make the user research on a certain topic and will make him eventually more familiar with some of its core concepts.<br>
+I see little to none value in what is known as "Installation Questions". Let's say I ask you "how to install Jenkins?". Should I conclude from your answer that you are familiar with what is Jenkins and/or how it works? In other words, is there a value in knowing how to install Jenkins? In my opinion, no.
 
 ### Where can I practice coding?
 

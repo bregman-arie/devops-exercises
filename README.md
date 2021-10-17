@@ -2,11 +2,11 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1800** questions
+:bar_chart: &nbsp;There are currently **1825** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
-:warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [Q&A](common-qa.md) for more details
+:warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [FAQ page](common-qa.md) for more details
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [DevOps community](https://www.facebook.com/groups/538897960007080) where we have discussions and share resources on DevOps
 
@@ -396,6 +396,10 @@ Reliability, when used in DevOps context, is the ability of a system to recover 
 
 <details>
 <summary>What "Availability" means? What means are there to track Availability of a service?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Why 100% availability isn't a target? Why most companies or teams set it to be 99%.X?</summary><br><b>
 </b></details>
 
 <details>
@@ -2417,6 +2421,10 @@ Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 </b></details>
 
 <details>
+<summary>Can you have two DHCP servers in the same network? How it works?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is SSL tunneling? How does it works?</summary><br><b>
 </b></details>
 
@@ -2931,6 +2939,10 @@ True
 * No more disk space
 * No more inodes
 * No permissions
+</b></details>
+
+<details>
+<summary>A user accidentally executed the following <code>chmod -x $(which chmod)</code>. How to fix it?</summary><br><b>
 </b></details>
 
 #### Linux - Shell Scripting
@@ -5684,6 +5696,10 @@ You can also think about it as containers are for OS-level virtualization while 
 </b></details>
 
 <details>
+<summary>Do we need virtual machines in the edge of containers? Are they still relevant?</summary><br><b>
+</b></details>
+
+<details>
 <summary>In which scenarios would you use containers and in which you would prefer to use VMs?</summary><br><b>
 
 You should choose VMs when:
@@ -5694,6 +5710,8 @@ You should choose containers when:
   * You need a lightweight solution
   * Running multiple versions or instances of a single application
 </b></details>
+
+#### Containers - OCI
 
 <details>
 <summary>What is the OCI?</summary><br><b>
@@ -5721,6 +5739,22 @@ Create, Kill, Delete, Start and Query State.
 </b></details>
 
 <details>
+<summary>How to run a container?</summary><br><b>
+
+Depends on which containers technology you are using.
+
+`docker container run ubuntu` or `podman container run ubuntu` for example.
+</b></details>
+
+<details>
+<summary>Why after running <code>podman container run ubuntu</code> the output of <code>podman container ls</code> is empty?</summary><br><b>
+
+Because the container immediately exits after running the ubuntu image. This is completely normal and expected as containers designed to run a service or a app and exit when they are done running it.<br>
+
+If you want the container to keep running, you can run a command like `sleep 100` which will run for 100 seconds or you can attach to terminal of the container with a command similar: `podman container run -it ubuntu /bin/bash`
+</b></details>
+
+<details>
 <summary>How to attach your shell to a terminal of a running container?</summary><br><b>
 
 `podman container exec -it [container id/name] bash`
@@ -5745,8 +5779,16 @@ False. You have to stop the container before removing it.
 <details>
 <summary>What is a container image?</summary><br><b>
 
-An image of a container contains the application, its dependencies and the operating system where the application is executed.<br>
-TODO: add more details
+* An image of a container contains the application, its dependencies and the operating system where the application is executed.<br>
+* It's a collection of read-only layers. These layers are loosely coupled
+  * Each layer is assembled out of one or more files
+</b></details>
+
+<details>
+<summary>Why container images are relatively small?</summary><br><b>
+
+* Most of the images don't contain Kernel. They share and access the one used by the host on which they are running
+* Containers intended to run specific application in most cases. This means they hold only what the application needs in order to run
 </b></details>
 
 <details>
@@ -5755,7 +5797,30 @@ TODO: add more details
 `podman image ls`<br>
 `docker image ls`
 
-Depends on which containers technology you use.
+Depends on which containers engine you use.
+</b></details>
+
+<details>
+<summary>How the centralized location, where images are stored, is called?</summary><br><b>
+
+Registry
+</b></details>
+
+<details>
+<summary>A registry contains one or more <code>____</code> which in turn contain one or more <code>____</code></summary><br><b>
+
+A registry contains one or more repositories which in turn contain one or more images.
+</b></details>
+
+<details>
+<summary>How to find out which registry do you use by default from your environment?</summary><br><b>
+
+Depends on the containers technology you are using. For example, in case of Docker, it can be done with `docker info`
+
+```
+> docker info
+Registry: https://index.docker.io/v1
+```
 </b></details>
 
 <details>
@@ -5765,31 +5830,122 @@ Depends on which containers technology you use.
 </b></details>
 
 <details>
+<summary>True or False? It's not possible to remove an image if a certain container is using it</summary><br><b>
+
+True. You should stop and remove the container before trying to remove the image it uses.
+</b></details>
+
+<details>
+<summary>True or False? If a tag isn't specified when pulling an image, the 'latest' tag is being used</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>Using the 'latest' tag when pulling an image means, you are pulling the most recently published image</summary><br><b>
+
+False. While this might be true in some cases, it's not guaranteed that you'll pull the latest published image when using the 'latest' tag.<br>
+For example, in some images, 'edge' tag is used for the most recently published images.
+</b></details>
+
+<details>
 <summary>Where pulled images are stored?</summary><br><b>
+
+Depends on the container technology being used. For example, in case of Docker, images are stored in `/var/lib/docker/`
 </b></details>
 
 <details>
-<summary>Where can you store Docker images?</summary><br><b>
+<summary>Explain container image layers</summary><br><b>
+
+  - The layers of an image is where all the content is stored - code, files, etc.
+  - Each layer is independent
+  - Each layer has an ID that is an hash based on its content
+  - The layers (as the image) are immutable which means a change to one of the layers can be easily identified
 </b></details>
 
 <details>
-<summary>What is Docker Hub?</summary><br><b>
+<summary>True or False? Changing the content of any of the image layers will cause the hash content of the image to change</summary><br><b>
+
+True. These hashes are content based and since images (and their layers) are immutable, any change will cause the hashes to change.
 </b></details>
 
 <details>
-<summary>How to push an image to Docker Hub?</summary><br><b>
+<summary>How to list the layers of an image?</summary><br><b>
 
-`docker image push [username]/[image name]:[tag]`
-
-For example:
-
-`docker image mario/web_app:latest`
+In case of Docker, you can use `docker image inspect <name>`
 </b></details>
 
 <details>
-<summary>How to view image's layers?</summary><br><b>
+<summary>True or False? In most cases, container images contain their own kernel</summary><br><b>
 
-`docker image inspect [image name]:[tag]`
+False. They share and access the one used by the host on which they are running.
+</b></details>
+
+<details>
+<summary>True or False? A single container image can have multiple tags</summary><br><b>
+
+True. When listing images, you might be able to see two images with the same ID but different tags.
+</b></details>
+
+<details>
+<summary>What is a dangling image?</summary><br><b>
+
+It's an image without tags attached to it.
+One way to reach this situation is by building an image with exact same name and tag as another already existing image. It can be still referenced by using its full SHA.
+</b></details>
+
+<details>
+<summary>How to see changes done to a given image over time?</summary><br><b>
+
+In the case of Docker, you could use `docker history <name>`
+</b></details>
+
+<details>
+<summary>True or False? Multiple images can share layers</summary><br><b>
+
+True.<br>
+One evidence for that can be found in pulling images. Sometimes when you pull an image, you'll see a line similar to the following:<br>
+`fa20momervif17: already exists`
+
+This is because it recognizes such layer already exists on the host, so there is no need to pull the same layer twice.
+</b></details>
+
+<details>
+<summary>What is the digest of an image? What problem does it solves?</summary><br><b>
+
+Tags are mutable. This is mean that we can have two different images with the same name and the same tag. It can be very confusing to see two images with the same name and the same tag in your environment. How would you know if they are truly the same or are they different?<br>
+
+This is where "digests` come handy. A digest is a content-addressable identifier. It isn't mutable as tags. Its value is predictable and this is how you can tell if two images are the same content wise and not merely by looking at the name and the tag of the images.
+</b></details>
+
+<details>
+<summary>True or False? A single image can support multiple architectures (Linux x64, Windows x64, ...)</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>What is a distribution hash in regards to layers?</summary><br><b>
+
+  - Layers are compressed when pushed or pulled
+  - distribution hash is the hash of the compressed layer
+  - the distribution hash used when pulling or pushing images for verification (making sure no one tempered with image or layers)
+  - It's also used for avoiding ID collisions (a case where two images have exactly the same generated ID)
+</b></details>
+
+<details>
+<summary>How multi-architecture images work? Explain by describing what happens when an image is pulled</summary><br><b>
+
+1. A client makes a call to the registry to use a specific image (using an image name and optionally a tag)
+2. A manifest list is parsed (assuming it exists) to check if the architecture of the client is supported and available as a manifest
+3. If it is supported (a manifest for the architecture is available) the relevant manifest is parsed to obtain the IDs of the layers
+4. Each layer is then pulled using the obtained IDs from the previous step
+</b></details>
+
+<details>
+<summary>How to check which architectures a certain container image supports?</summary><br><b>
+
+`docker manifest inspect <name>`
 </b></details>
 
 #### Containers - Volume
@@ -5891,7 +6047,7 @@ Multiple namespaces: pid,net, mnt, uts, ipc, user
 <summary>Which components/layers compose the Docker technology?</summary><br><b>
 
 1. Runtime - responsible for starting and stopping containers
-2. Daemon - manages images (including build), authentication, security, networking (part of it)
+2. Daemon - implements the Docker API and takes care of managing images (including builds), authentication, security, networking, etc.
 3. Orchestrator
 </b></details>
 
@@ -6048,17 +6204,6 @@ For example, you can use it to set up ELK stack where the services are: elastics
 </b></details>
 
 <details>
-<summary>What is the difference between Docker Hub and Docker cloud?</summary><br><b>
-
-Docker Hub is a native Docker registry service which allows you to run pull
-and push commands to install and deploy Docker images from the Docker Hub.
-
-Docker Cloud is built on top of the Docker Hub so Docker Cloud provides
-you with more options/features compared to Docker Hub. One example is
-Swarm management which means you can create new swarms in Docker Cloud.
-</b></details>
-
-<details>
 <summary>What is Docker Repository?</summary><br><b>
 </b></details>
 
@@ -6085,6 +6230,35 @@ Because each container has its own writable container layer, and all changes are
 
 <details>
 <summary>How do you copy files from Docker container to the host and vice versa?</summary><br><b>
+</b></details>
+
+#### Containers - Docker Images
+
+<details>
+<summary>What is Docker Hub?</summary><br><b>
+
+One of the most common registries for retrieving images.
+</b></details>
+
+<details>
+<summary>How to push an image to Docker Hub?</summary><br><b>
+
+`docker image push [username]/[image name]:[tag]`
+
+For example:
+
+`docker image mario/web_app:latest`
+</b></details>
+
+<details>
+<summary>What is the difference between Docker Hub and Docker cloud?</summary><br><b>
+
+Docker Hub is a native Docker registry service which allows you to run pull
+and push commands to install and deploy Docker images from the Docker Hub.
+
+Docker Cloud is built on top of the Docker Hub so Docker Cloud provides
+you with more options/features compared to Docker Hub. One example is
+Swarm management which means you can create new swarms in Docker Cloud.
 </b></details>
 
 #### Containers - Docker in Production
@@ -11981,6 +12155,14 @@ Access control based on user roles (i.e., a collection of access authorizations 
 
 <details>
 <summary>What is Nonce?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is SSRF?</summary><br><b>
+
+SSRF (Server-side request forgery) it's a vulnerability where you can make a server make arbitrary requests to anywhere you want.
+
+Read more about it at [portswigger.net](https://portswigger.net/web-security/ssrf)
 </b></details>
 
 #### Security - SSH
