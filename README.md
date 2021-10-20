@@ -5735,15 +5735,15 @@ Create, Kill, Delete, Start and Query State.
 <details>
 <summary>How to list all the containers on a given host?</summary><br><b>
 
-`podman container ls` or `docker container ls` (depends on which containers technology you are using)
+In the case of Docker, use: `docker container ls`<br>
+In the case of Podman, it's not very different: `podman container ls`
 </b></details>
 
 <details>
 <summary>How to run a container?</summary><br><b>
 
-Depends on which containers technology you are using.
-
-`docker container run ubuntu` or `podman container run ubuntu` for example.
+Docker: `docker container run ubuntu`<br>
+Podman: `podman container run ubuntu`
 </b></details>
 
 <details>
@@ -5771,7 +5771,17 @@ False. You have to stop the container before removing it.
 <details>
 <summary>How to stop and remove a container?</summary><br><b>
 
-`podman container stop [contatiner id/name] && podman container rm [container id/name]`
+`podman container stop <container id/name> && podman container rm <container id/name>`
+</b></details>
+
+<details>
+<summary>What happens when you run <code>docker container run ubuntu</code>?</summary><br><b>
+
+1. Docker client posts the command to the API server running as part of the Docker daemon
+2. Docker daemon checks if a local image exists
+  1. If it exists, it will use it
+  2. If doesn't exists, it will go to the remote registry (Docker Hub by default) and pull the image locally
+3. containerd and runc are instructed (by the daemon) to create and start the container
 </b></details>
 
 #### Containers - Images
