@@ -13450,7 +13450,7 @@ In Copyleft, any derivative work must use the same licensing while in permissive
 </b></details>
 
 <details>
-<summary>What is faster than RAM?</summary><br><b></summary><br><b>
+<summary>What is faster than RAM?</summary><br><b>
 
 CPU cache.
 [Source](https://www.enterprisestorageforum.com/hardware/cache-memory/)
