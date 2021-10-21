@@ -3011,6 +3011,12 @@ Should be `x=2`
 
 <details>
 <summary>How to store the output of a command in a variable?</summary><br><b>
+
+```
+OUTPUT=$(ls -1)
+echo "${OUTPUT}"
+```
+[Source](https://stackoverflow.com/questions/4651437/how-do-i-set-a-variable-to-the-output-of-a-command-in-bash)
 </b></details>
 
 <details>
@@ -3512,6 +3518,13 @@ execution or run forever, you may want to run them in the background instead of 
 
 <details>
 <summary>How can you find how much memory a specific process consumes?</summary><br><b>
+<code>
+mem()
+{                                                                                                      
+    ps -eo rss,pid,euser,args:100 --sort %mem | grep -v grep | grep -i $@ | awk '{printf $1/1024 "MB"; $1=""; print }'
+}
+</code>
+[Source](https://stackoverflow.com/questions/3853655/in-linux-how-to-tell-how-much-memory-processes-are-using)
 </b></details>
 
 <details>
@@ -13438,6 +13451,9 @@ In Copyleft, any derivative work must use the same licensing while in permissive
 
 <details>
 <summary>What is faster than RAM?</summary><br><b>
+
+CPU cache.
+[Source](https://www.enterprisestorageforum.com/hardware/cache-memory/)
 </b></details>
 
 <details>
