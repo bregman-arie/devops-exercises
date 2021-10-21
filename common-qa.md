@@ -90,4 +90,4 @@ For example:
 1. What is horizontal scaling?
 2. The act of adding additional instances to the pool to handle scaling is called ________ scaling
 
-You are right, both ask about horizontal scaling but it's done from a different angel in every question and in addition, I do believe repetition helps you to learn something in a way where you are not fixed on the way it's asked, rather you understand the concept itself.
+You are right, both ask about horizontal scaling but it's done from a different angle in every question and in addition, I do believe repetition helps you to learn something in a way where you are not fixed on the way it's asked, rather you understand the concept itself.
