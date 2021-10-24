@@ -6,18 +6,9 @@
 https://github.com/bregman-arie/node-hello-world
 https://github.com/bregman-arie/flask-hello-world
 ```
-
-`git clone https://github.com/bregman-arie/node-hello-world`
-
 2. Write a Dockerfile you'll use for building an image of the application (you can use any base image you would like)
-
-```
-FROM alpine
-LABEL maintainer="your name/email"
-RUN apk add --update nodejs nodejs-npm
-COPY . /src
-WORKDIR /src
-RUN npm install
-EXPOSE 8080
-ENTRYPOINT ["node", "./app.js"]
-```
+3. Build an image using the Dockerfile you've just wrote
+4. Verify the image exists
+5. [Optional] Push the image you've just built to a registry
+6. Run the application
+7. Verify the app is running

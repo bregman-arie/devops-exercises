@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1825** questions
+:bar_chart: &nbsp;There are currently **1840** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -6033,6 +6033,16 @@ It specifies the base layer of the image to be used. Every other instruction is 
   * WORKDIR: sets the working directory inside the image filesystems for all the instructions following it
   * EXPOSE: exposes the specified port (it doesn't adds a new layer, rather documented as image metadata)
   * ENTRYPOINT: specifies the startup commands to run when a container is started from the image
+  * ENV: sets an environment variable to the given value
+  * USER: sets the user (and optionally the user group) to use while running the image
+</b></details>
+
+<details>
+<summary>What are some of the best practices regarding writing Dockerfiles that you are following?</summary><br><b>
+
+  * Include only the packages you are going to use. Nothing else.
+  * Specify a tag in FROM instruction. Not using a tag means you'll always pull the latest, which changes over time and might result in unexpected result.
+  * Do not use environment variables to share secrets
 </b></details>
 
 <details>
@@ -6331,6 +6341,16 @@ and push commands to install and deploy Docker images from the Docker Hub.
 Docker Cloud is built on top of the Docker Hub so Docker Cloud provides
 you with more options/features compared to Docker Hub. One example is
 Swarm management which means you can create new swarms in Docker Cloud.
+</b></details>
+
+#### Containers - Security
+
+<details>
+<summary>A container can cause a kernel panic and bring down the whole host. What preventive actions can you apply to avoid it?</summary><br><b>
+
+  * Install only the necessary packages in the container
+  * Set volumes and container's filesystem to read only
+  * DO NOT run containers with `--privilged` flag
 </b></details>
 
 #### Containers - Docker in Production
