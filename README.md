@@ -88,6 +88,7 @@
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Set up a CI pipeline | CI | [Exercise](exercises/devops/ci_for_open_source_project.md) | | |
+| Containerize an Application | Containers |[Exercise](exercises/devops/containerize_app.md)|[Solution](exercises/devops/solutions/containerize_app.md)
 | Deploy to Kubernetes | Deployment | [Exercise](exercises/devops/deploy_to_kubernetes.md) | [Solution](exercises/devops/solutions/deploy_to_kubernetes/README.md) | |
 
 ### DevOps Self Assessment
@@ -2186,9 +2187,11 @@ Learn more about it [here](https://aws.amazon.com/sqs)
 ## Network
 
 <details>
-<summary>What is Ethernet?</summary><br><b>
+<summary>What do you need in order to communicate?</summary><br><b>
 
-Ethernet simply refers to the most common type of Local Area Network (LAN) used today. A LAN—in contrast to a WAN (Wide Area Network), which spans a larger geographical area—is a connected network of computers in a small area, like your office, college campus, or even home.
+  - A common language (for the two ends to understand)
+  - A way to address who do you want to communicate with
+  - A Connection (so the content of of the communication can reach the recipients)
 </b></details>
 
 <details>
@@ -2196,6 +2199,12 @@ Ethernet simply refers to the most common type of Local Area Network (LAN) used 
 
 A set of protocols that define how two or more devices can communicate with each other.
 To learn more about TCP/IP, read [here](http://www.penguintutor.com/linux/basic-network-reference)
+</b></details>
+
+<details>
+<summary>What is Ethernet?</summary><br><b>
+
+Ethernet simply refers to the most common type of Local Area Network (LAN) used today. A LAN—in contrast to a WAN (Wide Area Network), which spans a larger geographical area—is a connected network of computers in a small area, like your office, college campus, or even home.
 </b></details>
 
 <details>
@@ -5660,7 +5669,8 @@ resource "aws_instance" "tf_aws_instance" {
 |--------|--------|------|----|----|
 |Running Containers|Intro|[Exercise](exercises/containers/running_containers.md)|[Solution](exercises/containers/solutions/running_containers.md)
 |Working with Images|Image|[Exercise](exercises/containers/working_with_images.md)|[Solution](exercises/containers/solutions/working_with_images.md)
-|My First Dockerfile|Dockerfile|[Exercise](exercises/write_dockerfile_run_container.md)|[Solution](exercises/write_dockerfile_run_container.md)
+|My First Dockerfile|Dockerfile|[Exercise](exercises/containers/write_dockerfile_run_container.md)|
+|Run, Forest, Run!|Restart Policies|[Exercise](exercises/containers/run_forest_run.md)|[Solution](exercises/containers/solutions/run_forest_run.md)
 
 ### Containers Self Assesment
 
@@ -5709,6 +5719,15 @@ You should choose VMs when:
 You should choose containers when:
   * You need a lightweight solution
   * Running multiple versions or instances of a single application
+</b></details>
+
+<details>
+<summary>Describe the process of containerizing an application</summary><br><b>
+
+1. Write a Dockerfile that includes your app (including the commands to run it) and its dependencies
+2. Build the image using the Dockefile you wrote
+3. You might want to push the image to a registry
+4. Run the container using the image you've built
 </b></details>
 
 #### Containers - OCI
@@ -5782,6 +5801,14 @@ False. You have to stop the container before removing it.
   1. If it exists, it will use it
   2. If doesn't exists, it will go to the remote registry (Docker Hub by default) and pull the image locally
 3. containerd and runc are instructed (by the daemon) to create and start the container
+</b></details>
+
+<details>
+<summary>How to run a container in the background?</summary><br><b>
+
+With the -d flag. It will run in the background and will not attach it to the terminal.
+
+`docker container run -d httpd` or `podman container run -d httpd`
 </b></details>
 
 #### Containers - Images
@@ -5958,6 +5985,12 @@ True.
 `docker manifest inspect <name>`
 </b></details>
 
+<details>
+<summary>How to check what a certain container image will execute once we'll run a container based on that image?</summary><br><b>
+
+Look for "Cmd" or "Entrypoint" fields in the output of `docker image inspec <image name>`
+</b></details>
+
 #### Containers - Volume
 
 <details>
@@ -5969,17 +6002,33 @@ True.
 #### Containers - Dockerfile
 
 <details>
-<summary>What is Dockerfile</summary><br><b>
+<summary>What is a Dockerfile?</summary><br><b>
 
-Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image.
+Different container engines (e.g. Docker, Podman) can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text file that contains all the instructions for building an image which containers can use.
+</b></details>
+
+<details>
+<summary>What is the first line in all Dockefiles and what does it mean?</summary><br><b>
+
+The first instruction is `FROM <image name>`<br>
+It specifies the base layer of the image to be used. Every other instruction is a layer on top of that base image.
+</b></details>
+
+<details>
+<summary>List five different instructions that are available for use in a Dockerfile</summary><br><b>
+
+  * WORKDIR: sets the working directory inside the image filesystems for all the instructions following it
+  * EXPOSE: exposes the specified port (it doesn't adds a new layer, rather documented as image metadata)
+  * ENTRYPOINT: specifies the startup commands to run when a container is started from the image
 </b></details>
 
 <details>
 <summary>What is the difference between ADD and COPY in Dockerfile?</summary><br><b>
 
-COPY takes in a src and destination. It only lets you copy in a local file or directory from your host (the machine building the Docker image) into the Docker image itself.
-ADD lets you do that too, but it also supports 2 other sources. First, you can use a URL instead of a local file / directory. Secondly, you can extract a tar file from the source directly into the destination.
-Although ADD and COPY are functionally similar, generally speaking, COPY is preferred. That’s because it’s more transparent than ADD. COPY only supports the basic copying of local files into the container, while ADD has some features (like local-only tar extraction and remote URL support) that are not immediately obvious.
+COPY takes in a source and destination. It lets you copy in a file or directory from the build context into the Docker image itself.<br>
+ADD lets you do the same, but it also supports two other sources. You can use a URL instead of a file or directory from the build context. In addition, you can extract a tar file from the source directly into the destination.
+
+Although ADD and COPY are functionally similar, generally speaking, COPY is preferred. That’s because it’s more transparent than ADD. COPY only supports the basic copying of files from build context into the container, while ADD has some features (like local-only tar extraction and remote URL support) that are not immediately obvious.
 </b></details>
 
 <details>
@@ -6278,6 +6327,21 @@ Swarm management which means you can create new swarms in Docker Cloud.
 
 False. Communication between client and server shouldn't be done over HTTP since it's insecure. It's better to enforce the daemon to only accept network connection that are secured with TLS.<br>
 Basically, the Docker daemon will only accept secured connections with certificates from trusted CA.
+</b></details>
+
+<details>
+<summary>What forms of self-healing options available for Docker containers?</summary><br><b>
+
+Restart Policies. It allows you to automatically restart containers after certain events.
+</b></details>
+
+<details>
+<summary>What restart policies are you familiar with?</summary><br><b>
+
+  * always: restart the container when it's stopped (not with `docker container stop`)
+  * unless-stopped: restart the container unless it was in stopped status
+  * no: don't restart the container at any point (default policy)
+  * on-failure: restart the container when it exists due to an error (= exit code different than zero)
 </b></details>
 
 ## Kubernetes
@@ -13472,6 +13536,20 @@ DNS
 <summary>What is the C10K problem? Is it relevant today?</summary><br><b>
 
 https://idiallo.com/blog/c10k-2016
+</b></details>
+
+## Storage
+
+<details>
+<summary>What types of storage devices are there?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a filesystem?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Dark Data</summary><br><b>
 </b></details>
 
 ## HR
