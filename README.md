@@ -12619,6 +12619,10 @@ From the official [docs](https://www.elastic.co/guide/en/elasticsearch/reference
 
 <details>
 <summary>What is Logstash?</summary><br><b>
+	
+From the [blog](https://logit.io/blog/post/the-top-50-elk-stack-and-elasticsearch-interview-questions):
+
+"Logstash is a powerful, flexible pipeline that collects, enriches and transports data. It works as an extract, transform & load (ETL) tool for collecting log messages."
 </b></details>
 
 <details>
