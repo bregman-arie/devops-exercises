@@ -5,6 +5,12 @@ A summary of what you need to know for the exam can be found [here](https://codi
 #### Cloud 101
 
 <details>
+<summary>What is cloud computing?</summary><br><b>
+
+[Wikipedia](https://en.wikipedia.org/wiki/Cloud_computing): "Cloud computing is the on-demand availability of computer system resources, especially data storage (cloud storage) and computing power, without direct active management by the user"
+</b></details>
+
+<details>
 <summary>What types of Cloud Computing services are there?</summary><br><b>
 
 IAAS
@@ -44,6 +50,7 @@ SAAS
   * Availability zone
   * Region
   * Edge location</summary><br><b>
+
 AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independent of one another.<br>
 
 Within each region, there are multiple isolated locations known as Availability Zones. Multiple availability zones ensure high availability in case one of them goes down.<br>

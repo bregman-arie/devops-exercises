@@ -88,8 +88,9 @@
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Set up a CI pipeline | CI | [Exercise](exercises/devops/ci_for_open_source_project.md) | | |
-| Containerize an Application | Containers |[Exercise](exercises/devops/containerize_app.md)|[Solution](exercises/devops/solutions/containerize_app.md)
+| Containerize an application | Containers |[Exercise](exercises/devops/containerize_app.md)|[Solution](exercises/devops/solutions/containerize_app.md)
 | Deploy to Kubernetes | Deployment | [Exercise](exercises/devops/deploy_to_kubernetes.md) | [Solution](exercises/devops/solutions/deploy_to_kubernetes/README.md) | |
+| Highly Available "Hello World" | [Exercise](exercises/devops/ha_hello_world.md) | [Solution](exercises/devops/solutions/ha_hello_world.md)
 
 ### DevOps Self Assessment
 
@@ -3073,19 +3074,30 @@ https://superuser.com/a/1060002/167769
 <details>
 <summary>What is systemd?</summary><br>
 <b>
-Systemd is a daemon (System 'd', d stands from daemon).
+Systemd is a daemon (System 'd', d stands for daemon).
 
 A daemon is a program that runs in the background without direct control of the user, although the user can at any time
 talk to the daemon.
 
 systemd has many features such as user processes control/tracking, snapshot support, inhibitor locks..
 
-
-If we visualize the unix/linux system in layers, systemd would fall directly after the linux kernel.
-
+If we visualize the unix/linux system in layers, systemd would fall directly after the linux kernel.<br>
 Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
 </b>
 </details>
+
+<details>
+<summary>How to start or stop a service?</summary><br><b>
+
+To start a service: `systemctl start <service name>`
+To stop a service: `systemctl stop <service name>`
+</b></details>
+
+<details>
+<summary>How to check the status of a service?</summary><br><b>
+
+`systemctl status <service name>`
+</b></details>
 
 <details>
 <summary>On a system which uses systemd, how would you display the logs?</summary><br><b>
@@ -5684,6 +5696,7 @@ resource "aws_instance" "tf_aws_instance" {
 |Working with Images|Image|[Exercise](exercises/containers/working_with_images.md)|[Solution](exercises/containers/solutions/working_with_images.md)
 |My First Dockerfile|Dockerfile|[Exercise](exercises/containers/write_dockerfile_run_container.md)|
 |Run, Forest, Run!|Restart Policies|[Exercise](exercises/containers/run_forest_run.md)|[Solution](exercises/containers/solutions/run_forest_run.md)
+|Layer by Layer|Image Layers|[Exercise](exercises/containers/image_layers.md)|[Solution](exercises/containers/solutions/image_layers.md)
 
 ### Containers Self Assesment
 
@@ -6004,6 +6017,31 @@ True.
 Look for "Cmd" or "Entrypoint" fields in the output of `docker image inspec <image name>`
 </b></details>
 
+<details>
+<summary>How to view the instructions that were used to build image?</summary><br><b>
+
+`docker image history <image name>:<tag>`
+</b></details>
+
+<details>
+<summary>How <code>docker image build</code> works?</summary><br><b>
+
+1. Docker spins up a temporary container
+2. Runs a single instruction in the temporary container
+3. Stores the result as a new image layer
+4. Remove the temporary container
+5. Repeat for every instruction
+</b></details>
+
+<details>
+<summary>What ways are there to reduce container images size?</summary><br><b>
+
+  * Reduce number of instructions - in some case you may be able to join layers by installing multiple packages with one instructions for example or using `&&` to concatenate RUN instructions
+  * Using smaller images - in some cases you might be using images that contain more than what is needed for your application to run. It is good to get overview of some images and see whether you can use smaller images that you are usually using.
+  * Cleanup after running commands - some commands, like packages installation, create some metadata or cache that you might not need for running the application. It's important to clean up after such commands to reduce the image size
+  * For Docker images, you can use multi-stage builds
+</b></details>
+
 #### Containers - Volume
 
 <details>
@@ -6038,11 +6076,13 @@ It specifies the base layer of the image to be used. Every other instruction is 
 </b></details>
 
 <details>
-<summary>What are some of the best practices regarding writing Dockerfiles that you are following?</summary><br><b>
+<summary>What are some of the best practices regarding container images and Dockerfiles that you are following?</summary><br><b>
 
   * Include only the packages you are going to use. Nothing else.
   * Specify a tag in FROM instruction. Not using a tag means you'll always pull the latest, which changes over time and might result in unexpected result.
   * Do not use environment variables to share secrets
+  * Use images from official repositories
+  * Keep images small! - you want them only to include what is required for the application to run successfully. Nothing else.
 </b></details>
 
 <details>
@@ -6071,9 +6111,25 @@ The following command is executed from within the directory where Dockefile resi
 </b></details>
 
 <details>
-<summary>Do you perform any checks or testing related to your Dockerfile?</summary><br><b>
+<summary>Do you perform any checks or testing on your Dockerfiles?</summary><br><b>
 
 One option is to use [hadolint](https://github.com/hadolint/hadolint) project which is a linter based on Dockerfile best practices.
+</b></details>
+
+<details>
+<summary>Which instructions in Dockerfile create new layers?</summary><br><b>
+
+Instructions such as FROM, COPY and RUN, create new image layers instead of just adding metadata.
+</b></details>
+
+<details>
+<summary>Which instructions in Dockerfile create image metadata and don't create new layers?</summary><br><b>
+
+Instructions such as ENTRYPOINT, ENV, EXPOSE, create image metadata and they don't create new layers.
+</b></details>
+
+<details>
+<summary>Is it possible to identify which instruction create a new layer from the output of <code>docker image history</code>?</summary><br><b>
 </b></details>
 
 #### Containers - Architecture
@@ -6343,6 +6399,25 @@ you with more options/features compared to Docker Hub. One example is
 Swarm management which means you can create new swarms in Docker Cloud.
 </b></details>
 
+<details>
+<summary>Explain Multi-stage builds</summary><br><b>
+
+Multi-stages builds allow you to produce smaller container images by splitting the build process into multiple stages.
+
+As an example, imagine you have one Dockerfile where you first build the application and then run it. The whole build process of the application might be using packages and libraries you don't really need for running the application later. Moreover, the build process might produce different artifacts which not all are needed for running the application.
+
+How do you deal with that? Sure, one option is to add more instructions to remove all the unnecessary stuff but, there are a couple of issues with this approach:
+1. You need to know what to remove exactly and that might be not as straightforward as you think
+2. You add new layers which are not really needed
+</b></details>
+
+<details>
+<summary>What <code>.dockerignore</code> is used for?</summary><br><b>
+
+By default, Docker uses everything (all the files and directories) in the directory you use as build context.<br>
+`.dockerignore` used for excluding files and directories from the build context
+</b></details>
+
 #### Containers - Security
 
 <details>
@@ -6354,6 +6429,19 @@ Swarm management which means you can create new swarms in Docker Cloud.
 </b></details>
 
 #### Containers - Docker in Production
+
+<details>
+<summary>What are some best practices you following in regards to using containers in production?</summary><br><b>
+
+Images:
+  * Use images from official repositories
+  * Include only the packages you are going to use. Nothing else.
+  * Specify a tag in FROM instruction. Not using a tag means you'll always pull the latest, which changes over time and might result in unexpected result.
+  * Do not use environment variables to share secrets
+  * Keep images small! - you want them only to include what is required for the application to run successfully. Nothing else.
+Components:
+  * Secured connection between components (e.g. client and server)
+</b></details>
 
 <details>
 <summary>True or False? It's recommended for production environments that Docker client and server will communicate over network using HTTP socket</summary><br><b>
@@ -8606,6 +8694,35 @@ The reason is that the two created empty list are different objects. `x is y` on
 <summary>True or False? String is an immutable data type in Python</summary><br><b>
 
 True
+</b></details>
+
+<details>
+<summary>How to check if a string starts with a letter?</summary><br><b>
+
+Regex:
+
+```
+import re
+if re.match("^[a-zA-Z]+.*", string):
+```
+
+string built-in:
+
+```
+if string and string[0].isalpha():
+```
+</b></details>
+
+<details>
+<summary>How to check if all characters in a given string are digits?</summary><br><b>
+
+`string.isdigit`
+</b></details>
+
+<details>
+<summary>How to remove trailing slash ('/') from a string?</summary><br><b>
+
+`string.rstrip('/')`
 </b></details>
 
 <details>
@@ -13575,6 +13692,14 @@ https://idiallo.com/blog/c10k-2016
 </b></details>
 
 ## Storage
+
+<details>
+<summary>What types of storage formats are there?</summary><br><b>
+
+  * File
+  * Block
+  * Object
+</b></details>
 
 <details>
 <summary>What types of storage devices are there?</summary><br><b>
