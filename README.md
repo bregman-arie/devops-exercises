@@ -21,7 +21,7 @@
 <table>
   <tr>
     <td align="center"><a href="#devops"><img src="images/devops.png" width="70px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a></td>
-    <td align="center"><a href="#jenkins"><img src="images/jenkins.png" width="85px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a></td>
+    <td align="center"><a href="#cicd"><img src="images/cicd.png" width="85px;" height="85px;" alt="cicd"/><br /><b>CI/CD</b></a></td>
     <td align="center"><a href="#git"><img src="images/git.png" width="80px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
     <td align="center"><a href="#ansible"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
     <td align="center"><a href="#Network"><img src="images/network.png" width="80x;" height="75px;" alt="Network"/><br /><b>Network</b></a></td>
@@ -82,17 +82,6 @@
 <!-- ALL-TOPICS-LIST:END -->
 
 ## DevOps
-
-### DevOps Exercises
-
-|Name|Topic|Objective & Instructions|Solution|Comments|
-|--------|--------|------|----|----|
-| Set up a CI pipeline | CI | [Exercise](exercises/devops/ci_for_open_source_project.md) | | |
-| Containerize an application | Containers |[Exercise](exercises/devops/containerize_app.md)|[Solution](exercises/devops/solutions/containerize_app.md)
-| Deploy to Kubernetes | Deployment | [Exercise](exercises/devops/deploy_to_kubernetes.md) | [Solution](exercises/devops/solutions/deploy_to_kubernetes/README.md) | |
-| Highly Available "Hello World" | [Exercise](exercises/devops/ha_hello_world.md) | [Solution](exercises/devops/solutions/ha_hello_world.md)
-
-### DevOps Self Assessment
 
 <details>
 <summary>What is DevOps?</summary><br><b>
@@ -242,80 +231,6 @@ Things to think about:
 * Share your changes frequently
 * Coordinate with your co-workers
 * Don't commit generated files
-</b></details>
-
-#### CI/CD
-
-<details>
-<summary>What is Continuous Integration?</summary><br><b>
-
-A development practice where developers integrate code into a shared repository frequently. It can range from a couple of changes every day or a week to a couple of changes in one hour in larger scales.
-
-Each piece of code (change/patch) is verified, to make the change is safe to merge. Today, it's a common practice to test the change using an automated build that makes sure the code can integrated. It can be one build which runs several tests in different levels (unit, functional, etc.) or several separate builds that all or some has to pass in order for the change to be merged into the repository.
-</b></details>
-
-<details>
-<summary>What is Continuous Deployment?</summary><br><b>
-
-A development strategy used by developers to release software automatically into production where any code commit must pass through an automated testing phase. Only when this is successful is the release considered production worthy. This eliminates any human interaction and should be implemented only after production-ready pipelines have been set with real-time monitoring and reporting of deployed assets. If any issues are detected in production it should be easy to rollback to previous working state.
-
-For more info please read [here](https://www.atlassian.com/continuous-delivery/continuous-deployment)
-</b></details>
-
-
-<details>
-<summary>Can you describe an example of a CI (and/or CD) process starting the moment a developer submitted a change/PR to a repository?</summary><br><b>
-
-There are many answers for such a question, as CI processes vary, depending on the technologies used and the type of the project to where the change was submitted.
-Such processes can include one or more of the following stages:
-
-* Compile 
-* Build
-* Install
-* Configure
-* Update
-* Test
-
-An example of one possible answer:
-
-A developer submitted a pull request to a project. The PR (pull request) triggered two jobs (or one combined job). One job for running lint test on the change and the second job for building a package which includes the submitted change, and running multiple api/scenario tests using that package. Once all tests passed and the change was approved by a maintainer/core, it's merged/pushed to the repository. If some of the tests failed, the change will not be allowed to merged/pushed to the repository.
-
-A complete different answer or CI process, can describe how a developer pushes code to a repository, a workflow then triggered to build a container image and push it to the registry. Once in the registry, the k8s cluster is applied with the new changes.
-</b></details>
-
-<details>
-<summary>What is Continuous Delivery?</summary><br><b>
-
-A development strategy used to frequently deliver code to QA and Ops for testing. This entails having a staging area that has production like features where changes can only be accepted for production after a manual review. Because of this human entanglement there is usually a time lag between release and review making it slower and error prone as compared to continous deployment.
-
-For more info please read [here](https://www.atlassian.com/continuous-delivery/continuous-deployment)
-</b></details>
-
-<details>
-<summary>What CI/CD best practices are you familiar with? Or what do you consider as CI/CD best practice?</summary><br><b>
-
-* Commit and test often.
-* Testing/Staging environment should be a clone of production environment.
-* Clean up your environments (e.g. your CI/CD pipelines may create a lot of resources. They should also take care of cleaning up everything they create)
-* The CI/CD pipelines should provide the same results when executed locally or remotely
-* Treat CI/CD as another application in your organization. Not as a glue code.
-* On demand environments instead of pre-allocated resources for CI/CD purposes
-* Stages/Steps/Tasks of pipelines should be shared between applications or microservices (don't re-invent common tasks like "cloning a project")
-</b></details>
-
-<details>
-<summary>You are given a pipeline and a pool with 3 workers: virtual machine, baremetal and a container. How will you decide on which one of them to run the pipeline?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Where do you store CI/CD pipelines? Why?</summary><br><b>
-
-There are multiple approaches as to where to store the CI/CD pipeline definitions:
-
-1. App Repository - store them in the same repository of the application they are building or testing (perhaps the most popular one)
-2. Central Repository - store all organization's/project's CI/CD pipelines in one separate repository (perhaps the best approach when multiple teams test the same set of projects and they end up having many pipelines)
-3. CI repo for every app repo - you separate CI related code from app code but you don't put everything in one place (perhaps the worst option due to the maintenance)
-4. The platform where the CI/CD pipelines are being executed (e.g. Kubernetes Cluster in case of Tekton/OpenShift Pipelines).
 </b></details>
 
 <details>
@@ -503,18 +418,6 @@ Build artifacts are usually stored in a repository. They can be used in release 
 </b></details>
 
 <details>
-<summary>How do you perform plan capacity for your CI/CD resources? (e.g. servers, storage, etc.)</summary><br><b>
-</b></details>
-
-<details>
-<summary>How would you structure/implement CD for an application which depends on several other applications?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you measure your CI/CD quality? Are there any metrics or KPIs you are using for measuring the quality?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is a configuration drift? What problems is it causing?</summary><br><b>
 
 Configuration drift happens when in an environment of servers with the exact same configuration and software, a certain server
@@ -614,17 +517,105 @@ Google: "Monitoring is one of the primary means by which service owners keep tra
 Read more about it [here](https://sre.google/sre-book/introduction)
 </b></details>
 
-## Jenkins
+## CI/CD
 
-### Jenkins Exercises
+### CI/CD Exercises
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Jobs 101 | Jobs | [Exercise](exercises/jenkins/jobs_101.md) | | |
-| Remove Jobs | Scripts - Jobs | [Exercise](exercises/jenkins/remove_jobs.md) | [Solution](exercises/jenkins/solutions/remove_jobs_solution.groovy) | |
-| Remove Builds | Scripts - Builds | [Exercise](exercises/jenkins/remove_builds.md) | [Solution](exercises/jenkins/solutions/remove_builds_solution.groovy) | |
+| Set up a CI pipeline | CI | [Exercise](exercises/cicd/ci_for_open_source_project.md) | | |
+| Deploy to Kubernetes | Deployment | [Exercise](exercises/devops/deploy_to_kubernetes.md) | [Solution](exercises/devops/solutions/deploy_to_kubernetes/README.md) | |
+| Jenkins - Remove Jobs | Jenkins Scripts | [Exercise](exercises/cicd/remove_jobs.md) | [Solution](exercises/cicd/solutions/remove_jobs_solution.groovy) | |
+| Jenkins - Remove Builds | Jenkins Sripts | [Exercise](exercises/cicd/remove_builds.md) | [Solution](exercises/cicd/solutions/remove_builds_solution.groovy) | |
 
-### Jenkins Self Assessment
+### CI/CD Self Assessment
+
+<details>
+<summary>What is Continuous Integration?</summary><br><b>
+
+A development practice where developers integrate code into a shared repository frequently. It can range from a couple of changes every day or a week to a couple of changes in one hour in larger scales.
+
+Each piece of code (change/patch) is verified, to make the change is safe to merge. Today, it's a common practice to test the change using an automated build that makes sure the code can integrated. It can be one build which runs several tests in different levels (unit, functional, etc.) or several separate builds that all or some has to pass in order for the change to be merged into the repository.
+</b></details>
+
+<details>
+<summary>What is Continuous Deployment?</summary><br><b>
+
+A development strategy used by developers to release software automatically into production where any code commit must pass through an automated testing phase. Only when this is successful is the release considered production worthy. This eliminates any human interaction and should be implemented only after production-ready pipelines have been set with real-time monitoring and reporting of deployed assets. If any issues are detected in production it should be easy to rollback to previous working state.
+
+For more info please read [here](https://www.atlassian.com/continuous-delivery/continuous-deployment)
+</b></details>
+
+
+<details>
+<summary>Can you describe an example of a CI (and/or CD) process starting the moment a developer submitted a change/PR to a repository?</summary><br><b>
+
+There are many answers for such a question, as CI processes vary, depending on the technologies used and the type of the project to where the change was submitted.
+Such processes can include one or more of the following stages:
+
+* Compile 
+* Build
+* Install
+* Configure
+* Update
+* Test
+
+An example of one possible answer:
+
+A developer submitted a pull request to a project. The PR (pull request) triggered two jobs (or one combined job). One job for running lint test on the change and the second job for building a package which includes the submitted change, and running multiple api/scenario tests using that package. Once all tests passed and the change was approved by a maintainer/core, it's merged/pushed to the repository. If some of the tests failed, the change will not be allowed to merged/pushed to the repository.
+
+A complete different answer or CI process, can describe how a developer pushes code to a repository, a workflow then triggered to build a container image and push it to the registry. Once in the registry, the k8s cluster is applied with the new changes.
+</b></details>
+
+<details>
+<summary>What is Continuous Delivery?</summary><br><b>
+
+A development strategy used to frequently deliver code to QA and Ops for testing. This entails having a staging area that has production like features where changes can only be accepted for production after a manual review. Because of this human entanglement there is usually a time lag between release and review making it slower and error prone as compared to continous deployment.
+
+For more info please read [here](https://www.atlassian.com/continuous-delivery/continuous-deployment)
+</b></details>
+
+
+<details>
+<summary>What CI/CD best practices are you familiar with? Or what do you consider as CI/CD best practice?</summary><br><b>
+
+* Commit and test often.
+* Testing/Staging environment should be a clone of production environment.
+* Clean up your environments (e.g. your CI/CD pipelines may create a lot of resources. They should also take care of cleaning up everything they create)
+* The CI/CD pipelines should provide the same results when executed locally or remotely
+* Treat CI/CD as another application in your organization. Not as a glue code.
+* On demand environments instead of pre-allocated resources for CI/CD purposes
+* Stages/Steps/Tasks of pipelines should be shared between applications or microservices (don't re-invent common tasks like "cloning a project")
+</b></details>
+
+<details>
+<summary>You are given a pipeline and a pool with 3 workers: virtual machine, baremetal and a container. How will you decide on which one of them to run the pipeline?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Where do you store CI/CD pipelines? Why?</summary><br><b>
+
+There are multiple approaches as to where to store the CI/CD pipeline definitions:
+
+1. App Repository - store them in the same repository of the application they are building or testing (perhaps the most popular one)
+2. Central Repository - store all organization's/project's CI/CD pipelines in one separate repository (perhaps the best approach when multiple teams test the same set of projects and they end up having many pipelines)
+3. CI repo for every app repo - you separate CI related code from app code but you don't put everything in one place (perhaps the worst option due to the maintenance)
+4. The platform where the CI/CD pipelines are being executed (e.g. Kubernetes Cluster in case of Tekton/OpenShift Pipelines).
+</b></details>
+
+<details>
+<summary>How do you perform plan capacity for your CI/CD resources? (e.g. servers, storage, etc.)</summary><br><b>
+</b></details>
+
+<details>
+<summary>How would you structure/implement CD for an application which depends on several other applications?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How do you measure your CI/CD quality? Are there any metrics or KPIs you are using for measuring the quality?</summary><br><b>
+</b></details>
+
+#### CI/CD - Jenkins
 
 <details>
 <summary>What is Jenkins? What have you used it for?</summary><br><b>
@@ -747,14 +738,67 @@ You can describe the UI way to add new nodes but better to explain how to do in 
 <summary>How would you implement an option of a starting a build from a certain stage and not from the beginning?</summary><br><b>
 </b></details>
 
-#### Jenkins Dev
-
 <details>
 <summary>Do you have experience with developing a Jenkins plugin? Can you describe this experience?</summary><br><b>
 </b></details>
 
 <details>
 <summary>Have you written Jenkins scripts? If yes, what for and how they work?</summary><br><b>
+</b></details>
+
+#### CI/CD - GitHub Actions
+
+<details>
+<summary>What is a Workflow in GitHub Actions?</summary><br><b>
+
+A YAML file that defines the automation actions and instructions to execute upon a specific event.<br>
+The file is placed in the repository itself.
+
+A Workflow can be anything - running tests, compiling code, building packages, ...
+</b></details>
+
+<details>
+<summary>What is a Runner in GitHub Actions?</summary><br><b>
+
+A workflow has to be executed somewhere. The environment where the workflow is executed is called Runner.<br>
+A Runner can be an on-premise host or GitHub hoste
+</b></details>
+
+<details>
+<summary>What is a Job in GitHub Actions?</summary><br><b>
+
+A job is a series of steps which are executed on the same runner/environment.<br>
+A workflow must include at least one job.
+</b></details>
+
+<details>
+<summary>What is an Action in GitHub Actions?</summary><br><b>
+
+An action is the smallest unit in a workflow. It includes the commands to execute as part of the job.
+</b></details>
+
+<details>
+<summary>In GitHub Actions workflow, what the 'on' attribute/directive is used for?</summary><br><b>
+
+Specify upon which events the workflow will be triggered.<br>
+For example, you might configure the workflow to trigger every time a changed is pushed to the repository.
+</b></details>
+
+<details>
+<summary>In Git</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to add a Workflow to a repository?</summary><br><b>
+CLI:
+
+1. Create the directory `.github/workflows` in the repository
+2. Add a YAML file
+
+UI:
+
+1. In the repository page, click on "Actions"
+2. Choose workflow and click on "Set up this workflow"
 </b></details>
 
 ## Cloud
@@ -776,8 +820,16 @@ Cloud service providers are companies that establish public clouds, manage priva
 <details>
 <summary>What are the advantages of cloud computing? Mention at least 3 advantages</summary><br><b>
 
-* Pay as you go (or consumption-based payment) - you are paying only for what you are using. No upfront payments and payment stops when resources are no longer used.
-* Scalable - resources are scaled down or up based on demand
+* Pay as you go: you are paying only for what you are using. No upfront payments and payment stops when resources are no longer used.
+* Scalable: resources are scaled down or up based on demand
+* High availability: resources and applications provide seamless experience, even when some services are down
+* Disaster recovery 
+</b></details>
+
+<details>
+<summary>True or False? Cloud computing is a consumption-based model (users only pay for for resources they use)</summary><br><b>
+
+True
 </b></details>
 
 <details>
@@ -802,17 +854,6 @@ SAAS - Software as a Service
 <details>
 <summary>What types of clouds (or cloud deployments) are there?</summary><br><b>
 
-  * Public
-  * Hybrid
-  * Private
-</b></details>
-
-<details>
-<summary>Explain each of the following Cloud Computing Deployments:
-
-  * Public
-  * Private
-  * Hybrid</summary><br><b>
   * Public - Cloud services sharing computing resources among multiple customers
   * Private - Cloud services having computing resources limited to specific customer or organization, managed by third party or organizations itself
   * Hybrid - Combination of public and private clouds
@@ -5697,6 +5738,8 @@ resource "aws_instance" "tf_aws_instance" {
 |My First Dockerfile|Dockerfile|[Exercise](exercises/containers/write_dockerfile_run_container.md)|
 |Run, Forest, Run!|Restart Policies|[Exercise](exercises/containers/run_forest_run.md)|[Solution](exercises/containers/solutions/run_forest_run.md)
 |Layer by Layer|Image Layers|[Exercise](exercises/containers/image_layers.md)|[Solution](exercises/containers/solutions/image_layers.md)
+|Containerize an application | Containerization |[Exercise](exercises/containers/containerize_app.md)|[Solution](exercises/containers/solutions/containerize_app.md)
+|Multi-Stage Builds|Multi-Stage Builds|[Exercise](exercises/containers/multi_stage_builds.md)|[Solution](exercises/containers/solutions/multi_stage_builds.md)
 
 ### Containers Self Assesment
 
@@ -6409,6 +6452,14 @@ As an example, imagine you have one Dockerfile where you first build the applica
 How do you deal with that? Sure, one option is to add more instructions to remove all the unnecessary stuff but, there are a couple of issues with this approach:
 1. You need to know what to remove exactly and that might be not as straightforward as you think
 2. You add new layers which are not really needed
+
+A better solution might be to use multi-stage builds where one stage (the build process) is passing the relevant artifacts/outputs to the stage that runs the application.
+</b></details>
+
+<details>
+<summary>True or False? In multi-stage builds, artifacts can be copied between stages</summary><br><b>
+
+True. This allows us to eventually produce smaller images.
 </b></details>
 
 <details>
@@ -11541,7 +11592,15 @@ When you use a function (`YEAR(purchased_at)`) it has to scan the whole database
 ## Azure
 
 <details>
-<summary>Explain Azure's architecture</summary><br><b>
+<summary>What is Azure Portal?</summary><br><b>
+
+[Microsoft Docs](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-fundamentals/what-is-microsoft-azure): "The Azure portal is a web-based, unified console that provides an alternative to command-line tools. With the Azure portal, you can manage your Azure subscription by using a graphical user interface."
+</b></details>
+
+<details>
+<summary>What is Azure Marketplace?</summary><br><b>
+
+[Microsoft Docs](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-fundamentals/what-is-microsoft-azure): "Azure marketplace helps connect users with Microsoft partners, independent software vendors, and startups that are offering their solutions and services, which are optimized to run on Azure."
 </b></details>
 
 <details>
@@ -11562,7 +11621,57 @@ An availability set is a logical grouping of VMs that allows Azure to understand
 <summary>Explain Azure managed disks</summary><br><b>
 </b></details>
 
-#### Azure Network
+#### Azure - Compute
+
+<details>
+<summary>What Azure compute services are you familiar with?</summary><br><b>
+
+  * Azure Virtual Machines
+  * Azure Batch
+  * Azure Service Fabric
+  * Azure Container Instances
+  * Azure Virtual Machine Scale Set?s
+</b></details>
+
+<details>
+<summary>What "Azure Virtual Machines" service is used for?</summary><br><b>
+
+Windows or Linux virtual machines
+</b></details>
+
+<details>
+<summary>What "Azure Virtual Machine Scale Sets" service is used for?</summary><br><b>
+
+Scaling Linux or Windows virtual machines used in Azure
+</b></details>
+
+<details>
+<summary>What "Azure Functions" service is used for?</summary><br><b>
+
+Azure Functions is the serverless compute service of Azure.
+</b></details>
+
+<details>
+<summary>What "Azure Container Instances" service is used for?</summary><br><b>
+
+Running containerized applications (without the need to provision virtual machines).
+</b></details>
+
+<details>
+<summary>What "Azure Batch" service is used for?</summary><br><b>
+
+Running parallel and high-performance computing applications
+</b></details>
+
+<details>
+<summary>What "Azure Service Fabric" service is used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What "Azure Kubernetes" service is used for?</summary><br><b>
+</b></details>
+
+#### Azure - Network
 
 <details>
 <summary>What's an Azure region?</summary><br><b>
@@ -13217,6 +13326,10 @@ It's an architecture in which data is and retrieved from a single, non-shared, s
 
 ## Misc
 
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Highly Available "Hello World" | [Exercise](exercises/devops/ha_hello_world.md) | [Solution](exercises/devops/solutions/ha_hello_world.md)
+
 <details>
 <summary>What happens when you type in a URL in an address bar in a browser?</summary><br><b>
 
@@ -14130,11 +14243,21 @@ The ability to grow but also to reduce based on what is required
 </b></details>
 
 <details>
+<summary>Explain Disaster Recovery</summary><br><b>
+</b></details>
+
+<details>
 <summary>Explain Fault Tolerance and High Availability</summary><br><b>
 
 Fault Tolerance - The ability to self-heal and return to normal capacity. Also the ability to withstand a failure and remain functional.
 
 High Availability - Being able to access a resource (in some use cases, using different platforms)
+</b></details>
+
+<details>
+<summary>What is the difference between high availability and Disaster Recovery?</summary><br><b>
+
+[wintellect.com](https://www.wintellect.com/high-availability-vs-disaster-recovery): "High availability, simply put, is eliminating single points of failure and disaster recovery is the process of getting a system back to an operational state when a system is rendered inoperative. In essence, disaster recovery picks up when high availability fails, so HA first."
 </b></details>
 
 <details>
@@ -14501,6 +14624,10 @@ If you are looking for a way to prepare for a certain exam this is the section f
 #### AWS
 
 * [Cloud Practitioner](certificates/cloud-practitioner.md) (Latest update: 2020)
+
+#### Azure
+
+* [AZ-900](certificates/azure-fundamentals-az-900.md) (Latest update: 2021)
 
 #### Kubernetes
 
