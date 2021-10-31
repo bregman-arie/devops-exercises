@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1840** questions
+:bar_chart: &nbsp;There are currently **1899** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -785,7 +785,24 @@ For example, you might configure the workflow to trigger every time a changed is
 </b></details>
 
 <details>
-<summary>In Git</summary><br><b>
+<summary>True or False? In Github Actions, jobs are executed in parallel by deafult</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>How to create dependencies between jobs so one job runs after another?</summary><br><b>
+
+Using the "needs" attribute/directive.
+
+```
+jobs:
+  job1:
+  job2:
+    needs: job1
+```
+
+In the above example, job1 must complete successfully before job2 runs
 </b></details>
 
 <details>
@@ -898,6 +915,16 @@ Read more about auto scaling [here](https://aws.amazon.com/autoscaling)
 <summary>True or False? Auto Scaling is about adding resources (such as instances) and not about removing resource</summary><br><b>
 
 False. Auto scaling adjusts capacity and this can mean removing some resources based on usage and performances.
+</b></details>
+
+#### Cloud - Security
+
+<details>
+<summary>How to secure instances in the cloud?</summary><br><b>
+
+  * Instance should have minimal permissions needed. You don't want an instance-level incident to become an account-level incident
+  * Instances should be accessed through load balancers or bastion hosts. In other words, they should be off the internet (in a private subnet behind a NAT). 
+  * Using latest OS images with your instances (or at least apply latest patches)
 </b></details>
 
 ## AWS
@@ -1431,6 +1458,14 @@ Learn more about it [here](https://aws.amazon.com/compliance/shared-responsibili
 
 <details>
 <summary>What is the AWS compliance program?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to secure instances in AWS?</summary><br><b>
+
+  * Instance IAM roles should have minimal permissions needed. You don't want an instance-level incident to become an account-level incident
+  * Use "AWS System Manager Session Manager" for SSH
+  * Using latest OS images with your instances
 </b></details>
 
 <details>
@@ -5948,7 +5983,7 @@ True
 </b></details>
 
 <details>
-<summary>Using the 'latest' tag when pulling an image means, you are pulling the most recently published image</summary><br><b>
+<summary>True or False? Using the 'latest' tag when pulling an image means, you are pulling the most recently published image</summary><br><b>
 
 False. While this might be true in some cases, it's not guaranteed that you'll pull the latest published image when using the 'latest' tag.<br>
 For example, in some images, 'edge' tag is used for the most recently published images.
@@ -6077,12 +6112,37 @@ Look for "Cmd" or "Entrypoint" fields in the output of `docker image inspec <ima
 </b></details>
 
 <details>
+<summary>What is the role of cache in image builds?</summary><br><b>
+
+When you build an image for the first time, the different layers are being cached. So, while the first build of the image might take time, any other build of the same image (given that Dockerfile didn't change or the content used by the instructions) will be instant thanks to the caching mechanism used.
+
+In little bit more details, it works this way:
+1. The first instruction (FROM) will check if base image already exists on the host before pulling it 
+2. For the next instruction, it will check in the build cache if an existing layer was built from the same base image + if it used the same instruction
+  1. If it finds such layer, it skips the instruction and links the existing layer and it keeps using the cache.
+  2. If it doesn't find a matching layer, it builds the layer and the cache is invalidated.
+
+Note: in some cases (like COPY and ADD instructions) the instruction might stay the same but if the content of what being copied is changed then the cache is invalidated. The way this check is done is by comparing the checksum of each file that is being copied.
+</b></details>
+
+<details>
 <summary>What ways are there to reduce container images size?</summary><br><b>
 
   * Reduce number of instructions - in some case you may be able to join layers by installing multiple packages with one instructions for example or using `&&` to concatenate RUN instructions
   * Using smaller images - in some cases you might be using images that contain more than what is needed for your application to run. It is good to get overview of some images and see whether you can use smaller images that you are usually using.
   * Cleanup after running commands - some commands, like packages installation, create some metadata or cache that you might not need for running the application. It's important to clean up after such commands to reduce the image size
   * For Docker images, you can use multi-stage builds
+</b></details>
+
+<details>
+<summary>What are the pros and cons of squashing images?</summary><br><b>
+
+Pros:
+  * Smaller image
+  * Reducing number of layers (especially if the image has lot of layers)
+Cons:
+  * No sharing of the image layers
+  * Push and pull can take more time (because no matching layers found on target)
 </b></details>
 
 #### Containers - Volume
@@ -6102,7 +6162,7 @@ Different container engines (e.g. Docker, Podman) can build images automatically
 </b></details>
 
 <details>
-<summary>What is the first line in all Dockefiles and what does it mean?</summary><br><b>
+<summary>What is the instruction in all Dockefiles and what does it mean?</summary><br><b>
 
 The first instruction is `FROM <image name>`<br>
 It specifies the base layer of the image to be used. Every other instruction is a layer on top of that base image.
@@ -6126,6 +6186,13 @@ It specifies the base layer of the image to be used. Every other instruction is 
   * Do not use environment variables to share secrets
   * Use images from official repositories
   * Keep images small! - you want them only to include what is required for the application to run successfully. Nothing else.
+  * If are using the apt package manager, you might use 'no-install-recommends' with `apt-get install` to install only main dependencies (instead of suggested, recommended packages)
+</b></details>
+
+<details>
+<summary>What is the "build context"?</summary><br><b>
+
+[Docker docs](https://docs.docker.com/engine/reference/commandline/build): "A build’s context is the set of files located in the specified PATH or URL"
 </b></details>
 
 <details>
@@ -6366,21 +6433,6 @@ Via the local socket at `/var/run/docker.sock`
 </b></details>
 
 <details>
-<summary>Explain what is Docker compose and what is it used for</summary><br><b>
-
-Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.
-
-For example, you can use it to set up ELK stack where the services are: elasticsearch, logstash and kibana. Each running in its own container.
-</b></details>
-
-<details>
-<summary>Describe the process of using Docker Compose</summary><br><br>
-
-* Define the services you would like to run together in a docker-compose.yml file
-* Run `docker-compose up` to run the services
-</b></details>
-
-<details>
 <summary>Explain Docker interlock</summary><br><b>
 </b></details>
 
@@ -6411,6 +6463,24 @@ Because each container has its own writable container layer, and all changes are
 
 <details>
 <summary>How do you copy files from Docker container to the host and vice versa?</summary><br><b>
+</b></details>
+
+#### Containers - Docker Compose
+
+<details>
+<summary>Explain what is Docker compose and what is it used for</summary><br><b>
+
+Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.
+
+For example, you can use it to set up ELK stack where the services are: elasticsearch, logstash and kibana. Each running in its own container.<br>
+In general, it's useful for running applications which composed out of several different services. It let's you manage it as one deployed app, instead of different multiple separate services.
+</b></details>
+
+<details>
+<summary>Describe the process of using Docker Compose</summary><br><br>
+
+* Define the services you would like to run together in a docker-compose.yml file
+* Run `docker-compose up` to run the services
 </b></details>
 
 #### Containers - Docker Images
@@ -6469,10 +6539,52 @@ By default, Docker uses everything (all the files and directories) in the direct
 `.dockerignore` used for excluding files and directories from the build context
 </b></details>
 
+#### Containers - Networking
+
+<details>
+<summary>What container network standards or architectures are you familiar with?</summary><br><b>
+
+CNM (Container Network Model):
+  * Requires distrubited key value store (like etcd for example) for storing the network configuration
+  * Used by Docker
+CNI (Container Network Interface):
+  * Network configuration should be in JSON format
+</b></details>
+
+#### Containers - Docker Networking
+
+<details>
+<summary>What network specification Docker is using and how its implementation is called?</summary><br><b>
+
+Docker is using the CNM (Container Network Model) design specification.<br>
+The implementation of CNM specification by Docker is called "libnetwork". It's written in Go.
+</b></details>
+
+<details>
+<summary>Explain the following blocks in regards to CNM:
+
+  * Networks 
+  * Endpoints
+  * Sandboxes</summary><br><b>
+
+  * Networks: software implementation of an switch. They used for grouping and isolating a collection of endpoints.
+  * Endpoints: Virtual network interfaces. Used for making connections.
+  * Sandboxes: Isolated network stack (interfaces, routing tables, ports, ...)
+</b></details>
+
 #### Containers - Security
 
 <details>
-<summary>A container can cause a kernel panic and bring down the whole host. What preventive actions can you apply to avoid it?</summary><br><b>
+<summary>What security best practices are there regarding containers?</summary><br><b>
+  * Install only the necessary packages in the container
+  * Don't run containers as root when possible
+  * Don't mount the Docker daemon unix socket into any of the containers
+  * Set volumes and container's filesystem to read only
+  * DO NOT run containers with `--privilged` flag
+</b></details>
+
+<details>
+<summary>A container can cause a kernel panic and bring down the whole host. What preventive actions can you apply to avoid this specific situation?</summary><br><b>
 
   * Install only the necessary packages in the container
   * Set volumes and container's filesystem to read only
@@ -8380,6 +8492,20 @@ Or directly on the command line: `helm install --set some_key=some_value`
 <summary>How Helm supports release management?</summary><br><b>
 
 Helm allows you to upgrade, remove and rollback to previous versions of charts. In version 2 of Helm it was with what is known as "Tiller". In version 3, it was removed due to security concerns.
+</b></details>
+
+#### Kubernetes - Security
+
+<details>
+<summary>What best practices do you follow in regards to the Kubernetes cluster?</summary><br><b>
+
+  * Secure inter-service communication (one way is to use Istio to provide mutual TLS)
+  * Isolate different resources into separate namespaces based on some logical groups
+  * Use supported container runtime (if you use Docker then drop it because it's deprecated. You might want to CRI-O as an engine and podman for CLI)
+  * Test properly changes to the cluster (e.g. consider using Datree to prevent kubernetes misconfigurations)
+  * Limit who can do what (by using for example OPA gatekeeper) in the cluster
+  * Use NetworkPolicy to apply network security
+  * Consider using tools (e.g. Falco) for monitoring threats
 </b></details>
 
 #### Submariner
@@ -11674,6 +11800,10 @@ Running parallel and high-performance computing applications
 #### Azure - Network
 
 <details>
+<summary>What Azure network services are you familiar with?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What's an Azure region?</summary><br><b>
 </b></details>
 
@@ -11682,6 +11812,10 @@ Running parallel and high-performance computing applications
 </b></details>
 
 #### Azure Storage
+
+<details>
+<summary>What Azure storage services are you familiar with?</summary><br><b>
+</b></details>
 
 <details>
 <summary>What storage options Azure supports?</summary><br><b>
@@ -13337,18 +13471,14 @@ It's an architecture in which data is and retrieved from a single, non-shared, s
   * Browser cache
   * Operating system cache
   * The DNS server configured on the user's system (can be ISP DNS, public DNS, ...)
-
 2. If it couldn't find a DNS record locally, a full DNS resolution is started.
-
 3. It connects to the server using the TCP protocol
-
 4. The browser sends an HTTP request to the server
-
 5. The server sends an HTTP response back to the browser
-
 6. The browser renders the response (e.g. HTML)
-
 7. The browser then sends subsequent requests as needed to the server to get the embedded links, javascript, images in the HTML and then steps 3 to 5 are repeated.
+
+TODO: add more details!
 </b></details>
 
 #### API
@@ -13394,6 +13524,18 @@ While automation focuses on a task level, Orchestration is the process of automa
 
 <details>
 <summary>What is a Debuggger and how it works?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What services an application might have?</summary><br><b>
+
+  * Authorization
+  * Logging
+  * Authentication
+  * Ordering
+  * Front-end
+  * Back-end
+  ...
 </b></details>
 
 <details>
@@ -14054,6 +14196,18 @@ Not only this will tell you what is expected from you, it will also provide big 
 
 ## Databases
 
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Message Board Tables  | Relational DB Tables | [Exercise](exercises/databases/table_for_message_board_system.md) | [Solution](exercises/databases/solutions/table_for_message_board_system.md)
+
+<details>
+<summary>What is a relational database?</summary><br><b>
+
+  * Data Storage: system to store data in tables
+  * SQL: programming language to manage relational databases
+  * Data Definition Language: a standard syntax to create, alter and delete tables
+</b></details>
+
 <details>
 <summary>What does it mean when a database is ACID compliant?</summary><br>
 
@@ -14149,6 +14303,53 @@ A connection leak is a situation where database connection isn't closed after be
 <summary>What is an index in a database?</summary><br><b>
 
 A database index is a data structure that improves the speed of operations in a table. Indexes can be created using one or more columns, providing the basis for both rapid random lookups and efficient ordering of access to records.
+</b></details>
+
+<details>
+<summary>What data types are there in relational databases?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Normalization</summary><br><b>
+
+Data that is used multiple times in a database should be stored once and referenced with a foreign key.<br>
+This has the clear benefit of ease of maintenance where you need to change a value only in a single place to change it everywhere.
+</b></details>
+
+<details>
+<summary>Explain Primary Key and Foreign Key</summary><br><b>
+
+Primary Key: each row in every table should a unique identifier that represents the row.<br>
+Foreign Key: a reference to another table's primary key. This allows you to join table together to retrieve all the information you need without duplicating data.
+</b></details>
+
+<details>
+<summary>What types of data tables have you used?</summary><br><b>
+
+  * Primary data table: main data you care about
+  * Details table: includes a foreign key and has one to many relationship
+  * Lookup values table: can be one table per lookup or a table containing all the lookups and has one to many relationship
+  * Multi reference table
+</b></details>
+
+<details>
+<summary>What is ORM? What benefits it provides in regards to relational databases usage?</summary><br><b>
+
+[Wikipedia](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping): "is a programming technique for converting data between incompatible type systems using object-oriented programming languages"
+
+In regards to the relational databases:
+
+  * Database as code
+  * Database abstraction
+  * Encapsulates SQL complexity
+  * Enables code review process
+  * Enables usage as a native OOP structure
+</b></details>
+
+<details>
+<summary>What is DDL?</summary><br><b>
+
+[Wikipedia](https://en.wikipedia.org/wiki/Data_definition_language): "In the context of SQL, data definition or data description language (DDL) is a syntax for creating and modifying database objects such as tables, indices, and users."
 </b></details>
 
 ## Regex
