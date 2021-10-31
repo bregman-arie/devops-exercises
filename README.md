@@ -5299,7 +5299,7 @@ If your group has 8 hosts. It will run the whole play on 4 hosts and then the sa
 </b></details>
 
 <details>
-<summary>Why one would prefer using Terraform and not other technologies? (e.g. Ansible, Puppet, CloufFormation)</summary><br><b>
+<summary>Why one would prefer using Terraform and not other technologies? (e.g. Ansible, Puppet, CloudFormation)</summary><br><b>
 
 A common *wrong* answer is to say that Ansible and Puppet are configuration management tools
 and Terraform is a provisioning tool. While technically true, it doesn't mean Ansible and Puppet can't
