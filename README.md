@@ -6217,6 +6217,7 @@ You could say that CMD is a Docker run-time operation, meaning it’s not someth
 
 The following command is executed from within the directory where Dockefile resides:
 
+`docker image build -t some_app:latest .`
 `podman image build -t some_app:latest .`
 </b></details>
 
