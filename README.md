@@ -1324,14 +1324,19 @@ Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-accel
 
 <details>
 <summary>Explain data consistency</summary><br><b>
+	S3 Data Consistency provides strong read-after-write consistency for PUT and DELETE requests of objects in the S3 bucket in all AWS Regions. S3 always return latest file version.
 </b></details>
 
 <details>
 <summary>Can you host dynamic websites on S3? What about static websites?</summary><br><b>
+	No. S3 support only statis hosts. On a static website, individual webpages include static content. They might also contain client-side scripts. By contrast, a dynamic website relies on server-side processing, including server-side scripts such as PHP, JSP, or ASP.NET. Amazon S3 does not support server-side scripting.
 </b></details>
 
 <details>
 <summary>What security measures have you taken in context of S3?</summary><br><b>
+	* Enable versioning.
+	* Don't make bucket public.
+	* Enable encryption if it's disabled.
 </b></details>
 
 <details>
@@ -1428,8 +1433,9 @@ More on ELB [here](https://aws.amazon.com/elasticloadbalancing)
 <summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
 
   * Application LB - layer 7 traffic
-  * Network LB - ultra-high performances or static IP address
-  * Classic LB - low costs, good for test or dev environments
+  * Network LB - ultra-high performances or static IP address (layer 4)
+  * Classic LB - low costs, good for test or dev environments (retired by August 15, 2022)
+  * Gateway LB - transparent network gateway and and distributes traffic such as firewalls, intrusion detection and prevention systems, and deep packet inspection systems. (layer 3)
 </b></details>
 
 #### AWS Security
@@ -1486,6 +1492,8 @@ Learn more [here](https://aws.amazon.com/inspector)
 
 <details>
 <summary>What is AWS Guarduty?</summary><br><b>
+AWS definition: "Amazon GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your Amazon Web Services accounts, workloads, and data stored in Amazon S3" <br>
+Monitor VPC Flow lows, DNS logs, CloudTrail S3 events and CloudTrail Mgmt events.
 </b></details>
 
 <details>
