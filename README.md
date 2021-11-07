@@ -1329,6 +1329,7 @@ Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-accel
 
 <details>
 <summary>Can you host dynamic websites on S3? What about static websites?</summary><br><b>
+	No. S3 support only statis hosts. On a static website, individual webpages include static content. They might also contain client-side scripts. By contrast, a dynamic website relies on server-side processing, including server-side scripts such as PHP, JSP, or ASP.NET. Amazon S3 does not support server-side scripting.
 </b></details>
 
 <details>
