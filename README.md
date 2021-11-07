@@ -32,7 +32,7 @@
     <td align="center"><a href="#programming"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Programming</b></a></td>
     <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
     <td align="center"><a href="#go"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a></td>
-    <td align="center"><a href="#scripts"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Scripts</b></a></td>
+    <td align="center"><a href="#shell-scripting"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
     <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
     <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
   </tr>
@@ -546,7 +546,6 @@ A development strategy used by developers to release software automatically into
 For more info please read [here](https://www.atlassian.com/continuous-delivery/continuous-deployment)
 </b></details>
 
-
 <details>
 <summary>Can you describe an example of a CI (and/or CD) process starting the moment a developer submitted a change/PR to a repository?</summary><br><b>
 
@@ -575,6 +574,12 @@ A development strategy used to frequently deliver code to QA and Ops for testing
 For more info please read [here](https://www.atlassian.com/continuous-delivery/continuous-deployment)
 </b></details>
 
+<details>
+<summary>What is difference between Continuous Delivery and Continuous Deployment?</summary><br><b>
+
+Both encapsulate the same process of deploying the changes which were compiled and/or tested in the CI pipelines.<br>
+The difference between the two is that Continuous Delivery isn't fully automated process as opposed to Continuous Deployment where every change that is tested in the process is eventually deployed to production. In continuous delivery someone is either approving the deployment process or the deployment process is based on constraints and conditions (like time constraint of deploying every week/month/...)
+</b></details>
 
 <details>
 <summary>What CI/CD best practices are you familiar with? Or what do you consider as CI/CD best practice?</summary><br><b>
@@ -931,7 +936,14 @@ False. Auto scaling adjusts capacity and this can mean removing some resources b
 
 ### AWS Exercises
 
-#### AWS Lambda
+#### AWS - IAM
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Create a User | IAM | [Exercise](exercises/aws/create_user.md) | [Solution](exercises/aws/solutions/create_user.md) | |
+| Password Policy | IAM | [Exercise](exercises/aws/password_policy.md) | [Solution](exercises/aws/solutions/password_policy.md) | |
+
+#### AWS - Lambda
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
@@ -948,9 +960,10 @@ False. Auto scaling adjusts capacity and this can mean removing some resources b
   * Availability zone
   * Region
   * Edge location</summary><br><b>
+
 AWS regions are data centers hosted across different geographical locations worldwide.<br>
 
-Within each region, there are multiple isolated locations known as Availability Zones. Multiple availability zones ensure high availability in case one of them goes down.<br>
+Within each region, there are multiple isolated locations known as Availability Zones. Each availability zone is one or more data-centers with redundant network and connectivity and power supply. Multiple availability zones ensure high availability in case one of them goes down.<br>
 
 Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
 </b></details>
@@ -962,18 +975,21 @@ True.
 </b></details>
 
 <details>
-<summary>Do you agree with the statement "AWS region should be chosen based on proximity alone"?</summary><br><b>
+<summary>True or False? Each region has a minimum number of 1 availability zones and the maximum is 4</summary><br><b>
 
-Note: opinionated answer.
-
-No. There are a couple of factors to consider when choosing a region (order doesn't mean anything):
-
-1. Cost - regions vary in cost and AWS Price List API can assist in calculating the difference in cost between the different regions.
-2. Speed
-3. Features
+False. The minimum is 2 while the maximum is 6.
 </b></details>
 
-#### AWS IAM
+<details>
+<summary>What considerations to take when choosing an AWS region for running a new application?</summary><br><b>
+
+* Services Availability: not all service (and all their features) are available in every region
+* Reduced latency: deploy application in a region that is close to customers
+* Compliance: some countries have more strict rules and requirements such as making sure the data stays within the borders of the country or the region. In that case, only specific region can be used for running the application
+* Pricing: the pricing might not be consistent across regions so, the price for the same service in different regions might be different.
+</b></details>
+
+#### AWS - IAM
 
 <details>
 <summary>What is IAM? What are some of its features?</summary><br><b>
@@ -989,11 +1005,36 @@ True
 </b></details>
 
 <details>
-<summary>Given an example of IAM best practices?</summary><br><b>
+<summary>True or False? When creating an AWS account, root account is created by default. This is the recommended account to use and share in your organization</summary><br><b>
+
+False. Instead of using the root account, you should be creating users and use them.
+</b></details>
+
+<details>
+<summary>True or False? Groups in AWS IAM, can contain only users and not other groups</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? Users in AWS IAM, can belong only to a single group</summary><br><b>
+
+False. Users can belong to multiple groups.
+</b></details>
+
+<details>
+<summary>What best practices are there regarding IAM in AWS?</summary><br><b>
 
 * Set up MFA
 * Delete root account access keys
 * Create IAM users instead of using root for daily management
+* Apply "least privilege principle": give users only the permissions they need, nothing more than that.
+</b></details>
+
+<details>
+<summary>What permissions does a new user have?</summary><br><b>
+
+Only a login access.
 </b></details>
 
 <details>
@@ -1026,9 +1067,34 @@ There can be several reasons for that. One of them is lack of policy. To solve t
 </b></details>
 
 <details>
-<summary>What permissions does a new user have?</summary><br><b>
+<summary>What statements are consist of in AWS IAM policies?</summary><br><b>
 
-Only a login access.
+* Sid: identifier of the statement (optional)
+* Effect: allow or deny access
+* Action: list of actions (to deny or allow)
+* Resource: a list of resources to which the actions are applied
+* Principal: role or account or user to which to apply the policy
+* Condition: conditions to determine when the policy is applied (optional)
+</b></details>
+
+<details>
+<summary>Explain the following policy:
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect:": "Allow",
+            "Action": "*",
+            "Resources": "*"
+        }
+    ]
+}
+```
+</summary><br><b>
+
+This policy permits to perform any action on any resource. It happens to be the "AdministratorAccess" policy.
 </b></details>
 
 #### AWS - Compute
@@ -1038,6 +1104,12 @@ Only a login access.
 
 "a web service that provides secure, resizable compute capacity in the cloud".
 Read more [here](https://aws.amazon.com/ec2)
+</b></details>
+
+<details>
+<summary>True or False? EC2 is a regional service</summary><br><b>
+
+True. As opposed to IAM for example, which is a global service, EC2 is a regional service.
 </b></details>
 
 <details>
@@ -2557,12 +2629,30 @@ For example, your computer's private IP could be 192.168.1.100, but your router 
 <summary>Which factors affect network performances</summary><br><b>
 </b></details>
 
+#### Network - Data and Control planes
+
 <details>
-<summary>What the terms "Data Plane" and "Control Plane" refer?</summary><br><b>
+<summary>What "control plane" refers to?</summary><br><b>
 
-The exact meaning is usually depends on the context but overall data plane refers to all the functions that forward packets and/or frames from one interface to another while control plane refers to all the functions that make use of routing protocols.
+The control plane is the part of the network that decides how to route and forward packets to a different location.
+</b></details>
 
-There is also "Management Plane" which refers to monitoring and management functions.
+<details>
+<summary>What "data plane" refers to?</summary><br><b>
+
+The data plane is the part of the network that actually forwards the data/packets.
+</b></details>
+
+<details>
+<summary>What "management plane" refers to?</summary><br><b>
+
+Refers to monitoring and management functions.
+</b></details>
+
+<details>
+<summary>To which plane (data, control, ...) is creating routing tables belongs to?</summary><br><b>
+
+Control Plane.
 </b></details>
 
 <details>
@@ -2837,10 +2927,6 @@ Using the `mv` command.
 </b></details>
 
 <details>
-<summary>Explain redirection</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is the difference between these two commands? Will it result in the same output?
 
 ```
@@ -2910,6 +2996,37 @@ With cron, tasks are scheduled using the following format:
 The tasks are stored in a cron file, you can write in it using <code>crontab -e</code>
 
 Alternatively if you are using a distro with systemd it's recommended to use systemd timers.
+</b></details>
+
+#### Linux - I/O Redirection
+
+<details>
+<summary>Explain Linux I/O redirection</summary><br><b>
+</b></details>
+
+<details>
+<summary>Demonstrate Linux output redirection</summary><br><b>
+
+ls > ls_output.txt
+</b></details>
+
+<details>
+<summary>Demonstrate Linux stderr output redirection</summary><br><b>
+
+yippiekaiyay 2> ls_output.txt
+</b></details>
+
+<details>
+<summary>Demonstrate Linux stderr to stdout redirection</summary><br><b>
+
+yippiekaiyay 1>&2 
+</b></details>
+
+<details>
+<summary>What is the result of running the following command? <code>yippiekaiyay 1>&2 die_hard</code></code></summary><br><b>
+
+An output similar to: `yippikaiyay: command not found...`<br>
+The file `die_hard` will not be created
 </b></details>
 
 #### Linux FHS
@@ -3030,120 +3147,6 @@ True
 <details>
 <summary>A user accidentally executed the following <code>chmod -x $(which chmod)</code>. How to fix it?</summary><br><b>
 </b></details>
-
-#### Linux - Shell Scripting
-
-<details>
-<summary>What this line in scripts mean?: <code>#!/bin/bash</code></summary><br><b>
-
-
-`#!/bin/bash` is She-bang
-
-/bin/bash is the most common shell used as default shell for user login of the linux system. The shell’s name is an acronym for Bourne-again shell. Bash can execute the vast majority of scripts and thus is widely used because it has more features, is well developed and better syntax.
-
-</b></details>
-
-<details>
-<summary>True or False?: when a certain command/line fails, the script, by default, will exit and will no keep running</summary><br><b>
-
-Depends on the language and settings used.
-When a script written in Bash fails to run a certain command it will keep running and will execute all other commands mentioned after the command which failed.
-Most of the time we would actually want the opposite to happen. In order to make Bash exist when a specific command fails, use 'set -e' in your script.
-</b></details>
-
-<details>
-<summary>Explain what would be the result of each command:
-
-  * <code>echo $0</code>
-  * <code>echo $?</code>
-  * <code>echo $$</code>
-  * <code>echo $@</code>
-  * <code>echo $#</code></summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you debug shell scripts?</summary><br><b>
-
-Answer depends on the language you are using for writing your scripts. If Bash is used for example then:
-
-  * Adding -x to the script I'm running in Bash
-  * Old good way of adding echo statements
-
-If Python, then using pdb is very useful.
-</b></details>
-
-<details>
-<summary>How do you get input from the user in shell scripts?</summary><br><b>
-
-Using the keyword <code>read</code> so for example <code>read x</code> will wait for user input and will store it in the variable x.
-</b></details>
-
-<details>
-<summary>Explain <code>continue</code> and <code>break</code>. When do you use them if at all?</summary><br><b>
-</b></details>
-
-
-<details>
-<summary>Running the following bash script, we don't get 2 as a result, why?
-
-```
-x = 2
-echo $x
-```
-</summary><br><b>
-
-Should be `x=2`
-</b></details>
-
-<details>
-<summary>How to store the output of a command in a variable?</summary><br><b>
-
-```
-OUTPUT=$(ls -1)
-echo "${OUTPUT}"
-```
-[Source](https://stackoverflow.com/questions/4651437/how-do-i-set-a-variable-to-the-output-of-a-command-in-bash)
-</b></details>
-
-<details>
-<summary>How do you check variable length?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Generate 8 digit random number</summary><br><b>
-
-shuf -i 9999999-99999999 -n 1
-</b></details>
-
-<details>
-<summary>Explain the following code:
-
-<code>:(){ :|:& };:</code>
-
-</summary><br><b>
-</b></details>
-
-<details>
-<summary>Can you give an example to some Bash best practices?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the ternary operator? How do you use it in bash?</summary><br><b>
-
-A short way of using if/else. An example:
-
-[[ $a = 1 ]] && b="yes, equal" || b="nope"
-</b></details>
-
-<details>
-<summary>What does the following code do and when would you use it?
-
-<code>diff <(ls /tmp) <(ls /var/tmp)</code>
-
-</summary><br>
-It is called 'process substitution'. It provides a way to pass the output of a command to another command when using a pipe <code>|</code> is not possible. It can be used when a command does not support <code>STDIN</code> or you need the output of multiple commands.
-https://superuser.com/a/1060002/167769
-</details>
 
 #### Linux - systemd
 
@@ -4523,6 +4526,15 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 * Services
 * Software/Packages Management
 </b></details>
+
+#### Linux - Sed
+
+<details>
+<summary>Using sed, extract the date from the following line: <code>201.7.19.90 - - [05/Jun/1985:13:42:99 +0000] "GET /site HTTP/1.1" 200 32421</code></summary><br><b>
+
+`echo $line | sed 's/.*\[//g;s/].*//g;s/:.*//g'`
+</b></details>
+
 
 #### Linux - Misc
 
@@ -6572,10 +6584,25 @@ The implementation of CNM specification by Docker is called "libnetwork". It's w
   * Sandboxes: Isolated network stack (interfaces, routing tables, ports, ...)
 </b></details>
 
+<details>
+<summary>True or False? If you would like to connect a container to multiple networks, you need multiple endpoints</summary><br><b>
+
+True. An endpoint can connect only to a single network.
+</b></details>
+
+<details>
+<summary>What are some features of libnetwork?</summary><br><b>
+
+* Native service discovery
+* ingress-based load balancer
+* network control plane and management plane
+</b></details>
+
 #### Containers - Security
 
 <details>
 <summary>What security best practices are there regarding containers?</summary><br><b>
+
   * Install only the necessary packages in the container
   * Don't run containers as root when possible
   * Don't mount the Docker daemon unix socket into any of the containers
@@ -6628,6 +6655,11 @@ Restart Policies. It allows you to automatically restart containers after certai
   * on-failure: restart the container when it exists due to an error (= exit code different than zero)
 </b></details>
 
+#### Containers - Docker Misc
+<details>
+<summary>Explain what is Docker Bench</summary><br><b>
+</b></details>
+
 ## Kubernetes
 
 <a name="kubernetes"></a>
@@ -6657,26 +6689,6 @@ To understand what Kubernetes is good for, let's look at some examples:
 * You would like to run a certain application in a container on multiple different locations. Sure, if it's 2-3 servers/locations, you can do it by yourself but it can be challenging to scale it up to additional multiple location.<br>
 * Performing updates and changes across hundreds of containers<br>
 * Handle cases where the current load requires to scale up (or down)
-</b></details>
-
-<details>
-<summary>What is a Kubernetes Cluster?</summary><br><b>
-
-Red Hat Definition: "A Kubernetes cluster is a set of node machines for running containerized applications. If you’re running Kubernetes, you’re running a cluster.
-At a minimum, a cluster contains a worker node and a master node."
-
-Read more [here](https://www.redhat.com/en/topics/containers/what-is-a-kubernetes-cluster)
-</b></details>
-
-<details>
-<summary>Do you have experience with deploying a Kubernetes cluster? If so, can you describe the process in high-level?</summary><br><b>
-
-1. Create multiple instances you will use as Kubernetes nodes/workers. Create also an instance to act as the Master. The instances can be provisioned in a cloud or they can be virtual machines on bare metal hosts.
-2. Provision a certificate authority that will be used to generate TLS certificates for the different components of a Kubernetes cluster (kubelet, etcd, ...)
-  1. Generate a certificate and private key for the different components
-3. Generate kubeconfigs so the different clients of Kubernetes can locate the API servers and authenticate.
-4. Generate encryption key that will be used for encrypting the cluster data
-5. Create an etcd cluster
 </b></details>
 
 <details>
@@ -6719,8 +6731,25 @@ metadata, kind and apiVersion
 
 Kubectl is the Kubernetes command line tool that allows you to run commands against Kubernetes clusters. For example, you can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
 </b></details>
+<details>
+
+<summary>What Kubernetes objects do you usually use when deploying applications in Kubernetes?</summary><br><b>
+
+* Deployment - creates and the Pods and watches them
+* Service: route traffic to Pods internally
+* Ingress: route traffic from outside the cluster
+</b></details>
 
 #### Kubernetes - Cluster
+
+<details>
+<summary>What is a Kubernetes Cluster?</summary><br><b>
+
+Red Hat Definition: "A Kubernetes cluster is a set of node machines for running containerized applications. If you’re running Kubernetes, you’re running a cluster.
+At a minimum, a cluster contains a worker node and a master node."
+
+Read more [here](https://www.redhat.com/en/topics/containers/what-is-a-kubernetes-cluster)
+</b></details>
 
 <details>
 <summary>What is a Node?</summary><br><b>
@@ -6785,6 +6814,17 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
 <summary>How do you prevent high memory usage in your Kubernetes cluster and possibly issues like memory leak and OOM?</summary><br><b>
 
 Apply requests and limits, especially on third party applications (where the uncertainty is even bigger)
+</b></details>
+
+<details>
+<summary>Do you have experience with deploying a Kubernetes cluster? If so, can you describe the process in high-level?</summary><br><b>
+
+1. Create multiple instances you will use as Kubernetes nodes/workers. Create also an instance to act as the Master. The instances can be provisioned in a cloud or they can be virtual machines on bare metal hosts.
+2. Provision a certificate authority that will be used to generate TLS certificates for the different components of a Kubernetes cluster (kubelet, etcd, ...)
+  1. Generate a certificate and private key for the different components
+3. Generate kubeconfigs so the different clients of Kubernetes can locate the API servers and authenticate.
+4. Generate encryption key that will be used for encrypting the cluster data
+5. Create an etcd cluster
 </b></details>
 
 #### Kubernetes - Pods
@@ -7069,6 +7109,12 @@ The pod related to the deployment will terminate and the replicaset will be remo
 Using a Service.
 </b></details>
 
+<details>
+<summary>An internal load balancer in Kubernetes is called <code>____</code> and an external load balancer is called <code>____</code></summary><br><b>
+
+An internal load balancer in Kubernetes is called Service and an external load balancer is Ingress
+</b></details>
+
 #### Kubernetes - Services
 
 <details>
@@ -7093,6 +7139,19 @@ True
 * ExternalName
 
 More on this topic [here](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
+</b></details>
+
+<details>
+<summary>How Service and Deployment are connected?</summary><br><b>
+
+The truth is they aren't connected. Service points to Pod(s) directly, without connecting to the Deployment in any way.
+</b></details>
+
+<details>
+<summary>What are important steps in defining/adding a Service?</summary><br><b>
+
+1. Making sure that targetPort of the Service is matching the containerPort of the POd
+2. Making sure that selector matches at least one of the Pod's labels
 </b></details>
 
 <details>
@@ -8497,7 +8556,7 @@ Helm allows you to upgrade, remove and rollback to previous versions of charts. 
 #### Kubernetes - Security
 
 <details>
-<summary>What best practices do you follow in regards to the Kubernetes cluster?</summary><br><b>
+<summary>What security best practices do you follow in regards to the Kubernetes cluster?</summary><br><b>
 
   * Secure inter-service communication (one way is to use Istio to provide mutual TLS)
   * Isolate different resources into separate namespaces based on some logical groups
@@ -8508,7 +8567,29 @@ Helm allows you to upgrade, remove and rollback to previous versions of charts. 
   * Consider using tools (e.g. Falco) for monitoring threats
 </b></details>
 
-#### Submariner
+#### Kubernetes - Troubleshooting Scenarios
+
+<details>
+<summary>Running <code>kubectl get pods</code> you see Pods in "Pending" status. What would you do?</summary><br><b>
+
+One possible path is to run `kubectl describe pod <pod name>` to get more details.<br>
+You might see one of the following:
+  * Cluster is full. In this case, extend the cluster.
+  * ResourcesQuota limits are met. In this case you might want to modify them
+  * Check if PersistentVolumeClaim mount is pending
+
+If none of the above helped, run the command (`get pods`) with `-o wide` to see if the node is assigned to a node. If not, there might be an issue with scheduler.
+</b></details>
+
+<details>
+<summary>Users unable to reach an application running on a Pod on Kubernetes. What might be the issue and how to check?</summary><br><b>
+
+One possible path is to start with checking the Pod status.
+1. Is the Pod pending? if yes, check for the reason with `kubectl describe pod <pod name>`
+TODO: finish this...
+</b></details>
+
+#### Kubernetes - Submariner
 
 <details>
 <summary>Explain what is Submariner and what is it used for</summary><br><b>
@@ -8527,7 +8608,7 @@ You can learn more [here](https://submariner-io.github.io)
   * Route Agent</summary><br><b>
 </b></details>
 
-#### Istio
+#### Kubernetes - Istio
 
 <details>
 <summary>What is Istio? What is it used for?</summary><br><b>
@@ -8964,6 +9045,15 @@ def my_function():
 ```
 
 You can then assign a function to a variables like this `x = my_function` or you can return functions as return values like this `return my_function`
+</b></details>
+
+#### Python - Integer
+
+<details>
+<summary>Write a function to determine if a number is a Palindrome</summary><br><b>
+
+```
+```
 </b></details>
 
 #### Python - OOP
@@ -11477,7 +11567,45 @@ If more pods are running than needed -> it deletes some of them<br>
 If not enough pods are running -> it creates more
 </b></details>
 
-## Scripts
+## Shell Scripting
+
+### Shell Scripting Exercises
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+|Hello World|Variables|[Exercise](exercises/shell/hello_world.md)|[Solution](exercises/shell/solutions/hello_world.md) | Basic
+|Basic date|Variables|[Exercise](exercises/shell/basic_date.md)|[Solution](exercises/shell/solutions/basic_date.md) | Basic
+|Great Day|Variables|[Exercise](exercises/shell/great_day.md)|[Solution](exercises/shell/solutions/great_day.md) | Basic
+|Factors|Arithmetic|[Exercise](exercises/shell/factors.md)|[Solution](exercises/shell/solutions/factors.md) | Basic
+|Argument Check|Conditionals|[Exercise](exercises/shell/argument_check.md)|[Solution](exercises/shell/solutions/argument_check.md) | Basic
+|Files Size|For Loops|[Exercise](exercises/shell/files_size.md)|[Solution](exercises/shell/solutions/files_size.md) | Basic
+|Count Chars|Input + While Loops|[Exercise](exercises/shell/count_chars.md)|[Solution](exercises/shell/solutions/count_chars.md) | Basic
+|Sum|Functions|[Exercise](exercises/shell/sum.md)|[Solution](exercises/shell/solutions/sum.md) | Basic
+|Number of Arguments|Case Statement|[Exercise](exercises/shell/num_of_args.md)|[Solution](exercises/shell/solutions/num_of_args.md) | Basic
+|Empty Files|Misc|[Exercise](exercises/shell/empty_files.md)|[Solution](exercises/shell/solutions/empty_files.md) | Basic
+|Directories Comparison|Misc|[Exercise](exercises/shell/directories_comparison.md)| :( | Basic
+|It's alive!|Misc|[Exercise](exercises/shell/host_status.md)|[Solution](exercises/shell/solutions/host_status.md) | Intermediate
+
+## Shell Scripting - Self Assessment
+
+<details>
+<summary>What does this line in shell scripts means?: <code>#!/bin/bash</code></summary><br><b>
+
+
+`#!/bin/bash` is She-bang
+
+/bin/bash is the most common shell used as default shell for user login of the linux system. The shell’s name is an acronym for Bourne-again shell. Bash can execute the vast majority of scripts and thus is widely used because it has more features, is well developed and better syntax.
+
+</b></details>
+
+<details>
+<summary>True or False? When a certain command/line fails in a shell script, the shell script, by default, will exit and stop running</summary><br><b>
+
+Depends on the language and settings used.
+If the script is a bash script then this statement is true. When a script written in Bash fails to run a certain command it will keep running and will execute all other commands mentioned after the command which failed.
+
+Most of the time we might actually want the opposite to happen. In order to make Bash exist when a specific command fails, use 'set -e' in your script.
+</b></details>
 
 <details>
 <summary>What do you tend to include in every script you write?</summary><br><b>
@@ -11491,7 +11619,7 @@ You can have an entirely different answer. It's based only on your experience an
 </b></details>
 
 <details>
-<summary>Today we have tools and technologies like Ansible. Why would someone still use scripting?</summary><br><b>
+<summary>Today we have tools and technologies like Ansible, Puppet, Chef, ... Why would someone still use shell scripting?</summary><br><b>
 
   * Speed
   * Flexibility
@@ -11499,11 +11627,126 @@ You can have an entirely different answer. It's based only on your experience an
   * We are delivering the scripts to customers who don't have access to the public network and don't necessarily have Ansible installed on their systems.
 </b></details>
 
-#### Scripts Fundamentals
+#### Shell Scripting - Variables
 
 <details>
-<summary>Explain conditionals and how do you use them</summary><br><b>
+<summary>How to define a variable with the value "Hello World"?</summary><br><b>
+
+`HW="Hello World`
 </b></details>
+
+<details>
+<summary>How to define a variable with the value of the current date?</summary><br><b>
+
+`DATE=$(date)`
+</b></details>
+
+<details>
+<summary>How to print the first argument passed to a script?</summary><br><b>
+
+`echo $1`
+</b></details>
+
+<details>
+<summary>Write a script to print "yay" unless an argument was passed and then print that argument</summary><br><b>
+
+```
+echo "${1:-yay}"
+```
+</b></details>
+
+<details>
+<summary>What would be the output of the following script?
+
+```
+#!/usr/bin/env bash
+NINJA_TURTLE=Donatello
+function the_best_ninja_turtle {
+        local NINJA_TURTLE=Michelangelo
+        echo $NINJA_TURTLE
+}
+NINJA_TURTLE=Raphael
+the_best_ninja_turtle
+```
+</summary><br><b>
+Michelangelo
+</b></details>
+
+<details>
+<summary>Explain what would be the result of each command:
+
+  * <code>echo $0</code>
+  * <code>echo $?</code>
+  * <code>echo $$</code>
+  * <code>echo $#</code></summary><br><b>
+</b></details>
+
+<details>
+<summary>What is <code>$@</code>?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is difference between <code>$@</code> and <code>$*</code>?</summary><br><b>
+
+`$@` is an array of all the arguments passed to the script
+`$*` is a single string of all the arguments passed to the script
+</b></details>
+
+<details>
+<summary>How do you get input from the user in shell scripts?</summary><br><b>
+
+Using the keyword <code>read</code> so for example <code>read x</code> will wait for user input and will store it in the variable x.
+</b></details>
+
+<details>
+<summary>How to compare variables length?</summary><br><b>
+
+```
+if [ ${#1} -ne ${#2} ]; then
+    ...
+```
+</b></details>
+
+#### Shell Scripting - Conditionals
+
+<details>
+<summary>Explain conditionals and demonstrate how to use them</summary><br><b>
+</b></details>
+
+<details>
+<summary>In shell scripting, how to negate a conditional?</summary><br><b>
+</b></details>
+
+<details>
+<summary>In shell scripting, how to check if a given argument is a number?</summary><br><b>
+
+```
+regex='^[0-9]+$'
+if [[ ${var//*.} =~ $regex ]]; then
+...
+```
+</b></details>
+
+#### Shell Scripting - Arithmetic Operations
+
+<details>
+<summary>How to perform arithmetic operations on numbers?</summary><br><b>
+
+One way: `$(( 1 + 2 ))`
+Another way: `expr 1 + 2`
+</b></details>
+
+<details>
+<summary>How to perform arithmetic operations on numbers?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to check if a given number has 4 as a factor?</summary><br><b>
+
+`if [ $(($1 % 4)) -eq 0 ]; then`
+</b></details>
+
+#### Shell Scripting - Loops
 
 <details>
 <summary>What is a loop? What types of loops are you familiar with?</summary><br><b>
@@ -11513,48 +11756,79 @@ You can have an entirely different answer. It's based only on your experience an
 <summary>Demonstrate how to use loops</summary><br><b>
 </b></details>
 
-#### Writing Scripts
-
-Note: write them in any language you prefer
+#### Shell Scripting - Troubleshooting
 
 <details>
-<summary>Write a script which will list the differences between two directories</summary><br><b>
+<summary>How do you debug shell scripts?</summary><br><b>
+
+Answer depends on the language you are using for writing your scripts. If Bash is used for example then:
+
+  * Adding -x to the script I'm running in Bash
+  * Old good way of adding echo statements
+
+If Python, then using pdb is very useful.
 </b></details>
 
 <details>
-<summary>Write a script to determine whether a host is up or down</summary><br><b>
+<summary>Running the following bash script, we don't get 2 as a result, why?
 
-**EXAMPLE ONE**
 ```
-#!/bin/bash
-SERVERIP=<IP Address>
-NOTIFYEMAIL=test@example.com
+x = 2
+echo $x
+```
+</summary><br><b>
 
-ping -c 3 $SERVERIP > /dev/null 2>&1
-if [ $? -ne 0 ]
-then
-   # Use mailer here:
-   mailx -s "Server $SERVERIP is down" -t "$NOTIFYEMAIL" < /dev/null
-fi
-```
+Should be `x=2`
+</b></details>
+
+#### Shell Scripting - Substring
+
+<details>
+<summary>How to extract everything after the last dot in a string?</summary><br><b>
+
+`${var//*.}`
 </b></details>
 
 <details>
-<summary>Write a script to remove all the empty files in a given directory (also nested directories)</summary><br><b>
+<summary>How to extract everything before the last dot in a string?</summary><br><b>
 
-**EXAMPLE ONE**
-```
-#! /bin/bash
-for x in *
-do
-    if [ -s $x ]
-    then
-        continue
-    else
-        rm -rf $x
-    fi
-done
-```
+${var%.*}
+</b></details>
+
+#### Shell Scripting - Misc
+
+<details>
+<summary>Generate 8 digit random number</summary><br><b>
+
+shuf -i 9999999-99999999 -n 1
+</b></details>
+
+<details>
+<summary>Can you give an example to some Bash best practices?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the ternary operator? How do you use it in bash?</summary><br><b>
+
+A short way of using if/else. An example:
+
+[[ $a = 1 ]] && b="yes, equal" || b="nope"
+</b></details>
+
+<details>
+<summary>What does the following code do and when would you use it?
+
+<code>diff <(ls /tmp) <(ls /var/tmp)</code>
+
+</summary><br>
+It is called 'process substitution'. It provides a way to pass the output of a command to another command when using a pipe <code>|</code> is not possible. It can be used when a command does not support <code>STDIN</code> or you need the output of multiple commands.
+https://superuser.com/a/1060002/167769
+</details>
+
+<details>
+<summary>What are you using for testing shell scripts?</summary><br><b>
+
+bats
 </b></details>
 
 ## SQL
@@ -12566,20 +12840,9 @@ A list of services and their endpoints
 </b></details>
 
 <details>
-<summary>What security techniques are you familiar with? (or what security techniques have you used in the past?)</summary><br><b>
-</b></details>
-
-<details>
 <summary>What the "Zero Trust" concept means? How Organizations deal with it?</summary><br><b>
 
 [Codefresh definition](https://codefresh.io/security-testing/codefresh-runner-overview): "Zero trust is a security concept that is centered around the idea that organizations should never trust anyone or anything that does not originate from their domains. Organizations seeking zero trust automatically assume that any external services it commissions have security breaches and may leak sensitive information"
-</b></details>
-
-<details>
-<summary>Explain Authentication and Authorization</summary><br><b>
-
-Authentication is the process of identifying whether a service or a person is who they claim to be.
-Authorization is the process of identifying what level of access the service or the person have (after authentication was done)
 </b></details>
 
 <details>
@@ -12591,7 +12854,39 @@ Authorization is the process of identifying what level of access the service or 
 </b></details>
 
 <details>
-<summary>How do you manage sensitive information (like passwords) in different tools and platforms?</summary><br><b>
+<summary>Explain RBAC (Role-based Access Control)</summary><br><b>
+
+Access control based on user roles (i.e., a collection of access authorizations a user receives based on an explicit or implicit assumption of a given role). Role permissions may be inherited through a role hierarchy and typically reflect the permissions needed to perform defined functions within an organization. A given role may apply to a single individual or to several individuals.
+
+- RBAC mapped to job function, assumes that a person will take on different roles, overtime, within an organization and different responsibilities in relation to IT systems.
+
+</b></details>
+
+#### Security - Authentication and Authorization
+
+<details>
+<summary>Explain Authentication and Authorization</summary><br><b>
+
+Authentication is the process of identifying whether a service or a person is who they claim to be.
+Authorization is the process of identifying what level of access the service or the person have (after authentication was done)
+</b></details>
+
+<details>
+<summary>What authentication methods are there?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Give an example of basic authentication process</summary><br><b>
+
+A user uses the browser to authenticate to some server. It does so by using the authorization field which is constructed from the username and the password combined with a single colon. The result string is encoded using a certain character set which is compatible with US-ASCII. The authorization method + a space is prepended to the encoded string.
+</b></details>
+
+<details>
+<summary>Explain Token-based authentication</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Risk-based authentication</summary><br><b>
 </b></details>
 
 <details>
@@ -12609,27 +12904,57 @@ Multi-Factor Authentication (Also known as 2FA). Allows the user to present two 
 
 </b></details>
 
-<details>
-<summary>Explain RBAC (Role-based Access Control)</summary><br><b>
-
-Access control based on user roles (i.e., a collection of access authorizations a user receives based on an explicit or implicit assumption of a given role). Role permissions may be inherited through a role hierarchy and typically reflect the permissions needed to perform defined functions within an organization. A given role may apply to a single individual or to several individuals.
-
-- RBAC mapped to job function, assumes that a person will take on different roles, overtime, within an organization and different responsibilities in relation to IT systems.
-
-</b></details>
-
-#### Security - Web
+#### Security - Passwords
 
 <details>
-<summary>What is Nonce?</summary><br><b>
+<summary>How do you manage sensitive information (like passwords) in different tools and platforms?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is SSRF?</summary><br><b>
+<summary>What password attacks are you familiar with?</summary><br><b>
 
-SSRF (Server-side request forgery) it's a vulnerability where you can make a server make arbitrary requests to anywhere you want.
+  * Dictionary
+  * Brute force
+  * Password Spraying
+  * Social Engineering
+    * Whaling
+    * Vishing
+    * Phising
+    * Whaling
+</b></details>
 
-Read more about it at [portswigger.net](https://portswigger.net/web-security/ssrf)
+<details>
+<summary>How to mitigate password attacks?</summary><br><b>
+
+  * Strong password policy
+  * Do not reuse passwords
+  * ReCaptcha
+  * Training personnel against Social Engineering
+  * Risk Based Authentication
+  * Rate limiting
+  * MFA
+</b></details>
+
+#### Security - Cookies
+
+<details>
+<summary>What are cookies? Explain cookie-based authentication</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? Cookie-based authentication is stateful</summary><br><b>
+
+True. Cookie-based authentication session must be kept on both server and client-side.
+</b></details>
+
+<details>
+<summary>Explain the flow of using cookies</summary><br><b>
+
+1. User enters credentials
+2. The server verifies the credentials -> a sessions is created and stored in the database
+3. A cookie with the session ID is set in the browser of that user
+4. On every request, the session ID is verified against the database
+5. The session is destroyed (both on client-side and server-side) when the user logs out
 </b></details>
 
 #### Security - SSH
@@ -12777,10 +13102,6 @@ You can test by using a stored procedure, so the application must be sanitize th
 </b></details>
 
 <details>
-<summary>How do cookies work?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is DNS Spoofing? How to prevent it?</summary><br><b>
 
 DNS spoofing occurs when a particular DNS server’s records of “spoofed” or altered maliciously to redirect traffic to the attacker. This redirection of traffic allows the attacker to spread malware, steal data, etc.
@@ -12868,14 +13189,16 @@ HTTP Header Injection vulnerabilities occur when user input is insecurely includ
 A buffer overflow (or buffer overrun) occurs when the volume of data exceeds the storage capacity of the memory buffer. As a result, the program attempting to write the data to the buffer overwrites adjacent memory locations.
 </b></details>
 
-#### Security - Containers
-
 <details>
-<summary>What security measures are you taking when dealing with containers?</summary><br><b>
+<summary>What is Nonce?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Explain what is Docker Bench</summary><br><b>
+<summary>What is SSRF?</summary><br><b>
+
+SSRF (Server-side request forgery) it's a vulnerability where you can make a server make arbitrary requests to anywhere you want.
+
+Read more about it at [portswigger.net](https://portswigger.net/web-security/ssrf)
 </b></details>
 
 <details>
@@ -13654,6 +13977,14 @@ document_number: 1
 ---
 document_number: 2
 ```
+</b></details>
+
+#### Firmware
+
+<details>
+<summary>Explain what is a firmware</summary><br><b>
+
+[Wikipedia](https://en.wikipedia.org/wiki/Firmware): "In computing, firmware is a specific class of computer software that provides the low-level control for a device's specific hardware. Firmware, such as the BIOS of a personal computer, may contain basic functions of a device, and may provide hardware abstraction services to higher-level software such as operating systems."
 </b></details>
 
 #### Customers and Service Providers
@@ -14825,6 +15156,7 @@ If you are looking for a way to prepare for a certain exam this is the section f
 #### AWS
 
 * [Cloud Practitioner](certificates/cloud-practitioner.md) (Latest update: 2020)
+* [Solutions Architect Associate](certificates/aws-solutions-architect-associate.md) (Latest update: 2021)
 
 #### Azure
 

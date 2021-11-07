@@ -1,46 +1,6 @@
-## AWS - Cloud Practitioner
+## AWS - Solutions Architect Associate 
 
-A summary of what you need to know for the exam can be found [here](https://codingshell.com/aws-cloud-practitioner)
-
-#### Cloud 101
-
-<details>
-<summary>What is cloud computing?</summary><br><b>
-
-[Wikipedia](https://en.wikipedia.org/wiki/Cloud_computing): "Cloud computing is the on-demand availability of computer system resources, especially data storage (cloud storage) and computing power, without direct active management by the user"
-</b></details>
-
-<details>
-<summary>What types of Cloud Computing services are there?</summary><br><b>
-
-IAAS
-PAAS
-SAAS
-</b></details>
-
-<details>
-<summary>Explain each of the following and give an example:
-
-  * IAAS
-  * PAAS
-  * SAAS</summary><br><b>
-</b></details>
-
-<details>
-<summary>What types of clouds (or cloud deployments) are there?</summary><br><b>
-
-  * Public
-  * Hybrid
-  * Private
-</b></details>
-
-<details>
-<summary>Explain each of the following Cloud Computing Deployments:
-
-  * Public
-  * Hybrid
-  * Private</summary><br><b>
-</b></details>
+Last update: 2021
 
 #### AWS Global Infrastructure
 
@@ -57,6 +17,75 @@ Within each region, there are multiple isolated locations known as Availability 
 
 Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
 </b></details>
+
+#### AWS - IAM
+
+<details>
+<summary>What is IAM? What are some of its features?</summary><br><b>
+
+Full explanation is [here](https://aws.amazon.com/iam)
+In short: it's used for managing users, groups, access policies & roles
+</b></details>
+
+<details>
+<summary>True or False? IAM configuration is defined globally and not per region</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? When creating an AWS account, root account is created by default. This is the recommended account to use and share in your organization</summary><br><b>
+
+False. Instead of using the root account, you should be creating users and use them.
+</b></details>
+
+<details>
+<summary>True or False? Groups in AWS IAM, can contain only users and not other groups</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? Users in AWS IAM, can belong only to a single group</summary><br><b>
+
+False. Users can belong to multiple groups.
+</b></details>
+
+<details>
+<summary>What are Roles?</summary><br><b>
+
+A way for allowing a service of AWS to use another service of AWS. You assign roles to AWS resources.
+For example, you can make use of a role which allows EC2 service to acesses s3 buckets (read and write).
+</b></details>
+
+<details>
+<summary>What are Policies?</summary><br><b>
+
+Policies documents used to give permissions as to what a user, group or role are able to do. Their format is JSON.
+</b></details>
+
+<details>
+<summary>A user is unable to access an s3 bucket. What might be the problem?</summary><br><b>
+
+There can be several reasons for that. One of them is lack of policy. To solve that, the admin has to attach the user with a policy what allows him to access the s3 bucket.
+</b></details>
+
+<details>
+<summary>What should you use to:
+
+  * Grant access between two services/resources?
+  * Grant user access to resources/services?</summary><br><b>
+
+  * Role
+  * Policy
+</b></details>
+
+<details>
+<summary>What permissions does a new user have?</summary><br><b>
+
+Only a login access.
+</b></details>
+
 
 #### AWS Networking
 
@@ -126,6 +155,12 @@ Allows you to connect your corporate network to AWS network.
 
 "a web service that provides secure, resizable compute capacity in the cloud".
 Read more [here](https://aws.amazon.com/ec2)
+</b></details>
+
+<details>
+<summary>True or False? EC2 is a regional service</summary><br><b>
+
+True. As opposed to IAM for example, which is a global service, EC2 is a regional service.
 </b></details>
 
 <details>
@@ -381,74 +416,6 @@ Learn more [here](https://aws.amazon.com/efs)
 "AWS Snowmobile is an Exabyte-scale data transfer service used to move extremely large amounts of data to AWS."
 
 Learn more [here](https://aws.amazon.com/snowmobile)
-</b></details>
-
-#### AWS IAM
-
-<details>
-<summary>What is IAM? What are some of its features?</summary><br><b>
-
-Full explanation is [here](https://aws.amazon.com/iam)
-In short: it's used for managing users, groups, access policies & roles
-</b></details>
-
-<details>
-<summary>True or False? IAM configuration is defined globally and not per region</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>True or False? When creating an AWS account, root account is created by default. This is the recommended account to use and share in your organization</summary><br><b>
-
-False. Instead of using the root account, you should be creating users and use them.
-</b></details>
-
-<details>
-<summary>True or False? Groups in AWS IAM, can contain only users and not other groups</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>True or False? Users in AWS IAM, can belong only to a single group</summary><br><b>
-
-False. Users can belong to multiple groups.
-</b></details>
-
-<details>
-<summary>What are Roles?</summary><br><b>
-
-A way for allowing a service of AWS to use another service of AWS. You assign roles to AWS resources.
-For example, you can make use of a role which allows EC2 service to acesses s3 buckets (read and write).
-</b></details>
-
-<details>
-<summary>What are Policies?</summary><br><b>
-
-Policies documents used to give permissions as to what a user, group or role are able to do. Their format is JSON.
-</b></details>
-
-<details>
-<summary>A user is unable to access an s3 bucket. What might be the problem?</summary><br><b>
-
-There can be several reasons for that. One of them is lack of policy. To solve that, the admin has to attach the user with a policy what allows him to access the s3 bucket.
-</b></details>
-
-<details>
-<summary>What should you use to:
-
-  * Grant access between two services/resources?
-  * Grant user access to resources/services?</summary><br><b>
-
-  * Role
-  * Policy
-</b></details>
-
-<details>
-<summary>What permissions does a new user have?</summary><br><b>
-
-Only a login access.
 </b></details>
 
 ##### AWS ELB
