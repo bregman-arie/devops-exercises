@@ -1324,6 +1324,7 @@ Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-accel
 
 <details>
 <summary>Explain data consistency</summary><br><b>
+	S3 Data Consistency provides strong read-after-write consistency for PUT and DELETE requests of objects in the S3 bucket in all AWS Regions. S3 always return latest file version.
 </b></details>
 
 <details>
