@@ -1334,6 +1334,9 @@ Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-accel
 
 <details>
 <summary>What security measures have you taken in context of S3?</summary><br><b>
+	* Enable versioning.
+	* Don't make bucket public.
+	* Enable encryption if it's disabled.
 </b></details>
 
 <details>
