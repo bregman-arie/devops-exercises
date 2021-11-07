@@ -1492,6 +1492,8 @@ Learn more [here](https://aws.amazon.com/inspector)
 
 <details>
 <summary>What is AWS Guarduty?</summary><br><b>
+AWS definition: "Amazon GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your Amazon Web Services accounts, workloads, and data stored in Amazon S3" <br>
+Monitor VPC Flow lows, DNS logs, CloudTrail S3 events and CloudTrail Mgmt events.
 </b></details>
 
 <details>
