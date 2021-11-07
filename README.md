@@ -1428,8 +1428,9 @@ More on ELB [here](https://aws.amazon.com/elasticloadbalancing)
 <summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
 
   * Application LB - layer 7 traffic
-  * Network LB - ultra-high performances or static IP address
-  * Classic LB - low costs, good for test or dev environments
+  * Network LB - ultra-high performances or static IP address (layer 4)
+  * Classic LB - low costs, good for test or dev environments (retired by August 15, 2022)
+  * Gateway LB - transparent network gateway and and distributes traffic such as firewalls, intrusion detection and prevention systems, and deep packet inspection systems. (layer 3)
 </b></details>
 
 #### AWS Security
