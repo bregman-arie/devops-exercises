@@ -2,11 +2,11 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
-:bar_chart: &nbsp;There are currently **1899** questions
+:bar_chart: &nbsp;There are currently **1962** questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
-:warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [FAQ page](common-qa.md) for more details
+:warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [FAQ page](faq.md) for more details
 
 :busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [DevOps community](https://www.facebook.com/groups/538897960007080) where we have discussions and share resources on DevOps
 
@@ -941,7 +941,10 @@ False. Auto scaling adjusts capacity and this can mean removing some resources b
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Create a User | IAM | [Exercise](exercises/aws/create_user.md) | [Solution](exercises/aws/solutions/create_user.md) | |
-| Password Policy | IAM | [Exercise](exercises/aws/password_policy.md) | [Solution](exercises/aws/solutions/password_policy.md) | |
+| Password Policy | IAM | [Exercise](exercises/aws/password_policy_and_mfa.md) | [Solution](exercises/aws/solutions/password_policy_and_mfa.md) | |
+| Create a role | IAM | [Exercise](exercises/aws/create_role.md) | [Solution](exercises/aws/solutions/create_role.md) | |
+| Credential Report | IAM | [Exercise](exercises/aws/credential_report.md) | [Solution](exercises/aws/solutions/credential_report.md) | |
+| Access Advisor | IAM | [Exercise](exercises/aws/access_advisor.md) | [Solution](exercises/aws/solutions/access_advisor.md) | |
 
 #### AWS - Lambda
 
@@ -994,8 +997,8 @@ False. The minimum is 2 while the maximum is 6.
 <details>
 <summary>What is IAM? What are some of its features?</summary><br><b>
 
-Full explanation is [here](https://aws.amazon.com/iam)
-In short: it's used for managing users, groups, access policies & roles
+In short, it's used for managing users, groups, access policies & roles
+Full explanation can be found [here](https://aws.amazon.com/iam)
 </b></details>
 
 <details>
@@ -1023,12 +1026,13 @@ False. Users can belong to multiple groups.
 </b></details>
 
 <details>
-<summary>What best practices are there regarding IAM in AWS?</summary><br><b>
+<summary>What are some best practices regarding IAM in AWS?</summary><br><b>
 
-* Set up MFA
-* Delete root account access keys
-* Create IAM users instead of using root for daily management
+* Delete root account access keys and don't use root account regularly
+* Create IAM user for any physical user. Don't share users.
 * Apply "least privilege principle": give users only the permissions they need, nothing more than that.
+* Set up MFA and consider enforcing using it
+* Make use of groups to assign permissions ( user -> group -> permissions )
 </b></details>
 
 <details>
@@ -1038,10 +1042,24 @@ Only a login access.
 </b></details>
 
 <details>
+<summary>True or False? If a user in AWS is using password for authenticating, he doesn't needs to enable MFA</summary><br><b>
+
+False(!). MFA is a great additional security layer to use for authentication.
+</b></details>
+
+<details>
+<summary>What ways are there to access AWS?</summary><br><b>
+
+  * AWS Management Console
+  * AWS CLI
+  * AWS SDK
+</b></details>
+
+<details>
 <summary>What are Roles?</summary><br><b>
 
-A way for allowing a service of AWS to use another service of AWS. You assign roles to AWS resources.
-For example, you can make use of a role which allows EC2 service to acesses s3 buckets (read and write).
+[AWS docs](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html): "An IAM role is an IAM identity that you can create in your account that has specific permissions...it is an AWS identity with permission policies that determine what the identity can and cannot do in AWS."
+For example, you can make use of a role which allows EC2 service to access s3 buckets (read and write).
 </b></details>
 
 <details>
@@ -1067,7 +1085,7 @@ There can be several reasons for that. One of them is lack of policy. To solve t
 </b></details>
 
 <details>
-<summary>What statements are consist of in AWS IAM policies?</summary><br><b>
+<summary>What statements AWS IAM policies support?</summary><br><b>
 
 * Sid: identifier of the statement (optional)
 * Effect: allow or deny access
@@ -1095,6 +1113,19 @@ There can be several reasons for that. One of them is lack of policy. To solve t
 </summary><br><b>
 
 This policy permits to perform any action on any resource. It happens to be the "AdministratorAccess" policy.
+</b></details>
+
+<details>
+<summary>What security tools AWS IAM provides?</summary><br><b>
+
+* IAM Credentials Report: lists all the account users and the status of their credentials
+* IAM Access Advisor: Shows service permissions granted to a user and information on when he accessed these services the last time
+</b></details>
+
+<details>
+<summary>Which tool would you use to optimize user permissions by identifying which services he doesn't regularly (or at all) access?</summary><br><b>
+
+IAM Access Advisor
 </b></details>
 
 #### AWS - Compute
@@ -2307,7 +2338,13 @@ Learn more [here](https://aws.amazon.com/professional-services/CAF)
 <details>
 <summary>What is AWS Cloud9?</summary><br><b>
 
-AWS definition: "AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser"
+AWS: "AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser"
+</b></details>
+
+<details>
+<summary>What is AWS CloudShell?</summary><br><b>
+
+AWS: "AWS CloudShell is a browser-based shell that makes it easy to securely manage, explore, and interact with your AWS resources."
 </b></details>
 
 <details>
@@ -2375,7 +2412,6 @@ Packets that are sent on the ethernet are always coming from a MAC address and s
 
 <details>
 <summary>When is this MAC address used?: ff:ff:ff:ff:ff:ff</summary><br><b>
-
 
 When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. It needs to be used in order for all devices to receive your packet at the datalink layer.
 </b></details>
@@ -2496,14 +2532,12 @@ CSMA/CD algorithm:
 
 A router is a physical or virtual appliance that passes information between two or more packet-switched computer networks. A router inspects a given data packet's destination Internet Protocol address (IP address), calculates the best way for it to reach its destination and then forwards it accordingly.
 
-
 </b></details>
 
 <details>
 <summary>What is NAT?</summary><br><b>
 
  Network Address Translation (NAT) is a process in which one or more local IP address is translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts.
-
 
 </b></details>
 
@@ -2515,8 +2549,6 @@ A proxy server acts as a gateway between you and the internet. It’s an interme
 If you’re using a proxy server, internet traffic flows through the proxy server on its way to the address you requested. The request then comes back through that same proxy server (there are exceptions to this rule), and then the proxy server forwards the data received from the website to you.
 
 roxy servers provide varying levels of functionality, security, and privacy depending on your use case, needs, or company policy.
-
-
 </b></details>
 
 <details>
