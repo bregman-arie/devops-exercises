@@ -1,48 +1,27 @@
-## AWS - Cloud Practitioner
+## AWS
 
-A summary of what you need to know for the exam can be found [here](https://codingshell.com/aws-cloud-practitioner)
+### AWS Exercises
 
-#### Cloud 101
+#### AWS - IAM
 
-<details>
-<summary>What is cloud computing?</summary><br><b>
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Create a User | IAM | [Exercise](create_user.md) | [Solution](solutions/create_user.md) | |
+| Password Policy | IAM | [Exercise](password_policy_and_mfa.md) | [Solution](solutions/password_policy_and_mfa.md) | |
+| Create a role | IAM | [Exercise](create_role.md) | [Solution](solutions/create_role.md) | |
+| Credential Report | IAM | [Exercise](credential_report.md) | [Solution](solutions/credential_report.md) | |
+| Access Advisor | IAM | [Exercise](access_advisor.md) | [Solution](solutions/access_advisor.md) | |
 
-[Wikipedia](https://en.wikipedia.org/wiki/Cloud_computing): "Cloud computing is the on-demand availability of computer system resources, especially data storage (cloud storage) and computing power, without direct active management by the user"
-</b></details>
+#### AWS - Lambda
 
-<details>
-<summary>What types of Cloud Computing services are there?</summary><br><b>
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Hello Function | Lambda | [Exercise](hello_function.md) | [Solution](solutions/hello_function.md) | |
+| URL Function | Lambda | [Exercise](url_function.md) | [Solution](solutions/url_function.md) | |
 
-IAAS
-PAAS
-SAAS
-</b></details>
+### AWS Self Assessment
 
-<details>
-<summary>Explain each of the following and give an example:
-
-  * IAAS
-  * PAAS
-  * SAAS</summary><br><b>
-</b></details>
-
-<details>
-<summary>What types of clouds (or cloud deployments) are there?</summary><br><b>
-
-  * Public
-  * Hybrid
-  * Private
-</b></details>
-
-<details>
-<summary>Explain each of the following Cloud Computing Deployments:
-
-  * Public
-  * Hybrid
-  * Private</summary><br><b>
-</b></details>
-
-#### AWS Global Infrastructure
+#### AWS - Global Infrastructure
 
 <details>
 <summary>Explain the following
@@ -51,81 +30,183 @@ SAAS
   * Region
   * Edge location</summary><br><b>
 
-AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independent of one another.<br>
+AWS regions are data centers hosted across different geographical locations worldwide.<br>
 
-Within each region, there are multiple isolated locations known as Availability Zones. Multiple availability zones ensure high availability in case one of them goes down.<br>
+Within each region, there are multiple isolated locations known as Availability Zones. Each availability zone is one or more data-centers with redundant network and connectivity and power supply. Multiple availability zones ensure high availability in case one of them goes down.<br>
 
 Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
 </b></details>
 
-#### AWS Networking
-
 <details>
-<summary>What is VPC?</summary><br><b>
+<summary>True or False? Each AWS region is designed to be completely isolated from the other AWS regions </summary><br><b>
 
-"A logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define"
-Read more about it [here](https://aws.amazon.com/vpc).
+True.
 </b></details>
 
 <details>
-<summary>True or False? VPC spans multiple regions</summary><br><b>
+<summary>True or False? Each region has a minimum number of 1 availability zones and the maximum is 4</summary><br><b>
 
-False
+False. The minimum is 2 while the maximum is 6.
 </b></details>
 
 <details>
-<summary>True or False? Subnets belong to the same VPC, can be in different availability zones</summary><br><b>
+<summary>What considerations to take when choosing an AWS region for running a new application?</summary><br><b>
 
-True. Just to clarify, a subnet must reside entirely in one AZ.
+* Services Availability: not all service (and all their features) are available in every region
+* Reduced latency: deploy application in a region that is close to customers
+* Compliance: some countries have more strict rules and requirements such as making sure the data stays within the borders of the country or the region. In that case, only specific region can be used for running the application
+* Pricing: the pricing might not be consistent across regions so, the price for the same service in different regions might be different.
+</b></details>
+
+#### AWS - IAM
+
+<details>
+<summary>What is IAM? What are some of its features?</summary><br><b>
+
+In short, it's used for managing users, groups, access policies & roles
+Full explanation can be found [here](https://aws.amazon.com/iam)
 </b></details>
 
 <details>
-<summary>What is an Internet Gateway?</summary><br><b>
-
-"component that allows communication between instances in your VPC and the internet" (AWS docs).
-Read more about it [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
-</b></details>
-
-<details>
-<summary>True or False? NACL allow or deny traffic on the subnet level</summary><br><b>
+<summary>True or False? IAM configuration is defined globally and not per region</summary><br><b>
 
 True
 </b></details>
 
 <details>
-<summary>True or False? Multiple Internet Gateways can be attached to one VPC</summary><br><b>
+<summary>True or False? When creating an AWS account, root account is created by default. This is the recommended account to use and share in your organization</summary><br><b>
 
-False. Only one internet gateway can be attached to a single VPC.
+False. Instead of using the root account, you should be creating users and use them.
 </b></details>
 
 <details>
-<summary>True or False? Route Tables used to allow or deny traffic from the internet to AWS instances</summary><br><b>
+<summary>True or False? Groups in AWS IAM, can contain only users and not other groups</summary><br><b>
 
-False.
+True
 </b></details>
 
 <details>
-<summary>Explain Security Groups and Network ACLs</summary><br><b>
+<summary>True or False? Users in AWS IAM, can belong only to a single group</summary><br><b>
 
-* NACL - security layer on the subnet level.
-* Security Group - security layer on the instance level.
-
-Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) and [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
+False. Users can belong to multiple groups.
 </b></details>
 
 <details>
-<summary>What is AWS Direct Connect?</summary><br><b>
+<summary>What are some best practices regarding IAM in AWS?</summary><br><b>
 
-Allows you to connect your corporate network to AWS network.
+* Delete root account access keys and don't use root account regularly
+* Create IAM user for any physical user. Don't share users.
+* Apply "least privilege principle": give users only the permissions they need, nothing more than that.
+* Set up MFA and consider enforcing using it
+* Make use of groups to assign permissions ( user -> group -> permissions )
 </b></details>
 
-#### AWS Compute
+<details>
+<summary>What permissions does a new user have?</summary><br><b>
+
+Only a login access.
+</b></details>
+
+<details>
+<summary>True or False? If a user in AWS is using password for authenticating, he doesn't needs to enable MFA</summary><br><b>
+
+False(!). MFA is a great additional security layer to use for authentication.
+</b></details>
+
+<details>
+<summary>What ways are there to access AWS?</summary><br><b>
+
+  * AWS Management Console
+  * AWS CLI
+  * AWS SDK
+</b></details>
+
+<details>
+<summary>What are Roles?</summary><br><b>
+
+[AWS docs](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html): "An IAM role is an IAM identity that you can create in your account that has specific permissions...it is an AWS identity with permission policies that determine what the identity can and cannot do in AWS."
+For example, you can make use of a role which allows EC2 service to access s3 buckets (read and write).
+</b></details>
+
+<details>
+<summary>What are Policies?</summary><br><b>
+
+Policies documents used to give permissions as to what a user, group or role are able to do. Their format is JSON.
+</b></details>
+
+<details>
+<summary>A user is unable to access an s3 bucket. What might be the problem?</summary><br><b>
+
+There can be several reasons for that. One of them is lack of policy. To solve that, the admin has to attach the user with a policy what allows him to access the s3 bucket.
+</b></details>
+
+<details>
+<summary>What should you use to:
+
+  - Grant access between two services/resources?
+  - Grant user access to resources/services?</summary><br><b>
+
+  * Role
+  * Policy
+</b></details>
+
+<details>
+<summary>What statements AWS IAM policies support?</summary><br><b>
+
+* Sid: identifier of the statement (optional)
+* Effect: allow or deny access
+* Action: list of actions (to deny or allow)
+* Resource: a list of resources to which the actions are applied
+* Principal: role or account or user to which to apply the policy
+* Condition: conditions to determine when the policy is applied (optional)
+</b></details>
+
+<details>
+<summary>Explain the following policy:
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect:": "Allow",
+            "Action": "*",
+            "Resources": "*"
+        }
+    ]
+}
+```
+</summary><br><b>
+
+This policy permits to perform any action on any resource. It happens to be the "AdministratorAccess" policy.
+</b></details>
+
+<details>
+<summary>What security tools AWS IAM provides?</summary><br><b>
+
+* IAM Credentials Report: lists all the account users and the status of their credentials
+* IAM Access Advisor: Shows service permissions granted to a user and information on when he accessed these services the last time
+</b></details>
+
+<details>
+<summary>Which tool would you use to optimize user permissions by identifying which services he doesn't regularly (or at all) access?</summary><br><b>
+
+IAM Access Advisor
+</b></details>
+
+#### AWS - Compute
 
 <details>
 <summary>What is EC2?</summary><br><b>
 
 "a web service that provides secure, resizable compute capacity in the cloud".
 Read more [here](https://aws.amazon.com/ec2)
+</b></details>
+
+<details>
+<summary>True or False? EC2 is a regional service</summary><br><b>
+
+True. As opposed to IAM for example, which is a global service, EC2 is a regional service.
 </b></details>
 
 <details>
@@ -184,6 +265,10 @@ More on this subject [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/
 </b></details>
 
 <details>
+<summary>How to migrate an instance to another availability zone?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What can you attach to an EC2 instance in order to store data?</summary><br><b>
 
 EBS
@@ -197,6 +282,45 @@ Convertible RI - discount + change attribute of RI + suited for steady-state usa
 Scheduled RI - launch within time windows you reserve
 
 Learn more about EC2 RI [here](https://aws.amazon.com/ec2/pricing/reserved-instances)
+</b></details>
+
+<details>
+<summary>You would like to invoke a function every time you enter a URL in the browser. Which service would you use for that?</summary><br><b>
+
+AWS Lambda
+</b></details>
+
+#### AWS - Lambda
+
+<details>
+<summary>Explain what is AWS Lambda</summary><br><b>
+
+AWS definition: "AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume."
+
+Read more on it [here](https://aws.amazon.com/lambda)
+</b></details>
+
+<details>
+<summary>True or False? In AWS Lambda, you are charged as long as a function exists, regardless of whether it's running or not</summary><br><b>
+
+False. Charges are being made when the code is executed.
+</b></details>
+
+<details>
+<summary>Which of the following set of languages Lambda supports?
+
+- R, Swift, Rust, Kotlin
+- Python, Ruby, Go
+- Python, Ruby, PHP
+</summary><br><b>
+
+- Python, Ruby, Go
+</b></details>
+
+<details>
+<summary>True or False? Basic lambda permissions allow you only to upload logs to Amazon CloudWatch Logs</summary><br><b>
+
+True
 </b></details>
 
 #### AWS Containers
@@ -226,14 +350,14 @@ Learn more [here](https://aws.amazon.com/fargate)
 </b></details>
 
 #### AWS Storage
- 
+
 <details>
 <summary>Explain what is AWS S3?</summary><br><b>
 
 S3 stands for 3 S, Simple Storage Service.
 S3 is a object storage service which is fast, scalable and durable. S3 enables customers to upload, download or store any file or object that is up to 5 TB in size.
 
-More on S3 [here](https://aws.amazon.com/s3) 
+More on S3 [here](https://aws.amazon.com/s3)
 </b></details>
 
 <details>
@@ -258,9 +382,9 @@ True
 <details>
 <summary>Explain the following:
 
-  * Object Lifecycles
-  * Object Sharing
-  * Object Versioning</summary><br><b>
+  - Object Lifecycles
+  - Object Sharing
+  - Object Versioning</summary><br><b>
 
   * Object Lifecycles - Transfer objects between storage classes based on defined rules of time periods
   * Object Sharing - Share objects via a URL link
@@ -281,7 +405,7 @@ Each object has a storage class assigned to, affecting its availability and dura
 Storage classes offered today:
   * Standard:
     * Used for general, all-purpose storage (mostly storage that needs to be accessed frequently)
-    * The most expensive storage class 
+    * The most expensive storage class
     * 11x9% durability
     * 2x9% availability
     * Default storage class
@@ -296,7 +420,7 @@ Storage classes offered today:
     * Less expensive than Standard and Standard-IA storage classes
     * 2x9% durability
     * 99.50% availability
-    
+
   * Intelligent-Tiering:
     * Long-lived data with changing or unknown access patterns. Basically, In this class the data automatically moves to the class most suitable for you based on usage patterns
     * Price depends on the used class
@@ -307,7 +431,7 @@ Storage classes offered today:
   * Glacier Deep Archive: Archive data that rarely, if ever, needs to be accessed with retrieval times in hours
   * Both Glacier and Glacier Deep Archive are:
     * The most cheap storage classes
-    * have 9x9% durability 
+    * have 9x9% durability
 
 More on storage classes [here](https://aws.amazon.com/s3/storage-classes)
 
@@ -368,6 +492,27 @@ Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-accel
 </b></details>
 
 <details>
+<summary>Explain data consistency</summary><br><b>
+	S3 Data Consistency provides strong read-after-write consistency for PUT and DELETE requests of objects in the S3 bucket in all AWS Regions. S3 always return latest file version.
+</b></details>
+
+<details>
+<summary>Can you host dynamic websites on S3? What about static websites?</summary><br><b>
+	No. S3 support only statis hosts. On a static website, individual webpages include static content. They might also contain client-side scripts. By contrast, a dynamic website relies on server-side processing, including server-side scripts such as PHP, JSP, or ASP.NET. Amazon S3 does not support server-side scripting.
+</b></details>
+
+<details>
+<summary>What security measures have you taken in context of S3?</summary><br><b>
+	* Enable versioning.
+	* Don't make bucket public.
+	* Enable encryption if it's disabled.
+</b></details>
+
+<details>
+<summary>What storage options are there for EC2 Instances?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is Amazon EFS?</summary><br><b>
 
 Amazon definition: "Amazon Elastic File System (Amazon EFS) provides a simple, scalable, fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources."
@@ -383,118 +528,30 @@ Learn more [here](https://aws.amazon.com/efs)
 Learn more [here](https://aws.amazon.com/snowmobile)
 </b></details>
 
-#### AWS IAM
+#### AWS Disaster Recovery
 
 <details>
-<summary>What is IAM? What are some of its features?</summary><br><b>
+<summary>In regards to disaster recovery, what is RTO and RPO?</summary><br><b>
 
-Full explanation is [here](https://aws.amazon.com/iam)
-In short: it's used for managing users, groups, access policies & roles
+RTO - The maximum acceptable length of time that your application can be offline.
+
+RPO - The maximum acceptable length of time during which data might be lost from your application due to an incident.
 </b></details>
 
 <details>
-<summary>True or False? IAM configuration is defined globally and not per region</summary><br><b>
+<summary>What types of disaster recovery techniques AWS supports?</summary><br><b>
 
-True
+* The Cold Method - Periodically backups and sending the backups off-site<br>
+* Pilot Light - Data is mirrored to an environment which is always running
+* Warm Standby - Running scaled down version of production environment
+* Multi-site - Duplicated environment that is always running
 </b></details>
 
 <details>
-<summary>True or False? When creating an AWS account, root account is created by default. This is the recommended account to use and share in your organization</summary><br><b>
+<summary>Which disaster recovery option has the highest downtime and which has the lowest?</summary><br><b>
 
-False. Instead of using the root account, you should be creating users and use them.
-</b></details>
-
-<details>
-<summary>True or False? Groups in AWS IAM, can contain only users and not other groups</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>True or False? Users in AWS IAM, can belong only to a single group</summary><br><b>
-
-False. Users can belong to multiple groups.
-</b></details>
-
-<details>
-<summary>What are Roles?</summary><br><b>
-
-A way for allowing a service of AWS to use another service of AWS. You assign roles to AWS resources.
-For example, you can make use of a role which allows EC2 service to acesses s3 buckets (read and write).
-</b></details>
-
-<details>
-<summary>What are Policies?</summary><br><b>
-
-Policies documents used to give permissions as to what a user, group or role are able to do. Their format is JSON.
-</b></details>
-
-<details>
-<summary>A user is unable to access an s3 bucket. What might be the problem?</summary><br><b>
-
-There can be several reasons for that. One of them is lack of policy. To solve that, the admin has to attach the user with a policy what allows him to access the s3 bucket.
-</b></details>
-
-<details>
-<summary>What should you use to:
-
-  * Grant access between two services/resources?
-  * Grant user access to resources/services?</summary><br><b>
-
-  * Role
-  * Policy
-</b></details>
-
-<details>
-<summary>What permissions does a new user have?</summary><br><b>
-
-Only a login access.
-</b></details>
-
-##### AWS ELB
-
-<details>
-<summary>What is ELB (Elastic Load Balancing)?</summary><br><b>
-
-AWS definition: "Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions."
-
-More on ELB [here](https://aws.amazon.com/elasticloadbalancing)
-</b></details>
-
-<details>
-<summary>What is auto scaling?</summary><br><b>
-
-AWS definition: "AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost"
-
-Read more about auto scaling [here](https://aws.amazon.com/autoscaling)
-</b></details>
-
-<details>
-<summary>True or False? Auto Scaling is about adding resources (such as instances) and not about removing resource</summary><br><b>
-
-False. Auto scaling adjusts capacity and this can mean removing some resources based on usage and performances.
-</b></details>
-
-<details>
-<summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
-
-  * Application LB - layer 7 traffic
-  * Network LB - ultra-high performances or static IP address
-  * Classic LB - low costs, good for test or dev environments
-</b></details>
-
-#### AWS DNS
-
-<details>
-<summary>What is Route 53?</summary><br><b>
-
-"Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service"
-Some of Route 53 features:
-  * Register domain
-  * DNS service - domain name translations
-  * Health checks - verify your app is available
-
-More on Route 53 [here](https://aws.amazon.com/route53)
+Lowest - Multi-site
+Highest - The cold method
 </b></details>
 
 #### AWS CloudFront
@@ -515,45 +572,42 @@ More on CloudFront [here](https://aws.amazon.com/cloudfront)
   * Distribution</summary><br><b>
 </b></details>
 
-#### AWS Monitoring & Logging
-
 <details>
-<summary>What is AWS CloudWatch?</summary><br><b>
-
-AWS definition: "Amazon CloudWatch is a monitoring and observability service..."
-
-More on CloudWatch [here](https://aws.amazon.com/cloudwatch)
+<summary>What delivery methods available for the user with CDN?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is AWS CloudTrail?</summary><br><b>
+<summary>True or False?. Objects are cached for the life of TTL</summary><br><b>
 
-AWS definition: "AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account."
-
-Read more on CloudTrail [here](https://aws.amazon.com/cloudtrail)
+True
 </b></details>
 
 <details>
-<summary>What is Simply Notification Service?</summary><br><b>
+<summary>What is AWS Snowball?</summary><br><b>
 
-AWS definition: "a highly available, durable, secure, fully managed pub/sub messaging service that enables you to decouple microservices, distributed systems, and serverless applications."
+A transport solution which was designed for transferring large amounts of data (petabyte-scale) into and out the AWS cloud.
+</b></details>
 
-Read more about it [here](https://aws.amazon.com/sns)
+##### AWS ELB
+
+<details>
+<summary>What is ELB (Elastic Load Balancing)?</summary><br><b>
+
+AWS definition: "Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions."
+
+More on ELB [here](https://aws.amazon.com/elasticloadbalancing)
 </b></details>
 
 <details>
-<summary>Explain the following in regards to SNS:
+<summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
 
-  * Topics
-  * Subscribers
-  * Publishers</summary><br><b>
-
-  * Topics - used for grouping multiple endpoints
-  * Subscribers - the endpoints where topics send messages to 
-  * Publishers - the provider of the message (event, person, ...)
+  * Application LB - layer 7 traffic
+  * Network LB - ultra-high performances or static IP address (layer 4)
+  * Classic LB - low costs, good for test or dev environments (retired by August 15, 2022)
+  * Gateway LB - transparent network gateway and and distributes traffic such as firewalls, intrusion detection and prevention systems, and deep packet inspection systems. (layer 3)
 </b></details>
 
-#### AWS Security 
+#### AWS Security
 
 <details>
 <summary>What is the shared responsibility model? What AWS is responsible for and what the user is responsible for based on the shared responsibility model?</summary><br><b>
@@ -582,6 +636,14 @@ Learn more about it [here](https://aws.amazon.com/compliance/shared-responsibili
 </b></details>
 
 <details>
+<summary>How to secure instances in AWS?</summary><br><b>
+
+  * Instance IAM roles should have minimal permissions needed. You don't want an instance-level incident to become an account-level incident
+  * Use "AWS System Manager Session Manager" for SSH
+  * Using latest OS images with your instances
+</b></details>
+
+<details>
 <summary>What is AWS Artifact?</summary><br><b>
 
 AWS definition: "AWS Artifact is your go-to, central resource for compliance-related information that matters to you. It provides on-demand access to AWS’ security and compliance reports and select online agreements."
@@ -599,6 +661,8 @@ Learn more [here](https://aws.amazon.com/inspector)
 
 <details>
 <summary>What is AWS Guarduty?</summary><br><b>
+AWS definition: "Amazon GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your Amazon Web Services accounts, workloads, and data stored in Amazon S3" <br>
+Monitor VPC Flow lows, DNS logs, CloudTrail S3 events and CloudTrail Mgmt events.
 </b></details>
 
 <details>
@@ -634,17 +698,17 @@ True
 </b></details>
 
 <details>
-<summary>What is AWS Acceptable Use Policy?</summary><br><b>
-
-It describes prohibited uses of the web services offered by AWS.
-More on AWS Acceptable Use Policy [here](https://aws.amazon.com/aup)
-</b></details>
-
-<details>
 <summary>What is AWS Key Management Service (KMS)?</summary><br><b>
 
 AWS definition: "KMS makes it easy for you to create and manage cryptographic keys and control their use across a wide range of AWS services and in your applications."
 More on KMS [here](https://aws.amazon.com/kms)
+</b></details>
+
+<details>
+<summary>What is AWS Acceptable Use Policy?</summary><br><b>
+
+It describes prohibited uses of the web services offered by AWS.
+More on AWS Acceptable Use Policy [here](https://aws.amazon.com/aup)
 </b></details>
 
 <details>
@@ -722,9 +786,18 @@ cloud data warehouse
 </b></details>
 
 <details>
+<summary>What do you if you suspect AWS Redshift performs slowly?</summary><br><b>
+
+* You can confirm your suspicion by going to AWS Redshift console and see running queries graph. This should tell you if there are any long-running queries.
+* If confirmed, you can query for running queries and cancel the irrelevant queries
+* Check for connection leaks (query for running connections and include their IP)
+* Check for table locks and kill irrelevant locking sessions
+</b></details>
+
+<details>
 <summary>What is AWS ElastiCache? For what cases is it used?</summary><br><b>
 
-Amazon Elasticache is a fully managed Redis or Memcached in-memory data store.                                                                       
+Amazon Elasticache is a fully managed Redis or Memcached in-memory data store.
 It's great for use cases like two-tier web applications where the most frequently accesses data is stored in ElastiCache so response time is optimal.
 </b></details>
 
@@ -760,33 +833,80 @@ AWS definition: "Amazon RDS Read Replicas provide enhanced performance and durab
 Read more about [here](https://aws.amazon.com/rds/features/read-replicas)
 </b></details>
 
-#### AWS Serverless Compute
+#### AWS Networking
 
 <details>
-<summary>Explain what is AWS Lambda</summary><br><b>
+<summary>What is VPC?</summary><br><b>
 
-AWS definition: "AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume."
-
-Read more on it [here](https://aws.amazon.com/lambda)
+"A logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define"
+Read more about it [here](https://aws.amazon.com/vpc).
 </b></details>
 
 <details>
-<summary>True or False? In AWS Lambda, you are charged as long as a function exists, regardless of whether it's running or not</summary><br><b>
+<summary>True or False? VPC spans multiple regions</summary><br><b>
 
-False. Charges are being made when the code is executed.
+False
 </b></details>
 
 <details>
-<summary>Which of the following set of languages Lambda supports?
+<summary>True or False? Subnets belong to the same VPC, can be in different availability zones</summary><br><b>
 
-  * R, Swift, Rust, Kotlin
-  * Python, Ruby, Go 
-  * Python, Ruby, PHP</summary><br><b>
-
-  * Python, Ruby, Go 
+True. Just to clarify, a single subnet resides entirely in one AZ.
 </b></details>
 
-#### Identify the service or tool
+<details>
+<summary>What is an Internet Gateway?</summary><br><b>
+
+"component that allows communication between instances in your VPC and the internet" (AWS docs).
+Read more about it [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
+</b></details>
+
+<details>
+<summary>True or False? NACL allow or deny traffic on the subnet level</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What is VPC peering?</summary><br><b>
+
+[docs.aws](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html): "A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them using private IPv4 addresses or IPv6 addresses."
+</b></details>
+
+<details>
+<summary>True or False? Multiple Internet Gateways can be attached to one VPC</summary><br><b>
+
+False. Only one internet gateway can be attached to a single VPC.
+</b></details>
+
+<details>
+<summary>What is an Elastic IP address?</summary><br><b>
+An Elastic IP address is a reserved public IP address that you can assign to any EC2 instance in a particular region, until you choose to release it.
+When you associate an Elastic IP address with an EC2 instance, it replaces the default public IP address. If an external hostname was allocated to the instance from your launch settings, it will also replace this hostname; otherwise, it will create one for the instance. The Elastic IP address remains in place through events that normally cause the address to change, such as stopping or restarting the instance.
+</b></details>
+
+<details>
+<summary>True or False? Route Tables used to allow or deny traffic from the internet to AWS instances</summary><br><b>
+
+False.
+</b></details>
+
+<details>
+<summary>Explain Security Groups and Network ACLs</summary><br><b>
+
+* NACL - security layer on the subnet level.
+* Security Group - security layer on the instance level.
+
+Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) and [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
+</b></details>
+
+<details>
+<summary>What is AWS Direct Connect?</summary><br><b>
+
+Allows you to connect your corporate network to AWS network.
+</b></details>
+
+#### AWS - Identify the service or tool
 
 <details>
 <summary>What would you use for automating code/software deployments?</summary><br><b>
@@ -798,6 +918,12 @@ AWS CodeDeploy
 <summary>What would you use for easily creating similar AWS environments/resources for different customers?</summary><br><b>
 
 CloudFormation
+</b></details>
+
+<details>
+<summary>Using which service, can you add user sign-up, sign-in and access control to mobile and web apps?</summary><br><b>
+
+Cognito
 </b></details>
 
 <details>
@@ -819,13 +945,19 @@ Trusted Advisor
 </b></details>
 
 <details>
-<summary>What service allows you to transfer large amounts (Petabytes) of data in and out of the AWS cloud?</summary><br><b>
+<summary>Which service allows you to transfer large amounts (Petabytes) of data in and out of the AWS cloud?</summary><br><b>
 
 AWS Snowball
 </b></details>
 
 <details>
-<summary>What provides a virtual network dedicated to your AWS account?</summary><br><b>
+<summary>Which service would you use if you need a data warehouse?</summary><br><b>
+
+AWS RedShift
+</b></details>
+
+<details>
+<summary>Which service provides a virtual network dedicated to your AWS account?</summary><br><b>
 
 VPC
 </b></details>
@@ -861,12 +993,6 @@ AWS DynamoDB
 </b></details>
 
 <details>
-<summary>What would you use for running SQL queries interactively on S3?</summary><br><b>
-
-AWS Athena
-</b></details>
-
-<details>
 <summary>What would you use for adding image and video analysis to your application?</summary><br><b>
 
 AWS Rekognition
@@ -882,6 +1008,18 @@ AWS X-Ray
 <summary>Which service is used for sending notifications?</summary><br><b>
 
 SNS
+</b></details>
+
+<details>
+<summary>What would you use for running SQL queries interactively on S3?</summary><br><b>
+
+AWS Athena
+</b></details>
+
+<details>
+<summary>What would you use for preparing and combining data for analytics or ML?</summary><br><b>
+
+AWS Glue
 </b></details>
 
 <details>
@@ -956,6 +1094,77 @@ ElastiCache
 Amazon S3 Transfer Acceleration
 </b></details>
 
+<details>
+<summary>Which service would you use for distributing incoming requests across multiple?</summary><br><b>
+
+Route 53
+</b></details>
+
+<details>
+<summary>Which services are involved in getting a custom string (based on the input) when inserting a URL in the browser?</summary><br><b>
+
+Lambda - to define a function that gets an input and returns a certain string<br>
+API Gateway - to define the URL trigger (= when you insert the URL, the function is invoked).
+</b></details>
+
+<details>
+<summary>Which service would you use for data or events streaming?</summary><br><b>
+
+Kinesis
+</b></details>
+
+#### AWS DNS
+
+<details>
+<summary>What is Route 53?</summary><br><b>
+
+"Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service..."
+Some of Route 53 features:
+  * Register domain
+  * DNS service - domain name translations
+  * Health checks - verify your app is available
+
+More on Route 53 [here](https://aws.amazon.com/route53)
+</b></details>
+
+#### AWS Monitoring & Logging
+
+<details>
+<summary>What is AWS CloudWatch?</summary><br><b>
+
+AWS definition: "Amazon CloudWatch is a monitoring and observability service..."
+
+More on CloudWatch [here](https://aws.amazon.com/cloudwatch)
+</b></details>
+
+<details>
+<summary>What is AWS CloudTrail?</summary><br><b>
+
+AWS definition: "AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account."
+
+Read more on CloudTrail [here](https://aws.amazon.com/cloudtrail)
+</b></details>
+
+<details>
+<summary>What is Simply Notification Service?</summary><br><b>
+
+AWS definition: "a highly available, durable, secure, fully managed pub/sub messaging service that enables you to decouple microservices, distributed systems, and serverless applications."
+
+Read more about it [here](https://aws.amazon.com/sns)
+</b></details>
+
+<details>
+<summary>Explain the following in regards to SNS:
+
+  - Topics
+  - Subscribers
+  - Publishers</summary><br><b>
+
+  * Topics - used for grouping multiple endpoints
+  * Subscribers - the endpoints where topics send messages to
+  * Publishers - the provider of the message (event, person, ...)
+</b></details>
+
 #### AWS Billing & Support
 
 <details>
@@ -963,6 +1172,14 @@ Amazon S3 Transfer Acceleration
 
 AWS definition: "AWS Organizations helps you centrally govern your environment as you grow and scale your workloads on AWS."
 More on Organizations [here](https://aws.amazon.com/organizations)
+</b></details>
+
+<details>
+<summary>What are Service Control Policies and to what service they belong?</summary><br><b>
+
+AWS organizations service and the definition by Amazon: "SCPs offer central control over the maximum available permissions for all accounts in your organization, allowing you to ensure your accounts stay within your organization’s access control guidelines."
+
+Learn more [here](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html)
 </b></details>
 
 <details>
@@ -1018,12 +1235,13 @@ Learn more [here](https://aws.amazon.com/partners/consulting)
 <details>
 <summary>Which of the following are AWS accounts types (and are sorted by order)?
 
-  * Basic, Developer, Business, Enterprise
-  * Newbie, Intermediate, Pro, Enterprise
-  * Developer, Basic, Business, Enterprise
-  * Beginner, Pro, Intermediate Enterprise</summary><br><b>
+  - Basic, Developer, Business, Enterprise
+  - Newbie, Intermediate, Pro, Enterprise
+  - Developer, Basic, Business, Enterprise
+  - Beginner, Pro, Intermediate Enterprise
+  </summary><br><b>
 
-  * Basic, Developer, Business, Enterprise
+  - Basic, Developer, Business, Enterprise
 </b></details>
 
 <details>
@@ -1052,7 +1270,15 @@ Learn more [here](https://aws.amazon.com/codedeploy)
 <summary>Explain what is CloudFormation</summary><br><b>
 </b></details>
 
-#### AWS Misc
+#### AWS - Misc
+
+<details>
+<summary>Which AWS service you have experience with that you think is not very common?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS CloudSearch?</summary><br><b>
+</b></details>
 
 <details>
 <summary>What is AWS Lightsail?</summary><br><b>
@@ -1108,63 +1334,6 @@ Learn more about it [here](https://aws.amazon.com/opsworks)
 </b></details>
 
 <details>
-<summary>What is AWS Service Catalog?</summary><br><b>
-
-Amazon definition: "AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS."
-
-Learn more [here](https://aws.amazon.com/servicecatalog)
-</b></details>
-
-<details>
-<summary>What is AWS CAF?</summary><br><b>
-
-Amazon definition: "AWS Professional Services created the AWS Cloud Adoption Framework (AWS CAF) to help organizations design and travel an accelerated path to successful cloud adoption. "
-
-Learn more [here](https://aws.amazon.com/professional-services/CAF)
-</b></details>
-
-<details>
-<summary>What is AWS Cloud9?</summary><br><b>
-
-AWS definition: "AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser"
-</b></details>
-
-<details>
-<summary>What is AWS Application Discovery Service?</summary><br><b>
-
-Amazon definition: "AWS Application Discovery Service helps enterprise customers plan migration projects by gathering information about their on-premises data centers."
-
-Learn more [here](https://aws.amazon.com/application-discovery)
-</b></details>
-
-<details>
-<summary>What is the Trusted Advisor?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the AWS well-architected framework and what pillars it's based on?</summary><br><b>
-
-AWS definition: "The Well-Architected Framework has been developed to help cloud architects build secure, high-performing, resilient, and efficient infrastructure for their applications. Based on five pillars — operational excellence, security, reliability, performance efficiency, and cost optimization"
-
-Learn more [here](https://aws.amazon.com/architecture/well-architected)
-</b></details>
-
-<details>
-<summary>What AWS services are serverless (or have the option to be serverless)?</summary><br><b>
-
-AWS Lambda
-AWS Athena
-</b></details>
-
-<details>
-<summary>What is AWS EMR?</summary><br><b>
-
-AWS definition: "big data platform for processing vast amounts of data using open source tools such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto."
-
-Learn more [here](https://aws.amazon.com/emr)
-</b></details>
-
-<details>
 <summary>What is AWS Athena?</summary><br><b>
 
 "Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL."
@@ -1197,6 +1366,77 @@ Learn more on Amazon Simple Workflow Service [here](https://aws.amazon.com/swf)
 </b></details>
 
 <details>
+<summary>What is AWS EMR?</summary><br><b>
+
+AWS definition: "big data platform for processing vast amounts of data using open source tools such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto."
+
+Learn more [here](https://aws.amazon.com/emr)
+</b></details>
+
+<details>
+<summary>What is AWS Quick Starts?</summary><br><b>
+
+AWS definition: "Quick Starts are built by AWS solutions architects and partners to help you deploy popular technologies on AWS, based on AWS best practices for security and high availability."
+
+Read more [here](https://aws.amazon.com/quickstart)
+</b></details>
+
+<details>
+<summary>What is the Trusted Advisor?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is AWS Service Catalog?</summary><br><b>
+
+Amazon definition: "AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS."
+
+Learn more [here](https://aws.amazon.com/servicecatalog)
+</b></details>
+
+<details>
+<summary>What is AWS CAF?</summary><br><b>
+
+Amazon definition: "AWS Professional Services created the AWS Cloud Adoption Framework (AWS CAF) to help organizations design and travel an accelerated path to successful cloud adoption. "
+
+Learn more [here](https://aws.amazon.com/professional-services/CAF)
+</b></details>
+
+<details>
+<summary>What is AWS Cloud9?</summary><br><b>
+
+AWS: "AWS Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser"
+</b></details>
+
+<details>
+<summary>What is AWS CloudShell?</summary><br><b>
+
+AWS: "AWS CloudShell is a browser-based shell that makes it easy to securely manage, explore, and interact with your AWS resources."
+</b></details>
+
+<details>
+<summary>What is AWS Application Discovery Service?</summary><br><b>
+
+Amazon definition: "AWS Application Discovery Service helps enterprise customers plan migration projects by gathering information about their on-premises data centers."
+
+Learn more [here](https://aws.amazon.com/application-discovery)
+</b></details>
+
+<details>
+<summary>What is the AWS well-architected framework and what pillars it's based on?</summary><br><b>
+
+AWS definition: "The Well-Architected Framework has been developed to help cloud architects build secure, high-performing, resilient, and efficient infrastructure for their applications. Based on five pillars — operational excellence, security, reliability, performance efficiency, and cost optimization"
+
+Learn more [here](https://aws.amazon.com/architecture/well-architected)
+</b></details>
+
+<details>
+<summary>What AWS services are serverless (or have the option to be serverless)?</summary><br><b>
+
+AWS Lambda
+AWS Athena
+</b></details>
+
+<details>
 <summary>What is Simple Queue Service (SQS)?</summary><br><b>
 
 AWS definition: "Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications".
@@ -1204,32 +1444,3 @@ AWS definition: "Amazon Simple Queue Service (SQS) is a fully managed message qu
 Learn more about it [here](https://aws.amazon.com/sqs)
 </b></details>
 
-#### AWS Disaster Recovery
-
-<details>
-<summary>In regards to disaster recovery, what is RTO and RPO?</summary><br><b>
-
-RTO - The maximum acceptable length of time that your application can be offline.
-
-RPO - The maximum acceptable length of time during which data might be lost from your application due to an incident.
-</b></details>
-
-<details>
-<summary>What types of disaster recovery techniques AWS supports?</summary><br><b>
-
-* The Cold Method - Periodically backups and sending the backups off-site<br>
-* Pilot Light - Data is mirrored to an environment which is always running
-* Warm Standby - Running scaled down version of production environment
-* Multi-site - Duplicated environment that is always running
-</b></details>
-
-<details>
-<summary>Which disaster recovery option has the highest downtime and which has the lowest?</summary><br><b>
-
-Lowest - Multi-site
-Highest - The cold method
-</b></details>
-
-### Final Note
-
-Good luck! You can do it :)
