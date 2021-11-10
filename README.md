@@ -8894,7 +8894,7 @@ If you are looking for a way to prepare for a certain exam this is the section f
 
 #### AWS
 
-* [Cloud Practitioner](certificates/cloud-practitioner.md) (Latest update: 2020)
+* [Cloud Practitioner](certificates/aws-cloud-practitioner.md) (Latest update: 2020)
 * [Solutions Architect Associate](certificates/aws-solutions-architect-associate.md) (Latest update: 2021)
 
 #### Azure
