@@ -1,5 +1,7 @@
 <p align="center"><img src="images/devops_exercises.png"/></p>
 
+:about this:
+
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
 
 :bar_chart: &nbsp;There are currently **1962** questions
