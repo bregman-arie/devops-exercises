@@ -638,6 +638,9 @@ They take in input (<) and output for a given file (>) using stdin and stdout.
 </summary><br><b>
 
   - sed: a stream editor. Can be used for various purposes like replacing a word in a file: `sed -i s/salad/burger/g`
+  - grep: a search tool. Used to search, count or match a text in a file:
+    - searching for any line that contains a word in a file: `grep 'word' file.md`
+    - or displaying the total number of times a string appears in a file: `grep -c 'This is a string' file.md`
 </b></details>
 
 <details>
