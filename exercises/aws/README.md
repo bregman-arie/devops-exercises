@@ -19,6 +19,7 @@
 | Launch EC2 web instance | EC2 | [Exercise](launch_ec2_web_instance.md) | [Solution](solutions/launch_ec2_web_instance.md) | Easy |
 | Security Groups | EC2 | [Exercise](security_groups.md) | [Solution](solutions/security_groups.md) | Easy |
 | IAM Roles | EC2 + IAM | [Exercise](ec2_iam_roles.md) | [Solution](solutions/ec2_iam_roles.md) | Easy |
+| Spot Instances | EC2 | [Exercise](create_spot_instances.md) | [Solution](solutions/create_spot_instances.md) | Easy |
 
 
 #### AWS - Lambda
@@ -353,6 +354,12 @@ Reserved instances: they are cheaper than on-demand and the instance is yours fo
 </b></details>
 
 <details>
+<summary>Which pricing model has potentially the biggest discount and what its advantage</summary><br><b>
+
+Spot instances provide the biggest discount but has the disadvantage of risking losing them due bigger bid price.
+</b></details>
+
+<details>
 <summary>You need an instance for two years, but only between 10:00-15:00 every day. Which pricing model would you use?</summary><br><b>
 
 Reserved instances from the "Scheduled Reserved Instances" type which allows you to reserve for specific time window (like 10:00-15:00 every day).
@@ -434,13 +441,25 @@ EBS
 </b></details>
 
 <details>
-<summary>What EC2 RI types are there?</summary><br><b>
+<summary>What EC2 reserved instance types are there?</summary><br><b>
 
 Standard RI - most significant discount + suited for steady-state usage
 Convertible RI - discount + change attribute of RI + suited for steady-state usage
 Scheduled RI - launch within time windows you reserve
 
 Learn more about EC2 RI [here](https://aws.amazon.com/ec2/pricing/reserved-instances)
+</b></details>
+
+<details>
+<summary>For how long can reserved instances be reserved?</summary><br><b>
+
+1 or 3 years.
+</b></details>
+
+<details>
+<summary>What allows you to control inbound and outbound instance traffic?</summary><br><b>
+
+Security Groups
 </b></details>
 
 <details>
@@ -480,6 +499,14 @@ To terminate such instances, you must cancel the Spot instance request first.
 <summary>What are Spot Flees?</summary><br><b>
 
 Set of Spot instance and if you want, also on-demand instances.
+</b></details>
+
+<details>
+<summary>What strategies are there to allocate Spot instances?</summary><br><b>
+
+* lowestPrice: launch instances from the pool that has the lowest price
+* diversified: distributed across all pools
+* capacityOptimized: optimized based on the number of instances
 </b></details>
 
 #### AWS - Lambda
