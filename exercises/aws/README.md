@@ -6,18 +6,34 @@
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Create a User | IAM | [Exercise](create_user.md) | [Solution](solutions/create_user.md) | |
-| Password Policy | IAM | [Exercise](password_policy_and_mfa.md) | [Solution](solutions/password_policy_and_mfa.md) | |
-| Create a role | IAM | [Exercise](create_role.md) | [Solution](solutions/create_role.md) | |
-| Credential Report | IAM | [Exercise](credential_report.md) | [Solution](solutions/credential_report.md) | |
-| Access Advisor | IAM | [Exercise](access_advisor.md) | [Solution](solutions/access_advisor.md) | |
+| Create a User | IAM | [Exercise](create_user.md) | [Solution](solutions/create_user.md) | Easy |
+| Password Policy | IAM | [Exercise](password_policy_and_mfa.md) | [Solution](solutions/password_policy_and_mfa.md) | Easy |
+| Create a role | IAM | [Exercise](create_role.md) | [Solution](solutions/create_role.md) | Easy |
+| Credential Report | IAM | [Exercise](credential_report.md) | [Solution](solutions/credential_report.md) | Easy |
+| Access Advisor | IAM | [Exercise](access_advisor.md) | [Solution](solutions/access_advisor.md) | Easy |
+
+#### AWS - EC2
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Launch EC2 web instance | EC2 | [Exercise](launch_ec2_web_instance.md) | [Solution](solutions/launch_ec2_web_instance.md) | Easy |
+| Security Groups | EC2 | [Exercise](security_groups.md) | [Solution](solutions/security_groups.md) | Easy |
+| IAM Roles | EC2 + IAM | [Exercise](ec2_iam_roles.md) | [Solution](solutions/ec2_iam_roles.md) | Easy |
+
 
 #### AWS - Lambda
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Hello Function | Lambda | [Exercise](hello_function.md) | [Solution](solutions/hello_function.md) | |
-| URL Function | Lambda | [Exercise](url_function.md) | [Solution](solutions/url_function.md) | |
+| Hello Function | Lambda | [Exercise](hello_function.md) | [Solution](solutions/hello_function.md) | Easy |
+| URL Function | Lambda | [Exercise](url_function.md) | [Solution](solutions/url_function.md) | Easy |
+
+#### AWS - Misc
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Budget Setup | Budget | [Exercise](budget_setup.md) | [Solution](solutions/budget_setup.md) | Easy |
+| No Application :'( | Troubleshooting | [Exercise](no_application.md) | [Solution](solutions/no_application.md) | Easy |
 
 ### AWS Self Assessment
 
@@ -151,7 +167,7 @@ There can be several reasons for that. One of them is lack of policy. To solve t
 </b></details>
 
 <details>
-<summary>What statements AWS IAM policies support?</summary><br><b>
+<summary>What statements AWS IAM policies are consist of?</summary><br><b>
 
 * Sid: identifier of the statement (optional)
 * Effect: allow or deny access
@@ -194,7 +210,7 @@ This policy permits to perform any action on any resource. It happens to be the 
 IAM Access Advisor
 </b></details>
 
-#### AWS - Compute
+#### AWS - EC2
 
 <details>
 <summary>What is EC2?</summary><br><b>
@@ -207,6 +223,17 @@ Read more [here](https://aws.amazon.com/ec2)
 <summary>True or False? EC2 is a regional service</summary><br><b>
 
 True. As opposed to IAM for example, which is a global service, EC2 is a regional service.
+</b></details>
+
+<details>
+<summary>What are some of the properties/configuration options of EC2 instances that can be set or modified?</summary><br><b>
+
+* OS (Linux, Windows)
+* RAM and CPU
+* Networking - IP, Card properties like speed
+* Storage Space - (EBS, EFS, EC2 Instance Store)
+* EC2 User Data
+* Security groups
 </b></details>
 
 <details>
@@ -225,10 +252,20 @@ Read more [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
 </b></details>
 
 <details>
-<summary>What is instance type?</summary><br><b>
+<summary>What is an instance type?</summary><br><b>
 
 "the instance type that you specify determines the hardware of the host computer used for your instance"
 Read more about instance types [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html)
+</b></details>
+
+<details>
+<summary>Explain the instance type naming convention</summary><br><b>
+
+Let's take for example the following instance type: m5.large
+
+`m` is the instance class
+`5` is the generation
+`large` is the size of the instance (affects the spec properties like vCPUs and RAM)
 </b></details>
 
 <details>
@@ -239,6 +276,30 @@ Read more about instance types [here](https://docs.aws.amazon.com/AWSEC2/latest/
   * Web optimized</summary><br><b>
 
 False. From the above list only compute optimized is available.
+</b></details>
+
+<details>
+<summary>Explain each of the following instance types:
+
+  * "Compute Optimized"
+  * "Memory Optimized"
+  * "Storage Optimized"</summary><br><b>
+
+Compute Optimized:
+
+* Used for compute-intensive tasks
+* It has high performance processors
+* Use cases vary: gaming serves, machine learning, batch processing, etc.
+
+Memory Optimized:
+
+* Used for processing large data sets in memory
+* Other use cases: high performance, databases, distributed cache stores
+
+Storage Optimized:
+
+* Used for storage intensive tasks - high read and write access to large data sets
+* Use cases: databases, OLTP system, distributing file systems
 </b></details>
 
 <details>
@@ -258,10 +319,108 @@ Dedicated Hosts - physical EC2 server dedicated for your use.
 </b></details>
 
 <details>
+<summary>True or False? Reserved instance has to be used for a minimum of 1 year</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>Explain the following types of reserved instances:
+
+  * Convertible Reserved Instances
+  * Scheduled Reserved Instances</summary><br><b>
+
+* Convertible Reserved Instances: used for long running workloads but used when instance type might change during the period of time it's resreved
+* Scheduled Reserved Instances: when you need to reserve an instance for a long period but you don't need it continuously (so for example you need it only in the morning)
+</b></details>
+
+<details>
+<summary>True or False? In EC2 On Demand, you pay per hour when using Linux or Windows and per second (after first minute) when using any other operating system</summary><br><b>
+
+False. You pay per second (after the first minute) when using Windows or Linux and per hour for any other OS.
+</b></details>
+
+<details>
+<summary>You need an instance for short-term and the workload running on instance must not be interrupted. Which pricing model would you use?</summary><br><b>
+
+On Demand is good for short-term non-interrupted workloads (but it also has the highest cost).
+</b></details>
+
+<details>
+<summary>You need an instance for running an application for a period of 2 years continuously, without changing instance type. Which pricing model would you use?</summary><br><b>
+
+Reserved instances: they are cheaper than on-demand and the instance is yours for the chosen period of time.
+</b></details>
+
+<details>
+<summary>You need an instance for two years, but only between 10:00-15:00 every day. Which pricing model would you use?</summary><br><b>
+
+Reserved instances from the "Scheduled Reserved Instances" type which allows you to reserve for specific time window (like 10:00-15:00 every day).
+</b></details>
+
+<details>
+<summary>You need an instance for running workloads. You don't care if they fail for a given moment as long as they run eventually. Which pricing model would you use?</summary><br><b>
+
+Spot instances. The discount potential is the highest compared to all other pricing models. The disadvantage is that you can lose the instance at any point so, you must run only workloads that you are fine with them failing suddenly.
+</b></details>
+
+<details>
+<summary>You need a physical server only for your use. Which pricing model are you going to use?</summary><br><b>
+
+EC2 Dedicated Host
+</b></details>
+
+<details>
+<summary>What are some of the differences between dedicated hosts and dedicated instances?</summary><br><b>
+
+In dedicated hosts you have per host billing, you have more visibility (sockets, cores, ...) and you can control where instance will be placed.<br>
+In dedicated instances the billing is per instance but you can't control placement and you don't have visibility of sockets, cores, ...
+</b></details>
+
+<details>
+<summary>For what use cases, EC2 dedicated hosts are useful for?</summary><br><b>
+
+* Compliance needs
+* When the software license is complex (Bring Your Own License) and doesn't support cloud or multi-tenants
+* Regulatory requirements
+</b></details>
+
+<details>
 <summary>What are Security Groups?</summary><br><b>
 
 "A security group acts as a virtual firewall that controls the traffic for one or more instances"
 More on this subject [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)
+</b></details>
+
+<details>
+<summary>True or False? Security groups only contain deny rules</summary><br><b>
+
+False. Security groups only contain allow rules.
+</b></details>
+
+<details>
+<summary>True or False? One security group can be attached to multiple instances</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? Security groups are not locked down to a region and VPC (meaning you don't have to create a new one when switching regions)</summary><br><b>
+
+False. They are locked down to regions and VPC.
+</b></details>
+
+<details>
+<summary>True or False? By default, when using security groups, all inbound traffic to an EC2 instance is blocked and all outbound traffic is allowed</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What is the advantage of referencing security groups from a given security group?</summary><br><b>
+
+Imagine you have an instance referencing two security groups, allowing to get inbound traffic from them.<br>
+Now imagine you have two instances, each using one of the security groups referenced in the instance we've just mentioned. This means you can get traffic from these two instances because they use security groups which referenced in the instance mentioned at the beginning. No need to use IPs.
 </b></details>
 
 <details>
@@ -285,9 +444,42 @@ Learn more about EC2 RI [here](https://aws.amazon.com/ec2/pricing/reserved-insta
 </b></details>
 
 <details>
-<summary>You would like to invoke a function every time you enter a URL in the browser. Which service would you use for that?</summary><br><b>
+<summary>What bootstrapping means and how to use it in AWS EC2?</summary><br><b>
 
-AWS Lambda
+Bootstrapping is about launching commands when a machine starts for the first time.
+In AWS EC2 this is done using the EC2 user data script.
+</b></details>
+
+<details>
+<summary>You get time out when trying reach your application which runs on an EC2 instance. Specify one reason why it would possibly happen</summary><br><b>
+
+Security group isn't configured properly.
+</b></details>
+
+<details>
+<summary>What is the AWS Instance Connect?</summary><br><b>
+
+[AWS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html): "Amazon EC2 Instance Connect provides a simple and secure way to connect to your Linux instances using Secure Shell (SSH)."
+</b></details>
+
+<details>
+<summary>You try to run EC2 commands in an EC2 instance you've just created but it fails due to missing credentials. What would you do?</summary><br><b>
+
+DO NOT configure AWS credentials on the instance (this means anyone else in your account would be able to use and see your credentials).<br>
+The best practice is to attach an IAM role with sufficient permissions (like `IAMReadOnlyAccess`)
+</b></details>
+
+<details>
+<summary>True or False? Cancelling a Spot instance request terminates the instance</summary><br><b>
+
+False. When you cancel a Spot instance request, you are not terminating the instances created by it.<br>
+To terminate such instances, you must cancel the Spot instance request first.
+</b></details>
+
+<details>
+<summary>What are Spot Flees?</summary><br><b>
+
+Set of Spot instance and if you want, also on-demand instances.
 </b></details>
 
 #### AWS - Lambda
@@ -912,6 +1104,12 @@ Allows you to connect your corporate network to AWS network.
 <summary>What would you use for automating code/software deployments?</summary><br><b>
 
 AWS CodeDeploy
+</b></details>
+
+<details>
+<summary>You would like to invoke a function every time you enter a URL in the browser. Which service would you use for that?</summary><br><b>
+
+AWS Lambda
 </b></details>
 
 <details>

@@ -303,3 +303,23 @@ UI:
 1. In the repository page, click on "Actions"
 2. Choose workflow and click on "Set up this workflow"
 </b></details>
+
+#### Zuul
+
+<details>
+<summary>In Zuul, What are the <code>check</code> pipelines?</summary><br><b>
+
+`check` pipeline are triggered when a patch is uploaded to a code review system (e.g. Gerrit).<br>
+</b></details>
+
+<details>
+<summary>In Zuul, What are the <code>gate</code> pipelines?</summary><br><b>
+
+`gate` pipeline are triggered when a code reviewer approves the change in a code review system (e.g. Gerrit)
+</b></details>
+
+<details>
+<summary>True or False? <code>gate</code> pipelines run after the <code>check</code> pipelines</summary><br><b>
+
+True. `check` pipeline run when the change is uploaded, while the `gate` pipelines run when the change is approved by a reviewer
+</b></details>
