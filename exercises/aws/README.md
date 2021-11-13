@@ -18,9 +18,11 @@
 |--------|--------|------|----|----|
 | Launch EC2 web instance | EC2 | [Exercise](launch_ec2_web_instance.md) | [Solution](solutions/launch_ec2_web_instance.md) | Easy |
 | Security Groups | EC2 | [Exercise](security_groups.md) | [Solution](solutions/security_groups.md) | Easy |
-| IAM Roles | EC2 + IAM | [Exercise](ec2_iam_roles.md) | [Solution](solutions/ec2_iam_roles.md) | Easy |
+| IAM Roles | EC2, IAM | [Exercise](ec2_iam_roles.md) | [Solution](solutions/ec2_iam_roles.md) | Easy |
 | Spot Instances | EC2 | [Exercise](create_spot_instances.md) | [Solution](solutions/create_spot_instances.md) | Easy |
-
+| Elastic IP | EC2, Networking | [Exercise](elastic_ip.md) | [Solution](solutions/elastic_ip.md) | Easy |
+| Placement Groups Creation | EC2, Placement Groups | [Exercise](placement_groups.md) | [Solution](solutions/placement_groups.md) | Easy |
+| Elastic Network Interfaces | EC2, ENI | [Exercise](elastic_network_interfaces.md) | [Solution](solutions/elastic_network_interfaces.md) | Easy |
 
 #### AWS - Lambda
 
@@ -304,10 +306,30 @@ Storage Optimized:
 </b></details>
 
 <details>
+<summary>What can you attach to an EC2 instance in order to store data?</summary><br><b>
+
+EBS
+</b></details>
+
+##### AWS EC2 - EBS
+
+<details>
 <summary>What is EBS?</summary><br><b>
 
 "provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices."
 More on EBS [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html)
+</b></details>
+
+<details>
+<summary>What happens to EC2 disk (EBS) when the instance is terminated?</summary><br><b>
+
+All the related EBS volumes are removed and data is lost.
+</b></details>
+
+<details>
+<summary>What happens to the EC2 disk (EBS) when the instance is stopped?</summary><br><b>
+
+Disk is intact and can be used when the instance starts.
 </b></details>
 
 <details>
@@ -507,6 +529,24 @@ Set of Spot instance and if you want, also on-demand instances.
 * lowestPrice: launch instances from the pool that has the lowest price
 * diversified: distributed across all pools
 * capacityOptimized: optimized based on the number of instances
+</b></details>
+
+<details>
+<summary>From networking perspective, what do you get by default when running an EC2 instance?</summary><br><b>
+
+A private IP and a public IP.
+</b></details>
+
+<details>
+<summary>What happens when you hibernate an EC2 instance?</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html: "Hibernation saves the contents from the instance memory (RAM) to your Amazon Elastic Block Store (Amazon EBS) root volume."
+</b></details>
+
+<details>
+<summary>True or False? Using EC2 hibernate option results in having faster instance boot</summary><br><b>
+
+True. This is because the operating system isn't restarted or stopped.
 </b></details>
 
 #### AWS - Lambda
@@ -1100,8 +1140,26 @@ False. Only one internet gateway can be attached to a single VPC.
 
 <details>
 <summary>What is an Elastic IP address?</summary><br><b>
-An Elastic IP address is a reserved public IP address that you can assign to any EC2 instance in a particular region, until you choose to release it.
-When you associate an Elastic IP address with an EC2 instance, it replaces the default public IP address. If an external hostname was allocated to the instance from your launch settings, it will also replace this hostname; otherwise, it will create one for the instance. The Elastic IP address remains in place through events that normally cause the address to change, such as stopping or restarting the instance.
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html): "An Elastic IP address is a static IPv4 address designed for dynamic cloud computing. An Elastic IP address is allocated to your AWS account, and is yours until you release it. By using an Elastic IP address, you can mask the failure of an instance or software by rapidly remapping the address to another instance in your account."
+</b></details>
+
+<details>
+<summary>True or False? When stopping and starting an EC2 instance, its public IP changes</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What are the best practices around Elastic IP?</summary><br><b>
+
+The best practice is actually not using them in the first place. It's more common to use a load balancer without a public IP or use a random public IP and register a DNS record to it
+</b></details>
+
+<details>
+<summary>True or False? An Elastic IP is free, as long it's not associated with an EC2 instance</summary><br><b>
+
+False. An Elastic IP is free of charge as long as **it is ** associated with an EC2 instance. This instance should be running and should have only one Elastic IP.
 </b></details>
 
 <details>
@@ -1123,6 +1181,88 @@ Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec
 <summary>What is AWS Direct Connect?</summary><br><b>
 
 Allows you to connect your corporate network to AWS network.
+</b></details>
+
+<details>
+<summary>True or False? When you need a fixed public IP for your instance, you should use an Elastic IP</summary><br><b>
+
+True
+</b></details>
+
+##### AWS EC2 - ENI
+
+<details>
+<summary>Explain Elastic Network Interfaces (ENI)</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html): "An elastic network interface is a logical networking component in a VPC that represents a virtual network card."
+</b></details>
+
+<details>
+<summary>Name at least three attributes the Elastic Network Interfaces (ENI) can include</summary><br><b>
+
+1. One public IPv4 address
+2. Mac Address
+3. A primary private IPv4 address (from the address range of your VPC)
+</b></details>
+
+<details>
+<summary>True or False? ENI are not bound to a specific availability zone</summary><br><b>
+
+False. ENI are bound to specific availability zone.
+</b></details>
+
+<details>
+<summary>True or False? ENI can be created independently of EC2 instances</summary><br><b>
+
+True. They can be attached later on and on the fly (for failover purposes).
+</b></details>
+
+##### AWS EC2 - Placement Groups
+
+<details>
+<summary>What are "Placement Groups"?</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html): "When you launch a new EC2 instance, the EC2 service attempts to place the instance in such a way that all of your instances are spread out across underlying hardware to minimize correlated failures. You can use placement groups to influence the placement of a group of interdependent instances to meet the needs of your workload."
+</b></details>
+
+<details>
+<summary>What Placement Groups strategies are there?</summary><br><b>
+
+* Cluster: places instance close together in an AZ.
+* Spread: spreads the instance across the hardware
+* Partition: spreads the instances across different partitions (= different sets of hardware/racks) within an AZ
+</b></details>
+
+<details>
+<summary>For each of the following scenarios choose a placement group strategy:
+
+  * High availability is top priority
+  * Low latency between instances
+  * Instances must be isolated from each other
+  * Big Data applications that are partition aware
+  * Big Data process that needs to end quickly</summary><br><b>
+
+  * High availability is top priority - Spread
+  * Low latency between instances - Cluster
+  * Instances must be isolated from each other - Spread
+  * Big Data applications that are partition aware - Partition
+  * Big Data process that needs to end quickly - Cluster
+</b></details>
+
+<details>
+<summary>What are the cons and pros of the "Cluster" placement group strategy?</summary><br><b> 
+
+Cons: if the hardware fails, all instances fail
+Pros: Low latency & high throughput network
+</b></details>
+
+<details>
+<summary>What are the cons and pros of the "Spread" placement group strategy?</summary><br><b> 
+
+Cons:
+  * Current limitation is 7 instances per AZ (per replacement group)
+Pros:
+  * Maximized high availability (instances on different hardware, span across AZs)
 </b></details>
 
 #### AWS - Identify the service or tool
@@ -1668,4 +1808,3 @@ AWS definition: "Amazon Simple Queue Service (SQS) is a fully managed message qu
 
 Learn more about it [here](https://aws.amazon.com/sqs)
 </b></details>
-
