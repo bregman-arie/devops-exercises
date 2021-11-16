@@ -116,7 +116,7 @@ Packets that are sent on the ethernet are always coming from a MAC address and s
 <details>
 <summary>When is this MAC address used?: ff:ff:ff:ff:ff:ff</summary><br><b>
 
-When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. Ethernet broadcasts are used to resolve IP addresses to MAC addresses (by ARP).
+When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. Ethernet broadcasts are used to resolve IP addresses to MAC addresses (by ARP) at the datalink layer .
 </b></details>
 
 <details>
