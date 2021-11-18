@@ -74,6 +74,7 @@
       <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a></td>
       <td align="center"><a href="#distributed"><img src="images/distributed.png" width="110px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
       <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="90px;" height="75px;" alt="you"/><br /><b>Questions you can ask</b></a></td>
+      <td align="center"><a href="#perl"><img src="images/perl.png" width="75px;" height="75px;" alt="perl"/><br /><b>Perl</b></a></td>
   </tr>
 </table>
 </center>
@@ -5031,6 +5032,294 @@ func main() {
 Output: 3
 
 [Golang container/heap package](https://golang.org/pkg/container/heap/)
+</b></details>
+
+## Perl
+
+### Perl Self Assessment
+
+<details>
+<summary>What is Perl?</summary><br><b>
+
+From the official [docs](https://perldoc.perl.org/):
+
+"Perl officially stands for Practical Extraction and Report Language, except when it doesn't."
+
+It's a general purpose programming language developed for manipulating texts mainly. It has been used to perform system administration tasks, networking, building websites and more.
+</b></details>
+
+<details>
+<summary>What data types Perl has? And how can we define it?</summary><br><b>
+
+- Scalar: This is a simple variable that stores single data items. It can be a string, number or reference.
+
+```
+my $number = 5;
+```
+
+- Arrays: This is a list of scalars. 
+
+```
+my @numbers = (1, 2, 3, 4, 5);
+# or using the `qw` keyword (quote word):
+my @numbers = qw/1 2 3 4 5/; 
+# '/' can be another symbol, e.g qw@1 2 3 4 5@
+```
+
+- Hashes (or associative arrays): This is an unordered collection of key-value pairs. We can access to a hash using the keys.
+
+```
+my %numbers = (
+  First => '1',
+  Second => '2',
+  Third => '3'
+);
+```
+
+</b></details>
+
+<details>
+<summary>How can you access to a hash value, add and delete a key/value pair and modify a hash?</summary><br><b>
+
+my %numbers = (
+  'First' => '1',
+  'Second' => '2',
+  'Third' => '3'
+);
+
+- Access:
+print($numbers{'First'});
+- Add:
+$numbers{'Fourth'} = 4;
+- Delete:
+delete $numbers{'Third'};
+- Modify:
+$numbers{'Fifth'} = 6;
+
+$numbers{'Fifth'} = 5;
+
+</b></details>
+
+<details>
+<summary>How can you iterate an array? And a hash?</summary><br><b>
+
+- Array:
+
+```
+my @numbers = qw/1 2 3 4 5/;
+
+# Using `$_` that represents the current iteration in a loop. It starts from index array 0 until the last index.
+foreach (@numbers) {
+    print($_);
+}
+# Output: 12345
+
+
+# "$#" returns the max index of an array. That's the reason because we can iterate accesing to the array from the index 0 to the max index.
+for my $i (0..$#numbers) {
+    print($numbers[$i]);
+}
+# Output: 12345
+
+
+# Using the `map` keyword:
+print map {$_} @numbers;
+# Output: 12345
+
+# Using `while`. We should take care with this option. When we use `shift` we're deleting the first element of the array and assigning it to the `element` variable. 
+# After this `loop` the `numbers` array will not have elements.
+while (my $element = shift(@numbers)) {
+    print($element);
+}
+# Output: 12345
+```
+
+- Hashes:
+ 
+ ```
+ my %capital_cities = (
+  'Madrid' => 'Spain',
+  'Rome' => 'Italy',
+  'Berlin' => 'Germany'
+);
+
+# Iterate and get the `keys`:
+foreach my $city (keys %capital_cities) {
+    print($city . "\n");
+}
+# Iterate and get the `values`:
+foreach my $country (values %capital_cities) {
+    print($country . "\n");
+}
+
+# Iterate and get the values and keys (first option):
+foreach my $city (keys %capital_cities) {
+    print("City: $city - Country: $capital_cities{$city}" . "\n");
+}
+
+# Iterate and get the values and keys (first option):
+while(my ($city, $country) = each %capital_cities) {
+    print("City: $city - Country: $capital_cities{$city}" . "\n");
+}
+```
+
+</b></details>
+
+<details>
+<summary>What is a Perl subroutine? How to define it?</summary><br><b>
+
+It's the perl model for user defined functions (this is also called function like other programming languages). We can define a subroute with the keyword `sub`. 
+
+```
+sub hello {
+  print "hello";
+}
+```
+
+</b></details>
+
+<details>
+<summary>Describe the different ways to receive parameters in a subroutine</summary><br><b>
+
+- List assignment: Using the `@_` array. It's a list with the elements that are being passed as parameters.
+
+```
+sub power {
+    my ($b, $e) = @_;
+    return $b ** $e; 
+}
+
+&power(2, 3);
+```
+
+- Individual assigment: We should access to every element of the `@_` array. It starts from zero.
+
+```
+sub power {
+    my $b = $_[0];
+    my $e = $_[1];
+    return $b ** $e; 
+}
+
+&power(2, 3);
+```
+
+- Using `shift` keyword: It's used to remove the first value of an array and it's returned.
+
+```
+sub power {
+    my $b = shift;
+    my $3 = shift;
+    return $b ** $e; 
+}
+
+&power(2, 3);
+```
+
+
+[Source](https://stackoverflow.com/a/21465275/12771230)
+
+We can also read the best way in the same S.O answer.
+
+</b></details>
+
+<details>
+<summary>What is lexical and dynamic scoping?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to apply referencing and dereferencing?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Does Perl have conventions?</summary><br><b>
+
+You can check [perlstyle](https://perldoc.perl.org/perlstyle)
+
+</b></details>
+
+<details>
+<summary>What is Perl POD? Can you code an example?</summary><br><b>
+
+From the official [docs](https://perldoc.perl.org/perlpod):
+
+"Pod is a simple-to-use markup language used for writing documentation for Perl, Perl programs, and Perl modules."
+
+```
+=item
+    This function returns the factorial of a number.
+    Input: $n (number you wanna calculate).
+    Output: number factorial.
+=cut
+sub factorial {
+    my ($i, $result, $n) = (1, 1, shift);
+    $result = $result *= $i && $i++ while $i <= $n;
+    return $result;
+}
+```
+
+</b></details>
+
+### Perl Regex
+
+<details>
+<summary>How do you perform regular expresions in Perl?</summary><br><b>
+</b></details>
+
+### Perl Files Handle
+
+<details>
+<summary>How to write into a file?</summary><br><b>
+</b></details>
+
+### Perl OOP
+
+<details>
+<summary>Does Perl have support for OOP?</summary><br><b>
+
+From the official [docs](https://perldoc.perl.org/perlootut):
+
+"By default, Perl's built-in OO system is very minimal, leaving you to do most of the work."
+
+</b></details>
+
+<details>
+<summary>What is the purpose of the bless function?</summary><br><b>
+
+The function os the `bless` function is used to turning a plain data structure into an object.
+
+</b></details>
+
+<details>
+<summary>Does Perl have inheritance?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Does Perl have polymorphism? What is method overriding?</summary><br><b>
+</b></details>
+
+### Perl OS
+
+<details>
+<summary>What is Perl Open3?</summary><br><b>
+</b></details>
+
+### Perl Packages & Modules
+
+<details>
+<summary>What is a Perl package? And a module?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between .pl and .pm extensions?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is cpan? And cpanm?</summary><br><b>
+</b></details>
+
+<details>
+<summary>How can you install a Perl module?</summary><br><b>
 </b></details>
 
 ## Mongo
