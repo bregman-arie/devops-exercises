@@ -23,6 +23,10 @@
 | Elastic IP | EC2, Networking | [Exercise](elastic_ip.md) | [Solution](solutions/elastic_ip.md) | Easy |
 | Placement Groups Creation | EC2, Placement Groups | [Exercise](placement_groups.md) | [Solution](solutions/placement_groups.md) | Easy |
 | Elastic Network Interfaces | EC2, ENI | [Exercise](elastic_network_interfaces.md) | [Solution](solutions/elastic_network_interfaces.md) | Easy |
+| Hibernate an Instance | EC2 | [Exercise](hibernate_instance.md) | [Solution](solutions/hibernate_instance.md) | Easy |
+| Volume Creation | EC2, EBS | [Exercise](ebs_volume_creation.md) | [Solution](solutions/ebs_volume_creation.md) | Easy |
+| Snapshots | EC2, EBS | [Exercise](snapshots.md) | [Solution](solutions/snapshots.md) | Easy |
+| Create an AMI | EC2, AMI | [Exercise](create_ami.md) | [Solution](solutions/create_ami.md) | Easy |
 
 #### AWS - Lambda
 
@@ -240,6 +244,14 @@ True. As opposed to IAM for example, which is a global service, EC2 is a regiona
 </b></details>
 
 <details>
+<summary>What would you use for customizing EC2 instances? As in software installation, OS configuration, etc.</summary><br><b>
+
+AMI. With AMI (Amazon Machine Image) you can customize EC2 instances by specifying which software to install, what OS changes should be applied, etc.
+</b></details>
+
+##### AWS EC2 - AMI
+
+<details>
 <summary>What is AMI?</summary><br><b>
 
 Amazon Machine Images is "An Amazon Machine Image (AMI) provides the information required to launch an instance".
@@ -247,11 +259,27 @@ Read more [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
 </b></details>
 
 <details>
-<summary>What are the different source for AMIs?</summary><br><b>
+<summary>What are the different sources for AMIs?</summary><br><b>
 
 * Personal AMIs - AMIs you create
-* AWS Marketplace for AMIs - Paid AMIs usually with bundled with licensed software
-* Community AMIs - Free
+* AWS Marketplace for AMIs - AMIs made by others, mostly sold for some price
+* Public AMIs - Provided by AWS
+</b></details>
+
+<details>
+<summary>True or False? AMI are built for specific region</summary><br><b>
+
+True (but they can be copied from one region to another).
+</b></details>
+
+<details>
+<summary>Describe in high-level the process of creating AMIs</summary><br><b>
+
+1. Start an EC2 instance
+2. Customized the EC2 instance (install packages, change OS configuration, etc.)
+3. Stop the instance (for avoiding data integrity issues)
+4. Create EBS snapshot and build an AMI
+5. To verify and test the AMI, launch an instance from the AMI
 </b></details>
 
 <details>
@@ -311,19 +339,19 @@ Storage Optimized:
 EBS
 </b></details>
 
-##### AWS EC2 - EBS
+##### AWS EC2 - Storage
 
 <details>
-<summary>What is EBS?</summary><br><b>
+<summary>Explain what is Amazon EBS</summary><br><b>
 
-"provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices."
-More on EBS [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html)
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html): "provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices."
 </b></details>
 
 <details>
-<summary>What happens to EC2 disk (EBS) when the instance is terminated?</summary><br><b>
+<summary>What happens to EBS volumes when the instance is terminated?</summary><br><b>
 
-All the related EBS volumes are removed and data is lost.
+By deafult, the root volume is marked for deletion, while other volumes will still remain.<br>
+You can control what will happen to every volume upon termination.
 </b></details>
 
 <details>
@@ -331,6 +359,103 @@ All the related EBS volumes are removed and data is lost.
 
 Disk is intact and can be used when the instance starts.
 </b></details>
+
+<details>
+<summary>True or False? EBS volumes are locked to a specific availability zone</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>Explain EBS Snapshots</summary><br><b>
+
+EBS snapshots used for making a backup of the EBS volume at point of time.
+</b></details>
+
+<details>
+<summary>What are the use cases for using EBS snapshots?</summary><br><b>
+
+* Backups of the data
+* Moving the data between AZs
+</b></details>
+
+<details>
+<summary>Is it possible to attach the same EBS volume to multiple EC2 instances?</summary><br><b>
+
+Yes, with multi-attach it's possible to attach a single EBS volume to multiple instances.
+</b></details>
+
+<details>
+<summary>True or False? EBS is a network drive hence, it requires network connectivity</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>How to move EBS volumes between availability zones?</summary><br><b>
+
+Using snapshots.
+</b></details>
+
+<details>
+<summary>What EBS volume types are there?</summary><br><b>
+
+* HDD (st 1, sc 1): Low cost HDD volumes
+* SSD
+  * io1, io2: Highest performance SSD
+  * gp2, gp3: General purpose SSD
+</b></details>
+
+<details>
+<summary>If you need an EBS volume for low latency workloads, which volume type would you use?</summary><br><b>
+
+SSD - io1, io2
+</b></details>
+
+<details>
+<summary>If you need an EBS volume for workloads that require good performance but the cost is also an important aspect for you, which volume type would you use?</summary><br><b>
+
+SSD - gp2, gp3
+</b></details>
+
+<details>
+<summary>If you need an EBS volume for high-throughput, which volume type would you use?</summary><br><b>
+
+SSD - io1, io2
+</b></details>
+
+<details>
+<summary>If you need an EBS volume for infrequently data access, which volume type would you use?</summary><br><b>
+
+HDD - sc1
+</b></details>
+
+<details>
+<summary>Which EBS volume types can be used as boot volumes for EC2 instances?</summary><br><b>
+
+SSD: gp2, gp3, io1, io2
+</b></details>
+
+<details>
+<summary>If you would like to have an hardware disk attached to your EC2 instead of a network one (EBS). What would you use?</summary><br><b>
+
+EC2 Instance Store.
+</b></details>
+
+<details>
+<summary>Explain EC2 Instance Store. Why would someone choose to use it over other options?</summary><br><b>
+
+EC2 instance store provides better I/O performances when compared to EBS.<br>
+It is mostly used for cache and temporary data purposes.
+</b></details>
+
+<details>
+<summary>Are there any disadvantages in using instance store over EBS?</summary><br><b>
+
+Yes, the data on instance store is lost when they are stopped.
+</b></details>
+
+##### AWS EC2 - Pricing Models
 
 <details>
 <summary>What EC2 pricing models are there?</summary><br><b>
@@ -518,9 +643,9 @@ To terminate such instances, you must cancel the Spot instance request first.
 </b></details>
 
 <details>
-<summary>What are Spot Flees?</summary><br><b>
+<summary>What are Spot Fleets?</summary><br><b>
 
-Set of Spot instance and if you want, also on-demand instances.
+Set of Spot instances and if you would like, also on-demand instances.
 </b></details>
 
 <details>
@@ -538,7 +663,7 @@ A private IP and a public IP.
 </b></details>
 
 <details>
-<summary>What happens when you hibernate an EC2 instance?</summary><br><b>
+<summary>Explain EC2 hibernate</summary><br><b>
 
 [AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html: "Hibernation saves the contents from the instance memory (RAM) to your Amazon Elastic Block Store (Amazon EBS) root volume."
 </b></details>
@@ -547,6 +672,48 @@ A private IP and a public IP.
 <summary>True or False? Using EC2 hibernate option results in having faster instance boot</summary><br><b>
 
 True. This is because the operating system isn't restarted or stopped.
+</b></details>
+
+<details>
+<summary>What are some use cases for using EC2 hibernate option?</summary><br><b>
+
+* Save RAM state
+* Service with long time initialization
+* Keep long-running processes
+</b></details>
+
+<details>
+<summary>What are some limitations of EC2 hibernate option?</summary><br><b>
+
+* Instance RAM size is limited
+* Root volume must be encrypted EBS
+* Hibernation time is limited
+* Doesn't supports all instances types
+* No support for bare metal. Only On-Demand and Reserved instances
+* Doesn't supports all AMIs
+</b></details>
+
+<details>
+<summary>Explain what is EC2 Nitro</summary><br><b>
+
+* Next generation EC2 instances using new virtualization technology
+* Better EBS: 64,000 EBS IOPS
+* Better networking: HPC, IPv6
+* Better security
+</b></details>
+
+<details>
+<summary>What CPU customization is available with EC2?</summary><br><b>
+
+* Modifying number of CPU cores (useful for high RAM and low CPU applications)
+* Modifying number of threads per cure (useful for HPC workloads)
+</b></details>
+
+<details>
+<summary>Explain EC2 Capacity Reservations</summary><br><b>
+
+* Allows you to ensure you have EC2 capacity when you need it
+* Usually combined with Reserved Instances and Saving Plans to achieve cost saving
 </b></details>
 
 #### AWS - Lambda
@@ -1139,6 +1306,12 @@ False. Only one internet gateway can be attached to a single VPC.
 </b></details>
 
 <details>
+<summary>You've restarted your EC2 instance and the public IP has changed. How would you deal with it so it won't happen?</summary><br><b>
+
+Use Elastic IP which provides you a fixed IP address.
+</b></details>
+
+<details>
 <summary>What is an Elastic IP address?</summary><br><b>
 
 [AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html): "An Elastic IP address is a static IPv4 address designed for dynamic cloud computing. An Elastic IP address is allocated to your AWS account, and is yours until you release it. By using an Elastic IP address, you can mask the failure of an instance or software by rapidly remapping the address to another instance in your account."
@@ -1184,9 +1357,9 @@ Allows you to connect your corporate network to AWS network.
 </b></details>
 
 <details>
-<summary>True or False? When you need a fixed public IP for your instance, you should use an Elastic IP</summary><br><b>
+<summary>What would you use if you need a fixed public IP for your EC2 instance?</summary><br><b>
 
-True
+Elastic IP
 </b></details>
 
 ##### AWS EC2 - ENI
@@ -1533,7 +1706,7 @@ Read more about it [here](https://aws.amazon.com/sns)
 #### AWS Billing & Support
 
 <details>
-<summary>What is AWS Organizations?</summary><br><b>
+<summary>What is "AWS Organizations"?</summary><br><b>
 
 AWS definition: "AWS Organizations helps you centrally govern your environment as you grow and scale your workloads on AWS."
 More on Organizations [here](https://aws.amazon.com/organizations)
@@ -1558,11 +1731,13 @@ More on AWS pricing model [here](https://aws.amazon.com/pricing)
 </b></details>
 
 <details>
-<summary>How one should estimate AWS costs when for example comparing to on-premise solutions?</summary><br><b>
+<summary>How do you estimate AWS costs?</summary><br><b>
 
 * TCO calculator
 * AWS simple calculator
 * Cost Explorer
+* AWS Budgets
+* Cost Allocation Tags
 </b></details>
 
 <details>
@@ -1807,4 +1982,26 @@ AWS Athena
 AWS definition: "Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications".
 
 Learn more about it [here](https://aws.amazon.com/sqs)
+</b></details>
+
+#### AWS - Production
+
+<details>
+<summary>Describe in high-level how to upgrade a system on AWS with (near) zero downtime</summary><br><b>
+
+One way is through launching a new instance. In more detail:
+
+1. Launch a new instance
+2. Install all the updates and applications
+3. Test the instance
+4. If all tests passed successfully, you can start using the new instance and perform the switch with the old one, in one of various ways:
+  1. Go to route53 and update the record with the IP of the new instance
+  2. If you are using an Elastic IP then move it to the new instance
+  ...
+</b></details>
+
+<details>
+<summary>When you launch EC2 instances, it takes them time to boot due to commands you run with user data. How to improve instances boot time?</summary><br><b>
+
+Consider creating customized AMI with the commands from user data already executed there. This will allow you launch instance instantly.
 </b></details>
