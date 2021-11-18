@@ -1758,6 +1758,17 @@ In addition, you can specify in a spec how a certain package will be installed -
 #### Linux DNF
 
 <details>
+<summary>What is DNF?</summary><br><b>
+
+From the [repo](https://github.com/rpm-software-management/dnf):
+
+"Dandified YUM (DNF) is the next upcoming major version of YUM. It does package management using RPM, libsolv and hawkey libraries."
+
+Official [docs](https://dnf.readthedocs.io/en/latest/)
+
+</b></details>
+
+<details>
 <summary>How to look for a package that provides the command /usr/bin/git? (the package isn't necessarily installed)</summary><br><b>
 
 dnf provides /usr/bin/git
@@ -1973,10 +1984,32 @@ In time namespaces processes can use different system time.
 
 <details>
 <summary>What virtualization solutions are available for Linux?</summary><br><b>
+
+  * [KVM](https://www.linux-kvm.org/page/Main_Page)
+  * [XEN](http://www.xen.org/)
+  * [VirtualBox](https://www.virtualbox.org/)
+  * [Linux-VServer](http://linux-vserver.org/Welcome_to_Linux-VServer.org)
+  * [User-mode Linux](http://user-mode-linux.sourceforge.net/)
+  * ...
 </b></details>
 
 <details>
 <summary>What is KVM?</summary><br><b>
+
+Is an open source virtualization technology used to operate on x86 hardware. 
+
+From the official [docs](https://www.linux-kvm.org/page/Main_Page)
+Recommended read:
+  * [Red Hat Article - What is KVM?](https://www.redhat.com/en/topics/virtualization/what-is-KVM)
+</b></details>
+
+<details>
+<summary>What is Libvirt?</summary><br><b>
+
+It's an open source collection of software used to manage virtual machines. It can be used with: KVM, Xen, LXC and others. It's also called Libvirt Virtualization API.
+
+From the official [docs](https://libvirt.org/)
+Hypervisor supported [docs](https://libvirt.org/drivers.html)
 </b></details>
 
 #### Linux - AWK
@@ -4255,11 +4288,32 @@ PEP8 is a list of coding conventions and style guidelines for Python
 #### Flask
 
 <details>
-<summary>Can you describe what is Django/Flask and how you have used it? Why Flask and not Djano? (or vice versa)</summary><br><b>
+<summary>Can you describe what is Django/Flask and how you have used it? Why Flask and not Django? (or vice versa)</summary><br><b>
 </b></details>
 
 <details>
 <summary>What is a route?</summary><br><b>
+As every web framework, Flask provides a route functionality that lets you serve a content of a given URL.
+
+There are multiple ways to map a URL with a function in Python.
+
+- Decorator: you can use python decorators. In this case we're using `app`. This `app` decorator is the instance of the `Flask` class. And route it's a method of this class.
+
+```
+@app.route('/')
+def home():
+  return 'main website'
+```
+
+- `add_url_rule` method: This is a method of the Flask class. We can also use it for map the URL with a function.
+
+```
+def home():
+  return 'main website'
+
+app.add_url_rule('/', view_func=home)
+```
+
 </b></details>
 
 <details>
