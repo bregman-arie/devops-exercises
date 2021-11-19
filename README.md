@@ -5081,22 +5081,38 @@ my %numbers = (
 <details>
 <summary>How can you access to a hash value, add and delete a key/value pair and modify a hash?</summary><br><b>
 
+```
 my %numbers = (
   'First' => '1',
   'Second' => '2',
   'Third' => '3'
 );
+```
 
 - Access:
-print($numbers{'First'});
-- Add:
-$numbers{'Fourth'} = 4;
-- Delete:
-delete $numbers{'Third'};
-- Modify:
-$numbers{'Fifth'} = 6;
 
+```
+print($numbers{'First'});
+```
+
+- Add:
+
+```
+$numbers{'Fourth'} = 4;
+```
+
+- Delete:
+
+```
+delete $numbers{'Third'};
+```
+
+- Modify:
+
+```
+$numbers{'Fifth'} = 6;
 $numbers{'Fifth'} = 5;
+```
 
 </b></details>
 
@@ -5269,7 +5285,51 @@ sub factorial {
 ### Perl Files Handle
 
 <details>
+<summary>Mention the different modes in File Handling</summary><br><b>
+
+- Read only: `<`
+- Write mode. It creates the file if doesn't exist: `>`
+- Append mode. It creates the file if doesn't exist: `>>`
+- Read and write mode: `+<`
+- Read, clear and write mode. It creates the file if doesn't exist: `+>`
+- Read and append. It creates the file if doesn't exist: `+>>`
+
+</b></details>
+
+<details>
 <summary>How to write into a file?</summary><br><b>
+
+```
+# We can use:
+# '>' Write (it clears a previous content if exists).
+# '>>' Append.
+open(my $fh, '>>', 'file_name.ext') or "Error: file can't be opened";
+print $fh "writing text...\n";
+close($fh);
+```
+</b></details>
+
+<details>
+<summary>How can you read a file and print every line?</summary><br><b>
+
+```
+open(my $fh, '<', 'file_to_read.ext') or "Error: file can't be opened";
+my @file = <$fh>;
+foreach my $line (@file) {
+    print $line;
+}
+```
+
+We can use the file handle without assigning it to an array:
+
+```
+open(my $fh, '<', 'file_to_read.ext') or "Error: file can't be opened";
+
+foreach my $line (<$fh>) {
+    print $line;
+}
+```
+
 </b></details>
 
 ### Perl OOP
@@ -5291,11 +5351,100 @@ The function os the `bless` function is used to turning a plain data structure i
 </b></details>
 
 <details>
-<summary>Does Perl have inheritance?</summary><br><b>
+<summary>How to create a Perl class? How can you call a method?</summary><br><b>
+
+- Let's create the package: `Example.pm`
+
+```
+package Example;
+
+sub new {
+    my $class = shift;
+    my $self = {};
+    bless $self, $class;
+    return $self;
+}
+
+sub is_working {
+    print "Working!";
+}
+
+1;
+```
+
+- Now we can instance the `Example` class and call `is_working` method:
+
+```
+my $e = new Example();
+$e->is_working();
+# Output: Working!
+```
+
+</b></details>
+
+<details>
+<summary>Does Perl have inheritance? What is the `SUPER` keyword?</summary><br><b>
+
+Yes, Perl supports inheritance. We can read about it in the official [docs](https://perldoc.perl.org/perlobj#Inheritance). 
+We also can read about `SUPER` keyword that is used to call a method from the parent class. It gives an example about how we can apply inheritance.
 </b></details>
 
 <details>
 <summary>Does Perl have polymorphism? What is method overriding?</summary><br><b>
+
+Yes, it has polymorphism. In fact method overriding is a way to apply it in Perl.
+
+Method overriding in simple words appears when we have a class with a method that already exist in a parent class.
+
+Example:
+
+```
+package A;
+
+sub new { return bless {}, shift; };
+sub printMethod { print "A\n"; };
+
+package B;
+
+use parent -norequire, 'A';
+
+sub new { return bless {}, shift; };
+sub printMethod { print "B\n"; };
+
+my $a = A->new();
+my $b = B->new();
+
+A->new()->printMethod();
+B->new()->printMethod();
+
+# Output:
+# A
+# B
+```
+
+</b></details>
+
+<details>
+<summary>How can you call a method of an inherited class?</summary><br><b>
+
+```
+# Class `A` with `printA` method.
+package A;
+
+sub new { return bless {}, shift; };
+sub printA { print "A"; };
+
+# Class `B` that extends or use the parent class `A`.
+package B;
+
+use parent -norequire, 'A';
+
+sub new { return bless {}, shift; };
+
+# Instance class `B` allows call the inherated method
+my $b = B->new();
+$b->printA();
+```
 </b></details>
 
 ### Perl OS
