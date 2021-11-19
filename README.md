@@ -7610,6 +7610,14 @@ https://idiallo.com/blog/c10k-2016
 </b></details>
 
 <details>
+<summary>Explain IOPS</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain storage throughput</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is a filesystem?</summary><br><b>
 </b></details>
 
