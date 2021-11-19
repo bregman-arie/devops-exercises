@@ -2,6 +2,8 @@
 
 ### AWS Exercises
 
+Note: Provided solutions are using the AWS console. It's recommended you'll use IaC technologies to solve the exercises (e.g. Terraform).
+
 #### AWS - IAM
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
@@ -453,6 +455,54 @@ It is mostly used for cache and temporary data purposes.
 <summary>Are there any disadvantages in using instance store over EBS?</summary><br><b>
 
 Yes, the data on instance store is lost when they are stopped.
+</b></details>
+
+##### AWS Storage - EFS
+
+<details>
+<summary>What is Amazon EFS?</summary><br><b>
+
+[AWS Docs](https://aws.amazon.com/efs): "Amazon Elastic File System (Amazon EFS) provides a simple, scalable, fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources."
+
+In simpler words, it's a network file system you can mount on one or more EC2 instances.
+</b></details>
+
+<details>
+<summary>True or False? EFS is locked into a single availability zone</summary><br><b>
+
+False. EFS can be mounted across multiple availability zones.
+</b></details>
+
+<details>
+<summary>What are some use cases for using EFS?</summary><br><b>
+
+* Data sharing (e.g. developers working on the same source control)
+* Web serving
+* Content management
+</b></details>
+
+<details>
+<summary>True or False? EFS only compatible with Linux based AMI</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? EFS requires the user to perform capacity planning as it doesn't scales automatically</summary><br><b>
+
+False. EFS scales automatically and you pay-per-use.
+</b></details>
+
+<details>
+<summary>Which EFS mode would you use if need maximum throughput?</summary><br><b>
+
+Performance Mode (Max I/O): This provides high throughput and it's used for big data, media processing, etc.
+</b></details>
+
+<details>
+<summary>What is the default EFS mode?</summary><br><b>
+
+Performance Mode (General Purpose): Used for web servers, CMS, etc.
 </b></details>
 
 ##### AWS EC2 - Pricing Models
@@ -936,14 +986,6 @@ Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-accel
 
 <details>
 <summary>What storage options are there for EC2 Instances?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is Amazon EFS?</summary><br><b>
-
-Amazon definition: "Amazon Elastic File System (Amazon EFS) provides a simple, scalable, fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources."
-
-Learn more [here](https://aws.amazon.com/efs)
 </b></details>
 
 <details>
