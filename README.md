@@ -5279,7 +5279,82 @@ sub factorial {
 ### Perl Regex
 
 <details>
-<summary>How do you perform regular expresions in Perl?</summary><br><b>
+<summary>Check if the word `electroencefalografista` exists in a string</summary><br><b>
+
+```
+my $string = "The longest accepted word by RAE is: electroencefalografista";
+if ($string =~ /electroencefalografista/) {                                                         
+    print "Match!";
+}
+```
+</b></details>
+
+<details>
+<summary>Check if the word `electroencefalografista` does not exists in a string</summary><br><b>
+
+```
+my $string = "The longest not accepted word by RAE is: Ciclopentanoperhidrofenantreno";
+if ($string !~ /electroencefalografista/) {
+    print "Does not match!";
+}
+```
+</b></details>
+
+
+<details>
+<summary>Replace the word `amazing`</summary><br><b>
+
+```
+my $string = "Perl is amazing!";
+$string =~ s/amazing/incredible/;
+print $string;
+# Perl is incredible!
+```
+</b></details>
+
+<details>
+<summary>Extract `hh:mm:ss` with capturing group `()` in the following datetime</summary><br><b>
+
+```
+my $date = "Fri Nov 19 20:09:37 CET 2021";
+my @matches = $date =~ /(.*)(\d{2}:\d{2}:\d{2})(.*)/;
+print $matches[1];
+# Output: 20:09:37
+```
+</b></details>
+
+<details>
+<summary>Extract all the elements that are numbers in an array</summary><br><b>
+
+```
+my @array = ('a', 1, 'b', 2, 'c', 3);
+my @numbers = grep (/\d/, @array);    # Note: \d involves more digits than 0-9
+map {print $_ . "\n" } @numbers;
+```
+
+</b></details>
+
+<details>
+<summary>Print all the linux system users that starts with d or D</summary><br><b>
+
+- With a Perl one liner :D
+```
+open(my $fh, '<', '/etc/passwd');
+my @user_info = <$fh>;
+map { print $& . "\n" if $_ =~ /^d([^:]*)/  } @user_info;
+close $fh;
+```
+
+- Avoiding one-liners
+
+```
+foreach my $user_line (@user_info) {
+    if ($user_line =~ /^d([^:]*)/) {
+        print $& . "\n";
+    }
+}
+```
+
 </b></details>
 
 ### Perl Files Handle
@@ -5303,7 +5378,7 @@ sub factorial {
 # We can use:
 # '>' Write (it clears a previous content if exists).
 # '>>' Append.
-open(my $fh, '>>', 'file_name.ext') or "Error: file can't be opened";
+open(my $fh, '>>', 'file_name.ext') or die "Error: file can't be opened";
 print $fh "writing text...\n";
 close($fh);
 ```
@@ -5313,7 +5388,7 @@ close($fh);
 <summary>How can you read a file and print every line?</summary><br><b>
 
 ```
-open(my $fh, '<', 'file_to_read.ext') or "Error: file can't be opened";
+open(my $fh, '<', 'file_to_read.ext') or die "Error: file can't be opened";
 my @file = <$fh>;
 foreach my $line (@file) {
     print $line;
@@ -5323,7 +5398,7 @@ foreach my $line (@file) {
 We can use the file handle without assigning it to an array:
 
 ```
-open(my $fh, '<', 'file_to_read.ext') or "Error: file can't be opened";
+open(my $fh, '<', 'file_to_read.ext') or die "Error: file can't be opened";
 
 foreach my $line (<$fh>) {
     print $line;
