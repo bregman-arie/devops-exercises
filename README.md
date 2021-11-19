@@ -5337,11 +5337,22 @@ map {print $_ . "\n" } @numbers;
 <details>
 <summary>Print all the linux system users that starts with d or D</summary><br><b>
 
+- With a Perl one liner :D
 ```
 open(my $fh, '<', '/etc/passwd');
 my @user_info = <$fh>;
 map { print $& . "\n" if $_ =~ /^d([^:]*)/  } @user_info;
 close $fh;
+```
+
+- Avoiding one-liners
+
+```
+foreach my $user_line (@user_info) {
+    if ($user_line =~ /^d([^:]*)/) {
+        print $& . "\n";
+    }
+}
 ```
 
 </b></details>
