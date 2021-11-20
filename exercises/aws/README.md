@@ -29,6 +29,14 @@ Note: Provided solutions are using the AWS console. It's recommended you'll use 
 | Volume Creation | EC2, EBS | [Exercise](ebs_volume_creation.md) | [Solution](solutions/ebs_volume_creation.md) | Easy |
 | Snapshots | EC2, EBS | [Exercise](snapshots.md) | [Solution](solutions/snapshots.md) | Easy |
 | Create an AMI | EC2, AMI | [Exercise](create_ami.md) | [Solution](solutions/create_ami.md) | Easy |
+| Create EFS | EC2, EFS | [Exercise](create_efs.md) | [Solution](solutions/create_efs.md) | Easy |
+
+#### AWS - ELB
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Application Load Balancer | ELB, ALB | [Exercise](app_load_balancer.md) | [Solution](solutions/app_load_balancer.md) | Easy |
+| Multiple Target Groups | ELB, ALB | [Exercise](alb_multiple_target_groups.md) | [Solution](solutions/alb_multiple_target_groups.md) | Easy |
 
 #### AWS - Lambda
 
@@ -341,10 +349,10 @@ Storage Optimized:
 EBS
 </b></details>
 
-##### AWS EC2 - Storage
+##### AWS EC2 - EBS
 
 <details>
-<summary>Explain what is Amazon EBS</summary><br><b>
+<summary>Explain Amazon EBS</summary><br><b>
 
 [AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html): "provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices."
 </b></details>
@@ -394,12 +402,6 @@ True
 </b></details>
 
 <details>
-<summary>How to move EBS volumes between availability zones?</summary><br><b>
-
-Using snapshots.
-</b></details>
-
-<details>
 <summary>What EBS volume types are there?</summary><br><b>
 
 * HDD (st 1, sc 1): Low cost HDD volumes
@@ -437,6 +439,14 @@ HDD - sc1
 
 SSD: gp2, gp3, io1, io2
 </b></details>
+
+<details>
+<summary>True or False? In EBS gp2 volume type, IP will increase if the disk size increases</summary><br><b>
+
+True.
+</b></details>
+
+##### AWS EC2 - Instance Store
 
 <details>
 <summary>If you would like to have an hardware disk attached to your EC2 instead of a network one (EBS). What would you use?</summary><br><b>
@@ -494,15 +504,33 @@ False. EFS scales automatically and you pay-per-use.
 </b></details>
 
 <details>
-<summary>Which EFS mode would you use if need maximum throughput?</summary><br><b>
+<summary>What EFS modes are there?</summary><br><b>
 
-Performance Mode (Max I/O): This provides high throughput and it's used for big data, media processing, etc.
+* Performance mode
+  * General purpose: used mainly for CMS, web serving, ... as it's optimal for latency sensitive applications
+  * Max I/O: great for scaling to high levels of throughput and I/O operations per second
+* Throughput mode
+  * Bursting: scale throughput based on FS size
+  * Provisioned: fixed throughput
+</b></details>
+
+<details>
+<summary>Which EFS mode would you use if you need to perform media processing?</summary><br><b>
+
+Performance Mode (Max I/O): It provides high throughput and scales to operations per second. Mainly used for big data, media processing, etc.
 </b></details>
 
 <details>
 <summary>What is the default EFS mode?</summary><br><b>
 
-Performance Mode (General Purpose): Used for web servers, CMS, etc.
+Performance Mode (General Purpose): Used for web serving, CMS, ... anything that is sensitive to latency.
+</b></details>
+
+<details>
+<summary>What EFS storage tiers are there?</summary><br><b>
+
+* Standard: frequently accessed files
+* Infrequent access: lower prices to store files but it also costs to retrieve them
 </b></details>
 
 ##### AWS EC2 - Pricing Models
@@ -825,7 +853,7 @@ Amazon definition: "AWS Fargate is a serverless compute engine for containers th
 Learn more [here](https://aws.amazon.com/fargate)
 </b></details>
 
-#### AWS Storage
+#### AWS - S3
 
 <details>
 <summary>Explain what is AWS S3?</summary><br><b>
@@ -910,7 +938,6 @@ Storage classes offered today:
     * have 9x9% durability
 
 More on storage classes [here](https://aws.amazon.com/s3/storage-classes)
-
 </b></details>
 
 <details>
@@ -988,14 +1015,6 @@ Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-accel
 <summary>What storage options are there for EC2 Instances?</summary><br><b>
 </b></details>
 
-<details>
-<summary>What is AWS Snowmobile?</summary><br><b>
-
-"AWS Snowmobile is an Exabyte-scale data transfer service used to move extremely large amounts of data to AWS."
-
-Learn more [here](https://aws.amazon.com/snowmobile)
-</b></details>
-
 #### AWS Disaster Recovery
 
 <details>
@@ -1056,23 +1075,92 @@ True
 A transport solution which was designed for transferring large amounts of data (petabyte-scale) into and out the AWS cloud.
 </b></details>
 
-##### AWS ELB
+#### AWS - ELB
 
 <details>
 <summary>What is ELB (Elastic Load Balancing)?</summary><br><b>
 
-AWS definition: "Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions."
+[AWS Docs](https://aws.amazon.com/elasticloadbalancing): "Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions."
+</b></details>
 
-More on ELB [here](https://aws.amazon.com/elasticloadbalancing)
+<details>
+<summary>True or False? Elastic Load Balancer is a managed resource (= AWS takes care of it)</summary><br><b>
+
+True. AWS responsible for making sure ELB is operational and takes care of lifecycle operations like upgrades, maintenance and high availability.
+</b></details>
+
+<details>
+<summary>What types of AWS load balancers are there?</summary><br><b>
+
+* Classic Load Balancer (CLB): Mainly for TCP (layer 4) and HTTP, HTTPS (layer 7)
+* Application Load Balancer (ALB): Mainly for HTTP, HTTPS and WebSocket
+* Network Load Balancer (NLB): Mainly for TCP, TLS and UDP
+* Gateway Load Balancer (GWLB): Mainly for layer 3 operations (IP protocol)
+</b></details>
+
+<details>
+<summary>Which load balancer would you use for services which use HTTP or HTTPS traffic?</summary><br><b>
+
+Application Load Balancer (ALB).
+</b></details>
+
+<details>
+<summary>True or False? With ALB (Application Load Balancer) it's possible to do routing based on query string and/or headers</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>Explain "health checks" in the context of AWS ELB</summary><br><b>
+
+Health checks used by ELB to check whether EC2 instance(s) are properly working.<br>
+If health checks fail, ELB knows to not forward traffic to that specific EC2 instance where the health checks failed.
+</b></details>
+
+<details>
+<summary>True or False? AWS ELB health checks are done on a port and a route</summary><br><b>
+
+True.
+
+For example, port `2017` and endpoint `/health`.
 </b></details>
 
 <details>
 <summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
 
-  * Application LB - layer 7 traffic
-  * Network LB - ultra-high performances or static IP address (layer 4)
-  * Classic LB - low costs, good for test or dev environments (retired by August 15, 2022)
-  * Gateway LB - transparent network gateway and and distributes traffic such as firewalls, intrusion detection and prevention systems, and deep packet inspection systems. (layer 3)
+* Application LB - layer 7 traffic<br>
+* Network LB - ultra-high performances or static IP address (layer 4)<br>
+* Classic LB - low costs, good for test or dev environments (retired by August 15, 2022)<br>
+* Gateway LB - transparent network gateway and and distributes traffic such as firewalls, intrusion detection and prevention systems, and deep packet inspection systems. (layer 3)<br>
+</b></details>
+
+<details>
+<summary>Which type of AWS load balancer is used in the following drawing?<br>
+<img src="images/aws/identify_load_balancer.png" width="300x;" height="400px;"/>
+</summary><br><b>
+
+Application Load Balancer (routing based on different endpoints + HTTP is used).
+</b></details>
+
+<details>
+<summary>What are possible target groups for ALB (Application Load Balancer)?</summary><br><b>
+
+* EC2 tasks
+* ECS instances
+* Lambda functions
+* IP Addresses
+</b></details>
+
+<details>
+<summary>True or False? ALB can route only to a single route group</summary><br><b>
+
+False. ALB can route to multiple target groups.
+</b></details>
+
+<details>
+<summary>True or False? Network load balancers operate in layer 4</summary><br><b>
+
+True. They forward TCP, UDP traffic.
 </b></details>
 
 #### AWS Security
@@ -1916,6 +2004,14 @@ Learn more about it [here](https://aws.amazon.com/opsworks)
 </b></details>
 
 <details>
+<summary>What is AWS Snowmobile?</summary><br><b>
+
+"AWS Snowmobile is an Exabyte-scale data transfer service used to move extremely large amounts of data to AWS."
+
+Learn more [here](https://aws.amazon.com/snowmobile)
+</b></details>
+
+<details>
 <summary>What is AWS Athena?</summary><br><b>
 
 "Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL."
@@ -2026,6 +2122,15 @@ AWS definition: "Amazon Simple Queue Service (SQS) is a fully managed message qu
 Learn more about it [here](https://aws.amazon.com/sqs)
 </b></details>
 
+#### AWS - High Availability
+
+<details>
+<summary>What high availability means from AWS perspective?</summary><br><b>
+
+* Application/Service is running in at least 2 availability zones
+* Application/Service should survive (= operate as usual) a data center disaster
+</b></details>
+
 #### AWS - Production
 
 <details>
@@ -2043,7 +2148,35 @@ One way is through launching a new instance. In more detail:
 </b></details>
 
 <details>
+<summary>You try to use an detached EBS volume from us-east-1b in us-east-1a, but it fails. What might be the reason?</summary><br><b>
+
+EBS volumes are locked to a specific availability zone. To use them in another availability zone, you need to take a snapshot and restore it in the destination availability zone.
+</b></details>
+
+<details>
 <summary>When you launch EC2 instances, it takes them time to boot due to commands you run with user data. How to improve instances boot time?</summary><br><b>
 
 Consider creating customized AMI with the commands from user data already executed there. This will allow you launch instance instantly.
+</b></details>
+
+<details>
+<summary>You try to mount EFS on your EC2 instance and it doesn't work (hangs...) What might be a possible reason?</summary><br><b>
+
+Security group isn't attached to your EFS or it lacks a rule to allow NFS traffic.
+</b></details>
+
+<details>
+<summary>How to migrate an EBS volume across availability zones?</summary><br><b>
+
+1. Pause the application
+2. Take a snapshot of the EBS volume
+3. Restore the snapshot in another availability zone
+</b></details>
+
+<details>
+<summary>How to encrypt an unencrypted EBS volume attached to an EC2 instance?</summary><br><b>
+
+1. Create EBS snapshot of the volume
+2. Copy the snapshot and mark the "Encrypt" option
+3. Create a new EBS volume out of the encrypted snapshot
 </b></details>

@@ -10,7 +10,7 @@
 
 :busts_in_silhouette: &nbsp;Join our [DevOps community](https://www.facebook.com/groups/538897960007080) where we have discussions and share resources on DevOps
 
-:pencil: &nbsp;You can add more questions and exercises by submitting pull requests :) Read about contribution guidelines [here](CONTRIBUTING.md)
+:pencil: &nbsp;You can add more exercises by submitting pull requests :) Read about contribution guidelines [here](CONTRIBUTING.md)
 
 ****
 
@@ -7605,7 +7605,7 @@ A load balancer accepts (or denies) incoming network traffic from a client, and 
 </b></details>
 
 <details>
-<summary>What benefits load balancers provide?</summary><br><b>
+<summary>Why to used a load balancer?</summary><br><b>
 
 * Scalability - using a load balancer, you can possibly add more servers in the backend to handle more requests/traffic from the clients, as opposed to using one server.
 * Redundancy - if one server in the backend dies, the load balancer will keep forwarding the traffic/requests to the second server so users won't even notice one of the servers in the backend is down.
@@ -8277,13 +8277,19 @@ In addition, it has hardware limit where if you don't have more resources, you m
 </b></details>
 
 <details>
+<summary>Which type of cloud services usually support vertical scaling?</summary><br><b>
+
+Databases, cache. It's common mostly for non-distributed systems.
+</b></details>
+
+<details>
 <summary>Explain Horizontal Scaling</summary><br><b>
 
 Horizontal Scaling is the process of adding more resources that will be able handle requests as one unit
 </b></details>
 
 <details>
-<summary>What is the disadvange of Horizontal Scaling? What is often required in order to perform Horizontal Scaling?</summary><br><b>
+<summary>What is the disadvantage of Horizontal Scaling? What is often required in order to perform Horizontal Scaling?</summary><br><b>
 
 A load balancer. You can add more resources, but if you would like them to be part of the process, you have to serve them the requests/responses.
 Also, data inconsistency is a concern with horizontal scaling.
