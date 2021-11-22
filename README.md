@@ -3253,6 +3253,7 @@ False
 
 <details>
 <summary>Explain what is GIL</summary><br><b>
+	Python Global Interpreter Lock (GIL) is a type of process lock which is used by python whenever it deals with processes. Generally, Python only uses only one thread to execute the set of written statements. This means that in python only one thread will be executed at a time
 </b></details>
 
 <details>
