@@ -37,6 +37,7 @@ Note: Provided solutions are using the AWS console. It's recommended you'll use 
 |--------|--------|------|----|----|
 | Application Load Balancer | ELB, ALB | [Exercise](app_load_balancer.md) | [Solution](solutions/app_load_balancer.md) | Easy |
 | Multiple Target Groups | ELB, ALB | [Exercise](alb_multiple_target_groups.md) | [Solution](solutions/alb_multiple_target_groups.md) | Easy |
+| Network Load Balancer | ELB, NLB | [Exercise](network_load_balancer.md) | [Solution](solutions/network_load_balancer.md) | Easy |
 
 #### AWS - Lambda
 
@@ -1111,6 +1112,14 @@ True.
 </b></details>
 
 <details>
+<summary>What are some use cases for using Gateway Load Balancer?</summary><br><b>
+
+* Intrusion Detection
+* Firewall
+* Payload manipulation
+</b></details>
+
+<details>
 <summary>Explain "health checks" in the context of AWS ELB</summary><br><b>
 
 Health checks used by ELB to check whether EC2 instance(s) are properly working.<br>
@@ -1158,9 +1167,91 @@ False. ALB can route to multiple target groups.
 </b></details>
 
 <details>
+<summary>If you wanted to analyze network traffic, you would use the `____ load balancer`</summary><br><b>
+
+Gateway Load Balancer
+</b></details>
+
+<details>
+<summary>Who has better latency? Application Load Balancer or Network Load Balancer?</summary><br><b>
+
+Network Load Balancer (~100 ms) as ALB has a latency of ~400 ms
+</b></details>
+
+<details>
+<summary>True or False? Network load balancer has one static IP per availability zone</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>What are the supported target groups for network load balancer?</summary><br><b>
+
+* EC2 instance
+* IP addresses
+* Application Load Balancer
+</b></details>
+
+<details>
+<summary>What are the supported target groups for gateway load balancer?</summary><br><b>
+
+* EC2 instance
+* IP addresses (must be private IPs)
+</b></details>
+
+<details>
+<summary>Name one use case for using application load balancer as a target group for network load balancer</summary><br><b>
+
+You might want to have a fixed IP address (NLB) and then forward HTTP traffic based on path, query, ... which is then done by ALB
+</b></details>
+
+<details>
+<summary>What are some use cases for using Network Load Balancer?</summary><br><b>
+
+* TCP, UDP traffic
+* Extreme performance
+</b></details>
+
+<details>
 <summary>True or False? Network load balancers operate in layer 4</summary><br><b>
 
 True. They forward TCP, UDP traffic.
+</b></details>
+
+<details>
+<summary>True or False? It's possible to enable sticky session for network load balancer so the same client is always redirected to the same instance</summary><br><b>
+
+False. This is only supported in Classic Load Balancer and Application Load Balancer.
+</b></details>
+
+<details>
+<summary>Explain Cross Zone Load Balancing</summary><br><b>
+
+With cross zone load balancing, traffic distributed evenly across all (registered) instances in all the availability zones.
+</b></details>
+
+<details>
+<summary>True or False? For application load balancer, cross zone load balancing is always on and can't be disabled</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? For network load balancer, cross zone load balancing is always on and can't be disabled </summary><br><b>
+
+False. It's disabled by default
+</b></details>
+
+<details>
+<summary>True or False? In regards to cross zone load balancing, AWS charges you for inter AZ data in network load balancer but no in application load balancer</summary><br><b>
+
+False. It charges fir inter AZ data in network load balancer, but not in application load balancer
+</b></details>
+
+<details>
+<summary>True or False? Both ALB and NLB support multiple listeners with multiple SSL certificates </summary><br><b>
+
+True
 </b></details>
 
 #### AWS Security
@@ -2179,4 +2270,13 @@ Security group isn't attached to your EFS or it lacks a rule to allow NFS traffi
 1. Create EBS snapshot of the volume
 2. Copy the snapshot and mark the "Encrypt" option
 3. Create a new EBS volume out of the encrypted snapshot
+</b></details>
+
+<details>
+<summary>You've created a network load balancer but it doesn't work (you can't reach your app on your EC2 instance). What might be a possible reason?</summary><br><b>
+
+Missing security group or misconfigured one.
+For example, if you go to your instances in the AWS console you might see that the instances under your NLB are in "unhealthy status" and if you didn't create a dedicated security group for your NLB, that means that the security group used is the one attached to the EC2 instances.
+
+Go to the security group of your instance(s) and enable the traffic that NLB should forward (e.g. TCP on port 80).
 </b></details>

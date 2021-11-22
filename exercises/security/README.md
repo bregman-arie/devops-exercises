@@ -389,7 +389,23 @@ MAC address flooding attack (CAM table flooding attack) is a type of network att
 <summary>What is Cache Poisoned Denial of Service?</summary><br><b>
 
 CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipulating certain header requests, the attacker forces the origin server to return a Bad Request error which is stored in the CDN’s cache. Thus, every request that comes after the attack will get an error page.
+</b></details>
 
+<details>
+<summary>What is the difference if any between SSL and TLS?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is SNI (Server Name Indication)?</summary><br><b>
+
+[Wikipedia](https://en.wikipedia.org/wiki/Server_Name_Indication): "an extension to the Transport Layer Security (TLS) computer networking protocol by which a client indicates which hostname it is attempting to connect to at the start of the handshaking process"
+</b></details>
+
+<details>
+<summary>What benefits SNI introduces?</summary><br><b>
+
+SNI allows a single server to serve multiple certificates using the same IP and port.<br>
+Practically this means that a single IP can server multiple web services/pages, each using a different certificate.
 </b></details>
 
 #### Security - Threats
