@@ -486,20 +486,116 @@ $b->printA();
 ```
 </b></details>
 
+### Perl Exception Handling
+
+<details>
+<summary>How can we evaluate and capture an exception in Perl?</summary><br><b>
+
+From the official [eval docs](https://perldoc.perl.org/functions/eval):
+
+"`eval` in all its forms is used to execute a little Perl program, trapping any errors encountered so they don't crash the calling program.".
+
+e.g:
+
+```
+eval {
+    die;
+};
+if ($@) {
+    print "Error. Details: $@";
+}
+```
+
+If we execute this we get the next output:
+
+```
+Error. Details: Died at eval.pl line 2.
+```
+
+The `eval` (`try` in another programming languages) is trying to execute a code. This code fails (it's a die), and then the code continues into the `if` condition that evaluates `$@` error variable have something stored. This is like a `catch` in another programming languages. At this way we can handle errors.
+
+</b></details>
+
 ### Perl OS
 
 <details>
 <summary>What is Perl Open3?</summary><br><b>
+
+From the official [IPC::Open3 docs](https://perldoc.perl.org/IPC::Open3):
+
+"IPC::Open3 - open a process for reading, writing, and error handling using open3()".
+
+With `open3` we can have the full control of the STDIN, STDOUT, STDERR. It's usually used to execute commands.
+</b></details>
+
+<details>
+<summary>Using Open3: Create a file with the size of 15MB and check it's created successfully</summary><br><b>
+
+- Code:
+
+```
+use IPC::Open3;
+use Data::Dumper;
+
+sub execute_command {
+    my @command_to_execute = @_;
+    my ($stdin, $stdout, $stderr);
+    eval {
+        open3($stdin, $stdout, $stderr, @command_to_execute);
+    };
+    if ($@) {
+        print "Error. Details: $@";
+    }
+    close($stdin);
+    return $stdout;
+}
+
+my $file_name = 'perl_open3_test';
+&execute_command('truncate', '-s', '15M', $file_name);
+my $result = &execute_command('stat', '-c', '%s', $file_name);
+print Dumper(<$result>);
+```
+
+- Result:
+
+```
+$ -> perl command.pl 
+$VAR1 = '15728640
+';
+```
+
 </b></details>
 
 ### Perl Packages & Modules
 
 <details>
 <summary>What is a Perl package? And a module?</summary><br><b>
+
+With a Perl package we are defining a namespace.
+A Perl module in one simple word can be defined as a `class`. When we create a `class` in Perl we use the `package` keyword. A module can be used with the `use` keyword.
 </b></details>
 
 <details>
 <summary>What is the difference between .pl and .pm extensions?</summary><br><b>
+
+There's no a real difference between a `.pm` and `.pl` extensions. Perl use `.pm` extensions just to difference it as a perl module (a class). `.pl` extensions are usually named for perl scripts without OOP classes.
+
+</b></details>
+
+<details>
+<summary>Why a Perl class (or module) should return something at the end of the file? Check the example.</summary><br><b>
+
+If we want to `use` a Perl module (`import` a class), this module should end in a value different than 0. This is necessary because if we try to import the class and it has a false value, we will not be able to use it.
+
+```
+package A;
+
+sub new { return bless {}, shift; };
+sub printMethod { print "A\n"; };
+
+1;
+```
+
 </b></details>
 
 <details>
