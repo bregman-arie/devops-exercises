@@ -39,6 +39,12 @@ Note: Provided solutions are using the AWS console. It's recommended you'll use 
 | Multiple Target Groups | ELB, ALB | [Exercise](alb_multiple_target_groups.md) | [Solution](solutions/alb_multiple_target_groups.md) | Easy |
 | Network Load Balancer | ELB, NLB | [Exercise](network_load_balancer.md) | [Solution](solutions/network_load_balancer.md) | Easy |
 
+#### AWS - Auto Scaling Groups
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Auto Scaling Groups Basics | ASG | [Exercise](auto_scaling_groups_basics.md) | [Solution](solutions/auto_scaling_groups_basics.md) | Easy |
+
 #### AWS - Lambda
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
@@ -1254,7 +1260,41 @@ False. It charges fir inter AZ data in network load balancer, but not in applica
 True
 </b></details>
 
-#### AWS Security
+<details>
+<summary>Explain Deregistration Delay (or Connection Draining) in regards to ELB</summary><br><b>
+
+The period of time or process of "draining" instances from requests/traffic (basically let it complete all active connections but don't start new ones) so it can be de-registered eventually and ELB won't send requests/traffic to it anymore.
+</b></details>
+
+#### AWS - Auto Scaling Group
+
+<details>
+<summary>Explain Auto Scaling Group</summary><br><b>
+
+[Amazon Docs](https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html): "An Auto Scaling group contains a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management. An Auto Scaling group also enables you to use Amazon EC2 Auto Scaling features such as health check replacements and scaling policies"
+</b></details>
+
+<details>
+<summary>You have two instance running as part of ASG. You change the desired capacity to 1. What will be the outcome of this change?</summary><br><b>
+
+One of the instances will be terminated.
+</b></details>
+
+<details>
+<summary>How can you customize the trigger for the scaling in/out of an auto scaling group?</summary><br><b>
+
+One way is to use CloudWatch alarms where an alarm will monitor a metric and based on a certain value (or range) you can choose to scale-in or scale-out the ASG.
+</b></details>
+
+<details>
+<summary>Provide examples to metrics/rules used for auto scaling</summary><br><b>
+
+* Network In/Out
+* Number of requests on ELB per instance
+* Average CPU, RAM usage
+</b></details>
+
+#### AWS - Security
 
 <details>
 <summary>What is the shared responsibility model? What AWS is responsible for and what the user is responsible for based on the shared responsibility model?</summary><br><b>

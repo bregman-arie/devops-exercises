@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
 
-:bar_chart: &nbsp;There are currently **2112** exercises and questions
+:bar_chart: &nbsp;There are currently **2138** exercises and questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -1884,9 +1884,11 @@ Using the `last` command.
 #### Linux Hardware
 
 <details>
-<summary>Where can you find information on the processor?</summary><br><b>
+<summary>Where can you find information on the processor (like number of CPUs)?</summary><br><b>
 
 /proc/cpuinfo
+
+You can also use `nproc` for number of processors
 </b></details>
 
 <details>

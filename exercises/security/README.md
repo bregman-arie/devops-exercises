@@ -408,6 +408,12 @@ SNI allows a single server to serve multiple certificates using the same IP and 
 Practically this means that a single IP can server multiple web services/pages, each using a different certificate.
 </b></details>
 
+<details>
+<summary>Explain "Web Cache Deception Attach"</summary><br><b>
+
+[This blog post](https://omergil.blogspot.com/2017/02/web-cache-deception-attack.html) explains it in detail.
+</b></details>
+
 #### Security - Threats
 
 <details>
