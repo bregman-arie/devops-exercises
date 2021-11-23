@@ -19,3 +19,4 @@ jobs:
         run: chmod a+x scripts/run_ci.sh
       - name: Run the ci script in scripts folder
         run: scripts/run_ci.sh
+        shell: bash
