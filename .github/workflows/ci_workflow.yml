@@ -1,0 +1,20 @@
+name: Test
+
+on:
+  # Triggers the workflow on pull request events for the main and devel branch
+  pull_request:
+    branches: [ main, devel ]
+
+  # Allows running this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # Contains a single job called "build"
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks out repository under $GITHUB_WORKSPACE, so job can access it
+      - uses: actions/checkout@v2
+
+      - name: Run the ci script in scripts folder
+        run: ./scripts/run_ci.sh
