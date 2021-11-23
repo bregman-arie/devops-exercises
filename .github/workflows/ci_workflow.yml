@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  # Contains a single job called "build"
+  # Contains a single job called "ci"
   ci:
     runs-on: ubuntu-latest
     steps:
