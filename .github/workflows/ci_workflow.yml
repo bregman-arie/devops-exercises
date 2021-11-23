@@ -1,4 +1,4 @@
-name: Test
+name: CI
 
 on:
   # Triggers the workflow on pull request events for the main and devel branch
@@ -15,6 +15,7 @@ jobs:
     steps:
       # Checks out repository under $GITHUB_WORKSPACE, so job can access it
       - uses: actions/checkout@v2
-
+      - name: Check files
+        run: ls
       - name: Run the ci script in scripts folder
         run: ./scripts/run_ci.sh
