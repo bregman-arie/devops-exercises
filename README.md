@@ -3046,7 +3046,7 @@ def isNumberPalindrome(number: Union[int, str]) -> bool:
 print(isNumberPalindrome("12321"))
 ```
 
-- Using Python3.10 that accepts using bitwise operator '|'
+- Using Python3.10 that accepts using bitwise operator '|'. Note: it's faster than importing and using the `Union` way.
 
 ```
 def isNumberPalindrome(number: int | str) -> bool:
