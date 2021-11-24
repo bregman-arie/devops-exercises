@@ -3033,8 +3033,38 @@ You can then assign a function to a variables like this `x = my_function` or you
 <details>
 <summary>Write a function to determine if a number is a Palindrome</summary><br><b>
 
+- Code:
+
 ```
+from typing import Union
+
+def isNumberPalindrome(number: Union[int, str]) -> bool:
+    if isinstance(number, int):
+        number = str(number)
+    return number == number[::-1]
+
+print(isNumberPalindrome("12321"))
 ```
+
+- Using Python3.10 that accepts using bitwise operator '|'. 
+
+```
+def isNumberPalindrome(number: int | str) -> bool:
+    if isinstance(number, int):
+        number = str(number)
+    return number == number[::-1]
+
+print(isNumberPalindrome("12321"))
+```
+
+Note: Using slicing to reverse a list could be slower than other options like `reversed` that return an iterator.
+
+- Result:
+
+```
+True
+```
+
 </b></details>
 
 #### Python - OOP
@@ -3241,6 +3271,28 @@ False
 
 <details>
 <summary>What is the __call__ method?</summary><br><b>
+
+It is used to emulate callable objects. It allows a class instance to be called as a function.
+
+- Example code:
+
+```
+class Foo:
+    def __init__(self: object) ->  None:
+        pass
+    def __call__(self: object) -> None:
+        print("Called!")
+
+f = Foo()
+f()
+```
+
+- Result:
+
+```
+Called!
+```
+
 </b></details>
 
 <details>
@@ -3427,6 +3479,24 @@ some_list[:3]
 
 <details>
 <summary>How to insert an item to the beginning of a list? What about two items?</summary><br><b>
+
+- One item:
+
+```
+numbers = [1, 2, 3, 4, 5]
+numbers.insert(0, 0)
+print(numbers)
+```
+
+- Multiple items or list:
+
+```
+numbers_1 = [2, 3, 4, 5]
+numbers_2 = [0, 1]
+numbers_1 = numbers_2 + numbers_1
+print(numbers_1)
+```
+
 </b></details>
 
 <details>
@@ -3634,6 +3704,31 @@ list(zip(nums, letters))
 
 <details>
 <summary>What is List Comprehension? Is it better than a typical loop? Why? Can you demonstrate how to use it?</summary><br><b>
+
+From [Docs](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions): "List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.".
+
+It's better because they're compact, faster and have better readability.
+
+- For loop:
+
+```
+number_lists = [[1, 7, 3, 1], [13, 93, 23, 12], [123, 423, 456, 653, 124]]
+odd_numbers = []
+for number_list in number_lists:
+    for number in number_list:
+        if number % 2 == 0:
+            odd_numbers.append(number)
+print(odd_numbers)
+```
+
+- List comprehesion:
+
+```
+number_lists = [[1, 7, 3, 1], [13, 93, 23, 12], [123, 423, 456, 653, 124]]
+odd_numbers = [number for number_list in number_lists for number in number_list if number % 2 == 0]
+print(odd_numbers)
+```
+
 </b></details>
 
 <details>
