@@ -7664,7 +7664,7 @@ Not only this will tell you what is expected from you, it will also provide big 
 <details>
 <summary>What does it mean when a database is ACID compliant?</summary><br>
 
-ACID stands for Atomicity, Consistency, Isolation, Durability. In order to be ACID compliant, the database much meet each of the four criteria
+ACID stands for Atomicity, Consistency, Isolation, Durability. In order to be ACID compliant, the database must meet each of the four criteria
 
 **Atomicity** - When a change occurs to the database, it should either succeed or fail as a whole.
 
