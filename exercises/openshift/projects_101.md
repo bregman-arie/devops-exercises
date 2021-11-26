@@ -1,5 +1,7 @@
 ## OpenShift - Projects 101
 
+### Objectives
+
 In a newly deployed cluster (preferably) perform and answer the following instructions and questions, using CLI only
 
 1. Login to the OpenShift cluster

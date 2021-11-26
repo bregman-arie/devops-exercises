@@ -44,6 +44,7 @@ Note: Provided solutions are using the AWS console. It's recommended you'll use 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Auto Scaling Groups Basics | ASG | [Exercise](auto_scaling_groups_basics.md) | [Solution](solutions/auto_scaling_groups_basics.md) | Easy |
+| Dynamic Scaling Policy | ASG, Policies | [Exercise](asg_dynamic_scaling_policy.md) | [Solution](solutions/asg_dynamic_scaling_policy.md) | Easy |
 
 #### AWS - Lambda
 
@@ -1287,11 +1288,52 @@ One way is to use CloudWatch alarms where an alarm will monitor a metric and bas
 </b></details>
 
 <details>
-<summary>Provide examples to metrics/rules used for auto scaling</summary><br><b>
+<summary>What are some metrics/rules used for auto scaling</summary><br><b>
 
 * Network In/Out
 * Number of requests on ELB per instance
 * Average CPU, RAM usage
+</b></details>
+
+<details>
+<summary>What is dynamic Scaling policy in regards to Auto Scaling Groups?</summary><br><b>
+
+A policy in which scaling will occur automatically based on different metrics.
+
+There are 3 types:
+
+1. Target Tracking Scaling: scale when the baseline changes (e.g. CPU is over 60%)
+2. Step Scaling: more granular scaling where you can choose different actions for different metrics values (e.g. when CPU less than 20%, remove one instance. When CPU is over 40%, add 3 instances)
+3. Scheduled Actions: set in advance scaling for specific period of time (e.g. add instances on Monday between 10:00 am to 11:00 am)
+</b></details>
+
+<details>
+<summary>What is a predictive scaling policy in regards to Auto Scaling Groups?</summary><br><b>
+
+Scale by analyzing historical load and schedule scaling based on forecast load.
+</b></details>
+
+<details>
+<summary>Explain scaling cooldowns in regards to Auto Scaling Groups</summary><br><b>
+
+During a scaling cooldown, ASG will not terminate or launch additional instances. The cooldown happens after scaling activity and the reason for this behaviour is that some metrics have to be collected and stabilize before another scaling operating can take place.
+</b></details>
+
+<details>
+<summary>Explain the default ASG termination policy</summary><br><b>
+
+1. It finds the AZ which the most number of EC2 instnaces
+2. If number of instances > 1, choose the with oldest launch configuration, template and terminate it
+</b></details>
+
+<details>
+<summary>True or False? by deafult, ASG tries to balance the number of instances across AZ</summary><br><b>
+
+True, this is why when it terminates instances, it chooses the AZ with the most instances.
+</b></details>
+
+<details>
+<summary>Explain Lifecycle Hooks in regards to Auto Scaling Groups</summary><br><b>
 </b></details>
 
 #### AWS - Security

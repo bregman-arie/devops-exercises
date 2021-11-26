@@ -1,4 +1,6 @@
-## Projects 101 - Solution
+## OpenShift - Projects 101
+
+### Objectives
 
 1. Login to the OpenShift cluster -> `oc login -u YOUR_USER -p YOUR_PASSWORD_OR_TOKEN`
 2. List all the projects -> `oc get projects`(The output should be empty in a newly created cluster)
