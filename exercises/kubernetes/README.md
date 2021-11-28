@@ -15,7 +15,7 @@
 | Operating ReplicaSets | ReplicaSet | [Exercise](replicaset_02.md) | [Solution](solutions/replicaset_02_solution.md)
 | ReplicaSets Selectors | ReplicaSet | [Exercise](replicaset_03.md) | [Solution](solutions/replicaset_03_solution.md)
 
-### Kubernetes Self Assesment
+### Kubernetes Self Assessment
 
 <details>
 <summary>What is Kubernetes? Why organizations are using it?</summary><br><b>
@@ -58,7 +58,7 @@ metadata, kind and apiVersion
 </b></details>
 
 <details>
-<summary>What actions or operations you consider as best practices when it comes to Kuberentes?</summary><br><b>
+<summary>What actions or operations you consider as best practices when it comes to Kubernetes?</summary><br><b>
 
   - Always make sure Kubernetes YAML files are valid. Applying automated checks and pipelines is recommended.
   - Always specify requests and limits to prevent situation where containers are using the entire cluster memory which may lead to OOM issue
@@ -749,7 +749,7 @@ It specifies what do with an incoming request to the Kubernetes cluster that isn
 <details>
 <summary>How to configure a default backend?</summary><br><b>
 
-Create Service resource that specifies the name of the default backend as reflected in `kubectl desrcibe ingress ...` and the port under the ports section.
+Create Service resource that specifies the name of the default backend as reflected in `kubectl describe ingress ...` and the port under the ports section.
 </b></details>
 
 <details>
@@ -967,7 +967,7 @@ In simpler words, Network Policies specify how pods are allowed/disallowed to co
 <summary>What are some use cases for using Network Policies?</summary><br><b>
 
   - Security:  You want to prevent from everyone to communicate with a certain pod for security reasons
-  - Controling network traffic: You would like to deny network flow between two specific nodes
+  - Controlling network traffic: You would like to deny network flow between two specific nodes
 </b></details>
 
 <details>
@@ -1054,7 +1054,7 @@ When using the default namespace alone, it becomes hard over time to get an over
 
 Namespaces can also be useful for managing Blue/Green environments where each namespace can include a different version of an app and also share resources that are in other namespaces (namespaces like logging, monitoring, etc.).
 
-Another use case for namespaces is one cluster, multiple teams. When multiple teams use the same cluster, they might end up stepping on each others toes. For example if they end up creating an app with the same name it means one of the teams overriden the app of the other team because there can't be too apps in Kubernetes with the same name (in the same namespace).
+Another use case for namespaces is one cluster, multiple teams. When multiple teams use the same cluster, they might end up stepping on each others toes. For example if they end up creating an app with the same name it means one of the teams overridden the app of the other team because there can't be too apps in Kubernetes with the same name (in the same namespace).
 </b></details>
 
 <details>
@@ -1729,7 +1729,7 @@ Scale the number of pods automatically on observed CPU utilization.
 </b></details>
 
 <details>
-<summary>Describe how you one proceeds to run a containerised web app in K8s, which should be reachable from a public URL.</summary><br><b>
+<summary>Describe how you one proceeds to run a containerized web app in K8s, which should be reachable from a public URL.</summary><br><b>
 </b></details>
 
 <details>

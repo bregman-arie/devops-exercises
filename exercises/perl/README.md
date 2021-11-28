@@ -95,7 +95,7 @@ foreach (@numbers) {
 # Output: 12345
 
 
-# "$#" returns the max index of an array. That's the reason because we can iterate accesing to the array from the index 0 to the max index.
+# "$#" returns the max index of an array. That's the reason because we can iterate accessing to the array from the index 0 to the max index.
 for my $i (0..$#numbers) {
     print($numbers[$i]);
 }
@@ -148,7 +148,7 @@ while(my ($city, $country) = each %capital_cities) {
 <details>
 <summary>What is a Perl subroutine? How to define it?</summary><br><b>
 
-It's the perl model for user defined functions (this is also called function like other programming languages). We can define a subroute with the keyword `sub`. 
+It's the perl model for user defined functions (this is also called function like other programming languages). We can define a subroutine with the keyword `sub`. 
 
 ```
 sub hello {
@@ -172,7 +172,7 @@ sub power {
 &power(2, 3);
 ```
 
-- Individual assigment: We should access to every element of the `@_` array. It starts from zero.
+- Individual assignment: We should access to every element of the `@_` array. It starts from zero.
 
 ```
 sub power {
@@ -480,7 +480,7 @@ use parent -norequire, 'A';
 
 sub new { return bless {}, shift; };
 
-# Instance class `B` allows call the inherated method
+# Instance class `B` allows call the inherited method
 my $b = B->new();
 $b->printA();
 ```
