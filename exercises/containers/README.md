@@ -12,7 +12,7 @@
 |Containerize an application | Containerization |[Exercise](containerize_app.md)|[Solution](solutions/containerize_app.md)
 |Multi-Stage Builds|Multi-Stage Builds|[Exercise](multi_stage_builds.md)|[Solution](solutions/multi_stage_builds.md)
 
-### Containers Self Assesment
+### Containers Self Assessment
 
 <details>
 <summary>What is a Container?</summary><br><b>
@@ -506,7 +506,7 @@ Docker/Podman daemon redirects output from container to Docker CLI which redirec
 
 <details>
 <summary>Describe difference between cgroups and namespaces </summary><br><b>
-cgroup: Control Groups provide a mechanism for aggregating/partitioning sets of tasks, and all their future children, into hierarchical groups with specialized behaviour.
+cgroup: Control Groups provide a mechanism for aggregating/partitioning sets of tasks, and all their future children, into hierarchical groups with specialized behavior.
 namespace: wraps a global system resource in an abstraction that makes it appear to the processes within the namespace that they have their own isolated instance of the global resource.
 
 In short:
