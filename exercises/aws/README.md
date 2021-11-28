@@ -46,6 +46,14 @@ Note: Provided solutions are using the AWS console. It's recommended you'll use 
 | Auto Scaling Groups Basics | ASG | [Exercise](auto_scaling_groups_basics.md) | [Solution](solutions/auto_scaling_groups_basics.md) | Easy |
 | Dynamic Scaling Policy | ASG, Policies | [Exercise](asg_dynamic_scaling_policy.md) | [Solution](solutions/asg_dynamic_scaling_policy.md) | Easy |
 
+#### AWS - Databases
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| MySQL DB | RDS | [Exercise](mysql_db.md) | [Solution](solutions/mysql_db.md) | Easy |
+| Aurora DB | RDS | [Exercise](aurora_db.md) | [Solution](solutions/aurora_db.md) | Easy |
+| ElastiCache | ElastiCache | [Exercise](elasticache.md) | [Solution](solutions/elasticache.md) | Easy |
+
 #### AWS - Lambda
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
@@ -802,6 +810,25 @@ True. This is because the operating system isn't restarted or stopped.
 * Usually combined with Reserved Instances and Saving Plans to achieve cost saving
 </b></details>
 
+##### AWS EC2 - Launch Template
+
+<details>
+<summary>What is a launch template?</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html): "You can create a launch template that contains the configuration information to launch an instance. You can use launch templates to store launch parameters so that you do not have to specify them every time you launch an instance"
+</b></details>
+
+<details>
+<summary>What is the difference between Launch Configuration and Launch Template?</summary><br><b>
+
+Launch configuration is a legacy form of Launch Template that must be recreated every time you would like to update the configuration.
+
+In addition, launch template has the clear benefits of:
+  * Provision both On-Demand and Spot instances
+  * supporting multiple versions
+  * support creating parameters subsets (used for re-use and inheritance)
+</b></details>
+
 #### AWS - Lambda
 
 <details>
@@ -1164,7 +1191,7 @@ Application Load Balancer (routing based on different endpoints + HTTP is used).
 * EC2 tasks
 * ECS instances
 * Lambda functions
-* IP Addresses
+* Private IP Addresses
 </b></details>
 
 <details>
@@ -1323,7 +1350,7 @@ During a scaling cooldown, ASG will not terminate or launch additional instances
 <summary>Explain the default ASG termination policy</summary><br><b>
 
 1. It finds the AZ which the most number of EC2 instnaces
-2. If number of instances > 1, choose the with oldest launch configuration, template and terminate it
+2. If number of instances > 1, choose the one with oldest launch configuration, template and terminate it
 </b></details>
 
 <details>
@@ -1333,7 +1360,15 @@ True, this is why when it terminates instances, it chooses the AZ with the most 
 </b></details>
 
 <details>
-<summary>Explain Lifecycle Hooks in regards to Auto Scaling Groups</summary><br><b>
+<summary>Explain Lifecycle hooks in regards to Auto Scaling Groups</summary><br><b>
+
+Lifecycle hooks allows you perform extra steps before the instance goes in service (During pending state) or before it terminates (during terminating state).
+</b></details>
+
+<details>
+<summary>If you use ASG and you would like to run extra steps before the instance goes in service, what will you use? </summary><br><b>
+
+Lifecycle hooks in pending state.
 </b></details>
 
 #### AWS - Security
@@ -1474,11 +1509,188 @@ Amazon definition: "AWS Certificate Manager is a service that lets you easily pr
 Learn more [here](https://aws.amazon.com/certificate-manager)
 </b></details>
 
-#### AWS Databases
+#### AWS - Databases
+
+##### AWS Databases - RDS
 
 <details>
 <summary>What is AWS RDS?</summary><br><b>
+
+* Relational Database Service
+* Managed DB service (you can't ssh the machine)
+* Supports multiple DBs: MySQL, Oracle, Aurora (AWS Proprietary), ...
 </b></details>
+
+<details>
+<summary>Why to use AWS RDS instead of launching an EC2 instance and install a database on it?</summary><br><b>
+
+AWS RDS is a managed service, that means it's automatically provisioned and patched for you.
+
+In addition, it provides you with continuous backup (and the ability to restore from any point of time), scaling capability (both horizontal and vertical), monitoring dashboard and read replicas.
+</b></details>
+
+<details>
+<summary>What do you know about RDS backups?</summary><br><b>
+
+* Automated backups
+* Full daily backup (done during maintenance window)
+* Transactions logs backup every 5 minutes
+* Retention can be increased and by default it's 7 days
+</b></details>
+
+<details>
+<summary>Explain AWS RDS Storage Auto Scaling</summary><br><b>
+
+* RDS storage can automatically be increased upon lack in storage
+* The user needs to set "Maximum Storage Threshold" to have some limit on storage scaling
+* Use cases: applications with unpredictable workloads
+* Supports multiple RDS database engines
+</b></details>
+
+<details>
+<summary>Explain Amazon RDS Read Replicas</summary><br><b>
+
+[AWS Docs](https://aws.amazon.com/rds/features/read-replicas): "Amazon RDS Read Replicas provide enhanced performance and durability for RDS database (DB) instances. They make it easy to elastically scale out beyond the capacity constraints of a single DB instance for read-heavy database workloads."
+
+In simpler words, it allows you to scale your reads.
+</b></details>
+
+<details>
+<summary>True or False? RDS read replicas are supported within az, cross az and cross region</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? RDS read replicas are asynchronous</summary><br><b>
+
+True. This is done so the reads are consistent.
+</b></details>
+
+<details>
+<summary>True or False? Amazon RDS supports MongoDB</summary><br><b>
+
+False. RDS is relational database and MongoDB is a NoSQL db.
+</b></details>
+
+<details>
+<summary>What are some use cases for using RDS read replicas?</summary><br><b>
+
+You have a main application which works against your database but you would like to add additional app, one used for logging, analytics, ... so you prefer it won't use the same database. In this case, you create a read replica instance and the second application works against that instance.
+</b></details>
+
+<details>
+<summary>Explain RDS Multi Availability Zone</summary><br><b>
+
+* RDS multi AZ used mainly for disaster recovery purposes
+* There is an RDS master instance and in another AZ an RDS standby instance
+* The data is synced synchronously between them
+* The user, application is accessing one DNS name and where there is a failure with the master instance, the DNS name moves to the standby instance, so the failover done automatically
+</b></details>
+
+<details>
+<summary>True or False? Moving AWS RDS from single AZ to multi AZ is an operation with downtime (meaning there is a need to stop the DB)</summary><br><b>
+
+False. It's a zero downtime operation = no need to stop the database.
+</b></details>
+
+<details>
+<summary>How AWS RDS switches from single AZ to multi AZ?</summary><br><b>
+
+1. Snapshot is taken by RDS
+2. The snapshot is restored to another, standby, RDS instance
+3. Synchronization is enabled between the two instances
+</b></details>
+
+<details>
+<summary>True or False? RDS encryption should be defined at launch time</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? in regards to RDS, replicas can be encrypted even if the master isn't encrypted</summary><br><b>
+
+False
+</b></details>
+
+<details>
+<summary>How to make RDS snapshots encrypted?</summary><br><b>
+
+* If RDS database is encrypted then, the snapshot itself is also encrypted
+* If RDS database isn't encrypted then, the snapshot itself isn't encrypted and then you can copy the un-encrypted snapshot to created an encrypted copy
+</b></details>
+
+<details>
+<summary>How to encrypt an un-encrypted RDS instance?</summary><br><b>
+
+Create a copy of the un-encrypted instance -> copy the snapshot to create an encrypted copy -> restore the database from the encrypted snapshot -> migrate the application to work against the copied instance -> remove the original DB instance
+</b></details>
+
+<details>
+<summary>How IAM authentication works with RDS?</summary><br><b>
+
+For example:
+
+1. EC2 instance uses IAM role to make an API call to get auth token
+2. The token, with SSL encryption, is used for accessing the RDS instance
+
+Note: The token has a lifetime of 15 minutes
+</b></details>
+
+##### AWS Databases - Aurora
+
+<details>
+<summary>What do you know about Amazon Aurora?</summary><br><b>
+
+* A MySQL & Postgresql based relational database.
+* Proprietary technology from AWS
+* The default database proposed for the user when using RDS for creating a database.
+* Storage automatically grows in increments of 10 GiB
+* HA native - failover in instant
+* Has better performances over MySQL and Postgres
+* Supports 15 replicas (while MySQL supports 5)
+</b></details>
+
+<details>
+<summary>True or False? Aurora stores 4 copies of your data across 2 availability zones</summary><br><b>
+
+False. It stores 6 copies across 3 availability zones
+</b></details>
+
+<details>
+<summary>True or False? Aurora support self healing where corrupted data replaced by doing peer-to-peer replication</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? Aurora storage is striped across 20 volumes</summary><br><b>
+
+False. 100 volumes.
+</b></details>
+
+<details>
+<summary>True or False? It's possible to scale Aurora replicas</summary><br><b>
+
+True. If your read replica instances exhaust their CPU, you can scale by adding more instances
+</b></details>
+
+<details>
+<summary>Explain Aurora Serverless. What use cases is it good for?</summary><br><b>
+
+* Aurora serverless is an automated database instantiation and it's auto scaled based on an actual usage
+* It's good mainly for infrequent or unpredictable workflows
+* You pay per second so it can eventually be more cost effective
+</b></details>
+
+<details>
+<summary>What is the use case for Aurora multi-master?</summary><br><b>
+
+Aurora multi-master is perfect for a use case where you want to have instant failover for write node.
+</b></details>
+
+##### AWS Databases - DynamoDB
 
 <details>
 <summary>What is AWS DynamoDB?</summary><br><b>
@@ -1508,6 +1720,65 @@ Amazon definition: "Amazon DynamoDB Accelerator (DAX) is a fully managed, highly
 Learn more [here](https://aws.amazon.com/dynamodb/dax)
 </b></details>
 
+##### AWS Databases - ElastiCache
+
+<details>
+<summary>What is AWS ElastiCache? In what use case should it be used?</summary><br><b>
+
+Amazon Elasticache is a fully managed Redis or Memcached in-memory data store.<br>
+It's great for read-intensive workloads where the common data/queries are cached and apps/users access the cache instead of the primary database.
+</b></details>
+
+<details>
+<summary>Describe the workflow of an application using the cache in AWS</summary><br><b>
+
+1. The application performs a query against the DB. There is a check to see if the data is in the cache
+  1. If it is, it's a "cache hit" and the data is retrieved from there
+  2. If it's not in there, it's a "cache miss" and the data is pulled from the database
+   1. The data is then also written to the cache (assuming it is often accessed) and next time the user queries for the same data, it might be retrieved from the cache (depends on how much time passed and whether this specific data was invalidated or not)
+</b></details>
+
+<details>
+<summary>How can you make an application stateless using ElastiCache?</summary><br><b>
+
+Let's say you have multiple instances running the same application and every time you use the application, it creates a user session.<br>
+This user session can be stored in ElastiCache so even if the user contacts a different instance of the application, the application can retrieve the session from the ElsatiCache.
+</b></details>
+
+<details>
+<summary>You need a highly available cache with backup and restore features. Which one would you use?</summary><br><b>
+
+ElastiCache Redis.
+</b></details>
+
+<details>
+<summary>You need a cache with read replicas that can be scaled and one support multi AZ. Which one would you use?</summary><br><b>
+
+ElastiCache Redis.
+</b></details>
+
+<details>
+<summary>You need a cache that supports sharding and built with multi-threaded architecture in mind. Which one would you use?</summary><br><b>
+
+ElastiCache Memcached
+</b></details>
+
+<details>
+<summary>True or False? ElastiCache doesn't supports IAM authentication</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>What patterns are there for loading data into the cache?</summary><br><b>
+
+* Write Through: add or update data in the cache when the data is written to the DB
+* Lazy Loading: all the read data is cached
+* Session Store: store temporary session data in cache
+</b></details>
+
+##### AWS Databases - RedShift
+
 <details>
 <summary>What is AWS Redshift and how is it different than RDS?</summary><br><b>
 
@@ -1521,20 +1792,6 @@ cloud data warehouse
 * If confirmed, you can query for running queries and cancel the irrelevant queries
 * Check for connection leaks (query for running connections and include their IP)
 * Check for table locks and kill irrelevant locking sessions
-</b></details>
-
-<details>
-<summary>What is AWS ElastiCache? For what cases is it used?</summary><br><b>
-
-Amazon Elasticache is a fully managed Redis or Memcached in-memory data store.
-It's great for use cases like two-tier web applications where the most frequently accesses data is stored in ElastiCache so response time is optimal.
-</b></details>
-
-<details>
-<summary>What is Amazon Aurora</summary><br><b>
-
-A MySQL & Postgresql based relational database. Also, the default database proposed for the user when using RDS for creating a database.
-Great for use cases like two-tier web applications that has a MySQL or Postgresql database layer and you need automated backups for your application.
 </b></details>
 
 <details>
@@ -1555,14 +1812,9 @@ Learn more [here](https://aws.amazon.com/documentdb)
 EBS
 </b></details>
 
-<details>
-<summary>Explain Amazon RDS Read Replicas</summary><br><b>
+#### AWS - Networking
 
-AWS definition: "Amazon RDS Read Replicas provide enhanced performance and durability for RDS database (DB) instances. They make it easy to elastically scale out beyond the capacity constraints of a single DB instance for read-heavy database workloads."
-Read more about [here](https://aws.amazon.com/rds/features/read-replicas)
-</b></details>
-
-#### AWS Networking
+##### AWS Network - VPC
 
 <details>
 <summary>What is VPC?</summary><br><b>
@@ -2304,7 +2556,7 @@ Learn more about it [here](https://aws.amazon.com/sqs)
 * Application/Service should survive (= operate as usual) a data center disaster
 </b></details>
 
-#### AWS - Production
+#### AWS - Production Operations and Migrations
 
 <details>
 <summary>Describe in high-level how to upgrade a system on AWS with (near) zero downtime</summary><br><b>
@@ -2361,4 +2613,53 @@ Missing security group or misconfigured one.
 For example, if you go to your instances in the AWS console you might see that the instances under your NLB are in "unhealthy status" and if you didn't create a dedicated security group for your NLB, that means that the security group used is the one attached to the EC2 instances.
 
 Go to the security group of your instance(s) and enable the traffic that NLB should forward (e.g. TCP on port 80).
+</b></details>
+
+#### AWS - Scenarios
+
+<details>
+<summary>You have a load balancer running and behind it 5 web servers. Users complain that every time they move to a new page, they have to authenticate, instead of doing it once. How can you solve it?</summary><br><b>
+
+
+Enable sticky sessions. This way, the user keep working against the same instance, instead of being redirected to a different instance every request.
+</b></details>
+
+<details>
+<summary>You have a load balancer running and behind it 5 web servers. Users complain that some times when they try to use the application it doesn't works. You've found out that sometimes some of the instances crash. How would you deal with it?</summary><br><b>
+
+One possible way is to use health checks with the load balancer to ensure the instances are ready to be used before forwarding traffic to them.
+</b></details>
+
+<details>
+<summary>You run your application on 5 EC2 instances on one AZ and on 10 EC2 instances in another AZ. You distribute traffic between all of them using a network load balancer, but it seems that instances in one AZ have higher CPU rates than the instances in the other AZ. What might be the issue and how to solve it?</summary><br><b>
+
+It's possible that traffic is distributed evenly between the AZs but that doesn't mean it's distributed equally across all instances evenly.
+
+To distribute it evenly between all the instances, you have to enable cross-zone load balancing.
+</b></details>
+
+<details>
+<summary>You are running an ALB that routes traffic using two hostnames: a.b.com and d.e.com. Is it possible to configure HTTPS for both of the hostnames?</summary><br><b>
+
+Yes, using SNI (Server Name Indication) each application can has its own SSL certificate (This is supported from 2017).
+</b></details>
+
+<details>
+<summary>You have set up read replicas to scale reads but users complain that when they update posts in forums, the posts are not being updated. What may cause this issue?</summary><br><b>
+
+Read Replicas use asynchronous replication so it's possible users access a read replica instance that wasn't synced yet.
+</b></details>
+
+#### AWS - Architecture Design
+
+<details>
+<summary>You've been asked to design an architecture for high performance and low-latency application (millions of requests per second). Which load balancer would you use?</summary><br><b>
+
+Network Load Balancer
+</b></details>
+
+<details>
+<summary>What should you use for scaling reads?</summary><br><b>
+
+You can use an ElastiCache cluster or RDS Read Replicas.
 </b></details>

@@ -3065,6 +3065,27 @@ True
 
 </b></details>
 
+#### Python - Loops
+
+<details>
+<summary>What is the result of the following block of code?
+
+```
+x = ['a', 'b', 'c']
+for i in x:
+    if i == 'b':
+        x = ['z', 'y']
+    print(i)
+```
+</summary><br><b>
+
+```
+a
+b
+c
+```
+</b></details>
+
 #### Python - OOP
 
 <details>
@@ -6985,6 +7006,12 @@ The server didn't receive a response from another server it communicates with in
 
 <details>
 <summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with and which one do you prefer to use?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain what is "X-Forwarded-For"</summary><br><b>
+
+[Wikipedia](https://en.wikipedia.org/wiki/X-Forwarded-For): "The X-Forwarded-For (XFF) HTTP header field is a common method for identifying the originating IP address of a client connecting to a web server through an HTTP proxy or load balancer."
 </b></details>
 
 #### Load Balancers

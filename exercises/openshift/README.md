@@ -4,7 +4,8 @@
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| My First Project | Projects | [Exercise](projects_101.md) | [Solution](solutions/projects_101.md)
+| Projects 101 | Projects | [Exercise](projects_101.md) | [Solution](solutions/projects_101.md)
+| My First Application | Applications | [Exercise](my_first_app.md) | [Solution](solutions/my_first_app.md)
 
 ### OpenShift Self Assessment
 
@@ -18,13 +19,32 @@ It can be used for deploying applications while having minimal management overhe
 <details>
 <summary>How OpenShift is related to Kubernetes?</summary><br><b>
 
-It's built on top of Kubernetes while defining its own custom resources in addition to the built ones.
+OpenShift is build on top of Kubernetes while defining its own custom resources in addition to the built-in resources.
 </b></details>
 
 <details>
 <summary>True or False? OpenShift is a IaaS (infrastructure as a service) solution</summary><br><b>
 
 False. OpenShift is a PaaS (platform as a service) solution.
+</b></details>
+
+<details>
+<summary>True or False? OpenShift CLI supports everything kubectl supports, along with additional functionality</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>OpenShift supports many resources. How to get a list of all these resources?</summary><br><b>
+
+`oc api-resources`
+</b></details>
+
+<details>
+<summary>Explain OpenShift CLIs like <code>oc</code> and <code>odo</code></summary><br><b>
+
+oc is used for creating applications, but also for administrating OpenShift cluster<br>
+odo is used solely for managing applications on OpenShift (mainly from developers' perspective) and has nothing to do with administrating the cluster
 </b></details>
 
 ## OpenShift - Architecture
@@ -69,7 +89,15 @@ In simpler words, think about it as an isolated environment for users to manage 
 `oc adm policy add-role-to-user <role> <user> -n <project>`
 </b></details>
 
-## OpenShift - Images
+#### OpenShift - Applications
+
+<details>
+<summary>How to create a MySQL application using an image from Docker Hub?</summary><br><b>
+
+`oc new-app mysql`
+</b></details>
+
+#### OpenShift - Images
 
 <details>
 <summary>What is an image stream?</summary><br><b>
