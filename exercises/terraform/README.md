@@ -103,7 +103,7 @@ True
   
   - Arguments: resource specific configurations
   - Attributes: values exposed by the resource in a form of `resource_type.resource_name.attribute_name`. They are set by the provider or API usually.
-  - Meta-arguments: Functions of Terraform to change resource's behaviour
+  - Meta-arguments: Functions of Terraform to change resource's behavior
 </b></details>
 
 #### Terraform - Providers
@@ -197,7 +197,7 @@ It doesn't show its value when you run `terraform apply` or `terraform plan` but
 </b></details>
 
 <details>
-<summary>True or Fales? If an expression's result depends on a sensitive variable, it will be treated as sensitive as well</summary><br><b>
+<summary>True or False? If an expression's result depends on a sensitive variable, it will be treated as sensitive as well</summary><br><b>
 
 True
 </b></details>
@@ -209,7 +209,7 @@ True
   - Environment variable
   - Using `-var` or `-var-file`
   
-According to varaible precedence, which source will be used first?</summary><br><b>
+According to variable precedence, which source will be used first?</summary><br><b>
 
 The order is:
 
@@ -409,7 +409,7 @@ The Terraform Registry provides a centralized location for official and communit
 <details>
 <summary>What is Terraform import?</summary><br><b>
 
-Terraform import is used to import existing infrastucture. It allows you to bring resources created by some other means (eg. manually launched cloud resources) and bring it under Terraform management. 
+Terraform import is used to import existing infrastructure. It allows you to bring resources created by some other means (eg. manually launched cloud resources) and bring it under Terraform management. 
 </b></details>
 
 <details>

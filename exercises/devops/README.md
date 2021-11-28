@@ -115,7 +115,7 @@ Things to think about:
 <details>
 <summary>What is Version Control?</summary><br><b>
 	
-* Version control is the sytem of tracking and managing changes to software code.
+* Version control is the system of tracking and managing changes to software code.
 * It helps software teams to manage changes to source code over time.
 * Version control also helps developers move faster and allows software teams to preserve efficiency and agility as the team scales to include more developers.
 </b></details>
@@ -281,7 +281,7 @@ Read about Chaos Engineering [here](https://en.wikipedia.org/wiki/Chaos_engineer
 <details>
 <summary>What is "infrastructure as code"? What implementation of IAC are you familiar with?</summary><br><b>
 
-IAC (infrastructure as code) is a declerative approach of defining infrastructure or architecture of a system. Some implementations are ARM templates for Azure and Terraform that can work across multiple cloud providers.
+IAC (infrastructure as code) is a declarative approach of defining infrastructure or architecture of a system. Some implementations are ARM templates for Azure and Terraform that can work across multiple cloud providers.
 </b></details>
 
 <details>
@@ -346,7 +346,7 @@ This situation might lead to bugs which hard to identify and reproduce.
 
 <details>
 <summary>How to deal with a configuration drift?</summary><br><b>
-	Configuration drift can be avoided with desired state configuration (DSC) implementation. Desired state configuration can be a declarative file that defined how a system should be. There are tools to enforce desired state such a terraform or azure dsc. There are incramental or complete strategies.
+	Configuration drift can be avoided with desired state configuration (DSC) implementation. Desired state configuration can be a declarative file that defined how a system should be. There are tools to enforce desired state such a terraform or azure dsc. There are incremental or complete strategies.
 </b></details>
 
 <details>

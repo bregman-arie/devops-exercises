@@ -328,8 +328,8 @@ Let's take for example the following instance type: m5.large
 <details>
 <summary>True or False? The following are instance types available for a user in AWS:
 
-  * Compute optimizied
-  * Network optimizied
+  * Compute optimized
+  * Network optimized
   * Web optimized</summary><br><b>
 
 False. From the above list only compute optimized is available.
@@ -572,7 +572,7 @@ True.
   * Convertible Reserved Instances
   * Scheduled Reserved Instances</summary><br><b>
 
-* Convertible Reserved Instances: used for long running workloads but used when instance type might change during the period of time it's resreved
+* Convertible Reserved Instances: used for long running workloads but used when instance type might change during the period of time it's reserved
 * Scheduled Reserved Instances: when you need to reserve an instance for a long period but you don't need it continuously (so for example you need it only in the morning)
 </b></details>
 
