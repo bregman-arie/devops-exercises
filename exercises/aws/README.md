@@ -2,7 +2,8 @@
 
 ### AWS Exercises
 
-Note: Provided solutions are using the AWS console. It's recommended you'll use IaC technologies to solve the exercises (e.g. Terraform).
+Note: Provided solutions are using the AWS console. It's recommended you'll use IaC technologies to solve the exercises (e.g. Terraform).<br>
+Note 2: Some of the exercises cost money and can't be performed using the free tier/resources
 
 #### AWS - IAM
 
@@ -46,6 +47,13 @@ Note: Provided solutions are using the AWS console. It's recommended you'll use 
 | Auto Scaling Groups Basics | ASG | [Exercise](auto_scaling_groups_basics.md) | [Solution](solutions/auto_scaling_groups_basics.md) | Easy |
 | Dynamic Scaling Policy | ASG, Policies | [Exercise](asg_dynamic_scaling_policy.md) | [Solution](solutions/asg_dynamic_scaling_policy.md) | Easy |
 
+#### AWS - VPC
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| My First VPC | VPC | [Exercise](new_vpc.md) | [Solution](solutions/new_vpc.md) | Easy |
+| Subnets | VPC | [Exercise](subnets.md) | [Solution](solutions/subnets.md) | Easy |
+
 #### AWS - Databases
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
@@ -53,6 +61,13 @@ Note: Provided solutions are using the AWS console. It's recommended you'll use 
 | MySQL DB | RDS | [Exercise](mysql_db.md) | [Solution](solutions/mysql_db.md) | Easy |
 | Aurora DB | RDS | [Exercise](aurora_db.md) | [Solution](solutions/aurora_db.md) | Easy |
 | ElastiCache | ElastiCache | [Exercise](elasticache.md) | [Solution](solutions/elasticache.md) | Easy |
+
+#### AWS - DNS
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+Register Domain | Route 53 | [Exercise](register_domain.md) | [Solution](solutions/register_domain.md) | Easy |
+Creating Records | Route 53 | [Exercise](creating_records.md) | [Solution](solutions/creating_records.md) | Easy |
 
 #### AWS - Lambda
 
@@ -1638,6 +1653,12 @@ For example:
 Note: The token has a lifetime of 15 minutes
 </b></details>
 
+<details>
+<summary>True or False? In case of RDS (not Aurora), read replicas require you to change the SQL connection string</summary><br><b>
+
+True. Since read replicas add endpoints, each with its own DNS name, you need to modify your app to reference these new endpoints to balance the load read.
+</b></details>
+
 ##### AWS Databases - Aurora
 
 <details>
@@ -1812,9 +1833,7 @@ Learn more [here](https://aws.amazon.com/documentdb)
 EBS
 </b></details>
 
-#### AWS - Networking
-
-##### AWS Network - VPC
+#### AWS - VPC
 
 <details>
 <summary>What is VPC?</summary><br><b>
@@ -1824,9 +1843,29 @@ Read more about it [here](https://aws.amazon.com/vpc).
 </b></details>
 
 <details>
+<summary>True or False? By default, any new account has a default VPC</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? Default VPC doesn't have internet connectivity and any launched EC2 will only have a private IP assigned</summary><br><b>
+
+False. The default VPC has internet connectivity and any launched EC2 instance gets a public IPv4 address.
+
+In addition, any launched EC2 instance gets a public and private DNS names.
+</b></details>
+
+<details>
 <summary>True or False? VPC spans multiple regions</summary><br><b>
 
 False
+</b></details>
+
+<details>
+<summary>True or False? It's possible to have multiple VPCs in one region</summary><br><b>
+
+True. As of today, the soft limit is 5.
 </b></details>
 
 <details>
@@ -1836,10 +1875,36 @@ True. Just to clarify, a single subnet resides entirely in one AZ.
 </b></details>
 
 <details>
+<summary>You have noticed your VPC's subnets (which use x.x.x.x/20 CIDR) have 4096 available IP addresses although this CIDR should have 4096 addresses. What is the reason for that?</summary><br><b>
+
+AWS reserves 5 IP addresses in each subnet - first 4 and the last one, and so they aren't available for use.
+</b></details>
+
+<details>
+<summary>What AWS uses the 5 reserved IP addresses for?</summary><br><b>
+
+x.x.x.0 - network address
+x.x.x.1 - VPC router
+x.x.x.2 - DNS mapping
+x.x.x.3 - future use
+x.x.x.255 - broadcast address
+</b></details>
+
+<details>
 <summary>What is an Internet Gateway?</summary><br><b>
 
-"component that allows communication between instances in your VPC and the internet" (AWS docs).
-Read more about it [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
+[AWS Docs](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html): "component that allows communication between instances in your VPC and the internet"
+
+In addition it's good to know that IGW is:
+  * Highly available and redundant
+  * Not porivding internet access by its own (you need route tables to be edited)
+  * Created separately from VPC
+</b></details>
+
+<details>
+<summary>True or False? One or more VPCs can be attached to one Internet Gateway</summary><br><b>
+
+False. Only one VPC can be attached to one IGW and vice versa
 </b></details>
 
 <details>
@@ -1864,6 +1929,10 @@ False. Only one internet gateway can be attached to a single VPC.
 <summary>You've restarted your EC2 instance and the public IP has changed. How would you deal with it so it won't happen?</summary><br><b>
 
 Use Elastic IP which provides you a fixed IP address.
+</b></details>
+
+<details>
+<summary>When creating a new VPC, there is an option called "Tenancy". What is it used for?</summary><br><b>
 </b></details>
 
 <details>
@@ -1915,6 +1984,14 @@ Allows you to connect your corporate network to AWS network.
 <summary>What would you use if you need a fixed public IP for your EC2 instance?</summary><br><b>
 
 Elastic IP
+</b></details>
+
+<details>
+<summary>Kratos, your colleague, decided to use a subnet of /27 because he needs 29 IP addresses for EC2 instances. Is Kratos right?</summary><br><b>
+
+No. Since AWS reserves 5 IP addresses for every subnet, Kratos will have 32-5=27 addresses and this is less than what he needs (29).
+
+It's better if Kratos uses a subnet of size /26 but good luck telling him that.
 </b></details>
 
 ##### AWS EC2 - ENI
@@ -2188,12 +2265,6 @@ Amazon S3 Transfer Acceleration
 </b></details>
 
 <details>
-<summary>Which service would you use for distributing incoming requests across multiple?</summary><br><b>
-
-Route 53
-</b></details>
-
-<details>
 <summary>Which services are involved in getting a custom string (based on the input) when inserting a URL in the browser?</summary><br><b>
 
 Lambda - to define a function that gets an input and returns a certain string<br>
@@ -2206,18 +2277,95 @@ API Gateway - to define the URL trigger (= when you insert the URL, the function
 Kinesis
 </b></details>
 
-#### AWS DNS
+#### AWS - DNS (Route 53)
 
 <details>
 <summary>What is Route 53?</summary><br><b>
 
-"Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service..."
+[AWS Route 53](https://aws.amazon.com/route53): "Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service..."
+
 Some of Route 53 features:
-  * Register domain
+  * Register domains
   * DNS service - domain name translations
   * Health checks - verify your app is available
+  * Not a feature but its SLA is 100% availability
+</b></details>
 
-More on Route 53 [here](https://aws.amazon.com/route53)
+<details>
+<summary>What it means that "Route 53 is an Authoritative DNS"?</summary><br><b>
+
+The customer can update DNS records
+</b></details>
+
+<details>
+<summary>What each Route 53 record contains?</summary><br><b>
+
+* Domain/subdomain name (e.g. blipblop.com)
+* Value (e.g. 201.7.202.2)
+* Record type (e.g. A, AAAA, MX)
+* TTL: amount of time the  record is going to be cached
+* Routing Policy: how to respond to queries
+</b></details>
+
+<details>
+<summary>What DNS record types does Route 53 supports?</summary><br><b>
+
+* A
+* AAAA
+* CNAME
+* NS
+* DS
+* CAA
+* SOA
+* MX
+* TXT
+* SPF
+* SRV
+* NAPTR
+* PTR
+</b></details>
+
+<details>
+<summary>What are hosted zones?</summary><br><b>
+
+A container that includes records for defining how to route traffic from a domain and its subdomains
+</b></details>
+
+<details>
+<summary>What types of hosted zones are there?</summary><br><b>
+
+* Public Hosted Zones - include records to specify how to route traffic on the internet
+* Private Hosted Zones - contain records that specify how you traffic within VPC(s)
+</b></details>
+
+<details>
+<summary>What is the difference between CNAME record and an Alias record?</summary><br><b>
+
+CNAME is used for mapping one hostname to any other hostname while Alias is used to map an hostname to an AWS resource.
+
+In addition, Alias work for both root domain (somedomain.com) and non-root domain, while CNAME works only with non-root domain (foo.somedomain.com)
+</b></details>
+
+<details>
+<summary>True or False? Alias record can be set up for an EC2 DNS name</summary><br><b>
+
+False
+</b></details>
+
+<details>
+<summary>True or False? Alias record can be set up for an VPC interface endpoint</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? Alias record is only of type A or AAAA</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What is a routing policy in regards to AWS Route 53?</summary><br><b>
 </b></details>
 
 #### AWS Monitoring & Logging

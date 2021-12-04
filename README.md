@@ -66,7 +66,7 @@
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
     <td align="center"><a href="exercises/openshift/README.md"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
     <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
-    <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
+    <td align="center"><a href="exercises/soft_skills/README.md"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>Soft Skills</b></a></td>
   </tr>
   <tr>
       <td align="center"><a href="exercises/terraform/README.md"><img src="images/terraform.png" width="70px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
@@ -1682,7 +1682,7 @@ There a couple of modes:
 <summary>What is a bridge? How it's added in Linux OS?</summary><br><b>
 </b></details>
 
-##### Linux DNS
+##### Linux - DNS
 
 <details>
 <summary>How to check what is the hostname of the system?</summary><br><b>
@@ -1704,6 +1704,21 @@ You can specify one or more of the following:
  * <code>dig</code>
  * <code>host</code>
  * <code>nslookup</code>
+</b></details>
+
+<details>
+<summary>You run <code>dig codingshell.com</code> and get the following result: 
+
+```
+ANSWER SECTION:
+codingshell.com.	3515	IN	A	185.199.109.153
+```
+
+What is the meaning of the number 3515?
+</summary><br><b>
+
+This is the TTL. When you lookup for an address using a domain/host name, your OS is performing DNS resolution by contacting DNS name servers to get the IP address of the host/domain you are looking for.<br>
+When you get a reply, this reply in cached in your OS for a certain period of time. This is period of time is also known as TTL and this is the meaning of 3515 number - it will be cached for 3515 seconds before removed from the cache and during that period of time, you'll get the value from the cache instead of asking DNS name servers for the address again.
 </b></details>
 
 ##### Linux - Packaging
@@ -1879,6 +1894,13 @@ Using the `last` command.
   * usermod
   * whoami
   * id</summary><br><b>
+</b></details>
+
+<details>
+<summary>You run <code>grep $(whoami) /etc/passwd</code> but the output is empty. What might be a possible reason for that?</summary><br><b>
+
+The user you are using isn't defined locally but originates from services like LDAP.<br>
+You can verify with: `getent passwd`
 </b></details>
 
 #### Linux Hardware
@@ -6757,6 +6779,12 @@ I can't answer this for you :)
 </b></details>
 
 <details>
+<summary>What's DSL (Domain Specific Language)?</summary><br><b>
+
+Domain Specific Language (DSLs) are used to create a customised language that represents the domain such that domain experts can easily interpret it.
+</b></details>
+
+<details>
 <summary>What's the difference between KPI and OKR?</summary><br><b>
 </b></details>
 
@@ -7220,128 +7248,6 @@ https://idiallo.com/blog/c10k-2016
 
 <details>
 <summary>Explain Dark Data</summary><br><b>
-</b></details>
-
-## HR
-
-These are not DevOps related questions as you probably noticed, but since they are part of the DevOps interview process I've decided it might be good to keep them
-
-<details>
-<summary>Tell us little bit about yourself</summary><br><b>
-</b></details>
-
-<details>
-<summary>Tell me about your last big project/task you worked on</summary><br><b>
-</b></details>
-
-<details>
-<summary>What was most challenging part in the project you worked on?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How did you hear about us?</summary><br><b>
-
-Tell them how did you hear about them :D
-Relax, there is no wrong or right answer here...I think.
-</b></details>
-
-<details>
-<summary>How would you describe a good leadership?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Describe yourself in one word</summary><br><b>
-</b></details>
-
-<details>
-<summary>Tell me about a time where you didn't agree on an implementation</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you deal with a situation where key stakeholders are not around and a big decision needs to be made? </summary><br><b>
-</b></details>
-
-<details>
-<summary>Where do you see yourself 5 years down the line?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Give an example of a time when you were able to change the view of a team about a particular tool/project/technology</summary><br><b>
-</b></details>
-
-<details>
-<summary>Have you ever caused a service outage? (or broke a working project, tool, ...?)</summary><br><b>
-
-If you worked in this area for more than 5 years it's hard to imagine the answer would be no. It also doesn't have to be big service outage. Maybe you merged some code that broke a project or its tests. Simply focus on what you learned from such experience.
-</b></details>
-
-<details>
-<summary>Rank the following in order 1 to 5, where 1 is most important: salaray, benefits, career, team/people, work life balance</summary><br><b>
-
-You know best your order just have a good thought if you really want to put salary in top or bottom....
-</b></details>
-
-<details>
-<summary>You have three important tasks scheduled for today. One is for your boss, second for a colleague who is also a friend, third is for a customer. All tasks are equally important. What do you do first?</summary><br><b>
-</b></details>
-
-<details>
-<summary>You have a colleague you don‘t get along with. Tell us some strategies how you create a good work relationship with them anyway.</summary><br><b>
-
-Bad answer: I don't.
-Better answer: Every person has strengths and weaknesses. This is true also for colleagues I don't have good work relationship with and this is what helps me to create good work relationship with them. If I am able to highlight or recognize their strengths I'm able to focus mainly on that when communicating with them.
-</b></details>
-
-<details>
-<summary>What do you love about your work?</summary><br><b>
-
-You know the best, but some ideas if you find it hard to express yourself:
-
-* Diversity
-* Complexity
-* Challenging
-* Communication with several different teams
-</b></details>
-
-<details>
-<summary>What are your responsibilities in your current position?</summary><br><b>
-
-You know the best :)
-</b></details>
-
-<details>
-<summary>Why should we hire you for the role?</summary><br><b>
-
-You can use and elaborate on one or all of the following:
-
-* Passion
-* Motivation
-* Autodidact
-* Creativity (be able to support it with some actual examples)
-</b></details>
-
-#### Pointless Questions
-
-<details>
-<summary>Why do you want to work here?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Why are you looking to leave your current place?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are your strengths and weaknesses?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Where do you see yourself in five years?</summary><br><b>
-</b></details>
-
-#### Team Lead
-
-<details>
-<summary>How would you improve productivity in your team?</summary><br><b>
 </b></details>
 
 ## Questions you CAN ask
