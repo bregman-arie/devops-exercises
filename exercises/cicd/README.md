@@ -50,7 +50,7 @@ A complete different answer or CI process, can describe how a developer pushes c
 <details>
 <summary>What is Continuous Delivery?</summary><br><b>
 
-A development strategy used to frequently deliver code to QA and Ops for testing. This entails having a staging area that has production like features where changes can only be accepted for production after a manual review. Because of this human entanglement there is usually a time lag between release and review making it slower and error prone as compared to continous deployment.
+A development strategy used to frequently deliver code to QA and Ops for testing. This entails having a staging area that has production like features where changes can only be accepted for production after a manual review. Because of this human entanglement there is usually a time lag between release and review making it slower and error prone as compared to continuous deployment.
 
 For more info please read [here](https://www.atlassian.com/continuous-delivery/continuous-deployment)
 </b></details>
@@ -129,7 +129,7 @@ This might be considered to be an opinionated answer:
 * Old fashioned dashboards with not many options to customize it
 * Containers readiness (this has improved with Jenkins X)
 * By itself, it doesn't have many features. On the other hand, there many plugins created by the community to expand its abilities
-* Managing Jenkins and its piplines as a code can be one hell of a nightmare
+* Managing Jenkins and its pipelines as a code can be one hell of a nightmare
 </b></details>
 
 <details>
@@ -141,7 +141,7 @@ This might be considered to be an opinionated answer:
 - Node or Worker
 - Executor</summary><br><b>
 - Job is an automation definition = what and where to execute once the user clicks on "build" 
-- Build is a running instance of a job. You can have one or more builds at any given point of time (unless limited by confiugration)
+- Build is a running instance of a job. You can have one or more builds at any given point of time (unless limited by configuration)
 - A worker is the machine/instance on which the build is running. When a build starts, it "acquires" a worker out of a pool to run on it.
 - An executor is variable of the worker, defining how many builds can run on that worker in parallel. An executor value of 3 means, that 3 builds can run at any point on that executor (not necessarily of the same job. Any builds)
 </b></details>

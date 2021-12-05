@@ -9,12 +9,13 @@
 | My First Playbook | Playbooks | [Exercise](my_first_playbook.md) | [Solution](solutions/my_first_playbook.md)
 	
 
-### Ansible Self Assesment
+### Ansible Self Assessment
 
 <details>
 <summary>Describe each of the following components in Ansible, including the relationship between them:
 
   * Task
+  * Inventory	
   * Module
   * Play
   * Playbook
@@ -23,6 +24,8 @@
 
 Task – a call to a specific Ansible module
 Module – the actual unit of code executed by Ansible on your own host or a remote host. Modules are indexed by category (database, file, network, …) and also referred to as task plugins.
+	
+Inventory – An inventory file defines hosts and/or groups of hosts on which Ansible tasks executed upon. The inventory file can be in one of many formats, depending on the inventory plugins you have. The most common formats are INI and YAML.
 
 Play – One or more tasks executed on a given host(s)
 
@@ -47,7 +50,7 @@ Ansible is:
 <summary>True or False? Ansible follows the mutable infrastructure paradigm</summary><br><b>
 
 True. In immutable infrastructure approach, you'll replace infrastructure instead of modifying it.<br>
-Ansible rather follows the mutable infrastructure paradigm where it allows you to change the configuration of different components, but this approach is not perfect and has its own disadvantges like "configuration drift" where different components may reach different state for different reasons.
+Ansible rather follows the mutable infrastructure paradigm where it allows you to change the configuration of different components, but this approach is not perfect and has its own disadvantages like "configuration drift" where different components may reach different state for different reasons.
 </b></details>
 
 <details>
@@ -353,7 +356,7 @@ A full list can be found at  [PlayBook Variables](https://docs.ansible.com/ansib
 </b></details>
 
 <details>
-<summary>Explain the Diffrence between Forks and Serial & Throttle.</summary><br><b>
+<summary>Explain the Difference between Forks and Serial & Throttle.</summary><br><b>
 
 `Serial` is like running the playbook for each host in turn, waiting for completion of the complete playbook before moving on to the next host. `forks`=1 means run the first task in a play on one host before running the same task on the next host, so the first task will be run for each host before the next task is touched. Default fork is 5 in ansible.
 
@@ -464,7 +467,7 @@ Gotenks = 32
 <summary>True or False? By default, Ansible will execute all the tasks in play on a single host before proceeding to the next host</summary><br><b>
 
 False. Ansible will execute a single task on all hosts before moving to the next task in a play. As for today, it uses 5 forks by default.<br>
-This behaviour is described as "strategy" in Ansible and it's configurable.
+This behavior is described as "strategy" in Ansible and it's configurable.
 </b></details>
 
 <details>
@@ -507,7 +510,7 @@ If your group has 8 hosts. It will run the whole play on 4 hosts and then the sa
 </b></details>
 
 <details>
-<summary>You run Ansibe tests and you get "idempotence test failed". What does it mean? Why idempotence is important?</summary><br><b>
+<summary>You run Ansible tests and you get "idempotence test failed". What does it mean? Why idempotence is important?</summary><br><b>
 </b></details>
 
 #### Ansible - Debugging
