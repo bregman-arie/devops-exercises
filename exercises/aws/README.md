@@ -68,6 +68,14 @@ Note 2: Some of the exercises cost money and can't be performed using the free t
 |--------|--------|------|----|----|
 Register Domain | Route 53 | [Exercise](register_domain.md) | [Solution](solutions/register_domain.md) | Easy |
 Creating Records | Route 53 | [Exercise](creating_records.md) | [Solution](solutions/creating_records.md) | Easy |
+Health Checks | Route 53 | [Exercise](health_checks.md) | [Solution](solutions/health_checks.md) | Easy |
+Failover | Route 53 | [Exercise](route_53_failover.md) | [Solution](solutions/route_53_failover.md) | Easy |
+
+#### AWS - Containers
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| ECS Task | ECS, Fargate | [Exercise](ecs_task.md) | [Solution](solutions/ecs_task.md) | Easy |
 
 #### AWS - Lambda
 
@@ -877,30 +885,76 @@ False. Charges are being made when the code is executed.
 True
 </b></details>
 
-#### AWS Containers
+#### AWS - Containers
+
+##### AWS Containers - ECS
 
 <details>
 <summary>What is Amazon ECS?</summary><br><b>
 
-Amazon definition: "Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service. Customers such as Duolingo, Samsung, GE, and Cook Pad use ECS to run their most sensitive and mission critical applications because of its security, reliability, and scalability."
+[AWS Docs](https://aws.amazon.com/ecs): "Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service. Customers such as Duolingo, Samsung, GE, and Cook Pad use ECS to run their most sensitive and mission critical applications because of its security, reliability, and scalability."
 
-Learn more [here](https://aws.amazon.com/ecs)
+In simpler words, it allows you to launch containers on AWS.<br>
+While AWS takes care of starting/stopping containers, you need to provision and maintain the infrastructure where the containers are running (EC2 instances).
+</b></details>
+
+<details>
+<summary>What one should do in order to make EC2 instance part of an ECS cluster?</summary><br><b>
+
+Install ECS agent on it. Some AMIs have built-in configuration for that.
+</b></details>
+
+<details>
+<summary>What ECS launch types are there?</summary><br><b>
+
+* EC2 Instance
+* AWS Fargate
 </b></details>
 
 <details>
 <summary>What is Amazon ECR?</summary><br><b>
 
-Amazon definition: "Amazon Elastic Container Registry (ECR) is a fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images."
-
-Learn more [here](https://aws.amazon.com/ecr)
+[AWS Docs](https://aws.amazon.com/ecr): "Amazon Elastic Container Registry (ECR) is a fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images."
 </b></details>
+
+<details>
+<summary>What the role "EC2 Instance Profile" is used for in regards to ECS?</summary><br><b>
+
+EC2 Instance Profile used by ECS agent on an EC2 instance to:
+
+  * Make API calls to ECS Service
+  * Send logs to CloudWatch from the container
+  * Use secrets defined in SSM Parameter Store or Secrets Manager
+  * Pull container images from ECR (Registry)
+</b></details>
+
+<details>
+<summary>How to share data between containers (some from ECS and some from Fargate)?</summary><br><b>
+
+Using EFS is a good way to share data between containers and it works also between different AZs.
+</b></details>
+
+##### AWS Containers - Fargate
 
 <details>
 <summary>What is AWS Fargate?</summary><br><b>
 
-Amazon definition: "AWS Fargate is a serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS)."
+[Amazon Docs](https://aws.amazon.com/fargate): "AWS Fargate is a serverless, pay-as-you-go compute engine that lets you focus on building applications without managing servers. AWS Fargate is compatible with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS)"
 
-Learn more [here](https://aws.amazon.com/fargate)
+In simpler words, AWS Fargate allows you launch containers on AWS without worrying about managing infrastructure. It runs containers based on the CPU and RAM you need.
+</b></details>
+
+<details>
+<summary>How AWS Fargate different from AWS ECS?</summary><br><b>
+
+In AWS ECS, you manage the infrastructure - you need to provision and configure the EC2 instances.<br>
+While in AWS Fargate, you don't provision or manage the infrastructure, you simply focus on launching Docker containers. You can think of it as the serverless version of AWS ECS.
+</b></details>
+
+<details>
+<summary>True or False? Fargate creates an ENI for every task it runs</summary><br><b>
+
+True.
 </b></details>
 
 #### AWS - S3
@@ -908,10 +962,8 @@ Learn more [here](https://aws.amazon.com/fargate)
 <details>
 <summary>Explain what is AWS S3?</summary><br><b>
 
-S3 stands for 3 S, Simple Storage Service.
+S3 stands for: Simple Storage Service.<br>
 S3 is a object storage service which is fast, scalable and durable. S3 enables customers to upload, download or store any file or object that is up to 5 TB in size.
-
-More on S3 [here](https://aws.amazon.com/s3)
 </b></details>
 
 <details>
@@ -1942,6 +1994,12 @@ Use Elastic IP which provides you a fixed IP address.
 </b></details>
 
 <details>
+<summary>Why would you use an Elastic IP address?</summary><br><b>
+
+Let's say you have an instance that you need to shutdown or perform some maintenance on. In that case, what you would want to do is to move the Elastic IP address to another instance that is operational, until you finish to perform the maintenance and then you can move it back to the original instance (or keep it assigned to the second one).
+</b></details>
+
+<details>
 <summary>True or False? When stopping and starting an EC2 instance, its public IP changes</summary><br><b>
 
 True
@@ -2366,6 +2424,147 @@ True
 
 <details>
 <summary>What is a routing policy in regards to AWS Route 53?</summary><br><b>
+
+A routing policy routing defines how Route 53 responds to DNS queries.
+</b></details>
+
+<details>
+<summary>What Route 53 routing policies are there?</summary><br><b>
+
+* Simple 
+* Geolocation
+* Failover
+* Latency based
+* Geoproximity
+* Multi-Value Answer
+* Weighted
+</b></details>
+
+<details>
+<summary>Suppose you need to route % of your traffic to a certain instance and the rest of the traffic, to another instance. Which routing policy would you choose?</summary><br><b>
+
+Weighted routing policy.
+</b></details>
+
+<details>
+<summary>Suppose you need to route traffic to a single source with Route 53, without any other requirements, which routing policy would you choose?</summary><br><b>
+
+The `simple` routing policy
+</b></details>
+
+<details>
+<summary>Explain the geolocation routing policy</summary><br><b>
+
+* Routing based on user location
+* Location can be specified by continent, country or US state
+* It's recommended to have a default record in case there is no match on location
+</b></details>
+
+<details>
+<summary>What are some use cases for using geolocation routing policy?</summary><br><b>
+
+* Restrict content distribution
+* App localization
+* Load balancing
+</b></details>
+
+<details>
+<summary>Explain the geoproximity routing policy</summary><br><b>
+
+* Route based on the geographic location of resources
+* Shifting routing is done based on the `bias` value
+* Resources can be of AWS and non-AWS type
+    * For non-AWS you have to specify latitude and longitude in addition to AWS region as done in AWS-based resources
+* To use it, you have to use Route 53 traffic flow
+</b></details>
+
+<details>
+<summary>What are some use cases for <code>weighted</code> routing policy?</summary><br><b>
+
+* Load balancing between regions
+* Testing new applications versions
+</b></details>
+
+<details>
+<summary>True or False? Route 53 <code>simple</code> routing policy supports both single and multiple values</summary><br><b>
+
+True.
+
+If multiple values are returned from Route 53 then, the client chooses a single value to use.
+</b></details>
+
+<details>
+<summary>True or False? In <code>weighted</code> routing DNS records must have the same name but not the same type</summary><br><b>
+
+False. They must have the same name AND type.
+</b></details>
+
+<details>
+<summary>You would like to use a routing policy that will take latency into account and will route to the resource with the lowest latency. Which routing policy would you use?</summary><br><b>
+
+Latency-based routing policy.
+</b></details>
+
+<details>
+<summary>What happens when you set all records to weight 0 when using <code>Weighted</code> routing policy?</summary><br><b>
+
+All records are used equally.
+</b></details>
+
+<details>
+<summary>What Route 53 health checks are used for?</summary><br><b>
+
+Automated DNS failover based on monitoring:
+
+  * Another health check
+  * endpoint (app, AWS resource, server)
+  * CloudWatch alarms
+</b></details>
+
+<details>
+<summary>You would like to use a routing policy based on the resource location and be able to shift more traffic to some resources. Which one would you use?</summary><br><b>
+
+Geoproximity routing policy
+</b></details>
+
+<details>
+<summary>Explain Route 53 Traffic Flow feature</summary><br><b>
+
+It's a visual editor for managing complex routing decision trees. It allows you to simplify the process of managing records.
+
+Configuration can be saved (as Traffic Flow Policy) and applied to different domains/hosted zones. In addition, it supports versioning
+</b></details>
+
+<details>
+<summary>What are calculated health checks?</summary><br><b>
+
+When you combine the results of multiple health checks into a single health check.
+</b></details>
+
+<details>
+<summary>What is one possible use case for using calculated health checks?</summary><br><b>
+
+Performing maintenance for a website without causing all the health checks to fail.
+</b></details>
+
+<details>
+<summary>You would like to use a routing policy based on the user location. Which one would you use?</summary><br><b>
+
+Geolocation routing policy. It's based on user location.
+
+Don't confuse it with latency-based routing policy. While shorter distance may result in lower latency, this is not the requirement in the question.
+</b></details>
+
+<details>
+<summary>True or False? Route 53 Multi Value is a substitute for those who want cheaper solution than ELB</summary><br><b>
+
+False. Route 53 Multi Value is not a substitute for ELB. It's focused on client-side load balancing as opposed to ELB.
+</b></details>
+
+<details>
+<summary>True or False? Domain registrar and DNS service is inherently the same thing</summary><br><b>
+
+False. DNS service can be Route 53 (where you manage DNS records) while the domain itself can be purchased from other sources that aren't Amazon related (e.g. GoDadday).
 </b></details>
 
 #### AWS Monitoring & Logging
@@ -2796,6 +2995,20 @@ Yes, using SNI (Server Name Indication) each application can has its own SSL cer
 <summary>You have set up read replicas to scale reads but users complain that when they update posts in forums, the posts are not being updated. What may cause this issue?</summary><br><b>
 
 Read Replicas use asynchronous replication so it's possible users access a read replica instance that wasn't synced yet.
+</b></details>
+
+<details>
+<summary>You need a persistent shared storage between your containers that some are running in Fargate and some in ECS. What would you use?</summary><br><b>
+
+EFS. It allows us to have persistent multi-AZ shared storage for containers.
+</b></details>
+
+<details>
+<summary>You would like to run an AWS Fargate task every time a file is uploaded to a certain S3 bucket. How would you achieve that?</summary><br><b>
+
+Use Amazon EventBridge so every time a file is uploaded to an S3 bucket (event) it will run an ECS task.
+
+Such task should have an ECS Task Role so it can get the object from the S3 bucket (and possibly other permissions if it needs to update the DB for example).
 </b></details>
 
 #### AWS - Architecture Design
