@@ -252,6 +252,21 @@ Reliability, when used in DevOps context, is the ability of a system to recover 
 
 <details>
 <summary>How a web server works?</summary><br><b>
+
+A page on the internet can be viewed, when the browser requests the page from the web server and the web server responds with that page.
+This communcation between web browser and web server happens in the following ways:
+
+(1) User enters the domain name in the browser,and the browser then search for the IP address of the entered name. It can be done in 2 ways- 
+    -By searching in its cache. 
+    -By requesting one or more DNS (Domain Name System) Servers.
+
+(2) After knowing the IP Address, the browser now demands a full URL from the web server.
+
+(3) Now, the web server responds to the browser by sending the desired pages, and in case, 
+the pages do not exist or some other error occurs, it will send some appropriate error message. 
+
+(4) The Browser finally gets the webpages and displays it, or displays the error message.
+
 </b></details>
 
 <details>
