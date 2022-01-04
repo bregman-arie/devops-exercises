@@ -1931,7 +1931,7 @@ There are 2 configuration files, which stores users information
 </details>
 
 <details>
-<summary>Which file stores users passwords? Is it visible for everyone?</summary><br><b>
+<summary>Which file stores users passwords? Is it visible for everyone?</summary><br>
 
 `/etc/shadow` file holds the passwords of the users in encryted format. NO, it is only visble to the `root` user
 </details>
