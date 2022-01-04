@@ -600,8 +600,47 @@ sub printMethod { print "A\n"; };
 
 <details>
 <summary>What is cpan? And cpanm?</summary><br><b>
+
+CPAN is the Comprehensive Perl Archive Network. 
+
+CPANM From the official [App::cpanminus](https://metacpan.org/pod/App::cpanminus):
+"App::cpanminus - get, unpack, build and install modules from CPAN".
+
+[Find CPAN modules](https://metacpan.org/)
+
 </b></details>
 
 <details>
-<summary>How can you install a Perl module?</summary><br><b>
+<summary>How can you install cpanm and a Perl module?</summary><br><b>
+
+There are some different alternatives to install Perl modules. We will use `cpanm`.
+
+- Install `cpanm`:
+
+```
+$ cpan App::cpanminus
+```
+
+- Install the `Test` module with `cpanm`:
+
+```
+cpanm Test
+```
+
+Now we can test the `Test` installed module:
+
+```
+$ perl -M'Test::Simple tests => 1' -e 'ok( 1 + 1 == 2 );'
+1..1
+ok 1
+```
+
+```
+$ perl -M'Test::Simple tests => 1' -e 'ok( 1 + 1 == 3 );'
+1..1
+not ok 1
+#   Failed test at -e line 1.
+# Looks like you failed 1 test of 1.
+```
+
 </b></details>
