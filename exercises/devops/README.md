@@ -59,6 +59,16 @@ Things to think about:
 * Do DevOps teams or engineers have to be innovative or practice innovation as part of their role?
 </b></details>
 
+<details>
+<summary>One of your team members suggests to set a goal of "deploying at least 20 times a day" in regards to CD. What is your take on that?</summary><br><b>
+
+A couple of thoughts:
+
+1. Why is it an important goal? Is it affecting the business somehow? One of the KPIs? In other words, does it matters?
+2. This might introduce risks such as losing quality in favor of quantity
+3. You might want to set a possibly better goal such as "be able to deploy whenever we need to deploy"
+</b></details>
+
 #### Tooling
 
 <details>

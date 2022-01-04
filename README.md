@@ -1,16 +1,16 @@
 <p align="center"><img src="images/devops_exercises.png"/></p>
 
-:information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE :)
+:information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
 
-:bar_chart: &nbsp;There are currently **1999** questions
+:bar_chart: &nbsp;There are currently **2138** exercises and questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [FAQ page](faq.md) for more details
 
-:busts_in_silhouette: &nbsp;[Join](https://www.facebook.com/groups/538897960007080) our [DevOps community](https://www.facebook.com/groups/538897960007080) where we have discussions and share resources on DevOps
+:busts_in_silhouette: &nbsp;Join our [DevOps community](https://www.facebook.com/groups/538897960007080) where we have discussions and share resources on DevOps
 
-:pencil: &nbsp;You can add more questions and exercises by submitting pull requests :) Read about contribution guidelines [here](CONTRIBUTING.md)
+:pencil: &nbsp;You can add more exercises by submitting pull requests :) Read about contribution guidelines [here](CONTRIBUTING.md)
 
 ****
 
@@ -29,7 +29,7 @@
 
   </tr>
   <tr>
-    <td align="center"><a href="#programming"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Programming</b></a></td>
+    <td align="center"><a href="exercises/software_development/README.md"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Software Development</b></a></td>
     <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
     <td align="center"><a href="#go"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a></td>
     <td align="center"><a href="exercises/shell/README.md"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
@@ -38,7 +38,7 @@
   </tr>
   <tr>
     <td align="center"><a href="exercises/cloud/README.md"><img src="images/cloud.png" width="110px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a></td>
-    <td align="center"><a href="#aws"><img src="images/aws.png" width="75px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
+    <td align="center"><a href="exercises/aws/README.md"><img src="images/aws.png" width="75px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
     <td align="center"><a href="#azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a></td>
     <td align="center"><a href="#gcp"><img src="images/googlecloud.png" width="80px;" height="75px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
     <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a></td>
@@ -64,9 +64,9 @@
     <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
     <td align="center"><a href="#containers"><img src="images/containers.png" width="70px;" height="75px;" alt="Containers"/><br /><b>Containers</b></a></td>
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
-    <td align="center"><a href="#openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
+    <td align="center"><a href="exercises/openshift/README.md"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
     <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
-    <td align="center"><a href="#HR"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>HR</b></a></td>
+    <td align="center"><a href="exercises/soft_skills/README.md"><img src="images/HR.png" width="110px;" height="75px;" alt="HR"/><br /><b>Soft Skills</b></a></td>
   </tr>
   <tr>
       <td align="center"><a href="exercises/terraform/README.md"><img src="images/terraform.png" width="70px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
@@ -527,10 +527,6 @@ HTTP Strict Transport Security is a web server directive that informs user agent
 Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-use-it#:~:text=HTTP%20Strict%20Transport%20Security%20(HSTS,and%20back%20to%20the%20browser.)
 </b></details>
 
-<details>
-<summary>What is the difference if any between SSL and TLS?</summary><br><b>
-</b></details>
-
 #### Network - Misc
 
 <details>
@@ -832,7 +828,19 @@ The root of the filesystem. The beginning of the tree.
 </b></details>
 
 <details>
-<summary>Can you create files in /proc?</summary><br><b>
+<summary>What makes /proc different from other filesystems?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? only root can create files in /proc</summary><br><b>
+
+False. No one can create file in /proc directly (certain operations can lead to files being created in /proc by the kernel).
+</b></details>
+
+<details>
+<summary>What can be found in /proc/cmdline?</summary><br><b>
+
+The command passed to the boot loader to run the kernel
 </b></details>
 
 <details>
@@ -1027,7 +1035,7 @@ tail -f <file_name>
 <summary>How you measure time execution of a program?</summary><br><b>
 </b></details>
 
-#### Linux Kernel
+#### Linux - Kernel
 
 <details>
 <summary>What is a kernel, and what does it do?</summary><br><b>
@@ -1056,6 +1064,68 @@ The operating system executes the kernel in protected memory to prevent anyone f
 "User space" is where users executes their commands or applications. It's important to create this separation since we can't rely on user applications to not tamper with the kernel, causing it to crash.
 
 Applications can access system resources and indirectly the kernel space by making what is called "system calls".
+</b></details>
+
+<details>
+<summary>In what phases of kernel lifecycle, can you change its configuration?</summary><br><b>
+
+  * Build time (when it's compiled)
+  * Boot time (when it starts)
+  * Runtime (once it's already running)
+</b></details>
+
+<details>
+<summary>Where can you find kernel's configuration?</summary><br><b>
+
+Usually it will reside in `/boot/config-<kernel version>.<os release>.<arch>`
+</b></details>
+
+<details>
+<summary>Where can you find the file that contains the command passed to the boot loader to run the kernel?</summary><br><b>
+
+`/proc/cmdline`
+</b></details>
+
+<details>
+<summary>How to list kernel's runtime parameters?</summary><br><b>
+
+`sysctl -a`
+</b></details>
+
+<details>
+<summary>Will running <code>sysctl -a</code> as a regular user vs. root, produce different result?</summary><br><b>
+
+Yes, you might notice that in most systems, when running `systctl -a` with root, you'll get more runtime parameters compared to executing the same command with a regular user.
+</b></details>
+
+<details>
+<summary>You would like to enable IPv4 forwarding in the kernel, how would you do it?</summary><br><b>
+
+`sudo sysctl net.ipv4.ip_forward=1`
+
+To make it persistent (applied after reboot for example): insert `net.ipv4.ip_forward = 1` into `/etc/sysctl.conf`
+
+Another way to is to run `echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward`
+</b></details>
+
+<details>
+<summary>How <code>sysctl</code> applies the changes to kernel's runtime parameters the moment you run sysctl command?</summary><br><b>
+
+If you `strace` the sysctl command you can see it does it by changing the file under /proc/sys/...
+
+In the past it was done with sysctl system call, but it was deprecated at some point.
+</b></details>
+
+<details>
+<summary>How changes to kernel runtime parameters persist? (applied even after reboot to the system for example)</summary><br><b>
+
+There is a service called `systemd-sysctl` that takes the content of /etc/sysctl.conf and applies it. This is how changes persist, even after reboot, when they are written in /etc/sysctl.conf
+</b></details>
+
+<details>
+<summary>Are the changes you make to kernel parameters in a container, affects also the kernel parameters of the host on which the container runs?</summary><br><b>
+
+No. Containers have their own /proc filesystem so any change to kernel parameters inside a container, are not affecting the host or other containers running on that host.
 </b></details>
 
 #### Linux - SSH
@@ -1686,7 +1756,7 @@ There a couple of modes:
 <summary>What is a bridge? How it's added in Linux OS?</summary><br><b>
 </b></details>
 
-##### Linux DNS
+##### Linux - DNS
 
 <details>
 <summary>How to check what is the hostname of the system?</summary><br><b>
@@ -1708,6 +1778,21 @@ You can specify one or more of the following:
  * <code>dig</code>
  * <code>host</code>
  * <code>nslookup</code>
+</b></details>
+
+<details>
+<summary>You run <code>dig codingshell.com</code> and get the following result: 
+
+```
+ANSWER SECTION:
+codingshell.com.	3515	IN	A	185.199.109.153
+```
+
+What is the meaning of the number 3515?
+</summary><br><b>
+
+This is the TTL. When you lookup for an address using a domain/host name, your OS is performing DNS resolution by contacting DNS name servers to get the IP address of the host/domain you are looking for.<br>
+When you get a reply, this reply in cached in your OS for a certain period of time. This is period of time is also known as TTL and this is the meaning of 3515 number - it will be cached for 3515 seconds before removed from the cache and during that period of time, you'll get the value from the cache instead of asking DNS name servers for the address again.
 </b></details>
 
 ##### Linux - Packaging
@@ -1885,12 +1970,21 @@ Using the `last` command.
   * id</summary><br><b>
 </b></details>
 
+<details>
+<summary>You run <code>grep $(whoami) /etc/passwd</code> but the output is empty. What might be a possible reason for that?</summary><br><b>
+
+The user you are using isn't defined locally but originates from services like LDAP.<br>
+You can verify with: `getent passwd`
+</b></details>
+
 #### Linux Hardware
 
 <details>
-<summary>Where can you find information on the processor?</summary><br><b>
+<summary>Where can you find information on the processor (like number of CPUs)?</summary><br><b>
 
 /proc/cpuinfo
+
+You can also use `nproc` for number of processors
 </b></details>
 
 <details>
@@ -2323,6 +2417,21 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 #### Linux - Misc
 
 <details>
+<summary>How to generate a random string?</summary><br><b>
+
+One way is to run the following: `cat /proc/sys/kernel/random/uuid`
+</b></details>
+
+<details>
+<summary>What is a Linux distribution?</summary><br><b>
+
+* A collection of packages - kernel, GNU, third party apps, ...
+* Sometimes distributions store some information on the distribution in `/etc/*-release` file
+    * For example for Red Hat distribution it will be `/etc/redhat-release` and for Amazon it will be `/etc/os-release`
+    * `lsb_release` is a common command you can use in multiple different distributions
+</b></details>
+
+<details>
 <summary>Name 5 commands which are two letters long</summary><br><b>
 
 ls, wc, dd, df, du, ps, ip, cp, cd ...
@@ -2595,242 +2704,6 @@ Yes, it's a operating-system-level virtualization, where the kernel is shared an
 The introduction of virtual machines allowed companies to deploy multiple business applications on the same hardware while each application is separated from each other in secured way, where each is running on its own separate operating system.
 </b></details>
 
-## Programming
-
-<details>
-<summary>What programming language do you prefer to use for DevOps related tasks? Why specifically this one?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are static typed (or simply typed) languages?</summary><br><b>
-
-In static typed languages the variable type is known at compile-time instead of at run-time.
-Such languages are: C, C++ and Java
-</b></details>
-
-<details>
-<summary>Explain expressions and statements</summary><br><b>
-
-An expression is anything that results in a value (even if the value is None). Basically, any sequence of literals so, you can say that a string, integer, list, ... are all expressions.
-
-Statements are instructions executed by the interpreter like variable assignments, for loops and conditionals (if-else).
-</b></details>
-
-<details>
-<summary>What is Object Oriented Programming? Why is it important?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain Composition</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a compiler?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is an interpreter?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Are you familiar with SOLID design principles?</summary><br><b>
-
-SOLID design principles are about:
-
-* Make it easier to extend the functionality of the system
-* Make the code more readable and easier to maintain
-
-SOLID is:
-
-* Single Responsibility - A class should only have a single responsibility
-* Open-Closed - An entity should be open for extension, but closed for modification. What this practically means is that you should extend functionality by adding a new code and not by modifying it. Your system should be separated into components so it can be easily extended without breaking everything.
-* Liskov Substitution - Any derived class should be able to substitute the its parent without altering its corrections. Practically, every part of the code will get the expected result no matter which part is using it
-* Interface segregation - A client should never depend on anything it doesn't uses
-* Dependency Inversion - High level modules should depend on abstractions, not low level modules
-</b></details>
-
-<details>
-<summary>What is YAGNI? What is your opinion on it?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is DRY? What is your opinion on it?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are the four pillars of object oriented programming?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain recursion</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain Inversion of Control</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain Dependency Injection</summary><br><b>
-</b></details>
-
-<details>
-<summary>True or False? In Dynamically typed languages the variable type is known at run-time instead of at compile-time</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>Explain what are design patterns and describe three of them in detail</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain big O notation</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is "Duck Typing"?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain string interpolation</summary><br><b>
-</b></details>
-
-##### Common algorithms
-
-<details>
-<summary>Binary search:
-
-  * How does it works?
-  * Can you implement it? (in any language you prefer)
-  * What is the average performance of the algorithm you wrote?</summary><br><b>
-
-It's a search algorithm used with sorted arrays/lists to find a target value by dividing the array each iteration and comparing the middle value to the target value. If the middle value is smaller than target value, then the target value is searched in the right part of the divided array, else in the left side. This continues until the value is found (or the array divided max times)
-
-[python implementation](coding/python/binary_search.py)
-
-The average performance of the above algorithm is O(log n). Best performance can be O(1) and worst O(log n).
-</b></details>
-
-##### Code Review
-
-<details>
-<summary>What are your code-review best practices?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Do you agree/disagree with each of the following statements and why?:
-
-  * The commit message is not important. When reviewing a change/patch one should focus on the actual change
-  * You shouldn't test your code before submitting it. This is what CI/CD exists for.</summary><br><b>
-</b></details>
-
-#### Strings
-
-<details>
-<summary>In any language you want, write a function to determine if a given string is a palindrome</summary><br><b>
-</b></details>
-
-<details>
-<summary>In any language you want, write a function to determine if two strings are Anagrams </summary><br><b>
-</b></details>
-
-#### Integers
-
-<details>
-<summary>In any language you would like, print the numbers from 1 to a given integer. For example for input: 5, the output is: 12345</summary><br><b>
-</b></details>
-
-#### Time Complexity
-
-<details>
-<summary>Describe what would be the time complexity of the operations <code>access</code>, <code>search</code> <code>insert</code> and <code>remove</code> for the following data structures:</summary><br><b>
-
-  * Stack
-  * Queue
-  * Linked List
-  * Binary Search Tree
-</b></details>
-
-<details>
-<summary>What is the complexity for the best, worst and average cases of each of the following algorithms?:
-
-  * Quick sort
-  * Merge sort
-  * Bucket Sort
-  * Radix Sort</summary><br><b>
-</b></details>
-
-#### Data Structures & Types
-
-<details>
-<summary>Implement Stack in any language you would like</summary><br><b>
-</b></details>
-
-<details>
-<summary>Tell me everything you know about Linked Lists</summary><br><b>
-
-  * A linked list is a data structure
-  * It consists of a collection of nodes. Together these nodes represent a sequence
-  * Useful for use cases where you need to insert or remove an element from any position of the linked list
-  * Some programming languages don't have linked lists as a built-in data type (like Python for example) but it can be easily implemented
-</b></details>
-
-<details>
-<summary>Describe (no need to implement) how to detect a loop in a Linked List</summary><br><b>
-
-There are multiple ways to detect a loop in a linked list. I'll mention three here:
-
-Worst solution:<br>
-Two pointers where one points to the head and one points to the last node. Each time you advance the last pointer by one and check whether the distance between head pointer to the moved pointer is bigger than the last time you measured the same distance (if not, you have a loop).<br>
-The reason it's probably the worst solution, is because time complexity here is O(n^2)
-
-Decent solution:<br>
-
-Create an hash table and start traversing the linked list. Every time you move, check whether the node you moved to is in the hash table. If it isn't, insert it to the hash table. If you do find at any point the node in the hash table, it means you have a loop. When you reach None/Null, it's the end and you can return "no loop" value.
-This one is very easy to implement (just create a hash table, update it and check whether the node is in the hash table every time you move to the next node) but since the auxiliary space is O(n) because you create a hash table then, it's not the best solution
-
-Good solution:<br>
-Instead of creating a hash table to document which nodes in the linked list you have visited, as in the previous solution, you can modify the Linked List (or the Node to be precise) to have a "visited" attribute. Every time you visit a node, you set "visited" to True.<br>
-Time compleixty is O(n) and Auxiliary space is O(1), so it's a good solution but the only problem, is that you have to modify the Linked List.
-
-Best solution:<br>
-You set two pointers to traverse the linked list from the beginning. You move one pointer by one each time and the other pointer by two. If at any point they meet, you have a loop. This solution is also called "Floyd's Cycle-Finding"<br>
-Time complexity is O(n) and auxiliary space is O(1). Perfect :)
-</b></details>
-
-<details>
-<summary>Implement Hash table in any language you would like</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is Integer Overflow? How is it handled?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Name 3 design patterns. Do you know how to implement (= provide an example) these design pattern in any language you'll choose?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Given an array/list of integers, find 3 integers which are adding up to 0 (in any language you would like)</summary><br><b>
-
-```
-def find_triplets_sum_to_zero(li):
-    li = sorted(li)
-    for i, val in enumerate(li):
-        low, up = 0, len(li)-1
-        while low < i < up:
-            tmp = var + li[low] + li[up]
-            if tmp > 0:
-                up -= 1
-            elif tmp < 0:
-                low += 1
-            else:
-                yield li[low], val, li[up]
-                low += 1
-                up -= 1
-```
-</b></details>
-
 ## Python
 
 ### Python Exercises
@@ -3065,6 +2938,27 @@ Note: Using slicing to reverse a list could be slower than other options like `r
 True
 ```
 
+</b></details>
+
+#### Python - Loops
+
+<details>
+<summary>What is the result of the following block of code?
+
+```
+x = ['a', 'b', 'c']
+for i in x:
+    if i == 'b':
+        x = ['z', 'y']
+    print(i)
+```
+</summary><br><b>
+
+```
+a
+b
+c
+```
 </b></details>
 
 #### Python - OOP
@@ -5197,273 +5091,6 @@ as key-value pair, document-oriented, etc.
 * programming languages
 </b></details>
 
-## OpenShift
-
-### OpenShift Exercises
-
-|Name|Topic|Objective & Instructions|Solution|Comments|
-|--------|--------|------|----|----|
-| My First Project | Projects | [Exercise](exercises/openshift/projects_101.md) | [Solution](exercises/openshift/solutions/projects_101.md)
-
-### OpenShift Self Assessment
-
-<details>
-<summary>What is OpenShift?</summary><br><b>
-
-OpenShift is a container orchestration platform based on Kubernetes.<br>
-It can be used for deploying applications while having minimal management overhead.
-</b></details>
-
-<details>
-<summary>How OpenShift is related to Kubernetes?</summary><br><b>
-
-It's built on top of Kubernetes while defining its own custom resources in addition to the built ones.
-</b></details>
-
-<details>
-<summary>True or False? OpenShift is a IaaS (infrastructure as a service) solution</summary><br><b>
-
-False. OpenShift is a PaaS (platform as a service) solution.
-</b></details>
-
-## OpenShift - Architecture
-
-<details>
-<summary>What types of nodes OpenShift has?</summary><br><b>
-
-- Workers: Where the end-user applications are running
-- Masters: Responsible for managing the cluster
-</b></details>
-
-<details>
-<summary>Which component responsible for determining pod placement?</summary><br><b>
-
-The Scheduler.
-</b></details>
-
-<details>
-<summary>What else the scheduler responsible for except pod placement?</summary><br><b>
-
-Application high availability by spreading pod replicas between worker nodes
-</b></details>
-
-## OpenShift - Projects
-
-<details>
-<summary>What is a project in OpenShift?</summary><br><b>
-
-A project in OpenShift is a Kubernetes namespace with annotations.<br>
-In simpler words, think about it as an isolated environment for users to manage and organize their resources (like Pods, Deployments, Service, etc.).
-</b></details>
-
-<details>
-<summary>How to list all projects? What the "STATUS" column means in projects list output?</summary><br><b>
-
-`oc get projects` will list all projects. The "STATUS" column can be used to see which projects are currently active.
-</b></details>
-
-<details>
-<summary>You have a new team member and you would like to assign to him the "admin" role on your project in OpenShift. How to achieve that?</summary><br><b>
-
-`oc adm policy add-role-to-user <role> <user> -n <project>`
-</b></details>
-
-## OpenShift - Images
-
-<details>
-<summary>What is an image stream?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What would be the best way to run and manage multiple OpenShift environments?</summary><br><b>
-
-Federation
-</b></details>
-
-#### OpenShift - Federation
-
-<details>
-<summary>What is OpenShift Federation?</summary><br><b>
-
-Management and deployment of services and workloads accross multiple independent clusters from a single API
-</b></details>
-
-<details>
-<summary>Explain the following in regards to Federation:
-
-  * Multi Cluster
-  * Federated Cluster
-  * Host Cluster
-  * Member Cluster
-</summary><br><b>
-
-  * Multi Cluster - Multiple clusters deployed independently, not being aware of each other
-  * Federated Cluster - Multiple clusters managed by the OpenShift Federation Control Plane
-  * Host Cluster - The cluster that runs the Federation Control Plane
-  * Member Cluster - Cluster that is part of the Federated Cluster and connected to Federation Control Plane
-</b></details>
-
-## OpenShift - Storage
-
-<details>
-<summary>What is a storage device? What storage devices are there?</summary><br><b>
-
-* Hard Disks
-* SSD
-* USB
-* Magnetic Tape
-</b></details>
-
-<details>
-<summary>What is Random Seek Time?</summary><br><b>
-
-The time it takes for a disk to reach the place where the data is located and read a single block/sector.
-
-Bones question: What is the random seek time in SSD and Magnetic Disk?
-Answer: Magnetic is about 10ms and SSD is somewhere between 0.08 and 0.16ms
-</b></details>
-
-#### OpenShift - Pods
-
-<details>
-<summary>What happens when a pod fails or exit due to container crash</summary><br><b>
-
-Master node automatically restarts the pod unless it fails too often.
-</b></details>
-
-<details>
-<summary>What happens when a pod fails too often?</summary><br><b>
-
-It's marked as bad by the master node and temporarly not restarted anymore.
-</b></details>
-
-<details>
-<summary>How to find out on which node a certain pod is running?</summary><br><b>
-
-`oc get po -o wide`
-</b></details>
-
-#### OpenShift - Services
-
-<details>
-<summary>Explain Services and their benefits</summary><br><b>
-
-  - Services in OpenShift define access policy to one or more set of pods.<br>
-  - They are connecting applications together by enabling communication between them
-  - They provide permanent internal IP addresses and hostnames for applications
-  - They are able to provide basic internal load balancing
-</b></details>
-
-#### OpenShift - Labels
-
-<details>
-<summary>Explain labels. What are they? When do you use them?</summary><br><b>
-
-  - Labels are used to group or select API objects
-  - They are simple key-value pairs and can be included in metadata of some objects
-  - A common use case: group pods, services, deployments, ... all related to a certain application
-</b></details>
-
-#### OpenShift - Service Accounts
-
-<details>
-<summary>How to list Service Accounts?</summary><br><b>
-
-`oc get serviceaccounts`
-</b></details>
-
-#### OpenShift - Networking
-
-<details>
-<summary>What is a Route?</summary><br><b>
-
-A route is exposing a service by giving it hostname which is externally reachable
-</b></details>
-
-<details>
-<summary>What Route is consists of?</summary><br><b>
-
-  - name
-  - service selector
-  - (optional) security configuration
-</b></details>
-
-<details>
-<summary>True or False? Router container can run only on the Master node</summary><br><b>
-
-False. It can run on any node.
-</b></details>
-
-<details>
-<summary>Given an example of how a router is used</summary><br><b>
-
-1. Client is using an address of application running on OpenShift
-2. DNS resolves to host running the router
-3. Router checks whether route exists
-4. Router proxies the request to the internal pod 
-</b></details>
-
-#### OpenShift - Security
-
-<details>
-<summary>What are "Security Context Constraints"?</summary><br><b>
-
-From [OpenShift Docs](https://docs.openshift.com/container-platform/4.7/authentication/managing-security-context-constraints.html): "Similar to the way that RBAC resources control user access, administrators can use security context constraints (SCCs) to control permissions for pods".
-</b></details>
-
-<details>
-<summary>How to add the ability for the user `user1` to view the project `wonderland` assuming you are authorized to do so</summary><br><b>
-
-oc adm policy add-role-to-user view user1 -n wonderland
-</b></details>
-
-<details>
-<summary>How to check what is the current context?</summary><br><b>
-
-`oc whoami --show-context`
-</b></details>
-
-#### OpenShift - Serverless
-
-<details>
-<summary>What is OpenShift Serverless?</summary><br><b>
-
-  - In general 'serverless' is a cloud computing model where scaling and provisioning is taken care for application developers, so they can focus on the development aspect rather infrastructure related tasks
-  - OpenShift Serverless allows you to dynamically scale your applications and provides the ability to build event-driven applications, whether the sources are on Kubernetes, the cloud or on-premise solutions
-  - OpenShift Serverless is based on the Knative project.
-</b></details>
-
-<details>
-<summary>What are some of the event sources you can use with OpenShift Serverless?</summary><br><b>
-
-  * Kafka
-  * Kubernetes APIs
-  * AWS Kinesis
-  * AWS SQS
-  * JIRA
-  * Slack
-
-More are supported and provided with OpenShift.
-</b></details>
-
-<details>
-<summary>Explain serverless functions</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the difference between Serverless Containers and Serverless functions?</summary><br><b>
-</b></details>
-
-#### OpenShift - Misc
-
-<details>
-<summary>What is Replication Controller?</summary><br><b>
-
-Replication Controller responsible for ensuring the specified number of pods is running at all times.<br>
-If more pods are running than needed -> it deletes some of them<br>
-If not enough pods are running -> it creates more
-</b></details>
-
 ## SQL
 
 ### SQL Exercises
@@ -6009,6 +5636,7 @@ Platform teams in organisations that wish to offer developers additional tools t
 
 <details>
 <summary>List some Cloud Run for Anthos use cases</summary><br><b>
+
 As it does not support stateful applications or sticky sessions, it is suitable for running stateless applications such as:
 
 * Machine learning model predictions e.g Tensorflow serving containers
@@ -7004,6 +6632,12 @@ I can't answer this for you :)
 </b></details>
 
 <details>
+<summary>What's DSL (Domain Specific Language)?</summary><br><b>
+
+Domain Specific Language (DSLs) are used to create a customised language that represents the domain such that domain experts can easily interpret it.
+</b></details>
+
+<details>
 <summary>What's the difference between KPI and OKR?</summary><br><b>
 </b></details>
 
@@ -7255,6 +6889,12 @@ The server didn't receive a response from another server it communicates with in
 <summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with and which one do you prefer to use?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Explain what is "X-Forwarded-For"</summary><br><b>
+
+[Wikipedia](https://en.wikipedia.org/wiki/X-Forwarded-For): "The X-Forwarded-For (XFF) HTTP header field is a common method for identifying the originating IP address of a client connecting to a web server through an HTTP proxy or load balancer."
+</b></details>
+
 #### Load Balancers
 
 <details>
@@ -7264,7 +6904,7 @@ A load balancer accepts (or denies) incoming network traffic from a client, and 
 </b></details>
 
 <details>
-<summary>What benefits load balancers provide?</summary><br><b>
+<summary>Why to used a load balancer?</summary><br><b>
 
 * Scalability - using a load balancer, you can possibly add more servers in the backend to handle more requests/traffic from the clients, as opposed to using one server.
 * Redundancy - if one server in the backend dies, the load balancer will keep forwarding the traffic/requests to the second server so users won't even notice one of the servers in the backend is down.
@@ -7315,6 +6955,8 @@ Yes, you can use DNS for performing load balancing.
 <summary>What is DNS load balancing? What its advantages? When would you use it?</summary><br><b>
 </b></details>
 
+#### Load Balancers - Sticky Sessions
+
 <details>
 <summary>What are sticky sessions? What are their pros and cons?</summary><br><b>
 
@@ -7326,6 +6968,34 @@ Cons:
 Pros:
   * Ensures in-proc sessions are not lost when a new request is created
 </b></details>
+
+<details>
+<summary>Name one use case for using sticky sessions</summary><br><b>
+
+You would like to make sure the user doesn't lose the current session data.
+</b></details>
+
+<details>
+<summary>What sticky sessions use for enabling the "stickiness"?</summary><br><b>
+
+Cookies. There are application based cookies and duration based cookies.
+</b></details>
+
+<details>
+<summary>Explain application-based cookies</summary><br><b>
+
+* Generated by the application and/or the load balancer
+* Usually allows to include custom data
+</b></details>
+
+<details>
+<summary>Explain duration-based cookies</summary><br><b>
+
+* Generated by the load balancer
+* Session is not sticky anymore once the duration elapsed
+</b></details>
+
+#### Load Balancers - Load Balancing Algorithms
 
 <details>
 <summary>Explain each of the following load balancing techniques
@@ -7418,133 +7088,19 @@ https://idiallo.com/blog/c10k-2016
 </b></details>
 
 <details>
+<summary>Explain IOPS</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain storage throughput</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is a filesystem?</summary><br><b>
 </b></details>
 
 <details>
 <summary>Explain Dark Data</summary><br><b>
-</b></details>
-
-## HR
-
-These are not DevOps related questions as you probably noticed, but since they are part of the DevOps interview process I've decided it might be good to keep them
-
-<details>
-<summary>Tell us little bit about yourself</summary><br><b>
-</b></details>
-
-<details>
-<summary>Tell me about your last big project/task you worked on</summary><br><b>
-</b></details>
-
-<details>
-<summary>What was most challenging part in the project you worked on?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How did you hear about us?</summary><br><b>
-
-Tell them how did you hear about them :D
-Relax, there is no wrong or right answer here...I think.
-</b></details>
-
-<details>
-<summary>How would you describe a good leadership?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Describe yourself in one word</summary><br><b>
-</b></details>
-
-<details>
-<summary>Tell me about a time where you didn't agree on an implementation</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you deal with a situation where key stakeholders are not around and a big decision needs to be made? </summary><br><b>
-</b></details>
-
-<details>
-<summary>Where do you see yourself 5 years down the line?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Give an example of a time when you were able to change the view of a team about a particular tool/project/technology</summary><br><b>
-</b></details>
-
-<details>
-<summary>Have you ever caused a service outage? (or broke a working project, tool, ...?)</summary><br><b>
-
-If you worked in this area for more than 5 years it's hard to imagine the answer would be no. It also doesn't have to be big service outage. Maybe you merged some code that broke a project or its tests. Simply focus on what you learned from such experience.
-</b></details>
-
-<details>
-<summary>Rank the following in order 1 to 5, where 1 is most important: salaray, benefits, career, team/people, work life balance</summary><br><b>
-
-You know best your order just have a good thought if you really want to put salary in top or bottom....
-</b></details>
-
-<details>
-<summary>You have three important tasks scheduled for today. One is for your boss, second for a colleague who is also a friend, third is for a customer. All tasks are equally important. What do you do first?</summary><br><b>
-</b></details>
-
-<details>
-<summary>You have a colleague you don‘t get along with. Tell us some strategies how you create a good work relationship with them anyway.</summary><br><b>
-
-Bad answer: I don't.
-Better answer: Every person has strengths and weaknesses. This is true also for colleagues I don't have good work relationship with and this is what helps me to create good work relationship with them. If I am able to highlight or recognize their strengths I'm able to focus mainly on that when communicating with them.
-</b></details>
-
-<details>
-<summary>What do you love about your work?</summary><br><b>
-
-You know the best, but some ideas if you find it hard to express yourself:
-
-* Diversity
-* Complexity
-* Challenging
-* Communication with several different teams
-</b></details>
-
-<details>
-<summary>What are your responsibilities in your current position?</summary><br><b>
-
-You know the best :)
-</b></details>
-
-<details>
-<summary>Why should we hire you for the role?</summary><br><b>
-
-You can use and elaborate on one or all of the following:
-
-* Passion
-* Motivation
-* Autodidact
-* Creativity (be able to support it with some actual examples)
-</b></details>
-
-#### Pointless Questions
-
-<details>
-<summary>Why do you want to work here?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Why are you looking to leave your current place?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are your strengths and weaknesses?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Where do you see yourself in five years?</summary><br><b>
-</b></details>
-
-#### Team Lead
-
-<details>
-<summary>How would you improve productivity in your team?</summary><br><b>
 </b></details>
 
 ## Questions you CAN ask
@@ -7928,13 +7484,19 @@ In addition, it has hardware limit where if you don't have more resources, you m
 </b></details>
 
 <details>
+<summary>Which type of cloud services usually support vertical scaling?</summary><br><b>
+
+Databases, cache. It's common mostly for non-distributed systems.
+</b></details>
+
+<details>
 <summary>Explain Horizontal Scaling</summary><br><b>
 
 Horizontal Scaling is the process of adding more resources that will be able handle requests as one unit
 </b></details>
 
 <details>
-<summary>What is the disadvange of Horizontal Scaling? What is often required in order to perform Horizontal Scaling?</summary><br><b>
+<summary>What is the disadvantage of Horizontal Scaling? What is often required in order to perform Horizontal Scaling?</summary><br><b>
 
 A load balancer. You can add more resources, but if you would like them to be part of the process, you have to serve them the requests/responses.
 Also, data inconsistency is a concern with horizontal scaling.

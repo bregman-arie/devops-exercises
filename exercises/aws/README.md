@@ -2,6 +2,9 @@
 
 ### AWS Exercises
 
+Note: Provided solutions are using the AWS console. It's recommended you'll use IaC technologies to solve the exercises (e.g. Terraform).<br>
+Note 2: Some of the exercises cost money and can't be performed using the free tier/resources
+
 #### AWS - IAM
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
@@ -18,9 +21,61 @@
 |--------|--------|------|----|----|
 | Launch EC2 web instance | EC2 | [Exercise](launch_ec2_web_instance.md) | [Solution](solutions/launch_ec2_web_instance.md) | Easy |
 | Security Groups | EC2 | [Exercise](security_groups.md) | [Solution](solutions/security_groups.md) | Easy |
-| IAM Roles | EC2 + IAM | [Exercise](ec2_iam_roles.md) | [Solution](solutions/ec2_iam_roles.md) | Easy |
+| IAM Roles | EC2, IAM | [Exercise](ec2_iam_roles.md) | [Solution](solutions/ec2_iam_roles.md) | Easy |
 | Spot Instances | EC2 | [Exercise](create_spot_instances.md) | [Solution](solutions/create_spot_instances.md) | Easy |
+| Elastic IP | EC2, Networking | [Exercise](elastic_ip.md) | [Solution](solutions/elastic_ip.md) | Easy |
+| Placement Groups Creation | EC2, Placement Groups | [Exercise](placement_groups.md) | [Solution](solutions/placement_groups.md) | Easy |
+| Elastic Network Interfaces | EC2, ENI | [Exercise](elastic_network_interfaces.md) | [Solution](solutions/elastic_network_interfaces.md) | Easy |
+| Hibernate an Instance | EC2 | [Exercise](hibernate_instance.md) | [Solution](solutions/hibernate_instance.md) | Easy |
+| Volume Creation | EC2, EBS | [Exercise](ebs_volume_creation.md) | [Solution](solutions/ebs_volume_creation.md) | Easy |
+| Snapshots | EC2, EBS | [Exercise](snapshots.md) | [Solution](solutions/snapshots.md) | Easy |
+| Create an AMI | EC2, AMI | [Exercise](create_ami.md) | [Solution](solutions/create_ami.md) | Easy |
+| Create EFS | EC2, EFS | [Exercise](create_efs.md) | [Solution](solutions/create_efs.md) | Easy |
 
+#### AWS - ELB
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Application Load Balancer | ELB, ALB | [Exercise](app_load_balancer.md) | [Solution](solutions/app_load_balancer.md) | Easy |
+| Multiple Target Groups | ELB, ALB | [Exercise](alb_multiple_target_groups.md) | [Solution](solutions/alb_multiple_target_groups.md) | Easy |
+| Network Load Balancer | ELB, NLB | [Exercise](network_load_balancer.md) | [Solution](solutions/network_load_balancer.md) | Easy |
+
+#### AWS - Auto Scaling Groups
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Auto Scaling Groups Basics | ASG | [Exercise](auto_scaling_groups_basics.md) | [Solution](solutions/auto_scaling_groups_basics.md) | Easy |
+| Dynamic Scaling Policy | ASG, Policies | [Exercise](asg_dynamic_scaling_policy.md) | [Solution](solutions/asg_dynamic_scaling_policy.md) | Easy |
+
+#### AWS - VPC
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| My First VPC | VPC | [Exercise](new_vpc.md) | [Solution](solutions/new_vpc.md) | Easy |
+| Subnets | VPC | [Exercise](subnets.md) | [Solution](solutions/subnets.md) | Easy |
+
+#### AWS - Databases
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| MySQL DB | RDS | [Exercise](mysql_db.md) | [Solution](solutions/mysql_db.md) | Easy |
+| Aurora DB | RDS | [Exercise](aurora_db.md) | [Solution](solutions/aurora_db.md) | Easy |
+| ElastiCache | ElastiCache | [Exercise](elasticache.md) | [Solution](solutions/elasticache.md) | Easy |
+
+#### AWS - DNS
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+Register Domain | Route 53 | [Exercise](register_domain.md) | [Solution](solutions/register_domain.md) | Easy |
+Creating Records | Route 53 | [Exercise](creating_records.md) | [Solution](solutions/creating_records.md) | Easy |
+Health Checks | Route 53 | [Exercise](health_checks.md) | [Solution](solutions/health_checks.md) | Easy |
+Failover | Route 53 | [Exercise](route_53_failover.md) | [Solution](solutions/route_53_failover.md) | Easy |
+
+#### AWS - Containers
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| ECS Task | ECS, Fargate | [Exercise](ecs_task.md) | [Solution](solutions/ecs_task.md) | Easy |
 
 #### AWS - Lambda
 
@@ -238,6 +293,14 @@ True. As opposed to IAM for example, which is a global service, EC2 is a regiona
 </b></details>
 
 <details>
+<summary>What would you use for customizing EC2 instances? As in software installation, OS configuration, etc.</summary><br><b>
+
+AMI. With AMI (Amazon Machine Image) you can customize EC2 instances by specifying which software to install, what OS changes should be applied, etc.
+</b></details>
+
+##### AWS EC2 - AMI
+
+<details>
 <summary>What is AMI?</summary><br><b>
 
 Amazon Machine Images is "An Amazon Machine Image (AMI) provides the information required to launch an instance".
@@ -245,11 +308,27 @@ Read more [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
 </b></details>
 
 <details>
-<summary>What are the different source for AMIs?</summary><br><b>
+<summary>What are the different sources for AMIs?</summary><br><b>
 
 * Personal AMIs - AMIs you create
-* AWS Marketplace for AMIs - Paid AMIs usually with bundled with licensed software
-* Community AMIs - Free
+* AWS Marketplace for AMIs - AMIs made by others, mostly sold for some price
+* Public AMIs - Provided by AWS
+</b></details>
+
+<details>
+<summary>True or False? AMI are built for specific region</summary><br><b>
+
+True (but they can be copied from one region to another).
+</b></details>
+
+<details>
+<summary>Describe in high-level the process of creating AMIs</summary><br><b>
+
+1. Start an EC2 instance
+2. Customized the EC2 instance (install packages, change OS configuration, etc.)
+3. Stop the instance (for avoiding data integrity issues)
+4. Create EBS snapshot and build an AMI
+5. To verify and test the AMI, launch an instance from the AMI
 </b></details>
 
 <details>
@@ -304,11 +383,196 @@ Storage Optimized:
 </b></details>
 
 <details>
-<summary>What is EBS?</summary><br><b>
+<summary>What can you attach to an EC2 instance in order to store data?</summary><br><b>
 
-"provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices."
-More on EBS [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html)
+EBS
 </b></details>
+
+##### AWS EC2 - EBS
+
+<details>
+<summary>Explain Amazon EBS</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html): "provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices."
+</b></details>
+
+<details>
+<summary>What happens to EBS volumes when the instance is terminated?</summary><br><b>
+
+By deafult, the root volume is marked for deletion, while other volumes will still remain.<br>
+You can control what will happen to every volume upon termination.
+</b></details>
+
+<details>
+<summary>What happens to the EC2 disk (EBS) when the instance is stopped?</summary><br><b>
+
+Disk is intact and can be used when the instance starts.
+</b></details>
+
+<details>
+<summary>True or False? EBS volumes are locked to a specific availability zone</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>Explain EBS Snapshots</summary><br><b>
+
+EBS snapshots used for making a backup of the EBS volume at point of time.
+</b></details>
+
+<details>
+<summary>What are the use cases for using EBS snapshots?</summary><br><b>
+
+* Backups of the data
+* Moving the data between AZs
+</b></details>
+
+<details>
+<summary>Is it possible to attach the same EBS volume to multiple EC2 instances?</summary><br><b>
+
+Yes, with multi-attach it's possible to attach a single EBS volume to multiple instances.
+</b></details>
+
+<details>
+<summary>True or False? EBS is a network drive hence, it requires network connectivity</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What EBS volume types are there?</summary><br><b>
+
+* HDD (st 1, sc 1): Low cost HDD volumes
+* SSD
+  * io1, io2: Highest performance SSD
+  * gp2, gp3: General purpose SSD
+</b></details>
+
+<details>
+<summary>If you need an EBS volume for low latency workloads, which volume type would you use?</summary><br><b>
+
+SSD - io1, io2
+</b></details>
+
+<details>
+<summary>If you need an EBS volume for workloads that require good performance but the cost is also an important aspect for you, which volume type would you use?</summary><br><b>
+
+SSD - gp2, gp3
+</b></details>
+
+<details>
+<summary>If you need an EBS volume for high-throughput, which volume type would you use?</summary><br><b>
+
+SSD - io1, io2
+</b></details>
+
+<details>
+<summary>If you need an EBS volume for infrequently data access, which volume type would you use?</summary><br><b>
+
+HDD - sc1
+</b></details>
+
+<details>
+<summary>Which EBS volume types can be used as boot volumes for EC2 instances?</summary><br><b>
+
+SSD: gp2, gp3, io1, io2
+</b></details>
+
+<details>
+<summary>True or False? In EBS gp2 volume type, IP will increase if the disk size increases</summary><br><b>
+
+True.
+</b></details>
+
+##### AWS EC2 - Instance Store
+
+<details>
+<summary>If you would like to have an hardware disk attached to your EC2 instead of a network one (EBS). What would you use?</summary><br><b>
+
+EC2 Instance Store.
+</b></details>
+
+<details>
+<summary>Explain EC2 Instance Store. Why would someone choose to use it over other options?</summary><br><b>
+
+EC2 instance store provides better I/O performances when compared to EBS.<br>
+It is mostly used for cache and temporary data purposes.
+</b></details>
+
+<details>
+<summary>Are there any disadvantages in using instance store over EBS?</summary><br><b>
+
+Yes, the data on instance store is lost when they are stopped.
+</b></details>
+
+##### AWS Storage - EFS
+
+<details>
+<summary>What is Amazon EFS?</summary><br><b>
+
+[AWS Docs](https://aws.amazon.com/efs): "Amazon Elastic File System (Amazon EFS) provides a simple, scalable, fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources."
+
+In simpler words, it's a network file system you can mount on one or more EC2 instances.
+</b></details>
+
+<details>
+<summary>True or False? EFS is locked into a single availability zone</summary><br><b>
+
+False. EFS can be mounted across multiple availability zones.
+</b></details>
+
+<details>
+<summary>What are some use cases for using EFS?</summary><br><b>
+
+* Data sharing (e.g. developers working on the same source control)
+* Web serving
+* Content management
+</b></details>
+
+<details>
+<summary>True or False? EFS only compatible with Linux based AMI</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? EFS requires the user to perform capacity planning as it doesn't scales automatically</summary><br><b>
+
+False. EFS scales automatically and you pay-per-use.
+</b></details>
+
+<details>
+<summary>What EFS modes are there?</summary><br><b>
+
+* Performance mode
+  * General purpose: used mainly for CMS, web serving, ... as it's optimal for latency sensitive applications
+  * Max I/O: great for scaling to high levels of throughput and I/O operations per second
+* Throughput mode
+  * Bursting: scale throughput based on FS size
+  * Provisioned: fixed throughput
+</b></details>
+
+<details>
+<summary>Which EFS mode would you use if you need to perform media processing?</summary><br><b>
+
+Performance Mode (Max I/O): It provides high throughput and scales to operations per second. Mainly used for big data, media processing, etc.
+</b></details>
+
+<details>
+<summary>What is the default EFS mode?</summary><br><b>
+
+Performance Mode (General Purpose): Used for web serving, CMS, ... anything that is sensitive to latency.
+</b></details>
+
+<details>
+<summary>What EFS storage tiers are there?</summary><br><b>
+
+* Standard: frequently accessed files
+* Infrequent access: lower prices to store files but it also costs to retrieve them
+</b></details>
+
+##### AWS EC2 - Pricing Models
 
 <details>
 <summary>What EC2 pricing models are there?</summary><br><b>
@@ -496,9 +760,9 @@ To terminate such instances, you must cancel the Spot instance request first.
 </b></details>
 
 <details>
-<summary>What are Spot Flees?</summary><br><b>
+<summary>What are Spot Fleets?</summary><br><b>
 
-Set of Spot instance and if you want, also on-demand instances.
+Set of Spot instances and if you would like, also on-demand instances.
 </b></details>
 
 <details>
@@ -507,6 +771,85 @@ Set of Spot instance and if you want, also on-demand instances.
 * lowestPrice: launch instances from the pool that has the lowest price
 * diversified: distributed across all pools
 * capacityOptimized: optimized based on the number of instances
+</b></details>
+
+<details>
+<summary>From networking perspective, what do you get by default when running an EC2 instance?</summary><br><b>
+
+A private IP and a public IP.
+</b></details>
+
+<details>
+<summary>Explain EC2 hibernate</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html: "Hibernation saves the contents from the instance memory (RAM) to your Amazon Elastic Block Store (Amazon EBS) root volume."
+</b></details>
+
+<details>
+<summary>True or False? Using EC2 hibernate option results in having faster instance boot</summary><br><b>
+
+True. This is because the operating system isn't restarted or stopped.
+</b></details>
+
+<details>
+<summary>What are some use cases for using EC2 hibernate option?</summary><br><b>
+
+* Save RAM state
+* Service with long time initialization
+* Keep long-running processes
+</b></details>
+
+<details>
+<summary>What are some limitations of EC2 hibernate option?</summary><br><b>
+
+* Instance RAM size is limited
+* Root volume must be encrypted EBS
+* Hibernation time is limited
+* Doesn't supports all instances types
+* No support for bare metal. Only On-Demand and Reserved instances
+* Doesn't supports all AMIs
+</b></details>
+
+<details>
+<summary>Explain what is EC2 Nitro</summary><br><b>
+
+* Next generation EC2 instances using new virtualization technology
+* Better EBS: 64,000 EBS IOPS
+* Better networking: HPC, IPv6
+* Better security
+</b></details>
+
+<details>
+<summary>What CPU customization is available with EC2?</summary><br><b>
+
+* Modifying number of CPU cores (useful for high RAM and low CPU applications)
+* Modifying number of threads per cure (useful for HPC workloads)
+</b></details>
+
+<details>
+<summary>Explain EC2 Capacity Reservations</summary><br><b>
+
+* Allows you to ensure you have EC2 capacity when you need it
+* Usually combined with Reserved Instances and Saving Plans to achieve cost saving
+</b></details>
+
+##### AWS EC2 - Launch Template
+
+<details>
+<summary>What is a launch template?</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html): "You can create a launch template that contains the configuration information to launch an instance. You can use launch templates to store launch parameters so that you do not have to specify them every time you launch an instance"
+</b></details>
+
+<details>
+<summary>What is the difference between Launch Configuration and Launch Template?</summary><br><b>
+
+Launch configuration is a legacy form of Launch Template that must be recreated every time you would like to update the configuration.
+
+In addition, launch template has the clear benefits of:
+  * Provision both On-Demand and Spot instances
+  * supporting multiple versions
+  * support creating parameters subsets (used for re-use and inheritance)
 </b></details>
 
 #### AWS - Lambda
@@ -542,41 +885,85 @@ False. Charges are being made when the code is executed.
 True
 </b></details>
 
-#### AWS Containers
+#### AWS - Containers
+
+##### AWS Containers - ECS
 
 <details>
 <summary>What is Amazon ECS?</summary><br><b>
 
-Amazon definition: "Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service. Customers such as Duolingo, Samsung, GE, and Cook Pad use ECS to run their most sensitive and mission critical applications because of its security, reliability, and scalability."
+[AWS Docs](https://aws.amazon.com/ecs): "Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service. Customers such as Duolingo, Samsung, GE, and Cook Pad use ECS to run their most sensitive and mission critical applications because of its security, reliability, and scalability."
 
-Learn more [here](https://aws.amazon.com/ecs)
+In simpler words, it allows you to launch containers on AWS.<br>
+While AWS takes care of starting/stopping containers, you need to provision and maintain the infrastructure where the containers are running (EC2 instances).
+</b></details>
+
+<details>
+<summary>What one should do in order to make EC2 instance part of an ECS cluster?</summary><br><b>
+
+Install ECS agent on it. Some AMIs have built-in configuration for that.
+</b></details>
+
+<details>
+<summary>What ECS launch types are there?</summary><br><b>
+
+* EC2 Instance
+* AWS Fargate
 </b></details>
 
 <details>
 <summary>What is Amazon ECR?</summary><br><b>
 
-Amazon definition: "Amazon Elastic Container Registry (ECR) is a fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images."
-
-Learn more [here](https://aws.amazon.com/ecr)
+[AWS Docs](https://aws.amazon.com/ecr): "Amazon Elastic Container Registry (ECR) is a fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images."
 </b></details>
+
+<details>
+<summary>What the role "EC2 Instance Profile" is used for in regards to ECS?</summary><br><b>
+
+EC2 Instance Profile used by ECS agent on an EC2 instance to:
+
+  * Make API calls to ECS Service
+  * Send logs to CloudWatch from the container
+  * Use secrets defined in SSM Parameter Store or Secrets Manager
+  * Pull container images from ECR (Registry)
+</b></details>
+
+<details>
+<summary>How to share data between containers (some from ECS and some from Fargate)?</summary><br><b>
+
+Using EFS is a good way to share data between containers and it works also between different AZs.
+</b></details>
+
+##### AWS Containers - Fargate
 
 <details>
 <summary>What is AWS Fargate?</summary><br><b>
 
-Amazon definition: "AWS Fargate is a serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS)."
+[Amazon Docs](https://aws.amazon.com/fargate): "AWS Fargate is a serverless, pay-as-you-go compute engine that lets you focus on building applications without managing servers. AWS Fargate is compatible with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS)"
 
-Learn more [here](https://aws.amazon.com/fargate)
+In simpler words, AWS Fargate allows you launch containers on AWS without worrying about managing infrastructure. It runs containers based on the CPU and RAM you need.
 </b></details>
 
-#### AWS Storage
+<details>
+<summary>How AWS Fargate different from AWS ECS?</summary><br><b>
+
+In AWS ECS, you manage the infrastructure - you need to provision and configure the EC2 instances.<br>
+While in AWS Fargate, you don't provision or manage the infrastructure, you simply focus on launching Docker containers. You can think of it as the serverless version of AWS ECS.
+</b></details>
+
+<details>
+<summary>True or False? Fargate creates an ENI for every task it runs</summary><br><b>
+
+True.
+</b></details>
+
+#### AWS - S3
 
 <details>
 <summary>Explain what is AWS S3?</summary><br><b>
 
-S3 stands for 3 S, Simple Storage Service.
+S3 stands for: Simple Storage Service.<br>
 S3 is a object storage service which is fast, scalable and durable. S3 enables customers to upload, download or store any file or object that is up to 5 TB in size.
-
-More on S3 [here](https://aws.amazon.com/s3)
 </b></details>
 
 <details>
@@ -653,7 +1040,6 @@ Storage classes offered today:
     * have 9x9% durability
 
 More on storage classes [here](https://aws.amazon.com/s3/storage-classes)
-
 </b></details>
 
 <details>
@@ -731,22 +1117,6 @@ Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-accel
 <summary>What storage options are there for EC2 Instances?</summary><br><b>
 </b></details>
 
-<details>
-<summary>What is Amazon EFS?</summary><br><b>
-
-Amazon definition: "Amazon Elastic File System (Amazon EFS) provides a simple, scalable, fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources."
-
-Learn more [here](https://aws.amazon.com/efs)
-</b></details>
-
-<details>
-<summary>What is AWS Snowmobile?</summary><br><b>
-
-"AWS Snowmobile is an Exabyte-scale data transfer service used to move extremely large amounts of data to AWS."
-
-Learn more [here](https://aws.amazon.com/snowmobile)
-</b></details>
-
 #### AWS Disaster Recovery
 
 <details>
@@ -807,26 +1177,268 @@ True
 A transport solution which was designed for transferring large amounts of data (petabyte-scale) into and out the AWS cloud.
 </b></details>
 
-##### AWS ELB
+#### AWS - ELB
 
 <details>
 <summary>What is ELB (Elastic Load Balancing)?</summary><br><b>
 
-AWS definition: "Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions."
+[AWS Docs](https://aws.amazon.com/elasticloadbalancing): "Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions."
+</b></details>
 
-More on ELB [here](https://aws.amazon.com/elasticloadbalancing)
+<details>
+<summary>True or False? Elastic Load Balancer is a managed resource (= AWS takes care of it)</summary><br><b>
+
+True. AWS responsible for making sure ELB is operational and takes care of lifecycle operations like upgrades, maintenance and high availability.
+</b></details>
+
+<details>
+<summary>What types of AWS load balancers are there?</summary><br><b>
+
+* Classic Load Balancer (CLB): Mainly for TCP (layer 4) and HTTP, HTTPS (layer 7)
+* Application Load Balancer (ALB): Mainly for HTTP, HTTPS and WebSocket
+* Network Load Balancer (NLB): Mainly for TCP, TLS and UDP
+* Gateway Load Balancer (GWLB): Mainly for layer 3 operations (IP protocol)
+</b></details>
+
+<details>
+<summary>Which load balancer would you use for services which use HTTP or HTTPS traffic?</summary><br><b>
+
+Application Load Balancer (ALB).
+</b></details>
+
+<details>
+<summary>True or False? With ALB (Application Load Balancer) it's possible to do routing based on query string and/or headers</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>What are some use cases for using Gateway Load Balancer?</summary><br><b>
+
+* Intrusion Detection
+* Firewall
+* Payload manipulation
+</b></details>
+
+<details>
+<summary>Explain "health checks" in the context of AWS ELB</summary><br><b>
+
+Health checks used by ELB to check whether EC2 instance(s) are properly working.<br>
+If health checks fail, ELB knows to not forward traffic to that specific EC2 instance where the health checks failed.
+</b></details>
+
+<details>
+<summary>True or False? AWS ELB health checks are done on a port and a route</summary><br><b>
+
+True.
+
+For example, port `2017` and endpoint `/health`.
 </b></details>
 
 <details>
 <summary>What types of load balancers are supported in EC2 and what are they used for?</summary><br><b>
 
-  * Application LB - layer 7 traffic
-  * Network LB - ultra-high performances or static IP address (layer 4)
-  * Classic LB - low costs, good for test or dev environments (retired by August 15, 2022)
-  * Gateway LB - transparent network gateway and and distributes traffic such as firewalls, intrusion detection and prevention systems, and deep packet inspection systems. (layer 3)
+* Application LB - layer 7 traffic<br>
+* Network LB - ultra-high performances or static IP address (layer 4)<br>
+* Classic LB - low costs, good for test or dev environments (retired by August 15, 2022)<br>
+* Gateway LB - transparent network gateway and and distributes traffic such as firewalls, intrusion detection and prevention systems, and deep packet inspection systems. (layer 3)<br>
 </b></details>
 
-#### AWS Security
+<details>
+<summary>Which type of AWS load balancer is used in the following drawing?<br>
+<img src="images/aws/identify_load_balancer.png" width="300x;" height="400px;"/>
+</summary><br><b>
+
+Application Load Balancer (routing based on different endpoints + HTTP is used).
+</b></details>
+
+<details>
+<summary>What are possible target groups for ALB (Application Load Balancer)?</summary><br><b>
+
+* EC2 tasks
+* ECS instances
+* Lambda functions
+* Private IP Addresses
+</b></details>
+
+<details>
+<summary>True or False? ALB can route only to a single route group</summary><br><b>
+
+False. ALB can route to multiple target groups.
+</b></details>
+
+<details>
+<summary>If you wanted to analyze network traffic, you would use the `____ load balancer`</summary><br><b>
+
+Gateway Load Balancer
+</b></details>
+
+<details>
+<summary>Who has better latency? Application Load Balancer or Network Load Balancer?</summary><br><b>
+
+Network Load Balancer (~100 ms) as ALB has a latency of ~400 ms
+</b></details>
+
+<details>
+<summary>True or False? Network load balancer has one static IP per availability zone</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>What are the supported target groups for network load balancer?</summary><br><b>
+
+* EC2 instance
+* IP addresses
+* Application Load Balancer
+</b></details>
+
+<details>
+<summary>What are the supported target groups for gateway load balancer?</summary><br><b>
+
+* EC2 instance
+* IP addresses (must be private IPs)
+</b></details>
+
+<details>
+<summary>Name one use case for using application load balancer as a target group for network load balancer</summary><br><b>
+
+You might want to have a fixed IP address (NLB) and then forward HTTP traffic based on path, query, ... which is then done by ALB
+</b></details>
+
+<details>
+<summary>What are some use cases for using Network Load Balancer?</summary><br><b>
+
+* TCP, UDP traffic
+* Extreme performance
+</b></details>
+
+<details>
+<summary>True or False? Network load balancers operate in layer 4</summary><br><b>
+
+True. They forward TCP, UDP traffic.
+</b></details>
+
+<details>
+<summary>True or False? It's possible to enable sticky session for network load balancer so the same client is always redirected to the same instance</summary><br><b>
+
+False. This is only supported in Classic Load Balancer and Application Load Balancer.
+</b></details>
+
+<details>
+<summary>Explain Cross Zone Load Balancing</summary><br><b>
+
+With cross zone load balancing, traffic distributed evenly across all (registered) instances in all the availability zones.
+</b></details>
+
+<details>
+<summary>True or False? For application load balancer, cross zone load balancing is always on and can't be disabled</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? For network load balancer, cross zone load balancing is always on and can't be disabled </summary><br><b>
+
+False. It's disabled by default
+</b></details>
+
+<details>
+<summary>True or False? In regards to cross zone load balancing, AWS charges you for inter AZ data in network load balancer but no in application load balancer</summary><br><b>
+
+False. It charges fir inter AZ data in network load balancer, but not in application load balancer
+</b></details>
+
+<details>
+<summary>True or False? Both ALB and NLB support multiple listeners with multiple SSL certificates </summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>Explain Deregistration Delay (or Connection Draining) in regards to ELB</summary><br><b>
+
+The period of time or process of "draining" instances from requests/traffic (basically let it complete all active connections but don't start new ones) so it can be de-registered eventually and ELB won't send requests/traffic to it anymore.
+</b></details>
+
+#### AWS - Auto Scaling Group
+
+<details>
+<summary>Explain Auto Scaling Group</summary><br><b>
+
+[Amazon Docs](https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html): "An Auto Scaling group contains a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management. An Auto Scaling group also enables you to use Amazon EC2 Auto Scaling features such as health check replacements and scaling policies"
+</b></details>
+
+<details>
+<summary>You have two instance running as part of ASG. You change the desired capacity to 1. What will be the outcome of this change?</summary><br><b>
+
+One of the instances will be terminated.
+</b></details>
+
+<details>
+<summary>How can you customize the trigger for the scaling in/out of an auto scaling group?</summary><br><b>
+
+One way is to use CloudWatch alarms where an alarm will monitor a metric and based on a certain value (or range) you can choose to scale-in or scale-out the ASG.
+</b></details>
+
+<details>
+<summary>What are some metrics/rules used for auto scaling</summary><br><b>
+
+* Network In/Out
+* Number of requests on ELB per instance
+* Average CPU, RAM usage
+</b></details>
+
+<details>
+<summary>What is dynamic Scaling policy in regards to Auto Scaling Groups?</summary><br><b>
+
+A policy in which scaling will occur automatically based on different metrics.
+
+There are 3 types:
+
+1. Target Tracking Scaling: scale when the baseline changes (e.g. CPU is over 60%)
+2. Step Scaling: more granular scaling where you can choose different actions for different metrics values (e.g. when CPU less than 20%, remove one instance. When CPU is over 40%, add 3 instances)
+3. Scheduled Actions: set in advance scaling for specific period of time (e.g. add instances on Monday between 10:00 am to 11:00 am)
+</b></details>
+
+<details>
+<summary>What is a predictive scaling policy in regards to Auto Scaling Groups?</summary><br><b>
+
+Scale by analyzing historical load and schedule scaling based on forecast load.
+</b></details>
+
+<details>
+<summary>Explain scaling cooldowns in regards to Auto Scaling Groups</summary><br><b>
+
+During a scaling cooldown, ASG will not terminate or launch additional instances. The cooldown happens after scaling activity and the reason for this behaviour is that some metrics have to be collected and stabilize before another scaling operating can take place.
+</b></details>
+
+<details>
+<summary>Explain the default ASG termination policy</summary><br><b>
+
+1. It finds the AZ which the most number of EC2 instnaces
+2. If number of instances > 1, choose the one with oldest launch configuration, template and terminate it
+</b></details>
+
+<details>
+<summary>True or False? by deafult, ASG tries to balance the number of instances across AZ</summary><br><b>
+
+True, this is why when it terminates instances, it chooses the AZ with the most instances.
+</b></details>
+
+<details>
+<summary>Explain Lifecycle hooks in regards to Auto Scaling Groups</summary><br><b>
+
+Lifecycle hooks allows you perform extra steps before the instance goes in service (During pending state) or before it terminates (during terminating state).
+</b></details>
+
+<details>
+<summary>If you use ASG and you would like to run extra steps before the instance goes in service, what will you use? </summary><br><b>
+
+Lifecycle hooks in pending state.
+</b></details>
+
+#### AWS - Security
 
 <details>
 <summary>What is the shared responsibility model? What AWS is responsible for and what the user is responsible for based on the shared responsibility model?</summary><br><b>
@@ -964,11 +1576,194 @@ Amazon definition: "AWS Certificate Manager is a service that lets you easily pr
 Learn more [here](https://aws.amazon.com/certificate-manager)
 </b></details>
 
-#### AWS Databases
+#### AWS - Databases
+
+##### AWS Databases - RDS
 
 <details>
 <summary>What is AWS RDS?</summary><br><b>
+
+* Relational Database Service
+* Managed DB service (you can't ssh the machine)
+* Supports multiple DBs: MySQL, Oracle, Aurora (AWS Proprietary), ...
 </b></details>
+
+<details>
+<summary>Why to use AWS RDS instead of launching an EC2 instance and install a database on it?</summary><br><b>
+
+AWS RDS is a managed service, that means it's automatically provisioned and patched for you.
+
+In addition, it provides you with continuous backup (and the ability to restore from any point of time), scaling capability (both horizontal and vertical), monitoring dashboard and read replicas.
+</b></details>
+
+<details>
+<summary>What do you know about RDS backups?</summary><br><b>
+
+* Automated backups
+* Full daily backup (done during maintenance window)
+* Transactions logs backup every 5 minutes
+* Retention can be increased and by default it's 7 days
+</b></details>
+
+<details>
+<summary>Explain AWS RDS Storage Auto Scaling</summary><br><b>
+
+* RDS storage can automatically be increased upon lack in storage
+* The user needs to set "Maximum Storage Threshold" to have some limit on storage scaling
+* Use cases: applications with unpredictable workloads
+* Supports multiple RDS database engines
+</b></details>
+
+<details>
+<summary>Explain Amazon RDS Read Replicas</summary><br><b>
+
+[AWS Docs](https://aws.amazon.com/rds/features/read-replicas): "Amazon RDS Read Replicas provide enhanced performance and durability for RDS database (DB) instances. They make it easy to elastically scale out beyond the capacity constraints of a single DB instance for read-heavy database workloads."
+
+In simpler words, it allows you to scale your reads.
+</b></details>
+
+<details>
+<summary>True or False? RDS read replicas are supported within az, cross az and cross region</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? RDS read replicas are asynchronous</summary><br><b>
+
+True. This is done so the reads are consistent.
+</b></details>
+
+<details>
+<summary>True or False? Amazon RDS supports MongoDB</summary><br><b>
+
+False. RDS is relational database and MongoDB is a NoSQL db.
+</b></details>
+
+<details>
+<summary>What are some use cases for using RDS read replicas?</summary><br><b>
+
+You have a main application which works against your database but you would like to add additional app, one used for logging, analytics, ... so you prefer it won't use the same database. In this case, you create a read replica instance and the second application works against that instance.
+</b></details>
+
+<details>
+<summary>Explain RDS Multi Availability Zone</summary><br><b>
+
+* RDS multi AZ used mainly for disaster recovery purposes
+* There is an RDS master instance and in another AZ an RDS standby instance
+* The data is synced synchronously between them
+* The user, application is accessing one DNS name and where there is a failure with the master instance, the DNS name moves to the standby instance, so the failover done automatically
+</b></details>
+
+<details>
+<summary>True or False? Moving AWS RDS from single AZ to multi AZ is an operation with downtime (meaning there is a need to stop the DB)</summary><br><b>
+
+False. It's a zero downtime operation = no need to stop the database.
+</b></details>
+
+<details>
+<summary>How AWS RDS switches from single AZ to multi AZ?</summary><br><b>
+
+1. Snapshot is taken by RDS
+2. The snapshot is restored to another, standby, RDS instance
+3. Synchronization is enabled between the two instances
+</b></details>
+
+<details>
+<summary>True or False? RDS encryption should be defined at launch time</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? in regards to RDS, replicas can be encrypted even if the master isn't encrypted</summary><br><b>
+
+False
+</b></details>
+
+<details>
+<summary>How to make RDS snapshots encrypted?</summary><br><b>
+
+* If RDS database is encrypted then, the snapshot itself is also encrypted
+* If RDS database isn't encrypted then, the snapshot itself isn't encrypted and then you can copy the un-encrypted snapshot to created an encrypted copy
+</b></details>
+
+<details>
+<summary>How to encrypt an un-encrypted RDS instance?</summary><br><b>
+
+Create a copy of the un-encrypted instance -> copy the snapshot to create an encrypted copy -> restore the database from the encrypted snapshot -> migrate the application to work against the copied instance -> remove the original DB instance
+</b></details>
+
+<details>
+<summary>How IAM authentication works with RDS?</summary><br><b>
+
+For example:
+
+1. EC2 instance uses IAM role to make an API call to get auth token
+2. The token, with SSL encryption, is used for accessing the RDS instance
+
+Note: The token has a lifetime of 15 minutes
+</b></details>
+
+<details>
+<summary>True or False? In case of RDS (not Aurora), read replicas require you to change the SQL connection string</summary><br><b>
+
+True. Since read replicas add endpoints, each with its own DNS name, you need to modify your app to reference these new endpoints to balance the load read.
+</b></details>
+
+##### AWS Databases - Aurora
+
+<details>
+<summary>What do you know about Amazon Aurora?</summary><br><b>
+
+* A MySQL & Postgresql based relational database.
+* Proprietary technology from AWS
+* The default database proposed for the user when using RDS for creating a database.
+* Storage automatically grows in increments of 10 GiB
+* HA native - failover in instant
+* Has better performances over MySQL and Postgres
+* Supports 15 replicas (while MySQL supports 5)
+</b></details>
+
+<details>
+<summary>True or False? Aurora stores 4 copies of your data across 2 availability zones</summary><br><b>
+
+False. It stores 6 copies across 3 availability zones
+</b></details>
+
+<details>
+<summary>True or False? Aurora support self healing where corrupted data replaced by doing peer-to-peer replication</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? Aurora storage is striped across 20 volumes</summary><br><b>
+
+False. 100 volumes.
+</b></details>
+
+<details>
+<summary>True or False? It's possible to scale Aurora replicas</summary><br><b>
+
+True. If your read replica instances exhaust their CPU, you can scale by adding more instances
+</b></details>
+
+<details>
+<summary>Explain Aurora Serverless. What use cases is it good for?</summary><br><b>
+
+* Aurora serverless is an automated database instantiation and it's auto scaled based on an actual usage
+* It's good mainly for infrequent or unpredictable workflows
+* You pay per second so it can eventually be more cost effective
+</b></details>
+
+<details>
+<summary>What is the use case for Aurora multi-master?</summary><br><b>
+
+Aurora multi-master is perfect for a use case where you want to have instant failover for write node.
+</b></details>
+
+##### AWS Databases - DynamoDB
 
 <details>
 <summary>What is AWS DynamoDB?</summary><br><b>
@@ -998,6 +1793,65 @@ Amazon definition: "Amazon DynamoDB Accelerator (DAX) is a fully managed, highly
 Learn more [here](https://aws.amazon.com/dynamodb/dax)
 </b></details>
 
+##### AWS Databases - ElastiCache
+
+<details>
+<summary>What is AWS ElastiCache? In what use case should it be used?</summary><br><b>
+
+Amazon Elasticache is a fully managed Redis or Memcached in-memory data store.<br>
+It's great for read-intensive workloads where the common data/queries are cached and apps/users access the cache instead of the primary database.
+</b></details>
+
+<details>
+<summary>Describe the workflow of an application using the cache in AWS</summary><br><b>
+
+1. The application performs a query against the DB. There is a check to see if the data is in the cache
+  1. If it is, it's a "cache hit" and the data is retrieved from there
+  2. If it's not in there, it's a "cache miss" and the data is pulled from the database
+   1. The data is then also written to the cache (assuming it is often accessed) and next time the user queries for the same data, it might be retrieved from the cache (depends on how much time passed and whether this specific data was invalidated or not)
+</b></details>
+
+<details>
+<summary>How can you make an application stateless using ElastiCache?</summary><br><b>
+
+Let's say you have multiple instances running the same application and every time you use the application, it creates a user session.<br>
+This user session can be stored in ElastiCache so even if the user contacts a different instance of the application, the application can retrieve the session from the ElsatiCache.
+</b></details>
+
+<details>
+<summary>You need a highly available cache with backup and restore features. Which one would you use?</summary><br><b>
+
+ElastiCache Redis.
+</b></details>
+
+<details>
+<summary>You need a cache with read replicas that can be scaled and one support multi AZ. Which one would you use?</summary><br><b>
+
+ElastiCache Redis.
+</b></details>
+
+<details>
+<summary>You need a cache that supports sharding and built with multi-threaded architecture in mind. Which one would you use?</summary><br><b>
+
+ElastiCache Memcached
+</b></details>
+
+<details>
+<summary>True or False? ElastiCache doesn't supports IAM authentication</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>What patterns are there for loading data into the cache?</summary><br><b>
+
+* Write Through: add or update data in the cache when the data is written to the DB
+* Lazy Loading: all the read data is cached
+* Session Store: store temporary session data in cache
+</b></details>
+
+##### AWS Databases - RedShift
+
 <details>
 <summary>What is AWS Redshift and how is it different than RDS?</summary><br><b>
 
@@ -1011,20 +1865,6 @@ cloud data warehouse
 * If confirmed, you can query for running queries and cancel the irrelevant queries
 * Check for connection leaks (query for running connections and include their IP)
 * Check for table locks and kill irrelevant locking sessions
-</b></details>
-
-<details>
-<summary>What is AWS ElastiCache? For what cases is it used?</summary><br><b>
-
-Amazon Elasticache is a fully managed Redis or Memcached in-memory data store.
-It's great for use cases like two-tier web applications where the most frequently accesses data is stored in ElastiCache so response time is optimal.
-</b></details>
-
-<details>
-<summary>What is Amazon Aurora</summary><br><b>
-
-A MySQL & Postgresql based relational database. Also, the default database proposed for the user when using RDS for creating a database.
-Great for use cases like two-tier web applications that has a MySQL or Postgresql database layer and you need automated backups for your application.
 </b></details>
 
 <details>
@@ -1045,14 +1885,7 @@ Learn more [here](https://aws.amazon.com/documentdb)
 EBS
 </b></details>
 
-<details>
-<summary>Explain Amazon RDS Read Replicas</summary><br><b>
-
-AWS definition: "Amazon RDS Read Replicas provide enhanced performance and durability for RDS database (DB) instances. They make it easy to elastically scale out beyond the capacity constraints of a single DB instance for read-heavy database workloads."
-Read more about [here](https://aws.amazon.com/rds/features/read-replicas)
-</b></details>
-
-#### AWS Networking
+#### AWS - VPC
 
 <details>
 <summary>What is VPC?</summary><br><b>
@@ -1062,9 +1895,29 @@ Read more about it [here](https://aws.amazon.com/vpc).
 </b></details>
 
 <details>
+<summary>True or False? By default, any new account has a default VPC</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? Default VPC doesn't have internet connectivity and any launched EC2 will only have a private IP assigned</summary><br><b>
+
+False. The default VPC has internet connectivity and any launched EC2 instance gets a public IPv4 address.
+
+In addition, any launched EC2 instance gets a public and private DNS names.
+</b></details>
+
+<details>
 <summary>True or False? VPC spans multiple regions</summary><br><b>
 
 False
+</b></details>
+
+<details>
+<summary>True or False? It's possible to have multiple VPCs in one region</summary><br><b>
+
+True. As of today, the soft limit is 5.
 </b></details>
 
 <details>
@@ -1074,10 +1927,36 @@ True. Just to clarify, a single subnet resides entirely in one AZ.
 </b></details>
 
 <details>
+<summary>You have noticed your VPC's subnets (which use x.x.x.x/20 CIDR) have 4096 available IP addresses although this CIDR should have 4096 addresses. What is the reason for that?</summary><br><b>
+
+AWS reserves 5 IP addresses in each subnet - first 4 and the last one, and so they aren't available for use.
+</b></details>
+
+<details>
+<summary>What AWS uses the 5 reserved IP addresses for?</summary><br><b>
+
+x.x.x.0 - network address
+x.x.x.1 - VPC router
+x.x.x.2 - DNS mapping
+x.x.x.3 - future use
+x.x.x.255 - broadcast address
+</b></details>
+
+<details>
 <summary>What is an Internet Gateway?</summary><br><b>
 
-"component that allows communication between instances in your VPC and the internet" (AWS docs).
-Read more about it [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
+[AWS Docs](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html): "component that allows communication between instances in your VPC and the internet"
+
+In addition it's good to know that IGW is:
+  * Highly available and redundant
+  * Not porivding internet access by its own (you need route tables to be edited)
+  * Created separately from VPC
+</b></details>
+
+<details>
+<summary>True or False? One or more VPCs can be attached to one Internet Gateway</summary><br><b>
+
+False. Only one VPC can be attached to one IGW and vice versa
 </b></details>
 
 <details>
@@ -1099,9 +1978,43 @@ False. Only one internet gateway can be attached to a single VPC.
 </b></details>
 
 <details>
+<summary>You've restarted your EC2 instance and the public IP has changed. How would you deal with it so it won't happen?</summary><br><b>
+
+Use Elastic IP which provides you a fixed IP address.
+</b></details>
+
+<details>
+<summary>When creating a new VPC, there is an option called "Tenancy". What is it used for?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is an Elastic IP address?</summary><br><b>
-An Elastic IP address is a reserved public IP address that you can assign to any EC2 instance in a particular region, until you choose to release it.
-When you associate an Elastic IP address with an EC2 instance, it replaces the default public IP address. If an external hostname was allocated to the instance from your launch settings, it will also replace this hostname; otherwise, it will create one for the instance. The Elastic IP address remains in place through events that normally cause the address to change, such as stopping or restarting the instance.
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html): "An Elastic IP address is a static IPv4 address designed for dynamic cloud computing. An Elastic IP address is allocated to your AWS account, and is yours until you release it. By using an Elastic IP address, you can mask the failure of an instance or software by rapidly remapping the address to another instance in your account."
+</b></details>
+
+<details>
+<summary>Why would you use an Elastic IP address?</summary><br><b>
+
+Let's say you have an instance that you need to shutdown or perform some maintenance on. In that case, what you would want to do is to move the Elastic IP address to another instance that is operational, until you finish to perform the maintenance and then you can move it back to the original instance (or keep it assigned to the second one).
+</b></details>
+
+<details>
+<summary>True or False? When stopping and starting an EC2 instance, its public IP changes</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What are the best practices around Elastic IP?</summary><br><b>
+
+The best practice is actually not using them in the first place. It's more common to use a load balancer without a public IP or use a random public IP and register a DNS record to it
+</b></details>
+
+<details>
+<summary>True or False? An Elastic IP is free, as long it's not associated with an EC2 instance</summary><br><b>
+
+False. An Elastic IP is free of charge as long as **it is ** associated with an EC2 instance. This instance should be running and should have only one Elastic IP.
 </b></details>
 
 <details>
@@ -1123,6 +2036,96 @@ Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec
 <summary>What is AWS Direct Connect?</summary><br><b>
 
 Allows you to connect your corporate network to AWS network.
+</b></details>
+
+<details>
+<summary>What would you use if you need a fixed public IP for your EC2 instance?</summary><br><b>
+
+Elastic IP
+</b></details>
+
+<details>
+<summary>Kratos, your colleague, decided to use a subnet of /27 because he needs 29 IP addresses for EC2 instances. Is Kratos right?</summary><br><b>
+
+No. Since AWS reserves 5 IP addresses for every subnet, Kratos will have 32-5=27 addresses and this is less than what he needs (29).
+
+It's better if Kratos uses a subnet of size /26 but good luck telling him that.
+</b></details>
+
+##### AWS EC2 - ENI
+
+<details>
+<summary>Explain Elastic Network Interfaces (ENI)</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html): "An elastic network interface is a logical networking component in a VPC that represents a virtual network card."
+</b></details>
+
+<details>
+<summary>Name at least three attributes the Elastic Network Interfaces (ENI) can include</summary><br><b>
+
+1. One public IPv4 address
+2. Mac Address
+3. A primary private IPv4 address (from the address range of your VPC)
+</b></details>
+
+<details>
+<summary>True or False? ENI are not bound to a specific availability zone</summary><br><b>
+
+False. ENI are bound to specific availability zone.
+</b></details>
+
+<details>
+<summary>True or False? ENI can be created independently of EC2 instances</summary><br><b>
+
+True. They can be attached later on and on the fly (for failover purposes).
+</b></details>
+
+##### AWS EC2 - Placement Groups
+
+<details>
+<summary>What are "Placement Groups"?</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html): "When you launch a new EC2 instance, the EC2 service attempts to place the instance in such a way that all of your instances are spread out across underlying hardware to minimize correlated failures. You can use placement groups to influence the placement of a group of interdependent instances to meet the needs of your workload."
+</b></details>
+
+<details>
+<summary>What Placement Groups strategies are there?</summary><br><b>
+
+* Cluster: places instance close together in an AZ.
+* Spread: spreads the instance across the hardware
+* Partition: spreads the instances across different partitions (= different sets of hardware/racks) within an AZ
+</b></details>
+
+<details>
+<summary>For each of the following scenarios choose a placement group strategy:
+
+  * High availability is top priority
+  * Low latency between instances
+  * Instances must be isolated from each other
+  * Big Data applications that are partition aware
+  * Big Data process that needs to end quickly</summary><br><b>
+
+  * High availability is top priority - Spread
+  * Low latency between instances - Cluster
+  * Instances must be isolated from each other - Spread
+  * Big Data applications that are partition aware - Partition
+  * Big Data process that needs to end quickly - Cluster
+</b></details>
+
+<details>
+<summary>What are the cons and pros of the "Cluster" placement group strategy?</summary><br><b> 
+
+Cons: if the hardware fails, all instances fail
+Pros: Low latency & high throughput network
+</b></details>
+
+<details>
+<summary>What are the cons and pros of the "Spread" placement group strategy?</summary><br><b> 
+
+Cons:
+  * Current limitation is 7 instances per AZ (per replacement group)
+Pros:
+  * Maximized high availability (instances on different hardware, span across AZs)
 </b></details>
 
 #### AWS - Identify the service or tool
@@ -1320,12 +2323,6 @@ Amazon S3 Transfer Acceleration
 </b></details>
 
 <details>
-<summary>Which service would you use for distributing incoming requests across multiple?</summary><br><b>
-
-Route 53
-</b></details>
-
-<details>
 <summary>Which services are involved in getting a custom string (based on the input) when inserting a URL in the browser?</summary><br><b>
 
 Lambda - to define a function that gets an input and returns a certain string<br>
@@ -1338,18 +2335,236 @@ API Gateway - to define the URL trigger (= when you insert the URL, the function
 Kinesis
 </b></details>
 
-#### AWS DNS
+#### AWS - DNS (Route 53)
 
 <details>
 <summary>What is Route 53?</summary><br><b>
 
-"Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service..."
+[AWS Route 53](https://aws.amazon.com/route53): "Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service..."
+
 Some of Route 53 features:
-  * Register domain
+  * Register domains
   * DNS service - domain name translations
   * Health checks - verify your app is available
+  * Not a feature but its SLA is 100% availability
+</b></details>
 
-More on Route 53 [here](https://aws.amazon.com/route53)
+<details>
+<summary>What it means that "Route 53 is an Authoritative DNS"?</summary><br><b>
+
+The customer can update DNS records
+</b></details>
+
+<details>
+<summary>What each Route 53 record contains?</summary><br><b>
+
+* Domain/subdomain name (e.g. blipblop.com)
+* Value (e.g. 201.7.202.2)
+* Record type (e.g. A, AAAA, MX)
+* TTL: amount of time the  record is going to be cached
+* Routing Policy: how to respond to queries
+</b></details>
+
+<details>
+<summary>What DNS record types does Route 53 supports?</summary><br><b>
+
+* A
+* AAAA
+* CNAME
+* NS
+* DS
+* CAA
+* SOA
+* MX
+* TXT
+* SPF
+* SRV
+* NAPTR
+* PTR
+</b></details>
+
+<details>
+<summary>What are hosted zones?</summary><br><b>
+
+A container that includes records for defining how to route traffic from a domain and its subdomains
+</b></details>
+
+<details>
+<summary>What types of hosted zones are there?</summary><br><b>
+
+* Public Hosted Zones - include records to specify how to route traffic on the internet
+* Private Hosted Zones - contain records that specify how you traffic within VPC(s)
+</b></details>
+
+<details>
+<summary>What is the difference between CNAME record and an Alias record?</summary><br><b>
+
+CNAME is used for mapping one hostname to any other hostname while Alias is used to map an hostname to an AWS resource.
+
+In addition, Alias work for both root domain (somedomain.com) and non-root domain, while CNAME works only with non-root domain (foo.somedomain.com)
+</b></details>
+
+<details>
+<summary>True or False? Alias record can be set up for an EC2 DNS name</summary><br><b>
+
+False
+</b></details>
+
+<details>
+<summary>True or False? Alias record can be set up for an VPC interface endpoint</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True or False? Alias record is only of type A or AAAA</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What is a routing policy in regards to AWS Route 53?</summary><br><b>
+
+A routing policy routing defines how Route 53 responds to DNS queries.
+</b></details>
+
+<details>
+<summary>What Route 53 routing policies are there?</summary><br><b>
+
+* Simple 
+* Geolocation
+* Failover
+* Latency based
+* Geoproximity
+* Multi-Value Answer
+* Weighted
+</b></details>
+
+<details>
+<summary>Suppose you need to route % of your traffic to a certain instance and the rest of the traffic, to another instance. Which routing policy would you choose?</summary><br><b>
+
+Weighted routing policy.
+</b></details>
+
+<details>
+<summary>Suppose you need to route traffic to a single source with Route 53, without any other requirements, which routing policy would you choose?</summary><br><b>
+
+The `simple` routing policy
+</b></details>
+
+<details>
+<summary>Explain the geolocation routing policy</summary><br><b>
+
+* Routing based on user location
+* Location can be specified by continent, country or US state
+* It's recommended to have a default record in case there is no match on location
+</b></details>
+
+<details>
+<summary>What are some use cases for using geolocation routing policy?</summary><br><b>
+
+* Restrict content distribution
+* App localization
+* Load balancing
+</b></details>
+
+<details>
+<summary>Explain the geoproximity routing policy</summary><br><b>
+
+* Route based on the geographic location of resources
+* Shifting routing is done based on the `bias` value
+* Resources can be of AWS and non-AWS type
+    * For non-AWS you have to specify latitude and longitude in addition to AWS region as done in AWS-based resources
+* To use it, you have to use Route 53 traffic flow
+</b></details>
+
+<details>
+<summary>What are some use cases for <code>weighted</code> routing policy?</summary><br><b>
+
+* Load balancing between regions
+* Testing new applications versions
+</b></details>
+
+<details>
+<summary>True or False? Route 53 <code>simple</code> routing policy supports both single and multiple values</summary><br><b>
+
+True.
+
+If multiple values are returned from Route 53 then, the client chooses a single value to use.
+</b></details>
+
+<details>
+<summary>True or False? In <code>weighted</code> routing DNS records must have the same name but not the same type</summary><br><b>
+
+False. They must have the same name AND type.
+</b></details>
+
+<details>
+<summary>You would like to use a routing policy that will take latency into account and will route to the resource with the lowest latency. Which routing policy would you use?</summary><br><b>
+
+Latency-based routing policy.
+</b></details>
+
+<details>
+<summary>What happens when you set all records to weight 0 when using <code>Weighted</code> routing policy?</summary><br><b>
+
+All records are used equally.
+</b></details>
+
+<details>
+<summary>What Route 53 health checks are used for?</summary><br><b>
+
+Automated DNS failover based on monitoring:
+
+  * Another health check
+  * endpoint (app, AWS resource, server)
+  * CloudWatch alarms
+</b></details>
+
+<details>
+<summary>You would like to use a routing policy based on the resource location and be able to shift more traffic to some resources. Which one would you use?</summary><br><b>
+
+Geoproximity routing policy
+</b></details>
+
+<details>
+<summary>Explain Route 53 Traffic Flow feature</summary><br><b>
+
+It's a visual editor for managing complex routing decision trees. It allows you to simplify the process of managing records.
+
+Configuration can be saved (as Traffic Flow Policy) and applied to different domains/hosted zones. In addition, it supports versioning
+</b></details>
+
+<details>
+<summary>What are calculated health checks?</summary><br><b>
+
+When you combine the results of multiple health checks into a single health check.
+</b></details>
+
+<details>
+<summary>What is one possible use case for using calculated health checks?</summary><br><b>
+
+Performing maintenance for a website without causing all the health checks to fail.
+</b></details>
+
+<details>
+<summary>You would like to use a routing policy based on the user location. Which one would you use?</summary><br><b>
+
+Geolocation routing policy. It's based on user location.
+
+Don't confuse it with latency-based routing policy. While shorter distance may result in lower latency, this is not the requirement in the question.
+</b></details>
+
+<details>
+<summary>True or False? Route 53 Multi Value is a substitute for those who want cheaper solution than ELB</summary><br><b>
+
+False. Route 53 Multi Value is not a substitute for ELB. It's focused on client-side load balancing as opposed to ELB.
+</b></details>
+
+<details>
+<summary>True or False? Domain registrar and DNS service is inherently the same thing</summary><br><b>
+
+False. DNS service can be Route 53 (where you manage DNS records) while the domain itself can be purchased from other sources that aren't Amazon related (e.g. GoDadday).
 </b></details>
 
 #### AWS Monitoring & Logging
@@ -1393,7 +2608,7 @@ Read more about it [here](https://aws.amazon.com/sns)
 #### AWS Billing & Support
 
 <details>
-<summary>What is AWS Organizations?</summary><br><b>
+<summary>What is "AWS Organizations"?</summary><br><b>
 
 AWS definition: "AWS Organizations helps you centrally govern your environment as you grow and scale your workloads on AWS."
 More on Organizations [here](https://aws.amazon.com/organizations)
@@ -1418,11 +2633,13 @@ More on AWS pricing model [here](https://aws.amazon.com/pricing)
 </b></details>
 
 <details>
-<summary>How one should estimate AWS costs when for example comparing to on-premise solutions?</summary><br><b>
+<summary>How do you estimate AWS costs?</summary><br><b>
 
 * TCO calculator
 * AWS simple calculator
 * Cost Explorer
+* AWS Budgets
+* Cost Allocation Tags
 </b></details>
 
 <details>
@@ -1559,6 +2776,14 @@ Learn more about it [here](https://aws.amazon.com/opsworks)
 </b></details>
 
 <details>
+<summary>What is AWS Snowmobile?</summary><br><b>
+
+"AWS Snowmobile is an Exabyte-scale data transfer service used to move extremely large amounts of data to AWS."
+
+Learn more [here](https://aws.amazon.com/snowmobile)
+</b></details>
+
+<details>
 <summary>What is AWS Athena?</summary><br><b>
 
 "Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL."
@@ -1669,3 +2894,133 @@ AWS definition: "Amazon Simple Queue Service (SQS) is a fully managed message qu
 Learn more about it [here](https://aws.amazon.com/sqs)
 </b></details>
 
+#### AWS - High Availability
+
+<details>
+<summary>What high availability means from AWS perspective?</summary><br><b>
+
+* Application/Service is running in at least 2 availability zones
+* Application/Service should survive (= operate as usual) a data center disaster
+</b></details>
+
+#### AWS - Production Operations and Migrations
+
+<details>
+<summary>Describe in high-level how to upgrade a system on AWS with (near) zero downtime</summary><br><b>
+
+One way is through launching a new instance. In more detail:
+
+1. Launch a new instance
+2. Install all the updates and applications
+3. Test the instance
+4. If all tests passed successfully, you can start using the new instance and perform the switch with the old one, in one of various ways:
+  1. Go to route53 and update the record with the IP of the new instance
+  2. If you are using an Elastic IP then move it to the new instance
+  ...
+</b></details>
+
+<details>
+<summary>You try to use an detached EBS volume from us-east-1b in us-east-1a, but it fails. What might be the reason?</summary><br><b>
+
+EBS volumes are locked to a specific availability zone. To use them in another availability zone, you need to take a snapshot and restore it in the destination availability zone.
+</b></details>
+
+<details>
+<summary>When you launch EC2 instances, it takes them time to boot due to commands you run with user data. How to improve instances boot time?</summary><br><b>
+
+Consider creating customized AMI with the commands from user data already executed there. This will allow you launch instance instantly.
+</b></details>
+
+<details>
+<summary>You try to mount EFS on your EC2 instance and it doesn't work (hangs...) What might be a possible reason?</summary><br><b>
+
+Security group isn't attached to your EFS or it lacks a rule to allow NFS traffic.
+</b></details>
+
+<details>
+<summary>How to migrate an EBS volume across availability zones?</summary><br><b>
+
+1. Pause the application
+2. Take a snapshot of the EBS volume
+3. Restore the snapshot in another availability zone
+</b></details>
+
+<details>
+<summary>How to encrypt an unencrypted EBS volume attached to an EC2 instance?</summary><br><b>
+
+1. Create EBS snapshot of the volume
+2. Copy the snapshot and mark the "Encrypt" option
+3. Create a new EBS volume out of the encrypted snapshot
+</b></details>
+
+<details>
+<summary>You've created a network load balancer but it doesn't work (you can't reach your app on your EC2 instance). What might be a possible reason?</summary><br><b>
+
+Missing security group or misconfigured one.
+For example, if you go to your instances in the AWS console you might see that the instances under your NLB are in "unhealthy status" and if you didn't create a dedicated security group for your NLB, that means that the security group used is the one attached to the EC2 instances.
+
+Go to the security group of your instance(s) and enable the traffic that NLB should forward (e.g. TCP on port 80).
+</b></details>
+
+#### AWS - Scenarios
+
+<details>
+<summary>You have a load balancer running and behind it 5 web servers. Users complain that every time they move to a new page, they have to authenticate, instead of doing it once. How can you solve it?</summary><br><b>
+
+
+Enable sticky sessions. This way, the user keep working against the same instance, instead of being redirected to a different instance every request.
+</b></details>
+
+<details>
+<summary>You have a load balancer running and behind it 5 web servers. Users complain that some times when they try to use the application it doesn't works. You've found out that sometimes some of the instances crash. How would you deal with it?</summary><br><b>
+
+One possible way is to use health checks with the load balancer to ensure the instances are ready to be used before forwarding traffic to them.
+</b></details>
+
+<details>
+<summary>You run your application on 5 EC2 instances on one AZ and on 10 EC2 instances in another AZ. You distribute traffic between all of them using a network load balancer, but it seems that instances in one AZ have higher CPU rates than the instances in the other AZ. What might be the issue and how to solve it?</summary><br><b>
+
+It's possible that traffic is distributed evenly between the AZs but that doesn't mean it's distributed equally across all instances evenly.
+
+To distribute it evenly between all the instances, you have to enable cross-zone load balancing.
+</b></details>
+
+<details>
+<summary>You are running an ALB that routes traffic using two hostnames: a.b.com and d.e.com. Is it possible to configure HTTPS for both of the hostnames?</summary><br><b>
+
+Yes, using SNI (Server Name Indication) each application can has its own SSL certificate (This is supported from 2017).
+</b></details>
+
+<details>
+<summary>You have set up read replicas to scale reads but users complain that when they update posts in forums, the posts are not being updated. What may cause this issue?</summary><br><b>
+
+Read Replicas use asynchronous replication so it's possible users access a read replica instance that wasn't synced yet.
+</b></details>
+
+<details>
+<summary>You need a persistent shared storage between your containers that some are running in Fargate and some in ECS. What would you use?</summary><br><b>
+
+EFS. It allows us to have persistent multi-AZ shared storage for containers.
+</b></details>
+
+<details>
+<summary>You would like to run an AWS Fargate task every time a file is uploaded to a certain S3 bucket. How would you achieve that?</summary><br><b>
+
+Use Amazon EventBridge so every time a file is uploaded to an S3 bucket (event) it will run an ECS task.
+
+Such task should have an ECS Task Role so it can get the object from the S3 bucket (and possibly other permissions if it needs to update the DB for example).
+</b></details>
+
+#### AWS - Architecture Design
+
+<details>
+<summary>You've been asked to design an architecture for high performance and low-latency application (millions of requests per second). Which load balancer would you use?</summary><br><b>
+
+Network Load Balancer
+</b></details>
+
+<details>
+<summary>What should you use for scaling reads?</summary><br><b>
+
+You can use an ElastiCache cluster or RDS Read Replicas.
+</b></details>
