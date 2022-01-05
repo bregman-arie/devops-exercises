@@ -1904,28 +1904,80 @@ Nginx, Apache httpd.
 </b></details>
 
 <details>
-<summary>How do you create users? Where user information is stored?</summary><br><b>
-</b></details>
+<summary>How do you create users? Where user information is stored?</summary><br>
+
+Command to create users is `useradd` 
+
+Syntax:
+`useradd [options] Username`
+
+There are 2 configuration files, which stores users information
+
+1. `/etc/passwd` - Users information like, username, shell etc is stored in this file 
+
+2. `/etc/shadow` - Users password is stored in encrypted format 
+</details>
 
 <details>
-<summary>Which file stores information about groups?</summary><br><b>
-</b></details>
+<summary>Which file stores information about groups?</summary><br>
+
+`/etc/groups` file stores the group name, group ID, usernames which are in secondary group.
+</details>
 
 <details>
-<summary>How do you change/set the password of a user?</summary><br><b>
-</b></details>
+<summary>How do you change/set the password of a user?</summary><br>
+
+`passwd <username>` is the command to set/change password of a user.
+</details>
 
 <details>
-<summary>Which file stores users passwords? Is it visible for everyone?</summary><br><b>
-</b></details>
+<summary>Which file stores users passwords? Is it visible for everyone?</summary><br>
+
+`/etc/shadow` file holds the passwords of the users in encryted format. NO, it is only visble to the `root` user
+</details>
 
 <details>
-<summary>Do you know how to create a new user without using adduser/useradd command?</summary><br><b>
-</b></details>
+<summary>Do you know how to create a new user without using adduser/useradd command?</summary><br>
+
+YES, we can create new user by manually adding an entry in the `/etc/passwd` file. 
+
+For example, if we need to create a user called `john`. 
+
+Step 1: Add an entry to `/etc/passwd` file, so user gets created.
+
+`echo "john:x:2001:2001::/home/john:/bin/bash" >> /etc/passwd` 
+
+Step 2: Add an entry to `/etc/group` file, because every user belong to the primary group that has same name as the username.
+
+`echo "john:x:2001:" >> /etc/group`
+
+Step 3: Verify if the user got created
+
+`id john`
+
+</details>
 
 <details>
-<summary>What information is stored in /etc/passwd? explain each field</summary><br><b>
-</b></details>
+<summary>What information is stored in /etc/passwd? explain each field</summary><br>
+
+`/etc/passwd` is a configuration file, which contains users information. Each entry in this file has, 7 fields,
+
+`username:password:UID:GID:Comment:home directory:shell`
+
+`username` - The name of the user.
+
+`password` - This field is actually a placeholder of the password field. Due to security concerns, this field does not contain the password, just a placeholder (x) to the encrypted password stored in `/etc/shadow` file.
+
+`UID` - User ID of the user.
+
+`GID` - Group ID 
+
+`Comment` - This field is to provide description about the user.
+
+`home directory` - Abousulte path of the user's home directory. This directory gets created once the user is added.
+
+`shell` - This field contains the absolute path of the shell that will be used by the respective user.
+</details>
 
 <details>
 <summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
@@ -1942,8 +1994,17 @@ Use su - to switch to root
 </b></details>
 
 <details>
-<summary>What is the UID the root user? What about a regular user?</summary><br><b>
-</b></details>
+<summary>What is the UID the root user? What about a regular user?</summary><br>
+
+UID of root user is 0
+
+Default values of UID_MIN and UID_MAX in `/etc/login.defs`
+`UID_MIN` is `1000`
+`UID_MAX` is `60000`
+
+Actually, we can change this value. But UID < 1000 are reserved for system accounts.
+Therefore, as per the default configuration, for regular user UID starts from `1000`. 
+</details>
 
 <details>
 <summary>What can you do if you lost/forogt the root password?</summary><br><b>
@@ -1952,8 +2013,10 @@ Re-install the OS IS NOT the right answer :)
 </b></details>
 
 <details>
-<summary>What is /etc/skel?</summary><br><b>
-</b></details>
+<summary>What is /etc/skel?</summary><br>
+
+`/etc/skel` is a directory, that contains files or directories, so when a new user is created, these files/directories created under `/etc/skel` will be copied to user's home directory.
+</details>
 
 <details>
 <summary>How to see a list of who logged-in to the system?</summary><br><b>
@@ -1968,6 +2031,11 @@ Using the `last` command.
   * usermod
   * whoami
   * id</summary><br><b>
+
+  `useradd` - Command for creating new users 
+  `usermod` - Modify the users setting
+  `whoami`  - Outputs, the username that we are currently logged in
+  `id`      - Prints the  
 </b></details>
 
 <details>
