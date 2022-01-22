@@ -3974,6 +3974,15 @@ Detailed answer can be found here: http://codingshell.com/python-all-string-perm
 
 <details>
 <summary>Count the number of spaces in a string</summary><br><b>
+
+You can use the "count" method like this:
+
+```python
+
+ImAString.count(" ")
+
+```
+
 </b></details>
 
 <details>
