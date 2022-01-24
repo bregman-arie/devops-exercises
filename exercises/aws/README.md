@@ -1246,7 +1246,7 @@ For example, port `2017` and endpoint `/health`.
 
 <details>
 <summary>Which type of AWS load balancer is used in the following drawing?<br>
-<img src="images/aws/identify_load_balancer.png" width="300x;" height="400px;"/>
+<img src="images/aws/identify_load_balancer.png" width="300px;" height="400px;"/>
 </summary><br><b>
 
 Application Load Balancer (routing based on different endpoints + HTTP is used).
