@@ -435,6 +435,8 @@ Control Plane.
 
 <details>
 <summary>What is GRE? How does it works?</summary><br><b>
+
+Generic Routing Encapsulation (GRE), is a protocol for encapsulating data packets that use one routing protocol inside the packets of another protocol. 
 </b></details>
 
 <details>
@@ -900,6 +902,10 @@ Its a bit that only allows the owner or the root user to delete or modify the fi
 
 <details>
 <summary>What is sudo? How do you set it up?</summary><br><b>
+
+  * super user do (sudo). 
+  * Create a user using add user command (#adduser username).
+  * Add that user to sudo group using usermod command (usermod -aG sudo username). 
 </b></details>
 
 <details>
