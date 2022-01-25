@@ -100,6 +100,17 @@ To learn more about TCP/IP, read [here](http://www.penguintutor.com/linux/basic-
 </b></details>
 
 <details>
+<summary>What is APIPA?</summary><br><b>
+APIPA is a set of it addresses that devices are allocated
+when the main DHCP server is not reachable
+</b></details>
+
+<details>
+<summary>What ip range does APIPA use?</summary><br><b>
+APIPA uses the ip range: 169.254.0.1 - 169.254.255.254.
+</b></details>
+
+<details>
 <summary>What is Ethernet?</summary><br><b>
 
 Ethernet simply refers to the most common type of Local Area Network (LAN) used today. A LAN—in contrast to a WAN (Wide Area Network), which spans a larger geographical area—is a connected network of computers in a small area, like your office, college campus, or even home.
