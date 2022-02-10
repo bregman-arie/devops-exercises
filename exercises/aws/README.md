@@ -84,6 +84,13 @@ Failover | Route 53 | [Exercise](route_53_failover.md) | [Solution](solutions/ro
 | Hello Function | Lambda | [Exercise](hello_function.md) | [Solution](solutions/hello_function.md) | Easy |
 | URL Function | Lambda | [Exercise](url_function.md) | [Solution](solutions/url_function.md) | Easy |
 
+#### AWS - Elastic Beanstalk
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Simple Elastic Beanstalk Node.js app | Elastic Beanstalk | [Exercise](elastic_beanstalk_simple.md) | [Solution](solutions/elastic_beanstalk_simple.md) | Easy |
+
+
 #### AWS - Misc
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
