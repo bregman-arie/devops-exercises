@@ -1162,6 +1162,62 @@ It means that the key of the remote host was changed and doesn't match the one t
 
 <details>
 <summary>What <code>ssh-keygen</code> is used for?</summary><br><b>
+
+<code>ssh-keygen</code> is a tool to generate an authentication key pair for SSH, that consists of a private and a public key. It supports a number of algorithms to generate authentication keys : 
+- dsa
+- ecdsa
+- ecdsa-sk
+- ed25519
+- ed25519-sk
+- rsa (default)
+
+One can also specify number of bits in key. Command below generates an SSH key pair with RSA 4096-bits :
+```
+$ ssh-keygen -t rsa -b 4096
+```
+
+The output looks like this:
+```
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/user/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/user/.ssh/id_rsa
+Your public key has been saved in /home/user/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:f5MOGnhzYfC0ZCHvbSXXiRiNVYETjxpHcXD5xSojx+M user@mac-book-pro
+The key's randomart image is:
++---[RSA 4096]----+
+|        . ..+***o|
+|         o o++*o+|
+|        . =+.++++|
+|         B.oX+. .|
+|        S *=o+   |
+|       . o oE.   |
+|      . + + +    |
+|       . = + .   |
+|        .   .    |
++----[SHA256]-----+
+```
+
+One can check how many bits an SSH key has with :
+```
+$ ssh-keygen -l -f /home/user/.ssh/id_rsa
+```
+
+Output should look like this :
+```
+4096 SHA256:f5MOGnhzYfC0ZCHvbSXXiRiNVYETjxpHcXD5xSojx+M user@mac-book-pro (RSA)
+```
+It shows the key is RSA 4096-bits.
+
+`-l` and `-f` parameters usage explanation :
+```
+-l          Show the fingerprint of the key file.
+-f filename Filename of the key file.
+```
+
+Learn more : [How can I tell how many bits my ssh key is? - Superuser](https://superuser.com/a/139311)
 </b></details>
 
 <details>
