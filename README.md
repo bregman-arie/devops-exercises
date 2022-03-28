@@ -158,6 +158,7 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
 
 <details>
 <summary>What is a public IP address? In which scenarios/system designs, one should use it?</summary><br><b>
+A public IP address is the public facing IP address. In the event that you was hosting a game server that you want your friends to join, you will give your friends your public IP address to allow their computers to identify and locate your network and server in order for the connection to take place. One time that you would not need to use a public facing IP address is in the event that you was playing with friends who was connected to the same network as you, in that case, you would use a private ip address. In order for someone to be able to connect to your server that is located internally, you will have to setup a port forward to tell your router to allow traffic from the public domain into your network and vice versa.
 </b></details>
 
 <details>
