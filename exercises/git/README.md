@@ -41,7 +41,7 @@ a separate branch in your local repository
 
 There are different ways to check whether a file is tracked or not:
 
-  - `git ls-file <file>` -> exit code of 0 means it's tracked
+  - `git ls-files <file>` -> exit code of 0 means it's tracked
   - `git blame <file>`
   ...
 </b></details>
