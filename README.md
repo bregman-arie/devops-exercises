@@ -100,6 +100,17 @@ To learn more about TCP/IP, read [here](http://www.penguintutor.com/linux/basic-
 </b></details>
 
 <details>
+<summary>What is APIPA?</summary><br><b>
+APIPA is a set of it addresses that devices are allocated
+when the main DHCP server is not reachable
+</b></details>
+
+<details>
+<summary>What ip range does APIPA use?</summary><br><b>
+APIPA uses the ip range: 169.254.0.1 - 169.254.255.254.
+</b></details>
+
+<details>
 <summary>What is Ethernet?</summary><br><b>
 
 Ethernet simply refers to the most common type of Local Area Network (LAN) used today. A LAN—in contrast to a WAN (Wide Area Network), which spans a larger geographical area—is a connected network of computers in a small area, like your office, college campus, or even home.
@@ -158,6 +169,7 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
 
 <details>
 <summary>What is a public IP address? In which scenarios/system designs, one should use it?</summary><br><b>
+A public IP address is the public facing IP address. In the event that you was hosting a game server that you want your friends to join, you will give your friends your public IP address to allow their computers to identify and locate your network and server in order for the connection to take place. One time that you would not need to use a public facing IP address is in the event that you was playing with friends who was connected to the same network as you, in that case, you would use a private ip address. In order for someone to be able to connect to your server that is located internally, you will have to setup a port forward to tell your router to allow traffic from the public domain into your network and vice versa.
 </b></details>
 
 <details>
@@ -1162,6 +1174,62 @@ It means that the key of the remote host was changed and doesn't match the one t
 
 <details>
 <summary>What <code>ssh-keygen</code> is used for?</summary><br><b>
+
+<code>ssh-keygen</code> is a tool to generate an authentication key pair for SSH, that consists of a private and a public key. It supports a number of algorithms to generate authentication keys : 
+- dsa
+- ecdsa
+- ecdsa-sk
+- ed25519
+- ed25519-sk
+- rsa (default)
+
+One can also specify number of bits in key. Command below generates an SSH key pair with RSA 4096-bits :
+```
+$ ssh-keygen -t rsa -b 4096
+```
+
+The output looks like this:
+```
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/user/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/user/.ssh/id_rsa
+Your public key has been saved in /home/user/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:f5MOGnhzYfC0ZCHvbSXXiRiNVYETjxpHcXD5xSojx+M user@mac-book-pro
+The key's randomart image is:
++---[RSA 4096]----+
+|        . ..+***o|
+|         o o++*o+|
+|        . =+.++++|
+|         B.oX+. .|
+|        S *=o+   |
+|       . o oE.   |
+|      . + + +    |
+|       . = + .   |
+|        .   .    |
++----[SHA256]-----+
+```
+
+One can check how many bits an SSH key has with :
+```
+$ ssh-keygen -l -f /home/user/.ssh/id_rsa
+```
+
+Output should look like this :
+```
+4096 SHA256:f5MOGnhzYfC0ZCHvbSXXiRiNVYETjxpHcXD5xSojx+M user@mac-book-pro (RSA)
+```
+It shows the key is RSA 4096-bits.
+
+`-l` and `-f` parameters usage explanation :
+```
+-l          Show the fingerprint of the key file.
+-f filename Filename of the key file.
+```
+
+Learn more : [How can I tell how many bits my ssh key is? - Superuser](https://superuser.com/a/139311)
 </b></details>
 
 <details>
@@ -3974,6 +4042,15 @@ Detailed answer can be found here: http://codingshell.com/python-all-string-perm
 
 <details>
 <summary>Count the number of spaces in a string</summary><br><b>
+
+You can use the "count" method like this:
+
+```python
+
+ImAString.count(" ")
+
+```
+
 </b></details>
 
 <details>
