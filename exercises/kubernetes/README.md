@@ -137,9 +137,9 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
 
 <details>
 <summary>Place the components on the right side of the image in the right place in the drawing<br>
-<img src="images/kubernetes/kubernetes_components.png" height="300px" width="300px"/>
+<img src="images/kubernetes_components.png"/>
 </summary><br><b>
-<img src="images/kubernetes/kubernetes_components_solution.png" height="300px" width="300px"/>
+<img src="images/kubernetes_components_solution.png"/>
 </b></details>
 
 <details>
