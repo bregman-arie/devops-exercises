@@ -62,7 +62,7 @@
   </tr>
   <tr>
     <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
-    <td align="center"><a href="#containers"><img src="images/containers.png" width="70px;" height="75px;" alt="Containers"/><br /><b>Containers</b></a></td>
+    <td align="center"><a href="exercises/containers/README.md"><img src="images/containers.png" width="70px;" height="75px;" alt="Containers"/><br /><b>Containers</b></a></td>
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
     <td align="center"><a href="exercises/openshift/README.md"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
     <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
