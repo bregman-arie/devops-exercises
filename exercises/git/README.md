@@ -1,10 +1,14 @@
-## Git
+# Git
+
+## Exercises
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | My first Commit | Commit | [Exercise](exercises/git/commit_01.md) | [Solution](exercises/git/solutions/commit_01_solution.md) | |
 | Time to Branch | Branch | [Exercise](exercises/git/branch_01.md) | [Solution](exercises/git/solutions/branch_01_solution.md) | |
 | Squashing Commits | Commit | [Exercise](exercises/git/squashing_commits.md) | [Solution](exercises/git/solutions/squashing_commits.md) | |
+
+## Questions
 
 <details>
 <summary>How do you know if a certain directory is a git repository?</summary><br><b>
@@ -56,6 +60,14 @@ There are different ways to check whether a file is tracked or not:
 <summary>What <code>git status</code> does?</summary><br><b>
 </b></details>
 
+### Branches
+
+<details>
+<summary>True or False? A branch is basically a simple pointer or reference to the head of certain line of work</summary><br><b>
+
+True
+</b></details>
+
 <details>
 <summary>You have two branches - main and devel. How do you make sure devel is in sync with main?</summary><br><b>
 
@@ -67,10 +79,28 @@ git merge main
 ```
 </b></details>
 
-#### Git - Merge
+<details>
+<summary>Describe shortly what happens behind the scenes when you run <code>git branch <BRANCH></code></summary><br><b>
+
+Git runs update-ref to add the SHA-1 of the last commit of the branch you're on into the new branch you would like to create
+</b></details>
 
 <details>
-<summary>You have two branches - main and devel. How do you put devel into main?</summary><br><b>
+<summary>When you run <code>git branch <BRANCH></code> how does Git know the SHA-1 of the last commit?</summary><br><b>
+
+Using the HEAD file: `.git/HEAD`
+</b></details>
+
+<details>
+<summary>True or False? when you <code>git checkout some_branch</code>, Git updates .git/HEAD to <code>/refs/heads/some_branch</code></summary><br><b>
+
+True
+</b></details>
+
+### Merge
+
+<details>
+<summary>You have two branches - main and devel. How do you merge devel into main?</summary><br><b>
 
 git checkout main
 git merge devel
@@ -125,7 +155,7 @@ is currently pointing at.
 </p>
 </b></details>
 
-#### Git - Rebase
+### Rebase
 
 <details>
 <summary>You would like to move forth commit to the top. How would you achieve that?</summary><br><b>
@@ -197,4 +227,12 @@ If you would like to also discard the changes you `git reset --hard``
 <summary>True or False? To remove a file from git but not from the filesystem, one should use <code>git rm </code></summary><br><b>
 
 False. If you would like to keep a file on your filesystem, use `git reset <file_name>`
+</b></details>
+
+## References
+
+<details>
+<summary>How to list the current git references in a given repository? </summary><br><b>
+
+`find .git/refs/`
 </b></details>
