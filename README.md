@@ -30,7 +30,7 @@
   </tr>
   <tr>
     <td align="center"><a href="exercises/software_development/README.md"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Software Development</b></a></td>
-    <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
+    <td align="center"><a href="https://github.com/bregman-arie/python-exercises"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
     <td align="center"><a href="#go"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a></td>
     <td align="center"><a href="exercises/shell/README.md"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
     <td align="center"><a href="exercises/kubernetes/README.md"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
@@ -2840,263 +2840,6 @@ Yes, it's a operating-system-level virtualization, where the kernel is shared an
 The introduction of virtual machines allowed companies to deploy multiple business applications on the same hardware while each application is separated from each other in secured way, where each is running on its own separate operating system.
 </b></details>
 
-## Python
-
-### Python Exercises
-
-|Name|Topic|Objective & Instructions|Solution|Comments|
-|--------|--------|------|----|----|
-| Identify the data type | Data Types | [Exercise](exercises/python/data_types.md) | [Solution](exercises/python/solutions/data_types_solution.md)
-| Identify the data type - Advanced | Data Types | [Exercise](exercises/python/advanced_data_types.md) | [Solution](exercises/python/solutions/advanced_data_types_solution.md)
-| Reverse String | Strings | [Exercise](exercises/python/reverse_string.md) | [Solution](exercises/python/solutions/reverse_string.md)
-| Compress String | Strings | [Exercise](exercises/python/compress_string.md) | [Solution](exercises/python/solutions/compress_string.md)
-
-### Python Self Assessment
-
-<details>
-<summary>What are some characteristics of the Python programming language?</summary><br><b>
-
-```
-1. It is a high level general purpose programming language created in 1991 by Guido Van Rosum.
-2. The language is interpreted, being the CPython (Written in C) the most used/maintained implementation.
-3. It is strongly typed. The typing discipline is duck typing and gradual.
-4. Python focuses on readability and makes use of whitespaces/identation instead of brackets { }
-5. The python package manager is called PIP "pip installs packages", having more than 200.000 available packages.
-6. Python comes with pip installed and a big standard library that offers the programmer many precooked solutions.
-7. In python **Everything** is an object.
-```
-</b></details>
-
-<details>
-<summary>What built-in types Python has?</summary><br><b>
-
-    List
-    Dictionary
-    Set
-    Numbers (int, float, ...)
-    String
-    Bool
-    Tuple
-    Frozenset
-</b></details>
-
-<details>
-<summary>What is mutability? Which of the built-in types in Python are mutable?</summary><br><b>
-
-Mutability determines whether you can modify an object of specific type.
-
-The mutable data types are:
-
-    List
-    Dictionary
-    Set
-
-The immutable data types are:
-
-    Numbers (int, float, ...)
-    String
-    Bool
-    Tuple
-    Frozenset
-</b></details>
-
-#### Python - Booleans
-
-<details>
-<summary>What is the result of each of the following?
-
-  - 1 > 2
-  - 'b' > 'a'
-  * 1 == 'one'
-  - 2 > 'one'</summary><br><b>
-
-  * False
-  * True
-  * False
-  * TypeError
-</b></details>
-
-<details>
-<summary>What is the result of `bool("")`? What about `bool(" ")`? Explain</summary><br><b>
-
-bool("") -> evaluates to False<br>
-bool("  ") -> evaluates to True
-</b></details>
-
-<details>
-<summary>What is the result of running <code>[] is not []</code>? explain the result</summary><br><b>
-
-It evaluates to True.<br>
-The reason is that the two created empty list are different objects. `x is y` only evaluates to true when x and y are the same object.
-</b></details>
-
-<details>
-<summary>What is the result of running <code>True-True</code>?</summary><br><b>
-
-0
-</b></details>
-
-#### Python - Strings
-
-<details>
-<summary>True or False? String is an immutable data type in Python</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>How to check if a string starts with a letter?</summary><br><b>
-
-Regex:
-
-```
-import re
-if re.match("^[a-zA-Z]+.*", string):
-```
-
-string built-in:
-
-```
-if string and string[0].isalpha():
-```
-</b></details>
-
-<details>
-<summary>How to check if all characters in a given string are digits?</summary><br><b>
-
-`string.isdigit`
-</b></details>
-
-<details>
-<summary>How to remove trailing slash ('/') from a string?</summary><br><b>
-
-`string.rstrip('/')`
-</b></details>
-
-<details>
-<summary>What is the result of of each of the following?
-
-  - "abc"*3
-  - "abc"*2.5
-  - "abc"*2.0
-  - "abc"*True
-  - "abc"*False</summary><br><b>
-
-* abcabcabc
-* TypeError
-* TypeError
-* "abc"
-* ""
-</b></details>
-
-<details>
-<summary>Improve the following code:
-
-```
-char = input("Insert a character: ")
-if char == "a" or char == "o" or char == "e" or char =="u" or char == "i":
-    print("It's a vowel!")
-```
-</summary><br><b>
-
-```
-char = input("Insert a character: ") # For readablity
-if lower(char[0]) in "aieou": # Takes care of multiple characters and separate cases
-    print("It's a vowel!")
-```
-OR
-```
-if lower(input("Insert a character: ")[0]) in "aieou": # Takes care of multiple characters and small/Capital cases
-    print("It's a vowel!")
-```
-</b></details>
-
-#### Python - Functions
-
-<details>
-<summary>How to define a function with Python?</summary><br><b>
-Using the `def` keyword. For Examples:
-
-```
-def sum(a, b):
-    return (a + b)
-```
-</b></details>
-
-<details>
-<summary>In Python, functions are first-class objects. What does it mean?</summary><br><b>
-
-In general, first class objects in programming languages are objects which can be assigned to variable, used as a return value and can be used as arguments or parameters.<br>
-In python you can treat functions this way. Let's say we have the following function
-
-```
-def my_function():
-    return 5
-```
-
-You can then assign a function to a variables like this `x = my_function` or you can return functions as return values like this `return my_function`
-</b></details>
-
-#### Python - Integer
-
-<details>
-<summary>Write a function to determine if a number is a Palindrome</summary><br><b>
-
-- Code:
-
-```
-from typing import Union
-
-def isNumberPalindrome(number: Union[int, str]) -> bool:
-    if isinstance(number, int):
-        number = str(number)
-    return number == number[::-1]
-
-print(isNumberPalindrome("12321"))
-```
-
-- Using Python3.10 that accepts using bitwise operator '|'. 
-
-```
-def isNumberPalindrome(number: int | str) -> bool:
-    if isinstance(number, int):
-        number = str(number)
-    return number == number[::-1]
-
-print(isNumberPalindrome("12321"))
-```
-
-Note: Using slicing to reverse a list could be slower than other options like `reversed` that return an iterator.
-
-- Result:
-
-```
-True
-```
-
-</b></details>
-
-#### Python - Loops
-
-<details>
-<summary>What is the result of the following block of code?
-
-```
-x = ['a', 'b', 'c']
-for i in x:
-    if i == 'b':
-        x = ['z', 'y']
-    print(i)
-```
-</summary><br><b>
-
-```
-a
-b
-c
-```
-</b></details>
-
 #### Python - OOP
 
 <details>
@@ -3458,12 +3201,6 @@ List, as opposed to a tuple, is a mutable data type. It means we can modify it a
 </b></details>
 
 <details>
-<summary>How to check how many items a list contains?</summary><br><b>
-
-`len(sone_list)`
-</b></details>
-
-<details>
 <summary>How to get the last element of a list?</summary><br><b>
 
 `some_list[-1]`
@@ -3481,30 +3218,6 @@ Don't use `append` unless you would like the list as one item.
 <summary>How to remove the first 3 items from a list?</summary><br><b>
 
 `my_list[0:3] = []`
-</b></details>
-
-<details>
-<summary>How do you get the maximum and minimum values from a list?</summary><br><b>
-
-```
-Maximum: max(some_list)
-Minimum: min(some_list)
-```
-</b></details>
-
-<details>
-<summary>How to get the top/biggest 3 items from a list?</summary><br><b>
-
-```
-sorted(some_list, reverse=True)[:3]
-```
-
-Or
-
-```
-some_list.sort(reverse=True)
-some_list[:3]
-```
 </b></details>
 
 <details>
@@ -3861,14 +3574,6 @@ with open('file.txt', 'w') as file:
 </b></details>
 
 <details>
-<summary>How to print the 12th line of a file?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to reverse a file?</summary><br><b>
-</b></details>
-
-<details>
 <summary>Sum all the integers in a given file</summary><br><b>
 </b></details>
 
@@ -3963,10 +3668,6 @@ with open('file.json', 'w') as f:
 <summary>How do you perform regular expressions related operations in Python? (match patterns, substitute strings, etc.)</summary><br><b>
 
 Using the re module
-</b></details>
-
-<details>
-<summary>How to substitute the string "green" with "blue"?</summary><br><b>
 </b></details>
 
 <details>
