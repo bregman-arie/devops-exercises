@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
 
-:bar_chart: &nbsp;There are currently **2138** exercises and questions
+:bar_chart: &nbsp;There are currently **2292** exercises and questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
@@ -30,10 +30,10 @@
   </tr>
   <tr>
     <td align="center"><a href="exercises/software_development/README.md"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Software Development</b></a></td>
-    <td align="center"><a href="#python"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
+    <td align="center"><a href="https://github.com/bregman-arie/python-exercises"><img src="images/python.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
     <td align="center"><a href="#go"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a></td>
     <td align="center"><a href="exercises/shell/README.md"><img src="images/bash.png" width="70px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
-    <td align="center"><a href="#kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
+    <td align="center"><a href="exercises/kubernetes/README.md"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
     <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
   </tr>
   <tr>
@@ -62,7 +62,7 @@
   </tr>
   <tr>
     <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
-    <td align="center"><a href="#containers"><img src="images/containers.png" width="70px;" height="75px;" alt="Containers"/><br /><b>Containers</b></a></td>
+    <td align="center"><a href="exercises/containers/README.md"><img src="images/containers.png" width="70px;" height="75px;" alt="Containers"/><br /><b>Containers</b></a></td>
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
     <td align="center"><a href="exercises/openshift/README.md"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
     <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
@@ -97,6 +97,17 @@
 
 A set of protocols that define how two or more devices can communicate with each other.
 To learn more about TCP/IP, read [here](http://www.penguintutor.com/linux/basic-network-reference)
+</b></details>
+
+<details>
+<summary>What is APIPA?</summary><br><b>
+APIPA is a set of it addresses that devices are allocated
+when the main DHCP server is not reachable
+</b></details>
+
+<details>
+<summary>What ip range does APIPA use?</summary><br><b>
+APIPA uses the ip range: 169.254.0.1 - 169.254.255.254.
 </b></details>
 
 <details>
@@ -158,6 +169,7 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
 
 <details>
 <summary>What is a public IP address? In which scenarios/system designs, one should use it?</summary><br><b>
+A public IP address is the public facing IP address. In the event that you was hosting a game server that you want your friends to join, you will give your friends your public IP address to allow their computers to identify and locate your network and server in order for the connection to take place. One time that you would not need to use a public facing IP address is in the event that you was playing with friends who was connected to the same network as you, in that case, you would use a private ip address. In order for someone to be able to connect to your server that is located internally, you will have to setup a port forward to tell your router to allow traffic from the public domain into your network and vice versa.
 </b></details>
 
 <details>
@@ -1162,6 +1174,62 @@ It means that the key of the remote host was changed and doesn't match the one t
 
 <details>
 <summary>What <code>ssh-keygen</code> is used for?</summary><br><b>
+
+<code>ssh-keygen</code> is a tool to generate an authentication key pair for SSH, that consists of a private and a public key. It supports a number of algorithms to generate authentication keys : 
+- dsa
+- ecdsa
+- ecdsa-sk
+- ed25519
+- ed25519-sk
+- rsa (default)
+
+One can also specify number of bits in key. Command below generates an SSH key pair with RSA 4096-bits :
+```
+$ ssh-keygen -t rsa -b 4096
+```
+
+The output looks like this:
+```
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/user/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/user/.ssh/id_rsa
+Your public key has been saved in /home/user/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:f5MOGnhzYfC0ZCHvbSXXiRiNVYETjxpHcXD5xSojx+M user@mac-book-pro
+The key's randomart image is:
++---[RSA 4096]----+
+|        . ..+***o|
+|         o o++*o+|
+|        . =+.++++|
+|         B.oX+. .|
+|        S *=o+   |
+|       . o oE.   |
+|      . + + +    |
+|       . = + .   |
+|        .   .    |
++----[SHA256]-----+
+```
+
+One can check how many bits an SSH key has with :
+```
+$ ssh-keygen -l -f /home/user/.ssh/id_rsa
+```
+
+Output should look like this :
+```
+4096 SHA256:f5MOGnhzYfC0ZCHvbSXXiRiNVYETjxpHcXD5xSojx+M user@mac-book-pro (RSA)
+```
+It shows the key is RSA 4096-bits.
+
+`-l` and `-f` parameters usage explanation :
+```
+-l          Show the fingerprint of the key file.
+-f filename Filename of the key file.
+```
+
+Learn more : [How can I tell how many bits my ssh key is? - Superuser](https://superuser.com/a/139311)
 </b></details>
 
 <details>
@@ -1904,28 +1972,80 @@ Nginx, Apache httpd.
 </b></details>
 
 <details>
-<summary>How do you create users? Where user information is stored?</summary><br><b>
-</b></details>
+<summary>How do you create users? Where user information is stored?</summary><br>
+
+Command to create users is `useradd` 
+
+Syntax:
+`useradd [options] Username`
+
+There are 2 configuration files, which stores users information
+
+1. `/etc/passwd` - Users information like, username, shell etc is stored in this file 
+
+2. `/etc/shadow` - Users password is stored in encrypted format 
+</details>
 
 <details>
-<summary>Which file stores information about groups?</summary><br><b>
-</b></details>
+<summary>Which file stores information about groups?</summary><br>
+
+`/etc/groups` file stores the group name, group ID, usernames which are in secondary group.
+</details>
 
 <details>
-<summary>How do you change/set the password of a user?</summary><br><b>
-</b></details>
+<summary>How do you change/set the password of a user?</summary><br>
+
+`passwd <username>` is the command to set/change password of a user.
+</details>
 
 <details>
-<summary>Which file stores users passwords? Is it visible for everyone?</summary><br><b>
-</b></details>
+<summary>Which file stores users passwords? Is it visible for everyone?</summary><br>
+
+`/etc/shadow` file holds the passwords of the users in encryted format. NO, it is only visble to the `root` user
+</details>
 
 <details>
-<summary>Do you know how to create a new user without using adduser/useradd command?</summary><br><b>
-</b></details>
+<summary>Do you know how to create a new user without using adduser/useradd command?</summary><br>
+
+YES, we can create new user by manually adding an entry in the `/etc/passwd` file. 
+
+For example, if we need to create a user called `john`. 
+
+Step 1: Add an entry to `/etc/passwd` file, so user gets created.
+
+`echo "john:x:2001:2001::/home/john:/bin/bash" >> /etc/passwd` 
+
+Step 2: Add an entry to `/etc/group` file, because every user belong to the primary group that has same name as the username.
+
+`echo "john:x:2001:" >> /etc/group`
+
+Step 3: Verify if the user got created
+
+`id john`
+
+</details>
 
 <details>
-<summary>What information is stored in /etc/passwd? explain each field</summary><br><b>
-</b></details>
+<summary>What information is stored in /etc/passwd? explain each field</summary><br>
+
+`/etc/passwd` is a configuration file, which contains users information. Each entry in this file has, 7 fields,
+
+`username:password:UID:GID:Comment:home directory:shell`
+
+`username` - The name of the user.
+
+`password` - This field is actually a placeholder of the password field. Due to security concerns, this field does not contain the password, just a placeholder (x) to the encrypted password stored in `/etc/shadow` file.
+
+`UID` - User ID of the user.
+
+`GID` - Group ID 
+
+`Comment` - This field is to provide description about the user.
+
+`home directory` - Abousulte path of the user's home directory. This directory gets created once the user is added.
+
+`shell` - This field contains the absolute path of the shell that will be used by the respective user.
+</details>
 
 <details>
 <summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
@@ -1942,8 +2062,17 @@ Use su - to switch to root
 </b></details>
 
 <details>
-<summary>What is the UID the root user? What about a regular user?</summary><br><b>
-</b></details>
+<summary>What is the UID the root user? What about a regular user?</summary><br>
+
+UID of root user is 0
+
+Default values of UID_MIN and UID_MAX in `/etc/login.defs`
+`UID_MIN` is `1000`
+`UID_MAX` is `60000`
+
+Actually, we can change this value. But UID < 1000 are reserved for system accounts.
+Therefore, as per the default configuration, for regular user UID starts from `1000`. 
+</details>
 
 <details>
 <summary>What can you do if you lost/forogt the root password?</summary><br><b>
@@ -1952,8 +2081,10 @@ Re-install the OS IS NOT the right answer :)
 </b></details>
 
 <details>
-<summary>What is /etc/skel?</summary><br><b>
-</b></details>
+<summary>What is /etc/skel?</summary><br>
+
+`/etc/skel` is a directory, that contains files or directories, so when a new user is created, these files/directories created under `/etc/skel` will be copied to user's home directory.
+</details>
 
 <details>
 <summary>How to see a list of who logged-in to the system?</summary><br><b>
@@ -1968,6 +2099,11 @@ Using the `last` command.
   * usermod
   * whoami
   * id</summary><br><b>
+
+  `useradd` - Command for creating new users 
+  `usermod` - Modify the users setting
+  `whoami`  - Outputs, the username that we are currently logged in
+  `id`      - Prints the  
 </b></details>
 
 <details>
@@ -2704,263 +2840,6 @@ Yes, it's a operating-system-level virtualization, where the kernel is shared an
 The introduction of virtual machines allowed companies to deploy multiple business applications on the same hardware while each application is separated from each other in secured way, where each is running on its own separate operating system.
 </b></details>
 
-## Python
-
-### Python Exercises
-
-|Name|Topic|Objective & Instructions|Solution|Comments|
-|--------|--------|------|----|----|
-| Identify the data type | Data Types | [Exercise](exercises/python/data_types.md) | [Solution](exercises/python/solutions/data_types_solution.md)
-| Identify the data type - Advanced | Data Types | [Exercise](exercises/python/advanced_data_types.md) | [Solution](exercises/python/solutions/advanced_data_types_solution.md)
-| Reverse String | Strings | [Exercise](exercises/python/reverse_string.md) | [Solution](exercises/python/solutions/reverse_string.md)
-| Compress String | Strings | [Exercise](exercises/python/compress_string.md) | [Solution](exercises/python/solutions/compress_string.md)
-
-### Python Self Assessment
-
-<details>
-<summary>What are some characteristics of the Python programming language?</summary><br><b>
-
-```
-1. It is a high level general purpose programming language created in 1991 by Guido Van Rosum.
-2. The language is interpreted, being the CPython (Written in C) the most used/maintained implementation.
-3. It is strongly typed. The typing discipline is duck typing and gradual.
-4. Python focuses on readability and makes use of whitespaces/identation instead of brackets { }
-5. The python package manager is called PIP "pip installs packages", having more than 200.000 available packages.
-6. Python comes with pip installed and a big standard library that offers the programmer many precooked solutions.
-7. In python **Everything** is an object.
-```
-</b></details>
-
-<details>
-<summary>What built-in types Python has?</summary><br><b>
-
-    List
-    Dictionary
-    Set
-    Numbers (int, float, ...)
-    String
-    Bool
-    Tuple
-    Frozenset
-</b></details>
-
-<details>
-<summary>What is mutability? Which of the built-in types in Python are mutable?</summary><br><b>
-
-Mutability determines whether you can modify an object of specific type.
-
-The mutable data types are:
-
-    List
-    Dictionary
-    Set
-
-The immutable data types are:
-
-    Numbers (int, float, ...)
-    String
-    Bool
-    Tuple
-    Frozenset
-</b></details>
-
-#### Python - Booleans
-
-<details>
-<summary>What is the result of each of the following?
-
-  - 1 > 2
-  - 'b' > 'a'
-  * 1 == 'one'
-  - 2 > 'one'</summary><br><b>
-
-  * False
-  * True
-  * False
-  * TypeError
-</b></details>
-
-<details>
-<summary>What is the result of `bool("")`? What about `bool(" ")`? Explain</summary><br><b>
-
-bool("") -> evaluates to False<br>
-bool("  ") -> evaluates to True
-</b></details>
-
-<details>
-<summary>What is the result of running <code>[] is not []</code>? explain the result</summary><br><b>
-
-It evaluates to True.<br>
-The reason is that the two created empty list are different objects. `x is y` only evaluates to true when x and y are the same object.
-</b></details>
-
-<details>
-<summary>What is the result of running <code>True-True</code>?</summary><br><b>
-
-0
-</b></details>
-
-#### Python - Strings
-
-<details>
-<summary>True or False? String is an immutable data type in Python</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>How to check if a string starts with a letter?</summary><br><b>
-
-Regex:
-
-```
-import re
-if re.match("^[a-zA-Z]+.*", string):
-```
-
-string built-in:
-
-```
-if string and string[0].isalpha():
-```
-</b></details>
-
-<details>
-<summary>How to check if all characters in a given string are digits?</summary><br><b>
-
-`string.isdigit`
-</b></details>
-
-<details>
-<summary>How to remove trailing slash ('/') from a string?</summary><br><b>
-
-`string.rstrip('/')`
-</b></details>
-
-<details>
-<summary>What is the result of of each of the following?
-
-  - "abc"*3
-  - "abc"*2.5
-  - "abc"*2.0
-  - "abc"*True
-  - "abc"*False</summary><br><b>
-
-* abcabcabc
-* TypeError
-* TypeError
-* "abc"
-* ""
-</b></details>
-
-<details>
-<summary>Improve the following code:
-
-```
-char = input("Insert a character: ")
-if char == "a" or char == "o" or char == "e" or char =="u" or char == "i":
-    print("It's a vowel!")
-```
-</summary><br><b>
-
-```
-char = input("Insert a character: ") # For readablity
-if lower(char[0]) in "aieou": # Takes care of multiple characters and separate cases
-    print("It's a vowel!")
-```
-OR
-```
-if lower(input("Insert a character: ")[0]) in "aieou": # Takes care of multiple characters and small/Capital cases
-    print("It's a vowel!")
-```
-</b></details>
-
-#### Python - Functions
-
-<details>
-<summary>How to define a function with Python?</summary><br><b>
-Using the `def` keyword. For Examples:
-
-```
-def sum(a, b):
-    return (a + b)
-```
-</b></details>
-
-<details>
-<summary>In Python, functions are first-class objects. What does it mean?</summary><br><b>
-
-In general, first class objects in programming languages are objects which can be assigned to variable, used as a return value and can be used as arguments or parameters.<br>
-In python you can treat functions this way. Let's say we have the following function
-
-```
-def my_function():
-    return 5
-```
-
-You can then assign a function to a variables like this `x = my_function` or you can return functions as return values like this `return my_function`
-</b></details>
-
-#### Python - Integer
-
-<details>
-<summary>Write a function to determine if a number is a Palindrome</summary><br><b>
-
-- Code:
-
-```
-from typing import Union
-
-def isNumberPalindrome(number: Union[int, str]) -> bool:
-    if isinstance(number, int):
-        number = str(number)
-    return number == number[::-1]
-
-print(isNumberPalindrome("12321"))
-```
-
-- Using Python3.10 that accepts using bitwise operator '|'. 
-
-```
-def isNumberPalindrome(number: int | str) -> bool:
-    if isinstance(number, int):
-        number = str(number)
-    return number == number[::-1]
-
-print(isNumberPalindrome("12321"))
-```
-
-Note: Using slicing to reverse a list could be slower than other options like `reversed` that return an iterator.
-
-- Result:
-
-```
-True
-```
-
-</b></details>
-
-#### Python - Loops
-
-<details>
-<summary>What is the result of the following block of code?
-
-```
-x = ['a', 'b', 'c']
-for i in x:
-    if i == 'b':
-        x = ['z', 'y']
-    print(i)
-```
-</summary><br><b>
-
-```
-a
-b
-c
-```
-</b></details>
-
 #### Python - OOP
 
 <details>
@@ -3322,12 +3201,6 @@ List, as opposed to a tuple, is a mutable data type. It means we can modify it a
 </b></details>
 
 <details>
-<summary>How to check how many items a list contains?</summary><br><b>
-
-`len(sone_list)`
-</b></details>
-
-<details>
 <summary>How to get the last element of a list?</summary><br><b>
 
 `some_list[-1]`
@@ -3345,30 +3218,6 @@ Don't use `append` unless you would like the list as one item.
 <summary>How to remove the first 3 items from a list?</summary><br><b>
 
 `my_list[0:3] = []`
-</b></details>
-
-<details>
-<summary>How do you get the maximum and minimum values from a list?</summary><br><b>
-
-```
-Maximum: max(some_list)
-Minimum: min(some_list)
-```
-</b></details>
-
-<details>
-<summary>How to get the top/biggest 3 items from a list?</summary><br><b>
-
-```
-sorted(some_list, reverse=True)[:3]
-```
-
-Or
-
-```
-some_list.sort(reverse=True)
-some_list[:3]
-```
 </b></details>
 
 <details>
@@ -3725,14 +3574,6 @@ with open('file.txt', 'w') as file:
 </b></details>
 
 <details>
-<summary>How to print the 12th line of a file?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to reverse a file?</summary><br><b>
-</b></details>
-
-<details>
 <summary>Sum all the integers in a given file</summary><br><b>
 </b></details>
 
@@ -3830,10 +3671,6 @@ Using the re module
 </b></details>
 
 <details>
-<summary>How to substitute the string "green" with "blue"?</summary><br><b>
-</b></details>
-
-<details>
 <summary>How to find all the IP addresses in a variable? How to find them in a file?</summary><br><b>
 </b></details>
 
@@ -3906,6 +3743,15 @@ Detailed answer can be found here: http://codingshell.com/python-all-string-perm
 
 <details>
 <summary>Count the number of spaces in a string</summary><br><b>
+
+You can use the "count" method like this:
+
+```python
+
+ImAString.count(" ")
+
+```
+
 </b></details>
 
 <details>

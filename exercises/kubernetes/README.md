@@ -137,9 +137,9 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
 
 <details>
 <summary>Place the components on the right side of the image in the right place in the drawing<br>
-<img src="images/kubernetes/kubernetes_components.png"/>
+<img src="images/kubernetes_components.png"/>
 </summary><br><b>
-<img src="images/kubernetes/kubernetes_components_solution.png"/>
+<img src="images/kubernetes_components_solution.png"/>
 </b></details>
 
 <details>
@@ -1015,6 +1015,7 @@ etcd
 
 <details>
 <summary>What is etcd?</summary><br><b>
+  etcd is an open source distributed key-value store used to hold and manage the critical information that distributed systems need to keep running.[Read more](https://www.redhat.com/en/topics/containers/what-is-etcd)
 </b></details>
 
 <details>
@@ -1248,10 +1249,12 @@ kubectl delete pods --field-selector=status.phase!='Running'
 
 <details>
 <summary>What <code>kubectl logs [pod-name]</code> command does?</summary><br><b>
+  Print the logs for a container in a pod.
 </b></details>
 
 <details>
 <summary>What <code>kubectl describe pod [pod name] does?</code> command does?</summary><br><b>
+  Show details of a specific resource or group of resources.
 </b></details>
 
 <details>
@@ -1397,6 +1400,7 @@ It includes:
 
 <details>
 <summary>Explain StatefulSet</summary><br><b>
+  StatefulSet is the workload API object used to manage stateful applications. Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.[Learn more](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
 </b></details>
 
 #### Kubernetes - Secrets
@@ -1666,6 +1670,7 @@ To fix it, these lines should placed in the spec of the cron job, above or under
 
 <details>
 <summary>Explain Imperative Management vs. Declarative Management</summary><br><b>
+
 </b></details>
 
 <details>
@@ -1680,6 +1685,7 @@ Namespaces will allow to limit resources and also make sure there are no collisi
 
 <details>
 <summary>What Kube Proxy does?</summary><br><b>
+  Kube Proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept
 </b></details>
 
 <details>
@@ -1722,6 +1728,7 @@ Scale the number of pods automatically on observed CPU utilization.
 
 <details>
 <summary>What does being cloud-native mean?</summary><br><b>
+  The term cloud native refers to the concept of building and running applications to take advantage of the distributed computing offered by the cloud delivery model.
 </b></details>
 
 <details>
