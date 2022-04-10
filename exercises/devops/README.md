@@ -252,6 +252,7 @@ Reliability, when used in DevOps context, is the ability of a system to recover 
 
 <details>
 <summary>How a web server works?</summary><br><b>
+	According to MDN Web Docs
 	
 We can understand web servers using two view points,which is :
 	
