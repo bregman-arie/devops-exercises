@@ -165,6 +165,7 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
 
 <details>
 <summary>What is a private IP address? In which scenarios/system designs, one should use it?</summary><br><b>
+Private IP addresses are assigned to the hosts in the same network to communicate among one another. As the name "private" suggests, the devices having the priate IP addresses assigned can't be reached by the devices from any external network. For example, if I am living in a hostel and I want my hostelmates to join the game server I have hosted, I will ask them to join via my server's private IP address, since the network is local to the hostel.
 </b></details>
 
 <details>
@@ -196,7 +197,7 @@ You can read more about the OSI model in [penguintutor.com](http://www.penguintu
   * IP address
   * Terminate connections
   * 3 way handshake</summary><br><b>
-  * Error correction
+  * Error correction - Data link
   * Packets routing - Network
   * Cables and electrical signals - Physical
   * MAC address - Data link
