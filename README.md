@@ -464,14 +464,20 @@ Control Plane.
 
 <details>
 <summary>What is latency?</summary><br><b>
+	
+Latency is the time taken for an information to reach its destination from the source.
 </b></details>
 
 <details>
 <summary>What is bandwidth?</summary><br><b>
+	
+Bandwidth is the capacity of a communication channel to measure how much data the latter can handle over a specific time period. More bandwidth would imply more traffic handling and thus more data transfer.
 </b></details>
 
 <details>
 <summary>What is throughput?</summary><br><b>
+	
+Throughout refers to the measurement of the real amount of data transferred over a certain period of time across any transmission channel.
 </b></details>
 
 <details>
