@@ -477,7 +477,7 @@ Bandwidth is the capacity of a communication channel to measure how much data th
 <details>
 <summary>What is throughput?</summary><br><b>
 	
-Throughout refers to the measurement of the real amount of data transferred over a certain period of time across any transmission channel.
+Throughput refers to the measurement of the real amount of data transferred over a certain period of time across any transmission channel.
 </b></details>
 
 <details>
@@ -941,6 +941,8 @@ True
 
 <details>
 <summary>A user accidentally executed the following <code>chmod -x $(which chmod)</code>. How to fix it?</summary><br><b>
+
+Using `sudo setfacl -m u::rx /usr/bin/chmod` will set the execute permissions on `chmod` for all the users. Post this, the `chmod` binary can be used as usual.
 </b></details>
 
 #### Linux - systemd
@@ -1167,6 +1169,8 @@ Telnet also allows you to connect to a remote host but as opposed to SSH where t
 
 <details>
 <summary>What is stored in <code>~/.ssh/known_hosts</code>?</summary><br><b>
+
+The file stores the key fingerprints for the clients connecting to the SSH server. This fingerprint creates a trust between the client and the server for future SSH connections.
 </b></details>
 
 <details>
