@@ -165,6 +165,7 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
 
 <details>
 <summary>What is a private IP address? In which scenarios/system designs, one should use it?</summary><br><b>
+Private IP addresses are assigned to the hosts in the same network to communicate among one another. As the name "private" suggests, the devices having the priate IP addresses assigned can't be reached by the devices from any external network. For example, if I am living in a hostel and I want my hostelmates to join the game server I have hosted, I will ask them to join via my server's private IP address, since the network is local to the hostel.
 </b></details>
 
 <details>
@@ -196,7 +197,7 @@ You can read more about the OSI model in [penguintutor.com](http://www.penguintu
   * IP address
   * Terminate connections
   * 3 way handshake</summary><br><b>
-  * Error correction
+  * Error correction - Data link
   * Packets routing - Network
   * Cables and electrical signals - Physical
   * MAC address - Data link
@@ -463,14 +464,20 @@ Control Plane.
 
 <details>
 <summary>What is latency?</summary><br><b>
+	
+Latency is the time taken for an information to reach its destination from the source.
 </b></details>
 
 <details>
 <summary>What is bandwidth?</summary><br><b>
+	
+Bandwidth is the capacity of a communication channel to measure how much data the latter can handle over a specific time period. More bandwidth would imply more traffic handling and thus more data transfer.
 </b></details>
 
 <details>
 <summary>What is throughput?</summary><br><b>
+	
+Throughput refers to the measurement of the real amount of data transferred over a certain period of time across any transmission channel.
 </b></details>
 
 <details>
@@ -934,6 +941,8 @@ True
 
 <details>
 <summary>A user accidentally executed the following <code>chmod -x $(which chmod)</code>. How to fix it?</summary><br><b>
+
+Using `sudo setfacl -m u::rx /usr/bin/chmod` will set the execute permissions on `chmod` for all the users. Post this, the `chmod` binary can be used as usual.
 </b></details>
 
 #### Linux - systemd
@@ -1160,6 +1169,8 @@ Telnet also allows you to connect to a remote host but as opposed to SSH where t
 
 <details>
 <summary>What is stored in <code>~/.ssh/known_hosts</code>?</summary><br><b>
+
+The file stores the key fingerprints for the clients connecting to the SSH server. This fingerprint creates a trust between the client and the server for future SSH connections.
 </b></details>
 
 <details>
