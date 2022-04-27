@@ -53,7 +53,7 @@ There are different ways to check whether a file is tracked or not:
 <details>
 <summary>How can you see which changes have done before committing them?</summary><br><b>
 
-`git diff```
+`git diff`
 </b></details>
 
 <details>
