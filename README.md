@@ -5308,8 +5308,12 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 
 <details>
 <summary>How do you list buckets?</summary><br><b>
+    Two ways to do that:
+	 $ gsutil ls
+	 $ gcloud alpha storage ls
+	
 </b></details>
-
+ 
 <details>
 <summary>What Compute metadata key allows you to run code at startup?</summary><br><b>
 
