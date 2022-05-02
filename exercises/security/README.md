@@ -25,9 +25,10 @@ To be FIPS compliant means an organization adheres to the Federal Information Pr
 
 <details>
 <summary>What is a Certificate Authority?</summary><br><b>
-</b></details>
 
 [Thesslsstore](https://www.thesslstore.com/blog/what-is-a-certificate-authority-ca-and-what-do-they-do/): A certificate authority, also known as a certification authority, is a trusted organization that verifies websites (and other entities) so that you know who you’re communicating with online. Their objective is to make the internet a more secure place for organizations and users alike. This means that they play a pivotal role in digital security.
+</b></details>
+
 <details>
 <summary>Explain RBAC (Role-based Access Control)</summary><br><b>
 
