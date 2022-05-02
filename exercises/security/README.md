@@ -49,7 +49,8 @@ Authorization is the process of identifying what level of access the service or 
 <details>
 <summary>What authentication methods are there?</summary><br><b>
 
-[Idrnd], (https://www.idrnd.ai/5-authentication-methods-that-can-prevent-the-next-breach/)[Sailpoint](https://www.sailpoint.com/identity-library/authentication-methods-used-for-network-security/):
+[Idrnd](https://www.idrnd.ai/5-authentication-methods-that-can-prevent-the-next-breach/)
+& [Sailpoint](https://www.sailpoint.com/identity-library/authentication-methods-used-for-network-security/):
 
 * Password-based authentication. 
 * Multi-factor authentication.
