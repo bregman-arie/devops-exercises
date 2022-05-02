@@ -136,6 +136,7 @@ True. Cookie-based authentication session must be kept on both server and client
 
 <details>
 <summary>What is the role of an SSH key?</summary><br><b>
+ SSH uses public-key cryptography to authenticate the remote computer and allow it to authenticate the user. Two keys are created, private is stored inside user's computer to decrypted the communication then the public key is stored inside remoted computer where user want to connect with and it is used to cypher the communication.
 </b></details>
 
 #### Security - Cryptography
