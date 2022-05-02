@@ -2,6 +2,13 @@
 
 <details>
 <summary>What is DevSecOps? What its core principals?</summary><br><b>
+[Devopsonline definition](https://www.devopsonline.co.uk/how-to-put-the-sec-in-your-devsecops/): DevSecOps is the process of incorporating security into the development process. It includes the process of assessing and addressing potential threats and hardening attack surfaces, and commonly includes: penetration testing, code scanning and analysis, threat modeling and vulnerability assessments, compliance auditing, and all of the associated training that these require. The core principles are:
+
+  * deliver small, frequent releases using agile methodologies
+  * wherever possible, make use of automated testing
+  * empower developers to influence security changes
+  * ensure you are in a continuous state of compliance
+  * be prepared for threats, always invest in advanced training for your engineers.
 </b></details>
 
 <details>
@@ -12,12 +19,13 @@
 
 <details>
 <summary>What it means to be "FIPS compliant"?</summary><br><b>
+To be FIPS compliant means an organization adheres to the Federal Information Processing Standards (FIPS) in order to act in accordance with the Federal Information Security Management Act of 2002 (FISMA) and the Federal Information Security Modernization Act of 2014 (FISMA2014).
 </b></details>
 
 <details>
 <summary>What is a Certificate Authority?</summary><br><b>
 </b></details>
-
+[Thesslsstore](https://www.thesslstore.com/blog/what-is-a-certificate-authority-ca-and-what-do-they-do/): A certificate authority, also known as a certification authority, is a trusted organization that verifies websites (and other entities) so that you know who you’re communicating with online. Their objective is to make the internet a more secure place for organizations and users alike. This means that they play a pivotal role in digital security.
 <details>
 <summary>Explain RBAC (Role-based Access Control)</summary><br><b>
 
@@ -38,6 +46,13 @@ Authorization is the process of identifying what level of access the service or 
 
 <details>
 <summary>What authentication methods are there?</summary><br><b>
+[Idrnd, Sailpoint](https://www.idrnd.ai/5-authentication-methods-that-can-prevent-the-next-breach/)(https://www.sailpoint.com/identity-library/authentication-methods-used-for-network-security/):
+
+* Password-based authentication. 
+* Multi-factor authentication.
+* Certificate-based authentication.
+* Biometric authentication.
+* Token-based authentication.
 </b></details>
 
 <details>
@@ -48,10 +63,20 @@ A user uses the browser to authenticate to some server. It does so by using the 
 
 <details>
 <summary>Explain Token-based authentication</summary><br><b>
+[Fortinet](https://www.fortinet.com/resources/cyberglossary/authentication-token#:~:text=Token%2Dbased%20authentication%20is%20a,a%20unique%20encrypted%20authentication%20token):
+Token-based authentication is a protocol that generates encrypted security tokens. It enables users to verify their identity to websites, which then generates a unique encrypted authentication token. That token provides users with access to protected pages and resources for a limited period of time without having to re-enter their username and password. Token-based authentication works through this five-step process:
+
+  * Request: The user logs in to a service using their login credentials, which issues an access request to a server or protected resource.
+  * Verification: The server verifies the login information to determine that the user should have access. This involves checking the password entered against the username provided.
+  * Token submission: The server generates a secure, signed authentication token for the user for a specific period of time.
+  * Storage: The token is transmitted back to the user’s browser, which stores it for access to future website visits. When the user moves on to access a new website, the authentication token is decoded and verified. If there is a match, the user will be allowed to proceed.
+  * Expiration: The token will remain active until the user logs out or closes the server.
 </b></details>
 
 <details>
 <summary>Explain Risk-based authentication</summary><br><b>
+[Wikipedia](https://en.wikipedia.org/wiki/Risk-based_authentication):
+In Authentication, risk-based authentication is a non-static authentication system which takes into account the profile (IP address, User-Agent HTTP header, time of access, and so on[1]) of the agent requesting access to the system to determine the risk profile associated with that transaction. The risk profile is then used to determine the complexity of the challenge. Higher risk profiles lead to stronger challenges, whereas a static username/password may suffice for lower-risk profiles. Risk-based implementation allows the application to challenge the user for additional credentials only when the risk level is appropriate.
 </b></details>
 
 <details>
@@ -73,6 +98,14 @@ Multi-Factor Authentication (Also known as 2FA). Allows the user to present two 
 
 <details>
 <summary>How do you manage sensitive information (like passwords) in different tools and platforms?</summary><br><b>
+[Digitalguardian](https://digitalguardian.com/blog/101-data-protection-tips-how-keep-your-passwords-financial-personal-information-safe):
+
+  * Encrpyt sensitive data
+  * Use backups 
+  * Anti-malware protection 
+  * Update operating systems regularily 
+  * Automate software updates 
+  * Firewall
 </b></details>
 
 <details>
@@ -104,6 +137,16 @@ Multi-Factor Authentication (Also known as 2FA). Allows the user to present two 
 
 <details>
 <summary>What are cookies? Explain cookie-based authentication</summary><br><b>
+Cookies are pieces of data used to identify the user and their preferences. The browser returns the cookie to the server every time the page is requested. Specific cookies like HTTP cookies are used to perform cookie-based authentication to maintain the session for each user.
+The entire cookie-based authentication works in the following manner:
+
+  * The user gives a username and password at the time of login. Once the user fills in the login form, the browser (client) sends a login request to the server.
+  * The server verifies the user by querying the user data. If the authentication request is valid, the server generates the following:
+    * A session by utilizing the user information
+    * A unique ID, known as the session ID
+  * The server then passes the session ID to the browser that keeps it. The server also keeps track of the active sessions.
+  * The browser has to submit this generated session ID while sending a subsequent request. Every time the server validates the session ID. The session ID helps the authentication process identify the user and provides access accordingly.
+  * When the user logs out of the application, the session gets destroyed from both the client (browser) and the server. It discontinues the authentication process from happening again through the respective session ID.
 </b></details>
 
 <details>
@@ -136,6 +179,7 @@ True. Cookie-based authentication session must be kept on both server and client
 
 <details>
 <summary>What is the role of an SSH key?</summary><br><b>
+[Appviewx](https://www.appviewx.com/education-center/what-are-ssh-keys/#:~:text=for%20key%20management-,2.,remote%20machine%20over%20the%20internet.): SSH keys are a pair of public and private keys that are used to authenticate and establish an encrypted communication channel between a client and a remote machine over the internet.
 </b></details>
 
 #### Security - Cryptography
@@ -177,6 +221,9 @@ True. It is only used during the key exchange algorithm of symmetric encryption.
 
 <details>
 <summary>What is Hashing?</summary><br><b>
+Hashing is the process of converting a given key into another value. A hash function is used to generate the new value according to a mathematical algorithm. The result of a hash function is known as a hash value or simply, a hash.
+
+A good hash function uses a one-way hashing algorithm, or in other words, the hash cannot be converted back into the original key.
 </b></details>
 
 <details>
@@ -422,4 +469,120 @@ Practically this means that a single IP can server multiple web services/pages, 
 
 <details>
 <summary>What is a "Backdoor" in information security?</summary><br><b>
+</b></details>
+
+#### Software Supply Chain & Security 
+
+<details>
+<summary>Briefly describe software supply chain. </summary><br><b>
+[Increment](https://increment.com/apis/apis-supply-chain-software/): The fundamental idea of the software supply chain is to purchase and implement code solutions for a to-be system. This accelerates the development and deployment of a company’s product. Thus, playing an important role in the software's lifecycle and functionality.
+</b></details>
+
+<details>
+<summary>Give examples of what a code solution could be. </summary><br><b>
+
+  * API's, for instance:
+    * Twilio - provides communication APIs such as information for incoming mobile text messages.
+    * PayPal - provides a payment solution for e.g. e-commerce.
+    * AWS - e.g. outsourcing infrastructures / data centers.
+</b></details>
+
+<details>
+<summary>What're some benefits with software supply chain? </summary><br><b>
+[Increment](https://increment.com/apis/apis-supply-chain-software/): Resource-saving. Using and paying for existing solutions to resource-heavy problems saves time as well as money. Hence resulting in efficient, cheap and greater opportunities to develop and deploy software products for consumers. 
+</b></details>
+
+<details>
+<summary>What is a software supply chain attack? </summary><br><b>
+[Aquasec](https://www.aquasec.com/cloud-native-academy/devsecops/supply-chain-security/): An attack by an actor who injects malicious software into a part of the software supply chain.
+</b></details>
+
+<details>
+<summary> Give three examples of three potential security threats related to the software supply chain and describe them.</summary><br><b>
+[IEEE](https://ieeexplore.ieee.org/abstract/document/9203862): 
+
+  * Sensitive data being exposed or lost.
+    * In a software supply chain, sensitive data may be passed throughout the chain. Security threats involve loss or exposure of this data, such as customer credit card details.
+  * Cloud technology.
+    * Data sharing in the cloud might jeopardize the privacy of the data within the chain.
+  * Third-party vendors.
+    * Third-party vendors’ code solutions might not provide sufficient cybersecurity and risk being a potential subject to data breaches.
+</b></details>
+
+<details>
+<summary> Briefly suggest some solutions related to those threats from a developer perspective. 
+</summary><br><b>
+[Aquasec](https://www.aquasec.com/cloud-native-academy/devsecops/supply-chain-security/): 
+
+  * Carefully investigate the third party vendor’s security practices
+  * Conduct an incident response plan that should be followed if an attack occurs. 
+  * Raise awareness among employees of potential threats and critical attributes of the product and/or organization. 
+</b></details>
+
+<details>
+<summary> Suggest and describe a specific tool that could enhance threat prevention from a developer perspective. 
+</summary><br><b>
+[Aquasec](https://www.aquasec.com/aqua-cloud-native-security-platform/): 
+Aquasec is a tool which scans a project for potential security threats. This involves for instance vulnerability scanning, cloud security, Kubernetes security and serverless security.
+</b></details>
+
+#### Package management & Security 
+
+<details>
+<summary> What is a package manager?
+</summary><br><b>
+[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): A tool that allows you to easily download, add and thus reuse programming libraries in your project. E.g. npm or yarn.
+</b></details>
+
+<details>
+<summary> What is a build tool?
+</summary><br><b>
+[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): A tool that fetches the packages (dependencies) that are required to compile, test and deploy your application. 
+</b></details>
+
+<details>
+<summary> Describe bloated dependencies.
+</summary><br><b>
+[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): 
+An application usually has different dependencies. Typically, not all of them are required for building and running the application. Bloated dependencies is the concept of including the unnecessary dependencies for building and running your application. 
+</b></details>
+
+<details>
+<summary> Explain a few cons with bloated dependencies.
+</summary><br><b>
+[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): 
+
+  * Challenging to manage.
+  * Decreases performance of the application.
+  * Risk for malicious code that a threathening actor can take advantage of. 
+</b></details>
+
+<details>
+<summary> Briefly explain how DepClean for Maven projects work.
+</summary><br><b>
+[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): You input your project consisting of bytecode, a project object model (POM) and the Maven central repository into DepClean. DepClean will identify the dependency tree and perform bytecode analysis of API member calls in order to determine what dependencies are actually used in the project. The used dependencies will be intact, whereas the idle dependencies are removed from the dependency tree. DepClean will ultimately produce a dependency usage report and a debloated POM file. 
+</b></details>
+
+<details>
+<summary> Provide another solution to manage dependencies. 
+</summary><br><b>
+[Npm.js documentation](https://docs.npmjs.com/cli/v8/commands/npm-prune): Use clean-up commands that are usually provided by the package manager authors. For instance, npm prune will remove any extraneous package. 
+</b></details>
+
+<details>
+<summary> How can a threatening actor take advantage of open source packages/libraries? 
+</summary><br><b>
+[Aquasec](https://www.aquasec.com/cloud-native-academy/devsecops/supply-chain-security/): An attacking actor may identify, target and inject malicious software in a vulnerable part of an open source package or a third party vendor’s code. The consumer of this code may consequently and unknowingly deploy the malicious code throughout their pipelines, thus infecting their own projects. An example of this happening is the hack of (link) SolarWinds.
+</b></details>
+
+<details>
+<summary> How can you make sure that you use trustworthy packages for your project?
+</summary><br><b>
+You can’t. You will always be exposed to security risk once you start using open source or vendor packages. The goal is to minimize the risk in order to avoid security breaches.  
+</b></details>
+
+<details>
+<summary> Explain checksum.
+</summary><br><b>
+[Fred Cohen (permission needed)](https://reader.elsevier.com/reader/sd/pii/0167404887900319?token=D5339ABC064AD9A2B50B74D8CE890B0E22A302A0BC461A50078D407BEA01052737DC6AAEF95A854E72A73B6D0C67E260&originRegion=eu-west-1&originCreation=20220502180611): Checksum is a way to verify the integrity of information in systems with no built-in protection. In other words, it provides a way of validating that the content of a file or a package / library is intact. This is useful since attacks or errors may occur during transmission of files. However, it requires that the package author has run a checksum function for the file / package which creates a specific hash for that version of the file. A minor change of the file content will result in a different checksum. If you have access to the original checksum of the file, you may run checksum on your own. In case the resulting checksum matches the original one, no changes have been made in the file. You can now conclude that no error or malicious injection was done during transmission of the file. 
 </b></details>
