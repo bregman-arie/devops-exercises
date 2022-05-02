@@ -256,6 +256,10 @@ You can test by using a stored procedure, so the application must be sanitize th
 
 <details>
 <summary>Explain CVE and CVSS</summary><br><b>
+ CVE stands for Common Vulnerabilities and Exposures, it makes easier to identify vulnerabilities by adding an ID written on 8 digits.
+ The CVE ID have the following format : 
+ CVE prefix + Year + Arbitrary Digits
+ Then CVSS stands for Common Vulnerability Scoring System, it attemps to assign severity scores to vulnerabilities, allowing to ordonnance and prioritize responses and ressources according to threat. 
 </b></details>
 
 <details>
