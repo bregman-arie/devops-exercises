@@ -2,14 +2,6 @@
 
 <details>
 <summary>What is DevSecOps? What its core principals?</summary><br><b>
-
-[Devopsonline definition](https://www.devopsonline.co.uk/how-to-put-the-sec-in-your-devsecops/): DevSecOps is the process of incorporating security into the development process. It includes the process of assessing and addressing potential threats and hardening attack surfaces, and commonly includes: penetration testing, code scanning and analysis, threat modeling and vulnerability assessments, compliance auditing, and all of the associated training that these require. The core principles are:
-
-  * deliver small, frequent releases using agile methodologies
-  * wherever possible, make use of automated testing
-  * empower developers to influence security changes
-  * ensure you are in a continuous state of compliance
-  * be prepared for threats, always invest in advanced training for your engineers.
 </b></details>
 
 <details>
@@ -20,13 +12,10 @@
 
 <details>
 <summary>What it means to be "FIPS compliant"?</summary><br><b>
-To be FIPS compliant means an organization adheres to the Federal Information Processing Standards (FIPS) in order to act in accordance with the Federal Information Security Management Act of 2002 (FISMA) and the Federal Information Security Modernization Act of 2014 (FISMA2014).
 </b></details>
 
 <details>
 <summary>What is a Certificate Authority?</summary><br><b>
-
-[Thesslsstore](https://www.thesslstore.com/blog/what-is-a-certificate-authority-ca-and-what-do-they-do/): A certificate authority, also known as a certification authority, is a trusted organization that verifies websites (and other entities) so that you know who you’re communicating with online. Their objective is to make the internet a more secure place for organizations and users alike. This means that they play a pivotal role in digital security.
 </b></details>
 
 <details>
@@ -35,7 +24,6 @@ To be FIPS compliant means an organization adheres to the Federal Information Pr
 Access control based on user roles (i.e., a collection of access authorizations a user receives based on an explicit or implicit assumption of a given role). Role permissions may be inherited through a role hierarchy and typically reflect the permissions needed to perform defined functions within an organization. A given role may apply to a single individual or to several individuals.
 
 - RBAC mapped to job function, assumes that a person will take on different roles, overtime, within an organization and different responsibilities in relation to IT systems.
-
 </b></details>
 
 #### Security - Authentication and Authorization
@@ -49,15 +37,6 @@ Authorization is the process of identifying what level of access the service or 
 
 <details>
 <summary>What authentication methods are there?</summary><br><b>
-
-[Idrnd](https://www.idrnd.ai/5-authentication-methods-that-can-prevent-the-next-breach/)
-& [Sailpoint](https://www.sailpoint.com/identity-library/authentication-methods-used-for-network-security/):
-
-* Password-based authentication. 
-* Multi-factor authentication.
-* Certificate-based authentication.
-* Biometric authentication.
-* Token-based authentication.
 </b></details>
 
 <details>
@@ -68,22 +47,10 @@ A user uses the browser to authenticate to some server. It does so by using the 
 
 <details>
 <summary>Explain Token-based authentication</summary><br><b>
-
-[Fortinet](https://www.fortinet.com/resources/cyberglossary/authentication-token#:~:text=Token%2Dbased%20authentication%20is%20a,a%20unique%20encrypted%20authentication%20token):
-Token-based authentication is a protocol that generates encrypted security tokens. It enables users to verify their identity to websites, which then generates a unique encrypted authentication token. That token provides users with access to protected pages and resources for a limited period of time without having to re-enter their username and password. Token-based authentication works through this five-step process:
-
-  * Request: The user logs in to a service using their login credentials, which issues an access request to a server or protected resource.
-  * Verification: The server verifies the login information to determine that the user should have access. This involves checking the password entered against the username provided.
-  * Token submission: The server generates a secure, signed authentication token for the user for a specific period of time.
-  * Storage: The token is transmitted back to the user’s browser, which stores it for access to future website visits. When the user moves on to access a new website, the authentication token is decoded and verified. If there is a match, the user will be allowed to proceed.
-  * Expiration: The token will remain active until the user logs out or closes the server.
 </b></details>
 
 <details>
 <summary>Explain Risk-based authentication</summary><br><b>
-
-[Wikipedia](https://en.wikipedia.org/wiki/Risk-based_authentication):
-In Authentication, risk-based authentication is a non-static authentication system which takes into account the profile (IP address, User-Agent HTTP header, time of access, and so on[1]) of the agent requesting access to the system to determine the risk profile associated with that transaction. The risk profile is then used to determine the complexity of the challenge. Higher risk profiles lead to stronger challenges, whereas a static username/password may suffice for lower-risk profiles. Risk-based implementation allows the application to challenge the user for additional credentials only when the risk level is appropriate.
 </b></details>
 
 <details>
@@ -98,22 +65,12 @@ SSO (Single Sign-on), is a method of access control that enables a user to log i
 Multi-Factor Authentication (Also known as 2FA). Allows the user to present two pieces of evidence, credentials, when logging into an account.
 
 - The credentials fall into any of these three categories: something you know (like a password or PIN), something you have (like a smart card), or something you are (like your fingerprint).  Credentials must come from two different categories to enhance security.
-
 </b></details>
 
 #### Security - Passwords
 
 <details>
 <summary>How do you manage sensitive information (like passwords) in different tools and platforms?</summary><br><b>
-
-[Digitalguardian](https://digitalguardian.com/blog/101-data-protection-tips-how-keep-your-passwords-financial-personal-information-safe):
-
-  * Encrpyt sensitive data
-  * Use backups 
-  * Anti-malware protection 
-  * Update operating systems regularily 
-  * Automate software updates 
-  * Firewall
 </b></details>
 
 <details>
@@ -145,15 +102,6 @@ Multi-Factor Authentication (Also known as 2FA). Allows the user to present two 
 
 <details>
 <summary>What are cookies? Explain cookie-based authentication</summary><br><b>
-Cookies are pieces of data used to identify the user and their preferences. The browser returns the cookie to the server every time the page is requested. Specific cookies like HTTP cookies are used to perform cookie-based authentication to maintain the session for each user. The entire cookie-based authentication works in the following manner:
-
-  * The user gives a username and password at the time of login. Once the user fills in the login form, the browser (client) sends a login request to the server.
-  * The server verifies the user by querying the user data. If the authentication request is valid, the server generates the following:
-    * A session by utilizing the user information
-    * A unique ID, known as the session ID
-  * The server then passes the session ID to the browser that keeps it. The server also keeps track of the active sessions.
-  * The browser has to submit this generated session ID while sending a subsequent request. Every time the server validates the session ID. The session ID helps the authentication process identify the user and provides access accordingly.
-  * When the user logs out of the application, the session gets destroyed from both the client (browser) and the server. It discontinues the authentication process from happening again through the respective session ID.
 </b></details>
 
 <details>
@@ -186,8 +134,6 @@ True. Cookie-based authentication session must be kept on both server and client
 
 <details>
 <summary>What is the role of an SSH key?</summary><br><b>
-
-[Appviewx](https://www.appviewx.com/education-center/what-are-ssh-keys/#:~:text=for%20key%20management-,2.,remote%20machine%20over%20the%20internet.): SSH keys are a pair of public and private keys that are used to authenticate and establish an encrypted communication channel between a client and a remote machine over the internet.
 </b></details>
 
 #### Security - Cryptography
@@ -261,7 +207,6 @@ Read about it [here](https://owasp.org/www-project-top-ten)
 Cross Site Scripting (XSS) is an type of a attack when the attacker inserts browser executable code within a HTTP response. Now the injected attack is not stored in the web application, it will only affect the users who open the maliciously crafted link or third-party web page. A successful attack allows the attacker to access any cookies, session tokens, or other sensitive information retained by the browser and used with that site 
 
 You can test by detecting user-defined variables and how to input them. This includes hidden or non-obvious inputs such as HTTP parameters, POST data, hidden form field values, and predefined radio or selection values. You then analyze each found vector to see if their are potential vulnerabilities, then when found you craft input data with each input vector. Then you test the crafted input and see if it works.
-
 </b></details>
 
 <details>
@@ -270,7 +215,6 @@ You can test by detecting user-defined variables and how to input them. This inc
 SQL injection is an attack consists of inserts either a partial or full SQL query through data input from the browser to the web application. When a successful SQL injection happens it will allow the attacker to read sensitive information stored on the database for the web application. 
 
 You can test by using a stored procedure, so the application must be sanitize the user input to get rid of the risk of code injection. If not then the user could enter bad SQL, that will then be executed within the procedure
-
 </b></details>
 
 <details>
@@ -330,7 +274,6 @@ DNS spoofing occurs when a particular DNS server’s records of “spoofed” or
 - Use encrypted data transfer protocols - Using end-to-end encryption vian SSL/TLS will help decrease the chance that a website / its visitors are compromised by DNS spoofing.
 - Use DNSSEC - DNSSEC, or Domain Name System Security Extensions, uses digitally signed DNS records to help determine data authenticity.
 - Implement DNS spoofing detection mechanisms - it’s important to implement DNS spoofing detection software. Products such as XArp help product against ARP cache poisoning by inspecting the data that comes through before transmitting it.
-
 </b></details>
 
 <details>
@@ -347,7 +290,6 @@ Stuxnet is a computer worm that was originally aimed at Iran’s nuclear facilit
 <summary>What can you tell me about Spectre?</summary><br><b>
 
 Spectre is an attack method which allows a hacker to “read over the shoulder” of a program it does not have access to. Using code, the hacker forces the program to pull up its encryption key allowing full access to the program
-
 </b></details>
 
 <details>
@@ -373,14 +315,12 @@ Spectre is an attack method which allows a hacker to “read over the shoulder�
 Cross-Site Request Forgery (CSRF) is an attack that makes the end user to initate a unwanted action on the web application in which the user has a authenticated session, the attacker may user an email and force the end user to click on the link and that then execute malicious actions. When an CSRF attack is successful it will compromise the end user data 
 
 You can use OWASP ZAP to analyze a "request", and if it appears that there no protection against cross-site request forgery when the Security Level is set to 0 (the value of csrf-token is SecurityIsDisabled.) One can use data from this request to prepare a CSRF attack by using OWASP ZAP
-
 </b></details>
 
 <details>
 <summary>Explain HTTP Header Injection vulnerability</summary><br><b>
 
 HTTP Header Injection vulnerabilities occur when user input is insecurely included within server responses headers. If an attacker can inject newline characters into the header, then they can inject new HTTP headers and also, by injecting an empty line, break out of the headers into the message body and write arbitrary content into the application's response.
-
 </b></details>
 
 <details>
@@ -425,7 +365,6 @@ Read more about it at [portswigger.net](https://portswigger.net/web-security/ssr
 <summary>Explain MAC flooding attack</summary><br><b>
 
 MAC address flooding attack (CAM table flooding attack) is a type of network attack where an attacker connected to a switch port floods the switch interface with very large number of Ethernet frames with different fake source MAC address.
-
 </b></details>
 
 <details>
@@ -484,11 +423,13 @@ Practically this means that a single IP can server multiple web services/pages, 
 <details>
 <summary>Briefly describe software supply chain. </summary><br><b>
 
-[Increment](https://increment.com/apis/apis-supply-chain-software/): The fundamental idea of the software supply chain is to purchase and implement code solutions for a to-be system. This accelerates the development and deployment of a company’s product. Thus, playing an important role in the software's lifecycle and functionality.
+A company’s software supply chain consists of any third party or open source component which could be used to compromise the final product. 
+
+[WhiteSource](https://www.whitesourcesoftware.com/resources/blog/software-supply-chain-security-the-basics-and-four-critical-best-practices/): "Enterprise software projects increasingly depend on third-party and open source components. These components are created and maintained by individuals who are not employed by the organization developing the primary software, and who do not necessarily use the same security policies as the organization. This poses a security risk, because differences or inconsistencies between these policies can create overlooked areas of vulnerability that attackers seek to exploit." 
 </b></details>
 
 <details>
-<summary>Give examples of what a code solution could be. </summary><br><b>
+<summary>Give examples of third-party and open source components. </summary><br><b>
 
   * API's, for instance:
     * Twilio - provides communication APIs such as information for incoming mobile text messages.
@@ -506,6 +447,8 @@ Practically this means that a single IP can server multiple web services/pages, 
 <summary>What is a software supply chain attack? </summary><br><b>
 
 [Aquasec](https://www.aquasec.com/cloud-native-academy/devsecops/supply-chain-security/): An attack by an actor who injects malicious software into a part of the software supply chain.
+
+[NIST](https://www.cisa.gov/sites/default/files/publications/defending_against_software_supply_chain_attacks_508_1.pdf): Common software supply chain attacks are characterized by attackers injecting malicious code into a third party vendor's software before this vendor sends the code (e.g. as an update) to its customer, thurs leveraging the attack when the customers consequently integrate the code into their projects (e.g. CI pipelines).  
 </b></details>
 
 <details>
@@ -522,14 +465,15 @@ Practically this means that a single IP can server multiple web services/pages, 
 </b></details>
 
 <details>
-<summary> Briefly suggest some solutions related to those threats from a developer perspective. 
+<summary> Following the examples for security threats on supply chain above, briefly suggest some solutions related to those threats from a consumer perspective.
 </summary><br><b>
 
 [Aquasec](https://www.aquasec.com/cloud-native-academy/devsecops/supply-chain-security/): 
 
   * Carefully investigate the third party vendor’s security practices
   * Conduct an incident response plan that should be followed if an attack occurs. 
-  * Raise awareness among employees of potential threats and critical attributes of the product and/or organization. 
+  * Incorporate security tools in your project pipelines, such as [SonarQube](https://www.sonarqube.org/).
+
 </b></details>
 
 <details>
@@ -586,20 +530,27 @@ An application usually has different dependencies. Typically, not all of them ar
 <summary> Provide another solution to manage dependencies. 
 </summary><br><b>
 
-[Npm.js documentation](https://docs.npmjs.com/cli/v8/commands/npm-prune): Use clean-up commands that are usually provided by the package manager authors. For instance, npm prune will remove any extraneous package. 
+[Npm.js documentation](https://docs.npmjs.com/cli/v8/commands/npm-prune): Use clean-up commands that are usually provided by the package manager authors. For instance, npm prune will remove any extraneous package. Another command is npm audit which will scan your repository and report any vulnerable dependencies found.
 </b></details>
 
 <details>
-<summary> How can a threatening actor take advantage of open source packages/libraries? 
+<summary> What is a threatening actor and how can this actor take advantage of open source or third party vendor's packages/libraries? 
 </summary><br><b>
 
-[Aquasec](https://www.aquasec.com/cloud-native-academy/devsecops/supply-chain-security/): An attacking actor may identify, target and inject malicious software in a vulnerable part of an open source package or a third party vendor’s code. The consumer of this code may consequently and unknowingly deploy the malicious code throughout their pipelines, thus infecting their own projects. An example of this happening is the hack of (link) SolarWinds.
+[Wikipedia](https://en.wikipedia.org/wiki/Threat_actor): A threatening actor is one or more people who target technical artifacts such as software, networks and/or devices with the purpose of harming it.
+
+[Aquasec](https://www.aquasec.com/cloud-native-academy/devsecops/supply-chain-security/): An attacking actor may identify, target and inject malicious software in a vulnerable part of an open source package or a third party vendor’s code. The consumer of this code may consequently and unknowingly deploy the malicious code throughout their pipelines, thus infecting their own projects. An example of this happening is the hack of [SolarWinds](https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack).
 </b></details>
 
 <details>
 <summary> How can you make sure that you use trustworthy packages for your project?
 </summary><br><b>
-You can’t. You will always be exposed to security risk once you start using open source or vendor packages. The goal is to minimize the risk in order to avoid security breaches.  
+You can’t. You will always be exposed to security risk once you start using open source or vendor packages. The goal is to minimize the risk in order to avoid security breaches. This could be done by:
+
+  * Regularly update the project's dependencies to apply latest bug fixes and vulnerability clean-ups.
+  * However, unless you trust the author, do not update your dependencies instantly, since package updates recently have been a common target by hackers.
+  * Check for changes of the file content in previous versions. 
+
 </b></details>
 
 <details>
