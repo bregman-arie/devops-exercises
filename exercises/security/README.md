@@ -175,9 +175,6 @@ True. It is only used during the key exchange algorithm of symmetric encryption.
 
 <details>
 <summary>What is Hashing?</summary><br><b>
-Hashing is the process of converting a given key into another value. A hash function is used to generate the new value according to a mathematical algorithm. The result of a hash function is known as a hash value or simply, a hash.
-
-A good hash function uses a one-way hashing algorithm, or in other words, the hash cannot be converted back into the original key.
 </b></details>
 
 <details>
@@ -421,34 +418,17 @@ Practically this means that a single IP can server multiple web services/pages, 
 #### Software Supply Chain & Security 
 
 <details>
-<summary>Briefly describe software supply chain. </summary><br><b>
+<summary>Briefly describe what a software supply chain is. </summary><br><b>
 
-A company’s software supply chain consists of any third party or open source component which could be used to compromise the final product. 
+A company’s software supply chain consists of any third party or open source component which could be used to compromise the final product. Such component is usually an API provided by an actor. For instance Twilio who offers mobile communication APIs to their customers. 
 
 [WhiteSource](https://www.whitesourcesoftware.com/resources/blog/software-supply-chain-security-the-basics-and-four-critical-best-practices/): "Enterprise software projects increasingly depend on third-party and open source components. These components are created and maintained by individuals who are not employed by the organization developing the primary software, and who do not necessarily use the same security policies as the organization. This poses a security risk, because differences or inconsistencies between these policies can create overlooked areas of vulnerability that attackers seek to exploit." 
-</b></details>
-
-<details>
-<summary>Give examples of third-party and open source components. </summary><br><b>
-
-  * API's, for instance:
-    * Twilio - provides communication APIs such as information for incoming mobile text messages.
-    * PayPal - provides a payment solution for e.g. e-commerce.
-    * AWS - e.g. outsourcing infrastructures / data centers.
 </b></details>
 
 <details>
 <summary>What're some benefits with software supply chain? </summary><br><b>
 
 [Increment](https://increment.com/apis/apis-supply-chain-software/): Resource-saving. Using and paying for existing solutions to resource-heavy problems saves time as well as money. Hence resulting in efficient, cheap and greater opportunities to develop and deploy software products for consumers. 
-</b></details>
-
-<details>
-<summary>What is a software supply chain attack? </summary><br><b>
-
-[Aquasec](https://www.aquasec.com/cloud-native-academy/devsecops/supply-chain-security/): An attack by an actor who injects malicious software into a part of the software supply chain.
-
-[NIST](https://www.cisa.gov/sites/default/files/publications/defending_against_software_supply_chain_attacks_508_1.pdf): Common software supply chain attacks are characterized by attackers injecting malicious code into a third party vendor's software before this vendor sends the code (e.g. as an update) to its customer, thurs leveraging the attack when the customers consequently integrate the code into their projects (e.g. CI pipelines).  
 </b></details>
 
 <details>
@@ -462,18 +442,6 @@ A company’s software supply chain consists of any third party or open source c
     * Data sharing in the cloud might jeopardize the privacy of the data within the chain.
   * Third-party vendors.
     * Third-party vendors’ code solutions might not provide sufficient cybersecurity and risk being a potential subject to data breaches.
-</b></details>
-
-<details>
-<summary> Following the examples for security threats on supply chain above, briefly suggest some solutions related to those threats from a consumer perspective.
-</summary><br><b>
-
-[Aquasec](https://www.aquasec.com/cloud-native-academy/devsecops/supply-chain-security/): 
-
-  * Carefully investigate the third party vendor’s security practices
-  * Conduct an incident response plan that should be followed if an attack occurs. 
-  * Incorporate security tools in your project pipelines, such as [SonarQube](https://www.sonarqube.org/).
-
 </b></details>
 
 <details>
@@ -545,12 +513,12 @@ An application usually has different dependencies. Typically, not all of them ar
 <details>
 <summary> How can you make sure that you use trustworthy packages for your project?
 </summary><br><b>
+
 You can’t. You will always be exposed to security risk once you start using open source or vendor packages. The goal is to minimize the risk in order to avoid security breaches. This could be done by:
 
   * Regularly update the project's dependencies to apply latest bug fixes and vulnerability clean-ups.
   * However, unless you trust the author, do not update your dependencies instantly, since package updates recently have been a common target by hackers.
   * Check for changes of the file content in previous versions. 
-
 </b></details>
 
 <details>
