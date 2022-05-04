@@ -232,6 +232,11 @@ You can test by using a stored procedure, so the application must be sanitize th
 
 <details>
 <summary>How HTTPS is different from HTTP?</summary><br><b>
+ 
+ The S letter in the HTTPS anagram stands for Secure. When an user is connected to a website with HTTPS protocole, the communication is bidirectionnaly encrypted with a public-key cryptography and it prevents data from being intercepted, for example it protects users against man-in-the-land attacks. When a user want to be connected on a website with HTTPS procole, firstly, user's machine checks [server certificates](https://www.ssl.com/faqs/what-is-https/) which prove that website has made every necessities to be able to begin and to maintain a secure connection.
+ 
+ For more details check the [RFC 2818](https://datatracker.ietf.org/doc/html/rfc2818) 
+ 
 </b></details>
 
 <details>
