@@ -38,9 +38,9 @@
   </tr>
   <tr>
     <td align="center"><a href="exercises/cloud/README.md"><img src="images/cloud.png" width="75px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a></td>
-    <td align="center"><a href="exercises/aws/README.md"><img src="images/aws.png" width="75px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
+    <td align="center"><a href="exercises/aws/README.md"><img src="images/aws.png" width="100px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
     <td align="center"><a href="#azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a></td>
-    <td align="center"><a href="#gcp"><img src="images/googlecloud.png" width="75px;" height="75px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
+    <td align="center"><a href="#gcp"><img src="images/googlecloud.png" width="70px;" height="70px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
     <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a></td>
     <td align="center"><a href="exercises/security/README.md"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
   </tr>
