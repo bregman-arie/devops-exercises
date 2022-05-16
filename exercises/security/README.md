@@ -435,7 +435,7 @@ A company’s software supply chain consists of any third party or open source c
 </b></details>
 
 <details>
-<summary>What're some benefits with software supply chain? </summary><br><b>
+<summary>What're some benefits of a software supply chain? </summary><br><b>
 
 [Increment](https://increment.com/apis/apis-supply-chain-software/): Resource-saving. Using and paying for existing solutions to resource-heavy problems saves time as well as money. Hence resulting in efficient, cheap and greater opportunities to develop and deploy software products for consumers. 
 </b></details>
@@ -453,28 +453,20 @@ A company’s software supply chain consists of any third party or open source c
     * Third-party vendors’ code solutions might not provide sufficient cybersecurity and risk being a potential subject to data breaches.
 </b></details>
 
-<details>
-<summary> Suggest and describe a specific tool that could enhance threat prevention from a developer perspective. 
-</summary><br><b>
-
-[Aquasec](https://www.aquasec.com/aqua-cloud-native-security-platform/): 
-Aquasec is a tool which scans a project for potential security threats. This involves for instance vulnerability scanning, cloud security, Kubernetes security and serverless security.
-</b></details>
-
 #### Package management & Security 
 
 <details>
 <summary> What is a package manager?
 </summary><br><b>
 
-[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): A tool that allows you to easily download, add and thus reuse programming libraries in your project. E.g. npm or yarn.
+[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): "A tool that allows you to easily download, add and thus reuse programming libraries in your project." E.g. npm or yarn.
 </b></details>
 
 <details>
 <summary> What is a build tool?
 </summary><br><b>
 
-[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): A tool that fetches the packages (dependencies) that are required to compile, test and deploy your application. 
+[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): "A tool that fetches the packages (dependencies) that are required to compile, test and deploy your application." 
 </b></details>
 
 <details>
@@ -486,7 +478,7 @@ An application usually has different dependencies. Typically, not all of them ar
 </b></details>
 
 <details>
-<summary> Explain a few cons with bloated dependencies.
+<summary> Explain a few cons of bloated dependencies.
 </summary><br><b>
 
 [Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): 
@@ -497,14 +489,7 @@ An application usually has different dependencies. Typically, not all of them ar
 </b></details>
 
 <details>
-<summary> Briefly explain how DepClean for Maven projects work.
-</summary><br><b>
-
-[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): You input your project consisting of bytecode, a project object model (POM) and the Maven central repository into DepClean. DepClean will identify the dependency tree and perform bytecode analysis of API member calls in order to determine what dependencies are actually used in the project. The used dependencies will be intact, whereas the idle dependencies are removed from the dependency tree. DepClean will ultimately produce a dependency usage report and a debloated POM file. 
-</b></details>
-
-<details>
-<summary> Provide another solution to manage dependencies. 
+<summary> What solutions are there for managing project dependencies? 
 </summary><br><b>
 
 [Npm.js documentation](https://docs.npmjs.com/cli/v8/commands/npm-prune): Use clean-up commands that are usually provided by the package manager authors. For instance, npm prune will remove any extraneous package. Another command is npm audit which will scan your repository and report any vulnerable dependencies found.
