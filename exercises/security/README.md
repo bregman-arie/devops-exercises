@@ -134,6 +134,9 @@ True. Cookie-based authentication session must be kept on both server and client
 
 <details>
 <summary>What is the role of an SSH key?</summary><br><b>
+ 
+[Wikipedia definition](https://en.wikipedia.org/wiki/Secure_Shell) : SSH uses public-key cryptography to authenticate the remote computer and allow it to authenticate the user. Two keys are created, private is stored inside user's computer to decrypt the communication then the public key is stored inside the remoted computer where user want to connect with and it is used to encrypt the communication.
+ 
 </b></details>
 
 #### Security - Cryptography
@@ -252,6 +255,12 @@ You can test by using a stored procedure, so the application must be sanitize th
 
 <details>
 <summary>Explain CVE and CVSS</summary><br><b>
+ 
+  [Red Hat](https://www.redhat.com/en/topics/security/what-is-cve#how-does-it-work) : "When someone refers to a CVE (Common Vulnerabilities and Exposures), they mean a security flaw that's been assigned a CVE ID number. They don’t include technical data, or information about risks, impacts, and fixes." So CVE is just identified by an ID written with 8 digits. The CVE ID have the following format:  CVE prefix + Year + Arbitrary Digits.
+ Anyone can submit a vulnerability, [Exploit Database](https://www.exploit-db.com/submit) explains how it works to submit.
+  
+Then CVSS stands for Common Vulnerability Scoring System, it attemps to assign severity scores to vulnerabilities, allowing to ordonnance and prioritize responses and ressources according to threat. 
+ 
 </b></details>
 
 <details>
