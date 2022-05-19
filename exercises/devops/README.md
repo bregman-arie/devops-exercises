@@ -72,7 +72,7 @@ A couple of thoughts:
 #### Tooling
 
 <details>
-<summary>What are you taking into consideration when choosing a tool/technology?</summary><br><b>
+<summary>What do you take into consideration when choosing a tool/technology?</summary><br><b>
 
 A few ideas to think about:
 
@@ -220,7 +220,7 @@ Read more [here](https://en.wikipedia.org/wiki/Software_repository)
 </b></details>
 
 <details>
-<summary>What is caching? How does it works? Why is it important?</summary><br><b>
+<summary>What is caching? How does it work? Why is it important?</summary><br><b>
 
 Caching is fast access to frequently used resources which are computationally expensive or IO intensive and do not change often. There can be several layers of cache that can start from CPU caches to distributed cache systems. Common ones are in memory caching and distributed caching. <br/> Caches are typically data structures that contains some data, such as a hashtable or dictionary. However, any data structure can provide caching capabilities, like set, sorted set, sorted dictionary etc. While, caching is used in many applications, they can create subtle bugs if not implemented correctly or used correctly. For example,cache invalidation, expiration or updating is usually quite challenging and hard.
 </b></details>
@@ -239,11 +239,11 @@ Reliability, when used in DevOps context, is the ability of a system to recover 
 </b></details>
 
 <details>
-<summary>What "Availability" means? What means are there to track Availability of a service?</summary><br><b>
+<summary>What does "Availability" mean? What means are there to track Availability of a service?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Why 100% availability isn't a target? Why most companies or teams set it to be 99%.X?</summary><br><b>
+<summary>Why isn't 100% availability a target? Why do most companies or teams set it to be 99%.X?</summary><br><b>
 </b></details>
 
 <details>
@@ -251,7 +251,7 @@ Reliability, when used in DevOps context, is the ability of a system to recover 
 </b></details>
 
 <details>
-<summary>How a web server works?</summary><br><b>
+<summary>How does a web server work?</summary><br><b>
 <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server" title="Click here to redirect to MDN official page" style="background-color:#FFFFFF;color:#000000;text-decoration:none">According to MDN Web Docs -</a>
 	
 We can understand web servers using two view points, which is:
@@ -286,7 +286,7 @@ This communcation between web browser and web server happens in the following wa
 </b></details>
 
 <details>
-<summary>Describe me the architecture of service/app/project/... you designed and/or implemented</summary><br><b>
+<summary>Describe the architecture of service/app/project/... you designed and/or implemented</summary><br><b>
 </b></details>
 
 <details>
@@ -322,7 +322,7 @@ IAC (infrastructure as code) is a declarative approach of defining infrastructur
 </b></details>
 
 <details>
-<summary>What benefits infrastructure-as-code has?</summary><br><b>
+<summary>What benefits does infrastructure-as-code have?</summary><br><b>
 
 - fully automated process of provisioning, modifying and deleting your infrastructure
 - version control for your infrastructure which allows you to quickly rollback to previous versions
@@ -364,7 +364,7 @@ Build artifacts are usually stored in a repository. They can be used in release 
 </b></details>
 
 <details>
-<summary>What do you think about the following sentence?: "implementing or practicing DevOps leads to more secure software"</summary><br><b>
+<summary>What do you think about the following sentence?: "Implementing or practicing DevOps leads to more secure software"</summary><br><b>
 </b></details>
 
 <details>
