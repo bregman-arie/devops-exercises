@@ -4,9 +4,9 @@
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| My first Commit | Commit | [Exercise](exercises/git/commit_01.md) | [Solution](exercises/git/solutions/commit_01_solution.md) | |
-| Time to Branch | Branch | [Exercise](exercises/git/branch_01.md) | [Solution](exercises/git/solutions/branch_01_solution.md) | |
-| Squashing Commits | Commit | [Exercise](exercises/git/squashing_commits.md) | [Solution](exercises/git/solutions/squashing_commits.md) | |
+| My first Commit | Commit | [Exercise](commit_01.md) | [Solution](solutions/commit_01_solution.md) | |
+| Time to Branch | Branch | [Exercise](branch_01.md) | [Solution](solutions/branch_01_solution.md) | |
+| Squashing Commits | Commit | [Exercise](squashing_commits.md) | [Solution](solutions/squashing_commits.md) | |
 
 ## Questions
 
@@ -61,6 +61,18 @@ There are different ways to check whether a file is tracked or not:
 </b></details>
 
 ### Branches
+
+<details>
+<summary>What's is the branch strategy (flow) you know?</summary><br><b>
+
+* Git flow
+* GitHub flow
+* Trunk based development
+* GitLab flow
+
+[Explanation](https://www.bmc.com/blogs/devops-branching-strategies/#:~:text=What%20is%20a%20branching%20strategy,used%20in%20the%20development%20process).
+
+</b></details>
 
 <details>
 <summary>True or False? A branch is basically a simple pointer or reference to the head of certain line of work</summary><br><b>
