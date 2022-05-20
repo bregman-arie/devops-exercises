@@ -88,8 +88,7 @@ The custom configuration can be configured, either by modifying the custom confi
 <details>
 <summary>Which external authentication is supported out-of-the-box</summary><br><b>
 
-[Grafana docs](https://grafana.com/docs/grafana/latest/auth/overview/
-): Grafana Auth is the built-in authentication system with password authentication enabled by default
+[Grafana docs](https://grafana.com/docs/grafana/latest/auth/overview/): Grafana Auth is the built-in authentication system with password authentication enabled by default
 </b></details>
 
 <details>
@@ -106,25 +105,50 @@ Click load afterwards.
 <details>
 <summary>What is the format for the dashboard</summary><br><b>
 
-[Grafana docs](https://grafana.com/docs/grafana/latest/dashboards/json-model/
-): Grafana dashboards are represented in JSON files as objects, they store metadata about a dashboard e.g. dashboard properties, panel metadata and variables.
+[Grafana docs](https://grafana.com/docs/grafana/latest/dashboards/json-model/): Grafana dashboards are represented in JSON files as objects, they store metadata about a dashboard e.g. dashboard properties, panel metadata and variables.
 
 </b></details>
 
 <details>
 <summary>How is the version upgrade done</summary><br><b>
 
-[Grafana docs](https://grafana.com/docs/grafana/latest/dashboards/json-model/
-): The version upgrade varies on how Grafana was installed:
+[Grafana docs](https://grafana.com/docs/grafana/latest/dashboards/json-model/): The version upgrade varies on how Grafana was installed:
 - Debian package: Download and execute the latest grafana package to upgrade.
 - APT repository: Run sudo apt-get update (or upgrade)
 - Binary .tar file: Download and extract the new package and overwrite all existing files.
 - Docker: Pull the latest docker image from docker hub registry and stop the current container with Grafana. Then remove the old container and start a new with the latest grafana image
 - Windows: Download the latest Windows binary package and extract to the same location as the old files, overwriting them
 - MacOS: run brew update and then brew reinstall grafana
-
 </b></details>
 
+<details>
+<summary>Explain the steps to share your dashboard with your team</summary><br><b>
+
+[Grafana docs](https://grafana.com/docs/grafana/latest/sharing/share-dashboard/): Go to the homepage of your grafana Instance. Click on the share icon in the top navigation, from there three tabs are visible with the link tab shown.
+- Direct link: Click copy, send the link to a Grafana user, note that the user needs authorization to view the link. This is done by adding the user to a team.
+- Public Snapshot: Click on local snapshot to publish a snapshot to your local Grafana instance, or Publish to snapshots.raintank.io which is a free service for publishing dashboard snapshots to an external Grafana instance
+You can configure snapshots to expire after a certain time and the timeout value to collect dashboard metrics
+</b></details>
+ 
+<details>
+<summary>How can you organise your dashboards and users in Grafana</summary><br><b>
+
+[Grafana docs](https://grafana.com/blog/2022/03/14/how-to-best-organize-your-teams-and-resources-in-grafana/
+): The recommended way by Grafana labs is to create folders for grouping dashboards, library panels and alerts. Users can be organised through Teams which grants permissions to members of a group.
+- [Folders](https://grafana.com/docs/grafana/latest/dashboards/dashboard_folders/): Click the + icon in the sidebar, then click "Create folder". In the create folder page, fill an unique name for the folder and click "Create"
+- [Teams](https://grafana.com/tutorials/create-users-and-teams/) You need to be the server admin in order to create Teams. 
+ 1. Click the server admin (shield) icon in the sidebar, then in the Users tab, click New user.
+ 2. Enter the user details e.g. name, E-mail, Username and Password. The password can be changed later by the user
+ 3. Click Create to create the user account.
+</b></details>
+ 
+<details>
+<summary>Explain the steps to create an Alert</summary><br><b>
+
+[Grafana docs](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/): 
+ 
+ "Navigate to the panel you want to add or edit an alert rule for, click the title, and then click Edit. On the Alert tab, click Create Alert. If an alert already exists for this panel, then you can just edit the fields on the Alert tab. Fill out the fields. Descriptions are listed below in Alert rule fields. When you have finished writing your rule, click Save in the upper right corner to save alert rule and the dashboard. (Optional but recommended) Click Test rule to make sure the rule returns the results you expect"
+</b></details>
 
 
  
