@@ -42,6 +42,12 @@ compare() {
   echo "Comparing directories..."
   echo
   diff -r "$1" "$2"
+  
+  if [ $? -eq 0 ]
+  then
+  	echo "No difference"
+  fi
+  
   exit 0
 }
 
