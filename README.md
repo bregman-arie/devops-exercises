@@ -6596,10 +6596,6 @@ The server didn't receive a response from another server it communicates with in
 </b></details>
 
 <details>
-<summary>What is CDN?</summary><br><b>
-</b></details>
-
-<details>
 <summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with and which one do you prefer to use?</summary><br><b>
 </b></details>
 
@@ -7117,6 +7113,28 @@ Bonus: extract the last word of each line
 
 <details>
 <summary>Explain what is a "Single point of failure"?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is CDN?</summary><br><b>
+
+CDN (Content Delivery Network) responsible for distributing content geographically. Part of it, is what is known as edge locations, aka cache proxies, that allows users to get their content quickly due to cache features and geographical distribution.
+</b></details>
+
+<details>
+<summary>Explain Multi-CDN</summary><br><b>
+
+In single CDN, the whole content is originated from content delivery network.<br>
+In multi-CDN, content is distributed across multiple different CDNs, each might be on a completely different provider/cloud.
+</b></details>
+
+<details>
+<summary>What are the benefits of Multi-CDN over a single CDN?</summary><br><b>
+
+* Resiliency: Relying on one CDN means no redundancy. With multiple CDNs you don't need to worry about your CDN being down
+* Flexibility in Costs: Using one CDN enforces you to specific rates of that CDN. With multiple CDNs you can take into consideration using less expensive CDNs to deliver the content.
+* Performance: With Multi-CDN there is bigger potential in choosing better locations which more close to the client asking the content
+* Scale: With multiple CDNs, you can scale services to support more extreme conditions
 </b></details>
 
 <details>
