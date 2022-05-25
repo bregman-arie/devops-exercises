@@ -72,7 +72,7 @@ A couple of thoughts:
 #### Tooling
 
 <details>
-<summary>What are you taking into consideration when choosing a tool/technology?</summary><br><b>
+<summary>What do you take into consideration when choosing a tool/technology?</summary><br><b>
 
 A few ideas to think about:
 
@@ -220,7 +220,7 @@ Read more [here](https://en.wikipedia.org/wiki/Software_repository)
 </b></details>
 
 <details>
-<summary>What is caching? How does it works? Why is it important?</summary><br><b>
+<summary>What is caching? How does it work? Why is it important?</summary><br><b>
 
 Caching is fast access to frequently used resources which are computationally expensive or IO intensive and do not change often. There can be several layers of cache that can start from CPU caches to distributed cache systems. Common ones are in memory caching and distributed caching. <br/> Caches are typically data structures that contains some data, such as a hashtable or dictionary. However, any data structure can provide caching capabilities, like set, sorted set, sorted dictionary etc. While, caching is used in many applications, they can create subtle bugs if not implemented correctly or used correctly. For example,cache invalidation, expiration or updating is usually quite challenging and hard.
 </b></details>
@@ -239,11 +239,11 @@ Reliability, when used in DevOps context, is the ability of a system to recover 
 </b></details>
 
 <details>
-<summary>What "Availability" means? What means are there to track Availability of a service?</summary><br><b>
+<summary>What does "Availability" mean? What means are there to track Availability of a service?</summary><br><b>
 </b></details>
 
 <details>
-<summary>Why 100% availability isn't a target? Why most companies or teams set it to be 99%.X?</summary><br><b>
+<summary>Why isn't 100% availability a target? Why do most companies or teams set it to be 99%.X?</summary><br><b>
 </b></details>
 
 <details>
@@ -251,7 +251,34 @@ Reliability, when used in DevOps context, is the ability of a system to recover 
 </b></details>
 
 <details>
-<summary>How a web server works?</summary><br><b>
+<summary>How does a web server work?</summary><br><b>
+<a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server" title="Click here to redirect to MDN official page" style="background-color:#FFFFFF;color:#000000;text-decoration:none">According to MDN Web Docs -</a>
+	
+We can understand web servers using two view points, which is:
+	
+	(i) Hardware (ii) Software
+
+(i)   A web server is nothing but a remote computer which stores website's component files(HTML,CSS and Javascript files) and web server's software.A web server connects to
+      the Internet and supports physical data interchange with other devices connected to the web.
+	
+(ii)  On the software side, a web server includes several parts that control how web users access hosted files. At a minimum, this is an HTTP server. An HTTP server is software       that understands URLs (web addresses) and HTTP (the protocol your browser uses to view webpages). An HTTP server can be accessed through the domain names of the websites         it stores, and it delivers the content of these hosted websites to the end user's device.
+	
+## How communication between web server and web browsers established:
+	
+ Whenever a browser needs a file that is hosted on a web server, the browser requests the page from the web server and the web server responds with that page.
+This communcation between web browser and web server happens in the following ways:
+
+(1) User enters the domain name in the browser,and the browser then search for the IP address of the entered name. It can be done in 2 ways- 
+	
+    -By searching in its cache. 
+    -By requesting one or more DNS (Domain Name System) Servers.
+
+(2) After knowing the IP Address, the browser requests the file via HTTP and the request reaches the correct (hardware) web server.
+
+(3) The (software) HTTP server accepts the request, finds the requested document, and sends it back to the browser, also through HTTP. (If the server doesn't find the requested document, it returns a 404 response instead.)
+
+(4) The Browser finally gets the webpages and displays it, or displays the error message.
+
 </b></details>
 
 <details>
@@ -259,7 +286,7 @@ Reliability, when used in DevOps context, is the ability of a system to recover 
 </b></details>
 
 <details>
-<summary>Describe me the architecture of service/app/project/... you designed and/or implemented</summary><br><b>
+<summary>Describe the architecture of service/app/project/... you designed and/or implemented</summary><br><b>
 </b></details>
 
 <details>
@@ -295,7 +322,7 @@ IAC (infrastructure as code) is a declarative approach of defining infrastructur
 </b></details>
 
 <details>
-<summary>What benefits infrastructure-as-code has?</summary><br><b>
+<summary>What benefits does infrastructure-as-code have?</summary><br><b>
 
 - fully automated process of provisioning, modifying and deleting your infrastructure
 - version control for your infrastructure which allows you to quickly rollback to previous versions
@@ -337,7 +364,7 @@ Build artifacts are usually stored in a repository. They can be used in release 
 </b></details>
 
 <details>
-<summary>What do you think about the following sentence?: "implementing or practicing DevOps leads to more secure software"</summary><br><b>
+<summary>What do you think about the following sentence?: "Implementing or practicing DevOps leads to more secure software"</summary><br><b>
 </b></details>
 
 <details>

@@ -24,7 +24,6 @@
 Access control based on user roles (i.e., a collection of access authorizations a user receives based on an explicit or implicit assumption of a given role). Role permissions may be inherited through a role hierarchy and typically reflect the permissions needed to perform defined functions within an organization. A given role may apply to a single individual or to several individuals.
 
 - RBAC mapped to job function, assumes that a person will take on different roles, overtime, within an organization and different responsibilities in relation to IT systems.
-
 </b></details>
 
 #### Security - Authentication and Authorization
@@ -66,7 +65,6 @@ SSO (Single Sign-on), is a method of access control that enables a user to log i
 Multi-Factor Authentication (Also known as 2FA). Allows the user to present two pieces of evidence, credentials, when logging into an account.
 
 - The credentials fall into any of these three categories: something you know (like a password or PIN), something you have (like a smart card), or something you are (like your fingerprint).  Credentials must come from two different categories to enhance security.
-
 </b></details>
 
 #### Security - Passwords
@@ -136,6 +134,9 @@ True. Cookie-based authentication session must be kept on both server and client
 
 <details>
 <summary>What is the role of an SSH key?</summary><br><b>
+ 
+[Wikipedia definition](https://en.wikipedia.org/wiki/Secure_Shell) : SSH uses public-key cryptography to authenticate the remote computer and allow it to authenticate the user. Two keys are created, private is stored inside user's computer to decrypt the communication then the public key is stored inside the remoted computer where user want to connect with and it is used to encrypt the communication.
+ 
 </b></details>
 
 #### Security - Cryptography
@@ -206,7 +207,6 @@ Read about it [here](https://owasp.org/www-project-top-ten)
 Cross Site Scripting (XSS) is an type of a attack when the attacker inserts browser executable code within a HTTP response. Now the injected attack is not stored in the web application, it will only affect the users who open the maliciously crafted link or third-party web page. A successful attack allows the attacker to access any cookies, session tokens, or other sensitive information retained by the browser and used with that site 
 
 You can test by detecting user-defined variables and how to input them. This includes hidden or non-obvious inputs such as HTTP parameters, POST data, hidden form field values, and predefined radio or selection values. You then analyze each found vector to see if their are potential vulnerabilities, then when found you craft input data with each input vector. Then you test the crafted input and see if it works.
-
 </b></details>
 
 <details>
@@ -215,7 +215,6 @@ You can test by detecting user-defined variables and how to input them. This inc
 SQL injection is an attack consists of inserts either a partial or full SQL query through data input from the browser to the web application. When a successful SQL injection happens it will allow the attacker to read sensitive information stored on the database for the web application. 
 
 You can test by using a stored procedure, so the application must be sanitize the user input to get rid of the risk of code injection. If not then the user could enter bad SQL, that will then be executed within the procedure
-
 </b></details>
 
 <details>
@@ -256,6 +255,12 @@ You can test by using a stored procedure, so the application must be sanitize th
 
 <details>
 <summary>Explain CVE and CVSS</summary><br><b>
+ 
+  [Red Hat](https://www.redhat.com/en/topics/security/what-is-cve#how-does-it-work) : "When someone refers to a CVE (Common Vulnerabilities and Exposures), they mean a security flaw that's been assigned a CVE ID number. They don’t include technical data, or information about risks, impacts, and fixes." So CVE is just identified by an ID written with 8 digits. The CVE ID have the following format:  CVE prefix + Year + Arbitrary Digits.
+ Anyone can submit a vulnerability, [Exploit Database](https://www.exploit-db.com/submit) explains how it works to submit.
+  
+Then CVSS stands for Common Vulnerability Scoring System, it attemps to assign severity scores to vulnerabilities, allowing to ordonnance and prioritize responses and ressources according to threat. 
+ 
 </b></details>
 
 <details>
@@ -275,7 +280,6 @@ DNS spoofing occurs when a particular DNS server’s records of “spoofed” or
 - Use encrypted data transfer protocols - Using end-to-end encryption vian SSL/TLS will help decrease the chance that a website / its visitors are compromised by DNS spoofing.
 - Use DNSSEC - DNSSEC, or Domain Name System Security Extensions, uses digitally signed DNS records to help determine data authenticity.
 - Implement DNS spoofing detection mechanisms - it’s important to implement DNS spoofing detection software. Products such as XArp help product against ARP cache poisoning by inspecting the data that comes through before transmitting it.
-
 </b></details>
 
 <details>
@@ -292,7 +296,6 @@ Stuxnet is a computer worm that was originally aimed at Iran’s nuclear facilit
 <summary>What can you tell me about Spectre?</summary><br><b>
 
 Spectre is an attack method which allows a hacker to “read over the shoulder” of a program it does not have access to. Using code, the hacker forces the program to pull up its encryption key allowing full access to the program
-
 </b></details>
 
 <details>
@@ -318,14 +321,12 @@ Spectre is an attack method which allows a hacker to “read over the shoulder�
 Cross-Site Request Forgery (CSRF) is an attack that makes the end user to initate a unwanted action on the web application in which the user has a authenticated session, the attacker may user an email and force the end user to click on the link and that then execute malicious actions. When an CSRF attack is successful it will compromise the end user data 
 
 You can use OWASP ZAP to analyze a "request", and if it appears that there no protection against cross-site request forgery when the Security Level is set to 0 (the value of csrf-token is SecurityIsDisabled.) One can use data from this request to prepare a CSRF attack by using OWASP ZAP
-
 </b></details>
 
 <details>
 <summary>Explain HTTP Header Injection vulnerability</summary><br><b>
 
 HTTP Header Injection vulnerabilities occur when user input is insecurely included within server responses headers. If an attacker can inject newline characters into the header, then they can inject new HTTP headers and also, by injecting an empty line, break out of the headers into the message body and write arbitrary content into the application's response.
-
 </b></details>
 
 <details>
@@ -370,7 +371,6 @@ Read more about it at [portswigger.net](https://portswigger.net/web-security/ssr
 <summary>Explain MAC flooding attack</summary><br><b>
 
 MAC address flooding attack (CAM table flooding attack) is a type of network attack where an attacker connected to a switch port floods the switch interface with very large number of Ethernet frames with different fake source MAC address.
-
 </b></details>
 
 <details>
@@ -422,4 +422,102 @@ Practically this means that a single IP can server multiple web services/pages, 
 
 <details>
 <summary>What is a "Backdoor" in information security?</summary><br><b>
+</b></details>
+
+#### Software Supply Chain & Security 
+
+<details>
+<summary>Briefly describe what a software supply chain is. </summary><br><b>
+
+A company’s software supply chain consists of any third party or open source component which could be used to compromise the final product. Such component is usually an API provided by an actor. For instance Twilio who offers mobile communication APIs to their customers. 
+
+[WhiteSource](https://www.whitesourcesoftware.com/resources/blog/software-supply-chain-security-the-basics-and-four-critical-best-practices/): "Enterprise software projects increasingly depend on third-party and open source components. These components are created and maintained by individuals who are not employed by the organization developing the primary software, and who do not necessarily use the same security policies as the organization. This poses a security risk, because differences or inconsistencies between these policies can create overlooked areas of vulnerability that attackers seek to exploit." 
+</b></details>
+
+<details>
+<summary>What're some benefits of a software supply chain? </summary><br><b>
+
+[Increment](https://increment.com/apis/apis-supply-chain-software/): Resource-saving. Using and paying for existing solutions to resource-heavy problems saves time as well as money. Hence resulting in efficient, cheap and greater opportunities to develop and deploy software products for consumers. 
+</b></details>
+
+<details>
+<summary> Give three examples of three potential security threats related to the software supply chain and describe them.</summary><br><b>
+
+[IEEE](https://ieeexplore.ieee.org/abstract/document/9203862): 
+
+  * Sensitive data being exposed or lost.
+    * In a software supply chain, sensitive data may be passed throughout the chain. Security threats involve loss or exposure of this data, such as customer credit card details.
+  * Cloud technology.
+    * Data sharing in the cloud might jeopardize the privacy of the data within the chain.
+  * Third-party vendors.
+    * Third-party vendors’ code solutions might not provide sufficient cybersecurity and risk being a potential subject to data breaches.
+</b></details>
+
+#### Package management & Security 
+
+<details>
+<summary> What is a package manager?
+</summary><br><b>
+
+[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): "A tool that allows you to easily download, add and thus reuse programming libraries in your project." E.g. npm or yarn.
+</b></details>
+
+<details>
+<summary> What is a build tool?
+</summary><br><b>
+
+[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): "A tool that fetches the packages (dependencies) that are required to compile, test and deploy your application." 
+</b></details>
+
+<details>
+<summary> Describe bloated dependencies.
+</summary><br><b>
+
+[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): 
+An application usually has different dependencies. Typically, not all of them are required for building and running the application. Bloated dependencies is the concept of including the unnecessary dependencies for building and running your application. 
+</b></details>
+
+<details>
+<summary> Explain a few cons of bloated dependencies.
+</summary><br><b>
+
+[Baudry et al.](https://arxiv.org/pdf/2001.07808.pdf): 
+
+  * Challenging to manage.
+  * Decreases performance of the application.
+  * Risk for malicious code that a threathening actor can take advantage of. 
+</b></details>
+
+<details>
+<summary> What solutions are there for managing project dependencies? 
+</summary><br><b>
+
+[Npm.js documentation](https://docs.npmjs.com/cli/v8/commands/npm-prune): Use clean-up commands that are usually provided by the package manager authors. For instance, npm prune will remove any extraneous package. Another command is npm audit which will scan your repository and report any vulnerable dependencies found.
+</b></details>
+
+<details>
+<summary> What is a threatening actor and how can this actor take advantage of open source or third party vendor's packages/libraries? 
+</summary><br><b>
+
+[Wikipedia](https://en.wikipedia.org/wiki/Threat_actor): A threatening actor is one or more people who target technical artifacts such as software, networks and/or devices with the purpose of harming it.
+
+[Aquasec](https://www.aquasec.com/cloud-native-academy/devsecops/supply-chain-security/): An attacking actor may identify, target and inject malicious software in a vulnerable part of an open source package or a third party vendor’s code. The consumer of this code may consequently and unknowingly deploy the malicious code throughout their pipelines, thus infecting their own projects. An example of this happening is the hack of [SolarWinds](https://www.npr.org/2021/04/16/985439655/a-worst-nightmare-cyberattack-the-untold-story-of-the-solarwinds-hack).
+</b></details>
+
+<details>
+<summary> How can you make sure that you use trustworthy packages for your project?
+</summary><br><b>
+
+You can’t. You will always be exposed to security risk once you start using open source or vendor packages. The goal is to minimize the risk in order to avoid security breaches. This could be done by:
+
+  * Regularly update the project's dependencies to apply latest bug fixes and vulnerability clean-ups.
+  * However, unless you trust the author, do not update your dependencies instantly, since package updates recently have been a common target by hackers.
+  * Check for changes of the file content in previous versions. 
+</b></details>
+
+<details>
+<summary> Explain checksum.
+</summary><br><b>
+
+[Fred Cohen (permission needed)](https://reader.elsevier.com/reader/sd/pii/0167404887900319?token=D5339ABC064AD9A2B50B74D8CE890B0E22A302A0BC461A50078D407BEA01052737DC6AAEF95A854E72A73B6D0C67E260&originRegion=eu-west-1&originCreation=20220502180611): Checksum is a way to verify the integrity of information in systems with no built-in protection. In other words, it provides a way of validating that the content of a file or a package / library is intact. This is useful since attacks or errors may occur during transmission of files. However, it requires that the package author has run a checksum function for the file / package which creates a specific hash for that version of the file. A minor change of the file content will result in a different checksum. If you have access to the original checksum of the file, you may run checksum on your own. In case the resulting checksum matches the original one, no changes have been made in the file. You can now conclude that no error or malicious injection was done during transmission of the file. 
 </b></details>
