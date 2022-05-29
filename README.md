@@ -5280,6 +5280,20 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 
 <details>
 <summary>What are the main components and services of GCP?</summary><br><b>
+
+| Components | Services          |
+| ---------- | ----------------- |
+| Compute    | Compute Engine    |
+|            | App Engine        |
+|            | Kubernetes Engine |
+|            | Cloud Function    |
+|            | Cloud Run         | 
+| Storage &  | Cloud Storage     |
+| Database   | Cloud SQL         |
+|            | Cloud BigTable    |
+|            | Cloud Spanner     |
+|            | Cloud Datastore   |
+
 </b></details>
 
 <details>
