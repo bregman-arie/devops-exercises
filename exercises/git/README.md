@@ -177,6 +177,7 @@ Using the `git rebase` command
 
 <details>
 <summary>In what situations are you using <code>git rebase</code>?</summary><br><b>
+Suppose a team is working on a `feature` branch that is coming from the `main` branch of the repo. At a point, where the feature development is done, and finally we wish to merge the feature branch into the main branch without keeping the history of the commits made in the feature branch, a `git rebase` will be helpful. 
 </b></details>
 
 <details>
