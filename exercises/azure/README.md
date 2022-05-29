@@ -61,6 +61,13 @@ Azure Functions is the serverless compute service of Azure.
 </b></details>
 
 <details>
+<summary>What "Durable Azure Function" are?</summary>
+<br>
+
+[Microsoft Learn](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-fundamentals/what-is-microsoft-azure): Durable Functions is an extension of Azure Functions that lets you write stateful functions in a serverless compute environment.
+</details>
+
+<details>
 <summary>What "Azure Container Instances" service is used for?</summary><br><b>
 
 Running containerized applications (without the need to provision virtual machines).
