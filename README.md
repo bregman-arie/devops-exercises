@@ -5114,6 +5114,47 @@ When you use a function (`YEAR(purchased_at)`) it has to scan the whole database
 
 <details>
 <summary>What are the main components and services of GCP?</summary><br><b>
+
+| Components | Services          |
+| ---------- | ----------------- |
+| Compute    | Compute Engine    |
+|            | App Engine        |
+|            | Kubernetes Engine |
+|            | Cloud Function    |
+|            | Cloud Run         | 
+| Storage &  | Cloud Storage     |
+| Database   | Cloud SQL         |
+|            | Cloud BigTable    |
+|            | Cloud Spanner     |
+|            | Cloud Datastore   |
+| Networking | VPC               |
+|            | Load Balancing    |
+|            | Cloud Armor       |
+|            | Cloud CDN         |
+|            | Cloud DNS         |
+|            | Cloud Interconnect|
+| Big Data   | Big Query         |
+|            | Cloud Dataproc    |
+|            | Cloud Datalab     |
+|            | Data Studio       |
+| DevOps     | Container Registry|
+|            | Cloud Build       |
+|            | Source Repository |
+| Identity & | Cloud Identity    |
+| Security   | Cloud IAM         |
+|            | Cloud KMS         |
+| Cloud AI   | Cloud AutoML      |
+|            | Cloud Vision API  |
+|            | Natural Language  |
+|            | Cloud Speech-to-Text|
+|            | Cloud Text-to-Speech|
+|            | Cloud Translation API|
+|            | Cloud Video Intelligence|
+| API Platform | Maps Platform    |
+|            | API Analytics  |
+|            | Apigee Sense   |
+|            | Cloud Endpoints|
+
 </b></details>
 
 <details>
@@ -5122,29 +5163,68 @@ When you use a function (`YEAR(purchased_at)`) it has to scan the whole database
 
 <details>
 <summary>Tell me what do you know about GCP networking</summary><br><b>
+
+Virtual Private Cloud(VPC) network is a virtual version of physical network, implemented in Google's internal Network. VPC is a gloabal resource in GCP.
+Subnetworks(subnets) are regional resources, ie., subnets can be created withinin regions.
+
+VPC are created in 2 modes,
+
+1. Auto mode VPC - One subnet in each region is created automatically by GCP while creating VPC
+
+2. Custom mode VPC - No subnets are automatically created. This type of network provides complete control over the subnets creation to the users. 
+
+
 </b></details>
 
 <details>
 <summary>Explain Cloud Functions</summary><br><b>
+
+Google Cloud Functions is a serverless execution environment for building and connecting cloud services. With Cloud Functions you write simple, single-purpose functions that are attached to events emitted from your cloud infrastructure and services. Your function is triggered when an event being watched is fired.
+
 </b></details>
 
 <details>
 <summary>What is Cloud Datastore?</summary><br><b>
+
+Cloud Datastore is a schemaless NoSQL datastore in Google's cloud. Applications can use Datastore to query your data with SQL-like queries that support filtering and sorting. Datastore replicates data across multiple datacenters, which provides a high level of read/write availability.
+
 </b></details>
 
 <details>
 <summary>What network tags are used for?</summary><br><b>
+
+Network tags allow you to apply firewall rules and routes to a specific instance or set of instances: You make a firewall rule applicable to specific instances by using target tags and source tags.
+
 </b></details>
 
 <details>
 <summary>What are flow logs? Where are they enabled?</summary><br><b>
+
+VPC Flow Logs records a sample of network flows sent from and received by VM instances, including instances used as Google Kubernetes Engine nodes. These logs can be used for network monitoring, forensics, real-time security analysis, and expense optimization.
+
+Enable Flow Logs
+
+1. Open VPC Network in GCP Console
+
+2. Click the name of the subnet 
+
+3. Click EDIT button
+
+4. Set Flow Logs to On
+
+5. Click Save
+
+
+
 </b></details>
 
 <details>
 <summary>How do you list buckets?</summary><br><b>
     Two ways to do that:
-	 $ gsutil ls
-	 $ gcloud alpha storage ls
+	 
+   $ gsutil ls
+	 
+   $ gcloud alpha storage ls
 	
 </b></details>
  
@@ -5156,6 +5236,9 @@ startap-script
 
 <details>
 <summary>What the following commands does? `gcloud deployment-manager deployments create`</summary><br><b>
+
+Deployment Manager creates a new deployment. 
+
 </b></details>
 
 <details>
