@@ -5358,12 +5358,29 @@ Cloud Datastore is a schemaless NoSQL datastore in Google's cloud. Applications 
 
 <details>
 <summary>What network tags are used for?</summary><br><b>
+
+Network tags allow you to apply firewall rules and routes to a specific instance or set of instances: You make a firewall rule applicable to specific instances by using target tags and source tags.
+
 </b></details>
 
 <details>
 <summary>What are flow logs? Where are they enabled?</summary><br><b>
 
-Network tags allow you to apply firewall rules and routes to a specific instance or set of instances: You make a firewall rule applicable to specific instances by using target tags and source tags.
+VPC Flow Logs records a sample of network flows sent from and received by VM instances, including instances used as Google Kubernetes Engine nodes. These logs can be used for network monitoring, forensics, real-time security analysis, and expense optimization.
+
+Enable Flow Logs
+
+1. Open VPC Network in GCP Console
+
+2. Click the name of the subnet 
+
+3. Click EDIT button
+
+4. Set Flow Logs to On
+
+5. Click Save
+
+
 
 </b></details>
 
