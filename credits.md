@@ -18,3 +18,4 @@ Google Cloud Plataform Logo created by <a href="https://about.google/">Google®<
 VirtualBox Logo created by <a href="http://www.iconarchive.com/artist/dakirby309.html">dAKirby309</a>, under the <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-Noncommercial 4.0 License</a>.
 Certificates logo by <a href="https://www.iconfinder.com/Flatart">Flatart</a><br>
 Storage icon by <a href="https://www.iconfinder.com/iconic_hub">Dinosoftlab</a><br>
+CI/CD icon made made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
