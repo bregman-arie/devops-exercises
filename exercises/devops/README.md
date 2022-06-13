@@ -285,6 +285,8 @@ This communcation between web browser and web server happens in the following wa
 <summary>Explain "Open Source"</summary><br><b>
 </b></details>
 
+The term open source refers to any program whose source code is made available for use or modification as users or other developers see fit. Unlike proprietary software, open source software is computer software that is developed as a public, open collaboration and made freely available to the public.
+
 <details>
 <summary>Describe the architecture of service/app/project/... you designed and/or implemented</summary><br><b>
 </b></details>
@@ -359,9 +361,13 @@ Build artifacts are usually stored in a repository. They can be used in release 
 <summary>Explain test-driven development (TDD)</summary><br><b>
 </b></details>
 
+Test-driven development (TDD), also called test-driven design, is a method of implementing software programming that interlaces unit testing, programming and refactoring on source code.
+
 <details>
 <summary>Explain agile software development</summary><br><b>
 </b></details>
+
+Agile is a collection of principles used in software development and project management. Agile focuses on enabling teams to deliver work in small, workable increments, thus delivering value to their customers with ease. Evaluation of the requirements, plans, and results take place continuously.
 
 <details>
 <summary>What do you think about the following sentence?: "Implementing or practicing DevOps leads to more secure software"</summary><br><b>
@@ -413,6 +419,8 @@ Note: cross-dependency is when you have two or more changes to separate projects
 <details>
 <summary>What is Distributed Tracing?</summary><br><b>
 </b></details>
+
+Distributed tracing is the capability for a tracing solution to track and observe service requests as they flow through distributed systems by collecting data as the requests go from one service to another.
 
 <details>
 <summary>What is GitOps?</summary><br><b>
