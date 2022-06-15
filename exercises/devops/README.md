@@ -282,8 +282,7 @@ This communcation between web browser and web server happens in the following wa
 </b></details>
 
 <details>
-<summary>Explain "Open Source"</summary><br><b>
-</b></details>
+<summary>Explain "Open Source"</summary><br><b></b></details>
 
 The term open source refers to any program whose source code is made available for use or modification as users or other developers see fit. Unlike proprietary software, open source software is computer software that is developed as a public, open collaboration and made freely available to the public.
 
