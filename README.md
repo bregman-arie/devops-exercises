@@ -802,7 +802,7 @@ yippiekaiyay 2> ls_output.txt
 <details>
 <summary>Demonstrate Linux stderr to stdout redirection</summary><br><b>
 
-yippiekaiyay 1>&2 
+yippiekaiyay &> file
 </b></details>
 
 <details>
@@ -6811,6 +6811,10 @@ https://idiallo.com/blog/c10k-2016
 
 <details>
 <summary>Explain Dark Data</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain MBR</summary><br><b>
 </b></details>
 
 ## Questions you CAN ask
