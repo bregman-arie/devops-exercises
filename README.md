@@ -7196,7 +7196,7 @@ Bonus: extract the last word of each line
 </b></details>
 
 <details>
-<summary>What are the advantages of microoservices architecture over a monolithic architecture?</summary><br><b>
+<summary>What are the advantages of microservices architecture over a monolithic architecture?</summary><br><b>
 
 * Each of the services individually fail without escalating into an application-wide outage.
 * Each service can be developed and maintained by a separate team and this team can choose its own tools and coding language
