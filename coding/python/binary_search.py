@@ -9,7 +9,7 @@ def binary_search(arr: List[int], lb: int, ub: int, target: int) -> int:
     A Binary Search Example which has O(log n) time complexity.
     """
     if lb <= ub:
-        mid: int = lb + (ub -lb)// 2
+        mid: int = lb + (ub - lb) // 2
         if arr[mid] == target:
             return mid
         elif arr[mid] < target:
