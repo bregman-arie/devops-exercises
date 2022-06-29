@@ -12,3 +12,4 @@
 
 2. Edit the security group of one of your instances and remove HTTP rules.
   1. Did it change the status of the health check?
+yes
