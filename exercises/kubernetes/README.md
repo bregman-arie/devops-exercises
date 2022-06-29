@@ -932,6 +932,13 @@ Few notes:
   - type can be different and doesn't has to be specifically "NodePort"
 </b></details>
 
+<details>
+<summary>What's the diffence between a ReplicaSet and DaemonSet?</summary><br><b>
+
+A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time.
+A DaemonSet ensures that all Nodes run a copy of a Pod. 
+</b></details>  
+
 #### Kubernetes - Storage
 
 <details>
