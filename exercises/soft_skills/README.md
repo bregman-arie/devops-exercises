@@ -93,6 +93,15 @@ There are no answers for these questions for obvious reasons :)
 <summary>Where do you see yourself in five years?</summary><br><b>
 </b></details>
 
+<details>
+<summary>When you faced with problem, what do you do?</summary><br><b>
+</b></details>
+
+<details>
+<summary>When was the last time you had to learn a new technology and what was your approach in doing so?</summary><br><b>
+</b></details>
+
+
 #### Team Lead
 
 <details>
