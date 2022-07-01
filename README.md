@@ -2,11 +2,13 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
 
-:bar_chart: &nbsp;There are currently **2292** exercises and questions
+:bar_chart: &nbsp;There are currently **2322** exercises and questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [FAQ page](faq.md) for more details
+
+:stop_sign: &nbsp;If you are interested in pursuing a career as DevOps engineer, learning some of the concepts mentioned here would be useful but you should know it's not about learning all the topics and technologies mentioned in this repository
 
 :busts_in_silhouette: &nbsp;Join our [DevOps community](https://www.facebook.com/groups/538897960007080) where we have discussions and share resources on DevOps
 
@@ -2855,6 +2857,7 @@ The introduction of virtual machines allowed companies to deploy multiple busine
 
 <details>
 <summary>Explain inheritance and how to use it in Python</summary><br><b>
+</b></details>
 
 <details>
 <summary>Explain and demonstrate class attributes & instance attributes</summary><br><b>
@@ -7143,6 +7146,10 @@ In multi-CDN, content is distributed across multiple different CDNs, each might 
 
 <details>
 <summary>Explain "3-Tier Architecture" (including pros and cons)</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Mono-repo vs. Multi-repo. What are the cons and pros of each approach?</summary><br><b>
 </b></details>
 
 <details>
