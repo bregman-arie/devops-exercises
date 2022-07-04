@@ -2,11 +2,13 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
 
-:bar_chart: &nbsp;There are currently **2292** exercises and questions
+:bar_chart: &nbsp;There are currently **2322** exercises and questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [FAQ page](faq.md) for more details
+
+:stop_sign: &nbsp;If you are interested in pursuing a career as DevOps engineer, learning some of the concepts mentioned here would be useful but you should know it's not about learning all the topics and technologies mentioned in this repository
 
 :busts_in_silhouette: &nbsp;Join our [DevOps community](https://www.facebook.com/groups/538897960007080) where we have discussions and share resources on DevOps
 
@@ -802,7 +804,7 @@ yippiekaiyay 2> ls_output.txt
 <details>
 <summary>Demonstrate Linux stderr to stdout redirection</summary><br><b>
 
-yippiekaiyay 1>&2 
+yippiekaiyay &> file
 </b></details>
 
 <details>
@@ -2855,69 +2857,6 @@ The introduction of virtual machines allowed companies to deploy multiple busine
 
 <details>
 <summary>Explain inheritance and how to use it in Python</summary><br><b>
-
-```
-By definition inheritance is the mechanism where an object acts as a base of another object, retaining all its
-properties.
-
-So if Class B inherits from Class A, every characteristics from class A will be also available in class B.
-Class A would be the 'Base class' and B class would be the 'derived class'.
-
-This comes handy when you have several classes that share the same functionalities.
-
-The basic syntax is:
-
-class Base: pass
-
-class Derived(Base): pass
-
-A more forged example:
-
-class Animal:
-    def __init__(self):
-        print("and I'm alive!")
-
-    def eat(self, food):
-        print("ñom ñom ñom", food)
-
-class Human(Animal):
-    def __init__(self, name):
-        print('My name is ', name)
-        super().__init__()
-
-    def write_poem(self):
-        print('Foo bar bar foo foo bar!')
-
-class Dog(Animal):
-    def __init__(self, name):
-        print('My name is', name)
-        super().__init__()
-
-    def bark(self):
-        print('woof woof')
-
-
-michael = Human('Michael')
-michael.eat('Spam')
-michael.write_poem()
-
-bruno = Dog('Bruno')
-bruno.eat('bone')
-bruno.bark()
-
->>> My name is  Michael
->>> and I'm alive!
->>> ñom ñom ñom Spam
->>> Foo bar bar foo foo bar!
->>> My name is Bruno
->>> and I'm alive!
->>> ñom ñom ñom bone
->>> woof woof
-
-Calling super() calls the Base method, thus, calling super().__init__() we called the Animal __init__.
-
-There is a more advanced python feature called MetaClasses that aid the programmer to directly control class creation.
-```
 </b></details>
 
 <details>
@@ -6660,10 +6599,6 @@ The server didn't receive a response from another server it communicates with in
 </b></details>
 
 <details>
-<summary>What is CDN?</summary><br><b>
-</b></details>
-
-<details>
 <summary>When you publish a project, you usually publish it with a license. What types of licenses are you familiar with and which one do you prefer to use?</summary><br><b>
 </b></details>
 
@@ -6879,6 +6814,10 @@ https://idiallo.com/blog/c10k-2016
 
 <details>
 <summary>Explain Dark Data</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain MBR</summary><br><b>
 </b></details>
 
 ## Questions you CAN ask
@@ -7184,7 +7123,33 @@ Bonus: extract the last word of each line
 </b></details>
 
 <details>
+<summary>What is CDN?</summary><br><b>
+
+CDN (Content Delivery Network) responsible for distributing content geographically. Part of it, is what is known as edge locations, aka cache proxies, that allows users to get their content quickly due to cache features and geographical distribution.
+</b></details>
+
+<details>
+<summary>Explain Multi-CDN</summary><br><b>
+
+In single CDN, the whole content is originated from content delivery network.<br>
+In multi-CDN, content is distributed across multiple different CDNs, each might be on a completely different provider/cloud.
+</b></details>
+
+<details>
+<summary>What are the benefits of Multi-CDN over a single CDN?</summary><br><b>
+
+* Resiliency: Relying on one CDN means no redundancy. With multiple CDNs you don't need to worry about your CDN being down
+* Flexibility in Costs: Using one CDN enforces you to specific rates of that CDN. With multiple CDNs you can take into consideration using less expensive CDNs to deliver the content.
+* Performance: With Multi-CDN there is bigger potential in choosing better locations which more close to the client asking the content
+* Scale: With multiple CDNs, you can scale services to support more extreme conditions
+</b></details>
+
+<details>
 <summary>Explain "3-Tier Architecture" (including pros and cons)</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain Mono-repo vs. Multi-repo. What are the cons and pros of each approach?</summary><br><b>
 </b></details>
 
 <details>

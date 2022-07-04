@@ -9,6 +9,14 @@
 
 ### OpenShift Self Assessment
 
+* [OpenShift 101](#Openshift-101)
+* [OpenShift Architecture](#Openshift-architecture)
+* [OpenShift Hands-On Basics](#Openshift-hands-on-basics)
+* [OpenShift Projects](#Openshift-projects)
+
+<a name="openshift-101"></a>
+### OpenShift 101
+
 <details>
 <summary>What is OpenShift?</summary><br><b>
 
@@ -35,18 +43,14 @@ True
 </b></details>
 
 <details>
-<summary>OpenShift supports many resources. How to get a list of all these resources?</summary><br><b>
+<summary>What are some of OpenShift added features on top of Kubernetes?</summary><br><b>
 
-`oc api-resources`
+- UI: OpenShift provides unified UI out-of-the-box
+- Routes: Simple procedure for exposing services
+- Developer Workflow Support: built-in CI/CD (openshift pipelines), built-in container registry and tooling for building artifacts from source to container images
 </b></details>
 
-<details>
-<summary>Explain OpenShift CLIs like <code>oc</code> and <code>odo</code></summary><br><b>
-
-oc is used for creating applications, but also for administrating OpenShift cluster<br>
-odo is used solely for managing applications on OpenShift (mainly from developers' perspective) and has nothing to do with administrating the cluster
-</b></details>
-
+<a name="openshift-architecture"></a>
 ## OpenShift - Architecture
 
 <details>
@@ -68,6 +72,23 @@ The Scheduler.
 Application high availability by spreading pod replicas between worker nodes
 </b></details>
 
+<a name="openshift-hands-on-basics"></a>
+## OpenShift - Hands-On Basics
+
+<details>
+<summary>OpenShift supports many resources. How to get a list of all these resources?</summary><br><b>
+
+`oc api-resources`
+</b></details>
+
+<details>
+<summary>Explain OpenShift CLIs like <code>oc</code> and <code>odo</code></summary><br><b>
+
+oc is used for creating applications, but also for administrating OpenShift cluster<br>
+odo is used solely for managing applications on OpenShift (mainly from developers' perspective) and has nothing to do with administrating the cluster
+</b></details>
+
+<a name="openshift-projects"></a>
 ## OpenShift - Projects
 
 <details>

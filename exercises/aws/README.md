@@ -2059,6 +2059,10 @@ No. Since AWS reserves 5 IP addresses for every subnet, Kratos will have 32-5=27
 It's better if Kratos uses a subnet of size /26 but good luck telling him that.
 </b></details>
 
+<details>
+<summary>In order for AWS Lambda to have internet access</summary><br><b>
+</b></details>
+
 ##### AWS EC2 - ENI
 
 <details>

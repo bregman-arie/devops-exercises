@@ -1,7 +1,5 @@
 ## Kubernetes
 
-<a name="kubernetes"></a>
-
 ### Kubernetes Exercises
 
 #### Developer & "Regular" User Path
@@ -16,6 +14,26 @@
 | ReplicaSets Selectors | ReplicaSet | [Exercise](replicaset_03.md) | [Solution](solutions/replicaset_03_solution.md)
 
 ### Kubernetes Self Assessment
+
+* [Kubernetes 101](#kubernetes-101)
+* [Kubernetes Hands-On Basics](#kubernetes-hands-on-basiscs)
+* [Kubernetes Cluster](#kubernetes-cluster)
+* [Kubernetes Pods](#kubernetes-pods)
+* [Kubernetes Deployments](#kubernetes-deployments)
+* [Kubernetes Services](#kubernetes-services)
+
+<a name="kubernetes-101"></a>
+#### Kubernetes 101
+
+<details>
+<summary>What is Kubernetes? Why organizations are using it?</summary><br><b>
+
+Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
+
+To understand what Kubernetes is good for, let's look at some examples:
+
+<a name="kubernetes-101"></a>
+#### Kubernetes 101
 
 <details>
 <summary>What is Kubernetes? Why organizations are using it?</summary><br><b>
@@ -32,11 +50,23 @@ To understand what Kubernetes is good for, let's look at some examples:
 <details>
 <summary>When or why NOT to use Kubernetes?</summary><br><b>
 
-  - If you are big team of engineers (e.g. 200) deploying applications using containers and you need to manage scaling, rolling out updates, etc. You probably want to use Kubernetes
-      
   - If you manage low level infrastructure or baremetals, Kubernetes is probably not what you need or want
-  - If you are a small team (e.g. 20-50 engineers) Kubernetes might be an overkill (even if you need scale, rolling out updates, etc.)
+  - If you are a small team (like less than 20 engineers) running less than a dozen of containers, Kubernetes might be an overkill (even if you need scale, rolling out updates, etc.). You might still enjoy the benefits of using managed Kubernetes, but you definitely want to think about it carefully before making a decision
 </b></details>
+
+<details>
+<summary>What are some of Kubernetes features?</summary><br><b>
+
+  - Self-Healing: Kubernetes uses health checks to monitor containers and run certain actions upon failure or other type of events, like restarting the container
+  - Load Balancing: Kubernetes can split and/or balance requests to applications running in the cluster, based on the state of the Pods running the application
+  - Operators: Kubernetes packaged applications that can use the API of the cluster to update its state and trigger actions based on events and application state changes
+  - Automated Rollout: Gradual updates roll out to applications and support in roll back in case anything goes wrong
+  - Scaling: Scaling horizontally (down and up) based on different state parameters and custom defined criteria
+  - Secrets: you have a mechanism for storing user names, passwords and service endpoints in a private way, where not everyone using the cluster are able to view it
+</b></details>
+
+<a name="kubernetes-hands-on-basics"></a>
+#### Kubernetes - Hands-On Basics
 
 <details>
 <summary>What Kubernetes objects are there?</summary><br><b>
@@ -73,11 +103,12 @@ Kubectl is the Kubernetes command line tool that allows you to run commands agai
 
 <summary>What Kubernetes objects do you usually use when deploying applications in Kubernetes?</summary><br><b>
 
-* Deployment - creates and the Pods and watches them
+* Deployment - creates the Pods () and watches them
 * Service: route traffic to Pods internally
 * Ingress: route traffic from outside the cluster
 </b></details>
 
+<a name="kubernetes-cluster"></a>
 #### Kubernetes - Cluster
 
 <details>
@@ -165,6 +196,7 @@ Apply requests and limits, especially on third party applications (where the unc
 5. Create an etcd cluster
 </b></details>
 
+<a name="kubernetes-pods"></a>
 #### Kubernetes - Pods
 
 <details>
@@ -386,6 +418,7 @@ Only containers whose state set to Success will be able to receive requests sent
 One reason is that it makes it harder to scale, when you need to scale only one of the containers in a given Pod.
 </b></details>
 
+<a name="kubernetes-deployments"></a>
 #### Kubernetes - Deployments
 
 <details>
@@ -453,6 +486,7 @@ Using a Service.
 An internal load balancer in Kubernetes is called Service and an external load balancer is Ingress
 </b></details>
 
+<a name="kubernetes-services"></a>
 #### Kubernetes - Services
 
 <details>
@@ -1055,6 +1089,7 @@ True
 Namespaces allow you split your cluster into virtual clusters where you can group your applications in a way that makes sense and is completely separated from the other groups (so you can for example create an app with the same name in two different namespaces)
 </b></details>
 
+<a name="namespaces-use-cases"></a>
 <details>
 <summary>Why to use namespaces? What is the problem with using one default namespace?</summary><br><b>
 
@@ -1964,4 +1999,12 @@ You can learn more [here](https://submariner-io.github.io)
 
 <details>
 <summary>What is Istio? What is it used for?</summary><br><b>
+</b></details>
+
+#### Kubernetes - Scenarios
+
+<details>
+<summary>An engineer form your organization told you he is interested only in seeing his team resources in Kubernetes. Instead, in reality, he sees resources of the whole organization, from multiple different teams. What Kubernetes concept can you use in order to deal with it?</summary><br><b>
+
+Namespaces. See the following [namespaces question and answer](#namespaces-use-cases) for more information.
 </b></details>

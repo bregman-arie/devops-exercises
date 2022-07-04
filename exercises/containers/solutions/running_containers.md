@@ -2,7 +2,7 @@
 
 ### Objective
 
-Learn how to run containers
+Learn how to run, stop and remove containers
 
 ### Requirements
 

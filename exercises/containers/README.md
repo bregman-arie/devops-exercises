@@ -4,7 +4,8 @@
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-|Running Containers|Intro|[Exercise](running_containers.md)|[Solution](solutions/running_containers.md)
+|Running Containers|Basics|[Exercise](running_containers.md)|[Solution](solutions/running_containers.md)
+|Containerized Web Server|Basics|[Exercise](containerized_web_server.md)|[Solution](solutions/containerized_web_server.md)
 |Working with Images|Image|[Exercise](working_with_images.md)|[Solution](solutions/working_with_images.md)
 |My First Dockerfile|Dockerfile|[Exercise](write_dockerfile_run_container.md)|
 |Run, Forest, Run!|Restart Policies|[Exercise](run_forest_run.md)|[Solution](solutions/run_forest_run.md)
@@ -13,6 +14,24 @@
 |Multi-Stage Builds|Multi-Stage Builds|[Exercise](multi_stage_builds.md)|[Solution](solutions/multi_stage_builds.md)
 
 ### Containers Self Assessment
+
+* [Containers 101](#questions-containers-101)
+* [OCI](#questions-oci)
+* [Images](#questions-images)
+* [Basic Commands](#questions-basic-commands)
+* [Volume](#questions-volume)
+* [Dockerfile](#questions-dockerfile)
+* [Architecture](#questions-architecture)
+* [Docker Architecture](#questions-docker-architecture)
+* [Docker Compose](#questions-docker-compose)
+* [Docker Images](#questions-docker-images)
+* [Networking](#questions-networking)
+* [Docker Networking](#questions-docker-networking)
+* [Security](#questions-security)
+* [Docker In Production](#questions-docker-in-production)
+
+<a name="questions-containers-101"></a>
+#### Containers 101
 
 <details>
 <summary>What is a Container?</summary><br><b>
@@ -70,6 +89,15 @@ You should choose containers when:
 4. Run the container using the image you've built
 </b></details>
 
+<details>
+<summary>What are some of the advantages in using containers? you can compare to other options like VMs</summary><br><b>
+
+* Reusable: container can be used by multiple different users for different usages - production vs. staging, development, testing, etc.
+* Lightweight: containers are fairly lightweight which means deployments can be done quickly since you don't need to install a full OS (as in VMs for example)
+* Isolation: Containers are isolated environments, usually changes made to the OS won't affect the containers and vice-versa
+</b></details>
+
+<a name="questions-oci"></a>
 #### Containers - OCI
 
 <details>
@@ -89,68 +117,7 @@ Specifications published by OCI:
 Create, Kill, Delete, Start and Query State.
 </b></details>
 
-#### Containers - Basic Commands
-
-<details>
-<summary>How to list all the containers on a given host?</summary><br><b>
-
-In the case of Docker, use: `docker container ls`<br>
-In the case of Podman, it's not very different: `podman container ls`
-</b></details>
-
-<details>
-<summary>How to run a container?</summary><br><b>
-
-Docker: `docker container run ubuntu`<br>
-Podman: `podman container run ubuntu`
-</b></details>
-
-<details>
-<summary>Why after running <code>podman container run ubuntu</code> the output of <code>podman container ls</code> is empty?</summary><br><b>
-
-Because the container immediately exits after running the ubuntu image. This is completely normal and expected as containers designed to run a service or a app and exit when they are done running it.<br>
-
-If you want the container to keep running, you can run a command like `sleep 100` which will run for 100 seconds or you can attach to terminal of the container with a command similar: `podman container run -it ubuntu /bin/bash`
-</b></details>
-
-<details>
-<summary>How to attach your shell to a terminal of a running container?</summary><br><b>
-
-`podman container exec -it [container id/name] bash`
-
-This can be done in advance while running the container: `podman container run -it [image:tag] /bin/bash`
-</b></details>
-
-<details>
-<summary>True or False? You can remove a running container if it doesn't running anything</summary><br><b>
-
-False. You have to stop the container before removing it.
-</b></details>
-
-<details>
-<summary>How to stop and remove a container?</summary><br><b>
-
-`podman container stop <container id/name> && podman container rm <container id/name>`
-</b></details>
-
-<details>
-<summary>What happens when you run <code>docker container run ubuntu</code>?</summary><br><b>
-
-1. Docker client posts the command to the API server running as part of the Docker daemon
-2. Docker daemon checks if a local image exists
-  1. If it exists, it will use it
-  2. If doesn't exists, it will go to the remote registry (Docker Hub by default) and pull the image locally
-3. containerd and runc are instructed (by the daemon) to create and start the container
-</b></details>
-
-<details>
-<summary>How to run a container in the background?</summary><br><b>
-
-With the -d flag. It will run in the background and will not attach it to the terminal.
-
-`docker container run -d httpd` or `podman container run -d httpd`
-</b></details>
-
+<a name="questions-images"></a>
 #### Containers - Images
 
 <details>
@@ -169,12 +136,38 @@ With the -d flag. It will run in the background and will not attach it to the te
 </b></details>
 
 <details>
+<summary>You are interested in running a container with snake game application. How can you search for such image and check if it exists?</summary><br><b>
+
+`podman search snake-game`. Surprisingly, there are a couple of matches :)
+
+```
+INDEX       NAME                                                                DESCRIPTION                                      STARS
+docker.io   docker.io/dyego/snake-game                                                                                           0
+docker.io   docker.io/ainizetap/snake-game                                                                                       0
+docker.io   docker.io/islamifauzi/snake-games                                                                                    0
+docker.io   docker.io/harish1551/snake-game                                                                                      0
+docker.io   docker.io/spkane/snake-game                                         A console based snake game in a container        0
+docker.io   docker.io/rahulgadre/snake-game                                     This repository contains all the files to ru...  0
+```
+</b></details>
+
+<details>
 <summary>How to list the container images on certain host?</summary><br><b>
 
-`podman image ls`<br>
-`docker image ls`
+CONTAINER_BINARY=podman # or docker
+$CONTAINER_BINARY images
+```
 
-Depends on which containers engine you use.
+Note: you can also use `$CONTAINER_RUNTIME image ls`
+</b></details>
+
+<details>
+<summary>How to download/pull a container image without actually running a container?</summary><br><b>
+
+```
+CONTAINER_BINARY=podman # or docker
+$CONTAINER_BINARY pull rhel
+```
 </b></details>
 
 <details>
@@ -203,7 +196,7 @@ Registry: https://index.docker.io/v1
 <details>
 <summary>How to retrieve the latest ubuntu image?</summary><br><b>
 
-`docker image pull ubuntu:latest`
+`podman image pull ubuntu:latest`
 </b></details>
 
 <details>
@@ -381,6 +374,71 @@ Cons:
   * Push and pull can take more time (because no matching layers found on target)
 </b></details>
 
+<a name="questions-basic-commands"></a>
+#### Containers - Basic Commands
+
+<details>
+<summary>How to list all the containers on a given host?</summary><br><b>
+
+In the case of Docker, use: `docker container ls`<br>
+Same with Podman: `podman container ls`
+</b></details>
+
+<details>
+<summary>How to run a container?</summary><br><b>
+
+Docker: `docker container run ubuntu`<br>
+Podman: `podman container run ubuntu`
+</b></details>
+
+<details>
+<summary>Why after running <code>podman container run ubuntu</code> the output of <code>podman container ls</code> is empty?</summary><br><b>
+
+Because the container immediately exits after running the ubuntu image. This is completely normal and expected as containers designed to run a service or a app and exit when they are done running it.<br>
+
+If you want the container to keep running, you can run a command like `sleep 100` which will run for 100 seconds or you can attach to terminal of the container with a command similar: `podman container run -it ubuntu /bin/bash`
+</b></details>
+
+<details>
+<summary>How to attach your shell to a terminal of a running container?</summary><br><b>
+
+`podman container exec -it [container id/name] bash`
+
+This can be done in advance while running the container: `podman container run -it [image:tag] /bin/bash`
+</b></details>
+
+<details>
+<summary>True or False? You can remove a running container if it doesn't running anything</summary><br><b>
+
+False. You have to stop the container before removing it.
+</b></details>
+
+<details>
+<summary>How to stop and remove a container?</summary><br><b>
+
+`podman container stop <container id/name> && podman container rm <container id/name>`
+</b></details>
+
+<details>
+<summary>What happens when you run <code>docker container run ubuntu</code>?</summary><br><b>
+
+1. Docker client posts the command to the API server running as part of the Docker daemon
+2. Docker daemon checks if a local image exists
+  1. If it exists, it will use it
+  2. If doesn't exists, it will go to the remote registry (Docker Hub by default) and pull the image locally
+3. containerd and runc are instructed (by the daemon) to create and start the container
+</b></details>
+
+<details>
+<summary>How to run a container in the background?</summary><br><b>
+
+With the -d flag. It will run in the background and will not attach it to the terminal.
+
+`docker container run -d httpd` or `podman container run -d httpd`
+</b></details>
+
+
+<a name="questions-volume"></a>
 #### Containers - Volume
 
 <details>
@@ -389,6 +447,7 @@ Cons:
 `docker volume create some_volume`
 </b></details>
 
+<a name="questions-dockerfile"></a>
 #### Containers - Dockerfile
 
 <details>
@@ -479,6 +538,7 @@ Instructions such as ENTRYPOINT, ENV, EXPOSE, create image metadata and they don
 <summary>Is it possible to identify which instruction create a new layer from the output of <code>docker image history</code>?</summary><br><b>
 </b></details>
 
+<a name="questions-architecture"></a>
 #### Containers - Architecture
 
 <details>
@@ -496,6 +556,18 @@ Through the use of namespaces and cgroups. Linux kernel has several types of nam
 </b></details>
 
 <details>
+<summary>What Linux kernel features does containers use?</summary><br><b>
+
+* cgroups (Control Groups): used for limiting the amount of resources a certain groups of processes (and their children of course) use. This way, a group of processes isn't consuming all host resources and other groups can run and use part of the resources as well
+
+* namespaces: same as cgroups, namespaces isolate some of the system resources so it's available only for processes in the namespace. Differently from cgroups the focus with namespaces is on resources like mount points, IPC, network, ... and not about memory and CPU as in cgroups
+
+* SElinux: the access control mechanism used to protect processes. Unfortunately to this date many users don't actually understand SElinux and some turn it off but nontheless, it's a very important security feature of the Linux kernel, used by container as well
+
+* Seccomp: similarly to SElinux, it's also a security mechanism, but its focus is on limiting the processes in regards to using system calls and file descriptors
+</b></details>
+
+<details>
 <summary>Describe in detail what happens when you run `podman/docker run hello-world`?</summary><br><b>
 
 Docker/Podman CLI passes your request to Docker daemon.
@@ -505,7 +577,7 @@ Docker/Podman daemon redirects output from container to Docker CLI which redirec
 </b></details>
 
 <details>
-<summary>Describe difference between cgroups and namespaces </summary><br><b>
+<summary>Describe difference between cgroups and namespaces</summary><br><b>
 cgroup: Control Groups provide a mechanism for aggregating/partitioning sets of tasks, and all their future children, into hierarchical groups with specialized behavior.
 namespace: wraps a global system resource in an abstraction that makes it appear to the processes within the namespace that they have their own isolated instance of the global resource.
 
@@ -526,6 +598,22 @@ Multiple namespaces: pid,net, mnt, uts, ipc, user
 
 </b></details>
 
+<details>
+<summary>Which of the following are Linux features that containers use?
+
+* cspaces
+* namegroups
+* namespaces
+* cgroups
+* ELlinux
+* SElinux</summary><br><b>
+
+* namespaces
+* cgroups
+* SElinux
+</b></details>
+
+<a name="questions-docker-architecture"></a>
 #### Containers - Docker Architecture
 
 <details>
@@ -702,6 +790,7 @@ Because each container has its own writable container layer, and all changes are
 <summary>How do you copy files from Docker container to the host and vice versa?</summary><br><b>
 </b></details>
 
+<a name="questions-docker-compose"></a>
 #### Containers - Docker Compose
 
 <details>
@@ -720,6 +809,7 @@ In general, it's useful for running applications which composed out of several d
 * Run `docker-compose up` to run the services
 </b></details>
 
+<a name="questions-docker-images"></a>
 #### Containers - Docker Images
 
 <details>
@@ -776,6 +866,7 @@ By default, Docker uses everything (all the files and directories) in the direct
 `.dockerignore` used for excluding files and directories from the build context
 </b></details>
 
+<a name="questions-networking"></a>
 #### Containers - Networking
 
 <details>
@@ -788,6 +879,7 @@ CNI (Container Network Interface):
   * Network configuration should be in JSON format
 </b></details>
 
+<a name="questions-docker-networking"></a>
 #### Containers - Docker Networking
 
 <details>
@@ -823,6 +915,7 @@ True. An endpoint can connect only to a single network.
 * network control plane and management plane
 </b></details>
 
+<a name="questions-security"></a>
 #### Containers - Security
 
 <details>
@@ -843,6 +936,7 @@ True. An endpoint can connect only to a single network.
   * DO NOT run containers with `--privilged` flag
 </b></details>
 
+<a name="questions-docker-in-production"></a>
 #### Containers - Docker in Production
 
 <details>
@@ -879,9 +973,3 @@ Restart Policies. It allows you to automatically restart containers after certai
   * no: don't restart the container at any point (default policy)
   * on-failure: restart the container when it exists due to an error (= exit code different than zero)
 </b></details>
-
-#### Containers - Docker Misc
-<details>
-<summary>Explain what is Docker Bench</summary><br><b>
-</b></details>
-
