@@ -16,6 +16,20 @@
 
 <details>
 <summary>What is a Certificate Authority?</summary><br><b>
+ 
+ [wikipedia](https://en.wikipedia.org/wiki/Certificate_authority) : A certificate Authority that stores, singns and issues certificates.
+ 
+ A certificate certifies the authenticity of the public key delivered by the website. It prevents [man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) attacks by providing a lot of information which identifie the public key. Importante information provided inside a [X.509](https://www.ssl.com/faqs/what-is-an-x-509-certificate/) certificate are like :
+  * Version Number
+  * Serial Number
+  * Signature Algorithm ID
+  * Issuer Name 
+  * Validity period
+  * Subject name
+  * Subject Public Key info
+ 
+Every certificates must be signed by a trusted authority, a certificate chain is a concatenation of mutilple certificates signed by a more trusted authority from the one delivered by the website to the root Certificate Authority (CA). The root Certificate Authority is the top most trusted authority and every browsers embark their certificate natively.
+ 
 </b></details>
 
 <details>
