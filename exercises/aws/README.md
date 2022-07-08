@@ -1,11 +1,24 @@
-## AWS
+# AWS
 
-### AWS Exercises
+## AWS Exercises
 
-Note: Provided solutions are using the AWS console. It's recommended you'll use IaC technologies to solve the exercises (e.g. Terraform).<br>
-Note 2: Some of the exercises cost money and can't be performed using the free tier/resources
+**Note**: Provided solutions are using the AWS console. It's recommended you'll use IaC technologies to solve the exercises (e.g. Terraform, Pulumi).<br>
+**2nd Note**: Some of the exercises cost money and can't be performed using the free tier/resources
 
-#### AWS - IAM
+* [AWS IAM](#exercises-aws-iam)
+* [AWS EC2](#exercises-aws-ec2)
+* [AWS ELB](#exercises-aws-elb)
+* [AWS Auto Scaling Groups](#exercises-aws-asg)
+* [AWS VPC](#exercises-aws-vpc)
+* [AWS Databases](#exercises-aws-databases)
+* [AWS DNS](#exercises-aws-dns)
+* [AWS Containers](#exercises-aws-containers)
+* [AWS Lambda](#exercises-aws-rambda)
+* [AWS Elastic Beanstalk](#exercises-aws-elastic-beanstalk)
+* [AWS Misc](#exercises-aws-misc)
+
+<a name="exercises-aws-iam"></a>
+### IAM
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
@@ -15,7 +28,8 @@ Note 2: Some of the exercises cost money and can't be performed using the free t
 | Credential Report | IAM | [Exercise](credential_report.md) | [Solution](solutions/credential_report.md) | Easy |
 | Access Advisor | IAM | [Exercise](access_advisor.md) | [Solution](solutions/access_advisor.md) | Easy |
 
-#### AWS - EC2
+<a name="exercises-aws-ec2"></a>
+### EC2
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
@@ -32,7 +46,8 @@ Note 2: Some of the exercises cost money and can't be performed using the free t
 | Create an AMI | EC2, AMI | [Exercise](create_ami.md) | [Solution](solutions/create_ami.md) | Easy |
 | Create EFS | EC2, EFS | [Exercise](create_efs.md) | [Solution](solutions/create_efs.md) | Easy |
 
-#### AWS - ELB
+<a name="exercises-aws-elb"></a>
+### ELB
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
@@ -40,21 +55,24 @@ Note 2: Some of the exercises cost money and can't be performed using the free t
 | Multiple Target Groups | ELB, ALB | [Exercise](alb_multiple_target_groups.md) | [Solution](solutions/alb_multiple_target_groups.md) | Easy |
 | Network Load Balancer | ELB, NLB | [Exercise](network_load_balancer.md) | [Solution](solutions/network_load_balancer.md) | Easy |
 
-#### AWS - Auto Scaling Groups
+<a name="exercises-aws-asg"></a>
+### Auto Scaling Groups
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Auto Scaling Groups Basics | ASG | [Exercise](auto_scaling_groups_basics.md) | [Solution](solutions/auto_scaling_groups_basics.md) | Easy |
 | Dynamic Scaling Policy | ASG, Policies | [Exercise](asg_dynamic_scaling_policy.md) | [Solution](solutions/asg_dynamic_scaling_policy.md) | Easy |
 
-#### AWS - VPC
+<a name="exercises-aws-vpc"></a>
+### VPC
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | My First VPC | VPC | [Exercise](new_vpc.md) | [Solution](solutions/new_vpc.md) | Easy |
 | Subnets | VPC | [Exercise](subnets.md) | [Solution](solutions/subnets.md) | Easy |
 
-#### AWS - Databases
+<a name="exercises-aws-databases"></a>
+### Databases
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
@@ -62,7 +80,8 @@ Note 2: Some of the exercises cost money and can't be performed using the free t
 | Aurora DB | RDS | [Exercise](aurora_db.md) | [Solution](solutions/aurora_db.md) | Easy |
 | ElastiCache | ElastiCache | [Exercise](elasticache.md) | [Solution](solutions/elasticache.md) | Easy |
 
-#### AWS - DNS
+<a name="exercises-aws-dns"></a>
+### DNS
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
@@ -71,36 +90,76 @@ Creating Records | Route 53 | [Exercise](creating_records.md) | [Solution](solut
 Health Checks | Route 53 | [Exercise](health_checks.md) | [Solution](solutions/health_checks.md) | Easy |
 Failover | Route 53 | [Exercise](route_53_failover.md) | [Solution](solutions/route_53_failover.md) | Easy |
 
-#### AWS - Containers
+<a name="exercises-aws-containers"></a>
+### Containers
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | ECS Task | ECS, Fargate | [Exercise](ecs_task.md) | [Solution](solutions/ecs_task.md) | Easy |
 
-#### AWS - Lambda
+<a name="exercises-aws-lambda"></a>
+### Lambda
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Hello Function | Lambda | [Exercise](hello_function.md) | [Solution](solutions/hello_function.md) | Easy |
 | URL Function | Lambda | [Exercise](url_function.md) | [Solution](solutions/url_function.md) | Easy |
 
-#### AWS - Elastic Beanstalk
+<a name="exercises-aws-elastic-beanstalk"></a>
+### Elastic Beanstalk
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Simple Elastic Beanstalk Node.js app | Elastic Beanstalk | [Exercise](elastic_beanstalk_simple.md) | [Solution](solutions/elastic_beanstalk_simple.md) | Easy |
 
-
-#### AWS - Misc
+<a name="exercises-aws-misc"></a>
+### Misc
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Budget Setup | Budget | [Exercise](budget_setup.md) | [Solution](solutions/budget_setup.md) | Easy |
 | No Application :'( | Troubleshooting | [Exercise](no_application.md) | [Solution](solutions/no_application.md) | Easy |
 
-### AWS Self Assessment
+## AWS Self Assessment
 
-#### AWS - Global Infrastructure
+* [AWS Global Infrastructure](#questions-aws-global-infra)
+* [AWS IAM](#questions-aws-iam)
+* [AWS EC2](#questions-aws-ec2)
+  * [AMI](#questions-aws-ec2-ami)
+  * [EBS](#questions-aws-ec2-ebs)
+  * [Instance Store](#questions-aws-ec2-instance-store)
+  * [EFS](#questions-aws-ec2-efs)
+  * [Pricing Models](#questions-aws-ec2-pricing-models)
+  * [Launch Templates](#questions-aws-ec2-launch-templates)
+  * [ENI](#questions-aws-ec2-eni)
+  * [Placement Groups](#questions-aws-ec2-placement-groups)
+* [AWS Containers](#questions-aws-containers)
+  * [AWS ECS](#questions-aws-containers-ecs)
+  * [AWS Fargate](#questions-aws-containers-fargate)
+* [AWS S3](#questions-aws-s3)
+* [AWS Disaster Recovery](#questions-aws-disaster-recovery)
+* [AWS ELB](#questions-aws-elb)
+* [AWS Auto Scaling Group](#questions-aws-asg)
+* [AWS Security](#questions-aws-security)
+* [AWS Databases](#questions-aws-db)
+  * [AWS RDS](#questions-aws-db-rds)
+  * [AWS Aurora](#questions-aws-db-aurora)
+  * [AWS DynamoDB](#questions-aws-db-dynamodb)
+  * [AWS ElastiCache](#questions-aws-db-elasticache)
+  * [AWS RedShift](#questions-aws-db-redshift)
+* [AWS VPC](#questions-vpc)
+* [AWS DNS](#questions-aws-dns)
+* [AWS Monitoring and Logging](#questions-aws-monitoring-logging)
+* [AWS Billing and Support](#questions-aws-billing-support)
+* [AWS Automation](#questions-aws-automation)
+* [AWS Misc](#questions-aws-misc)
+* [AWS HA](#questions-aws-ha)
+* [AWS Production Operations and Migrations](#questions-aws-migrations)
+* [AWS Scenarios](#questions-aws-scenarios)
+* [AWS Architecture Design](#questions-aws-architecture-design)
+
+<a name="questions-aws-global-infra"></a>
+### Global Infrastructure
 
 <details>
 <summary>Explain the following
@@ -137,7 +196,8 @@ False. The minimum is 2 while the maximum is 6.
 * Pricing: the pricing might not be consistent across regions so, the price for the same service in different regions might be different.
 </b></details>
 
-#### AWS - IAM
+<a name="questions-aws-iam"></a>
+### IAM
 
 <details>
 <summary>What is IAM? What are some of its features?</summary><br><b>
@@ -273,7 +333,8 @@ This policy permits to perform any action on any resource. It happens to be the 
 IAM Access Advisor
 </b></details>
 
-#### AWS - EC2
+<a name="questions-aws-ec2"></a>
+### EC2
 
 <details>
 <summary>What is EC2?</summary><br><b>
@@ -305,7 +366,8 @@ True. As opposed to IAM for example, which is a global service, EC2 is a regiona
 AMI. With AMI (Amazon Machine Image) you can customize EC2 instances by specifying which software to install, what OS changes should be applied, etc.
 </b></details>
 
-##### AWS EC2 - AMI
+<a name="questions-aws-ec2-ami"></a>
+#### EC2 - AMI
 
 <details>
 <summary>What is AMI?</summary><br><b>
@@ -395,7 +457,8 @@ Storage Optimized:
 EBS
 </b></details>
 
-##### AWS EC2 - EBS
+<a name="questions-aws-ec2-ebs"></a>
+#### AWS EC2 - EBS
 
 <details>
 <summary>Explain Amazon EBS</summary><br><b>
@@ -492,7 +555,8 @@ SSD: gp2, gp3, io1, io2
 True.
 </b></details>
 
-##### AWS EC2 - Instance Store
+<a name="questions-aws-ec2-instance-store"></a>
+#### AWS EC2 - Instance Store
 
 <details>
 <summary>If you would like to have an hardware disk attached to your EC2 instead of a network one (EBS). What would you use?</summary><br><b>
@@ -513,7 +577,8 @@ It is mostly used for cache and temporary data purposes.
 Yes, the data on instance store is lost when they are stopped.
 </b></details>
 
-##### AWS Storage - EFS
+<a name="questions-aws-ec2-efs"></a>
+#### AWS EC2 - EFS
 
 <details>
 <summary>What is Amazon EFS?</summary><br><b>
@@ -579,7 +644,8 @@ Performance Mode (General Purpose): Used for web serving, CMS, ... anything that
 * Infrequent access: lower prices to store files but it also costs to retrieve them
 </b></details>
 
-##### AWS EC2 - Pricing Models
+<a name="questions-aws-ec2-pricing-models"></a>
+#### AWS EC2 - Pricing Models
 
 <details>
 <summary>What EC2 pricing models are there?</summary><br><b>
@@ -840,7 +906,8 @@ True. This is because the operating system isn't restarted or stopped.
 * Usually combined with Reserved Instances and Saving Plans to achieve cost saving
 </b></details>
 
-##### AWS EC2 - Launch Template
+<a name="questions-aws-ec2-launch-templates"></a>
+#### AWS EC2 - Launch Template
 
 <details>
 <summary>What is a launch template?</summary><br><b>
@@ -859,7 +926,87 @@ In addition, launch template has the clear benefits of:
   * support creating parameters subsets (used for re-use and inheritance)
 </b></details>
 
-#### AWS - Lambda
+<a name="questions-aws-ec2-eni"></a>
+#### AWS EC2 - ENI
+
+<details>
+<summary>Explain Elastic Network Interfaces (ENI)</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html): "An elastic network interface is a logical networking component in a VPC that represents a virtual network card."
+</b></details>
+
+<details>
+<summary>Name at least three attributes the Elastic Network Interfaces (ENI) can include</summary><br><b>
+
+1. One public IPv4 address
+2. Mac Address
+3. A primary private IPv4 address (from the address range of your VPC)
+</b></details>
+
+<details>
+<summary>True or False? ENI are not bound to a specific availability zone</summary><br><b>
+
+False. ENI are bound to specific availability zone.
+</b></details>
+
+<details>
+<summary>True or False? ENI can be created independently of EC2 instances</summary><br><b>
+
+True. They can be attached later on and on the fly (for failover purposes).
+</b></details>
+
+<a name="questions-aws-ec2-placement-groups"></a>
+#### AWS EC2 - Placement Groups
+
+<details>
+<summary>What are "Placement Groups"?</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html): "When you launch a new EC2 instance, the EC2 service attempts to place the instance in such a way that all of your instances are spread out across underlying hardware to minimize correlated failures. You can use placement groups to influence the placement of a group of interdependent instances to meet the needs of your workload."
+</b></details>
+
+<details>
+<summary>What Placement Groups strategies are there?</summary><br><b>
+
+* Cluster: places instance close together in an AZ.
+* Spread: spreads the instance across the hardware
+* Partition: spreads the instances across different partitions (= different sets of hardware/racks) within an AZ
+</b></details>
+
+<details>
+<summary>For each of the following scenarios choose a placement group strategy:
+
+  * High availability is top priority
+  * Low latency between instances
+  * Instances must be isolated from each other
+  * Big Data applications that are partition aware
+  * Big Data process that needs to end quickly</summary><br><b>
+
+  * High availability is top priority - Spread
+  * Low latency between instances - Cluster
+  * Instances must be isolated from each other - Spread
+  * Big Data applications that are partition aware - Partition
+  * Big Data process that needs to end quickly - Cluster
+</b></details>
+
+<details>
+<summary>What are the cons and pros of the "Cluster" placement group strategy?</summary><br><b> 
+
+Cons: if the hardware fails, all instances fail
+Pros: Low latency & high throughput network
+</b></details>
+
+<details>
+<summary>What are the cons and pros of the "Spread" placement group strategy?</summary><br><b> 
+
+Cons:
+  * Current limitation is 7 instances per AZ (per replacement group)
+Pros:
+  * Maximized high availability (instances on different hardware, span across AZs)
+</b></details>
+
+<a name="questions-aws-identify-service"></a>
+
+### Lambda
 
 <details>
 <summary>Explain what is AWS Lambda</summary><br><b>
@@ -892,9 +1039,11 @@ False. Charges are being made when the code is executed.
 True
 </b></details>
 
-#### AWS - Containers
+<a name="questions-aws-containers"></a>
+### Containers
 
-##### AWS Containers - ECS
+<a name="questions-aws-containers-ecs"></a>
+#### Containers - ECS
 
 <details>
 <summary>What is Amazon ECS?</summary><br><b>
@@ -941,7 +1090,8 @@ EC2 Instance Profile used by ECS agent on an EC2 instance to:
 Using EFS is a good way to share data between containers and it works also between different AZs.
 </b></details>
 
-##### AWS Containers - Fargate
+<a name="questions-aws-containers-fargate"></a>
+#### Containers - Fargate
 
 <details>
 <summary>What is AWS Fargate?</summary><br><b>
@@ -964,7 +1114,8 @@ While in AWS Fargate, you don't provision or manage the infrastructure, you simp
 True.
 </b></details>
 
-#### AWS - S3
+<a name="questions-aws-s3"></a>
+### S3
 
 <details>
 <summary>Explain what is AWS S3?</summary><br><b>
@@ -1124,7 +1275,8 @@ Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-accel
 <summary>What storage options are there for EC2 Instances?</summary><br><b>
 </b></details>
 
-#### AWS Disaster Recovery
+<a name="questions-aws-disaster-recovery"></a>
+### Disaster Recovery
 
 <details>
 <summary>In regards to disaster recovery, what is RTO and RPO?</summary><br><b>
@@ -1150,7 +1302,8 @@ Lowest - Multi-site
 Highest - The cold method
 </b></details>
 
-#### AWS CloudFront
+<a name="questions-aws-cloudfront"></a>
+### CloudFront
 
 <details>
 <summary>Explain what is CloudFront</summary><br><b>
@@ -1184,7 +1337,8 @@ True
 A transport solution which was designed for transferring large amounts of data (petabyte-scale) into and out the AWS cloud.
 </b></details>
 
-#### AWS - ELB
+<a name="questions-aws-elb"></a>
+### ELB
 
 <details>
 <summary>What is ELB (Elastic Load Balancing)?</summary><br><b>
@@ -1368,7 +1522,8 @@ True
 The period of time or process of "draining" instances from requests/traffic (basically let it complete all active connections but don't start new ones) so it can be de-registered eventually and ELB won't send requests/traffic to it anymore.
 </b></details>
 
-#### AWS - Auto Scaling Group
+<a name="questions-aws-asg"></a>
+### Auto Scaling Group
 
 <details>
 <summary>Explain Auto Scaling Group</summary><br><b>
@@ -1445,7 +1600,8 @@ Lifecycle hooks allows you perform extra steps before the instance goes in servi
 Lifecycle hooks in pending state.
 </b></details>
 
-#### AWS - Security
+<a name="questions-aws-securtiy"></a>
+### Security
 
 <details>
 <summary>What is the shared responsibility model? What AWS is responsible for and what the user is responsible for based on the shared responsibility model?</summary><br><b>
@@ -1583,9 +1739,11 @@ Amazon definition: "AWS Certificate Manager is a service that lets you easily pr
 Learn more [here](https://aws.amazon.com/certificate-manager)
 </b></details>
 
-#### AWS - Databases
+<a name="questions-aws-db"></a>
+### Databases
 
-##### AWS Databases - RDS
+<a name="questions-aws-db-rds"></a>
+#### Databases - RDS
 
 <details>
 <summary>What is AWS RDS?</summary><br><b>
@@ -1718,7 +1876,8 @@ Note: The token has a lifetime of 15 minutes
 True. Since read replicas add endpoints, each with its own DNS name, you need to modify your app to reference these new endpoints to balance the load read.
 </b></details>
 
-##### AWS Databases - Aurora
+<a name="questions-aws-db-aurora"></a>
+#### Databases - Aurora
 
 <details>
 <summary>What do you know about Amazon Aurora?</summary><br><b>
@@ -1770,7 +1929,8 @@ True. If your read replica instances exhaust their CPU, you can scale by adding 
 Aurora multi-master is perfect for a use case where you want to have instant failover for write node.
 </b></details>
 
-##### AWS Databases - DynamoDB
+<a name="questions-aws-db-dynamodb"></a>
+#### Databases - DynamoDB
 
 <details>
 <summary>What is AWS DynamoDB?</summary><br><b>
@@ -1800,7 +1960,8 @@ Amazon definition: "Amazon DynamoDB Accelerator (DAX) is a fully managed, highly
 Learn more [here](https://aws.amazon.com/dynamodb/dax)
 </b></details>
 
-##### AWS Databases - ElastiCache
+<a name="questions-aws-db-elasticache"></a>
+#### Databases - ElastiCache
 
 <details>
 <summary>What is AWS ElastiCache? In what use case should it be used?</summary><br><b>
@@ -1857,7 +2018,8 @@ True.
 * Session Store: store temporary session data in cache
 </b></details>
 
-##### AWS Databases - RedShift
+<a name="questions-aws-db-redshift"></a>
+#### Databases - RedShift
 
 <details>
 <summary>What is AWS Redshift and how is it different than RDS?</summary><br><b>
@@ -1892,7 +2054,8 @@ Learn more [here](https://aws.amazon.com/documentdb)
 EBS
 </b></details>
 
-#### AWS - VPC
+<a name="questions-aws-vpc"></a>
+### VPC
 
 <details>
 <summary>What is VPC?</summary><br><b>
@@ -2063,83 +2226,7 @@ It's better if Kratos uses a subnet of size /26 but good luck telling him that.
 <summary>In order for AWS Lambda to have internet access</summary><br><b>
 </b></details>
 
-##### AWS EC2 - ENI
-
-<details>
-<summary>Explain Elastic Network Interfaces (ENI)</summary><br><b>
-
-[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html): "An elastic network interface is a logical networking component in a VPC that represents a virtual network card."
-</b></details>
-
-<details>
-<summary>Name at least three attributes the Elastic Network Interfaces (ENI) can include</summary><br><b>
-
-1. One public IPv4 address
-2. Mac Address
-3. A primary private IPv4 address (from the address range of your VPC)
-</b></details>
-
-<details>
-<summary>True or False? ENI are not bound to a specific availability zone</summary><br><b>
-
-False. ENI are bound to specific availability zone.
-</b></details>
-
-<details>
-<summary>True or False? ENI can be created independently of EC2 instances</summary><br><b>
-
-True. They can be attached later on and on the fly (for failover purposes).
-</b></details>
-
-##### AWS EC2 - Placement Groups
-
-<details>
-<summary>What are "Placement Groups"?</summary><br><b>
-
-[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html): "When you launch a new EC2 instance, the EC2 service attempts to place the instance in such a way that all of your instances are spread out across underlying hardware to minimize correlated failures. You can use placement groups to influence the placement of a group of interdependent instances to meet the needs of your workload."
-</b></details>
-
-<details>
-<summary>What Placement Groups strategies are there?</summary><br><b>
-
-* Cluster: places instance close together in an AZ.
-* Spread: spreads the instance across the hardware
-* Partition: spreads the instances across different partitions (= different sets of hardware/racks) within an AZ
-</b></details>
-
-<details>
-<summary>For each of the following scenarios choose a placement group strategy:
-
-  * High availability is top priority
-  * Low latency between instances
-  * Instances must be isolated from each other
-  * Big Data applications that are partition aware
-  * Big Data process that needs to end quickly</summary><br><b>
-
-  * High availability is top priority - Spread
-  * Low latency between instances - Cluster
-  * Instances must be isolated from each other - Spread
-  * Big Data applications that are partition aware - Partition
-  * Big Data process that needs to end quickly - Cluster
-</b></details>
-
-<details>
-<summary>What are the cons and pros of the "Cluster" placement group strategy?</summary><br><b> 
-
-Cons: if the hardware fails, all instances fail
-Pros: Low latency & high throughput network
-</b></details>
-
-<details>
-<summary>What are the cons and pros of the "Spread" placement group strategy?</summary><br><b> 
-
-Cons:
-  * Current limitation is 7 instances per AZ (per replacement group)
-Pros:
-  * Maximized high availability (instances on different hardware, span across AZs)
-</b></details>
-
-#### AWS - Identify the service or tool
+### Identify the Service
 
 <details>
 <summary>What would you use for automating code/software deployments?</summary><br><b>
@@ -2346,7 +2433,8 @@ API Gateway - to define the URL trigger (= when you insert the URL, the function
 Kinesis
 </b></details>
 
-#### AWS - DNS (Route 53)
+<a name="questions-aws-dns"></a>
+### DNS (Route 53)
 
 <details>
 <summary>What is Route 53?</summary><br><b>
@@ -2578,7 +2666,8 @@ False. Route 53 Multi Value is not a substitute for ELB. It's focused on client-
 False. DNS service can be Route 53 (where you manage DNS records) while the domain itself can be purchased from other sources that aren't Amazon related (e.g. GoDadday).
 </b></details>
 
-#### AWS Monitoring & Logging
+<a name="questions-aws-monitoring-logging"></a>
+### Monitoring & Logging
 
 <details>
 <summary>What is AWS CloudWatch?</summary><br><b>
@@ -2616,7 +2705,8 @@ Read more about it [here](https://aws.amazon.com/sns)
   * Publishers - the provider of the message (event, person, ...)
 </b></details>
 
-#### AWS Billing & Support
+<a name="questions-aws-billing-support"></a>
+### Billing & Support
 
 <details>
 <summary>What is "AWS Organizations"?</summary><br><b>
@@ -2709,7 +2799,8 @@ True. You pay differently based on the chosen region.
 AWS Definition: "AWS Infrastructure Event Management is a structured program available to Enterprise Support customers (and Business Support customers for an additional fee) that helps you plan for large-scale events such as product or application launches, infrastructure migrations, and marketing events."
 </b></details>
 
-#### AWS Automation
+<a name="questions-aws-automation"></a>
+### Automation
 
 <details>
 <summary>What is AWS CodeDeploy?</summary><br><b>
@@ -2723,7 +2814,8 @@ Learn more [here](https://aws.amazon.com/codedeploy)
 <summary>Explain what is CloudFormation</summary><br><b>
 </b></details>
 
-#### AWS - Misc
+<a name="questions-aws-misc"></a>
+###  Misc
 
 <details>
 <summary>Which AWS service you have experience with that you think is not very common?</summary><br><b>
@@ -2910,7 +3002,8 @@ AWS definition: "Amazon Simple Queue Service (SQS) is a fully managed message qu
 Learn more about it [here](https://aws.amazon.com/sqs)
 </b></details>
 
-#### AWS - High Availability
+<a name="questions-aws-ha"></a>
+### High Availability
 
 <details>
 <summary>What high availability means from AWS perspective?</summary><br><b>
@@ -2919,7 +3012,8 @@ Learn more about it [here](https://aws.amazon.com/sqs)
 * Application/Service should survive (= operate as usual) a data center disaster
 </b></details>
 
-#### AWS - Production Operations and Migrations
+<a name="questions-aws-migrations"></a>
+### Production Operations and Migrations
 
 <details>
 <summary>Describe in high-level how to upgrade a system on AWS with (near) zero downtime</summary><br><b>
@@ -2978,7 +3072,8 @@ For example, if you go to your instances in the AWS console you might see that t
 Go to the security group of your instance(s) and enable the traffic that NLB should forward (e.g. TCP on port 80).
 </b></details>
 
-#### AWS - Scenarios
+<a name="questions-aws-scenarios"></a>
+### Scenarios
 
 <details>
 <summary>You have a load balancer running and behind it 5 web servers. Users complain that every time they move to a new page, they have to authenticate, instead of doing it once. How can you solve it?</summary><br><b>
@@ -3027,7 +3122,8 @@ Use Amazon EventBridge so every time a file is uploaded to an S3 bucket (event) 
 Such task should have an ECS Task Role so it can get the object from the S3 bucket (and possibly other permissions if it needs to update the DB for example).
 </b></details>
 
-#### AWS - Architecture Design
+<a name="questions-aws-architecture-design"></a>
+### Architecture Design
 
 <details>
 <summary>You've been asked to design an architecture for high performance and low-latency application (millions of requests per second). Which load balancer would you use?</summary><br><b>

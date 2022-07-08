@@ -50,6 +50,12 @@ True
 - Developer Workflow Support: built-in CI/CD (openshift pipelines), built-in container registry and tooling for building artifacts from source to container images
 </b></details>
 
+<details>
+<summary>True or False? To run containers on OpenShift, you have to own root privileges</summary><br><b>
+
+False. OpenShift supports rootless containers by default.
+</b></details>
+
 <a name="openshift-architecture"></a>
 ## OpenShift - Architecture
 
