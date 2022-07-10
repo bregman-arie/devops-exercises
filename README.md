@@ -2,15 +2,13 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
 
-:bar_chart: &nbsp;There are currently **2322** exercises and questions
+:bar_chart: &nbsp;There are currently **2371** exercises and questions
 
 :books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [FAQ page](faq.md) for more details
 
-:stop_sign: &nbsp;If you are interested in pursuing a career as DevOps engineer, learning some of the concepts mentioned here would be useful but you should know it's not about learning all the topics and technologies mentioned in this repository
-
-:busts_in_silhouette: &nbsp;Join our [DevOps community](https://www.facebook.com/groups/538897960007080) where we have discussions and share resources on DevOps
+:stop_sign: &nbsp;If you are interested in pursuing a career as DevOps engineer, learning some of the concepts mentioned here would be useful, but you should know it's not about learning all the topics and technologies mentioned in this repository
 
 :pencil: &nbsp;You can add more exercises by submitting pull requests :) Read about contribution guidelines [here](CONTRIBUTING.md)
 
@@ -79,7 +77,7 @@
       <td align="center"><a href="exercises/perl/README.md"><img src="images/perl.png" width="75px;" height="75px;" alt="perl"/><br /><b>Perl</b></a></td>
   </tr>
   <tr>
-      <td align="center"><a href="exercises/kafka/README.md"><img src="images/logos/kafka.png" width="75px;" height="75px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
+      <td align="center"><a href="exercises/kafka/README.md"><img src="images/logos/kafka.png" width="70px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
   </tr>
 </table>
 </center>
@@ -752,6 +750,12 @@ Yes, it's a operating-system-level virtualization, where the kernel is shared an
 <summary>How the introduction of virtual machines changed the industry and the way applications were deployed?</summary><br><b>
 
 The introduction of virtual machines allowed companies to deploy multiple business applications on the same hardware while each application is separated from each other in secured way, where each is running on its own separate operating system.
+</b></details>
+
+#### Virtual Machines
+
+<details>
+<summary>Do we need virtual machines in the age of containers? Are they still relevant?</summary><br><b>
 </b></details>
 
 #### Python - OOP
@@ -4673,11 +4677,57 @@ https://idiallo.com/blog/c10k-2016
 ## Storage
 
 <details>
-<summary>What types of storage formats are there?</summary><br><b>
+<summary>What types of storage are there?</summary><br><b>
 
   * File
   * Block
   * Object
+</b></details>
+
+<details>
+<summary>Explain Object Storage</summary><br><b>
+
+- Data is divided to self-contained objects
+- Objects can contain metadata
+</b></details>
+
+<details>
+<summary>What are the pros and cons of object storage?</summary><br><b>
+
+Pros:
+  - Usually with object storage, you pay for what you use as opposed to other storage types where you pay for the storage space you allocate
+  - Scalable storage: Object storage mostly based on a model where what you use, is what you get and you can add storage as need
+Cons:
+  - Usually performs slower than other types of storage
+  - No granular modification: to change an object, you have re-create it
+</b></details>
+
+<details>
+<summary>What are some use cases for using object storage?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain File Storage</summary><br><b>
+
+- File Storage used for storing data in files, in a hierarchical sturcture
+- Some of the devices for file storage: hard drive, flash drive, cloud-based file storage
+- Files usually organized in directories
+</b></details>
+
+<details>
+<summary>What are the pros and cons of File Storage?</summary><br><b>
+
+Pros:
+- Users have full control of their own files and can run variety of operations on the files: delete, read, write and move.
+- Security mechanism allows for users to have a better control at things such as file locking
+</b></details>
+
+<details>
+<summary>What are some examples of file storage?</summary><br><b>
+
+Local filesystem
+Dropbox
+Google Drive
 </b></details>
 
 <details>

@@ -17,6 +17,46 @@
 * [AWS Elastic Beanstalk](#exercises-aws-elastic-beanstalk)
 * [AWS Misc](#exercises-aws-misc)
 
+## AWS Questions
+
+* [AWS Global Infrastructure](#questions-aws-global-infra)
+* [AWS IAM](#questions-aws-iam)
+* [AWS EC2](#questions-aws-ec2)
+  * [AMI](#questions-aws-ec2-ami)
+  * [EBS](#questions-aws-ec2-ebs)
+  * [Instance Store](#questions-aws-ec2-instance-store)
+  * [EFS](#questions-aws-ec2-efs)
+  * [Pricing Models](#questions-aws-ec2-pricing-models)
+  * [Launch Templates](#questions-aws-ec2-launch-templates)
+  * [ENI](#questions-aws-ec2-eni)
+  * [Placement Groups](#questions-aws-ec2-placement-groups)
+* [AWS Containers](#questions-aws-containers)
+  * [AWS ECS](#questions-aws-containers-ecs)
+  * [AWS Fargate](#questions-aws-containers-fargate)
+* [AWS S3](#questions-aws-s3)
+* [AWS Disaster Recovery](#questions-aws-disaster-recovery)
+* [AWS ELB](#questions-aws-elb)
+* [AWS Auto Scaling Group](#questions-aws-asg)
+* [AWS Security](#questions-aws-security)
+* [AWS Databases](#questions-aws-db)
+  * [AWS RDS](#questions-aws-db-rds)
+  * [AWS Aurora](#questions-aws-db-aurora)
+  * [AWS DynamoDB](#questions-aws-db-dynamodb)
+  * [AWS ElastiCache](#questions-aws-db-elasticache)
+  * [AWS RedShift](#questions-aws-db-redshift)
+* [AWS VPC](#questions-vpc)
+* [AWS DNS](#questions-aws-dns)
+* [AWS Monitoring and Logging](#questions-aws-monitoring-logging)
+* [AWS Billing and Support](#questions-aws-billing-support)
+* [AWS Automation](#questions-aws-automation)
+* [AWS Misc](#questions-aws-misc)
+* [AWS HA](#questions-aws-ha)
+* [AWS Production Operations and Migrations](#questions-aws-migrations)
+* [AWS Scenarios](#questions-aws-scenarios)
+* [AWS Architecture Design](#questions-aws-architecture-design)
+
+## Exercises
+
 <a name="exercises-aws-iam"></a>
 ### IAM
 
@@ -120,43 +160,7 @@ Failover | Route 53 | [Exercise](route_53_failover.md) | [Solution](solutions/ro
 | Budget Setup | Budget | [Exercise](budget_setup.md) | [Solution](solutions/budget_setup.md) | Easy |
 | No Application :'( | Troubleshooting | [Exercise](no_application.md) | [Solution](solutions/no_application.md) | Easy |
 
-## AWS Self Assessment
-
-* [AWS Global Infrastructure](#questions-aws-global-infra)
-* [AWS IAM](#questions-aws-iam)
-* [AWS EC2](#questions-aws-ec2)
-  * [AMI](#questions-aws-ec2-ami)
-  * [EBS](#questions-aws-ec2-ebs)
-  * [Instance Store](#questions-aws-ec2-instance-store)
-  * [EFS](#questions-aws-ec2-efs)
-  * [Pricing Models](#questions-aws-ec2-pricing-models)
-  * [Launch Templates](#questions-aws-ec2-launch-templates)
-  * [ENI](#questions-aws-ec2-eni)
-  * [Placement Groups](#questions-aws-ec2-placement-groups)
-* [AWS Containers](#questions-aws-containers)
-  * [AWS ECS](#questions-aws-containers-ecs)
-  * [AWS Fargate](#questions-aws-containers-fargate)
-* [AWS S3](#questions-aws-s3)
-* [AWS Disaster Recovery](#questions-aws-disaster-recovery)
-* [AWS ELB](#questions-aws-elb)
-* [AWS Auto Scaling Group](#questions-aws-asg)
-* [AWS Security](#questions-aws-security)
-* [AWS Databases](#questions-aws-db)
-  * [AWS RDS](#questions-aws-db-rds)
-  * [AWS Aurora](#questions-aws-db-aurora)
-  * [AWS DynamoDB](#questions-aws-db-dynamodb)
-  * [AWS ElastiCache](#questions-aws-db-elasticache)
-  * [AWS RedShift](#questions-aws-db-redshift)
-* [AWS VPC](#questions-vpc)
-* [AWS DNS](#questions-aws-dns)
-* [AWS Monitoring and Logging](#questions-aws-monitoring-logging)
-* [AWS Billing and Support](#questions-aws-billing-support)
-* [AWS Automation](#questions-aws-automation)
-* [AWS Misc](#questions-aws-misc)
-* [AWS HA](#questions-aws-ha)
-* [AWS Production Operations and Migrations](#questions-aws-migrations)
-* [AWS Scenarios](#questions-aws-scenarios)
-* [AWS Architecture Design](#questions-aws-architecture-design)
+## Questions
 
 <a name="questions-aws-global-infra"></a>
 ### Global Infrastructure

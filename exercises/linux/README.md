@@ -12,7 +12,8 @@ A completely free application for testing your knowledge on Linux
 * [Linux I/O Redirection](#questions-linux-redirection)
 * [Linux Filesystem Hierarchy Standard](#questions-linux-fhs)
 * [Linux Permissions](#questions-linux-permissions)
-* [Linux Systemd](#questions-linux-fhs)
+* [Linux Scenarios](#questions-linux-scenarios)
+* [Linux Systemd](#questions-linux-systemd)
 * [Linux Troubleshooting and Debugging](#questions-linux-troubleshooting)
 * [Linux kernel](#questions-linux-kernel)
 * [Linux SSH](#questions-linux-ssh)
@@ -412,6 +413,27 @@ True
 <summary>A user accidentally executed the following <code>chmod -x $(which chmod)</code>. How to fix it?</summary><br><b>
 
 Using `sudo setfacl -m u::rx /usr/bin/chmod` will set the execute permissions on `chmod` for all the users. Post this, the `chmod` binary can be used as usual.
+</b></details>
+
+<a name="questions-linux-scenarios"></a>
+### Scenarios
+
+<details>
+<summary>You would like to copy a file to a remote Linux host. How would you do?</summary><br><b>
+
+There are multiple ways to transfer files between hosts. Personal opinion: use `rsync`
+</b></details>
+
+<details>
+<summary>How to generate a random string?</summary><br><b>
+
+One way is to run the following: `cat /proc/sys/kernel/random/uuid`
+</b></details>
+
+<details>
+<summary>How to generate a random string of 7 characters?</summary><br><b>
+
+`mkpasswd -l 7`
 </b></details>
 
 <a name="questions-linux-systemd"></a>
@@ -2055,12 +2077,6 @@ MemAvailable - The amount of available memory for new workloads (without pushing
 
 <a name="questions-linux-misc"></a>
 ### Misc
-
-<details>
-<summary>How to generate a random string?</summary><br><b>
-
-One way is to run the following: `cat /proc/sys/kernel/random/uuid`
-</b></details>
 
 <details>
 <summary>What is a Linux distribution?</summary><br><b>

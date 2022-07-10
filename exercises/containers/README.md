@@ -1,37 +1,64 @@
 # Containers
 
-## Containers Exercises
+## Exercises - Index
 
-|Name|Topic|Objective & Instructions|Solution|Comments|
-|--------|--------|------|----|----|
-|Running Containers|Basics|[Exercise](running_containers.md)|[Solution](solutions/running_containers.md)
-|Working with Images|Image|[Exercise](working_with_images.md)|[Solution](solutions/working_with_images.md)
-|Containerized Web Server|Applications|[Exercise](containerized_web_server.md)|[Solution](solutions/containerized_web_server.md)
-|Containerized Database|Applications|[Exercise](containerized_db.md)|[Solution](solutions/containerized_db.md)
-|Containerized Database with Persistent Storage|Applications|[Exercise](containerized_db_persistent_storage.md)|[Solution](solutions/containerized_db_persistent_storage.md)
-|My First Dockerfile|Dockerfile|[Exercise](write_dockerfile_run_container.md)|
-|Run, Forest, Run!|Restart Policies|[Exercise](run_forest_run.md)|[Solution](solutions/run_forest_run.md)
-|Layer by Layer|Image Layers|[Exercise](image_layers.md)|[Solution](solutions/image_layers.md)
-|Containerize an application | Containerization |[Exercise](containerize_app.md)|[Solution](solutions/containerize_app.md)
-|Multi-Stage Builds|Multi-Stage Builds|[Exercise](multi_stage_builds.md)|[Solution](solutions/multi_stage_builds.md)
+* [Running Containers](#exercises-running-containers)
+* [Images](#exercises-containers-images)
+* [Misc](#exercises-containers-misc)
 
-## Containers Self Assessment
+## Questions - Index
 
 * [Containers 101](#questions-containers-101)
-* [OCI](#questions-oci)
-* [Images](#questions-images)
-* [Basic Commands](#questions-basic-commands)
+* [Common Commands](#questions-common-commands)
+* [Images](#questions-containers-images)
+  * [Tags](#questions-containers-images-tags)
+  * [Registry](#questions-containers-images-registry)
 * [Storage](#questions-containers-storage)
-* [Dockerfile](#questions-dockerfile)
+* [Containerfile](#questions-containerfile)
 * [Architecture](#questions-architecture)
 * [Docker Architecture](#questions-docker-architecture)
 * [Docker Compose](#questions-docker-compose)
-* [Docker Images](#questions-docker-images)
 * [Networking](#questions-networking)
 * [Docker Networking](#questions-docker-networking)
 * [Security](#questions-security)
 * [Docker In Production](#questions-docker-in-production)
 * [Rootless Containers](#questions-rootless-containers)
+* [OCI](#questions-oci)
+* [Scenarios](#questions-scenarios)
+
+## Containers Exercises
+
+<a name="exercises-running-containers"></a>
+### Running Containers
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+|Running Containers|Basics|[Exercise](running_containers.md)|[Solution](solutions/running_containers.md)
+|Containerized Web Server|Applications|[Exercise](containerized_web_server.md)|[Solution](solutions/containerized_web_server.md)
+|Containerized Database|Applications|[Exercise](containerized_db.md)|[Solution](solutions/containerized_db.md)
+|Containerized Database with Persistent Storage|Applications|[Exercise](containerized_db_persistent_storage.md)|[Solution](solutions/containerized_db_persistent_storage.md)
+
+<a name="exercises-containers-images"></a>
+### Images
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+|Working with Images|Image|[Exercise](working_with_images.md)|[Solution](solutions/working_with_images.md)
+|Sharing Images (without a registry)|Images|[Exercise](sharing_images.md)|[Solution](solutions/sharing_images.md)
+|Creating images on the fly|Images|[Exercise](commit_image.md)|[Solution](solutions/commit_image.md)
+|My First Containerfile|Containerfile|[Exercise](write_containerfile_run_container.md)|
+
+<a name="exercises-containers-misc"></a>
+### Misc
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+|Run, Forest, Run!|Restart Policies|[Exercise](run_forest_run.md)|[Solution](solutions/run_forest_run.md)
+|Layer by Layer|Image Layers|[Exercise](image_layers.md)|[Solution](solutions/image_layers.md)
+|Containerize an application | Containerization |[Exercise](containerize_app.md)|[Solution](solutions/containerize_app.md)
+|Multi-Stage Builds|Multi-Stage Builds|[Exercise](multi_stage_builds.md)|[Solution](solutions/multi_stage_builds.md)
+
+## Questions
 
 <a name="questions-containers-101"></a>
 ### Containers 101
@@ -55,6 +82,14 @@ OCI provides a good [explanation](https://github.com/opencontainers/runtime-spec
 </b></details>
 
 <details>
+<summary>What is a container image?</summary><br><b>
+
+* An image of a container contains the application, its dependencies and the operating system where the application is executed.<br>
+* It's a collection of read-only layers. These layers are loosely coupled
+  * Each layer is assembled out of one or more files
+</b></details>
+
+<details>
 <summary>How are containers different from virtual machines (VMs)?</summary><br><b>
 
 The primary difference between containers and VMs is that containers allow you to virtualize
@@ -65,10 +100,6 @@ You can also think about it as containers are for OS-level virtualization while 
 * It usually takes a few seconds to set up a container as opposed to VMs which can take minutes or at least more time than containers as there is an entire OS to boot and initialize as opposed to containers which has share of the underlying OS
 * Virtual machines considered to be more secured than containers
 * VMs portability considered to be limited when compared to containers
-</b></details>
-
-<details>
-<summary>Do we need virtual machines in the edge of containers? Are they still relevant?</summary><br><b>
 </b></details>
 
 <details>
@@ -86,8 +117,8 @@ You should choose containers when:
 <details>
 <summary>Describe the process of containerizing an application</summary><br><b>
 
-1. Write a Dockerfile that includes your app (including the commands to run it) and its dependencies
-2. Build the image using the Dockefile you wrote
+1. Write a Containerfile/Dockerfile that includes your app (including the commands to run it) and its dependencies
+2. Build the image using the Containerfile/Dockefile you wrote
 3. You might want to push the image to a registry
 4. Run the container using the image you've built
 </b></details>
@@ -100,36 +131,108 @@ You should choose containers when:
 * Isolation: Containers are isolated environments, usually changes made to the OS won't affect the containers and vice-versa
 </b></details>
 
-<a name="questions-oci"></a>
-### OCI
+<a name="questions-common-commands"></a>
+### Commands Commands
+
+Note: I've used `Podman` in the answers, but other containers engines can be used as well (e.g. Docker)
 
 <details>
-<summary>What is the OCI?</summary><br><b>
+<summary>How to run a container?</summary><br><b>
 
-OCI (Open Container Initiative) is an open governance established in 2015 to standardize container creation - mostly image format and runtime. At that time there were a number of parties involved and the most prominent one was Docker.
-
-Specifications published by OCI:
-
-  - [image-spec](https://github.com/opencontainers/image-spec)
-  - [runtime-spec](https://github.com/opencontainers/runtime-spec)
+`podman run ubuntu`
 </b></details>
 
 <details>
-<summary>Which operations OCI based containers must support?</summary><br><b>
+<summary>Why after running <code>podman container run ubuntu</code> the output of <code>podman container ls</code> is empty?</summary><br><b>
 
-Create, Kill, Delete, Start and Query State.
+Because the container immediately exits after running the ubuntu image. This is completely normal and expected as containers designed to run a service or a app and exit when they are done running it. To see the container you can run `podman ps -a`
+
+If you want the container to keep running, you can run a command like `sleep 100` which will run for 100 seconds or you can attach to terminal of the container with a command similar: `podman container run -it ubuntu /bin/bash`
+</b></details>
+
+<details>
+<summary>How to list all the containers on the local host?</summary><br><b>
+
+`podman container ls`
+</b></details>
+
+<details>
+<summary>How to attach your shell to a terminal of a running container?</summary><br><b>
+
+`podman container exec -it [container id/name] bash`
+
+This can be done in advance while running the container: `podman container run -it [image:tag] /bin/bash`
+</b></details>
+
+<details>
+<summary>True or False? You can remove a running container if it doesn't running anything</summary><br><b>
+
+False. You have to stop the container before removing it.
+</b></details>
+
+<details>
+<summary>How to stop and remove a container?</summary><br><b>
+
+`podman container stop <container id/name> && podman container rm <container id/name>`
+</b></details>
+
+<details>
+<summary>What happens when you run <code>docker container run ubuntu</code>?</summary><br><b>
+
+1. Docker client posts the command to the API server running as part of the Docker daemon
+2. Docker daemon checks if a local image exists
+  1. If it exists, it will use it
+  2. If doesn't exists, it will go to the remote registry (Docker Hub by default) and pull the image locally
+3. containerd and runc are instructed (by the daemon) to create and start the container
+</b></details>
+
+<details>
+<summary>How to run a container in the background?</summary><br><b>
+
+With the -d flag. It will run in the background and will not attach it to the terminal.
+
+`docker container run -d httpd` or `podman container run -d httpd`
+</b></details>
+
+<details>
+<summary>If you'll run <code>sleep 100</code> inside a container, will you see it when listing all the processes of the host on which the container runs? Why?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? If image <code>httpd-service</code> has an entry point for running the httpd service then, the following will run the container and eventually the httpd service <code>podman run httpd-service ls</code></summary><br><b>
+
+False. Running that command will override the entry point so the httpd service won't run and instead podman will run the `ls` command.
+</b></details>
+
+<details>
+<summary>True or False? Running <code>podman restart CONTAINER_NAME</code> kills the main process inside the container and runs it again from scratch</summary><br><b>
+
+False. `podman restart` creates an entirely new container with the same ID while reusing the filesystem and state of the original container.
+</b></details>
+
+<details>
+<summary>You would like to run a web server inside a container but, be able to access it from the localhost. Demonstrate how to do that</summary><br><b>
+
+```
+podman run -d --name apache1 -p 8080:8080 registry.redhat.io/rhel8/httpd-24
+curl 127.0.0.1:8080
+```
+</b></details>
+
+<details>
+<summary>After running a container, it stopped. <code>podman ps</code> shows nothing. How can you show its details?</summary><br><b>
+
+`podman ps -a` will shows also the details of a stopped container.
+</b></details>
+
+<details>
+<summary>How to list all the image tags for a given container image?</summary><br><b>
+
+`podman search --list-tags IMAGE_NAME`
 </b></details>
 
 <a name="questions-images"></a>
 ### Images
-
-<details>
-<summary>What is a container image?</summary><br><b>
-
-* An image of a container contains the application, its dependencies and the operating system where the application is executed.<br>
-* It's a collection of read-only layers. These layers are loosely coupled
-  * Each layer is assembled out of one or more files
-</b></details>
 
 <details>
 <summary>Why container images are relatively small?</summary><br><b>
@@ -157,6 +260,7 @@ docker.io   docker.io/rahulgadre/snake-game                                     
 <details>
 <summary>How to list the container images on certain host?</summary><br><b>
 
+```
 CONTAINER_BINARY=podman
 $CONTAINER_BINARY images
 ```
@@ -171,35 +275,6 @@ Note: you can also use `$CONTAINER_RUNTIME image ls`
 CONTAINER_BINARY=podman
 $CONTAINER_BINARY pull rhel
 ```
-</b></details>
-
-<details>
-<summary>How the centralized location, where images are stored, is called?</summary><br><b>
-
-Registry
-</b></details>
-
-<details>
-<summary>A registry contains one or more <code>____</code> which in turn contain one or more <code>____</code></summary><br><b>
-
-A registry contains one or more repositories which in turn contain one or more images.
-</b></details>
-
-<details>
-<summary>How to find out which registry do you use by default from your environment?</summary><br><b>
-
-Depends on the containers technology you are using. For example, in case of Docker, it can be done with `docker info`
-
-```
-> docker info
-Registry: https://index.docker.io/v1
-```
-</b></details>
-
-<details>
-<summary>How to retrieve the latest ubuntu image?</summary><br><b>
-
-`podman image pull ubuntu:latest`
 </b></details>
 
 <details>
@@ -271,6 +346,14 @@ One way to reach this situation is by building an image with exact same name and
 <summary>How to see changes done to a given image over time?</summary><br><b>
 
 In the case of Docker, you could use `docker history <name>`
+</b></details>
+
+<details>
+<summary>What `podman commit` does?. When will you use it?</summary><br><b>
+
+Creates a new image from a running container. Users can apply extra changes to be saved in the new image version.
+
+Most of the time the user case for using `podman commit` would be to apply changes allowing to better debug the container. Not so much for creating a new image since commit adds additional overhead of potential logs and processes, not required for running the application in the container. This eventually makes images created by `podman commit` bigger due to the additional data stored there.
 </b></details>
 
 <details>
@@ -346,7 +429,7 @@ Look for "Cmd" or "Entrypoint" fields in the output of `docker image inspec <ima
 <details>
 <summary>What is the role of cache in image builds?</summary><br><b>
 
-When you build an image for the first time, the different layers are being cached. So, while the first build of the image might take time, any other build of the same image (given that Dockerfile didn't change or the content used by the instructions) will be instant thanks to the caching mechanism used.
+When you build an image for the first time, the different layers are being cached. So, while the first build of the image might take time, any other build of the same image (given that Containerfile/Dockerfile didn't change or the content used by the instructions) will be instant thanks to the caching mechanism used.
 
 In little bit more details, it works this way:
 1. The first instruction (FROM) will check if base image already exists on the host before pulling it 
@@ -355,6 +438,16 @@ In little bit more details, it works this way:
   2. If it doesn't find a matching layer, it builds the layer and the cache is invalidated.
 
 Note: in some cases (like COPY and ADD instructions) the instruction might stay the same but if the content of what being copied is changed then the cache is invalidated. The way this check is done is by comparing the checksum of each file that is being copied.
+</b></details>
+
+<details>
+<summary>How to remove an image from the host?</summary><br><b>
+
+`podman rmi IMAGE`
+
+It will fail if some containers are using it. You can then use `--force` flag for that but generally, it's better if you inspect the containers using the image before doing so.
+
+To delete all images: `podman rmi -a`
 </b></details>
 
 <details>
@@ -377,83 +470,287 @@ Cons:
   * Push and pull can take more time (because no matching layers found on target)
 </b></details>
 
-<a name="questions-basic-commands"></a>
-### Basic Commands
-
 <details>
-<summary>How to list all the containers on a given host?</summary><br><b>
+<summary>You would like to share an image with another developer, but without using a registry. How would you do it?</summary><br><b>
 
-In the case of Docker, use: `docker container ls`<br>
-Same with Podman: `podman container ls`
+```
+# On the local host
+podman save -o some_image.tar IMAGE
+rsync some_image.tar SOME_HOST
+
+# On the remote host
+podman load -i some_image.tar
+```
 </b></details>
 
 <details>
-<summary>How to run a container?</summary><br><b>
+<summary>True or False? Once a container is stopped and removed, its image removed as well from the host</summary><br><b>
 
-Docker: `docker container run ubuntu`<br>
-Podman: `podman container run ubuntu`
+False. The image will still be available for use by potential containers in the future.<br>
+To remove the container, run `podman rmi IMAGE`
 </b></details>
 
 <details>
-<summary>Why after running <code>podman container run ubuntu</code> the output of <code>podman container ls</code> is empty?</summary><br><b>
+<summary>How to view the instructions that were used to build image?</summary><br><b>
 
-Because the container immediately exits after running the ubuntu image. This is completely normal and expected as containers designed to run a service or a app and exit when they are done running it.<br>
-
-If you want the container to keep running, you can run a command like `sleep 100` which will run for 100 seconds or you can attach to terminal of the container with a command similar: `podman container run -it ubuntu /bin/bash`
+`docker image history <image name>:<tag>`
 </b></details>
 
 <details>
-<summary>How to attach your shell to a terminal of a running container?</summary><br><b>
+<summary>How to find out which files were added to the container image filesystem?</summary><br><b>
 
-`podman container exec -it [container id/name] bash`
-
-This can be done in advance while running the container: `podman container run -it [image:tag] /bin/bash`
+`podman diff IMAGE_NAME`
 </b></details>
 
 <details>
-<summary>True or False? You can remove a running container if it doesn't running anything</summary><br><b>
+<summary>True or False? <code>podman diff</code> works only on the container filesystem and not mounted files</summary><br><b>
 
-False. You have to stop the container before removing it.
+True. For mounted files you can use `podman inspec CONTAINER_NAMD/ID`
 </b></details>
 
 <details>
-<summary>How to stop and remove a container?</summary><br><b>
+<summary>How the centralized location, where images are stored, is called?</summary><br><b>
 
-`podman container stop <container id/name> && podman container rm <container id/name>`
+Registry
+</b></details>
+
+<a name="questions-containers-images-registry"></a>
+#### Images - Registry
+
+<details>
+<summary>What is a Registry?</summary><br><b>
+
+- A registry is a service which stores container images and allows users to pull specified images to run containers.
+- There are public registries (everyone can access them) and private (accessed only internally in the organization or specific network)
 </b></details>
 
 <details>
-<summary>What happens when you run <code>docker container run ubuntu</code>?</summary><br><b>
+<summary>A registry contains one or more <code>____</code> which in turn contain one or more <code>____</code></summary><br><b>
 
-1. Docker client posts the command to the API server running as part of the Docker daemon
-2. Docker daemon checks if a local image exists
-  1. If it exists, it will use it
-  2. If doesn't exists, it will go to the remote registry (Docker Hub by default) and pull the image locally
-3. containerd and runc are instructed (by the daemon) to create and start the container
+A registry contains one or more repositories which in turn contain one or more images.
 </b></details>
 
 <details>
-<summary>How to run a container in the background?</summary><br><b>
+<summary>How to find out which registry do you use by default from your environment?</summary><br><b>
 
-With the -d flag. It will run in the background and will not attach it to the terminal.
+Depends on the containers technology you are using. For example, in case of Docker, it can be done with `docker info`
 
-`docker container run -d httpd` or `podman container run -d httpd`
+```
+> docker info
+Registry: https://index.docker.io/v1
+```
 </b></details>
 
 <details>
-<summary>If you'll run <code>sleep 100</code> inside a container, will you see it when listing all the processes of the host on which the container runs? Why?</summary><br><b>
+<summary>How to configure registries with the containers engine you are using?</summary><br><b>
+
+For podman, registries can be configured in `/etc/containers/registries.conf` this way:
+
+```
+[registries.search]
+registries = ["quay.io"]
+```
 </b></details>
 
 <details>
-<summary>True or False? If image <code>httpd-service</code> has an entry point for running the httpd service then, the following will run the container and eventually the httpd service <code>podman run httpd-service ls</code></summary><br><b>
+<summary>How to retrieve the latest ubuntu image?</summary><br><b>
 
-False. Running that command will override the entry point so the httpd service won't run and instead podman will run the `ls` command.
+`podman image pull ubuntu:latest`
 </b></details>
 
 <details>
-<summary>True or False? Running <code>podman restart CONTAINER_NAME</code> kills the main process inside the container and runs it again from scratch</summary><br><b>
+<summary>How to push an image to a registry?</summary><br><b>
 
-False. `podman restart` creates an entirely new container with the same ID while reusing the filesystem and state of the original container.
+`podman push IMAGE`
+
+You can specify a specific registry: `podman push IMAGE REGISTRY_ADDRESS`
+</b></details>
+
+<details>
+<summary>What are some best practices in regards to Container Images?</summary><br><b>
+
+- Use tags. Using `latest` is quite common (which can mean latest build or latest release)
+  - tag like `3.1` can be used to reference the latest release/tag of the image like `3.1.6`
+- Don't use `commit` for creating new official images as they include the overhead of logs and processes and usually end up with bigger images
+- For sharing the image, use a registry (either a public or a private one, depends on your needs)
+</b></details>
+
+<details>
+<summary>What ways are there for creating new images?</summary><br><b>
+
+1. Create a Containerfile/Dockerfile and build an image out of it
+2. Using `podman commit` on a running container after making changes to it
+</b></details>
+
+<a name="questions-containers-images-tags"></a>
+#### Images - Tags
+
+<details>
+<summary>What are image tags? Why is it recommended to use tags when supporting multiple releases/versions of a project?</summary><br><b>
+
+Image tags are used to distinguish between multiple versions of the same software or project. Let's say you developed a project called "FluffyUnicorn" and the current release is `1.0`. You are about to release `1.1` but you still want to keep `1.0` as stable release for anyone who is interested in it. What would you do? If your answer is create another, separate new image, then you probably want to rethink the idea and just create a new image tag for the new release.
+
+In addition, it's important to note that container registries support tags. So when pulling an image, you can specify a specific tag of that image.
+</b></details>
+
+<details>
+<summary>How to tag an image?</summary><br><b>
+
+`podman tag IMAGE:TAG`
+
+for example: `podman tag FluffyUnicorn:latest`
+</b></details>
+
+<details>
+<summary>True or False? Once created, it's impossible to remove a tag for a certain image</summary><br><b>
+
+False. You can run `podman rmi IMAGE:TAG`.
+</b></details>
+
+<details>
+<summary>True or False? Multiple tags can reference the same image</summary><br><b>
+
+True.
+</b></details>
+
+### Containerfile
+
+<details>
+<summary>What is a Containerfile/Dockerfile?</summary><br><b>
+
+Different container engines (e.g. Docker, Podman) can build images automatically by reading the instructions from a Containerfile/Dockerfile. A Containerfile/Dockerfile is a text file that contains all the instructions for building an image which containers can use.
+</b></details>
+
+<details>
+<summary>What instruction exists in every Containerfile/Dockefile and what does it do?</summary><br><b>
+
+In every Containerfile/Dockerfile, you can find the instruction `FROM <image name>` which is also the first instruction (at least most of the time. You can put ARG before).<br> 
+It specifies the base layer of the image to be used. Every other instruction is a layer on top of that base image.
+</b></details>
+
+<details>
+<summary>List five different instructions that are available for use in a Containerfile/Dockerfile</summary><br><b>
+
+  * WORKDIR: sets the working directory inside the image filesystems for all the instructions following it
+  * EXPOSE: exposes the specified port (it doesn't adds a new layer, rather documented as image metadata)
+  * ENTRYPOINT: specifies the startup commands to run when a container is started from the image
+  * ENV: sets an environment variable to the given value
+  * USER: sets the user (and optionally the user group) to use while running the image
+</b></details>
+
+<details>
+<summary>What are some of the best practices regarding Containerfiles/Dockerfiles that you are following?</summary><br><b>
+
+  * Include only the packages you are going to use. Nothing else.
+  * Specify a tag in FROM instruction. Not using a tag means you'll always pull the latest, which changes over time and might result in unexpected result.
+  * Do not use environment variables to share secrets
+  * Use images from official repositories
+  * Keep images small! - you want them only to include what is required for the application to run successfully. Nothing else.
+  * If are using the apt package manager, you might want to use 'no-install-recommends' with `apt-get install` to install only main dependencies (instead of suggested, recommended packages)
+</b></details>
+
+<details>
+<summary>What is the "build context"?</summary><br><b>
+
+[Docker docs](https://docs.docker.com/engine/reference/commandline/build): "A build’s context is the set of files located in the specified PATH or URL"
+</b></details>
+
+<details>
+<summary>What is the difference between ADD and COPY in Containerfile/Dockerfile?</summary><br><b>
+
+COPY takes in a source and destination. It lets you copy in a file or directory from the build context into the Docker image itself.<br>
+ADD lets you do the same, but it also supports two other sources. You can use a URL instead of a file or directory from the build context. In addition, you can extract a tar file from the source directly into the destination.
+
+Although ADD and COPY are functionally similar, generally speaking, COPY is preferred. That’s because it’s more transparent than ADD. COPY only supports the basic copying of files from build context into the container, while ADD has some features (like local-only tar extraction and remote URL support) that are not immediately obvious.
+</b></details>
+
+<details>
+<summary>What is the difference between CMD and RUN in Containerfile/Dockerfile?</summary><br><b>
+
+RUN lets you execute commands inside of your Docker image. These commands get executed once at build time and get written into your Docker image as a new layer.
+CMD is the command the container executes by default when you launch the built image. A Containerfile/Dockerfile can only have one CMD.
+You could say that CMD is a Docker run-time operation, meaning it’s not something that gets executed at build time. It happens when you run an image. A running image is called a container.
+</b></details>
+
+<details>
+<summary>How to create a new image using a Containerfile/Dockerfile?</summary><br><b>
+
+The following command is executed from within the directory where Dockefile resides:
+
+`docker image build -t some_app:latest .`
+`podman image build -t some_app:latest .`
+</b></details>
+
+<details>
+<summary>Do you perform any checks or testing on your Containerfiles/Dockerfiles?</summary><br><b>
+
+One option is to use [hadolint](https://github.com/hadolint/hadolint) project which is a linter based on Containerfile/Dockerfile best practices.
+</b></details>
+
+<details>
+<summary>Which instructions in Containerfile/Dockerfile create new layers?</summary><br><b>
+
+Instructions such as FROM, COPY and RUN, create new image layers instead of just adding metadata.
+</b></details>
+
+<details>
+<summary>Which instructions in Containerfile/Dockerfile create image metadata and don't create new layers?</summary><br><b>
+
+Instructions such as ENTRYPOINT, ENV, EXPOSE, create image metadata and they don't create new layers.
+</b></details>
+
+<details>
+<summary>Is it possible to identify which instruction create a new layer from the output of <code>podman image history</code>?</summary><br><b>
+</b></details>
+
+<details>
+<summary>True or False? Each Containerfile instruction runs in an independent container using an image built from every previous layer/entry</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What's the difference between these two forms:
+ 
+```
+ENTRYPOINT ["cmd", "param0", "param1"]
+CMD ["param0"]
+
+ENTRYPOINT cmd param0 param1
+CMD param0
+```
+</summary><br><b>
+
+The first form is also referred as "Exec form" and the second one is referred as "Shell form".<br>
+The second one (Shell form) wraps the commands in `/bin/sh -c` hence creates a shell process for it.
+
+While using either Exec form or Shell form might be fine, it's the mixing that can lead to unexpected results.<br>
+Consider:
+
+```
+ENTRYPOINT ["ls"]
+CMD /tmp
+```
+
+That would results in running `ls /bin/sh -c /tmp`
+</b></details>
+
+<details>
+<summary>Containerfile/Dockerfile can contain more than one ENTRYPOINT instruction and one CMD instruction</summary><br><b>
+
+True but in case of ENTRYPOINT and CMD only the last instruction takes effect.
+</b></details>
+
+<details>
+<summary>What happens when CMD instruction is defined but not an ENTRYPOINT instruction in a Containerfile/Dockerfile?</summary><br><b>
+
+The ENTRYPOINT from the base image is being used in such case.
+</b></details>
+
+<details>
+<summary>In the case of running <code>podman run -it IMAGE ls</code> the <code>ls</code> overrides the <code>___</code> instruction</summary><br><b>
+
+CMD
 </b></details>
 
 <a name="questions-containers-storage"></a>
@@ -505,96 +802,7 @@ sudo restorecon -Rv /tmp/dir_on_the_host
 ```
 </b></details>
 
-<a name="questions-dockerfile"></a>
-### Dockerfile
-
-<details>
-<summary>What is a Dockerfile?</summary><br><b>
-
-Different container engines (e.g. Docker, Podman) can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text file that contains all the instructions for building an image which containers can use.
-</b></details>
-
-<details>
-<summary>What is the instruction in all Dockefiles and what does it mean?</summary><br><b>
-
-The first instruction is `FROM <image name>`<br>
-It specifies the base layer of the image to be used. Every other instruction is a layer on top of that base image.
-</b></details>
-
-<details>
-<summary>List five different instructions that are available for use in a Dockerfile</summary><br><b>
-
-  * WORKDIR: sets the working directory inside the image filesystems for all the instructions following it
-  * EXPOSE: exposes the specified port (it doesn't adds a new layer, rather documented as image metadata)
-  * ENTRYPOINT: specifies the startup commands to run when a container is started from the image
-  * ENV: sets an environment variable to the given value
-  * USER: sets the user (and optionally the user group) to use while running the image
-</b></details>
-
-<details>
-<summary>What are some of the best practices regarding container images and Dockerfiles that you are following?</summary><br><b>
-
-  * Include only the packages you are going to use. Nothing else.
-  * Specify a tag in FROM instruction. Not using a tag means you'll always pull the latest, which changes over time and might result in unexpected result.
-  * Do not use environment variables to share secrets
-  * Use images from official repositories
-  * Keep images small! - you want them only to include what is required for the application to run successfully. Nothing else.
-  * If are using the apt package manager, you might use 'no-install-recommends' with `apt-get install` to install only main dependencies (instead of suggested, recommended packages)
-</b></details>
-
-<details>
-<summary>What is the "build context"?</summary><br><b>
-
-[Docker docs](https://docs.docker.com/engine/reference/commandline/build): "A build’s context is the set of files located in the specified PATH or URL"
-</b></details>
-
-<details>
-<summary>What is the difference between ADD and COPY in Dockerfile?</summary><br><b>
-
-COPY takes in a source and destination. It lets you copy in a file or directory from the build context into the Docker image itself.<br>
-ADD lets you do the same, but it also supports two other sources. You can use a URL instead of a file or directory from the build context. In addition, you can extract a tar file from the source directly into the destination.
-
-Although ADD and COPY are functionally similar, generally speaking, COPY is preferred. That’s because it’s more transparent than ADD. COPY only supports the basic copying of files from build context into the container, while ADD has some features (like local-only tar extraction and remote URL support) that are not immediately obvious.
-</b></details>
-
-<details>
-<summary>What is the difference between CMD and RUN in Dockerfile?</summary><br><b>
-
-RUN lets you execute commands inside of your Docker image. These commands get executed once at build time and get written into your Docker image as a new layer.
-CMD is the command the container executes by default when you launch the built image. A Dockerfile can only have one CMD.
-You could say that CMD is a Docker run-time operation, meaning it’s not something that gets executed at build time. It happens when you run an image. A running image is called a container.
-</b></details>
-
-<details>
-<summary>How to create a new image using a Dockerfile?</summary><br><b>
-
-The following command is executed from within the directory where Dockefile resides:
-
-`docker image build -t some_app:latest .`
-`podman image build -t some_app:latest .`
-</b></details>
-
-<details>
-<summary>Do you perform any checks or testing on your Dockerfiles?</summary><br><b>
-
-One option is to use [hadolint](https://github.com/hadolint/hadolint) project which is a linter based on Dockerfile best practices.
-</b></details>
-
-<details>
-<summary>Which instructions in Dockerfile create new layers?</summary><br><b>
-
-Instructions such as FROM, COPY and RUN, create new image layers instead of just adding metadata.
-</b></details>
-
-<details>
-<summary>Which instructions in Dockerfile create image metadata and don't create new layers?</summary><br><b>
-
-Instructions such as ENTRYPOINT, ENV, EXPOSE, create image metadata and they don't create new layers.
-</b></details>
-
-<details>
-<summary>Is it possible to identify which instruction create a new layer from the output of <code>docker image history</code>?</summary><br><b>
-</b></details>
+<a name="questions-containerfile"></a>
 
 <a name="questions-architecture"></a>
 ### Architecture
@@ -782,29 +990,11 @@ shim is the process that becomes the container's parent when runc process exists
 </b></details>
 
 <details>
-<summary>What `podman commit` does?. When will you use it?</summary><br><b>
-
-Create a new image from a container’s changes
-</b></details>
-
-<details>
 <summary>How would you transfer data from one container into another?</summary><br><b>
 </b></details>
 
 <details>
 <summary>What happens to data of the container when a container exists?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain what each of the following commands do:
-
-  * docker run
-  * docker rm
-  * docker ps
-  * docker pull
-  * docker build
-  * docker commit
-</summary><br><b>
 </b></details>
 
 <details>
@@ -832,7 +1022,7 @@ Via the local socket at `/var/run/docker.sock`
 <details>
 <summary>Explain image layers</summary><br><b>
 
-A Docker image is built up from a series of layers. Each layer represents an instruction in the image’s Dockerfile. Each layer except the very last one is read-only.
+A Docker image is built up from a series of layers. Each layer represents an instruction in the image’s Containerfile/Dockerfile. Each layer except the very last one is read-only.
 Each layer is only a set of differences from the layer before it. The layers are stacked on top of each other. When you create a new container, you add a new writable layer on top of the underlying layers. This layer is often called the “container layer”. All changes made to the running container, such as writing new files, modifying existing files, and deleting files, are written to this thin writable container layer.
 The major difference between a container and an image is the top writable layer. All writes to the container that add new or modify existing data are stored in this writable layer. When the container is deleted, the writable layer is also deleted. The underlying image remains unchanged.
 Because each container has its own writable container layer, and all changes are stored in this container layer, multiple containers can share access to the same underlying image and yet have their own data state.
@@ -873,42 +1063,12 @@ In general, it's useful for running applications which composed out of several d
 * Run `docker-compose up` to run the services
 </b></details>
 
-<a name="questions-docker-images"></a>
-### Docker Images
-
-<details>
-<summary>What is Docker Hub?</summary><br><b>
-
-One of the most common registries for retrieving images.
-</b></details>
-
-<details>
-<summary>How to push an image to Docker Hub?</summary><br><b>
-
-`docker image push [username]/[image name]:[tag]`
-
-For example:
-
-`docker image mario/web_app:latest`
-</b></details>
-
-<details>
-<summary>What is the difference between Docker Hub and Docker cloud?</summary><br><b>
-
-Docker Hub is a native Docker registry service which allows you to run pull
-and push commands to install and deploy Docker images from the Docker Hub.
-
-Docker Cloud is built on top of the Docker Hub so Docker Cloud provides
-you with more options/features compared to Docker Hub. One example is
-Swarm management which means you can create new swarms in Docker Cloud.
-</b></details>
-
 <details>
 <summary>Explain Multi-stage builds</summary><br><b>
 
 Multi-stages builds allow you to produce smaller container images by splitting the build process into multiple stages.
 
-As an example, imagine you have one Dockerfile where you first build the application and then run it. The whole build process of the application might be using packages and libraries you don't really need for running the application later. Moreover, the build process might produce different artifacts which not all are needed for running the application.
+As an example, imagine you have one Containerfile/Dockerfile where you first build the application and then run it. The whole build process of the application might be using packages and libraries you don't really need for running the application later. Moreover, the build process might produce different artifacts which not all are needed for running the application.
 
 How do you deal with that? Sure, one option is to add more instructions to remove all the unnecessary stuff but, there are a couple of issues with this approach:
 1. You need to know what to remove exactly and that might be not as straightforward as you think
@@ -1077,4 +1237,43 @@ Networking is usually managed by Slirp in rootless containers. Slirp creates a t
 <summary>When running a container, usually a layered file system is created, but it requires root privileges. How is it then managed in rootless containers?</summary><br><b>
 
 New drivers were created to allow creating filesystems in a user namespaces. Drivers like the FUSE-OverlayFS.
+</b></details>
+
+<a name="questions-oci"></a>
+### OCI
+
+<details>
+<summary>What is the OCI?</summary><br><b>
+
+OCI (Open Container Initiative) is an open governance established in 2015 to standardize container creation - mostly image format and runtime. At that time there were a number of parties involved and the most prominent one was Docker.
+
+Specifications published by OCI:
+
+  - [image-spec](https://github.com/opencontainers/image-spec)
+  - [runtime-spec](https://github.com/opencontainers/runtime-spec)
+</b></details>
+
+<details>
+<summary>Which operations OCI based containers must support?</summary><br><b>
+
+Create, Kill, Delete, Start and Query State.
+</b></details>
+
+<a name="questions-containers-scenarios"></a>
+### Scenarios
+
+<details>
+<summary>There is a running container that has a certain issue. You would like to share an image of that container with your team members, with certain environment variables set for debugging purposes. How would you do it?</summary><br><b>
+
+`podman commit` can be a good choice for that. You can create a new image of the running container (with the issue) and share that new image with your team members.<br>
+
+What you probably want to avoid using:
+  - Using something as `podman save/load` as it applies on an image, not a running container (so you'll share the image but the issue might not be reproduced when your team members run a container using it)
+  - Modifying Containerfile/Dockerfile as you don't really want to add environment variables meant for debugging to the source from which you usually build images
+</b></details>
+
+<details>
+<summary>You and your team work on the same project, but different versions of it. For each version, the team creates a new, separate image. What would you suggest the team to change in such case?</summary><br><b>
+
+Use tags. You can distinguish between different releases of a project using image tags. There is no need to create an entire separate image for version/release of a project.
 </b></details>

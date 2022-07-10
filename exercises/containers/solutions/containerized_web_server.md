@@ -3,6 +3,7 @@
 1. Run a containerized web server in the background and bind its port (8080) to a local port
 2. Verify the port (8080) is bound
 3. Reach the webserver from your local host
+4. Now run the same web application but bound it to the local port 8080
 
 ## Solution
 
@@ -18,4 +19,6 @@ $ curl http://0.0.0.0:41203 # use the port from the output of the previous comma
 	<head>
 		<title>Test Page for the HTTP Server on Red Hat Enterprise Linux</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+$ podman run -d -p 8080:8080 httpd
 ```
