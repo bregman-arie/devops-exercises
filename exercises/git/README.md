@@ -53,7 +53,11 @@ There are different ways to check whether a file is tracked or not:
 </b></details>
 
 <details>
-<summary>Explain what the file <code>gitignore</code> is used for</summary><br><b>
+<summary>Explain what the file <code>gitignore</code> is used for.</summary><br><b>
+
+The gitignore file tells Git which files to ignore when committing your project to the GitHub repository. gitignore is located in the root directory of
+your repo.
+#### You can read [here](https://www.bmc.com/blogs/gitignore/#:~:text=gitignore%20file%20tells%20Git%20which,root%20directory%20of%20your%20repo.&text=%2F%20will%20ignore%20directories%20with%20the,vendor%2F%20ignores%20the%20vendor%20directory.) more.	
 </b></details>
 
 <details>
