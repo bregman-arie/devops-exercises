@@ -1186,6 +1186,8 @@ OR
 
 <details>
 <summary>What is Resource Quota?</code></summary><br><b>
+  
+Resource quota provides constraints that limit aggregate resource consumption per namespace. It can limit the quantity of objects that can be created in a namespace by type, as well as the total amount of compute resources that may be consumed by resources in that namespace.
 </b></details>
 
 <details>
