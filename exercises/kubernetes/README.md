@@ -1436,6 +1436,9 @@ It includes:
 
 <details>
 <summary>What is kubconfig? What do you use it for?</summary><br><b>
+  
+A kubeconfig file is a file used to configure access to Kubernetes when used in conjunction with the kubectl commandline tool (or other clients).
+Use kubeconfig files to organize information about clusters, users, namespaces, and authentication mechanisms.
 </b></details>
 
 <details>
@@ -1554,6 +1557,8 @@ True
 
 <details>
 <summary>Explain Volume Snapshots</summary><br><b>
+  
+Volume snapshots let you create a copy of your volume at a specific point in time.
 </b></details>
 
 <details>
@@ -1568,6 +1573,8 @@ False
 
 <details>
 <summary>Explain "Dynamic Provisioning" and "Static Provisioning"</summary><br><b>
+  
+The main difference relies on the moment when you want to configure storage. For instance, if you need to pre-populate data in a volume, you choose static provisioning. Whereas, if you need to create volumes on demand, you go for dynamic provisioning.
 </b></details>
 
 <details>
@@ -1602,6 +1609,8 @@ False
 
 <details>
 <summary>What is RBAC?</summary><br><b>
+ 
+RBAC in Kubernetes is the mechanism that enables you to configure fine-grained and specific sets of permissions that define how a given user, or group of users, can interact with any Kubernetes object in cluster, or in a specific Namespace of cluster.
 </b></details>
 
 <details>
@@ -1610,6 +1619,8 @@ False
 
 <details>
 <summary>What is the difference between <code>Role</code> and <code>ClusterRole</code> objects?</summary><br><b>
+  
+The difference between them is that a Role is used at a namespace level whereas a ClusterRole is for the entire cluster.
 </b></details>
 
 <details>
@@ -1650,12 +1661,17 @@ The pod is automatically assigned with the default service account (in the names
 
 <details>
 <summary>Explain the sidecar container pattern</summary><br><b>
+ 
+The sidecar pattern is a single-node pattern made up of two containers. The first is the application container. It contains the core logic for the application.
+Without this container, the application would not exist. In addition to the application container, there is a sidecar container.
 </b></details>
 
 #### Kubernetes - CronJob
 
 <details>
 <summary>Explain what is CronJob and what is it used for</summary><br><b>
+  
+A CronJob creates Jobs on a repeating schedule. One CronJob object is like one line of a crontab (cron table) file. It runs a job periodically on a given schedule, written in Cron format.
 </b></details>
 
 <details>
@@ -1763,7 +1779,7 @@ False. Use secret.
 <details>
 <summary>Explain "Horizontal Pod Autoscaler"</summary><br><b>
 
-Scale the number of pods automatically on observed CPU utilization.
+In Kubernetes, a HorizontalPodAutoscaler automatically updates a workload resource with the aim of automatically scaling the workload to match demand.
 </b></details>
 
 <details>
@@ -1816,6 +1832,8 @@ View more [here](https://www.youtube.com/watch?v=rDCWxkvPlAw)
 
 <details>
 <summary>Explain Labels. What are they and why would one use them?</summary><br><b>
+  
+Kubernetes labels are key-value pairs that can connect identifying metadata with Kubernetes objects.
 </b></details>
 
 <details>
@@ -2001,6 +2019,8 @@ You can learn more [here](https://submariner-io.github.io)
 
 <details>
 <summary>What is Istio? What is it used for?</summary><br><b>
+  
+Istio is an open source service mesh that helps organizations run distributed, microservices-based apps anywhere. Istio enables organizations to secure, connect, and monitor microservices, so they can modernize their enterprise apps more swiftly and securely.
 </b></details>
 
 #### Kubernetes - Scenarios
