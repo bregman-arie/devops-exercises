@@ -65,93 +65,93 @@
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Create a User | IAM | [Exercise](create_user.md) | [Solution](solutions/create_user.md) | |
-| Password Policy | IAM | [Exercise](password_policy_and_mfa.md) | [Solution](solutions/password_policy_and_mfa.md) | |
-| Create a role | IAM | [Exercise](create_role.md) | [Solution](solutions/create_role.md) | |
-| Credential Report | IAM | [Exercise](credential_report.md) | [Solution](solutions/credential_report.md) | |
-| Access Advisor | IAM | [Exercise](access_advisor.md) | [Solution](solutions/access_advisor.md) | |
+| Create a User | IAM | [Exercise](exercises/create_user/exercise.md) | [Solution](exercises/create_user/solution.md) | |
+| Password Policy | IAM | [Exercise](exercises/password_policy_and_mfa/exercise.md) | [Solution](exercises/password_policy_and_mfa/solution.md) | |
+| Create a role | IAM | [Exercise](exercises/create_role/exercise.md) | [Solution](exercises/create_role/solution.md) | |
+| Credential Report | IAM | [Exercise](exercises/credential_report/exercise.md) | [Solution](exercises/credential_report/solution.md) | |
+| Access Advisor | IAM | [Exercise](exercises/access_advisor/exercise.md) | [Solution](exercises/access_advisor/solution.md) | |
 
 ### EC2
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Launch EC2 web instance | EC2 | [Exercise](launch_ec2_web_instance.md) | [Solution](solutions/launch_ec2_web_instance.md) | |
-| Security Groups | EC2 | [Exercise](security_groups.md) | [Solution](solutions/security_groups.md) | |
-| IAM Roles | EC2, IAM | [Exercise](ec2_iam_roles.md) | [Solution](solutions/ec2_iam_roles.md) | |
-| Spot Instances | EC2 | [Exercise](create_spot_instances.md) | [Solution](solutions/create_spot_instances.md) | |
-| Elastic IP | EC2, Networking | [Exercise](elastic_ip.md) | [Solution](solutions/elastic_ip.md) | |
-| Placement Groups Creation | EC2, Placement Groups | [Exercise](placement_groups.md) | [Solution](solutions/placement_groups.md) | |
-| Elastic Network Interfaces | EC2, ENI | [Exercise](elastic_network_interfaces.md) | [Solution](solutions/elastic_network_interfaces.md) | |
-| Hibernate an Instance | EC2 | [Exercise](hibernate_instance.md) | [Solution](solutions/hibernate_instance.md) | |
-| Volume Creation | EC2, EBS | [Exercise](ebs_volume_creation.md) | [Solution](solutions/ebs_volume_creation.md) | |
-| Snapshots | EC2, EBS | [Exercise](snapshots.md) | [Solution](solutions/snapshots.md) | |
-| Create an AMI | EC2, AMI | [Exercise](create_ami.md) | [Solution](solutions/create_ami.md) | |
-| Create EFS | EC2, EFS | [Exercise](create_efs.md) | [Solution](solutions/create_efs.md) | |
+| Launch EC2 web instance | EC2 | [Exercise](exercises/launch_ec2_web_instance/exercise.md) | [Solution](exercises/launch_ec2_web_instance/solution.md) | |
+| Security Groups | EC2 | [Exercise](exercises/security_groups/exercise.md) | [Solution](exercises/security_groups/solution.md) | |
+| IAM Roles | EC2, IAM | [Exercise](exercises/ec2_iam_roles/exercise.md) | [Solution](exercises/ec2_iam_roles/solution.md) | |
+| Spot Instances | EC2 | [Exercise](exercises/create_spot_instances/exercise.md) | [Solution](exercises/create_spot_instances/solution.md) | |
+| Elastic IP | EC2, Networking | [Exercise](exercises/elastic_ip/exercise.md) | [Solution](exercises/elastic_ip/solution.md) | |
+| Placement Groups Creation | EC2, Placement Groups | [Exercise](exercises/placement_groups/exercise.md) | [Solution](exercises/placement_groups/solution.md) | |
+| Elastic Network Interfaces | EC2, ENI | [Exercise](exercises/elastic_network_interfaces/exercise.md) | [Solution](exercises/elastic_network_interfaces/solution.md) | |
+| Hibernate an Instance | EC2 | [Exercise](exercises/hibernate_instance.md) | [Solution](exercises/hibernate_instance/solution.md) | |
+| Volume Creation | EC2, EBS | [Exercise](exercises/ebs_volume_creation/exercise.md) | [Solution](exercises/ebs_volume_creation/solution.md) | |
+| Snapshots | EC2, EBS | [Exercise](exercises/snapshots/exercise.md) | [Solution](exercises/snapshots/solution.md) | |
+| Create an AMI | EC2, AMI | [Exercise](exercises/create_ami/exercise.md) | [Solution](exercises/create_ami/solution.md) | |
+| Create EFS | EC2, EFS | [Exercise](exercises/create_efs/exercise.md) | [Solution](exercises/create_efs/solution.md) | |
 
 ### ELB
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Application Load Balancer | ELB, ALB | [Exercise](app_load_balancer.md) | [Solution](solutions/app_load_balancer.md) | |
-| Multiple Target Groups | ELB, ALB | [Exercise](alb_multiple_target_groups.md) | [Solution](solutions/alb_multiple_target_groups.md) | |
-| Network Load Balancer | ELB, NLB | [Exercise](network_load_balancer.md) | [Solution](solutions/network_load_balancer.md) | |
+| Application Load Balancer | ELB, ALB | [Exercise](exercises/app_load_balancer/exercise.md) | [Solution](exercises/app_load_balancer/solution.md) | |
+| Multiple Target Groups | ELB, ALB | [Exercise](exercises/alb_multiple_target_groups/exercise.md) | [Solution](exercises/alb_multiple_target_groups/solution.md) | |
+| Network Load Balancer | ELB, NLB | [Exercise](exercises/network_load_balancer/exercise.md) | [Solution](exercises/network_load_balancer/solution.md) | |
 
 ### Auto Scaling Groups
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Auto Scaling Groups Basics | ASG | [Exercise](auto_scaling_groups_basics.md) | [Solution](solutions/auto_scaling_groups_basics.md) | |
-| Dynamic Scaling Policy | ASG, Policies | [Exercise](asg_dynamic_scaling_policy.md) | [Solution](solutions/asg_dynamic_scaling_policy.md) | |
+| Auto Scaling Groups Basics | ASG | [Exercise](exercises/auto_scaling_groups_basics/exercise.md) | [Solution](exercises/auto_scaling_groups_basics/solution.md) | |
+| Dynamic Scaling Policy | ASG, Policies | [Exercise](exercises/asg_dynamic_scaling_policy/exercise.md) | [Solution](exercises/asg_dynamic_scaling_policy/solution.md) | |
 
 ### VPC
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| My First VPC | VPC | [Exercise](new_vpc.md) | [Solution](solutions/new_vpc.md) | |
-| Subnets | VPC | [Exercise](subnets.md) | [Solution](solutions/subnets.md) | |
+| My First VPC | VPC | [Exercise](exercises/new_vpc/exercise.md) | [Solution](exercises/new_vpc/solution.md) | |
+| Subnets | VPC | [Exercise](exercises/subnets/exercise.md) | [Solution](exercises/subnets/solution.md) | |
 
 ### Databases
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| MySQL DB | RDS | [Exercise](mysql_db.md) | [Solution](solutions/mysql_db.md) | |
-| Aurora DB | RDS | [Exercise](aurora_db.md) | [Solution](solutions/aurora_db.md) | |
-| ElastiCache | ElastiCache | [Exercise](elasticache.md) | [Solution](solutions/elasticache.md) | |
+| MySQL DB | RDS | [Exercise](exercises/mysql_db/exercise.md) | [Solution](exercises/mysql_db/solution.md) | |
+| Aurora DB | RDS | [Exercise](exercises/aurora_db/exercise.md) | [Solution](exercises/aurora_db/solution.md) | |
+| ElastiCache | ElastiCache | [Exercise](exercises/elasticache/exercise.md) | [Solution](exercises/elasticache/solution.md) | |
 
 ### DNS
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-Register Domain | Route 53 | [Exercise](register_domain.md) | [Solution](solutions/register_domain.md) | |
-Creating Records | Route 53 | [Exercise](creating_records.md) | [Solution](solutions/creating_records.md) | |
-Health Checks | Route 53 | [Exercise](health_checks.md) | [Solution](solutions/health_checks.md) | |
-Failover | Route 53 | [Exercise](route_53_failover.md) | [Solution](solutions/route_53_failover.md) | |
+Register Domain | Route 53 | [Exercise](exercises/register_domain/exercise.md) | [Solution](exercises/register_domain/solution.md) | |
+Creating Records | Route 53 | [Exercise](exercises/creating_records/exercise.md) | [Solution](exercises/creating_records/solution.md) | |
+Health Checks | Route 53 | [Exercise](exercises/health_checks/exercise.md) | [Solution](exercises/health_checks/solution.md) | |
+Failover | Route 53 | [Exercise](exercises/route_53_failover/exercise.md) | [Solution](exercises/route_53_failover/solution.md) | |
 
 ### Containers
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| ECS Task | ECS, Fargate | [Exercise](ecs_task.md) | [Solution](solutions/ecs_task.md) | |
+| ECS Task | ECS, Fargate | [Exercise](exercises/ecs_task/exercise.md) | [Solution](exercises/ecs_task/solution.md) | |
 
 ### Lambda
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Hello Function | Lambda | [Exercise](hello_function.md) | [Solution](solutions/hello_function.md) | |
-| URL Function | Lambda | [Exercise](url_function.md) | [Solution](solutions/url_function.md) | |
+| Hello Function | Lambda | [Exercise](exercises/hello_function/exercise.md) | [Solution](exercises/hello_function/solution.md) | |
+| URL Function | Lambda | [Exercise](exercises/url_function/exercise.md) | [Solution](exercises/url_function/solution.md) | |
 
 ### Elastic Beanstalk
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Simple Elastic Beanstalk Node.js app | Elastic Beanstalk | [Exercise](elastic_beanstalk_simple.md) | [Solution](solutions/elastic_beanstalk_simple.md) | |
+| Simple Elastic Beanstalk Node.js app | Elastic Beanstalk | [Exercise](exercises/elastic_beanstalk_simple/exercise.md) | [Solution](exercises/elastic_beanstalk_simple/solution.md) | |
 
 ### Misc
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Budget Setup | Budget | [Exercise](budget_setup.md) | [Solution](solutions/budget_setup.md) | |
-| No Application :'( | Troubleshooting | [Exercise](no_application.md) | [Solution](solutions/no_application.md) | |
+| Budget Setup | Budget | [Exercise](exercises/budget_setup/exercise.md) | [Solution](exercises/budget_setup/solution.md) | |
+| No Application :'( | Troubleshooting | [Exercise](exercises/no_application/exercise.md) | [Solution](exercises/no_application/solution.md) | |
 
 ## Questions
 

@@ -17,3 +17,7 @@ Single newly created VPC
   1. CIDR: 10.0.2.0/24
   2. Name: NewSubnet3
   3. Different AZ compared to previous subnets
+
+## Solution
+
+Click [here to view to solution](solution.md)

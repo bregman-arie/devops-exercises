@@ -21,7 +21,7 @@
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Local Provider  | Basics | [Exercise](terraform_local_provider/exercise.md) | [Solution](terraform_local_provider/solution.md) | |
+| Local Provider  | Basics | [Exercise](exercises/terraform_local_provider/exercise.md) | [Solution](exercises/terraform_local_provider/solution.md) | |
 
 ### AWS
 
@@ -29,8 +29,8 @@
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Launch EC2 web instance | EC2 | [Exercise](launch_ec2_web_instance/exercise.md) | [Solution](launch_ec2_web_instance/solution.md) | |
-| Rename S3 bucket | S3 | [Exercise](s3_bucket_rename/exercise.md) | [Solution](s3_bucket_rename/solution.md) | |
+| Launch EC2 instance | EC2 | [Exercise](exercises/launch_ec2_instance/exercise.md) | [Solution](exercises/launch_ec2_instance/solution.md) | |
+| Rename S3 bucket | S3 | [Exercise](exercises/s3_bucket_rename/exercise.md) | [Solution](exercises/s3_bucket_rename/solution.md) | |
 
 ## Questions
 
@@ -99,9 +99,39 @@ In the [Terraform Registry](https://registry.terraform.io/browse/providers)
 </b></details>
 
 <details>
-<summary>What is the name of the provider in this case: `resource "libvirt_domain" "instance" {...}`</summary><br><b>
+<summary>What are the names of the providers in this case?
 
-libvirt
+```
+terraform {
+    required_providers {
+      aws = {
+        source  = "hashicorp/aws"
+      }
+      azurer = {
+        source  = "hashicorp/azurerm"
+        version = "~> 3.0.2"
+      }
+    }
+  }
+```
+</summary><br><b>
+
+azurerm and aws
+</b></details>
+
+<details>
+<summary>True or False? Applying the following Terraform configuration will fail since no source or version specific for 'aws' provider
+
+```
+terraform {
+    required_providers {
+      aws = {}
+    }
+  }
+```
+</summary><br><b>
+
+False. It will look for "aws" provider in the public Terraform registry and will take the latest version.
 </b></details>
 
 <details>
@@ -124,6 +154,12 @@ provider "aws" {
   region = "us-west-2"
 }
 ```
+</b></details>
+
+<details>
+<summary>Where Terraform installs providers from by default? </summary><br><b>
+
+By default Terraform providers are installed from Terraform Registry
 </b></details>
 
 <details>
@@ -387,6 +423,18 @@ It keeps track of the IDs of created resources so that Terraform knows what it's
 </b></details>
 
 <details>
+<summary>How to inspect current state?</summary><br><b>
+
+terraform show
+</b></details>
+
+<details>
+<summary>How to list resources created with Terraform?</summary><br><b>
+
+terraform state list
+</b></details>
+
+<details>
 <summary>How do you rename an existing resource?</summary><br><b>
 
 terraform state mv
@@ -482,4 +530,6 @@ It's does NOT create the definitions/configuration for creating such infrastruct
 
 ### Real Life Scenarios
 
-TODO
+<details>
+<summary></summary><br><b>
+</b></details>

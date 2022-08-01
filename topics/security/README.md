@@ -410,6 +410,12 @@ CPDoS or Cache Poisoned Denial of Service. It poisons the CDN cache. By manipula
 </b></details>
 
 <details>
+<summary>What's SSL termination (or SSL offloading)?</summary><br><b>
+
+SSL termination is the process of decrypting encrypted traffic. The advantage in SSL termination is that the server doesn't have to perform it, we can use SSL termination to reduce the load on the server, speed up some processes, and allow the server to focus on its core functionality (e.g. deliver content)
+</b></details>
+
+<details>
 <summary>What is SNI (Server Name Indication)?</summary><br><b>
 
 [Wikipedia](https://en.wikipedia.org/wiki/Server_Name_Indication): "an extension to the Transport Layer Security (TLS) computer networking protocol by which a client indicates which hostname it is attempting to connect to at the start of the handshaking process"

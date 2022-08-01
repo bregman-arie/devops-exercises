@@ -1,4 +1,17 @@
-## Azure
+# Azure
+
+- [Azure](#azure)
+  - [Questions](#questions)
+    - [Azure 101](#azure-101)
+    - [Azure Resource Manager](#azure-resource-manager)
+    - [Compute](#compute)
+    - [Network](#network)
+    - [Storage](#storage)
+    - [Security](#security)
+
+## Questions
+
+### Azure 101
 
 <details>
 <summary>What is Azure Portal?</summary><br><b>
@@ -30,7 +43,21 @@ An availability set is a logical grouping of VMs that allows Azure to understand
 <summary>Explain Azure managed disks</summary><br><b>
 </b></details>
 
-#### Azure - Compute
+### Azure Resource Manager
+
+<details>
+<summary>Explain what's Azure Resource Manager</summary><br><b>
+
+From [Azure docs](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview): "Azure Resource Manager is the deployment and management service for Azure. It provides a management layer that enables you to create, update, and delete resources in your Azure account. You use management features, like access control, locks, and tags, to secure and organize your resources after deployment."
+</b></details>
+
+<details>
+<summary>What's an Azure Resource Group?</summary><br><b>
+
+From [Azure docs](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal): "A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group."
+</b></details>
+
+### Compute
 
 <details>
 <summary>What Azure compute services are you familiar with?</summary><br><b>
@@ -87,7 +114,7 @@ Running parallel and high-performance computing applications
 <summary>What "Azure Kubernetes" service is used for?</summary><br><b>
 </b></details>
 
-#### Azure - Network
+### Network
 
 <details>
 <summary>What Azure network services are you familiar with?</summary><br><b>
@@ -101,7 +128,7 @@ Running parallel and high-performance computing applications
 <summary>What is the N-tier architecture?</summary><br><b>
 </b></details>
 
-#### Azure Storage
+### Storage
 
 <details>
 <summary>What Azure storage services are you familiar with?</summary><br><b>
@@ -111,7 +138,7 @@ Running parallel and high-performance computing applications
 <summary>What storage options Azure supports?</summary><br><b>
 </b></details>
 
-#### Azure Security
+### Security
 
 <details>
 <summary>What is the Azure Security Center? What are some of its features?</summary><br><b>

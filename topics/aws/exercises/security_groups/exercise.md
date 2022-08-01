@@ -14,3 +14,7 @@ For this exercise you'll need:
 3. Can you still access the application? What do you see/get?
 4. Add back the rule
 5. Can you access the application now?
+
+## Solution
+
+Click [here to view to solution](solution.md)
