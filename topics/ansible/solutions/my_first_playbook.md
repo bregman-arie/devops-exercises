@@ -12,6 +12,7 @@
         state: present
       become: yes
     - name: Create the file /tmp/some_file
+      file:
         path: '/tmp/some_file'
         state: touch
 ```
