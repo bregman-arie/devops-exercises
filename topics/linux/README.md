@@ -313,6 +313,8 @@ The root of the filesystem. The beginning of the tree.
 
 <details>
 <summary>What kind of information one can find in /proc?</summary><br><b>
+ 
+It contains useful information about the processes that are currently running, it is regarded as control and information center for kernel.
 </b></details>
 
 <details>
