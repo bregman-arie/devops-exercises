@@ -357,10 +357,16 @@ Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 
 <details>
 <summary>What is MTU?</summary><br><b>
+	
+MTU stands for Maximum Transmission Unit. It's the size of the largest PDU (protocol Data Unit) that can be sent in a single transaction.
 </b></details>
 
 <details>
 <summary>What happens if you send a packet that is bigger than the MTU?</summary><br><b>
+	
+With IPv4 protocol, router can fragment the PDU then sending all the fragmented PDU through the transaction.
+	
+With IPv6 protocol, it issues a error to the user's computer.
 </b></details>
 
 <details>
