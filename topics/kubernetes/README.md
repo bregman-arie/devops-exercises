@@ -1,8 +1,6 @@
-## Kubernetes
+# Kubernetes
 
-### Kubernetes Exercises
-
-#### Developer & "Regular" User Path
+## Kubernetes Exercises
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
@@ -13,7 +11,7 @@
 | Operating ReplicaSets | ReplicaSet | [Exercise](replicaset_02.md) | [Solution](solutions/replicaset_02_solution.md)
 | ReplicaSets Selectors | ReplicaSet | [Exercise](replicaset_03.md) | [Solution](solutions/replicaset_03_solution.md)
 
-### Kubernetes Self Assessment
+## Kubernetes Questions
 
 * [Kubernetes 101](#kubernetes-101)
 * [Kubernetes Hands-On Basics](#kubernetes-hands-on-basiscs)
@@ -22,28 +20,17 @@
 * [Kubernetes Deployments](#kubernetes-deployments)
 * [Kubernetes Services](#kubernetes-services)
 
-<a name="kubernetes-101"></a>
-#### Kubernetes 101
+## Kubernetes 101
 
 <details>
 <summary>What is Kubernetes? Why organizations are using it?</summary><br><b>
 
-Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
+Kubernetes is an open-source system that provides users with the ability to manage, scale and deploy containerized applications.
 
 To understand what Kubernetes is good for, let's look at some examples:
 
-<a name="kubernetes-101"></a>
-#### Kubernetes 101
-
-<details>
-<summary>What is Kubernetes? Why organizations are using it?</summary><br><b>
-
-Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
-
-To understand what Kubernetes is good for, let's look at some examples:
-
-* You would like to run a certain application in a container on multiple different locations. Sure, if it's 2-3 servers/locations, you can do it by yourself but it can be challenging to scale it up to additional multiple location.<br>
-* Performing updates and changes across hundreds of containers<br>
+* You would like to run a certain application in a container on multiple different locations and sync changes across all of them, no matter where they run
+* Performing updates and changes across hundreds of containers
 * Handle cases where the current load requires to scale up (or down)
 </b></details>
 
@@ -51,7 +38,7 @@ To understand what Kubernetes is good for, let's look at some examples:
 <summary>When or why NOT to use Kubernetes?</summary><br><b>
 
   - If you manage low level infrastructure or baremetals, Kubernetes is probably not what you need or want
-  - If you are a small team (like less than 20 engineers) running less than a dozen of containers, Kubernetes might be an overkill (even if you need scale, rolling out updates, etc.). You might still enjoy the benefits of using managed Kubernetes, but you definitely want to think about it carefully before making a decision
+  - If you are a small team (like less than 20 engineers) running less than a dozen of containers, Kubernetes might be an overkill (even if you need scale, rolling out updates, etc.). You might still enjoy the benefits of using managed Kubernetes, but you definitely want to think about it carefully before making a decision on whether to adopt it.
 </b></details>
 
 <details>
@@ -88,13 +75,6 @@ metadata, kind and apiVersion
 </b></details>
 
 <details>
-<summary>What actions or operations you consider as best practices when it comes to Kubernetes?</summary><br><b>
-
-  - Always make sure Kubernetes YAML files are valid. Applying automated checks and pipelines is recommended.
-  - Always specify requests and limits to prevent situation where containers are using the entire cluster memory which may lead to OOM issue
-</b></details>
-
-<details>
 <summary>What is kubectl?</summary><br><b>
 
 Kubectl is the Kubernetes command line tool that allows you to run commands against Kubernetes clusters. For example, you can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
@@ -106,6 +86,19 @@ Kubectl is the Kubernetes command line tool that allows you to run commands agai
 * Deployment - creates the Pods () and watches them
 * Service: route traffic to Pods internally
 * Ingress: route traffic from outside the cluster
+</b></details>
+
+<details>
+<summary>Why there is no such command in Kubernetes? <code>kubectl get containers</code></summary><br><b>
+
+Becaused container is not a Kubernetes object. The smallest object unit in Kubernetes is a Pod. In a single Pod you can find one or more containers.
+</b></details>
+
+<details>
+<summary>What actions or operations you consider as best practices when it comes to Kubernetes?</summary><br><b>
+
+  - Always make sure Kubernetes YAML files are valid. Applying automated checks and pipelines is recommended.
+  - Always specify requests and limits to prevent situation where containers are using the entire cluster memory which may lead to OOM issue
 </b></details>
 
 <a name="kubernetes-cluster"></a>
@@ -150,7 +143,7 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
 </b></details> 
 
 <details>
-<summary>What are the components of the master node?</summary><br><b>
+<summary>What are the components of the master node (aka control plane)?</summary><br><b>
 
   * API Server - the Kubernetes API. All cluster components communicate through it
   * Scheduler - assigns an application with a worker node it can run on
@@ -159,7 +152,7 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
 </b></details>
 
 <details>
-<summary>What are the components of a worker node?</summary><br><b>
+<summary>What are the components of a worker node (aka data plane)?</summary><br><b>
 
   * Kubelet - an agent responsible for node communication with the master.
   * Kube-proxy - load balancing traffic between app components
@@ -196,8 +189,13 @@ Apply requests and limits, especially on third party applications (where the unc
 5. Create an etcd cluster
 </b></details>
 
-<a name="kubernetes-pods"></a>
-#### Kubernetes - Pods
+<details>
+<summary>Which command will list all the object types in a cluster?</code></summary><br><b>
+
+`kubectl api-resources`
+</b></details>
+
+#### Pods
 
 <details>
 <summary>Explain what is a Pod</summary><br><b>
@@ -413,13 +411,32 @@ Only containers whose state set to Success will be able to receive requests sent
 </b></details>
 
 <details>
-<summary>Why it's usually considered better to include one container per Pod?</summary><br><b>
+<summary>Why it's common to have only one container per Pod in most cases?</summary><br><b>
 
-One reason is that it makes it harder to scale, when you need to scale only one of the containers in a given Pod.
+One reason is that it makes it harder to scale when you need to scale only one of the containers in a given Pod.
 </b></details>
 
-<a name="kubernetes-deployments"></a>
-#### Kubernetes - Deployments
+<details>
+<summary>True or False? Once a Pod is assisgned to a worker node, it will only run on that node, even if it fails at some point and spins up a new Pod</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>True or False? Each Pod, when created, gets its own public IP address</summary><br><b>
+
+False. Each Pod gets an IP address but an internal one and not publicly accessible.
+
+To make a Pod externally accessible, we need to use an object called Service in Kubernetes.
+</b></details>
+
+<details>
+<summary>How to check to which worker node the pods were scheduled to?</summary><br><b>
+
+`kubectl get pods -o wide`
+</b></details>
+
+#### Deployments
 
 <details>
 <summary>What is a "Deployment" in Kubernetes?</summary><br><b>
@@ -433,6 +450,10 @@ A Deployment is a declarative statement for the desired state for Pods and Repli
 <details>
 <summary>How to create a deployment?</code></summary><br><b>
 
+`kubectl create deployment my_first_deployment --image=nginx:alpine`
+
+OR
+
 ```
 cat << EOF | kubectl create -f -
 apiVersion: v1
@@ -442,9 +463,17 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: nginx
+    image: nginx:alpine
 EOF
 ```
+</b></details>
+
+<details>
+<summary>How to verify a deployment was created?</code></summary><br><b>
+
+`kubectl get deployments`
+
+This command lists all the Deployment objects created and exist in the cluster. It doesn't mean the deployments are readt and running. This can be checked with the "READY" and "AVAILABLE" columns.
 </b></details>
 
 <details>
@@ -464,7 +493,7 @@ Also, when looking at the replicaset, you'll see the old replica doesn't have an
 <details>
 <summary>How to delete a deployment?</summary><br><b>
 
-One way is by specifying the deployment name: `kubectl delete deployment [deployment_name]`
+One way is by specifying the deployment name: `kubectl delete deployment [deployment_name]`<br>
 Another way is using the deployment configuration file: `kubectl delete -f deployment.yaml`
 </b></details>
 
@@ -475,9 +504,38 @@ The pod related to the deployment will terminate and the replicaset will be remo
 </b></details>
 
 <details>
+<summary>What happens behind the scenes when you create a Deployment object?</summary><br><b>
+
+The following occurs when you run `kubectl create deployment some_deployment --image=nginx`
+
+1. HTTP request sent to kubernetes API server on the cluster to create a new deployment
+2. A new Pod object is created and scheduled to one of the workers nodes
+3. Kublet on the worker node notices the new Pod and instructs the Container runtime engine to pull the image from the registry
+4. A new container is created using the image that was just pulled
+</b></details>
+
+<details>
 <summary>How make an app accessible on private or external network?</summary><br><b>
 
 Using a Service.
+</b></details>
+
+### Services
+
+<details>
+<summary>What is a Service in Kubernetes?</summary><br><b>
+
+"An abstract way to expose an application running on a set of Pods as a network service." - read more [here](https://kubernetes.io/docs/concepts/services-networking/service)<br>
+
+In simpler words, it allows you to add an internal or external connectivity to a certain application running in a container.
+</b></details>
+
+<details>
+<summary>How to create a service for an existing deployment called "alle" on port 8080 so the Pod(s) accessible via a Load Balancer?</summary><br><b>
+
+The imperative way:
+
+`kubectl expose deployment alle --type=LoadBalancer --port 8080`
 </b></details>
 
 <details>
@@ -486,20 +544,16 @@ Using a Service.
 An internal load balancer in Kubernetes is called Service and an external load balancer is Ingress
 </b></details>
 
-<a name="kubernetes-services"></a>
-#### Kubernetes - Services
-
-<details>
-<summary>What is a Service in Kubernetes?</summary><br><b>
-
-"An abstract way to expose an application running on a set of Pods as a network service." - read more [here](https://kubernetes.io/docs/concepts/services-networking/service)<br>
-In simpler words, it allows you to add an internal or external connectivity to a certain application running in a container.
-</b></details>
-
 <details>
 <summary>True or False? The lifecycle of Pods and Services isn't connected so when a Pod dies, the Service still stays </summary><br><b>
 
 True
+</b></details>
+
+<details>
+<summary>After creating a service, how to check it was created?</summary><br><b>
+
+`kubectl get svc`
 </b></details>
 
 <details>
@@ -522,7 +576,7 @@ The truth is they aren't connected. Service points to Pod(s) directly, without c
 <details>
 <summary>What are important steps in defining/adding a Service?</summary><br><b>
 
-1. Making sure that targetPort of the Service is matching the containerPort of the POd
+1. Making sure that targetPort of the Service is matching the containerPort of the Pod
 2. Making sure that selector matches at least one of the Pod's labels
 </b></details>
 
@@ -685,7 +739,21 @@ Explanation as to who added them:
   - iptables rules are added by kube-proxy during Endpoint and Service creation
 </b></details>
 
-#### Kubernetes - Ingress
+<details>
+<summary>Describe in high level what happens when you run <code>kubctl expose deployment remo --type=LoadBalancer --port 8080</code></summary><br><b>
+
+1. Kubectl sends a request to Kubernetes API to create a Service object
+2. Kubernetes asks the cloud provider (e.g. AWS, GCP, Azure) to provision a load balancer
+3. The newly created load balancer forwards incoming traffic to relevant worker node(s) which forwards the traffic to the relevant containers
+</b></details>
+
+<details>
+<summary>After creating a service that forwards incoming external traffic to the containerized application, how to make sure it works?</summary><br><b>
+
+You can run `curl <SERIVCE IP>:<SERVICE PORT>` to examine the output.
+</b></details>
+
+### Ingress
 
 <details>
 <summary>What is Ingress?</summary><br><b>
@@ -813,6 +881,26 @@ Network Policies
 </b></details>
 
 <details>
+<summary>How to scale an application (deplyoment) so it runs more than one instance of the application?</summary><br><b>
+
+To run two instances of the applicaation?
+
+`kubectl scale deployment <DEPLOYMENT_NAME> --replicas=2`
+
+You can speciy any other number, given that your application knows how to scale.
+</b></details>
+
+### ReplicaSets
+
+<details>
+<summary>What is the purpose of ReplicaSet?</summary><br><b>
+
+[kubernetes.io](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset): "A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods."
+
+In simpler words, a ReplicaSet will ensure the specified number of Pods replicas is running for a selected Pod. If there are more Pods than defined in the ReplicaSet, some will be removed. If there are less than what is defined in the ReplicaSet then, then more replicas will be added.
+</b></details>
+
+<details>
 <summary>What the following block of lines does?
 
 ```
@@ -833,16 +921,6 @@ spec:
 </summary><br><b>
 
 It defines a replicaset for Pods whose type is set to "backend" so at any given point of time there will be 2 concurrent Pods running.
-</b></details>
-
-#### Kubernetes - ReplicaSets
-
-<details>
-<summary>What is the purpose of ReplicaSet?</summary><br><b>
-
-[kubernetes.io](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset): "A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods."
-
-In simpler words, a ReplicaSet will ensure the specified number of Pods replicas is running for a selected Pod. If there are more Pods than defined in the ReplicaSet, some will be removed. If there are less than what is defined in the ReplicaSet then, then more replicas will be added.
 </b></details>
 
 <details>
@@ -1280,7 +1358,7 @@ kubectl run nginx --image=nginx --restart=Never --port 80 --expose
 </b></details>
 
 <details>
-<summary>How to get list of resources which are not in a namespace?</code></summary><br><b>
+<summary>How to get list of resources which are not bound to a specific namespace?</code></summary><br><b>
 
 kubectl api-resources --namespaced=false
 </b></details>

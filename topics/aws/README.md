@@ -146,6 +146,12 @@ Failover | Route 53 | [Exercise](exercises/route_53_failover/exercise.md) | [Sol
 |--------|--------|------|----|----|
 | Simple Elastic Beanstalk Node.js app | Elastic Beanstalk | [Exercise](exercises/elastic_beanstalk_simple/exercise.md) | [Solution](exercises/elastic_beanstalk_simple/solution.md) | |
 
+### CodePipeline
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Basic CI with S3 | CodePipeline & S3 | [Exercise](exercises/basic_s3_ci/exercise.md) | [Solution](exercises/basic_s3_ci/solution.md) | |
+
 ### Misc
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
@@ -1624,6 +1630,12 @@ Lifecycle hooks allows you perform extra steps before the instance goes in servi
 <summary>If you use ASG and you would like to run extra steps before the instance goes in service, what will you use? </summary><br><b>
 
 Lifecycle hooks in pending state.
+</b></details>
+
+<details>
+<summary>Describe one way to test ASG actually works</summary><br><b>
+
+In Linux instnaces, you can install the 'stress' package and run stress to load the system for certain period of time and see if ASG kicks in by adding additional capacity (= more instances).
 </b></details>
 
 ### Security
