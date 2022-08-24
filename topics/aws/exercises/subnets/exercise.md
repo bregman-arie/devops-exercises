@@ -2,7 +2,8 @@
 
 ### Requirements
 
-Single newly created VPC
+1. Single newly created VPC
+2. Region with more than two availability zones
 
 ### Objectives
 

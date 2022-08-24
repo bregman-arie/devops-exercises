@@ -13,12 +13,21 @@
 
 ## Kubernetes Questions
 
-* [Kubernetes 101](#kubernetes-101)
-* [Kubernetes Hands-On Basics](#kubernetes-hands-on-basiscs)
-* [Kubernetes Cluster](#kubernetes-cluster)
-* [Kubernetes Pods](#kubernetes-pods)
-* [Kubernetes Deployments](#kubernetes-deployments)
-* [Kubernetes Services](#kubernetes-services)
+- [Kubernetes](#kubernetes)
+  - [Kubernetes Exercises](#kubernetes-exercises)
+  - [Kubernetes Questions](#kubernetes-questions)
+  - [Kubernetes 101](#kubernetes-101)
+      - [Kubernetes - Hands-On Basics](#kubernetes---hands-on-basics)
+      - [Kubernetes - Cluster](#kubernetes---cluster)
+      - [Pods](#pods)
+      - [Deployments](#deployments)
+    - [Services](#services)
+    - [Ingress](#ingress)
+      - [Kubernetes - Security](#kubernetes---security)
+      - [Kubernetes - Troubleshooting Scenarios](#kubernetes---troubleshooting-scenarios)
+      - [Kubernetes - Submariner](#kubernetes---submariner)
+      - [Kubernetes - Istio](#kubernetes---istio)
+      - [Kubernetes - Scenarios](#kubernetes---scenarios)
 
 ## Kubernetes 101
 
@@ -161,9 +170,9 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
 
 <details>
 <summary>Place the components on the right side of the image in the right place in the drawing<br>
-<img src="images/kubernetes_components.png"/>
+<img src="images/cluster_architecture_exercise.png"/>
 </summary><br><b>
-<img src="images/kubernetes_components_solution.png"/>
+<img src="images/cluster_architecture_solution.png"/>
 </b></details>
 
 <details>

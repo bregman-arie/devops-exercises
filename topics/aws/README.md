@@ -1,7 +1,7 @@
 # AWS
 
 **Note**: Provided solutions are using the AWS console. It's recommended you'll use IaC technologies to solve the exercises (e.g. Terraform, Pulumi).<br>
-**2nd Note**: Some of the exercises cost money and can't be performed using the free tier/resources
+**2nd Note**: Some of the exercises cost $$$ and can't be performed using the free tier/resources
 
 - [AWS](#aws)
   - [Exercises](#exercises)
@@ -15,6 +15,7 @@
     - [Containers](#containers)
     - [Lambda](#lambda)
     - [Elastic Beanstalk](#elastic-beanstalk)
+    - [CodePipeline](#codepipeline)
     - [Misc](#misc)
   - [Questions](#questions)
     - [Global Infrastructure](#global-infrastructure)
@@ -39,6 +40,7 @@
     - [Disaster Recovery](#disaster-recovery)
     - [CloudFront](#cloudfront)
     - [ELB](#elb-1)
+      - [ALB](#alb)
     - [Auto Scaling Group](#auto-scaling-group)
     - [Security](#security-1)
     - [Databases](#databases-1)
@@ -58,6 +60,7 @@
     - [Production Operations and Migrations](#production-operations-and-migrations)
     - [Scenarios](#scenarios)
     - [Architecture Design](#architecture-design)
+    - [Misc](#misc-2)
 
 ## Exercises
 
@@ -1395,15 +1398,17 @@ True. AWS responsible for making sure ELB is operational and takes care of lifec
 </b></details>
 
 <details>
-<summary>Which load balancer would you use for services which use HTTP or HTTPS traffic?</summary><br><b>
-
-Application Load Balancer (ALB).
+<summary>What's a "listener" in regards to ELB?</summary><br><b>
 </b></details>
 
 <details>
-<summary>True or False? With ALB (Application Load Balancer) it's possible to do routing based on query string and/or headers</summary><br><b>
+<summary>What's a "target group" in regards to ELB?</summary><br><b>
+</b></details>
 
-True.
+<details>
+<summary>Which load balancer would you use for services which use HTTP or HTTPS traffic?</summary><br><b>
+
+Application Load Balancer (ALB).
 </b></details>
 
 <details>
@@ -1440,7 +1445,7 @@ For example, port `2017` and endpoint `/health`.
 
 <details>
 <summary>Which type of AWS load balancer is used in the following drawing?<br>
-<img src="images/aws/identify_load_balancer.png" width="300px;" height="400px;"/>
+<img src="../../images/aws/identify_load_balancer.png"/>
 </summary><br><b>
 
 Application Load Balancer (routing based on different endpoints + HTTP is used).
@@ -1526,12 +1531,6 @@ With cross zone load balancing, traffic distributed evenly across all (registere
 </b></details>
 
 <details>
-<summary>True or False? For application load balancer, cross zone load balancing is always on and can't be disabled</summary><br><b>
-
-True
-</b></details>
-
-<details>
 <summary>True or False? For network load balancer, cross zone load balancing is always on and can't be disabled </summary><br><b>
 
 False. It's disabled by default
@@ -1540,7 +1539,7 @@ False. It's disabled by default
 <details>
 <summary>True or False? In regards to cross zone load balancing, AWS charges you for inter AZ data in network load balancer but no in application load balancer</summary><br><b>
 
-False. It charges fir inter AZ data in network load balancer, but not in application load balancer
+False. It charges for inter AZ data in network load balancer, but not in application load balancer
 </b></details>
 
 <details>
@@ -1553,6 +1552,20 @@ True
 <summary>Explain Deregistration Delay (or Connection Draining) in regards to ELB</summary><br><b>
 
 The period of time or process of "draining" instances from requests/traffic (basically let it complete all active connections but don't start new ones) so it can be de-registered eventually and ELB won't send requests/traffic to it anymore.
+</b></details>
+
+#### ALB
+
+<details>
+<summary>True or False? With ALB (Application Load Balancer) it's possible to do routing based on query string and/or headers</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>True or False? For application load balancer, cross zone load balancing is always on and can't be disabled</summary><br><b>
+
+True
 </b></details>
 
 ### Auto Scaling Group
@@ -3156,4 +3169,13 @@ Network Load Balancer
 <summary>What should you use for scaling reads?</summary><br><b>
 
 You can use an ElastiCache cluster or RDS Read Replicas.
+</b></details>
+
+### Misc
+
+<details>
+<summary>What's an ARN?</summary><br><b>
+
+ARN (Amazon Resources Names) used for uniquely identifying different AWS resources.
+It is used when you would like to identify resource uniqely across all AWS infra.
 </b></details>

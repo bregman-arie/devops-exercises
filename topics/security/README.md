@@ -2,6 +2,14 @@
 
 <details>
 <summary>What is DevSecOps? What its core principals?</summary><br><b>
+
+A couple of quotations from chosen companies:
+
+[Snyk](https://snyk.io/series/devsecops): "DevSecOps refers to the integration of security practices into a DevOps software delivery model. Its foundation is a culture where development and operations are enabled through process and tooling to take part in a shared responsibility for delivering secure software."
+
+[Red Hat](https://www.redhat.com/en/topics/devops/what-is-devsecops): "DevSecOps stands for development, security, and operations. It's an approach to culture, automation, and platform design that integrates security as a shared responsibility throughout the entire IT lifecycle."
+
+[Jfrog](https://jfrog.com/devops-tools/what-is-devsecops): "DevSecOps principles and practices parallel those of traditional DevOps with integrated and multidisciplinary teams, working together to enable secure continuous software delivery. The DevSecOps development lifecycle is a repetitive process that starts with a developer writing code, a build being triggered, the software package deployed to a production environment and monitored for issues identified in the runtime but includes security at each of these stages."
 </b></details>
 
 <details>
