@@ -24,7 +24,7 @@
     <td align="center"><a href="topics/cicd/README.md"><img src="images/cicd.png" width="75px;" height="75px;" alt="cicd"/><br /><b>CI/CD</b></a></td>
     <td align="center"><a href="topics/git/README.md"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
     <td align="center"><a href="topics/ansible/README.md"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
-    <td align="center"><a href="#Network"><img src="images/network.png" width="75px;" height="75px;" alt="Network"/><br /><b>Network</b></a></td>
+    <td align="center"><a href="#network"><img src="images/network.png" width="75px;" height="75px;" alt="Network"/><br /><b>Network</b></a></td>
     <td align="center"><a href="topics/linux/README.md"><img src="images/logos/linux.png" width="75px;" height="75px;" alt="Linux"/><br /><b>Linux</b></a></td>
 
   </tr>
@@ -245,6 +245,20 @@ CSMA/CD algorithm:
 </b></details>
 
 <details>
+<summary>What is a "Collision Domain"?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a "Broadcast Domain"?</summary><br><b>
+</b></details>
+
+<details>
+<summary>three computers connected to a switch. How many collision domains are there? How many broadcast domains?</summary><br><b>
+
+Three collision domains and one broadcast domain
+</b></details>
+
+<details>
 <summary>How does a router works?</summary><br><b>
 
 A router is a physical or virtual appliance that passes information between two or more packet-switched computer networks. A router inspects a given data packet's destination Internet Protocol address (IP address), calculates the best way for it to reach its destination and then forwards it accordingly.
@@ -405,6 +419,10 @@ For example, your computer's private IP could be 192.168.1.100, but your router 
   * HTTPS - 443
   * FTP - 21
   * SFTP - 22
+</b></details>
+
+<details>
+<summary>Which factors affect network performances</summary><br><b>
 </b></details>
 
 #### Network - Data and Control planes

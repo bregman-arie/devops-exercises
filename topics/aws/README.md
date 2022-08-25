@@ -1,12 +1,14 @@
 # AWS
 
-**Note**: Provided solutions are using the AWS console. It's recommended you'll use IaC technologies to solve the exercises (e.g. Terraform, Pulumi).<br>
-**2nd Note**: Some of the exercises cost $$$ and can't be performed using the free tier/resources
+**Note**: Some of the exercises <b>cost $$$</b> and can't be performed using the free tier/resources
+
+**2nd Note**: Provided solutions are using the AWS console. It's recommended you'll use IaC technologies to solve the exercises (e.g. Terraform, Pulumi).<br>
 
 - [AWS](#aws)
   - [Exercises](#exercises)
     - [IAM](#iam)
     - [EC2](#ec2)
+    - [S3](#s3)
     - [ELB](#elb)
     - [Auto Scaling Groups](#auto-scaling-groups)
     - [VPC](#vpc)
@@ -33,10 +35,12 @@
     - [Containers](#containers-1)
       - [ECS](#ecs)
       - [Fargate](#fargate)
-    - [S3](#s3)
+    - [S3](#s3-1)
       - [Basics](#basics)
-      - [Buckets](#buckets)
+      - [Buckets 101](#buckets-101)
+      - [Objects](#objects)
       - [Security](#security)
+      - [Misc](#misc-1)
     - [Disaster Recovery](#disaster-recovery)
     - [CloudFront](#cloudfront)
     - [ELB](#elb-1)
@@ -55,12 +59,12 @@
     - [Monitoring and Logging](#monitoring-and-logging)
     - [Billing and Support](#billing-and-support)
     - [Automation](#automation)
-    - [Misc](#misc-1)
+    - [Misc](#misc-2)
     - [High Availability](#high-availability)
     - [Production Operations and Migrations](#production-operations-and-migrations)
     - [Scenarios](#scenarios)
     - [Architecture Design](#architecture-design)
-    - [Misc](#misc-2)
+    - [Misc](#misc-3)
 
 ## Exercises
 
@@ -91,6 +95,11 @@
 | Create an AMI | EC2, AMI | [Exercise](exercises/create_ami/exercise.md) | [Solution](exercises/create_ami/solution.md) | |
 | Create EFS | EC2, EFS | [Exercise](exercises/create_efs/exercise.md) | [Solution](exercises/create_efs/solution.md) | |
 
+### S3
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Create buckets | S3 | [Exercise](exercises/s3/new_bucket/exercise.md) | [Solution](exercises/s3/new_bucket/solution.md)
 ### ELB
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
@@ -1116,6 +1125,8 @@ True.
 - As a user you don't have to worry about filesystems or disk space
 </b></details>
 
+#### Buckets 101
+
 <details>
 <summary>What is a bucket?</summary><br><b>
 
@@ -1123,22 +1134,68 @@ An S3 bucket is a resource which is similar to folders in a file system and allo
 </b></details>
 
 <details>
-<summary>Explain folders and objects in regards to buckets</summary><br><b>
+<summary>True or False? Buckets are defined globally</summary><br><b>
 
-* Folder - any sub folder in an s3 bucket
-* Object - The files which are stored in a bucket
+False. They are defined at the region level.
+</b></details>
+
+<details>
+<summary>True or False? A bucket name must be globally unique</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>How to rename a bucket in S3?</summary><br><b>
+
+A S3 bucket name is immutable. That means it's not possible to change it, without removing and creating a new bucket.
+
+This is why the process for renaming a bucket is as follows:
+
+* Create a new bucket with the desired name
+* Move the data from the old bucket to it
+* Delete the old bucket
+
+With the AWS CLI that would be:
+
+```sh
+# Create new bucket
+aws s3 mb s3://[NEW_BUCKET_NAME]
+# Sync the content from the old bucket to the new bucket
+$ aws s3 sync s3://[OLD_BUCKET_NAME] s3://[NEW_BUCKET_NAME]
+# Remove old bucket
+$ aws s3 rb --force s3://[OLD_BUCKET_NAME]
+```
+</b></details>
+
+<details>
+<summary>True or False? The max object size a user can upload in one go, is 5TB</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>Explain "Multi-part upload"</summary><br><b>
+
+[Amazon docs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html): "Multipart upload allows you to upload a single object as a set of parts. Each part is a contiguous portion of the object's data...In general, when your object size reaches 100 MB, you should consider using multipart uploads instead of uploading the object in a single operation."
+</b></details>
+
+#### Objects
+
+<details>
+<summary>Explain "Object Versioning"</summary><br><b>
+
+When enabled at a bucket level, versioning allows you to upload new version of files, overriding previous version and so be able to easily roll-back and protect your data from being permanently deleted.
 </b></details>
 
 <details>
 <summary>Explain the following:
 
   - Object Lifecycles
-  - Object Sharing
-  - Object Versioning</summary><br><b>
+  - Object Sharing</summary><br><b>
 
   * Object Lifecycles - Transfer objects between storage classes based on defined rules of time periods
   * Object Sharing - Share objects via a URL link
-  * Object Versioning - Manage multiple versions of an object
 </b></details>
 
 <details>
@@ -1147,6 +1204,49 @@ An S3 bucket is a resource which is similar to folders in a file system and allo
 Object Durability: The percent over a one-year time period that a file will not be lost
 Object Availability: The percent over a one-year time period that a file will be accessible
 </b></details>
+
+#### Security
+
+<details>
+<summary>True or False? Every new S3 bucket is public by default</summary><br><b>
+
+False. A newly created bucket is private unless it was configured to be public.
+</b></details>
+
+<details>
+<summary>What's a presigned URL?</summary><br><b>
+
+Since every newly created bucket is by default private it doesn't allows to share files with users. Even if the person who uploaded them tries to view them, it gets denied.
+
+A presigned URL is a way to bypass that and allow sharing the files with users by including the credentials (token) as part of the URL. It can be done for limited time.
+</b></details>
+
+<details>
+<summary>What security measures have you taken in context of S3?</summary><br><b>
+	* Don't make a bucket public.
+	* Enable encryption if it's disabled.
+    * Define an access policy
+</b></details>
+
+<details>
+<summary>True or False? In case of SSE-AES encryption, you manage the key</summary><br><b>
+
+False. S3 manages the key and uses AES-256 algorithm for the encryption.
+</b></details>
+
+<details>
+<summary>True or False? In case of SSE-C encryption, both S3 and you manage the keys</summary><br><b>
+
+False. You manage the keys. It's customer provided key.
+</b></details>
+
+<details>
+<summary>True or False? Traffic between a host an S3 (e.g. uploading a file) is encrypted using SSL/TLS</summary><br><b>
+
+True
+</b></details>
+
+#### Misc
 
 <details>
 <summary>What is a storage class? What storage classes are there?</summary><br><b>
@@ -1248,70 +1348,6 @@ Learn more [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-accel
 <details>
 <summary>Can you host dynamic websites on S3? What about static websites?</summary><br><b>
 	No. S3 support only statis hosts. On a static website, individual webpages include static content. They might also contain client-side scripts. By contrast, a dynamic website relies on server-side processing, including server-side scripts such as PHP, JSP, or ASP.NET. Amazon S3 does not support server-side scripting.
-</b></details>
-
-#### Buckets
-
-<details>
-<summary>True or False? A bucket name must be globally unique</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>How to rename a bucket in S3?</summary><br><b>
-
-A S3 bucket name is immutable. That means it's not possible to change it, without removing and creating a new bucket.
-
-This is why the process for renaming a bucket is as follows:
-
-* Create a new bucket with the desired name
-* Move the data from the old bucket to it
-* Delete the old bucket
-
-With the AWS CLI that would be:
-
-```sh
-# Create new bucket
-aws s3 mb s3://[NEW_BUCKET_NAME]
-# Sync the content from the old bucket to the new bucket
-$ aws s3 sync s3://[OLD_BUCKET_NAME] s3://[NEW_BUCKET_NAME]
-# Remove old bucket
-$ aws s3 rb --force s3://[OLD_BUCKET_NAME]
-```
-</b></details>
-
-#### Security
-
-<details>
-<summary>True or False? Every new S3 bucket is public by default</summary><br><b>
-
-False
-</b></details>
-
-<details>
-<summary>What security measures have you taken in context of S3?</summary><br><b>
-	* Don't make a bucket public.
-	* Enable encryption if it's disabled.
-    * Define an access policy
-</b></details>
-
-<details>
-<summary>True or False? In case of SSE-AES encryption, you manage the key</summary><br><b>
-
-False. S3 manages the key and uses AES-256 algorithm for the encryption.
-</b></details>
-
-<details>
-<summary>True or False? In case of SSE-C encryption, both S3 and you manage the keys</summary><br><b>
-
-False. You manage the keys. It's customer provided key.
-</b></details>
-
-<details>
-<summary>True or False? Traffic between a host an S3 (e.g. uploading a file) is encrypted using SSL/TLS</summary><br><b>
-
-True
 </b></details>
 
 ### Disaster Recovery
