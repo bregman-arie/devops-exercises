@@ -31,6 +31,8 @@
       - [Launch Template](#launch-template)
       - [ENI](#eni)
       - [Placement Groups](#placement-groups)
+    - [VPC](#vpc-1)
+      - [Default VPC](#default-vpc)
     - [Lambda](#lambda-1)
     - [Containers](#containers-1)
       - [ECS](#ecs)
@@ -39,25 +41,27 @@
       - [Basics](#basics)
       - [Buckets 101](#buckets-101)
       - [Objects](#objects)
-      - [Security](#security)
+      - [S3 Security](#s3-security)
       - [Misc](#misc-1)
     - [Disaster Recovery](#disaster-recovery)
     - [CloudFront](#cloudfront)
     - [ELB](#elb-1)
+      - [NLB](#nlb)
       - [ALB](#alb)
     - [Auto Scaling Group](#auto-scaling-group)
-    - [Security](#security-1)
+    - [Security](#security)
     - [Databases](#databases-1)
       - [RDS](#rds)
       - [Aurora](#aurora)
       - [DynamoDB](#dynamodb)
       - [ElastiCache](#elasticache)
       - [RedShift](#redshift)
-    - [VPC](#vpc-1)
     - [Identify the Service](#identify-the-service)
     - [DNS (Route 53)](#dns-route-53)
+    - [SQS](#sqs)
     - [Monitoring and Logging](#monitoring-and-logging)
     - [Billing and Support](#billing-and-support)
+      - [AWS Organizations](#aws-organizations)
     - [Automation](#automation)
     - [Misc](#misc-2)
     - [High Availability](#high-availability)
@@ -100,6 +104,7 @@
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Create buckets | S3 | [Exercise](exercises/s3/new_bucket/exercise.md) | [Solution](exercises/s3/new_bucket/solution.md)
+| Bucket Lifecycle Policy | S3, Lifecycle Policy |  | 
 ### ELB
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
@@ -346,6 +351,11 @@ This policy permits to perform any action on any resource. It happens to be the 
 IAM Access Advisor
 </b></details>
 
+<details>
+<summary>What type of IAM object would you use to allow inter-service communication?</summary><br><b>
+
+Role
+</b></details>
 ### EC2
 
 <details>
@@ -1008,6 +1018,185 @@ Pros:
   * Maximized high availability (instances on different hardware, span across AZs)
 </b></details>
 
+### VPC
+
+<details>
+<summary>What is VPC?</summary><br><b>
+
+"A logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define"
+Read more about it [here](https://aws.amazon.com/vpc).
+</b></details>
+
+<details>
+<summary>True or False? VPC spans multiple regions</summary><br><b>
+
+False
+</b></details>
+
+<details>
+<summary>True or False? It's possible to have multiple VPCs in one region</summary><br><b>
+
+True. As of today, the soft limit is 5.
+</b></details>
+
+<details>
+<summary>True or False? Subnets belong to the same VPC, can be in different availability zones</summary><br><b>
+
+True. Just to clarify, a single subnet resides entirely in one AZ.
+</b></details>
+
+<details>
+<summary>You have noticed your VPC's subnets (which use x.x.x.x/20 CIDR) have 4096 available IP addresses although this CIDR should have 4096 addresses. What is the reason for that?</summary><br><b>
+
+AWS reserves 5 IP addresses in each subnet - first 4 and the last one, and so they aren't available for use.
+</b></details>
+
+<details>
+<summary>What AWS uses the 5 reserved IP addresses for?</summary><br><b>
+
+x.x.x.0 - network address
+x.x.x.1 - VPC router
+x.x.x.2 - DNS mapping
+x.x.x.3 - future use
+x.x.x.255 - broadcast address
+</b></details>
+
+<details>
+<summary>What is an Internet Gateway?</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html): "component that allows communication between instances in your VPC and the internet"
+
+In addition it's good to know that IGW is:
+  * Highly available and redundant
+  * Not porivding internet access by its own (you need route tables to be edited)
+  * Created separately from VPC
+</b></details>
+
+<details>
+<summary>True or False? One or more VPCs can be attached to one Internet Gateway</summary><br><b>
+
+False. Only one VPC can be attached to one IGW and vice versa
+</b></details>
+
+<details>
+<summary>True or False? NACL allow or deny traffic on the subnet level</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What is VPC peering?</summary><br><b>
+
+[docs.aws](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html): "A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them using private IPv4 addresses or IPv6 addresses."
+</b></details>
+
+<details>
+<summary>True or False? Multiple Internet Gateways can be attached to one VPC</summary><br><b>
+
+False. Only one internet gateway can be attached to a single VPC.
+</b></details>
+
+<details>
+<summary>You've restarted your EC2 instance and the public IP has changed. How would you deal with it so it won't happen?</summary><br><b>
+
+Use Elastic IP which provides you a fixed IP address.
+</b></details>
+
+<details>
+<summary>When creating a new VPC, there is an option called "Tenancy". What is it used for?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is an Elastic IP address?</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html): "An Elastic IP address is a static IPv4 address designed for dynamic cloud computing. An Elastic IP address is allocated to your AWS account, and is yours until you release it. By using an Elastic IP address, you can mask the failure of an instance or software by rapidly remapping the address to another instance in your account."
+</b></details>
+
+<details>
+<summary>Why would you use an Elastic IP address?</summary><br><b>
+
+Let's say you have an instance that you need to shutdown or perform some maintenance on. In that case, what you would want to do is to move the Elastic IP address to another instance that is operational, until you finish to perform the maintenance and then you can move it back to the original instance (or keep it assigned to the second one).
+</b></details>
+
+<details>
+<summary>True or False? When stopping and starting an EC2 instance, its public IP changes</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>What are the best practices around Elastic IP?</summary><br><b>
+
+The best practice is actually not using them in the first place. It's more common to use a load balancer without a public IP or use a random public IP and register a DNS record to it
+</b></details>
+
+<details>
+<summary>True or False? An Elastic IP is free, as long it's not associated with an EC2 instance</summary><br><b>
+
+False. An Elastic IP is free of charge as long as **it is ** associated with an EC2 instance. This instance should be running and should have only one Elastic IP.
+</b></details>
+
+<details>
+<summary>True or False? Route Tables used to allow or deny traffic from the internet to AWS instances</summary><br><b>
+
+False.
+</b></details>
+
+<details>
+<summary>Explain Security Groups and Network ACLs</summary><br><b>
+
+* NACL - security layer on the subnet level.
+* Security Group - security layer on the instance level.
+
+Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) and [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
+</b></details>
+
+<details>
+<summary>What is AWS Direct Connect?</summary><br><b>
+
+Allows you to connect your corporate network to AWS network.
+</b></details>
+
+<details>
+<summary>What would you use if you need a fixed public IP for your EC2 instance?</summary><br><b>
+
+Elastic IP
+</b></details>
+
+<details>
+<summary>Kratos, your colleague, decided to use a subnet of /27 because he needs 29 IP addresses for EC2 instances. Is Kratos right?</summary><br><b>
+
+No. Since AWS reserves 5 IP addresses for every subnet, Kratos will have 32-5=27 addresses and this is less than what he needs (29).
+
+It's better if Kratos uses a subnet of size /26 but good luck telling him that.
+</b></details>
+
+#### Default VPC
+
+<details>
+<summary>True or False? By default, any new account has a default VPC</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>True or False? Default VPC doesn't have internet connectivity and any launched EC2 will only have a private IP assigned</summary><br><b>
+
+False. The default VPC has internet connectivity and any launched EC2 instance gets a public IPv4 address.
+
+In addition, any launched EC2 instance gets a public and private DNS names.
+</b></details>
+
+<details>
+<summary>Which of the following is included with default VPC?
+
+* Internet gateway connected to the default VPC
+* A route to main route table that points all traffic to internet gateway
+* Default public subnet
+* Default /16 IPv4 CIDR block</summary><br><b>
+
+All of them :)
+</b></details>
 ### Lambda
 
 <details>
@@ -1205,7 +1394,7 @@ Object Durability: The percent over a one-year time period that a file will not 
 Object Availability: The percent over a one-year time period that a file will be accessible
 </b></details>
 
-#### Security
+#### S3 Security
 
 <details>
 <summary>True or False? Every new S3 bucket is public by default</summary><br><b>
@@ -1228,22 +1417,71 @@ A presigned URL is a way to bypass that and allow sharing the files with users b
     * Define an access policy
 </b></details>
 
+
 <details>
-<summary>True or False? In case of SSE-AES encryption, you manage the key</summary><br><b>
+<summary>What encryption types supported by S3?</summary><br><b>
+
+* SSE-S3
+* SSE-KMS
+* SSE-C
+</b></details>
+
+<details>
+<summary>Describe shortly how SSE-S3 (AES) encryption works</summary><br><b>
+
+1. You upload a file to S3 using HTTP (or HTTPS) and header
+2. S3 uses the managed data key to encrypt it
+3. S3 stores the encrypted object in the bucket
+</b></details>
+
+<details>
+<summary>True or False? In case of SSE-S3 (AES-256) encryption, you manage the key</summary><br><b>
 
 False. S3 manages the key and uses AES-256 algorithm for the encryption.
 </b></details>
 
 <details>
-<summary>True or False? In case of SSE-C encryption, both S3 and you manage the keys</summary><br><b>
+<summary>Who or what manages the keys in the case of SSE-KMS encryption?</summary><br><b>
 
-False. You manage the keys. It's customer provided key.
+The KMS service.
 </b></details>
 
 <details>
-<summary>True or False? Traffic between a host an S3 (e.g. uploading a file) is encrypted using SSL/TLS</summary><br><b>
+<summary>Why would someone choose to use SSE-KMS instead of SSE-S3?</summary><br><b>
 
-True
+SS3-KMS provides control over who has access to the keys and you can also enabled audit trail.
+</b></details>
+
+<details>
+<summary>True or False? In case of SSE-C encryption, both S3 and you manage the keys</summary><br><b>
+
+False. You manage the keys. It's customer provided keys.
+</b></details>
+
+<details>
+<summary>True or False? In case of SSE-C HTTPS must be used and encryption key must be provided in headers for every HTTP request</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>Describe shortly how SSE-C encryption works</summary><br><b>
+
+1. User uploads a file to S3 using HTTPS while providing data key in the header
+2. AWS S3 performs the encryption using the provided data key and encrypted object is stored in the bucket
+
+If a user would like to get the object, the same data key would have to be provided.
+</b></details>
+
+<details>
+<summary>With which string an header starts?
+
+* x-zmz
+* x-amz
+* x-ama
+</summary><br><b>
+
+x-amz
 </b></details>
 
 #### Misc
@@ -1590,6 +1828,14 @@ True
 The period of time or process of "draining" instances from requests/traffic (basically let it complete all active connections but don't start new ones) so it can be de-registered eventually and ELB won't send requests/traffic to it anymore.
 </b></details>
 
+#### NLB
+
+<details>
+<summary>At what network level/layer a Network Load Balancer operates?</summary><br><b>
+
+Layer 4
+</b></details>
+
 #### ALB
 
 <details>
@@ -1659,12 +1905,12 @@ During a scaling cooldown, ASG will not terminate or launch additional instances
 <details>
 <summary>Explain the default ASG termination policy</summary><br><b>
 
-1. It finds the AZ which the most number of EC2 instnaces
+1. It finds the AZ which the most number of EC2 instances
 2. If number of instances > 1, choose the one with oldest launch configuration, template and terminate it
 </b></details>
 
 <details>
-<summary>True or False? by deafult, ASG tries to balance the number of instances across AZ</summary><br><b>
+<summary>True or False? by default, ASG tries to balance the number of instances across AZ</summary><br><b>
 
 True, this is why when it terminates instances, it chooses the AZ with the most instances.
 </b></details>
@@ -1684,7 +1930,9 @@ Lifecycle hooks in pending state.
 <details>
 <summary>Describe one way to test ASG actually works</summary><br><b>
 
-In Linux instnaces, you can install the 'stress' package and run stress to load the system for certain period of time and see if ASG kicks in by adding additional capacity (= more instances).
+In Linux instances, you can install the 'stress' package and run stress to load the system for certain period of time and see if ASG kicks in by adding additional capacity (= more instances).
+
+For example: `sudo stress --cpu 100 --timeout 20`
 </b></details>
 
 ### Security
@@ -2134,176 +2382,6 @@ Learn more [here](https://aws.amazon.com/documentdb)
 EBS
 </b></details>
 
-### VPC
-
-<details>
-<summary>What is VPC?</summary><br><b>
-
-"A logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define"
-Read more about it [here](https://aws.amazon.com/vpc).
-</b></details>
-
-<details>
-<summary>True or False? By default, any new account has a default VPC</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>True or False? Default VPC doesn't have internet connectivity and any launched EC2 will only have a private IP assigned</summary><br><b>
-
-False. The default VPC has internet connectivity and any launched EC2 instance gets a public IPv4 address.
-
-In addition, any launched EC2 instance gets a public and private DNS names.
-</b></details>
-
-<details>
-<summary>True or False? VPC spans multiple regions</summary><br><b>
-
-False
-</b></details>
-
-<details>
-<summary>True or False? It's possible to have multiple VPCs in one region</summary><br><b>
-
-True. As of today, the soft limit is 5.
-</b></details>
-
-<details>
-<summary>True or False? Subnets belong to the same VPC, can be in different availability zones</summary><br><b>
-
-True. Just to clarify, a single subnet resides entirely in one AZ.
-</b></details>
-
-<details>
-<summary>You have noticed your VPC's subnets (which use x.x.x.x/20 CIDR) have 4096 available IP addresses although this CIDR should have 4096 addresses. What is the reason for that?</summary><br><b>
-
-AWS reserves 5 IP addresses in each subnet - first 4 and the last one, and so they aren't available for use.
-</b></details>
-
-<details>
-<summary>What AWS uses the 5 reserved IP addresses for?</summary><br><b>
-
-x.x.x.0 - network address
-x.x.x.1 - VPC router
-x.x.x.2 - DNS mapping
-x.x.x.3 - future use
-x.x.x.255 - broadcast address
-</b></details>
-
-<details>
-<summary>What is an Internet Gateway?</summary><br><b>
-
-[AWS Docs](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html): "component that allows communication between instances in your VPC and the internet"
-
-In addition it's good to know that IGW is:
-  * Highly available and redundant
-  * Not porivding internet access by its own (you need route tables to be edited)
-  * Created separately from VPC
-</b></details>
-
-<details>
-<summary>True or False? One or more VPCs can be attached to one Internet Gateway</summary><br><b>
-
-False. Only one VPC can be attached to one IGW and vice versa
-</b></details>
-
-<details>
-<summary>True or False? NACL allow or deny traffic on the subnet level</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>What is VPC peering?</summary><br><b>
-
-[docs.aws](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html): "A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them using private IPv4 addresses or IPv6 addresses."
-</b></details>
-
-<details>
-<summary>True or False? Multiple Internet Gateways can be attached to one VPC</summary><br><b>
-
-False. Only one internet gateway can be attached to a single VPC.
-</b></details>
-
-<details>
-<summary>You've restarted your EC2 instance and the public IP has changed. How would you deal with it so it won't happen?</summary><br><b>
-
-Use Elastic IP which provides you a fixed IP address.
-</b></details>
-
-<details>
-<summary>When creating a new VPC, there is an option called "Tenancy". What is it used for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is an Elastic IP address?</summary><br><b>
-
-[AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html): "An Elastic IP address is a static IPv4 address designed for dynamic cloud computing. An Elastic IP address is allocated to your AWS account, and is yours until you release it. By using an Elastic IP address, you can mask the failure of an instance or software by rapidly remapping the address to another instance in your account."
-</b></details>
-
-<details>
-<summary>Why would you use an Elastic IP address?</summary><br><b>
-
-Let's say you have an instance that you need to shutdown or perform some maintenance on. In that case, what you would want to do is to move the Elastic IP address to another instance that is operational, until you finish to perform the maintenance and then you can move it back to the original instance (or keep it assigned to the second one).
-</b></details>
-
-<details>
-<summary>True or False? When stopping and starting an EC2 instance, its public IP changes</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>What are the best practices around Elastic IP?</summary><br><b>
-
-The best practice is actually not using them in the first place. It's more common to use a load balancer without a public IP or use a random public IP and register a DNS record to it
-</b></details>
-
-<details>
-<summary>True or False? An Elastic IP is free, as long it's not associated with an EC2 instance</summary><br><b>
-
-False. An Elastic IP is free of charge as long as **it is ** associated with an EC2 instance. This instance should be running and should have only one Elastic IP.
-</b></details>
-
-<details>
-<summary>True or False? Route Tables used to allow or deny traffic from the internet to AWS instances</summary><br><b>
-
-False.
-</b></details>
-
-<details>
-<summary>Explain Security Groups and Network ACLs</summary><br><b>
-
-* NACL - security layer on the subnet level.
-* Security Group - security layer on the instance level.
-
-Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) and [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
-</b></details>
-
-<details>
-<summary>What is AWS Direct Connect?</summary><br><b>
-
-Allows you to connect your corporate network to AWS network.
-</b></details>
-
-<details>
-<summary>What would you use if you need a fixed public IP for your EC2 instance?</summary><br><b>
-
-Elastic IP
-</b></details>
-
-<details>
-<summary>Kratos, your colleague, decided to use a subnet of /27 because he needs 29 IP addresses for EC2 instances. Is Kratos right?</summary><br><b>
-
-No. Since AWS reserves 5 IP addresses for every subnet, Kratos will have 32-5=27 addresses and this is less than what he needs (29).
-
-It's better if Kratos uses a subnet of size /26 but good luck telling him that.
-</b></details>
-
-<details>
-<summary>In order for AWS Lambda to have internet access</summary><br><b>
-</b></details>
 
 ### Identify the Service
 
@@ -2510,6 +2588,18 @@ API Gateway - to define the URL trigger (= when you insert the URL, the function
 <summary>Which service would you use for data or events streaming?</summary><br><b>
 
 Kinesis
+</b></details>
+
+<details>
+<summary>Which (free) tool would you use to get information on cost savings?</summary><br><b>
+
+Trusted Advisor
+</b></details>
+
+<details>
+<summary>You would like to have on-perm storage access to AWS storage. What would you use for that?</summary><br><b>
+
+Storage Gateway
 </b></details>
 
 ### DNS (Route 53)
@@ -2744,6 +2834,28 @@ False. Route 53 Multi Value is not a substitute for ELB. It's focused on client-
 False. DNS service can be Route 53 (where you manage DNS records) while the domain itself can be purchased from other sources that aren't Amazon related (e.g. GoDadday).
 </b></details>
 
+### SQS
+
+<details>
+<summary>What is Simple Queue Service (SQS)?</summary><br><b>
+
+AWS definition: "Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications".
+
+Learn more about it [here](https://aws.amazon.com/sqs)
+</b></details>
+
+<details>
+<summary>Give an example of architecture or workflow that involves SQS</summary><br><b>
+
+A website that allows users to upload videos and adds subtitles to them:
+
+1. First the user uploads the video through the web interface which uploads it to an S3 bucket
+2. SQS gets notified with a message on the video location
+3. EC2 instance (or Lambda function) starts to work on adding the subtitles
+4. The video with the subtitles is uploaded to an S3 buckets
+5. SQS gets notified of the result and specifically the video location
+</b></details>
+
 ### Monitoring and Logging
 
 <details>
@@ -2783,13 +2895,6 @@ Read more about it [here](https://aws.amazon.com/sns)
 </b></details>
 
 ### Billing and Support
-
-<details>
-<summary>What is "AWS Organizations"?</summary><br><b>
-
-AWS definition: "AWS Organizations helps you centrally govern your environment as you grow and scale your workloads on AWS."
-More on Organizations [here](https://aws.amazon.com/organizations)
-</b></details>
 
 <details>
 <summary>What are Service Control Policies and to what service they belong?</summary><br><b>
@@ -2874,7 +2979,25 @@ True. You pay differently based on the chosen region.
 
 AWS Definition: "AWS Infrastructure Event Management is a structured program available to Enterprise Support customers (and Business Support customers for an additional fee) that helps you plan for large-scale events such as product or application launches, infrastructure migrations, and marketing events."
 </b></details>
+#### AWS Organizations
 
+<details>
+<summary>What is "AWS Organizations"?</summary><br><b>
+
+AWS definition: "AWS Organizations helps you centrally govern your environment as you grow and scale your workloads on AWS."
+
+Read more on Organizations [here](https://aws.amazon.com/organizations)
+</b></details>
+
+<details>
+<summary>What's an OU in regards to AWS Organizations?'</summary><br><b>
+
+OU (Organizational Units) is a way to group multiple accounts together so you can treat them as a single unit.
+
+By default there is the "Root" OU created in AWS Organizations.
+
+Most of the time OUs are based on functions or common set of controls. 
+</b></details>
 ### Automation
 
 <details>
@@ -3068,14 +3191,6 @@ AWS Lambda
 AWS Athena
 </b></details>
 
-<details>
-<summary>What is Simple Queue Service (SQS)?</summary><br><b>
-
-AWS definition: "Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications".
-
-Learn more about it [here](https://aws.amazon.com/sqs)
-</b></details>
-
 ### High Availability
 
 <details>
@@ -3191,6 +3306,12 @@ EFS. It allows us to have persistent multi-AZ shared storage for containers.
 Use Amazon EventBridge so every time a file is uploaded to an S3 bucket (event) it will run an ECS task.
 
 Such task should have an ECS Task Role so it can get the object from the S3 bucket (and possibly other permissions if it needs to update the DB for example).
+</b></details>
+
+<details>
+<summary>Your hosts scale down and then back up quite often. What's your take on that? </summary><br><b>
+
+Often circular scaling (scale down, up and vice versa) is not a sign that the threshold set for scaling down and up are met quite often. In most cases that's a sign for you to adjust the threshold so scaling down doesn't happen as often.
 </b></details>
 
 ### Architecture Design
