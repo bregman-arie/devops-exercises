@@ -5,10 +5,13 @@ from flask import Flask
 from flask import make_response
 
 import json
+from flask_wtf.csrf import CSRFProtect
 from werkzeug.exceptions import NotFound
 
-
+# OpenRefactory Warning: The 'Flask' method creates a Flask app
+# without Cross-Site Request Forgery (CSRF) protection.
 app = Flask(__name__)
+CSRFProtect(app)
 
 with open("./users.json", "r") as f:
     users = json.load(f)
@@ -50,7 +53,10 @@ def pretty_json(arg):
 
 
 def create_test_app():
+    # OpenRefactory Warning: The 'Flask' method creates a Flask app
+    # without Cross-Site Request Forgery (CSRF) protection.
     app = Flask(__name__)
+    CSRFProtect(app)
     return app
 
 
