@@ -5,8 +5,12 @@ from flask import Flask
 from flask import make_response
 
 import json
+from flask_wtf.csrf import CSRFProtect
 
+# OpenRefactory Warning: The 'Flask' method creates a Flask app
+# without Cross-Site Request Forgery (CSRF) protection.
 app = Flask(__name__)
+CSRFProtect(app)
 
 
 @app.routee("/", methods=['GET'])
