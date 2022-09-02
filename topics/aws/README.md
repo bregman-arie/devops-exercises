@@ -59,6 +59,7 @@
     - [Identify the Service](#identify-the-service)
     - [DNS (Route 53)](#dns-route-53)
     - [SQS](#sqs)
+    - [SNS](#sns)
     - [Monitoring and Logging](#monitoring-and-logging)
     - [Billing and Support](#billing-and-support)
       - [AWS Organizations](#aws-organizations)
@@ -2582,6 +2583,12 @@ AWS Cognito
 </b></details>
 
 <details>
+<summary>Which service is often reffered to as "used for decoupling applications"?</summary><br><b>
+
+AWS SQS. Since it's a messaging queue so it allows applications to switch from synchronous communication to asynchronous one.
+</b></details>
+
+<details>
 <summary>Which service would you use if you need messaging queue?</summary><br><b>
 
 Simple Queue Service (SQS)
@@ -2873,7 +2880,74 @@ Learn more about it [here](https://aws.amazon.com/sqs)
 </b></details>
 
 <details>
-<summary>Give an example of architecture or workflow that involves SQS</summary><br><b>
+<summary>Explain "producer" and "consumer" in regards to messaging queue</summary><br><b>
+
+Producer is the application or in general, the source that sends messages to the queue.
+
+Consumer is the process or application that pulls the messages from the queue.
+</b></details>
+
+<details>
+<summary>What "default retention of messages" means?</summary><br><b>
+
+It refers to a retention period in which a message has to consumed/processed and deleted from the queue.
+
+As of today, the retention of a message is 4 days by default and the maximum allows is 14 days.
+</b></details>
+
+<details>
+<summary>What's the limitation on message size in SQS?
+
+* 128KB
+* 128MB
+* 256KB
+* 256MB</summary><br><b>
+
+256KB
+</b></details>
+
+<details>
+<summary>True or False? It's possible to have duplicated messages in the queue</summary><br><b>
+
+True. It's referred to as "at least once delivery".
+</b></details>
+
+<details>
+<summary>True or False? "Consumers" can be only EC2 instances</summary><br><b>
+
+False. They can be Lambda functions and even on-premise instances
+</b></details>
+
+<details>
+<summary>True or False? Processes/Applications use from the SDK the SendMessage API in order to send messages to the queue</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>What it means "best effort ordering" in regards to SQS?</summary><br><b>
+
+It means messages in the queue can be out of order.
+</b></details>
+
+<details>
+<summary>What is "Delay Queue" in regards to SQS?</summary><br><b>
+
+It's the time in seconds to delay the delivery of new messages (when they reached the queue already).
+
+The limit as of today is 15 minutes.
+</b></details>
+
+<details>
+<summary>What is "Visibility Timeout?"</summary><br><b>
+
+The time in seconds for a message to not be visible for consumers.
+
+The limit as of today is 12 hours
+</b></details>
+
+<details>
+<summary>Give an example of architecture or workflow that involves SQS and EC2 & S3</summary><br><b>
 
 A website that allows users to upload videos and adds subtitles to them:
 
@@ -2884,23 +2958,11 @@ A website that allows users to upload videos and adds subtitles to them:
 5. SQS gets notified of the result and specifically the video location
 </b></details>
 
-### Monitoring and Logging
-
 <details>
-<summary>What is AWS CloudWatch?</summary><br><b>
-
-AWS definition: "Amazon CloudWatch is a monitoring and observability service..."
-
-More on CloudWatch [here](https://aws.amazon.com/cloudwatch)
+<summary>What's MessageGroupID?</summary><br><b>
 </b></details>
 
-<details>
-<summary>What is AWS CloudTrail?</summary><br><b>
-
-AWS definition: "AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account."
-
-Read more on CloudTrail [here](https://aws.amazon.com/cloudtrail)
-</b></details>
+### SNS
 
 <details>
 <summary>What is Simply Notification Service?</summary><br><b>
@@ -2920,6 +2982,38 @@ Read more about it [here](https://aws.amazon.com/sns)
   * Topics - used for grouping multiple endpoints
   * Subscribers - the endpoints where topics send messages to
   * Publishers - the provider of the message (event, person, ...)
+</b></details>
+
+<details>
+<summary>How SNS is different from SQS?</summary><br><b>
+
+SNS, as opposed to SQS, works in a publisher/subscriber model. Where's SQS works in  Producer/Consumer model.
+
+SQS delivers the message to one consumer where's SNS will send a message to multiple subscribers.
+</b></details>
+
+<details>
+<summary>What's a Fan-Out pattern?</summary><br><b>
+
+A messaging pattern where a single message is send to multiple destinations (often simultaneously). So one-to-many broadcast message.
+</b></details>
+
+### Monitoring and Logging
+
+<details>
+<summary>What is AWS CloudWatch?</summary><br><b>
+
+AWS definition: "Amazon CloudWatch is a monitoring and observability service..."
+
+More on CloudWatch [here](https://aws.amazon.com/cloudwatch)
+</b></details>
+
+<details>
+<summary>What is AWS CloudTrail?</summary><br><b>
+
+AWS definition: "AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account."
+
+Read more on CloudTrail [here](https://aws.amazon.com/cloudtrail)
 </b></details>
 
 ### Billing and Support
@@ -3354,6 +3448,15 @@ Network Load Balancer
 <summary>What should you use for scaling reads?</summary><br><b>
 
 You can use an ElastiCache cluster or RDS Read Replicas.
+</b></details>
+
+<details>
+<summary>You have two applications who communicate synchronously. It worked fine until there suddenly a spike of traffic. What change you might apply in this case?</summary><br><b>
+
+More details are missing to determine for sure but it might be better to decouple the applications by introducing one of the following:
+
+* Queue model with SQS
+* Publisher/Subscriber model with SNS
 </b></details>
 
 ### Misc
