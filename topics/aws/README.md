@@ -1230,6 +1230,34 @@ False. Charges are being made when the code is executed.
 True
 </b></details>
 
+<details>
+<summary>What's one of the issues with the current architecture?
+
+<img src="images/lambda/aws_lambda_direct_access.png"/>
+</summary><br><b>
+
+Users shouldn't access directly AWS Lambda directly. If you'd to like to expose your Lambda function to users a better approach would be to set up API Gateway endpoint between the users and the Lambda function.
+
+This not only provides enhanced security but also easier access for the user where he can use HTTP or HTTPS for accessing the function.
+</b></details>
+
+<details>
+<summary>Specify one or more use cases for using AWS Lambda</summary><br><b>
+
+- Uploading images to S3 and tagging them or inserting information on the images to a database
+- Uploading videos to S3 and edit them or add subtitles/captions to them and store the result in S3
+- Use SNS and/or SQS to trigger functions based on notifications or messages receieved from these services.
+- Cron Jobs: Use Lambda together with CloudWatch events to schedule tasks/functions periodically.
+</b></details>
+
+<details>
+<summary>You run an architecture where you have a Lambda function that uploads images to S3 bucket and stores information on the images in DynamoDB. You would like to expose the function to users so they can invoke it. Your friend Carlos suggests you expose the credentials to the Lambda function. What's your take on that?</summary><br><b>
+
+That's a big no. You shouldn't let users direct access to your Lambda function.
+
+The way to go here and expose the Lambda function to users is to to an API Gateway endpoint.
+</b></details>
+
 ### Containers
 
 #### ECS
