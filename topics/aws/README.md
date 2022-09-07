@@ -18,6 +18,7 @@
     - [Lambda](#lambda)
     - [Elastic Beanstalk](#elastic-beanstalk)
     - [CodePipeline](#codepipeline)
+    - [CDK](#cdk)
     - [Misc](#misc)
   - [Questions](#questions)
     - [Global Infrastructure](#global-infrastructure)
@@ -171,6 +172,11 @@ Failover | Route 53 | [Exercise](exercises/route_53_failover/exercise.md) | [Sol
 |--------|--------|------|----|----|
 | Basic CI with S3 | CodePipeline & S3 | [Exercise](exercises/basic_s3_ci/exercise.md) | [Solution](exercises/basic_s3_ci/solution.md) | |
 
+### CDK
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Sample CDK | CDK | [Exercise](exercises/sample_cdk/exercise.md) | [Solution](exercises/sample_cdk/solution.md) | |
 ### Misc
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
