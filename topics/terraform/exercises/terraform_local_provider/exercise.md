@@ -15,7 +15,7 @@ resource "local_file" "mario_local_file" {
 ```
 3. Run `terraform init`. What did it do?
 4. Run `terraform plan`. What Terraform is going to perform?
-5. Finally, run 'terraform apply' and verify the file was created
+5. Finally, run `terraform apply` and verify the file was created
 
 ## Solution
 
