@@ -241,7 +241,10 @@ CSMA/CD algorithm:
 
   * router
   * switch
-  * hub</summary><br><b>
+  * hub</summary><br><b>  
+  * router : A router is a device that connects two or more packet-switched networks or subnetworks. It serves two primary functions: managing traffic between these   networks by forwarding data packets to their intended IP addresses, and allowing multiple devices to use the same Internet connection. There are several types of routers, but most routers pass data between LANs (local area networks) and WANs (wide area networks). A LAN is a group of connected devices restricted to a specific geographic area. A LAN usually requires a single router. A WAN, by contrast, is a large network spread out over a vast geographic area. 
+  * switch : A switch serves as a controller, enabling networked devices to talk to each other efficiently. A switches use to connect computers, printers, phones, cameras, lights, and servers in a building or campus. Types of Switches :- Unmanaged switches : An unmanaged switch works right out of the box. It's not designed to be configured. so you don't have to worry about installing or setting it up correctly. Unmanaged switches have fewer features and less network capacity than managed switches. You'll usually find unmanaged switches in home networking equipments. Managed switches :- A managed network switch is configurable, offering greater security, flexibility and capacity than an unmanaged switch. You can monitor and adjust a managed switch locally or remotely, to give you greater network control.
+  * hub : It is basically a multiport hub. A hub is a device to which all the devices sharing a physical network can be physically connected to form a "Local Area Network" or "LAN". Hubs enable the electric currents from a computer to pass to all other devices connected to it. Since a hub was the electronic equivalent of shouting in a room as necessary, as the number of devices increased, the number of collisions increased and LAN performance ground to a hault. In a hub-centric environment, the message packets being sent by each device that is connected to the hub can be "seen" by every other device on the hub whether they are involved in the conversation or not. So, hubs can facilitate message eavesdropping. Types of Hub :- Active Hub : These are the hubs which have their own power supply and can clean , boost and relay the signal along the network. It serves both as a repeater as well as wiring center. These are used to extend maximum distance between nodes. Passive Hub : These are the hubs which collect wiring from nodes and power supply from active hub. These hubs relay signals onto the network without cleaning and boosting them and can't be used to extend distance between nodes. Intelligent Hubs : An intelligent hub can help in troubleshooting by pinpointing the actual location of the problem and help identify the root cause and resolution. It is very adaptable to different technologies without any need to change its configuration. The intelligent hub performs different functions such as bridging, routing, switching and network management.	
 </b></details>
 
 <details>
@@ -255,7 +258,7 @@ CSMA/CD algorithm:
 <details>
 <summary>three computers connected to a switch. How many collision domains are there? How many broadcast domains?</summary><br><b>
 
-Three collision domains and one broadcast domain
+Three collision domains and one broadcast domain.
 </b></details>
 
 <details>
