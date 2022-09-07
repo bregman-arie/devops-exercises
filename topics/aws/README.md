@@ -3135,6 +3135,16 @@ Learn more [here](https://aws.amazon.com/codedeploy)
 
 <details>
 <summary>Explain what is CloudFormation</summary><br><b>
+
+AWS definition: "AWS CloudFormation is a service that helps you model and set up your Amazon Web Services resources so that you can spend less time managing those resources and more time focusing on your applications that run in AWS. You create a template that describes all the AWS resources that you want (like Amazon EC2 instances or Amazon RDS DB instances), and CloudFormation takes care of provisioning and configuring those resources for you."
+</b></details>
+
+<details>
+<summary>What is AWS CDK?</summary><br><b>
+
+AWS definition: "The AWS Cloud Development Kit (AWS CDK) is an open-source software development framework to define cloud infrastructure as code and provision it through AWS CloudFormation. CDK gives the flexibility to use popular programming languages like TypeScript, JavaScript, Python, Java, C# and Go (in Developer Preview) to define your infrastructure, and AWS CDK provides a set of libraries for AWS services that abstract away the need to write raw CloudFormation templates.
+
+Learn more [here](https://aws.amazon.com/cdk)
 </b></details>
 
 ### Misc
