@@ -1,35 +1,65 @@
 # Kubernetes
 
+- [Kubernetes](#kubernetes)
+  - [Kubernetes Exercises](#kubernetes-exercises)
+    - [Pods](#pods)
+    - [Service](#service)
+    - [ReplicaSet](#replicaset)
+  - [Kubernetes Questions](#kubernetes-questions)
+    - [Kubernetes 101](#kubernetes-101)
+      - [Kubernetes - Hands-On Basics](#kubernetes---hands-on-basics)
+    - [Cluster](#cluster)
+    - [Pods](#pods-1)
+    - [Deployments](#deployments)
+    - [Services](#services)
+    - [Ingress](#ingress)
+    - [ReplicaSets](#replicasets)
+    - [Storage](#storage)
+    - [Network Policies](#network-policies)
+      - [Configuration File](#configuration-file)
+    - [etcd](#etcd)
+    - [Namespaces](#namespaces)
+    - [Operators](#operators)
+    - [Secrets](#secrets)
+    - [Volumes](#volumes)
+    - [Access Control](#access-control)
+    - [Patterns](#patterns)
+    - [CronJob](#cronjob)
+    - [Misc](#misc)
+    - [Gatekeeper](#gatekeeper)
+    - [Policy Testing](#policy-testing)
+    - [Helm](#helm)
+    - [Security](#security)
+    - [Troubleshooting Scenarios](#troubleshooting-scenarios)
+    - [Istio](#istio)
+    - [Scenarios](#scenarios)
+
 ## Kubernetes Exercises
+
+### Pods
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | My First Pod | Pods | [Exercise](pods_01.md) | [Solution](solutions/pods_01_solution.md)
 | "Killing" Containers | Pods | [Exercise](killing_containers.md) | [Solution](solutions/killing_containers.md)
+
+### Service
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
 | Creating a Service | Service | [Exercise](services_01.md) | [Solution](solutions/services_01_solution.md)
+
+### ReplicaSet
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
 | Creating a ReplicaSet | ReplicaSet | [Exercise](replicaset_01.md) | [Solution](solutions/replicaset_01_solution.md)
 | Operating ReplicaSets | ReplicaSet | [Exercise](replicaset_02.md) | [Solution](solutions/replicaset_02_solution.md)
 | ReplicaSets Selectors | ReplicaSet | [Exercise](replicaset_03.md) | [Solution](solutions/replicaset_03_solution.md)
 
 ## Kubernetes Questions
 
-- [Kubernetes](#kubernetes)
-  - [Kubernetes Exercises](#kubernetes-exercises)
-  - [Kubernetes Questions](#kubernetes-questions)
-  - [Kubernetes 101](#kubernetes-101)
-      - [Kubernetes - Hands-On Basics](#kubernetes---hands-on-basics)
-      - [Kubernetes - Cluster](#kubernetes---cluster)
-      - [Pods](#pods)
-      - [Deployments](#deployments)
-    - [Services](#services)
-    - [Ingress](#ingress)
-      - [Kubernetes - Security](#kubernetes---security)
-      - [Kubernetes - Troubleshooting Scenarios](#kubernetes---troubleshooting-scenarios)
-      - [Kubernetes - Submariner](#kubernetes---submariner)
-      - [Kubernetes - Istio](#kubernetes---istio)
-      - [Kubernetes - Scenarios](#kubernetes---scenarios)
-
-## Kubernetes 101
+### Kubernetes 101
 
 <details>
 <summary>What is Kubernetes? Why organizations are using it?</summary><br><b>
@@ -110,8 +140,7 @@ Becaused container is not a Kubernetes object. The smallest object unit in Kuber
   - Always specify requests and limits to prevent situation where containers are using the entire cluster memory which may lead to OOM issue
 </b></details>
 
-<a name="kubernetes-cluster"></a>
-#### Kubernetes - Cluster
+### Cluster
 
 <details>
 <summary>What is a Kubernetes Cluster?</summary><br><b>
@@ -204,7 +233,7 @@ Apply requests and limits, especially on third party applications (where the unc
 `kubectl api-resources`
 </b></details>
 
-#### Pods
+### Pods
 
 <details>
 <summary>Explain what is a Pod</summary><br><b>
@@ -445,7 +474,7 @@ To make a Pod externally accessible, we need to use an object called Service in 
 `kubectl get pods -o wide`
 </b></details>
 
-#### Deployments
+### Deployments
 
 <details>
 <summary>What is a "Deployment" in Kubernetes?</summary><br><b>
@@ -874,7 +903,7 @@ spec:
   - hosts:
     - some_app.com
     secretName: someapp-secret-tls
-````
+```
 </b></details>
 
 <details>
@@ -1060,7 +1089,7 @@ A ReplicaSet's purpose is to maintain a stable set of replica Pods running at an
 A DaemonSet ensures that all Nodes run a copy of a Pod. 
 </b></details>  
 
-#### Kubernetes - Storage
+### Storage
 
 <details>
 <summary>What is a volume in regards to Kubernetes?</summary><br><b>
@@ -1081,7 +1110,7 @@ A directory accessible by the containers inside a certain Pod. The mechanism res
 Ephemeral volume types have the lifetime of a pod as opposed to persistent volumes which exist beyond the lifetime of a Pod.
 </b></details>
 
-#### Kubernetes - Network Policies
+### Network Policies
 
 <details>
 <summary>Explain Network Policies</summary><br><b>
@@ -1110,7 +1139,7 @@ False. By default pods are non-isolated.
 Denied. Both source and destination policies has to allow traffic for it to be allowed.
 </b></details>
 
-#### Kubernetes - Configuration File
+#### Configuration File
 
 <details>
 <summary>Which parts a configuration file has?</summary><br><b>
@@ -1139,7 +1168,7 @@ YAML
 etcd
 </b></details>
 
-#### Kubernetes - etcd
+### etcd
 
 <details>
 <summary>What is etcd?</summary><br><b>
@@ -1168,7 +1197,7 @@ True
 <summary>Why etcd? Why not some SQL or NoSQL database?</summary><br><b>
 </b></details>
 
-#### Kubernetes - Namespaces
+### Namespaces
 
 <details>
 <summary>What are namespaces?</summary><br><b>
@@ -1452,7 +1481,7 @@ False. CPU is a compressible resource while memory is a non compressible resourc
 Explained [here](https://www.youtube.com/watch?v=i9V4oCa5f9I)
 </b></details>
 
-#### Kubernetes - Operators
+### Operators
 
 <details>
 <summary>What is an Operator?</summary><br><b>
@@ -1537,7 +1566,7 @@ Use kubeconfig files to organize information about clusters, users, namespaces, 
   StatefulSet is the workload API object used to manage stateful applications. Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.[Learn more](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
 </b></details>
 
-#### Kubernetes - Secrets
+### Secrets
 
 <details>
 <summary>Explain Kubernetes Secrets</summary><br><b>
@@ -1609,7 +1638,7 @@ USER_PASSWORD environment variable will store the value from password key in the
 In other words, you reference a value from a Kubernetes Secret.
 </b></details>
 
-#### Kubernetes - Volumes
+### Volumes
 
 <details>
 <summary>True or False? Kubernetes provides data persistence out of the box, so when you restart a pod, data is saved</summary><br><b>
@@ -1692,7 +1721,7 @@ The main difference relies on the moment when you want to configure storage. For
 * Delete
 </b></details>
 
-#### Kubernetes - Access Control
+### Access Control
 
 <details>
 <summary>What is RBAC?</summary><br><b>
@@ -1744,7 +1773,7 @@ The pod is automatically assigned with the default service account (in the names
 [kubernetes.io](https://kubernetes.io/docs/tasks/configure-pod-container/security-context): "A security context defines privilege and access control settings for a Pod or Container."
 </b></details>
 
-#### Kubernetes - Patterns
+### Patterns
 
 <details>
 <summary>Explain the sidecar container pattern</summary><br><b>
@@ -1753,7 +1782,7 @@ The sidecar pattern is a single-node pattern made up of two containers. The firs
 Without this container, the application would not exist. In addition to the application container, there is a sidecar container.
 </b></details>
 
-#### Kubernetes - CronJob
+### CronJob
 
 <details>
 <summary>Explain what is CronJob and what is it used for</summary><br><b>
@@ -1813,7 +1842,7 @@ As a result this configuration isn't part of the cron job spec hence the cron jo
 To fix it, these lines should placed in the spec of the cron job, above or under the "schedule" directive in the above example.
 </b></details>
 
-#### Kubernetes - Misc
+###  Misc
 
 <details>
 <summary>Explain Imperative Management vs. Declarative Management</summary><br><b>
@@ -1931,7 +1960,7 @@ Kubernetes labels are key-value pairs that can connect identifying metadata with
 <summary>What is Kubeconfig?</summary><br><b>
 </b></details>
 
-#### Kubernetes - Gatekeeper
+### Gatekeeper
 
 <details>
 <summary>What is Gatekeeper?</summary><br><b>
@@ -1945,7 +1974,7 @@ Kubernetes labels are key-value pairs that can connect identifying metadata with
 On every request sent to the Kubernetes cluster, Gatekeeper sends the policies and the resources to OPA (Open Policy Agent) to check if it violates any policy. If it does, Gatekeeper will return the policy error message back. If it isn't violates any policy, the request will reach the cluster.
 </b></details>
 
-#### Kubernetes - Policy Testing
+### Policy Testing
 
 <details>
 <summary>What is Conftest?</summary><br><b>
@@ -1960,7 +1989,7 @@ It is mostly used in testing environments such as CI pipelines or local hooks.
 Same as Conftest, it is used for policy testing and enforcement. The difference is that it comes with built-in policies.
 </b></details>
 
-#### Kubernetes - Helm
+### Helm
 
 <details>
 <summary>What is Helm?</summary><br><b>
@@ -2047,7 +2076,7 @@ Or directly on the command line: `helm install --set some_key=some_value`
 Helm allows you to upgrade, remove and rollback to previous versions of charts. In version 2 of Helm it was with what is known as "Tiller". In version 3, it was removed due to security concerns.
 </b></details>
 
-#### Kubernetes - Security
+### Security
 
 <details>
 <summary>What security best practices do you follow in regards to the Kubernetes cluster?</summary><br><b>
@@ -2061,7 +2090,7 @@ Helm allows you to upgrade, remove and rollback to previous versions of charts. 
   * Consider using tools (e.g. Falco) for monitoring threats
 </b></details>
 
-#### Kubernetes - Troubleshooting Scenarios
+### Troubleshooting Scenarios
 
 <details>
 <summary>Running <code>kubectl get pods</code> you see Pods in "Pending" status. What would you do?</summary><br><b>
@@ -2083,26 +2112,7 @@ One possible path is to start with checking the Pod status.
 TODO: finish this...
 </b></details>
 
-#### Kubernetes - Submariner
-
-<details>
-<summary>Explain what is Submariner and what is it used for</summary><br><b>
-
-"Submariner enables direct networking between pods and services in different Kubernetes clusters, either on premise or in the cloud."
-
-You can learn more [here](https://submariner-io.github.io)
-</b></details>
-
-<details>
-<summary>What each of the following components does?:
-
-  * Lighthouse
-  * Broker
-  * Gateway Engine
-  * Route Agent</summary><br><b>
-</b></details>
-
-#### Kubernetes - Istio
+### Istio
 
 <details>
 <summary>What is Istio? What is it used for?</summary><br><b>
@@ -2110,7 +2120,7 @@ You can learn more [here](https://submariner-io.github.io)
 Istio is an open source service mesh that helps organizations run distributed, microservices-based apps anywhere. Istio enables organizations to secure, connect, and monitor microservices, so they can modernize their enterprise apps more swiftly and securely.
 </b></details>
 
-#### Kubernetes - Scenarios
+### Scenarios
 
 <details>
 <summary>An engineer form your organization told you he is interested only in seeing his team resources in Kubernetes. Instead, in reality, he sees resources of the whole organization, from multiple different teams. What Kubernetes concept can you use in order to deal with it?</summary><br><b>

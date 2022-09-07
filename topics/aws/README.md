@@ -157,6 +157,7 @@ Failover | Route 53 | [Exercise](exercises/route_53_failover/exercise.md) | [Sol
 |--------|--------|------|----|----|
 | Hello Function | Lambda | [Exercise](exercises/hello_function/exercise.md) | [Solution](exercises/hello_function/solution.md) | |
 | URL Function | Lambda | [Exercise](exercises/url_function/exercise.md) | [Solution](exercises/url_function/solution.md) | |
+| Web App with DB | Lambda, DynamoDB | [Exercise](exercises/web_app_dynamodb/exercise.md) | [Solution](exercises/web_app_dynamodb/solution.md) | |
 
 ### Elastic Beanstalk
 
@@ -1211,18 +1212,20 @@ Read more on it [here](https://aws.amazon.com/lambda)
 <details>
 <summary>True or False? In AWS Lambda, you are charged as long as a function exists, regardless of whether it's running or not</summary><br><b>
 
-False. Charges are being made when the code is executed.
+False. Charges are being made when the function is executed for the time it takes to execute and compute resources it uses.
 </b></details>
 
 <details>
 <summary>Which of the following set of languages Lambda supports?
 
 - R, Swift, Rust, Kotlin
-- Python, Ruby, Go
-- Python, Ruby, PHP
+- Python, Ruby, Go, Kotlin, Bash
+- Python, Ruby, PHP, PowerShell, C#, Perl
+- Python, Ruby, Go, Node.js, Groovy, C++
+- Python, Ruby, Go, Node.js, PowerShell, C#
 </summary><br><b>
 
-- Python, Ruby, Go
+- Python, Ruby, Go, Node.js, PowerShell, C#
 </b></details>
 
 <details>
