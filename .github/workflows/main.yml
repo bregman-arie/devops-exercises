@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install flake8
+        run: pip install flake8
+      - name: Give executable permissions to run_ci.sh inside the scripts directory
+        run: chmod a+x scripts/run_ci.sh
+      - name: Run the ci script inside the scripts folder
+        run: sh scripts/run_ci.sh
+        shell: bash
