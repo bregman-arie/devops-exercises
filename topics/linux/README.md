@@ -917,9 +917,13 @@ There are many answers for this question. One way is running `df -T`
 <details>
 <summary>How to create a
 
-  * new empty file
-  * a file with text (without using text editor)
-  * a file with given size</summary><br><b>
+  - new empty file
+  - a file with text (without using text editor)
+  - a file with given size</summary><br><b>
+  
+  * touch new_file.txt
+  * cat > new_file [enter] submit text; ctrl + d to exit insert mode
+  * truncate -s <size> new_file.txt
 </b></details>
 
 <details>
