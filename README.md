@@ -686,6 +686,9 @@ CPU scheduler
 
 <details>
 <summary>What is "virtual memory" and what purpose it serves?</summary><br><b>
+
+Virtual memory combines your computer's RAM with temporary space on your hard disk. When RAM runs low, virtual memory helps to move data from RAM to a space called a paging file. Moving data to paging file can free up the RAM so your computer can complete its work. In general, the more RAM your computer has, the faster the programs run.
+https://www.minitool.com/lib/virtual-memory.html
 </b></details>
 
 <details>
