@@ -242,6 +242,7 @@ CSMA/CD algorithm:
   * router
   * switch
   * hub</summary><br><b>
+
 </b></details>
 
 <details>
@@ -4436,6 +4437,8 @@ document_number: 2
 
 <details>
 <summary>What is HTTP?</summary><br><b>
+
+[Avinetworks](https://avinetworks.com/glossary/layer-7/): HTTP stands for Hypertext Transfer Protocol. HTTP uses TCP port 80 to enable internet communication. It is part of the Application Layer (L7) in OSI Model. 
 </b></details>
 
 <details>
