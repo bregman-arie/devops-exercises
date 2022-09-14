@@ -433,6 +433,7 @@ Read more [here](https://about.gitlab.com/topics/gitops)
 
 * It introduces limited/granular access to infrastructure
 * It makes it easier to trace who makes changes to infrastructure
+
 </b></details>
 
 <details>
@@ -440,6 +441,14 @@ Read more [here](https://about.gitlab.com/topics/gitops)
 
 * Store Infra files in a version control repository (like Git)
 * Apply review/approval process for changes
+</b></details>
+
+<details>
+<summary>Two engineers in your team argue on where to put the configuration and infra related files of a certain application. One of them suggests to put it in the same repo as the application repository and the other one suggests to put to put it in its own separate repository. What's your take on that?</summary><br><b>
+
+One might say we need more details as to what these configuration and infra files look like exactly and how complex the application and its CI/CD pipeline(s), but in general, most of the time you will want to put configuration and infra related files in their own separate repository and not in the repository of the application for multiple reasons:
+
+* Every change submitted to the configuration, shouldn't trigger the CI/CD of the application, it should be testing out and applying the modified configuration
 </b></details>
 
 #### SRE

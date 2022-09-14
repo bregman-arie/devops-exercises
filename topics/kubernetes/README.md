@@ -14,6 +14,7 @@
     - [Services](#services)
     - [Ingress](#ingress)
     - [ReplicaSets](#replicasets)
+  - [StatefulSet](#statefulset)
     - [Storage](#storage)
     - [Network Policies](#network-policies)
       - [Configuration File](#configuration-file)
@@ -32,6 +33,7 @@
     - [Security](#security)
     - [Troubleshooting Scenarios](#troubleshooting-scenarios)
     - [Istio](#istio)
+    - [Controllers](#controllers)
     - [Scenarios](#scenarios)
 
 ## Kubernetes Exercises
@@ -556,6 +558,10 @@ The following occurs when you run `kubectl create deployment some_deployment --i
 <summary>How make an app accessible on private or external network?</summary><br><b>
 
 Using a Service.
+</b></details>
+
+<details>
+<summary>Can you use a Deployment for stateful applications?</summary><br><b>
 </b></details>
 
 ### Services
@@ -1089,6 +1095,14 @@ A ReplicaSet's purpose is to maintain a stable set of replica Pods running at an
 A DaemonSet ensures that all Nodes run a copy of a Pod. 
 </b></details>  
 
+## StatefulSet
+
+<details>
+<summary>Explain StatefulSet</summary><br><b>
+
+StatefulSet is the workload API object used to manage stateful applications. Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.[Learn more](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
+</b></details>
+
 ### Storage
 
 <details>
@@ -1475,12 +1489,6 @@ They become candidates to for termination.
 False. CPU is a compressible resource while memory is a non compressible resource - once a container reached the memory limit, it will be terminated.
 </b></details>
 
-<details>
-<summary>What is the control loop? How it works?</summary><br><b>
-
-Explained [here](https://www.youtube.com/watch?v=i9V4oCa5f9I)
-</b></details>
-
 ### Operators
 
 <details>
@@ -1489,6 +1497,8 @@ Explained [here](https://www.youtube.com/watch?v=i9V4oCa5f9I)
 Explained [here](https://kubernetes.io/docs/concepts/extend-kubernetes/operator)
 
 "Operators are software extensions to Kubernetes that make use of custom resources to manage applications and their components. Operators follow Kubernetes principles, notably the control loop."
+
+In simpler words, you can think about an operator as a custom control loop in Kubernetes.
 </b></details>
 
 <details>
@@ -1502,17 +1512,27 @@ This also help with automating a standard process on multiple Kubernetes cluster
 <details>
 <summary>What components the Operator consists of?</summary><br><b>
 
-1. CRD (custom resource definition)
+1. CRD (Custom Resource Definition) - You are fanmiliar with Kubernetes resources like Deployment, Pod, Service, etc. CRD is also a resource, but one that you or the developer the operator defines.
 2. Controller - Custom control loop which runs against the CRD
+
+</b></details>
+
+<details>
+<summary>Explain CRD</summary><br><b>
+
+CRD is Custom Resource Definitions. It's custom Kubernetes component which extends K8s API.
+
+TODO(abregman): add more info.
+
 </b></details>
 
 <details>
 <summary>How Operator works?</summary><br><b>
 
 It uses the control loop used by Kubernetes in general. It watches for changes in the application state. The difference is that is uses a custom control loop.
-In additions.
 
 In addition, it also makes use of CRD's (Custom Resources Definitions) so basically it extends Kubernetes API.
+
 </b></details>
 
 <details>
@@ -1522,9 +1542,15 @@ True
 </b></details>
 
 <details>
+<summary>Explain what is the OLM (Operator Lifecycle Manager) and what is it used for</summary><br><b>
+
+</b></details>
+
+<details>
 <summary>What is the Operator Framework?</summary><br><b>
 
 open source toolkit used to manage k8s native applications, called operators, in an automated and efficient way.
+
 </b></details>
 
 <details>
@@ -1533,12 +1559,14 @@ open source toolkit used to manage k8s native applications, called operators, in
 1. Operator SDK - allows developers to build operators
 2. Operator Lifecycle Manager - helps to install, update and generally manage the lifecycle of all operators
 3. Operator Metering - Enables usage reporting for operators that provide specialized services
+4. 
 </b></details>
 
 <details>
 <summary>Describe in detail what is the Operator Lifecycle Manager</summary><br><b>
 
 It's part of the Operator Framework, used for managing the lifecycle of operators. It basically extends Kubernetes so a user can use a declarative way to manage operators (installation, upgrade, ...).
+
 </b></details>
 
 <details>
@@ -1548,6 +1576,7 @@ It includes:
 
   * catalog-operator - Resolving and installing ClusterServiceVersions the resource they specify.
   * olm-operator - Deploys applications defined by ClusterServiceVersion resource
+
 </b></details>
 
 <details>
@@ -1558,12 +1587,20 @@ Use kubeconfig files to organize information about clusters, users, namespaces, 
 </b></details>
 
 <details>
-<summary>Can you use a Deployment for stateful applications?</summary><br><b>
+<summary>Would you use Helm, Go or something else for creating an Operator?</summary><br><b>
+  
+Depends on the scope and maturity of the Operator. If it mainly covers installation and upgrades, Helm might be enough. If you want to go for Lifecycle management, insights and auto-pilot, this is where you'd probably use Go.
 </b></details>
 
 <details>
-<summary>Explain StatefulSet</summary><br><b>
-  StatefulSet is the workload API object used to manage stateful applications. Manages the deployment and scaling of a set of Pods, and provides guarantees about the ordering and uniqueness of these Pods.[Learn more](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)
+<summary>Are there any tools, projects you are using for building Operators?</summary><br><b>
+
+This one is based more on a personal experience and taste...
+
+* Operator Framework
+* Kubebuilder
+* Controller Runtime
+...
 </b></details>
 
 ### Secrets
@@ -1994,7 +2031,7 @@ Same as Conftest, it is used for policy testing and enforcement. The difference 
 <details>
 <summary>What is Helm?</summary><br><b>
 
-Package manager for Kubernetes. Basically the ability to package YAML files and distribute them to other users and apply them in different clusters.
+Package manager for Kubernetes. Basically the ability to package YAML files and distribute them to other users and apply them in the cluster(s).
 </b></details>
 
 <details>
@@ -2003,6 +2040,8 @@ Package manager for Kubernetes. Basically the ability to package YAML files and 
 Sometimes when you would like to deploy a certain application to your cluster, you need to create multiple YAML files/components like: Secret, Service, ConfigMap, etc. This can be tedious task. So it would make sense to ease the process by introducing something that will allow us to share these bundle of YAMLs every time we would like to add an application to our cluster. This something is called Helm.
 
 A common scenario is having multiple Kubernetes clusters (prod, dev, staging). Instead of individually applying different YAMLs in each cluster, it makes more sense to create one Chart and install it in every cluster.
+
+Another scenario is, you would like to share what you've created with the community. For people and companies to easily deploy your application in their cluster.
 </b></details>
 
 <details>
@@ -2118,6 +2157,22 @@ TODO: finish this...
 <summary>What is Istio? What is it used for?</summary><br><b>
   
 Istio is an open source service mesh that helps organizations run distributed, microservices-based apps anywhere. Istio enables organizations to secure, connect, and monitor microservices, so they can modernize their enterprise apps more swiftly and securely.
+</b></details>
+
+### Controllers
+
+<details>
+<summary>What is the control loop? How it works?</summary><br><b>
+
+Explained [here](https://www.youtube.com/watch?v=i9V4oCa5f9I)
+</b></details>
+
+<details>
+<summary>What are all the phases/steps of a control loop?</summary><br><b>
+
+- Observe - identify the cluster current state
+- Diff - Identify whether a diff exists between current state and desired state
+- Act - Bring current cluster state to the desired state (basically reach a state where there is no diff)
 </b></details>
 
 ### Scenarios

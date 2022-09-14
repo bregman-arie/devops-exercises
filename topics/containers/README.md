@@ -1,32 +1,30 @@
 # Containers
 
-## Exercises - Index
+- [Containers](#containers)
+  - [Exercises](#exercises)
+    - [Running Containers](#running-containers)
+    - [Images](#images)
+    - [Misc](#misc)
+  - [Questions](#questions)
+    - [Containers 101](#containers-101)
+    - [Commands Commands](#commands-commands)
+    - [Images](#images-1)
+      - [Registry](#registry)
+      - [Tags](#tags)
+      - [Containerfile](#containerfile)
+    - [Storage](#storage)
+    - [Architecture](#architecture)
+    - [Docker Architecture](#docker-architecture)
+    - [Docker Compose](#docker-compose)
+    - [Networking](#networking)
+    - [Docker Networking](#docker-networking)
+    - [Security](#security)
+    - [Docker in Production](#docker-in-production)
+    - [OCI](#oci)
+    - [Scenarios](#scenarios)
 
-* [Running Containers](#exercises-running-containers)
-* [Images](#exercises-containers-images)
-* [Misc](#exercises-containers-misc)
 
-## Questions - Index
-
-* [Containers 101](#questions-containers-101)
-* [Common Commands](#questions-common-commands)
-* [Images](#questions-containers-images)
-  * [Tags](#questions-containers-images-tags)
-  * [Registry](#questions-containers-images-registry)
-* [Storage](#questions-containers-storage)
-* [Containerfile](#questions-containerfile)
-* [Architecture](#questions-architecture)
-* [Docker Architecture](#questions-docker-architecture)
-* [Docker Compose](#questions-docker-compose)
-* [Networking](#questions-networking)
-* [Docker Networking](#questions-docker-networking)
-* [Security](#questions-security)
-* [Docker In Production](#questions-docker-in-production)
-* [Rootless Containers](#questions-rootless-containers)
-* [OCI](#questions-oci)
-* [Scenarios](#questions-scenarios)
-
-## Containers Exercises
+## Exercises
 
 <a name="exercises-running-containers"></a>
 ### Running Containers
@@ -514,8 +512,7 @@ True. For mounted files you can use `podman inspec CONTAINER_NAMD/ID`
 Registry
 </b></details>
 
-<a name="questions-containers-images-registry"></a>
-#### Images - Registry
+#### Registry
 
 <details>
 <summary>What is a Registry?</summary><br><b>
@@ -582,8 +579,7 @@ You can specify a specific registry: `podman push IMAGE REGISTRY_ADDRESS`
 2. Using `podman commit` on a running container after making changes to it
 </b></details>
 
-<a name="questions-containers-images-tags"></a>
-#### Images - Tags
+#### Tags
 
 <details>
 <summary>What are image tags? Why is it recommended to use tags when supporting multiple releases/versions of a project?</summary><br><b>
@@ -613,7 +609,7 @@ False. You can run `podman rmi IMAGE:TAG`.
 True.
 </b></details>
 
-### Containerfile
+#### Containerfile
 
 <details>
 <summary>What is a Containerfile/Dockerfile?</summary><br><b>
@@ -660,8 +656,6 @@ It specifies the base layer of the image to be used. Every other instruction is 
 
 COPY takes in a source and destination. It lets you copy in a file or directory from the build context into the Docker image itself.<br>
 ADD lets you do the same, but it also supports two other sources. You can use a URL instead of a file or directory from the build context. In addition, you can extract a tar file from the source directly into the destination.
-
-Although ADD and COPY are functionally similar, generally speaking, COPY is preferred. That’s because it’s more transparent than ADD. COPY only supports the basic copying of files from build context into the container, while ADD has some features (like local-only tar extraction and remote URL support) that are not immediately obvious.
 </b></details>
 
 <details>

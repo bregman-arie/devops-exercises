@@ -78,6 +78,7 @@
   </tr>
   <tr>
       <td align="center"><a href="topics/kafka/README.md"><img src="images/logos/kafka.png" width="70px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
+      <td align="center"><a href="topics/argo/README.md"><img src="images/logos/argo.png" width="80px;" height="80px;" alt="Argo"/><br /><b>Argo</b></a></td>
   </tr>
 </table>
 </center>
@@ -5546,6 +5547,23 @@ A configuration->deployment which has some advantages like:
 
 1. Deployment Speed - you configure once prior to deployment instead of configuring every time you deploy. This allows you to start instances/services much quicker.
 2. More immutable infrastructure - with configuration->deployment it's not likely to have very different deployments since most of the configuration is done prior to the deployment. Issues like dependencies errors are handled/discovered prior to deployment in this model.
+</b></details>
+
+## Release
+
+<details>
+<summary>Explain Semantic Versioning</summary><br><b>
+
+[This](https://semver.org/) page explains it perfectly:
+
+```
+Given a version number MAJOR.MINOR.PATCH, increment the:
+
+MAJOR version when you make incompatible API changes
+MINOR version when you add functionality in a backwards compatible manner
+PATCH version when you make backwards compatible bug fixes
+Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+```
 </b></details>
 
 ## Certificates

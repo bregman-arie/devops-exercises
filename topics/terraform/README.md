@@ -276,13 +276,19 @@ resource "aws_instance" "tf_aws_instance" {
 <details>
 <summary>How do you test a terraform module?</summary><br><b>
 
-Many examples are acceptable, but the most common answer would likely to be using the tool <code>terratest</code>, and to test that a module can be initialized, can create resources, and can destroy those resources cleanly.
+There are multiple answers, but the most common answer would likely to be using the tool <code>terratest</code>, and to test that a module can be initialized, can create resources, and can destroy those resources cleanly.
 </b></details>
 
 <details>
-<summary>Where can you obtain Terraform modules?<summary><br><b>
+<summary>Where can you obtain Terraform modules?</summary><br><b>
 
 Terraform modules can be found at the [Terrafrom registry](https://registry.terraform.io/browse/modules)
+</b></details>
+
+<details>
+<summary>There's a discussion in your team whether to store modules in one centralized location/repository or have them in each of the projects/repositories where they are used. What's your take on that?</summary><br><b>
+
+You might have a different opinion but my personal take on that, is to keep modules in one centralized repository as any maintenance or updates to the module you need to perform, are done in one place instead of multiple times in different repositories.
 </b></details>
 
 ### Variables
