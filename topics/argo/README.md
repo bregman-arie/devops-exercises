@@ -1,5 +1,13 @@
 # Argo
 
+- [Argo](#argo)
+  - [ArgoCD Exercises](#argocd-exercises)
+  - [Argo Questions](#argo-questions)
+    - [ArgoCD 101](#argocd-101)
+    - [Practical ArgoCD 101](#practical-argocd-101)
+    - [Multi-Cluster Environment](#multi-cluster-environment)
+    - [Access Control](#access-control)
+
 ## ArgoCD Exercises
 
 TODO
@@ -20,9 +28,9 @@ As to why Argo CD, they provide the following explanation: "Application definiti
 <details>
 <summary>There been a lot of CI/CD systems before ArgoCD (Jenkins, Teamcity, CircleCI, etc.) What added value ArgoCD brought?</summary><br><b>
 
-Simply said, ArgoCD is running on Kubernetes, it's part of its ecosystem, as opposed to some other CI/CD systems.
+Simply said, ArgoCD is CD, not CI. We still need CI systems. Secondly, ArgoCD is running on Kubernetes, it's part of its ecosystem, as opposed to some other CI/CD systems. Finally, ArgoCD was built specifically for Kubernetes, not other platforms and systems.
 
-Easier to explain the need for ArgoCD by direct comparison to another CI/CD system. Let's use Jenkins for this.
+Easier to explain the need for ArgoCD by direct comparison to another system that can do CD. Let's use Jenkins for this.
 
 With Jenkins, you need make sure to install k8s related tools and set access for commands like kubectl.
 With ArgoCD you simply need to install it in your namespace but no need to install additional tools as it's part of k8s.
@@ -102,14 +110,79 @@ Imagine you have a cluster in the cloud, in one of the regions. Something happen
 If you have all your cluster configuration in a GitOps repository, ArgoCD can be pointed to that repository while be configured to use a new cluster you've set up and apply that configuration so your cluster is again up and running with the same status as o
 </b></details>
 
+<details>
+<summary>Ella, an engineer in your team, claims ArgoCD benefit is that it's an extension Kubernetes, it's part of the cluster. Sarah, also an engineer in your team, claims it's not a real benefit as Jenkins can be also deployed in the cluster hence being part of it. What's your take?</summary><br><b>
+
+Ella is right, ArgoCD is an extension of the cluster, that is very different from simply being deployed in the cluster as other CI/CD systems like Jenkins. ArgoCD uses existing k8s resources like K8s controllers (for monitoring and state differences) and etcd for storing data.
+</b></details>
+
+<details>
+<summary>How the main resource in ArgoCD called?</summary><br><b>
+
+"Application"
+</b></details>
+
+### Practical ArgoCD 101
+
+<details>
+<summary>Describe the purpose of the following section in a an Application YAML file
+
+```YAML
+source:
+  repoURL: https://github.com/bregman-arie/devops-exercises
+  targetRevision: HEAD
+  path: main
+```
+</summary><br><b>
+
+This section of an Application in ArgoCD, defines which Git repository should be synced
+</b></details>
+
+<details>
+<summary>Describe the purpose of the following section in a an Application YAML file
+
+```YAML
+destination:
+  server: http://some.kubernetes.cluster.svc
+  namespace: devopsExercises
+```
+</summary><br><b>
+
+This section defines with which Kubernetes cluster the app in the tracked Git repository should be synced with.
+</b></details>
+
+<details>
+<summary>What CRD would you use if you have multiple applications and you would like to group them together logically?</code></summary><br><b>
+
+AddProject
+</b></details>
+
+
+### Multi-Cluster Environment
+
+<details>
+<summary>True or False? If you have multiple Kubernetes clusters you want to manage sync applications to with ArgoCD then, you must have ArgoCD installed on each one of them</summary><br><b>
+
+False, it can be deployed on one of them. ArgoCD is able to manage external clusters on which it doesn't run.
+</b></details>
+
+<details>
+<summary>You've three clusters - dev, staging and prod. Whenever you update the application GitOps repo, all three clusters are being updated. What's the problem with that and how to deal with it?</summary><br><b>
+
+You don't usually want to go and update all of your clusters at once, especially when some for testing and development purposes and some for actual production usage.
+
+There are multiple ways to deal with it:
+
+1. Branch Drived: Have branches for your GitOps repo where you push first to development, do some testing, merge it then to staging and if everything works fine in staging, you merge it to production.
+
+2. Use overlays and Kustomize to control the context of where your changes synced based on the CI process/pipeline used.
+</b></details>
 
 ### Access Control
 
 <details>
-<summary>What is Argo CD?</code></summary><br><b>
+<summary>How ArgoCD makes access management in the cluster easier?</summary><br><b>
 
-[ArgoCD](https://argo-cd.readthedocs.io/en/stable): "Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes."
-
-As to why Argo CD, they provide the following explanation: "Application definitions, configurations, and environments should be declarative and version controlled. Application deployment and lifecycle management should be automated, auditable, and easy to understand."
+Instead of creating Kubernetes resources, you can use Git to manage who is allowed to push code, to review it, merge it, etc - either human users or 3rd party systems and services. There is no need to use ClusterRole or User resources in Kubernetes hence the management of access is much more simplified.
 
 </b></details>
