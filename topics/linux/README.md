@@ -1401,6 +1401,38 @@ This is the TTL. When you lookup for an address using a domain/host name, your O
 When you get a reply, this reply in cached in your OS for a certain period of time. This is period of time is also known as TTL and this is the meaning of 3515 number - it will be cached for 3515 seconds before removed from the cache and during that period of time, you'll get the value from the cache instead of asking DNS name servers for the address again.
 </b></details>
 
+<details>
+
+<summary> How can we modify the network connection via `nmcli` command, to use `8.8.8.8` as a DNS server? </summary><br><b>
+
+1. Find the connection name: 
+    ```
+    # nmcli con show
+    NAME         UUID                                  TYPE      DEVICE
+    System ens5  8126c120-a964-e959-ff98-ac4973344505  ethernet  ens5
+    System eth0  5fb06bd0-0bb0-7ffb-45f1-d6edd65f3e03  ethernet  --
+    ```
+    Here the connection name is "System ens5". Let's say we want to modify settings for this connection.
+
+2. Modify the connection to use 8.8.8.8 as DNS server:
+    ```
+    # nmcli con mod "System ens5" ipv4.dns "8.8.8.8"
+    ```
+
+3. We need to reactivate the connection for the change to take effect:
+    ```
+    nmcli con up "System ens5"
+    ```
+
+4. Verify our settings once more:
+    ```
+    cat /etc/resolv.conf
+    nmcli -f ipv4.dns con show "System ens5"
+    ```
+</b>
+
+</details>
+ 
 <a name="questions-linux-packaging"></a>
 ### Packaging
 
