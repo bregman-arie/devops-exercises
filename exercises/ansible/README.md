@@ -211,6 +211,11 @@ when the environment variable 'BEST_YEAR' is empty or false.
 
 <details>
 <summary>Which Ansible best practices are you familiar with?. Name at least three</summary><br><b>
+“Name” Your Plays and Tasks.
+Use Prefixes and Human Meaningful Names with Variables.
+Use Native YAML Syntax.
+Use Modules Before Run Commands.
+Clean Up Your Debugging Messages.
 </b></details>
 
 <details>
