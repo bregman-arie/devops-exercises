@@ -76,15 +76,6 @@ It's the repository that holds app configuration, the one updated most of the ti
 * Your whole configuration is one place, defined as code so it's completely transparent, adjustable for changes and easily reproducible
 * Everyone go through the same interface hence you have more people experiencing and testing the code, even if not intentionally
 * Engineers can use it for testing, development, ... there is no more running manual commands and hoping to reach the same status as in the cluster/cloud.
-* 
-</b></details>
-
-<details>
-<summary>What are the advantages in using GitOps approach/repository?</summary><br><b>
-
-* Your whole configuration is one place, defined as code so it's completely transparent, adjustable for changes and easily reproducible
-* Everyone go through the same interface hence you have more people experiencing and testing the code, even if not intentionally
-* Engineers can use it for testing, development, ... there is no more running manual commands and hoping to reach the same status as in the cluster/cloud.
 * Single source of truth: you know that your GitOps is the repo from which changes can be done to the cluster. So even if someone tries to manually override it, it won't work.
 </b></details>
 
