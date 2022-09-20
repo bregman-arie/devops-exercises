@@ -1,6 +1,6 @@
 # Launch EC2 instance
 
-## Reuqirements
+## Requirements
 
 * AWS account
 
