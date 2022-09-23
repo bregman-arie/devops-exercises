@@ -2,7 +2,7 @@
 
 ## Objectives
 
-1. Create a Docker image:
+1. Create an image:
   * Use centos or ubuntu as the base image
   * Install apache web server
   * Deploy any web application you want

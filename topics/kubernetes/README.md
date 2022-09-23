@@ -120,8 +120,8 @@ metadata, kind and apiVersion
 
 Kubectl is the Kubernetes command line tool that allows you to run commands against Kubernetes clusters. For example, you can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
 </b></details>
-<details>
 
+<details>
 <summary>What Kubernetes objects do you usually use when deploying applications in Kubernetes?</summary><br><b>
 
 * Deployment - creates the Pods () and watches them

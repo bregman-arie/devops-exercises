@@ -437,6 +437,12 @@ Read more [here](https://about.gitlab.com/topics/gitops)
 </b></details>
 
 <details>
+<summary>When a repository refereed to as "GitOps Repository" what does it means?</summary><br><b>
+
+A repository that doesn't holds the application source code, but the configuration, infra, ... files that required to test and deploy the application.
+</b></details>
+
+<details>
 <summary>What are some practical implementations or practices of GitOp?</summary><br><b>
 
 * Store Infra files in a version control repository (like Git)
@@ -448,7 +454,8 @@ Read more [here](https://about.gitlab.com/topics/gitops)
 
 One might say we need more details as to what these configuration and infra files look like exactly and how complex the application and its CI/CD pipeline(s), but in general, most of the time you will want to put configuration and infra related files in their own separate repository and not in the repository of the application for multiple reasons:
 
-* Every change submitted to the configuration, shouldn't trigger the CI/CD of the application, it should be testing out and applying the modified configuration
+* Every change submitted to the configuration, shouldn't trigger the CI/CD of the application, it should be testing out and applying the modified configuration, not the application itself
+* When you mix application code with conifguration and infra related files
 </b></details>
 
 #### SRE
