@@ -1,5 +1,15 @@
 # Kubernetes
 
+What's your goal?
+
+* I would like to prepare for CKA certification
+  * See [CKA](CKA.md) page
+* I would like to learn Kubernetes by practicing both theoritcal and practical material
+  * Solve [exercises](#kubernetes-exercises)
+  * Solve [questions](#kubernetes-questions)
+* I would like to learn parctical Kubernetes
+  * Solve [exercises](#kubernetes-exercises)
+
 - [Kubernetes](#kubernetes)
   - [Kubernetes Exercises](#kubernetes-exercises)
     - [Pods](#pods)
@@ -7,17 +17,16 @@
     - [ReplicaSet](#replicaset)
   - [Kubernetes Questions](#kubernetes-questions)
     - [Kubernetes 101](#kubernetes-101)
-      - [Kubernetes - Hands-On Basics](#kubernetes---hands-on-basics)
-    - [Cluster](#cluster)
+    - [Cluster and Architecture](#cluster-and-architecture)
     - [Pods](#pods-1)
     - [Deployments](#deployments)
     - [Services](#services)
     - [Ingress](#ingress)
     - [ReplicaSets](#replicasets)
-  - [StatefulSet](#statefulset)
+    - [StatefulSet](#statefulset)
     - [Storage](#storage)
+    - [Networking](#networking)
     - [Network Policies](#network-policies)
-      - [Configuration File](#configuration-file)
     - [etcd](#etcd)
     - [Namespaces](#namespaces)
     - [Operators](#operators)
@@ -73,6 +82,7 @@ To understand what Kubernetes is good for, let's look at some examples:
 * You would like to run a certain application in a container on multiple different locations and sync changes across all of them, no matter where they run
 * Performing updates and changes across hundreds of containers
 * Handle cases where the current load requires to scale up (or down)
+
 </b></details>
 
 <details>
@@ -80,6 +90,7 @@ To understand what Kubernetes is good for, let's look at some examples:
 
   - If you manage low level infrastructure or baremetals, Kubernetes is probably not what you need or want
   - If you are a small team (like less than 20 engineers) running less than a dozen of containers, Kubernetes might be an overkill (even if you need scale, rolling out updates, etc.). You might still enjoy the benefits of using managed Kubernetes, but you definitely want to think about it carefully before making a decision on whether to adopt it.
+
 </b></details>
 
 <details>
@@ -91,10 +102,8 @@ To understand what Kubernetes is good for, let's look at some examples:
   - Automated Rollout: Gradual updates roll out to applications and support in roll back in case anything goes wrong
   - Scaling: Scaling horizontally (down and up) based on different state parameters and custom defined criteria
   - Secrets: you have a mechanism for storing user names, passwords and service endpoints in a private way, where not everyone using the cluster are able to view it
-</b></details>
 
-<a name="kubernetes-hands-on-basics"></a>
-#### Kubernetes - Hands-On Basics
+</b></details>
 
 <details>
 <summary>What Kubernetes objects are there?</summary><br><b>
@@ -142,7 +151,7 @@ Becaused container is not a Kubernetes object. The smallest object unit in Kuber
   - Always specify requests and limits to prevent situation where containers are using the entire cluster memory which may lead to OOM issue
 </b></details>
 
-### Cluster
+### Cluster and Architecture
 
 <details>
 <summary>What is a Kubernetes Cluster?</summary><br><b>
@@ -168,18 +177,29 @@ The master coordinates all the workflows in the cluster:
 * Scheduling applications
 * Managing desired state
 * Rolling out new updates
+
 </b></details>
 
 <details>
-<summary>Which command will list the nodes of the cluster?</code></summary><br><b>
+<summary>Which command will list the nodes of the cluster?</summary><br><b>
 
 `kubectl get nodes`
+
+</b></details>
+
+<details>
+<summary>Describe shortly and in high-level, what happens when you run <code>kubectl get nodes</code></summary><br><b>
+
+1. Your user is getting authenticated
+2. Request is validated by the kube-apiserver
+3. Data is retrieved from etcd
 </b></details>
 
 <details>
 <summary>True or False? Every cluster must have 0 or more master nodes and at least 1 worker</summary><br><b>
 
 False. A Kubernetes cluster consists of at least 1 master and can have 0 workers (although that wouldn't be very useful...)
+
 </b></details> 
 
 <details>
@@ -189,6 +209,7 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
   * Scheduler - assigns an application with a worker node it can run on
   * Controller Manager - cluster maintenance (replications, node failures, etc.)
   * etcd - stores cluster configuration
+
 </b></details>
 
 <details>
@@ -197,6 +218,7 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
   * Kubelet - an agent responsible for node communication with the master.
   * Kube-proxy - load balancing traffic between app components
   * Container runtime - the engine runs the containers (Podman, Docker, ...)
+
 </b></details>
 
 <details>
@@ -204,6 +226,7 @@ False. A Kubernetes cluster consists of at least 1 master and can have 0 workers
 <img src="images/cluster_architecture_exercise.png"/>
 </summary><br><b>
 <img src="images/cluster_architecture_solution.png"/>
+
 </b></details>
 
 <details>
@@ -230,9 +253,15 @@ Apply requests and limits, especially on third party applications (where the unc
 </b></details>
 
 <details>
-<summary>Which command will list all the object types in a cluster?</code></summary><br><b>
+<summary>Which command will list all the object types in a cluster?</summary><br><b>
 
 `kubectl api-resources`
+</b></details>
+
+<details>
+<summary>True of False? The scheduler is responsible for both deciding where a Pod will run and actually run it</summary><br><b>
+
+False. While the scheduler is responsible for choosing the node on which the Pod will run, Kubelet is the one that actually runs the Pod.
 </b></details>
 
 ### Pods
@@ -240,23 +269,27 @@ Apply requests and limits, especially on third party applications (where the unc
 <details>
 <summary>Explain what is a Pod</summary><br><b>
 
-A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers.<br>
+A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers.
+
 Pods are the smallest deployable units of computing that you can create and manage in Kubernetes. 
+
 </b></details>
 
 <details>
 <summary>Deploy a pod called "my-pod" using the nginx:alpine image</summary><br><b>
 
-`kubectl run my-pod --image=nginx:alpine --restart=Never`
+`kubectl run my-pod --image=nginx:alpine`
 
-If you are a Kubernetes beginner you should know that this is not a common way to run Pods. The common way is to run a Deployment which in turn runs Pod(s).<br>
+If you are a Kubernetes beginner you should know that this is not a common way to run Pods. The common way is to run a Deployment which in turn runs Pod(s).
+
 In addition, Pods and/or Deployments are usually defined in files rather than executed directly using only the CLI arguments.
 </b></details>
 
 <details>
 <summary>What are your thoughts on "Pods are not meant to be created directly"?</summary><br><b>
 
-Pods are usually indeed not created directly. You'll notice that Pods are usually created as part of another entities such as Deployments or ReplicaSets.<br>
+Pods are usually indeed not created directly. You'll notice that Pods are usually created as part of another entities such as Deployments or ReplicaSets.
+
 If a Pod dies, Kubernetes will not bring it back. This is why it's more useful for example to define ReplicaSets that will make sure that a given number of Pods will always run, even after a certain Pod dies.
 </b></details>
 
@@ -264,6 +297,8 @@ If a Pod dies, Kubernetes will not bring it back. This is why it's more useful f
 <summary>How many containers can a pod contain?</summary><br><b>
 
 A pod can include multiple containers but in most cases it would probably be one container per pod.
+
+There are some patterns where it makes to run more than one container like the "side-car" pattern where you might want to perform logging or some other operation that is executed by another container running with your app container in the same Pod.
 </b></details>
 
 <details>
@@ -277,7 +312,7 @@ A CI/CD pipeline (using Tekton for example) can run multiple containers in one P
 <summary>What are the possible Pod phases?</summary><br><b>
 
   * Running - The Pod bound to a node and at least one container is running
-  * Failed - At least one container in the Pod terminated with a failure
+  * Failed/Error - At least one container in the Pod terminated with a failure
   * Succeeded - Every container in the Pod terminated with success
   * Unknown - Pod's state could not be obtained
   * Pending - Containers are not yet running (Perhaps images are still being downloaded or the pod wasn't scheduled yet)
@@ -296,27 +331,31 @@ False. "Pending" is after the Pod was accepted by the cluster, but the container
 </b></details>
 
 <details>
-<summary>How to list the pods in the current namespace?</code></summary><br><b>
+<summary>How to list the pods in the current namespace?</summary><br><b>
 
 `kubectl get po`
 </b></details>
 
 <details>
-<summary>How view all the pods running in all the namespaces?</code></summary><br><b>
+<summary>How view all the pods running in all the namespaces?</summary><br><b>
 
 `kubectl get pods --all-namespaces`
 </b></details>
 
 <details>
-<summary>True or False? A single Pod can be split across multiple nodes</code></summary><br><b>
+<summary>True or False? A single Pod can be split across multiple nodes</summary><br><b>
 
 False. A single Pod can run on a single node.
 </b></details>
 
 <details>
-<summary>How to delete a pod?</code></summary><br><b>
+<summary>How to delete a pod?</summary><br><b>
 
 `kubectl delete pod pod_name`
+</b></details>
+
+<details>
+<summary>You run a pod and you see the status <code>ContainerCreating</code></summary><br><b>
 </b></details>
 
 <details>
@@ -342,15 +381,19 @@ True.
 </b></details>
 
 <details>
-<summary>What happens when you run a Pod?</summary><br><b>
+<summary>What happens when you run a Pod with kubectl?</summary><br><b>
 
-1. Kubectl sends a request to the API server to create the Pod
-2. The Scheduler detects that there is an unassigned Pod (by monitoring the API server)
+1. Kubectl sends a request to the API server (kube-apiserver) to create the Pod
+   1. In the the process the user gets authenticated and the request is being validated.
+   2. etcd is being updated with the data
+2. The Scheduler detects that there is an unassigned Pod by monitoring the API server (kube-apiserver)
 3. The Scheduler chooses a node to assign the Pod to
+   1. etcd is being updated with the information
 4. The Scheduler updates the API server about which node it chose
 5. Kubelet (which also monitors the API server) notices there is a Pod assigned to the same node on which it runs and that Pod isn't running
 6. Kubelet sends request to the container engine (e.g. Docker) to create and run the containers
 7. An update is sent by Kubelet to the API server (notifying it that the Pod is running)
+   1. etcd is being updated by the API server again
 </b></details>
 
 <details>
@@ -1095,7 +1138,7 @@ A ReplicaSet's purpose is to maintain a stable set of replica Pods running at an
 A DaemonSet ensures that all Nodes run a copy of a Pod. 
 </b></details>  
 
-## StatefulSet
+### StatefulSet
 
 <details>
 <summary>Explain StatefulSet</summary><br><b>
@@ -1124,6 +1167,15 @@ A directory accessible by the containers inside a certain Pod. The mechanism res
 Ephemeral volume types have the lifetime of a pod as opposed to persistent volumes which exist beyond the lifetime of a Pod.
 </b></details>
 
+### Networking
+
+<details>
+<summary>True or False? By default there is no communication between two Pods in two different namespaces</summary><br><b>
+
+False. By default two Pods in two different namespaces are able to communicate with each other.
+
+</b></details>
+
 ### Network Policies
 
 <details>
@@ -1132,6 +1184,7 @@ Ephemeral volume types have the lifetime of a pod as opposed to persistent volum
 [kubernetes.io](https://kubernetes.io/docs/concepts/services-networking/network-policies): "NetworkPolicies are an application-centric construct which allow you to specify how a pod is allowed to communicate with various network "entities"..."
 
 In simpler words, Network Policies specify how pods are allowed/disallowed to communicate with each other and/or other network endpoints.
+
 </b></details>
 
 <details>
@@ -1139,6 +1192,7 @@ In simpler words, Network Policies specify how pods are allowed/disallowed to co
 
   - Security:  You want to prevent from everyone to communicate with a certain pod for security reasons
   - Controlling network traffic: You would like to deny network flow between two specific nodes
+
 </b></details>
 
 <details>
@@ -1153,29 +1207,6 @@ False. By default pods are non-isolated.
 Denied. Both source and destination policies has to allow traffic for it to be allowed.
 </b></details>
 
-#### Configuration File
-
-<details>
-<summary>Which parts a configuration file has?</summary><br><b>
-
-It has three main parts:
-1. Metadata
-2. Specification
-3. Status (this automatically generated and added by Kubernetes)
-</b></details>
-
-<details>
-<summary>What is the format of a configuration file?</summary><br><b>
-
-YAML
-</b></details>
-
-<details>
-<summary>How to get latest configuration of a deployment?</summary><br><b>
-
-`kubectl get deployment [deployment_name] -o yaml`
-</b></details>
-
 <details>
 <summary>Where Kubernetes cluster stores the cluster state?</summary><br><b>
 
@@ -1186,7 +1217,11 @@ etcd
 
 <details>
 <summary>What is etcd?</summary><br><b>
-  etcd is an open source distributed key-value store used to hold and manage the critical information that distributed systems need to keep running.[Read more](https://www.redhat.com/en/topics/containers/what-is-etcd)
+
+etcd is an open source distributed key-value store used to hold and manage the critical information that distributed systems need to keep running.
+
+[Read more here](https://www.redhat.com/en/topics/containers/what-is-etcd)
+
 </b></details>
 
 <details>
@@ -1209,6 +1244,14 @@ True
 
 <details>
 <summary>Why etcd? Why not some SQL or NoSQL database?</summary><br><b>
+
+When chosen as the data store etcd was (and still is of course):
+
+* Highly Available - you can deploy multiple nodes
+* Fully Replicated - any node in etcd cluster is "primary" node and has full access to the data
+* Consistent - reads return latest data
+* Secured - supports both TLS and SSL
+* Speed - high performance data store (10k writes per sec!)
 </b></details>
 
 ### Namespaces
@@ -2162,6 +2205,25 @@ Istio is an open source service mesh that helps organizations run distributed, m
 ### Controllers
 
 <details>
+<summary>What are controllers?</summary><br><b>
+
+[Kubernetes.io](https://kubernetes.io/docs/concepts/architecture/controller): "In Kubernetes, controllers are control loops that watch the state of your cluster, then make or request changes where needed. Each controller tries to move the current cluster state closer to the desired state."
+</b></details>
+
+<details>
+<summary>Name two controllers you are familiar with</summary><br><b>
+
+1. Node Contorller: manages the nodes of a cluster. Among other things, the controller is responsible for monitoring nodes' health - if the node is suddenly unreachable it will evacuate all the pods running on it and will mark the node status accordingly.
+2. Replication Controller - monitors the status of pod replicas based on what should be running. It makes sure the number of pods that should be running is actually running
+</b></details>
+
+<details>
+<summary>What process is responsible for running and installing the different controllers?</summary><br><b>
+
+Kube-Controller-Manager
+</b></details>
+
+<details>
 <summary>What is the control loop? How it works?</summary><br><b>
 
 Explained [here](https://www.youtube.com/watch?v=i9V4oCa5f9I)
@@ -2181,4 +2243,22 @@ Explained [here](https://www.youtube.com/watch?v=i9V4oCa5f9I)
 <summary>An engineer form your organization told you he is interested only in seeing his team resources in Kubernetes. Instead, in reality, he sees resources of the whole organization, from multiple different teams. What Kubernetes concept can you use in order to deal with it?</summary><br><b>
 
 Namespaces. See the following [namespaces question and answer](#namespaces-use-cases) for more information.
+</b></details>
+
+<details>
+<summary>An engineer in your team runs a Pod but the status he sees is "CrashLoopBackOff". What does it means? How to identify the issue?</summary><br><b>
+
+The container failed to run (due to different reasons) and Kubernetes tries to run the Pod again after some delay (= BackOff time).
+
+Some reasons for it to fail:
+  - Misconfiguration - mispelling, non supported value, etc.
+  - Resource not available - nodes are down, PV not mounted, etc.
+
+Some ways to debug:
+
+1. `kubectl describe pod POD_NAME`
+   1. Focus on `State` (which should be Waiting, CrashLoopBackOff) and `Last State` which should tell what happened before (as in why it failed)
+2. Run `kubectl logs mypod`
+   1. This should provide an accurate output of 
+   2. For specific container, you can add `-c CONTAINER_NAME`
 </b></details>
