@@ -24,6 +24,11 @@ SAAS
   * IAAS
   * PAAS
   * SAAS</summary><br><b>
+ - IAAS - Infrastructure As A Service is a cloud computing service where a cloud provider rents out IT infrastructure such as compute, networking resources and strorage over the internet.<br>
+ 
+ - PAAS - Platform As A Service is a cloud hosting platform with an on-demand access to ready-to-use set of deployment, application management and DevOps tools.<br>
+ 
+ - SAAS - Software As A Service is a software distribution model in which services are hosted by a cloud service provider.
 </b></details>
 
 <details>
@@ -40,6 +45,13 @@ SAAS
   * Public
   * Hybrid
   * Private</summary><br><b>
+
+- Public - Public cloud is when you leverage cloud services over the open internet on hardware owned by the cloud provider, but its usage is shared by other companies.<br>
+
+- Hybrid - A hybrid cloud is a cloud computing environment that uses a mix of combining a public and private cloud environment, like an on-premises data center, and public CSPs.<br>
+
+- Private - Private cloud means that the cloud infrastructure is provisioned for exclusive use by a single organization.
+  [Read more](https://aws.amazon.com/types-of-cloud-computing/)
 </b></details>
 
 #### AWS Global Infrastructure
