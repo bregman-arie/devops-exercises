@@ -1,24 +1,18 @@
 name: CI
 
 on:
-  # Triggers the workflow on pull request events for the main and devel branch
   pull_request:
-    branches: [ main, devel ]
-
-  # Allows running this workflow manually from the Actions tab
-  workflow_dispatch:
+    branches: [ master ]
 
 jobs:
-  # Contains a single job called "ci"
   ci:
     runs-on: ubuntu-latest
     steps:
-      # Checks out repository under $GITHUB_WORKSPACE, so job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install flake8
-        run: sudo apt install flake8
-      - name: Give executable permissions to the script
+        run: pip install flake8
+      - name: Give executable permissions to run_ci.sh inside the scripts directory
         run: chmod a+x scripts/run_ci.sh
-      - name: Run the ci script in scripts folder
+      - name: Run the ci script inside the scripts folder
         run: sh scripts/run_ci.sh
         shell: bash
