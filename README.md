@@ -5557,6 +5557,8 @@ If you are looking for a way to prepare for a certain exam this is the section f
 
 * [Cloud Practitioner](certificates/aws-cloud-practitioner.md) (Latest update: 2020)
 * [Solutions Architect Associate](certificates/aws-solutions-architect-associate.md) (Latest update: 2021)
+* [Cloud SysOps Administration Associate](certificates/aws-cloud-sysops-associate.md) (Latest update: Oct 2022)
+
 
 #### Azure
 
