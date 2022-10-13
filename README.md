@@ -175,7 +175,7 @@ You can read more about the OSI model in [penguintutor.com](http://www.penguintu
 </b></details>
 
 <details>
-<summary>For each of the following determine to which OSI layer it belongs:
+<summary>For each of the following determines to which OSI layer it belongs:
 
   * Error correction
   * Packets routing
