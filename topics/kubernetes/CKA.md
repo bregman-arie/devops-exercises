@@ -2,10 +2,11 @@
 
 - [CKA (Certified Kubernetes Administrator)](#cka-certified-kubernetes-administrator)
   - [Setup](#setup)
-  - [Kubernetes Nodes](#kubernetes-nodes)
   - [Pods](#pods)
     - [Troubleshooting Pods](#troubleshooting-pods)
   - [Namespaces](#namespaces)
+  - [Nodes](#nodes)
+  - [Services](#services)
 
 ## Setup
 
@@ -23,16 +24,6 @@ alias ke=kubectl edit
 alias kr=kubectl run
 alias kg=kubectl get
 ```
-
-## Kubernetes Nodes
-
-<details>
-<summary>Run a command to view all nodes of the cluster</summary><br><b>
-
-`kubectl get nodes`
-
-Note: create an alias (`alias k=kubectl`) and get used to `k get no`
-</b></details>
 
 ## Pods
 
@@ -98,7 +89,33 @@ k create -f pod.yaml
 
 with `--dry-run` flag which will not actually create it, but it will test it and you can find this way any syntax issues.
 
-`kubectl create -f YAML_FILE --dry-run`
+`k create -f YAML_FILE --dry-run`
+</b></details>
+
+<details>
+<summary>How to check which image a certain Pod is using?</summary><br><b>
+
+`k describe po <POD_NAME> | grep -i image`
+</b></details>
+
+<details>
+<summary>How to check how many containers run in signle Pod?</summary><br><b>
+
+`k get po POD_NAME` and see the number under "READY" column.
+
+You can also run `k describe po POD_NAME`
+</b></details>
+
+<details>
+<summary>Run a Pod called "remo" with the the latest redis image and the label 'year=2017'</summary><br><b>
+
+`k run remo --image=redis:latest -l year=2017`
+</b></details>
+
+<details>
+<summary>List pods and their labels</summary><br><b>
+
+`k get po --show-labels`
 </b></details>
 
 ### Troubleshooting Pods
@@ -130,10 +147,44 @@ Most likely you didn't write correctly the name of the image you try to pull and
 You can confirm with `kubectl describe po POD_NAME`
 </b></details>
 
+<details>
+<summary>How to check on which node a certain Pod is running?</summary><br><b>
+
+`k get po POD_NAME -o wide`
+</b></details>
+
 ## Namespaces
 
 <details>
 <summary>List all the namespaces</summary><br><b>
 
 `k get ns`
+</b></details>
+
+<details>
+<summary>Create a namespace called 'alle'</summary><br><b>
+
+`k create ns alle`
+</b></details>
+
+## Nodes
+
+<details>
+<summary>Run a command to view all nodes of the cluster</summary><br><b>
+
+`kubectl get nodes`
+
+Note: create an alias (`alias k=kubectl`) and get used to `k get no`
+</b></details>
+
+<details>
+<summary>Create a list of all nodes in JSON format and store it in a file called "some_nodes.json"</summary><br><b>
+
+`k get nodes -o json > some_nodes.json`
+</b></details>
+
+## Services
+
+<details>
+<summary>Create an internal service called "sevi" to expose the app 'web' on port 1991</summary><br><b>
 </b></details>
