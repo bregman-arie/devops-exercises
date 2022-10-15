@@ -531,7 +531,7 @@ A Deployment is a declarative statement for the desired state for Pods and Repli
 </b></details>
 
 <details>
-<summary>How to create a deployment?</code></summary><br><b>
+<summary>How to create a deployment with the image "nginx:alpine"?</code></summary><br><b>
 
 `kubectl create deployment my_first_deployment --image=nginx:alpine`
 
@@ -554,7 +554,7 @@ EOF
 <details>
 <summary>How to verify a deployment was created?</code></summary><br><b>
 
-`kubectl get deployments`
+`kubectl get deployments` or `kubectl get deploy`
 
 This command lists all the Deployment objects created and exist in the cluster. It doesn't mean the deployments are readt and running. This can be checked with the "READY" and "AVAILABLE" columns.
 </b></details>
@@ -562,7 +562,7 @@ This command lists all the Deployment objects created and exist in the cluster. 
 <details>
 <summary>How to edit a deployment?</code></summary><br><b>
 
-kubectl edit deployment some-deployment
+`kubectl edit deployment <DEPLOYMENT_NAME>`
 </b></details>
 
 <details>
@@ -576,7 +576,8 @@ Also, when looking at the replicaset, you'll see the old replica doesn't have an
 <details>
 <summary>How to delete a deployment?</summary><br><b>
 
-One way is by specifying the deployment name: `kubectl delete deployment [deployment_name]`<br>
+One way is by specifying the deployment name: `kubectl delete deployment [deployment_name]`
+
 Another way is using the deployment configuration file: `kubectl delete -f deployment.yaml`
 </b></details>
 
@@ -607,12 +608,94 @@ Using a Service.
 <summary>Can you use a Deployment for stateful applications?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Create a file definition/manifest of a deployment called "dep", with 3 replicas that uses the image 'redis'</summary><br><b>
+
+`k create deploy dep -o yaml --image=redis --dry-run=client --replicas 3 > deployment.yaml `
+
+</b></details>
+
+<details>
+<summary>Delete the deployment `depdep`</summary><br><b>
+
+`k delete deploy depdep`
+
+</b></details>
+
+<details>
+<summary>Fix the following deployment manifest
+
+```yaml
+apiVersion: apps/v1
+kind: Deploy
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dep
+  name: dep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dep
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dep
+    spec:
+      containers:
+      - image: redis
+        name: redis
+        resources: {}
+status: {}
+```
+</summary><br><b>
+
+Change `kind: Deploy` to `kind: Deployment`
+</b></details>
+
+<details>
+<summary>Fix the following deployment manifest
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dep
+  name: dep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: depdep
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dep
+    spec:
+      containers:
+      - image: redis
+        name: redis
+        resources: {}
+status: {}
+```
+</summary><br><b>
+
+The selector doesn't match the label (dep vs depdep). To solve it, fix depdep so it's dep instead.
+</b></details>
+
 ### Services
 
 <details>
 <summary>What is a Service in Kubernetes?</summary><br><b>
 
-"An abstract way to expose an application running on a set of Pods as a network service." - read more [here](https://kubernetes.io/docs/concepts/services-networking/service)<br>
+"An abstract way to expose an application running on a set of Pods as a network service." - read more [here](https://kubernetes.io/docs/concepts/services-networking/service)
 
 In simpler words, it allows you to add an internal or external connectivity to a certain application running in a container.
 </b></details>
@@ -665,12 +748,14 @@ The truth is they aren't connected. Service points to Pod(s) directly, without c
 
 1. Making sure that targetPort of the Service is matching the containerPort of the Pod
 2. Making sure that selector matches at least one of the Pod's labels
+
 </b></details>
 
 <details>
 <summary>What is the default service type in Kubernetes and what is it used for?</summary><br><b>
 
 The default is ClusterIP and it's used for exposing a port internally. It's useful when you want to enable internal communication between Pods and prevent any external access.
+
 </b></details>
 
 <details>
@@ -679,6 +764,7 @@ The default is ClusterIP and it's used for exposing a port internally. It's usef
 `kubctl describe service <SERVICE_NAME>`
 
 It's more common to use `kubectl describe svc ...`
+
 </b></details>
 
 <details>
@@ -1037,7 +1123,7 @@ False. It will terminate one of the Pods to reach the desired state of 2 replica
 <details>
 <summary>How to list ReplicaSets in the current namespace?</summary><br><b>
 
-kubectl get rs
+`kubectl get rs`
 </b></details>
 
 <details>
@@ -1062,13 +1148,6 @@ web                     2         2         0       2m23s
 </summary><br><b>
 
 The replicaset `web` has 2 replicas. It seems that the containers inside the Pod(s) are not yet running since the value of READY is 0. It might be normal since it takes time for some containers to start running and it might be due to an error. Running `kubectl describe po POD_NAME` or `kubectl logs POD_NAME` can give us more information.
-</b></details>
-
-<details>
-<summary>You run <code>kubectl get rs</code> and while DESIRED is set to 2, you see that READY is set to 0. What are some possible reasons for it to be 0?</summary><br><b>
-
-  * Images are still being pulled
-  * There is an error and the containers can't reach the state "Running"
 </b></details>
 
 <details>
@@ -1104,7 +1183,7 @@ True (and not only the Pods but anything else it created).
 </b></details>
 
 <details>
-<summary>True or False? Removing the label from a Pod that is used by ReplicaSet to match Pods, will cause the ReplicaSet to create a new Pod</summary><br><b>
+<summary>True or False? Removing the label from a Pod that is tracked by a ReplicaSet, will cause the ReplicaSet to create a new Pod</summary><br><b>
 
 True. When the label, used by a ReplicaSet in the selector field, removed from a Pod, that Pod no longer controlled by the ReplicaSet and the ReplicaSet will create a new Pod to compensate for the one it "lost".
 </b></details>
@@ -1132,11 +1211,105 @@ Few notes:
 </b></details>
 
 <details>
-<summary>What's the diffence between a ReplicaSet and DaemonSet?</summary><br><b>
+<summary>What's the difference between a ReplicaSet and DaemonSet?</summary><br><b>
 
 A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time.
 A DaemonSet ensures that all Nodes run a copy of a Pod. 
-</b></details>  
+</b></details>
+
+<details>
+<summary>Fix the following ReplicaSet definition
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaCet
+metadata:
+  name: redis
+  labels:
+    app: redis
+    tier: cache
+spec:
+  selector:
+    matchLabels:
+      tier: cache
+  template:
+    metadata:
+      labels:
+        tier: cachy
+    spec:
+      containers:
+      - name: redis
+        image: redis
+```
+</summary><br><b>
+
+kind should be ReplicaSet and not ReplicaCet :)
+</b></details>
+
+<details>
+<summary>Fix the following ReplicaSet definition
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: redis
+  labels:
+    app: redis
+    tier: cache
+spec:
+  selector:
+    matchLabels:
+      tier: cache
+  template:
+    metadata:
+      labels:
+        tier: cachy
+    spec:
+      containers:
+      - name: redis
+        image: redis
+```
+</summary><br><b>
+
+The selector doesn't match the label (cache vs cachy). To solve it, fix cachy so it's cache instead.
+</b></details>
+
+<details>
+<summary>How to check which container image was used as part of replica set called "repli"?</summary><br><b>
+
+`k describe rs repli | grep -i image`
+</b></details>
+
+<details>
+<summary>How to check how many Pods are ready as part of a replica set called "repli"?</summary><br><b>
+
+`k describe rs repli | grep -i "Pods Status"`
+</b></details>
+
+<details>
+<summary>How to delete a replica set called "rori"?</summary><br><b>
+
+`k delete rs rori`
+</b></details>
+
+<details>
+<summary>How to modify a replica set called "rori" to use a different image?</summary><br><b>
+
+`k edis rs rori`
+</b></details>
+
+<details>
+<summary>Scale up a replica set called "rori" to run 5 Pods instead of 2</summary><br><b>
+
+`k scale rs rori --replicas=5`
+</b></details>
+
+<details>
+<summary>Scale down a replica set called "rori" to run 1 Pod instead of 5</summary><br><b>
+
+`k scale rs rori --replicas=1`
+</b></details>
 
 ### StatefulSet
 
