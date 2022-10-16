@@ -11,6 +11,9 @@
     - [Troubleshooting ReplicaSets](#troubleshooting-replicasets)
   - [Deployments](#deployments)
     - [Troubleshooting Deployments](#troubleshooting-deployments)
+  - [Scheduler](#scheduler)
+  - [Labels and Selectors](#labels-and-selectors)
+  - [Taints](#taints)
 
 ## Setup
 
@@ -136,6 +139,14 @@ You can also run `k describe po POD_NAME`
 `k delete po nm`
 </b></details>
 
+<details>
+<summary>List all the pods with the label "env=prod"</summary><br><b>
+
+`k get po -l env=prod`
+
+To count them: `k get po -l env=prod --no-headers | wc -l`
+</b></details>
+
 ### Troubleshooting Pods
 
 <details>
@@ -180,6 +191,12 @@ Because there is no such image `sheris`. At least for now :)
 To fix it, run `kubectl edit ohno` and modify the following line `- image: sheris` to `- image: redis` or any other image you prefer.
 </b></details>
 
+<details>
+<summary>You try to run a Pod but it's in "Pending" state. What might be the reason?</summary><br><b>
+
+One possible reason is that the scheduler which supposed to schedule Pods on nodes, is not running. To verify it, you can run `kubectl get po -A | grep scheduler` or check directly in `kube-system` namespace.
+</b></details>
+
 ## Namespaces
 
 <details>
@@ -192,6 +209,32 @@ To fix it, run `kubectl edit ohno` and modify the following line `- image: sheri
 <summary>Create a namespace called 'alle'</summary><br><b>
 
 `k create ns alle`
+</b></details>
+
+<details>
+<summary>Check how many namespaces are there</summary><br><b>
+
+`k get ns --no-headers | wc -l`
+</b></details>
+
+<details>
+<summary>Check how many pods exist in the "dev" namespace</summary><br><b>
+
+`k get po -n dev`
+</b></details>
+
+<details>
+<summary>Create a pod called "kartos" in the namespace dev. The pod should be using the "redis" image.</summary><br><b>
+
+If the namespace doesn't exist already: `k create ns dev`
+
+`k run kratos --image=redis -n dev`
+</b></details>
+
+<details>
+<summary>You are looking for a Pod called "atreus". How to check in which namespace it runs?</summary><br><b>
+
+`k get po -A | grep atreus`
 </b></details>
 
 ## Nodes
@@ -213,7 +256,54 @@ Note: create an alias (`alias k=kubectl`) and get used to `k get no`
 ## Services
 
 <details>
+<summary>Check how many services are running in the current namespace</summary><br><b>
+
+`k get svc`
+</b></details>
+
+<details>
 <summary>Create an internal service called "sevi" to expose the app 'web' on port 1991</summary><br><b>
+</b></details>
+
+<details>
+<summary>How to reference by name a service called "app-service" within the same namespace?</summary><br><b>
+
+app-service
+</b></details>
+
+<details>
+<summary>How to check the TargetPort of a service?</summary><br><b>
+
+`k describe svc <SERVICE_NAME>`
+</b></details>
+
+<details>
+<summary>How to check what endpoints the svc has?</summary><br><b>
+
+`k describe svc <SERVICE_NAME>`
+</b></details>
+
+<details>
+<summary>How to reference by name a service called "app-service" within a different namespace, called "dev"?</summary><br><b>
+
+app-service.dev.svc.cluster.local
+</b></details>
+
+<details>
+<summary>Assume you have a deployment running and you need to create a Service for exposing the pods. This is what is required/known:
+
+* Deployment name: jabulik
+* Target port: 8080
+* Service type: NodePort
+* Selector: jabulik-app
+* Port: 8080
+</summary><br><b>
+
+`kubectl expose deployment jabulik --name=jabulik-service --target-port=8080 --type=NodePort --port=8080 --dry-run=client -o yaml -> svc.yaml`
+
+`vi svc.yaml` (make sure selector is set to `jabulik-app`)
+
+`k apply -f svc.yaml`
 </b></details>
 
 ## ReplicaSets
@@ -426,4 +516,57 @@ status: {}
 </summary><br><b>
 
 The selector doesn't match the label (dep vs depdep). To solve it, fix depdep so it's dep instead.
+</b></details>
+
+## Scheduler
+
+<details>
+<summary>How to schedule a pod on a node called "node1"?</summary><br><b>
+
+`k run some-pod --image=redix -o yaml --dry-run=client > pod.yaml`
+
+`vi pod.yaml` and add:
+
+```
+spec:
+  nodeName: node1
+```
+
+`k apply -f pod.yaml`
+
+Note: if you don't have a node1 in your cluster the Pod will be stuck on "Pending" state.
+</b></details>
+
+## Labels and Selectors
+
+<details>
+<summary>How to list all the Pods with the label "app=web"?</summary><br><b>
+
+`k get po -l app=web`
+</b></details>
+
+<details>
+<summary>How to list all objects labeled as "env=staging"?</summary><br><b>
+
+`k get all -l env=staging`
+</b></details>
+
+<details>
+<summary>How to list all deployments from "env=prod" and "type=web"?</summary><br><b>
+
+`k get deploy -l env=prod,type=web`
+</b></details>
+
+## Taints
+
+<details>
+<summary>Check if there are taints on node "master"</summary><br><b>
+
+`k describe no master | grep -i taints`
+</b></details>
+
+<details>
+<summary>Create a taint on one of the nodes in your cluster with key of "app" and value of "web" and effect of "NoSchedule"</summary><br><b>
+
+`k taint node minikube app=web:NoSchedule`
 </b></details>
