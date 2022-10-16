@@ -12,7 +12,9 @@
   - [Deployments](#deployments)
     - [Troubleshooting Deployments](#troubleshooting-deployments)
   - [Scheduler](#scheduler)
+    - [Node Affinity](#node-affinity)
   - [Labels and Selectors](#labels-and-selectors)
+    - [Node Selector](#node-selector)
   - [Taints](#taints)
 
 ## Setup
@@ -537,6 +539,45 @@ spec:
 Note: if you don't have a node1 in your cluster the Pod will be stuck on "Pending" state.
 </b></details>
 
+### Node Affinity
+
+<details>
+<summary>Using node affinity, set a Pod to schedule on a node where the key is "region" and value is either "asia" or "emea"</summary><br><b>
+
+`vi pod.yaml`
+
+```yaml
+affinity:
+  nodeAffinity:
+    requiredDuringSchedlingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: region
+          operator: In
+          values:
+          - asia
+          - emea
+```
+</b></details>
+
+<details>
+<summary>Using node affinity, set a Pod to never schedule on a node where the key is "region" and value is "neverland"</summary><br><b>
+
+`vi pod.yaml`
+
+```yaml
+affinity:
+  nodeAffinity:
+    requiredDuringSchedlingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: region
+          operator: NotIn
+          values:
+          - neverland
+```
+</b></details>
+
 ## Labels and Selectors
 
 <details>
@@ -557,6 +598,38 @@ Note: if you don't have a node1 in your cluster the Pod will be stuck on "Pendin
 `k get deploy -l env=prod,type=web`
 </b></details>
 
+### Node Selector
+
+<details>
+<summary>Apply the label "hw=max" on one of the nodes in your cluster</summary><br><b>
+
+`kubectl label nodes some-node hw=max`
+
+</b></details>
+
+<details>
+<summary>reate and run a Pod called `some-pod` with the image `redis` and configure it to use the selector `hw=max`</summary><br><b>
+
+```
+kubectl run some-pod --image=redis --dry-run=client -o yaml > pod.yaml
+
+vi pod.yaml
+
+spec:
+  nodeSelector:
+    hw: max
+
+kubectl apply -f pod.yaml
+```
+
+</b></details>
+
+<details>
+<summary>Explain why node selectors might be limited</summary><br><b>
+
+Assume you would like to run your Pod on all the nodes with with either `hw` set to max or to min, instead of just max. This is not possible with nodeSelectors which are quite simplified and this is where you might want to consider `node affinity`.
+</b></details>
+
 ## Taints
 
 <details>
@@ -566,7 +639,36 @@ Note: if you don't have a node1 in your cluster the Pod will be stuck on "Pendin
 </b></details>
 
 <details>
-<summary>Create a taint on one of the nodes in your cluster with key of "app" and value of "web" and effect of "NoSchedule"</summary><br><b>
+<summary>Create a taint on one of the nodes in your cluster with key of "app" and value of "web" and effect of "NoSchedule". Verify it was applied</summary><br><b>
 
 `k taint node minikube app=web:NoSchedule`
+
+`k describe no minikube | grep -i taints`
+</b></details>
+
+<details>
+<summary>You applied a taint with <code>k taint node minikube app=web:NoSchedule</code> on the only node in your cluster and then executed <code>kubectl run some-pod --image=redis</code>. What will happen?</summary><br><b>
+
+The Pod will remain in "Pending" status due to the only node in the cluster having a taint of "app=web".
+</b></details>
+
+<details>
+<summary>You applied a taint with <code>k taint node minikube app=web:NoSchedule</code> on the only node in your cluster and then executed <code>kubectl run some-pod --image=redis</code> but the Pod is in pending state. How to fix it?</summary><br><b>
+
+`kubectl edit po some-pod` and add the following
+
+```
+  - effect: NoSchedule
+    key: app
+    operator: Equal
+    value: web
+```
+
+Exit and save. The pod should be in Running state now.
+</b></details>
+
+<details>
+<summary>Remove an existing taint from one of the nodes in your cluster</summary><br><b>
+
+`k taint node minikube app=web:NoSchedule-`
 </b></details>

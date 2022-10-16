@@ -6,12 +6,8 @@
 2. Create a taint on one of the nodes in your cluster with key of "app" and value of "web" and effect of "NoSchedule"
    1. Explain what it does exactly
    2. Verify it was applied
+3. Run a Pod that will be able to run on the node on which you applied the taint
 
 ## Solution
 
 Click [here](solution.md) to view the solution.
-
-1. `kubectl describe no minikube | grep -i taints`
-2. `kubectl taint node minikube app=web:NoSchedule`
-   1. Any resource with "app=web" key value will not be scheduled on node `minikube`
-   2. `kubectl describe no minikube | grep -i taints`

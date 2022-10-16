@@ -48,6 +48,7 @@ What's your goal?
     - [Istio](#istio)
     - [Controllers](#controllers)
     - [Scheduler](#scheduler-1)
+      - [Node Affinity](#node-affinity)
   - [Taints](#taints)
     - [Scenarios](#scenarios)
 
@@ -79,6 +80,8 @@ What's your goal?
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Labels and Selectors 101 | Labels, Selectors | [Exercise](exercises/labels_and_selectors/exercise.md) | [Solution](exercises/labels_and_selectors/solution.md)
+| Node Selectors | Labels, Selectors | [Exercise](exercises/node_selectors/exercise.md) | [Solution](exercises/node_selectors/solution.md)
+
 
 ### Scheduler
 
@@ -2475,6 +2478,57 @@ spec:
 Note: if you don't have a node1 in your cluster the Pod will be stuck on "Pending" state.
 </b></details>
 
+#### Node Affinity
+
+<details>
+<summary>Using node affinity, set a Pod to schedule on a node where the key is "region" and value is either "asia" or "emea"</summary><br><b>
+
+`vi pod.yaml`
+
+```yaml
+affinity:
+  nodeAffinity:
+    requiredDuringSchedlingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: region
+          operator: In
+          values:
+          - asia
+          - emea
+```
+</b></details>
+
+<details>
+<summary>Using node affinity, set a Pod to never schedule on a node where the key is "region" and value is "neverland"</summary><br><b>
+
+`vi pod.yaml`
+
+```yaml
+affinity:
+  nodeAffinity:
+    requiredDuringSchedlingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: region
+          operator: NotIn
+          values:
+          - neverland
+```
+</b></details>
+
+<details>
+<summary>True of False? Using the node affinity type "requiredDuringSchedlingIgnoredDuringExecution" means the scheduler can't schedule unless the rule is met</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True of False? Using the node affinity type "preferredDuringSchedlingIgnoredDuringExecution" means the scheduler can't schedule unless the rule is met</summary><br><b>
+
+False. The scheduler tries to find a node that meets the requirements/rules and if it doesn't it will schedule the Pod anyway.
+</b></details>
+
 ## Taints
 
 <details>
@@ -2484,9 +2538,38 @@ Note: if you don't have a node1 in your cluster the Pod will be stuck on "Pendin
 </b></details>
 
 <details>
-<summary>Create a taint on one of the nodes in your cluster with key of "app" and value of "web" and effect of "NoSchedule"</summary><br><b>
+<summary>Create a taint on one of the nodes in your cluster with key of "app" and value of "web" and effect of "NoSchedule". Verify it was applied</summary><br><b>
 
 `k taint node minikube app=web:NoSchedule`
+
+`k describe no minikube | grep -i taints`
+</b></details>
+
+<details>
+<summary>You applied a taint with <code>k taint node minikube app=web:NoSchedule</code> on the only node in your cluster and then executed <code>kubectl run some-pod --image=redis</code>. What will happen?</summary><br><b>
+
+The Pod will remain in "Pending" status due to the only node in the cluster having a taint of "app=web".
+</b></details>
+
+<details>
+<summary>You applied a taint with <code>k taint node minikube app=web:NoSchedule</code> on the only node in your cluster and then executed <code>kubectl run some-pod --image=redis</code> but the Pod is in pending state. How to fix it?</summary><br><b>
+
+`kubectl edit po some-pod` and add the following
+
+```
+  - effect: NoSchedule
+    key: app
+    operator: Equal
+    value: web
+```
+
+Exit and save. The pod should be in Running state now.
+</b></details>
+
+<details>
+<summary>Remove an existing taint from one of the nodes in your cluster</summary><br><b>
+
+`k taint node minikube app=web:NoSchedule-`
 </b></details>
 
 <details>

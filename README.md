@@ -77,8 +77,10 @@
       <td align="center"><a href="topics/perl/README.md"><img src="images/perl.png" width="75px;" height="75px;" alt="perl"/><br /><b>Perl</b></a></td>
   </tr>
   <tr>
-      <td align="center"><a href="topics/kafka/README.md"><img src="images/logos/kafka.png" width="70px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
+      <td align="center"><a href="topics/circleci/README.md"><img src="images/logos/circleci.png" width="70px;" height="70px;" alt="Circle CI"/><br /><b>Circle CI</b></a></td>
       <td align="center"><a href="topics/argo/README.md"><img src="images/logos/argo.png" width="80px;" height="80px;" alt="Argo"/><br /><b>Argo</b></a></td>
+      <td align="center"><a href="topics/kafka/README.md"><img src="images/logos/kafka.png" width="70px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
+
   </tr>
 </table>
 </center>
