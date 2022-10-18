@@ -15,10 +15,14 @@ What's your goal?
     - [Pods](#pods)
     - [Service](#service)
     - [ReplicaSet](#replicaset)
+    - [Labels and Selectors](#labels-and-selectors)
+    - [Scheduler](#scheduler)
   - [Kubernetes Questions](#kubernetes-questions)
     - [Kubernetes 101](#kubernetes-101)
     - [Cluster and Architecture](#cluster-and-architecture)
     - [Pods](#pods-1)
+      - [Pods - Commands](#pods---commands)
+      - [Pods - Troubleshooting and Debugging](#pods---troubleshooting-and-debugging)
     - [Deployments](#deployments)
     - [Services](#services)
     - [Ingress](#ingress)
@@ -43,6 +47,9 @@ What's your goal?
     - [Troubleshooting Scenarios](#troubleshooting-scenarios)
     - [Istio](#istio)
     - [Controllers](#controllers)
+    - [Scheduler](#scheduler-1)
+      - [Node Affinity](#node-affinity)
+  - [Taints](#taints)
     - [Scenarios](#scenarios)
 
 ## Kubernetes Exercises
@@ -67,6 +74,20 @@ What's your goal?
 | Creating a ReplicaSet | ReplicaSet | [Exercise](replicaset_01.md) | [Solution](solutions/replicaset_01_solution.md)
 | Operating ReplicaSets | ReplicaSet | [Exercise](replicaset_02.md) | [Solution](solutions/replicaset_02_solution.md)
 | ReplicaSets Selectors | ReplicaSet | [Exercise](replicaset_03.md) | [Solution](solutions/replicaset_03_solution.md)
+
+### Labels and Selectors
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Labels and Selectors 101 | Labels, Selectors | [Exercise](exercises/labels_and_selectors/exercise.md) | [Solution](exercises/labels_and_selectors/solution.md)
+| Node Selectors | Labels, Selectors | [Exercise](exercises/node_selectors/exercise.md) | [Solution](exercises/node_selectors/solution.md)
+
+
+### Scheduler
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Taints 101 | Taints | [Exercise](exercises/taints_101/exercise.md) | [Solution](exercises/taints_101/solution.md)
 
 ## Kubernetes Questions
 
@@ -259,9 +280,9 @@ Apply requests and limits, especially on third party applications (where the unc
 </b></details>
 
 <details>
-<summary>True of False? The scheduler is responsible for both deciding where a Pod will run and actually run it</summary><br><b>
+<summary>What <code>kubectl get componentstatus</code> does?</summary><br><b>
 
-False. While the scheduler is responsible for choosing the node on which the Pod will run, Kubelet is the one that actually runs the Pod.
+Outputs the status of each of the control plane components.
 </b></details>
 
 ### Pods
@@ -331,37 +352,13 @@ False. "Pending" is after the Pod was accepted by the cluster, but the container
 </b></details>
 
 <details>
-<summary>How to list the pods in the current namespace?</summary><br><b>
-
-`kubectl get po`
-</b></details>
-
-<details>
-<summary>How view all the pods running in all the namespaces?</summary><br><b>
-
-`kubectl get pods --all-namespaces`
-</b></details>
-
-<details>
 <summary>True or False? A single Pod can be split across multiple nodes</summary><br><b>
 
 False. A single Pod can run on a single node.
 </b></details>
 
 <details>
-<summary>How to delete a pod?</summary><br><b>
-
-`kubectl delete pod pod_name`
-</b></details>
-
-<details>
 <summary>You run a pod and you see the status <code>ContainerCreating</code></summary><br><b>
-</b></details>
-
-<details>
-<summary>How to find out on which node a certain pod is running?</summary><br><b>
-
-`kubectl get po -o wide`
 </b></details>
 
 <details>
@@ -513,10 +510,46 @@ False. Each Pod gets an IP address but an internal one and not publicly accessib
 To make a Pod externally accessible, we need to use an object called Service in Kubernetes.
 </b></details>
 
+#### Pods - Commands
+
 <details>
-<summary>How to check to which worker node the pods were scheduled to?</summary><br><b>
+<summary>How to check to which worker node the pods were scheduled to? In other words, how to check on which node a certain Pod is running?</summary><br><b>
 
 `kubectl get pods -o wide`
+</b></details>
+
+<details>
+<summary>How to delete a pod?</summary><br><b>
+
+`kubectl delete pod pod_name`
+</b></details>
+
+<details>
+<summary>List all the pods with the label "env=prod"</summary><br><b>
+
+`k get po -l env=prod`
+
+To count them: `k get po -l env=prod --no-headers | wc -l`
+</b></details>
+
+<details>
+<summary>How to list the pods in the current namespace?</summary><br><b>
+
+`kubectl get po`
+</b></details>
+
+<details>
+<summary>How view all the pods running in all the namespaces?</summary><br><b>
+
+`kubectl get pods --all-namespaces`
+</b></details>
+
+#### Pods - Troubleshooting and Debugging
+
+<details>
+<summary>You try to run a Pod but it's in "Pending" state. What might be the reason?</summary><br><b>
+
+One possible reason is that the scheduler which supposed to schedule Pods on nodes, is not running. To verify it, you can run `kubectl get po -A | grep scheduler` or check directly in `kube-system` namespace.
 </b></details>
 
 ### Deployments
@@ -531,7 +564,7 @@ A Deployment is a declarative statement for the desired state for Pods and Repli
 </b></details>
 
 <details>
-<summary>How to create a deployment?</code></summary><br><b>
+<summary>How to create a deployment with the image "nginx:alpine"?</code></summary><br><b>
 
 `kubectl create deployment my_first_deployment --image=nginx:alpine`
 
@@ -554,7 +587,7 @@ EOF
 <details>
 <summary>How to verify a deployment was created?</code></summary><br><b>
 
-`kubectl get deployments`
+`kubectl get deployments` or `kubectl get deploy`
 
 This command lists all the Deployment objects created and exist in the cluster. It doesn't mean the deployments are readt and running. This can be checked with the "READY" and "AVAILABLE" columns.
 </b></details>
@@ -562,7 +595,7 @@ This command lists all the Deployment objects created and exist in the cluster. 
 <details>
 <summary>How to edit a deployment?</code></summary><br><b>
 
-kubectl edit deployment some-deployment
+`kubectl edit deployment <DEPLOYMENT_NAME>`
 </b></details>
 
 <details>
@@ -576,7 +609,8 @@ Also, when looking at the replicaset, you'll see the old replica doesn't have an
 <details>
 <summary>How to delete a deployment?</summary><br><b>
 
-One way is by specifying the deployment name: `kubectl delete deployment [deployment_name]`<br>
+One way is by specifying the deployment name: `kubectl delete deployment [deployment_name]`
+
 Another way is using the deployment configuration file: `kubectl delete -f deployment.yaml`
 </b></details>
 
@@ -607,15 +641,107 @@ Using a Service.
 <summary>Can you use a Deployment for stateful applications?</summary><br><b>
 </b></details>
 
+<details>
+<summary>Create a file definition/manifest of a deployment called "dep", with 3 replicas that uses the image 'redis'</summary><br><b>
+
+`k create deploy dep -o yaml --image=redis --dry-run=client --replicas 3 > deployment.yaml `
+
+</b></details>
+
+<details>
+<summary>Delete the deployment `depdep`</summary><br><b>
+
+`k delete deploy depdep`
+
+</b></details>
+
+<details>
+<summary>Fix the following deployment manifest
+
+```yaml
+apiVersion: apps/v1
+kind: Deploy
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dep
+  name: dep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dep
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dep
+    spec:
+      containers:
+      - image: redis
+        name: redis
+        resources: {}
+status: {}
+```
+</summary><br><b>
+
+Change `kind: Deploy` to `kind: Deployment`
+</b></details>
+
+<details>
+<summary>Fix the following deployment manifest
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dep
+  name: dep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: depdep
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dep
+    spec:
+      containers:
+      - image: redis
+        name: redis
+        resources: {}
+status: {}
+```
+</summary><br><b>
+
+The selector doesn't match the label (dep vs depdep). To solve it, fix depdep so it's dep instead.
+</b></details>
+
 ### Services
 
 <details>
 <summary>What is a Service in Kubernetes?</summary><br><b>
 
-"An abstract way to expose an application running on a set of Pods as a network service." - read more [here](https://kubernetes.io/docs/concepts/services-networking/service)<br>
+"An abstract way to expose an application running on a set of Pods as a network service." - read more [here](https://kubernetes.io/docs/concepts/services-networking/service)
 
 In simpler words, it allows you to add an internal or external connectivity to a certain application running in a container.
 </b></details>
+
+<details>
+<summary>Place the components in the right placeholders in regards to Kubernetes service<br>
+<img src="images/service_exercise.png"/>
+</summary><br><b>
+
+<img src="images/service_solution.png"/>
+
+</b></details>
+
 
 <details>
 <summary>How to create a service for an existing deployment called "alle" on port 8080 so the Pod(s) accessible via a Load Balancer?</summary><br><b>
@@ -623,12 +749,6 @@ In simpler words, it allows you to add an internal or external connectivity to a
 The imperative way:
 
 `kubectl expose deployment alle --type=LoadBalancer --port 8080`
-</b></details>
-
-<details>
-<summary>An internal load balancer in Kubernetes is called <code>____</code> and an external load balancer is called <code>____</code></summary><br><b>
-
-An internal load balancer in Kubernetes is called Service and an external load balancer is Ingress
 </b></details>
 
 <details>
@@ -641,6 +761,12 @@ True
 <summary>After creating a service, how to check it was created?</summary><br><b>
 
 `kubectl get svc`
+</b></details>
+
+<details>
+<summary>What's the default Service type?</summary><br><b>
+
+ClusterIP - used for internal communication.
 </b></details>
 
 <details>
@@ -665,12 +791,14 @@ The truth is they aren't connected. Service points to Pod(s) directly, without c
 
 1. Making sure that targetPort of the Service is matching the containerPort of the Pod
 2. Making sure that selector matches at least one of the Pod's labels
+
 </b></details>
 
 <details>
 <summary>What is the default service type in Kubernetes and what is it used for?</summary><br><b>
 
 The default is ClusterIP and it's used for exposing a port internally. It's useful when you want to enable internal communication between Pods and prevent any external access.
+
 </b></details>
 
 <details>
@@ -679,6 +807,7 @@ The default is ClusterIP and it's used for exposing a port internally. It's usef
 `kubctl describe service <SERVICE_NAME>`
 
 It's more common to use `kubectl describe svc ...`
+
 </b></details>
 
 <details>
@@ -838,6 +967,12 @@ Explanation as to who added them:
 <summary>After creating a service that forwards incoming external traffic to the containerized application, how to make sure it works?</summary><br><b>
 
 You can run `curl <SERIVCE IP>:<SERVICE PORT>` to examine the output.
+</b></details>
+
+<details>
+<summary>An internal load balancer in Kubernetes is called <code>____</code> and an external load balancer is called <code>____</code></summary><br><b>
+
+An internal load balancer in Kubernetes is called Service and an external load balancer is Ingress
 </b></details>
 
 ### Ingress
@@ -1037,7 +1172,7 @@ False. It will terminate one of the Pods to reach the desired state of 2 replica
 <details>
 <summary>How to list ReplicaSets in the current namespace?</summary><br><b>
 
-kubectl get rs
+`kubectl get rs`
 </b></details>
 
 <details>
@@ -1062,13 +1197,6 @@ web                     2         2         0       2m23s
 </summary><br><b>
 
 The replicaset `web` has 2 replicas. It seems that the containers inside the Pod(s) are not yet running since the value of READY is 0. It might be normal since it takes time for some containers to start running and it might be due to an error. Running `kubectl describe po POD_NAME` or `kubectl logs POD_NAME` can give us more information.
-</b></details>
-
-<details>
-<summary>You run <code>kubectl get rs</code> and while DESIRED is set to 2, you see that READY is set to 0. What are some possible reasons for it to be 0?</summary><br><b>
-
-  * Images are still being pulled
-  * There is an error and the containers can't reach the state "Running"
 </b></details>
 
 <details>
@@ -1104,7 +1232,7 @@ True (and not only the Pods but anything else it created).
 </b></details>
 
 <details>
-<summary>True or False? Removing the label from a Pod that is used by ReplicaSet to match Pods, will cause the ReplicaSet to create a new Pod</summary><br><b>
+<summary>True or False? Removing the label from a Pod that is tracked by a ReplicaSet, will cause the ReplicaSet to create a new Pod</summary><br><b>
 
 True. When the label, used by a ReplicaSet in the selector field, removed from a Pod, that Pod no longer controlled by the ReplicaSet and the ReplicaSet will create a new Pod to compensate for the one it "lost".
 </b></details>
@@ -1132,11 +1260,105 @@ Few notes:
 </b></details>
 
 <details>
-<summary>What's the diffence between a ReplicaSet and DaemonSet?</summary><br><b>
+<summary>What's the difference between a ReplicaSet and DaemonSet?</summary><br><b>
 
 A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time.
 A DaemonSet ensures that all Nodes run a copy of a Pod. 
-</b></details>  
+</b></details>
+
+<details>
+<summary>Fix the following ReplicaSet definition
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaCet
+metadata:
+  name: redis
+  labels:
+    app: redis
+    tier: cache
+spec:
+  selector:
+    matchLabels:
+      tier: cache
+  template:
+    metadata:
+      labels:
+        tier: cachy
+    spec:
+      containers:
+      - name: redis
+        image: redis
+```
+</summary><br><b>
+
+kind should be ReplicaSet and not ReplicaCet :)
+</b></details>
+
+<details>
+<summary>Fix the following ReplicaSet definition
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: redis
+  labels:
+    app: redis
+    tier: cache
+spec:
+  selector:
+    matchLabels:
+      tier: cache
+  template:
+    metadata:
+      labels:
+        tier: cachy
+    spec:
+      containers:
+      - name: redis
+        image: redis
+```
+</summary><br><b>
+
+The selector doesn't match the label (cache vs cachy). To solve it, fix cachy so it's cache instead.
+</b></details>
+
+<details>
+<summary>How to check which container image was used as part of replica set called "repli"?</summary><br><b>
+
+`k describe rs repli | grep -i image`
+</b></details>
+
+<details>
+<summary>How to check how many Pods are ready as part of a replica set called "repli"?</summary><br><b>
+
+`k describe rs repli | grep -i "Pods Status"`
+</b></details>
+
+<details>
+<summary>How to delete a replica set called "rori"?</summary><br><b>
+
+`k delete rs rori`
+</b></details>
+
+<details>
+<summary>How to modify a replica set called "rori" to use a different image?</summary><br><b>
+
+`k edis rs rori`
+</b></details>
+
+<details>
+<summary>Scale up a replica set called "rori" to run 5 Pods instead of 2</summary><br><b>
+
+`k scale rs rori --replicas=5`
+</b></details>
+
+<details>
+<summary>Scale down a replica set called "rori" to run 1 Pod instead of 5</summary><br><b>
+
+`k scale rs rori --replicas=1`
+</b></details>
 
 ### StatefulSet
 
@@ -1262,7 +1484,6 @@ When chosen as the data store etcd was (and still is of course):
 Namespaces allow you split your cluster into virtual clusters where you can group your applications in a way that makes sense and is completely separated from the other groups (so you can for example create an app with the same name in two different namespaces)
 </b></details>
 
-<a name="namespaces-use-cases"></a>
 <details>
 <summary>Why to use namespaces? What is the problem with using one default namespace?</summary><br><b>
 
@@ -1298,47 +1519,64 @@ False. When a namespace is deleted, the resources in that namespace are deleted 
 <details>
 <summary>How to list all namespaces?</code></summary><br><b>
 
-`kubectl get namespaces`
+`kubectl get namespaces` OR `kubectl get ns`
+
+</b></details>
+
+<details>
+<summary>Create a namespace called 'alle'</summary><br><b>
+
+`k create ns alle`
+
+</b></details>
+
+<details>
+<summary>Check how many namespaces are there</summary><br><b>
+
+`k get ns --no-headers | wc -l`
+
+</b></details>
+
+<details>
+<summary>Check how many pods exist in the "dev" namespace</summary><br><b>
+
+`k get po -n dev`
+
+</b></details>
+
+<details>
+<summary>Create a pod called "kartos" in the namespace dev. The pod should be using the "redis" image.</summary><br><b>
+
+If the namespace doesn't exist already: `k create ns dev`
+
+`k run kratos --image=redis -n dev`
+
+</b></details>
+
+<details>
+<summary>You are looking for a Pod called "atreus". How to check in which namespace it runs?</summary><br><b>
+
+`k get po -A | grep atreus`
+
 </b></details>
 
 <details>
 <summary>What kube-public contains?</summary><br><b>
 
 * A configmap, which contains cluster information
-* Publicely accessible data
+* Publicly accessible data
 </b></details>
 
 <details>
 <summary>How to get the name of the current namespace?</code></summary><br><b>
 
-kubectl config view | grep namespace
+`kubectl config view | grep namespace`
 </b></details>
 
 <details>
 <summary>What kube-node-lease contains?</summary><br><b>
 
 It holds information on hearbeats of nodes. Each node gets an object which holds information about its availability.
-</b></details>
-
-<details>
-<summary>How to create a namespace?</summary><br><b>
-
-One way is by running `kubectl create namespace [NAMESPACE_NAME]`
-
-Another way is by using namespace configuration file:
-```
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: some-cofngimap
-  namespace: some-namespace
-```
-</b></details>
-
-<details>
-<summary>What default namespace contains?</summary><br><b>
-
-Any resource you create while using Kubernetes.
 </b></details>
 
 <details>
@@ -1372,13 +1610,7 @@ kubectl create quota some-quota --hard-cpu=2,pods=2
 <details>
 <summary>Which resources are accessible from different namespaces?</code></summary><br><b>
 
-Service.
-</b></details>
-
-<details>
-<summary>Let's say you have three namespaces: x, y and z. In x namespace you have a ConfigMap referencing service in z namespace. Can you reference the ConfigMap in x namespace from y namespace?</code></summary><br><b>
-
-No, you would have to create separate namespace in y namespace.
+Services.
 </b></details>
 
 <details>
@@ -1478,22 +1710,6 @@ kubectl delete pods --field-selector=status.phase!='Running'
 <summary>How to display the resources usages of pods?</summary><br><b>
 
 kubectl top pod
-</b></details>
-
-<details>
-<summary>What <code>kubectl get componentstatus</code> does?</summary><br><b>
-
-Outputs the status of each of the control plane components.
-</b></details>
-
-<details>
-<summary>What is Minikube?</summary><br><b>
-
-Minikube is a lightweight Kubernetes implementation. It create a local virtual machine and deploys a simple (single node) cluster.
-</b></details>
-
-<details>
-<summary>How do you monitor your Kubernetes?</summary><br><b>
 </b></details>
 
 <details>
@@ -2237,6 +2453,133 @@ Explained [here](https://www.youtube.com/watch?v=i9V4oCa5f9I)
 - Act - Bring current cluster state to the desired state (basically reach a state where there is no diff)
 </b></details>
 
+### Scheduler
+
+<details>
+<summary>True of False? The scheduler is responsible for both deciding where a Pod will run and actually running it</summary><br><b>
+
+False. While the scheduler is responsible for choosing the node on which the Pod will run, Kubelet is the one that actually runs the Pod.
+</b></details>
+
+<details>
+<summary>How to schedule a pod on a node called "node1"?</summary><br><b>
+
+`k run some-pod --image=redix -o yaml --dry-run=client > pod.yaml`
+
+`vi pod.yaml` and add:
+
+```
+spec:
+  nodeName: node1
+```
+
+`k apply -f pod.yaml`
+
+Note: if you don't have a node1 in your cluster the Pod will be stuck on "Pending" state.
+</b></details>
+
+#### Node Affinity
+
+<details>
+<summary>Using node affinity, set a Pod to schedule on a node where the key is "region" and value is either "asia" or "emea"</summary><br><b>
+
+`vi pod.yaml`
+
+```yaml
+affinity:
+  nodeAffinity:
+    requiredDuringSchedlingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: region
+          operator: In
+          values:
+          - asia
+          - emea
+```
+</b></details>
+
+<details>
+<summary>Using node affinity, set a Pod to never schedule on a node where the key is "region" and value is "neverland"</summary><br><b>
+
+`vi pod.yaml`
+
+```yaml
+affinity:
+  nodeAffinity:
+    requiredDuringSchedlingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: region
+          operator: NotIn
+          values:
+          - neverland
+```
+</b></details>
+
+<details>
+<summary>True of False? Using the node affinity type "requiredDuringSchedlingIgnoredDuringExecution" means the scheduler can't schedule unless the rule is met</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>True of False? Using the node affinity type "preferredDuringSchedlingIgnoredDuringExecution" means the scheduler can't schedule unless the rule is met</summary><br><b>
+
+False. The scheduler tries to find a node that meets the requirements/rules and if it doesn't it will schedule the Pod anyway.
+</b></details>
+
+## Taints
+
+<details>
+<summary>Check if there are taints on node "master"</summary><br><b>
+
+`k describe no master | grep -i taints`
+</b></details>
+
+<details>
+<summary>Create a taint on one of the nodes in your cluster with key of "app" and value of "web" and effect of "NoSchedule". Verify it was applied</summary><br><b>
+
+`k taint node minikube app=web:NoSchedule`
+
+`k describe no minikube | grep -i taints`
+</b></details>
+
+<details>
+<summary>You applied a taint with <code>k taint node minikube app=web:NoSchedule</code> on the only node in your cluster and then executed <code>kubectl run some-pod --image=redis</code>. What will happen?</summary><br><b>
+
+The Pod will remain in "Pending" status due to the only node in the cluster having a taint of "app=web".
+</b></details>
+
+<details>
+<summary>You applied a taint with <code>k taint node minikube app=web:NoSchedule</code> on the only node in your cluster and then executed <code>kubectl run some-pod --image=redis</code> but the Pod is in pending state. How to fix it?</summary><br><b>
+
+`kubectl edit po some-pod` and add the following
+
+```
+  - effect: NoSchedule
+    key: app
+    operator: Equal
+    value: web
+```
+
+Exit and save. The pod should be in Running state now.
+</b></details>
+
+<details>
+<summary>Remove an existing taint from one of the nodes in your cluster</summary><br><b>
+
+`k taint node minikube app=web:NoSchedule-`
+</b></details>
+
+<details>
+<summary>What taint effects are there? Explain each one of them</summary><br><b>
+
+`NoSchedule`: prevents from resources to be scheduled on a certain node
+`PreferNoSchedule`: will prefer to shcedule resources on other nodes before resorting to scheduling the resource on the chosen node (on which the taint was applied)
+`NoExecute`: Appling "NoSchedule" will not evict already running Pods (or other resources) from the node as opposed to "NoExecute" which will evict any already running resource from the Node
+</b></details>
+
 ### Scenarios
 
 <details>
@@ -2261,4 +2604,10 @@ Some ways to debug:
 2. Run `kubectl logs mypod`
    1. This should provide an accurate output of 
    2. For specific container, you can add `-c CONTAINER_NAME`
+</b></details>
+
+<details>
+<summary>An engineer form your organization asked whether there is a way to prevent from Pods (with cretain label) to be scheduled on one of the nodes in the cluster. Your reply is:</summary><br><b>
+
+Yes, using taints, we could run the following command and it will prevent from all resources with label "app=web" to be scheduled on node1: `kubectl taint node node1 app=web:NoSchedule`
 </b></details>
