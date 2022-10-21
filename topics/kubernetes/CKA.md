@@ -16,6 +16,7 @@
   - [Labels and Selectors](#labels-and-selectors)
     - [Node Selector](#node-selector)
   - [Taints](#taints)
+  - [Resources Limits](#resources-limits)
 
 ## Setup
 
@@ -255,6 +256,12 @@ Note: create an alias (`alias k=kubectl`) and get used to `k get no`
 `k get nodes -o json > some_nodes.json`
 </b></details>
 
+<details>
+<summary>Check what labels one of your nodes in the cluster has</summary><br><b>
+
+`k get no minikube --show-labels`
+</b></details>
+
 ## Services
 
 <details>
@@ -448,6 +455,42 @@ The selector doesn't match the label (cache vs cachy). To solve it, fix cachy so
 
 `k delete deploy depdep`
 
+</b></details>
+
+<details>
+<summary>Create a deployment called "pluck" using the image "redis" and make sure it runs 5 replicas</summary><br><b>
+
+`kubectl create deployment pluck --image=redis`
+
+`kubectl scale deployment pluck --replicas=5`
+
+</b></details>
+
+<details>
+<summary>Create a deployment with the following properties:
+
+* called "blufer"
+* using the image "python"
+* runs 3 replicas
+* all pods will be placed on a node that has the label "blufer"
+</summary><br><b>
+
+`kubectl create deployment blufer --image=python --replicas=3 -o yaml --dry-run=client > deployment.yaml`
+
+Add the following section (`vi deployment.yaml`):
+
+```
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedlingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: blufer
+            operator: Exists
+```
+
+`kubectl apply -f deployment.yaml`
 </b></details>
 
 ### Troubleshooting Deployments
@@ -671,4 +714,59 @@ Exit and save. The pod should be in Running state now.
 <summary>Remove an existing taint from one of the nodes in your cluster</summary><br><b>
 
 `k taint node minikube app=web:NoSchedule-`
+</b></details>
+
+## Resources Limits
+
+<details>
+<summary>Check if there are any limits on one of the pods in your cluster</summary><br><b>
+
+`kubectl describe po <POD_NAME> | grep -i limits`
+</b></details>
+
+<details>
+<summary>Run a pod called "yay" with the image "python" and resources request of 64Mi memory and 250m CPU</summary><br><b>
+
+`kubectl run yay --image=python --dry-run=client -o yaml > pod.yaml`
+
+`vi pod.yaml`
+
+```
+spec:
+  containers:
+  - image: python
+    imagePullPolicy: Always
+    name: yay
+    resources:
+      requests:
+        cpu: 250m
+        memory: 64Mi
+```
+
+`kubectl apply -f pod.yaml`
+</b></details>
+
+<details>
+<summary>Run a pod called "yay2" with the image "python". Make sure it has resources request of 64Mi memory and 250m CPU and the limits are 128Mi memory and 500m CPU</summary><br><b>
+
+`kubectl run yay2 --image=python --dry-run=client -o yaml > pod.yaml`
+
+`vi pod.yaml`
+
+```
+spec:
+  containers:
+  - image: python
+    imagePullPolicy: Always
+    name: yay2
+    resources:
+      limits:
+        cpu: 500m
+        memory: 128Mi
+      requests:
+        cpu: 250m
+        memory: 64Mi
+```
+
+`kubectl apply -f pod.yaml`
 </b></details>

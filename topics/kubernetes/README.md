@@ -20,22 +20,32 @@ What's your goal?
   - [Kubernetes Questions](#kubernetes-questions)
     - [Kubernetes 101](#kubernetes-101)
     - [Cluster and Architecture](#cluster-and-architecture)
+      - [Kubelet](#kubelet)
+      - [Nodes Commands](#nodes-commands)
     - [Pods](#pods-1)
+      - [Static Pods](#static-pods)
       - [Pods - Commands](#pods---commands)
       - [Pods - Troubleshooting and Debugging](#pods---troubleshooting-and-debugging)
+    - [Labels and Selectors](#labels-and-selectors-1)
     - [Deployments](#deployments)
+      - [Deployments Commands](#deployments-commands)
     - [Services](#services)
     - [Ingress](#ingress)
     - [ReplicaSets](#replicasets)
+    - [DaemonSet](#daemonset)
+      - [DaemonSet - Commands](#daemonset---commands)
     - [StatefulSet](#statefulset)
     - [Storage](#storage)
+      - [Volumes](#volumes)
     - [Networking](#networking)
     - [Network Policies](#network-policies)
     - [etcd](#etcd)
     - [Namespaces](#namespaces)
+      - [Namespaces - commands](#namespaces---commands)
+      - [Resources Quota](#resources-quota)
     - [Operators](#operators)
     - [Secrets](#secrets)
-    - [Volumes](#volumes)
+    - [Volumes](#volumes-1)
     - [Access Control](#access-control)
     - [Patterns](#patterns)
     - [CronJob](#cronjob)
@@ -49,7 +59,9 @@ What's your goal?
     - [Controllers](#controllers)
     - [Scheduler](#scheduler-1)
       - [Node Affinity](#node-affinity)
-  - [Taints](#taints)
+    - [Taints](#taints)
+    - [Resource Limits](#resource-limits)
+      - [Resources Limits - Commands](#resources-limits---commands)
     - [Scenarios](#scenarios)
 
 ## Kubernetes Exercises
@@ -170,6 +182,7 @@ Becaused container is not a Kubernetes object. The smallest object unit in Kuber
 
   - Always make sure Kubernetes YAML files are valid. Applying automated checks and pipelines is recommended.
   - Always specify requests and limits to prevent situation where containers are using the entire cluster memory which may lead to OOM issue
+  - Specify labels to logically group Pods, Deployments, etc. Use labels to identify the type of the application for example, among other things
 </b></details>
 
 ### Cluster and Architecture
@@ -198,13 +211,6 @@ The master coordinates all the workflows in the cluster:
 * Scheduling applications
 * Managing desired state
 * Rolling out new updates
-
-</b></details>
-
-<details>
-<summary>Which command will list the nodes of the cluster?</summary><br><b>
-
-`kubectl get nodes`
 
 </b></details>
 
@@ -285,6 +291,35 @@ Apply requests and limits, especially on third party applications (where the unc
 Outputs the status of each of the control plane components.
 </b></details>
 
+#### Kubelet
+
+<details>
+<summary>What happens to running pods if if you stop Kubelet on the worker nodes?</summary><br><b>
+
+</b></details>
+
+#### Nodes Commands
+
+<details>
+<summary>Run a command to view all nodes of the cluster</summary><br><b>
+
+`kubectl get nodes`
+
+Note: You might want to create an alias (`alias k=kubectl`) and get used to `k get no`
+</b></details>
+
+<details>
+<summary>Create a list of all nodes in JSON format and store it in a file called "some_nodes.json"</summary><br><b>
+
+`k get nodes -o json > some_nodes.json`
+</b></details>
+
+<details>
+<summary>Check what labels one of your nodes in the cluster has</summary><br><b>
+
+`k get no minikube --show-labels`
+</b></details>
+
 ### Pods
 
 <details>
@@ -359,16 +394,6 @@ False. A single Pod can run on a single node.
 
 <details>
 <summary>You run a pod and you see the status <code>ContainerCreating</code></summary><br><b>
-</b></details>
-
-<details>
-<summary>What are "Static Pods"?</summary><br><b>
-
-* Managed directly by Kubelet on specific node
-* API server is not observing static Pods
-* For each static Pod there is a mirror Pod on kubernetes API server but it can't be managed from there
-
-Read more about it [here](https://kubernetes.io/docs/tasks/configure-pod-container/static-pod)
 </b></details>
 
 <details>
@@ -510,6 +535,54 @@ False. Each Pod gets an IP address but an internal one and not publicly accessib
 To make a Pod externally accessible, we need to use an object called Service in Kubernetes.
 </b></details>
 
+#### Static Pods
+
+<details>
+<summary>What are Static Pods?</summary><br><b>
+
+[Kubernetes.io](https://kubernetes.io/docs/tasks/configure-pod-container/static-pod/): "Static Pods are managed directly by the kubelet daemon on a specific node, without the API server observing them. Unlike Pods that are managed by the control plane (for example, a Deployment); instead, the kubelet watches each static Pod (and restarts it if it fails)."
+</b></details>
+
+<details>
+<summary>True or False? The same as there are "Static Pods" there are other static resources like "deployments" and "replicasets"</summary><br><b>
+
+False.
+</b></details>
+
+<details>
+<summary>What are some use cases for using Static Pods?</summary><br><b>
+
+One clear use case is running Control Plane Pods -  running Pods such as kube-apiserver, scheduler, etc. These should run and operate regardless of whether some components of the cluster work or not and they should run on specific nodes of the cluster.
+</b></details>
+
+<details>
+<summary>How to identify which Pods are Static Pods?</summary><br><b>
+
+The suffix of the Pods is the same as the name of the nodes on which they are running
+TODO: check if it's always the case.
+</b></details>
+
+<details>
+<summary>Which of the following is not a static pod?:
+
+* kube-scheduler
+* kube-proxy
+* kube-apiserver
+</summary><br><b>
+
+kube-proxy - it's a DaemonSet (since it has to be presented on every node in the cluster). There is no one specific node on which it has to run.
+</b></details>
+
+<details>
+<summary>Where static Pods manifests are located?</summary><br><b>
+
+Most of the time it's in /etc/kubernetes/manifests but you can verify with `grep -i static /var/lib/kubelet/config.yaml` to locate the value of `statisPodsPath`.
+
+It might be that your config is in different path. To verify run `ps -ef | grep kubelet` and see what is the value of --config argument of the process `/usr/bin/kubelet`
+
+The key itself for defining the path of static Pods is `staticPodPath`. So if your config is in `/var/lib/kubelet/config.yaml` you can run `grep staticPodPath /var/lib/kubelet/config.yaml`.
+</b></details>
+
 #### Pods - Commands
 
 <details>
@@ -550,6 +623,55 @@ To count them: `k get po -l env=prod --no-headers | wc -l`
 <summary>You try to run a Pod but it's in "Pending" state. What might be the reason?</summary><br><b>
 
 One possible reason is that the scheduler which supposed to schedule Pods on nodes, is not running. To verify it, you can run `kubectl get po -A | grep scheduler` or check directly in `kube-system` namespace.
+</b></details>
+
+<details>
+<summary>What <code>kubectl logs [pod-name]</code> command does?</summary><br><b>
+
+Prints the logs for a container in a pod.
+</b></details>
+
+<details>
+<summary>What <code>kubectl describe pod [pod name] does?</code> command does?</summary><br><b>
+
+Show details of a specific resource or group of resources.
+</b></details>
+
+### Labels and Selectors
+
+<details>
+<summary>Explain Labels</summary><br><b>
+
+[Kubernetes.io](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/): "Labels are key/value pairs that are attached to objects, such as pods. Labels are intended to be used to specify identifying attributes of objects that are meaningful and relevant to users, but do not directly imply semantics to the core system. Labels can be used to organize and to select subsets of objects. Labels can be attached to objects at creation time and subsequently added and modified at any time. Each object can have a set of key/value labels defined. Each Key must be unique for a given object."
+</b></details>
+
+<details>
+<summary>Explain selectors</summary><br><b>
+
+[Kubernetes.io](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors): "Unlike names and UIDs, labels do not provide uniqueness. In general, we expect many objects to carry the same label(s).
+
+Via a label selector, the client/user can identify a set of objects. The label selector is the core grouping primitive in Kubernetes.
+
+The API currently supports two types of selectors: equality-based and set-based. A label selector can be made of multiple requirements which are comma-separated. In the case of multiple requirements, all must be satisfied so the comma separator acts as a logical AND (&&) operator."
+</b></details>
+
+<details>
+<summary>Provide some actual examples of how labels are used</summary><br><b>
+
+* Can be used by the scheduler to place certain Pods (with certain labels) on specific nodes
+* Used by replicasets to track pods which have to be scaled
+</b></details>
+
+<details>
+<summary>What are Annotations?</summary><br><b>
+
+[Kubernetes.io](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/): "You can use Kubernetes annotations to attach arbitrary non-identifying metadata to objects. Clients such as tools and libraries can retrieve this metadata."
+</b></details>
+
+<details>
+<summary>How annotations different from labels?</summary><br><b>
+
+[Kuberenets.io](Labels can be used to select objects and to find collections of objects that satisfy certain conditions. In contrast, annotations are not used to identify and select objects. The metadata in an annotation can be small or large, structured or unstructured, and can include characters not permitted by labels.): "Labels can be used to select objects and to find collections of objects that satisfy certain conditions. In contrast, annotations are not used to identify and select objects. The metadata in an annotation can be small or large, structured or unstructured, and can include characters not permitted by labels."
 </b></details>
 
 ### Deployments
@@ -642,20 +764,6 @@ Using a Service.
 </b></details>
 
 <details>
-<summary>Create a file definition/manifest of a deployment called "dep", with 3 replicas that uses the image 'redis'</summary><br><b>
-
-`k create deploy dep -o yaml --image=redis --dry-run=client --replicas 3 > deployment.yaml `
-
-</b></details>
-
-<details>
-<summary>Delete the deployment `depdep`</summary><br><b>
-
-`k delete deploy depdep`
-
-</b></details>
-
-<details>
 <summary>Fix the following deployment manifest
 
 ```yaml
@@ -721,6 +829,57 @@ status: {}
 </summary><br><b>
 
 The selector doesn't match the label (dep vs depdep). To solve it, fix depdep so it's dep instead.
+</b></details>
+
+#### Deployments Commands
+
+<details>
+<summary>Create a file definition/manifest of a deployment called "dep", with 3 replicas that uses the image 'redis'</summary><br><b>
+
+`k create deploy dep -o yaml --image=redis --dry-run=client --replicas 3 > deployment.yaml `
+
+</b></details>
+
+<details>
+<summary>Delete the deployment `depdep`</summary><br><b>
+
+`k delete deploy depdep`
+
+</b></details>
+
+<details>
+<summary>Create a deployment called "pluck" using the image "redis" and make sure it runs 5 replicas</summary><br><b>
+
+`kubectl create deployment pluck --image=redis`
+
+`kubectl scale deployment pluck --replicas=5`
+</b></details>
+
+<details>
+<summary>Create a deployment with the following properties:
+
+* called "blufer"
+* using the image "python"
+* runs 3 replicas
+* all pods will be placed on a node that has the label "blufer"
+</summary><br><b>
+
+`kubectl create deployment blufer --image=python --replicas=3 -o yaml --dry-run=client > deployment.yaml`
+
+Add the following section (`vi deployment.yaml`):
+
+```
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedlingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: blufer
+            operator: Exists
+```
+
+`kubectl apply -f deployment.yaml`
 </b></details>
 
 ### Services
@@ -1260,13 +1419,6 @@ Few notes:
 </b></details>
 
 <details>
-<summary>What's the difference between a ReplicaSet and DaemonSet?</summary><br><b>
-
-A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time.
-A DaemonSet ensures that all Nodes run a copy of a Pod. 
-</b></details>
-
-<details>
 <summary>Fix the following ReplicaSet definition
 
 ```yaml
@@ -1360,6 +1512,45 @@ The selector doesn't match the label (cache vs cachy). To solve it, fix cachy so
 `k scale rs rori --replicas=1`
 </b></details>
 
+### DaemonSet
+
+<details>
+<summary>What's a DaemonSet?</summary><br><b>
+
+[Kubernetes.io](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset): "A DaemonSet ensures that all (or some) Nodes run a copy of a Pod. As nodes are added to the cluster, Pods are added to them. As nodes are removed from the cluster, those Pods are garbage collected. Deleting a DaemonSet will clean up the Pods it created."
+</b></details>
+
+<details>
+<summary>What's the difference between a ReplicaSet and DaemonSet?</summary><br><b>
+
+A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time.
+A DaemonSet ensures that all Nodes run a copy of a Pod. 
+</b></details>
+
+<details>
+<summary>What are some use cases for using a DaemonSet?</summary><br><b>
+
+* Monitoring: You would like to perform monitoring on every node part of cluster. For example datadog pod runs on  every node using a daemonset
+* Logging: You would like to having logging set up on every node part of your cluster
+* Networking: there is networking component you need on every node for all nodes to communicate between them
+</b></details>
+
+<details>
+<summary>How DaemonSet works?</summary><br><b>
+
+Historically, up 1.12, it was done with NodeName attribute.
+
+Starting 1.12, it's achieved with regular scheduler and node affinity.
+</b></details>
+
+#### DaemonSet - Commands
+
+<details>
+<summary>How to list all daemonsets in the current namespace?</summary><br><b>
+
+`kubectl get ds`
+</b></details>
+
 ### StatefulSet
 
 <details>
@@ -1370,23 +1561,47 @@ StatefulSet is the workload API object used to manage stateful applications. Man
 
 ### Storage
 
+#### Volumes
+
 <details>
 <summary>What is a volume in regards to Kubernetes?</summary><br><b>
 
-A directory accessible by the containers inside a certain Pod. The mechanism responsible for creating the directory and managing it, ... is mainly depends on the volume type.
+A directory accessible by the containers inside a certain Pod and containers. The mechanism responsible for creating the directory, managing it, ... mainly depends on the volume type.
+
 </b></details>
 
 <details>
-<summary>Which problems volumes in Kubernetes solve?</summary><br><b>
+<summary>What volume types are you familiar with?</summary><br><b>
+
+* emptyDir: created when a Pod assigned to a node and ceases to exist when the Pod is no longer running on that node
+* hostPath: mounts a path from the host itself. Usually not used due to security risks but has multiple use-cases where it's needed like access to some internal host paths (`/sys`, `/var/lib`, etc.)
+
+</b></details>
+
+<details>
+<summary>Which problems, volumes in Kubernetes solve?</summary><br><b>
 
 1. Sharing files between containers running in the same Pod
-2. Storage in containers is ephemeral - it usually doesn't last for long. For example, when a container crashes, you lose all on-disk data.
+2. Storage in containers is ephemeral - it usually doesn't last for long. For example, when a container crashes, you lose all on-disk data. Certain volumes allows to manage such situation by persistent volumes
+
 </b></details>
 
 <details>
 <summary>Explain ephemeral volume types vs. persistent volumes in regards to Pods</summary><br><b>
 
 Ephemeral volume types have the lifetime of a pod as opposed to persistent volumes which exist beyond the lifetime of a Pod.
+
+</b></details>
+
+<details>
+<summary>Provide at least one use-case for each of the following volume types:
+
+* emptyDir
+* hostPath
+</summary><br><b>
+
+* EmptyDir: You need a temporary data that you can afford to lose if the Pod is deleted. For example short-lived data required for one-time operations.
+* hostPath: You need access to paths on the host itself (like data from `/sys` or data generated in `/var/lib`)
 </b></details>
 
 ### Networking
@@ -1395,6 +1610,17 @@ Ephemeral volume types have the lifetime of a pod as opposed to persistent volum
 <summary>True or False? By default there is no communication between two Pods in two different namespaces</summary><br><b>
 
 False. By default two Pods in two different namespaces are able to communicate with each other.
+
+Try it for yourself:
+
+kubectl run test-prod -n prod --image ubuntu -- sleep 2000000000
+kubectl run test-dev -n dev --image ubuntu -- sleep 2000000000
+
+`k describe po test-prod -n prod` to get the IP of test-prod Pod.
+
+Access dev Pod: `kubectl exec --stdin --tty test-dev -n dev -- /bin/bash`
+
+And ping the IP of test-prod Pod you get earlier.You'll see that there is communication between the two pods, in two separate namespaces.
 
 </b></details>
 
@@ -1517,6 +1743,14 @@ False. When a namespace is deleted, the resources in that namespace are deleted 
 </b></details>
 
 <details>
+<summary>While namspaces do provide scope for resources, they are not isolating them</summary><br><b>
+
+True. Try create two pods in two separate namspaces for example, and you'll see there is a connection between the two.
+</b></details>
+
+#### Namespaces - commands
+
+<details>
 <summary>How to list all namespaces?</code></summary><br><b>
 
 `kubectl get namespaces` OR `kubectl get ns`
@@ -1594,6 +1828,8 @@ OR
 
 `kubens some-namespace`
 </b></details>
+
+#### Resources Quota
 
 <details>
 <summary>What is Resource Quota?</code></summary><br><b>
@@ -1697,23 +1933,13 @@ kubectl delete pods --field-selector=status.phase!='Running'
 </b></details>
 
 <details>
-<summary>What <code>kubectl logs [pod-name]</code> command does?</summary><br><b>
-  Print the logs for a container in a pod.
-</b></details>
-
-<details>
-<summary>What <code>kubectl describe pod [pod name] does?</code> command does?</summary><br><b>
-  Show details of a specific resource or group of resources.
-</b></details>
-
-<details>
 <summary>How to display the resources usages of pods?</summary><br><b>
 
 kubectl top pod
 </b></details>
 
 <details>
-<summary>You suspect one of the pods is having issues, what do you do?</summary><br><b>
+<summary>Perhaps a general question but, you suspect one of the pods is having issues, you don't know what exactly. What do you do?</summary><br><b>
 
 Start by inspecting the pods status. we can use the command `kubectl get pods` (--all-namespaces for pods in system namespace)<br>
 
@@ -1722,14 +1948,6 @@ If we see "Error" status, we can keep debugging by running the command `kubectl 
 In case we find out there was a temporary issue with the pod or the system, we can try restarting the pod with the following `kubectl scale deployment [name] --replicas=0`<br>
 
 Setting the replicas to 0 will shut down the process. Now start it with `kubectl scale deployment [name] --replicas=1`
-</b></details>
-
-<details>
-<summary>What the Kubernetes Scheduler does?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What happens to running pods if if you stop Kubelet on the worker nodes?</summary><br><b>
 </b></details>
 
 <details>
@@ -2073,9 +2291,11 @@ The pod is automatically assigned with the default service account (in the names
 
 <details>
 <summary>Explain the sidecar container pattern</summary><br><b>
- 
-The sidecar pattern is a single-node pattern made up of two containers. The first is the application container. It contains the core logic for the application.
-Without this container, the application would not exist. In addition to the application container, there is a sidecar container.
+ ion container, there is a sidecar container.
+</b></details>
+r, the application would not exist. In addition to the application container, there is a sidecar container.
+
+In simpler words, when you have a Pod and there is more than one container running in that Pod that supports or complements the application container, it means you use the sidecar pattern.
 </b></details>
 
 ### CronJob
@@ -2529,7 +2749,7 @@ True
 False. The scheduler tries to find a node that meets the requirements/rules and if it doesn't it will schedule the Pod anyway.
 </b></details>
 
-## Taints
+### Taints
 
 <details>
 <summary>Check if there are taints on node "master"</summary><br><b>
@@ -2580,6 +2800,76 @@ Exit and save. The pod should be in Running state now.
 `NoExecute`: Appling "NoSchedule" will not evict already running Pods (or other resources) from the node as opposed to "NoExecute" which will evict any already running resource from the Node
 </b></details>
 
+### Resource Limits
+
+<details>
+<summary>Explain why one would specify resource limits in regards to Pods</summary><br><b>
+
+* You know how much RAM and/or CPU your app should be consuming and anything above that is not valid
+* You would like to make sure that everyone can run their apps in the cluster and resources are not being solely used by one type of application
+</b></details>
+
+<details>
+<summary>True or False? Resource limits applied on a Pod level meaning, if limits is 2gb RAM and there are two container in a Pod that it's 1gb RAM each</summary><br><b>
+
+False. It's per container and not per Pod.
+</b></details>
+
+#### Resources Limits - Commands
+
+<details>
+<summary>Check if there are any limits on one of the pods in your cluster</summary><br><b>
+
+`kubectl describe po <POD_NAME> | grep -i limits`
+</b></details>
+
+<details>
+<summary>Run a pod called "yay" with the image "python" and resources request of 64Mi memory and 250m CPU</summary><br><b>
+
+`kubectl run yay --image=python --dry-run=client -o yaml > pod.yaml`
+
+`vi pod.yaml`
+
+```
+spec:
+  containers:
+  - image: python
+    imagePullPolicy: Always
+    name: yay
+    resources:
+      requests:
+        cpu: 250m
+        memory: 64Mi
+```
+
+`kubectl apply -f pod.yaml`
+</b></details>
+
+<details>
+<summary>Run a pod called "yay2" with the image "python". Make sure it has resources request of 64Mi memory and 250m CPU and the limits are 128Mi memory and 500m CPU</summary><br><b>
+
+`kubectl run yay2 --image=python --dry-run=client -o yaml > pod.yaml`
+
+`vi pod.yaml`
+
+```
+spec:
+  containers:
+  - image: python
+    imagePullPolicy: Always
+    name: yay2
+    resources:
+      limits:
+        cpu: 500m
+        memory: 128Mi
+      requests:
+        cpu: 250m
+        memory: 64Mi
+```
+
+`kubectl apply -f pod.yaml`
+</b></details>
+
 ### Scenarios
 
 <details>
@@ -2610,4 +2900,10 @@ Some ways to debug:
 <summary>An engineer form your organization asked whether there is a way to prevent from Pods (with cretain label) to be scheduled on one of the nodes in the cluster. Your reply is:</summary><br><b>
 
 Yes, using taints, we could run the following command and it will prevent from all resources with label "app=web" to be scheduled on node1: `kubectl taint node node1 app=web:NoSchedule`
+</b></details>
+
+<details>
+<summary>You would like to limit the number of resources being used in your cluster. For example no more than 4 replicasets, 2 services, etc. How would you achieve that?</summary><br><b>
+
+Using ResourceQuats
 </b></details>

@@ -26,6 +26,20 @@ Use the CLI to access advanced tools locally.
 Get flaky test detection with test insights."
 </b></details>
 
+<details>
+<summary>Explain the following:
+
+* Pipeline
+* Workflow
+* Jobs
+* Steps
+</summary><br><b>
+
+* Pipeline: the entire CI/CD configuration (.circleci/config.yaml)
+* Workflow: primarily used when there is more than one job in the configuration to orchestrate the workflows
+* Jobs: One or more steps to execute as part of the CI/CD process
+* Steps: The actual commands to execute
+</b></details>
 
 <details>
 <summary>What is an Orb?</summary><br><b>
@@ -41,4 +55,31 @@ They can come from the public registry or defined privately as part of an organi
 <summary>Where (in what location in the project) Circle CI pipelines are defined?</summary><br><b>
 
 `.circleci/config.yml`
+</b></details>
+
+<details>
+<summary>Explain the following configuration file
+
+
+```
+version: 2.1
+
+jobs:
+  say-hello:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: "Say hello"
+          command: "echo Hello, World!"
+workflows:
+  say-hello-workflow:
+    jobs:
+      - say-hello
+```
+</summary><br><b>
+
+This configuration file will set up one job that will checkout the code of the project will run the command `echo Hello, World!`.
+It will run in a container using the image `cimg/base:stable`.
 </b></details>
