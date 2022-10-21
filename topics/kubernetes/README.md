@@ -24,8 +24,8 @@ What's your goal?
       - [Nodes Commands](#nodes-commands)
     - [Pods](#pods-1)
       - [Static Pods](#static-pods)
-      - [Pods - Commands](#pods---commands)
-      - [Pods - Troubleshooting and Debugging](#pods---troubleshooting-and-debugging)
+      - [Pods Commands](#pods-commands)
+      - [Pods Troubleshooting and Debugging](#pods-troubleshooting-and-debugging)
     - [Labels and Selectors](#labels-and-selectors-1)
     - [Deployments](#deployments)
       - [Deployments Commands](#deployments-commands)
@@ -62,6 +62,7 @@ What's your goal?
     - [Taints](#taints)
     - [Resource Limits](#resource-limits)
       - [Resources Limits - Commands](#resources-limits---commands)
+    - [Monitoring](#monitoring)
     - [Scenarios](#scenarios)
 
 ## Kubernetes Exercises
@@ -583,7 +584,16 @@ It might be that your config is in different path. To verify run `ps -ef | grep 
 The key itself for defining the path of static Pods is `staticPodPath`. So if your config is in `/var/lib/kubelet/config.yaml` you can run `grep staticPodPath /var/lib/kubelet/config.yaml`.
 </b></details>
 
-#### Pods - Commands
+<details>
+<summary>Describe how would you delete a static Pod
+</summary><br><b>
+
+Locate the static Pods directory (look at `staticPodPath` in kubelet configuration file).
+
+Go to that directory and remove the manifest/definition of the staic Pod (`rm <STATIC_POD_PATH>/<POD_DEFINITION_FILE>`)
+</b></details>
+
+#### Pods Commands
 
 <details>
 <summary>How to check to which worker node the pods were scheduled to? In other words, how to check on which node a certain Pod is running?</summary><br><b>
@@ -617,7 +627,7 @@ To count them: `k get po -l env=prod --no-headers | wc -l`
 `kubectl get pods --all-namespaces`
 </b></details>
 
-#### Pods - Troubleshooting and Debugging
+#### Pods Troubleshooting and Debugging
 
 <details>
 <summary>You try to run a Pod but it's in "Pending" state. What might be the reason?</summary><br><b>
@@ -635,6 +645,15 @@ Prints the logs for a container in a pod.
 <summary>What <code>kubectl describe pod [pod name] does?</code> command does?</summary><br><b>
 
 Show details of a specific resource or group of resources.
+</b></details>
+
+<details>
+<summary>Create a static pod with the image <code>python</code> that runs the command <code>sleep 2017</code></summary><br><b>
+
+First change to the directory tracked by kubelet for creating static pod: `cd /etc/kubernetes/manifests` (you can verify path by reading kubelet conf file)
+
+Now create the definition/manifest in that directory
+`k run some-pod --image=python --command sleep 2017 --restart=Never --dry-run=client -o yaml > statuc-pod.yaml`
 </b></details>
 
 ### Labels and Selectors
@@ -672,6 +691,18 @@ The API currently supports two types of selectors: equality-based and set-based.
 <summary>How annotations different from labels?</summary><br><b>
 
 [Kuberenets.io](Labels can be used to select objects and to find collections of objects that satisfy certain conditions. In contrast, annotations are not used to identify and select objects. The metadata in an annotation can be small or large, structured or unstructured, and can include characters not permitted by labels.): "Labels can be used to select objects and to find collections of objects that satisfy certain conditions. In contrast, annotations are not used to identify and select objects. The metadata in an annotation can be small or large, structured or unstructured, and can include characters not permitted by labels."
+</b></details>
+
+<details>
+<summary>How to view the logs of a container running in a Pod?</summary><br><b>
+
+`k logs POD_NAME`
+</b></details>
+
+<details>
+<summary>There are two containers inside a Pod called "some-pod". What will happen if you run <code>kubectl logs some-pod</code></summary><br><b>
+
+It won't work because there are two containers inside the Pod and you need to specify one of them with `kubectl logs POD_NAME -c CONTAINER_NAME`
 </b></details>
 
 ### Deployments
@@ -2749,6 +2780,40 @@ True
 False. The scheduler tries to find a node that meets the requirements/rules and if it doesn't it will schedule the Pod anyway.
 </b></details>
 
+<details>
+<summary>Can you deploy multiple schedulers?</summary><br><b>
+
+Yes, it is possible. You can run another pod with a command similar to:
+
+```
+spec:
+  containers:
+  - command:
+    - kube-scheduler
+    - --address=127.0.0.1
+    - --leader-elect=true
+    - --scheduler-name=some-custom-scheduler
+...
+```
+</b></details>
+
+<details>
+<summary>Assuming you have multiple schedulers, how to know which scheduler was used for a given Pod?</summary><br><b>
+
+Running `kubectl get events` you can see which scheduler was used.
+</b></details>
+
+<details>
+<summary>You want to run a new Pod and you would like it to be scheduled by a custom schduler. How to achieve it?</summary><br><b>
+
+Add the following to the spec of the Pod:
+
+```
+spec:
+  schedulerName: some-custom-scheduler
+```
+</b></details>
+
 ### Taints
 
 <details>
@@ -2869,6 +2934,32 @@ spec:
 
 `kubectl apply -f pod.yaml`
 </b></details>
+
+### Monitoring
+
+<details>
+<summary>What monitoring solutions are you familiar with in regards to Kubernetes?</summary><br><b>
+
+There are many types of monitoring solutions for Kubernetes. Some open-source, some are in-memory, some of them cost money, ... here is a short list:
+
+* metrics-server: in-memory open source monitoring
+* datadog: $$$
+* promethues: open source monitoring solution
+
+</b></details>
+
+<details>
+<summary>Describe how the monitoring solution you are working with monitors Kubernetes and </summary><br><b>
+
+This very much depends on what you chose to use. Let's address some of the solutions:
+
+* metrics-server: an open source and free monitoring solution that uses the cAdvisor component of kubelet to retrieve information on the cluster and its resources and stores them in-memory.
+Once installed, after some time you can run commands like `kubectl top node` and `kubectl top pod` to view performance metrics on nodes, pods and other resources.
+
+TODO: add more monitoring solutions
+
+</b></details>
+
 
 ### Scenarios
 

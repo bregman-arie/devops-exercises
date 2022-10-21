@@ -17,6 +17,8 @@
     - [Node Selector](#node-selector)
   - [Taints](#taints)
   - [Resources Limits](#resources-limits)
+  - [Monitoring](#monitoring)
+  - [Scheduler](#scheduler-1)
 
 ## Setup
 
@@ -150,6 +152,24 @@ You can also run `k describe po POD_NAME`
 To count them: `k get po -l env=prod --no-headers | wc -l`
 </b></details>
 
+<details>
+<summary>Create a static pod with the image <code>python</code> that runs the command <code>sleep 2017</code></summary><br><b>
+
+First change to the directory tracked by kubelet for creating static pod: `cd /etc/kubernetes/manifests` (you can verify path by reading kubelet conf file)
+
+Now create the definition/manifest in that directory
+`k run some-pod --image=python --command sleep 2017 --restart=Never --dry-run=client -o yaml > statuc-pod.yaml`
+</b></details>
+
+<details>
+<summary>Describe how would you delete a static Pod
+</summary><br><b>
+
+Locate the static Pods directory (look at `staticPodPath` in kubelet configuration file).
+
+Go to that directory and remove the manifest/definition of the staic Pod (`rm <STATIC_POD_PATH>/<POD_DEFINITION_FILE>`)
+</b></details>
+
 ### Troubleshooting Pods
 
 <details>
@@ -187,7 +207,7 @@ You can confirm with `kubectl describe po POD_NAME`
 </b></details>
 
 <details>
-<summary>Run the following command: <code>kubectl run ohno --image=sheris</code>. Did it work? why not? fix it without removing the Pod and using any image you want</summary><br><b>
+<summary>Run the following command: <code>kubectl run ohno --image=sheris</code>. Did it work? why not? fix it without removing the Pod and using any image you would like</summary><br><b>
 
 Because there is no such image `sheris`. At least for now :)
 
@@ -198,6 +218,18 @@ To fix it, run `kubectl edit ohno` and modify the following line `- image: sheri
 <summary>You try to run a Pod but it's in "Pending" state. What might be the reason?</summary><br><b>
 
 One possible reason is that the scheduler which supposed to schedule Pods on nodes, is not running. To verify it, you can run `kubectl get po -A | grep scheduler` or check directly in `kube-system` namespace.
+</b></details>
+
+<details>
+<summary>How to view the logs of a container running in a Pod?</summary><br><b>
+
+`k logs POD_NAME`
+</b></details>
+
+<details>
+<summary>There are two containers inside a Pod called "some-pod". What will happen if you run <code>kubectl logs some-pod</code></summary><br><b>
+
+It won't work because there are two containers inside the Pod and you need to specify one of them with `kubectl logs POD_NAME -c CONTAINER_NAME`
 </b></details>
 
 ## Namespaces
@@ -769,4 +801,60 @@ spec:
 ```
 
 `kubectl apply -f pod.yaml`
+</b></details>
+
+## Monitoring
+
+<details>
+<summary>Deploy metrics-server</summary><br><b>
+
+`kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml`
+</b></details>
+
+<details>
+<summary>Using metrics-server, view the following:
+
+* top performing nodes in the cluster
+* top performing Pods
+</summary><br><b>
+
+* top nodes: `kubectl top nodes`
+* top pods: `kubectl top pods`
+
+</b></details>
+
+## Scheduler
+
+<details>
+<summary>Can you deploy multiple schedulers?</summary><br><b>
+
+Yes, it is possible. You can run another pod with a command similar to:
+
+```
+spec:
+  containers:
+  - command:
+    - kube-scheduler
+    - --address=127.0.0.1
+    - --leader-elect=true
+    - --scheduler-name=some-custom-scheduler
+...
+```
+</b></details>
+
+<details>
+<summary>Assuming you have multiple schedulers, how to know which scheduler was used for a given Pod?</summary><br><b>
+
+Running `kubectl get events` you can see which scheduler was used.
+</b></details>
+
+<details>
+<summary>You want to run a new Pod and you would like it to be scheduled by a custom schduler. How to achieve it?</summary><br><b>
+
+Add the following to the spec of the Pod:
+
+```
+spec:
+  schedulerName: some-custom-scheduler
+```
 </b></details>
