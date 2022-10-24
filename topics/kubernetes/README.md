@@ -53,6 +53,7 @@ What's your goal?
     - [Gatekeeper](#gatekeeper)
     - [Policy Testing](#policy-testing)
     - [Helm](#helm)
+      - [Commands](#commands)
     - [Security](#security)
     - [Troubleshooting Scenarios](#troubleshooting-scenarios)
     - [Istio](#istio)
@@ -156,12 +157,14 @@ To understand what Kubernetes is good for, let's look at some examples:
 <summary>What fields are mandatory with any Kubernetes object?</summary><br><b>
 
 metadata, kind and apiVersion
+
 </b></details>
 
 <details>
 <summary>What is kubectl?</summary><br><b>
 
 Kubectl is the Kubernetes command line tool that allows you to run commands against Kubernetes clusters. For example, you can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
+
 </b></details>
 
 <details>
@@ -170,12 +173,14 @@ Kubectl is the Kubernetes command line tool that allows you to run commands agai
 * Deployment - creates the Pods () and watches them
 * Service: route traffic to Pods internally
 * Ingress: route traffic from outside the cluster
+
 </b></details>
 
 <details>
 <summary>Why there is no such command in Kubernetes? <code>kubectl get containers</code></summary><br><b>
 
 Becaused container is not a Kubernetes object. The smallest object unit in Kubernetes is a Pod. In a single Pod you can find one or more containers.
+
 </b></details>
 
 <details>
@@ -184,6 +189,7 @@ Becaused container is not a Kubernetes object. The smallest object unit in Kuber
   - Always make sure Kubernetes YAML files are valid. Applying automated checks and pipelines is recommended.
   - Always specify requests and limits to prevent situation where containers are using the entire cluster memory which may lead to OOM issue
   - Specify labels to logically group Pods, Deployments, etc. Use labels to identify the type of the application for example, among other things
+
 </b></details>
 
 ### Cluster and Architecture
@@ -2117,18 +2123,20 @@ This one is based more on a personal experience and taste...
 <summary>Explain Kubernetes Secrets</summary><br><b>
 
 Secrets let you store and manage sensitive information (passwords, ssh keys, etc.)
+
 </b></details>
 
 <details>
 <summary>How to create a Secret from a key and value?</summary><br><b>
 
-kubectl create secret generic some-secret --from-literal=password='donttellmypassword'
+`kubectl create secret generic some-secret --from-literal=password='donttellmypassword'`
+
 </b></details>
 
 <details>
 <summary>How to create a Secret from a file?</summary><br><b>
 
-kubectl create secret generic some-secret --from-file=/some/file.txt
+`kubectl create secret generic some-secret --from-file=/some/file.txt`
 </b></details>
 
 <details>
@@ -2156,18 +2164,14 @@ data:
     password: mySecretPassword
 ```
 </summary><br><b>
+
 Password isn't encrypted.
 You should run something like this: `echo -n 'mySecretPassword' | base64` and paste the result to the file instead of using plain-text.
+
 </b></details>
 
 <details>
-<summary>How to create a Secret from a configuration file?</summary><br><b>
-
-`kubectl apply -f some-secret.yaml`
-</b></details>
-
-<details>
-<summary>What the following in Deployment configuration file means? 
+<summary>What the following in a Deployment configuration file means? 
 
 ```
 spec:
@@ -2179,8 +2183,22 @@ spec:
           key: password
 ```
 </summary><br><b>
+
 USER_PASSWORD environment variable will store the value from password key in the secret called "some-secret"
 In other words, you reference a value from a Kubernetes Secret.
+
+</b></details>
+
+<details>
+<summary>How to commit secrets to Git and in general how to use encrypted secrets?</summary><br><b>
+
+One possible process would be as follows:
+
+1. You create a Kubernetes secret (but don't commit it)
+2. You encrypt it using some 3rd party project (.e.g kubeseal)
+3. You apply the seald/encrypted secret
+4. You commit the the sealed secret to Git
+5. You deploy an application that requires the secret and it can be automatically decrypted by using for example a Bitnami Sealed secrets controller
 </b></details>
 
 ### Volumes
@@ -2542,6 +2560,8 @@ Same as Conftest, it is used for policy testing and enforcement. The difference 
 <summary>What is Helm?</summary><br><b>
 
 Package manager for Kubernetes. Basically the ability to package YAML files and distribute them to other users and apply them in the cluster(s).
+
+As a concept it's quite common and can be found in many platforms and services. Think for example on package managers in operating systems. If you use Fedora/RHEL that would be dnf. If you use Ubuntu then, apt. If you don't use Linux, then a different question should be asked and it's why? but that's another topic :)
 </b></details>
 
 <details>
@@ -2606,6 +2626,14 @@ someChart/     -> the name of the chart
 </b></details>
 
 <details>
+<summary>How Helm supports release management?</summary><br><b>
+
+Helm allows you to upgrade, remove and rollback to previous versions of charts. In version 2 of Helm it was with what is known as "Tiller". In version 3, it was removed due to security concerns.
+</b></details>
+
+#### Commands
+
+<details>
 <summary>How do you search for charts?</summary><br><b>
 
 `helm search hub [some_keyword]`
@@ -2620,9 +2648,27 @@ Or directly on the command line: `helm install --set some_key=some_value`
 </b></details>
 
 <details>
-<summary>How Helm supports release management?</summary><br><b>
+<summary>How do you list deployed releases?</summary><br><b>
 
-Helm allows you to upgrade, remove and rollback to previous versions of charts. In version 2 of Helm it was with what is known as "Tiller". In version 3, it was removed due to security concerns.
+`helm ls` or `helm list`
+</b></details>
+
+<details>
+<summary>How to execute a rollback?</summary><br><b>
+
+`helm rollback RELEASE_NAME REVISION_ID`
+</b></details>
+
+<details>
+<summary>How to view revision history for a certain release?</summary><br><b>
+
+`helm history RELEASE_NAME`
+</b></details>
+
+<details>
+<summary>How to upgrade a release?</summary><br><b>
+
+`helm upgrade RELEASE_NAME CHART_NAME`
 </b></details>
 
 ### Security

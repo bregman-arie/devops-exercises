@@ -2,15 +2,40 @@
 
 - [Argo](#argo)
   - [ArgoCD Exercises](#argocd-exercises)
-  - [Argo Questions](#argo-questions)
     - [ArgoCD 101](#argocd-101)
+    - [ArgoCD Secrets](#argocd-secrets)
+    - [ArgoCD Helm](#argocd-helm)
+  - [Argo Questions](#argo-questions)
+    - [ArgoCD 101](#argocd-101-1)
     - [Practical ArgoCD 101](#practical-argocd-101)
+      - [CLI](#cli)
+    - [ArgoCD Configuration](#argocd-configuration)
     - [Multi-Cluster Environment](#multi-cluster-environment)
-    - [Access Control](#access-control)
+    - [ArgoCD Application Health](#argocd-application-health)
+    - [ArgoCD Syncs](#argocd-syncs)
+    - [ArgoCD and Helm](#argocd-and-helm)
 
 ## ArgoCD Exercises
 
-TODO
+### ArgoCD 101
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Creating an App | App | [Exercise](exercises/app_creation/exercise.md) | [Solution](exercises/app_creation/solution.md)
+| Syncing App - Git | Sync | [Exercise](exercises/sync_app_git/exercise.md) | [Solution](exercises/sync_app_git/solution.md)
+| Syncing App - Cluster | Sync | [Exercise](exercises/sync_app_cluster/exercise.md) | [Solution](exercises/sync_app_cluster/solution.md)
+
+### ArgoCD Secrets
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Secrets 101 | Secrets | [Exercise](exercises/secrets_101/exercise.md) | [Solution](exercises/secrets_101/solution.md)
+
+### ArgoCD Helm
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Helm ArgoCD App | Secrets | [Exercise](exercises/argocd_helm_app/exercise.md) | [Solution](exercises/argocd_helm_app/solution.md)
 
 ## Argo Questions
 
@@ -53,11 +78,10 @@ With ArgoCD it's really easy to roll back to a previous version because all the 
 4. Push to image to a registry
 5. Update K8S manifest file(s) in a separate app config repository
 6. ArgoCD tracks changes in the app config repository. Since there was a change in the repository, it will apply the changes from the repo
-7. 
 </b></details>
 
 <details>
-<summary>True or False? ArgoCD support Kubernetes YAML files but not other manifests formats like Helm Charts and Kustomize</summary><br><b>
+<summary>True or False? ArgoCD supports Kubernetes YAML files but not other manifests formats like Helm Charts and Kustomize</summary><br><b>
 
 False. It supports Kubernetes YAML files as well as Helm Charts and Kustomize.
 
@@ -113,6 +137,13 @@ Ella is right, ArgoCD is an extension of the cluster, that is very different fro
 "Application"
 </b></details>
 
+<details>
+<summary>How ArgoCD makes access management in the cluster easier?</summary><br><b>
+
+Instead of creating Kubernetes resources, you can use Git to manage who is allowed to push code, to review it, merge it, etc - either human users or 3rd party systems and services. There is no need to use ClusterRole or User resources in Kubernetes hence the management of access is much more simplified.
+
+</b></details>
+
 ### Practical ArgoCD 101
 
 <details>
@@ -148,6 +179,77 @@ This section defines with which Kubernetes cluster the app in the tracked Git re
 AddProject
 </b></details>
 
+<details>
+<summary>True or False? ArgoCD sync period is 3 hours</summary><br><b>
+
+False. ArgoCD sync period is 3 minutes as of today (and not hours).
+</b></details>
+
+<details>
+<summary>Describe shortly what ArgoCD does every sync period</summary><br><b>
+
+1. Gathers list of all the apps to sync (those that are marked with "auto-sync")
+2. Gets Git state for each repository
+3. Performs comparison between the repository Git state and the Kubernetes cluster state
+  1. If states are different, the application marked as "out-of-sync" and further action might be taken (based on the configuration)
+  2. If states are equal, the application marked as "synced"
+</b></details>
+
+#### CLI
+
+<details>
+<summary>Create a new application with the following properties:
+
+* app name: some-app
+* repo: https://fake.repo.address
+* app path: ./app_path
+* namespace: default
+* cluster: my.kubernetes.cluster
+</summary><br><b>
+
+```
+argocd app create some-app \
+--project  \
+--repo https://fake.repo.address \
+--path ./app_path \
+--dest-namespace default \
+--dest-server my.kubernetes.cluster
+```
+
+</b></details>
+
+<details>
+<summary>List all argocd apps</summary><br><b>
+
+`argocd app list`
+</b></details>
+
+<details>
+<summary>Print detailed information on the app called "some-app"</summary><br><b>
+
+`argocd app get some-app`
+</b></details>
+
+### ArgoCD Configuration
+
+<details>
+<summary>Is it possible to change default sync period of ArgoCD?</summary><br><b>
+
+Yes, it is possible by adding the following to the argocd-cm (ConfigMap):
+
+```
+data:
+  timeout.reconciliation: 300s
+```
+
+The value can be any number of seconds you would like to set.
+</b></details>
+
+<details>
+<summary>What will be the result of setting <code>timeout.reconciliation: 0s</code>?</summary><br><b>
+
+sync functionality will be disabled.
+</b></details>
 
 ### Multi-Cluster Environment
 
@@ -169,11 +271,73 @@ There are multiple ways to deal with it:
 2. Use overlays and Kustomize to control the context of where your changes synced based on the CI process/pipeline used.
 </b></details>
 
-### Access Control
+### ArgoCD Application Health
 
 <details>
-<summary>How ArgoCD makes access management in the cluster easier?</summary><br><b>
+<summary>What are some possible health statuses for an ArgoCD application?</summary><br><b>
 
-Instead of creating Kubernetes resources, you can use Git to manage who is allowed to push code, to review it, merge it, etc - either human users or 3rd party systems and services. There is no need to use ClusterRole or User resources in Kubernetes hence the management of access is much more simplified.
+* Healthy
+* Missing: resource doesn't exist in the cluser
+* Suspended: resource is paused
+* Progressing: resources isn't healthy but will become healthy or has the chance to become healthy
+* Degraded: resource isn't healthy
+* Unknown: it's not known what's the app health
+</b></details>
 
+<details>
+<summary>True or False? A Deployment considered to be healthy if the Pods are running</summary><br><b>
+
+Not exactly. A Deployment (as well as StatefulSet, ReplicaSet and DaemonSet) considered healthy  if the desired state equals to actual/current state (this includes the number of replicas).
+</b></details>
+
+<details>
+<summary>True or False? An ingress is considered healthy if status.loadBalancer.ingress list includes at least one value</summary><br><b>
+
+True.
+</b></details>
+
+<details>
+<summary>What can you tell about the health of custom Kubernetes resources?</summary><br><b>
+
+The health of custom Kubernetes resources is defined by writing Lua scripts.
+
+You find such list of scripts here: https://github.com/argoproj/argo-cd/tree/master/resource_customizations
+</b></details>
+
+### ArgoCD Syncs
+
+<details>
+<summary>Explain manual syncs vs. automatic syncs</summary><br><b>
+
+Automatic syncs means that once ArgoCD detected a change or a new version of your app in Git, it will apply the changes so the current/actual state can be equal to desired state.
+
+With manual syncs, ArgoCD will identify there is a difference, but will do nothing to correct it.
+</b></details>
+
+<details>
+<summary>Explain auto-pruning</summary><br><b>
+
+If enabled, auto-pruning will remove resources when files or content is removed from a tracked Git repository.
+
+If disabled, ArgoCD will not remove anything, even when content or files are removed.
+</b></details>
+
+<details>
+<summary>Explain self-heal in regards to ArgoCD</summary><br><b>
+
+Self-heal is the process of correcting the cluster state based on the desired state, when someone makes manual changes to the cluster.
+</b></details>
+
+### ArgoCD and Helm
+
+<details>
+<summary>What support is provided in ArgoCD for Helm?</summary><br><b>
+
+ArgoCD is able to track packaged Helm chart in a sense where it will monitor for new versions.
+</b></details>
+
+<details>
+<summary>True or False? When ArgoCD tracks Helm chart the chart is no longer an Helm application and it's a ArgoCD app</summary><br><b>
+
+True. Trying to execute commands like `helm ls` will fail because helm metadata doesn't exist anymore and the application is tracked as ArgoCD app.
 </b></details>

@@ -2,9 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
 
-:bar_chart: &nbsp;There are currently **2415** exercises and questions
-
-:books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
+:bar_chart: &nbsp;There are currently **2466** exercises and questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [FAQ page](faq.md) for more details
 
@@ -797,6 +795,33 @@ Logging<br>
 
 <details>
 <summary>What is the difference between infrastructure monitoring and application monitoring? (methods, tools, ...)</summary><br><b>
+</b></details>
+
+### Application Performance Management
+
+<details>
+<summary>What is Application Performance Management?</summary><br><b>
+
+- IT metrics translated into business insights
+- Practices for monitoring applications insights so we can improve performances, reduce issues and improve overall user experience
+</b></details>
+
+<details>
+<summary>Name three aspects of a project you can monitor with APM (e.g. backend)</summary><br><b>
+
+- Frontend
+- Backend
+- Infra
+- ...
+</b></details>
+
+<details>
+<summary>What can be collected/monitored to perform APM monitoring?</summary><br><b>
+
+- Metrics
+- Logs
+- Events
+  Traces
 </b></details>
 
 ## Prometheus
