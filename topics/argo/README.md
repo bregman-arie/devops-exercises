@@ -5,7 +5,8 @@
     - [ArgoCD 101](#argocd-101)
     - [ArgoCD Secrets](#argocd-secrets)
     - [ArgoCD Helm](#argocd-helm)
-  - [Argo Questions](#argo-questions)
+    - [Argo Rollouts](#argo-rollouts)
+  - [ArgoCD Questions](#argocd-questions)
     - [ArgoCD 101](#argocd-101-1)
     - [Practical ArgoCD 101](#practical-argocd-101)
       - [CLI](#cli)
@@ -14,6 +15,9 @@
     - [ArgoCD Application Health](#argocd-application-health)
     - [ArgoCD Syncs](#argocd-syncs)
     - [ArgoCD and Helm](#argocd-and-helm)
+  - [Argo Rollouts Questions](#argo-rollouts-questions)
+    - [Argo Rollouts 101](#argo-rollouts-101)
+    - [Argo Rollouts Commands](#argo-rollouts-commands)
 
 ## ArgoCD Exercises
 
@@ -37,7 +41,14 @@
 |--------|--------|------|----|----|
 | Helm ArgoCD App | Secrets | [Exercise](exercises/argocd_helm_app/exercise.md) | [Solution](exercises/argocd_helm_app/solution.md)
 
-## Argo Questions
+### Argo Rollouts
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Blue/Green Rollout | Rollouts | [Exercise](exercises/blue_green_rollout/exercise.md) | [Solution](exercises/blue_green_rollout/solution.md)
+| Canary Rollout | Rollouts | [Exercise](exercises/canary_rollout/exercise.md) | [Solution](exercises/canary_rollout/solution.md)
+
+## ArgoCD Questions
 
 ### ArgoCD 101
 
@@ -340,4 +351,62 @@ ArgoCD is able to track packaged Helm chart in a sense where it will monitor for
 <summary>True or False? When ArgoCD tracks Helm chart the chart is no longer an Helm application and it's a ArgoCD app</summary><br><b>
 
 True. Trying to execute commands like `helm ls` will fail because helm metadata doesn't exist anymore and the application is tracked as ArgoCD app.
+</b></details>
+
+## Argo Rollouts Questions
+
+### Argo Rollouts 101
+
+<details>
+<summary>What is Argo Rollouts?</summary><br><b>
+
+A controller for Kubernetes to perform application deployments using different strategies like Blue/Green deployments, Canary deployments, etc.
+
+In addition, it supports A/B tests, automatic rollbacks and integrated metric analysis.
+</b></details>
+
+<details>
+<summary>What happens when you rollout a new version of your app with argo rollouts?</summary><br><b>
+
+- Argo Rollouts creates a new replicaset (that is the new app version)
+  - Old version is still alive
+- ArgoCD marks the app as out-ofsync 
+</b></details>
+
+### Argo Rollouts Commands
+
+<details>
+<summary>How to list rollouts?</summary><br><b>
+
+`kubectl argo rollouts list rollouts`
+</b></details>
+
+<details>
+<summary>How to list the rollouts of a given application?</summary><br><b>
+
+`kubectl argo rollouts get rollout SOME-APP`
+</b></details>
+
+<details>
+<summary>How to check the status of a rollout?</summary><br><b>
+
+`kubectl argo rollouts status SOME-APP`
+</b></details>
+
+<details>
+<summary>How to rollout a new version (with new container tag)?</summary><br><b>
+
+`kubectl argo rollouts set image SOME-APP web-app=some/registry/and/image:v2.0`
+</b></details>
+
+<details>
+<summary>How to manually promote to new app version?</summary><br><b>
+
+`kubectl argo rollouts promote SOME-APP`
+</b></details>
+
+<details>
+<summary>How do you monitor a rollout?</summary><br><b>
+
+`kubectl argo rollouts get rollout SOME-APP --watch`
 </b></details>

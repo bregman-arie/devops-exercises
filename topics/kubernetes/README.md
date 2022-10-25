@@ -17,6 +17,7 @@ What's your goal?
     - [ReplicaSet](#replicaset)
     - [Labels and Selectors](#labels-and-selectors)
     - [Scheduler](#scheduler)
+    - [Kustomize](#kustomize)
   - [Kubernetes Questions](#kubernetes-questions)
     - [Kubernetes 101](#kubernetes-101)
     - [Cluster and Architecture](#cluster-and-architecture)
@@ -64,6 +65,8 @@ What's your goal?
     - [Resource Limits](#resource-limits)
       - [Resources Limits - Commands](#resources-limits---commands)
     - [Monitoring](#monitoring)
+    - [Kustomize](#kustomize-1)
+    - [Deployment Strategies](#deployment-strategies)
     - [Scenarios](#scenarios)
 
 ## Kubernetes Exercises
@@ -102,6 +105,12 @@ What's your goal?
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Taints 101 | Taints | [Exercise](exercises/taints_101/exercise.md) | [Solution](exercises/taints_101/solution.md)
+
+### Kustomize
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| common labels | Kustomize | [Exercise](exercises/kustomize_common_labels/exercise.md) | [Solution](exercises/kustomize_common_labels/solution.md)
 
 ## Kubernetes Questions
 
@@ -3006,6 +3015,103 @@ TODO: add more monitoring solutions
 
 </b></details>
 
+### Kustomize
+
+<details>
+<summary>What is Kustomize?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the need for Kustomize by describing actual use cases</summary><br><b>
+
+* You have an helm chart of an application used by multiple teams in your organization and there is a requirement to add annotation to the app specifying the name of the of team owning the app
+  * Without Kustomize you would need to copy the files (chart template in this case) and modify it to include the specific annotations we need
+  * With Kustomize you don't need to copy the entire repo or files
+* You are asked to apply a change/patch to some app without modifying the original files of the app
+  * With Kustomize you can define kustomization.yml file that defines these customizations so you don't need to touch the original app files
+</b></details>
+
+<details>
+<summary>Describe in high-level how Kustomize works</summary><br><b>
+
+1. You add kustomization.yml file in the folder of the app you would like to customize.
+   1. You define the customizations you would like to perform
+2. You run `kustomize build APP_PATH` where your kustomization.yml also resides
+</b></details>
+
+### Deployment Strategies
+
+<details>
+<summary>What rollout/deployment strategies are you familiar with?</summary><br><b>
+
+* Blue/Green Deployments: You deploy a new version of your app, while old version still running, and you start redirecting traffic to the new version of the app
+* Canary Deployments: You deploy a new version of your app and start redirecting **portion** of your users/traffic to the new version. So you the migration to the new version is much more gradual
+</b></details>
+
+<details>
+<summary>Explain Blue/Green deployments/rollouts in detail</summary><br><b>
+
+Blue/Green deployment steps:
+
+1. Traffic coming from users through a load balancer to the application which is currently version 1
+
+Users -> Load Balancer -> App Version 1
+
+2. A new application version 2 is deployed (while version 1 still running)
+
+Users -> Load Balancer -> App Version 1
+                          App Version 2
+
+3. If version 2 runs properly, traffic switched to it instead of version 1
+
+User -> Load Balancer     App version 1
+                       -> App Version 2
+
+4. Whether old version is removed or keep running but without users being redirected to it, is based on team or company decision
+
+Pros:
+  * We can rollback/switch quickly to previous version at any point
+Cons:
+  * In case of an issue with new version, ALL users are affected (instead of small portion/percentage)
+
+</b></details>
+
+<details>
+<summary>Explain Canary deployments/rollouts in detail</summary><br><b>
+
+Canary deployment steps:
+
+1. Traffic coming from users through a load balancer to the application which is currently version 1
+
+Users -> Load Balancer -> App Version 1
+
+2. A new application version 2 is deployed (while version 1 still running) and part of the traffic is redirected to the new version
+
+Users -> Load Balancer ->(95% of the traffic) App Version 1
+                       ->(5% of the traffic) App Version 2
+
+3. If the new version (2) runs well, more traffic is redirected to it
+
+Users -> Load Balancer ->(70% of the traffic) App Version 1
+                       ->(30% of the traffic) App Version 2
+
+3. If everything runs well, at some point all traffic is redirected to the new version
+
+Users -> Load Balancer -> App Version 2
+
+
+Pros:
+  * If there is any issue with the new deployed app version, only some portion of the users affected, instead of all of them
+Cons:
+  * Testing of new version is neccesrialy in the production environment (as the user traffic is exists only there)
+
+</b></details>
+
+<details>
+<summary>What ways are you familiar with to implement deployment strategies (like canary, blue/green) in Kubernetes?</summary><br><b>
+
+There are multiple ways. One of them is Argo Rollouts.
+</b></details>
 
 ### Scenarios
 

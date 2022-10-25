@@ -3,6 +3,8 @@
 - [DataDog](#datadog)
   - [Questions](#questions)
     - [Basics](#basics)
+  - [Datadog Agent](#datadog-agent)
+  - [Datadog Integrations](#datadog-integrations)
 
 ## Questions
 
@@ -41,8 +43,37 @@ Basically any device or location that has Datadog agent installed and running on
 
 <details>
 <summary>What is a Datadog agent?</summary><br><b>
+
+A software runs on a Datadog host. Its purpose is to collect data from the host and sent it to Datadog (data like metrics, logs, etc.)
 </b></details>
 
 <details>
-<summary>What are Datadog agents?</summary><br><b>
+<summary>What are Datadog tags?</summary><br><b>
+
+Datadog tags are used to mark different information with unique properties. For example, you might want to tag some data with "environment: production" while tagging information from staging or dev environment with "environment: staging".
+</b></details>
+
+## Datadog Agent
+
+<details>
+<summary>What are the component of a Datadog agent?</summary><br><b>
+
+* Collector: its role is to collect data from the host on which it's installed. The default period of time as of today is every 15 seconds.
+* Forwarder: responsible for sending the data to Datadog over HTTPS
+</b></details>
+
+## Datadog Integrations
+
+
+<details>
+<summary>What can you tell about Datadog integrations?</summary><br><b>
+
+- Datadog has many supported integrations with different services, platforms, etc.
+- Each integration includes information on how to apply it, how to use it and what configuration options it supports
+</b></details>
+
+<details>
+<summary>What opening some of the integrations windows/pages, there is a ection called "Monitors". What can be found there?</summary><br><b>
+
+Usually you can find there some anomaly types that Datadog suggests to monitor and track.
 </b></details>
