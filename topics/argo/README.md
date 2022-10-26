@@ -11,12 +11,13 @@
     - [Practical ArgoCD 101](#practical-argocd-101)
       - [CLI](#cli)
     - [ArgoCD Configuration](#argocd-configuration)
-    - [Multi-Cluster Environment](#multi-cluster-environment)
+    - [Advanced ArgoCD](#advanced-argocd)
     - [ArgoCD Application Health](#argocd-application-health)
     - [ArgoCD Syncs](#argocd-syncs)
     - [ArgoCD and Helm](#argocd-and-helm)
   - [Argo Rollouts Questions](#argo-rollouts-questions)
     - [Argo Rollouts 101](#argo-rollouts-101)
+    - [Argo Advanced Rollouts](#argo-advanced-rollouts)
     - [Argo Rollouts Commands](#argo-rollouts-commands)
 
 ## ArgoCD Exercises
@@ -149,6 +150,12 @@ Ella is right, ArgoCD is an extension of the cluster, that is very different fro
 </b></details>
 
 <details>
+<summary>Explain what is an "Application" in regards to ArgoCD</summary><br><b>
+
+It's a custom resource definitions which responsible for the deployment and synchronization of application resources to a Kubernetes cluster.
+</b></details>
+
+<details>
 <summary>How ArgoCD makes access management in the cluster easier?</summary><br><b>
 
 Instead of creating Kubernetes resources, you can use Git to manage who is allowed to push code, to review it, merge it, etc - either human users or 3rd party systems and services. There is no need to use ClusterRole or User resources in Kubernetes hence the management of access is much more simplified.
@@ -206,6 +213,14 @@ False. ArgoCD sync period is 3 minutes as of today (and not hours).
   2. If states are equal, the application marked as "synced"
 </b></details>
 
+<details>
+<summary>You deployed a new application in a namespace called "yay" but when running <code>kubectl get ns yay</code> you see there is no such namespace. What happened?</summary><br><b>
+
+Deploying applications in non-existing namespaces doesn't create the namespace. For that you have to explicitly mark "Auto-create namespace".
+
+To fix it, you can simply run `kubectl create namespace NAMESPACE_NAME` but it's better of course to have it stored in Git rather than running kubectl commands.
+</b></details>
+
 #### CLI
 
 <details>
@@ -241,6 +256,18 @@ argocd app create some-app \
 `argocd app get some-app`
 </b></details>
 
+<details>
+<summary>How to add an additional (external) cluster for ArgoCD to manage?</summary><br><b>
+
+`argocd cluster add CLUSTER_ADDRESS/NAME`
+</b></details>
+
+<details>
+<summary>How to list all the clusters ArgoCD manage?</summary><br><b>
+
+`argocd cluster list`
+</b></details>
+
 ### ArgoCD Configuration
 
 <details>
@@ -262,7 +289,25 @@ The value can be any number of seconds you would like to set.
 sync functionality will be disabled.
 </b></details>
 
-### Multi-Cluster Environment
+### Advanced ArgoCD
+
+<details>
+<summary>What is the "App of Apps Patterns"?</summary><br><b>
+
+A solution from Argo community in regards to managing multiple similar applications.
+
+Basically a pattern where you have root application that consists of other child applications.
+
+So instead of creating multiple separate applications, you have the root application pointing to a repository with additional applications.
+</b></details>
+
+<details>
+<summary>Can you provide some use cases for using "App of Apps Patterns"?</summary><br><b>
+
+* Cluster Preparation: You would like to deploy multiple applications at once to bootstrap a Kubernetes cluster
+
+TODO: add more :)
+</b></details>
 
 <details>
 <summary>True or False? If you have multiple Kubernetes clusters you want to manage sync applications to with ArgoCD then, you must have ArgoCD installed on each one of them</summary><br><b>
@@ -277,7 +322,7 @@ You don't usually want to go and update all of your clusters at once, especially
 
 There are multiple ways to deal with it:
 
-1. Branch Drived: Have branches for your GitOps repo where you push first to development, do some testing, merge it then to staging and if everything works fine in staging, you merge it to production.
+1. Branch driven: Have branches for your GitOps repo where you push first to development, do some testing, merge it then to staging and if everything works fine in staging, you merge it to production.
 
 2. Use overlays and Kustomize to control the context of where your changes synced based on the CI process/pipeline used.
 </b></details>
@@ -370,7 +415,56 @@ In addition, it supports A/B tests, automatic rollbacks and integrated metric an
 
 - Argo Rollouts creates a new replicaset (that is the new app version)
   - Old version is still alive
-- ArgoCD marks the app as out-ofsync 
+- ArgoCD marks the app as out-of-sync 
+</b></details>
+
+<details>
+<summary>True or False? You need to install ArgoCD in order to use Argo Rollouts</summary><br><b>
+
+False. Quite common misconception today but both cab be used independency even though they work nicely together.
+</b></details>
+
+### Argo Advanced Rollouts
+
+<details>
+<summary>Scott, an engineer in your team, executes manually some smoke tests and monitors rollouts every time a new version is deployed. This way, if there is an issue he detects, he performs a rollback. What better approach you might suggest him to take?</summary><br><b>
+
+Shift towards fully automated rollbacks. Argo Rollouts supports multiple metric providers (Datadog, NewRelic, etc.) so you can use data and metrics for automating the rollbacks based on different conditions
+
+</b></details>
+
+<details>
+<summary>Explain the concept of "Analysis" in regards to Argo Rollouts</summary><br><b>
+
+Analysis is a resource deployed along a Rollout resources and defines the conditions and metrics threshols for performing a rollback
+
+</b></details>
+
+<details>
+<summary>Explain the following configuration
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: success-rate
+spec:
+  args:
+  - name: service-name
+  metrics:
+  - name: success-rate
+    interval: 4m
+    count: 3
+    successCondition: result[0] >= 0.90
+    provider:
+      prometheus:
+        address: http:/some-prometheus-instance:80
+        query: sum(response_status{app="{{args.service-name}}",role="canary",status=~"2.*"})/sum(response_status{app="{{args.service-name}}",role="canary"}
+```
+</summary><br><b>
+
+It's an Analysis resource that fetches response status from Prometheus (monitoring instance). If it's more than 0.90 the rollout will continue, if it's less than 0.90 a rollback will be performed meaning the canary deployment failed.
+
 </b></details>
 
 ### Argo Rollouts Commands

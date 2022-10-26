@@ -2520,30 +2520,6 @@ document_number: 2
 [Wikipedia](https://en.wikipedia.org/wiki/Firmware): "In computing, firmware is a specific class of computer software that provides the low-level control for a device's specific hardware. Firmware, such as the BIOS of a personal computer, may contain basic functions of a device, and may provide hardware abstraction services to higher-level software such as operating systems."
 </b></details>
 
-#### Customers and Service Providers
-
-<details>
-<summary>What is SLO (service-level objective)?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is SLA (service-level agreement)?</summary><br><b>
-</b></details>
-
-## Jira
-
-<details>
-<summary>Explain/Demonstrate the following types in Jira:
-
-  * Epic
-  * Story
-  * Task</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a project in Jira?</summary><br><b>
-</b></details>
-
 ## Cassandra
 
 <details>

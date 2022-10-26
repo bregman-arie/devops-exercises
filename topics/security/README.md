@@ -1,4 +1,4 @@
-## Security
+# Security
 
 <details>
 <summary>What is DevSecOps? What its core principals?</summary><br><b>
@@ -16,6 +16,10 @@ A couple of quotations from chosen companies:
 <summary>What the "Zero Trust" concept means? How Organizations deal with it?</summary><br><b>
 
 [Codefresh definition](https://codefresh.io/security-testing/codefresh-runner-overview): "Zero trust is a security concept that is centered around the idea that organizations should never trust anyone or anything that does not originate from their domains. Organizations seeking zero trust automatically assume that any external services it commissions have security breaches and may leak sensitive information"
+</b></details>
+
+<details>
+<summary>Explain the principle of least privilege</summary><br><b>
 </b></details>
 
 <details>
@@ -517,7 +521,7 @@ An application usually has different dependencies. Typically, not all of them ar
 </b></details>
 
 <details>
-<summary> What solutions are there for managing project dependencies? 
+<summary> What solutions are there for managing project dependencies?
 </summary><br><b>
 
 [Npm.js documentation](https://docs.npmjs.com/cli/v8/commands/npm-prune): Use clean-up commands that are usually provided by the package manager authors. For instance, npm prune will remove any extraneous package. Another command is npm audit which will scan your repository and report any vulnerable dependencies found.
@@ -548,4 +552,36 @@ You can’t. You will always be exposed to security risk once you start using op
 </summary><br><b>
 
 [Fred Cohen (permission needed)](https://reader.elsevier.com/reader/sd/pii/0167404887900319?token=D5339ABC064AD9A2B50B74D8CE890B0E22A302A0BC461A50078D407BEA01052737DC6AAEF95A854E72A73B6D0C67E260&originRegion=eu-west-1&originCreation=20220502180611): Checksum is a way to verify the integrity of information in systems with no built-in protection. In other words, it provides a way of validating that the content of a file or a package / library is intact. This is useful since attacks or errors may occur during transmission of files. However, it requires that the package author has run a checksum function for the file / package which creates a specific hash for that version of the file. A minor change of the file content will result in a different checksum. If you have access to the original checksum of the file, you may run checksum on your own. In case the resulting checksum matches the original one, no changes have been made in the file. You can now conclude that no error or malicious injection was done during transmission of the file. 
+</b></details>
+
+## Microsegmentation
+
+<details>
+<summary>What is Microsegmentation?</summary><br><b>
+
+- Security method
+- Managing network access between endpoints (processes, devices, instances)
+- A method in which security policies are applied to limit traffic
+  - based on concepts such as "Zero Trust" and "Least Privileged"
+- The result of Microsegmentation should be:
+  - Reduced attack ability
+  - Better breach containment
+</b></details>
+
+<details>
+<summary>Why do we need Microsegmentation solutions? Why using something such as firewalls isn't enough?</summary><br><b>
+
+- Firewalls focused on north-south traffic. Basically traffic that is outside of the company perimeter
+- Traffic that is considered west-east, internal workflows and communication, is usually left untreated
+</b></details>
+
+<details>
+<summary>How Microsegmentation is applied?</summary><br><b>
+
+ There are different ways to apply Microsegmentation:
+
+- Cloud Native: Using cloud embedded capabilities such as security groups, firewalls, etc.
+- Agent: Agents running on the different endpoints (instances, services, etc.)
+- Network: Modify network devices and their configuration to create microsegmentation 
+
 </b></details>

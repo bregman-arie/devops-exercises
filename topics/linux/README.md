@@ -1247,6 +1247,13 @@ If using the private key from the previous question then the command would be:
 `openssl req -new -x509 -days 730 -key ca-private-key.pem -sha256 -out ca.pem`
 </b></details>
 
+<details>
+<summary>Demonstrate one way to encode and decode data in Linux</summary><br><b>
+
+Encode: `echo -n "some password" | base64`
+Decode: `echo -n "allE19remO91" | base64`
+</b></details>
+
 <a name="questions-linux-networking"></a>
 ### Networking
 
