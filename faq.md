@@ -9,7 +9,7 @@ Learning, of course.
 ### My goal is to prepare for a DevOps interviews. Should I use this repository?
 
 Overall, this repository should help you learn some concepts but, don't assume at any point that your interview will include similar questions to those that included in this repository.
-Regarding interview, I've added a couple of suggestions [here](prepare_for_interview.md)<br>
+Regarding interviews, I've added a couple of suggestions [here](prepare_for_interview.md)<br>
 
 ### Will you stop at some point adding questions and exercises?
 

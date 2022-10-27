@@ -7,12 +7,15 @@
   - [Questions](#questions)
     - [Terraform 101](#terraform-101-1)
     - [Terraform Hands-On Basics](#terraform-hands-on-basics)
+    - [Dependencies](#dependencies)
     - [Providers](#providers)
     - [Provisioners](#provisioners)
     - [Modules](#modules)
     - [Variables](#variables)
+      - [Variables Hands-On](#variables-hands-on)
     - [State](#state)
     - [Import](#import)
+    - [Version Control](#version-control)
     - [AWS](#aws-1)
 
 ## Exercises
@@ -103,9 +106,98 @@ To be clear, CM tools can be used to provision resources so in the end goal of h
 ### Terraform Hands-On Basics
 
 <details>
-<summary>How to reference other parts of your Terraform code?</summary><br><b>
+<summary>Explain the following block of Terraform code
+
+```
+resource "aws_instance" "some-instance" {
+  ami           = "ami-201720221991yay"
+  instance_type = "t2.micro
+}
+```
+</summary><br><b>
+
+It's a resource of type "aws_instance" used to provision an instance. The name of the resource (NOT INSTANCE) is "some-instance".
+
+The instance itself will be provisioned with type "t2.micro" and using an image of the AMI "ami-201720221991yay".
+</b></details>
+
+<details>
+<summary>What do you do next after writing the following in main.tf file?
+
+```
+resource "aws_instance" "some-instance" {
+  ami           = "ami-201720221991yay"
+  instance_type = "t2.micro
+}
+```
+</summary><br><b>
+
+Run `terraform init`. This will scan the code in the directory to figure out which providers are used (in this case AWS provider) and will download them
+</b></details>
+
+<details>
+<summary>You've executed <code>terraform init</code> and now you would like to move forward to creating the resources but you have concerns and would like to make be 100% sure on what you are going to execute. What should you be doing?</summary><br><b>
+
+Execute `terraform plan`. That will provide a detailed information on what Terraform will do once you apply the changes.
+</b></details>
+
+<details>
+<summary>You've downloaded the providers, seen the what Terraform will do (with terraform plan) and you are ready to actually apply the changes. What should you do next?</summary><br><b>
+
+Run `terraform apply`. That will apply the changes described in your .tf files.
+</b></details>
+
+<details>
+<summary>Explain the meaning of the following strings that seen at the beginning of each line When you run <code>terraform apply</code>
+
+* '+'
+* '-'
+* '-/+'
+</summary><br><b>
+
+* '+' - The resource or attribute is going to be added
+* '-' - the resource or attribute is going to be removed
+* '-/+' - the resource or attribute is going to be replaced
+</b></details>
+
+### Dependencies 
+
+<details>
+<summary>Sometimes you need to reference some resources in the same or separate .tf file. Why and how it's done?</summary><br><b>
+
+Why: because resources are sometimes connected or need to be connected. For example, you create an AWS instance with "aws_instance" resource but, at the same time you would like also to allow some traffic to it (because by default traffic is not allowed). For that you'll create a "aws_security_group" resource and then, in your aws_instance resource, you'll reference it.
+
+How:
 
 Using the syntax <PROVIDER TYPE>.<NAME>.<ATTRIBUTE>
+
+In your AWS instance it would like that:
+
+```
+resource "aws_instance" "some-instance" {
+  
+  ami           = "some-ami"
+  instance_type = "t2.micro"
+  vpc_security_group_ids = [aws_security_group.instance.id]
+
+}
+```
+</b></details>
+
+<details>
+<summary>Does it matter in which order Terraform creates resources?</summary><br><b>
+
+Yes, when there is a dependency between different Terraform resources, you want the resources to be created in the right order and this is exactly what Terraform does.
+
+To make it ever more clear, if you have a resource X that references the ID of resource Y, it doesn't makes sense to create first resource X because it won't have any ID to get from a resource that wasn't created yet. 
+</b></details>
+
+<details>
+<summary>Is there a way to print/see the dependencies between the different resources?</summary><br><b>
+
+Yes, with `terraform graph`
+
+The output is in DOT - A graph description language.
 </b></details>
 
 ### Providers
@@ -190,6 +282,12 @@ By default Terraform providers are installed from Terraform Registry
 <summary>What is the Terraform Registry?</summary><br><b>
 
 The Terraform Registry provides a centralized location for official and community-managed providers and modules.
+</b></details>
+
+<details>
+<summary>Where providers are downloaded to? (when for example you run <code>terraform init</code>)</summary><br><b>
+
+`.terraform` directory.
 </b></details>
 
 ### Provisioners
@@ -318,8 +416,15 @@ You might have a different opinion but my personal take on that, is to keep modu
 ### Variables
 
 <details>
+<summary>What variables are good for in Terraform?</summary><br><b>
+
+Variables allow you define piece of data in one location instead of repeating the hardcoded value of it in multiple different locations. Then when you need to modify the variable's value, you do it in one location instead of changing each one of the hardcoded values.
+</b></details>
+
+<details>
 <summary>What types of variables are supported in Terraform?</summary><br><b>
 
+```
 string
 number
 bool
@@ -328,56 +433,29 @@ set(<TYPE>)
 map(<TYPE>)
 object({<ATTR_NAME> = <TYPE>, ... })
 tuple([<TYPE>, ...])
+```
 </b></details>
 
 <details>
-<summary>What are Input Variables in Terraform? Why one should use them?</summary><br><b>
+<summary>What's the default variable type in Terraform?</summary><br><b>
 
-Input variables serve as parameters to the module in Terraform. They allow you for example to define once the value of a variable and use that variable in different places in the module so next time you would want to change the value, you will change it in one place instead of changing the value in different places in the module.
+`any`
 </b></details>
 
 <details>
-<summary>How to define variables?</summary><br><b>
+<summary>What ways are there to pass values for variables?</summary><br><b>
 
-```
-variable "app_id" {
-  type = string
-  description = "The id of application"
-  default = "some_value"
-}
-```
+* Using `-var` option in the CLI
+* Using a file by using the `-var-file` option in the CLI
+* Environment variable that starts with `TF_VAR_<VAR_NAME>`
 
-Usually they are defined in their own file (vars.tf for example).
+If no value given, user will be prompted to provide one.
 </b></details>
 
 <details>
-<summary>How variables are used in modules?</summary><br><b>
+<summary>How to reference variable?</summary><br><b>
 
-They are referenced with `var.VARIABLE_NAME`
-
-vars.tf:
-
-```
-variable "memory" {
-  type = string
-  default "8192"
-}
-
-variable "cpu" {
-  type = string
-  default = "4"
-}
-```
-
-main.tf:
-
-```
-resource "libvirt_domain" "vm1" {
-   name = "vm1"
-   memory = var.memory
-   cpu = var.cpu
-}
-```
+Using the syntax `var.<VAR_NAME>`
 </b></details>
 
 <details>
@@ -413,9 +491,9 @@ True
 <details>
 <summary>The same variable is defined in the following places:
 
-  - The file `terraform.tfvars`
-  - Environment variable
-  - Using `-var` or `-var-file`
+- The file `terraform.tfvars`
+- Environment variable
+- Using `-var` or `-var-file`
   
 According to variable precedence, which source will be used first?</summary><br><b>
 
@@ -424,17 +502,110 @@ The order is:
   - Environment variable
   - The file `terraform.tfvars`
   - Using `-var` or `-var-file`
+
 </b></details>
 
 <details>
-<summary>What other way is there to define lots of variables in more "simplified" way?</summary><br><b>
+<summary>Whenever you run terraform apply, it prompts to enter a value for a given variable. How to avoid being prompted?</summary><br><b>
 
-Using `.tfvars` file which contains variable consists of simple variable names assignments this way:
+While removing the variable is theoretically a correct answer, it will probably fail the execution.
+
+You can use something like the `-var` option to provide the value and avoid being prompted to insert a value. Another option is to run `export TF_VAR_<VAR_NAME>=<VALUE>`.
+
+</b></details>
+
+#### Variables Hands-On
+
+<details>
+<summary>Demonstrate variable definition with type, description and default parameters</summary><br><b>
 
 ```
-x = 2
-y = "mario"
-z = "luigi"
+variable "app_id" {
+  type = string
+  description = "The id of application"
+  default = "some_value"
+}
+```
+
+Unrelated note: variables are usually defined in their own file (vars.tf for example).
+
+</b></details>
+
+<details>
+<summary>How to define a variable which is a list of numbers?</summary><br><b>
+
+```
+variable "list_of_nums" {
+  type = list(number)
+  description = "An example of list of numbers"
+  default = [2, 0, 1, 7]
+}
+```
+
+</b></details>
+
+<details>
+<summary>How to define a variable which is an object with attributes "model" (string), "color" (string), year (number)?</summary><br><b>
+
+```
+variable "car_model" {
+  description = "Car model object"
+  type        = object({
+    model   = string
+    color   = string
+    year    = number
+  })
+}
+```
+
+Note: you can also define a default for it.
+
+</b></details>
+
+<details>
+<summary>How to reference variables?</summary><br><b>
+
+Variable are referenced with `var.VARIABLE_NAME` syntax. Let's have a look at an example:
+
+vars.tf:
+
+```
+variable "memory" {
+  type = string
+  default "8192"
+}
+
+variable "cpu" {
+  type = string
+  default = "4"
+}
+```
+
+main.tf:
+
+```
+resource "libvirt_domain" "vm1" {
+   name = "vm1"
+   memory = var.memory
+   cpu = var.cpu
+}
+```
+
+</b></details>
+
+<details>
+<summary>How to reference variable from inside of string literal? (bonus question: how that type of expression is called?)</summary><br><b>
+
+Using the syntax: `"${var.VAR_NAME}"`. It's called "interpolation".
+
+Very common to see it used in user_data attribute related to instances.
+
+```
+user_data = <<-EOF
+            This is some fabulos string
+            It demonstrates how to use interpolation
+            Yes, it's truly ${var.awesome_or_meh}
+            EOF
 ```
 </b></details>
 
@@ -444,30 +615,35 @@ z = "luigi"
 <summary>What's Terraform State?</summary><br><b>
 
 [Terraform.io](https://www.terraform.io/language/state): "Terraform must store state about your managed infrastructure and configuration. This state is used by Terraform to map real world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures."
+
 </b></details>
 
 <details>
 <summary>What <code>terraform.tfstate</code> file is used for?</summary><br><b>
 
 It keeps track of the IDs of created resources so that Terraform knows what it's managing.
+
 </b></details>
 
 <details>
 <summary>How to inspect current state?</summary><br><b>
 
 terraform show
+
 </b></details>
 
 <details>
 <summary>How to list resources created with Terraform?</summary><br><b>
 
 terraform state list
+
 </b></details>
 
 <details>
 <summary>How do you rename an existing resource?</summary><br><b>
 
 terraform state mv
+
 </b></details>
 
 <details>
@@ -478,6 +654,7 @@ terraform state mv
   - tfstate is in important file. As such, it might be better to put it in a location that has regular backups.
 
 As such, tfstate shouldn't be stored in git repositories. secured storage such as secured buckets, is a better option.
+
 </b></details>
 
 <details>
@@ -485,24 +662,28 @@ As such, tfstate shouldn't be stored in git repositories. secured storage such a
 
   - terraform apply file.terraform
   - Above command will create tfstate file in the working folder.
+
 </b></details>
 
 <details>
 <summary>By default where does the state get stored?</summary><br><b>
 
   - The state is stored by default in a local file named terraform.tfstate.
+
 </b></details>
 
 <details>
 <summary>What is Terraform import?</summary><br><b>
 
-Terraform import is used to import existing infrastructure. It allows you to bring resources created by some other means (eg. manually launched cloud resources) and bring it under Terraform management. 
+Terraform import is used to import existing infrastructure. It allows you to bring resources created by some other means (eg. manually launched cloud resources) and bring it under Terraform management.
+
 </b></details>
 
 <details>
 <summary>Can we store tfstate file at remote location? If yes, then in which condition you will do this?</summary><br><b>
 
-  - Yes, It can also be stored remotely, which works better in a team environment. Given condition that remote location is not publicly accessible since tfstate file contain sensitive information as well. Access to this remote location must be only shared with team members.
+Yes, It can also be stored remotely, which works better in a team environment. Given condition that remote location is not publicly accessible since tfstate file contain sensitive information as well. Access to this remote location must be only shared with team members.
+
 </b></details>
 
 <details>
@@ -513,6 +694,7 @@ Terraform import is used to import existing infrastructure. It allows you to bri
   - Backup it regularly so you can roll-back easily when needed 
   - Store it in remote shared storage. This is especially needed when working in a team and the state can be updated by any of the team members
   - Enabled versioning if the storage where you store the state file, supports it. Versioning is great for backups and roll-backs in case of an issue.
+
 </b></details>
 
 <details>
@@ -556,6 +738,20 @@ It's does NOT create the definitions/configuration for creating such infrastruct
 
 1. You have existing resources in the cloud and they are not managed by Terraform (as in not included in the state)
 2. You lost your tfstate file and need to rebuild it
+</b></details>
+
+### Version Control
+
+<details>
+<summary>You have a Git repository with Terraform files but no .gitignore. What would you add to a .gitignore file in Terraform repository?</summary><br><b>
+
+```
+.terraform
+*.tfstate
+*.tfstate.backup
+```
+
+You don't want to store state file nor any downloaded providers in .terraform directory. It also doesn't makes sense to share/store the state backup files.
 </b></details>
 
 ### AWS
