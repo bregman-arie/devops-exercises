@@ -9,14 +9,18 @@
     - [Terraform Hands-On Basics](#terraform-hands-on-basics)
     - [Dependencies](#dependencies)
     - [Providers](#providers)
+    - [Variables](#variables)
+      - [Input Variables](#input-variables)
+      - [Output Variables](#output-variables)
+      - [Variables Hands-On](#variables-hands-on)
+    - [Lifecycle](#lifecycle)
     - [Provisioners](#provisioners)
     - [Modules](#modules)
-    - [Variables](#variables)
-      - [Variables Hands-On](#variables-hands-on)
     - [State](#state)
     - [Import](#import)
     - [Version Control](#version-control)
     - [AWS](#aws-1)
+    - [Validations](#validations)
 
 ## Exercises
 
@@ -132,7 +136,7 @@ resource "aws_instance" "some-instance" {
 ```
 </summary><br><b>
 
-Run `terraform init`. This will scan the code in the directory to figure out which providers are used (in this case AWS provider) and will download them
+Run `terraform init`. This will scan the code in the directory to figure out which providers are used (in this case AWS provider) and will download them.
 </b></details>
 
 <details>
@@ -290,6 +294,247 @@ The Terraform Registry provides a centralized location for official and communit
 `.terraform` directory.
 </b></details>
 
+### Variables
+
+#### Input Variables
+
+<details>
+<summary>What input variables are good for in Terraform?</summary><br><b>
+
+Variables allow you define piece of data in one location instead of repeating the hardcoded value of it in multiple different locations. Then when you need to modify the variable's value, you do it in one location instead of changing each one of the hardcoded values.
+</b></details>
+
+<details>
+<summary>What type of input variables are supported in Terraform?</summary><br><b>
+
+```
+string
+number
+bool
+list(<TYPE>)
+set(<TYPE>)
+map(<TYPE>)
+object({<ATTR_NAME> = <TYPE>, ... })
+tuple([<TYPE>, ...])
+```
+</b></details>
+
+<details>
+<summary>What's the default input variable type in Terraform?</summary><br><b>
+
+`any`
+</b></details>
+
+<details>
+<summary>What ways are there to pass values for input variables?</summary><br><b>
+
+* Using `-var` option in the CLI
+* Using a file by using the `-var-file` option in the CLI
+* Environment variable that starts with `TF_VAR_<VAR_NAME>`
+
+If no value given, user will be prompted to provide one.
+</b></details>
+
+<details>
+<summary>How to reference a variable?</summary><br><b>
+
+Using the syntax `var.<VAR_NAME>`
+</b></details>
+
+<details>
+<summary>What is the effect of setting variable as "sensitive"?</summary><br><b>
+
+It doesn't show its value when you run `terraform apply` or `terraform plan` but eventually it's still recorded in the state file.
+</b></details>
+
+<details>
+<summary>True or False? If an expression's result depends on a sensitive variable, it will be treated as sensitive as well</summary><br><b>
+
+True
+</b></details>
+
+<details>
+<summary>The same variable is defined in the following places:
+
+- The file `terraform.tfvars`
+- Environment variable
+- Using `-var` or `-var-file`
+  
+According to variable precedence, which source will be used first?</summary><br><b>
+
+The order is:
+
+  - Environment variable
+  - The file `terraform.tfvars`
+  - Using `-var` or `-var-file`
+
+</b></details>
+
+<details>
+<summary>Whenever you run terraform apply, it prompts to enter a value for a given variable. How to avoid being prompted?</summary><br><b>
+
+While removing the variable is theoretically a correct answer, it will probably fail the execution.
+
+You can use something like the `-var` option to provide the value and avoid being prompted to insert a value. Another option is to run `export TF_VAR_<VAR_NAME>=<VALUE>`.
+
+</b></details>
+
+#### Output Variables
+
+<details>
+<summary>What are output variables? Why do we need them?</summary><br><b>
+
+Output variable allow you to display/print certain piece of data as part of Terraform execution.
+
+The most common use case for it is probably to print the IP address of an instance. Imagine you provision an instance and you would like to know what the IP address to connect to it. Instead of looking for it for the console/OS, you can use the output variable and print that piece of information to the screen
+
+</b></details>
+
+<details>
+<summary>Explain the "sensitive" parameter of output variable</summary><br><b>
+
+When set to "true", Terraform will avoid logging output variable's data. The use case for it is sensitive data such as password or private keys.
+</b></details>
+
+<details>
+<summary>Explain the "depends" parameter of output variable</summary><br><b>
+
+It is used to set explicitly dependency between the output variable and any other resource. Use case: some piece of information is available only once another resource is ready.
+</b></details>
+
+#### Variables Hands-On
+
+<details>
+<summary>Demonstrate input variable definition with type, description and default parameters</summary><br><b>
+
+```
+variable "app_id" {
+  type = string
+  description = "The id of application"
+  default = "some_value"
+}
+```
+
+Unrelated note: variables are usually defined in their own file (vars.tf for example).
+
+</b></details>
+
+<details>
+<summary>How to define an input variable which is a list of numbers?</summary><br><b>
+
+```
+variable "list_of_nums" {
+  type = list(number)
+  description = "An example of list of numbers"
+  default = [2, 0, 1, 7]
+}
+```
+
+</b></details>
+
+<details>
+<summary>How to define an input variable which is an object with attributes "model" (string), "color" (string), year (number)?</summary><br><b>
+
+```
+variable "car_model" {
+  description = "Car model object"
+  type        = object({
+    model   = string
+    color   = string
+    year    = number
+  })
+}
+```
+
+Note: you can also define a default for it.
+
+</b></details>
+
+<details>
+<summary>How to reference variables?</summary><br><b>
+
+Variable are referenced with `var.VARIABLE_NAME` syntax. Let's have a look at an example:
+
+vars.tf:
+
+```
+variable "memory" {
+  type = string
+  default "8192"
+}
+
+variable "cpu" {
+  type = string
+  default = "4"
+}
+```
+
+main.tf:
+
+```
+resource "libvirt_domain" "vm1" {
+   name = "vm1"
+   memory = var.memory
+   cpu = var.cpu
+}
+```
+
+</b></details>
+
+<details>
+<summary>How to reference variable from inside of string literal? (bonus question: how that type of expression is called?)</summary><br><b>
+
+Using the syntax: `"${var.VAR_NAME}"`. It's called "interpolation".
+
+Very common to see it used in user_data attribute related to instances.
+
+```
+user_data = <<-EOF
+            This is some fabulos string
+            It demonstrates how to use interpolation
+            Yes, it's truly ${var.awesome_or_meh}
+            EOF
+```
+</b></details>
+
+<details>
+<summary>How can list all outputs without applying Terraform changes?</summary><br><b>
+
+`terraform output` will list all outputs without applying any changes
+</b></details>
+
+<details>
+<summary>Can you see the output of specific variable without applying terrafom changes?</summary><br><b>
+
+Yes, with `terraform output <OUTPUT_VAR>`.
+
+Very useful for scripts :)
+</b></details>
+
+### Lifecycle
+
+<details>
+<summary>When you update a resource, how it works?</summary><br><b>
+
+By default the current resource is deleted, a new one is created and any references pointing the old resource are updated to point the new resource
+</b></details>
+
+<details>
+<summary>Is it possible to modify the default lifecycle? How? Why?</summary><br><b>
+
+Yes, it's possible. There are different lifecycles one can choose from. For example "create_before_destroy" which inverts the order and first creates the new resource, updates all the references from old resource to the new resource and then removes the old resource.
+
+How to use it:
+
+```
+lifecycle {
+  create_before_destroy = true
+}
+```
+
+Why to use it in the first place: you might have resources that have dependency where they dependency itself is immutable (= you can't modify it hence you have to create a new one), in such case the default lifecycle won't work because you won't be able to remove the resource that has the dependency as it still references an old resource. AWS ASG + launch configurations is a good example of such use case.
+</b></details>
+
 ### Provisioners
 
 <details>
@@ -411,202 +656,6 @@ Terraform modules can be found at the [Terrafrom registry](https://registry.terr
 <summary>There's a discussion in your team whether to store modules in one centralized location/repository or have them in each of the projects/repositories where they are used. What's your take on that?</summary><br><b>
 
 You might have a different opinion but my personal take on that, is to keep modules in one centralized repository as any maintenance or updates to the module you need to perform, are done in one place instead of multiple times in different repositories.
-</b></details>
-
-### Variables
-
-<details>
-<summary>What variables are good for in Terraform?</summary><br><b>
-
-Variables allow you define piece of data in one location instead of repeating the hardcoded value of it in multiple different locations. Then when you need to modify the variable's value, you do it in one location instead of changing each one of the hardcoded values.
-</b></details>
-
-<details>
-<summary>What types of variables are supported in Terraform?</summary><br><b>
-
-```
-string
-number
-bool
-list(<TYPE>)
-set(<TYPE>)
-map(<TYPE>)
-object({<ATTR_NAME> = <TYPE>, ... })
-tuple([<TYPE>, ...])
-```
-</b></details>
-
-<details>
-<summary>What's the default variable type in Terraform?</summary><br><b>
-
-`any`
-</b></details>
-
-<details>
-<summary>What ways are there to pass values for variables?</summary><br><b>
-
-* Using `-var` option in the CLI
-* Using a file by using the `-var-file` option in the CLI
-* Environment variable that starts with `TF_VAR_<VAR_NAME>`
-
-If no value given, user will be prompted to provide one.
-</b></details>
-
-<details>
-<summary>How to reference variable?</summary><br><b>
-
-Using the syntax `var.<VAR_NAME>`
-</b></details>
-
-<details>
-<summary>How would you enforce users that use your variables to provide values with certain constraints? For example, a number greater than 1</summary><br><b>
-
-Using `validation` block
-
-```
-variable "some_var" {
-  type = number
-  
-  validation {
-    condition = var.some_var > 1
-    error_message = "you have to specify a number greater than 1"
-  }
-
-}
-```
-</b></details>
-
-<details>
-<summary>What is the effect of setting variable as "sensitive"?</summary><br><b>
-
-It doesn't show its value when you run `terraform apply` or `terraform plan` but eventually it's still recorded in the state file.
-</b></details>
-
-<details>
-<summary>True or False? If an expression's result depends on a sensitive variable, it will be treated as sensitive as well</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>The same variable is defined in the following places:
-
-- The file `terraform.tfvars`
-- Environment variable
-- Using `-var` or `-var-file`
-  
-According to variable precedence, which source will be used first?</summary><br><b>
-
-The order is:
-
-  - Environment variable
-  - The file `terraform.tfvars`
-  - Using `-var` or `-var-file`
-
-</b></details>
-
-<details>
-<summary>Whenever you run terraform apply, it prompts to enter a value for a given variable. How to avoid being prompted?</summary><br><b>
-
-While removing the variable is theoretically a correct answer, it will probably fail the execution.
-
-You can use something like the `-var` option to provide the value and avoid being prompted to insert a value. Another option is to run `export TF_VAR_<VAR_NAME>=<VALUE>`.
-
-</b></details>
-
-#### Variables Hands-On
-
-<details>
-<summary>Demonstrate variable definition with type, description and default parameters</summary><br><b>
-
-```
-variable "app_id" {
-  type = string
-  description = "The id of application"
-  default = "some_value"
-}
-```
-
-Unrelated note: variables are usually defined in their own file (vars.tf for example).
-
-</b></details>
-
-<details>
-<summary>How to define a variable which is a list of numbers?</summary><br><b>
-
-```
-variable "list_of_nums" {
-  type = list(number)
-  description = "An example of list of numbers"
-  default = [2, 0, 1, 7]
-}
-```
-
-</b></details>
-
-<details>
-<summary>How to define a variable which is an object with attributes "model" (string), "color" (string), year (number)?</summary><br><b>
-
-```
-variable "car_model" {
-  description = "Car model object"
-  type        = object({
-    model   = string
-    color   = string
-    year    = number
-  })
-}
-```
-
-Note: you can also define a default for it.
-
-</b></details>
-
-<details>
-<summary>How to reference variables?</summary><br><b>
-
-Variable are referenced with `var.VARIABLE_NAME` syntax. Let's have a look at an example:
-
-vars.tf:
-
-```
-variable "memory" {
-  type = string
-  default "8192"
-}
-
-variable "cpu" {
-  type = string
-  default = "4"
-}
-```
-
-main.tf:
-
-```
-resource "libvirt_domain" "vm1" {
-   name = "vm1"
-   memory = var.memory
-   cpu = var.cpu
-}
-```
-
-</b></details>
-
-<details>
-<summary>How to reference variable from inside of string literal? (bonus question: how that type of expression is called?)</summary><br><b>
-
-Using the syntax: `"${var.VAR_NAME}"`. It's called "interpolation".
-
-Very common to see it used in user_data attribute related to instances.
-
-```
-user_data = <<-EOF
-            This is some fabulos string
-            It demonstrates how to use interpolation
-            Yes, it's truly ${var.awesome_or_meh}
-            EOF
-```
 </b></details>
 
 ### State
@@ -774,4 +823,38 @@ user_data = <<-EOF
 Nothing, because user_data is executed on boot so if an instance is already running, it won't change anything.
 
 To make it effective you'll have to use `user_data_replace_on_change = true`.
+</b></details>
+
+<details>
+<summary>You manage ASG with Terraform which means you also have "aws_launch_configuration" resources. The problem is that launch configurations are immutable and sometimes you need to change them. This creates a problem where Terraform isn't able to delete ASG because they reference old launch configuration. How to do deal with it?</summary><br><b>
+
+Add the following to "aws_launch_configuration" resource
+
+```
+lifecycle {
+  create_before_destroy = true
+}
+```
+
+This will change the order of how Terraform works. First it will create the new resource (launch configuration). then it will update other resources to reference the new launch configuration and finally, it will remove old resources
+</b></details>
+
+### Validations
+
+<details>
+<summary>How would you enforce users that use your variables to provide values with certain constraints? For example, a number greater than 1</summary><br><b>
+
+Using `validation` block
+
+```
+variable "some_var" {
+  type = number
+
+  validation {
+    condition = var.some_var > 1
+    error_message = "you have to specify a number greater than 1"
+  }
+
+}
+```
 </b></details>
