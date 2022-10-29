@@ -13,14 +13,19 @@
       - [Input Variables](#input-variables)
       - [Output Variables](#output-variables)
       - [Variables Hands-On](#variables-hands-on)
+    - [Data Sources](#data-sources)
     - [Lifecycle](#lifecycle)
     - [Provisioners](#provisioners)
-    - [Modules](#modules)
     - [State](#state)
+      - [Terraform Backend](#terraform-backend)
+      - [Workspaces](#workspaces)
+      - [State Hands-On](#state-hands-on)
+    - [Modules](#modules)
     - [Import](#import)
     - [Version Control](#version-control)
     - [AWS](#aws-1)
     - [Validations](#validations)
+    - [Terraform Syntax](#terraform-syntax)
 
 ## Exercises
 
@@ -294,6 +299,14 @@ The Terraform Registry provides a centralized location for official and communit
 `.terraform` directory.
 </b></details>
 
+<details>
+<summary>How to cleanup Terraform resourcse? Why the user shold be careful doing so?</summary><br><b>
+
+`terraform destroy` will cleanup all the resources tracked by Terraform.
+
+A user should be careful with this command because there is no way to revert it. Sure, you can always run again "apply" but that can take time, generates completely new resources, etc.
+</b></details>
+
 ### Variables
 
 #### Input Variables
@@ -511,12 +524,69 @@ Yes, with `terraform output <OUTPUT_VAR>`.
 Very useful for scripts :)
 </b></details>
 
+### Data Sources
+
+<details>
+<summary>Explain data sources in Terraform</summary><br><b>
+
+* Data sources used to get data from providers or in general from external resources to Terraform (e.g. public clouds like AWS, GCP, Azure).
+* Data sources used for reading. They are not modifying or creating anything
+* Many providers expose multiple data sources
+
+</b></details>
+
+<details>
+<summary>Demonstrate how to use data sources</summary><br><b>
+
+```
+data "aws_vpc" "default {
+  default = true
+}
+```
+
+</b></details>
+
+<details>
+<summary>How to get data out of a data source?</summary><br><b>
+
+The general syntax is `data.<PROVIDER_AND_TYPE>.<NAME>.<ATTRBIUTE>`
+
+So if you defined the following data source
+
+```
+data "aws_vpc" "default {
+  default = true
+}
+```
+
+You can retrieve the ID attribute this way: `data.aws_vpc.default.id` 
+</b></details>
+
+<details>
+<summary>Is there such a thing as combining data sources? What would be the use case?</summary><br><b>
+
+Yes, you can define a data source while using another data source as a filter for example.
+
+Let's say we want to get AWS subnets but only from our default VPC:
+
+```
+data "aws_subnets" "default" {
+  filter {
+    name   = "vpc-id"
+    values = [data.aws_vpc.default.id]
+  }
+}
+```
+
+</b></details>
+
 ### Lifecycle
 
 <details>
 <summary>When you update a resource, how it works?</summary><br><b>
 
 By default the current resource is deleted, a new one is created and any references pointing the old resource are updated to point the new resource
+
 </b></details>
 
 <details>
@@ -533,6 +603,13 @@ lifecycle {
 ```
 
 Why to use it in the first place: you might have resources that have dependency where they dependency itself is immutable (= you can't modify it hence you have to create a new one), in such case the default lifecycle won't work because you won't be able to remove the resource that has the dependency as it still references an old resource. AWS ASG + launch configurations is a good example of such use case.
+
+</b></details>
+
+<details>
+<summary>You've deployed a virtual machine with Terraform and you would like to pass data to it (or execute some commands). Which concept of Terraform would you use?</summary><br><b>
+
+[Provisioners](https://www.terraform.io/docs/language/resources/provisioners)
 </b></details>
 
 ### Provisioners
@@ -547,12 +624,14 @@ Few example of provisioners:
 * Run configuration management on a provisioned instance using technology like Ansible, Chef or Puppet.
 * Copying files
 * Executing remote scripts
+
 </b></details>
 
 <details>
 <summary>Why is it often recommended to use provisioners as last resort?</summary><br><b>
 
 Since a provisioner can run a variety of actions, it's not always feasible to plan and understand what will happen when running a certain provisioner. For this reason, it's usually recommended to use Terraform built-in option, whenever's possible.
+
 </b></details>
 
 <details>
@@ -563,11 +642,13 @@ Since a provisioner can run a variety of actions, it's not always feasible to pl
 <summary>What is a "tainted resource"?</summary><br><b>
 
 It's a resource which was successfully created but failed during provisioning. Terraform will fail and mark this resource as "tainted".
+
 </b></details>
 
 <details>
 <summary>What <code>terraform taint</code> does?</summary><br><b>
 <code>terraform taint resource.id</code> manually marks the resource as tainted in the state file. So when you run <code>terraform apply</code> the next time, the resource will be destroyed and recreated.
+
 </b></details>
 
 <details>
@@ -578,6 +659,7 @@ There are quite a few cases you might need to use them:
 * you want to reference resources not managed through terraform
 * you want to reference resources managed by a different terraform module
 * you want to cleanly compute a value with typechecking, such as with <code>aws_iam_policy_document</code>
+
 </b></details>
 
 <details>
@@ -594,6 +676,7 @@ Output variables are named values that are sourced from the attributes of a modu
 <summary>Explain "Remote State". When would you use it and how?</summary><br><b>
   Terraform generates a `terraform.tfstate` json file that describes components/service provisioned on the specified provider. Remote
   State stores this file in a remote storage media to enable collaboration amongst team.
+
 </b></details>
 
 <details>
@@ -601,6 +684,7 @@ Output variables are named values that are sourced from the attributes of a modu
   State locking is a mechanism that blocks an operations against a specific state file from multiple callers so as to avoid conflicting operations from different team members. Once the first caller's operation's lock is released the other team member may go ahead to
   carryout his own operation. Nevertheless Terraform will first check the state file to see if the desired resource already exist and
   if not it goes ahead to create it.
+
 </b></details>
 
 <details>
@@ -632,107 +716,58 @@ resource "aws_instance" "tf_aws_instance" {
 3. Run terraform command <code>terraform import aws_instance.tf_aws_instance i-12345678</code>
 </b></details>
 
-### Modules
-
-<details>
-<summary>Explain Modules</summary>
-
-[Terraform.io](https://www.terraform.io/language/modules/develop): "A module is a container for multiple resources that are used together. Modules can be used to create lightweight abstractions, so that you can describe your infrastructure in terms of its architecture, rather than directly in terms of physical objects."
-</b></details>
-
-<details>
-<summary>How do you test a terraform module?</summary><br><b>
-
-There are multiple answers, but the most common answer would likely to be using the tool <code>terratest</code>, and to test that a module can be initialized, can create resources, and can destroy those resources cleanly.
-</b></details>
-
-<details>
-<summary>Where can you obtain Terraform modules?</summary><br><b>
-
-Terraform modules can be found at the [Terrafrom registry](https://registry.terraform.io/browse/modules)
-</b></details>
-
-<details>
-<summary>There's a discussion in your team whether to store modules in one centralized location/repository or have them in each of the projects/repositories where they are used. What's your take on that?</summary><br><b>
-
-You might have a different opinion but my personal take on that, is to keep modules in one centralized repository as any maintenance or updates to the module you need to perform, are done in one place instead of multiple times in different repositories.
-</b></details>
 
 ### State
 
 <details>
 <summary>What's Terraform State?</summary><br><b>
 
-[Terraform.io](https://www.terraform.io/language/state): "Terraform must store state about your managed infrastructure and configuration. This state is used by Terraform to map real world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures."
+[terraform.io](https://www.terraform.io/language/state): "Terraform must store state about your managed infrastructure and configuration. This state is used by Terraform to map real world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures."
+
+In other words, it's a mechanism in Terraform to track resources you've created or cleaned up. This is how terraform knows what to update/create/delete when you run `terraform apply` and also other commands like `terraform destroy`.
 
 </b></details>
 
 <details>
-<summary>What <code>terraform.tfstate</code> file is used for?</summary><br><b>
+<summary>Where Terraform state is stored?</summary><br><b>
 
-It keeps track of the IDs of created resources so that Terraform knows what it's managing.
-
-</b></details>
-
-<details>
-<summary>How to inspect current state?</summary><br><b>
-
-terraform show
+There is more than one answer to this question. It's very much depends on whether you share it with others or it's only local in your Terraform directory, but taking a beginner's case, when you run terraform in a directory, the state will be stored in that directory in `terraform.tfstate` file.
 
 </b></details>
 
 <details>
-<summary>How to list resources created with Terraform?</summary><br><b>
+<summary>Can you name three different things included in the state file?</summary><br><b>
 
-terraform state list
-
+* The representation of resources - JSON format of the resources, their attributes, IDs, ... everything that required to identify the resource and also anything that was included in the .tf files on these resources
+* Terraform version
+* Outputs
 </b></details>
 
 <details>
-<summary>How do you rename an existing resource?</summary><br><b>
+<summary>Why does it matter where you store the tfstate file? In your answer make sure to address the following:
 
-terraform state mv
+* Public vs. Private
+* Git repository vs. Other locations
+</summary><br><b>
 
-</b></details>
-
-<details>
-<summary>Why does it matter where you store the tfstate file? Where would you store it?</summary><br><b>
-
-  - tfstate contains credentials in plain text. You don't want to put it in publicly shared location
-  - tfstate shouldn't be modified concurrently so putting it in a shared location available for everyone with "write" permissions might lead to issues. (Terraform remote state doesn't has this problem).
-  - tfstate is in important file. As such, it might be better to put it in a location that has regular backups.
-
+- tfstate contains credentials in plain text. You don't want to put it in publicly shared location
+- tfstate shouldn't be modified concurrently so putting it in a shared location available for everyone with "write" permissions might lead to issues. (Terraform remote state doesn't has this problem).
+- tfstate is an important file. As such, it might be better to put it in a location that has regular backups and good security.
+  
 As such, tfstate shouldn't be stored in git repositories. secured storage such as secured buckets, is a better option.
 
 </b></details>
 
 <details>
-<summary>Which command is responsible for creating state file?</summary><br><b>
+<summary>True or False? it's common to edit terraform state file directly by hand and even recommended for many different use cases</summary><br><b>
 
-  - terraform apply file.terraform
-  - Above command will create tfstate file in the working folder.
-
+False. You should avoid as much possible to edit Terraform state files directly by hand.
 </b></details>
 
 <details>
-<summary>By default where does the state get stored?</summary><br><b>
+<summary>Why storing state file locally on your computer may be problematic?</summary><br><b>
 
-  - The state is stored by default in a local file named terraform.tfstate.
-
-</b></details>
-
-<details>
-<summary>What is Terraform import?</summary><br><b>
-
-Terraform import is used to import existing infrastructure. It allows you to bring resources created by some other means (eg. manually launched cloud resources) and bring it under Terraform management.
-
-</b></details>
-
-<details>
-<summary>Can we store tfstate file at remote location? If yes, then in which condition you will do this?</summary><br><b>
-
-Yes, It can also be stored remotely, which works better in a team environment. Given condition that remote location is not publicly accessible since tfstate file contain sensitive information as well. Access to this remote location must be only shared with team members.
-
+In general, storing state file on your computer isn't a problem. It starts to be a problem when you are part of a team that uses Terraform and then you would like to make sure it's shared. In addition to being shared, you want to be able to handle the fact that different teams members can edit the file and can do it at the same time, so locking is quite an important aspect as well.
 </b></details>
 
 <details>
@@ -751,25 +786,165 @@ Yes, It can also be stored remotely, which works better in a team environment. G
 
 If there are two users or processes concurrently editing the state file it can result in invalid state file that doesn't actually represents the state of resources.<br>
 
-To avoid that, Terraform can apply state locking if the backend supports that. For example, AWS s3 supports state locking and consistency via DynamoDB. Often, if the backend support it, Terraform will make use of state locking automatically so nothing is required from the user to activate it.
+To avoid that, Terraform can apply state locking if the backend supports that. For example, AWS s3 supports state locking and consistency via DynamoDB. Often, if the backend supports it, Terraform will make use of state locking automatically so nothing is required from the user to activate it.
 </b></details>
 
 <details>
 <summary>Describe how you manage state file(s) when you have multiple environments (e.g. development, staging and production)</summary><br><b>
 
-There is no right or wrong here, but it seems that the overall preferred way is to have a dedicated state file per environment.
+Probably no right or wrong answer here, but it seems, based on different source, that the overall preferred way is to have a dedicated state file per environment.
 </b></details>
 
 <details>
-<summary>How to write down a variable which changes by an external source or during <code>terraform apply</code>?</summary><br><b>
+<summary>Why storing the state in versioned control repo is not a good idea?</summary><br><b>
 
-You use it this way: <code>variable “my_var” {}</code>
+* Sensitive data: some resources may specify sensitive data (like passwords and tokens) and everything in a state file is stored in plain text
+* Prone to errors: when working with Git repos, you mayo often find yourself switch branches, checkout specific commits, perform rebases, ... all these operations may end up in you eventually performing `terraform apply` on non-latest version of your Terraform code
+</b></details>
+
+#### Terraform Backend
+
+<details>
+<summary>What's a Terraform backend? What is the default backend?</summary><br><b>
+
+Terraform backend determines how the Terraform state is stored and loaded. By default the state is local, but it's possible to set a remote backend
 </b></details>
 
 <details>
-<summary>You've deployed a virtual machine with Terraform and you would like to pass data to it (or execute some commands). Which concept of Terraform would you use?</summary><br><b>
+<summary>Describe how to set a remote backend of any type you choose</summary><br><b>
 
-[Provisioners](https://www.terraform.io/docs/language/resources/provisioners)
+Let's say we chose use Amazon s3 as a remote Terraform backend where we can store Terraform's state.
+
+1. Write Terraform code for creating an s3 bucket
+   1. It would be a good idea to add lifecycle of "prevent_destroy" to it so it's not accidentally deleted
+2. Enable versioning (add a resource of "aws_s3_bucket_versioning")
+3. Encrypt the bucket ("aws_s3_bucket_server_side_encryption_configuration")
+4. Block public access
+5. Handle locking. One way is to add DB for it
+6. Add the point you'll want to run init and apply commands to avoid an issue where you at the same time create the resources for remote backend and also switch to a remote backend
+7. Once resources were created, add Terraform backend code 
+
+```
+terraform {
+  backend "s3" {
+    bucket ...
+  }
+}
+```
+7. Run `teraform init` as it will configure the backend
+
+</b></details>
+
+<details>
+<summary>How <code>terraform apply</code> workflow is different when a remote backend is used?</summary><br><b>
+
+It starts with acquiring a state lock so others can't modify the state at the same time.
+</b></details>
+
+<details>
+<summary>What would be te process of switching back from remote backend to local?</summary><br><b>
+
+1. You remove the backend code and perform `terraform init` to switch back to `local` backend
+2. You remove the resources that are the remote backend itself
+</b></details>
+
+<details>
+<summary>True or False? it's NOT possible to use variable in a backend configuration</summary><br><b>
+
+That's true and quite a limitation as it means you'll have to go to the resources of the remote backend and copy some values to the backend configuration.
+
+One way to deal with it is using partial configurations in a completel separate file from the backend itself and then load them with `terraform init -backend-config=some_backend_partial_conf.hcl`
+
+</b></details>
+
+#### Workspaces
+
+<details>
+<summary>Explain what is a Terraform workspace</summary><br><b>
+
+[developer.hashicorp.com](https://developer.hashicorp.com/terraform/language/state/workspaces): "The persistent data stored in the backend belongs to a workspace. The backend initially has only one workspace containing one Terraform state associated with that configuration. Some backends support multiple named workspaces, allowing multiple states to be associated with a single configuration."
+
+</b></details>
+
+<details>
+<summary>True or False? Each workspace has its own state file</summary><br><b>
+
+True
+
+</b></details>
+
+
+#### State Hands-On
+
+<details>
+<summary>Which command will produce a state file?</summary><br><b>
+
+`terraform apply`
+
+</b></details>
+
+<details>
+<summary>How to inspect current state?</summary><br><b>
+
+`terraform show`
+
+</b></details>
+
+<details>
+<summary>How to list resources created with Terraform?</summary><br><b>
+
+`terraform state list`
+
+</b></details>
+
+<details>
+<summary>How do you rename an existing resource?</summary><br><b>
+
+`terraform state mv`
+
+</b></details>
+
+<details>
+<summary>How to create a new workspace?</summary><br><b>
+
+`terraform workspace new <WORKSPACE_NAME>`
+
+</b></details>
+
+<details>
+<summary>How to identify which workspace are you using?</summary><br><b>
+
+`terraform workspace show`
+
+</b></details>
+
+### Modules
+
+<details>
+<summary>Explain Modules</summary>
+
+[Terraform.io](https://www.terraform.io/language/modules/develop): "A module is a container for multiple resources that are used together. Modules can be used to create lightweight abstractions, so that you can describe your infrastructure in terms of its architecture, rather than directly in terms of physical objects."
+
+</b></details>
+
+<details>
+<summary>How do you test a terraform module?</summary><br><b>
+
+There are multiple answers, but the most common answer would likely to be using the tool <code>terratest</code>, and to test that a module can be initialized, can create resources, and can destroy those resources cleanly.
+
+</b></details>
+
+<details>
+<summary>Where can you obtain Terraform modules?</summary><br><b>
+
+Terraform modules can be found at the [Terrafrom registry](https://registry.terraform.io/browse/modules)
+</b></details>
+
+<details>
+<summary>There's a discussion in your team whether to store modules in one centralized location/repository or have them in each of the projects/repositories where they are used. What's your take on that?</summary><br><b>
+
+You might have a different opinion but my personal take on that, is to keep modules in one centralized repository as any maintenance or updates to the module you need to perform, are done in one place instead of multiple times in different repositories.
+
 </b></details>
 
 ### Import
@@ -780,6 +955,7 @@ You use it this way: <code>variable “my_var” {}</code>
 `terraform import` is a CLI command used for importing an existing infrastructure into Terraform's state.
 
 It's does NOT create the definitions/configuration for creating such infrastructure
+
 </b></details>
 
 <details>
@@ -787,6 +963,7 @@ It's does NOT create the definitions/configuration for creating such infrastruct
 
 1. You have existing resources in the cloud and they are not managed by Terraform (as in not included in the state)
 2. You lost your tfstate file and need to rebuild it
+
 </b></details>
 
 ### Version Control
@@ -801,6 +978,7 @@ It's does NOT create the definitions/configuration for creating such infrastruct
 ```
 
 You don't want to store state file nor any downloaded providers in .terraform directory. It also doesn't makes sense to share/store the state backup files.
+
 </b></details>
 
 ### AWS
@@ -823,6 +1001,7 @@ user_data = <<-EOF
 Nothing, because user_data is executed on boot so if an instance is already running, it won't change anything.
 
 To make it effective you'll have to use `user_data_replace_on_change = true`.
+
 </b></details>
 
 <details>
@@ -837,6 +1016,7 @@ lifecycle {
 ```
 
 This will change the order of how Terraform works. First it will create the new resource (launch configuration). then it will update other resources to reference the new launch configuration and finally, it will remove old resources
+
 </b></details>
 
 ### Validations
@@ -857,4 +1037,12 @@ variable "some_var" {
 
 }
 ```
+
+</b></details>
+
+### Terraform Syntax
+
+<details>
+<summary>Demonstrate using the ternary syntax</summary><br><b>
+
 </b></details>
