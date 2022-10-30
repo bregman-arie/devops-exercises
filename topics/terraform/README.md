@@ -26,6 +26,7 @@
     - [AWS](#aws-1)
     - [Validations](#validations)
     - [Terraform Syntax](#terraform-syntax)
+    - [Production](#production)
 
 ## Exercises
 
@@ -839,6 +840,7 @@ terraform {
 <summary>How <code>terraform apply</code> workflow is different when a remote backend is used?</summary><br><b>
 
 It starts with acquiring a state lock so others can't modify the state at the same time.
+
 </b></details>
 
 <details>
@@ -846,6 +848,7 @@ It starts with acquiring a state lock so others can't modify the state at the sa
 
 1. You remove the backend code and perform `terraform init` to switch back to `local` backend
 2. You remove the resources that are the remote backend itself
+
 </b></details>
 
 <details>
@@ -853,7 +856,16 @@ It starts with acquiring a state lock so others can't modify the state at the sa
 
 That's true and quite a limitation as it means you'll have to go to the resources of the remote backend and copy some values to the backend configuration.
 
-One way to deal with it is using partial configurations in a completel separate file from the backend itself and then load them with `terraform init -backend-config=some_backend_partial_conf.hcl`
+One way to deal with it is using partial configurations in a completely separate file from the backend itself and then load them with `terraform init -backend-config=some_backend_partial_conf.hcl`
+
+</b></details>
+
+<details>
+<summary>Is there a way to obtain information from a remote backend/state usign Terraform?</summary><br><b>
+
+Yes, using the concept of data sources. There is a data source for a remote state called "terraform_remote_state".
+
+You can use it the following syntax `data.terraform_remote_state.<NAME>.outputs.<ATTRIBUTE>`
 
 </b></details>
 
@@ -871,6 +883,12 @@ One way to deal with it is using partial configurations in a completel separate 
 
 True
 
+</b></details>
+
+<details>
+<summary>Why workspaces might not be the best solution for managing states for different environemnts? like staging and production</summary><br><b>
+
+One reason is that all the workspaces are stored in one location (as in one backend) and usually you don't want to use the same access control and authentication for both staging and production for obvious reasons. Also working in workspaces is quite prone to human errors as you might accidently think you are in one workspace, while you are working a completely different one.
 </b></details>
 
 
@@ -924,6 +942,8 @@ True
 <summary>Explain Modules</summary>
 
 [Terraform.io](https://www.terraform.io/language/modules/develop): "A module is a container for multiple resources that are used together. Modules can be used to create lightweight abstractions, so that you can describe your infrastructure in terms of its architecture, rather than directly in terms of physical objects."
+
+In addition, modules are great for creating reuable Terraform code that can be shared and used not only between different repositories but even within the same repo, between different environments (like staging and production).
 
 </b></details>
 
@@ -1045,4 +1065,107 @@ variable "some_var" {
 <details>
 <summary>Demonstrate using the ternary syntax</summary><br><b>
 
+</b></details>
+
+<details>
+<summary>What <code>templatefile</code> function does?</summary><br><b>
+
+Renders a template file and returns the result as string.
+</b></details>
+
+<details>
+<summary>How do you test terraform syntax?</summary><br><b>
+
+A valid answer could be "I write Terraform configuration and try to execute it" but this makes testing cumbersome and quite complex in general.
+
+There is `terraform console` command which allows you to easily execute terraform functions and experiment with general syntax.
+
+</b></details>
+
+<details>
+<summary>True or False? Terraform console should be used carefully as it may modify your resources</summary><br><b>
+
+False. terraform console is ready-only.
+</b></details>
+
+<details>
+<summary>You need to render a template and get it as string. Which function would you use?</summary><br><b>
+
+`templatefile` function.
+</b></details>
+
+
+### Production
+
+This section is about how Terraform is actually used in real-life scenarios and organizations.
+
+<details>
+<summary>What structure layout do you use for your projects?</summary><br><b>
+
+There is no right or wrong answer, just what you personally adopted or your team, and being able to explain why.
+
+One common approach is to have a separate directory for each environment.
+
+```
+terraform_project/
+  staging/
+  production/
+```
+
+Each environment has its own backend (as you don't want to use the same authentication and access controls for all environments)
+
+Going further, under each environment you'll separate between comoponents, applications and services
+
+
+```
+terraform_project/
+  staging/
+    applications/
+      some-app-service-1/
+      some-app-service-2/
+    databases/
+      mongo/
+      postgres/
+    networking/
+```
+</b></details>
+
+<details>
+<summary>What files do you have you have in your Terraform projects?</summary><br><b>
+
+Again, no right or wrong answer. Just your personal experience.
+
+main.tf
+providers.tf
+outputs.tf
+variables.tf
+dependencies.tf
+
+Each one of these files can be divided to smaller parts if needed (no reason to maintain VERY long files)
+</b></details>
+
+<details>
+<summary>An engineer in your team complains about having to copy-paste quite a lot of code between different folders and files of Terraform. What would you do?</summary><br><b>
+
+Suggest to use Terraform modules.
+</b></details>
+
+<details>
+<summary>When working with nested layout of many directories, it can make it cumbresome to run terraform commands in many different folders. How to deal with it?</summary><br><b>
+
+There are multiple ways to deal with it:
+1. Write scripts that perform some commands recurisvely with different conditions
+2. Use tools like Terragrunt where you commands like "run-all" that can run in parallel on multiple different paths
+</b></details>
+
+<details>
+<summary>One of the engineers in your team complains the inline shell scripts are quite big and maintaining them in Terraform files seems like a bad idea. What would you do?</summary><br><b>
+
+A good solution for not including shell scripts inline (as in inside terraform configuration files) is to keep them in a separate file and then use the terraform `templatefile` function to render and get them as a string
+</b></details>
+
+<details>
+<summary>You noticed a lot of your Terraform code/configuration is duplicated, between repositories and also within the same repository between different directories. What one way you may adopt that will help handling with that?</summary><br><b>
+
+Using Terraform modules can help greatly with duplicated code and so different environments for example (staging and production) can reuse the same code by using the same modules.
 </b></details>

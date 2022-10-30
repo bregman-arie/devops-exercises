@@ -2,46 +2,69 @@
 
 ## Linux Master Application
 
-A completely free application for testing your knowledge on Linux
+A completely free application for testing your knowledge on Linux.
+Desclaimer: developed by repository owner
 
-<a href="https://play.google.com/store/apps/details?id=com.codingshell.linuxmaster"><img src="images/linux_master.jpeg"/></a>
+<a href="https://play.google.com/store/apps/details?id=com.codingshell.linuxmaster"><img src="../../images/linux_master.jpeg"/></a>
 
-## Linux Self Assessment
+- [Linux](#linux)
+  - [Linux Master Application](#linux-master-application)
+  - [Linux Exercises](#linux-exercises)
+    - [Basics](#basics)
+    - [Misc](#misc)
+  - [Linux Questions](#linux-questions)
+    - [Linux 101](#linux-101)
+    - [I/O Redirection](#io-redirection)
+    - [Filesystem Hierarchy Standard](#filesystem-hierarchy-standard)
+    - [Permissions](#permissions)
+    - [Scenarios](#scenarios)
+    - [Systemd](#systemd)
+    - [Troubleshooting and Debugging](#troubleshooting-and-debugging)
+      - [Scenarios](#scenarios-1)
+    - [Kernel](#kernel)
+    - [SSH](#ssh)
+    - [Globbing & Wildcards](#globbing--wildcards)
+    - [Boot Process](#boot-process)
+    - [Disk and Filesystem](#disk-and-filesystem)
+    - [Performance Analysis](#performance-analysis)
+    - [Processes](#processes)
+    - [Security](#security)
+    - [Networking](#networking)
+    - [DNS](#dns)
+    - [Packaging](#packaging)
+    - [DNF](#dnf)
+    - [Applications and Services](#applications-and-services)
+    - [Users and Groups](#users-and-groups)
+    - [Hardware](#hardware)
+    - [Namespaces](#namespaces)
+    - [Virtualization](#virtualization)
+    - [AWK](#awk)
+    - [System Calls](#system-calls)
+    - [Filesystem & Files](#filesystem--files)
+    - [Advanced Networking](#advanced-networking)
+    - [Memory](#memory)
+    - [Distributions](#distributions)
+    - [Sed](#sed)
+    - [Misc](#misc-1)
 
-* [Linux 101](#questions-linux-101)
-* [Linux I/O Redirection](#questions-linux-redirection)
-* [Linux Filesystem Hierarchy Standard](#questions-linux-fhs)
-* [Linux Permissions](#questions-linux-permissions)
-* [Linux Scenarios](#questions-linux-scenarios)
-* [Linux Systemd](#questions-linux-systemd)
-* [Linux Troubleshooting and Debugging](#questions-linux-troubleshooting)
-* [Linux kernel](#questions-linux-kernel)
-* [Linux SSH](#questions-linux-ssh)
-* [Linux Globbing and Wildcards](#questions-linux-wildcards)
-* [Linux Boot Process](#questions-linux-boot)
-* [Linux Disk and Filesystem](#questions-linux-disk-fs)
-* [Linux Performance Analysis](#questions-linux-performance-analysis)
-* [Linux Processes](#questions-linux-processes)
-* [Linux Security](#questions-linux-security)
-* [Linux Networking](#questions-linux-networking)
-* [Linux DNS](#questions-linux-dns)
-* [Linux Packaging](#questions-linux-packaging)
-* [Linux DNF](#questions-linux-dnf)
-* [Linux Applications and Services](#questions-linux-apps-and-services)
-* [Linux Users and Groups](#questions-linux-users-and-groups)
-* [Linux Hardware](#questions-linux-hardware)
-* [Linux Namepsaces](#questions-linux-namespaces)
-* [Linux Virtualization](#questions-linux-virtualization)
-* [Linux AWK](#questions-linux-awk)
-* [Linux System Calls](#questions-linux-system-calls)
-* [Linux Filesystem and Files](#questions-linux-fs-files)
-* [Linux Advanced Networking](#questions-linux-advanced-networking)
-* [Linux Memory](#questions-linux-memory)
-* [Linux Distributions](#questions-linux-distributions)
-* [Linux Sed](#questions-linux-sed)
-* [Linux Misc](#questions-linux-misc)
+## Linux Exercises
 
-<a name="questions-linux-101"></a>
+### Basics
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Navigation | cd, pwd | [Exercise](exercises/navigation/README.md) | [Solution](exercises/navigation/solution.md)
+| Create and Destroy | touch, rm, mkdir | [Exercise](exercises/create_remove/README.md) | [Solution](exercises/create_remove/solution.md)
+| Copy Time | touch, cp, ls | [Exercise](exercises/copy/README.md) | [Solution](exercises/copy/solution.md)
+
+### Misc
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Unique Count |  | [Exercise](exercises/uniqe_count/README.md) | [Solution](exercises/uniqe_count/solution.md)
+
+## Linux Questions
+
 ### Linux 101
 
 <details>
@@ -50,6 +73,7 @@ A completely free application for testing your knowledge on Linux
 [Wikipedia](https://en.wikipedia.org/wiki/Linux): "Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution."
 
 [Red Hat](https://www.redhat.com/en/topics/linux/what-is-linux): "Linux® is an open source operating system (OS). An operating system is the software that directly manages a system’s hardware and resources, like CPU, memory, and storage. The OS sits between applications and hardware and makes the connections between all of your software and the physical resources that do the work."
+
 </b></details>
 
 <details>
@@ -479,8 +503,7 @@ To stop a service: `systemctl stop <service name>`
 <summary>Describe how to make a certain process/app a service</summary><br><b>
 </b></details>
 
-<a name="questions-linux-troubleshooting"></a>
-### Troubleshooting & Debugging
+### Troubleshooting and Debugging
 
 <details>
 <summary>Where system logs are located?</summary><br><b>
@@ -551,7 +574,16 @@ tail -f <file_name>
 <summary>How you measure time execution of a program?</summary><br><b>
 </b></details>
 
-<a name="questions-linux-kernel"></a>
+#### Scenarios
+
+<details>
+<summary>You have a process writing to a file. You don't know which process exactly, you just know the path of the file. You would like to kill the process as it's no longer needed. How would you achieve it?</summary><br><b>
+
+1. Run `lsof <FILE_PATH>`
+2. Use the pid (process ID) from the lsof command and run `kill <PID>`
+
+</b></details>
+
 ### Kernel
 
 <details>
