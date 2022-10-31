@@ -1866,11 +1866,14 @@ A list of services and their endpoints
 ## Puppet
 
 <details>
-<summary>What is Puppet? How does it works?</summary><br><b>
-</b></details>
+<summary>What is Puppet? How does it works?</summary><br><b> 
 
+  * Puppet is a configuration management tool ensuring that all systems are configured to a desired and predictable state.
+</b></details>
 <details>
 <summary>Explain Puppet architecture</summary><br><b>
+
+  * Puppet has a primary-secondary node architecture. The clients are distributed across the network and communicate with the primary-secondary environment where Puppet modules are present. The client agent sends a certificate with its ID to the server; the server then signs that certificate and sends it back to the client. This authentication allows for secure and verifiable communication between the client and the master. 
 </b></details>
 
 <details>
