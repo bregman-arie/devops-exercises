@@ -17,25 +17,36 @@ What's your goal?
     - [ReplicaSet](#replicaset)
     - [Labels and Selectors](#labels-and-selectors)
     - [Scheduler](#scheduler)
+    - [Kustomize](#kustomize)
   - [Kubernetes Questions](#kubernetes-questions)
     - [Kubernetes 101](#kubernetes-101)
     - [Cluster and Architecture](#cluster-and-architecture)
+      - [Kubelet](#kubelet)
+      - [Nodes Commands](#nodes-commands)
     - [Pods](#pods-1)
-      - [Pods - Commands](#pods---commands)
-      - [Pods - Troubleshooting and Debugging](#pods---troubleshooting-and-debugging)
+      - [Static Pods](#static-pods)
+      - [Pods Commands](#pods-commands)
+      - [Pods Troubleshooting and Debugging](#pods-troubleshooting-and-debugging)
+    - [Labels and Selectors](#labels-and-selectors-1)
     - [Deployments](#deployments)
+      - [Deployments Commands](#deployments-commands)
     - [Services](#services)
     - [Ingress](#ingress)
     - [ReplicaSets](#replicasets)
+    - [DaemonSet](#daemonset)
+      - [DaemonSet - Commands](#daemonset---commands)
     - [StatefulSet](#statefulset)
     - [Storage](#storage)
+      - [Volumes](#volumes)
     - [Networking](#networking)
     - [Network Policies](#network-policies)
     - [etcd](#etcd)
     - [Namespaces](#namespaces)
+      - [Namespaces - commands](#namespaces---commands)
+      - [Resources Quota](#resources-quota)
     - [Operators](#operators)
     - [Secrets](#secrets)
-    - [Volumes](#volumes)
+    - [Volumes](#volumes-1)
     - [Access Control](#access-control)
     - [Patterns](#patterns)
     - [CronJob](#cronjob)
@@ -43,13 +54,19 @@ What's your goal?
     - [Gatekeeper](#gatekeeper)
     - [Policy Testing](#policy-testing)
     - [Helm](#helm)
+      - [Commands](#commands)
     - [Security](#security)
     - [Troubleshooting Scenarios](#troubleshooting-scenarios)
     - [Istio](#istio)
     - [Controllers](#controllers)
     - [Scheduler](#scheduler-1)
       - [Node Affinity](#node-affinity)
-  - [Taints](#taints)
+    - [Taints](#taints)
+    - [Resource Limits](#resource-limits)
+      - [Resources Limits - Commands](#resources-limits---commands)
+    - [Monitoring](#monitoring)
+    - [Kustomize](#kustomize-1)
+    - [Deployment Strategies](#deployment-strategies)
     - [Scenarios](#scenarios)
 
 ## Kubernetes Exercises
@@ -88,6 +105,12 @@ What's your goal?
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Taints 101 | Taints | [Exercise](exercises/taints_101/exercise.md) | [Solution](exercises/taints_101/solution.md)
+
+### Kustomize
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| common labels | Kustomize | [Exercise](exercises/kustomize_common_labels/exercise.md) | [Solution](exercises/kustomize_common_labels/solution.md)
 
 ## Kubernetes Questions
 
@@ -143,12 +166,14 @@ To understand what Kubernetes is good for, let's look at some examples:
 <summary>What fields are mandatory with any Kubernetes object?</summary><br><b>
 
 metadata, kind and apiVersion
+
 </b></details>
 
 <details>
 <summary>What is kubectl?</summary><br><b>
 
 Kubectl is the Kubernetes command line tool that allows you to run commands against Kubernetes clusters. For example, you can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
+
 </b></details>
 
 <details>
@@ -157,12 +182,14 @@ Kubectl is the Kubernetes command line tool that allows you to run commands agai
 * Deployment - creates the Pods () and watches them
 * Service: route traffic to Pods internally
 * Ingress: route traffic from outside the cluster
+
 </b></details>
 
 <details>
 <summary>Why there is no such command in Kubernetes? <code>kubectl get containers</code></summary><br><b>
 
 Becaused container is not a Kubernetes object. The smallest object unit in Kubernetes is a Pod. In a single Pod you can find one or more containers.
+
 </b></details>
 
 <details>
@@ -170,6 +197,8 @@ Becaused container is not a Kubernetes object. The smallest object unit in Kuber
 
   - Always make sure Kubernetes YAML files are valid. Applying automated checks and pipelines is recommended.
   - Always specify requests and limits to prevent situation where containers are using the entire cluster memory which may lead to OOM issue
+  - Specify labels to logically group Pods, Deployments, etc. Use labels to identify the type of the application for example, among other things
+
 </b></details>
 
 ### Cluster and Architecture
@@ -198,13 +227,6 @@ The master coordinates all the workflows in the cluster:
 * Scheduling applications
 * Managing desired state
 * Rolling out new updates
-
-</b></details>
-
-<details>
-<summary>Which command will list the nodes of the cluster?</summary><br><b>
-
-`kubectl get nodes`
 
 </b></details>
 
@@ -285,6 +307,35 @@ Apply requests and limits, especially on third party applications (where the unc
 Outputs the status of each of the control plane components.
 </b></details>
 
+#### Kubelet
+
+<details>
+<summary>What happens to running pods if if you stop Kubelet on the worker nodes?</summary><br><b>
+
+</b></details>
+
+#### Nodes Commands
+
+<details>
+<summary>Run a command to view all nodes of the cluster</summary><br><b>
+
+`kubectl get nodes`
+
+Note: You might want to create an alias (`alias k=kubectl`) and get used to `k get no`
+</b></details>
+
+<details>
+<summary>Create a list of all nodes in JSON format and store it in a file called "some_nodes.json"</summary><br><b>
+
+`k get nodes -o json > some_nodes.json`
+</b></details>
+
+<details>
+<summary>Check what labels one of your nodes in the cluster has</summary><br><b>
+
+`k get no minikube --show-labels`
+</b></details>
+
 ### Pods
 
 <details>
@@ -359,16 +410,6 @@ False. A single Pod can run on a single node.
 
 <details>
 <summary>You run a pod and you see the status <code>ContainerCreating</code></summary><br><b>
-</b></details>
-
-<details>
-<summary>What are "Static Pods"?</summary><br><b>
-
-* Managed directly by Kubelet on specific node
-* API server is not observing static Pods
-* For each static Pod there is a mirror Pod on kubernetes API server but it can't be managed from there
-
-Read more about it [here](https://kubernetes.io/docs/tasks/configure-pod-container/static-pod)
 </b></details>
 
 <details>
@@ -510,7 +551,64 @@ False. Each Pod gets an IP address but an internal one and not publicly accessib
 To make a Pod externally accessible, we need to use an object called Service in Kubernetes.
 </b></details>
 
-#### Pods - Commands
+#### Static Pods
+
+<details>
+<summary>What are Static Pods?</summary><br><b>
+
+[Kubernetes.io](https://kubernetes.io/docs/tasks/configure-pod-container/static-pod/): "Static Pods are managed directly by the kubelet daemon on a specific node, without the API server observing them. Unlike Pods that are managed by the control plane (for example, a Deployment); instead, the kubelet watches each static Pod (and restarts it if it fails)."
+</b></details>
+
+<details>
+<summary>True or False? The same as there are "Static Pods" there are other static resources like "deployments" and "replicasets"</summary><br><b>
+
+False.
+</b></details>
+
+<details>
+<summary>What are some use cases for using Static Pods?</summary><br><b>
+
+One clear use case is running Control Plane Pods -  running Pods such as kube-apiserver, scheduler, etc. These should run and operate regardless of whether some components of the cluster work or not and they should run on specific nodes of the cluster.
+</b></details>
+
+<details>
+<summary>How to identify which Pods are Static Pods?</summary><br><b>
+
+The suffix of the Pods is the same as the name of the nodes on which they are running
+TODO: check if it's always the case.
+</b></details>
+
+<details>
+<summary>Which of the following is not a static pod?:
+
+* kube-scheduler
+* kube-proxy
+* kube-apiserver
+</summary><br><b>
+
+kube-proxy - it's a DaemonSet (since it has to be presented on every node in the cluster). There is no one specific node on which it has to run.
+</b></details>
+
+<details>
+<summary>Where static Pods manifests are located?</summary><br><b>
+
+Most of the time it's in /etc/kubernetes/manifests but you can verify with `grep -i static /var/lib/kubelet/config.yaml` to locate the value of `statisPodsPath`.
+
+It might be that your config is in different path. To verify run `ps -ef | grep kubelet` and see what is the value of --config argument of the process `/usr/bin/kubelet`
+
+The key itself for defining the path of static Pods is `staticPodPath`. So if your config is in `/var/lib/kubelet/config.yaml` you can run `grep staticPodPath /var/lib/kubelet/config.yaml`.
+</b></details>
+
+<details>
+<summary>Describe how would you delete a static Pod
+</summary><br><b>
+
+Locate the static Pods directory (look at `staticPodPath` in kubelet configuration file).
+
+Go to that directory and remove the manifest/definition of the staic Pod (`rm <STATIC_POD_PATH>/<POD_DEFINITION_FILE>`)
+</b></details>
+
+#### Pods Commands
 
 <details>
 <summary>How to check to which worker node the pods were scheduled to? In other words, how to check on which node a certain Pod is running?</summary><br><b>
@@ -544,12 +642,82 @@ To count them: `k get po -l env=prod --no-headers | wc -l`
 `kubectl get pods --all-namespaces`
 </b></details>
 
-#### Pods - Troubleshooting and Debugging
+#### Pods Troubleshooting and Debugging
 
 <details>
 <summary>You try to run a Pod but it's in "Pending" state. What might be the reason?</summary><br><b>
 
 One possible reason is that the scheduler which supposed to schedule Pods on nodes, is not running. To verify it, you can run `kubectl get po -A | grep scheduler` or check directly in `kube-system` namespace.
+</b></details>
+
+<details>
+<summary>What <code>kubectl logs [pod-name]</code> command does?</summary><br><b>
+
+Prints the logs for a container in a pod.
+</b></details>
+
+<details>
+<summary>What <code>kubectl describe pod [pod name] does?</code> command does?</summary><br><b>
+
+Show details of a specific resource or group of resources.
+</b></details>
+
+<details>
+<summary>Create a static pod with the image <code>python</code> that runs the command <code>sleep 2017</code></summary><br><b>
+
+First change to the directory tracked by kubelet for creating static pod: `cd /etc/kubernetes/manifests` (you can verify path by reading kubelet conf file)
+
+Now create the definition/manifest in that directory
+`k run some-pod --image=python --command sleep 2017 --restart=Never --dry-run=client -o yaml > statuc-pod.yaml`
+</b></details>
+
+### Labels and Selectors
+
+<details>
+<summary>Explain Labels</summary><br><b>
+
+[Kubernetes.io](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/): "Labels are key/value pairs that are attached to objects, such as pods. Labels are intended to be used to specify identifying attributes of objects that are meaningful and relevant to users, but do not directly imply semantics to the core system. Labels can be used to organize and to select subsets of objects. Labels can be attached to objects at creation time and subsequently added and modified at any time. Each object can have a set of key/value labels defined. Each Key must be unique for a given object."
+</b></details>
+
+<details>
+<summary>Explain selectors</summary><br><b>
+
+[Kubernetes.io](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors): "Unlike names and UIDs, labels do not provide uniqueness. In general, we expect many objects to carry the same label(s).
+
+Via a label selector, the client/user can identify a set of objects. The label selector is the core grouping primitive in Kubernetes.
+
+The API currently supports two types of selectors: equality-based and set-based. A label selector can be made of multiple requirements which are comma-separated. In the case of multiple requirements, all must be satisfied so the comma separator acts as a logical AND (&&) operator."
+</b></details>
+
+<details>
+<summary>Provide some actual examples of how labels are used</summary><br><b>
+
+* Can be used by the scheduler to place certain Pods (with certain labels) on specific nodes
+* Used by replicasets to track pods which have to be scaled
+</b></details>
+
+<details>
+<summary>What are Annotations?</summary><br><b>
+
+[Kubernetes.io](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/): "You can use Kubernetes annotations to attach arbitrary non-identifying metadata to objects. Clients such as tools and libraries can retrieve this metadata."
+</b></details>
+
+<details>
+<summary>How annotations different from labels?</summary><br><b>
+
+[Kuberenets.io](Labels can be used to select objects and to find collections of objects that satisfy certain conditions. In contrast, annotations are not used to identify and select objects. The metadata in an annotation can be small or large, structured or unstructured, and can include characters not permitted by labels.): "Labels can be used to select objects and to find collections of objects that satisfy certain conditions. In contrast, annotations are not used to identify and select objects. The metadata in an annotation can be small or large, structured or unstructured, and can include characters not permitted by labels."
+</b></details>
+
+<details>
+<summary>How to view the logs of a container running in a Pod?</summary><br><b>
+
+`k logs POD_NAME`
+</b></details>
+
+<details>
+<summary>There are two containers inside a Pod called "some-pod". What will happen if you run <code>kubectl logs some-pod</code></summary><br><b>
+
+It won't work because there are two containers inside the Pod and you need to specify one of them with `kubectl logs POD_NAME -c CONTAINER_NAME`
 </b></details>
 
 ### Deployments
@@ -642,20 +810,6 @@ Using a Service.
 </b></details>
 
 <details>
-<summary>Create a file definition/manifest of a deployment called "dep", with 3 replicas that uses the image 'redis'</summary><br><b>
-
-`k create deploy dep -o yaml --image=redis --dry-run=client --replicas 3 > deployment.yaml `
-
-</b></details>
-
-<details>
-<summary>Delete the deployment `depdep`</summary><br><b>
-
-`k delete deploy depdep`
-
-</b></details>
-
-<details>
 <summary>Fix the following deployment manifest
 
 ```yaml
@@ -721,6 +875,57 @@ status: {}
 </summary><br><b>
 
 The selector doesn't match the label (dep vs depdep). To solve it, fix depdep so it's dep instead.
+</b></details>
+
+#### Deployments Commands
+
+<details>
+<summary>Create a file definition/manifest of a deployment called "dep", with 3 replicas that uses the image 'redis'</summary><br><b>
+
+`k create deploy dep -o yaml --image=redis --dry-run=client --replicas 3 > deployment.yaml `
+
+</b></details>
+
+<details>
+<summary>Delete the deployment `depdep`</summary><br><b>
+
+`k delete deploy depdep`
+
+</b></details>
+
+<details>
+<summary>Create a deployment called "pluck" using the image "redis" and make sure it runs 5 replicas</summary><br><b>
+
+`kubectl create deployment pluck --image=redis`
+
+`kubectl scale deployment pluck --replicas=5`
+</b></details>
+
+<details>
+<summary>Create a deployment with the following properties:
+
+* called "blufer"
+* using the image "python"
+* runs 3 replicas
+* all pods will be placed on a node that has the label "blufer"
+</summary><br><b>
+
+`kubectl create deployment blufer --image=python --replicas=3 -o yaml --dry-run=client > deployment.yaml`
+
+Add the following section (`vi deployment.yaml`):
+
+```
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedlingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: blufer
+            operator: Exists
+```
+
+`kubectl apply -f deployment.yaml`
 </b></details>
 
 ### Services
@@ -1260,13 +1465,6 @@ Few notes:
 </b></details>
 
 <details>
-<summary>What's the difference between a ReplicaSet and DaemonSet?</summary><br><b>
-
-A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time.
-A DaemonSet ensures that all Nodes run a copy of a Pod. 
-</b></details>
-
-<details>
 <summary>Fix the following ReplicaSet definition
 
 ```yaml
@@ -1360,6 +1558,45 @@ The selector doesn't match the label (cache vs cachy). To solve it, fix cachy so
 `k scale rs rori --replicas=1`
 </b></details>
 
+### DaemonSet
+
+<details>
+<summary>What's a DaemonSet?</summary><br><b>
+
+[Kubernetes.io](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset): "A DaemonSet ensures that all (or some) Nodes run a copy of a Pod. As nodes are added to the cluster, Pods are added to them. As nodes are removed from the cluster, those Pods are garbage collected. Deleting a DaemonSet will clean up the Pods it created."
+</b></details>
+
+<details>
+<summary>What's the difference between a ReplicaSet and DaemonSet?</summary><br><b>
+
+A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time.
+A DaemonSet ensures that all Nodes run a copy of a Pod. 
+</b></details>
+
+<details>
+<summary>What are some use cases for using a DaemonSet?</summary><br><b>
+
+* Monitoring: You would like to perform monitoring on every node part of cluster. For example datadog pod runs on  every node using a daemonset
+* Logging: You would like to having logging set up on every node part of your cluster
+* Networking: there is networking component you need on every node for all nodes to communicate between them
+</b></details>
+
+<details>
+<summary>How DaemonSet works?</summary><br><b>
+
+Historically, up 1.12, it was done with NodeName attribute.
+
+Starting 1.12, it's achieved with regular scheduler and node affinity.
+</b></details>
+
+#### DaemonSet - Commands
+
+<details>
+<summary>How to list all daemonsets in the current namespace?</summary><br><b>
+
+`kubectl get ds`
+</b></details>
+
 ### StatefulSet
 
 <details>
@@ -1370,23 +1607,47 @@ StatefulSet is the workload API object used to manage stateful applications. Man
 
 ### Storage
 
+#### Volumes
+
 <details>
 <summary>What is a volume in regards to Kubernetes?</summary><br><b>
 
-A directory accessible by the containers inside a certain Pod. The mechanism responsible for creating the directory and managing it, ... is mainly depends on the volume type.
+A directory accessible by the containers inside a certain Pod and containers. The mechanism responsible for creating the directory, managing it, ... mainly depends on the volume type.
+
 </b></details>
 
 <details>
-<summary>Which problems volumes in Kubernetes solve?</summary><br><b>
+<summary>What volume types are you familiar with?</summary><br><b>
+
+* emptyDir: created when a Pod assigned to a node and ceases to exist when the Pod is no longer running on that node
+* hostPath: mounts a path from the host itself. Usually not used due to security risks but has multiple use-cases where it's needed like access to some internal host paths (`/sys`, `/var/lib`, etc.)
+
+</b></details>
+
+<details>
+<summary>Which problems, volumes in Kubernetes solve?</summary><br><b>
 
 1. Sharing files between containers running in the same Pod
-2. Storage in containers is ephemeral - it usually doesn't last for long. For example, when a container crashes, you lose all on-disk data.
+2. Storage in containers is ephemeral - it usually doesn't last for long. For example, when a container crashes, you lose all on-disk data. Certain volumes allows to manage such situation by persistent volumes
+
 </b></details>
 
 <details>
 <summary>Explain ephemeral volume types vs. persistent volumes in regards to Pods</summary><br><b>
 
 Ephemeral volume types have the lifetime of a pod as opposed to persistent volumes which exist beyond the lifetime of a Pod.
+
+</b></details>
+
+<details>
+<summary>Provide at least one use-case for each of the following volume types:
+
+* emptyDir
+* hostPath
+</summary><br><b>
+
+* EmptyDir: You need a temporary data that you can afford to lose if the Pod is deleted. For example short-lived data required for one-time operations.
+* hostPath: You need access to paths on the host itself (like data from `/sys` or data generated in `/var/lib`)
 </b></details>
 
 ### Networking
@@ -1395,6 +1656,17 @@ Ephemeral volume types have the lifetime of a pod as opposed to persistent volum
 <summary>True or False? By default there is no communication between two Pods in two different namespaces</summary><br><b>
 
 False. By default two Pods in two different namespaces are able to communicate with each other.
+
+Try it for yourself:
+
+kubectl run test-prod -n prod --image ubuntu -- sleep 2000000000
+kubectl run test-dev -n dev --image ubuntu -- sleep 2000000000
+
+`k describe po test-prod -n prod` to get the IP of test-prod Pod.
+
+Access dev Pod: `kubectl exec --stdin --tty test-dev -n dev -- /bin/bash`
+
+And ping the IP of test-prod Pod you get earlier.You'll see that there is communication between the two pods, in two separate namespaces.
 
 </b></details>
 
@@ -1517,6 +1789,14 @@ False. When a namespace is deleted, the resources in that namespace are deleted 
 </b></details>
 
 <details>
+<summary>While namspaces do provide scope for resources, they are not isolating them</summary><br><b>
+
+True. Try create two pods in two separate namspaces for example, and you'll see there is a connection between the two.
+</b></details>
+
+#### Namespaces - commands
+
+<details>
 <summary>How to list all namespaces?</code></summary><br><b>
 
 `kubectl get namespaces` OR `kubectl get ns`
@@ -1594,6 +1874,8 @@ OR
 
 `kubens some-namespace`
 </b></details>
+
+#### Resources Quota
 
 <details>
 <summary>What is Resource Quota?</code></summary><br><b>
@@ -1697,23 +1979,13 @@ kubectl delete pods --field-selector=status.phase!='Running'
 </b></details>
 
 <details>
-<summary>What <code>kubectl logs [pod-name]</code> command does?</summary><br><b>
-  Print the logs for a container in a pod.
-</b></details>
-
-<details>
-<summary>What <code>kubectl describe pod [pod name] does?</code> command does?</summary><br><b>
-  Show details of a specific resource or group of resources.
-</b></details>
-
-<details>
 <summary>How to display the resources usages of pods?</summary><br><b>
 
 kubectl top pod
 </b></details>
 
 <details>
-<summary>You suspect one of the pods is having issues, what do you do?</summary><br><b>
+<summary>Perhaps a general question but, you suspect one of the pods is having issues, you don't know what exactly. What do you do?</summary><br><b>
 
 Start by inspecting the pods status. we can use the command `kubectl get pods` (--all-namespaces for pods in system namespace)<br>
 
@@ -1722,14 +1994,6 @@ If we see "Error" status, we can keep debugging by running the command `kubectl 
 In case we find out there was a temporary issue with the pod or the system, we can try restarting the pod with the following `kubectl scale deployment [name] --replicas=0`<br>
 
 Setting the replicas to 0 will shut down the process. Now start it with `kubectl scale deployment [name] --replicas=1`
-</b></details>
-
-<details>
-<summary>What the Kubernetes Scheduler does?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What happens to running pods if if you stop Kubelet on the worker nodes?</summary><br><b>
 </b></details>
 
 <details>
@@ -1868,18 +2132,20 @@ This one is based more on a personal experience and taste...
 <summary>Explain Kubernetes Secrets</summary><br><b>
 
 Secrets let you store and manage sensitive information (passwords, ssh keys, etc.)
+
 </b></details>
 
 <details>
 <summary>How to create a Secret from a key and value?</summary><br><b>
 
-kubectl create secret generic some-secret --from-literal=password='donttellmypassword'
+`kubectl create secret generic some-secret --from-literal=password='donttellmypassword'`
+
 </b></details>
 
 <details>
 <summary>How to create a Secret from a file?</summary><br><b>
 
-kubectl create secret generic some-secret --from-file=/some/file.txt
+`kubectl create secret generic some-secret --from-file=/some/file.txt`
 </b></details>
 
 <details>
@@ -1907,18 +2173,14 @@ data:
     password: mySecretPassword
 ```
 </summary><br><b>
+
 Password isn't encrypted.
 You should run something like this: `echo -n 'mySecretPassword' | base64` and paste the result to the file instead of using plain-text.
+
 </b></details>
 
 <details>
-<summary>How to create a Secret from a configuration file?</summary><br><b>
-
-`kubectl apply -f some-secret.yaml`
-</b></details>
-
-<details>
-<summary>What the following in Deployment configuration file means? 
+<summary>What the following in a Deployment configuration file means? 
 
 ```
 spec:
@@ -1930,8 +2192,22 @@ spec:
           key: password
 ```
 </summary><br><b>
+
 USER_PASSWORD environment variable will store the value from password key in the secret called "some-secret"
 In other words, you reference a value from a Kubernetes Secret.
+
+</b></details>
+
+<details>
+<summary>How to commit secrets to Git and in general how to use encrypted secrets?</summary><br><b>
+
+One possible process would be as follows:
+
+1. You create a Kubernetes secret (but don't commit it)
+2. You encrypt it using some 3rd party project (.e.g kubeseal)
+3. You apply the seald/encrypted secret
+4. You commit the the sealed secret to Git
+5. You deploy an application that requires the secret and it can be automatically decrypted by using for example a Bitnami Sealed secrets controller
 </b></details>
 
 ### Volumes
@@ -2073,9 +2349,11 @@ The pod is automatically assigned with the default service account (in the names
 
 <details>
 <summary>Explain the sidecar container pattern</summary><br><b>
- 
-The sidecar pattern is a single-node pattern made up of two containers. The first is the application container. It contains the core logic for the application.
-Without this container, the application would not exist. In addition to the application container, there is a sidecar container.
+ ion container, there is a sidecar container.
+</b></details>
+r, the application would not exist. In addition to the application container, there is a sidecar container.
+
+In simpler words, when you have a Pod and there is more than one container running in that Pod that supports or complements the application container, it means you use the sidecar pattern.
 </b></details>
 
 ### CronJob
@@ -2291,6 +2569,8 @@ Same as Conftest, it is used for policy testing and enforcement. The difference 
 <summary>What is Helm?</summary><br><b>
 
 Package manager for Kubernetes. Basically the ability to package YAML files and distribute them to other users and apply them in the cluster(s).
+
+As a concept it's quite common and can be found in many platforms and services. Think for example on package managers in operating systems. If you use Fedora/RHEL that would be dnf. If you use Ubuntu then, apt. If you don't use Linux, then a different question should be asked and it's why? but that's another topic :)
 </b></details>
 
 <details>
@@ -2355,6 +2635,14 @@ someChart/     -> the name of the chart
 </b></details>
 
 <details>
+<summary>How Helm supports release management?</summary><br><b>
+
+Helm allows you to upgrade, remove and rollback to previous versions of charts. In version 2 of Helm it was with what is known as "Tiller". In version 3, it was removed due to security concerns.
+</b></details>
+
+#### Commands
+
+<details>
 <summary>How do you search for charts?</summary><br><b>
 
 `helm search hub [some_keyword]`
@@ -2369,9 +2657,27 @@ Or directly on the command line: `helm install --set some_key=some_value`
 </b></details>
 
 <details>
-<summary>How Helm supports release management?</summary><br><b>
+<summary>How do you list deployed releases?</summary><br><b>
 
-Helm allows you to upgrade, remove and rollback to previous versions of charts. In version 2 of Helm it was with what is known as "Tiller". In version 3, it was removed due to security concerns.
+`helm ls` or `helm list`
+</b></details>
+
+<details>
+<summary>How to execute a rollback?</summary><br><b>
+
+`helm rollback RELEASE_NAME REVISION_ID`
+</b></details>
+
+<details>
+<summary>How to view revision history for a certain release?</summary><br><b>
+
+`helm history RELEASE_NAME`
+</b></details>
+
+<details>
+<summary>How to upgrade a release?</summary><br><b>
+
+`helm upgrade RELEASE_NAME CHART_NAME`
 </b></details>
 
 ### Security
@@ -2529,7 +2835,41 @@ True
 False. The scheduler tries to find a node that meets the requirements/rules and if it doesn't it will schedule the Pod anyway.
 </b></details>
 
-## Taints
+<details>
+<summary>Can you deploy multiple schedulers?</summary><br><b>
+
+Yes, it is possible. You can run another pod with a command similar to:
+
+```
+spec:
+  containers:
+  - command:
+    - kube-scheduler
+    - --address=127.0.0.1
+    - --leader-elect=true
+    - --scheduler-name=some-custom-scheduler
+...
+```
+</b></details>
+
+<details>
+<summary>Assuming you have multiple schedulers, how to know which scheduler was used for a given Pod?</summary><br><b>
+
+Running `kubectl get events` you can see which scheduler was used.
+</b></details>
+
+<details>
+<summary>You want to run a new Pod and you would like it to be scheduled by a custom schduler. How to achieve it?</summary><br><b>
+
+Add the following to the spec of the Pod:
+
+```
+spec:
+  schedulerName: some-custom-scheduler
+```
+</b></details>
+
+### Taints
 
 <details>
 <summary>Check if there are taints on node "master"</summary><br><b>
@@ -2580,6 +2920,199 @@ Exit and save. The pod should be in Running state now.
 `NoExecute`: Appling "NoSchedule" will not evict already running Pods (or other resources) from the node as opposed to "NoExecute" which will evict any already running resource from the Node
 </b></details>
 
+### Resource Limits
+
+<details>
+<summary>Explain why one would specify resource limits in regards to Pods</summary><br><b>
+
+* You know how much RAM and/or CPU your app should be consuming and anything above that is not valid
+* You would like to make sure that everyone can run their apps in the cluster and resources are not being solely used by one type of application
+</b></details>
+
+<details>
+<summary>True or False? Resource limits applied on a Pod level meaning, if limits is 2gb RAM and there are two container in a Pod that it's 1gb RAM each</summary><br><b>
+
+False. It's per container and not per Pod.
+</b></details>
+
+#### Resources Limits - Commands
+
+<details>
+<summary>Check if there are any limits on one of the pods in your cluster</summary><br><b>
+
+`kubectl describe po <POD_NAME> | grep -i limits`
+</b></details>
+
+<details>
+<summary>Run a pod called "yay" with the image "python" and resources request of 64Mi memory and 250m CPU</summary><br><b>
+
+`kubectl run yay --image=python --dry-run=client -o yaml > pod.yaml`
+
+`vi pod.yaml`
+
+```
+spec:
+  containers:
+  - image: python
+    imagePullPolicy: Always
+    name: yay
+    resources:
+      requests:
+        cpu: 250m
+        memory: 64Mi
+```
+
+`kubectl apply -f pod.yaml`
+</b></details>
+
+<details>
+<summary>Run a pod called "yay2" with the image "python". Make sure it has resources request of 64Mi memory and 250m CPU and the limits are 128Mi memory and 500m CPU</summary><br><b>
+
+`kubectl run yay2 --image=python --dry-run=client -o yaml > pod.yaml`
+
+`vi pod.yaml`
+
+```
+spec:
+  containers:
+  - image: python
+    imagePullPolicy: Always
+    name: yay2
+    resources:
+      limits:
+        cpu: 500m
+        memory: 128Mi
+      requests:
+        cpu: 250m
+        memory: 64Mi
+```
+
+`kubectl apply -f pod.yaml`
+</b></details>
+
+### Monitoring
+
+<details>
+<summary>What monitoring solutions are you familiar with in regards to Kubernetes?</summary><br><b>
+
+There are many types of monitoring solutions for Kubernetes. Some open-source, some are in-memory, some of them cost money, ... here is a short list:
+
+* metrics-server: in-memory open source monitoring
+* datadog: $$$
+* promethues: open source monitoring solution
+
+</b></details>
+
+<details>
+<summary>Describe how the monitoring solution you are working with monitors Kubernetes and </summary><br><b>
+
+This very much depends on what you chose to use. Let's address some of the solutions:
+
+* metrics-server: an open source and free monitoring solution that uses the cAdvisor component of kubelet to retrieve information on the cluster and its resources and stores them in-memory.
+Once installed, after some time you can run commands like `kubectl top node` and `kubectl top pod` to view performance metrics on nodes, pods and other resources.
+
+TODO: add more monitoring solutions
+
+</b></details>
+
+### Kustomize
+
+<details>
+<summary>What is Kustomize?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain the need for Kustomize by describing actual use cases</summary><br><b>
+
+* You have an helm chart of an application used by multiple teams in your organization and there is a requirement to add annotation to the app specifying the name of the of team owning the app
+  * Without Kustomize you would need to copy the files (chart template in this case) and modify it to include the specific annotations we need
+  * With Kustomize you don't need to copy the entire repo or files
+* You are asked to apply a change/patch to some app without modifying the original files of the app
+  * With Kustomize you can define kustomization.yml file that defines these customizations so you don't need to touch the original app files
+</b></details>
+
+<details>
+<summary>Describe in high-level how Kustomize works</summary><br><b>
+
+1. You add kustomization.yml file in the folder of the app you would like to customize.
+   1. You define the customizations you would like to perform
+2. You run `kustomize build APP_PATH` where your kustomization.yml also resides
+</b></details>
+
+### Deployment Strategies
+
+<details>
+<summary>What rollout/deployment strategies are you familiar with?</summary><br><b>
+
+* Blue/Green Deployments: You deploy a new version of your app, while old version still running, and you start redirecting traffic to the new version of the app
+* Canary Deployments: You deploy a new version of your app and start redirecting **portion** of your users/traffic to the new version. So you the migration to the new version is much more gradual
+</b></details>
+
+<details>
+<summary>Explain Blue/Green deployments/rollouts in detail</summary><br><b>
+
+Blue/Green deployment steps:
+
+1. Traffic coming from users through a load balancer to the application which is currently version 1
+
+Users -> Load Balancer -> App Version 1
+
+2. A new application version 2 is deployed (while version 1 still running)
+
+Users -> Load Balancer -> App Version 1
+                          App Version 2
+
+3. If version 2 runs properly, traffic switched to it instead of version 1
+
+User -> Load Balancer     App version 1
+                       -> App Version 2
+
+4. Whether old version is removed or keep running but without users being redirected to it, is based on team or company decision
+
+Pros:
+  * We can rollback/switch quickly to previous version at any point
+Cons:
+  * In case of an issue with new version, ALL users are affected (instead of small portion/percentage)
+
+</b></details>
+
+<details>
+<summary>Explain Canary deployments/rollouts in detail</summary><br><b>
+
+Canary deployment steps:
+
+1. Traffic coming from users through a load balancer to the application which is currently version 1
+
+Users -> Load Balancer -> App Version 1
+
+2. A new application version 2 is deployed (while version 1 still running) and part of the traffic is redirected to the new version
+
+Users -> Load Balancer ->(95% of the traffic) App Version 1
+                       ->(5% of the traffic) App Version 2
+
+3. If the new version (2) runs well, more traffic is redirected to it
+
+Users -> Load Balancer ->(70% of the traffic) App Version 1
+                       ->(30% of the traffic) App Version 2
+
+3. If everything runs well, at some point all traffic is redirected to the new version
+
+Users -> Load Balancer -> App Version 2
+
+
+Pros:
+  * If there is any issue with the new deployed app version, only some portion of the users affected, instead of all of them
+Cons:
+  * Testing of new version is neccesrialy in the production environment (as the user traffic is exists only there)
+
+</b></details>
+
+<details>
+<summary>What ways are you familiar with to implement deployment strategies (like canary, blue/green) in Kubernetes?</summary><br><b>
+
+There are multiple ways. One of them is Argo Rollouts.
+</b></details>
+
 ### Scenarios
 
 <details>
@@ -2610,4 +3143,10 @@ Some ways to debug:
 <summary>An engineer form your organization asked whether there is a way to prevent from Pods (with cretain label) to be scheduled on one of the nodes in the cluster. Your reply is:</summary><br><b>
 
 Yes, using taints, we could run the following command and it will prevent from all resources with label "app=web" to be scheduled on node1: `kubectl taint node node1 app=web:NoSchedule`
+</b></details>
+
+<details>
+<summary>You would like to limit the number of resources being used in your cluster. For example no more than 4 replicasets, 2 services, etc. How would you achieve that?</summary><br><b>
+
+Using ResourceQuats
 </b></details>

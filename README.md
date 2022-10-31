@@ -2,9 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
 
-:bar_chart: &nbsp;There are currently **2354** exercises and questions
-
-:books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
+:bar_chart: &nbsp;There are currently **2557** exercises and questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [FAQ page](faq.md) for more details
 
@@ -25,7 +23,7 @@
     <td align="center"><a href="topics/git/README.md"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
     <td align="center"><a href="topics/ansible/README.md"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
     <td align="center"><a href="#network"><img src="images/network.png" width="75px;" height="75px;" alt="Network"/><br /><b>Network</b></a></td>
-    <td align="center"><a href="topics/linux/README.md"><img src="images/logos/linux.png" width="75px;" height="75px;" alt="Linux"/><br /><b>Linux</b></a></td>
+   
 
   </tr>
   <tr>
@@ -34,15 +32,14 @@
     <td align="center"><a href="https://github.com/bregman-arie/go-exercises"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a></td>
     <td align="center"><a href="topics/shell/README.md"><img src="images/bash.png" width="75px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
     <td align="center"><a href="topics/kubernetes/README.md"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
-    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
+ 
   </tr>
   <tr>
     <td align="center"><a href="topics/cloud/README.md"><img src="images/cloud.png" width="75px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a></td>
     <td align="center"><a href="topics/aws/README.md"><img src="images/aws.png" width="100px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
     <td align="center"><a href="topics/azure/README.md"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a></td>
-    <td align="center"><a href="#gcp"><img src="images/googlecloud.png" width="70px;" height="70px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
+    <td align="center"><a href="topics/gcp/README.md"><img src="images/googlecloud.png" width="70px;" height="70px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
     <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a></td>
-    <td align="center"><a href="topics/security/README.md"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
   </tr>
   <tr>
     <td align="center"><a href="#operating-system"><img src="images/os.png" width="75px;" height="75px;" alt="Operating System"/><br /><b>Operating System</b></a></td>
@@ -50,7 +47,6 @@
     <td align="center"><a href="#elastic"><img src="images/elastic.png" width="75px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
     <td align="center"><a href="#virtualization"><img src="images/virtualization.png" width="75px;" height="75px;" alt="Virtualization"/><br /><b>Virtualization</b></a></td>
     <td align="center"><a href="topics/dns/README.md"><img src="images/dns.png" width="75px;" height="75px;" alt="DNS"/><br /><b>DNS</b></a></td>
-    <td align="center"><a href="#Misc"><img src="images/general.png" width="75px;" height="75px;" alt="Misc"/><br /><b>Misc</b></a></td>
   </tr>
   <tr>
     <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
@@ -58,7 +54,6 @@
     <td align="center"><a href="#regex"><img src="images/regex.png" width="75px;" height="75px;" alt="RegEx"/><br /><b>Regex</b></a></td>
     <td align="center"><a href="#system-design"><img src="images/design.png" width="75px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
     <td align="center"><a href="#hardware"><img src="images/hardware.png" width="75px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
-    <td align="center"><a href="#big-data"><img src="images/big-data.png" width="75px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
   </tr>
   <tr>
     <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
@@ -66,7 +61,6 @@
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
     <td align="center"><a href="topics/openshift/README.md"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
     <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
-    <td align="center"><a href="topics/soft_skills/README.md"><img src="images/HR.png" width="75px;" height="75px;" alt="HR"/><br /><b>Soft Skills</b></a></td>
   </tr>
   <tr>
       <td align="center"><a href="topics/terraform/README.md"><img src="images/terraform.png" width="75px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
@@ -74,14 +68,26 @@
       <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a></td>
       <td align="center"><a href="#distributed"><img src="images/distributed.png" width="75px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
       <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="75px;" height="75px;" alt="you"/><br /><b>Questions you can ask</b></a></td>
-      <td align="center"><a href="topics/perl/README.md"><img src="images/perl.png" width="75px;" height="75px;" alt="perl"/><br /><b>Perl</b></a></td>
   </tr>
   <tr>
       <td align="center"><a href="topics/circleci/README.md"><img src="images/logos/circleci.png" width="70px;" height="70px;" alt="Circle CI"/><br /><b>Circle CI</b></a></td>
       <td align="center"><a href="topics/argo/README.md"><img src="images/logos/argo.png" width="80px;" height="80px;" alt="Argo"/><br /><b>Argo</b></a></td>
-      <td align="center"><a href="topics/kafka/README.md"><img src="images/logos/kafka.png" width="70px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
-
+      <td align="center"><a href="topics/kafka/README.md"><img src="images/logos/kafka.png" width="85px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
+      <td align="center"><a href="topics/datadog/README.md"><img src="images/logos/datadog.png" width="80px;" height="80px;" alt="DataDog"/><br /><b></b></a></td>
+      <td align="center"><a href="topics/perl/README.md"><img src="images/perl.png" width="75px;" height="75px;" alt="perl"/><br /><b>Perl</b></a></td>
   </tr>
+   <tr>
+    <td align="center"><a href="topics/linux/README.md"><img src="images/logos/linux.png" width="75px;" height="75px;" alt="Linux"/><br /><b>Linux</b></a></td>
+    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
+    <td align="center"><a href="#big-data"><img src="images/big-data.png" width="75px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
+    <td align="center"><a href="topics/soft_skills/README.md"><img src="images/HR.png" width="75px;" height="75px;" alt="HR"/><br /><b>Soft Skills</b></a></td>
+    <td align="center"><a href="topics/security/README.md"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
+   </tr>
+   <tr>
+    <td align="center"><a href="topics/chaos_engineering/README.md"><img src="images/logos/chaos_engineering.png" width="75px;" height="75px;" alt="Chaos Engineering"/><br /><b>Chaos Engineering</b></a></td>
+    <td align="center"><a href="#Misc"><img src="images/general.png" width="75px;" height="75px;" alt="Misc"/><br /><b>Misc</b></a></td>
+   </tr>
+   
 </table>
 </center>
 <!-- markdownlint-enable -->
@@ -91,35 +97,28 @@
 ## Network
 
 <details>
-<summary>What do you need in order to communicate?</summary><br><b>
+<summary>In general, what do you need in order to communicate?</summary><br><b>
 
   - A common language (for the two ends to understand)
   - A way to address who do you want to communicate with
   - A Connection (so the content of the communication can reach the recipients)
+
 </b></details>
 
 <details>
 <summary>What is TCP/IP?</summary><br><b>
 
 A set of protocols that define how two or more devices can communicate with each other.
+
 To learn more about TCP/IP, read [here](http://www.penguintutor.com/linux/basic-network-reference)
-</b></details>
 
-<details>
-<summary>What is APIPA?</summary><br><b>
-APIPA is a set of it addresses that devices are allocated
-when the main DHCP server is not reachable
-</b></details>
-
-<details>
-<summary>What ip range does APIPA use?</summary><br><b>
-APIPA uses the ip range: 169.254.0.1 - 169.254.255.254.
 </b></details>
 
 <details>
 <summary>What is Ethernet?</summary><br><b>
 
 Ethernet simply refers to the most common type of Local Area Network (LAN) used today. A LAN—in contrast to a WAN (Wide Area Network), which spans a larger geographical area—is a connected network of computers in a small area, like your office, college campus, or even home.
+
 </b></details>
 
 <details>
@@ -418,7 +417,22 @@ For example, your computer's private IP could be 192.168.1.100, but your router 
 <summary>Which factors affect network performances</summary><br><b>
 </b></details>
 
-#### Network - Data and Control planes
+<details>
+<summary>What is APIPA?</summary><br><b>
+
+APIPA is a set of it addresses that devices are allocated
+when the main DHCP server is not reachable
+
+</b></details>
+
+<details>
+<summary>What ip range does APIPA use?</summary><br><b>
+
+APIPA uses the ip range: 169.254.0.1 - 169.254.255.254.
+
+</b></details>
+
+#### Control Plane and Data Plane
 
 <details>
 <summary>What "control plane" refers to?</summary><br><b>
@@ -797,6 +811,33 @@ Logging<br>
 
 <details>
 <summary>What is the difference between infrastructure monitoring and application monitoring? (methods, tools, ...)</summary><br><b>
+</b></details>
+
+### Application Performance Management
+
+<details>
+<summary>What is Application Performance Management?</summary><br><b>
+
+- IT metrics translated into business insights
+- Practices for monitoring applications insights so we can improve performances, reduce issues and improve overall user experience
+</b></details>
+
+<details>
+<summary>Name three aspects of a project you can monitor with APM (e.g. backend)</summary><br><b>
+
+- Frontend
+- Backend
+- Infra
+- ...
+</b></details>
+
+<details>
+<summary>What can be collected/monitored to perform APM monitoring?</summary><br><b>
+
+- Metrics
+- Logs
+- Events
+  Traces
 </b></details>
 
 ## Prometheus
@@ -1386,322 +1427,6 @@ WHERE
 ```
 
 When you use a function (`YEAR(purchased_at)`) it has to scan the whole database as opposed to using indexes and basically the column as it is, in its natural state.
-</b></details>
-
-## GCP
-
-<details>
-<summary>Explain GCP's architecture</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are the main components and services of GCP?</summary><br><b>
-
-| Components | Services          |
-| ---------- | ----------------- |
-| Compute    | Compute Engine    |
-|            | App Engine        |
-|            | Kubernetes Engine |
-|            | Cloud Function    |
-|            | Cloud Run         | 
-| Storage &  | Cloud Storage     |
-| Database   | Cloud SQL         |
-|            | Cloud BigTable    |
-|            | Cloud Spanner     |
-|            | Cloud Datastore   |
-| Networking | VPC               |
-|            | Load Balancing    |
-|            | Cloud Armor       |
-|            | Cloud CDN         |
-|            | Cloud DNS         |
-|            | Cloud Interconnect|
-| Big Data   | Big Query         |
-|            | Cloud Dataproc    |
-|            | Cloud Datalab     |
-|            | Data Studio       |
-| DevOps     | Container Registry|
-|            | Cloud Build       |
-|            | Source Repository |
-| Identity & | Cloud Identity    |
-| Security   | Cloud IAM         |
-|            | Cloud KMS         |
-| Cloud AI   | Cloud AutoML      |
-|            | Cloud Vision API  |
-|            | Natural Language  |
-|            | Cloud Speech-to-Text|
-|            | Cloud Text-to-Speech|
-|            | Cloud Translation API|
-|            | Cloud Video Intelligence|
-| API Platform | Maps Platform    |
-|            | API Analytics  |
-|            | Apigee Sense   |
-|            | Cloud Endpoints|
-
-</b></details>
-
-<details>
-<summary>What GCP management tools are you familiar with?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Tell me what do you know about GCP networking</summary><br><b>
-
-Virtual Private Cloud(VPC) network is a virtual version of physical network, implemented in Google's internal Network. VPC is a gloabal resource in GCP.
-Subnetworks(subnets) are regional resources, ie., subnets can be created withinin regions.
-
-VPC are created in 2 modes,
-
-1. Auto mode VPC - One subnet in each region is created automatically by GCP while creating VPC
-
-2. Custom mode VPC - No subnets are automatically created. This type of network provides complete control over the subnets creation to the users. 
-
-
-</b></details>
-
-<details>
-<summary>Explain Cloud Functions</summary><br><b>
-
-Google Cloud Functions is a serverless execution environment for building and connecting cloud services. With Cloud Functions you write simple, single-purpose functions that are attached to events emitted from your cloud infrastructure and services. Your function is triggered when an event being watched is fired.
-
-</b></details>
-
-<details>
-<summary>What is Cloud Datastore?</summary><br><b>
-
-Cloud Datastore is a schemaless NoSQL datastore in Google's cloud. Applications can use Datastore to query your data with SQL-like queries that support filtering and sorting. Datastore replicates data across multiple datacenters, which provides a high level of read/write availability.
-
-</b></details>
-
-<details>
-<summary>What network tags are used for?</summary><br><b>
-
-Network tags allow you to apply firewall rules and routes to a specific instance or set of instances: You make a firewall rule applicable to specific instances by using target tags and source tags.
-
-</b></details>
-
-<details>
-<summary>What are flow logs? Where are they enabled?</summary><br><b>
-
-VPC Flow Logs records a sample of network flows sent from and received by VM instances, including instances used as Google Kubernetes Engine nodes. These logs can be used for network monitoring, forensics, real-time security analysis, and expense optimization.
-
-Enable Flow Logs
-
-1. Open VPC Network in GCP Console
-
-2. Click the name of the subnet 
-
-3. Click EDIT button
-
-4. Set Flow Logs to On
-
-5. Click Save
-
-
-
-</b></details>
-
-<details>
-<summary>How do you list buckets?</summary><br><b>
-    Two ways to do that:
-	 
-   $ gsutil ls
-	 
-   $ gcloud alpha storage ls
-	
-</b></details>
- 
-<details>
-<summary>What Compute metadata key allows you to run code at startup?</summary><br><b>
-
-startap-script
-</b></details>
-
-<details>
-<summary>What the following commands does? `gcloud deployment-manager deployments create`</summary><br><b>
-
-Deployment Manager creates a new deployment. 
-
-</b></details>
-
-<details>
-<summary>What is Cloud Code?</summary><br><b>
-It is a set of tools to help developers write, run and debug GCP kubernetes based applications. It provides built-in support for rapid iteration, debugging and running applications in development and production K8s environments.
-</b></details>
-
-### Google Kubernetes Engine (GKE)
-
-<details>
-<summary>What is GKE</summary><br><b>
-
-* It is the managed kubernetes service on GCP for deploying, managing and scaling containerised applications using Google infrastructure.
-</b></details>
-
-### Anthos
-
-<details>
-<summary>What is Anthos</summary><br><b>
-It is a managed application platform for organisations like enterprises that require quick modernisation and certain levels
-of consistency for their legacy applications in a hybrid or multicloud world. From this explanation the core ideas can be drawn from these statements;
-
-* Managed -> the customer does not need to worry about the underlying software intergrations, they just enable the API.
-* application platform -> It consists of open source tools like K8s, Knative, Istio and Tekton
-* Enterprises -> these are usually organisations with complex needs
-* Consistency -> to have the same policies declaratively initiated to be run anywhere securely e.g on-prem, GCP or other-clouds (AWS or Azure)
-
-fun fact: Anthos is flower in greek, they grow in the ground (earth) but need rain from the clouds to flourish.
-</b></details>
-
-<details>
-<summary>List the technical components that make up Anthos</summary><br><b>
-
-* Infrastructure management - Google Kubernetes Engine (GKE)
-* Cluster management - GKE, Ingress for Anthos
-* Service management - Anthos Service Mesh
-* Policy enforcement - Anthos Config Management, Anthos Enterprise Data Protection, Policy Controller
-* Application deployment - CI/CD tools like Cloud Build, GitLab
-* Application development - Cloud Code
-</b></details>
-
-<details>
-<summary>What is the primary computing environment for Anthos to easily manage workload deployment?</summary><br><b>
-
-* Google Kubernetes Engine (GKE)
-</b></details>
-
-<details>
-<summary>How does Anthos handle the control plane and node components for GKE?</summary><br><b>
-
-On GCP the kubernetes api-server is the only control plane component exposed to customers whilst compute engine manages
-instances in the project.
-</b></details>
-
-<details>
-<summary>Which load balancing options are available?</summary><br><b>
-
-* Networking load balancing for L4 and HTTP(S) Load Balancing for L7 which are both managed services that do not require
-  additional configuration.
-* Ingress for Anthos which allows the ability to deploy a load balancer that serves an application across multiple clusters
-  on GKE
-</b></details>
-
-<details>
-<summary>Can you deploy Anthos on AWS?</summary><br><b>
-
-* Yes, Anthos on AWS is now GA. For more read [here](https://cloud.google.com/anthos/gke/docs/aws)
-</b></details>
-
-<details>
-<summary>List and explain the enterprise security capabilities provided by Anthos</summary><br><b>
-
-* Control plane security - GCP manages and maintains the K8s control plane out of the box. The user can secure the api-server by using master authorized networks and private clusters. These allow the user to disable access on the public IP address by assigning a private IP address to the master.
-* Node security - By default workloads are provisioned on Compute engine instances that use Google's Container Optimised OS. This operating system implements a locked-down firewall, limited user accounts with root disabled and a read-only filesystem. There is a further option to enable GKE Sandbox for stronger isolation in multi-tenant deployment scenarios.
-* Network security - Within a created cluster VPC, Anthos GKE leverages a powerful software-defined network that enables simple Pod-to-Pod communications. Network policies allow locking down ingress and egress connections in a given namespace. Filtering can also be implemented to incoming load-balanced traffic for services that require external access, by supplying whitelisted CIDR IP ranges.
-* Workload security - Running workloads run with limited privileges, default Docker AppArmor security policies are applied to all Kubernetes Pods. Workload identity for Anthos GKE aligns with the open source kubernetes service accounts with GCP service account permissions.
-* Audit logging - Adminstrators are given a way to retain, query, process and alert on events of the deployed environments.
-</b></details>
-
-<details>
-<summary>How can workloads deployed on Anthos GKE on-prem clusters securely connect to Google Cloud services?</summary><br><b>
-
-* Google Cloud Virtual Private Network (Cloud VPN) - this is for secure networking
-* Google Cloud Key Management Service (Cloud KMS) - for key management
-</b></details>
-
-<details>
-<summary>What is Island Mode configuration with regards to networking in Anthos GKE deployed on-prem?</summary><br><b>
-
-* This is when pods can directly talk to each other within a cluster, but cannot be reached from outside the cluster thus forming an "island" within the network that is not connected to the external network.
-</b></details>
-
-<details>
-<summary>Explain Anthos Config Management</summary><br><b>
-
-It is a core component of the Anthos stack which provides platform, service and security operators with a single, unified approach to multi-cluster management that spans both on-premises and cloud environments. It closely follows K8s best practices, favoring declarative approaches over imperative operations, and actively monitors cluster state and applies the desired state as defined in Git. It includes three key components as follows:
-
-1. An importer that reads from a central Git repository
-2. A component that synchronises stored configuration data into K8s objects
-3. A component that monitors drift between desired and actual cluster configurations with a capability of reconciliation when need rises.
-</b></details>
-
-<details>
-<summary>How does Anthos Config Management help?</summary><br><b>
-
-It follows common modern software development practices which makes cluster configuration, management and policy changes auditable, revertable, and versionable easily enforcing IT governance and unifying resource management in an organisation.
-</b></details>
-
-<details>
-<summary>What is Anthos Service Mesh?</summary><br><b>
-
-* It is a suite of tools that assist in monitoring and managing deployed services on Anthos of all shapes and sizes whether running in cloud, hybrid or multi-cloud environments. It leverages the APIs and core components from Istio, a highly configurable and open-source service mesh platform.
-</b></details>
-
-<details>
-<summary>Describe the two main components of Anthos Service Mesh</summary><br><b>
-
-1. Data plane - it consists of a set of distributed proxies that mediate all inbound and outbound network traffic between individual services which are configured using a centralised control plane and an open API
-2. Control plane - is a fully managed offering outside of Anthos GKE clusters to simplify management overhead and ensure highest possible availability.
-</b></details>
-
-<details>
-<summary>What are the components of the managed control plane of Anthos Service Mesh?</summary><br><b>
-
-1. Traffic Director - it is GCP's fully managed service mesh traffic control plane, responsible for translating Istio API objects into configuration information for the distributed proxies, as well as directing service mesh ingress and egress traffic
-2. Managed CA - is a centralised certificate authority responsible for providing SSL certificates to each of the distributed proxies, authentication information and distributing secrets
-3. Operations tooling - formerly stackdriver, provides a managed ingestion point for observability and telemetry, specifically monitoring, tracing and logging data generated by each of the proxies. This powers the observability dashboard for operators to visually inspect their services and service dependencies assisting in the implementation of SRE best practices for monitoring SLIs and establishing SLOs.
-</b></details>
-
-<details>
-<summary>How does Anthos Service Mesh help?</summary><br><b>
-Tool and technology integration that makes up Anthos service mesh delivers signficant operational benefits to Anthos environments, with minimal additional overhead such as follows:
-
-* Uniform observability - the data plane reports service to service communication back to the control plane generating a service dependency graph. Traffic inspection by the proxy inserts headers to facilitate distributed tracing, capturing and reporting service logs together with service-level metrics (i.e latency, errors, availability).
-* Operational agility - fine-grained controls for managing the flow of inter-mesh (north-south) and intra-mesh (east-west) traffic are provided.
-* Policy-driven security - policies can be enforced consistently across diverse protocols and runtimes as service communications are secured by default.
-</b></details>
-
-<details>
-<summary>List possible use cases of traffic controls that can be implemented within Anthos Service Mesh</summary><br><b>
-
-* Traffic splitting across differing service versions for canary or A/B testing
-* Circuit breaking to prevent cascading failures
-* Fault injection to help build resilient and fault-tolerant deployments
-* HTTP header-based traffic steering between individual services or versions
-</b></details>
-
-<details>
-<summary>What is Cloud Run for Anthos?</summary><br><b>
-
-It is part of the Anthos stack that brings a serverless container experience to Anthos, offering a high-level platform experience on top of K8s clusters. It is built with Knative, an open-source operator for K8s that brings serverless application serving and eventing capabilities.
-</b></details>
-
-<details>
-<summary>How does Cloud Run for Anthos simplify operations?</summary><br><b>
-
-Platform teams in organisations that wish to offer developers additional tools to test, deploy and run applications can use Knative to enhance this experience on Anthos as Cloud Run. Below are some of the benefits;
-
-* Easy migration from K8s deployments - Without Cloud Run, platform engineers have to configure deployment, service, and HorizontalPodAutoscalers(HPA) objects to a loadbalancer and autoscaling. If application is already serving traffic it becomes hard to change configurations or roll back efficiently. Using Cloud Run all this is managed thus the Knative service manifest describes the application to be autoscaled and loadbalanced
-* Autoscaling - a sudden traffic spike may cause application containers in K8s to crash due to overload thus an efficient automated autoscaling is executed to serve the high volume of traffic
-* Networking - it has built-in load balancing capabilities and policies for traffic splitting between multiple versions of an application.
-* Releases and rollouts - supports the notion of the Knatibe API's revisions which describe new versions or different configurations of your application and canary deployments by splitting traffic.
-* Monitoring - observing and recording metrics such as latency, error rate and requests per second.
-</b></details>
-
-<details>
-<summary>List and explain three high-level out of the box autoscaling primitives offered by Cloud Run for Anthos that do not exist in K8s natively</summary><br><b>
-
-* Rapid, request-based autoscaling - default autoscalers monitor request metrics which allows Cloud Run for Anthos to handle spiky traffic patterns smoothly
-* Concurrency controls - limits such as max in-flight requests per container are enforced to ensure the container does not become overloaded and crash. More containers are added to handle the spiky traffic, buffering the requests.
-* Scale to zero - if an application is inactive for a while Cloud Run scales it down to zero to reduce its footprint. Alternatively one can turn off scale-to-zero to prevent cold starts.
-</b></details>
-
-<details>
-<summary>List some Cloud Run for Anthos use cases</summary><br><b>
-
-As it does not support stateful applications or sticky sessions, it is suitable for running stateless applications such as:
-
-* Machine learning model predictions e.g Tensorflow serving containers
-* API gateways, API middleware, web front ends and Microservices
-* Event handlers, ETL
 </b></details>
 
 ## OpenStack
@@ -2811,30 +2536,6 @@ document_number: 2
 [Wikipedia](https://en.wikipedia.org/wiki/Firmware): "In computing, firmware is a specific class of computer software that provides the low-level control for a device's specific hardware. Firmware, such as the BIOS of a personal computer, may contain basic functions of a device, and may provide hardware abstraction services to higher-level software such as operating systems."
 </b></details>
 
-#### Customers and Service Providers
-
-<details>
-<summary>What is SLO (service-level objective)?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is SLA (service-level agreement)?</summary><br><b>
-</b></details>
-
-## Jira
-
-<details>
-<summary>Explain/Demonstrate the following types in Jira:
-
-  * Epic
-  * Story
-  * Task</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a project in Jira?</summary><br><b>
-</b></details>
-
 ## Cassandra
 
 <details>
@@ -3202,9 +2903,8 @@ Google Drive
 <summary>Explain MBR</summary><br><b>
 </b></details>
 
-## Questions you CAN ask
-
 <a name="questions-you-ask"></a>
+## Questions you CAN ask
 
 A list of questions you as a candidate can ask the interviewer during or after the interview.
 These are only a suggestion, use them carefully. Not every interviewer will be able to answer these (or happy to) which should be perhaps a red flag warning for your regarding working in such place but that's really up to you.
@@ -3994,7 +3694,9 @@ If you are looking for a way to prepare for a certain exam this is the section f
 
 * [Certified Kubernetes Administrator (CKA)](topics/kubernetes/CKA.md) (Latest update: 2022)
 
-## Other DevOps Projects
+## Additional DevOps and SRE Projects
+
+<p align="center"><a href="https://github.com/bregman-arie/sre-checklist"><img width="500px" src="images/sre_checklist.png"/></a></p>
 
 <p align="center"><a href="https://github.com/bregman-arie/howtheydevops"><img src="images/how_they_devops.png"/></a></p>
 <p align="center"><a href="https://github.com/bregman-arie/devops-resources"><img src="images/devops_resources.png"/></a></p>
