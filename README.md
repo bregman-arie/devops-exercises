@@ -1885,7 +1885,12 @@ A list of services and their endpoints
 
   * Module
   * Manifest
-  * Node</summary><br><b>
+  * Node
+</summary><br><b>
+  
+  * Modules - are a collection of manifests, templates, and files
+  * Manifests - are the actual codes for configuring the clients
+  * Node - allows you to assign specific configurations to specific nodes
 </b></details>
 
 <details>
