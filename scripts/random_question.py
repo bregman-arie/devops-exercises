@@ -1,6 +1,6 @@
 import random
 import optparse
-
+import os
 
 def main():
     """Reads through README.md for question/answer pairs and adds them to a
@@ -39,9 +39,13 @@ def main():
 
             if options.skip and not answer.strip():
                 continue
-
-            if input(f'Q: {question} ...Show answer? "y" for yes: ').lower() == 'y':
-                print('A: ', answer)
+            os.system("clear")
+            print(question)
+            print("...Press Enter to show answer...")
+            input()
+            print('A: ', answer)
+            print("... Press Enter to continue, Ctrl-C to exit")
+            input()
 
         except KeyboardInterrupt:
             break
