@@ -12,6 +12,7 @@
     - [Variables](#variables)
       - [Input Variables](#input-variables)
       - [Output Variables](#output-variables)
+      - [Locals](#locals)
       - [Variables Hands-On](#variables-hands-on)
     - [Data Sources](#data-sources)
     - [Lifecycle](#lifecycle)
@@ -20,12 +21,17 @@
       - [Terraform Backend](#terraform-backend)
       - [Workspaces](#workspaces)
       - [State Hands-On](#state-hands-on)
+    - [Terraform Structures and Syntax](#terraform-structures-and-syntax)
+      - [Lists](#lists)
+      - [Loops](#loops)
+      - [Maps](#maps)
+      - [Misc](#misc)
     - [Modules](#modules)
+      - [Modules Hands-On](#modules-hands-on)
     - [Import](#import)
     - [Version Control](#version-control)
     - [AWS](#aws-1)
     - [Validations](#validations)
-    - [Terraform Syntax](#terraform-syntax)
     - [Production](#production)
 
 ## Exercises
@@ -408,12 +414,30 @@ The most common use case for it is probably to print the IP address of an instan
 <summary>Explain the "sensitive" parameter of output variable</summary><br><b>
 
 When set to "true", Terraform will avoid logging output variable's data. The use case for it is sensitive data such as password or private keys.
+
 </b></details>
 
 <details>
 <summary>Explain the "depends" parameter of output variable</summary><br><b>
 
 It is used to set explicitly dependency between the output variable and any other resource. Use case: some piece of information is available only once another resource is ready.
+
+</b></details>
+
+#### Locals
+
+<details>
+<summary>What are locals?</summary><br><b>
+
+Similarly to variables they serve as placeholders for data and values. Differently from variables, users can't override them by passing different values.
+
+</b></details>
+
+<details>
+<summary>What's the use case for using locals?</summary><br><b>
+
+You have multiple hardcoded values that repeat themselves in different sections, but at the same time you don't want to expose them as in, allow users to override values.
+
 </b></details>
 
 #### Variables Hands-On
@@ -430,19 +454,6 @@ variable "app_id" {
 ```
 
 Unrelated note: variables are usually defined in their own file (vars.tf for example).
-
-</b></details>
-
-<details>
-<summary>How to define an input variable which is a list of numbers?</summary><br><b>
-
-```
-variable "list_of_nums" {
-  type = list(number)
-  description = "An example of list of numbers"
-  default = [2, 0, 1, 7]
-}
-```
 
 </b></details>
 
@@ -509,6 +520,7 @@ user_data = <<-EOF
             Yes, it's truly ${var.awesome_or_meh}
             EOF
 ```
+
 </b></details>
 
 <details>
@@ -523,6 +535,32 @@ user_data = <<-EOF
 Yes, with `terraform output <OUTPUT_VAR>`.
 
 Very useful for scripts :)
+</b></details>
+
+<details>
+<summary>Demonstrate how to define locals</summary><br><b>
+
+```
+locals {
+  x = 2
+  y = "o"
+  z = 2.2
+}
+```
+</b></details>
+
+<details>
+<summary>Demonstrate how to use a local</summary><br><b>
+
+if we defined something like this
+
+```
+locals {
+  x = 2
+}
+```
+
+then to use it, you have to use something like this: `local.x`
 </b></details>
 
 ### Data Sources
@@ -611,6 +649,7 @@ Why to use it in the first place: you might have resources that have dependency 
 <summary>You've deployed a virtual machine with Terraform and you would like to pass data to it (or execute some commands). Which concept of Terraform would you use?</summary><br><b>
 
 [Provisioners](https://www.terraform.io/docs/language/resources/provisioners)
+
 </b></details>
 
 ### Provisioners
@@ -936,6 +975,276 @@ One reason is that all the workspaces are stored in one location (as in one back
 
 </b></details>
 
+### Terraform Structures and Syntax
+
+#### Lists
+
+<details>
+<summary>How to define an input variable which is a list of numbers?</summary><br><b>
+
+```
+variable "list_of_nums" {
+  type = list(number)
+  description = "An example of list of numbers"
+  default = [2, 0, 1, 7]
+}
+```
+
+</b></details>
+
+<details>
+<summary>How to create a number of resources based on the length of a list?</summary><br><b>
+
+```
+resource "some_resource" "some_name" {
+  count = length(var.some_list)
+}
+```
+
+</b></details>
+
+<details>
+<summary>You have a list variable called "users". How to access the second item in that list and attribute called "name"?</summary><br><b>
+
+`users[1].name`
+
+</b></details>
+
+<details>
+<summary>You have a list variable called "users". How to access attribute "name" of all items?</summary><br><b>
+
+`users[*].name`
+
+</b></details>
+
+#### Loops
+
+<details>
+<summary>What loops are useful for in Terraform?</summary><br><b>
+
+The most common use case is when you need to create multiple resources with only a slight difference (like different name). Instead of defining multiple separate resources, you can define it once and create multiple instances of it using loops.
+
+</b></details>
+
+<details>
+<summary>Demonstrate how to define a simple Terraform loop</summary><br><b>
+
+```
+resource "aws_instance" "server" {
+  count = 15
+}
+```
+
+The above configuration will create 15 aws instances.
+
+</b></details>
+
+<details>
+<summary>How to create multiple AWS instances but each with a different name?</summary><br><b>
+
+```
+resource "aws_instance" "server" {
+  count = 6
+
+  tags = {
+    Name = "instance-${count.index}"
+  }
+}
+```
+
+The above configuration will create 6 instances, each with a different name.
+
+</b></details>
+
+<details>
+<summary>You have the following variable defined in Terraform
+
+```
+variable "users" {
+  type    = list(string)
+  default = ["mario", "luigi", "peach"]
+}
+```
+
+How to use it to create users on one of the public clouds (or any other platform, infra)?
+</summary><br><b>
+
+```
+resource "aws_iam_user" "user" {
+  count = length(var.users)
+
+  name = var.users[count.index]
+}
+```
+
+</b></details>
+
+<details>
+<summary>Is there any limitation to "count" meta-argument?</summary><br><b>
+
+* `count` isn't supported within an inline block
+* It's quite limited when it comes to lists.You'll notice that modifying items in lists or even operations like removal sometimes interpreted in a way you didn't expect. For example, removing an item from a list, may shift other items to a new position and since each position represents a resource with count, that may lead to a result where wrong resources are being modified and removed. There are ways to do deal it, but still using count with lists is not always straightforward
+</b></details>
+
+<details>
+<summary>What's a for_each loop? How is it different from "count"?</summary><br><b>
+
+* for_each can applied only on collections like maps or sets (as opposed to count that can be applied on lists)
+* for_each helps to deal with the limitation of `count` which isn't optimal for use cases of modifying lists
+* for_each supports inline blocks as opposed to `count`
+</b></details>
+
+<details>
+<summary>Demonstrate how to use the for_each loop</summary><br><b>
+
+```
+resource “google_compute_instance” “instances” {
+  
+  for_each = var.names_map
+  name = each.value
+}
+```
+</b></details>
+
+<details>
+<summary>The following resource tries to use for_each loop on a list of string but it fails, why?
+
+```
+resource “google_compute_instance” “instances” {
+  
+  for_each = var.names
+  name = each.value
+}
+```
+</summary><br><b>
+
+for_each can applied only on collections like maps or sets so the list should be converted to a set like this: `for_each = toset(var.names)`
+
+</b></details>
+
+<details>
+<summary>How to use for_each loop for inline blocks?</summary><br><b>
+
+
+```
+resouce "some_instance" "instance" {
+
+dynamic "tag" {
+  for_each = var.tags
+
+  content {
+    key   = tag.key
+    value = tag.value
+    }
+  }
+}
+```
+
+</b></details>
+
+<details>
+<summary>You have a list variable called "users". You would like to define an output variable with a value of all users in uppercase. How to achieve that?</summary><br><b>
+
+```
+output "users" {
+  value = [for name in var.user_names : upper(name)]
+}
+```
+
+</b></details>
+
+<details>
+<summary>You have a list variable called "users". You would like to define an output variable with a value of all users in uppercase but only if the name is longer than 3 characters. How to achieve that?</summary><br><b>
+
+```
+output "users" {
+  value = [for name in var.user_names : upper(name) if length(name) > 3]
+}
+```
+
+</b></details>
+
+#### Maps
+
+<details>
+<summary>There is a map called "instances"
+
+* How to extract only the values of that map?
+* How to extract only the attribute "name" from each value?
+</summary><br><b>
+
+* Using the values built-in function: `values(instances)`
+* `values(instances)[*].name`
+
+</b></details>
+
+<details>
+<summary>You have a map variable, called "users", with the keys "name" and "age". Define an output list variable with the following "my name is {name} and my age is {age}"</summary><br><b>
+
+```
+output "name_and_age" {
+  value = [for name, age in var.users : "my name is ${name} and my age is ${age}"]
+}
+```
+
+</b></details>
+
+#### Misc
+
+<details>
+<summary>Demonstrate using the ternary syntax</summary><br><b>
+
+</b></details>
+
+<details>
+<summary>What <code>templatefile</code> function does?</summary><br><b>
+
+Renders a template file and returns the result as string.
+
+</b></details>
+
+<details>
+<summary>You are trying to use templatefile as part of a module and you use a relative path to load a file but sometimes it fails, especially when others try to reuse the module. How can you deal with that?</summary><br><b>
+
+Switch relative paths with what is known as path references. These are fixes paths like module root path, module expression file path, etc.
+
+</b></details>
+
+<details>
+<summary>How do you test terraform syntax?</summary><br><b>
+
+A valid answer could be "I write Terraform configuration and try to execute it" but this makes testing cumbersome and quite complex in general.
+
+There is `terraform console` command which allows you to easily execute terraform functions and experiment with general syntax.
+
+</b></details>
+
+<details>
+<summary>True or False? Terraform console should be used carefully as it may modify your resources</summary><br><b>
+
+False. terraform console is ready-only.
+
+</b></details>
+
+<details>
+<summary>You need to render a template and get it as string. Which function would you use?</summary><br><b>
+
+`templatefile` function.
+
+</b></details>
+
+<details>
+<summary>What are meta-arguments in Terraform?</summary><br><b>
+
+Arguments that affect the lifecycle of a resources (its creation, modification, ...) and supported by Terraform regardless to the type of resource in which they are used.
+
+Some examples:
+
+* count: how many resources to create out of one definition of a resource
+* lifecycle: how to treat resource creation or removal
+
+</b></details>
+
 ### Modules
 
 <details>
@@ -943,14 +1252,44 @@ One reason is that all the workspaces are stored in one location (as in one back
 
 [Terraform.io](https://www.terraform.io/language/modules/develop): "A module is a container for multiple resources that are used together. Modules can be used to create lightweight abstractions, so that you can describe your infrastructure in terms of its architecture, rather than directly in terms of physical objects."
 
-In addition, modules are great for creating reuable Terraform code that can be shared and used not only between different repositories but even within the same repo, between different environments (like staging and production).
+In addition, modules are great for creating reusable Terraform code that can be shared and used not only between different repositories but even within the same repo, between different environments (like staging and production).
 
 </b></details>
 
 <details>
-<summary>How do you test a terraform module?</summary><br><b>
+<summary>What makes a Terraform code module? In other words, what a module is from practical perspective?</summary>
+
+Basically any file or files in a directory is a module in Terraform. There is no special syntax to use in order to define a module.
+
+</b></details>
+
+<details>
+<summary>How do you test a Terraform module?</summary><br><b>
 
 There are multiple answers, but the most common answer would likely to be using the tool <code>terratest</code>, and to test that a module can be initialized, can create resources, and can destroy those resources cleanly.
+
+</b></details>
+
+<details>
+<summary>When creating a module, do you prefer to use inline blocks, separate resources or both? why?</summary>
+
+No right or wrong here.
+
+Personally, I prefer to use only separate resources in modules as it makes modules more flexible. So if a resource includes inline blocks, that may limit you at some point.
+
+</b></details>
+
+<details>
+<summary>True or False? Module source can be only local path</summary>
+
+False. It can be a Git URL, HTTP URL, ... for example:
+
+```
+module "some_module" {
+
+  source = "github.com/foo/modules/bar?ref=v0.1"
+}
+```
 
 </b></details>
 
@@ -958,13 +1297,69 @@ There are multiple answers, but the most common answer would likely to be using 
 <summary>Where can you obtain Terraform modules?</summary><br><b>
 
 Terraform modules can be found at the [Terrafrom registry](https://registry.terraform.io/browse/modules)
+
 </b></details>
 
 <details>
-<summary>There's a discussion in your team whether to store modules in one centralized location/repository or have them in each of the projects/repositories where they are used. What's your take on that?</summary><br><b>
+<summary>You noticed there are relative paths in some of your modules and you would like to change that. What can you do and why is that a problem in the first place?</summary><br><b>
 
-You might have a different opinion but my personal take on that, is to keep modules in one centralized repository as any maintenance or updates to the module you need to perform, are done in one place instead of multiple times in different repositories.
+Relative paths usually work fine in your own environment as you are familiar with the layout and paths used, but when sharing a module and making it reusable, you may bump into issues as it runs on different environments where the relative paths may no longer be relevant.
 
+A better approach would be to use `path reference` like one of the following:
+
+* `path.module`: the path of the module where the expression is used
+* `path.cwd`: the path of the current working directory
+* `path.root`: the path of the root module
+
+</b></details>
+
+#### Modules Hands-On
+
+<details>
+<summary>How to use a module?</summary><br><b>
+
+The general syntax is:
+
+```
+module "<MODULE_NAME>" {
+  source = "<MODULE_SOURCE>"
+
+  ...
+}
+```
+
+The critical part is the source which you use to tell Terraform where the module can be found.
+</b></details>
+
+<details>
+<summary>Demonstrate using a module called "amazing_modle" in the path "../modules/amazing-module"</summary><br><b>
+
+```
+module "amazing_module" {
+  source = "../modules/amazing-module"
+}
+```
+</b></details>
+
+<details>
+<summary>What should be done every time you modify the source parameter of a module?</summary><br><b>
+
+`terraform init` should be executed as it takes care of downloading and installing the module from the new path.
+</b></details>
+
+<details>
+<summary>How to access module output variables?</summary><br><b>
+
+the general syntax is `module.<MODULE_NAME>.<OUTPUT_VAR_NAME>`
+
+</b></details>
+
+<details>
+<summary>You would like to load and render a file from module directory. How to do that?</summary><br><b>
+
+script = templatesfile("${path.module}/user-data.sh", {
+  ...
+})
 </b></details>
 
 ### Import
@@ -983,6 +1378,25 @@ It's does NOT create the definitions/configuration for creating such infrastruct
 
 1. You have existing resources in the cloud and they are not managed by Terraform (as in not included in the state)
 2. You lost your tfstate file and need to rebuild it
+
+</b></details>
+
+</b></details>
+
+<details>
+<summary>There is a module to create an compute instance. How would you use the module to create three separate instances?</summary><br><b>
+
+starting with Terraform 0.13, the `count` meta-argument can be used with modules. So you could use something like this:
+
+```
+module "instances" {
+  source = "/some/module/path"
+
+  count = 3
+}
+```
+
+You can also use it in outputs vars: `value = module.instances[*]`
 
 </b></details>
 
@@ -1060,41 +1474,6 @@ variable "some_var" {
 
 </b></details>
 
-### Terraform Syntax
-
-<details>
-<summary>Demonstrate using the ternary syntax</summary><br><b>
-
-</b></details>
-
-<details>
-<summary>What <code>templatefile</code> function does?</summary><br><b>
-
-Renders a template file and returns the result as string.
-</b></details>
-
-<details>
-<summary>How do you test terraform syntax?</summary><br><b>
-
-A valid answer could be "I write Terraform configuration and try to execute it" but this makes testing cumbersome and quite complex in general.
-
-There is `terraform console` command which allows you to easily execute terraform functions and experiment with general syntax.
-
-</b></details>
-
-<details>
-<summary>True or False? Terraform console should be used carefully as it may modify your resources</summary><br><b>
-
-False. terraform console is ready-only.
-</b></details>
-
-<details>
-<summary>You need to render a template and get it as string. Which function would you use?</summary><br><b>
-
-`templatefile` function.
-</b></details>
-
-
 ### Production
 
 This section is about how Terraform is actually used in real-life scenarios and organizations.
@@ -1168,4 +1547,16 @@ A good solution for not including shell scripts inline (as in inside terraform c
 <summary>You noticed a lot of your Terraform code/configuration is duplicated, between repositories and also within the same repository between different directories. What one way you may adopt that will help handling with that?</summary><br><b>
 
 Using Terraform modules can help greatly with duplicated code and so different environments for example (staging and production) can reuse the same code by using the same modules.
+</b></details>
+
+<details>
+<summary>You noticed your Terraform code includes quite a lot of hardcoded values (like ports, subnets, ...) and they are duplicated in many locations. How'd you deal with it?</summary><br><b>
+
+Using variables might not be a good solution because some things shouldn't be exposed and accidentally overridden. In such case you might want to use the concept of `locals`
+</b></details>
+
+<details>
+<summary>Every time there is a change in tags standards (for example your team decided to change one of the tags' name) you find yourself changing tags in multiple files and you find the process quite tedious. What can be done about it?</summary><br><b>
+
+Instead of defining tags at resource level, consider using `default_tags` as part of the provider configuration.
 </b></details>
