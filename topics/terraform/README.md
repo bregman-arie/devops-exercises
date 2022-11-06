@@ -25,6 +25,7 @@
       - [Lists](#lists)
       - [Loops](#loops)
       - [Maps](#maps)
+      - [Conditionals](#conditionals)
       - [Misc](#misc)
     - [Modules](#modules)
       - [Modules Hands-On](#modules-hands-on)
@@ -32,6 +33,7 @@
     - [Version Control](#version-control)
     - [AWS](#aws-1)
     - [Validations](#validations)
+    - [Secrets](#secrets)
     - [Production](#production)
 
 ## Exercises
@@ -176,6 +178,14 @@ Run `terraform apply`. That will apply the changes described in your .tf files.
 * '-/+' - the resource or attribute is going to be replaced
 </b></details>
 
+<details>
+<summary>How to cleanup Terraform resources? Why the user shold be careful doing so?</summary><br><b>
+
+`terraform destroy` will cleanup all the resources tracked by Terraform.
+
+A user should be careful with this command because there is no way to revert it. Sure, you can always run again "apply" but that can take time, generates completely new resources, etc.
+</b></details>
+
 ### Dependencies 
 
 <details>
@@ -252,6 +262,19 @@ azurerm and aws
 </b></details>
 
 <details>
+<summary>How to install a provider? </summary><br><b>
+
+You write a provider block like the following one and run `terraform init`
+
+```
+provider "aws" {
+  region = "us-west-1"
+}
+```
+
+</b></details>
+
+<details>
 <summary>True or False? Applying the following Terraform configuration will fail since no source or version specific for 'aws' provider
 
 ```
@@ -307,11 +330,28 @@ The Terraform Registry provides a centralized location for official and communit
 </b></details>
 
 <details>
-<summary>How to cleanup Terraform resourcse? Why the user shold be careful doing so?</summary><br><b>
+<summary>Describe in high level what happens behind the scenes when you run terraform init on on the following Terraform configuration
 
-`terraform destroy` will cleanup all the resources tracked by Terraform.
+```
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+```
+</summary><br><b>
 
-A user should be careful with this command because there is no way to revert it. Sure, you can always run again "apply" but that can take time, generates completely new resources, etc.
+1. Terraform checks if there is an aws provider in this address: `registry.terraform.io/hashicorp/aws`
+2. Installs latest version of aws provider (assuming the URL exists and valid)
+</b></details>
+
+<details>
+<summary>True or False? You can install providers only from hashicorp</summary><br><b>
+
+False. You can specify any provider from any URL, not only those from hashicorp.
 </b></details>
 
 ### Variables
@@ -1143,7 +1183,7 @@ dynamic "tag" {
 </b></details>
 
 <details>
-<summary>You have a list variable called "users". You would like to define an output variable with a value of all users in uppercase. How to achieve that?</summary><br><b>
+<summary>There is a list variable called "users". You would like to define an output variable with a value of all users in uppercase. How to achieve that?</summary><br><b>
 
 ```
 output "users" {
@@ -1154,7 +1194,38 @@ output "users" {
 </b></details>
 
 <details>
-<summary>You have a list variable called "users". You would like to define an output variable with a value of all users in uppercase but only if the name is longer than 3 characters. How to achieve that?</summary><br><b>
+<summary>What's the result of the following code?
+
+```
+resource "random_integer" "num" {
+  min = 20
+  max = 17
+}
+
+resource "aws_instance" "instances" {
+  count = random_integer.num.results
+}
+```
+
+</summary><br><b>
+
+The above code will fail as it's not possible to reference resource outputs with count, because Terraform has to compute count before any resources are created (or modified).
+
+</b></details>
+
+<details>
+<summary>There is a variable called "values" with the following value: ["mario", "luigi", "peach"]. How to create an output variable with the string value of the items in the list: "mario, luigi, peach," ?</summary><br><b>
+
+```
+output "users" {
+  value = "%{ for name in var.values }${name}, %{ endfor }"
+}
+```
+
+</b></details>
+
+<details>
+<summary>There is a list variable called "users". You would like to define an output variable with a value of all users in uppercase but only if the name is longer than 3 characters. How to achieve that?</summary><br><b>
 
 ```
 output "users" {
@@ -1189,10 +1260,72 @@ output "name_and_age" {
 
 </b></details>
 
-#### Misc
+<details>
+<summary>You have a map variable, called "users", with the keys "name" (string) and "age" (float). Define an output map variable with the key being name in uppercase and value being age in the closest whole number </summary><br><b>
+
+```
+output "name_and_age" {
+  value = {for name, age in var.users : upper(name) => floor(age) 
+}
+```
+
+</b></details>
+
+#### Conditionals
 
 <details>
-<summary>Demonstrate using the ternary syntax</summary><br><b>
+<summary>How to use conditional expressions in Terraform?</summary><br><b>
+
+`some_condition ? "value_if_true" : "value_if_false"`
+
+</b></details>
+
+<details>
+<summary>Explain the following condition: <code>var.x ? 1 : 0</code></summary><br><b>
+
+If `x` evaluated to true, the result is 1, otherwise (if false) the result is 0.
+
+</b></details>
+
+<details>
+<summary>Explain the following condition: <code>var.x != "" ? var.x : "yay"</code></summary><br><b>
+
+If `x` is an empty string the result is "yay", otherwise it's the value of `x` variable
+
+</b></details>
+
+<details>
+<summary>Can conditionals be used with meta-arguments?</code></summary><br><b>
+
+Yes, for example the "count" meta-argument:
+
+```
+resource "aws_instance" "server" {
+  count = var.amount ? 1 : 0
+  ...
+}
+```
+
+</b></details>
+
+<details>
+<summary>Is it possible to combine conditionals and loop?</code></summary><br><b>
+
+Yes, for example:
+
+```
+dynamic "tag" {
+  for_each = {
+    for key, value in var.tags:
+    key => value
+    if key != ""
+  }
+}
+```
+
+</b></details>
+
+#### Misc
 
 </b></details>
 
@@ -1362,29 +1495,8 @@ script = templatesfile("${path.module}/user-data.sh", {
 })
 </b></details>
 
-### Import
-
 <details>
-<summary>Explain Terraform's import functionality</summary><br><b>
-
-`terraform import` is a CLI command used for importing an existing infrastructure into Terraform's state.
-
-It's does NOT create the definitions/configuration for creating such infrastructure
-
-</b></details>
-
-<details>
-<summary>State two use cases where you would use <code>terraform import</code></summary><br><b>
-
-1. You have existing resources in the cloud and they are not managed by Terraform (as in not included in the state)
-2. You lost your tfstate file and need to rebuild it
-
-</b></details>
-
-</b></details>
-
-<details>
-<summary>There is a module to create an compute instance. How would you use the module to create three separate instances?</summary><br><b>
+<summary>There is a module to create a compute instance. How would you use the module to create three separate instances?</summary><br><b>
 
 starting with Terraform 0.13, the `count` meta-argument can be used with modules. So you could use something like this:
 
@@ -1397,6 +1509,25 @@ module "instances" {
 ```
 
 You can also use it in outputs vars: `value = module.instances[*]`
+
+</b></details>
+
+### Import
+
+<details>
+<summary>Explain Terraform's import functionality</summary><br><b>
+
+`terraform import` is a CLI command used for importing an existing infrastructure into Terraform's state.
+
+It's does NOT create the definitions/configuration for creating such infrastructure.
+
+</b></details>
+
+<details>
+<summary>State two use cases where you would use <code>terraform import</code></summary><br><b>
+
+1. You have existing resources in one of the providers and they are not managed by Terraform (as in not included in the state)
+2. You lost your tfstate file and need to rebuild it
 
 </b></details>
 
@@ -1453,6 +1584,58 @@ This will change the order of how Terraform works. First it will create the new 
 
 </b></details>
 
+<details>
+<summary>How to manage multiple regions in AWS provider configuration?</summary><br><b>
+
+```
+provider "aws" {
+  region = "us-west-1"
+  alias = "west_region"
+}
+
+provider "aws" {
+  region = "us-east-1"
+  alias = "east_region"
+}
+
+data "aws_region" "west_region" {
+  provider = aws.west_region
+}
+
+data "aws_region" "east_region" {
+  provider = aws.east_region
+}
+```
+
+To use it:
+
+```
+resource "aws_instance" "west_region_instance" {
+  provider = aws.west_region
+  instance_type = "t2.micro"
+  ...
+}
+```
+
+</b></details>
+
+<details>
+<summary>Assuming you have multiple regions configured and you would like to use a module in one of them. How to achieve that?</summary><br><b>
+
+```
+module "some_module" {
+  source = "..."
+
+  providers = {
+    aws = aws.some_region
+  }
+
+  ...
+}
+```
+
+</b></details>
+
 ### Validations
 
 <details>
@@ -1471,6 +1654,94 @@ variable "some_var" {
 
 }
 ```
+
+</b></details>
+
+### Secrets
+
+<details>
+<summary>What's the issue with the following provider configuration?
+
+```
+provider "aws" {
+  region = "us-west-1"
+
+  access_key = "blipblopblap"
+  secret_key = "bipbopbipbop"
+}
+```
+</summary><br><b>
+
+It's not secure! you should never store credentials in plain text this way. 
+
+</b></details>
+
+<details>
+<summary>What can you do to NOT store provider credentials in Terraform configuration files in plain text?</summary><br><b>
+
+1. Use environment variables
+2. Use password CLIs (like 1Password which is generic but there also specific provider options like aws-vault)
+
+</b></details>
+
+<details>
+<summary>What can you do to NOT store provider credentials in Terraform configuration files in plain text?</summary><br><b>
+
+1. Use environment variables
+2. Use password CLIs (like 1Password which is generic but there also specific provider options like aws-vault)
+
+</b></details>
+
+<details>
+<summary>How can you manage secrets/credentials in CI/CD?</summary><br><b>
+
+That very much depends on the CI/CD system/platform you are using.
+
+- GitHub Actions: Use Open ID Connect (OIDC) to establish connection with your provider. You then can specify in your GitHub Actions workflow the following:
+
+```
+- uses: aws-actions/configure-aws-credentials@v1
+with:
+ role-to-assume: arn:aws:iam::someIamRole
+ aws-region: ...
+```
+
+
+- Jenkins: If Jenkins runs on the provider, you can use the provider access entities (like roles, policies, ...) to grant the instance, on which Jenkins is running, access control
+- CircleCI: you can use `CircleCI Context` and then specify it in your CircleCI config file
+
+```
+context:
+- some-context
+```
+
+</b></details>
+
+<details>
+<summary>What are the pros and cons of using environment variables for managing secrets in Terraform configurations?</summary><br><b>
+
+Pros:
+ * You avoid using secrets directly in configurations in plain text
+ * free (no need to pay for secret management platforms/solutions)
+ * Straightforward to use
+
+Cons:
+  * Configurations might not be usable without the environment variables which may make impact the user experience as the user has to know what environment variables he should pass for everything to work properly
+  * Mostly managed outside of Terraform mechanisms which makes it hard to enforce, track, ... anything that is related to secrets when it depends on the user to pass environment variables
+
+</b></details>
+
+<details>
+<summary>True or False? If you pass secrets with environment variables, they are not visible in your state file</summary><br><b>
+
+False. State files include sensitive data as it is. Which means it's very important that wherever you store your state file, it's encrypted and accessible only to those who should be able to access it.
+
+</b></details>
+
+<details>
+<summary>True or False? If you pass secrets from a centralized secrets store (like Hashicorp Vault) they are not visible in plan files (terraform plan)</summary><br><b>
+
+False. It doesn't matter where your secrets store (file, environment variables, centralized secrets store), they will be visible in both state file and plan output.
 
 </b></details>
 
@@ -1521,12 +1792,14 @@ variables.tf
 dependencies.tf
 
 Each one of these files can be divided to smaller parts if needed (no reason to maintain VERY long files)
+
 </b></details>
 
 <details>
 <summary>An engineer in your team complains about having to copy-paste quite a lot of code between different folders and files of Terraform. What would you do?</summary><br><b>
 
 Suggest to use Terraform modules.
+
 </b></details>
 
 <details>
@@ -1535,28 +1808,40 @@ Suggest to use Terraform modules.
 There are multiple ways to deal with it:
 1. Write scripts that perform some commands recurisvely with different conditions
 2. Use tools like Terragrunt where you commands like "run-all" that can run in parallel on multiple different paths
+
 </b></details>
 
 <details>
 <summary>One of the engineers in your team complains the inline shell scripts are quite big and maintaining them in Terraform files seems like a bad idea. What would you do?</summary><br><b>
 
 A good solution for not including shell scripts inline (as in inside terraform configuration files) is to keep them in a separate file and then use the terraform `templatefile` function to render and get them as a string
+
 </b></details>
 
 <details>
 <summary>You noticed a lot of your Terraform code/configuration is duplicated, between repositories and also within the same repository between different directories. What one way you may adopt that will help handling with that?</summary><br><b>
 
 Using Terraform modules can help greatly with duplicated code and so different environments for example (staging and production) can reuse the same code by using the same modules.
+
 </b></details>
 
 <details>
 <summary>You noticed your Terraform code includes quite a lot of hardcoded values (like ports, subnets, ...) and they are duplicated in many locations. How'd you deal with it?</summary><br><b>
 
 Using variables might not be a good solution because some things shouldn't be exposed and accidentally overridden. In such case you might want to use the concept of `locals`
+
 </b></details>
 
 <details>
 <summary>Every time there is a change in tags standards (for example your team decided to change one of the tags' name) you find yourself changing tags in multiple files and you find the process quite tedious. What can be done about it?</summary><br><b>
 
 Instead of defining tags at resource level, consider using `default_tags` as part of the provider configuration.
+
+</b></details>
+
+<details>
+<summary>You would like to change the name of a resource but afraid to cause downtime. What can be done?</summary><br><b>
+
+If it's a matter of changing a resource name, you could make use of `terraform state mv <ORIGINAL_RESOURCE_NAME> <NEW_RESOURCE_NAME>`
+
 </b></details>
