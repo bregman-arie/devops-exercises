@@ -84,7 +84,7 @@
 <details>
 <summary>What language does Terraform uses?</summary><br><b>
 
-A DSL called "HCL" (Hashiciorp Configuration Language). A declarative language for defining infrastructure.
+A DSL called "HCL" (Hashicorp Configuration Language). A declarative language for defining infrastructure.
 
 </b></details>
 
