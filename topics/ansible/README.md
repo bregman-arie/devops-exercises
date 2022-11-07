@@ -1,5 +1,7 @@
 ## Ansible
 
+<!-- {% raw %} -->
+
 ### Ansible Exercises
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
@@ -527,3 +529,4 @@ If your group has 8 hosts. It will run the whole play on 4 hosts and then the sa
 <summary>What are collections in Ansible?</summary><br><b>
 </b></details>
 
+<!-- {% endraw %} -->

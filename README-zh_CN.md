@@ -1,5 +1,6 @@
 # DevOps 面试问题
 
+<!-- {% raw %} -->
 
 :information_source: &nbsp;本仓库包含各种 DevOps 相关主题的面试问题
 
@@ -1273,7 +1274,7 @@ The content of the system_info.j2 template
 
 ```
 # {{ ansible_managed }}
-I'm {{ ansible_hostname }} and my operating system is {{ ansible_distribution }
+I'm {{ ansible_hostname }} and my operating system is {{ ansible_distribution }}
 ```
 
 </b></details>
@@ -2982,3 +2983,5 @@ where c.Customer_ID in (Select Customer_ID from cat_food);
 * [Cloud Slack bot](scenarios/cloud_slack_bot.md)
 * [Writing Jenkins Scripts](scenarios/jenkins_scripts.md)
 * [Writing Jenkins Pipelines](scenarios/jenkins_pipelines.md)
+
+<!-- {% endraw %} -->
