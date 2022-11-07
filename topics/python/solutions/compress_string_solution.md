@@ -31,3 +31,11 @@ def compress_str(mystr: str) -> str:
 2. Write a function that decompresses a given string
   - 'a4b2c3' -> 'aaaabbccc'
   - 'a1b3c1' -> 'abbbc'
+
+```
+def decompress_str(mystr: str) -> str:
+	result = ''
+	for index in range(0, len(mystr), 2):
+		result += mystr[index] * int(mystr[index + 1])
+	return result
+```
