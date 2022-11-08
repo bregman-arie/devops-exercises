@@ -1,5 +1,7 @@
 # Argo
 
+<!-- {% raw %} -->
+
 - [Argo](#argo)
   - [ArgoCD Exercises](#argocd-exercises)
     - [ArgoCD 101](#argocd-101)
@@ -504,3 +506,5 @@ It's an Analysis resource that fetches response status from Prometheus (monitori
 
 `kubectl argo rollouts get rollout SOME-APP --watch`
 </b></details>
+
+<!-- {% endraw %} -->
