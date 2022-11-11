@@ -6,10 +6,8 @@ import pathlib
 from random import choice
 from typing import List
 import os
-'''
-devops-exercises//README.md
-'''
-p = os.getcwd()+'/README.md'
+
+p = pathlib.Path(__file__).parent.parent.joinpath('README.md')
 
 
 def get_file_list():
