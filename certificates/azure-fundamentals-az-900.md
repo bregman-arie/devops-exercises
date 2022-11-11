@@ -13,3 +13,13 @@
   * Private - Cloud services having computing resources limited to specific customer or organization, managed by third party or organizations itself
   * Hybrid - Combination of public and private clouds
 </b></details>
+
+
+<details>
+<summary>What is Azure Firewall?</summary><br><b>
+
+Azure Firewall is a cloud-native and intelligent network firewall security service that provides the best of breed threat protection for your cloud workloads running in Azure.
+</b></details>
+
+
+
