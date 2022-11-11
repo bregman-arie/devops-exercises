@@ -5,8 +5,11 @@ Question utils functions
 import pathlib
 from random import choice
 from typing import List
-
-p = pathlib.Path(__file__).parent.parent.joinpath('README.md')
+import os
+'''
+devops-exercises//README.md
+'''
+p = os.getcwd()+'/README.md'
 
 
 def get_file_list():
@@ -14,54 +17,42 @@ def get_file_list():
         file_list = [line.rstrip() for line in f.readlines()]
     return file_list
 
-
-def get_question_list(file_list: List[bytes]) -> list:
-
+def get_question_list(file_list: List[str]) -> list:
+    file_list =re.findall('<details>(.*?)</details>',file_list)
     questions_list = []
-    temp = []
-    after_summary_tag = False
-
-    for line in file_list:
-        if line.startswith(b'<details>'):
-            temp.append(line)
-            after_summary_tag = True
-
-        elif after_summary_tag and line != b'' and b'</details>' not in line:
-            temp.append(line)
-
-        elif after_summary_tag and b'</details>' in line:
-            temp.append(line)
-            after_summary_tag = False
-
-            questions_list.append(temp)
-            temp = []
-
+    for i in file_list:
+        q=re.findall(r'<summary>(.*?)</summary>',i)[0]
+        questions_list.append(q)
     return questions_list
 
 
-def get_answered_questions(question_list: List[List[bytes]]) -> list:
-    """Dont let the type hint confuse you, problem of not using classes.
-
-     It takes the result of get_question_list(file_list)
-
-     Returns a list of questions that are answered.
-     """
-
-    t = []
-
-    for q in question_list:
-
-        index = 0
-
-        for i in q:
-            if b'</summary>' in i:
-                index = q.index(i)
-
-        if q[index+1: len(q) - 1]:
-            t.append(q)
-
+def get_answered_questions(question_list: List[str]) -> list:
+    t=[]
+    question_list =re.findall('<details>(.*?)</details>',question_list)
+    for i in question_list:
+        q=re.findall(r'<summary>(.*?)</summary>',i)
+        if q and q[0]=='':
+            continue
+        a=re.findall(r'<b>(.*?)</b>',i)
+        if a and a[0]=='':
+            continue
+        else:
+            t.append(q[0])
     return t
 
+def get_answers_count() -> List:
+    """
+    
+    Return the number of questions answered and the number of all questions ,PASS if it is complete.
+
+    >>> get_answers_count()
+    [1, 1]
+    """
+    ans_questions=get_answered_questions(get_file_list())
+    len_ans_questions=len(ans_questions)
+    all_questions=get_question_list(get_file_list())
+    len_all_questions=len(all_questions)
+    return [len_ans_questions,len_all_questions]
 
 def get_challenges_count() -> int:
     challenges_path = pathlib.Path(__file__).parent.parent.joinpath('exercises').glob('*.md')
@@ -90,4 +81,6 @@ print(question_utils.get_answered_questions(question_utils.question_list)
 
 """
 
-question_list = get_question_list(get_file_list())
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
