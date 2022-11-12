@@ -107,12 +107,12 @@ def check_summary_tag(file_list):
     error = False
     err_message = ""
     for idx, line in enumerate(file_list):
-        line_number = idx+1
+        line_number = idx + 1
         if b"<summary>" in line and b"</summary>" in line:
             if after_summary:
                 err_message = f"Missing closing summary tag around line {line_number}"
                 error = True
-            
+
         else:
             if b"<summary>" in line and after_summary:
                 err_message = f"Missing closing summary tag around line {line_number}"
