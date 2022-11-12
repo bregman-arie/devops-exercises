@@ -1,5 +1,7 @@
 # Kubernetes
 
+<!-- {% raw %} -->
+
 What's your goal?
 
 * I would like to prepare for CKA certification
@@ -3150,3 +3152,5 @@ Yes, using taints, we could run the following command and it will prevent from a
 
 Using ResourceQuats
 </b></details>
+
+<!-- {% endraw %} -->

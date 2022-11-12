@@ -2,6 +2,7 @@ import random
 import optparse
 import os
 
+
 def main():
     """Reads through README.md for question/answer pairs and adds them to a
     list to randomly select from and quiz yourself.

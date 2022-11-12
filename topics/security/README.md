@@ -20,6 +20,8 @@ A couple of quotations from chosen companies:
 
 <details>
 <summary>Explain the principle of least privilege</summary><br><b>
+
+The principle of least privilege refers to the practice of providing minimal permissions to users, roles, and service accounts that allow them to perform their functions. If an entity does not require an access right then it should not have that right.
 </b></details>
 
 <details>
@@ -72,6 +74,25 @@ A user uses the browser to authenticate to some server. It does so by using the 
 </b></details>
 
 <details>
+<summary>What are the three primary factors of authentication? Give three examples of each</summary><br><b>
+
+Something you have
+- Smart card
+- Physical authentication device
+- Software token
+
+Something you know
+- Password
+- PIN
+- Passphrase
+
+Something you are
+- Fingerprint
+- Iris or retina scan
+- Gait analysis
+</b></details>
+
+<details>
 <summary>Explain Token-based authentication</summary><br><b>
 </b></details>
 
@@ -86,11 +107,27 @@ SSO (Single Sign-on), is a method of access control that enables a user to log i
 </b></details>
 
 <details>
+<summary>Explain how the Kerberos authentication protocol works as a SSO solution</summary><br><b>
+
+Kerberos works as a SSO solution by only requiring the user to sign in using their credentials once within a specific validity time window. Kerberos authentication grants the user a Ticket Granting Ticket (TGT) from a trusted authentication server which can then be used to request service tickets for accessing various services and resources. By passing around this encrypted TGT instead of credentials, the user does not need to sign-in multiple times for each resource that has been integrated with Kerberos.
+</b></details>
+
+<details>
+<summary>Does Kerberos make use of symmetric encryption, asymmetric encryption, both, or neither?</summary><br><b>
+
+Symmetric Encryption - Kerberos uses exclusively symmetric encryption with pre-shared keys for transmitting encrypted information and authorizing users.
+</b></details>
+
+<details>
 <summary>Explain MFA (Multi-Factor Authentication)</summary><br><b>
 
 Multi-Factor Authentication (Also known as 2FA). Allows the user to present two pieces of evidence, credentials, when logging into an account.
 
 - The credentials fall into any of these three categories: something you know (like a password or PIN), something you have (like a smart card), or something you are (like your fingerprint).  Credentials must come from two different categories to enhance security.
+</b></details>
+
+<details>
+<summary>Explain OAuth</summary><br><b>
 </b></details>
 
 #### Security - Passwords
@@ -122,6 +159,14 @@ Multi-Factor Authentication (Also known as 2FA). Allows the user to present two 
   * Risk Based Authentication
   * Rate limiting
   * MFA
+</b></details>
+
+<details>
+<summary>What is password salting? What attack does it help to deter?</summary><br><b>
+
+Password salting is the processing of prepending or appending a series of characters to a user's password before hashing this new combined value. This value should be different for every single user but the same salt should be applied to the same user password everytime it is validated.
+
+ This ensures that users that have the same password will still have very different hash values stored in the password database. This process specifically helps deter rainbow table attacks since a new rainbow table would need to be computed for every single user in the database.
 </b></details>
 
 #### Security - Cookies
@@ -204,6 +249,13 @@ True. It is only used during the key exchange algorithm of symmetric encryption.
 
 <details>
 <summary>What is Hashing?</summary><br><b>
+
+Hashing is a mathematical function for mapping data of arbitrary sizes to fixed-size values. This function produces a "digest" of the data that can be used for verifying that the data has not been modified (amongst other uses)
+</b></details>
+
+<summary>How is hashing different from encryption?</summary><br><b>
+
+Encrypted data can be decrypted to its original value. Hashed data cannot be reversed to view the original data - hashing is a one-way function.
 </b></details>
 
 <details>
@@ -212,6 +264,7 @@ True. It is only used during the key exchange algorithm of symmetric encryption.
 Hashes used in SSH to verify the authenticity of messages and to verify that nothing tampered with the data received.
 </b></details>
 
+#### Security - Attacks, Threats, and Vulnerabilities
 <details>
 <summary>Explain the following:
 
@@ -257,6 +310,7 @@ You can test by using a stored procedure, so the application must be sanitize th
 
 <details>
 <summary>How HTTPS is different from HTTP?</summary><br><b>
+The 'S' in HTTPS stands for 'secure'. HTTPS uses TLS to provide encryption of HTTP requests and responses, as well as providing verifaction by digitally signing requests and responses. As a result, HTTPS is far more secure than HTTP and is used by default for most modern websites.
 </b></details>
 
 <details>
@@ -322,10 +376,6 @@ Stuxnet is a computer worm that was originally aimed at Iran’s nuclear facilit
 <summary>What can you tell me about Spectre?</summary><br><b>
 
 Spectre is an attack method which allows a hacker to “read over the shoulder” of a program it does not have access to. Using code, the hacker forces the program to pull up its encryption key allowing full access to the program
-</b></details>
-
-<details>
-<summary>Explain OAuth</summary><br><b>
 </b></details>
 
 <details>
@@ -405,6 +455,10 @@ MAC address flooding attack (CAM table flooding attack) is a type of network att
 
 <details>
 <summary>What is "Diffie-Hellman key exchange" and how does it work?</summary><br><b>
+
+Have you heard of [The Two General's Problem](https://en.wikipedia.org/wiki/Two_Generals%27_Problem)? The Diffie-Hellman key exchange is a solution to this problem to allow for the secure exchange of cryptographic keys over an encrypted channel.
+
+It works using public/private key pairs (asymmetric encryption). Two parties that wish to communicate securely over a public channel will each generate a public/private key pair and distribute the public key to the other party (note that public keys are free to be exchanged over a public channel). From here, each party can derive a shared key using a combination of their personal private key and the public key of the other party. This combined key can now be used as a symmetric encryption key for communications.
 </b></details>
 
 <details>
