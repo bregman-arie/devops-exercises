@@ -1327,7 +1327,6 @@ dynamic "tag" {
 
 #### Misc
 
-</b></details>
 
 <details>
 <summary>What <code>templatefile</code> function does?</summary><br><b>
