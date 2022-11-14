@@ -83,7 +83,5 @@ if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
-    # print(get_question_list(get_file_list()))
-    # print(get_answered_questions(get_file_list()))
     # print(get_random_question(get_file_list(),True))
     # print(get_random_question(get_file_list(),False))
