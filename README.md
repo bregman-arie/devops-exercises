@@ -966,7 +966,8 @@ func main() {
 <details>
 <summary>The following block of code tries to convert the integer 101 to a string but instead we get "e". Why is that? How to fix it?
 
-```
+
+```go
 package main
 
 import "fmt"
@@ -1007,7 +1008,7 @@ But `x`, `y` and their sum is variable.
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import "fmt"
@@ -1045,7 +1046,7 @@ It is called the [blank identifier](https://golang.org/doc/effective_go.html#bla
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import "fmt"
@@ -1067,7 +1068,7 @@ Since the first iota is declared with the value `3` (` + 3`), the next one has t
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import (
@@ -1106,7 +1107,7 @@ Output: 2 1 3
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import (
@@ -1160,7 +1161,7 @@ But in `mod2`, `append` creats new slice, and we're changing only `a` value, not
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import (

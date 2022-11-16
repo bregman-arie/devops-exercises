@@ -2330,7 +2330,7 @@ with <code>var x int = 2</code> we are setting the variable type to integer whil
 <details>
 <summary>下面代码块有什么问题? 怎么解决?
 
-```
+```go
 func main() {
     var x float32 = 13.5
     var y int
@@ -2343,7 +2343,7 @@ func main() {
 <details>
 <summary>下面的代码块尝试将整数101转换为字符串，但相反，我们得到“ e”。 这是为什么？ 怎么解决?
 
-```
+```go
 package main
 
 import "fmt"
@@ -2379,7 +2379,7 @@ func main() {
 <details>
 <summary>以下代码块的输出是什么？:
 
-```
+```go   
 package main
 
 import "fmt"
@@ -2406,7 +2406,7 @@ func main() {
 <details>
 <summary>以下代码块的输出是什么？:
 
-```
+```go
 package main
 
 import "fmt"
