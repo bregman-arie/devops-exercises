@@ -393,11 +393,11 @@ This situation might lead to bugs which hard to identify and reproduce.
 <details>
 <summary>Explain Declarative and Procedural styles. The technologies you are familiar with (or using) are using procedural or declarative style?</summary><br><b>
 
-Declarative - You write code that specifies the desired end state
+Declarative - You write code that specifies the desired end state<br><b>
 Procedural - You describe the steps to get to the desired end state
 
-Declarative Tools - Terraform, Puppet, CloudFormation
-Procedural Tools - Ansible, Chef
+Declarative Tools - Terraform, Puppet, CloudFormation, Ansible<br><b>
+Procedural Tools - Chef
 
 To better emphasize the difference, consider creating two virtual instances/servers.
 In declarative style, you would specify two servers and the tool will figure out how to reach that state.
