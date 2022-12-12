@@ -393,10 +393,10 @@ This situation might lead to bugs which hard to identify and reproduce.
 <details>
 <summary>Explain Declarative and Procedural styles. The technologies you are familiar with (or using) are using procedural or declarative style?</summary><br><b>
 
-Declarative - You write code that specifies the desired end state<br><b>
+Declarative - You write code that specifies the desired end state<br>
 Procedural - You describe the steps to get to the desired end state
 
-Declarative Tools - Terraform, Puppet, CloudFormation, Ansible<br><b>
+Declarative Tools - Terraform, Puppet, CloudFormation, Ansible<br>
 Procedural Tools - Chef
 
 To better emphasize the difference, consider creating two virtual instances/servers.
@@ -506,3 +506,31 @@ Google: "Monitoring is one of the primary means by which service owners keep tra
 
 Read more about it [here](https://sre.google/sre-book/introduction)
 </b></details>
+
+<details>
+<summary>What are the two main SRE KPIs</summary><br><b>
+
+Service Level Indicators (SLI) and Service Level Objectives (SLO).
+</b></details>
+
+<details>
+<summary>What is Toil?</summary><br><b>
+
+Google: Toil is the kind of work tied to running a production service that tends to be manual, repetitive, automatable, tactical, devoid of enduring value, and that scales linearly as a service grows
+
+Read more about it [here](https://sre.google/sre-book/eliminating-toil/) 
+</b></details>
+
+
+<details>
+<summary>What is a postmortem ? </summary><br><b>
+
+The postmortem is a process that should take place folowing an incident. It’s purpose is to identify the root cause of an incident and the actions that should be taken to avoid this kind of incidents from hapenning again. </b></details>
+
+
+<details>
+<summary>What is the core value often put forward when talking about postmortem?</summary><br><b>
+
+Blamelessness. 
+Postmortems need to be blameless and this value should be remided at the begining of every postmortem. This is the best way to ensure that people are playing the game to find the root cause and not trying to hide their possible faults.</b></details>
+
