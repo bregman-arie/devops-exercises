@@ -1,5 +1,6 @@
 # DevOps 面试问题
 
+<!-- {% raw %} -->
 
 :information_source: &nbsp;本仓库包含各种 DevOps 相关主题的面试问题
 
@@ -1273,7 +1274,7 @@ The content of the system_info.j2 template
 
 ```
 # {{ ansible_managed }}
-I'm {{ ansible_hostname }} and my operating system is {{ ansible_distribution }
+I'm {{ ansible_hostname }} and my operating system is {{ ansible_distribution }}
 ```
 
 </b></details>
@@ -2329,7 +2330,7 @@ with <code>var x int = 2</code> we are setting the variable type to integer whil
 <details>
 <summary>下面代码块有什么问题? 怎么解决?
 
-```
+```go
 func main() {
     var x float32 = 13.5
     var y int
@@ -2342,7 +2343,7 @@ func main() {
 <details>
 <summary>下面的代码块尝试将整数101转换为字符串，但相反，我们得到“ e”。 这是为什么？ 怎么解决?
 
-```
+```go
 package main
 
 import "fmt"
@@ -2378,7 +2379,7 @@ func main() {
 <details>
 <summary>以下代码块的输出是什么？:
 
-```
+```go   
 package main
 
 import "fmt"
@@ -2405,7 +2406,7 @@ func main() {
 <details>
 <summary>以下代码块的输出是什么？:
 
-```
+```go
 package main
 
 import "fmt"
@@ -2982,3 +2983,5 @@ where c.Customer_ID in (Select Customer_ID from cat_food);
 * [Cloud Slack bot](scenarios/cloud_slack_bot.md)
 * [Writing Jenkins Scripts](scenarios/jenkins_scripts.md)
 * [Writing Jenkins Pipelines](scenarios/jenkins_pipelines.md)
+
+<!-- {% endraw %} -->
