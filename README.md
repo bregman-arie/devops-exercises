@@ -232,10 +232,12 @@ CSMA/CD algorithm:
 
 <details>
 <summary>What is a "Collision Domain"?</summary><br><b>
+A collision domain is a network segment in which devices can potentially interfere with each other by attempting to transmit data at the same time. When two devices transmit data at the same time, it can cause a collision, resulting in lost or corrupted data. In a collision domain, all devices share the same bandwidth, and any device can potentially interfere with the transmission of data by other devices.
 </b></details>
 
 <details>
 <summary>What is a "Broadcast Domain"?</summary><br><b>
+A broadcast domain is a network segment in which all devices can communicate with each other by sending broadcast messages. A broadcast message is a message that is sent to all devices in a network rather than a specific device. In a broadcast domain, all devices can receive and process broadcast messages, regardless of whether the message was intended for them or not.
 </b></details>
 
 <details>
