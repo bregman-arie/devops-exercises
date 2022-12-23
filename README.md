@@ -290,6 +290,18 @@ Bonus question: what is the RTT of LAN?
 
 <details>
 <summary>How does SSL handshake work?</summary><br><b>
+SSL handshake is a process that establishes a secure connection between a client and a server.
+
+1. The client sends a Client Hello message to the server, which includes the client's version of the SSL/TLS protocol, a list of the cryptographic algorithms supported by the client, and a random value.
+2. The server responds with a Server Hello message, which includes the server's version of the SSL/TLS protocol, a random value, and a session ID.
+3. The server sends a Certificate message, which contains the server's certificate.
+4. The server sends a Server Hello Done message, which indicates that the server is done sending messages for the Server Hello phase.
+5. The client sends a Client Key Exchange message, which contains the client's public key.
+6. The client sends a Change Cipher Spec message, which notifies the server that the client is about to send a message encrypted with the new cipher spec.
+7. The client sends an Encrypted Handshake Message, which contains the pre-master secret encrypted with the server's public key.
+8. The server sends a Change Cipher Spec message, which notifies the client that the server is about to send a message encrypted with the new cipher spec.
+9. The server sends an Encrypted Handshake Message, which contains the pre-master secret encrypted with the client's public key.
+10. The client and server can now exchange application data.
 </b></details>
 
 <details>
