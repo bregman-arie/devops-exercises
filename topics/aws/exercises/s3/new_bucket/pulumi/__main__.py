@@ -17,7 +17,7 @@ aws.s3.BucketObject("bucketObject",
 
 # Public Bucket
 aws.s3.Bucket("my-first-public-bucket",
-              acl="private",
+              acl="public-read",
               tags={
                   "Environment": "Exercise",
                   "Name": "My First Public Bucket"},

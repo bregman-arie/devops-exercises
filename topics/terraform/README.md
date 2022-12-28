@@ -1716,14 +1716,6 @@ It's not secure! you should never store credentials in plain text this way.
 </b></details>
 
 <details>
-<summary>What can you do to NOT store provider credentials in Terraform configuration files in plain text?</summary><br><b>
-
-1. Use environment variables
-2. Use password CLIs (like 1Password which is generic but there also specific provider options like aws-vault)
-
-</b></details>
-
-<details>
 <summary>How can you manage secrets/credentials in CI/CD?</summary><br><b>
 
 That very much depends on the CI/CD system/platform you are using.
