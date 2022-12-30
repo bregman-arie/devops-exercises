@@ -708,7 +708,15 @@ https://www.minitool.com/lib/virtual-memory.html
 </b></details>
 
 <details>
-<summary>What is copy-on-write or shadowing?</summary><br><b>
+<summary>What is copy-on-write?</summary><br><b>
+Copy-on-write (COW) is a resource management concept, with the goal to reduce unnecessary copying of information. It is a concept which is implemented for instance within the POSIX fork syscall, which creates a duplicate process of the calling process.
+
+The idea:
+1. If resources are shared between 2 or more entities (for example shared memory segments between 2 processes) the resources don't need to be copied for every entity, but rather every entity has a READ operation access permission on the shared resource. (the shared segements are marked as read-only) 
+(Think of every entity having a pointer to the location of the shared resource which can be dereferenced to read its value)
+2. If one entity would perform a WRITE operation on a shared resource a problem would arise since the resource also would be permanently changed for ALL other entities sharing it.
+(Think of a process modifying some variables on the stack, or allocatingy some data dynamically on the heap, these changes to the shared resource would also apply for ALL other processes, this is definetly an undesirable behaviour)
+3. As a solution only if a WRITE operation is about to be performed on a shared resource, this resource gets COPIED first and then the changes are applied.
 </b></details>
 
 <details>
