@@ -36,10 +36,6 @@ An availability set is a logical grouping of VMs that allows Azure to understand
 </b></details>
 
 <details>
-<summary>What is the Azure Resource Manager? Can you describe the format for ARM templates?</summary><br><b>
-</b></details>
-
-<details>
 <summary>Explain Azure managed disks</summary><br><b>
 </b></details>
 
