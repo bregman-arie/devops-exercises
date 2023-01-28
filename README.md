@@ -1468,7 +1468,9 @@ When you use a function (`YEAR(purchased_at)`) it has to scan the whole database
   - Keystone</summary><br><b>
 
   * Nova - Manage virtual instances
+  * Neutron - Manage networking by providing Network as a service (NaaS)
   * Cinder - Block Storage
+  * Glance - Manage images for virtual machines and containers (search, get and register)
   * Keystone - Authentication service across the cloud
 </b></details>
 
