@@ -54,6 +54,9 @@ There are different ways to check whether a file is tracked or not:
 
 <details>
 <summary>Explain what the file <code>gitignore</code> is used for</summary><br><b>
+
+The `.gitignore` file is used to specify files/directories that should not be tracked by git.
+These usually include local configuration files, some compiled binaries, virtual environments etc.
 </b></details>
 
 <details>
@@ -244,6 +247,10 @@ git checkout HEAD~1 -- /path/of/the/file
 
 <details>
 <summary>How to squash last two commits?</summary><br><b>
+
+There are two ways to squash commits:
+- Interactive rebasing: `git rebase -i HEAD~n`, where n is the number of commits to squash
+- Merging with squash option: `git merge --squash branch`
 </b></details>
 
 <details>
