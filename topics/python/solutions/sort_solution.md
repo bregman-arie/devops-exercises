@@ -1,4 +1,4 @@
-## Sort - Solution
+## Sort Descending - Solution
 
 1. write a function that sorts the following list of list without using the `sorted()` and `.sort()`
    function in descending order
