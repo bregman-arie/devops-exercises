@@ -4,7 +4,7 @@
 
 1. You are given two directories as arguments and the output should be any difference between the two directories
 
-### Solution
+### Solution 1
 
 Suppose the name of the bash script is ```dirdiff.sh```
 
@@ -26,5 +26,12 @@ then
 fi
 
 diff -q $1 $2
+```
 
+### Solution 2
+
+With gnu find, you can use diff to compare directories recursively.
+
+```shell
+diff --recursive directory1 directory2
 ```
