@@ -1279,7 +1279,7 @@ as key-value pair, document-oriented, etc.
 <details>
 <summary>Have you performed data retrieval optimizations in Mongo? If not, can you think about ways to optimize a slow data retrieval?</summary><br><b>
 
-  * Some ways to optimize data retrieval in MongoDB are : indexing, proper schema design, query optimization and database load balancing.
+  * Some ways to optimize data retrieval in MongoDB are: indexing, proper schema design, query optimization and database load balancing.
 </b></details>
 
 ##### Queries
