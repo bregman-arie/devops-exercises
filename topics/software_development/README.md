@@ -98,13 +98,13 @@ SOLID design principles are about:
 
 SOLID is:
 
-* Single Responsibility - A class* should have one ~responsibility~ reason to change. It was edited by Robert Martin due to wrong understanding of principle.
-* Open-Closed - A class should be open for extension, but closed for modification. What this practically means is that you should extend functionality by adding a new code and not by modifying it. Your system should be separated into components so it can be easily extended without breaking everything.
+* Single Responsibility - A class* should have one ~responsibility~ reason to change. It was edited by Robert Martin due to wrong understanding of principle
+* Open-Closed - A class should be open for extension, but closed for modification. What this practically means is that you should extend functionality by adding a new code and not by modifying it. Your system should be separated into components so it can be easily extended without breaking everything
 * Liskov Substitution - Any derived class should be able to substitute the its parent without altering its corrections. Practically, every part of the code will get the expected result no matter which part is using it
 * Interface Segregation - A client should never depend on anything it doesn't uses. Big interfaces must be splitted to smaller interfaces if needed
 * Dependency Inversion - High level modules should depend on abstractions, not low level modules
 
-*class also can be module, component, entity, etc. Depends on project structure and programming language
+*there also can be module, component, entity, etc. Depends on project structure and programming language
 </b></details>
 
 <details>
@@ -131,7 +131,7 @@ DRY - Don't repeat yourself. Actually it means that you shouldn't duplicate logi
 <details>
 <summary>Explain recursion</summary><br><b>
 
-Recursion - process (or strategy), when function calls itself. It has 2 recursive case and exit case. In recursive case we call function again, in exit case we finish function without calling it again. If we don't have exit case - function will work infinite, until memory overload or call stack limit
+Recursion - process (or strategy), when function calls itself. It has recursive case and exit case. In recursive case we call function again, in exit case we finish function without calling it again. If we don't have exit case - function will work infinite, until memory overload or call stack limit
 </b></details>
 
 <details>
