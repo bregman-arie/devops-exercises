@@ -1295,7 +1295,7 @@ as key-value pair, document-oriented, etc.
 <details>
 <summary>What is the difference between find() and find_one()?</code></summary><br><b>
 	
-  * find() returns all documents that match the query conditions.
+  * `find()` returns all documents that match the query conditions.
   * find_one() returns only one document that matches the query conditions (or null if no match is found).
 </b></details>
 
