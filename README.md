@@ -1260,7 +1260,7 @@ as key-value pair, document-oriented, etc.
 <details>
 <summary>What is a document? What is a collection?</summary><br><b>
 
-  * A document is a record in MongoDB, which is stored in BSON (Binary JSON) format and is the casic unit of data in MongoDB.
+  * A document is a record in MongoDB, which is stored in BSON (Binary JSON) format and is the basic unit of data in MongoDB.
   * A collection is a group of related documents stored in a single database in MongoDB.
 </b></details>
 
