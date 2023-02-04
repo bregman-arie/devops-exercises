@@ -3,7 +3,7 @@
 ## Linux Master Application
 
 A completely free application for testing your knowledge on Linux.
-Desclaimer: developed by repository owner
+Disclaimer: developed by repository owner
 
 <a href="https://play.google.com/store/apps/details?id=com.codingshell.linuxmaster"><img src="../../images/linux_master.jpeg"/></a>
 
