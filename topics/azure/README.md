@@ -33,10 +33,9 @@ An availability set is a logical grouping of VMs that allows Azure to understand
 
 <details>
 <summary>What is Azure Policy?</summary><br><b>
-</b></details>
 
-<details>
-<summary>What is the Azure Resource Manager? Can you describe the format for ARM templates?</summary><br><b>
+
+[Microsoft Learn](https://learn.microsoft.com/en-us/azure/governance/policy/overview): "Azure Policy helps to enforce organizational standards and to assess compliance at-scale. Through its compliance dashboard, it provides an aggregated view to evaluate the overall state of the environment, with the ability to drill down to the per-resource, per-policy granularity. It also helps to bring your resources to compliance through bulk remediation for existing resources and automatic remediation for new resources."
 </b></details>
 
 <details>
@@ -52,6 +51,24 @@ From [Azure docs](https://docs.microsoft.com/en-us/azure/azure-resource-manager/
 </b></details>
 
 <details>
+
+<summary>What are the ARM template's sections ?</summary><br><b>
+
+[Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview): The template has the following sections:
+
+Parameters - Provide values during deployment that allow the same template to be used with different environments.
+
+Variables - Define values that are reused in your templates. They can be constructed from parameter values.
+
+User-defined functions - Create customized functions that simplify your template.
+
+Resources - Specify the resources to deploy.
+
+Outputs - Return values from the deployed resources.
+</b></details>
+
+<details>
+
 <summary>What's an Azure Resource Group?</summary><br><b>
 
 From [Azure docs](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal): "A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group."
@@ -66,19 +83,20 @@ From [Azure docs](https://docs.microsoft.com/en-us/azure/azure-resource-manager/
   * Azure Batch
   * Azure Service Fabric
   * Azure Container Instances
-  * Azure Virtual Machine Scale Set?s
+  * Azure Virtual Machine Scale Sets
 </b></details>
 
 <details>
+
 <summary>What "Azure Virtual Machines" service is used for?</summary><br><b>
 
-Windows or Linux virtual machines
+Azure VMs support Windows and Linux OS. They can be used for hosting web servers, applications, backups, Databases, they can also be used as jump server or azure self-hosted agent for building and deploying apps.
 </b></details>
 
 <details>
 <summary>What "Azure Virtual Machine Scale Sets" service is used for?</summary><br><b>
 
-Scaling Linux or Windows virtual machines used in Azure
+Scaling Linux or Windows virtual machines; it lets you create and manage a group of load balanced VMs. The number of VM instances can automatically increase or decrease in response to demand or a defined schedule.
 </b></details>
 
 <details>
@@ -119,9 +137,17 @@ Running parallel and high-performance computing applications
 <details>
 <summary>What Azure network services are you familiar with?</summary><br><b>
 </b></details>
+<details>
+<summary>Explain VNet peering</summary><br><b>
+
+VNet peering enables connecting virtual networks. This means that you can route traffic between resources of the connected VNets privately through IPv4 addresses. Connecting VNets within the same region is known as regional VNet Peering, however connecting VNets across Azure regions is known as global VNet Peering.
+
+</b></details>
 
 <details>
 <summary>What's an Azure region?</summary><br><b>
+
+An Azure region is a set of datacenters deployed within an interval-defined and connected through a dedicated regional low-latency network.
 </b></details>
 
 <details>
@@ -179,10 +205,7 @@ Azure AD is a cloud-based identity service. You can use it as a standalone servi
 </b></details>
 
 <details>
-<summary>Explain VNet peering</summary><br><b>
-</b></details>
 
-<details>
 <summary>Which protocols are available for configuring health probe</summary><br><b>
 </b></details>
 

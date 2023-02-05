@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
 
-:bar_chart: &nbsp;There are currently **2610** exercises and questions
+:bar_chart: &nbsp;There are currently **2619** exercises and questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [FAQ page](faq.md) for more details
 
@@ -232,10 +232,12 @@ CSMA/CD algorithm:
 
 <details>
 <summary>What is a "Collision Domain"?</summary><br><b>
+A collision domain is a network segment in which devices can potentially interfere with each other by attempting to transmit data at the same time. When two devices transmit data at the same time, it can cause a collision, resulting in lost or corrupted data. In a collision domain, all devices share the same bandwidth, and any device can potentially interfere with the transmission of data by other devices.
 </b></details>
 
 <details>
 <summary>What is a "Broadcast Domain"?</summary><br><b>
+A broadcast domain is a network segment in which all devices can communicate with each other by sending broadcast messages. A broadcast message is a message that is sent to all devices in a network rather than a specific device. In a broadcast domain, all devices can receive and process broadcast messages, regardless of whether the message was intended for them or not.
 </b></details>
 
 <details>
@@ -290,6 +292,18 @@ Bonus question: what is the RTT of LAN?
 
 <details>
 <summary>How does SSL handshake work?</summary><br><b>
+SSL handshake is a process that establishes a secure connection between a client and a server.
+
+1. The client sends a Client Hello message to the server, which includes the client's version of the SSL/TLS protocol, a list of the cryptographic algorithms supported by the client, and a random value.
+2. The server responds with a Server Hello message, which includes the server's version of the SSL/TLS protocol, a random value, and a session ID.
+3. The server sends a Certificate message, which contains the server's certificate.
+4. The server sends a Server Hello Done message, which indicates that the server is done sending messages for the Server Hello phase.
+5. The client sends a Client Key Exchange message, which contains the client's public key.
+6. The client sends a Change Cipher Spec message, which notifies the server that the client is about to send a message encrypted with the new cipher spec.
+7. The client sends an Encrypted Handshake Message, which contains the pre-master secret encrypted with the server's public key.
+8. The server sends a Change Cipher Spec message, which notifies the client that the server is about to send a message encrypted with the new cipher spec.
+9. The server sends an Encrypted Handshake Message, which contains the pre-master secret encrypted with the client's public key.
+10. The client and server can now exchange application data.
 </b></details>
 
 <details>
@@ -696,7 +710,15 @@ https://www.minitool.com/lib/virtual-memory.html
 </b></details>
 
 <details>
-<summary>What is copy-on-write or shadowing?</summary><br><b>
+<summary>What is copy-on-write?</summary><br><b>
+Copy-on-write (COW) is a resource management concept, with the goal to reduce unnecessary copying of information. It is a concept which is implemented for instance within the POSIX fork syscall, which creates a duplicate process of the calling process.
+
+The idea:
+1. If resources are shared between 2 or more entities (for example shared memory segments between 2 processes) the resources don't need to be copied for every entity, but rather every entity has a READ operation access permission on the shared resource. (the shared segements are marked as read-only) 
+(Think of every entity having a pointer to the location of the shared resource which can be dereferenced to read its value)
+2. If one entity would perform a WRITE operation on a shared resource a problem would arise since the resource also would be permanently changed for ALL other entities sharing it.
+(Think of a process modifying some variables on the stack, or allocatingy some data dynamically on the heap, these changes to the shared resource would also apply for ALL other processes, this is definetly an undesirable behaviour)
+3. As a solution only if a WRITE operation is about to be performed on a shared resource, this resource gets COPIED first and then the changes are applied.
 </b></details>
 
 <details>
@@ -966,7 +988,8 @@ func main() {
 <details>
 <summary>The following block of code tries to convert the integer 101 to a string but instead we get "e". Why is that? How to fix it?
 
-```
+
+```go
 package main
 
 import "fmt"
@@ -1007,7 +1030,7 @@ But `x`, `y` and their sum is variable.
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import "fmt"
@@ -1045,7 +1068,7 @@ It is called the [blank identifier](https://golang.org/doc/effective_go.html#bla
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import "fmt"
@@ -1067,7 +1090,7 @@ Since the first iota is declared with the value `3` (` + 3`), the next one has t
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import (
@@ -1106,7 +1129,7 @@ Output: 2 1 3
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import (
@@ -1160,7 +1183,7 @@ But in `mod2`, `append` creats new slice, and we're changing only `a` value, not
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import (
@@ -1236,18 +1259,27 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>What is a document? What is a collection?</summary><br><b>
+
+  * A document is a record in MongoDB, which is stored in BSON (Binary JSON) format and is the basic unit of data in MongoDB.
+  * A collection is a group of related documents stored in a single database in MongoDB.
 </b></details>
 
 <details>
 <summary>What is an aggregator?</summary><br><b>
+
+  * An aggregator is a framework in MongoDB that performs operations on a set of data to return a single computed result.
 </b></details>
 
 <details>
 <summary>What is better? Embedded documents or referenced?</summary><br><b>
+
+  * There is no definitive answer to which is better, it depends on the specific use case and requirements. Some explainations : Embedded documents provide atomic updates, while referenced documents allow for better normalization.
 </b></details>
 
 <details>
 <summary>Have you performed data retrieval optimizations in Mongo? If not, can you think about ways to optimize a slow data retrieval?</summary><br><b>
+
+  * Some ways to optimize data retrieval in MongoDB are: indexing, proper schema design, query optimization and database load balancing.
 </b></details>
 
 ##### Queries
@@ -1262,6 +1294,9 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>What is the difference between find() and find_one()?</code></summary><br><b>
+	
+  * `find()` returns all documents that match the query conditions.
+  * find_one() returns only one document that matches the query conditions (or null if no match is found).
 </b></details>
 
 <details>
@@ -1445,7 +1480,9 @@ When you use a function (`YEAR(purchased_at)`) it has to scan the whole database
   - Keystone</summary><br><b>
 
   * Nova - Manage virtual instances
+  * Neutron - Manage networking by providing Network as a service (NaaS)
   * Cinder - Block Storage
+  * Glance - Manage images for virtual machines and containers (search, get and register)
   * Keystone - Authentication service across the cloud
 </b></details>
 
@@ -1894,6 +1931,8 @@ A list of services and their endpoints
 
 <details>
 <summary>Can you compare Puppet to other configuration management tools? Why did you chose to use Puppet?</summary><br><b>
+
+  * Puppet is often compared to other configuration management tools like Chef, Ansible, SaltStack, and cfengine. The choice to use Puppet often depends on an organization's needs, such as ease of use, scalability, and community support.
 </b></details>
 
 <details>
@@ -1911,10 +1950,14 @@ A list of services and their endpoints
 
 <details>
 <summary>Explain Facter</summary><br><b>
+
+  * Facter is a standalone tool in Puppet that collects information about a system and its configuration, such as the operating system, IP addresses, memory, and network interfaces. This information can be used in Puppet manifests to make decisions about how resources should be managed, and to customize the behavior of Puppet based on the characteristics of the system. Facter is integrated into Puppet, and its facts can be used within Puppet manifests to make decisions about resource management.
 </b></details>
 
 <details>
 <summary>What is MCollective?</summary><br><b>
+
+  * MCollective is a middleware system that integrates with Puppet to provide orchestration, remote execution, and parallel job execution capabilities.
 </b></details>
 
 <details>
@@ -1923,6 +1966,8 @@ A list of services and their endpoints
 
 <details>
 <summary>Explain what is Hiera</summary><br><b>
+
+  * Hiera is a hierarchical data store in Puppet that is used to separate data from code, allowing data to be more easily separated, managed, and reused.
 </b></details>
 
 ## Elastic
@@ -1996,7 +2041,7 @@ This is where data is stored and also where different processing takes place (e.
 <details>
 <summary>What is a master node?</summary><br><b>
 
-Par of a master node responsibilites:
+Part of a master node responsibilites:
   * Track the status of all the nodes in the cluster
   * Verify replicas are working and the data is available from every data node.
   * No hot nodes (no data node that works much harder than other nodes)

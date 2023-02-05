@@ -29,3 +29,17 @@ According to [Gremlin](gremlin.com) there are three steps:
 The process then repeats itself either with same scenario or a new one.
 
 </b></details>
+
+<details>
+<summary>Cite a few tools used to operate Chaos exercises</summary><br><b>
+
+- AAWS Fault Injection Simulator: inject failures in AWS resources
+- Azure Chaos Studio: inject failures in Azure resources
+- Chaos Monkey: one of the most famous tools to orchestrate Chaos on diverse Cloud providers
+- Litmus - A Framework for Kubernetes 
+- Chaos Mesh: for Cloud Kubernetes platforms
+
+
+See an extensive list [here](https://github.com/dastergon/awesome-chaos-engineering)
+
+</b></details>

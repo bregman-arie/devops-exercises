@@ -22,4 +22,8 @@ Azure Firewall is a cloud-native and intelligent network firewall security servi
 </b></details>
 
 
+<details>
+<summary>What is Network Security Group?</summary><br><b>
 
+A network security group contains security rules that allow or deny inbound network traffic to, or outbound network traffic from, several types of Azure resources. For each rule, you can specify source and destination, port, and protocol.
+</b></details>

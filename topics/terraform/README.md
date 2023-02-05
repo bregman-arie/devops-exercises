@@ -1327,6 +1327,25 @@ dynamic "tag" {
 
 #### Misc
 
+<details>
+<summary>What are meta-arguments in Terraform?</summary><br><b>
+
+Arguments that affect the lifecycle of a resources (its creation, modification, ...) and supported by Terraform regardless to the type of resource in which they are used.
+
+Some examples:
+
+* count: how many resources to create out of one definition of a resource
+* lifecycle: how to treat resource creation or removal
+
+</b></details>
+
+<details>
+<summary>What meta-arguments are you familiar with?</summary><br><b>
+
+* count: how many resources to create out of one definition of a resource
+* lifecycle: how to treat resource creation or removal
+* depends_on: create a dependency between resources
+</b></details>
 
 <details>
 <summary>What <code>templatefile</code> function does?</summary><br><b>
@@ -1366,14 +1385,9 @@ False. terraform console is ready-only.
 </b></details>
 
 <details>
-<summary>What are meta-arguments in Terraform?</summary><br><b>
+<summary>Explain what <code>depends_on</code> used for and given an example</summary><br><b>
 
-Arguments that affect the lifecycle of a resources (its creation, modification, ...) and supported by Terraform regardless to the type of resource in which they are used.
-
-Some examples:
-
-* count: how many resources to create out of one definition of a resource
-* lifecycle: how to treat resource creation or removal
+`depends_on` used to create a dependency between resources in Terraform. For example, there is an application you would like to deploy in a cluster. If the cluster isn't ready (and also managed by Terraform of course) then you can't deploy the app. In this case, you will define "depends_on" in the app configuration and its value will be the cluster resource.
 
 </b></details>
 
@@ -1635,6 +1649,24 @@ module "some_module" {
 
 </b></details>
 
+<details>
+<summary>How to manage multiple AWS accounts?</summary><br><b>
+
+One way is to define multiple different provider blocks, each with its own "assume_role"
+
+```
+provider "aws" {
+  region = "us-west-1"
+  alias = "some-region"
+
+  assume_role {
+    role_arn = "arn:aws:iam::<SOME_ACCOUNT_ID>:role/<SOME_ROLE_NAME>"
+  }
+}
+```
+
+</b></details>
+
 ### Validations
 
 <details>
@@ -1672,14 +1704,6 @@ provider "aws" {
 </summary><br><b>
 
 It's not secure! you should never store credentials in plain text this way. 
-
-</b></details>
-
-<details>
-<summary>What can you do to NOT store provider credentials in Terraform configuration files in plain text?</summary><br><b>
-
-1. Use environment variables
-2. Use password CLIs (like 1Password which is generic but there also specific provider options like aws-vault)
 
 </b></details>
 
@@ -1842,5 +1866,12 @@ Instead of defining tags at resource level, consider using `default_tags` as par
 <summary>You would like to change the name of a resource but afraid to cause downtime. What can be done?</summary><br><b>
 
 If it's a matter of changing a resource name, you could make use of `terraform state mv <ORIGINAL_RESOURCE_NAME> <NEW_RESOURCE_NAME>`
+
+</b></details>
+
+<details>
+<summary>You try to deploy a cluster and an app on that cluster, but the app resource was created before the cluster. How to manage such situation?</summary><br><b>
+
+Use the meta-argument `depends_on` in the app resource definition. This way the app will depend on the cluster resource and order will be maintained in creation of the resources.
 
 </b></details>

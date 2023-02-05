@@ -39,7 +39,7 @@ kubectl get rs
 3. Remove the ReplicaSet but NOT the pods it created
 
 ```
-kubectl delete -f rs.yaml --cascade=false
+kubectl delete -f rs.yaml --cascade=orphan
 ```
 
 4. Verify you've deleted the ReplicaSet but the Pods are still running
