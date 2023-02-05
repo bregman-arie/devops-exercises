@@ -253,6 +253,7 @@ True. It is only used during the key exchange algorithm of symmetric encryption.
 Hashing is a mathematical function for mapping data of arbitrary sizes to fixed-size values. This function produces a "digest" of the data that can be used for verifying that the data has not been modified (amongst other uses)
 </b></details>
 
+<details>
 <summary>How is hashing different from encryption?</summary><br><b>
 
 Encrypted data can be decrypted to its original value. Hashed data cannot be reversed to view the original data - hashing is a one-way function.
