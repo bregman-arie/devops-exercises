@@ -1060,7 +1060,7 @@ sar -n TCP,ETCP 1
 <details>
 <summary>how to list all the processes running in your system?</summary><br><b>
 
-`ps -ef`
+The "ps" command can be used to list all the processes running in a system. The "ps aux" command provides a detailed list of all the processes, including the ones running in the background.
 </b></details>
 
 <details>
@@ -1103,22 +1103,28 @@ To view all available signals run `kill -l`
 
 <details>
 <summary>What <code>kill 0</code> does?</summary><br><b>
+"kill 0" sends a signal to all processes in the current process group. It is used to check if the processes exist or not
 </b></details>
 
 <details>
 <summary>What <code>kill -0 <PID></code> does?</summary><br><b>
+"kill -0" checks if a process with a given process ID exists or not. It does not actually send any signal to the process.
 </b></details>
 
 <details>
 <summary>What is a trap?</summary><br><b>
+A trap is a mechanism that allows the shell to intercept signals sent to a process and perform a specific action, such as handling errors or cleaning up resources before terminating the process.
+
 </b></details>
 
 <details>
 <summary>Every couple of days, a certain process stops running. How can you look into why it's happening?</summary><br><b>
+One way to investigate why a process stops running is to check the system logs, such as the messages in /var/log/messages or journalctl. Additionally, checking the process's resource usage and system load may provide clues as to what caused the process to stop
 </b></details>
 
 <details>
 <summary>What happens when you press ctrl + c?</summary><br><b>
+When you press "Ctrl+C," it sends the SIGINT signal to the foreground process, asking it to terminate gracefully.
 </b></details>
 
 <details>
@@ -1142,6 +1148,7 @@ Zombie (z)
 
 <details>
 <summary>How do you kill a process in D state?</summary><br><b>
+A process in D state (also known as "uninterruptible sleep") cannot be killed using the "kill" command. The only way to terminate it is to reboot the system.
 </b></details>
 
 <details>
@@ -1184,14 +1191,24 @@ It is the first process executed by the kernel during the booting of a system. I
 
 <details>
 <summary>How to change the priority of a process? Why would you want to do that?</summary><br><b>
+To change the priority of a process, you can use the nice command in Linux. The nice command allows you to specify the priority of a process by assigning a priority value ranging from -20 to 19. A higher value of priority means lower priority for the process, and vice versa.
+
+You may want to change the priority of a process to adjust the amount of CPU time it is allocated by the system scheduler. For example, if you have a CPU-intensive process running on your system that is slowing down other processes, you can lower its priority to give more CPU time to other processes.
 </b></details>
 
 <details>
 <summary>Can you explain how network process/connection is established and how it's terminated?></summary><br></b>
+When a client process on one system wants to establish a connection with a server process on another system, it first creates a socket using the socket system call. The client then calls the connect system call, passing the address of the server as an argument. This causes a three-way handshake to occur between the client and server, where the two systems exchange information to establish a connection.
+
+Once the connection is established, the client and server can exchange data using the read and write system calls. When the connection is no longer needed, the client or server can terminate the connection by calling the close system call on the socket.
 </b></details>
 
 <details>
 <summary>What <code>strace</code> does? What about <code>ltrace</code>?</summary><br><b>
+Strace is a debugging tool that is used to monitor the system calls made by a process. It allows you to trace the execution of a process and see the system calls it makes, as well as the signals it receives. This can be useful for diagnosing issues with a process, such as identifying why it is hanging or crashing.
+
+Ltrace, on the other hand, is a similar tool that is used to trace the library calls made by a process. It allows you to see the function calls made by a process to shared libraries, as well as the arguments passed to those functions. This can be useful for diagnosing issues with a process that involve library calls, such as identifying why a particular library is causing a problem.
+
 </b></details>
 
 <details>
