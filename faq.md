@@ -9,7 +9,7 @@ Learning, of course.
 ### My goal is to prepare for a DevOps interviews. Should I use this repository?
 
 Overall, this repository should help you learn some concepts but, don't assume at any point that your interview will include similar questions to those that included in this repository.
-Regarding interview, I've added a couple of suggestions [here](prepare_for_interview.md)<br>
+Regarding interviews, I've added a couple of suggestions [here](prepare_for_interview.md)<br>
 
 ### Will you stop at some point adding questions and exercises?
 
@@ -34,7 +34,7 @@ I don't have a definitive answer for this question, I'm exploring it myself from
 
 1. Search for them using search engines, documentation pages, ... this is part of being a DevOps engineer
 2. Use the communities: many people will be happy to help and answer your questions
-3. Ask us. If you want, you can contact me or even open an issue that is only a question, that's totally fine :)
+3. Ask us. If you want, you can contact me or start a discussion on this project.
 
 ### Where the questions and answers are coming from?
 

@@ -1,4 +1,4 @@
-## Security
+# Security
 
 <details>
 <summary>What is DevSecOps? What its core principals?</summary><br><b>
@@ -16,6 +16,12 @@ A couple of quotations from chosen companies:
 <summary>What the "Zero Trust" concept means? How Organizations deal with it?</summary><br><b>
 
 [Codefresh definition](https://codefresh.io/security-testing/codefresh-runner-overview): "Zero trust is a security concept that is centered around the idea that organizations should never trust anyone or anything that does not originate from their domains. Organizations seeking zero trust automatically assume that any external services it commissions have security breaches and may leak sensitive information"
+</b></details>
+
+<details>
+<summary>Explain the principle of least privilege</summary><br><b>
+
+The principle of least privilege refers to the practice of providing minimal permissions to users, roles, and service accounts that allow them to perform their functions. If an entity does not require an access right then it should not have that right.
 </b></details>
 
 <details>
@@ -68,6 +74,25 @@ A user uses the browser to authenticate to some server. It does so by using the 
 </b></details>
 
 <details>
+<summary>What are the three primary factors of authentication? Give three examples of each</summary><br><b>
+
+Something you have
+- Smart card
+- Physical authentication device
+- Software token
+
+Something you know
+- Password
+- PIN
+- Passphrase
+
+Something you are
+- Fingerprint
+- Iris or retina scan
+- Gait analysis
+</b></details>
+
+<details>
 <summary>Explain Token-based authentication</summary><br><b>
 </b></details>
 
@@ -82,11 +107,27 @@ SSO (Single Sign-on), is a method of access control that enables a user to log i
 </b></details>
 
 <details>
+<summary>Explain how the Kerberos authentication protocol works as a SSO solution</summary><br><b>
+
+Kerberos works as a SSO solution by only requiring the user to sign in using their credentials once within a specific validity time window. Kerberos authentication grants the user a Ticket Granting Ticket (TGT) from a trusted authentication server which can then be used to request service tickets for accessing various services and resources. By passing around this encrypted TGT instead of credentials, the user does not need to sign-in multiple times for each resource that has been integrated with Kerberos.
+</b></details>
+
+<details>
+<summary>Does Kerberos make use of symmetric encryption, asymmetric encryption, both, or neither?</summary><br><b>
+
+Symmetric Encryption - Kerberos uses exclusively symmetric encryption with pre-shared keys for transmitting encrypted information and authorizing users.
+</b></details>
+
+<details>
 <summary>Explain MFA (Multi-Factor Authentication)</summary><br><b>
 
 Multi-Factor Authentication (Also known as 2FA). Allows the user to present two pieces of evidence, credentials, when logging into an account.
 
 - The credentials fall into any of these three categories: something you know (like a password or PIN), something you have (like a smart card), or something you are (like your fingerprint).  Credentials must come from two different categories to enhance security.
+</b></details>
+
+<details>
+<summary>Explain OAuth</summary><br><b>
 </b></details>
 
 #### Security - Passwords
@@ -118,6 +159,14 @@ Multi-Factor Authentication (Also known as 2FA). Allows the user to present two 
   * Risk Based Authentication
   * Rate limiting
   * MFA
+</b></details>
+
+<details>
+<summary>What is password salting? What attack does it help to deter?</summary><br><b>
+
+Password salting is the processing of prepending or appending a series of characters to a user's password before hashing this new combined value. This value should be different for every single user but the same salt should be applied to the same user password everytime it is validated.
+
+ This ensures that users that have the same password will still have very different hash values stored in the password database. This process specifically helps deter rainbow table attacks since a new rainbow table would need to be computed for every single user in the database.
 </b></details>
 
 #### Security - Cookies
@@ -200,6 +249,14 @@ True. It is only used during the key exchange algorithm of symmetric encryption.
 
 <details>
 <summary>What is Hashing?</summary><br><b>
+
+Hashing is a mathematical function for mapping data of arbitrary sizes to fixed-size values. This function produces a "digest" of the data that can be used for verifying that the data has not been modified (amongst other uses)
+</b></details>
+
+<details>
+<summary>How is hashing different from encryption?</summary><br><b>
+
+Encrypted data can be decrypted to its original value. Hashed data cannot be reversed to view the original data - hashing is a one-way function.
 </b></details>
 
 <details>
@@ -208,6 +265,7 @@ True. It is only used during the key exchange algorithm of symmetric encryption.
 Hashes used in SSH to verify the authenticity of messages and to verify that nothing tampered with the data received.
 </b></details>
 
+#### Security - Attacks, Threats, and Vulnerabilities
 <details>
 <summary>Explain the following:
 
@@ -253,6 +311,7 @@ You can test by using a stored procedure, so the application must be sanitize th
 
 <details>
 <summary>How HTTPS is different from HTTP?</summary><br><b>
+The 'S' in HTTPS stands for 'secure'. HTTPS uses TLS to provide encryption of HTTP requests and responses, as well as providing verifaction by digitally signing requests and responses. As a result, HTTPS is far more secure than HTTP and is used by default for most modern websites.
 </b></details>
 
 <details>
@@ -318,10 +377,6 @@ Stuxnet is a computer worm that was originally aimed at Iran’s nuclear facilit
 <summary>What can you tell me about Spectre?</summary><br><b>
 
 Spectre is an attack method which allows a hacker to “read over the shoulder” of a program it does not have access to. Using code, the hacker forces the program to pull up its encryption key allowing full access to the program
-</b></details>
-
-<details>
-<summary>Explain OAuth</summary><br><b>
 </b></details>
 
 <details>
@@ -401,6 +456,10 @@ MAC address flooding attack (CAM table flooding attack) is a type of network att
 
 <details>
 <summary>What is "Diffie-Hellman key exchange" and how does it work?</summary><br><b>
+
+Have you heard of [The Two General's Problem](https://en.wikipedia.org/wiki/Two_Generals%27_Problem)? The Diffie-Hellman key exchange is a solution to this problem to allow for the secure exchange of cryptographic keys over an encrypted channel.
+
+It works using public/private key pairs (asymmetric encryption). Two parties that wish to communicate securely over a public channel will each generate a public/private key pair and distribute the public key to the other party (note that public keys are free to be exchanged over a public channel). From here, each party can derive a shared key using a combination of their personal private key and the public key of the other party. This combined key can now be used as a symmetric encryption key for communications.
 </b></details>
 
 <details>
@@ -517,7 +576,7 @@ An application usually has different dependencies. Typically, not all of them ar
 </b></details>
 
 <details>
-<summary> What solutions are there for managing project dependencies? 
+<summary> What solutions are there for managing project dependencies?
 </summary><br><b>
 
 [Npm.js documentation](https://docs.npmjs.com/cli/v8/commands/npm-prune): Use clean-up commands that are usually provided by the package manager authors. For instance, npm prune will remove any extraneous package. Another command is npm audit which will scan your repository and report any vulnerable dependencies found.
@@ -548,4 +607,36 @@ You can’t. You will always be exposed to security risk once you start using op
 </summary><br><b>
 
 [Fred Cohen (permission needed)](https://reader.elsevier.com/reader/sd/pii/0167404887900319?token=D5339ABC064AD9A2B50B74D8CE890B0E22A302A0BC461A50078D407BEA01052737DC6AAEF95A854E72A73B6D0C67E260&originRegion=eu-west-1&originCreation=20220502180611): Checksum is a way to verify the integrity of information in systems with no built-in protection. In other words, it provides a way of validating that the content of a file or a package / library is intact. This is useful since attacks or errors may occur during transmission of files. However, it requires that the package author has run a checksum function for the file / package which creates a specific hash for that version of the file. A minor change of the file content will result in a different checksum. If you have access to the original checksum of the file, you may run checksum on your own. In case the resulting checksum matches the original one, no changes have been made in the file. You can now conclude that no error or malicious injection was done during transmission of the file. 
+</b></details>
+
+## Microsegmentation
+
+<details>
+<summary>What is Microsegmentation?</summary><br><b>
+
+- Security method
+- Managing network access between endpoints (processes, devices, instances)
+- A method in which security policies are applied to limit traffic
+  - based on concepts such as "Zero Trust" and "Least Privileged"
+- The result of Microsegmentation should be:
+  - Reduced attack ability
+  - Better breach containment
+</b></details>
+
+<details>
+<summary>Why do we need Microsegmentation solutions? Why using something such as firewalls isn't enough?</summary><br><b>
+
+- Firewalls focused on north-south traffic. Basically traffic that is outside of the company perimeter
+- Traffic that is considered west-east, internal workflows and communication, is usually left untreated
+</b></details>
+
+<details>
+<summary>How Microsegmentation is applied?</summary><br><b>
+
+ There are different ways to apply Microsegmentation:
+
+- Cloud Native: Using cloud embedded capabilities such as security groups, firewalls, etc.
+- Agent: Agents running on the different endpoints (instances, services, etc.)
+- Network: Modify network devices and their configuration to create microsegmentation 
+
 </b></details>

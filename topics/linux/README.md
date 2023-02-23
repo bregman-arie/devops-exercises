@@ -2,46 +2,69 @@
 
 ## Linux Master Application
 
-A completely free application for testing your knowledge on Linux
+A completely free application for testing your knowledge on Linux.
+Disclaimer: developed by repository owner
 
-<a href="https://play.google.com/store/apps/details?id=com.codingshell.linuxmaster"><img src="images/linux_master.jpeg"/></a>
+<a href="https://play.google.com/store/apps/details?id=com.codingshell.linuxmaster"><img src="../../images/linux_master.jpeg"/></a>
 
-## Linux Self Assessment
+- [Linux](#linux)
+  - [Linux Master Application](#linux-master-application)
+  - [Linux Exercises](#linux-exercises)
+    - [Basics](#basics)
+    - [Misc](#misc)
+  - [Linux Questions](#linux-questions)
+    - [Linux 101](#linux-101)
+    - [I/O Redirection](#io-redirection)
+    - [Filesystem Hierarchy Standard](#filesystem-hierarchy-standard)
+    - [Permissions](#permissions)
+    - [Scenarios](#scenarios)
+    - [Systemd](#systemd)
+    - [Troubleshooting and Debugging](#troubleshooting-and-debugging)
+      - [Scenarios](#scenarios-1)
+    - [Kernel](#kernel)
+    - [SSH](#ssh)
+    - [Globbing & Wildcards](#globbing--wildcards)
+    - [Boot Process](#boot-process)
+    - [Disk and Filesystem](#disk-and-filesystem)
+    - [Performance Analysis](#performance-analysis)
+    - [Processes](#processes)
+    - [Security](#security)
+    - [Networking](#networking)
+    - [DNS](#dns)
+    - [Packaging](#packaging)
+    - [DNF](#dnf)
+    - [Applications and Services](#applications-and-services)
+    - [Users and Groups](#users-and-groups)
+    - [Hardware](#hardware)
+    - [Namespaces](#namespaces)
+    - [Virtualization](#virtualization)
+    - [AWK](#awk)
+    - [System Calls](#system-calls)
+    - [Filesystem & Files](#filesystem--files)
+    - [Advanced Networking](#advanced-networking)
+    - [Memory](#memory)
+    - [Distributions](#distributions)
+    - [Sed](#sed)
+    - [Misc](#misc-1)
 
-* [Linux 101](#questions-linux-101)
-* [Linux I/O Redirection](#questions-linux-redirection)
-* [Linux Filesystem Hierarchy Standard](#questions-linux-fhs)
-* [Linux Permissions](#questions-linux-permissions)
-* [Linux Scenarios](#questions-linux-scenarios)
-* [Linux Systemd](#questions-linux-systemd)
-* [Linux Troubleshooting and Debugging](#questions-linux-troubleshooting)
-* [Linux kernel](#questions-linux-kernel)
-* [Linux SSH](#questions-linux-ssh)
-* [Linux Globbing and Wildcards](#questions-linux-wildcards)
-* [Linux Boot Process](#questions-linux-boot)
-* [Linux Disk and Filesystem](#questions-linux-disk-fs)
-* [Linux Performance Analysis](#questions-linux-performance-analysis)
-* [Linux Processes](#questions-linux-processes)
-* [Linux Security](#questions-linux-security)
-* [Linux Networking](#questions-linux-networking)
-* [Linux DNS](#questions-linux-dns)
-* [Linux Packaging](#questions-linux-packaging)
-* [Linux DNF](#questions-linux-dnf)
-* [Linux Applications and Services](#questions-linux-apps-and-services)
-* [Linux Users and Groups](#questions-linux-users-and-groups)
-* [Linux Hardware](#questions-linux-hardware)
-* [Linux Namepsaces](#questions-linux-namespaces)
-* [Linux Virtualization](#questions-linux-virtualization)
-* [Linux AWK](#questions-linux-awk)
-* [Linux System Calls](#questions-linux-system-calls)
-* [Linux Filesystem and Files](#questions-linux-fs-files)
-* [Linux Advanced Networking](#questions-linux-advanced-networking)
-* [Linux Memory](#questions-linux-memory)
-* [Linux Distributions](#questions-linux-distributions)
-* [Linux Sed](#questions-linux-sed)
-* [Linux Misc](#questions-linux-misc)
+## Linux Exercises
 
-<a name="questions-linux-101"></a>
+### Basics
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Navigation | cd, pwd | [Exercise](exercises/navigation/README.md) | [Solution](exercises/navigation/solution.md)
+| Create and Destroy | touch, rm, mkdir | [Exercise](exercises/create_remove/README.md) | [Solution](exercises/create_remove/solution.md)
+| Copy Time | touch, cp, ls | [Exercise](exercises/copy/README.md) | [Solution](exercises/copy/solution.md)
+
+### Misc
+
+|Name|Topic|Objective & Instructions|Solution|Comments|
+|--------|--------|------|----|----|
+| Unique Count |  | [Exercise](exercises/uniqe_count/README.md) | [Solution](exercises/uniqe_count/solution.md)
+
+## Linux Questions
+
 ### Linux 101
 
 <details>
@@ -50,6 +73,7 @@ A completely free application for testing your knowledge on Linux
 [Wikipedia](https://en.wikipedia.org/wiki/Linux): "Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution."
 
 [Red Hat](https://www.redhat.com/en/topics/linux/what-is-linux): "Linux® is an open source operating system (OS). An operating system is the software that directly manages a system’s hardware and resources, like CPU, memory, and storage. The OS sits between applications and hardware and makes the connections between all of your software and the physical resources that do the work."
+
 </b></details>
 
 <details>
@@ -479,8 +503,7 @@ To stop a service: `systemctl stop <service name>`
 <summary>Describe how to make a certain process/app a service</summary><br><b>
 </b></details>
 
-<a name="questions-linux-troubleshooting"></a>
-### Troubleshooting & Debugging
+### Troubleshooting and Debugging
 
 <details>
 <summary>Where system logs are located?</summary><br><b>
@@ -551,7 +574,16 @@ tail -f <file_name>
 <summary>How you measure time execution of a program?</summary><br><b>
 </b></details>
 
-<a name="questions-linux-kernel"></a>
+#### Scenarios
+
+<details>
+<summary>You have a process writing to a file. You don't know which process exactly, you just know the path of the file. You would like to kill the process as it's no longer needed. How would you achieve it?</summary><br><b>
+
+1. Run `lsof <FILE_PATH>`
+2. Use the pid (process ID) from the lsof command and run `kill <PID>`
+
+</b></details>
+
 ### Kernel
 
 <details>
@@ -1028,7 +1060,7 @@ sar -n TCP,ETCP 1
 <details>
 <summary>how to list all the processes running in your system?</summary><br><b>
 
-`ps -ef`
+The "ps" command can be used to list all the processes running in a system. The "ps aux" command provides a detailed list of all the processes, including the ones running in the background.
 </b></details>
 
 <details>
@@ -1071,22 +1103,28 @@ To view all available signals run `kill -l`
 
 <details>
 <summary>What <code>kill 0</code> does?</summary><br><b>
+"kill 0" sends a signal to all processes in the current process group. It is used to check if the processes exist or not
 </b></details>
 
 <details>
 <summary>What <code>kill -0 <PID></code> does?</summary><br><b>
+"kill -0" checks if a process with a given process ID exists or not. It does not actually send any signal to the process.
 </b></details>
 
 <details>
 <summary>What is a trap?</summary><br><b>
+A trap is a mechanism that allows the shell to intercept signals sent to a process and perform a specific action, such as handling errors or cleaning up resources before terminating the process.
+
 </b></details>
 
 <details>
 <summary>Every couple of days, a certain process stops running. How can you look into why it's happening?</summary><br><b>
+One way to investigate why a process stops running is to check the system logs, such as the messages in /var/log/messages or journalctl. Additionally, checking the process's resource usage and system load may provide clues as to what caused the process to stop
 </b></details>
 
 <details>
 <summary>What happens when you press ctrl + c?</summary><br><b>
+When you press "Ctrl+C," it sends the SIGINT signal to the foreground process, asking it to terminate gracefully.
 </b></details>
 
 <details>
@@ -1110,6 +1148,7 @@ Zombie (z)
 
 <details>
 <summary>How do you kill a process in D state?</summary><br><b>
+A process in D state (also known as "uninterruptible sleep") cannot be killed using the "kill" command. The only way to terminate it is to reboot the system.
 </b></details>
 
 <details>
@@ -1152,14 +1191,24 @@ It is the first process executed by the kernel during the booting of a system. I
 
 <details>
 <summary>How to change the priority of a process? Why would you want to do that?</summary><br><b>
+To change the priority of a process, you can use the nice command in Linux. The nice command allows you to specify the priority of a process by assigning a priority value ranging from -20 to 19. A higher value of priority means lower priority for the process, and vice versa.
+
+You may want to change the priority of a process to adjust the amount of CPU time it is allocated by the system scheduler. For example, if you have a CPU-intensive process running on your system that is slowing down other processes, you can lower its priority to give more CPU time to other processes.
 </b></details>
 
 <details>
 <summary>Can you explain how network process/connection is established and how it's terminated?></summary><br></b>
+When a client process on one system wants to establish a connection with a server process on another system, it first creates a socket using the socket system call. The client then calls the connect system call, passing the address of the server as an argument. This causes a three-way handshake to occur between the client and server, where the two systems exchange information to establish a connection.
+
+Once the connection is established, the client and server can exchange data using the read and write system calls. When the connection is no longer needed, the client or server can terminate the connection by calling the close system call on the socket.
 </b></details>
 
 <details>
 <summary>What <code>strace</code> does? What about <code>ltrace</code>?</summary><br><b>
+Strace is a debugging tool that is used to monitor the system calls made by a process. It allows you to trace the execution of a process and see the system calls it makes, as well as the signals it receives. This can be useful for diagnosing issues with a process, such as identifying why it is hanging or crashing.
+
+Ltrace, on the other hand, is a similar tool that is used to trace the library calls made by a process. It allows you to see the function calls made by a process to shared libraries, as well as the arguments passed to those functions. This can be useful for diagnosing issues with a process that involve library calls, such as identifying why a particular library is causing a problem.
+
 </b></details>
 
 <details>
@@ -1245,6 +1294,13 @@ One way is using openssl this way:
 If using the private key from the previous question then the command would be:
 
 `openssl req -new -x509 -days 730 -key ca-private-key.pem -sha256 -out ca.pem`
+</b></details>
+
+<details>
+<summary>Demonstrate one way to encode and decode data in Linux</summary><br><b>
+
+Encode: `echo -n "some password" | base64`
+Decode: `echo -n "allE19remO91" | base64`
 </b></details>
 
 <a name="questions-linux-networking"></a>

@@ -2,9 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
 
-:bar_chart: &nbsp;There are currently **2477** exercises and questions
-
-:books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
+:bar_chart: &nbsp;There are currently **2619** exercises and questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [FAQ page](faq.md) for more details
 
@@ -20,37 +18,35 @@
 <center>
 <table>
   <tr>
-    <td align="center"><a href="topics/devops/README.md"><img src="images/devops.png" width="75px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a></td>
-    <td align="center"><a href="topics/cicd/README.md"><img src="images/cicd.png" width="75px;" height="75px;" alt="cicd"/><br /><b>CI/CD</b></a></td>
-    <td align="center"><a href="topics/git/README.md"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
-    <td align="center"><a href="topics/ansible/README.md"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
+    <td align="center"><a href="topics/devops"><img src="images/devops.png" width="75px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a></td>
+    <td align="center"><a href="topics/cicd"><img src="images/cicd.png" width="75px;" height="75px;" alt="cicd"/><br /><b>CI/CD</b></a></td>
+    <td align="center"><a href="topics/git"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
+    <td align="center"><a href="topics/ansible"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
     <td align="center"><a href="#network"><img src="images/network.png" width="75px;" height="75px;" alt="Network"/><br /><b>Network</b></a></td>
-    <td align="center"><a href="topics/linux/README.md"><img src="images/logos/linux.png" width="75px;" height="75px;" alt="Linux"/><br /><b>Linux</b></a></td>
+   
 
   </tr>
   <tr>
-    <td align="center"><a href="topics/software_development/README.md"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Software Development</b></a></td>
+    <td align="center"><a href="topics/software_development"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Software Development</b></a></td>
     <td align="center"><a href="https://github.com/bregman-arie/python-exercises"><img src="images/python.png" width="75px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
     <td align="center"><a href="https://github.com/bregman-arie/go-exercises"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a></td>
-    <td align="center"><a href="topics/shell/README.md"><img src="images/bash.png" width="75px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
-    <td align="center"><a href="topics/kubernetes/README.md"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
-    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
+    <td align="center"><a href="topics/shell"><img src="images/bash.png" width="75px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
+    <td align="center"><a href="topics/kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
+ 
   </tr>
   <tr>
-    <td align="center"><a href="topics/cloud/README.md"><img src="images/cloud.png" width="75px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a></td>
-    <td align="center"><a href="topics/aws/README.md"><img src="images/aws.png" width="100px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
-    <td align="center"><a href="topics/azure/README.md"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a></td>
-    <td align="center"><a href="#gcp"><img src="images/googlecloud.png" width="70px;" height="70px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
+    <td align="center"><a href="topics/cloud"><img src="images/cloud.png" width="75px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a></td>
+    <td align="center"><a href="topics/aws"><img src="images/aws.png" width="100px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
+    <td align="center"><a href="topics/azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a></td>
+    <td align="center"><a href="topics/gcp"><img src="images/googlecloud.png" width="70px;" height="70px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
     <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a></td>
-    <td align="center"><a href="topics/security/README.md"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
   </tr>
   <tr>
     <td align="center"><a href="#operating-system"><img src="images/os.png" width="75px;" height="75px;" alt="Operating System"/><br /><b>Operating System</b></a></td>
     <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a></td>
     <td align="center"><a href="#elastic"><img src="images/elastic.png" width="75px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
     <td align="center"><a href="#virtualization"><img src="images/virtualization.png" width="75px;" height="75px;" alt="Virtualization"/><br /><b>Virtualization</b></a></td>
-    <td align="center"><a href="topics/dns/README.md"><img src="images/dns.png" width="75px;" height="75px;" alt="DNS"/><br /><b>DNS</b></a></td>
-    <td align="center"><a href="#Misc"><img src="images/general.png" width="75px;" height="75px;" alt="Misc"/><br /><b>Misc</b></a></td>
+    <td align="center"><a href="topics/dns"><img src="images/dns.png" width="75px;" height="75px;" alt="DNS"/><br /><b>DNS</b></a></td>
   </tr>
   <tr>
     <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
@@ -58,28 +54,40 @@
     <td align="center"><a href="#regex"><img src="images/regex.png" width="75px;" height="75px;" alt="RegEx"/><br /><b>Regex</b></a></td>
     <td align="center"><a href="#system-design"><img src="images/design.png" width="75px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
     <td align="center"><a href="#hardware"><img src="images/hardware.png" width="75px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
-    <td align="center"><a href="#big-data"><img src="images/big-data.png" width="75px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
   </tr>
   <tr>
     <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
-    <td align="center"><a href="topics/containers/README.md"><img src="images/containers.png" width="75px;" height="75px;" alt="Containers"/><br /><b>Containers</b></a></td>
+    <td align="center"><a href="topics/containers"><img src="images/containers.png" width="75px;" height="75px;" alt="Containers"/><br /><b>Containers</b></a></td>
     <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
-    <td align="center"><a href="topics/openshift/README.md"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
+    <td align="center"><a href="topics/openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
     <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
-    <td align="center"><a href="topics/soft_skills/README.md"><img src="images/HR.png" width="75px;" height="75px;" alt="HR"/><br /><b>Soft Skills</b></a></td>
   </tr>
   <tr>
-      <td align="center"><a href="topics/terraform/README.md"><img src="images/terraform.png" width="75px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
+      <td align="center"><a href="topics/terraform"><img src="images/terraform.png" width="75px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
       <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a></td>
       <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a></td>
       <td align="center"><a href="#distributed"><img src="images/distributed.png" width="75px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
       <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="75px;" height="75px;" alt="you"/><br /><b>Questions you can ask</b></a></td>
-      <td align="center"><a href="topics/perl/README.md"><img src="images/perl.png" width="75px;" height="75px;" alt="perl"/><br /><b>Perl</b></a></td>
   </tr>
   <tr>
-      <td align="center"><a href="topics/kafka/README.md"><img src="images/logos/kafka.png" width="70px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
-      <td align="center"><a href="topics/argo/README.md"><img src="images/logos/argo.png" width="80px;" height="80px;" alt="Argo"/><br /><b>Argo</b></a></td>
+      <td align="center"><a href="topics/circleci"><img src="images/logos/circleci.png" width="70px;" height="70px;" alt="Circle CI"/><br /><b>Circle CI</b></a></td>
+      <td align="center"><a href="topics/argo"><img src="images/logos/argo.png" width="80px;" height="80px;" alt="Argo"/><br /><b>Argo</b></a></td>
+      <td align="center"><a href="topics/kafka"><img src="images/logos/kafka.png" width="85px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
+      <td align="center"><a href="topics/datadog"><img src="images/logos/datadog.png" width="80px;" height="80px;" alt="DataDog"/><br /><b></b></a></td>
+      <td align="center"><a href="topics/perl"><img src="images/perl.png" width="75px;" height="75px;" alt="perl"/><br /><b>Perl</b></a></td>
   </tr>
+   <tr>
+    <td align="center"><a href="topics/linux"><img src="images/logos/linux.png" width="75px;" height="75px;" alt="Linux"/><br /><b>Linux</b></a></td>
+    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
+    <td align="center"><a href="#big-data"><img src="images/big-data.png" width="75px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
+    <td align="center"><a href="topics/soft_skills"><img src="images/HR.png" width="75px;" height="75px;" alt="HR"/><br /><b>Soft Skills</b></a></td>
+    <td align="center"><a href="topics/security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
+   </tr>
+   <tr>
+    <td align="center"><a href="topics/chaos_engineering"><img src="images/logos/chaos_engineering.png" width="75px;" height="75px;" alt="Chaos Engineering"/><br /><b>Chaos Engineering</b></a></td>
+    <td align="center"><a href="#Misc"><img src="images/general.png" width="75px;" height="75px;" alt="Misc"/><br /><b>Misc</b></a></td>
+   </tr>
+   
 </table>
 </center>
 <!-- markdownlint-enable -->
@@ -89,35 +97,28 @@
 ## Network
 
 <details>
-<summary>What do you need in order to communicate?</summary><br><b>
+<summary>In general, what do you need in order to communicate?</summary><br><b>
 
   - A common language (for the two ends to understand)
   - A way to address who do you want to communicate with
   - A Connection (so the content of the communication can reach the recipients)
+
 </b></details>
 
 <details>
 <summary>What is TCP/IP?</summary><br><b>
 
 A set of protocols that define how two or more devices can communicate with each other.
+
 To learn more about TCP/IP, read [here](http://www.penguintutor.com/linux/basic-network-reference)
-</b></details>
 
-<details>
-<summary>What is APIPA?</summary><br><b>
-APIPA is a set of it addresses that devices are allocated
-when the main DHCP server is not reachable
-</b></details>
-
-<details>
-<summary>What ip range does APIPA use?</summary><br><b>
-APIPA uses the ip range: 169.254.0.1 - 169.254.255.254.
 </b></details>
 
 <details>
 <summary>What is Ethernet?</summary><br><b>
 
 Ethernet simply refers to the most common type of Local Area Network (LAN) used today. A LAN—in contrast to a WAN (Wide Area Network), which spans a larger geographical area—is a connected network of computers in a small area, like your office, college campus, or even home.
+
 </b></details>
 
 <details>
@@ -175,7 +176,7 @@ You can read more about the OSI model in [penguintutor.com](http://www.penguintu
 </b></details>
 
 <details>
-<summary>For each of the following determine to which OSI layer it belongs:
+<summary>For each of the following determines to which OSI layer it belongs:
 
   * Error correction
   * Packets routing
@@ -231,10 +232,12 @@ CSMA/CD algorithm:
 
 <details>
 <summary>What is a "Collision Domain"?</summary><br><b>
+A collision domain is a network segment in which devices can potentially interfere with each other by attempting to transmit data at the same time. When two devices transmit data at the same time, it can cause a collision, resulting in lost or corrupted data. In a collision domain, all devices share the same bandwidth, and any device can potentially interfere with the transmission of data by other devices.
 </b></details>
 
 <details>
 <summary>What is a "Broadcast Domain"?</summary><br><b>
+A broadcast domain is a network segment in which all devices can communicate with each other by sending broadcast messages. A broadcast message is a message that is sent to all devices in a network rather than a specific device. In a broadcast domain, all devices can receive and process broadcast messages, regardless of whether the message was intended for them or not.
 </b></details>
 
 <details>
@@ -289,6 +292,18 @@ Bonus question: what is the RTT of LAN?
 
 <details>
 <summary>How does SSL handshake work?</summary><br><b>
+SSL handshake is a process that establishes a secure connection between a client and a server.
+
+1. The client sends a Client Hello message to the server, which includes the client's version of the SSL/TLS protocol, a list of the cryptographic algorithms supported by the client, and a random value.
+2. The server responds with a Server Hello message, which includes the server's version of the SSL/TLS protocol, a random value, and a session ID.
+3. The server sends a Certificate message, which contains the server's certificate.
+4. The server sends a Server Hello Done message, which indicates that the server is done sending messages for the Server Hello phase.
+5. The client sends a Client Key Exchange message, which contains the client's public key.
+6. The client sends a Change Cipher Spec message, which notifies the server that the client is about to send a message encrypted with the new cipher spec.
+7. The client sends an Encrypted Handshake Message, which contains the pre-master secret encrypted with the server's public key.
+8. The server sends a Change Cipher Spec message, which notifies the client that the server is about to send a message encrypted with the new cipher spec.
+9. The server sends an Encrypted Handshake Message, which contains the pre-master secret encrypted with the client's public key.
+10. The client and server can now exchange application data.
 </b></details>
 
 <details>
@@ -416,7 +431,22 @@ For example, your computer's private IP could be 192.168.1.100, but your router 
 <summary>Which factors affect network performances</summary><br><b>
 </b></details>
 
-#### Network - Data and Control planes
+<details>
+<summary>What is APIPA?</summary><br><b>
+
+APIPA is a set of it addresses that devices are allocated
+when the main DHCP server is not reachable
+
+</b></details>
+
+<details>
+<summary>What ip range does APIPA use?</summary><br><b>
+
+APIPA uses the ip range: 169.254.0.1 - 169.254.255.254.
+
+</b></details>
+
+#### Control Plane and Data Plane
 
 <details>
 <summary>What "control plane" refers to?</summary><br><b>
@@ -680,7 +710,15 @@ https://www.minitool.com/lib/virtual-memory.html
 </b></details>
 
 <details>
-<summary>What is copy-on-write or shadowing?</summary><br><b>
+<summary>What is copy-on-write?</summary><br><b>
+Copy-on-write (COW) is a resource management concept, with the goal to reduce unnecessary copying of information. It is a concept which is implemented for instance within the POSIX fork syscall, which creates a duplicate process of the calling process.
+
+The idea:
+1. If resources are shared between 2 or more entities (for example shared memory segments between 2 processes) the resources don't need to be copied for every entity, but rather every entity has a READ operation access permission on the shared resource. (the shared segements are marked as read-only) 
+(Think of every entity having a pointer to the location of the shared resource which can be dereferenced to read its value)
+2. If one entity would perform a WRITE operation on a shared resource a problem would arise since the resource also would be permanently changed for ALL other entities sharing it.
+(Think of a process modifying some variables on the stack, or allocatingy some data dynamically on the heap, these changes to the shared resource would also apply for ALL other processes, this is definetly an undesirable behaviour)
+3. As a solution only if a WRITE operation is about to be performed on a shared resource, this resource gets COPIED first and then the changes are applied.
 </b></details>
 
 <details>
@@ -770,1582 +808,6 @@ The introduction of virtual machines allowed companies to deploy multiple busine
 <summary>Do we need virtual machines in the age of containers? Are they still relevant?</summary><br><b>
 </b></details>
 
-#### Python - OOP
-
-<details>
-<summary>Explain inheritance and how to use it in Python</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain and demonstrate class attributes & instance attributes</summary><br><b>
-
-In the following block of code `x` is a class attribute while `self.y` is a instance attribute
-
-```
-class MyClass(object):
-    x = 1
-
-    def __init__(self, y):
-        self.y = y
-```
-</b></details>
-
-#### Python - Exceptions
-
-<details>
-<summary>What is an error? What is an exception? What types of exceptions are you familiar with?</summary><br><b>
-
-```
-#  Note that you generally don't need to know the compiling process but knowing where everything comes from
-#  and giving complete answers shows that you truly know what you are talking about.
-
-Generally, every compiling process have a two steps.
-    - Analysis
-    - Code Generation.
-
-    Analysis can be broken into:
-        1. Lexical analysis   (Tokenizes source code)
-        2. Syntactic analysis (Check whether the tokens are legal or not, tldr, if syntax is correct)
-
-               for i in 'foo'
-                          ^
-             SyntaxError: invalid syntax
-
-        We missed ':'
-
-
-        3. Semantic analysis  (Contextual analysis, legal syntax can still trigger errors, did you try to divide by 0,
-          hash a mutable object or use an undeclared function?)
-
-                 1/0
-                ZeroDivisionError: division by zero
-
-    These three analysis steps are the responsible for error handlings.
-
-    The second step would be responsible for errors, mostly syntax errors, the most common error.
-    The third step would be responsible for Exceptions.
-
-    As we have seen, Exceptions are semantic errors, there are many builtin Exceptions:
-
-        ImportError
-        ValueError
-        KeyError
-        FileNotFoundError
-        IndentationError
-        IndexError
-        ...
-
-    You can also have user defined Exceptions that have to inherit from the `Exception` class, directly or indirectly.
-
-    Basic example:
-
-    class DividedBy2Error(Exception):
-        def __init__(self, message):
-            self.message = message
-
-
-    def division(dividend,divisor):
-        if divisor == 2:
-            raise DividedBy2Error('I dont want you to divide by 2!')
-        return dividend / divisor
-
-    division(100, 2)
-
-    >>> __main__.DividedBy2Error: I dont want you to divide by 2!
-```
-</b></details>
-
-<details>
-<summary>Explain Exception Handling and how to use it in Python</summary><br><b>
-
-**Exceptions:** Errors detected during execution are called Exceptions.
-
-**Handling Exception:** When an error occurs, or exception as we call it, Python will normally stop and generate an error message.</br>
-Exceptions can be handled using `try` and `except` statement in python.
-
-**Example:** Following example asks the user for input until a valid integer has been entered. </br>
-If user enter a non-integer value it will raise exception and using except it will catch that exception and ask the user to enter valid integer again.
-
-
-```py
-while True:
-    try:
-        a = int(input("please enter an integer value: "))
-        break
-    except ValueError:
-        print("Ops! Please enter a valid integer value.")
-
-```
-
-For more details about errors and exceptions follow this [https://docs.python.org/3/tutorial/errors.html](https://docs.python.org/3/tutorial/errors.html)
-
-</b></details>
-
-<details>
-<summary>What is the result of running the following function?
-
-```
-def true_or_false():
-    try:
-        return True
-    finally:
-        return False
-```
-</summary><br><b>
-False
-</b></details>
-
-#### Python Built-in functions
-
-<details>
-<summary>Explain the following built-in functions (their purpose + use case example):
-
-  * repr
-  * any
-  * all</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the difference between repr function and str?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the __call__ method?</summary><br><b>
-
-It is used to emulate callable objects. It allows a class instance to be called as a function.
-
-- Example code:
-
-```
-class Foo:
-    def __init__(self: object) ->  None:
-        pass
-    def __call__(self: object) -> None:
-        print("Called!")
-
-f = Foo()
-f()
-```
-
-- Result:
-
-```
-Called!
-```
-
-</b></details>
-
-<details>
-<summary>Do classes has the __call__ method as well? What for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What _ is used for in Python?</summary><br><b>
-
-1. Translation lookup in i18n
-2. Hold the result of the last executed expression or statement in the interactive interpreter.
-3. As a general purpose "throwaway" variable name. For example: x, y, _ = get_data() (x and y are used but since we don't care about third variable, we "threw it away").
-</b></details>
-
-<details>
-<summary>Explain what is GIL</summary><br><b>
-	Python Global Interpreter Lock (GIL) is a type of process lock which is used by python whenever it deals with processes. Generally, Python only uses only one thread to execute the set of written statements. This means that in python only one thread will be executed at a time
-</b></details>
-
-<details>
-<summary>What is Lambda? How is it used?</summary><br><b>
-
-A <code>lambda</code> expression is an 'anonymous' function, the difference from a normal defined function using the keyword `def`` is the syntax and usage.
-
-The syntax is:
-
-```lambda[parameters]: [expresion]```
-
-**Examples:**
-
-* A lambda function add 10 with any argument passed.
-
-```py
-x = lambda a: a + 10
-print(x(10))
-```
-
-* An addition function
-
-```py
-addition = lambda x, y: x + y
-print(addition(10, 20))
-```
-
-* Squaring function
-
-```py
-square = lambda x : x ** 2
-print(square(5))
-```
-Generally it is considered a bad practice under PEP 8 to assign a lambda expresion, they are meant to be used as parameters and inside of other defined functions.
-
-</b></details>
-
-#### Properties
-
-<details>
-<summary>Are there private variables in Python? How would you make an attribute of a class, private?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain the following:
-
-* getter
-* setter
-* deleter</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain what is @property</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you swap values between two variables?</summary><br><b>
-
-```
-x, y = y, x
-```
-</b></details>
-
-<details>
-<summary>Explain the following object's magic variables:
-
-  * __dict__
-</summary><br><b>
-</b></details>
-
-<details>
-<summary>Write a function to return the sum of one or more numbers. The user will decide how many numbers to use</summary><br><b>
-
-First you ask the user for the amount of numbers that will be use. Use a while loop that runs until amount_of_numbers becomes 0 through subtracting amount_of_numbers by one each loop. In the while loop you want ask the user for a number which will be added a variable each time the loop runs.
-
-```
-def return_sum():
-	amount_of_numbers = int(input("How many numbers? "))
-	total_sum = 0
-	while amount_of_numbers != 0:
-		num = int(input("Input a number. "))
-		total_sum += num
-		amount_of_numbers -= 1
-	return total_sum
-
-```
-</b></details>
-
-<details>
-<summary>Print the average of [2, 5, 6]. It should be rounded to 3 decimal places</summary><br><b>
-
-```
-li = [2, 5, 6]
-print("{0:.3f}".format(sum(li)/len(li)))
-```
-</b></details>
-
-#### Python - Lists
-
-<details>
-<summary>What is a tuple in Python? What is it used for?</summary><br><b>
-
-A tuple is a built-in data type in Python. It's used for storing multiple items in a single variable.
-</b></details>
-
-<details>
-<summary>List, like a tuple, is also used for storing multiple items. What is then, the difference between a tuple and a list?</summary><br><b>
-
-List, as opposed to a tuple, is a mutable data type. It means we can modify it and at items to it.
-</b></details>
-
-<details>
-<summary>How to add the number 2 to the list <code>x = [1, 2, 3]</code></summary><br><b>
-
-`x.append(2)`
-</b></details>
-
-<details>
-<summary>How to get the last element of a list?</summary><br><b>
-
-`some_list[-1]`
-</b></details>
-
-<details>
-<summary>How to add the items of [1, 2, 3] to the list [4, 5, 6]?</summary><br><b>
-x = [4, 5, 6]
-x.extend([1, 2, 3])
-
-Don't use `append` unless you would like the list as one item.
-</b></details>
-
-<details>
-<summary>How to remove the first 3 items from a list?</summary><br><b>
-
-`my_list[0:3] = []`
-</b></details>
-
-<details>
-<summary>How to insert an item to the beginning of a list? What about two items?</summary><br><b>
-
-- One item:
-
-```
-numbers = [1, 2, 3, 4, 5]
-numbers.insert(0, 0)
-print(numbers)
-```
-
-- Multiple items or list:
-
-```
-numbers_1 = [2, 3, 4, 5]
-numbers_2 = [0, 1]
-numbers_1 = numbers_2 + numbers_1
-print(numbers_1)
-```
-
-</b></details>
-
-<details>
-<summary>How to sort list by the length of items?</summary><br><b>
-
-```
-sorted_li = sorted(li, key=len)
-```
-
-Or without creating a new list:
-
-```
-li.sort(key=len)
-```
-</b></details>
-
-<details>
-<summary>Do you know what is the difference between list.sort() and sorted(list)?</summary><br><b>
-
-* sorted(list) will return a new list (original list doesn't change)
-* list.sort() will return None but the list is change in-place
-
-* sorted() works on any iterable (Dictionaries, Strings, ...)
-* list.sort() is faster than sorted(list) in case of Lists
-</b></details>
-
-<details>
-<summary>Convert every string to an integer: <code>[['1', '2', '3'], ['4', '5', '6']]</code></summary><br><b>
-
-```
-nested_li = [['1', '2', '3'], ['4', '5', '6']]
-[[int(x) for x in li] for li in nested_li]
-```
-</b></details>
-
-<details>
-<summary>How to merge two sorted lists into one sorted list?</summary><br><b>
-
-```
-sorted(li1 + li2)
-```
-
-Another way:
-
-```
-i, j = 0
-merged_li = []
-
-while i < len(li1) and j < len(li2):
-    if li1[i] < li2[j]:
-        merged_li.append(li1[i])
-        i += 1
-    else:
-        merged_li.append(li2[j])
-        j += 1
-
-merged_li = merged_li + merged_li[i:] + merged_li[j:]
-```
-</b></details>
-
-<details>
-<summary>How to check if all the elements in a given lists are unique? so [1, 2, 3] is unique but [1, 1, 2, 3] is not unique because 1 exists twice</summary><br><b>
-</b>
-
-There are many ways of solving this problem:<br>
-<code># Note: :list and -> bool are just python typings, they are not needed for the correct execution of the algorithm. </code>
-
-Taking advantage of sets and len:
-
-```
-def is_unique(l:list) -> bool:
-    return len(set(l)) == len(l)
-```
-
-This one is can be seen used in other programming languages.
-
-```
-def is_unique2(l:list) -> bool:
-    seen = []
-
-    for i in l:
-        if i in seen:
-            return False
-        seen.append(i)
-    return True
-```
-
-Here we just count and make sure every element is just repeated once.
-
-```
-def is_unique3(l:list) -> bool:
-    for i in l:
-        if l.count(i) > 1:
-            return False
-    return True
-```
-
-This one might look more convulated but hey, one liners.
-
-```
-def is_unique4(l:list) -> bool:
-    return all(map(lambda x: l.count(x) < 2, l))
-```
-</details>
-
-<details>
-<summary>You have the following function
-
-```
-def my_func(li = []):
-    li.append("hmm")
-    print(li)
-```
-
-If we call it 3 times, what would be the result each call?
-</summary><br><b>
-
-```
-['hmm']
-['hmm', 'hmm']
-['hmm', 'hmm', 'hmm']
-```
-</b></details>
-
-
-<details>
-<summary>How to iterate over a list?</summary><br><b>
-
-```
-for item in some_list:
-    print(item)
-```
-</b></details>
-
-<details>
-<summary>How to iterate over a list with indexes?</summary><br><b>
-
-```
-for i, item in enumerate(some_list):
-    print(i)
-```
-</b></details>
-
-<details>
-<summary>How to start list iteration from 2nd index?</summary><br><b>
-
-Using range like this
-
-```
-for i in range(1, len(some_list)):
-    some_list[i]
-```
-
-Another way is using slicing
-
-```
-for i in some_list[1:]:
-```
-</b></details>
-
-<details>
-<summary>How to iterate over a list in reverse order?</summary><br><b>
-
-Method 1
-```
-for i in reversed(li):
-    ...
-```
-
-Method 2
-```
-n = len(li) - 1
-while n > 0:
-    ...
-    n -= 1
-```
-</b></details>
-
-<details>
-<summary>Sort a list of lists by the second item of each nested list</summary><br><b>
-
-```
-li = [[1, 4], [2, 1], [3, 9], [4, 2], [4, 5]]
-
-sorted(li, key=lambda l: l[1])
-```
-
-or
-
-```
-li.sort(key=lambda l: l[1)
-```
-</b></details>
-
-<details>
-<summary>Combine [1, 2, 3] and ['x', 'y', 'z'] so the result is [(1, 'x'), (2, 'y'), (3, 'z')]</summary><br><b>
-
-```
-nums = [1, 2, 3]
-letters = ['x', 'y', 'z']
-
-list(zip(nums, letters))
-```
-</b></details>
-
-<details>
-<summary>What is List Comprehension? Is it better than a typical loop? Why? Can you demonstrate how to use it?</summary><br><b>
-
-From [Docs](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions): "List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.".
-
-It's better because they're compact, faster and have better readability.
-
-- For loop:
-
-```
-number_lists = [[1, 7, 3, 1], [13, 93, 23, 12], [123, 423, 456, 653, 124]]
-odd_numbers = []
-for number_list in number_lists:
-    for number in number_list:
-        if number % 2 == 0:
-            odd_numbers.append(number)
-print(odd_numbers)
-```
-
-- List comprehesion:
-
-```
-number_lists = [[1, 7, 3, 1], [13, 93, 23, 12], [123, 423, 456, 653, 124]]
-odd_numbers = [number for number_list in number_lists for number in number_list if number % 2 == 0]
-print(odd_numbers)
-```
-
-</b></details>
-
-<details>
-<summary>You have the following list: <code>[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]</code>
-  Extract all type of foods. Final output should be: {'mushrooms', 'goombas', 'turtles'}</summary><br><b>
-
-```
-brothers_menu =  \
-[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]
-
-# "Classic" Way
-def get_food(brothers_menu) -> set:
-    temp = []
-
-    for brother in brothers_menu:
-        for food in brother['food']:
-            temp.append(food)
-
-    return set(temp)
-
-# One liner way (Using list comprehension)
-set([food for bro in x for food in bro['food']])
-```
-</b></details>
-
-#### Python - Dictionaries
-
-<details>
-<summary>How to create a dictionary?</summary><br><b>
-
-my_dict = dict(x=1, y=2)
-OR
-my_dict = {'x': 1, 'y': 2}
-OR
-my_dict = dict([('x', 1), ('y', 2)])
-</b></details>
-
-<details>
-<summary>How to remove a key from a dictionary?</summary><br><b>
-
-del my_dict['some_key']
-you can also use `my_dict.pop('some_key')` which returns the value of the key.
-</b></details>
-
-<details>
-<summary>How to sort a dictionary by values?</summary><br><b>
-
-```
-{k: v for k, v in sorted(x.items(), key=lambda item: item[1])}
-```
-</b></details>
-
-<details>
-<summary>How to sort a dictionary by keys?</summary><br><b>
-
-```
-dict(sorted(some_dictionary.items()))
-```
-</b></details>
-
-<details>
-<summary>How to merge two dictionaries?</summary><br><b>
-
-```
-some_dict1.update(some_dict2)
-```
-</b></details>
-
-
-<details>
-<summary>Convert the string "a.b.c" to the dictionary <code>{'a': {'b': {'c': 1}}}</code></summary><br><b>
-
-```
-output = {}
-string = "a.b.c"
-path = string.split('.')
-target = reduce(lambda d, k: d.setdefault(k, {}), path[:-1], output)
-target[path[-1]] = 1
-print(output)
-```
-</b></details>
-
-##### Common Algorithms Implementation
-
-<details>
-<summary>Can you implement "binary search" in Python?</summary><br><b>
-
-[Solution](coding/python/binary_search.py)
-</b></details>
-
-#### Python Files
-
-<details>
-<summary>How to write to a file?</summary><br><b>
-
-```
-with open('file.txt', 'w') as file:
-    file.write("My insightful comment")
-```
-</b></details>
-
-<details>
-<summary>Sum all the integers in a given file</summary><br><b>
-</b></details>
-
-<details>
-<summary>Print a random line of a given file</summary><br><b>
-</b></details>
-
-<details>
-<summary>Print every 3rd line of a given file</summary><br><b>
-</b></details>
-
-<details>
-<summary>Print the number of lines in a given file</summary><br><b>
-</b></details>
-
-<details>
-<summary>Print the number of of words in a given file</summary><br><b>
-</b></details>
-
-<details>
-<summary>Can you write a function which will print all the file in a given directory? including sub-directories</summary><br><b>
-</b></details>
-
-<details>
-<summary>Write a dictionary (variable) to a file</summary><br><b>
-
-```
-import json
-
-with open('file.json', 'w') as f:
-    f.write(json.dumps(dict_var))
-```
-</b></details>
-
-#### Python OS
-
-<details>
-<summary>How to print current working directory?</summary><br><b>
-
-    import os
-
-    print(os.getcwd())
-
-</b></details>
-
-<details>
-<summary>Given the path <code>/dir1/dir2/file1</code> print the file name (file1)</summary><br><b>
-
-    import os
-
-    print(os.path.basename('/dir1/dir2/file1'))
-
-    # Another way
-    print(os.path.split('/dir1/dir2/file1')[1])
-
-</b></details>
-
-<details>
-<summary>Given the path <code>/dir1/dir2/file1</code>
-
-1. Print the path without the file name (/dir1/dir2)
-2. Print the name of the directory where the file resides (dir2)
-</summary><br><b>
-
-    import os
-
-    ## Part 1.
-    # os.path.dirname gives path removing the end component
-    dirpath = os.path.dirname('/dir1/dir2/file1')
-    print(dirpath)
-
-    ## Part 2.
-    print(os.path.basename(dirpath))
-
-</b></details>
-
-<details>
-<summary>How do you execute shell commands using Python?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you join path components? for example <code>/home</code> and <code>luig</code> will result in <code>/home/luigi</code> </summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you remove non-empty directory?</summary><br><b>
-</b></details>
-
-#### Python Regex
-
-<details>
-<summary>How do you perform regular expressions related operations in Python? (match patterns, substitute strings, etc.)</summary><br><b>
-
-Using the re module
-</b></details>
-
-<details>
-<summary>How to find all the IP addresses in a variable? How to find them in a file?</summary><br><b>
-</b></details>
-
-#### Python Strings
-
-<details>
-<summary>Find the first repeated character in a string</summary><br><b>
-
-While you iterate through the characters, store them in a dictionary and check for every character whether it's already in the dictionary.
-
-```
-def firstRepeatedCharacter(str):
-    chars = {}
-    for ch in str:
-        if ch in chars:
-            return ch
-        else:
-            chars[ch] = 0
-```
-</b></details>
-
-<details>
-<summary>How to extract the unique characters from a string? for example given the input "itssssssameeeemarioooooo" the output will be "mrtisaoe"</summary><br><b>
-
-```
-x = "itssssssameeeemarioooooo"
-y = ''.join(set(x))
-```
-</b></details>
-
-<details>
-<summary>Find all the permutations of a given string</summary><br><b>
-
-```
-def permute_string(string):
-
-    if len(string) == 1:
-        return [string]
-
-    permutations = []
-    for i in range(len(string)):
-        swaps = permute_string(string[:i] + string[(i+1):])
-        for swap in swaps:
-            permutations.append(string[i] + swap)
-
-    return permutations
-
-print(permute_string("abc"))
-```
-
-Short way (but probably not acceptable in interviews):
-
-```
-from itertools import permutations
-
-[''.join(p) for p in permutations("abc")]
-```
-
-Detailed answer can be found here: http://codingshell.com/python-all-string-permutations
-
-</b></details>
-
-<details>
-<summary>How to check if a string contains a sub string?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Find the frequency of each character in string</summary><br><b>
-</b></details>
-
-<details>
-<summary>Count the number of spaces in a string</summary><br><b>
-
-You can use the "count" method like this:
-
-```python
-
-ImAString.count(" ")
-
-```
-
-</b></details>
-
-<details>
-<summary>Given a string, find the N most repeated words</summary><br><b>
-</b></details>
-
-<details>
-<summary>Given the string (which represents a matrix) "1 2 3\n4 5 6\n7 8 9" create rows and colums variables (should contain integers, not strings)</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of each of the following?
-
-```
->> ', '.join(["One", "Two", "Three"])
->> " ".join("welladsadgadoneadsadga".split("adsadga")[:2])
->> "".join(["c", "t", "o", "a", "o", "q", "l"])[0::2]
-```
-</summary><br><b>
-
-```
->>> 'One, Two, Three'
->>> 'well done'
->>> 'cool'
-```
-</b></details>
-
-<details>
-<summary>If <code>x = "pizza"</code>, what would be the result of <code>x[::-1]</code>?</summary><br><b>
-
-It will reverse the string, so x would be equal to `azzip`.
-</b></details>
-
-<details>
-<summary>Reverse each word in a string (while keeping the order)</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the output of the following code: <code>"".join(["a", "h", "m", "a", "h", "a", "n", "q", "r", "l", "o", "i", "f", "o", "o"])[2::3]</code></summary><br><b>
-
-mario
-</b></details>
-
-#### Python Iterators
-
-<details>
-<summary>What is an iterator?</summary><br><b>
-</b></details>
-
-#### Python Misc
-
-<details>
-<summary>Explain data serialization and how do you perform it with Python</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you handle argument parsing in Python?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a generator? Why using generators?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What would be the output of the following block?
-
-```
-for i in range(3, 3):
-   print(i)
-```
-</summary><br><b>
-
-No output :)
-</b></details>
-
-<details>
-<summary>What is <code>yeild</code>? When would you use it?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain the following types of methods and how to use them:
-
-  * Static method
-  * Class method
-  * instance method</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to reverse a list?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to combine list of strings into one string with spaces between the strings</summary><br><b>
-</b></details>
-
-<details>
-<summary>You have the following list of nested lists: <code>[['Mario', 90], ['Geralt', 82], ['Gordon', 88]]</code> How to sort the list by the numbers in the nested lists?</code></summary><br><b>
-
-One way is:
-
-the_list.sort(key=lambda x: x[1])
-</b></details>
-
-<details>
-<summary>Explain the following:
-
-  * zip()
-  * map()
-  * filter()</summary><br><b>
-</b></details>
-
-#### Python - Slicing
-
-For the following slicing exercises, assume you have the following list: `my_list = [8, 2, 1, 10, 5, 4, 3, 9]`
-
-<details>
-<summary>What is the result of `my_list[0:4]`?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of `my_list[5:6]`?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of `my_list[5:5]`?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of `my_list[::-1]`?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of `my_list[::3]`?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of `my_list[2:]`?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of `my_list[:3]`?</summary><br><b>
-</b></details>
-
-#### Python Debugging
-
-<details>
-<summary>How do you debug Python code?</summary><br><b>
-
-pdb :D
-</b></details>
-
-<details>
-<summary>How to check how much time it took to execute a certain script or block of code?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What empty <code>return</code> returns?</summary><br><b>
-</b>
-
-Short answer is: It returns a None object.
-
-We could go a bit deeper and explain the difference between
-
-```
-def a ():
-    return
-
->>> None
-```
-
-And
-
-```
-def a ():
-    pass
-
->>> None
-```
-Or we could be asked this as a following question, since they both give the same result.
-
-We could use the dis module to see what's going on:
-
-```
-  2           0 LOAD_CONST               0 (<code object a at 0x0000029C4D3C2DB0, file "<dis>", line 2>)
-              2 LOAD_CONST               1 ('a')
-              4 MAKE_FUNCTION            0
-              6 STORE_NAME               0 (a)
-
-  5           8 LOAD_CONST               2 (<code object b at 0x0000029C4D3C2ED0, file "<dis>", line 5>)
-             10 LOAD_CONST               3 ('b')
-             12 MAKE_FUNCTION            0
-             14 STORE_NAME               1 (b)
-             16 LOAD_CONST               4 (None)
-             18 RETURN_VALUE
-
-Disassembly of <code object a at 0x0000029C4D3C2DB0, file "<dis>", line 2>:
-  3           0 LOAD_CONST               0 (None)
-              2 RETURN_VALUE
-
-Disassembly of <code object b at 0x0000029C4D3C2ED0, file "<dis>", line 5>:
-  6           0 LOAD_CONST               0 (None)
-              2 RETURN_VALUE
-```
-
-An empty <code> return</code> is exactly the same as <code>return None</code> and functions without any explicit return
-will always return None regardless of the operations, therefore
-
-
-```
-def sum(a, b):
-    global c
-    c = a + b
-
->>> None
-```
-</b></details>
-
-<details>
-<summary>How to improve the following block of code?
-
-```
-li = []
-for i in range(1, 10):
-    li.append(i)
-```
-</summary><br><b>
-
-```
-[i for i in range(1, 10)]
-```
-</b></details>
-
-<details>
-<summary>Given the following function
-
-```
-def is_int(num):
-    if isinstance(num, int):
-        print('Yes')
-    else:
-        print('No')
-```
-What would be the result of is_int(2) and is_int(False)?
-</summary><br><b>
-</b></details>
-
-#### Python - Linked List
-
-<details>
-<summary>Can you implement a linked list in Python?</summary><br><b>
-
-The reason we need to implement in the first place, it's because a linked list isn't part of Python standard library.<br>
-To implement a linked list, we have to implement two structures: The linked list itself and a node which is used by the linked list.
-
-Let's start with a node. A node has some value (the data it holds) and a pointer to the next node
-
-```
-class Node(object):
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-```
-
-Now the linked list. An empty linked list has nothing but an empty head.
-
-```
-class LinkedList(object):
-    def __init__(self):
-        self.head = None
-```
-
-Now we can start using the linked list
-
-```
-ll = Linkedlist()
-ll.head = Node(1)
-ll.head.next = Node(2)
-ll.head.next.next = Node(3)
-```
-
-What we have is:
-
-----       -----      ----
-| 1 | ->   | 2 |  ->  | 3 |
-----       -----      -----
-
-Usually, more methods are implemented, like a push_head() method where you insert a node at the beginning of the linked list
-
-```
-def push_head(self, value):
-    new_node = Node(value)
-    new_node.next = self.head
-    self.head = new_node
-```
-</b></details>
-
-<details>
-<summary>Add a method to the Linked List class to traverse (print every node's data) the linked list</summary><br><b>
-
-def print_list(self):
-    node = self.head
-    while(node):
-        print(node.data)
-        node = node.next
-</b></details>
-
-<details>
-<summary>Write a method to that will return a boolean based on whether there is a loop in a linked list or not</summary><br><b>
-
-Let's use the Floyd's Cycle-Finding algorithm:
-
-```
-def loop_exists(self):
-    one_step_p = self.head
-    two_steps_p = self.head
-    while(one_step_p and two_steps_p and two_steps_p.next):
-        one_step_p = self.head.next
-        two_step_p = self.head.next.next
-        if (one_step_p == two_steps_p):
-            return True 
-    return False
-```
-</b></details>
-
-#### Python - Stack
-
-<details>
-<summary>Implement Stack in Python</summary><br><b>
-</b></details>
-
-#### Python Testing
-
-<details>
-<summary>What is your experience with writing tests in Python?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is PEP8? Give an example of 3 style guidelines</summary><br><b>
-
-PEP8 is a list of coding conventions and style guidelines for Python
-
-5 style guidelines:
-
-    1. Limit all lines to a maximum of 79 characters.
-    2. Surround top-level function and class definitions with two blank lines.
-    3. Use commas when making a tuple of one element
-    4. Use spaces (and not tabs) for indentation
-    5. Use 4 spaces per indentation level
-</b></details>
-
-<details>
-<summary>How to test if an exception was raised?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What <code>assert</code> does in Python?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain mocks</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you measure execution time of small code snippets?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Why one shouldn't use <code>assert</code> in non-test/production code?</summary><br><b>
-</b></details>
-
-#### Flask
-
-<details>
-<summary>Can you describe what is Django/Flask and how you have used it? Why Flask and not Django? (or vice versa)</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a route?</summary><br><b>
-As every web framework, Flask provides a route functionality that lets you serve a content of a given URL.
-
-There are multiple ways to map a URL with a function in Python.
-
-- Decorator: you can use python decorators. In this case we're using `app`. This `app` decorator is the instance of the `Flask` class. And route it's a method of this class.
-
-```
-@app.route('/')
-def home():
-  return 'main website'
-```
-
-- `add_url_rule` method: This is a method of the Flask class. We can also use it for map the URL with a function.
-
-```
-def home():
-  return 'main website'
-
-app.add_url_rule('/', view_func=home)
-```
-
-</b></details>
-
-<details>
-<summary>What is a blueprint in Flask?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a template?</summary><br><b>
-</b></details>
-
-#### zip
-
-<details>
-<summary>Given <code>x = [1, 2, 3]</code>, what is the result of list(zip(x))?</summary><br><b>
-
-```
-[(1,), (2,), (3,)]
-```
-</b></details>
-
-<details>
-<summary>What is the result of each of the following:
-
-```
-list(zip(range(5), range(50), range(50)))
-list(zip(range(5), range(50), range(-2)))
-```
-</summary><br><b>
-
-```
-[(0, 0, 0), (1, 1, 1), (2, 2, 2), (3, 3, 3), (4, 4, 4)]
-[]
-```
-</b></details>
-
-#### Python Descriptors
-
-<details>
-<summary>Explain Descriptors</summary><br><b>
-
-Read about descriptors [here](https://docs.python.org/3/howto/descriptor.html)
-</b></details>
-
-<details>
-<summary>What would be the result of running <code>a.num2</code> assuming the following code
-
-```
-class B:
-    def __get__(self, obj, objtype=None):
-        reuturn 10
-
-class A:
-    num1 = 2
-    num2 = Five()
-```
-</summary><br><b>
-10
-</b></details>
-
-<details>
-<summary>What would be the result of running <code>some_car = Car("Red", 4)</code> assuming the following code
-
-```
-class Print:
-
-    def __get__(self, obj, objtype=None):
-        value = obj._color
-        print("Color was set to {}".format(valie))
-        return value
-
-    def __set__(self, obj, value):
-        print("The color of the car is {}".format(value))
-        obj._color = value
-
-class Car:
-
-    color = Print()
-
-    def __ini__(self, color, age):
-        self.color = color
-        self.age = age
-```
-</summary><br><b>
-An instance of Car class will be created and the following will be printed: "The color of the car is Red"
-</b></details>
-
-#### Python Misc
-
-<details>
-<summary>How can you spawn multiple processes with Python?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Implement simple calculator for two numbers</summary><br><b>
-
-```
-def add(num1, num2):
-    return num1 + num2
-
-
-def sub(num1, num2):
-    return num1 - num2
-
-
-def mul(num1, num2):
-    return num1*num2
-
-
-def div(num1, num2):
-    return num1 / num2
-
-operators = {
-    '+': add,
-    '-': sub,
-    '*': mul,
-    '/': div
-}
-
-if __name__ == '__main__':
-    operator = str(input("Operator: "))
-    num1 = int(input("1st number: "))
-    num2 = int(input("2nd number: "))
-    print(operators[operator](num1, num2))
-```
-</b></details>
-
-<details>
-<summary>What data types are you familiar with that are not Python built-in types but still provided by modules which are part of the standard library?</summary><br><b>
-
-This is a good reference https://docs.python.org/3/library/datatypes.html
-</b></details>
-
-<details>
-<summary>Explain what is a decorator</summary><br><b>
-</b>
-<b>In python, everything is an object, even functions themselves. Therefore you could pass functions as arguments
-for another function eg;
-
-```
-def wee(word):
-    return word
-
-def oh(f):
-    return f + "Ohh"
-
->>> oh(wee("Wee"))
-<<< Wee Ohh
-```
-
-This allows us to control the before execution of any given function and if we added another function as wrapper,
-(a function receiving another function that receives a function as parameter) we could also control the after execution.
-
-Sometimes we want to control the before-after execution of many functions and it would get tedious to write
-
-<code> f = function(function_1())</code>
-<code> f = function(function_1(function_2(*args)))</code>
-
-every time, that's what decorators do, they introduce syntax to write all of this on the go, using the keyword '@'.
-</b>
-</details>
-
-<details>
-<summary>Can you show how to write and use decorators?</summary><br><b>
-
-<code>
-These two decorators (ntimes and timer) are usually used to display decorators functionalities, you can find them in lots of
-tutorials/reviews. I first saw these examples two years ago in pyData 2017. https://www.youtube.com/watch?v=7lmCu8wz8ro&t=3731s</code>
-
-```
-Simple decorator:
-
-def deco(f):
-    print(f"Hi I am the {f.__name__}() function!")
-    return f
-
-@deco
-def hello_world():
-    return "Hi, I'm in!"
-
-a = hello_world()
-print(a)
-
->>> Hi I am the hello_world() function!
-    Hi, I'm in!
-```
-
-This is the simplest decorator version, it basically saves us from writting <code>a = deco(hello_world())</code>.
-But at this point we can only control the before execution, let's take on the after:
-
-```
-def deco(f):
-    def wrapper(*args, **kwargs):
-        print("Rick Sanchez!")
-        func = f(*args, **kwargs)
-        print("I'm in!")
-        return func
-    return wrapper
-
-@deco
-def f(word):
-    print(word)
-
-a = f("************")
->>> Rick Sanchez!
-    ************
-    I'm in!
-```
-
-deco receives a function -> f
-wrapper receives the arguments -> *args, **kwargs
-
-wrapper returns the function plus the arguments -> f(*args, **kwargs)
-deco returns wrapper.
-
-As you can see we conveniently do things before and after the execution of a given function.
-
-For example, we could write a decorator that calculates the execution time of a function.
-
-```
-import time
-def deco(f):
-    def wrapper(*args, **kwargs):
-        before = time.time()
-        func = f(*args, **kwargs)
-        after = time.time()
-        print(after-before)
-        return func
-    return wrapper
-
-@deco
-def f():
-    time.sleep(2)
-    print("************")
-
-a = f()
->>> 2.0008859634399414
-```
-
-Or create a decorator that executes a function n times.
-
-```
-def n_times(n):
-    def wrapper(f):
-        def inner(*args, **kwargs):
-            for _ in range(n):
-                func = f(*args, **kwargs)
-            return func
-        return inner
-    return wrapper
-
-@n_times(4)
-def f():
-    print("************")
-
-a = f()
-
->>>************
-   ************
-   ************
-   ************
-```
-
-</b></details>
-
-<details>
-<summary>Write a decorator that calculates the execution time of a function</summary><br><b>
-</b></details>
-
-<details>
-<summary>Write a script which will determine if a given host is accessible on a given port</summary><br><b>
-</b></details>
-
-<details>
-<summary>Are you familiar with Dataclasses? Can you explain what are they used for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>You wrote a class to represent a car. How would you compare two cars instances if two cars are equal if they have the same model and color?</summary><br><b>
-
-```
-class Car:
-    def __init__(self, model, color):
-        self.model = model
-        self.color = color
-
-    def __eq__(self, other):
-        if not isinstance(other, Car):
-            return NotImplemented
-        return self.model == other.model and self.color == other.color
-
->> a = Car('model_1', 'red')
->> b = Car('model_2', 'green')
->> c = Car('model_1', 'red')
->> a == b
-False
->> a == c
-True
-```
-</b></details>
-
-<details>
-<summary>Explain Context Manager</summary><br><b>
-</b></details>
-
-<details>
-<summary>Tell me everything you know about concurrency in Python</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain the Buffer Protocol</summary><br><b>
-</b></details>
-
-<details>
-<summary>Do you have experience with web scraping? Can you describe what have you used and for what?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Can you implement Linux's <code>tail</code> command in Python? Bonus: implement <code>head</code> as well</summary><br><b>
-</b></details>
-
-<details>
-<summary>You have created a web page where a user can upload a document. But the function which reads the uploaded files, runs for a long time, based on the document size and user has to wait for the read operation to complete before he/she can continue using the web site. How can you overcome this?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How yield works exactly?</summary><br><b>
-</b></details>
-
 ## Monitoring
 
 <details>
@@ -2371,6 +833,33 @@ Logging<br>
 
 <details>
 <summary>What is the difference between infrastructure monitoring and application monitoring? (methods, tools, ...)</summary><br><b>
+</b></details>
+
+### Application Performance Management
+
+<details>
+<summary>What is Application Performance Management?</summary><br><b>
+
+- IT metrics translated into business insights
+- Practices for monitoring applications insights so we can improve performances, reduce issues and improve overall user experience
+</b></details>
+
+<details>
+<summary>Name three aspects of a project you can monitor with APM (e.g. backend)</summary><br><b>
+
+- Frontend
+- Backend
+- Infra
+- ...
+</b></details>
+
+<details>
+<summary>What can be collected/monitored to perform APM monitoring?</summary><br><b>
+
+- Metrics
+- Logs
+- Events
+  Traces
 </b></details>
 
 ## Prometheus
@@ -2499,7 +988,8 @@ func main() {
 <details>
 <summary>The following block of code tries to convert the integer 101 to a string but instead we get "e". Why is that? How to fix it?
 
-```
+
+```go
 package main
 
 import "fmt"
@@ -2540,7 +1030,7 @@ But `x`, `y` and their sum is variable.
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import "fmt"
@@ -2578,7 +1068,7 @@ It is called the [blank identifier](https://golang.org/doc/effective_go.html#bla
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import "fmt"
@@ -2600,7 +1090,7 @@ Since the first iota is declared with the value `3` (` + 3`), the next one has t
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import (
@@ -2639,7 +1129,7 @@ Output: 2 1 3
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import (
@@ -2693,7 +1183,7 @@ But in `mod2`, `append` creats new slice, and we're changing only `a` value, not
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import (
@@ -2769,18 +1259,27 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>What is a document? What is a collection?</summary><br><b>
+
+  * A document is a record in MongoDB, which is stored in BSON (Binary JSON) format and is the basic unit of data in MongoDB.
+  * A collection is a group of related documents stored in a single database in MongoDB.
 </b></details>
 
 <details>
 <summary>What is an aggregator?</summary><br><b>
+
+  * An aggregator is a framework in MongoDB that performs operations on a set of data to return a single computed result.
 </b></details>
 
 <details>
 <summary>What is better? Embedded documents or referenced?</summary><br><b>
+
+  * There is no definitive answer to which is better, it depends on the specific use case and requirements. Some explainations : Embedded documents provide atomic updates, while referenced documents allow for better normalization.
 </b></details>
 
 <details>
 <summary>Have you performed data retrieval optimizations in Mongo? If not, can you think about ways to optimize a slow data retrieval?</summary><br><b>
+
+  * Some ways to optimize data retrieval in MongoDB are: indexing, proper schema design, query optimization and database load balancing.
 </b></details>
 
 ##### Queries
@@ -2795,6 +1294,9 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>What is the difference between find() and find_one()?</code></summary><br><b>
+	
+  * `find()` returns all documents that match the query conditions.
+  * find_one() returns only one document that matches the query conditions (or null if no match is found).
 </b></details>
 
 <details>
@@ -2962,322 +1464,6 @@ WHERE
 When you use a function (`YEAR(purchased_at)`) it has to scan the whole database as opposed to using indexes and basically the column as it is, in its natural state.
 </b></details>
 
-## GCP
-
-<details>
-<summary>Explain GCP's architecture</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are the main components and services of GCP?</summary><br><b>
-
-| Components | Services          |
-| ---------- | ----------------- |
-| Compute    | Compute Engine    |
-|            | App Engine        |
-|            | Kubernetes Engine |
-|            | Cloud Function    |
-|            | Cloud Run         | 
-| Storage &  | Cloud Storage     |
-| Database   | Cloud SQL         |
-|            | Cloud BigTable    |
-|            | Cloud Spanner     |
-|            | Cloud Datastore   |
-| Networking | VPC               |
-|            | Load Balancing    |
-|            | Cloud Armor       |
-|            | Cloud CDN         |
-|            | Cloud DNS         |
-|            | Cloud Interconnect|
-| Big Data   | Big Query         |
-|            | Cloud Dataproc    |
-|            | Cloud Datalab     |
-|            | Data Studio       |
-| DevOps     | Container Registry|
-|            | Cloud Build       |
-|            | Source Repository |
-| Identity & | Cloud Identity    |
-| Security   | Cloud IAM         |
-|            | Cloud KMS         |
-| Cloud AI   | Cloud AutoML      |
-|            | Cloud Vision API  |
-|            | Natural Language  |
-|            | Cloud Speech-to-Text|
-|            | Cloud Text-to-Speech|
-|            | Cloud Translation API|
-|            | Cloud Video Intelligence|
-| API Platform | Maps Platform    |
-|            | API Analytics  |
-|            | Apigee Sense   |
-|            | Cloud Endpoints|
-
-</b></details>
-
-<details>
-<summary>What GCP management tools are you familiar with?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Tell me what do you know about GCP networking</summary><br><b>
-
-Virtual Private Cloud(VPC) network is a virtual version of physical network, implemented in Google's internal Network. VPC is a gloabal resource in GCP.
-Subnetworks(subnets) are regional resources, ie., subnets can be created withinin regions.
-
-VPC are created in 2 modes,
-
-1. Auto mode VPC - One subnet in each region is created automatically by GCP while creating VPC
-
-2. Custom mode VPC - No subnets are automatically created. This type of network provides complete control over the subnets creation to the users. 
-
-
-</b></details>
-
-<details>
-<summary>Explain Cloud Functions</summary><br><b>
-
-Google Cloud Functions is a serverless execution environment for building and connecting cloud services. With Cloud Functions you write simple, single-purpose functions that are attached to events emitted from your cloud infrastructure and services. Your function is triggered when an event being watched is fired.
-
-</b></details>
-
-<details>
-<summary>What is Cloud Datastore?</summary><br><b>
-
-Cloud Datastore is a schemaless NoSQL datastore in Google's cloud. Applications can use Datastore to query your data with SQL-like queries that support filtering and sorting. Datastore replicates data across multiple datacenters, which provides a high level of read/write availability.
-
-</b></details>
-
-<details>
-<summary>What network tags are used for?</summary><br><b>
-
-Network tags allow you to apply firewall rules and routes to a specific instance or set of instances: You make a firewall rule applicable to specific instances by using target tags and source tags.
-
-</b></details>
-
-<details>
-<summary>What are flow logs? Where are they enabled?</summary><br><b>
-
-VPC Flow Logs records a sample of network flows sent from and received by VM instances, including instances used as Google Kubernetes Engine nodes. These logs can be used for network monitoring, forensics, real-time security analysis, and expense optimization.
-
-Enable Flow Logs
-
-1. Open VPC Network in GCP Console
-
-2. Click the name of the subnet 
-
-3. Click EDIT button
-
-4. Set Flow Logs to On
-
-5. Click Save
-
-
-
-</b></details>
-
-<details>
-<summary>How do you list buckets?</summary><br><b>
-    Two ways to do that:
-	 
-   $ gsutil ls
-	 
-   $ gcloud alpha storage ls
-	
-</b></details>
- 
-<details>
-<summary>What Compute metadata key allows you to run code at startup?</summary><br><b>
-
-startap-script
-</b></details>
-
-<details>
-<summary>What the following commands does? `gcloud deployment-manager deployments create`</summary><br><b>
-
-Deployment Manager creates a new deployment. 
-
-</b></details>
-
-<details>
-<summary>What is Cloud Code?</summary><br><b>
-It is a set of tools to help developers write, run and debug GCP kubernetes based applications. It provides built-in support for rapid iteration, debugging and running applications in development and production K8s environments.
-</b></details>
-
-### Google Kubernetes Engine (GKE)
-
-<details>
-<summary>What is GKE</summary><br><b>
-
-* It is the managed kubernetes service on GCP for deploying, managing and scaling containerised applications using Google infrastructure.
-</b></details>
-
-### Anthos
-
-<details>
-<summary>What is Anthos</summary><br><b>
-It is a managed application platform for organisations like enterprises that require quick modernisation and certain levels
-of consistency for their legacy applications in a hybrid or multicloud world. From this explanation the core ideas can be drawn from these statements;
-
-* Managed -> the customer does not need to worry about the underlying software intergrations, they just enable the API.
-* application platform -> It consists of open source tools like K8s, Knative, Istio and Tekton
-* Enterprises -> these are usually organisations with complex needs
-* Consistency -> to have the same policies declaratively initiated to be run anywhere securely e.g on-prem, GCP or other-clouds (AWS or Azure)
-
-fun fact: Anthos is flower in greek, they grow in the ground (earth) but need rain from the clouds to flourish.
-</b></details>
-
-<details>
-<summary>List the technical components that make up Anthos</summary><br><b>
-
-* Infrastructure management - Google Kubernetes Engine (GKE)
-* Cluster management - GKE, Ingress for Anthos
-* Service management - Anthos Service Mesh
-* Policy enforcement - Anthos Config Management, Anthos Enterprise Data Protection, Policy Controller
-* Application deployment - CI/CD tools like Cloud Build, GitLab
-* Application development - Cloud Code
-</b></details>
-
-<details>
-<summary>What is the primary computing environment for Anthos to easily manage workload deployment?</summary><br><b>
-
-* Google Kubernetes Engine (GKE)
-</b></details>
-
-<details>
-<summary>How does Anthos handle the control plane and node components for GKE?</summary><br><b>
-
-On GCP the kubernetes api-server is the only control plane component exposed to customers whilst compute engine manages
-instances in the project.
-</b></details>
-
-<details>
-<summary>Which load balancing options are available?</summary><br><b>
-
-* Networking load balancing for L4 and HTTP(S) Load Balancing for L7 which are both managed services that do not require
-  additional configuration.
-* Ingress for Anthos which allows the ability to deploy a load balancer that serves an application across multiple clusters
-  on GKE
-</b></details>
-
-<details>
-<summary>Can you deploy Anthos on AWS?</summary><br><b>
-
-* Yes, Anthos on AWS is now GA. For more read [here](https://cloud.google.com/anthos/gke/docs/aws)
-</b></details>
-
-<details>
-<summary>List and explain the enterprise security capabilities provided by Anthos</summary><br><b>
-
-* Control plane security - GCP manages and maintains the K8s control plane out of the box. The user can secure the api-server by using master authorized networks and private clusters. These allow the user to disable access on the public IP address by assigning a private IP address to the master.
-* Node security - By default workloads are provisioned on Compute engine instances that use Google's Container Optimised OS. This operating system implements a locked-down firewall, limited user accounts with root disabled and a read-only filesystem. There is a further option to enable GKE Sandbox for stronger isolation in multi-tenant deployment scenarios.
-* Network security - Within a created cluster VPC, Anthos GKE leverages a powerful software-defined network that enables simple Pod-to-Pod communications. Network policies allow locking down ingress and egress connections in a given namespace. Filtering can also be implemented to incoming load-balanced traffic for services that require external access, by supplying whitelisted CIDR IP ranges.
-* Workload security - Running workloads run with limited privileges, default Docker AppArmor security policies are applied to all Kubernetes Pods. Workload identity for Anthos GKE aligns with the open source kubernetes service accounts with GCP service account permissions.
-* Audit logging - Adminstrators are given a way to retain, query, process and alert on events of the deployed environments.
-</b></details>
-
-<details>
-<summary>How can workloads deployed on Anthos GKE on-prem clusters securely connect to Google Cloud services?</summary><br><b>
-
-* Google Cloud Virtual Private Network (Cloud VPN) - this is for secure networking
-* Google Cloud Key Management Service (Cloud KMS) - for key management
-</b></details>
-
-<details>
-<summary>What is Island Mode configuration with regards to networking in Anthos GKE deployed on-prem?</summary><br><b>
-
-* This is when pods can directly talk to each other within a cluster, but cannot be reached from outside the cluster thus forming an "island" within the network that is not connected to the external network.
-</b></details>
-
-<details>
-<summary>Explain Anthos Config Management</summary><br><b>
-
-It is a core component of the Anthos stack which provides platform, service and security operators with a single, unified approach to multi-cluster management that spans both on-premises and cloud environments. It closely follows K8s best practices, favoring declarative approaches over imperative operations, and actively monitors cluster state and applies the desired state as defined in Git. It includes three key components as follows:
-
-1. An importer that reads from a central Git repository
-2. A component that synchronises stored configuration data into K8s objects
-3. A component that monitors drift between desired and actual cluster configurations with a capability of reconciliation when need rises.
-</b></details>
-
-<details>
-<summary>How does Anthos Config Management help?</summary><br><b>
-
-It follows common modern software development practices which makes cluster configuration, management and policy changes auditable, revertable, and versionable easily enforcing IT governance and unifying resource management in an organisation.
-</b></details>
-
-<details>
-<summary>What is Anthos Service Mesh?</summary><br><b>
-
-* It is a suite of tools that assist in monitoring and managing deployed services on Anthos of all shapes and sizes whether running in cloud, hybrid or multi-cloud environments. It leverages the APIs and core components from Istio, a highly configurable and open-source service mesh platform.
-</b></details>
-
-<details>
-<summary>Describe the two main components of Anthos Service Mesh</summary><br><b>
-
-1. Data plane - it consists of a set of distributed proxies that mediate all inbound and outbound network traffic between individual services which are configured using a centralised control plane and an open API
-2. Control plane - is a fully managed offering outside of Anthos GKE clusters to simplify management overhead and ensure highest possible availability.
-</b></details>
-
-<details>
-<summary>What are the components of the managed control plane of Anthos Service Mesh?</summary><br><b>
-
-1. Traffic Director - it is GCP's fully managed service mesh traffic control plane, responsible for translating Istio API objects into configuration information for the distributed proxies, as well as directing service mesh ingress and egress traffic
-2. Managed CA - is a centralised certificate authority responsible for providing SSL certificates to each of the distributed proxies, authentication information and distributing secrets
-3. Operations tooling - formerly stackdriver, provides a managed ingestion point for observability and telemetry, specifically monitoring, tracing and logging data generated by each of the proxies. This powers the observability dashboard for operators to visually inspect their services and service dependencies assisting in the implementation of SRE best practices for monitoring SLIs and establishing SLOs.
-</b></details>
-
-<details>
-<summary>How does Anthos Service Mesh help?</summary><br><b>
-Tool and technology integration that makes up Anthos service mesh delivers signficant operational benefits to Anthos environments, with minimal additional overhead such as follows:
-
-* Uniform observability - the data plane reports service to service communication back to the control plane generating a service dependency graph. Traffic inspection by the proxy inserts headers to facilitate distributed tracing, capturing and reporting service logs together with service-level metrics (i.e latency, errors, availability).
-* Operational agility - fine-grained controls for managing the flow of inter-mesh (north-south) and intra-mesh (east-west) traffic are provided.
-* Policy-driven security - policies can be enforced consistently across diverse protocols and runtimes as service communications are secured by default.
-</b></details>
-
-<details>
-<summary>List possible use cases of traffic controls that can be implemented within Anthos Service Mesh</summary><br><b>
-
-* Traffic splitting across differing service versions for canary or A/B testing
-* Circuit breaking to prevent cascading failures
-* Fault injection to help build resilient and fault-tolerant deployments
-* HTTP header-based traffic steering between individual services or versions
-</b></details>
-
-<details>
-<summary>What is Cloud Run for Anthos?</summary><br><b>
-
-It is part of the Anthos stack that brings a serverless container experience to Anthos, offering a high-level platform experience on top of K8s clusters. It is built with Knative, an open-source operator for K8s that brings serverless application serving and eventing capabilities.
-</b></details>
-
-<details>
-<summary>How does Cloud Run for Anthos simplify operations?</summary><br><b>
-
-Platform teams in organisations that wish to offer developers additional tools to test, deploy and run applications can use Knative to enhance this experience on Anthos as Cloud Run. Below are some of the benefits;
-
-* Easy migration from K8s deployments - Without Cloud Run, platform engineers have to configure deployment, service, and HorizontalPodAutoscalers(HPA) objects to a loadbalancer and autoscaling. If application is already serving traffic it becomes hard to change configurations or roll back efficiently. Using Cloud Run all this is managed thus the Knative service manifest describes the application to be autoscaled and loadbalanced
-* Autoscaling - a sudden traffic spike may cause application containers in K8s to crash due to overload thus an efficient automated autoscaling is executed to serve the high volume of traffic
-* Networking - it has built-in load balancing capabilities and policies for traffic splitting between multiple versions of an application.
-* Releases and rollouts - supports the notion of the Knatibe API's revisions which describe new versions or different configurations of your application and canary deployments by splitting traffic.
-* Monitoring - observing and recording metrics such as latency, error rate and requests per second.
-</b></details>
-
-<details>
-<summary>List and explain three high-level out of the box autoscaling primitives offered by Cloud Run for Anthos that do not exist in K8s natively</summary><br><b>
-
-* Rapid, request-based autoscaling - default autoscalers monitor request metrics which allows Cloud Run for Anthos to handle spiky traffic patterns smoothly
-* Concurrency controls - limits such as max in-flight requests per container are enforced to ensure the container does not become overloaded and crash. More containers are added to handle the spiky traffic, buffering the requests.
-* Scale to zero - if an application is inactive for a while Cloud Run scales it down to zero to reduce its footprint. Alternatively one can turn off scale-to-zero to prevent cold starts.
-</b></details>
-
-<details>
-<summary>List some Cloud Run for Anthos use cases</summary><br><b>
-
-As it does not support stateful applications or sticky sessions, it is suitable for running stateless applications such as:
-
-* Machine learning model predictions e.g Tensorflow serving containers
-* API gateways, API middleware, web front ends and Microservices
-* Event handlers, ETL
-</b></details>
-
 ## OpenStack
 
 <details>
@@ -3294,7 +1480,9 @@ As it does not support stateful applications or sticky sessions, it is suitable 
   - Keystone</summary><br><b>
 
   * Nova - Manage virtual instances
+  * Neutron - Manage networking by providing Network as a service (NaaS)
   * Cinder - Block Storage
+  * Glance - Manage images for virtual machines and containers (search, get and register)
   * Keystone - Authentication service across the cloud
 </b></details>
 
@@ -3731,15 +1919,20 @@ A list of services and their endpoints
 ## Puppet
 
 <details>
-<summary>What is Puppet? How does it works?</summary><br><b>
-</b></details>
+<summary>What is Puppet? How does it works?</summary><br><b> 
 
+  * Puppet is a configuration management tool ensuring that all systems are configured to a desired and predictable state.
+</b></details>
 <details>
 <summary>Explain Puppet architecture</summary><br><b>
+
+  * Puppet has a primary-secondary node architecture. The clients are distributed across the network and communicate with the primary-secondary environment where Puppet modules are present. The client agent sends a certificate with its ID to the server; the server then signs that certificate and sends it back to the client. This authentication allows for secure and verifiable communication between the client and the master. 
 </b></details>
 
 <details>
 <summary>Can you compare Puppet to other configuration management tools? Why did you chose to use Puppet?</summary><br><b>
+
+  * Puppet is often compared to other configuration management tools like Chef, Ansible, SaltStack, and cfengine. The choice to use Puppet often depends on an organization's needs, such as ease of use, scalability, and community support.
 </b></details>
 
 <details>
@@ -3747,15 +1940,24 @@ A list of services and their endpoints
 
   * Module
   * Manifest
-  * Node</summary><br><b>
+  * Node
+</summary><br><b>
+  
+  * Modules - are a collection of manifests, templates, and files
+  * Manifests - are the actual codes for configuring the clients
+  * Node - allows you to assign specific configurations to specific nodes
 </b></details>
 
 <details>
 <summary>Explain Facter</summary><br><b>
+
+  * Facter is a standalone tool in Puppet that collects information about a system and its configuration, such as the operating system, IP addresses, memory, and network interfaces. This information can be used in Puppet manifests to make decisions about how resources should be managed, and to customize the behavior of Puppet based on the characteristics of the system. Facter is integrated into Puppet, and its facts can be used within Puppet manifests to make decisions about resource management.
 </b></details>
 
 <details>
 <summary>What is MCollective?</summary><br><b>
+
+  * MCollective is a middleware system that integrates with Puppet to provide orchestration, remote execution, and parallel job execution capabilities.
 </b></details>
 
 <details>
@@ -3764,6 +1966,8 @@ A list of services and their endpoints
 
 <details>
 <summary>Explain what is Hiera</summary><br><b>
+
+  * Hiera is a hierarchical data store in Puppet that is used to separate data from code, allowing data to be more easily separated, managed, and reused.
 </b></details>
 
 ## Elastic
@@ -3837,7 +2041,7 @@ This is where data is stored and also where different processing takes place (e.
 <details>
 <summary>What is a master node?</summary><br><b>
 
-Par of a master node responsibilites:
+Part of a master node responsibilites:
   * Track the status of all the nodes in the cluster
   * Verify replicas are working and the data is available from every data node.
   * No hot nodes (no data node that works much harder than other nodes)
@@ -4385,30 +2589,6 @@ document_number: 2
 [Wikipedia](https://en.wikipedia.org/wiki/Firmware): "In computing, firmware is a specific class of computer software that provides the low-level control for a device's specific hardware. Firmware, such as the BIOS of a personal computer, may contain basic functions of a device, and may provide hardware abstraction services to higher-level software such as operating systems."
 </b></details>
 
-#### Customers and Service Providers
-
-<details>
-<summary>What is SLO (service-level objective)?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is SLA (service-level agreement)?</summary><br><b>
-</b></details>
-
-## Jira
-
-<details>
-<summary>Explain/Demonstrate the following types in Jira:
-
-  * Epic
-  * Story
-  * Task</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a project in Jira?</summary><br><b>
-</b></details>
-
 ## Cassandra
 
 <details>
@@ -4776,9 +2956,8 @@ Google Drive
 <summary>Explain MBR</summary><br><b>
 </b></details>
 
-## Questions you CAN ask
-
 <a name="questions-you-ask"></a>
+## Questions you CAN ask
 
 A list of questions you as a candidate can ask the interviewer during or after the interview.
 These are only a suggestion, use them carefully. Not every interviewer will be able to answer these (or happy to) which should be perhaps a red flag warning for your regarding working in such place but that's really up to you.
@@ -5557,6 +3736,8 @@ If you are looking for a way to prepare for a certain exam this is the section f
 
 * [Cloud Practitioner](certificates/aws-cloud-practitioner.md) (Latest update: 2020)
 * [Solutions Architect Associate](certificates/aws-solutions-architect-associate.md) (Latest update: 2021)
+* [Cloud SysOps Administration Associate](certificates/aws-cloud-sysops-associate.md) (Latest update: Oct 2022)
+
 
 #### Azure
 
@@ -5564,9 +3745,11 @@ If you are looking for a way to prepare for a certain exam this is the section f
 
 #### Kubernetes
 
-* [Certified Kubernetes Administrator (CKA)](certificates/cka.md) (Latest update: 2020)
+* [Certified Kubernetes Administrator (CKA)](topics/kubernetes/CKA.md) (Latest update: 2022)
 
-## Other DevOps Projects
+## Additional DevOps and SRE Projects
+
+<p align="center"><a href="https://github.com/bregman-arie/sre-checklist"><img width="500px" src="images/sre_checklist.png"/></a></p>
 
 <p align="center"><a href="https://github.com/bregman-arie/howtheydevops"><img src="images/how_they_devops.png"/></a></p>
 <p align="center"><a href="https://github.com/bregman-arie/devops-resources"><img src="images/devops_resources.png"/></a></p>

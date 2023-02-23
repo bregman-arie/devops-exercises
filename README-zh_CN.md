@@ -1,5 +1,6 @@
 # DevOps 面试问题
 
+<!-- {% raw %} -->
 
 :information_source: &nbsp;本仓库包含各种 DevOps 相关主题的面试问题
 
@@ -288,7 +289,7 @@
 </b></details>
 
 <details>
-<summary>你是如何实施从某个阶段而不是从最开始构建的选项？<summary><br><b>
+<summary>你是如何实施从某个阶段而不是从最开始构建的选项？</summary><br><b>
 </b></details>
 
 <details>
@@ -923,7 +924,7 @@ Zombie（假死态）
 </b></details>
 
 <details>
-<summary>你能解释一下网络进程/连接如何建立以及如何终止?><br></b>
+<summary>你能解释一下网络进程/连接如何建立以及如何终止?</summary><br></b>
 </b></details>
 
 <details>
@@ -1273,7 +1274,7 @@ The content of the system_info.j2 template
 
 ```
 # {{ ansible_managed }}
-I'm {{ ansible_hostname }} and my operating system is {{ ansible_distribution }
+I'm {{ ansible_hostname }} and my operating system is {{ ansible_distribution }}
 ```
 
 </b></details>
@@ -1384,6 +1385,7 @@ Terraform与其他工具相比的优势：
   * Provider
   * Resource
   * Provisioner
+  </summary>
 </b></details>
 
 <details>
@@ -1655,7 +1657,7 @@ Docker Cloud构建在Docker Hub之上，因此Docker Cloud提供了
 </b></details>
 
 <details>
-<summary>解释一下递归</summary<br><b>
+<summary>解释一下递归</summary><br><b>
 </b></details>
 
 <details>
@@ -1950,11 +1952,11 @@ with open('file.txt', 'w') as file:
 </b></details>
 
 <details>
-<summay>如何用 "blue" 替换字符串 "green"?</summary><br><b>
+<summary>如何用 "blue" 替换字符串 "green"?</summary><br><b>
 </b></details>
 
 <details>
-<summay>如何找到一个变量中的所有IP地址？ 如何在文件中找到它们?</summary><br><b>
+<summary>如何找到一个变量中的所有IP地址？ 如何在文件中找到它们?</summary><br><b>
 </b></details>
 
 <details>
@@ -2071,6 +2073,7 @@ def reverse_string(string):
   * Mergesort
   * Bucket Sort
   * Radix Sort
+  </summary>
 </b></details>
 
 <a name="python-advanced"></a>
@@ -2109,7 +2112,7 @@ def reverse_string(string):
 </b></details>
 
 <details>
-<summary>你可以在Python中实现链接链表吗?<br><b>
+<summary>你可以在Python中实现链接链表吗?</summary><br><b>
 </b></details>
 
 <details>
@@ -2329,7 +2332,7 @@ with <code>var x int = 2</code> we are setting the variable type to integer whil
 <details>
 <summary>下面代码块有什么问题? 怎么解决?
 
-```
+```go
 func main() {
     var x float32 = 13.5
     var y int
@@ -2342,7 +2345,7 @@ func main() {
 <details>
 <summary>下面的代码块尝试将整数101转换为字符串，但相反，我们得到“ e”。 这是为什么？ 怎么解决?
 
-```
+```go
 package main
 
 import "fmt"
@@ -2378,7 +2381,7 @@ func main() {
 <details>
 <summary>以下代码块的输出是什么？:
 
-```
+```go   
 package main
 
 import "fmt"
@@ -2405,7 +2408,7 @@ func main() {
 <details>
 <summary>以下代码块的输出是什么？:
 
-```
+```go
 package main
 
 import "fmt"
@@ -2831,7 +2834,7 @@ where c.Customer_ID in (Select Customer_ID from cat_food);
 </b></details>
 
 <details>
-<summmary>详细描述如何使用可以从云外部访问的IP来启动实例</summary><br><b>
+<summary>详细描述如何使用可以从云外部访问的IP来启动实例</summary><br><b>
 </b></details>
 
 <details>
@@ -2982,3 +2985,5 @@ where c.Customer_ID in (Select Customer_ID from cat_food);
 * [Cloud Slack bot](scenarios/cloud_slack_bot.md)
 * [Writing Jenkins Scripts](scenarios/jenkins_scripts.md)
 * [Writing Jenkins Pipelines](scenarios/jenkins_pipelines.md)
+
+<!-- {% endraw %} -->

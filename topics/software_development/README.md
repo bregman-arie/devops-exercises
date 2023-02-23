@@ -41,6 +41,8 @@
 
 <details>
 <summary>What programming language do you prefer to use for DevOps related tasks? Why specifically this one?</summary><br><b>
+
+For example, Python. It's multipurpose, easy-to-learn, continuously-evolving, and open-source. And it's very popular today
 </b></details>
 
 <details>
@@ -60,18 +62,30 @@ Statements are instructions executed by the interpreter like variable assignment
 
 <details>
 <summary>What is Object Oriented Programming? Why is it important?</summary><br><b>
+
+[educative.io](https://www.educative.io/blog/object-oriented-programming) "Object-Oriented Programming (OOP) is a programming paradigm in computer science that relies on the concept of classes and objects. It is used to structure a software program into simple, reusable pieces of code blueprints (usually called classes), which are used to create individual instances of objects."
+
+OOP is the mainstream paradigm today. Most of the big services are wrote with OOP
 </b></details>
 
 <details>
 <summary>Explain Composition</summary><br><b>
+
+Composition - ability to build a complex object from other objects
 </b></details>
 
 <details>
-<summary>What is a compiler?</summary><br><b>
-</b></details>
+<summary>What is a compiler and interpreter?</summary><br><b>
 
-<details>
-<summary>What is an interpreter?</summary><br><b>
+[bzfar.org](https://www.bzfar.org/publ/algorithms_programming/programming_languages/translators_compiler_vs_interpetator/42-1-0-50)
+
+Compiler:
+
+"A compiler is a translator used to convert high-level programming language to low-level programming language.  It converts the whole program in one session and reports errors detected after the conversion. Compiler takes time to do its work as it translates high-level code to lower-level code all at once and then saves it to memory."
+
+Interpreter:
+
+"Just like a compiler, is a translator used to convert high-level programming language to low-level programming language. It converts the program line by line and reports errors detected at once, while doing the conversion. With this, it is easier to detect errors than in a compiler."
 </b></details>
 
 <details>
@@ -84,35 +98,52 @@ SOLID design principles are about:
 
 SOLID is:
 
-* Single Responsibility - A class should only have a single responsibility
-* Open-Closed - An entity should be open for extension, but closed for modification. What this practically means is that you should extend functionality by adding a new code and not by modifying it. Your system should be separated into components so it can be easily extended without breaking everything.
+* Single Responsibility - A class* should have one ~responsibility~ reason to change. It was edited by Robert Martin due to wrong understanding of principle
+* Open-Closed - A class should be open for extension, but closed for modification. What this practically means is that you should extend functionality by adding a new code and not by modifying it. Your system should be separated into components so it can be easily extended without breaking everything
 * Liskov Substitution - Any derived class should be able to substitute the its parent without altering its corrections. Practically, every part of the code will get the expected result no matter which part is using it
-* Interface segregation - A client should never depend on anything it doesn't uses
+* Interface Segregation - A client should never depend on anything it doesn't uses. Big interfaces must be splitted to smaller interfaces if needed
 * Dependency Inversion - High level modules should depend on abstractions, not low level modules
+
+*there also can be module, component, entity, etc. Depends on project structure and programming language
 </b></details>
 
 <details>
 <summary>What is YAGNI? What is your opinion on it?</summary><br><b>
+
+YAGNI - You aren't gonna need it. You must add functionality that will be used. No need to add functionality that is not directly needed
 </b></details>
 
 <details>
 <summary>What is DRY? What is your opinion on it?</summary><br><b>
+
+DRY - Don't repeat yourself. Actually it means that you shouldn't duplicate logic and use functions/classes instead. But this must be done smartly and pay attention to the domain logic. Same code lines don't always mean duplication
 </b></details>
 
 <details>
 <summary>What are the four pillars of object oriented programming?</summary><br><b>
+
+* Abstraction - you don't need to know how this class implemented. You need to know what functionality does it provide (interface) and how to use it
+* Encapsulation - keep fields for class purposes private (or protected) and provide public methods if needed. We must keep the data and code safe within the class itself
+* Inheritance - gives ability to create class that shares some of attributes of existing classes
+* Polymorphism - same methods in different contexts can do different things. Method overloading and overriding are some forms of polymorphism
 </b></details>
 
 <details>
 <summary>Explain recursion</summary><br><b>
+
+Recursion - process (or strategy), when function calls itself. It has recursive case and exit case. In recursive case we call function again, in exit case we finish function without calling it again. If we don't have exit case - function will work infinite, until memory overload or call stack limit
 </b></details>
 
 <details>
-<summary>Explain Inversion of Control</summary><br><b>
+<summary>Explain Inversion of Control (IoC)</summary><br><b>
+
+Inversion of Control - design principle, used to achieve loose coupling. You must use some abstraction layer to access some functionality (similar to SOLID Dependency Inversion)
 </b></details>
 
 <details>
-<summary>Explain Dependency Injection</summary><br><b>
+<summary>Explain Dependency Injection (DI)</summary><br><b>
+
+Dependency Injection - deisgn pattern, used with IoC. Our object fields (dependecies) must be configurated by external objects
 </b></details>
 
 <details>
@@ -129,15 +160,29 @@ True
 
 <details>
 <summary>Explain big O notation</summary><br><b>
+
+[habr.com](https://habr.com/ru/post/559518/) "We can use Big O notation to compare and search different solutions to find which solution is best. The best solution is one that consumes less amount of time and space. Generally, time and space are two parameters that determine the efficiency of the algorithm.
+
+ Big O Notation tells accurately how long an algorithm takes to run. It is a basic analysis of algorithm efficiency. It describes the execution time required. It depends on the size of input data that essentially passes in. Big O notation gives us algorithm complexity in terms of input size. For the large size of input data, the execution time will be slow as compared to the small size of input data. Big O notation is used to analyze space and time."
 </b></details>
 
 <details>
 <summary>What is "Duck Typing"?</summary><br><b>
+
+"When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck."
+
+This is direction in programming, where we are checking properties of object, but not it's type
 </b></details>
 
 <details>
 <summary>Explain string interpolation</summary><br><b>
-</b></details>
+
+String interpolation - process of evaluating of string literal. For example (JS):</b>
+```js
+const messages = 5;
+console.log(`You have ${messages} new messages`); // You have 5 new messages 
+```
+</details>
 
 ##### Common algorithms
 
