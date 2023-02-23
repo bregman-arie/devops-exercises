@@ -14,5 +14,5 @@ jobs:
       - name: Give executable permissions to run_ci.sh inside the scripts directory
         run: chmod a+x scripts/run_ci.sh
       - name: Run the ci script inside the scripts folder
-        run: sh scripts/run_ci.sh
+        run: bash scripts/run_ci.sh
         shell: bash
