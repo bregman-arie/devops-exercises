@@ -1,10 +1,10 @@
-## Git Commit 01 - Solution
+## التزام البوابة 01 - الحل
 
 ```
 mkdir my_repo && cd my_repo
-git init
-echo "hello_commit" > file
-git add file
+بوابة الحرف الأول
+صدى "hello_commit"> ملف
+بوابة إضافة ملف
 git commit -a -m "It's my first commit. Exciting!"
 git log
 ```
