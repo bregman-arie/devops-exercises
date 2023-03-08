@@ -13,9 +13,11 @@
 |Count Chars|Input + While Loops|[Exercise](count_chars.md)|[Solution](solutions/count_chars.md) | Basic
 |Sum|Functions|[Exercise](sum.md)|[Solution](solutions/sum.md) | Basic
 |Number of Arguments|Case Statement|[Exercise](num_of_args.md)|[Solution](solutions/num_of_args.md) | Basic
+|Directories Check |Misc|[Exercise](directories_check.md)|[Solution](solutions/directories_check.md) | Basic
 |Empty Files|Misc|[Exercise](empty_files.md)|[Solution](solutions/empty_files.md) | Basic
 |Directories Comparison|Misc|[Exercise](directories_comparison.md)|[Solution](solutions/directories_comparison.md) | Basic
 |It's alive!|Misc|[Exercise](host_status.md)|[Solution](solutions/host_status.md) | Intermediate
+|Directories Check |Misc|[Exercise](packages_install.md)|[Solution](solutions/packages_install.md) | Advance
 
 ## Shell Scripting - Self Assessment
 
@@ -261,4 +263,3 @@ https://superuser.com/a/1060002/167769
 
 bats
 </b></details>
-
