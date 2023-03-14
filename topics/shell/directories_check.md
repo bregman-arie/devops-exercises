@@ -2,4 +2,4 @@
 
 ### Objectives
 
-1. write a script to Check if directory exists.
+1. write a script to Check if a directory exists.
