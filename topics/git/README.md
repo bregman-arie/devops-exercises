@@ -154,7 +154,7 @@ Using the HEAD file: `.git/HEAD`
 <details>
 <summary>What <code>unstaged</code> means in regards to Git?</summary><br><b>
 
-A file the is in the working directory but is not in the HEAD nor in the staging area, referred to as "unstaged".
+A file that is in the working directory but is not in the HEAD nor in the staging area, referred to as "unstaged".
 </b></details>
 
 <details>
