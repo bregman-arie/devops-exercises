@@ -168,9 +168,11 @@ True
 <details>
 <summary>You have two branches - main and devel. How do you merge devel into main?</summary><br><b>
 
+```
 git checkout main
 git merge devel
 git push origin main
+```
 </b></details>
 
 <details>
