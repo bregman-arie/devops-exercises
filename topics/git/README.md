@@ -14,21 +14,27 @@
 
 <details>
 <summary>How do you know if a certain directory is a git repository?</summary><br><b>
-
 You can check if there is a ".git" directory.
-</b></details>
+</b>
+</details>
 
 <details>
-<summary>Explain the following: <code>git directory</code>, <code>working directory</code> and <code>staging area</code></summary><br><b>
+<summary>Explain the following: <code>git directory</code>, <code>working directory</code> and <code>staging area</code></summary><br>
+<b>
 
 This answer taken from [git-scm.com](https://git-scm.com/book/en/v1/Getting-Started-Git-Basics#_the_three_states)
 
-"The Git directory is where Git stores the meta data and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
+"The Git directory is where Git stores the meta-data and object database for your project. This is the most important
+part of Git, and it is what is copied when you clone a repository from another computer.
 
-The working directory is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
+The working directory is a single checkout of one version of the project. These files are pulled out of the compressed
+database in the Git directory and placed on disk for you to use or modify.
 
-The staging area is a simple file, generally contained in your Git directory, that stores information about what will go into your next commit. It’s sometimes referred to as the index, but it’s becoming standard to refer to it as the staging area."
-</b></details>
+The staging area is a simple file, generally contained in your Git directory, that stores information about what will go
+into your next commit. It’s sometimes referred to as the index, but it’s becoming standard to refer to it as the staging
+area."
+</b>
+</details>
 
 <details>
 <summary>What is the difference between <code>git pull</code> and <code>git fetch</code>?</summary><br><b>
@@ -46,20 +52,22 @@ a separate branch in your local repository
 <summary>How to check if a file is tracked and if not, then track it?</summary><br><b>
 
 There are different ways to check whether a file is tracked or not:
-
-- `git ls-files <file>` -> exit code of 0 means it's tracked
-- `git blame <file>`
+  - `git ls-files <file>` -> exit code of 0 means it's tracked
+  - `git blame <file>`
   ...
-  </b></details>
+</b>
+</details>
 
 <details>
 <summary>Explain what the file <code>gitignore</code> is used for</summary><br><b>
-</b></details>
+The purpose of <code>gitignore</code> files is to ensure that certain files not tracked by Git remain untracked. To stop tracking a file that is currently tracked, use git rm --cached.
+</b>
+</details>
 
 <details>
 <summary>How can you see which changes have done before committing them?</summary><br><b>
-
 `git diff`
+
 </b></details>
 
 <details>
@@ -72,7 +80,8 @@ There are different ways to check whether a file is tracked or not:
 <summary>You've created new files in your repository. How to make sure Git tracks them?</summary><br><b>
 
 `git add FILES`
-</b></details>
+</b>
+</details>
 
 ### Scenarios
 
@@ -130,13 +139,14 @@ True
 
 <details>
 <summary>You have two branches - main and devel. How do you make sure devel is in sync with main?</summary><br><b>
-
+<code>
 ```
 git checkout main
 git pull
 git checkout devel
 git merge main
 ```
+</code>
 
 </b></details>
 
@@ -237,6 +247,7 @@ Using the `git rebase` command
 <details>
 <summary>In what situations are you using <code>git rebase</code>?</summary><br><b>
 Suppose a team is working on a `feature` branch that is coming from the `main` branch of the repo. At a point, where the feature development is done, and finally we wish to merge the feature branch into the main branch without keeping the history of the commits made in the feature branch, a `git rebase` will be helpful. 
+
 </b></details>
 
 <details>
