@@ -2044,7 +2044,7 @@ The Elastic Stack consists of:
   * Elastic Hadoop
   * APM Server
 
-Elasticserach, Logstash and Kibana are also known as the ELK stack.
+Elasticsearch, Logstash and Kibana are also known as the ELK stack.
 </b></details>
 
 <details>
@@ -2112,17 +2112,22 @@ While there can be multiple master nodes in reality only of them is the elected 
 <details>
 <summary>What is an ingest node?</summary><br><b>
 
-A node which responsible for parsing the data. In case you don't use logstash then this node can recieve data from beats and parse it, similarly to how it can be parsed in Logstash.
+A node which responsible for processing the data according to ingest pipeline. In case you don't need to use 
+logstash then this node can recieve data from beats and process it, similarly to how it can be processed 
+in Logstash.
 </b></details>
 
 <details>
-<summary>What is Coordinating node?</summary><br><b>
+<summary>What is Coordinating only node?</summary><br><b>
 
-A Coordinating node responsible for routing requests out and in to the cluser (data nodes).
+From the official docs:
+
+Coordinating only nodes can benefit large clusters by offloading the coordinating node role from data and master-eligible nodes. They join the cluster and receive the full cluster state, like every other node, and they use the cluster state to route requests directly to the appropriate place(s).
+
 </b></details>
 
 <details>
-<summary>How data is stored in elasticsearch?</summary><br><b>
+<summary>How data is stored in Elasticsearch?</summary><br><b>
 
 * Data is stored in an index
 * The index is spread across the cluster using shards
@@ -2131,7 +2136,7 @@ A Coordinating node responsible for routing requests out and in to the cluser (d
 <details>
 <summary>What is an Index?</summary><br><b>
 
-Index in Elastic is in most cases compared to a whole database from the SQL/NoSQL world.<br>
+Index in Elasticsearch is in most cases compared to a whole database from the SQL/NoSQL world.<br>
 You can choose to have one index to hold all the data of your app or have multiple indices where each index holds different type of your app (e.g. index for each service your app is running).
 
 The official docs also offer a great explanation (in general, it's really good documentation, as every project should have):
@@ -2157,15 +2162,17 @@ From the official docs:
 <details>
 <summary>What is a Document?</summary><br><b>
 
-Continuing with the comparison to SQL/NoSQL a Document in Elastic is a row in table in the case of SQL or a document in a collection in the case of NoSQL.
-As in NoSQL a Document is a JSON object which holds data on a unit in your app. What is this unit depends on the your app. If your app related to book then each document describes a book. If you are app is about shirts then each document is a shirt.
+Continuing with the comparison to SQL/NoSQL a Document in Elasticsearch is a row in table in the case of SQL or a document in a collection in the case of NoSQL.
+As in NoSQL a document is a JSON object which holds data on a unit in your app. What is this unit depends on the your app. If your app related to book then each document describes a book. If you are app is about shirts then each document is a shirt.
 </b></details>
 
 <details>
 <summary>You check the health of your elasticsearch cluster and it's red. What does it mean? What can cause the status to be yellow instead of green?</summary><br><b>
 
-Red means some data is unavailable.
-Yellow can be caused by running single node cluster instead of multi-node.
+Red means some data is unavailable in your cluster. Some shards of your indices are unassinged. 
+There are some other states for the cluster.
+Yellow means that you have unassigned shards in the cluster. You can be in this state if you have single node and your indices have replicas.
+Green means that all shards in the cluster are assigned to nodes and your cluster is healthy. 
 </b></details>
 
 <details>
