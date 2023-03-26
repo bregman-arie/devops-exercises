@@ -3035,10 +3035,21 @@ Not only this will tell you what is expected from you, it will also provide big 
 
 <details>
 <summary>Explain white-box testing</summary><br><b>
+White-box Testing is a software testing method in which the internal structure/ design/
+implementation of the item being tested is known to the tester.
 </b></details>
 
 <details>
 <summary>Explain black-box testing</summary><br><b>
+Black-box Testing is a software testing method in which the internal structure/ design/
+implementation of the item being tested is not known to the tester .
+</b></details>
+
+<details>
+<summary>Explain grey-box testing</summary><br><b>
+Grey-box Testing is a software testing technique to test a software product or application with
+partial knowledge of internal structure of the application. The purpose of grey box testing is to
+search and identify the defects due to improper code structure or improper use of applications.
 </b></details>
 
 <details>
@@ -3074,6 +3085,52 @@ Not only this will tell you what is expected from you, it will also provide big 
   * Volume Testing
   * Endurance Testing
 </summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the difference between SDLC & STLC?</summary>
+<b>
+<u>Software Development Life Cycle (SDLC)</u> is a process used by the software industry to design, develop and test high quality softwares. The SDLC aims to produce a high-quality software that
+meets or exceeds customer expectations, reaches completion within times and cost estimates.
+<br><br>
+  <u>Software Testing Life Cycle (STLC)</u> is a sequence of different activities performed by the testing team
+to ensure the quality of the software or the product. STLC is an integral part of Software
+Development Life Cycle (SDLC). But, STLC deals only with the testing phases.
+</b></details>
+
+<details><summary>
+What is the difference between a test case and a test scenario?</summary><br><b>
+
+<u>Test scenario</u> is defined as any functionality that can be tested. It is also called Test Condition or Test
+Possibility.<br>
+- Example: Test the login functionality
+
+<u>Test case</u> is a set of actions executed to verify a particular feature or functionality of your software application. A Test Case contains test steps, test data, precondition, postcondition developed for specific test scenario to verify any requirement.
+
+- Example: Test login with a valid username and a valid password
+
+The test scenario can be tested with more than one test case
+</b></details>
+
+<details><summary>
+What is the difference between functional and non-functional testing?</summary><br><b>
+<u>Functional testing</u> is a type of testing which verifies that each function of the software application operates in conformance with the requirement specification. It tests what the system does.
+
+<u>Non-functional testing</u> is a type of testing to check non-functional aspects (performance, usability,reliability, etc.) of a software application. It tests how well the system performs.
+- Example:
+  - In functional testing, we test the login functionality, does it work like expected or not?
+  - In non-functional testing we may test the performance of the system when 100 users login
+simultaneously.
+</b></details>
+
+
+<details><summary>When should we start testing in our project?</summary><br><b>
+
+Software testing should start early in the Software Development Life Cycle.
+This helps to capture and eliminate defects in the early stages of SDLC i.e requirement gathering and design phases. An early start to testing helps to reduce the number of defects and ultimately the rework cost in the end.
+
+One of the seven principles of software testing is “Early testing saves time
+and money”.
 </b></details>
 
 ## Regex
