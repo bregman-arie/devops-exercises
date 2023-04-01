@@ -234,7 +234,8 @@ find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \;
 <details>
 <summary>How to check which commands you executed in the past?</summary><br><b>
 
-history command or .bash_history file
+history command or .bash_history file 
+  * also can use up arrow key to access or to show the recent commands you type
 </b></details>
 
 <details>
