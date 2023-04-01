@@ -278,6 +278,19 @@ Alternatively if you are using a distro with systemd it's recommended to use sys
 
 <details>
 <summary>Explain Linux I/O redirection</summary><br><b>
+  In Linux, IO redirection is a way of changing the default input/output behavior of a command or program. It allows you to redirect input and output from/to different sources/destinations, such as files, devices, and other commands.
+
+Here are some common examples of IO redirection:
+ * Redirecting Standard Output (stdout):
+  ls > filelist.txt
+* Redirecting Standard Error (stderr):
+  ls /some/nonexistent/directory 2> error.txt
+* Appending to a file:
+  echo "hello" >> myfile.txt
+* Redirecting Input (stdin):
+  sort < unsorted.txt
+* Using Pipes: Pipes ("|"):
+  ls | grep "\.txt$"                   
 </b></details>
 
 <details>
