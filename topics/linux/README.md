@@ -373,6 +373,7 @@ The command passed to the boot loader to run the kernel
 
 <details>
 <summary>In which path can you find the system devices (e.g. block storage)?</summary><br><b>
+  /dev
 </b></details>
 
 <a name="questions-linux-permissions"></a>
