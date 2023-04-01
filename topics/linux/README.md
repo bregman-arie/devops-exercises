@@ -282,33 +282,33 @@ Alternatively if you are using a distro with systemd it's recommended to use sys
 
 Here are some common examples of IO redirection:
  * Redirecting Standard Output (stdout):
-  ls > filelist.txt
+  <code>ls > filelist.txt</code>
 * Redirecting Standard Error (stderr):
-  ls /some/nonexistent/directory 2> error.txt
+  <code>ls /some/nonexistent/directory 2> error.txt</code>
 * Appending to a file:
-  echo "hello" >> myfile.txt
+  <code>echo "hello" >> myfile.txt</code>
 * Redirecting Input (stdin):
-  sort < unsorted.txt
+  <code>sort < unsorted.txt</code>
 * Using Pipes: Pipes ("|"):
-  ls | grep "\.txt$"                   
+  <code>ls | grep "\.txt$"</code>         
 </b></details>
 
 <details>
 <summary>Demonstrate Linux output redirection</summary><br><b>
 
-ls > ls_output.txt
+<code>ls > ls_output.txt</code>
 </b></details>
 
 <details>
 <summary>Demonstrate Linux stderr output redirection</summary><br><b>
 
-yippiekaiyay 2> ls_output.txt
+<code>yippiekaiyay 2> ls_output.txt</code>
 </b></details>
 
 <details>
 <summary>Demonstrate Linux stderr to stdout redirection</summary><br><b>
 
-yippiekaiyay &> file
+<code>yippiekaiyay &> file</code>
 </b></details>
 
 <details>
