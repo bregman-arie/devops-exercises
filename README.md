@@ -151,9 +151,9 @@ An Internet Protocol address (IP address) is a numerical label assigned to each 
 </b></details>
 
 <details>
-<summary>Explain subnet mask and given an example</summary><br><b>
+<summary>Explain subnet mask and give an example</summary><br><b>
 
-A Subnet mask is a 32-bit number that masks an IP address, and divides the IP address into network address and host address. Subnet Mask is made by setting network bits to all "1"s and setting host bits to all "0"s. Within a given network, out of the total usable host addresses, two are always reserved for specific purposes and cannot be allocated to any host. These are the first address, which is reserved as a network address (a.k.a network ID) and the last address used for network broadcast.
+A Subnet mask is a 32-bit number that masks an IP address, and divides the IP addresses into network address and host address. Subnet Mask is made by setting network bits to all "1"s and setting host bits to all "0"s. Within a given network, out of the total usable host addresses, two are always reserved for specific purposes and cannot be allocated to any host. These are the first address, which is reserved as a network address (a.k.a network ID) and the last address used for network broadcast.
 
 [Example](https://github.com/philemonnwanne/o0o0o/tree/main/exes/exe-09)
 
@@ -166,7 +166,7 @@ Private IP addresses are assigned to the hosts in the same network to communicat
 
 <details>
 <summary>What is a public IP address? In which scenarios/system designs, one should use it?</summary><br><b>
-A public IP address is the public facing IP address. In the event that you was hosting a game server that you want your friends to join, you will give your friends your public IP address to allow their computers to identify and locate your network and server in order for the connection to take place. One time that you would not need to use a public facing IP address is in the event that you was playing with friends who was connected to the same network as you, in that case, you would use a private ip address. In order for someone to be able to connect to your server that is located internally, you will have to setup a port forward to tell your router to allow traffic from the public domain into your network and vice versa.
+A public IP address is the public facing IP address. In the event that you were hosting a game server that you want your friends to join, you will give your friends your public IP address to allow their computers to identify and locate your network and server in order for the connection to take place. One time that you would not need to use a public facing IP address is in the event that you were playing with friends who were connected to the same network as you, in that case, you would use a private ip address. In order for someone to be able to connect to your server that is located internally, you will have to setup a port forward to tell your router to allow traffic from the public domain into your network and vice versa.
 </b></details>
 
 <details>
@@ -221,12 +221,12 @@ Its primarily focus it to manage access to shared medium/bus where only one host
 
 CSMA/CD algorithm:
 
-1. Before sending a frame, it checks whether another host already transmitting a frame.
-2. If no one transmitting, it starts transmitting the frame.
+1. Before sending a frame, it checks whether another host is already transmitting a frame.
+2. If no one is transmitting, it starts transmitting the frame.
 3. If two hosts transmitted at the same time, we have a collision.
 4. Both hosts stop sending the frame and they send to everyone a 'jam signal' notifying everyone that a collision occurred
 5. They are waiting for a random time before sending again
-6. Once each host waited for a random time, they try to send the frame again and so the
+6. Once each host waited for a random time, they try to send the frame again and so the cycle starts again
 </b></details>
 
 <details>
@@ -260,7 +260,7 @@ Three collision domains and one broadcast domain
 </b></details>
 
 <details>
-<summary>How does a router works?</summary><br><b>
+<summary>How does a router work?</summary><br><b>
 
 A router is a physical or virtual appliance that passes information between two or more packet-switched computer networks. A router inspects a given data packet's destination Internet Protocol address (IP address), calculates the best way for it to reach its destination and then forwards it accordingly.
 
@@ -269,12 +269,12 @@ A router is a physical or virtual appliance that passes information between two 
 <details>
 <summary>What is NAT?</summary><br><b>
 
- Network Address Translation (NAT) is a process in which one or more local IP address is translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts.
+ Network Address Translation (NAT) is a process in which one or more local IP addresses are translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts.
 
 </b></details>
 
 <details>
-<summary>What is a proxy? How does it works? What do we need it for?</summary><br><b>
+<summary>What is a proxy? How does it work? What do we need it for?</summary><br><b>
 
 A proxy server acts as a gateway between you and the internet. It’s an intermediary server separating end users from the websites they browse.
 
@@ -284,7 +284,7 @@ Proxy servers provide varying levels of functionality, security, and privacy dep
 </b></details>
 
 <details>
-<summary>What is TCP? How does it works? What is the 3 way handshake?</summary><br><b>
+<summary>What is TCP? How does it work? What is the 3-way handshake?</summary><br><b>
 
 TCP 3-way handshake or three-way handshake is a process which is used in a TCP/IP network to make a connection between server and client.
 
@@ -338,7 +338,7 @@ A default gateway serves as an access point or IP router that a networked comput
 </b></details>
 
 <details>
-<summary>What is ARP? How does it works?</summary><br><b>
+<summary>What is ARP? How does it work?</summary><br><b>
 
 ARP stands for Address Resolution Protocol. When you try to ping an IP address on your local network, say 192.168.1.1, your system has to turn the IP address 192.168.1.1 into a MAC address. This involves using ARP to resolve the address, hence its name.
 
@@ -346,16 +346,16 @@ Systems keep an ARP look-up table where they store information about what IP add
 </b></details>
 
 <details>
-<summary>What is TTL? What does it helps to prevent?</summary><br><b>
+<summary>What is TTL? What does it help to prevent?</summary><br><b>
 
 - TTL (Time to Live) is a value in an IP (Internet Protocol) packet that determines how many hops or routers a packet can travel before it is discarded. Each time a packet is forwarded by a router, the TTL value is decreased by one. When the TTL value reaches zero, the packet is dropped, and an ICMP (Internet Control Message Protocol) message is sent back to the sender indicating that the packet has expired.
 - TTL is used to prevent packets from circulating indefinitely in the network, which can cause congestion and degrade network performance.
-- It also helps prevent packets from being trapped in routing loops, where packets continuously travel between the same set of routers without ever reaching their destination.
+- It also helps to prevent packets from being trapped in routing loops, where packets continuously travel between the same set of routers without ever reaching their destination.
 - In addition, TTL can be used to help detect and prevent IP spoofing attacks, where an attacker attempts to impersonate another device on the network by using a false or fake IP address. By limiting the number of hops that a packet can travel, TTL can help prevent packets from being routed to destinations that are not legitimate.
 </b></details>
 
 <details>
-<summary>What is DHCP? How does it works?</summary><br><b>
+<summary>What is DHCP? How does it work?</summary><br><b>
 
 It stands for Dynamic Host Configuration Protocol, and allocates IP addresses, subnet masks and gateways to hosts. This is how it works:
 
@@ -368,7 +368,7 @@ Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 </b></details>
 
 <details>
-<summary>Can you have two DHCP servers in the same network? How it works?</summary><br><b>
+<summary>Can you have two DHCP servers in the same network? How it work?</summary><br><b>
 
 It is possible to have two DHCP servers on the same network, however it is not recommended, and it is important to configure them carefully to prevent conflicts and configuration problems.
 - When two DHCP servers are configured on the same network, there is a risk that both servers will assign IP addresses and other network configuration settings to the same device, which can cause conflicts and connectivity issues. Additionally, if the DHCP servers are configured with different network settings or options, devices on the network may receive conflicting or inconsistent configuration settings.
@@ -376,14 +376,14 @@ It is possible to have two DHCP servers on the same network, however it is not r
 </b></details>
 
 <details>
-<summary>What is SSL tunneling? How does it works?</summary><br><b>
+<summary>What is SSL tunneling? How does it work?</summary><br><b>
 
 - SSL (Secure Sockets Layer) tunneling is a technique used to establish a secure, encrypted connection between two endpoints over an insecure network, such as the internet. The SSL tunnel is created by encapsulating the traffic within an SSL connection, which provides confidentiality, integrity, and authentication.
 
 Here's how SSL tunneling works:
 
 1. A client initiates an SSL connection to a server, which involves a handshake process to establish the SSL session.
-2. Once the SSL session is established, the client and server negotiate encryption parameters, such as the encryption algorithm and key length, and exchange digital certificates to authenticate each other.
+2. Once the SSL session is established, the client and server negotiate encryption parameters, such as the encryption algorithm and key length, then exchange digital certificates to authenticate each other.
 3. The client then sends traffic through the SSL tunnel to the server, which decrypts the traffic and forwards it to its destination.
 4. The server sends traffic back through the SSL tunnel to the client, which decrypts the traffic and forwards it to the application.
 </b></details>
@@ -403,7 +403,7 @@ Here's how SSL tunneling works:
 
 There are several reasons why we should consider using IPv6 over IPv4:
 
-1. Address space: IPv4 has a limited address space, which has been exhausted in many parts of the world. IPv6 provides a much larger address space, allowing for trillions of unique IP addresses..
+1. Address space: IPv4 has a limited address space, which has been exhausted in many parts of the world. IPv6 provides a much larger address space, allowing for trillions of unique IP addresses.
 2. Security: IPv6 includes built-in support for IPsec, which provides end-to-end encryption and authentication for network traffic.
 3. Performance: IPv6 includes features that can help to improve network performance, such as multicast routing, which allows a single packet to be sent to multiple destinations simultaneously.
 4. Simplified network configuration: IPv6 includes features that can simplify network configuration, such as stateless autoconfiguration, which allows devices to automatically configure their own IPv6 addresses without the need for a DHCP server.
@@ -425,9 +425,9 @@ MTU stands for Maximum Transmission Unit. It's the size of the largest PDU (prot
 <details>
 <summary>What happens if you send a packet that is bigger than the MTU?</summary><br><b>
 	
-With IPv4 protocol, router can fragment the PDU then sending all the fragmented PDU through the transaction.
+With IPv4 protocol, router can fragment the PDU then send all the fragmented PDU through the transaction.
 	
-With IPv6 protocol, it issues a error to the user's computer.
+With IPv6 protocol, it issues an error to the user's computer.
 </b></details>
 
 <details>
@@ -446,20 +446,20 @@ False. Ping is actually using ICMP (Internet Control Message Protocol) which is 
 <details>
 <summary>What is ICMP? What is it used for?</summary><br><b>
 
-- ICMP stands for Internet Control Message Protocol. It is a protocol used for diagnostic and control purposes in IP networks. It is part of the Internet Protocol suite, operating at the network layer.
+- ICMP stands for Internet Control Message Protocol. It is a protocol used for diagnostic and control purposes in IP networks. It is a part of the Internet Protocol suite, operating at the network layer.
 
 ICMP messages are used for a variety of purposes, including:
 1. Error reporting: ICMP messages are used to report errors that occur in the network, such as a packet that could not be delivered to its destination.
 2. Ping: ICMP is used to send ping messages, which are used to test whether a host or network is reachable and to measure the round-trip time for packets.
 3. Path MTU discovery: ICMP is used to discover the Maximum Transmission Unit (MTU) of a path, which is the largest packet size that can be transmitted without fragmentation.
 4. Traceroute: ICMP is used by the traceroute utility to trace the path that packets take through the network.
-5. Router discovery: ICMP is used to discover the routers on a network.
+5. Router discovery: ICMP is used to discover the routers in a network.
 </b></details>
 
 <details>
 <summary>What is NAT? How does it work?</summary><br><b>
 
-NAT stands for network address translation. It’s a way to map multiple local private addresses to a public one before transferring the information. Organizations that want multiple devices to employ a single IP address use NAT, as do most home routers.
+NAT stands for Network Address Translation. It’s a way to map multiple local private addresses to a public one before transferring the information. Organizations that want multiple devices to employ a single IP address use NAT, as do most home routers.
 For example, your computer's private IP could be 192.168.1.100, but your router maps the traffic to it's public IP (e.g. 1.1.1.1). Any device on the internet would see the traffic coming from your public IP (1.1.1.1) instead of your private IP (192.168.1.100).
 </b></details>
 
@@ -485,7 +485,7 @@ For example, your computer's private IP could be 192.168.1.100, but your router 
 </b></details>
 
 <details>
-<summary>Which factors affect network performances</summary><br><b>
+<summary>Which factors affect network performance?</summary><br><b>
 
 Several factors can affect network performance, including:
 
@@ -502,46 +502,46 @@ Several factors can affect network performance, including:
 <details>
 <summary>What is APIPA?</summary><br><b>
 
-APIPA is a set of it addresses that devices are allocated
+APIPA is a set of IP addresses that devices are allocated
 when the main DHCP server is not reachable
 
 </b></details>
 
 <details>
-<summary>What ip range does APIPA use?</summary><br><b>
+<summary>What IP range does APIPA use?</summary><br><b>
 
-APIPA uses the ip range: 169.254.0.1 - 169.254.255.254.
+APIPA uses the IP range: 169.254.0.1 - 169.254.255.254.
 
 </b></details>
 
 #### Control Plane and Data Plane
 
 <details>
-<summary>What "control plane" refers to?</summary><br><b>
+<summary>What does "control plane" refer to?</summary><br><b>
 
 The control plane is the part of the network that decides how to route and forward packets to a different location.
 </b></details>
 
 <details>
-<summary>What "data plane" refers to?</summary><br><b>
+<summary>What does "data plane" refer to?</summary><br><b>
 
 The data plane is the part of the network that actually forwards the data/packets.
 </b></details>
 
 <details>
-<summary>What "management plane" refers to?</summary><br><b>
+<summary>What does "management plane" refer to?</summary><br><b>
 
-Refers to monitoring and management functions.
+It refers to monitoring and management functions.
 </b></details>
 
 <details>
-<summary>To which plane (data, control, ...) is creating routing tables belongs to?</summary><br><b>
+<summary>To which plane (data, control, ...) does creating routing tables belong to?</summary><br><b>
 
 Control Plane.
 </b></details>
 
 <details>
-<summary>Explain Spanning Tree Protocol (STP)</summary><br><b>
+<summary>Explain Spanning Tree Protocol (STP).</summary><br><b>
 </b></details>
 
 <details>
@@ -557,11 +557,11 @@ Control Plane.
 </b></details>
 
 <details>
-<summary>What is GRE? How does it works?</summary><br><b>
+<summary>What is GRE? How does it work?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is VXLAN? How does it works?</summary><br><b>
+<summary>What is VXLAN? How does it work?</summary><br><b>
 </b></details>
 
 <details>
@@ -569,7 +569,7 @@ Control Plane.
 </b></details>
 
 <details>
-<summary>Explain OSPF</summary><br><b>
+<summary>Explain OSPF.</summary><br><b>
 </b></details>
 
 <details>
