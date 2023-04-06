@@ -681,7 +681,7 @@ affinity:
 </b></details>
 
 <details>
-<summary>reate and run a Pod called `some-pod` with the image `redis` and configure it to use the selector `hw=max`</summary><br><b>
+<summary>Create and run a Pod called `some-pod` with the image `redis` and configure it to use the selector `hw=max`</summary><br><b>
 
 ```
 kubectl run some-pod --image=redis --dry-run=client -o yaml > pod.yaml
