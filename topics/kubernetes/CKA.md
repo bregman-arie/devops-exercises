@@ -304,6 +304,8 @@ Note: create an alias (`alias k=kubectl`) and get used to `k get no`
 
 <details>
 <summary>Create an internal service called "sevi" to expose the app 'web' on port 1991</summary><br><b>
+ 
+`kubectl expose pod web --port=1991 --name=sevi`
 </b></details>
 
 <details>
