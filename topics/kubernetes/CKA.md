@@ -492,9 +492,7 @@ The selector doesn't match the label (cache vs cachy). To solve it, fix cachy so
 <details>
 <summary>Create a deployment called "pluck" using the image "redis" and make sure it runs 5 replicas</summary><br><b>
 
-`kubectl create deployment pluck --image=redis`
-
-`kubectl scale deployment pluck --replicas=5`
+`kubectl create deployment pluck --image=redis --replicas=5`
 
 </b></details>
 
