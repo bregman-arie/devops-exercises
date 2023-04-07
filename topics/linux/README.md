@@ -169,6 +169,9 @@ They take in input (<) and output for a given file (>) using stdin and stdout.
   - cut: a tool for cutting out selected portions of each line of a file:
     - syntax: `cut OPTION [FILE]`
       - cutting first two bytes from a word in a file: `cut -b 1-2 file.md`, output: `wo`
+  - awk: a programming language that is mainly used for text processing and data extraction. It can be used to manipulate and modify text in a file:
+    - syntax: awk [OPTIONS] [FILTER] [FILE]
+extracting a specific field from a CSV file: awk -F ',' '{print $1}' file.csv, output: first field of each line in the file
 </b></details>
 
 <details>
