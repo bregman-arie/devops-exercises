@@ -614,6 +614,10 @@ Throughput. To have a good throughput, the upload stream should be routed to an 
 
 <details>
 <summary>What is Network Congestion? What can cause it?</summary><br><b>
+
+Network congestion occurs when there is too much data to transmit on a network and it doesn't have enough capacity to handle the demand. </br>
+This can lead to increased latency and packet loss. The causes can be multiple, such as high network usage, large file transfers, malware, hardware issues, or network design problems. </br>
+To prevent network congestion, it's important to monitor your network usage and implement strategies to limit or manage the demand.
 </b></details>
 
 <details>
