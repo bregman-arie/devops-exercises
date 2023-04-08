@@ -141,7 +141,7 @@ Packets that are sent on the ethernet are always coming from a MAC address and s
 <details>
 <summary>When is this MAC address used?: ff:ff:ff:ff:ff:ff</summary><br><b>
 
-When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. Ethernet broadcasts are used to resolve IP addresses to MAC addresses (by ARP) at the datalink layer .
+When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. Ethernet broadcasts are used to resolve IP addresses to MAC addresses (by ARP) at the data link layer .
 </b></details>
 
 <details>
@@ -161,7 +161,7 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
 
 <details>
 <summary>What is a private IP address? In which scenarios/system designs, one should use it?</summary><br><b>
-Private IP addresses are assigned to the hosts in the same network to communicate among one another. As the name "private" suggests, the devices having the private IP addresses assigned can't be reached by the devices from any external network. For example, if I am living in a hostel and I want my hostelmates to join the game server I have hosted, I will ask them to join via my server's private IP address, since the network is local to the hostel.
+Private IP addresses are assigned to the hosts in the same network to communicate among one another. As the name "private" suggests, the devices having the private IP addresses assigned can't be reached by the devices from any external network. For example, if I am living in a hostel and I want my hostel mates to join the game server I have hosted, I will ask them to join via my server's private IP address, since the network is local to the hostel.
 </b></details>
 
 <details>
@@ -217,13 +217,13 @@ Multicast: Sending a message to a group of subscribers. It can be one-to-many or
 <summary>What is CSMA/CD? Is it used in modern ethernet networks?</summary><br><b>
 
 CSMA/CD stands for Carrier Sense Multiple Access / Collision Detection.
-Its primarily focus it to manage access to shared medium/bus where only one host can transmit at a given point of time.
+Its primary focus is to manage access to a shared medium/bus where only one host can transmit at a given point of time.
 
 CSMA/CD algorithm:
 
 1. Before sending a frame, it checks whether another host is already transmitting a frame.
 2. If no one is transmitting, it starts transmitting the frame.
-3. If two hosts transmitted at the same time, we have a collision.
+3. If two hosts transmit at the same time, we have a collision.
 4. Both hosts stop sending the frame and they send to everyone a 'jam signal' notifying everyone that a collision occurred
 5. They are waiting for a random time before sending again
 6. Once each host waited for a random time, they try to send the frame again and so the cycle starts again
@@ -304,7 +304,7 @@ Bonus question: what is the RTT of LAN?
 </b></details>
 
 <details>
-<summary>How does SSL handshake work?</summary><br><b>
+<summary>How does an SSL handshake work?</summary><br><b>
 SSL handshake is a process that establishes a secure connection between a client and a server.
 
 1. The client sends a Client Hello message to the server, which includes the client's version of the SSL/TLS protocol, a list of the cryptographic algorithms supported by the client, and a random value.
@@ -368,7 +368,7 @@ Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 </b></details>
 
 <details>
-<summary>Can you have two DHCP servers in the same network? How it work?</summary><br><b>
+<summary>Can you have two DHCP servers in the same network? How does it work?</summary><br><b>
 
 It is possible to have two DHCP servers on the same network, however it is not recommended, and it is important to configure them carefully to prevent conflicts and configuration problems.
 - When two DHCP servers are configured on the same network, there is a risk that both servers will assign IP addresses and other network configuration settings to the same device, which can cause conflicts and connectivity issues. Additionally, if the DHCP servers are configured with different network settings or options, devices on the network may receive conflicting or inconsistent configuration settings.
@@ -425,7 +425,7 @@ MTU stands for Maximum Transmission Unit. It's the size of the largest PDU (prot
 <details>
 <summary>What happens if you send a packet that is bigger than the MTU?</summary><br><b>
 	
-With IPv4 protocol, router can fragment the PDU then send all the fragmented PDU through the transaction.
+With IPv4 protocol, the router can fragment the PDU then send all the fragmented PDU through the transaction.
 	
 With IPv6 protocol, it issues an error to the user's computer.
 </b></details>
@@ -549,7 +549,7 @@ Control Plane.
 </b></details>
 
 <details>
-<summary>What is Asymmetric Routing? How do deal with it?</summary><br><b>
+<summary>What is Asymmetric Routing? How to deal with it?</summary><br><b>
 </b></details>
 
 <details>
@@ -591,7 +591,8 @@ Throughput refers to the measurement of the real amount of data transferred over
 </b></details>
 
 <details>
-<summary>When performing a search query, what is more important, latency or throughput? And how to assure that what managing global infrastructure?</summary><br><b>
+<summary>When performing a search query, what is more important, latency or throughput? And how to ensure that we manage global infrastructure?
+</summary><br><b>
 
 Latency. To have a good latency, a search query should be forwarded to the closest datacenter.
 </b></details>
@@ -665,8 +666,8 @@ Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-us
 <details>
 <summary>What is the Internet? Is it the same as the World Wide Web?</summary><br><b>
 
-The internet refers to network of networks, transferring huge amounts of data around the globe.<br>
-The World Wide Web is an application running on millions of server, on top of the internet, accessed through what is know as the web browser
+The internet refers to a network of networks, transferring huge amounts of data around the globe.<br>
+The World Wide Web is an application running on millions of server, on top of the internet, accessed through what is known as the web browser
 </b></details>
 
 <details>
