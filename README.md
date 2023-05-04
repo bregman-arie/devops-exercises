@@ -155,7 +155,7 @@ An Internet Protocol address (IP address) is a numerical label assigned to each 
 
 A Subnet mask is a 32-bit number that masks an IP address, and divides the IP addresses into network address and host address. Subnet Mask is made by setting network bits to all "1"s and setting host bits to all "0"s. Within a given network, out of the total usable host addresses, two are always reserved for specific purposes and cannot be allocated to any host. These are the first address, which is reserved as a network address (a.k.a network ID) and the last address used for network broadcast.
 
-[Example](https://github.com/philemonnwanne/o0o0o/tree/main/exes/exe-09)
+[Example](https://github.com/philemonnwanne/projects/tree/main/exercises/exe-09)
 
 </b></details>
 
