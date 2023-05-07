@@ -2701,6 +2701,11 @@ It consists of:
 
 <details>
 <summary>What is HTTPS?</summary><br><b>
+
+
+HTTPS is a secure version of the HTTP protocol used to transfer data between a web browser and a web server. It encrypts the communication using SSL/TLS encryption to ensure that the data is private and secure.
+
+Learn more: https://www.cloudflare.com/learning/ssl/why-is-http-not-secure/
 </b></details>
 
 <details>
