@@ -3472,6 +3472,8 @@ Raspberry Pi
 
 <details>
 <summary>What types of storage are there?</summary><br><b>
+
+There are several types of storage, including hard disk drives (HDDs), solid-state drives (SSDs), and optical drives (CD/DVD/Blu-ray). Other types of storage include USB flash drives, memory cards, and network-attached storage (NAS).
 </b></details>
 
 ## Big Data
