@@ -2890,6 +2890,8 @@ The Creative Commons license is a set of copyright licenses that allow creators 
   * Attribution-NonCommercial-NoDerivs (CC BY-NC-ND): Allows others to download and share the work, but they cannot use it commercially, remix or change it in any way, and must credit the original creator.
 
 Simple stated, the Creative Commons licenses are a way for creators to share their work with the public while retaining some control over how it can be used. The licenses promote creativity, innovation, and collaboration, while also respecting the rights of creators while still encouraging the responsible use of creative works.
+
+More information: https://creativecommons.org/licenses/
 </b></details>
 
 <details>
