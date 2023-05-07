@@ -2446,6 +2446,12 @@ False. From [swagger.io](https://swagger.io/resources/articles/difference-betwee
 
 <details>
 <summary>What is an API gateway?</summary><br><b>
+
+An API gateway is like the gatekeeper that controls how different parts talk to each other and how information is exchanged between them.
+
+The API gateway provides a single point of entry for all clients, and it can perform several tasks, including routing requests to the appropriate backend service, load balancing, security and authentication, rate limiting, caching, and monitoring.
+
+By using an API gateway, organizations can simplify the management of their APIs, ensure consistent security and governance, and improve the performance and scalability of their backend services. They are also commonly used in microservices architectures, where there are many small, independent services that need to be accessed by different clients.
 </b></details>
 
 <details>
