@@ -3459,6 +3459,11 @@ RAM (Random Access Memory) is the hardware in a computing device where the opera
 </b></details>
 
 <details>
+
+<details>
+<summary>What is a GPU?</summary><br><b>
+</b></details>
+
 <summary>What is an embedded system?</summary><br><b>
 
 An embedded system is a computer system - a combination of a computer processor, computer memory, and input/output peripheral devices—that has a dedicated function within a larger mechanical or electronic system. It is embedded as part of a complete device often including electrical or electronic hardware and mechanical parts. 
@@ -3474,6 +3479,26 @@ Raspberry Pi
 <summary>What types of storage are there?</summary><br><b>
 
 There are several types of storage, including hard disk drives (HDDs), solid-state drives (SSDs), and optical drives (CD/DVD/Blu-ray). Other types of storage include USB flash drives, memory cards, and network-attached storage (NAS).
+</b></details>
+
+<details>
+<summary>What are some considerations DevOps teams should keep in mind when selecting hardware for their job?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the role of hardware in disaster recovery planning and implementation?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a RAID?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a microcontroller?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a Network Interface Controller or NIC?</summary><br><b>
 </b></details>
 
 ## Big Data
