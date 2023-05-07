@@ -3159,6 +3159,8 @@ Given a text file, perform the following exercises
 
 <details>
 <summary>Extract all the numbers</summary><br><b>
+
+  - "\d+"
 </b></details>
 
 <details>
