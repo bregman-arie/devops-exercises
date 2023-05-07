@@ -3175,7 +3175,7 @@ Bonus: extract the last word of each line
 <details>
 <summary>Extract all the IP addresses</summary><br><b>
 
-  - "\b(?:\d{1,3}\.){3}\d{1,3}\b" IPV4:(This format looks for 1 to 3 digit sequence 3 times)
+  - "\b(?:\d{1,3}\ .){3}\d{1,3}\b" IPV4:(This format looks for 1 to 3 digit sequence 3 times)
 </b></details>
 
 <details>
