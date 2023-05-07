@@ -570,6 +570,15 @@ Control Plane.
 
 <details>
 <summary>Explain OSPF.</summary><br><b>
+
+
+OSPF (Open Shortest Path First) is a routing protocol that can be implemented on various types of routers. In general, OSPF is supported on most modern routers, including those from vendors such as Cisco, Juniper, and Huawei. The protocol is designed to work with IP-based networks, including both IPv4 and IPv6. Also, it uses a hierarchical network design, where routers are grouped into areas, with each area having its own topology map and routing table. This design helps to reduce the amount of routing information that needs to be exchanged between routers and improve network scalability.
+
+The OSPF 4 Types of routers are:
+  * Internal Router
+  * Area Border Routers
+  * Autonomous Systems Boundary Routers
+  * Backbone Routers
 </b></details>
 
 <details>
