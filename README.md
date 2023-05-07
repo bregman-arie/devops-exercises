@@ -579,6 +579,8 @@ The OSPF 4 Types of routers are:
   * Area Border Routers
   * Autonomous Systems Boundary Routers
   * Backbone Routers
+
+  Learn more about OSPF router types: https://www.educba.com/ospf-router-types/
 </b></details>
 
 <details>
