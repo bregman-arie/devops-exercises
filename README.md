@@ -3459,11 +3459,10 @@ RAM (Random Access Memory) is the hardware in a computing device where the opera
 </b></details>
 
 <details>
-
-<details>
 <summary>What is a GPU?</summary><br><b>
 </b></details>
 
+<details>
 <summary>What is an embedded system?</summary><br><b>
 
 An embedded system is a computer system - a combination of a computer processor, computer memory, and input/output peripheral devices—that has a dedicated function within a larger mechanical or electronic system. It is embedded as part of a complete device often including electrical or electronic hardware and mechanical parts. 
