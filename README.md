@@ -3270,6 +3270,9 @@ The ability to grow but also to reduce based on what is required
 
 <details>
 <summary>Explain Disaster Recovery</summary><br><b>
+
+
+Disaster recovery is the process of restoring critical business systems and data after a disruptive event. The goal is to minimize the impact and resume normal business activities quickly. This involves creating a plan, testing it, backing up critical data, and storing it in safe locations. In case of a disaster, the plan is then executed, backups are restored, and systems are hopefully brought back online. The recovery process may take hours or days depending on the damages of infrastructure. This makes business planning important, as a well-designed and tested disaster recovery plan can minimize the impact of a disaster and keep operations going.
 </b></details>
 
 <details>
