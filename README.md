@@ -3015,6 +3015,18 @@ Google Drive
 
 <details>
 <summary>What is a filesystem?</summary><br><b>
+
+A file system is a way for computers and other electronic devices to organize and store data files. It provides a structure that helps to organize data into files and directories, making it easier to find and manage information. A file system is crucial for providing a way to store and manage data in an organized manner.
+
+Commonly used filed systems:
+  Windows:
+  * NTFS
+  * exFAT
+
+  Mac OS:
+  * HFS+
+  *APFS
+  
 </b></details>
 
 <details>
