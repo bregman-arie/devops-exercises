@@ -3185,7 +3185,7 @@ Bonus: extract the last word of each line
 <details>
 <summary>Extract email addresses</summary><br><b>
 
-  - "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b"
+  - "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\ .[A-Za-z]{2,}\b"
 </b></details>
 
 #### Replace
