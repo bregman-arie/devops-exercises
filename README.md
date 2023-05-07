@@ -3166,7 +3166,10 @@ Given a text file, perform the following exercises
 <details>
 <summary>Extract the first word of each line</summary><br><b>
 
+  - "^\w+"
 Bonus: extract the last word of each line
+
+  - "\w+(?=\W*$)" (in most cases, depends on line formating)
 </b></details>
 
 <details>
