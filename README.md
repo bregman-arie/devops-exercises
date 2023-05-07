@@ -3026,7 +3026,7 @@ Commonly used filed systems:
   Mac OS:
   * HFS+
   *APFS
-  
+
 </b></details>
 
 <details>
@@ -3103,6 +3103,10 @@ Not only this will tell you what is expected from you, it will also provide big 
 
 <details>
 <summary>What are unit tests?</summary><br><b>
+
+Unit test are a software testing technique that involves systimatically breaking down a system and testing each individual part of the assembly. These tests are automated and can be run repeatedly to allow developers to catch edge case scenarios or bugs quickly while developing.
+
+The main objective of unit tests are to verify each function is producing proper outputs given a set of inputs.
 </b></details>
 
 <details>
