@@ -108,7 +108,7 @@
 <summary>In general, what do you need in order to communicate?</summary><br><b>
 
   - A common language (for the two ends to understand)
-  - A way to address who do you want to communicate with
+  - A way to address who you want to communicate with
   - A Connection (so the content of the communication can reach the recipients)
 
 </b></details>
@@ -141,7 +141,7 @@ Packets that are sent on the ethernet are always coming from a MAC address and s
 <details>
 <summary>When is this MAC address used?: ff:ff:ff:ff:ff:ff</summary><br><b>
 
-When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. Ethernet broadcasts are used to resolve IP addresses to MAC addresses (by ARP) at the datalink layer .
+When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. Ethernet broadcasts are used to resolve IP addresses to MAC addresses (by ARP) at the data link layer.
 </b></details>
 
 <details>
@@ -151,9 +151,9 @@ An Internet Protocol address (IP address) is a numerical label assigned to each 
 </b></details>
 
 <details>
-<summary>Explain subnet mask and give an example</summary><br><b>
+<summary>Explain the subnet mask and give an example</summary><br><b>
 
-A Subnet mask is a 32-bit number that masks an IP address, and divides the IP addresses into network address and host address. Subnet Mask is made by setting network bits to all "1"s and setting host bits to all "0"s. Within a given network, out of the total usable host addresses, two are always reserved for specific purposes and cannot be allocated to any host. These are the first address, which is reserved as a network address (a.k.a network ID) and the last address used for network broadcast.
+A Subnet mask is a 32-bit number that masks an IP address and divides the IP addresses into network addresses and host addresses. Subnet Mask is made by setting network bits to all "1"s and setting host bits to all "0"s. Within a given network, out of the total usable host addresses, two are always reserved for specific purposes and cannot be allocated to any host. These are the first address, which is reserved as a network address (a.k.a network ID), and the last address used for network broadcast.
 
 [Example](https://github.com/philemonnwanne/projects/tree/main/exercises/exe-09)
 
@@ -161,12 +161,12 @@ A Subnet mask is a 32-bit number that masks an IP address, and divides the IP ad
 
 <details>
 <summary>What is a private IP address? In which scenarios/system designs, one should use it?</summary><br><b>
-Private IP addresses are assigned to the hosts in the same network to communicate among one another. As the name "private" suggests, the devices having the private IP addresses assigned can't be reached by the devices from any external network. For example, if I am living in a hostel and I want my hostelmates to join the game server I have hosted, I will ask them to join via my server's private IP address, since the network is local to the hostel.
+Private IP addresses are assigned to the hosts in the same network to communicate with one another. As the name "private" suggests, the devices having the private IP addresses assigned can't be reached by the devices from any external network. For example, if I am living in a hostel and I want my hostel mates to join the game server I have hosted, I will ask them to join via my server's private IP address, since the network is local to the hostel.
 </b></details>
 
 <details>
 <summary>What is a public IP address? In which scenarios/system designs, one should use it?</summary><br><b>
-A public IP address is the public facing IP address. In the event that you were hosting a game server that you want your friends to join, you will give your friends your public IP address to allow their computers to identify and locate your network and server in order for the connection to take place. One time that you would not need to use a public facing IP address is in the event that you were playing with friends who were connected to the same network as you, in that case, you would use a private ip address. In order for someone to be able to connect to your server that is located internally, you will have to setup a port forward to tell your router to allow traffic from the public domain into your network and vice versa.
+A public IP address is a public-facing IP address. In the event that you were hosting a game server that you want your friends to join, you will give your friends your public IP address to allow their computers to identify and locate your network and server in order for the connection to take place. One time that you would not need to use a public-facing IP address is in the event that you were playing with friends who were connected to the same network as you, in that case, you would use a private IP address. In order for someone to be able to connect to your server that is located internally, you will have to set up a port forward to tell your router to allow traffic from the public domain into your network and vice versa.
 </b></details>
 
 <details>
@@ -174,11 +174,11 @@ A public IP address is the public facing IP address. In the event that you were 
 
 - Application: user end (HTTP is here)
 - Presentation: establishes context between application-layer entities (Encryption is here)
-- Session: establishes, manages and terminates the connections
+- Session: establishes, manages, and terminates the connections
 - Transport: transfers variable-length data sequences from a source to a destination host (TCP & UDP are here)
 - Network: transfers datagrams from one network to another (IP is here)
 - Data link: provides a link between two directly connected nodes (MAC is here)
-- Physical: the electrical and physical spec the data connection (Bits are here)
+- Physical: the electrical and physical spec of the data connection (Bits are here)
 
 You can read more about the OSI model in [penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference)
 </b></details>
@@ -199,13 +199,13 @@ You can read more about the OSI model in [penguintutor.com](http://www.penguintu
   * MAC address - Data link
   * IP address - Network
   * Terminate connections - Session
-  * 3 way handshake - Transport
+  * 3-way handshake - Transport
 </b></details>
 
 <details>
 <summary>What delivery schemes are you familiar with?</summary><br><b>
 
-Unitcast: One to one communication where there is one sender and one receiver.
+Unicast: One-to-one communication where there is one sender and one receiver.
 
 Broadcast: Sending a message to everyone in the network. The address ff:ff:ff:ff:ff:ff is used for broadcasting.
            Two common protocols which use broadcast are ARP and DHCP.
@@ -217,15 +217,15 @@ Multicast: Sending a message to a group of subscribers. It can be one-to-many or
 <summary>What is CSMA/CD? Is it used in modern ethernet networks?</summary><br><b>
 
 CSMA/CD stands for Carrier Sense Multiple Access / Collision Detection.
-Its primarily focus it to manage access to shared medium/bus where only one host can transmit at a given point of time.
+Its primary focus is to manage access to a shared medium/bus where only one host can transmit at a given point in time.
 
 CSMA/CD algorithm:
 
 1. Before sending a frame, it checks whether another host is already transmitting a frame.
 2. If no one is transmitting, it starts transmitting the frame.
-3. If two hosts transmitted at the same time, we have a collision.
-4. Both hosts stop sending the frame and they send to everyone a 'jam signal' notifying everyone that a collision occurred
-5. They are waiting for a random time before sending again
+3. If two hosts transmit at the same time, we have a collision.
+4. Both hosts stop sending the frame and they send everyone a 'jam signal' notifying everyone that a collision occurred
+5. They are waiting for a random time before sending it again
 6. Once each host waited for a random time, they try to send the frame again and so the cycle starts again
 </b></details>
 
@@ -238,9 +238,9 @@ CSMA/CD algorithm:
 
 A router, switch, and hub are all network devices used to connect devices in a local area network (LAN). However, each device operates differently and has its specific use cases. Here is a brief description of each device and the differences between them:
 
-1. Router: is a network device that connects multiple network segments together. It operates at the network layer (Layer 3) of the OSI model and uses routing protocols to direct data between networks. Routers use IP addresses to identify devices and route data packets to the correct destination.
-2. Switch: is a network device that connects multiple devices on a LAN. It operates at the data link layer (Layer 2) of the OSI model and uses MAC addresses to identify devices and direct data packets to the correct destination. Switches allow devices on the same network to communicate with each other more efficiently and can prevent data collisions that can occur when multiple devices send data simultaneously.
-3. Hub: is a network device that connects multiple devices through a single cable and is used to connect multiple devices without segmenting a network. However, unlike a switch, it operates at the physical layer (Layer 1) of the OSI model and simply broadcasts data packets to all devices connected to it, regardless of whether the device is the intended recipient or not. This means that data collisions can occur, and the network's efficiency can suffer as a result. Hubs are generally not used in modern network setups, as switches are more efficient and provide better network performance.
+1. Router: a network device that connects multiple network segments together. It operates at the network layer (Layer 3) of the OSI model and uses routing protocols to direct data between networks. Routers use IP addresses to identify devices and route data packets to the correct destination.
+2. Switch: a network device that connects multiple devices on a LAN. It operates at the data link layer (Layer 2) of the OSI model and uses MAC addresses to identify devices and direct data packets to the correct destination. Switches allow devices on the same network to communicate with each other more efficiently and can prevent data collisions that can occur when multiple devices send data simultaneously.
+3. Hub: a network device that connects multiple devices through a single cable and is used to connect multiple devices without segmenting a network. However, unlike a switch, it operates at the physical layer (Layer 1) of the OSI model and simply broadcasts data packets to all devices connected to it, regardless of whether the device is the intended recipient or not. This means that data collisions can occur, and the network's efficiency can suffer as a result. Hubs are generally not used in modern network setups, as switches are more efficient and provide better network performance.
 </b></details>
 
 <details>
@@ -262,7 +262,7 @@ Three collision domains and one broadcast domain
 <details>
 <summary>How does a router work?</summary><br><b>
 
-A router is a physical or virtual appliance that passes information between two or more packet-switched computer networks. A router inspects a given data packet's destination Internet Protocol address (IP address), calculates the best way for it to reach its destination and then forwards it accordingly.
+A router is a physical or virtual appliance that passes information between two or more packet-switched computer networks. A router inspects a given data packet's destination Internet Protocol address (IP address), calculates the best way for it to reach its destination, and then forwards it accordingly.
 
 </b></details>
 
@@ -286,11 +286,11 @@ Proxy servers provide varying levels of functionality, security, and privacy dep
 <details>
 <summary>What is TCP? How does it work? What is the 3-way handshake?</summary><br><b>
 
-TCP 3-way handshake or three-way handshake is a process which is used in a TCP/IP network to make a connection between server and client.
+TCP 3-way handshake or three-way handshake is a process that is used in a TCP/IP network to make a connection between server and client.
 
 A three-way handshake is primarily used to create a TCP socket connection. It works when:
 
-- A client node sends a SYN data packet over an IP network to a server on the same or an external network. The objective of this packet is to ask/infer if the server is open for new connections.
+- A client node sends an SYN data packet over an IP network to a server on the same or an external network. The objective of this packet is to ask/infer if the server is open for new connections.
 - The target server must have open ports that can accept and initiate new connections. When the server receives the SYN packet from the client node, it responds and returns a confirmation receipt – the ACK packet or SYN/ACK packet.
 - The client node receives the SYN/ACK from the server and responds with an ACK packet.
 </b></details>
@@ -298,13 +298,13 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 <details>
 <summary>What is round-trip delay or round-trip time?</summary><br><b>
 
-From [wikipedia](https://en.wikipedia.org/wiki/Round-trip_delay): "the length of time it takes for a signal to be sent plus the length of time it takes for an acknowledgement of that signal to be received"
+From [wikipedia](https://en.wikipedia.org/wiki/Round-trip_delay): "the length of time it takes for a signal to be sent plus the length of time it takes for an acknowledgment of that signal to be received"
 
 Bonus question: what is the RTT of LAN?
 </b></details>
 
 <details>
-<summary>How does SSL handshake work?</summary><br><b>
+<summary>How does an SSL handshake work?</summary><br><b>
 SSL handshake is a process that establishes a secure connection between a client and a server.
 
 1. The client sends a Client Hello message to the server, which includes the client's version of the SSL/TLS protocol, a list of the cryptographic algorithms supported by the client, and a random value.
@@ -322,7 +322,7 @@ SSL handshake is a process that establishes a secure connection between a client
 <details>
 <summary>What is the difference between TCP and UDP?</summary><br><b>
 
-TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for services like streaming.
+TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between the client and server and doesn't handle package orders. This makes UDP more lightweight than TCP and a perfect candidate for services like streaming.
 
 [Penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference) provides a good explanation.
 </b></details>
@@ -332,7 +332,7 @@ TCP establishes a connection between the client and the server to guarantee the 
 </b></details>
 
 <details>
-<summary>Explain "default gateway"</summary><br><b>
+<summary>Explain the "default gateway"</summary><br><b>
 
 A default gateway serves as an access point or IP router that a networked computer uses to send information to a computer in another network or the internet.
 </b></details>
@@ -357,20 +357,20 @@ Systems keep an ARP look-up table where they store information about what IP add
 <details>
 <summary>What is DHCP? How does it work?</summary><br><b>
 
-It stands for Dynamic Host Configuration Protocol, and allocates IP addresses, subnet masks and gateways to hosts. This is how it works:
+It stands for Dynamic Host Configuration Protocol and allocates IP addresses, subnet masks, and gateways to hosts. This is how it works:
 
-* A host upon entering a network, broadcasts a message in search of a DHCP server (DHCP DISCOVER)
+* A host upon entering a network broadcasts a message in search of a DHCP server (DHCP DISCOVER)
 * An offer message is sent back by the DHCP server as a packet containing lease time, subnet mask, IP addresses, etc (DHCP OFFER)
-* Depending on which offer accepted, the client sends back a reply broadcast letting all DHCP servers know (DHCP REQUEST)
-* Server sends an acknowledgment (DHCP ACK)
+* Depending on which offer is accepted, the client sends back a reply broadcast letting all DHCP servers know (DHCP REQUEST)
+* The server sends an acknowledgment (DHCP ACK)
 
 Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 </b></details>
 
 <details>
-<summary>Can you have two DHCP servers in the same network? How it work?</summary><br><b>
+<summary>Can you have two DHCP servers on the same network? How does it work?</summary><br><b>
 
-It is possible to have two DHCP servers on the same network, however it is not recommended, and it is important to configure them carefully to prevent conflicts and configuration problems.
+It is possible to have two DHCP servers on the same network, however, it is not recommended, and it is important to configure them carefully to prevent conflicts and configuration problems.
 - When two DHCP servers are configured on the same network, there is a risk that both servers will assign IP addresses and other network configuration settings to the same device, which can cause conflicts and connectivity issues. Additionally, if the DHCP servers are configured with different network settings or options, devices on the network may receive conflicting or inconsistent configuration settings.
 - However, in some cases, it may be necessary to have two DHCP servers on the same network, such as in large networks where one DHCP server may not be able to handle all the requests. In such cases, DHCP servers can be configured to serve different IP address ranges or different subnets, so they do not interfere with each other.
 </b></details>
@@ -378,7 +378,7 @@ It is possible to have two DHCP servers on the same network, however it is not r
 <details>
 <summary>What is SSL tunneling? How does it work?</summary><br><b>
 
-- SSL (Secure Sockets Layer) tunneling is a technique used to establish a secure, encrypted connection between two endpoints over an insecure network, such as the internet. The SSL tunnel is created by encapsulating the traffic within an SSL connection, which provides confidentiality, integrity, and authentication.
+- SSL (Secure Sockets Layer) tunneling is a technique used to establish a secure, encrypted connection between two endpoints over an insecure network, such as the Internet. The SSL tunnel is created by encapsulating the traffic within an SSL connection, which provides confidentiality, integrity, and authentication.
 
 Here's how SSL tunneling works:
 
@@ -425,13 +425,13 @@ MTU stands for Maximum Transmission Unit. It's the size of the largest PDU (prot
 <details>
 <summary>What happens if you send a packet that is bigger than the MTU?</summary><br><b>
 	
-With IPv4 protocol, router can fragment the PDU then send all the fragmented PDU through the transaction.
+With the IPv4 protocol, the router can fragment the PDU and then send all the fragmented PDU through the transaction.
 	
 With IPv6 protocol, it issues an error to the user's computer.
 </b></details>
 
 <details>
-<summary>True or False?. Ping is using UDP because it doesn't care about reliable connection</summary><br><b>
+<summary>True or False? Ping is using UDP because it doesn't care about reliable connection</summary><br><b>
 
 False. Ping is actually using ICMP (Internet Control Message Protocol) which is a network protocol used to send diagnostic messages and control messages related to network communication.
 </b></details>
@@ -439,7 +439,7 @@ False. Ping is actually using ICMP (Internet Control Message Protocol) which is 
 <details>
 <summary>What is SDN?</summary><br><b>
 
-- SDN stands for Software-Defined Networking. It is an approach to network management that emphasizes the centralization of network control, enabling administrators to manage network behavior through software abstraction.
+- SDN stands for Software-Defined Networking. It is an approach to network management that emphasizes the centralization of network control, enabling administrators to manage network behavior through a software abstraction.
 - In a traditional network, network devices such as routers, switches, and firewalls are configured and managed individually, using specialized software or command-line interfaces. In contrast, SDN separates the network control plane from the data plane, allowing administrators to manage network behavior through a centralized software controller.
 </b></details>
 
@@ -460,7 +460,7 @@ ICMP messages are used for a variety of purposes, including:
 <summary>What is NAT? How does it work?</summary><br><b>
 
 NAT stands for Network Address Translation. It’s a way to map multiple local private addresses to a public one before transferring the information. Organizations that want multiple devices to employ a single IP address use NAT, as do most home routers.
-For example, your computer's private IP could be 192.168.1.100, but your router maps the traffic to it's public IP (e.g. 1.1.1.1). Any device on the internet would see the traffic coming from your public IP (1.1.1.1) instead of your private IP (192.168.1.100).
+For example, your computer's private IP could be 192.168.1.100, but your router maps the traffic to its public IP (e.g. 1.1.1.1). Any device on the internet would see the traffic coming from your public IP (1.1.1.1) instead of your private IP (192.168.1.100).
 </b></details>
 
 <details>
@@ -519,13 +519,13 @@ APIPA uses the IP range: 169.254.0.1 - 169.254.255.254.
 <details>
 <summary>What does "control plane" refer to?</summary><br><b>
 
-The control plane is the part of the network that decides how to route and forward packets to a different location.
+The control plane is a part of the network that decides how to route and forward packets to a different location.
 </b></details>
 
 <details>
 <summary>What does "data plane" refer to?</summary><br><b>
 
-The data plane is the part of the network that actually forwards the data/packets.
+The data plane is a part of the network that actually forwards the data/packets.
 </b></details>
 
 <details>
@@ -549,7 +549,7 @@ Control Plane.
 </b></details>
 
 <details>
-<summary>What is Asymmetric Routing? How do deal with it?</summary><br><b>
+<summary>What is Asymmetric Routing? How to deal with it?</summary><br><b>
 </b></details>
 
 <details>
@@ -570,12 +570,23 @@ Control Plane.
 
 <details>
 <summary>Explain OSPF.</summary><br><b>
+
+
+OSPF (Open Shortest Path First) is a routing protocol that can be implemented on various types of routers. In general, OSPF is supported on most modern routers, including those from vendors such as Cisco, Juniper, and Huawei. The protocol is designed to work with IP-based networks, including both IPv4 and IPv6. Also, it uses a hierarchical network design, where routers are grouped into areas, with each area having its own topology map and routing table. This design helps to reduce the amount of routing information that needs to be exchanged between routers and improve network scalability.
+
+The OSPF 4 Types of routers are:
+  * Internal Router
+  * Area Border Routers
+  * Autonomous Systems Boundary Routers
+  * Backbone Routers
+
+  Learn more about OSPF router types: https://www.educba.com/ospf-router-types/
 </b></details>
 
 <details>
 <summary>What is latency?</summary><br><b>
 	
-Latency is the time taken for an information to reach its destination from the source.
+Latency is the time taken for information to reach its destination from the source.
 </b></details>
 
 <details>
@@ -591,21 +602,22 @@ Throughput refers to the measurement of the real amount of data transferred over
 </b></details>
 
 <details>
-<summary>When performing a search query, what is more important, latency or throughput? And how to assure that what managing global infrastructure?</summary><br><b>
+<summary>When performing a search query, what is more important, latency or throughput? And how to ensure that we manage global infrastructure?
+</summary><br><b>
 
-Latency. To have a good latency, a search query should be forwarded to the closest datacenter.
+Latency. To have good latency, a search query should be forwarded to the closest data center.
 </b></details>
 
 <details>
 <summary>When uploading a video, what is more important, latency or throughput? And how to assure that?</summary><br><b>
 
-Throughput. To have a good throughput, the upload stream should be routed to an underutilized link.
+Throughput. To have good throughput, the upload stream should be routed to an underutilized link.
 </b></details>
 
 <details>
 <summary>What other considerations (except latency and throughput) are there when forwarding requests?</summary><br><b>
 
-* Keep caches updated (which means the request could be forwarded not to the closest datacenter)
+* Keep caches updated (which means the request could be forwarded not to the closest data center)
 </b></details>
 
 <details>
@@ -621,7 +633,7 @@ To prevent network congestion, it's important to monitor your network usage and 
 </b></details>
 
 <details>
-<summary>What can you tell me about UDP packet format? What about TCP packet format? How is it different?</summary><br><b>
+<summary>What can you tell me about the UDP packet format? What about the TCP packet format? How is it different?</summary><br><b>
 </b></details>
 
 <details>
@@ -639,15 +651,15 @@ To prevent network congestion, it's important to monitor your network usage and 
 
 * Hypertext Transfer Protocol (HTTP) - used for the webpages on the internet
 * Simple Mail Transfer Protocol (SMTP) - email transmission
-* Telecommunications Network - (TELNET) - terminal emulation to allow client access to telnet server
-* File Transfer Protocol (FTP) - facilitates transfer of files between any two machines
+* Telecommunications Network - (TELNET) - terminal emulation to allow a client access to a telnet server
+* File Transfer Protocol (FTP) - facilitates the transfer of files between any two machines
 * Domain Name System (DNS) - domain name translation
-* Dynamic Host Configuration Protocol (DHCP) - allocates IP addresses, subnet masks and gateways to hosts
-* Simple Network Management Protocol (SNMP) - gathers data of devices on the network
+* Dynamic Host Configuration Protocol (DHCP) - allocates IP addresses, subnet masks, and gateways to hosts
+* Simple Network Management Protocol (SNMP) - gathers data on devices on the network
 </b></details>
 
 <details>
-<summary>Give examples of protocols found in the network Layer</summary><br><b>
+<summary>Give examples of protocols found in the Network Layer</summary><br><b>
 
 * Internet Protocol (IP) - assists in routing packets from one machine to another
 * Internet Control Message Protocol (ICMP) - lets one know what is going such as error messages and debugging information
@@ -665,8 +677,8 @@ Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-us
 <details>
 <summary>What is the Internet? Is it the same as the World Wide Web?</summary><br><b>
 
-The internet refers to network of networks, transferring huge amounts of data around the globe.<br>
-The World Wide Web is an application running on millions of server, on top of the internet, accessed through what is know as the web browser
+The internet refers to a network of networks, transferring huge amounts of data around the globe.<br>
+The World Wide Web is an application running on millions of servers, on top of the internet, accessed through what is known as the web browser
 </b></details>
 
 <details>
@@ -878,6 +890,8 @@ The introduction of virtual machines allowed companies to deploy multiple busine
 
 <details>
 <summary>Do we need virtual machines in the age of containers? Are they still relevant?</summary><br><b>
+
+Yes, virtual machines are still relevant even in the age of containers. While containers provide a lightweight and portable alternative to virtual machines, they do have certain limitations. Virtual machines still matter because they offer isolation and security, can run different operating systems, and are good for legacy apps. Containers limitations for example are sharing the host kernel.
 </b></details>
 
 ## Prometheus
@@ -2445,10 +2459,25 @@ False. From [swagger.io](https://swagger.io/resources/articles/difference-betwee
 
 <details>
 <summary>What is an API gateway?</summary><br><b>
+
+An API gateway is like the gatekeeper that controls how different parts talk to each other and how information is exchanged between them.
+
+The API gateway provides a single point of entry for all clients, and it can perform several tasks, including routing requests to the appropriate backend service, load balancing, security and authentication, rate limiting, caching, and monitoring.
+
+By using an API gateway, organizations can simplify the management of their APIs, ensure consistent security and governance, and improve the performance and scalability of their backend services. They are also commonly used in microservices architectures, where there are many small, independent services that need to be accessed by different clients.
 </b></details>
 
 <details>
 <summary>What are the advantages of using/implementing an API gateway?</summary><br><b>
+
+Advantages:
+
+  - Simplifies API management: Provides a single entry point for all requests, which simplifies the management and monitoring of multiple APIs.
+  - Improves security: Able to implement security features like authentication, authorization, and encryption to protect the backend services from unauthorized access.
+  - Enhances scalability: Can handle traffic spikes and distribute requests to backend services in a way that maximizes resource utilization and improves overall system performance.
+  - Enables service composition: Can combine different backend services into a single API, providing more granular control over the services that clients can access.
+  - Facilitates integration with external systems:  Can be used to expose internal services to external partners or customers, making it easier to integrate with external systems and enabling new business models.
+
 </b></details>
 
 <details>
@@ -2685,6 +2714,11 @@ It consists of:
 
 <details>
 <summary>What is HTTPS?</summary><br><b>
+
+
+HTTPS is a secure version of the HTTP protocol used to transfer data between a web browser and a web server. It encrypts the communication using SSL/TLS encryption to ensure that the data is private and secure.
+
+Learn more: https://www.cloudflare.com/learning/ssl/why-is-http-not-secure/
 </b></details>
 
 <details>
@@ -2707,10 +2741,16 @@ The server didn't receive a response from another server it communicates with in
 
 <details>
 <summary>What is a proxy?</summary><br><b>
+
+A proxy is a server that acts as a middleman between a client device and a destination server. It can help improve privacy, security, and performance by hiding the client's IP address, filtering content, and caching frequently accessed data. 
+  - Proxies can be used for load balancing, distributing traffic across multiple servers to help prevent server overload and improve website or application performance. They can also be used for data analysis, as they can log requests and traffic, providing useful insights into user behavior and preferences.
 </b></details>
 
 <details>
 <summary>What is a reverse proxy?</summary><br><b>
+
+A reverse proxy is a type of proxy server that sits between a client and a server, but it is used to manage traffic going in the opposite direction of a traditional forward proxy. In a forward proxy, the client sends requests to the proxy server, which then forwards them to the destination server. However, in a reverse proxy, the client sends requests to the destination server, but the requests are intercepted by the reverse proxy before they reach the server. 
+  - They're commonly used to improve web server performance, provide high availability and fault tolerance, and enhance security by preventing direct access to the back-end server. They are often used in large-scale web applications and high-traffic websites to manage and distribute requests to multiple servers, resulting in improved scalability and reliability.
 </b></details>
 
 <details>
@@ -2852,6 +2892,19 @@ The maximum timeout value can be set between 1 and 3,600 seconds on both GCP and
 
 <details>
 <summary>Are you familiar with "Creative Commons"? What do you know about it?</summary><br><b>
+
+The Creative Commons license is a set of copyright licenses that allow creators to share their work with the public while retaining some control over how it can be used. The license was developed as a response to the restrictive standards of traditional copyright laws, which limited access of creative works. Its creators to choose the terms under which their works can be shared, distributed, and used by others. They're six main types of Creative Commons licenses, each with different levels of restrictions and permissions, the six licenses are:
+
+  * Attribution (CC BY): Allows others to distribute, remix, and build upon the work, even commercially, as long as they credit the original creator.
+  * Attribution-ShareAlike (CC BY-SA): Allows others to remix and build upon the work, even commercially, as long as they credit the original creator and release any new creations under the same license.
+  * Attribution-NoDerivs (CC BY-ND): Allows others to distribute the work, even commercially, but they cannot remix or change it in any way and must credit the original creator.
+  * Attribution-NonCommercial (CC BY-NC): Allows others to remix and build upon the work, but they cannot use it commercially and must credit the original creator.
+  * Attribution-NonCommercial-ShareAlike (CC BY-NC-SA): Allows others to remix and build upon the work, but they cannot use it commercially, must credit the original creator, and must release any new creations under the same license.
+  * Attribution-NonCommercial-NoDerivs (CC BY-NC-ND): Allows others to download and share the work, but they cannot use it commercially, remix or change it in any way, and must credit the original creator.
+
+Simply stated, the Creative Commons licenses are a way for creators to share their work with the public while retaining some control over how it can be used. The licenses promote creativity, innovation, and collaboration, while also respecting the rights of creators while still encouraging the responsible use of creative works.
+
+More information: https://creativecommons.org/licenses/
 </b></details>
 
 <details>
@@ -2879,6 +2932,10 @@ CPU cache.
 
 <details>
 <summary>What is a memory leak?</summary><br><b>
+
+A memory leak is a programming error that occurs when a program fails to release memory that is no longer needed, causing the program to consume increasing amounts of memory over time.
+
+The leaks can lead to a variety of problems, including system crashes, performance degradation, and instability. Usually occuring after failed maintenance on older systems and compatibility with new components over time.
 </b></details>
 
 <details>
@@ -2971,6 +3028,18 @@ Google Drive
 
 <details>
 <summary>What is a filesystem?</summary><br><b>
+
+A file system is a way for computers and other electronic devices to organize and store data files. It provides a structure that helps to organize data into files and directories, making it easier to find and manage information. A file system is crucial for providing a way to store and manage data in an organized manner.
+
+Commonly used filed systems:
+  Windows:
+  * NTFS
+  * exFAT
+
+  Mac OS:
+  * HFS+
+  *APFS
+
 </b></details>
 
 <details>
@@ -3047,6 +3116,10 @@ Not only this will tell you what is expected from you, it will also provide big 
 
 <details>
 <summary>What are unit tests?</summary><br><b>
+
+Unit test are a software testing technique that involves systimatically breaking down a system and testing each individual part of the assembly. These tests are automated and can be run repeatedly to allow developers to catch edge case scenarios or bugs quickly while developing.
+
+The main objective of unit tests are to verify each function is producing proper outputs given a set of inputs.
 </b></details>
 
 <details>
@@ -3088,16 +3161,23 @@ Given a text file, perform the following exercises
 
 <details>
 <summary>Extract all the numbers</summary><br><b>
+
+  - "\d+"
 </b></details>
 
 <details>
 <summary>Extract the first word of each line</summary><br><b>
 
+  - "^\w+"
 Bonus: extract the last word of each line
+
+  - "\w+(?=\W*$)" (in most cases, depends on line formating)
 </b></details>
 
 <details>
 <summary>Extract all the IP addresses</summary><br><b>
+
+  - "\b(?:\d{1,3}\ .){3}\d{1,3}\b" IPV4:(This format looks for 1 to 3 digit sequence 3 times)
 </b></details>
 
 <details>
@@ -3106,6 +3186,8 @@ Bonus: extract the last word of each line
 
 <details>
 <summary>Extract email addresses</summary><br><b>
+
+  - "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\ .[A-Za-z]{2,}\b"
 </b></details>
 
 #### Replace
@@ -3199,6 +3281,9 @@ The ability to grow but also to reduce based on what is required
 
 <details>
 <summary>Explain Disaster Recovery</summary><br><b>
+
+
+Disaster recovery is the process of restoring critical business systems and data after a disruptive event. The goal is to minimize the impact and resume normal business activities quickly. This involves creating a plan, testing it, backing up critical data, and storing it in safe locations. In case of a disaster, the plan is then executed, backups are restored, and systems are hopefully brought back online. The recovery process may take hours or days depending on the damages of infrastructure. This makes business planning important, as a well-designed and tested disaster recovery plan can minimize the impact of a disaster and keep operations going.
 </b></details>
 
 <details>
@@ -3374,6 +3459,10 @@ RAM (Random Access Memory) is the hardware in a computing device where the opera
 </b></details>
 
 <details>
+<summary>What is a GPU?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is an embedded system?</summary><br><b>
 
 An embedded system is a computer system - a combination of a computer processor, computer memory, and input/output peripheral devices—that has a dedicated function within a larger mechanical or electronic system. It is embedded as part of a complete device often including electrical or electronic hardware and mechanical parts. 
@@ -3387,6 +3476,28 @@ Raspberry Pi
 
 <details>
 <summary>What types of storage are there?</summary><br><b>
+
+There are several types of storage, including hard disk drives (HDDs), solid-state drives (SSDs), and optical drives (CD/DVD/Blu-ray). Other types of storage include USB flash drives, memory cards, and network-attached storage (NAS).
+</b></details>
+
+<details>
+<summary>What are some considerations DevOps teams should keep in mind when selecting hardware for their job?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the role of hardware in disaster recovery planning and implementation?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a RAID?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a microcontroller?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a Network Interface Controller or NIC?</summary><br><b>
 </b></details>
 
 ## Big Data
