@@ -9,7 +9,7 @@ What's your goal?
 * I would like to learn Kubernetes by practicing both theoritcal and practical material
   * Solve [exercises](#kubernetes-exercises)
   * Solve [questions](#kubernetes-questions)
-* I would like to learn parctical Kubernetes
+* I would like to learn practical Kubernetes
   * Solve [exercises](#kubernetes-exercises)
 
 - [Kubernetes](#kubernetes)
