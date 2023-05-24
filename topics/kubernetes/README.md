@@ -117,6 +117,15 @@ What's your goal?
 ## Kubernetes Questions
 
 ### Kubernetes 101
+## Why Kubernetes :-
+
+In the past, there were monolithic applications, meaning that all of the application's components ran in the same container and were bundled together. Let's look at an example to better understand. We have an application with a frontend, a backend, a database, etc, therefore if we need to update either of them, we must deploy the entire thing again. The same is true when scaling. Therefore, this is not optimal.
+
+Microservices were introduced to tackle this. We used to run all the components of a monolithic application in a single container, but with microservices, we can now run each component independently. Now, we only need to deploy the component that has changed, and we can scale the components independently based on our needs, hence saving cost.
+
+When designing and running any large-scale system, a containerized application may need managing hundreds or thousands of containers.
+
+As was mentioned above, there are numerous microservices running for every application that require scheduling, networking, scaling, etc, and an orchestrator is what we use to manage these microservices.
 
 <details>
 <summary>What is Kubernetes? Why organizations are using it?</summary><br><b>
