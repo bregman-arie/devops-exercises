@@ -158,7 +158,7 @@ To count them: `k get po -l env=prod --no-headers | wc -l`
 First change to the directory tracked by kubelet for creating static pod: `cd /etc/kubernetes/manifests` (you can verify path by reading kubelet conf file)
 
 Now create the definition/manifest in that directory
-`k run some-pod --image=python --command sleep 2017 --restart=Never --dry-run=client -o yaml > statuc-pod.yaml`
+`k run some-pod --image=python --command sleep 2017 --restart=Never --dry-run=client -o yaml > static-pod.yaml`
 </b></details>
 
 <details>
