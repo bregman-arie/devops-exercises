@@ -89,6 +89,7 @@ A mapping between domain name and an IP address.
 <summary>What types of DNS records are there?</summary><br><b>
 
   * A
+  * CNAME
   * PTR
   * MX
   * AAAA
@@ -161,8 +162,29 @@ True.
 
 <details>
 <summary>Which techniques a DNS can use for load balancing?</summary><br><b>
+There are several techniques that a DNS can use for load balancing, including:
+
+* Round-robin DNS
+
+* Weighted round-robin DNS
+
+* Least connections
+
+* GeoDNS
 </b></details>
 
 <details>
-<summary>What is a zone? What types of zones are there?</summary><br><b>
+<summary>What is a DNS zone?</summary><br><b>
+A DNS zone is a logical container that holds all the DNS resource records for a specific domain name.
+</b></details>
+
+<details>
+<summary>What types of zones are there?</summary><br><b>
+There are several types, including:
+
+* Primary zone: A primary zone is a read/write zone that is stored in a master DNS server.
+
+* Secondary zone: A secondary zone is a read-only copy of a primary zone that is stored in a slave DNS server. 
+
+* Stub zone: A stub zone is a type of zone that contains only the essential information about a domain name. It is used to reduce the amount of DNS traffic and improve the efficiency of the DNS resolution process.
 </b></details>

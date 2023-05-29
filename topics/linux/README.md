@@ -237,7 +237,8 @@ find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \;
 <details>
 <summary>How to check which commands you executed in the past?</summary><br><b>
 
-history command or .bash_history file
+history command or .bash_history file 
+  * also can use up arrow key to access or to show the recent commands you type
 </b></details>
 
 <details>
@@ -280,24 +281,37 @@ Alternatively if you are using a distro with systemd it's recommended to use sys
 
 <details>
 <summary>Explain Linux I/O redirection</summary><br><b>
+  In Linux, IO redirection is a way of changing the default input/output behavior of a command or program. It allows you to redirect input and output from/to different sources/destinations, such as files, devices, and other commands.
+
+Here are some common examples of IO redirection:
+ * Redirecting Standard Output (stdout):
+  <code>ls > filelist.txt</code>
+* Redirecting Standard Error (stderr):
+  <code>ls /some/nonexistent/directory 2> error.txt</code>
+* Appending to a file:
+  <code>echo "hello" >> myfile.txt</code>
+* Redirecting Input (stdin):
+  <code>sort < unsorted.txt</code>
+* Using Pipes: Pipes ("|"):
+  <code>ls | grep "\.txt$"</code>         
 </b></details>
 
 <details>
 <summary>Demonstrate Linux output redirection</summary><br><b>
 
-ls > ls_output.txt
+<code>ls > ls_output.txt</code>
 </b></details>
 
 <details>
 <summary>Demonstrate Linux stderr output redirection</summary><br><b>
 
-yippiekaiyay 2> ls_output.txt
+<code>yippiekaiyay 2> ls_output.txt</code>
 </b></details>
 
 <details>
 <summary>Demonstrate Linux stderr to stdout redirection</summary><br><b>
 
-yippiekaiyay &> file
+<code>yippiekaiyay &> file</code>
 </b></details>
 
 <details>
@@ -362,6 +376,7 @@ The command passed to the boot loader to run the kernel
 
 <details>
 <summary>In which path can you find the system devices (e.g. block storage)?</summary><br><b>
+  /dev
 </b></details>
 
 <a name="questions-linux-permissions"></a>
@@ -2261,6 +2276,14 @@ It's used in commands to mark the end of commands options. One common example is
 
 <details>
 <summary>What is User-mode Linux?</summary><br><b>
+In Linux, user mode is a restricted operating mode in which a user's application or process runs. User mode is a non-privileged mode that prevents user-level processes from accessing sensitive system resources directly.
+
+In user mode, an application can only access hardware resources indirectly, by calling system services or functions provided by the operating system. This ensures that the system's security and stability are maintained by preventing user processes from interfering with or damaging system resources.
+
+Additionally, user mode also provides memory protection to prevent applications from accessing unauthorized memory locations. This is done by assigning each process its own virtual memory space, which is isolated from other processes.
+
+In contrast to user mode, kernel mode is a privileged operating mode in which the operating system's kernel has full access to system resources, and can perform low-level operations, such as accessing hardware devices and managing system resources directly.
+
 </b></details>
 
 <details>
