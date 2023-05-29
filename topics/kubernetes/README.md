@@ -117,7 +117,7 @@ What's your goal?
 ## Kubernetes Questions
 
 ### Kubernetes 101
-## Why Kubernetes :-
+## How orchestrators made our life easy? :-
 
 In the past, there were monolithic applications, meaning that all of the application's components ran in the same container and were bundled together. Let's look at an example to better understand. We have an application with a frontend, a backend, a database, etc, therefore if we need to update either of them, we must deploy the entire thing again. The same is true when scaling. Therefore, this is not optimal.
 
