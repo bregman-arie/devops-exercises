@@ -3563,6 +3563,7 @@ RAM (Random Access Memory) is the hardware in a computing device where the opera
 
 <details>
 <summary>What is a GPU?</summary><br><b>
+A graphics processing unit (GPU) is a specialized electronic circuit designed to manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device. GPUs are used in embedded systems, mobile phones, personal computers, workstations, and game consoles.
 </b></details>
 
 <details>
