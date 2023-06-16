@@ -546,7 +546,7 @@ For example, you might configure the workflow to trigger every time a changed is
 </b></details>
 
 <details>
-<summary>True or False? In Github Actions, jobs are executed in parallel by deafult</summary><br><b>
+<summary>True or False? In Github Actions, jobs are executed in parallel by default</summary><br><b>
 
 True
 </b></details>
