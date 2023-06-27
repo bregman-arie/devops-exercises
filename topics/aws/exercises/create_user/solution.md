@@ -27,7 +27,7 @@ As you probably know at this point, it's not recommended to work with the root a
 13. ### Solution using Terraform
     
 ```
-14. 
+ 
 resource "aws_iam_group_membership" "team" {
   name = "tf-testing-group-membership"
 
