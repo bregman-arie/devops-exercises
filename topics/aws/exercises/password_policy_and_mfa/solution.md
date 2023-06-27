@@ -30,3 +30,17 @@ MFA:
 3. Expand "Multi-factor authentication (MFA)" and click on "Activate MFA"
 4. Choose one of the devices
 5. Follow the instructions to set it up and click on "Assign MFA"
+
+6. ### Solution using Terraform:
+
+```
+resource "aws_iam_account_password_policy" "strict" {
+  minimum_password_length        = 8
+  require_numbers                = true
+  allow_users_to_change_password = true
+  password_reuse_prevention      = 1
+}
+```
+
+ **Note:** You cannot add MFA through terraform, you have to do it in the GUI.
+
