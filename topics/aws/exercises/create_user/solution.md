@@ -43,7 +43,6 @@ resource "aws_iam_group_policy_attachment" "test-attach" {
   group      = aws_iam_group.admin.name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
-```
 resource "aws_iam_group" "admin" {
   name = "admin"
 }
@@ -56,3 +55,5 @@ resource "aws_iam_user" "newuser" {
     Role = "DevOps"
   }
 }
+```
+
