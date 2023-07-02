@@ -2,7 +2,7 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
 
-:bar_chart: &nbsp;There are currently **2619** exercises and questions
+:bar_chart: &nbsp;There are currently **2624** exercises and questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [FAQ page](faq.md) for more details
 
@@ -18,74 +18,82 @@
 <center>
 <table>
   <tr>
-    <td align="center"><a href="topics/devops"><img src="images/devops.png" width="75px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a></td>
-    <td align="center"><a href="topics/cicd"><img src="images/cicd.png" width="75px;" height="75px;" alt="cicd"/><br /><b>CI/CD</b></a></td>
-    <td align="center"><a href="topics/git"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
-    <td align="center"><a href="topics/ansible"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
+    <td align="center"><a href="topics/devops/README.md"><img src="images/devops.png" width="75px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a></td>
+    <td align="center"><a href="topics/git/README.md"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
     <td align="center"><a href="#network"><img src="images/network.png" width="75px;" height="75px;" alt="Network"/><br /><b>Network</b></a></td>
-   
-
+    <td align="center"><a href="#hardware"><img src="images/hardware.png" width="75px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
+    <td align="center"><a href="topics/kubernetes/README.md"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
   </tr>
+
   <tr>
-    <td align="center"><a href="topics/software_development"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Software Development</b></a></td>
+    <td align="center"><a href="topics/software_development/README.md"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Software Development</b></a></td>
     <td align="center"><a href="https://github.com/bregman-arie/python-exercises"><img src="images/python.png" width="75px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
     <td align="center"><a href="https://github.com/bregman-arie/go-exercises"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a></td>
-    <td align="center"><a href="topics/shell"><img src="images/bash.png" width="75px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
-    <td align="center"><a href="topics/kubernetes"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
- 
-  </tr>
-  <tr>
-    <td align="center"><a href="topics/cloud"><img src="images/cloud.png" width="75px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a></td>
-    <td align="center"><a href="topics/aws"><img src="images/aws.png" width="100px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
-    <td align="center"><a href="topics/azure"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a></td>
-    <td align="center"><a href="topics/gcp"><img src="images/googlecloud.png" width="70px;" height="70px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
-    <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="#operating-system"><img src="images/os.png" width="75px;" height="75px;" alt="Operating System"/><br /><b>Operating System</b></a></td>
-    <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a></td>
-    <td align="center"><a href="#elastic"><img src="images/elastic.png" width="75px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
-    <td align="center"><a href="#virtualization"><img src="images/virtualization.png" width="75px;" height="75px;" alt="Virtualization"/><br /><b>Virtualization</b></a></td>
-    <td align="center"><a href="topics/dns"><img src="images/dns.png" width="75px;" height="75px;" alt="DNS"/><br /><b>DNS</b></a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
-    <td align="center"><a href="#databases"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
+    <td align="center"><a href="topics/perl/README.md"><img src="images/perl.png" width="75px;" height="75px;" alt="perl"/><br /><b>Perl</b></a></td>
     <td align="center"><a href="#regex"><img src="images/regex.png" width="75px;" height="75px;" alt="RegEx"/><br /><b>Regex</b></a></td>
-    <td align="center"><a href="#system-design"><img src="images/design.png" width="75px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
-    <td align="center"><a href="#hardware"><img src="images/hardware.png" width="75px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
   </tr>
+
   <tr>
-    <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
-    <td align="center"><a href="topics/containers"><img src="images/containers.png" width="75px;" height="75px;" alt="Containers"/><br /><b>Containers</b></a></td>
-    <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
-    <td align="center"><a href="topics/openshift"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
-    <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
+      <td align="center"><a href="topics/cloud/README.md"><img src="images/cloud.png" width="75px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a></td>
+      <td align="center"><a href="topics/aws/README.md"><img src="images/aws.png" width="100px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
+      <td align="center"><a href="topics/azure/README.md"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a></td>
+      <td align="center"><a href="topics/gcp/README.md"><img src="images/googlecloud.png" width="70px;" height="70px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
+      <td align="center"><a href="#openstack/README.md"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a></td>
   </tr>
+
   <tr>
-      <td align="center"><a href="topics/terraform"><img src="images/terraform.png" width="75px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
+      <td align="center"><a href="#operating-system"><img src="images/os.png" width="75px;" height="75px;" alt="Operating System"/><br /><b>Operating System</b></a></td>
+      <td align="center"><a href="topics/linux/README.md"><img src="images/logos/linux.png" width="75px;" height="75px;" alt="Linux"/><br /><b>Linux</b></a></td>
+      <td align="center"><a href="#virtualization"><img src="images/virtualization.png" width="75px;" height="75px;" alt="Virtualization"/><br /><b>Virtualization</b></a></td>
+      <td align="center"><a href="topics/dns/README.md"><img src="images/dns.png" width="75px;" height="75px;" alt="DNS"/><br /><b>DNS</b></a></td>
+      <td align="center"><a href="topics/shell/README.md"><img src="images/bash.png" width="75px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
+  </tr>
+
+  <tr>
+      <td align="center"><a href="topics/databases/README.md"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
+      <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
       <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a></td>
+      <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
+      <td align="center"><a href="#big-data"><img src="images/big-data.png" width="75px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
+
+  </tr>
+
+  <tr>
+      <td align="center"><a href="topics/cicd/README.md"><img src="images/cicd.png" width="75px;" height="75px;" alt="cicd"/><br /><b>CI/CD</b></a></td>
+      <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
+      <td align="center"><a href="topics/containers/README.md"><img src="images/containers.png" width="75px;" height="75px;" alt="Containers"/><br /><b>Containers</b></a></td>
+      <td align="center"><a href="topics/openshift/README.md"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
+      <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
+  </tr>
+
+  <tr>
+      <td align="center"><a href="topics/terraform/README.md"><img src="images/terraform.png" width="75px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
       <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a></td>
       <td align="center"><a href="#distributed"><img src="images/distributed.png" width="75px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
       <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="75px;" height="75px;" alt="you"/><br /><b>Questions you can ask</b></a></td>
+      <td align="center"><a href="topics/ansible/README.md"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
   </tr>
+
   <tr>
-      <td align="center"><a href="topics/circleci"><img src="images/logos/circleci.png" width="70px;" height="70px;" alt="Circle CI"/><br /><b>Circle CI</b></a></td>
-      <td align="center"><a href="topics/argo"><img src="images/logos/argo.png" width="80px;" height="80px;" alt="Argo"/><br /><b>Argo</b></a></td>
-      <td align="center"><a href="topics/kafka"><img src="images/logos/kafka.png" width="85px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
-      <td align="center"><a href="topics/datadog"><img src="images/logos/datadog.png" width="80px;" height="80px;" alt="DataDog"/><br /><b></b></a></td>
-      <td align="center"><a href="topics/perl"><img src="images/perl.png" width="75px;" height="75px;" alt="perl"/><br /><b>Perl</b></a></td>
+      <td align="center"><a href="topics/observability/README.md"><img src="images/observability.png" width="75px;" height="75px;" alt="observability"/><br /><b>Observability</b></a></td>
+      <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
+      <td align="center"><a href="topics/circleci/README.md"><img src="images/logos/circleci.png" width="70px;" height="70px;" alt="Circle CI"/><br /><b>Circle CI</b></a></td>
+      <td align="center"><a href="topics/datadog/README.md"><img src="images/logos/datadog.png" width="80px;" height="80px;" alt="DataDog"/><br /><b></b></a></td>
+      <td align="center"><a href="topics/grafana/README.md"><img src="images/logos/grafana.png" width="80px;" height="80px;" alt="Grafana"/><br /><b>Grafana</b></a></td>
   </tr>
-   <tr>
-    <td align="center"><a href="topics/linux"><img src="images/logos/linux.png" width="75px;" height="75px;" alt="Linux"/><br /><b>Linux</b></a></td>
-    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
-    <td align="center"><a href="#big-data"><img src="images/big-data.png" width="75px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
-    <td align="center"><a href="topics/soft_skills"><img src="images/HR.png" width="75px;" height="75px;" alt="HR"/><br /><b>Soft Skills</b></a></td>
-    <td align="center"><a href="topics/security"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
+
+  <tr>
+    <td align="center"><a href="topics/argo/README.md"><img src="images/logos/argo.png" width="80px;" height="80px;" alt="Argo"/><br /><b>Argo</b></a></td>
+    <td align="center"><a href="topics/soft_skills/README.md"><img src="images/HR.png" width="75px;" height="75px;" alt="HR"/><br /><b>Soft Skills</b></a></td>
+    <td align="center"><a href="topics/security/README.md"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
+    <td align="center"><a href="#system-design"><img src="images/design.png" width="75px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
    </tr>
+
    <tr>
-    <td align="center"><a href="topics/chaos_engineering"><img src="images/logos/chaos_engineering.png" width="75px;" height="75px;" alt="Chaos Engineering"/><br /><b>Chaos Engineering</b></a></td>
+    <td align="center"><a href="topics/chaos_engineering/README.md"><img src="images/logos/chaos_engineering.png" width="75px;" height="75px;" alt="Chaos Engineering"/><br /><b>Chaos Engineering</b></a></td>
     <td align="center"><a href="#Misc"><img src="images/general.png" width="75px;" height="75px;" alt="Misc"/><br /><b>Misc</b></a></td>
+    <td align="center"><a href="#elastic"><img src="images/elastic.png" width="75px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
+    <td align="center"><a href="topics/kafka/README.md"><img src="images/logos/kafka.png" width="85px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
    </tr>
    
 </table>
@@ -100,7 +108,7 @@
 <summary>In general, what do you need in order to communicate?</summary><br><b>
 
   - A common language (for the two ends to understand)
-  - A way to address who do you want to communicate with
+  - A way to address who you want to communicate with
   - A Connection (so the content of the communication can reach the recipients)
 
 </b></details>
@@ -133,7 +141,7 @@ Packets that are sent on the ethernet are always coming from a MAC address and s
 <details>
 <summary>When is this MAC address used?: ff:ff:ff:ff:ff:ff</summary><br><b>
 
-When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. Ethernet broadcasts are used to resolve IP addresses to MAC addresses (by ARP) at the datalink layer .
+When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. Ethernet broadcasts are used to resolve IP addresses to MAC addresses (by ARP) at the data link layer.
 </b></details>
 
 <details>
@@ -143,22 +151,22 @@ An Internet Protocol address (IP address) is a numerical label assigned to each 
 </b></details>
 
 <details>
-<summary>Explain subnet mask and given an example</summary><br><b>
+<summary>Explain the subnet mask and give an example</summary><br><b>
 
-A Subnet mask is a 32-bit number that masks an IP address, and divides the IP address into network address and host address. Subnet Mask is made by setting network bits to all "1"s and setting host bits to all "0"s. Within a given network, out of the total usable host addresses, two are always reserved for specific purposes and cannot be allocated to any host. These are the first address, which is reserved as a network address (a.k.a network ID) and the last address used for network broadcast.
+A Subnet mask is a 32-bit number that masks an IP address and divides the IP addresses into network addresses and host addresses. Subnet Mask is made by setting network bits to all "1"s and setting host bits to all "0"s. Within a given network, out of the total usable host addresses, two are always reserved for specific purposes and cannot be allocated to any host. These are the first address, which is reserved as a network address (a.k.a network ID), and the last address used for network broadcast.
 
-[Example](https://github.com/philemonnwanne/o0o0o/tree/main/exes/exe-09)
+[Example](https://github.com/philemonnwanne/projects/tree/main/exercises/exe-09)
 
 </b></details>
 
 <details>
 <summary>What is a private IP address? In which scenarios/system designs, one should use it?</summary><br><b>
-Private IP addresses are assigned to the hosts in the same network to communicate among one another. As the name "private" suggests, the devices having the private IP addresses assigned can't be reached by the devices from any external network. For example, if I am living in a hostel and I want my hostelmates to join the game server I have hosted, I will ask them to join via my server's private IP address, since the network is local to the hostel.
+Private IP addresses are assigned to the hosts in the same network to communicate with one another. As the name "private" suggests, the devices having the private IP addresses assigned can't be reached by the devices from any external network. For example, if I am living in a hostel and I want my hostel mates to join the game server I have hosted, I will ask them to join via my server's private IP address, since the network is local to the hostel.
 </b></details>
 
 <details>
 <summary>What is a public IP address? In which scenarios/system designs, one should use it?</summary><br><b>
-A public IP address is the public facing IP address. In the event that you was hosting a game server that you want your friends to join, you will give your friends your public IP address to allow their computers to identify and locate your network and server in order for the connection to take place. One time that you would not need to use a public facing IP address is in the event that you was playing with friends who was connected to the same network as you, in that case, you would use a private ip address. In order for someone to be able to connect to your server that is located internally, you will have to setup a port forward to tell your router to allow traffic from the public domain into your network and vice versa.
+A public IP address is a public-facing IP address. In the event that you were hosting a game server that you want your friends to join, you will give your friends your public IP address to allow their computers to identify and locate your network and server in order for the connection to take place. One time that you would not need to use a public-facing IP address is in the event that you were playing with friends who were connected to the same network as you, in that case, you would use a private IP address. In order for someone to be able to connect to your server that is located internally, you will have to set up a port forward to tell your router to allow traffic from the public domain into your network and vice versa.
 </b></details>
 
 <details>
@@ -166,11 +174,11 @@ A public IP address is the public facing IP address. In the event that you was h
 
 - Application: user end (HTTP is here)
 - Presentation: establishes context between application-layer entities (Encryption is here)
-- Session: establishes, manages and terminates the connections
+- Session: establishes, manages, and terminates the connections
 - Transport: transfers variable-length data sequences from a source to a destination host (TCP & UDP are here)
 - Network: transfers datagrams from one network to another (IP is here)
 - Data link: provides a link between two directly connected nodes (MAC is here)
-- Physical: the electrical and physical spec the data connection (Bits are here)
+- Physical: the electrical and physical spec of the data connection (Bits are here)
 
 You can read more about the OSI model in [penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference)
 </b></details>
@@ -191,13 +199,13 @@ You can read more about the OSI model in [penguintutor.com](http://www.penguintu
   * MAC address - Data link
   * IP address - Network
   * Terminate connections - Session
-  * 3 way handshake - Transport
+  * 3-way handshake - Transport
 </b></details>
 
 <details>
 <summary>What delivery schemes are you familiar with?</summary><br><b>
 
-Unitcast: One to one communication where there is one sender and one receiver.
+Unicast: One-to-one communication where there is one sender and one receiver.
 
 Broadcast: Sending a message to everyone in the network. The address ff:ff:ff:ff:ff:ff is used for broadcasting.
            Two common protocols which use broadcast are ARP and DHCP.
@@ -209,16 +217,16 @@ Multicast: Sending a message to a group of subscribers. It can be one-to-many or
 <summary>What is CSMA/CD? Is it used in modern ethernet networks?</summary><br><b>
 
 CSMA/CD stands for Carrier Sense Multiple Access / Collision Detection.
-Its primarily focus it to manage access to shared medium/bus where only one host can transmit at a given point of time.
+Its primary focus is to manage access to a shared medium/bus where only one host can transmit at a given point in time.
 
 CSMA/CD algorithm:
 
-1. Before sending a frame, it checks whether another host already transmitting a frame.
-2. If no one transmitting, it starts transmitting the frame.
-3. If two hosts transmitted at the same time, we have a collision.
-4. Both hosts stop sending the frame and they send to everyone a 'jam signal' notifying everyone that a collision occurred
-5. They are waiting for a random time before sending again
-6. Once each host waited for a random time, they try to send the frame again and so the
+1. Before sending a frame, it checks whether another host is already transmitting a frame.
+2. If no one is transmitting, it starts transmitting the frame.
+3. If two hosts transmit at the same time, we have a collision.
+4. Both hosts stop sending the frame and they send everyone a 'jam signal' notifying everyone that a collision occurred
+5. They are waiting for a random time before sending it again
+6. Once each host waited for a random time, they try to send the frame again and so the cycle starts again
 </b></details>
 
 <details>
@@ -228,14 +236,21 @@ CSMA/CD algorithm:
   * switch
   * hub</summary><br><b>
 
+A router, switch, and hub are all network devices used to connect devices in a local area network (LAN). However, each device operates differently and has its specific use cases. Here is a brief description of each device and the differences between them:
+
+1. Router: a network device that connects multiple network segments together. It operates at the network layer (Layer 3) of the OSI model and uses routing protocols to direct data between networks. Routers use IP addresses to identify devices and route data packets to the correct destination.
+2. Switch: a network device that connects multiple devices on a LAN. It operates at the data link layer (Layer 2) of the OSI model and uses MAC addresses to identify devices and direct data packets to the correct destination. Switches allow devices on the same network to communicate with each other more efficiently and can prevent data collisions that can occur when multiple devices send data simultaneously.
+3. Hub: a network device that connects multiple devices through a single cable and is used to connect multiple devices without segmenting a network. However, unlike a switch, it operates at the physical layer (Layer 1) of the OSI model and simply broadcasts data packets to all devices connected to it, regardless of whether the device is the intended recipient or not. This means that data collisions can occur, and the network's efficiency can suffer as a result. Hubs are generally not used in modern network setups, as switches are more efficient and provide better network performance.
 </b></details>
 
 <details>
 <summary>What is a "Collision Domain"?</summary><br><b>
+A collision domain is a network segment in which devices can potentially interfere with each other by attempting to transmit data at the same time. When two devices transmit data at the same time, it can cause a collision, resulting in lost or corrupted data. In a collision domain, all devices share the same bandwidth, and any device can potentially interfere with the transmission of data by other devices.
 </b></details>
 
 <details>
 <summary>What is a "Broadcast Domain"?</summary><br><b>
+A broadcast domain is a network segment in which all devices can communicate with each other by sending broadcast messages. A broadcast message is a message that is sent to all devices in a network rather than a specific device. In a broadcast domain, all devices can receive and process broadcast messages, regardless of whether the message was intended for them or not.
 </b></details>
 
 <details>
@@ -245,21 +260,21 @@ Three collision domains and one broadcast domain
 </b></details>
 
 <details>
-<summary>How does a router works?</summary><br><b>
+<summary>How does a router work?</summary><br><b>
 
-A router is a physical or virtual appliance that passes information between two or more packet-switched computer networks. A router inspects a given data packet's destination Internet Protocol address (IP address), calculates the best way for it to reach its destination and then forwards it accordingly.
+A router is a physical or virtual appliance that passes information between two or more packet-switched computer networks. A router inspects a given data packet's destination Internet Protocol address (IP address), calculates the best way for it to reach its destination, and then forwards it accordingly.
 
 </b></details>
 
 <details>
 <summary>What is NAT?</summary><br><b>
 
- Network Address Translation (NAT) is a process in which one or more local IP address is translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts.
+ Network Address Translation (NAT) is a process in which one or more local IP addresses are translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts.
 
 </b></details>
 
 <details>
-<summary>What is a proxy? How does it works? What do we need it for?</summary><br><b>
+<summary>What is a proxy? How does it work? What do we need it for?</summary><br><b>
 
 A proxy server acts as a gateway between you and the internet. It’s an intermediary server separating end users from the websites they browse.
 
@@ -269,13 +284,13 @@ Proxy servers provide varying levels of functionality, security, and privacy dep
 </b></details>
 
 <details>
-<summary>What is TCP? How does it works? What is the 3 way handshake?</summary><br><b>
+<summary>What is TCP? How does it work? What is the 3-way handshake?</summary><br><b>
 
-TCP 3-way handshake or three-way handshake is a process which is used in a TCP/IP network to make a connection between server and client.
+TCP 3-way handshake or three-way handshake is a process that is used in a TCP/IP network to make a connection between server and client.
 
 A three-way handshake is primarily used to create a TCP socket connection. It works when:
 
-- A client node sends a SYN data packet over an IP network to a server on the same or an external network. The objective of this packet is to ask/infer if the server is open for new connections.
+- A client node sends an SYN data packet over an IP network to a server on the same or an external network. The objective of this packet is to ask/infer if the server is open for new connections.
 - The target server must have open ports that can accept and initiate new connections. When the server receives the SYN packet from the client node, it responds and returns a confirmation receipt – the ACK packet or SYN/ACK packet.
 - The client node receives the SYN/ACK from the server and responds with an ACK packet.
 </b></details>
@@ -283,13 +298,13 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 <details>
 <summary>What is round-trip delay or round-trip time?</summary><br><b>
 
-From [wikipedia](https://en.wikipedia.org/wiki/Round-trip_delay): "the length of time it takes for a signal to be sent plus the length of time it takes for an acknowledgement of that signal to be received"
+From [wikipedia](https://en.wikipedia.org/wiki/Round-trip_delay): "the length of time it takes for a signal to be sent plus the length of time it takes for an acknowledgment of that signal to be received"
 
 Bonus question: what is the RTT of LAN?
 </b></details>
 
 <details>
-<summary>How does SSL handshake work?</summary><br><b>
+<summary>How does an SSL handshake work?</summary><br><b>
 SSL handshake is a process that establishes a secure connection between a client and a server.
 
 1. The client sends a Client Hello message to the server, which includes the client's version of the SSL/TLS protocol, a list of the cryptographic algorithms supported by the client, and a random value.
@@ -307,7 +322,7 @@ SSL handshake is a process that establishes a secure connection between a client
 <details>
 <summary>What is the difference between TCP and UDP?</summary><br><b>
 
-TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for services like streaming.
+TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between the client and server and doesn't handle package orders. This makes UDP more lightweight than TCP and a perfect candidate for services like streaming.
 
 [Penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference) provides a good explanation.
 </b></details>
@@ -317,13 +332,13 @@ TCP establishes a connection between the client and the server to guarantee the 
 </b></details>
 
 <details>
-<summary>Explain "default gateway"</summary><br><b>
+<summary>Explain the "default gateway"</summary><br><b>
 
 A default gateway serves as an access point or IP router that a networked computer uses to send information to a computer in another network or the internet.
 </b></details>
 
 <details>
-<summary>What is ARP? How does it works?</summary><br><b>
+<summary>What is ARP? How does it work?</summary><br><b>
 
 ARP stands for Address Resolution Protocol. When you try to ping an IP address on your local network, say 192.168.1.1, your system has to turn the IP address 192.168.1.1 into a MAC address. This involves using ARP to resolve the address, hence its name.
 
@@ -331,40 +346,74 @@ Systems keep an ARP look-up table where they store information about what IP add
 </b></details>
 
 <details>
-<summary>What is TTL? What does it helps to prevent?</summary><br><b>
+<summary>What is TTL? What does it help to prevent?</summary><br><b>
+
+- TTL (Time to Live) is a value in an IP (Internet Protocol) packet that determines how many hops or routers a packet can travel before it is discarded. Each time a packet is forwarded by a router, the TTL value is decreased by one. When the TTL value reaches zero, the packet is dropped, and an ICMP (Internet Control Message Protocol) message is sent back to the sender indicating that the packet has expired.
+- TTL is used to prevent packets from circulating indefinitely in the network, which can cause congestion and degrade network performance.
+- It also helps to prevent packets from being trapped in routing loops, where packets continuously travel between the same set of routers without ever reaching their destination.
+- In addition, TTL can be used to help detect and prevent IP spoofing attacks, where an attacker attempts to impersonate another device on the network by using a false or fake IP address. By limiting the number of hops that a packet can travel, TTL can help prevent packets from being routed to destinations that are not legitimate.
 </b></details>
 
 <details>
-<summary>What is DHCP? How does it works?</summary><br><b>
+<summary>What is DHCP? How does it work?</summary><br><b>
 
-It stands for Dynamic Host Configuration Protocol, and allocates IP addresses, subnet masks and gateways to hosts. This is how it works:
+It stands for Dynamic Host Configuration Protocol and allocates IP addresses, subnet masks, and gateways to hosts. This is how it works:
 
-* A host upon entering a network, broadcasts a message in search of a DHCP server (DHCP DISCOVER)
+* A host upon entering a network broadcasts a message in search of a DHCP server (DHCP DISCOVER)
 * An offer message is sent back by the DHCP server as a packet containing lease time, subnet mask, IP addresses, etc (DHCP OFFER)
-* Depending on which offer accepted, the client sends back a reply broadcast letting all DHCP servers know (DHCP REQUEST)
-* Server sends an acknowledgment (DHCP ACK)
+* Depending on which offer is accepted, the client sends back a reply broadcast letting all DHCP servers know (DHCP REQUEST)
+* The server sends an acknowledgment (DHCP ACK)
 
 Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 </b></details>
 
 <details>
-<summary>Can you have two DHCP servers in the same network? How it works?</summary><br><b>
+<summary>Can you have two DHCP servers on the same network? How does it work?</summary><br><b>
+
+It is possible to have two DHCP servers on the same network, however, it is not recommended, and it is important to configure them carefully to prevent conflicts and configuration problems.
+- When two DHCP servers are configured on the same network, there is a risk that both servers will assign IP addresses and other network configuration settings to the same device, which can cause conflicts and connectivity issues. Additionally, if the DHCP servers are configured with different network settings or options, devices on the network may receive conflicting or inconsistent configuration settings.
+- However, in some cases, it may be necessary to have two DHCP servers on the same network, such as in large networks where one DHCP server may not be able to handle all the requests. In such cases, DHCP servers can be configured to serve different IP address ranges or different subnets, so they do not interfere with each other.
 </b></details>
 
 <details>
-<summary>What is SSL tunneling? How does it works?</summary><br><b>
+<summary>What is SSL tunneling? How does it work?</summary><br><b>
+
+- SSL (Secure Sockets Layer) tunneling is a technique used to establish a secure, encrypted connection between two endpoints over an insecure network, such as the Internet. The SSL tunnel is created by encapsulating the traffic within an SSL connection, which provides confidentiality, integrity, and authentication.
+
+Here's how SSL tunneling works:
+
+1. A client initiates an SSL connection to a server, which involves a handshake process to establish the SSL session.
+2. Once the SSL session is established, the client and server negotiate encryption parameters, such as the encryption algorithm and key length, then exchange digital certificates to authenticate each other.
+3. The client then sends traffic through the SSL tunnel to the server, which decrypts the traffic and forwards it to its destination.
+4. The server sends traffic back through the SSL tunnel to the client, which decrypts the traffic and forwards it to the application.
 </b></details>
 
 <details>
 <summary>What is a socket? Where can you see the list of sockets in your system?</summary><br><b>
+
+- A socket is a software endpoint that enables two-way communication between processes over a network. Sockets provide a standardized interface for network communication, allowing applications to send and receive data across a network. To view the list of open sockets on a Linux system: 
+***netstat -an***
+- This command displays a list of all open sockets, along with their protocol, local address, foreign address, and state.
 </b></details>
 
 <details>
 <summary>What is IPv6? Why should we consider using it if we have IPv4?</summary><br><b>
+
+- IPv6 (Internet Protocol version 6) is the latest version of the Internet Protocol (IP), which is used to identify and communicate with devices on a network. IPv6 addresses are 128-bit addresses and are expressed in hexadecimal notation, such as 2001:0db8:85a3:0000:0000:8a2e:0370:7334.
+
+There are several reasons why we should consider using IPv6 over IPv4:
+
+1. Address space: IPv4 has a limited address space, which has been exhausted in many parts of the world. IPv6 provides a much larger address space, allowing for trillions of unique IP addresses.
+2. Security: IPv6 includes built-in support for IPsec, which provides end-to-end encryption and authentication for network traffic.
+3. Performance: IPv6 includes features that can help to improve network performance, such as multicast routing, which allows a single packet to be sent to multiple destinations simultaneously.
+4. Simplified network configuration: IPv6 includes features that can simplify network configuration, such as stateless autoconfiguration, which allows devices to automatically configure their own IPv6 addresses without the need for a DHCP server.
+5. Better mobility support: IPv6 includes features that can improve mobility support, such as Mobile IPv6, which allows devices to maintain their IPv6 addresses as they move between different networks.
 </b></details>
 
 <details>
 <summary>What is VLAN?</summary><br><b>
+
+- A VLAN (Virtual Local Area Network) is a logical network that groups together a set of devices on a physical network, regardless of their physical location. VLANs are created by configuring network switches to assign a specific VLAN ID to frames sent by devices connected to a specific port or group of ports on the switch.
 </b></details>
 
 <details>
@@ -376,32 +425,42 @@ MTU stands for Maximum Transmission Unit. It's the size of the largest PDU (prot
 <details>
 <summary>What happens if you send a packet that is bigger than the MTU?</summary><br><b>
 	
-With IPv4 protocol, router can fragment the PDU then sending all the fragmented PDU through the transaction.
+With the IPv4 protocol, the router can fragment the PDU and then send all the fragmented PDU through the transaction.
 	
-With IPv6 protocol, it issues a error to the user's computer.
+With IPv6 protocol, it issues an error to the user's computer.
 </b></details>
 
 <details>
-<summary>True or False?. Ping is using UDP because it doesn't care about reliable connection</summary><br><b>
+<summary>True or False? Ping is using UDP because it doesn't care about reliable connection</summary><br><b>
+
+False. Ping is actually using ICMP (Internet Control Message Protocol) which is a network protocol used to send diagnostic messages and control messages related to network communication.
 </b></details>
 
 <details>
 <summary>What is SDN?</summary><br><b>
+
+- SDN stands for Software-Defined Networking. It is an approach to network management that emphasizes the centralization of network control, enabling administrators to manage network behavior through a software abstraction.
+- In a traditional network, network devices such as routers, switches, and firewalls are configured and managed individually, using specialized software or command-line interfaces. In contrast, SDN separates the network control plane from the data plane, allowing administrators to manage network behavior through a centralized software controller.
 </b></details>
 
 <details>
 <summary>What is ICMP? What is it used for?</summary><br><b>
+
+- ICMP stands for Internet Control Message Protocol. It is a protocol used for diagnostic and control purposes in IP networks. It is a part of the Internet Protocol suite, operating at the network layer.
+
+ICMP messages are used for a variety of purposes, including:
+1. Error reporting: ICMP messages are used to report errors that occur in the network, such as a packet that could not be delivered to its destination.
+2. Ping: ICMP is used to send ping messages, which are used to test whether a host or network is reachable and to measure the round-trip time for packets.
+3. Path MTU discovery: ICMP is used to discover the Maximum Transmission Unit (MTU) of a path, which is the largest packet size that can be transmitted without fragmentation.
+4. Traceroute: ICMP is used by the traceroute utility to trace the path that packets take through the network.
+5. Router discovery: ICMP is used to discover the routers in a network.
 </b></details>
 
 <details>
 <summary>What is NAT? How does it work?</summary><br><b>
 
-NAT stands for network address translation. It’s a way to map multiple local private addresses to a public one before transferring the information. Organizations that want multiple devices to employ a single IP address use NAT, as do most home routers.
-For example, your computer's private IP could be 192.168.1.100, but your router maps the traffic to it's public IP (e.g. 1.1.1.1). Any device on the internet would see the traffic coming from your public IP (1.1.1.1) instead of your private IP (192.168.1.100).
-</b></details>
-
-<details>
-<summary>Which factors affect network performances</summary><br><b>
+NAT stands for Network Address Translation. It’s a way to map multiple local private addresses to a public one before transferring the information. Organizations that want multiple devices to employ a single IP address use NAT, as do most home routers.
+For example, your computer's private IP could be 192.168.1.100, but your router maps the traffic to its public IP (e.g. 1.1.1.1). Any device on the internet would see the traffic coming from your public IP (1.1.1.1) instead of your private IP (192.168.1.100).
 </b></details>
 
 <details>
@@ -426,52 +485,63 @@ For example, your computer's private IP could be 192.168.1.100, but your router 
 </b></details>
 
 <details>
-<summary>Which factors affect network performances</summary><br><b>
+<summary>Which factors affect network performance?</summary><br><b>
+
+Several factors can affect network performance, including:
+
+1. Bandwidth: The available bandwidth of a network connection can significantly impact its performance. Networks with limited bandwidth can experience slow data transfer rates, high latency, and poor responsiveness.
+2. Latency: Latency refers to the delay that occurs when data is transmitted from one point in a network to another. High latency can result in slow network performance, especially for real-time applications like video conferencing and online gaming.
+3. Network congestion: When too many devices are using a network at the same time, network congestion can occur, leading to slow data transfer rates and poor network performance.
+4. Packet loss: Packet loss occurs when packets of data are dropped during transmission. This can result in slower network speeds and lower overall network performance.
+5. Network topology: The physical layout of a network, including the placement of switches, routers, and other network devices, can impact network performance.
+6. Network protocol: Different network protocols have different performance characteristics, which can impact network performance. For example, TCP is a reliable protocol that can guarantee the delivery of data, but it can also result in slower performance due to the overhead required for error checking and retransmission.
+7. Network security: Security measures such as firewalls and encryption can impact network performance, especially if they require significant processing power or introduce additional latency.
+8. Distance: The physical distance between devices on a network can impact network performance, especially for wireless networks where signal strength and interference can affect connectivity and data transfer rates.
 </b></details>
 
 <details>
 <summary>What is APIPA?</summary><br><b>
 
-APIPA is a set of it addresses that devices are allocated
+APIPA is a set of IP addresses that devices are allocated
 when the main DHCP server is not reachable
 
 </b></details>
 
 <details>
-<summary>What ip range does APIPA use?</summary><br><b>
+<summary>What IP range does APIPA use?</summary><br><b>
 
-APIPA uses the ip range: 169.254.0.1 - 169.254.255.254.
+APIPA uses the IP range: 169.254.0.1 - 169.254.255.254.
 
 </b></details>
 
 #### Control Plane and Data Plane
 
 <details>
-<summary>What "control plane" refers to?</summary><br><b>
+<summary>What does "control plane" refer to?</summary><br><b>
 
-The control plane is the part of the network that decides how to route and forward packets to a different location.
+The control plane is a part of the network that decides how to route and forward packets to a different location.
 </b></details>
 
 <details>
-<summary>What "data plane" refers to?</summary><br><b>
+<summary>What does "data plane" refer to?</summary><br><b>
 
-The data plane is the part of the network that actually forwards the data/packets.
+The data plane is a part of the network that actually forwards the data/packets.
 </b></details>
 
 <details>
-<summary>What "management plane" refers to?</summary><br><b>
+<summary>What does "management plane" refer to?</summary><br><b>
 
-Refers to monitoring and management functions.
+It refers to monitoring and management functions.
 </b></details>
 
 <details>
-<summary>To which plane (data, control, ...) is creating routing tables belongs to?</summary><br><b>
+<summary>To which plane (data, control, ...) does creating routing tables belong to?</summary><br><b>
 
 Control Plane.
 </b></details>
 
 <details>
-<summary>Explain Spanning Tree Protocol (STP)</summary><br><b>
+<summary>Explain Spanning Tree Protocol (STP).</summary><br><b>
 </b></details>
 
 <details>
@@ -479,7 +549,7 @@ Control Plane.
 </b></details>
 
 <details>
-<summary>What is Asymmetric Routing? How do deal with it?</summary><br><b>
+<summary>What is Asymmetric Routing? How to deal with it?</summary><br><b>
 </b></details>
 
 <details>
@@ -487,11 +557,11 @@ Control Plane.
 </b></details>
 
 <details>
-<summary>What is GRE? How does it works?</summary><br><b>
+<summary>What is GRE? How does it work?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is VXLAN? How does it works?</summary><br><b>
+<summary>What is VXLAN? How does it work?</summary><br><b>
 </b></details>
 
 <details>
@@ -499,13 +569,24 @@ Control Plane.
 </b></details>
 
 <details>
-<summary>Explain OSPF</summary><br><b>
+<summary>Explain OSPF.</summary><br><b>
+
+
+OSPF (Open Shortest Path First) is a routing protocol that can be implemented on various types of routers. In general, OSPF is supported on most modern routers, including those from vendors such as Cisco, Juniper, and Huawei. The protocol is designed to work with IP-based networks, including both IPv4 and IPv6. Also, it uses a hierarchical network design, where routers are grouped into areas, with each area having its own topology map and routing table. This design helps to reduce the amount of routing information that needs to be exchanged between routers and improve network scalability.
+
+The OSPF 4 Types of routers are:
+  * Internal Router
+  * Area Border Routers
+  * Autonomous Systems Boundary Routers
+  * Backbone Routers
+
+  Learn more about OSPF router types: https://www.educba.com/ospf-router-types/
 </b></details>
 
 <details>
 <summary>What is latency?</summary><br><b>
 	
-Latency is the time taken for an information to reach its destination from the source.
+Latency is the time taken for information to reach its destination from the source.
 </b></details>
 
 <details>
@@ -521,21 +602,22 @@ Throughput refers to the measurement of the real amount of data transferred over
 </b></details>
 
 <details>
-<summary>When performing a search query, what is more important, latency or throughput? And how to assure that what managing global infrastructure?</summary><br><b>
+<summary>When performing a search query, what is more important, latency or throughput? And how to ensure that we manage global infrastructure?
+</summary><br><b>
 
-Latency. To have a good latency, a search query should be forwarded to the closest datacenter.
+Latency. To have good latency, a search query should be forwarded to the closest data center.
 </b></details>
 
 <details>
 <summary>When uploading a video, what is more important, latency or throughput? And how to assure that?</summary><br><b>
 
-Throughput. To have a good throughput, the upload stream should be routed to an underutilized link.
+Throughput. To have good throughput, the upload stream should be routed to an underutilized link.
 </b></details>
 
 <details>
 <summary>What other considerations (except latency and throughput) are there when forwarding requests?</summary><br><b>
 
-* Keep caches updated (which means the request could be forwarded not to the closest datacenter)
+* Keep caches updated (which means the request could be forwarded not to the closest data center)
 </b></details>
 
 <details>
@@ -544,10 +626,14 @@ Throughput. To have a good throughput, the upload stream should be routed to an 
 
 <details>
 <summary>What is Network Congestion? What can cause it?</summary><br><b>
+
+Network congestion occurs when there is too much data to transmit on a network and it doesn't have enough capacity to handle the demand. </br>
+This can lead to increased latency and packet loss. The causes can be multiple, such as high network usage, large file transfers, malware, hardware issues, or network design problems. </br>
+To prevent network congestion, it's important to monitor your network usage and implement strategies to limit or manage the demand.
 </b></details>
 
 <details>
-<summary>What can you tell me about UDP packet format? What about TCP packet format? How is it different?</summary><br><b>
+<summary>What can you tell me about the UDP packet format? What about the TCP packet format? How is it different?</summary><br><b>
 </b></details>
 
 <details>
@@ -565,15 +651,15 @@ Throughput. To have a good throughput, the upload stream should be routed to an 
 
 * Hypertext Transfer Protocol (HTTP) - used for the webpages on the internet
 * Simple Mail Transfer Protocol (SMTP) - email transmission
-* Telecommunications Network - (TELNET) - terminal emulation to allow client access to telnet server
-* File Transfer Protocol (FTP) - facilitates transfer of files between any two machines
+* Telecommunications Network - (TELNET) - terminal emulation to allow a client access to a telnet server
+* File Transfer Protocol (FTP) - facilitates the transfer of files between any two machines
 * Domain Name System (DNS) - domain name translation
-* Dynamic Host Configuration Protocol (DHCP) - allocates IP addresses, subnet masks and gateways to hosts
-* Simple Network Management Protocol (SNMP) - gathers data of devices on the network
+* Dynamic Host Configuration Protocol (DHCP) - allocates IP addresses, subnet masks, and gateways to hosts
+* Simple Network Management Protocol (SNMP) - gathers data on devices on the network
 </b></details>
 
 <details>
-<summary>Give examples of protocols found in the network Layer</summary><br><b>
+<summary>Give examples of protocols found in the Network Layer</summary><br><b>
 
 * Internet Protocol (IP) - assists in routing packets from one machine to another
 * Internet Control Message Protocol (ICMP) - lets one know what is going such as error messages and debugging information
@@ -591,8 +677,8 @@ Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-us
 <details>
 <summary>What is the Internet? Is it the same as the World Wide Web?</summary><br><b>
 
-The internet refers to network of networks, transferring huge amounts of data around the globe.<br>
-The World Wide Web is an application running on millions of server, on top of the internet, accessed through what is know as the web browser
+The internet refers to a network of networks, transferring huge amounts of data around the globe.<br>
+The World Wide Web is an application running on millions of servers, on top of the internet, accessed through what is known as the web browser
 </b></details>
 
 <details>
@@ -708,7 +794,15 @@ https://www.minitool.com/lib/virtual-memory.html
 </b></details>
 
 <details>
-<summary>What is copy-on-write or shadowing?</summary><br><b>
+<summary>What is copy-on-write?</summary><br><b>
+Copy-on-write (COW) is a resource management concept, with the goal to reduce unnecessary copying of information. It is a concept which is implemented for instance within the POSIX fork syscall, which creates a duplicate process of the calling process.
+
+The idea:
+1. If resources are shared between 2 or more entities (for example shared memory segments between 2 processes) the resources don't need to be copied for every entity, but rather every entity has a READ operation access permission on the shared resource. (the shared segements are marked as read-only) 
+(Think of every entity having a pointer to the location of the shared resource which can be dereferenced to read its value)
+2. If one entity would perform a WRITE operation on a shared resource a problem would arise since the resource also would be permanently changed for ALL other entities sharing it.
+(Think of a process modifying some variables on the stack, or allocatingy some data dynamically on the heap, these changes to the shared resource would also apply for ALL other processes, this is definetly an undesirable behaviour)
+3. As a solution only if a WRITE operation is about to be performed on a shared resource, this resource gets COPIED first and then the changes are applied.
 </b></details>
 
 <details>
@@ -796,66 +890,31 @@ The introduction of virtual machines allowed companies to deploy multiple busine
 
 <details>
 <summary>Do we need virtual machines in the age of containers? Are they still relevant?</summary><br><b>
-</b></details>
 
-## Monitoring
-
-<details>
-<summary>Explain monitoring. What is it? What its goal?</summary><br><b>
-
-Google: "Monitoring is one of the primary means by which service owners keep track of a system’s health and availability".
-</b></details>
-
-<details>
-<summary>What is wrong with the old approach of watching for a specific value and trigger an email/phone alert while value is exceeded?</summary><br><b>
-
-This approach require from a human to always check why the value exceeded and how to handle it while today, it is more effective to notify people only when they need to take an actual action.
-If the issue doesn't require any human intervention, then the problem can be fixed by some processes running in the relevant environment.
-</b></details>
-
-<details>
-<summary>What types of monitoring outputs are you familiar with and/or used in the past?</summary><br><b>
-
-Alerts<br>
-Tickets<br>
-Logging<br>
-</b></details>
-
-<details>
-<summary>What is the difference between infrastructure monitoring and application monitoring? (methods, tools, ...)</summary><br><b>
-</b></details>
-
-### Application Performance Management
-
-<details>
-<summary>What is Application Performance Management?</summary><br><b>
-
-- IT metrics translated into business insights
-- Practices for monitoring applications insights so we can improve performances, reduce issues and improve overall user experience
-</b></details>
-
-<details>
-<summary>Name three aspects of a project you can monitor with APM (e.g. backend)</summary><br><b>
-
-- Frontend
-- Backend
-- Infra
-- ...
-</b></details>
-
-<details>
-<summary>What can be collected/monitored to perform APM monitoring?</summary><br><b>
-
-- Metrics
-- Logs
-- Events
-  Traces
+Yes, virtual machines are still relevant even in the age of containers. While containers provide a lightweight and portable alternative to virtual machines, they do have certain limitations. Virtual machines still matter because they offer isolation and security, can run different operating systems, and are good for legacy apps. Containers limitations for example are sharing the host kernel.
 </b></details>
 
 ## Prometheus
 
 <details>
 <summary>What is Prometheus? What are some of Prometheus's main features?</summary><br><b>
+
+Prometheus is a popular open-source systems monitoring and alerting toolkit, originally developed at SoundCloud. It is designed to collect and store time-series data, and to allow for querying and analysis of that data using a powerful query language called PromQL. Prometheus is frequently used to monitor cloud-native applications, microservices, and other modern infrastructure.
+
+Some of the main features of Prometheus include:
+
+    1. Data model: Prometheus uses a flexible data model that allows users to organize and label their time-series data in a way that makes sense for their particular use case. Labels are used to identify different dimensions of the data, such as the source of the data or the environment in which it was collected.
+
+    2. Pull-based architecture: Prometheus uses a pull-based model to collect data from targets, meaning that the Prometheus server actively queries its targets for metrics data at regular intervals. This architecture is more scalable and reliable than a push-based model, which would require every target to push data to the server.
+
+    3. Time-series database: Prometheus stores all of its data in a time-series database, which allows users to perform queries over time ranges and to aggregate and analyze their data in various ways. The database is optimized for write-heavy workloads, and can handle a high volume of data with low latency.
+
+    4. Alerting: Prometheus includes a powerful alerting system that allows users to define rules based on their metrics data and to send alerts when certain conditions are met. Alerts can be sent via email, chat, or other channels, and can be customized to include specific details about the problem.
+
+    5. Visualization: Prometheus has a built-in graphing and visualization tool, called PromDash, which allows users to create custom dashboards to monitor their systems and applications. PromDash supports a variety of graph types and visualization options, and can be customized using CSS and JavaScript.
+
+Overall, Prometheus is a powerful and flexible tool for monitoring and analyzing systems and applications, and is widely used in the industry for cloud-native monitoring and observability.
+
 </b></details>
 
 <details>
@@ -866,62 +925,143 @@ From Prometheus documentation: "if you need 100% accuracy, such as for per-reque
 
 <details>
 <summary>Describe Prometheus architecture and components</summary><br><b>
+
+The Prometheus architecture consists of four major components:
+
+    1. Prometheus Server: The Prometheus server is responsible for collecting and storing metrics data. It has a simple built-in storage layer that allows it to store time-series data in a time-ordered database.
+
+    2. Client Libraries: Prometheus provides a range of client libraries that enable applications to expose their metrics data in a format that can be ingested by the Prometheus server. These libraries are available for a range of programming languages, including Java, Python, and Go.
+
+    3. Exporters: Exporters are software components that expose existing metrics from third-party systems and make them available for ingestion by the Prometheus server. Prometheus provides exporters for a range of popular technologies, including MySQL, PostgreSQL, and Apache.
+
+    4. Alertmanager: The Alertmanager component is responsible for processing alerts generated by the Prometheus server. It can handle alerts from multiple sources and provides a range of features for deduplicating, grouping, and routing alerts to appropriate channels.
+
+Overall, the Prometheus architecture is designed to be highly scalable and resilient. The server and client libraries can be deployed in a distributed fashion to support monitoring across large-scale, highly dynamic environments
 </b></details>
 
 <details>
 <summary>Can you compare Prometheus to other solutions like InfluxDB for example?</summary><br><b>
+
+Compared to other monitoring solutions, such as InfluxDB, Prometheus is known for its high performance and scalability. It can handle large volumes of data and can easily be integrated with other tools in the monitoring ecosystem. InfluxDB, on the other hand, is known for its ease of use and simplicity. It has a user-friendly interface and provides easy-to-use APIs for collecting and querying data.
+
+Another popular solution, Nagios, is a more traditional monitoring system that relies on a push-based model for collecting data. Nagios has been around for a long time and is known for its stability and reliability. However, compared to Prometheus, Nagios lacks some of the more advanced features, such as multi-dimensional data model and powerful query language.
+
+Overall, the choice of a monitoring solution depends on the specific needs and requirements of the organization. While Prometheus is a great choice for large-scale monitoring and alerting, InfluxDB may be a better fit for smaller environments that require ease of use and simplicity. Nagios remains a solid choice for organizations that prioritize stability and reliability over advanced features.
 </b></details>
 
 <details>
 <summary>What is an Alert?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Describe the following Prometheus components:
-
-  * Prometheus server
-  * Push Gateway
-  * Alert Manager</summary><br><b>
-
-Prometheus server is responsible for scraping and storing the data<br>
-Push gateway is used for short-lived jobs<br>
-Alert manager is responsible for alerts ;)
+In Prometheus, an alert is a notification triggered when a specific condition or threshold is met. Alerts can be configured to trigger when certain metrics cross a certain threshold or when specific events occur. Once an alert is triggered, it can be routed to various channels, such as email, pager, or chat, to notify relevant teams or individuals to take appropriate action. Alerts are a critical component of any monitoring system, as they allow teams to proactively detect and respond to issues before they impact users or cause system downtime.
 </b></details>
 
 <details>
 <summary>What is an Instance? What is a Job?</summary><br><b>
+
+In Prometheus, an instance refers to a single target that is being monitored. For example, a single server or service. A job is a set of instances that perform the same function, such as a set of web servers serving the same application. Jobs allow you to define and manage a group of targets together.
+
+In essence, an instance is an individual target that Prometheus collects metrics from, while a job is a collection of similar instances that can be managed as a group.
 </b></details>
 
 <details>
 <summary>What core metrics types Prometheus supports?</summary><br><b>
+Prometheus supports several types of metrics, including:
+
+    1. Counter: A monotonically increasing value used for tracking counts of events or samples. Examples include the number of requests processed or the total number of errors encountered.
+
+    2. Gauge: A value that can go up or down, such as CPU usage or memory usage. Unlike counters, gauge values can be arbitrary, meaning they can go up and down based on changes in the system being monitored.
+
+    3. Histogram: A set of observations or events that are divided into buckets based on their value. Histograms help in analyzing the distribution of a metric, such as request latencies or response sizes.
+
+    4. Summary: A summary is similar to a histogram, but instead of buckets, it provides a set of quantiles for the observed values. Summaries are useful for monitoring the distribution of request latencies or response sizes over time.
+
+Prometheus also supports various functions and operators for aggregating and manipulating metrics, such as sum, max, min, and rate. These features make it a powerful tool for monitoring and alerting on system metrics.
 </b></details>
 
 <details>
 <summary>What is an exporter? What is it used for?</summary><br><b>
+The exporter serves as a bridge between the third-party system or application and Prometheus, making it possible for Prometheus to monitor and collect data from that system or application.
+
+The exporter acts as a server, listening on a specific network port for requests from Prometheus to scrape metrics. It collects metrics from the third-party system or application and transforms them into a format that can be understood by Prometheus. The exporter then exposes these metrics to Prometheus via an HTTP endpoint, making them available for collection and analysis.
+
+Exporters are commonly used to monitor various types of infrastructure components such as databases, web servers, and storage systems. For example, there are exporters available for monitoring popular databases such as MySQL and PostgreSQL, as well as web servers like Apache and Nginx.
+
+Overall, exporters are a critical component of the Prometheus ecosystem, allowing for the monitoring of a wide range of systems and applications, and providing a high degree of flexibility and extensibility to the platform.
 </b></details>
 
 <details>
-<summary>Which Prometheus best practices are you familiar with?. Name at least three</summary><br><b>
+<summary>Which Prometheus best practices?</summary><br><b>
+Here are three of them:
+
+    1. Label carefully: Careful and consistent labeling of metrics is crucial for effective querying and alerting. Labels should be clear, concise, and include all relevant information about the metric.
+
+    2. Keep metrics simple: The metrics exposed by exporters should be simple and focus on a single aspect of the system being monitored. This helps avoid confusion and ensures that the metrics are easily understandable by all members of the team.
+
+    3. Use alerting sparingly: While alerting is a powerful feature of Prometheus, it should be used sparingly and only for the most critical issues. Setting up too many alerts can lead to alert fatigue and result in important alerts being ignored. It is recommended to set up only the most important alerts and adjust the thresholds over time based on the actual frequency of alerts.
 </b></details>
 
 <details>
 <summary>How to get total requests in a given period of time?</summary><br><b>
+To get the total requests in a given period of time using Prometheus, you can use the *sum* function along with the *rate* function. Here is an example query that will give you the total number of requests in the last hour:
+
+```
+sum(rate(http_requests_total[1h]))
+```
+In this query, *http_requests_total* is the name of the metric that tracks the total number of HTTP requests, and the *rate* function calculates the per-second rate of requests over the last hour. The *sum* function then adds up all of the requests to give you the total number of requests in the last hour.
+
+You can adjust the time range by changing the duration in the *rate* function. For example, if you wanted to get the total number of requests in the last day, you could change the function to *rate(http_requests_total[1d])*.
 </b></details>
 
 <details>
 <summary>What HA in Prometheus means?</summary><br><b>
+
+HA stands for High Availability. This means that the system is designed to be highly reliable and always available, even in the face of failures or other issues. In practice, this typically involves setting up multiple instances of Prometheus and ensuring that they are all synchronized and able to work together seamlessly. This can be achieved through a variety of techniques, such as load balancing, replication, and failover mechanisms. By implementing HA in Prometheus, users can ensure that their monitoring data is always available and up-to-date, even in the face of hardware or software failures, network issues, or other problems that might otherwise cause downtime or data loss.
 </b></details>
 
 <details>
 <summary>How do you join two metrics?</summary><br><b>
+In Prometheus, joining two metrics can be achieved using the *join()* function. The *join()* function combines two or more time series based on their label values. It takes two mandatory arguments: *on* and *table*. The on argument specifies the labels to join *on* and the *table* argument specifies the time series to join.
+
+Here's an example of how to join two metrics using the *join()* function:
+
+```
+sum_series(
+  join(
+    on(service, instance) request_count_total,
+    on(service, instance) error_count_total,
+  )
+)
+```
+In this example, the *join()* function combines the *request_count_total* and *error_count_total* time series based on their *service* and *instance* label values. The *sum_series()* function then calculates the sum of the resulting time series
 </b></details>
 
 <details>
 <summary>How to write a query that returns the value of a label?</summary><br><b>
+To write a query that returns the value of a label in Prometheus, you can use the *label_values* function. The *label_values* function takes two arguments: the name of the label and the name of the metric.
+
+For example, if you have a metric called *http_requests_total* with a label called *method*, and you want to return all the values of the *method* label, you can use the following query:
+
+```
+label_values(http_requests_total, method)
+```
+
+This will return a list of all the values for the *method* label in the *http_requests_total* metric. You can then use this list in further queries or to filter your data.
 </b></details>
 
 <details>
 <summary>How do you convert cpu_user_seconds to cpu usage in percentage?</summary><br><b>
+To convert *cpu_user_seconds* to CPU usage in percentage, you need to divide it by the total elapsed time and the number of CPU cores, and then multiply by 100. The formula is as follows:
+
+```
+100 * sum(rate(process_cpu_user_seconds_total{job="<job-name>"}[<time-period>])) by (instance) / (<time-period> * <num-cpu-cores>)
+```
+
+Here, *<job-name>* is the name of the job you want to query, *<time-period>* is the time range you want to query (e.g. *5m*, *1h*), and *<num-cpu-cores>* is the number of CPU cores on the machine you are querying.
+
+For example, to get the CPU usage in percentage for the last 5 minutes for a job named *my-job* running on a machine with 4 CPU cores, you can use the following query:
+
+```
+100 * sum(rate(process_cpu_user_seconds_total{job="my-job"}[5m])) by (instance) / (5m * 4)
+```
 </b></details>
 
 ## Go
@@ -1249,18 +1389,27 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>What is a document? What is a collection?</summary><br><b>
+
+  * A document is a record in MongoDB, which is stored in BSON (Binary JSON) format and is the basic unit of data in MongoDB.
+  * A collection is a group of related documents stored in a single database in MongoDB.
 </b></details>
 
 <details>
 <summary>What is an aggregator?</summary><br><b>
+
+  * An aggregator is a framework in MongoDB that performs operations on a set of data to return a single computed result.
 </b></details>
 
 <details>
 <summary>What is better? Embedded documents or referenced?</summary><br><b>
+
+  * There is no definitive answer to which is better, it depends on the specific use case and requirements. Some explainations : Embedded documents provide atomic updates, while referenced documents allow for better normalization.
 </b></details>
 
 <details>
 <summary>Have you performed data retrieval optimizations in Mongo? If not, can you think about ways to optimize a slow data retrieval?</summary><br><b>
+
+  * Some ways to optimize data retrieval in MongoDB are: indexing, proper schema design, query optimization and database load balancing.
 </b></details>
 
 ##### Queries
@@ -1275,6 +1424,9 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>What is the difference between find() and find_one()?</code></summary><br><b>
+	
+  * `find()` returns all documents that match the query conditions.
+  * find_one() returns only one document that matches the query conditions (or null if no match is found).
 </b></details>
 
 <details>
@@ -1458,7 +1610,9 @@ When you use a function (`YEAR(purchased_at)`) it has to scan the whole database
   - Keystone</summary><br><b>
 
   * Nova - Manage virtual instances
+  * Neutron - Manage networking by providing Network as a service (NaaS)
   * Cinder - Block Storage
+  * Glance - Manage images for virtual machines and containers (search, get and register)
   * Keystone - Authentication service across the cloud
 </b></details>
 
@@ -1907,6 +2061,8 @@ A list of services and their endpoints
 
 <details>
 <summary>Can you compare Puppet to other configuration management tools? Why did you chose to use Puppet?</summary><br><b>
+
+  * Puppet is often compared to other configuration management tools like Chef, Ansible, SaltStack, and cfengine. The choice to use Puppet often depends on an organization's needs, such as ease of use, scalability, and community support.
 </b></details>
 
 <details>
@@ -1924,10 +2080,14 @@ A list of services and their endpoints
 
 <details>
 <summary>Explain Facter</summary><br><b>
+
+  * Facter is a standalone tool in Puppet that collects information about a system and its configuration, such as the operating system, IP addresses, memory, and network interfaces. This information can be used in Puppet manifests to make decisions about how resources should be managed, and to customize the behavior of Puppet based on the characteristics of the system. Facter is integrated into Puppet, and its facts can be used within Puppet manifests to make decisions about resource management.
 </b></details>
 
 <details>
 <summary>What is MCollective?</summary><br><b>
+
+  * MCollective is a middleware system that integrates with Puppet to provide orchestration, remote execution, and parallel job execution capabilities.
 </b></details>
 
 <details>
@@ -1936,6 +2096,8 @@ A list of services and their endpoints
 
 <details>
 <summary>Explain what is Hiera</summary><br><b>
+
+  * Hiera is a hierarchical data store in Puppet that is used to separate data from code, allowing data to be more easily separated, managed, and reused.
 </b></details>
 
 ## Elastic
@@ -1952,7 +2114,7 @@ The Elastic Stack consists of:
   * Elastic Hadoop
   * APM Server
 
-Elasticserach, Logstash and Kibana are also known as the ELK stack.
+Elasticsearch, Logstash and Kibana are also known as the ELK stack.
 </b></details>
 
 <details>
@@ -2009,7 +2171,7 @@ This is where data is stored and also where different processing takes place (e.
 <details>
 <summary>What is a master node?</summary><br><b>
 
-Par of a master node responsibilites:
+Part of a master node responsibilites:
   * Track the status of all the nodes in the cluster
   * Verify replicas are working and the data is available from every data node.
   * No hot nodes (no data node that works much harder than other nodes)
@@ -2020,17 +2182,22 @@ While there can be multiple master nodes in reality only of them is the elected 
 <details>
 <summary>What is an ingest node?</summary><br><b>
 
-A node which responsible for parsing the data. In case you don't use logstash then this node can recieve data from beats and parse it, similarly to how it can be parsed in Logstash.
+A node which responsible for processing the data according to ingest pipeline. In case you don't need to use 
+logstash then this node can recieve data from beats and process it, similarly to how it can be processed 
+in Logstash.
 </b></details>
 
 <details>
-<summary>What is Coordinating node?</summary><br><b>
+<summary>What is Coordinating only node?</summary><br><b>
 
-A Coordinating node responsible for routing requests out and in to the cluser (data nodes).
+From the official docs:
+
+Coordinating only nodes can benefit large clusters by offloading the coordinating node role from data and master-eligible nodes. They join the cluster and receive the full cluster state, like every other node, and they use the cluster state to route requests directly to the appropriate place(s).
+
 </b></details>
 
 <details>
-<summary>How data is stored in elasticsearch?</summary><br><b>
+<summary>How data is stored in Elasticsearch?</summary><br><b>
 
 * Data is stored in an index
 * The index is spread across the cluster using shards
@@ -2039,7 +2206,7 @@ A Coordinating node responsible for routing requests out and in to the cluser (d
 <details>
 <summary>What is an Index?</summary><br><b>
 
-Index in Elastic is in most cases compared to a whole database from the SQL/NoSQL world.<br>
+Index in Elasticsearch is in most cases compared to a whole database from the SQL/NoSQL world.<br>
 You can choose to have one index to hold all the data of your app or have multiple indices where each index holds different type of your app (e.g. index for each service your app is running).
 
 The official docs also offer a great explanation (in general, it's really good documentation, as every project should have):
@@ -2065,15 +2232,17 @@ From the official docs:
 <details>
 <summary>What is a Document?</summary><br><b>
 
-Continuing with the comparison to SQL/NoSQL a Document in Elastic is a row in table in the case of SQL or a document in a collection in the case of NoSQL.
-As in NoSQL a Document is a JSON object which holds data on a unit in your app. What is this unit depends on the your app. If your app related to book then each document describes a book. If you are app is about shirts then each document is a shirt.
+Continuing with the comparison to SQL/NoSQL a Document in Elasticsearch is a row in table in the case of SQL or a document in a collection in the case of NoSQL.
+As in NoSQL a document is a JSON object which holds data on a unit in your app. What is this unit depends on the your app. If your app related to book then each document describes a book. If you are app is about shirts then each document is a shirt.
 </b></details>
 
 <details>
 <summary>You check the health of your elasticsearch cluster and it's red. What does it mean? What can cause the status to be yellow instead of green?</summary><br><b>
 
-Red means some data is unavailable.
-Yellow can be caused by running single node cluster instead of multi-node.
+Red means some data is unavailable in your cluster. Some shards of your indices are unassinged. 
+There are some other states for the cluster.
+Yellow means that you have unassigned shards in the cluster. You can be in this state if you have single node and your indices have replicas.
+Green means that all shards in the cluster are assigned to nodes and your cluster is healthy. 
 </b></details>
 
 <details>
@@ -2388,10 +2557,25 @@ False. From [swagger.io](https://swagger.io/resources/articles/difference-betwee
 
 <details>
 <summary>What is an API gateway?</summary><br><b>
+
+An API gateway is like the gatekeeper that controls how different parts talk to each other and how information is exchanged between them.
+
+The API gateway provides a single point of entry for all clients, and it can perform several tasks, including routing requests to the appropriate backend service, load balancing, security and authentication, rate limiting, caching, and monitoring.
+
+By using an API gateway, organizations can simplify the management of their APIs, ensure consistent security and governance, and improve the performance and scalability of their backend services. They are also commonly used in microservices architectures, where there are many small, independent services that need to be accessed by different clients.
 </b></details>
 
 <details>
 <summary>What are the advantages of using/implementing an API gateway?</summary><br><b>
+
+Advantages:
+
+  - Simplifies API management: Provides a single entry point for all requests, which simplifies the management and monitoring of multiple APIs.
+  - Improves security: Able to implement security features like authentication, authorization, and encryption to protect the backend services from unauthorized access.
+  - Enhances scalability: Can handle traffic spikes and distribute requests to backend services in a way that maximizes resource utilization and improves overall system performance.
+  - Enables service composition: Can combine different backend services into a single API, providing more granular control over the services that clients can access.
+  - Facilitates integration with external systems:  Can be used to expose internal services to external partners or customers, making it easier to integrate with external systems and enabling new business models.
+
 </b></details>
 
 <details>
@@ -2628,6 +2812,11 @@ It consists of:
 
 <details>
 <summary>What is HTTPS?</summary><br><b>
+
+
+HTTPS is a secure version of the HTTP protocol used to transfer data between a web browser and a web server. It encrypts the communication using SSL/TLS encryption to ensure that the data is private and secure.
+
+Learn more: https://www.cloudflare.com/learning/ssl/why-is-http-not-secure/
 </b></details>
 
 <details>
@@ -2650,10 +2839,16 @@ The server didn't receive a response from another server it communicates with in
 
 <details>
 <summary>What is a proxy?</summary><br><b>
+
+A proxy is a server that acts as a middleman between a client device and a destination server. It can help improve privacy, security, and performance by hiding the client's IP address, filtering content, and caching frequently accessed data. 
+  - Proxies can be used for load balancing, distributing traffic across multiple servers to help prevent server overload and improve website or application performance. They can also be used for data analysis, as they can log requests and traffic, providing useful insights into user behavior and preferences.
 </b></details>
 
 <details>
 <summary>What is a reverse proxy?</summary><br><b>
+
+A reverse proxy is a type of proxy server that sits between a client and a server, but it is used to manage traffic going in the opposite direction of a traditional forward proxy. In a forward proxy, the client sends requests to the proxy server, which then forwards them to the destination server. However, in a reverse proxy, the client sends requests to the destination server, but the requests are intercepted by the reverse proxy before they reach the server. 
+  - They're commonly used to improve web server performance, provide high availability and fault tolerance, and enhance security by preventing direct access to the back-end server. They are often used in large-scale web applications and high-traffic websites to manage and distribute requests to multiple servers, resulting in improved scalability and reliability.
 </b></details>
 
 <details>
@@ -2795,6 +2990,19 @@ The maximum timeout value can be set between 1 and 3,600 seconds on both GCP and
 
 <details>
 <summary>Are you familiar with "Creative Commons"? What do you know about it?</summary><br><b>
+
+The Creative Commons license is a set of copyright licenses that allow creators to share their work with the public while retaining some control over how it can be used. The license was developed as a response to the restrictive standards of traditional copyright laws, which limited access of creative works. Its creators to choose the terms under which their works can be shared, distributed, and used by others. They're six main types of Creative Commons licenses, each with different levels of restrictions and permissions, the six licenses are:
+
+  * Attribution (CC BY): Allows others to distribute, remix, and build upon the work, even commercially, as long as they credit the original creator.
+  * Attribution-ShareAlike (CC BY-SA): Allows others to remix and build upon the work, even commercially, as long as they credit the original creator and release any new creations under the same license.
+  * Attribution-NoDerivs (CC BY-ND): Allows others to distribute the work, even commercially, but they cannot remix or change it in any way and must credit the original creator.
+  * Attribution-NonCommercial (CC BY-NC): Allows others to remix and build upon the work, but they cannot use it commercially and must credit the original creator.
+  * Attribution-NonCommercial-ShareAlike (CC BY-NC-SA): Allows others to remix and build upon the work, but they cannot use it commercially, must credit the original creator, and must release any new creations under the same license.
+  * Attribution-NonCommercial-NoDerivs (CC BY-NC-ND): Allows others to download and share the work, but they cannot use it commercially, remix or change it in any way, and must credit the original creator.
+
+Simply stated, the Creative Commons licenses are a way for creators to share their work with the public while retaining some control over how it can be used. The licenses promote creativity, innovation, and collaboration, while also respecting the rights of creators while still encouraging the responsible use of creative works.
+
+More information: https://creativecommons.org/licenses/
 </b></details>
 
 <details>
@@ -2822,6 +3030,10 @@ CPU cache.
 
 <details>
 <summary>What is a memory leak?</summary><br><b>
+
+A memory leak is a programming error that occurs when a program fails to release memory that is no longer needed, causing the program to consume increasing amounts of memory over time.
+
+The leaks can lead to a variety of problems, including system crashes, performance degradation, and instability. Usually occuring after failed maintenance on older systems and compatibility with new components over time.
 </b></details>
 
 <details>
@@ -2914,6 +3126,18 @@ Google Drive
 
 <details>
 <summary>What is a filesystem?</summary><br><b>
+
+A file system is a way for computers and other electronic devices to organize and store data files. It provides a structure that helps to organize data into files and directories, making it easier to find and manage information. A file system is crucial for providing a way to store and manage data in an organized manner.
+
+Commonly used filed systems:
+  Windows:
+  * NTFS
+  * exFAT
+
+  Mac OS:
+  * HFS+
+  *APFS
+
 </b></details>
 
 <details>
@@ -2990,6 +3214,10 @@ Not only this will tell you what is expected from you, it will also provide big 
 
 <details>
 <summary>What are unit tests?</summary><br><b>
+
+Unit test are a software testing technique that involves systimatically breaking down a system and testing each individual part of the assembly. These tests are automated and can be run repeatedly to allow developers to catch edge case scenarios or bugs quickly while developing.
+
+The main objective of unit tests are to verify each function is producing proper outputs given a set of inputs.
 </b></details>
 
 <details>
@@ -3023,164 +3251,6 @@ Not only this will tell you what is expected from you, it will also provide big 
 </summary><br><b>
 </b></details>
 
-## Databases
-
-|Name|Topic|Objective & Instructions|Solution|Comments|
-|--------|--------|------|----|----|
-| Message Board Tables  | Relational DB Tables | [Exercise](topics/databases/table_for_message_board_system.md) | [Solution](topics/databases/solutions/table_for_message_board_system.md)
-
-<details>
-<summary>What is a relational database?</summary><br><b>
-
-  * Data Storage: system to store data in tables
-  * SQL: programming language to manage relational databases
-  * Data Definition Language: a standard syntax to create, alter and delete tables
-</b></details>
-
-<details>
-<summary>What does it mean when a database is ACID compliant?</summary><br>
-
-ACID stands for Atomicity, Consistency, Isolation, Durability. In order to be ACID compliant, the database must meet each of the four criteria
-
-**Atomicity** - When a change occurs to the database, it should either succeed or fail as a whole.
-
-For example, if you were to update a table, the update should completely execute. If it only partially executes, the
-update is considered failed as a whole, and will not go through - the DB will revert back to it's original
-state before the update occurred. It should also be mentioned that Atomicity ensures that each
-transaction is completed as it's own stand alone "unit" - if any part fails, the whole statement fails.
-
-**Consistency** - any change made to the database should bring it from one valid state into the next.
-
-For example, if you make a change to the DB, it shouldn't corrupt it. Consistency is upheld by checks and constraints that
-are pre-defined in the DB. For example, if you tried to change a value from a string to an int when the column
-should be of datatype string, a consistent DB would not allow this transaction to go through, and the action would
-not be executed
-
-**Isolation** - this ensures that a database will never be seen "mid-update" - as multiple transactions are running at
-the same time, it should still leave the DB in the same state as if the transactions were being run sequentially.
-
-For example, let's say that 20 other people were making changes to the database at the same time. At the
-time you executed your query, 15 of the 20 changes had gone through, but 5 were still in progress. You should
-only see the 15 changes that had completed - you wouldn't see the database mid-update as the change goes through.
-
-**Durability** - Once a change is committed, it will remain committed regardless of what happens
-(power failure, system crash, etc.). This means that all completed transactions
-must be recorded in non-volatile memory.
-
-Note that SQL is by nature ACID compliant. Certain NoSQL DB's can be ACID compliant depending on
-how they operate, but as a general rule of thumb, NoSQL DB's are not considered ACID compliant
-</details>
-
-<details>
-<summary>What is sharding?</summary><br><b>
-
-Sharding is a horizontal partitioning.
-
-Are you able to explain what is it good for?
-</b></details>
-
-<details>
-<summary>You find out your database became a bottleneck and users experience issues accessing data. How can you deal with such situation?</summary><br><b>
-
-Not much information provided as to why it became a bottleneck and what is current architecture, so one general approach could be<br>
-to reduce the load on your database by moving frequently-accessed data to in-memory structure.
-</b></details>
-
-<details>
-<summary>What is a connection pool?</summary><br><b>
-
-Connection Pool is a cache of database connections and the reason it's used is to avoid an overhead of establishing a connection for every query done to a database.
-</b></details>
-
-<details>
-<summary>What is a connection leak?</summary><br><b>
-
-A connection leak is a situation where database connection isn't closed after being created and is no longer needed.
-</b></details>
-
-<details>
-<summary>What is Table Lock?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Your database performs slowly than usual. More specifically, your queries are taking a lot of time. What would you do?</summary><br><b>
-
-* Query for running queries and cancel the irrelevant queries
-* Check for connection leaks (query for running connections and include their IP)
-* Check for table locks and kill irrelevant locking sessions
-</b></details>
-
-<details>
-<summary>What is a Data Warehouse?</summary><br><b>
-
-"A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of organisation's decision-making process"
-</b></details>
-
-<details>
-<summary>Explain what is a time-series database</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is OLTP (Online transaction processing)?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is OLAP (Online Analytical Processing)?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is an index in a database?</summary><br><b>
-
-A database index is a data structure that improves the speed of operations in a table. Indexes can be created using one or more columns, providing the basis for both rapid random lookups and efficient ordering of access to records.
-</b></details>
-
-<details>
-<summary>What data types are there in relational databases?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain Normalization</summary><br><b>
-
-Data that is used multiple times in a database should be stored once and referenced with a foreign key.<br>
-This has the clear benefit of ease of maintenance where you need to change a value only in a single place to change it everywhere.
-</b></details>
-
-<details>
-<summary>Explain Primary Key and Foreign Key</summary><br><b>
-
-Primary Key: each row in every table should a unique identifier that represents the row.<br>
-Foreign Key: a reference to another table's primary key. This allows you to join table together to retrieve all the information you need without duplicating data.
-</b></details>
-
-<details>
-<summary>What types of data tables have you used?</summary><br><b>
-
-  * Primary data table: main data you care about
-  * Details table: includes a foreign key and has one to many relationship
-  * Lookup values table: can be one table per lookup or a table containing all the lookups and has one to many relationship
-  * Multi reference table
-</b></details>
-
-<details>
-<summary>What is ORM? What benefits it provides in regards to relational databases usage?</summary><br><b>
-
-[Wikipedia](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping): "is a programming technique for converting data between incompatible type systems using object-oriented programming languages"
-
-In regards to the relational databases:
-
-  * Database as code
-  * Database abstraction
-  * Encapsulates SQL complexity
-  * Enables code review process
-  * Enables usage as a native OOP structure
-</b></details>
-
-<details>
-<summary>What is DDL?</summary><br><b>
-
-[Wikipedia](https://en.wikipedia.org/wiki/Data_definition_language): "In the context of SQL, data definition or data description language (DDL) is a syntax for creating and modifying database objects such as tables, indices, and users."
-</b></details>
-
 ## Regex
 
 Given a text file, perform the following exercises
@@ -3189,16 +3259,23 @@ Given a text file, perform the following exercises
 
 <details>
 <summary>Extract all the numbers</summary><br><b>
+
+  - "\d+"
 </b></details>
 
 <details>
 <summary>Extract the first word of each line</summary><br><b>
 
+  - "^\w+"
 Bonus: extract the last word of each line
+
+  - "\w+(?=\W*$)" (in most cases, depends on line formating)
 </b></details>
 
 <details>
 <summary>Extract all the IP addresses</summary><br><b>
+
+  - "\b(?:\d{1,3}\ .){3}\d{1,3}\b" IPV4:(This format looks for 1 to 3 digit sequence 3 times)
 </b></details>
 
 <details>
@@ -3207,6 +3284,8 @@ Bonus: extract the last word of each line
 
 <details>
 <summary>Extract email addresses</summary><br><b>
+
+  - "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\ .[A-Za-z]{2,}\b"
 </b></details>
 
 #### Replace
@@ -3300,6 +3379,9 @@ The ability to grow but also to reduce based on what is required
 
 <details>
 <summary>Explain Disaster Recovery</summary><br><b>
+
+
+Disaster recovery is the process of restoring critical business systems and data after a disruptive event. The goal is to minimize the impact and resume normal business activities quickly. This involves creating a plan, testing it, backing up critical data, and storing it in safe locations. In case of a disaster, the plan is then executed, backups are restored, and systems are hopefully brought back online. The recovery process may take hours or days depending on the damages of infrastructure. This makes business planning important, as a well-designed and tested disaster recovery plan can minimize the impact of a disaster and keep operations going.
 </b></details>
 
 <details>
@@ -3421,6 +3503,11 @@ Read about it [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
 
 <details>
 <summary>Why not writing everything to cache instead of a database/datastore?</summary><br><b>
+Caching and databases serve different purposes and are optimized for different use cases.
+
+Caching is used to speed up read operations by storing frequently accessed data in memory or on a fast storage medium. By keeping data close to the application, caching reduces the latency and overhead of accessing data from a slower, more distant storage system such as a database or disk.
+
+On the other hand, databases are optimized for storing and managing persistent data. Databases are designed to handle concurrent read and write operations, enforce consistency and integrity constraints, and provide features such as indexing and querying.
 </b></details>
 
 #### Migrations
@@ -3475,6 +3562,10 @@ RAM (Random Access Memory) is the hardware in a computing device where the opera
 </b></details>
 
 <details>
+<summary>What is a GPU?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is an embedded system?</summary><br><b>
 
 An embedded system is a computer system - a combination of a computer processor, computer memory, and input/output peripheral devices—that has a dedicated function within a larger mechanical or electronic system. It is embedded as part of a complete device often including electrical or electronic hardware and mechanical parts. 
@@ -3488,6 +3579,28 @@ Raspberry Pi
 
 <details>
 <summary>What types of storage are there?</summary><br><b>
+
+There are several types of storage, including hard disk drives (HDDs), solid-state drives (SSDs), and optical drives (CD/DVD/Blu-ray). Other types of storage include USB flash drives, memory cards, and network-attached storage (NAS).
+</b></details>
+
+<details>
+<summary>What are some considerations DevOps teams should keep in mind when selecting hardware for their job?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the role of hardware in disaster recovery planning and implementation?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a RAID?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a microcontroller?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a Network Interface Controller or NIC?</summary><br><b>
 </b></details>
 
 ## Big Data

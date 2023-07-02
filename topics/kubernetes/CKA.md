@@ -158,7 +158,7 @@ To count them: `k get po -l env=prod --no-headers | wc -l`
 First change to the directory tracked by kubelet for creating static pod: `cd /etc/kubernetes/manifests` (you can verify path by reading kubelet conf file)
 
 Now create the definition/manifest in that directory
-`k run some-pod --image=python --command sleep 2017 --restart=Never --dry-run=client -o yaml > statuc-pod.yaml`
+`k run some-pod --image=python --command sleep 2017 --restart=Never --dry-run=client -o yaml > static-pod.yaml`
 </b></details>
 
 <details>
@@ -304,6 +304,8 @@ Note: create an alias (`alias k=kubectl`) and get used to `k get no`
 
 <details>
 <summary>Create an internal service called "sevi" to expose the app 'web' on port 1991</summary><br><b>
+ 
+`kubectl expose pod web --port=1991 --name=sevi`
 </b></details>
 
 <details>
@@ -492,9 +494,7 @@ The selector doesn't match the label (cache vs cachy). To solve it, fix cachy so
 <details>
 <summary>Create a deployment called "pluck" using the image "redis" and make sure it runs 5 replicas</summary><br><b>
 
-`kubectl create deployment pluck --image=redis`
-
-`kubectl scale deployment pluck --replicas=5`
+`kubectl create deployment pluck --image=redis --replicas=5`
 
 </b></details>
 
@@ -683,7 +683,7 @@ affinity:
 </b></details>
 
 <details>
-<summary>reate and run a Pod called `some-pod` with the image `redis` and configure it to use the selector `hw=max`</summary><br><b>
+<summary>Create and run a Pod called `some-pod` with the image `redis` and configure it to use the selector `hw=max`</summary><br><b>
 
 ```
 kubectl run some-pod --image=redis --dry-run=client -o yaml > pod.yaml

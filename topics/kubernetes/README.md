@@ -9,7 +9,7 @@ What's your goal?
 * I would like to learn Kubernetes by practicing both theoritcal and practical material
   * Solve [exercises](#kubernetes-exercises)
   * Solve [questions](#kubernetes-questions)
-* I would like to learn parctical Kubernetes
+* I would like to learn practical Kubernetes
   * Solve [exercises](#kubernetes-exercises)
 
 - [Kubernetes](#kubernetes)
@@ -2349,14 +2349,7 @@ The pod is automatically assigned with the default service account (in the names
 
 ### Patterns
 
-<details>
-<summary>Explain the sidecar container pattern</summary><br><b>
- ion container, there is a sidecar container.
-</b></details>
-r, the application would not exist. In addition to the application container, there is a sidecar container.
 
-In simpler words, when you have a Pod and there is more than one container running in that Pod that supports or complements the application container, it means you use the sidecar pattern.
-</b></details>
 
 ### CronJob
 

@@ -3,7 +3,7 @@
 ## Requirements
 
 1. Running Kubernetes cluster
-2. Kustomize binary installed
+2. Kubctl version 1.14 or above
 
 ## Objectives
 

@@ -2,11 +2,11 @@
 
 ## Exercises
 
-|Name|Topic|Objective & Instructions|Solution|Comments|
-|--------|--------|------|----|----|
-| My first Commit | Commit | [Exercise](commit_01.md) | [Solution](solutions/commit_01_solution.md) | |
-| Time to Branch | Branch | [Exercise](branch_01.md) | [Solution](solutions/branch_01_solution.md) | |
-| Squashing Commits | Commit | [Exercise](squashing_commits.md) | [Solution](solutions/squashing_commits.md) | |
+| Name              | Topic  | Objective & Instructions         | Solution                                    | Comments |
+| ----------------- | ------ | -------------------------------- | ------------------------------------------- | -------- |
+| My first Commit   | Commit | [Exercise](commit_01.md)         | [Solution](solutions/commit_01_solution.md) |          |
+| Time to Branch    | Branch | [Exercise](branch_01.md)         | [Solution](solutions/branch_01_solution.md) |          |
+| Squashing Commits | Commit | [Exercise](squashing_commits.md) | [Solution](solutions/squashing_commits.md)  |          |
 
 ## Questions
 
@@ -14,21 +14,27 @@
 
 <details>
 <summary>How do you know if a certain directory is a git repository?</summary><br><b>
-
 You can check if there is a ".git" directory.
-</b></details>
+</b>
+</details>
 
 <details>
-<summary>Explain the following: <code>git directory</code>, <code>working directory</code> and <code>staging area</code></summary><br><b>
+<summary>Explain the following: <code>git directory</code>, <code>working directory</code> and <code>staging area</code></summary><br>
+<b>
 
 This answer taken from [git-scm.com](https://git-scm.com/book/en/v1/Getting-Started-Git-Basics#_the_three_states)
 
-"The Git directory is where Git stores the meta data and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
+"The Git directory is where Git stores the meta-data and object database for your project. This is the most important
+part of Git, and it is what is copied when you clone a repository from another computer.
 
-The working directory is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
+The working directory is a single checkout of one version of the project. These files are pulled out of the compressed
+database in the Git directory and placed on disk for you to use or modify.
 
-The staging area is a simple file, generally contained in your Git directory, that stores information about what will go into your next commit. It’s sometimes referred to as the index, but it’s becoming standard to refer to it as the staging area."
-</b></details>
+The staging area is a simple file, generally contained in your Git directory, that stores information about what will go
+into your next commit. It’s sometimes referred to as the index, but it’s becoming standard to refer to it as the staging
+area."
+</b>
+</details>
 
 <details>
 <summary>What is the difference between <code>git pull</code> and <code>git fetch</code>?</summary><br><b>
@@ -46,20 +52,22 @@ a separate branch in your local repository
 <summary>How to check if a file is tracked and if not, then track it?</summary><br><b>
 
 There are different ways to check whether a file is tracked or not:
-
   - `git ls-files <file>` -> exit code of 0 means it's tracked
   - `git blame <file>`
   ...
-</b></details>
+</b>
+</details>
 
 <details>
 <summary>Explain what the file <code>gitignore</code> is used for</summary><br><b>
-</b></details>
+The purpose of <code>gitignore</code> files is to ensure that certain files not tracked by Git remain untracked. To stop tracking a file that is currently tracked, use git rm --cached.
+</b>
+</details>
 
 <details>
 <summary>How can you see which changes have done before committing them?</summary><br><b>
-
 `git diff`
+
 </b></details>
 
 <details>
@@ -72,7 +80,8 @@ There are different ways to check whether a file is tracked or not:
 <summary>You've created new files in your repository. How to make sure Git tracks them?</summary><br><b>
 
 `git add FILES`
-</b></details>
+</b>
+</details>
 
 ### Scenarios
 
@@ -95,8 +104,8 @@ One thing to do about it, would be to use the built-in `fsmonitor` (filesystem m
 
 Next, you can try to enable `feature.manyFile` with `git config feature.manyFiles true`. This does two things:
 
-  1. Sets `index.version = 4` which enables path-prefix compression in the index
-  2. Sets `core.untrackedCache=true` which by default is set to `keep`. The untracked cache is quite important concept. What it does is to record the mtime of all the files and directories in the working directory. This way, when time comes to iterate over all the files and directories, it can skip those whom mtime wasn't updated.
+1. Sets `index.version = 4` which enables path-prefix compression in the index
+2. Sets `core.untrackedCache=true` which by default is set to `keep`. The untracked cache is quite important concept. What it does is to record the mtime of all the files and directories in the working directory. This way, when time comes to iterate over all the files and directories, it can skip those whom mtime wasn't updated.
 
 Before enabling it, you might want to run `git update-index --test-untracked-cache` to test it out and make sure mtime operational on your system.
 
@@ -113,10 +122,10 @@ Finally, with certain build systems, you can know which files are being used/rel
 <details>
 <summary>What's is the branch strategy (flow) you know?</summary><br><b>
 
-* Git flow
-* GitHub flow
-* Trunk based development
-* GitLab flow
+- Git flow
+- GitHub flow
+- Trunk based development
+- GitLab flow
 
 [Explanation](https://www.bmc.com/blogs/devops-branching-strategies/#:~:text=What%20is%20a%20branching%20strategy,used%20in%20the%20development%20process).
 
@@ -130,13 +139,15 @@ True
 
 <details>
 <summary>You have two branches - main and devel. How do you make sure devel is in sync with main?</summary><br><b>
-
+<code>
 ```
 git checkout main
 git pull
 git checkout devel
 git merge main
 ```
+</code>
+
 </b></details>
 
 <details>
@@ -154,7 +165,7 @@ Using the HEAD file: `.git/HEAD`
 <details>
 <summary>What <code>unstaged</code> means in regards to Git?</summary><br><b>
 
-A file the is in the working directory but is not in the HEAD nor in the staging area, referred to as "unstaged".
+A file that is in the working directory but is not in the HEAD nor in the staging area is referred to as "unstaged".
 </b></details>
 
 <details>
@@ -168,9 +179,12 @@ True
 <details>
 <summary>You have two branches - main and devel. How do you merge devel into main?</summary><br><b>
 
+```
 git checkout main
 git merge devel
 git push origin main
+```
+
 </b></details>
 
 <details>
@@ -203,8 +217,8 @@ This page explains it the best: https://git-scm.com/docs/merge-strategies
 
 Probably good to mention that it's:
 
-  * It's good for cases of merging more than one branch (and also the default of such use cases)
-  * It's primarily meant for bundling topic branches together
+- It's good for cases of merging more than one branch (and also the default of such use cases)
+- It's primarily meant for bundling topic branches together
 
 This is a great article about Octopus merge: http://www.freblogg.com/2016/12/git-octopus-merge.html
 </b></details>
@@ -218,6 +232,7 @@ This is a great article about Octopus merge: http://www.freblogg.com/2016/12/git
 
 `git reset` depends on the usage, can modify the index or change the commit which the branch head
 is currently pointing at.
+
 </p>
 </b></details>
 
@@ -232,6 +247,7 @@ Using the `git rebase` command
 <details>
 <summary>In what situations are you using <code>git rebase</code>?</summary><br><b>
 Suppose a team is working on a `feature` branch that is coming from the `main` branch of the repo. At a point, where the feature development is done, and finally we wish to merge the feature branch into the main branch without keeping the history of the commits made in the feature branch, a `git rebase` will be helpful. 
+
 </b></details>
 
 <details>
@@ -240,6 +256,7 @@ Suppose a team is working on a `feature` branch that is coming from the `main` b
 ```
 git checkout HEAD~1 -- /path/of/the/file
 ```
+
 </b></details>
 
 <details>
@@ -250,16 +267,15 @@ git checkout HEAD~1 -- /path/of/the/file
 <summary>What is the <code>.git</code> directory? What can you find there?</summary><br><b>
 	The <code>.git</code> folder contains all the information that is necessary for your project in version control and all the information about commits, remote repository address, etc. All of them are present in this folder. It also contains a log that stores your commit history so that you can roll back to history.
 
-
 This info copied from [https://stackoverflow.com/questions/29217859/what-is-the-git-folder](https://stackoverflow.com/questions/29217859/what-is-the-git-folder)
 </b></details>
 
 <details>
 <summary>What are some Git anti-patterns? Things that you shouldn't do</summary><br><b>
 
-  * Not waiting too long between commits
-  * Not removing the .git directory :)
-</b></details>
+- Not waiting too long between commits
+- Not removing the .git directory :)
+  </b></details>
 
 <details>
 <summary>How do you remove a remote branch?</summary><br><b>
@@ -334,20 +350,20 @@ Shortly, it runs `git diff` twice:
 
 1. Compare between HEAD to staging area
 2. Compare staging area to working directory
-</b></details>
+   </b></details>
 
 <details>
 <summary>If <code>git status</code> has to run diff on all the files in the HEAD commit to those in staging area/index and another one on staging area/index and working directory, how is it fairly fast? </summary><br><b>
 
 One reason is about the structure of the index, commits, etc.
 
-* Every file in a commit is stored in tree object
-* The index is then a flattened structure of tree objects
-* All files in the index have pre-computed hashes
-* The diff operation then, is comparing the hashes
+- Every file in a commit is stored in tree object
+- The index is then a flattened structure of tree objects
+- All files in the index have pre-computed hashes
+- The diff operation then, is comparing the hashes
 
 Another reason is caching
 
-* Index caches information on working directory 
-* When Git has the information for certain file cached, there is no need to look at the working directory file
-</b></details>
+- Index caches information on working directory
+- When Git has the information for certain file cached, there is no need to look at the working directory file
+  </b></details>

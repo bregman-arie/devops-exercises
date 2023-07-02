@@ -3,7 +3,7 @@
 ## Linux Master Application
 
 A completely free application for testing your knowledge on Linux.
-Desclaimer: developed by repository owner
+Disclaimer: developed by repository owner
 
 <a href="https://play.google.com/store/apps/details?id=com.codingshell.linuxmaster"><img src="../../images/linux_master.jpeg"/></a>
 
@@ -169,6 +169,9 @@ They take in input (<) and output for a given file (>) using stdin and stdout.
   - cut: a tool for cutting out selected portions of each line of a file:
     - syntax: `cut OPTION [FILE]`
       - cutting first two bytes from a word in a file: `cut -b 1-2 file.md`, output: `wo`
+  - awk: a programming language that is mainly used for text processing and data extraction. It can be used to manipulate and modify text in a file:
+    - syntax: awk [OPTIONS] [FILTER] [FILE]
+extracting a specific field from a CSV file: awk -F ',' '{print $1}' file.csv, output: first field of each line in the file
 </b></details>
 
 <details>
@@ -234,7 +237,8 @@ find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \;
 <details>
 <summary>How to check which commands you executed in the past?</summary><br><b>
 
-history command or .bash_history file
+history command or .bash_history file 
+  * also can use up arrow key to access or to show the recent commands you type
 </b></details>
 
 <details>
@@ -277,24 +281,37 @@ Alternatively if you are using a distro with systemd it's recommended to use sys
 
 <details>
 <summary>Explain Linux I/O redirection</summary><br><b>
+  In Linux, IO redirection is a way of changing the default input/output behavior of a command or program. It allows you to redirect input and output from/to different sources/destinations, such as files, devices, and other commands.
+
+Here are some common examples of IO redirection:
+ * Redirecting Standard Output (stdout):
+  <code>ls > filelist.txt</code>
+* Redirecting Standard Error (stderr):
+  <code>ls /some/nonexistent/directory 2> error.txt</code>
+* Appending to a file:
+  <code>echo "hello" >> myfile.txt</code>
+* Redirecting Input (stdin):
+  <code>sort < unsorted.txt</code>
+* Using Pipes: Pipes ("|"):
+  <code>ls | grep "\.txt$"</code>         
 </b></details>
 
 <details>
 <summary>Demonstrate Linux output redirection</summary><br><b>
 
-ls > ls_output.txt
+<code>ls > ls_output.txt</code>
 </b></details>
 
 <details>
 <summary>Demonstrate Linux stderr output redirection</summary><br><b>
 
-yippiekaiyay 2> ls_output.txt
+<code>yippiekaiyay 2> ls_output.txt</code>
 </b></details>
 
 <details>
 <summary>Demonstrate Linux stderr to stdout redirection</summary><br><b>
 
-yippiekaiyay &> file
+<code>yippiekaiyay &> file</code>
 </b></details>
 
 <details>
@@ -359,6 +376,7 @@ The command passed to the boot loader to run the kernel
 
 <details>
 <summary>In which path can you find the system devices (e.g. block storage)?</summary><br><b>
+  /dev
 </b></details>
 
 <a name="questions-linux-permissions"></a>
@@ -1060,7 +1078,7 @@ sar -n TCP,ETCP 1
 <details>
 <summary>how to list all the processes running in your system?</summary><br><b>
 
-`ps -ef`
+The "ps" command can be used to list all the processes running in a system. The "ps aux" command provides a detailed list of all the processes, including the ones running in the background.
 </b></details>
 
 <details>
@@ -1103,22 +1121,28 @@ To view all available signals run `kill -l`
 
 <details>
 <summary>What <code>kill 0</code> does?</summary><br><b>
+"kill 0" sends a signal to all processes in the current process group. It is used to check if the processes exist or not
 </b></details>
 
 <details>
 <summary>What <code>kill -0 <PID></code> does?</summary><br><b>
+"kill -0" checks if a process with a given process ID exists or not. It does not actually send any signal to the process.
 </b></details>
 
 <details>
 <summary>What is a trap?</summary><br><b>
+A trap is a mechanism that allows the shell to intercept signals sent to a process and perform a specific action, such as handling errors or cleaning up resources before terminating the process.
+
 </b></details>
 
 <details>
 <summary>Every couple of days, a certain process stops running. How can you look into why it's happening?</summary><br><b>
+One way to investigate why a process stops running is to check the system logs, such as the messages in /var/log/messages or journalctl. Additionally, checking the process's resource usage and system load may provide clues as to what caused the process to stop
 </b></details>
 
 <details>
 <summary>What happens when you press ctrl + c?</summary><br><b>
+When you press "Ctrl+C," it sends the SIGINT signal to the foreground process, asking it to terminate gracefully.
 </b></details>
 
 <details>
@@ -1142,6 +1166,7 @@ Zombie (z)
 
 <details>
 <summary>How do you kill a process in D state?</summary><br><b>
+A process in D state (also known as "uninterruptible sleep") cannot be killed using the "kill" command. The only way to terminate it is to reboot the system.
 </b></details>
 
 <details>
@@ -1184,14 +1209,24 @@ It is the first process executed by the kernel during the booting of a system. I
 
 <details>
 <summary>How to change the priority of a process? Why would you want to do that?</summary><br><b>
+To change the priority of a process, you can use the nice command in Linux. The nice command allows you to specify the priority of a process by assigning a priority value ranging from -20 to 19. A higher value of priority means lower priority for the process, and vice versa.
+
+You may want to change the priority of a process to adjust the amount of CPU time it is allocated by the system scheduler. For example, if you have a CPU-intensive process running on your system that is slowing down other processes, you can lower its priority to give more CPU time to other processes.
 </b></details>
 
 <details>
 <summary>Can you explain how network process/connection is established and how it's terminated?></summary><br></b>
+When a client process on one system wants to establish a connection with a server process on another system, it first creates a socket using the socket system call. The client then calls the connect system call, passing the address of the server as an argument. This causes a three-way handshake to occur between the client and server, where the two systems exchange information to establish a connection.
+
+Once the connection is established, the client and server can exchange data using the read and write system calls. When the connection is no longer needed, the client or server can terminate the connection by calling the close system call on the socket.
 </b></details>
 
 <details>
 <summary>What <code>strace</code> does? What about <code>ltrace</code>?</summary><br><b>
+Strace is a debugging tool that is used to monitor the system calls made by a process. It allows you to trace the execution of a process and see the system calls it makes, as well as the signals it receives. This can be useful for diagnosing issues with a process, such as identifying why it is hanging or crashing.
+
+Ltrace, on the other hand, is a similar tool that is used to trace the library calls made by a process. It allows you to see the function calls made by a process to shared libraries, as well as the arguments passed to those functions. This can be useful for diagnosing issues with a process that involve library calls, such as identifying why a particular library is causing a problem.
+
 </b></details>
 
 <details>
@@ -2241,6 +2276,14 @@ It's used in commands to mark the end of commands options. One common example is
 
 <details>
 <summary>What is User-mode Linux?</summary><br><b>
+In Linux, user mode is a restricted operating mode in which a user's application or process runs. User mode is a non-privileged mode that prevents user-level processes from accessing sensitive system resources directly.
+
+In user mode, an application can only access hardware resources indirectly, by calling system services or functions provided by the operating system. This ensures that the system's security and stability are maintained by preventing user processes from interfering with or damaging system resources.
+
+Additionally, user mode also provides memory protection to prevent applications from accessing unauthorized memory locations. This is done by assigning each process its own virtual memory space, which is isolated from other processes.
+
+In contrast to user mode, kernel mode is a privileged operating mode in which the operating system's kernel has full access to system resources, and can perform low-level operations, such as accessing hardware devices and managing system resources directly.
+
 </b></details>
 
 <details>
