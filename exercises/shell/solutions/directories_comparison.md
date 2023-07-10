@@ -6,25 +6,64 @@
 
 ### Solution
 
-Suppose the name of the bash script is ```dirdiff.sh```
-
 ```
-#!/bin/bash
+#!/usr/bin/env bash
 
-if test $# -ne 2
-then
-	echo -e "USAGE: ./dirdiff.sh directory1 directory2"
-	exit 1
-fi
 
-# check for the checksums. 
-# If both the checksums same, then both directories are same
-if test `ls -1 $1 | sort | md5sum | awk -F "  " '{print $1}'` == `ls -1 $2 | sort | md5sum | awk -F "  " '{print $1}'`
-then
-	echo -e "No difference between the 2 directories"
-	exit 0
-fi
+help () {
+  echo "Usage: compare <filename1> <filename2>"
+  echo
+}
 
-diff -q $1 $2
+validate_args() {
+  # Ensure that 2 arguments are passed
+  if [ $# != 2 ]
+  then
+    help
+    exit 1
+  fi
+
+  i=1
+  for dir in "$@"
+  do
+      # Validate existence of directories
+      if [ ! -d "$dir" ]
+      then
+        echo "Directory $dir does not exist"
+        exit 1
+      fi
+      echo "Directory $i: $dir"
+      i=$((i + 1))
+  done
+  echo
+}
+
+compare() {
+  echo "Comparing directories..."
+  echo
+  diff -r "$1" "$2"
+  
+  if [ $? -eq 0 ]
+  then
+  	echo "No difference"
+  fi
+  
+  exit 0
+}
+
+while getopts ":h" option; do
+   case $option in
+      h) # display Help
+         help
+         exit 0;;
+      \?) # invalid option
+         echo "Error: Invalid option"
+         exit 1;;
+   esac
+done
+
+validate_args "$@"
+compare "$1" "$2"
+
 
 ```

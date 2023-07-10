@@ -2,15 +2,11 @@
 
 :information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
 
-:bar_chart: &nbsp;There are currently **2322** exercises and questions
-
-:books: &nbsp;To learn more about DevOps and SRE, check the resources in [devops-resources](https://github.com/bregman-arie/devops-resources) repository
+:bar_chart: &nbsp;There are currently **2624** exercises and questions
 
 :warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read [FAQ page](faq.md) for more details
 
-:stop_sign: &nbsp;If you are interested in pursuing a career as DevOps engineer, learning some of the concepts mentioned here would be useful but you should know it's not about learning all the topics and technologies mentioned in this repository
-
-:busts_in_silhouette: &nbsp;Join our [DevOps community](https://www.facebook.com/groups/538897960007080) where we have discussions and share resources on DevOps
+:stop_sign: &nbsp;If you are interested in pursuing a career as DevOps engineer, learning some of the concepts mentioned here would be useful, but you should know it's not about learning all the topics and technologies mentioned in this repository
 
 :pencil: &nbsp;You can add more exercises by submitting pull requests :) Read about contribution guidelines [here](CONTRIBUTING.md)
 
@@ -22,62 +18,84 @@
 <center>
 <table>
   <tr>
-    <td align="center"><a href="exercises/devops/README.md"><img src="images/devops.png" width="75px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a></td>
-    <td align="center"><a href="exercises/cicd/README.md"><img src="images/cicd.png" width="75px;" height="75px;" alt="cicd"/><br /><b>CI/CD</b></a></td>
-    <td align="center"><a href="exercises/git/README.md"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
-    <td align="center"><a href="exercises/ansible/README.md"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
-    <td align="center"><a href="#Network"><img src="images/network.png" width="75px;" height="75px;" alt="Network"/><br /><b>Network</b></a></td>
-    <td align="center"><a href="#linux"><img src="images/linux.png" width="75px;" height="75px;" alt="Linux"/><br /><b>Linux</b></a></td>
+    <td align="center"><a href="topics/devops/README.md"><img src="images/devops.png" width="75px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a></td>
+    <td align="center"><a href="topics/git/README.md"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
+    <td align="center"><a href="#network"><img src="images/network.png" width="75px;" height="75px;" alt="Network"/><br /><b>Network</b></a></td>
+    <td align="center"><a href="#hardware"><img src="images/hardware.png" width="75px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
+    <td align="center"><a href="topics/kubernetes/README.md"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
+  </tr>
+
+  <tr>
+    <td align="center"><a href="topics/software_development/README.md"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Software Development</b></a></td>
+    <td align="center"><a href="https://github.com/bregman-arie/python-exercises"><img src="images/python.png" width="75px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
+    <td align="center"><a href="https://github.com/bregman-arie/go-exercises"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a></td>
+    <td align="center"><a href="topics/perl/README.md"><img src="images/perl.png" width="75px;" height="75px;" alt="perl"/><br /><b>Perl</b></a></td>
+    <td align="center"><a href="#regex"><img src="images/regex.png" width="75px;" height="75px;" alt="RegEx"/><br /><b>Regex</b></a></td>
+  </tr>
+
+  <tr>
+      <td align="center"><a href="topics/cloud/README.md"><img src="images/cloud.png" width="75px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a></td>
+      <td align="center"><a href="topics/aws/README.md"><img src="images/aws.png" width="100px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
+      <td align="center"><a href="topics/azure/README.md"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a></td>
+      <td align="center"><a href="topics/gcp/README.md"><img src="images/googlecloud.png" width="70px;" height="70px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
+      <td align="center"><a href="#openstack/README.md"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a></td>
+  </tr>
+
+  <tr>
+      <td align="center"><a href="#operating-system"><img src="images/os.png" width="75px;" height="75px;" alt="Operating System"/><br /><b>Operating System</b></a></td>
+      <td align="center"><a href="topics/linux/README.md"><img src="images/logos/linux.png" width="75px;" height="75px;" alt="Linux"/><br /><b>Linux</b></a></td>
+      <td align="center"><a href="#virtualization"><img src="images/virtualization.png" width="75px;" height="75px;" alt="Virtualization"/><br /><b>Virtualization</b></a></td>
+      <td align="center"><a href="topics/dns/README.md"><img src="images/dns.png" width="75px;" height="75px;" alt="DNS"/><br /><b>DNS</b></a></td>
+      <td align="center"><a href="topics/shell/README.md"><img src="images/bash.png" width="75px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
+  </tr>
+
+  <tr>
+      <td align="center"><a href="topics/databases/README.md"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
+      <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
+      <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a></td>
+      <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
+      <td align="center"><a href="#big-data"><img src="images/big-data.png" width="75px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
 
   </tr>
+
   <tr>
-    <td align="center"><a href="exercises/software_development/README.md"><img src="images/programming.png" width="75px;" height="75px;" alt="programming"/><br /><b>Software Development</b></a></td>
-    <td align="center"><a href="https://github.com/bregman-arie/python-exercises"><img src="images/python.png" width="75px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
-    <td align="center"><a href="#go"><img src="images/Go.png" width="75px;" height="75px;" alt="go"/><br /><b>Go</b></a></td>
-    <td align="center"><a href="exercises/shell/README.md"><img src="images/bash.png" width="75px;" height="75px;" alt="Bash"/><br /><b>Shell Scripting</b></a></td>
-    <td align="center"><a href="exercises/kubernetes/README.md"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
-    <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
+      <td align="center"><a href="topics/cicd/README.md"><img src="images/cicd.png" width="75px;" height="75px;" alt="cicd"/><br /><b>CI/CD</b></a></td>
+      <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
+      <td align="center"><a href="topics/containers/README.md"><img src="images/containers.png" width="75px;" height="75px;" alt="Containers"/><br /><b>Containers</b></a></td>
+      <td align="center"><a href="topics/openshift/README.md"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
+      <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
   </tr>
+
   <tr>
-    <td align="center"><a href="exercises/cloud/README.md"><img src="images/cloud.png" width="75px;" height="75px;" alt="Cloud"/><br /><b>Cloud</b></a></td>
-    <td align="center"><a href="exercises/aws/README.md"><img src="images/aws.png" width="100px;" height="75px;" alt="aws"/><br /><b>AWS</b></a></td>
-    <td align="center"><a href="exercises/azure/README.md"><img src="images/azure.png" width="75px;" height="75px;" alt="azure"/><br /><b>Azure</b></a></td>
-    <td align="center"><a href="#gcp"><img src="images/googlecloud.png" width="70px;" height="70px;" alt="Google Cloud Platform"/><br /><b>Google Cloud Platform</b></a></td>
-    <td align="center"><a href="#openstack"><img src="images/openstack.png" width="75px;" height="75px;" alt="openstack"/><br /><b>OpenStack</b></a></td>
-    <td align="center"><a href="exercises/security/README.md"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="#operating-system"><img src="images/os.png" width="75px;" height="75px;" alt="Operating System"/><br /><b>Operating System</b></a></td>
-    <td align="center"><a href="#monitoring"><img src="images/monitoring.png" width="75px;" height="75px;" alt="Monitoring"/><br /><b>Monitoring</b></a></td>
-    <td align="center"><a href="#elastic"><img src="images/elastic.png" width="75px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
-    <td align="center"><a href="#virtualization"><img src="images/virtualization.png" width="75px;" height="75px;" alt="Virtualization"/><br /><b>Virtualization</b></a></td>
-    <td align="center"><a href="exercises/dns/README.md"><img src="images/dns.png" width="75px;" height="75px;" alt="DNS"/><br /><b>DNS</b></a></td>
-    <td align="center"><a href="#Misc"><img src="images/general.png" width="75px;" height="75px;" alt="Misc"/><br /><b>Misc</b></a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="#testing"><img src="images/testing.png" width="75px;" height="75px;" alt="Testing"/><br /><b>Testing</b></a></td>
-    <td align="center"><a href="#databases"><img src="images/databases.png" width="75px;" height="75px;" alt="Databases"/><br /><b>Databases</b></a></td>
-    <td align="center"><a href="#regex"><img src="images/regex.png" width="75px;" height="75px;" alt="RegEx"/><br /><b>Regex</b></a></td>
-    <td align="center"><a href="#system-design"><img src="images/design.png" width="75px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
-    <td align="center"><a href="#hardware"><img src="images/hardware.png" width="75px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
-    <td align="center"><a href="#big-data"><img src="images/big-data.png" width="75px;" height="75px;" alt="Big Data"/><br /><b>Big Data</b></a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="#certificates"><img src="images/certificates.png" width="75px;" height="75px;" alt="Certificates"/><br /><b>Certificates</b></a></td>
-    <td align="center"><a href="exercises/containers/README.md"><img src="images/containers.png" width="75px;" height="75px;" alt="Containers"/><br /><b>Containers</b></a></td>
-    <td align="center"><a href="#sql"><img src="images/sql.png" width="75px;" height="75px;" alt="sql"/><br /><b>SQL</b></a></td>
-    <td align="center"><a href="exercises/openshift/README.md"><img src="images/openshift.png" width="75px;" height="75px;" alt="OpenShift"/><br /><b>OpenShift</b></a></td>
-    <td align="center"><a href="#storage"><img src="images/storage.png" width="75px;" height="75px;" alt="Storage"/><br /><b>Storage</b></a></td>
-    <td align="center"><a href="exercises/soft_skills/README.md"><img src="images/HR.png" width="75px;" height="75px;" alt="HR"/><br /><b>Soft Skills</b></a></td>
-  </tr>
-  <tr>
-      <td align="center"><a href="exercises/terraform/README.md"><img src="images/terraform.png" width="75px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
-      <td align="center"><a href="#mongo"><img src="images/mongo.png" width="75px;" height="75px;" alt="Mongo"/><br /><b>Mongo</b></a></td>
+      <td align="center"><a href="topics/terraform/README.md"><img src="images/terraform.png" width="75px;" height="75px;" alt="Terraform"/><br /><b>Terraform</b></a></td>
       <td align="center"><a href="#puppet"><img src="images/puppet.png" width="75px;" height="75px;" alt="puppet"/><br /><b>Puppet</b></a></td>
       <td align="center"><a href="#distributed"><img src="images/distributed.png" width="75px;" height="75px;" alt="Distributed"/><br /><b>Distributed</b></a></td>
       <td align="center"><a href="#questions-you-ask"><img src="images/you.png" width="75px;" height="75px;" alt="you"/><br /><b>Questions you can ask</b></a></td>
-      <td align="center"><a href="exercises/perl/README.md"><img src="images/perl.png" width="75px;" height="75px;" alt="perl"/><br /><b>Perl</b></a></td>
+      <td align="center"><a href="topics/ansible/README.md"><img src="images/ansible.png" width="75px;" height="75px;" alt="ansible"/><br /><b>Ansible</b></a></td>
   </tr>
+
+  <tr>
+      <td align="center"><a href="topics/observability/README.md"><img src="images/observability.png" width="75px;" height="75px;" alt="observability"/><br /><b>Observability</b></a></td>
+      <td align="center"><a href="#prometheus"><img src="images/prometheus.png" width="75px;" height="75px;" alt="Prometheus"/><br /><b>Prometheus</b></a></td>
+      <td align="center"><a href="topics/circleci/README.md"><img src="images/logos/circleci.png" width="70px;" height="70px;" alt="Circle CI"/><br /><b>Circle CI</b></a></td>
+      <td align="center"><a href="topics/datadog/README.md"><img src="images/logos/datadog.png" width="80px;" height="80px;" alt="DataDog"/><br /><b></b></a></td>
+      <td align="center"><a href="topics/grafana/README.md"><img src="images/logos/grafana.png" width="80px;" height="80px;" alt="Grafana"/><br /><b>Grafana</b></a></td>
+  </tr>
+
+  <tr>
+    <td align="center"><a href="topics/argo/README.md"><img src="images/logos/argo.png" width="80px;" height="80px;" alt="Argo"/><br /><b>Argo</b></a></td>
+    <td align="center"><a href="topics/soft_skills/README.md"><img src="images/HR.png" width="75px;" height="75px;" alt="HR"/><br /><b>Soft Skills</b></a></td>
+    <td align="center"><a href="topics/security/README.md"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
+    <td align="center"><a href="#system-design"><img src="images/design.png" width="75px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
+   </tr>
+
+   <tr>
+    <td align="center"><a href="topics/chaos_engineering/README.md"><img src="images/logos/chaos_engineering.png" width="75px;" height="75px;" alt="Chaos Engineering"/><br /><b>Chaos Engineering</b></a></td>
+    <td align="center"><a href="#Misc"><img src="images/general.png" width="75px;" height="75px;" alt="Misc"/><br /><b>Misc</b></a></td>
+    <td align="center"><a href="#elastic"><img src="images/elastic.png" width="75px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
+    <td align="center"><a href="topics/kafka/README.md"><img src="images/logos/kafka.png" width="85px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
+   </tr>
+   
 </table>
 </center>
 <!-- markdownlint-enable -->
@@ -87,35 +105,28 @@
 ## Network
 
 <details>
-<summary>What do you need in order to communicate?</summary><br><b>
+<summary>In general, what do you need in order to communicate?</summary><br><b>
 
   - A common language (for the two ends to understand)
-  - A way to address who do you want to communicate with
-  - A Connection (so the content of of the communication can reach the recipients)
+  - A way to address who you want to communicate with
+  - A Connection (so the content of the communication can reach the recipients)
+
 </b></details>
 
 <details>
 <summary>What is TCP/IP?</summary><br><b>
 
 A set of protocols that define how two or more devices can communicate with each other.
+
 To learn more about TCP/IP, read [here](http://www.penguintutor.com/linux/basic-network-reference)
-</b></details>
 
-<details>
-<summary>What is APIPA?</summary><br><b>
-APIPA is a set of it addresses that devices are allocated
-when the main DHCP server is not reachable
-</b></details>
-
-<details>
-<summary>What ip range does APIPA use?</summary><br><b>
-APIPA uses the ip range: 169.254.0.1 - 169.254.255.254.
 </b></details>
 
 <details>
 <summary>What is Ethernet?</summary><br><b>
 
 Ethernet simply refers to the most common type of Local Area Network (LAN) used today. A LAN—in contrast to a WAN (Wide Area Network), which spans a larger geographical area—is a connected network of computers in a small area, like your office, college campus, or even home.
+
 </b></details>
 
 <details>
@@ -130,7 +141,7 @@ Packets that are sent on the ethernet are always coming from a MAC address and s
 <details>
 <summary>When is this MAC address used?: ff:ff:ff:ff:ff:ff</summary><br><b>
 
-When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. Ethernet broadcasts are used to resolve IP addresses to MAC addresses (by ARP) at the datalink layer .
+When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. Ethernet broadcasts are used to resolve IP addresses to MAC addresses (by ARP) at the data link layer.
 </b></details>
 
 <details>
@@ -140,39 +151,22 @@ An Internet Protocol address (IP address) is a numerical label assigned to each 
 </b></details>
 
 <details>
-<summary>Explain subnet mask and given an example</summary><br><b>
+<summary>Explain the subnet mask and give an example</summary><br><b>
 
-A Subnet mask is a 32-bit number that masks an IP address, and divides the IP address into network address and host address. Subnet Mask is made by setting network bits to all "1"s and setting host bits to all "0"s. Within a given network, two host addresses are reserved for special purpose, and cannot be assigned to hosts. The "0" address is assigned a network address and "255" is assigned to a broadcast address, and they cannot be assigned to hosts.
+A Subnet mask is a 32-bit number that masks an IP address and divides the IP addresses into network addresses and host addresses. Subnet Mask is made by setting network bits to all "1"s and setting host bits to all "0"s. Within a given network, out of the total usable host addresses, two are always reserved for specific purposes and cannot be allocated to any host. These are the first address, which is reserved as a network address (a.k.a network ID), and the last address used for network broadcast.
 
-**For Example**
+[Example](https://github.com/philemonnwanne/projects/tree/main/exercises/exe-09)
 
-```
-| Address Class | No of Network Bits | No of Host Bits | Subnet mask     | CIDR notation |
-| ------------- | ------------------ | --------------- | --------------- | ------------- |
-| A             | 8                  | 24              | 255.0.0.0       | /8            |
-| A             | 9                  | 23              | 255.128.0.0     | /9            |
-| A             | 12                 | 20              | 255.240.0.0     | /12           |
-| A             | 14                 | 18              | 255.252.0.0     | /14           |
-| B             | 16                 | 16              | 255.255.0.0     | /16           |
-| B             | 17                 | 15              | 255.255.128.0   | /17           |
-| B             | 20                 | 12              | 255.255.240.0   | /20           |
-| B             | 22                 | 10              | 255.255.252.0   | /22           |
-| C             | 24                 | 8               | 255.255.255.0   | /24           |
-| C             | 25                 | 7               | 255.255.255.128 | /25           |
-| C             | 28                 | 4               | 255.255.255.240 | /28           |
-| C             | 30                 | 2               | 255.255.255.252 | /30           |
-
-```
 </b></details>
 
 <details>
 <summary>What is a private IP address? In which scenarios/system designs, one should use it?</summary><br><b>
-Private IP addresses are assigned to the hosts in the same network to communicate among one another. As the name "private" suggests, the devices having the priate IP addresses assigned can't be reached by the devices from any external network. For example, if I am living in a hostel and I want my hostelmates to join the game server I have hosted, I will ask them to join via my server's private IP address, since the network is local to the hostel.
+Private IP addresses are assigned to the hosts in the same network to communicate with one another. As the name "private" suggests, the devices having the private IP addresses assigned can't be reached by the devices from any external network. For example, if I am living in a hostel and I want my hostel mates to join the game server I have hosted, I will ask them to join via my server's private IP address, since the network is local to the hostel.
 </b></details>
 
 <details>
 <summary>What is a public IP address? In which scenarios/system designs, one should use it?</summary><br><b>
-A public IP address is the public facing IP address. In the event that you was hosting a game server that you want your friends to join, you will give your friends your public IP address to allow their computers to identify and locate your network and server in order for the connection to take place. One time that you would not need to use a public facing IP address is in the event that you was playing with friends who was connected to the same network as you, in that case, you would use a private ip address. In order for someone to be able to connect to your server that is located internally, you will have to setup a port forward to tell your router to allow traffic from the public domain into your network and vice versa.
+A public IP address is a public-facing IP address. In the event that you were hosting a game server that you want your friends to join, you will give your friends your public IP address to allow their computers to identify and locate your network and server in order for the connection to take place. One time that you would not need to use a public-facing IP address is in the event that you were playing with friends who were connected to the same network as you, in that case, you would use a private IP address. In order for someone to be able to connect to your server that is located internally, you will have to set up a port forward to tell your router to allow traffic from the public domain into your network and vice versa.
 </b></details>
 
 <details>
@@ -180,17 +174,17 @@ A public IP address is the public facing IP address. In the event that you was h
 
 - Application: user end (HTTP is here)
 - Presentation: establishes context between application-layer entities (Encryption is here)
-- Session: establishes, manages and terminates the connections
+- Session: establishes, manages, and terminates the connections
 - Transport: transfers variable-length data sequences from a source to a destination host (TCP & UDP are here)
 - Network: transfers datagrams from one network to another (IP is here)
 - Data link: provides a link between two directly connected nodes (MAC is here)
-- Physical: the electrical and physical spec the data connection (Bits are here)
+- Physical: the electrical and physical spec of the data connection (Bits are here)
 
 You can read more about the OSI model in [penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference)
 </b></details>
 
 <details>
-<summary>For each of the following determine to which OSI layer it belongs:
+<summary>For each of the following determines to which OSI layer it belongs:
 
   * Error correction
   * Packets routing
@@ -205,13 +199,13 @@ You can read more about the OSI model in [penguintutor.com](http://www.penguintu
   * MAC address - Data link
   * IP address - Network
   * Terminate connections - Session
-  * 3 way handshake - Transport
+  * 3-way handshake - Transport
 </b></details>
 
 <details>
 <summary>What delivery schemes are you familiar with?</summary><br><b>
 
-Unitcast: One to one communication where there is one sender and one receiver.
+Unicast: One-to-one communication where there is one sender and one receiver.
 
 Broadcast: Sending a message to everyone in the network. The address ff:ff:ff:ff:ff:ff is used for broadcasting.
            Two common protocols which use broadcast are ARP and DHCP.
@@ -223,16 +217,16 @@ Multicast: Sending a message to a group of subscribers. It can be one-to-many or
 <summary>What is CSMA/CD? Is it used in modern ethernet networks?</summary><br><b>
 
 CSMA/CD stands for Carrier Sense Multiple Access / Collision Detection.
-Its primarily focus it to manage access to shared medium/bus where only one host can transmit at a given point of time.
+Its primary focus is to manage access to a shared medium/bus where only one host can transmit at a given point in time.
 
 CSMA/CD algorithm:
 
-1. Before sending a frame, it checks whether another host already transmitting a frame.
-2. If no one transmitting, it starts transmitting the frame.
-3. If two hosts transmitted at the same time, we have a collision.
-4. Both hosts stop sending the frame and they send to everyone a 'jam signal' notifying everyone that a collision occurred
-5. They are waiting for a random time before sending again
-6. Once each host waited for a random time, they try to send the frame again and so the
+1. Before sending a frame, it checks whether another host is already transmitting a frame.
+2. If no one is transmitting, it starts transmitting the frame.
+3. If two hosts transmit at the same time, we have a collision.
+4. Both hosts stop sending the frame and they send everyone a 'jam signal' notifying everyone that a collision occurred
+5. They are waiting for a random time before sending it again
+6. Once each host waited for a random time, they try to send the frame again and so the cycle starts again
 </b></details>
 
 <details>
@@ -241,24 +235,46 @@ CSMA/CD algorithm:
   * router
   * switch
   * hub</summary><br><b>
+
+A router, switch, and hub are all network devices used to connect devices in a local area network (LAN). However, each device operates differently and has its specific use cases. Here is a brief description of each device and the differences between them:
+
+1. Router: a network device that connects multiple network segments together. It operates at the network layer (Layer 3) of the OSI model and uses routing protocols to direct data between networks. Routers use IP addresses to identify devices and route data packets to the correct destination.
+2. Switch: a network device that connects multiple devices on a LAN. It operates at the data link layer (Layer 2) of the OSI model and uses MAC addresses to identify devices and direct data packets to the correct destination. Switches allow devices on the same network to communicate with each other more efficiently and can prevent data collisions that can occur when multiple devices send data simultaneously.
+3. Hub: a network device that connects multiple devices through a single cable and is used to connect multiple devices without segmenting a network. However, unlike a switch, it operates at the physical layer (Layer 1) of the OSI model and simply broadcasts data packets to all devices connected to it, regardless of whether the device is the intended recipient or not. This means that data collisions can occur, and the network's efficiency can suffer as a result. Hubs are generally not used in modern network setups, as switches are more efficient and provide better network performance.
 </b></details>
 
 <details>
-<summary>How does a router works?</summary><br><b>
+<summary>What is a "Collision Domain"?</summary><br><b>
+A collision domain is a network segment in which devices can potentially interfere with each other by attempting to transmit data at the same time. When two devices transmit data at the same time, it can cause a collision, resulting in lost or corrupted data. In a collision domain, all devices share the same bandwidth, and any device can potentially interfere with the transmission of data by other devices.
+</b></details>
 
-A router is a physical or virtual appliance that passes information between two or more packet-switched computer networks. A router inspects a given data packet's destination Internet Protocol address (IP address), calculates the best way for it to reach its destination and then forwards it accordingly.
+<details>
+<summary>What is a "Broadcast Domain"?</summary><br><b>
+A broadcast domain is a network segment in which all devices can communicate with each other by sending broadcast messages. A broadcast message is a message that is sent to all devices in a network rather than a specific device. In a broadcast domain, all devices can receive and process broadcast messages, regardless of whether the message was intended for them or not.
+</b></details>
+
+<details>
+<summary>three computers connected to a switch. How many collision domains are there? How many broadcast domains?</summary><br><b>
+
+Three collision domains and one broadcast domain
+</b></details>
+
+<details>
+<summary>How does a router work?</summary><br><b>
+
+A router is a physical or virtual appliance that passes information between two or more packet-switched computer networks. A router inspects a given data packet's destination Internet Protocol address (IP address), calculates the best way for it to reach its destination, and then forwards it accordingly.
 
 </b></details>
 
 <details>
 <summary>What is NAT?</summary><br><b>
 
- Network Address Translation (NAT) is a process in which one or more local IP address is translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts.
+ Network Address Translation (NAT) is a process in which one or more local IP addresses are translated into one or more Global IP address and vice versa in order to provide Internet access to the local hosts.
 
 </b></details>
 
 <details>
-<summary>What is a proxy? How does it works? What do we need it for?</summary><br><b>
+<summary>What is a proxy? How does it work? What do we need it for?</summary><br><b>
 
 A proxy server acts as a gateway between you and the internet. It’s an intermediary server separating end users from the websites they browse.
 
@@ -268,13 +284,13 @@ Proxy servers provide varying levels of functionality, security, and privacy dep
 </b></details>
 
 <details>
-<summary>What is TCP? How does it works? What is the 3 way handshake?</summary><br><b>
+<summary>What is TCP? How does it work? What is the 3-way handshake?</summary><br><b>
 
-TCP 3-way handshake or three-way handshake is a process which is used in a TCP/IP network to make a connection between server and client.
+TCP 3-way handshake or three-way handshake is a process that is used in a TCP/IP network to make a connection between server and client.
 
 A three-way handshake is primarily used to create a TCP socket connection. It works when:
 
-- A client node sends a SYN data packet over an IP network to a server on the same or an external network. The objective of this packet is to ask/infer if the server is open for new connections.
+- A client node sends an SYN data packet over an IP network to a server on the same or an external network. The objective of this packet is to ask/infer if the server is open for new connections.
 - The target server must have open ports that can accept and initiate new connections. When the server receives the SYN packet from the client node, it responds and returns a confirmation receipt – the ACK packet or SYN/ACK packet.
 - The client node receives the SYN/ACK from the server and responds with an ACK packet.
 </b></details>
@@ -282,19 +298,31 @@ A three-way handshake is primarily used to create a TCP socket connection. It wo
 <details>
 <summary>What is round-trip delay or round-trip time?</summary><br><b>
 
-From [wikipedia](https://en.wikipedia.org/wiki/Round-trip_delay): "the length of time it takes for a signal to be sent plus the length of time it takes for an acknowledgement of that signal to be received"
+From [wikipedia](https://en.wikipedia.org/wiki/Round-trip_delay): "the length of time it takes for a signal to be sent plus the length of time it takes for an acknowledgment of that signal to be received"
 
 Bonus question: what is the RTT of LAN?
 </b></details>
 
 <details>
-<summary>How does SSL handshake work?</summary><br><b>
+<summary>How does an SSL handshake work?</summary><br><b>
+SSL handshake is a process that establishes a secure connection between a client and a server.
+
+1. The client sends a Client Hello message to the server, which includes the client's version of the SSL/TLS protocol, a list of the cryptographic algorithms supported by the client, and a random value.
+2. The server responds with a Server Hello message, which includes the server's version of the SSL/TLS protocol, a random value, and a session ID.
+3. The server sends a Certificate message, which contains the server's certificate.
+4. The server sends a Server Hello Done message, which indicates that the server is done sending messages for the Server Hello phase.
+5. The client sends a Client Key Exchange message, which contains the client's public key.
+6. The client sends a Change Cipher Spec message, which notifies the server that the client is about to send a message encrypted with the new cipher spec.
+7. The client sends an Encrypted Handshake Message, which contains the pre-master secret encrypted with the server's public key.
+8. The server sends a Change Cipher Spec message, which notifies the client that the server is about to send a message encrypted with the new cipher spec.
+9. The server sends an Encrypted Handshake Message, which contains the pre-master secret encrypted with the client's public key.
+10. The client and server can now exchange application data.
 </b></details>
 
 <details>
 <summary>What is the difference between TCP and UDP?</summary><br><b>
 
-TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between client and server and doesn't handle package order. This makes UDP more lightweight than TCP and a perfect candidate for services like streaming.
+TCP establishes a connection between the client and the server to guarantee the order of the packages, on the other hand, UDP does not establish a connection between the client and server and doesn't handle package orders. This makes UDP more lightweight than TCP and a perfect candidate for services like streaming.
 
 [Penguintutor.com](http://www.penguintutor.com/linux/basic-network-reference) provides a good explanation.
 </b></details>
@@ -304,13 +332,13 @@ TCP establishes a connection between the client and the server to guarantee the 
 </b></details>
 
 <details>
-<summary>Explain "default gateway"</summary><br><b>
+<summary>Explain the "default gateway"</summary><br><b>
 
 A default gateway serves as an access point or IP router that a networked computer uses to send information to a computer in another network or the internet.
 </b></details>
 
 <details>
-<summary>What is ARP? How does it works?</summary><br><b>
+<summary>What is ARP? How does it work?</summary><br><b>
 
 ARP stands for Address Resolution Protocol. When you try to ping an IP address on your local network, say 192.168.1.1, your system has to turn the IP address 192.168.1.1 into a MAC address. This involves using ARP to resolve the address, hence its name.
 
@@ -318,71 +346,121 @@ Systems keep an ARP look-up table where they store information about what IP add
 </b></details>
 
 <details>
-<summary>What is TTL? What does it helps to prevent?</summary><br><b>
+<summary>What is TTL? What does it help to prevent?</summary><br><b>
+
+- TTL (Time to Live) is a value in an IP (Internet Protocol) packet that determines how many hops or routers a packet can travel before it is discarded. Each time a packet is forwarded by a router, the TTL value is decreased by one. When the TTL value reaches zero, the packet is dropped, and an ICMP (Internet Control Message Protocol) message is sent back to the sender indicating that the packet has expired.
+- TTL is used to prevent packets from circulating indefinitely in the network, which can cause congestion and degrade network performance.
+- It also helps to prevent packets from being trapped in routing loops, where packets continuously travel between the same set of routers without ever reaching their destination.
+- In addition, TTL can be used to help detect and prevent IP spoofing attacks, where an attacker attempts to impersonate another device on the network by using a false or fake IP address. By limiting the number of hops that a packet can travel, TTL can help prevent packets from being routed to destinations that are not legitimate.
 </b></details>
 
 <details>
-<summary>What is DHCP? How does it works?</summary><br><b>
+<summary>What is DHCP? How does it work?</summary><br><b>
 
-It stands for Dynamic Host Configuration Protocol, and allocates IP addresses, subnet masks and gateways to hosts. This is how it works:
+It stands for Dynamic Host Configuration Protocol and allocates IP addresses, subnet masks, and gateways to hosts. This is how it works:
 
-* A host upon entering a network, broadcasts a message in search of a DHCP server (DHCP DISCOVER)
+* A host upon entering a network broadcasts a message in search of a DHCP server (DHCP DISCOVER)
 * An offer message is sent back by the DHCP server as a packet containing lease time, subnet mask, IP addresses, etc (DHCP OFFER)
-* Depending on which offer accepted, the client sends back a reply broadcast letting all DHCP servers know (DHCP REQUEST)
-* Server sends an acknowledgment (DHCP ACK)
+* Depending on which offer is accepted, the client sends back a reply broadcast letting all DHCP servers know (DHCP REQUEST)
+* The server sends an acknowledgment (DHCP ACK)
 
 Read more [here](https://linuxjourney.com/lesson/dhcp-overview)
 </b></details>
 
 <details>
-<summary>Can you have two DHCP servers in the same network? How it works?</summary><br><b>
+<summary>Can you have two DHCP servers on the same network? How does it work?</summary><br><b>
+
+It is possible to have two DHCP servers on the same network, however, it is not recommended, and it is important to configure them carefully to prevent conflicts and configuration problems.
+- When two DHCP servers are configured on the same network, there is a risk that both servers will assign IP addresses and other network configuration settings to the same device, which can cause conflicts and connectivity issues. Additionally, if the DHCP servers are configured with different network settings or options, devices on the network may receive conflicting or inconsistent configuration settings.
+- However, in some cases, it may be necessary to have two DHCP servers on the same network, such as in large networks where one DHCP server may not be able to handle all the requests. In such cases, DHCP servers can be configured to serve different IP address ranges or different subnets, so they do not interfere with each other.
 </b></details>
 
 <details>
-<summary>What is SSL tunneling? How does it works?</summary><br><b>
+<summary>What is SSL tunneling? How does it work?</summary><br><b>
+
+- SSL (Secure Sockets Layer) tunneling is a technique used to establish a secure, encrypted connection between two endpoints over an insecure network, such as the Internet. The SSL tunnel is created by encapsulating the traffic within an SSL connection, which provides confidentiality, integrity, and authentication.
+
+Here's how SSL tunneling works:
+
+1. A client initiates an SSL connection to a server, which involves a handshake process to establish the SSL session.
+2. Once the SSL session is established, the client and server negotiate encryption parameters, such as the encryption algorithm and key length, then exchange digital certificates to authenticate each other.
+3. The client then sends traffic through the SSL tunnel to the server, which decrypts the traffic and forwards it to its destination.
+4. The server sends traffic back through the SSL tunnel to the client, which decrypts the traffic and forwards it to the application.
 </b></details>
 
 <details>
 <summary>What is a socket? Where can you see the list of sockets in your system?</summary><br><b>
+
+- A socket is a software endpoint that enables two-way communication between processes over a network. Sockets provide a standardized interface for network communication, allowing applications to send and receive data across a network. To view the list of open sockets on a Linux system: 
+***netstat -an***
+- This command displays a list of all open sockets, along with their protocol, local address, foreign address, and state.
 </b></details>
 
 <details>
 <summary>What is IPv6? Why should we consider using it if we have IPv4?</summary><br><b>
+
+- IPv6 (Internet Protocol version 6) is the latest version of the Internet Protocol (IP), which is used to identify and communicate with devices on a network. IPv6 addresses are 128-bit addresses and are expressed in hexadecimal notation, such as 2001:0db8:85a3:0000:0000:8a2e:0370:7334.
+
+There are several reasons why we should consider using IPv6 over IPv4:
+
+1. Address space: IPv4 has a limited address space, which has been exhausted in many parts of the world. IPv6 provides a much larger address space, allowing for trillions of unique IP addresses.
+2. Security: IPv6 includes built-in support for IPsec, which provides end-to-end encryption and authentication for network traffic.
+3. Performance: IPv6 includes features that can help to improve network performance, such as multicast routing, which allows a single packet to be sent to multiple destinations simultaneously.
+4. Simplified network configuration: IPv6 includes features that can simplify network configuration, such as stateless autoconfiguration, which allows devices to automatically configure their own IPv6 addresses without the need for a DHCP server.
+5. Better mobility support: IPv6 includes features that can improve mobility support, such as Mobile IPv6, which allows devices to maintain their IPv6 addresses as they move between different networks.
 </b></details>
 
 <details>
 <summary>What is VLAN?</summary><br><b>
+
+- A VLAN (Virtual Local Area Network) is a logical network that groups together a set of devices on a physical network, regardless of their physical location. VLANs are created by configuring network switches to assign a specific VLAN ID to frames sent by devices connected to a specific port or group of ports on the switch.
 </b></details>
 
 <details>
 <summary>What is MTU?</summary><br><b>
+	
+MTU stands for Maximum Transmission Unit. It's the size of the largest PDU (protocol Data Unit) that can be sent in a single transaction.
 </b></details>
 
 <details>
 <summary>What happens if you send a packet that is bigger than the MTU?</summary><br><b>
+	
+With the IPv4 protocol, the router can fragment the PDU and then send all the fragmented PDU through the transaction.
+	
+With IPv6 protocol, it issues an error to the user's computer.
 </b></details>
 
 <details>
-<summary>True or False?. Ping is using UDP because it doesn't care about reliable connection</summary><br><b>
+<summary>True or False? Ping is using UDP because it doesn't care about reliable connection</summary><br><b>
+
+False. Ping is actually using ICMP (Internet Control Message Protocol) which is a network protocol used to send diagnostic messages and control messages related to network communication.
 </b></details>
 
 <details>
 <summary>What is SDN?</summary><br><b>
+
+- SDN stands for Software-Defined Networking. It is an approach to network management that emphasizes the centralization of network control, enabling administrators to manage network behavior through a software abstraction.
+- In a traditional network, network devices such as routers, switches, and firewalls are configured and managed individually, using specialized software or command-line interfaces. In contrast, SDN separates the network control plane from the data plane, allowing administrators to manage network behavior through a centralized software controller.
 </b></details>
 
 <details>
 <summary>What is ICMP? What is it used for?</summary><br><b>
+
+- ICMP stands for Internet Control Message Protocol. It is a protocol used for diagnostic and control purposes in IP networks. It is a part of the Internet Protocol suite, operating at the network layer.
+
+ICMP messages are used for a variety of purposes, including:
+1. Error reporting: ICMP messages are used to report errors that occur in the network, such as a packet that could not be delivered to its destination.
+2. Ping: ICMP is used to send ping messages, which are used to test whether a host or network is reachable and to measure the round-trip time for packets.
+3. Path MTU discovery: ICMP is used to discover the Maximum Transmission Unit (MTU) of a path, which is the largest packet size that can be transmitted without fragmentation.
+4. Traceroute: ICMP is used by the traceroute utility to trace the path that packets take through the network.
+5. Router discovery: ICMP is used to discover the routers in a network.
 </b></details>
 
 <details>
 <summary>What is NAT? How does it work?</summary><br><b>
 
-NAT stands for network address translation. It’s a way to map multiple local private addresses to a public one before transferring the information. Organizations that want multiple devices to employ a single IP address use NAT, as do most home routers.
-For example, your computer's private IP could be 192.168.1.100, but your router maps the traffic to it's public IP (e.g. 1.1.1.1). Any device on the internet would see the traffic coming from your public IP (1.1.1.1) instead of your private IP (192.168.1.100).
-</b></details>
-
-<details>
-<summary>Which factors affect network performances</summary><br><b>
+NAT stands for Network Address Translation. It’s a way to map multiple local private addresses to a public one before transferring the information. Organizations that want multiple devices to employ a single IP address use NAT, as do most home routers.
+For example, your computer's private IP could be 192.168.1.100, but your router maps the traffic to its public IP (e.g. 1.1.1.1). Any device on the internet would see the traffic coming from your public IP (1.1.1.1) instead of your private IP (192.168.1.100).
 </b></details>
 
 <details>
@@ -406,34 +484,64 @@ For example, your computer's private IP could be 192.168.1.100, but your router 
   * SFTP - 22
 </b></details>
 
-#### Network - Data and Control planes
-
 <details>
-<summary>What "control plane" refers to?</summary><br><b>
+<summary>Which factors affect network performance?</summary><br><b>
 
-The control plane is the part of the network that decides how to route and forward packets to a different location.
+Several factors can affect network performance, including:
+
+1. Bandwidth: The available bandwidth of a network connection can significantly impact its performance. Networks with limited bandwidth can experience slow data transfer rates, high latency, and poor responsiveness.
+2. Latency: Latency refers to the delay that occurs when data is transmitted from one point in a network to another. High latency can result in slow network performance, especially for real-time applications like video conferencing and online gaming.
+3. Network congestion: When too many devices are using a network at the same time, network congestion can occur, leading to slow data transfer rates and poor network performance.
+4. Packet loss: Packet loss occurs when packets of data are dropped during transmission. This can result in slower network speeds and lower overall network performance.
+5. Network topology: The physical layout of a network, including the placement of switches, routers, and other network devices, can impact network performance.
+6. Network protocol: Different network protocols have different performance characteristics, which can impact network performance. For example, TCP is a reliable protocol that can guarantee the delivery of data, but it can also result in slower performance due to the overhead required for error checking and retransmission.
+7. Network security: Security measures such as firewalls and encryption can impact network performance, especially if they require significant processing power or introduce additional latency.
+8. Distance: The physical distance between devices on a network can impact network performance, especially for wireless networks where signal strength and interference can affect connectivity and data transfer rates.
 </b></details>
 
 <details>
-<summary>What "data plane" refers to?</summary><br><b>
+<summary>What is APIPA?</summary><br><b>
 
-The data plane is the part of the network that actually forwards the data/packets.
+APIPA is a set of IP addresses that devices are allocated
+when the main DHCP server is not reachable
+
 </b></details>
 
 <details>
-<summary>What "management plane" refers to?</summary><br><b>
+<summary>What IP range does APIPA use?</summary><br><b>
 
-Refers to monitoring and management functions.
+APIPA uses the IP range: 169.254.0.1 - 169.254.255.254.
+
+</b></details>
+
+#### Control Plane and Data Plane
+
+<details>
+<summary>What does "control plane" refer to?</summary><br><b>
+
+The control plane is a part of the network that decides how to route and forward packets to a different location.
 </b></details>
 
 <details>
-<summary>To which plane (data, control, ...) is creating routing tables belongs to?</summary><br><b>
+<summary>What does "data plane" refer to?</summary><br><b>
+
+The data plane is a part of the network that actually forwards the data/packets.
+</b></details>
+
+<details>
+<summary>What does "management plane" refer to?</summary><br><b>
+
+It refers to monitoring and management functions.
+</b></details>
+
+<details>
+<summary>To which plane (data, control, ...) does creating routing tables belong to?</summary><br><b>
 
 Control Plane.
 </b></details>
 
 <details>
-<summary>Explain Spanning Tree Protocol (STP)</summary><br><b>
+<summary>Explain Spanning Tree Protocol (STP).</summary><br><b>
 </b></details>
 
 <details>
@@ -441,7 +549,7 @@ Control Plane.
 </b></details>
 
 <details>
-<summary>What is Asymmetric Routing? How do deal with it?</summary><br><b>
+<summary>What is Asymmetric Routing? How to deal with it?</summary><br><b>
 </b></details>
 
 <details>
@@ -449,11 +557,11 @@ Control Plane.
 </b></details>
 
 <details>
-<summary>What is GRE? How does it works?</summary><br><b>
+<summary>What is GRE? How does it work?</summary><br><b>
 </b></details>
 
 <details>
-<summary>What is VXLAN? How does it works?</summary><br><b>
+<summary>What is VXLAN? How does it work?</summary><br><b>
 </b></details>
 
 <details>
@@ -461,13 +569,24 @@ Control Plane.
 </b></details>
 
 <details>
-<summary>Explain OSPF</summary><br><b>
+<summary>Explain OSPF.</summary><br><b>
+
+
+OSPF (Open Shortest Path First) is a routing protocol that can be implemented on various types of routers. In general, OSPF is supported on most modern routers, including those from vendors such as Cisco, Juniper, and Huawei. The protocol is designed to work with IP-based networks, including both IPv4 and IPv6. Also, it uses a hierarchical network design, where routers are grouped into areas, with each area having its own topology map and routing table. This design helps to reduce the amount of routing information that needs to be exchanged between routers and improve network scalability.
+
+The OSPF 4 Types of routers are:
+  * Internal Router
+  * Area Border Routers
+  * Autonomous Systems Boundary Routers
+  * Backbone Routers
+
+  Learn more about OSPF router types: https://www.educba.com/ospf-router-types/
 </b></details>
 
 <details>
 <summary>What is latency?</summary><br><b>
 	
-Latency is the time taken for an information to reach its destination from the source.
+Latency is the time taken for information to reach its destination from the source.
 </b></details>
 
 <details>
@@ -483,21 +602,22 @@ Throughput refers to the measurement of the real amount of data transferred over
 </b></details>
 
 <details>
-<summary>When performing a search query, what is more important, latency or throughput? And how to assure that what managing global infrastructure?</summary><br><b>
+<summary>When performing a search query, what is more important, latency or throughput? And how to ensure that we manage global infrastructure?
+</summary><br><b>
 
-Latency. To have a good latency, a search query should be forwarded to the closest datacenter.
+Latency. To have good latency, a search query should be forwarded to the closest data center.
 </b></details>
 
 <details>
 <summary>When uploading a video, what is more important, latency or throughput? And how to assure that?</summary><br><b>
 
-Throughput. To have a good throughput, the upload stream should be routed to an underutilized link.
+Throughput. To have good throughput, the upload stream should be routed to an underutilized link.
 </b></details>
 
 <details>
 <summary>What other considerations (except latency and throughput) are there when forwarding requests?</summary><br><b>
 
-* Keep caches updated (which means the request could be forwarded not to the closest datacenter)
+* Keep caches updated (which means the request could be forwarded not to the closest data center)
 </b></details>
 
 <details>
@@ -506,10 +626,14 @@ Throughput. To have a good throughput, the upload stream should be routed to an 
 
 <details>
 <summary>What is Network Congestion? What can cause it?</summary><br><b>
+
+Network congestion occurs when there is too much data to transmit on a network and it doesn't have enough capacity to handle the demand. </br>
+This can lead to increased latency and packet loss. The causes can be multiple, such as high network usage, large file transfers, malware, hardware issues, or network design problems. </br>
+To prevent network congestion, it's important to monitor your network usage and implement strategies to limit or manage the demand.
 </b></details>
 
 <details>
-<summary>What can you tell me about UDP packet format? What about TCP packet format? How is it different?</summary><br><b>
+<summary>What can you tell me about the UDP packet format? What about the TCP packet format? How is it different?</summary><br><b>
 </b></details>
 
 <details>
@@ -527,15 +651,15 @@ Throughput. To have a good throughput, the upload stream should be routed to an 
 
 * Hypertext Transfer Protocol (HTTP) - used for the webpages on the internet
 * Simple Mail Transfer Protocol (SMTP) - email transmission
-* Telecommunications Network - (TELNET) - terminal emulation to allow client access to telnet server
-* File Transfer Protocol (FTP) - facilitates transfer of files between any two machines
+* Telecommunications Network - (TELNET) - terminal emulation to allow a client access to a telnet server
+* File Transfer Protocol (FTP) - facilitates the transfer of files between any two machines
 * Domain Name System (DNS) - domain name translation
-* Dynamic Host Configuration Protocol (DHCP) - allocates IP addresses, subnet masks and gateways to hosts
-* Simple Network Management Protocol (SNMP) - gathers data of devices on the network
+* Dynamic Host Configuration Protocol (DHCP) - allocates IP addresses, subnet masks, and gateways to hosts
+* Simple Network Management Protocol (SNMP) - gathers data on devices on the network
 </b></details>
 
 <details>
-<summary>Give examples of protocols found in the network Layer</summary><br><b>
+<summary>Give examples of protocols found in the Network Layer</summary><br><b>
 
 * Internet Protocol (IP) - assists in routing packets from one machine to another
 * Internet Control Message Protocol (ICMP) - lets one know what is going such as error messages and debugging information
@@ -553,8 +677,8 @@ Read more [here](https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-us
 <details>
 <summary>What is the Internet? Is it the same as the World Wide Web?</summary><br><b>
 
-The internet refers to network of networks, transferring huge amounts of data around the globe.<br>
-The World Wide Web is an application running on millions of server, on top of the internet, accessed through what is know as the web browser
+The internet refers to a network of networks, transferring huge amounts of data around the globe.<br>
+The World Wide Web is an application running on millions of servers, on top of the internet, accessed through what is known as the web browser
 </b></details>
 
 <details>
@@ -563,2116 +687,14 @@ The World Wide Web is an application running on millions of server, on top of th
 ISP (Internet Service Provider) is the local internet company provider.
 </b></details>
 
-## Linux
-
-#### Linux Master Application
-
-A completely free application for testing your knowledge on Linux
-
-<a href="https://play.google.com/store/apps/details?id=com.codingshell.linuxmaster"><img src="images/linux_master.jpeg"/></a>
-
-### Linux Self Assessment
-
-<details>
-<summary>What is your experience with Linux?</summary><br><b>
-
-Only you know :)
-
-For example:
-* Administration
-* Troubleshooting & Debugging
-* Storage
-* Networking
-* Development
-* Deployments
-</b></details>
-
-<details>
-<summary>Explain what each of the following commands does and give an example on how to use it:
-
-  * touch
-  * ls
-  * rm
-  * cat
-  * cp
-  * mkdir
-  * pwd
-  * cd
-</summary><br><b>
-
-  * touch - update file's timestamp. More commonly used for creating files
-  * ls - listing files and directories
-  * rm - remove files and directories
-  * cat - create, view and concatenate files
-  * cp - copy files and directories
-  * mkdir - create directories
-  * pwd - print current working directory (= at what path the user currently located)
-  * cd - change directory
-</b></details>
-
-<details>
-<summary>What each of the following commands does?
-
-  * cd /
-  * cd ~
-  * cd
-  * cd ..
-  * cd .
-  * cd -
-</summary><br><b>
-
-  * cd / -> change to the root directory
-  * cd ~ -> change to your home directory
-  * cd -> change to your home directory
-  * cd .. -> change to the directory above your current i.e parent directory
-  * cd . -> change to the directory you currently in
-  * cd - -> change to the last visited path
-</b></details>
-
-<details>
-<summary>Some of the commands in the previous question can be run with the -r/-R flag. What does it do? Give an example to when you would use it</summary><br><b>
-
-The -r (or -R in some commands) flag allows the user to run a certain command recursively. For example, listing all the files under the following tree is possible when done recursively (`ls -R`):
-
-/dir1/
-  dir2/
-    file1
-    file2
-  dir3/
-    file3
-
-To list all the files, one can run `ls -R /dir1`
-</b></details>
-
-<details>
-<summary>Explain each field in the output of `ls -l` command</summary><br><b>
-It shows a detailed list of files in a long format. From the left:
-
-* file permissions, number of links, owner name, owner group, file size, timestamp of last modification and directory/file name
-</b></details>
-
-<details>
-<summary>What are hidden files/directories? How to list them?</summary><br><b>
-
-These are files directly not displayed after performing a standard ls direct listing. An example of these files are .bashrc which are used to execute some scripts. Some also store configuration about services on your host like .KUBECONFIG. The command used to list them is, `ls -a`
-</b></details>
-
-<details>
-<summary>What do > and < do in terms of input and output for programs?</summary><br><b>
-They take in input (<) and output for a given file (>) using stdin and stdout.
-
-`myProgram < input.txt > executionOutput.txt`
-</b></details>
-
-<details>
-<summary>Explain what each of the following commands does and give an example on how to use it:
-
-  * sed
-  * grep
-  * cut
-  * awk
-</summary><br><b>
-
-  - sed: a stream editor. Can be used for various purposes like replacing a word in a file: `sed -i s/salad/burger/g`
-  - grep: a search tool. Used to search, count or match a text in a file:
-    - searching for any line that contains a word in a file: `grep 'word' file.md`
-    - or displaying the total number of times a string appears in a file: `grep -c 'This is a string' file.md`
-  - cut: a tool for cutting out selected portions of each line of a file:
-    - syntax: `cut OPTION [FILE]`
-      - cutting first two bytes from a word in a file: `cut -b 1-2 file.md`, output: `wo`
-</b></details>
-
-<details>
-<summary>How to rename the name of a file or a directory?</summary><br><b>
-
-Using the `mv` command.
-</b></details>
-
-<details>
-<summary>Specify which command would you use (and how) for each of the following scenarios 
-
-  * Remove a directory with files
-  * Display the content of a file
-  * Provides access to the file /tmp/x for everyone
-  * Change working directory to user home directory
-  * Replace every occurrence of the word "good" with "great" in the file /tmp/y</summary><br><b>
-
-  - `rm -rf dir`
-  - `cat or less`
-  - `chmod 777 /tmp/x`
-  - `cd ~`
-  - `sed -i s/good/great/g /tmp/y`
-</b></details>
-
-<details>
-<summary>How can you check what is the path of a certain command?</summary><br><b>
-
-  * whereis
-  * which
-</b></details>
-
-<details>
-<summary>What is the difference between these two commands? Will it result in the same output?
-
-```
-echo hello world
-echo "hello world"
-```
-</summary><br><b>
-
-The echo command receives two separate arguments in the first execution and in the second execution it gets one argument which is the string "hello world". The output will be the same.
-</b></details>
-
-<details>
-<summary>Explain piping. How do you perform piping?</summary><br><b>
-
-Using a pipe in Linux, allows you to send the output of one command to the input of another command. For example: `cat /etc/services | wc -l`
-</b></details>
-
-<details>
-<summary>Fix the following commands:
-
-  * sed "s/1/2/g' /tmp/myFile
-  * find . -iname \*.yaml -exec sed -i "s/1/2/g" {} ;
-</summary><br><b>
-
-```
-sed 's/1/2/g' /tmp/myFile  # sed "s/1/2/g" is also fine
-find . -iname "*.yaml" -exec sed -i "s/1/2/g" {} \;
-```
-</b></details>
-
-<details>
-<summary>How to check which commands you executed in the past?</summary><br><b>
-
-history command or .bash_history file
-</b></details>
-
-<details>
-<summary>Running the command <code>df</code> you get "command not found". What could be wrong and how to fix it?</summary><br><b>
-</b>
-<p><b>
-Most likely the default/generated $PATH was somehow modified or overridden thus not containing <code>/bin/</code> where df would normally go.
-This issue could also happen if bash_profile or any configuration file of your interpreter was wrongly modified, causing erratics behaviours.
-You would solve this by fixing your $PATH variable:
-
-As to fix it there are several options:
-
-1. Manually adding what you need to your $PATH <code>PATH="$PATH":/user/bin:/..etc</code>
-2. You have your weird env variables backed up.
-3. You would look for your distro default $PATH variable, copy paste using method #1
-
-Note: There are many ways of getting errors like this: if bash_profile or any configuration file of your interpreter was wrongly modified; causing erratics behaviours,
-permissions issues, bad compiled software (if you compiled it by yourself)... there is no answer that will be true 100% of the time.
-</b>
-</p>
-</details>
-
-<details>
-<summary>How do you schedule tasks periodically?</summary><br><b>
-
-You can use the commands <code>cron</code> and <code>at</code>.
-With cron, tasks are scheduled using the following format:
-
-<code>*/30 * * * * bash myscript.sh</code> Executes the script every 30 minutes.
-
-<minute> <hour> <day of month> <month> <day of week> <command to execute>
-
-The tasks are stored in a cron file, you can write in it using <code>crontab -e</code>
-
-Alternatively if you are using a distro with systemd it's recommended to use systemd timers.
-</b></details>
-
-#### Linux - I/O Redirection
-
-<details>
-<summary>Explain Linux I/O redirection</summary><br><b>
-</b></details>
-
-<details>
-<summary>Demonstrate Linux output redirection</summary><br><b>
-
-ls > ls_output.txt
-</b></details>
-
-<details>
-<summary>Demonstrate Linux stderr output redirection</summary><br><b>
-
-yippiekaiyay 2> ls_output.txt
-</b></details>
-
-<details>
-<summary>Demonstrate Linux stderr to stdout redirection</summary><br><b>
-
-yippiekaiyay &> file
-</b></details>
-
-<details>
-<summary>What is the result of running the following command? <code>yippiekaiyay 1>&2 die_hard</code></code></summary><br><b>
-
-An output similar to: `yippikaiyay: command not found...`<br>
-The file `die_hard` will not be created
-</b></details>
-
-#### Linux FHS
-
-<details>
-<summary>In Linux FHS (Filesystem Hierarchy Standard) what is the <code>/</code>?</summary><br><b>
-
-The root of the filesystem. The beginning of the tree.
-</b></details>
-
-<details>
-<summary>What is stored in each of the following paths?
-
-  - /bin, /sbin, /usr/bin and /usr/sbin
-  - /etc
-  - /home
-  - /var
-  - /tmp</summary><br><b>
-
-  * binaries
-  * configuration files
-  * home directories of the different users
-  * files that tend to change and be modified like logs
-  * temporary files
-</b></details>
-
-<details>
-<summary>What is special about the /tmp directory when compared to other directories?</summary><br><b>
-
-`/tmp` folder is cleaned automatically, usually upon reboot.
-</b></details>
-
-<details>
-<summary>What kind of information one can find in /proc?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What makes /proc different from other filesystems?</summary><br><b>
-</b></details>
-
-<details>
-<summary>True or False? only root can create files in /proc</summary><br><b>
-
-False. No one can create file in /proc directly (certain operations can lead to files being created in /proc by the kernel).
-</b></details>
-
-<details>
-<summary>What can be found in /proc/cmdline?</summary><br><b>
-
-The command passed to the boot loader to run the kernel
-</b></details>
-
-<details>
-<summary>In which path can you find the system devices (e.g. block storage)?</summary><br><b>
-</b></details>
-
-#### Linux - Permissions
-
-<details>
-<summary>How to change the permissions of a file?</summary><br><b>
-
-Using the `chmod` command.
-</b></details>
-
-<details>
-<summary>What does the following permissions mean?:
-
-  * 777
-  * 644
-  * 750</summary><br><b>
-
-<pre>
-777 - You give the owner, group and other: Execute (1), Write (2) and Read (4); 4+2+1 = 7.
-644 - Owner has Read (4), Write (2), 4+2 = 6; Group and Other have Read (4).
-750 - Owner has x+r+w, Group has Read (4) and Execute (1); 4+1 = 5. Other have no permissions.
-</pre>
-</b></details>
-
-<details>
-<summary>What this command does? <code>chmod +x some_file</code></summary><br><b>
-It adds execute permissions to all sets i.e user, group and others
-</b></details>
-
-<details>
-<summary>Explain what is setgid and setuid</summary><br><b>
-
-* setuid is a linux file permission that permits a user to run a file or program with the permissions of the owner of that file. This is possible by elevation of current user privileges.
-* setgid is a process when executed will run as the group that owns the file.
-</b></details>
-
-<details>
-<summary>What is the purpose of sticky bit?</summary><br><b>
-Its a bit that only allows the owner or the root user to delete or modify the file.
-</b></details>
-
-<details>
-<summary>What the following commands do?
-
-  - chmod
-  - chown
-  - chgrp</summary><br><b>
-
-  * chmod - changes access permissions to files system objects
-  * chown - changes the owner of file system files and directories
-  * chgrp - changes the group associated with a file system object
-</b></details>
-
-<details>
-<summary>What is sudo? How do you set it up?</summary><br><b>
-</b></details>
-
-<details>
-<summary>True or False? In order to install packages on the system one must be the root user or use the sudo command</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>Explain what are ACLs. For what use cases would you recommend to use them?</summary><br><b>
-</b></details>
-
-<details>
-<summary>You try to create a file but it fails. Name at least three different reason as to why it could happen</summary><br><b>
-
-* No more disk space
-* No more inodes
-* No permissions
-</b></details>
-
-<details>
-<summary>A user accidentally executed the following <code>chmod -x $(which chmod)</code>. How to fix it?</summary><br><b>
-
-Using `sudo setfacl -m u::rx /usr/bin/chmod` will set the execute permissions on `chmod` for all the users. Post this, the `chmod` binary can be used as usual.
-</b></details>
-
-#### Linux - systemd
-
-<details>
-<summary>What is systemd?</summary><br>
-<b>
-Systemd is a daemon (System 'd', d stands for daemon).
-
-A daemon is a program that runs in the background without direct control of the user, although the user can at any time
-talk to the daemon.
-
-systemd has many features such as user processes control/tracking, snapshot support, inhibitor locks..
-
-If we visualize the unix/linux system in layers, systemd would fall directly after the linux kernel.<br>
-Hardware -> Kernel -> <u>Daemons</u>, System Libraries, Server Display.
-</b>
-</details>
-
-<details>
-<summary>How to start or stop a service?</summary><br><b>
-
-To start a service: `systemctl start <service name>`
-To stop a service: `systemctl stop <service name>`
-</b></details>
-
-<details>
-<summary>How to check the status of a service?</summary><br><b>
-
-`systemctl status <service name>`
-</b></details>
-
-<details>
-<summary>On a system which uses systemd, how would you display the logs?</summary><br><b>
-
-<code>journalctl</code>
-</b></details>
-
-<details>
-<summary>Describe how to make a certain process/app a service</summary><br><b>
-</b></details>
-
-##### Linux - Troubleshooting & Debugging
-
-<details>
-<summary>Where system logs are located?</summary><br><b>
-
-/var/log
-</b></details>
-
-<details>
-<summary>How to follow file's content as it being appended without opening the file every time?</summary><br><b>
-
-tail -f <file_name>
-</b></details>
-
-<details>
-<summary>What are you using for troubleshooting and debugging <b>network</b> issues?</summary><br><b>
-
-<code>dstat -t</code> is great for identifying network and disk issues.
-<code>netstat -tnlaup</code> can be used to see which processes are running on which ports.
-<code>lsof -i -P</code> can be used for the same purpose as netstat.
-<code>ngrep -d any metafilter</code> for matching regex against payloads of packets.
-<code>tcpdump</code> for capturing packets
-<code>wireshark</code> same concept as tcpdump but with GUI (optional).
-</b></details>
-
-<details>
-<summary>What are you using for troubleshooting and debugging <b>disk & file system</b> issues?</summary><br><b>
-
-<code>dstat -t</code> is great for identifying network and disk issues.
-<code>opensnoop</code> can be used to see which files are being opened on the system (in real time).
-</b></details>
-
-<details>
-<summary>What are you using for troubleshooting and debugging <b>process</b> issues?</summary><br><b>
-
-<code>strace</code> is great for understanding what your program does. It prints every system call your program executed.
-</b></details>
-
-<details>
-<summary>What are you using for debugging CPU related issues?</summary><br><b>
-
-<code>top</code> will show you how much CPU percentage each process consumes
-<code>perf</code> is a great choice for sampling profiler and in general, figuring out what your CPU cycles are "wasted" on
-<code>flamegraphs</code> is great for CPU consumption visualization (http://www.brendangregg.com/flamegraphs.html)
-</b></details>
-
-<details>
-<summary>You get a call from someone claiming "my system is SLOW". What do you do?</summary><br><b>
-
-* Check with `top` for anything unusual
-* Run `dstat -t` to check if it's related to disk or network.
-* Check if it's network related with `sar`
-* Check I/O stats with `iostat`
-</b></details>
-
-<details>
-<summary>Explain iostat output</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to debug binaries?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the difference between CPU load and utilization?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How you measure time execution of a program?</summary><br><b>
-</b></details>
-
-#### Linux - Kernel
-
-<details>
-<summary>What is a kernel, and what does it do?</summary><br><b>
-
-The kernel is part of the operating system and is responsible for tasks like:
-
-  * Allocating memory
-  * Schedule processes
-  * Control CPU
-</b></details>
-
-<details>
-<summary>How do you find out which Kernel version your system is using?</summary><br><b>
-
-`uname -a` command
-</b></details>
-
-<details>
-<summary>What is a Linux kernel module and how do you load a new module?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain user space vs. kernel space</summary><br><b>
-
-The operating system executes the kernel in protected memory to prevent anyone from changing (and risking it crashing). This is what is known as "Kernel space".
-"User space" is where users executes their commands or applications. It's important to create this separation since we can't rely on user applications to not tamper with the kernel, causing it to crash.
-
-Applications can access system resources and indirectly the kernel space by making what is called "system calls".
-</b></details>
-
-<details>
-<summary>In what phases of kernel lifecycle, can you change its configuration?</summary><br><b>
-
-  * Build time (when it's compiled)
-  * Boot time (when it starts)
-  * Runtime (once it's already running)
-</b></details>
-
-<details>
-<summary>Where can you find kernel's configuration?</summary><br><b>
-
-Usually it will reside in `/boot/config-<kernel version>.<os release>.<arch>`
-</b></details>
-
-<details>
-<summary>Where can you find the file that contains the command passed to the boot loader to run the kernel?</summary><br><b>
-
-`/proc/cmdline`
-</b></details>
-
-<details>
-<summary>How to list kernel's runtime parameters?</summary><br><b>
-
-`sysctl -a`
-</b></details>
-
-<details>
-<summary>Will running <code>sysctl -a</code> as a regular user vs. root, produce different result?</summary><br><b>
-
-Yes, you might notice that in most systems, when running `systctl -a` with root, you'll get more runtime parameters compared to executing the same command with a regular user.
-</b></details>
-
-<details>
-<summary>You would like to enable IPv4 forwarding in the kernel, how would you do it?</summary><br><b>
-
-`sudo sysctl net.ipv4.ip_forward=1`
-
-To make it persistent (applied after reboot for example): insert `net.ipv4.ip_forward = 1` into `/etc/sysctl.conf`
-
-Another way to is to run `echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward`
-</b></details>
-
-<details>
-<summary>How <code>sysctl</code> applies the changes to kernel's runtime parameters the moment you run sysctl command?</summary><br><b>
-
-If you `strace` the sysctl command you can see it does it by changing the file under /proc/sys/...
-
-In the past it was done with sysctl system call, but it was deprecated at some point.
-</b></details>
-
-<details>
-<summary>How changes to kernel runtime parameters persist? (applied even after reboot to the system for example)</summary><br><b>
-
-There is a service called `systemd-sysctl` that takes the content of /etc/sysctl.conf and applies it. This is how changes persist, even after reboot, when they are written in /etc/sysctl.conf
-</b></details>
-
-<details>
-<summary>Are the changes you make to kernel parameters in a container, affects also the kernel parameters of the host on which the container runs?</summary><br><b>
-
-No. Containers have their own /proc filesystem so any change to kernel parameters inside a container, are not affecting the host or other containers running on that host.
-</b></details>
-
-#### Linux - SSH
-
-<details>
-<summary>What is SSH? How to check if a Linux server is running SSH?</summary><br><b>
-
-[Wikipedia Definition](https://en.wikipedia.org/wiki/SSH_(Secure_Shell)): "SSH or Secure Shell is a cryptographic network protocol for operating network services securely over an unsecured network."
-
-[Hostinger.com Definition](https://www.hostinger.com/tutorials/ssh-tutorial-how-does-ssh-work): "SSH, or Secure Shell, is a remote administration protocol that allows users to control and modify their remote servers over the Internet."
-
-An SSH server will have SSH daemon running. Depends on the distribution, you should be able to check whether the service is running (e.g. systemctl status sshd).
-</b></details>
-
-<details>
-<summary>Why SSH is considered better than telnet?</summary><br><b>
-
-Telnet also allows you to connect to a remote host but as opposed to SSH where the communication is encrypted, in telnet, the data is sent in clear text, so it doesn't considered to be secured because anyone on the network can see what exactly is sent, including passwords.
-</b></details>
-
-<details>
-<summary>What is stored in <code>~/.ssh/known_hosts</code>?</summary><br><b>
-
-The file stores the key fingerprints for the clients connecting to the SSH server. This fingerprint creates a trust between the client and the server for future SSH connections.
-</b></details>
-
-<details>
-<summary>You try to ssh to a server and you get "Host key verification failed". What does it mean?</summary><br><b>
-
-It means that the key of the remote host was changed and doesn't match the one that stored on the machine (in ~/.ssh/known_hosts).
-</b></details>
-
-<details>
-<summary>What is the difference between SSH and SSL?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What <code>ssh-keygen</code> is used for?</summary><br><b>
-
-<code>ssh-keygen</code> is a tool to generate an authentication key pair for SSH, that consists of a private and a public key. It supports a number of algorithms to generate authentication keys : 
-- dsa
-- ecdsa
-- ecdsa-sk
-- ed25519
-- ed25519-sk
-- rsa (default)
-
-One can also specify number of bits in key. Command below generates an SSH key pair with RSA 4096-bits :
-```
-$ ssh-keygen -t rsa -b 4096
-```
-
-The output looks like this:
-```
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/user/.ssh/id_rsa): 
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
-Your identification has been saved in /home/user/.ssh/id_rsa
-Your public key has been saved in /home/user/.ssh/id_rsa.pub
-The key fingerprint is:
-SHA256:f5MOGnhzYfC0ZCHvbSXXiRiNVYETjxpHcXD5xSojx+M user@mac-book-pro
-The key's randomart image is:
-+---[RSA 4096]----+
-|        . ..+***o|
-|         o o++*o+|
-|        . =+.++++|
-|         B.oX+. .|
-|        S *=o+   |
-|       . o oE.   |
-|      . + + +    |
-|       . = + .   |
-|        .   .    |
-+----[SHA256]-----+
-```
-
-One can check how many bits an SSH key has with :
-```
-$ ssh-keygen -l -f /home/user/.ssh/id_rsa
-```
-
-Output should look like this :
-```
-4096 SHA256:f5MOGnhzYfC0ZCHvbSXXiRiNVYETjxpHcXD5xSojx+M user@mac-book-pro (RSA)
-```
-It shows the key is RSA 4096-bits.
-
-`-l` and `-f` parameters usage explanation :
-```
--l          Show the fingerprint of the key file.
--f filename Filename of the key file.
-```
-
-Learn more : [How can I tell how many bits my ssh key is? - Superuser](https://superuser.com/a/139311)
-</b></details>
-
-<details>
-<summary>What is SSH port forwarding?</summary><br><b>
-</b></details>
-
-#### Linux - Globbing, Wildcards
-
-<details>
-<summary>What is Globbing?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are wildcards? Can you give an example of how to use them?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain what will <code>ls [XYZ]</code> match</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain what will <code>ls [^XYZ]</code> match</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain what will <code>ls [0-5]</code> match</summary><br><b>
-</b></details>
-
-<details>
-<summary>What each of the following matches
-
-  - ?
-  - *</summary><br><b>
-
-  * The ? matches any single character
-  * The * matches zero or more characters
-</b></details>
-
-<details>
-<summary>What do we grep for in each of the following commands?:
-
-  * <code>grep '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' some_file</code>
-  * <code>grep -E "error|failure" some_file</code>
-  * <code>grep '[0-9]$' some_file</code>
-</summary><br><b>
-
-1. An IP address
-2. The word "error" or "failure"
-3. Lines which end with a number
-</b></details>
-
-<details>
-<summary>Which line numbers will be printed when running `grep '\baaa\b'` on the following content:
-
-aaa
-bbb
-ccc.aaa
-aaaaaa</summary><br><b>
-
-lines 1 and 3.
-</b></details>
-
-<details>
-<summary>What is the difference single and double quotes?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is escaping? What escape character is used for escaping?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is an exit code? What exit codes are you familiar with?</summary><br><b>
-
-An exit code (or return code) represents the code returned by a child process to its
-parent process.
-
-0 is an exit code which represents success while anything higher than 1 represents error.
-Each number has different meaning, based on how the application was developed.
-
-I consider this as a good blog post to read more about it: https://shapeshed.com/unix-exit-codes
-</b></details>
-
-#### Linux Boot Process
-
-<details>
-<summary>Tell me everything you know about the Linux boot process</summary><br><b>
-
-Another way to ask this: what happens from the moment you turned on the server until you get a prompt
-</b></details>
-
-<details>
-<summary>What is GRUB2?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is Secure Boot?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What can you find in /boot?</summary><br><b>
-</b></details>
-
-##### Linux Disk & Filesystem
-
-<details>
-<summary>What's an inode?</summary><br><b>
-
-For each file (and directory) in Linux there is an inode, a data structure which stores meta data
-related to the file like its size, owner, permissions, etc.
-</b></details>
-
-<details>
-<summary>Which of the following is not included in inode:
-
-  * Link count
-  * File size
-  * File name
-  * File timestamp</summary><br><b>
-
-File name (it's part of the directory file)
-</b></details>
-
-<details>
-<summary>How to check which disks are currently mounted?</summary><br><b>
-
-Run `mount`
-</b></details>
-
-<details>
-<summary>You run the <code>mount</code> command but you get no output. How would you check what mounts you have on your system?</summary><br><b>
-
-`cat /proc/mounts`
-</b></details>
-
-<details>
-<summary>What is the difference between a soft link and hard link?</summary><br><b>
-
-Hard link is the same file, using the same inode.
-Soft link is a shortcut to another file, using a different inode.
-</b></details>
-
-<details>
-<summary>True or False? You can create an hard link for a directory</summary><br><b>
-
-False
-</b></details>
-
-<details>
-<summary>True or False? You can create a soft link between different filesystems</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>True or False? Directories always have by minimum 2 links</summary><br><b>
-
-True.
-</b></details>
-
-<details>
-<summary>What happens when you delete the original file in case of soft link and hard link?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Can you check what type of filesystem is used in /home?</summary><br><b>
-
-There are many answers for this question. One way is running `df -T`
-</b></details>
-
-<details>
-<summary>What is a swap partition? What is it used for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to create a
-
-  * new empty file
-  * a file with text (without using text editor)
-  * a file with given size</summary><br><b>
-</b></details>
-
-<details>
-<summary>You are trying to create a new file but you get "File system is full". You check with df for free space and you see you used only 20% of the space. What could be the problem?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How would you check what is the size of a certain directory?</summary><br><b>
-
-`du -sh`
-</b></details>
-
-<details>
-<summary>What is LVM?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain the following in regards to LVM:
-
-  * PV
-  * VG
-  * LV</summary><br><b>
-
-
-</b></details>
-
-<details>
-<summary>What is NFS? What is it used for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What RAID is used for? Can you explain the differences between RAID 0, 1, 5 and 10?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Describe the process of extending a filesystem disk space</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is lazy umount?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is tmpfs?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is stored in each of the following logs?
-
-  * /var/log/messages
-  * /var/log/boot.log</summary><br><b>
-</b></details>
-
-<details>
-<summary>True or False? both /tmp and /var/tmp cleared upon system boot</summary><br><b>
-
-False. /tmp is cleared upon system boot while /var/tmp is cleared every a couple of days or not cleared at all (depends on distro).
-</b></details>
-
-#### Linux Performance Analysis
-
-<details>
-<summary>How to check what is the current load average?</summary><br><b>
-
-One can use `uptime` or `top`
-</b></details>
-
-<details>
-<summary>You know how to see the load average, great. but what each part of it means? for example 1.43, 2.34, 2.78</summary><br><b>
-
-[This article](http://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html) summarizes the load average topic in a great way
-</b></details>
-
-<details>
-<summary>How to check process usage?</summary><br><b>
-
-pidstat
-</b></details>
-
-<details>
-<summary>How to check disk I/O?</summary><br><b>
-
-`iostat -xz 1`
-</b></details>
-
-<details>
-<summary>How to check how much free memory a system has? How to check memory consumption by each process?</summary><br><b>
-
-You can use the commands <code>top</code> and <code>free</code>
-</b></details>
-
-<details>
-<summary>How to check TCP stats?</summary><br><b>
-
-sar -n TCP,ETCP 1
-</b></details>
-
-#### Linux Processes
-
-<details>
-<summary>how to list all the processes running in your system?</summary><br><b>
-
-`ps -ef`
-</b></details>
-
-<details>
-<summary>How to run a process in the background and why to do that in the first place?</summary><br><b>
-
-You can achieve that by specifying & at the end of the command.
-As to why, since some commands/processes can take a lot of time to finish
-execution or run forever, you may want to run them in the background instead of waiting for them to finish before gaining control again in current session.
-</b></details>
-
-<details>
-<summary>How can you find how much memory a specific process consumes?</summary><br><b>
-<code>
-mem()
-{                                                                                                      
-    ps -eo rss,pid,euser,args:100 --sort %mem | grep -v grep | grep -i $@ | awk '{printf $1/1024 "MB"; $1=""; print }'
-}
-</code>
-[Source](https://stackoverflow.com/questions/3853655/in-linux-how-to-tell-how-much-memory-processes-are-using)
-</b></details>
-
-<details>
-<summary>What signal is used by default when you run 'kill *process id*'?</summary><br><b>
-<pre>
-The default signal is SIGTERM (15). This signal kills
-process gracefully which means it allows it to save current
-state configuration.
-</pre>
-</b></details>
-
-<details>
-<summary>What signals are you familiar with?</summary><br><b>
-
-SIGTERM - default signal for terminating a process
-SIGHUP - common usage is for reloading configuration
-SIGKILL - a signal which cannot caught or ignored
-
-To view all available signals run `kill -l`
-</b></details>
-
-<details>
-<summary>What <code>kill 0</code> does?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What <code>kill -0 <PID></code> does?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a trap?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Every couple of days, a certain process stops running. How can you look into why it's happening?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What happens when you press ctrl + c?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a Daemon in Linux?</summary><br><b>
-
-A background process. Most of these processes are waiting for requests or set of conditions to be met before actually running anything.
-Some examples: sshd, crond, rpcbind.
-</b></details>
-
-<details>
-<summary>What are the possible states of a process in Linux?</summary><br><b>
-<pre>
-Running (R)
-Uninterruptible Sleep (D) - The process is waiting for I/O
-Interruptible Sleep (S)
-Stopped (T)
-Dead (x)
-Zombie (z)
-</pre>
-</b></details>
-
-<details>
-<summary>How do you kill a process in D state?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a zombie process?</summary><br><b>
-
-A process which has finished to run but has not exited.
-
-One reason it happens is when a parent process is programmed incorrectly. Every parent process should execute wait() to get the exit code from the child process which finished to run. But when the parent isn't checking for the child exit code, the child process can still exists although it finished to run.
-</b></details>
-
-<details>
-<summary>How to get rid of zombie processes?</summary><br><b>
-
-You can't kill a zombie process the regular way with `kill -9` for example as it's already dead.
-
-One way to kill zombie process is by sending SIGCHLD to the parent process telling it to terminate its child processes. This might not work if the parent process wasn't programmed properly. The invocation is `kill -s SIGCHLD [parent_pid]`
-
-You can also try closing/terminating the parent process. This will make the zombie process a child of init (1) which does periodic cleanups and will at some point clean up the zombie process.
-</b></details>
-
-<details>
-<summary>How to find all the
-
-  * Processes executed/owned by a certain user
-  * Process which are Java processes
-  * Zombie Processes
-</summary><br><b>
-
-If you mention at any point ps command with arugments, be familiar with what these arguments does exactly.
-</b></details>
-
-<details>
-<summary>What is the init process?</summary><br><b>
-It is the first process executed by the kernel during the booting of a system. It is a daemon process which runs till the system is shutdown. That is why, it is the parent of all the processes
-</b></details>
-
-<details>
-<summary>Can you describe how processes are being created?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to change the priority of a process? Why would you want to do that?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Can you explain how network process/connection is established and how it's terminated?></summary><br></b>
-</b></details>
-
-<details>
-<summary>What <code>strace</code> does? What about <code>ltrace</code>?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Find all the files which end with '.yml' and replace the number 1 in 2 in each file</summary><br><b>
-
-find /some_dir -iname \*.yml -print0 | xargs -0 -r sed -i "s/1/2/g"
-</b></details>
-
-<details>
-<summary>You run ls and you get "/lib/ld-linux-armhf.so.3 no such file or directory". What is the problem?</summary><br><b>
-
-The ls executable is built for an incompatible architecture.
-</b></details>
-
-<details>
-<summary>How would you split a 50 lines file into 2 files of 25 lines each?</summary><br><b>
-
-You can use the <code>split</code> command this way: <code>split -l 25 some_file</code>
-</b></details>
-
-<details>
-<summary>What is a file descriptor? What file descriptors are you familiar with?</summary><br><b>
-Kerberos
-File descriptor, also known as file handler, is a unique number which identifies an open file in the operating system.
-
-In Linux (and Unix) the first three file descriptors are:
-
-  * 0 - the default data stream for input
-  * 1 - the default data stream for output
-  * 2 - the default data stream for output related to errors
-
-This is a great article on the topic: https://www.computerhope.com/jargon/f/file-descriptor.htm
-</b></details>
-
-<details>
-<summary>What is NTP? What is it used for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain Kernel OOM</summary><br><b>
-</b></details>
-
-##### Linux Security
-
-<details>
-<summary>What is chroot? In what scenarios would you consider using it?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is SELiunx?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is Kerberos?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is nftables?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What firewalld daemon is responsible for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Do you have experience with hardening servers? Can you describe the process?</summary><br><b>
-</b></details>
-
-##### Linux - Networking
-
-<details>
-<summary>How to list all the interfaces?</summary><br><b>
-
-```
-ip link show
-```
-</b></details>
-
-<details>
-<summary>What is the loopback (lo) interface?</summary><br><b>
-
-The loopback interface is a special, virtual network interface that your computer uses to communicate with itself. It is used mainly for diagnostics and troubleshooting, and to connect to servers running on the local machine.
-</b></details>
-
-<details>
-<summary>What the following commands are used for?
-
-  * ip addr
-  * ip route
-  * ip link
-  * ping
-  * netstat
-  * traceroute</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a network namespace? What is it used for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to check if a certain port is being used?</summary><br><b>
-
-One of the following would work:
-
-```
-netstat -tnlp | grep <port_number>
-lsof -i -n -P | grep <port_number>
-```
-</b></details>
-
-<details>
-<summary>How can you turn your Linux server into a router?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a virtual IP? In what situation would you use it?</summary><br><b>
-</b></details>
-
-<details>
-<summary>True or False? The MAC address of an interface is assigned/set by the OS</summary><br><b>
-
-False
-</b></details>
-
-<details>
-<summary>Can you have more than one default gateway in a given system?</summary><br><b>
-
-Technically, yes.
-</b></details>
-
-<details>
-<summary>What is telnet and why is it a bad idea to use it in production? (or at all)</summary><br><b>
-
-Telnet is a type of client-server protocol that can be used to open a command line on a remote computer, typically a server.
-By default, all the data sent and received via telnet is transmitted in clear/plain text, therefore it should not be used as it does not encrypt any data between the client and the server.
-</b></details>
-
-<details>
-<summary>What is the routing table? How do you view it?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How can you send an HTTP request from your shell?</summary><br><b>
-<br>
-Using nc is one way<br>
-</b></details>
-
-<details>
-<summary>What are packet sniffers? Have you used one in the past? If yes, which packet sniffers have you used and for what purpose?</summary><br><b>
-It is a network utility that analyses and may inject tasks into the data-stream travelling over the targeted network.
-</b></details>
-
-<details>
-<summary>How to list active connections?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to trigger neighbor discovery in IPv6?</summary><br><b>
-
-One way would be `ping6 ff02::1`
-</b></details>
-
-<details>
-<summary>What is network interface bonding and do you know how it's performed in Linux?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What network bonding modes are there?</summary><br><b>
-
-There a couple of modes:
-
-  * balance-rr: round robing bonding
-  * active-backup: a fault tolerance mode where only one is active
-  * balance-tlb: Adaptive transmit load balancing
-  * balance-alb: Adaptive load balancing
-</b></details>
-
-<details>
-<summary>What is a bridge? How it's added in Linux OS?</summary><br><b>
-</b></details>
-
-##### Linux - DNS
-
-<details>
-<summary>How to check what is the hostname of the system?</summary><br><b>
-
-`cat /etc/hostname`
-
-You can also run `hostnamectl` or `hostname` but that might print only a temporary hostname. The one in the file is the permanent one.
-</b></details>
-
-<details>
-<summary>What the file <code>/etc/resolv.conf</code> is used for? What does it include?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What commands are you using for performing DNS queries (or troubleshoot DNS related issues)?</summary><br><b>
-
-You can specify one or more of the following:
-
- * <code>dig</code>
- * <code>host</code>
- * <code>nslookup</code>
-</b></details>
-
-<details>
-<summary>You run <code>dig codingshell.com</code> and get the following result: 
-
-```
-ANSWER SECTION:
-codingshell.com.	3515	IN	A	185.199.109.153
-```
-
-What is the meaning of the number 3515?
-</summary><br><b>
-
-This is the TTL. When you lookup for an address using a domain/host name, your OS is performing DNS resolution by contacting DNS name servers to get the IP address of the host/domain you are looking for.<br>
-When you get a reply, this reply in cached in your OS for a certain period of time. This is period of time is also known as TTL and this is the meaning of 3515 number - it will be cached for 3515 seconds before removed from the cache and during that period of time, you'll get the value from the cache instead of asking DNS name servers for the address again.
-</b></details>
-
-##### Linux - Packaging
-
-<details>
-<summary>Do you have experience with packaging? (as in building packages) Can you explain how does it works?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How packages installation/removal is performed on the distribution you are using?</summary><br><b>
-
-The answer depends on the distribution being used.
-
-In Fedora/CentOS/RHEL/Rocky it can be done with `rpm` or `dnf` commands.
-In Ubuntu it can be done with the `apt` command.
-</b></details>
-
-<details>
-<summary>RPM: explain the spec format (what it should and can include)</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you list the content of a package without actually installing it?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to know to which package a file on the system belongs to? Is it a problem if it doesn't belongs to any package?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Where repositories are stored? (based on the distribution you are using)</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is an archive? How do you create one in Linux?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to extract the content of an archive?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Why do we need package managers? Why not simply creating archives and publish them?</summary><br><b>
-
-Package managers allow you to manage packages lifecycle as in installing, removing and updating the packages.<br>
-In addition, you can specify in a spec how a certain package will be installed - where to copy the files, which commands to run prior to the installation, post the installation, etc.
-</b></details>
-
-#### Linux DNF
-
-<details>
-<summary>What is DNF?</summary><br><b>
-
-From the [repo](https://github.com/rpm-software-management/dnf):
-
-"Dandified YUM (DNF) is the next upcoming major version of YUM. It does package management using RPM, libsolv and hawkey libraries."
-
-Official [docs](https://dnf.readthedocs.io/en/latest/)
-
-</b></details>
-
-<details>
-<summary>How to look for a package that provides the command /usr/bin/git? (the package isn't necessarily installed)</summary><br><b>
-
-dnf provides /usr/bin/git
-</b></details>
-
-##### Linux Applications and Services
-
-<details>
-<summary>What can you find in /etc/services?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to make sure a Service starts automatically after a reboot or crash?</summary><br><b>
-
-Depends on the init system.
-
-Systemd: <code> systemctl enable [service_name] </code>
-System V: <code> update-rc.d [service_name] </code> and add this line <code> id:5678:respawn:/bin/sh /path/to/app </code> to /etc/inittab
-Upstart: add Upstart init script at /etc/init/service.conf
-</b></details>
-
-<details>
-<summary>You run <code>ssh 127.0.0.1</code> but it fails with "connection refused". What could be the problem?</summary><br><b>
-
-1. SSH server is not installed
-2. SSH server is not running
-</b></details>
-
-<details>
-<summary>How to print the shared libraries required by a certain program? What is it useful for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is CUPS?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What types of web servers are you familiar with?</summary><br><b>
-
-Nginx, Apache httpd.
-</b></details>
-
-##### Linux Users and Groups
-
-<details>
-<summary>What is a "superuser" (or root user)? How is it different from regular users?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you create users? Where user information is stored?</summary><br>
-
-Command to create users is `useradd` 
-
-Syntax:
-`useradd [options] Username`
-
-There are 2 configuration files, which stores users information
-
-1. `/etc/passwd` - Users information like, username, shell etc is stored in this file 
-
-2. `/etc/shadow` - Users password is stored in encrypted format 
-</details>
-
-<details>
-<summary>Which file stores information about groups?</summary><br>
-
-`/etc/groups` file stores the group name, group ID, usernames which are in secondary group.
-</details>
-
-<details>
-<summary>How do you change/set the password of a user?</summary><br>
-
-`passwd <username>` is the command to set/change password of a user.
-</details>
-
-<details>
-<summary>Which file stores users passwords? Is it visible for everyone?</summary><br>
-
-`/etc/shadow` file holds the passwords of the users in encryted format. NO, it is only visble to the `root` user
-</details>
-
-<details>
-<summary>Do you know how to create a new user without using adduser/useradd command?</summary><br>
-
-YES, we can create new user by manually adding an entry in the `/etc/passwd` file. 
-
-For example, if we need to create a user called `john`. 
-
-Step 1: Add an entry to `/etc/passwd` file, so user gets created.
-
-`echo "john:x:2001:2001::/home/john:/bin/bash" >> /etc/passwd` 
-
-Step 2: Add an entry to `/etc/group` file, because every user belong to the primary group that has same name as the username.
-
-`echo "john:x:2001:" >> /etc/group`
-
-Step 3: Verify if the user got created
-
-`id john`
-
-</details>
-
-<details>
-<summary>What information is stored in /etc/passwd? explain each field</summary><br>
-
-`/etc/passwd` is a configuration file, which contains users information. Each entry in this file has, 7 fields,
-
-`username:password:UID:GID:Comment:home directory:shell`
-
-`username` - The name of the user.
-
-`password` - This field is actually a placeholder of the password field. Due to security concerns, this field does not contain the password, just a placeholder (x) to the encrypted password stored in `/etc/shadow` file.
-
-`UID` - User ID of the user.
-
-`GID` - Group ID 
-
-`Comment` - This field is to provide description about the user.
-
-`home directory` - Abousulte path of the user's home directory. This directory gets created once the user is added.
-
-`shell` - This field contains the absolute path of the shell that will be used by the respective user.
-</details>
-
-<details>
-<summary>How to add a new user to the system without providing him the ability to log-in into the system?</summary><br><b>
-
-`adduser user_name --shell=/bin/false --no-create-home`
-You can also add a user and then edit /etc/passwd.
-</b></details>
-
-<details>
-<summary>How to switch to another user? How to switch to the root user?</summary><br><b>
-
-su command.
-Use su - to switch to root
-</b></details>
-
-<details>
-<summary>What is the UID the root user? What about a regular user?</summary><br>
-
-UID of root user is 0
-
-Default values of UID_MIN and UID_MAX in `/etc/login.defs`
-`UID_MIN` is `1000`
-`UID_MAX` is `60000`
-
-Actually, we can change this value. But UID < 1000 are reserved for system accounts.
-Therefore, as per the default configuration, for regular user UID starts from `1000`. 
-</details>
-
-<details>
-<summary>What can you do if you lost/forogt the root password?</summary><br><b>
-
-Re-install the OS IS NOT the right answer :)
-</b></details>
-
-<details>
-<summary>What is /etc/skel?</summary><br>
-
-`/etc/skel` is a directory, that contains files or directories, so when a new user is created, these files/directories created under `/etc/skel` will be copied to user's home directory.
-</details>
-
-<details>
-<summary>How to see a list of who logged-in to the system?</summary><br><b>
-
-Using the `last` command.
-</b></details>
-
-<details>
-<summary>Explain what each of the following commands does:
-
-  * useradd
-  * usermod
-  * whoami
-  * id</summary><br><b>
-
-  `useradd` - Command for creating new users 
-  `usermod` - Modify the users setting
-  `whoami`  - Outputs, the username that we are currently logged in
-  `id`      - Prints the  
-</b></details>
-
-<details>
-<summary>You run <code>grep $(whoami) /etc/passwd</code> but the output is empty. What might be a possible reason for that?</summary><br><b>
-
-The user you are using isn't defined locally but originates from services like LDAP.<br>
-You can verify with: `getent passwd`
-</b></details>
-
-#### Linux Hardware
-
-<details>
-<summary>Where can you find information on the processor (like number of CPUs)?</summary><br><b>
-
-/proc/cpuinfo
-
-You can also use `nproc` for number of processors
-</b></details>
-
-<details>
-<summary>How can you print information on the BIOS, motherboard, processor and RAM?</summary><br><b>
-
-dmidecoode
-</b></details>
-
-<details>
-<summary>How can you print all the information on connected block devices in your system?</summary><br><b>
-
-lsblk
-</b></details>
-
-<details>
-<summary>True or False? In user space, applications don't have full access to hardware resources</summary><br><b>
-
-True. Only in kernel space they have full access to hardware resources.
-</b></details>
-
-#### Linux - Security
-
-<details>
-<summary>How do you create a private key for a CA (certificate authority)?</summary><br><b>
-
-One way is using openssl this way:
-
-`openssl genrsa -aes256 -out ca-private-key.pem 4096`
-</b></details>
-
-<details>
-<summary>How do you create a public key for a CA (certificate authority)?</summary><br><b>
-
-`openssl req -new -x509 -days 730 -key [private key file name] -sha256 -out ca.pem`
-
-If using the private key from the previous question then the command would be:
-
-`openssl req -new -x509 -days 730 -key ca-private-key.pem -sha256 -out ca.pem`
-</b></details>
-
-#### Linux - Namespaces
-
-<details>
-<summary>What types of namespaces are there in Linux?</summary><br><b>
-
-  - Process ID namespaces: these namespaces include independent set of process IDs
-  - Mount namespaces: Isolation and control of mountpoints
-  - Network namespaces: Isolates system networking resources such as routing table, interfaces, ARP table, etc.
-  - UTS namespaces: Isolate host and domains
-  - IPC namespaces: Isolates interprocess communications
-  - User namespaces: Isolate user and group IDs
-  - Time namespaces: Isolates time machine
-</b></details>
-
-<details>
-<summary>True or False? In every PID (Process ID) namespace the first process assigned with the process id number 1</summary><br><b>
-
-True. Inside the namespace it's PID 1 while to the parent namespace the PID is a different one.
-</b></details>
-
-<details>
-<summary>True or False? In a child PID namespace all processes are aware of parent PID namespace and processes and the parent PID namespace has no visibility of child PID namespace processes</summary><br><b>
-
-False. The opposite is true. Parent PID namespace is aware and has visibility of processes in child PID namespace and child PID namespace has no visibility as to what is going on in the parent PID namespace.
-</b></details>
-
-<details>
-<summary>True or False? By default, when creating two separate network namespaces, a ping from one namespace to another will work fine</summary><br><b>
-
-False. Network namespace has its own interfaces and routing table. There is no way (without creating a bridge for example) for one network namespace to reach another.
-</b></details>
-
-<details>
-<summary>True or False? With UTS namespaces, processes may appear as if they run on different hosts and domains while running on the same host</summary><br><b>
-
-True
-</b></details>
-
-<details>
-<summary>True or False? It's not possible to have a root user with ID 0 in child user namespaces</summary><br><b>
-
-False. In every child user namespace, it's possible to have a separate root user with uid of 0.
-</b></details>
-
-<details>
-<summary>What time namespaces are used for?</summary><br><b>
-
-In time namespaces processes can use different system time.
-</b></details>
-
-#### Linux - Virtualization
-
-<details>
-<summary>What virtualization solutions are available for Linux?</summary><br><b>
-
-  * [KVM](https://www.linux-kvm.org/page/Main_Page)
-  * [XEN](http://www.xen.org/)
-  * [VirtualBox](https://www.virtualbox.org/)
-  * [Linux-VServer](http://linux-vserver.org/Welcome_to_Linux-VServer.org)
-  * [User-mode Linux](http://user-mode-linux.sourceforge.net/)
-  * ...
-</b></details>
-
-<details>
-<summary>What is KVM?</summary><br><b>
-
-Is an open source virtualization technology used to operate on x86 hardware. 
-
-From the official [docs](https://www.linux-kvm.org/page/Main_Page)
-Recommended read:
-  * [Red Hat Article - What is KVM?](https://www.redhat.com/en/topics/virtualization/what-is-KVM)
-</b></details>
-
-<details>
-<summary>What is Libvirt?</summary><br><b>
-
-It's an open source collection of software used to manage virtual machines. It can be used with: KVM, Xen, LXC and others. It's also called Libvirt Virtualization API.
-
-From the official [docs](https://libvirt.org/)
-Hypervisor supported [docs](https://libvirt.org/drivers.html)
-</b></details>
-
-#### Linux - AWK
-
-<details>
-<summary>What the <code>awk</code> command does? Have you used it? What for?</summary><br><b>
-
-From Wikipedia: "AWK is domain-specific language designed for text processing and typically used as a data extraction and reporting tool"
-</b></details>
-
-<details>
-<summary>How to print the 4th column in a file?</summary><br><b>
-
-`awk '{print $4}' file`
-</b></details>
-
-<details>
-<summary>How to print every line that is longer than 79 characters?</summary><br><b>
-
-`awk 'length($0) > 79' file`
-</b></details>
-
-<details>
-<summary>What the <code>lsof</code> command does? Have you used it? What for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the difference between find and locate?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How a user process performs a privileged operation, such as reading from the disk?</summary><br><b>
-
-Using system calls
-</b></details>
-
-#### Linux - System Calls
-
-<details>
-<summary>What is a system call? What system calls are you familiar with?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How a program executes a system call?</summary><br><b>
-
-- A program executes a trap instruction. The instruction jump into the kernel while raising the privileged level to kernel space.
-- Once in kernel space, it can perform any privileged operation
-- Once it's finished, it calls a "return-from-trap" instruction which returns to user space while reducing back the privilege level to user space.
-</b></details>
-
-<details>
-<summary>Explain the fork() system call</summary><br><b>
-
-fork() is used for creating a new process. It does so by cloning the calling process but the child process has its own PID and any memory locks, I/O operations and semaphores are not inherited.
-</b></details>
-
-<details>
-<summary>What is the return value of fork()?</summary><br><b>
-
-  - On success, the PID of the child process in parent and 0 in child process
-  - On error, -1 in the parent
-</b></details>
-
-<details>
-<summary>Name one reason for fork() to fail</summary><br><b>
-
-Not enough memory to create a new process
-</b></details>
-
-<details>
-<summary>Why do we need the wait() system call?</summary><br><b>
-
-wait() is used by a parent process to wait for the child process to finish execution.
-If wait is not used by a parent process then a child process might become a zombie process.
-</b></details>
-
-<details>
-<summary>How the kernel notifies the parent process about child process termination?</summary><br><b>
-
-The kernel notifies the parent by sending the SIGCHLD to the parent.
-</b></details>
-
-<details>
-<summary>How the waitpid() is different from wait()?</summary><br><b>
-
-The waitpid() is a non-blocking version of the wait() function.<br>
-It also supports using library routine (e.g. system()) to wait a child process without messing up with other children processes for which the process has not waited.
-</b></details>
-
-<details>
-<summary>True or False? The wait() system call won't return until the child process has run and exited</summary><br><b>
-
-True in most cases though there are cases where wait() returns before the child exits.
-</b></details>
-
-<details>
-<summary>Explain the exec() system call</summary><br><b>
-
-It transforms the current running program into another program.<br>
-Given the name of an executable and some arguments, it loads the code and static data from the specified executable and overwrites its current code segment and current static code data. After initializing its memory space (like stack and heap) the OS runs the program passing any arguments as the argv of that process.
-</b></details>
-
-<details>
-<summary>True or False? A successful call to exec() never returns</summary><br><b>
-
-True<br>
-Since a succesful exec replace the current process, it can't return anything to the process that made the call.
-</b></details>
-
-<details>
-<summary>What system call is used for listing files?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What system calls are used for creating a new process?</summary><br><b>
-
-fork(), exec() and the wait() system call is also included in this workflow.
-</b></details>
-
-<details>
-<summary>What execve() does?</summary><br><b>
-
-Executes a program. The program is passed as a filename (or path) and must be a binary executable or a script.
-</b></details>
-
-<details>
-<summary>What is the return value of malloc?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain the pipe() system call. What does it used for?</summary><br><b>
-
-[Unix pipe implementation](https://toroid.org/unix-pipe-implementation)
-
-"Pipes provide a unidirectional interprocess communication channel. A pipe has a read end and a write end. Data written to the write end of a pipe can be read from the read end of the pipe.
-A pipe is created using pipe(2), which returns two file descriptors, one referring to the read end of the pipe, the other referring to the write end."
-</b></details>
-
-<details>
-<summary>What happens when you execute <code>ls -l</code>?</summary><br><b>
-
-* Shell reads the input using getline() which reads the input file stream and stores into a buffer as a string
-* The buffer is broken down into tokens and stored in an array this way: {"ls", "-l", "NULL"}
-* Shell checks if an expansion is required (in case of ls *.c)
-
-* Once the program in memory, its execution starts. First by calling readdir()
-
-Notes:
-
-* getline() originates in GNU C library and used to read lines from input stream and stores those lines in the buffer
-</b></details>
-
-<details>
-<summary>What happens when you execute <code>ls -l *.log</code>?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What readdir() system call does?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What exactly the command <code>alias x=y</code> does?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Why running a new program is done using the fork() and exec() system calls? why a different API wasn't developed where there is one call to run a new program?</summary><br><b>
-
-This way provides a lot of flexibility. It allows the shell for example, to run code after the call to fork() but before the call to exec(). Such code can be used to alter the environment of the program it about to run.
-</b></details>
-
-<details>
-<summary>Describe shortly what happens when you execute a command in the shell</summary><br><b>
-
-The shell figures out, using the PATH variable, where the executable of the command resides in the filesystem. It then calls fork() to create a new child process for running the command. Once the fork was executed successfully, it calls a variant of exec() to execute the command and finally, waits the command to finish using wait(). When the child completes, the shell returns from wait() and prints out the prompt again.
-</b></details>
-
-#### Linux Filesystem & Files
-
-<details>
-<summary>How to create a file of a certain size?</summary><br><b>
-
-There are a couple of ways to do that:
-
-  * dd if=/dev/urandom of=new_file.txt bs=2MB count=1
-  * truncate -s 2M new_file.txt
-  * fallocate -l 2097152 new_file.txt
-</b></details>
-
-<details>
-<summary>What does the following block do?:
-
-```
-open("/my/file") = 5
-read(5, "file content")
-```
-</summary><br><b>
-
-These system calls are reading the file <code>/my/file</code> and 5 is the file descriptor number.
-</b></details>
-
-<details>
-<summary>Describe three different ways to remove a file (or its content)</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the difference between a process and a thread?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is context switch?</summary><br><b>
-
-From [wikipedia](https://en.wikipedia.org/wiki/Context_switch): a context switch is the process of storing the state of a process or thread, so that it can be restored and resume execution at a later point
-</b></details>
-
-<details>
-<summary>You found there is a server with high CPU load but you didn't find a process with high CPU. How is that possible?</summary><br><b>
-</b></details>
-
-##### Linux Advanced - Networking
-
-<details>
-<summary>When you run <code>ip a</code> you see there is a device called 'lo'. What is it and why do we need it?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What the <code>traceroute</code> command does? How does it works?</summary><br><b>
-
-Another common way to task this questions is "what part of the tcp header does traceroute modify?"
-</b></details>
-
-<details>
-<summary>What is network bonding? What types are you familiar with?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to link two separate network namespaces so you can ping an interface on one namespace from the second one?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are cgroups?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain Process Descriptor and Task Structure</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are the differences between threads and processes?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain Kernel Threads</summary><br><b>
-</b></details>
-
-<details>
-<summary>What happens when socket system call is used?</summary><br><b>
-
-This is a good article about the topic: https://ops.tips/blog/how-linux-creates-sockets
-</b></details>
-
-<details>
-<summary>You executed a script and while still running, it got accidentally removed. Is it possible to restore the script while it's still running?</summary><br><b>
-</b></details>
-
-#### Linux Memory
-
-<details>
-<summary>What is the difference between MemFree and MemAvailable in /proc/meminfo?</summary><br><b>
-
-MemFree - The amount of unused physical RAM in your system
-MemAvailable - The amount of available memory for new workloads (without pushing system to use swap) based on MemFree, Active(file), Inactive(file), and SReclaimable.
-</b></details>
-
-<details>
-<summary>What is the difference between paging and swapping?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain what is OOM killer</summary><br><b>
-</b></details>
-
-#### Distribution
-
-<details>
-<summary>What is a Linux distribution?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What Linux distributions are you familiar with?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are the components of a Linux distribution?</summary><br><b>
-
-* Kernel
-* Utilities
-* Services
-* Software/Packages Management
-</b></details>
-
-#### Linux - Sed
-
-<details>
-<summary>Using sed, extract the date from the following line: <code>201.7.19.90 - - [05/Jun/1985:13:42:99 +0000] "GET /site HTTP/1.1" 200 32421</code></summary><br><b>
-
-`echo $line | sed 's/.*\[//g;s/].*//g;s/:.*//g'`
-</b></details>
-
-
-#### Linux - Misc
-
-<details>
-<summary>How to generate a random string?</summary><br><b>
-
-One way is to run the following: `cat /proc/sys/kernel/random/uuid`
-</b></details>
-
-<details>
-<summary>What is a Linux distribution?</summary><br><b>
-
-* A collection of packages - kernel, GNU, third party apps, ...
-* Sometimes distributions store some information on the distribution in `/etc/*-release` file
-    * For example for Red Hat distribution it will be `/etc/redhat-release` and for Amazon it will be `/etc/os-release`
-    * `lsb_release` is a common command you can use in multiple different distributions
-</b></details>
-
-<details>
-<summary>Name 5 commands which are two letters long</summary><br><b>
-
-ls, wc, dd, df, du, ps, ip, cp, cd ...
-</b></details>
-
-<details>
-<summary>What ways are there for creating a new empty file?</summary><br><b>
-
-  * touch new_file
-  * echo "" > new_file
-</b></details>
-
-<details>
-<summary>How `cd -` works? How does it knows the previous location?</summary><br><b>
-
-$OLDPWD
-</b></details>
-
-<details>
-<summary>List three ways to print all the files in the current directory</summary><br><b>
-
-* ls
-* find .
-* echo *
-</b></details>
-
-<details>
-<summary>How to count the number of lines in a file? What about words?</summary><br><b>
-</b></details>
-
-<details>
-<summary>You define x=2 in /etc/bashrc and x=6 ~/.bashrc you then login to the system. What would be the value of x?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the difference between man and info?</summary><br><b>
-
-A good answer can be found [here](https://askubuntu.com/questions/9325/what-is-the-difference-between-man-and-info-documentation)
-</b></details>
-
-<details>
-<summary>Explain "environment variables". How do you list all environment variables?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a TTY device?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to create your own environment variables?</summary><br><b>
-
-`X=2` for example. But this will persist to new shells. To have it in new shells as well, use `export X=2`
-</b></details>
-
-<details>
-<summary>What a double dash (--) mean?</summary><br><b>
-
-It's used in commands to mark the end of commands options. One common example is when used with git to discard local changes: `git checkout -- some_file`
-</b></details>
-
-<details>
-<summary>Wildcards are implemented on user or kernel space?</summary><br><b>
-</b></details>
-
-<details>
-<summary>If I plug a new device into a Linux machine, where on the system, a new device entry/file will be created?</summary><br><b>
-
-/dev
-</b></details>
-
-<details>
-<summary>Why there are different sections in man? What is the difference between the sections?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is User-mode Linux?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Under which license Linux is distributed? </summary><br><b>
-
-GPL v2
-</b></details>
-
 ## Operating System
 
 ### Operating System Exercises
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-|Fork 101|Fork|[Link](exercises/os/fork_101.md)|[Link](exercises/os/solutions/fork_101_solution.md)
-|Fork 102|Fork|[Link](exercises/os/fork_102.md)|[Link](exercises/os/solutions/fork_102_solution.md)
+|Fork 101|Fork|[Link](topics/os/fork_101.md)|[Link](topics/os/solutions/fork_101_solution.md)
+|Fork 102|Fork|[Link](topics/os/fork_102.md)|[Link](topics/os/solutions/fork_102_solution.md)
 
 ### Operating System - Self Assessment
 
@@ -2762,6 +784,9 @@ CPU scheduler
 
 <details>
 <summary>What is "virtual memory" and what purpose it serves?</summary><br><b>
+
+Virtual memory combines your computer's RAM with temporary space on your hard disk. When RAM runs low, virtual memory helps to move data from RAM to a space called a paging file. Moving data to paging file can free up the RAM so your computer can complete its work. In general, the more RAM your computer has, the faster the programs run.
+https://www.minitool.com/lib/virtual-memory.html
 </b></details>
 
 <details>
@@ -2769,7 +794,15 @@ CPU scheduler
 </b></details>
 
 <details>
-<summary>What is copy-on-write or shadowing?</summary><br><b>
+<summary>What is copy-on-write?</summary><br><b>
+Copy-on-write (COW) is a resource management concept, with the goal to reduce unnecessary copying of information. It is a concept which is implemented for instance within the POSIX fork syscall, which creates a duplicate process of the calling process.
+
+The idea:
+1. If resources are shared between 2 or more entities (for example shared memory segments between 2 processes) the resources don't need to be copied for every entity, but rather every entity has a READ operation access permission on the shared resource. (the shared segements are marked as read-only) 
+(Think of every entity having a pointer to the location of the shared resource which can be dereferenced to read its value)
+2. If one entity would perform a WRITE operation on a shared resource a problem would arise since the resource also would be permanently changed for ALL other entities sharing it.
+(Think of a process modifying some variables on the stack, or allocatingy some data dynamically on the heap, these changes to the shared resource would also apply for ALL other processes, this is definetly an undesirable behaviour)
+3. As a solution only if a WRITE operation is about to be performed on a shared resource, this resource gets COPIED first and then the changes are applied.
 </b></details>
 
 <details>
@@ -2853,1613 +886,35 @@ Yes, it's a operating-system-level virtualization, where the kernel is shared an
 The introduction of virtual machines allowed companies to deploy multiple business applications on the same hardware while each application is separated from each other in secured way, where each is running on its own separate operating system.
 </b></details>
 
-#### Python - OOP
+#### Virtual Machines
 
 <details>
-<summary>Explain inheritance and how to use it in Python</summary><br><b>
-</b></details>
+<summary>Do we need virtual machines in the age of containers? Are they still relevant?</summary><br><b>
 
-<details>
-<summary>Explain and demonstrate class attributes & instance attributes</summary><br><b>
-
-In the following block of code `x` is a class attribute while `self.y` is a instance attribute
-
-```
-class MyClass(object):
-    x = 1
-
-    def __init__(self, y):
-        self.y = y
-```
-</b></details>
-
-#### Python - Exceptions
-
-<details>
-<summary>What is an error? What is an exception? What types of exceptions are you familiar with?</summary><br><b>
-
-```
-#  Note that you generally don't need to know the compiling process but knowing where everything comes from
-#  and giving complete answers shows that you truly know what you are talking about.
-
-Generally, every compiling process have a two steps.
-    - Analysis
-    - Code Generation.
-
-    Analysis can be broken into:
-        1. Lexical analysis   (Tokenizes source code)
-        2. Syntactic analysis (Check whether the tokens are legal or not, tldr, if syntax is correct)
-
-               for i in 'foo'
-                          ^
-             SyntaxError: invalid syntax
-
-        We missed ':'
-
-
-        3. Semantic analysis  (Contextual analysis, legal syntax can still trigger errors, did you try to divide by 0,
-          hash a mutable object or use an undeclared function?)
-
-                 1/0
-                ZeroDivisionError: division by zero
-
-    These three analysis steps are the responsible for error handlings.
-
-    The second step would be responsible for errors, mostly syntax errors, the most common error.
-    The third step would be responsible for Exceptions.
-
-    As we have seen, Exceptions are semantic errors, there are many builtin Exceptions:
-
-        ImportError
-        ValueError
-        KeyError
-        FileNotFoundError
-        IndentationError
-        IndexError
-        ...
-
-    You can also have user defined Exceptions that have to inherit from the `Exception` class, directly or indirectly.
-
-    Basic example:
-
-    class DividedBy2Error(Exception):
-        def __init__(self, message):
-            self.message = message
-
-
-    def division(dividend,divisor):
-        if divisor == 2:
-            raise DividedBy2Error('I dont want you to divide by 2!')
-        return dividend / divisor
-
-    division(100, 2)
-
-    >>> __main__.DividedBy2Error: I dont want you to divide by 2!
-```
-</b></details>
-
-<details>
-<summary>Explain Exception Handling and how to use it in Python</summary><br><b>
-
-**Exceptions:** Errors detected during execution are called Exceptions.
-
-**Handling Exception:** When an error occurs, or exception as we call it, Python will normally stop and generate an error message.</br>
-Exceptions can be handled using `try` and `except` statement in python.
-
-**Example:** Following example asks the user for input until a valid integer has been entered. </br>
-If user enter a non-integer value it will raise exception and using except it will catch that exception and ask the user to enter valid integer again.
-
-
-```py
-while True:
-    try:
-        a = int(input("please enter an integer value: "))
-        break
-    except ValueError:
-        print("Ops! Please enter a valid integer value.")
-
-```
-
-For more details about errors and exceptions follow this [https://docs.python.org/3/tutorial/errors.html](https://docs.python.org/3/tutorial/errors.html)
-
-</b></details>
-
-<details>
-<summary>What is the result of running the following function?
-
-```
-def true_or_false():
-    try:
-        return True
-    finally:
-        return False
-```
-</summary><br><b>
-False
-</b></details>
-
-#### Python Built-in functions
-
-<details>
-<summary>Explain the following built-in functions (their purpose + use case example):
-
-  * repr
-  * any
-  * all</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the difference between repr function and str?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the __call__ method?</summary><br><b>
-
-It is used to emulate callable objects. It allows a class instance to be called as a function.
-
-- Example code:
-
-```
-class Foo:
-    def __init__(self: object) ->  None:
-        pass
-    def __call__(self: object) -> None:
-        print("Called!")
-
-f = Foo()
-f()
-```
-
-- Result:
-
-```
-Called!
-```
-
-</b></details>
-
-<details>
-<summary>Do classes has the __call__ method as well? What for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What _ is used for in Python?</summary><br><b>
-
-1. Translation lookup in i18n
-2. Hold the result of the last executed expression or statement in the interactive interpreter.
-3. As a general purpose "throwaway" variable name. For example: x, y, _ = get_data() (x and y are used but since we don't care about third variable, we "threw it away").
-</b></details>
-
-<details>
-<summary>Explain what is GIL</summary><br><b>
-	Python Global Interpreter Lock (GIL) is a type of process lock which is used by python whenever it deals with processes. Generally, Python only uses only one thread to execute the set of written statements. This means that in python only one thread will be executed at a time
-</b></details>
-
-<details>
-<summary>What is Lambda? How is it used?</summary><br><b>
-
-A <code>lambda</code> expression is an 'anonymous' function, the difference from a normal defined function using the keyword `def`` is the syntax and usage.
-
-The syntax is:
-
-```lambda[parameters]: [expresion]```
-
-**Examples:**
-
-* A lambda function add 10 with any argument passed.
-
-```py
-x = lambda a: a + 10
-print(x(10))
-```
-
-* An addition function
-
-```py
-addition = lambda x, y: x + y
-print(addition(10, 20))
-```
-
-* Squaring function
-
-```py
-square = lambda x : x ** 2
-print(square(5))
-```
-Generally it is considered a bad practice under PEP 8 to assign a lambda expresion, they are meant to be used as parameters and inside of other defined functions.
-
-</b></details>
-
-#### Properties
-
-<details>
-<summary>Are there private variables in Python? How would you make an attribute of a class, private?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain the following:
-
-* getter
-* setter
-* deleter</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain what is @property</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you swap values between two variables?</summary><br><b>
-
-```
-x, y = y, x
-```
-</b></details>
-
-<details>
-<summary>Explain the following object's magic variables:
-
-  * __dict__
-</summary><br><b>
-</b></details>
-
-<details>
-<summary>Write a function to return the sum of one or more numbers. The user will decide how many numbers to use</summary><br><b>
-
-First you ask the user for the amount of numbers that will be use. Use a while loop that runs until amount_of_numbers becomes 0 through subtracting amount_of_numbers by one each loop. In the while loop you want ask the user for a number which will be added a variable each time the loop runs.
-
-```
-def return_sum():
-	amount_of_numbers = int(input("How many numbers? "))
-	total_sum = 0
-	while amount_of_numbers != 0:
-		num = int(input("Input a number. "))
-		total_sum += num
-		amount_of_numbers -= 1
-	return total_sum
-
-```
-</b></details>
-
-<details>
-<summary>Print the average of [2, 5, 6]. It should be rounded to 3 decimal places</summary><br><b>
-
-```
-li = [2, 5, 6]
-print("{0:.3f}".format(sum(li)/len(li)))
-```
-</b></details>
-
-#### Python - Lists
-
-<details>
-<summary>What is a tuple in Python? What is it used for?</summary><br><b>
-
-A tuple is a built-in data type in Python. It's used for storing multiple items in a single variable.
-</b></details>
-
-<details>
-<summary>List, like a tuple, is also used for storing multiple items. What is then, the difference between a tuple and a list?</summary><br><b>
-
-List, as opposed to a tuple, is a mutable data type. It means we can modify it and at items to it.
-</b></details>
-
-<details>
-<summary>How to add the number 2 to the list <code>x = [1, 2, 3]</code></summary><br><b>
-
-`x.append(2)`
-</b></details>
-
-<details>
-<summary>How to get the last element of a list?</summary><br><b>
-
-`some_list[-1]`
-</b></details>
-
-<details>
-<summary>How to add the items of [1, 2, 3] to the list [4, 5, 6]?</summary><br><b>
-x = [4, 5, 6]
-x.extend([1, 2, 3])
-
-Don't use `append` unless you would like the list as one item.
-</b></details>
-
-<details>
-<summary>How to remove the first 3 items from a list?</summary><br><b>
-
-`my_list[0:3] = []`
-</b></details>
-
-<details>
-<summary>How to insert an item to the beginning of a list? What about two items?</summary><br><b>
-
-- One item:
-
-```
-numbers = [1, 2, 3, 4, 5]
-numbers.insert(0, 0)
-print(numbers)
-```
-
-- Multiple items or list:
-
-```
-numbers_1 = [2, 3, 4, 5]
-numbers_2 = [0, 1]
-numbers_1 = numbers_2 + numbers_1
-print(numbers_1)
-```
-
-</b></details>
-
-<details>
-<summary>How to sort list by the length of items?</summary><br><b>
-
-```
-sorted_li = sorted(li, key=len)
-```
-
-Or without creating a new list:
-
-```
-li.sort(key=len)
-```
-</b></details>
-
-<details>
-<summary>Do you know what is the difference between list.sort() and sorted(list)?</summary><br><b>
-
-* sorted(list) will return a new list (original list doesn't change)
-* list.sort() will return None but the list is change in-place
-
-* sorted() works on any iterable (Dictionaries, Strings, ...)
-* list.sort() is faster than sorted(list) in case of Lists
-</b></details>
-
-<details>
-<summary>Convert every string to an integer: <code>[['1', '2', '3'], ['4', '5', '6']]</code></summary><br><b>
-
-```
-nested_li = [['1', '2', '3'], ['4', '5', '6']]
-[[int(x) for x in li] for li in nested_li]
-```
-</b></details>
-
-<details>
-<summary>How to merge two sorted lists into one sorted list?</summary><br><b>
-
-```
-sorted(li1 + li2)
-```
-
-Another way:
-
-```
-i, j = 0
-merged_li = []
-
-while i < len(li1) and j < len(li2):
-    if li1[i] < li2[j]:
-        merged_li.append(li1[i])
-        i += 1
-    else:
-        merged_li.append(li2[j])
-        j += 1
-
-merged_li = merged_li + merged_li[i:] + merged_li[j:]
-```
-</b></details>
-
-<details>
-<summary>How to check if all the elements in a given lists are unique? so [1, 2, 3] is unique but [1, 1, 2, 3] is not unique because 1 exists twice</summary><br><b>
-</b>
-
-There are many ways of solving this problem:<br>
-<code># Note: :list and -> bool are just python typings, they are not needed for the correct execution of the algorithm. </code>
-
-Taking advantage of sets and len:
-
-```
-def is_unique(l:list) -> bool:
-    return len(set(l)) == len(l)
-```
-
-This one is can be seen used in other programming languages.
-
-```
-def is_unique2(l:list) -> bool:
-    seen = []
-
-    for i in l:
-        if i in seen:
-            return False
-        seen.append(i)
-    return True
-```
-
-Here we just count and make sure every element is just repeated once.
-
-```
-def is_unique3(l:list) -> bool:
-    for i in l:
-        if l.count(i) > 1:
-            return False
-    return True
-```
-
-This one might look more convulated but hey, one liners.
-
-```
-def is_unique4(l:list) -> bool:
-    return all(map(lambda x: l.count(x) < 2, l))
-```
-</details>
-
-<details>
-<summary>You have the following function
-
-```
-def my_func(li = []):
-    li.append("hmm")
-    print(li)
-```
-
-If we call it 3 times, what would be the result each call?
-</summary><br><b>
-
-```
-['hmm']
-['hmm', 'hmm']
-['hmm', 'hmm', 'hmm']
-```
-</b></details>
-
-
-<details>
-<summary>How to iterate over a list?</summary><br><b>
-
-```
-for item in some_list:
-    print(item)
-```
-</b></details>
-
-<details>
-<summary>How to iterate over a list with indexes?</summary><br><b>
-
-```
-for i, item in enumerate(some_list):
-    print(i)
-```
-</b></details>
-
-<details>
-<summary>How to start list iteration from 2nd index?</summary><br><b>
-
-Using range like this
-
-```
-for i in range(1, len(some_list)):
-    some_list[i]
-```
-
-Another way is using slicing
-
-```
-for i in some_list[1:]:
-```
-</b></details>
-
-<details>
-<summary>How to iterate over a list in reverse order?</summary><br><b>
-
-Method 1
-```
-for i in reversed(li):
-    ...
-```
-
-Method 2
-```
-n = len(li) - 1
-while n > 0:
-    ...
-    n -= 1
-```
-</b></details>
-
-<details>
-<summary>Sort a list of lists by the second item of each nested list</summary><br><b>
-
-```
-li = [[1, 4], [2, 1], [3, 9], [4, 2], [4, 5]]
-
-sorted(li, key=lambda l: l[1])
-```
-
-or
-
-```
-li.sort(key=lambda l: l[1)
-```
-</b></details>
-
-<details>
-<summary>Combine [1, 2, 3] and ['x', 'y', 'z'] so the result is [(1, 'x'), (2, 'y'), (3, 'z')]</summary><br><b>
-
-```
-nums = [1, 2, 3]
-letters = ['x', 'y', 'z']
-
-list(zip(nums, letters))
-```
-</b></details>
-
-<details>
-<summary>What is List Comprehension? Is it better than a typical loop? Why? Can you demonstrate how to use it?</summary><br><b>
-
-From [Docs](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions): "List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.".
-
-It's better because they're compact, faster and have better readability.
-
-- For loop:
-
-```
-number_lists = [[1, 7, 3, 1], [13, 93, 23, 12], [123, 423, 456, 653, 124]]
-odd_numbers = []
-for number_list in number_lists:
-    for number in number_list:
-        if number % 2 == 0:
-            odd_numbers.append(number)
-print(odd_numbers)
-```
-
-- List comprehesion:
-
-```
-number_lists = [[1, 7, 3, 1], [13, 93, 23, 12], [123, 423, 456, 653, 124]]
-odd_numbers = [number for number_list in number_lists for number in number_list if number % 2 == 0]
-print(odd_numbers)
-```
-
-</b></details>
-
-<details>
-<summary>You have the following list: <code>[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]</code>
-  Extract all type of foods. Final output should be: {'mushrooms', 'goombas', 'turtles'}</summary><br><b>
-
-```
-brothers_menu =  \
-[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]
-
-# "Classic" Way
-def get_food(brothers_menu) -> set:
-    temp = []
-
-    for brother in brothers_menu:
-        for food in brother['food']:
-            temp.append(food)
-
-    return set(temp)
-
-# One liner way (Using list comprehension)
-set([food for bro in x for food in bro['food']])
-```
-</b></details>
-
-#### Python - Dictionaries
-
-<details>
-<summary>How to create a dictionary?</summary><br><b>
-
-my_dict = dict(x=1, y=2)
-OR
-my_dict = {'x': 1, 'y': 2}
-OR
-my_dict = dict([('x', 1), ('y', 2)])
-</b></details>
-
-<details>
-<summary>How to remove a key from a dictionary?</summary><br><b>
-
-del my_dict['some_key']
-you can also use `my_dict.pop('some_key')` which returns the value of the key.
-</b></details>
-
-<details>
-<summary>How to sort a dictionary by values?</summary><br><b>
-
-```
-{k: v for k, v in sorted(x.items(), key=lambda item: item[1])}
-```
-</b></details>
-
-<details>
-<summary>How to sort a dictionary by keys?</summary><br><b>
-
-```
-dict(sorted(some_dictionary.items()))
-```
-</b></details>
-
-<details>
-<summary>How to merge two dictionaries?</summary><br><b>
-
-```
-some_dict1.update(some_dict2)
-```
-</b></details>
-
-
-<details>
-<summary>Convert the string "a.b.c" to the dictionary <code>{'a': {'b': {'c': 1}}}</code></summary><br><b>
-
-```
-output = {}
-string = "a.b.c"
-path = string.split('.')
-target = reduce(lambda d, k: d.setdefault(k, {}), path[:-1], output)
-target[path[-1]] = 1
-print(output)
-```
-</b></details>
-
-##### Common Algorithms Implementation
-
-<details>
-<summary>Can you implement "binary search" in Python?</summary><br><b>
-
-[Solution](coding/python/binary_search.py)
-</b></details>
-
-#### Python Files
-
-<details>
-<summary>How to write to a file?</summary><br><b>
-
-```
-with open('file.txt', 'w') as file:
-    file.write("My insightful comment")
-```
-</b></details>
-
-<details>
-<summary>Sum all the integers in a given file</summary><br><b>
-</b></details>
-
-<details>
-<summary>Print a random line of a given file</summary><br><b>
-</b></details>
-
-<details>
-<summary>Print every 3rd line of a given file</summary><br><b>
-</b></details>
-
-<details>
-<summary>Print the number of lines in a given file</summary><br><b>
-</b></details>
-
-<details>
-<summary>Print the number of of words in a given file</summary><br><b>
-</b></details>
-
-<details>
-<summary>Can you write a function which will print all the file in a given directory? including sub-directories</summary><br><b>
-</b></details>
-
-<details>
-<summary>Write a dictionary (variable) to a file</summary><br><b>
-
-```
-import json
-
-with open('file.json', 'w') as f:
-    f.write(json.dumps(dict_var))
-```
-</b></details>
-
-#### Python OS
-
-<details>
-<summary>How to print current working directory?</summary><br><b>
-
-    import os
-
-    print(os.getcwd())
-
-</b></details>
-
-<details>
-<summary>Given the path <code>/dir1/dir2/file1</code> print the file name (file1)</summary><br><b>
-
-    import os
-
-    print(os.path.basename('/dir1/dir2/file1'))
-
-    # Another way
-    print(os.path.split('/dir1/dir2/file1')[1])
-
-</b></details>
-
-<details>
-<summary>Given the path <code>/dir1/dir2/file1</code>
-
-1. Print the path without the file name (/dir1/dir2)
-2. Print the name of the directory where the file resides (dir2)
-</summary><br><b>
-
-    import os
-
-    ## Part 1.
-    # os.path.dirname gives path removing the end component
-    dirpath = os.path.dirname('/dir1/dir2/file1')
-    print(dirpath)
-
-    ## Part 2.
-    print(os.path.basename(dirpath))
-
-</b></details>
-
-<details>
-<summary>How do you execute shell commands using Python?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you join path components? for example <code>/home</code> and <code>luig</code> will result in <code>/home/luigi</code> </summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you remove non-empty directory?</summary><br><b>
-</b></details>
-
-#### Python Regex
-
-<details>
-<summary>How do you perform regular expressions related operations in Python? (match patterns, substitute strings, etc.)</summary><br><b>
-
-Using the re module
-</b></details>
-
-<details>
-<summary>How to find all the IP addresses in a variable? How to find them in a file?</summary><br><b>
-</b></details>
-
-#### Python Strings
-
-<details>
-<summary>Find the first repeated character in a string</summary><br><b>
-
-While you iterate through the characters, store them in a dictionary and check for every character whether it's already in the dictionary.
-
-```
-def firstRepeatedCharacter(str):
-    chars = {}
-    for ch in str:
-        if ch in chars:
-            return ch
-        else:
-            chars[ch] = 0
-```
-</b></details>
-
-<details>
-<summary>How to extract the unique characters from a string? for example given the input "itssssssameeeemarioooooo" the output will be "mrtisaoe"</summary><br><b>
-
-```
-x = "itssssssameeeemarioooooo"
-y = ''.join(set(x))
-```
-</b></details>
-
-<details>
-<summary>Find all the permutations of a given string</summary><br><b>
-
-```
-def permute_string(string):
-
-    if len(string) == 1:
-        return [string]
-
-    permutations = []
-    for i in range(len(string)):
-        swaps = permute_string(string[:i] + string[(i+1):])
-        for swap in swaps:
-            permutations.append(string[i] + swap)
-
-    return permutations
-
-print(permute_string("abc"))
-```
-
-Short way (but probably not acceptable in interviews):
-
-```
-from itertools import permutations
-
-[''.join(p) for p in permutations("abc")]
-```
-
-Detailed answer can be found here: http://codingshell.com/python-all-string-permutations
-
-</b></details>
-
-<details>
-<summary>How to check if a string contains a sub string?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Find the frequency of each character in string</summary><br><b>
-</b></details>
-
-<details>
-<summary>Count the number of spaces in a string</summary><br><b>
-
-You can use the "count" method like this:
-
-```python
-
-ImAString.count(" ")
-
-```
-
-</b></details>
-
-<details>
-<summary>Given a string, find the N most repeated words</summary><br><b>
-</b></details>
-
-<details>
-<summary>Given the string (which represents a matrix) "1 2 3\n4 5 6\n7 8 9" create rows and colums variables (should contain integers, not strings)</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of each of the following?
-
-```
->> ', '.join(["One", "Two", "Three"])
->> " ".join("welladsadgadoneadsadga".split("adsadga")[:2])
->> "".join(["c", "t", "o", "a", "o", "q", "l"])[0::2]
-```
-</summary><br><b>
-
-```
->>> 'One, Two, Three'
->>> 'well done'
->>> 'cool'
-```
-</b></details>
-
-<details>
-<summary>If <code>x = "pizza"</code>, what would be the result of <code>x[::-1]</code>?</summary><br><b>
-
-It will reverse the string, so x would be equal to `azzip`.
-</b></details>
-
-<details>
-<summary>Reverse each word in a string (while keeping the order)</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the output of the following code: <code>"".join(["a", "h", "m", "a", "h", "a", "n", "q", "r", "l", "o", "i", "f", "o", "o"])[2::3]</code></summary><br><b>
-
-mario
-</b></details>
-
-#### Python Iterators
-
-<details>
-<summary>What is an iterator?</summary><br><b>
-</b></details>
-
-#### Python Misc
-
-<details>
-<summary>Explain data serialization and how do you perform it with Python</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you handle argument parsing in Python?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a generator? Why using generators?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What would be the output of the following block?
-
-```
-for i in range(3, 3):
-   print(i)
-```
-</summary><br><b>
-
-No output :)
-</b></details>
-
-<details>
-<summary>What is <code>yeild</code>? When would you use it?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain the following types of methods and how to use them:
-
-  * Static method
-  * Class method
-  * instance method</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to reverse a list?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How to combine list of strings into one string with spaces between the strings</summary><br><b>
-</b></details>
-
-<details>
-<summary>You have the following list of nested lists: <code>[['Mario', 90], ['Geralt', 82], ['Gordon', 88]]</code> How to sort the list by the numbers in the nested lists?</code></summary><br><b>
-
-One way is:
-
-the_list.sort(key=lambda x: x[1])
-</b></details>
-
-<details>
-<summary>Explain the following:
-
-  * zip()
-  * map()
-  * filter()</summary><br><b>
-</b></details>
-
-#### Python - Slicing
-
-For the following slicing exercises, assume you have the following list: `my_list = [8, 2, 1, 10, 5, 4, 3, 9]`
-
-<details>
-<summary>What is the result of `my_list[0:4]`?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of `my_list[5:6]`?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of `my_list[5:5]`?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of `my_list[::-1]`?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of `my_list[::3]`?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of `my_list[2:]`?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is the result of `my_list[:3]`?</summary><br><b>
-</b></details>
-
-#### Python Debugging
-
-<details>
-<summary>How do you debug Python code?</summary><br><b>
-
-pdb :D
-</b></details>
-
-<details>
-<summary>How to check how much time it took to execute a certain script or block of code?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What empty <code>return</code> returns?</summary><br><b>
-</b>
-
-Short answer is: It returns a None object.
-
-We could go a bit deeper and explain the difference between
-
-```
-def a ():
-    return
-
->>> None
-```
-
-And
-
-```
-def a ():
-    pass
-
->>> None
-```
-Or we could be asked this as a following question, since they both give the same result.
-
-We could use the dis module to see what's going on:
-
-```
-  2           0 LOAD_CONST               0 (<code object a at 0x0000029C4D3C2DB0, file "<dis>", line 2>)
-              2 LOAD_CONST               1 ('a')
-              4 MAKE_FUNCTION            0
-              6 STORE_NAME               0 (a)
-
-  5           8 LOAD_CONST               2 (<code object b at 0x0000029C4D3C2ED0, file "<dis>", line 5>)
-             10 LOAD_CONST               3 ('b')
-             12 MAKE_FUNCTION            0
-             14 STORE_NAME               1 (b)
-             16 LOAD_CONST               4 (None)
-             18 RETURN_VALUE
-
-Disassembly of <code object a at 0x0000029C4D3C2DB0, file "<dis>", line 2>:
-  3           0 LOAD_CONST               0 (None)
-              2 RETURN_VALUE
-
-Disassembly of <code object b at 0x0000029C4D3C2ED0, file "<dis>", line 5>:
-  6           0 LOAD_CONST               0 (None)
-              2 RETURN_VALUE
-```
-
-An empty <code> return</code> is exactly the same as <code>return None</code> and functions without any explicit return
-will always return None regardless of the operations, therefore
-
-
-```
-def sum(a, b):
-    global c
-    c = a + b
-
->>> None
-```
-</b></details>
-
-<details>
-<summary>How to improve the following block of code?
-
-```
-li = []
-for i in range(1, 10):
-    li.append(i)
-```
-</summary><br><b>
-
-```
-[i for i in range(1, 10)]
-```
-</b></details>
-
-<details>
-<summary>Given the following function
-
-```
-def is_int(num):
-    if isinstance(num, int):
-        print('Yes')
-    else:
-        print('No')
-```
-What would be the result of is_int(2) and is_int(False)?
-</summary><br><b>
-</b></details>
-
-#### Python - Linked List
-
-<details>
-<summary>Can you implement a linked list in Python?</summary><br><b>
-
-The reason we need to implement in the first place, it's because a linked list isn't part of Python standard library.<br>
-To implement a linked list, we have to implement two structures: The linked list itself and a node which is used by the linked list.
-
-Let's start with a node. A node has some value (the data it holds) and a pointer to the next node
-
-```
-class Node(object):
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-```
-
-Now the linked list. An empty linked list has nothing but an empty head.
-
-```
-class LinkedList(object):
-    def __init__(self):
-        self.head = None
-```
-
-Now we can start using the linked list
-
-```
-ll = Linkedlist()
-ll.head = Node(1)
-ll.head.next = Node(2)
-ll.head.next.next = Node(3)
-```
-
-What we have is:
-
-----       -----      ----
-| 1 | ->   | 2 |  ->  | 3 |
-----       -----      -----
-
-Usually, more methods are implemented, like a push_head() method where you insert a node at the beginning of the linked list
-
-```
-def push_head(self, value):
-    new_node = Node(value)
-    new_node.next = self.head
-    self.head = new_node
-```
-</b></details>
-
-<details>
-<summary>Add a method to the Linked List class to traverse (print every node's data) the linked list</summary><br><b>
-
-def print_list(self):
-    node = self.head
-    while(node):
-        print(node.data)
-        node = node.next
-</b></details>
-
-<details>
-<summary>Write a method to that will return a boolean based on whether there is a loop in a linked list or not</summary><br><b>
-
-Let's use the Floyd's Cycle-Finding algorithm:
-
-```
-def loop_exists(self):
-    one_step_p = self.head
-    two_steps_p = self.head
-    while(one_step_p and two_steps_p and two_steps_p.next):
-        one_step_p = self.head.next
-        two_step_p = self.head.next.next
-        if (one_step_p == two_steps_p):
-            return True 
-    return False
-```
-</b></details>
-
-#### Python - Stack
-
-<details>
-<summary>Implement Stack in Python</summary><br><b>
-</b></details>
-
-#### Python Testing
-
-<details>
-<summary>What is your experience with writing tests in Python?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is PEP8? Give an example of 3 style guidelines</summary><br><b>
-
-PEP8 is a list of coding conventions and style guidelines for Python
-
-5 style guidelines:
-
-    1. Limit all lines to a maximum of 79 characters.
-    2. Surround top-level function and class definitions with two blank lines.
-    3. Use commas when making a tuple of one element
-    4. Use spaces (and not tabs) for indentation
-    5. Use 4 spaces per indentation level
-</b></details>
-
-<details>
-<summary>How to test if an exception was raised?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What <code>assert</code> does in Python?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain mocks</summary><br><b>
-</b></details>
-
-<details>
-<summary>How do you measure execution time of small code snippets?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Why one shouldn't use <code>assert</code> in non-test/production code?</summary><br><b>
-</b></details>
-
-#### Flask
-
-<details>
-<summary>Can you describe what is Django/Flask and how you have used it? Why Flask and not Django? (or vice versa)</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a route?</summary><br><b>
-As every web framework, Flask provides a route functionality that lets you serve a content of a given URL.
-
-There are multiple ways to map a URL with a function in Python.
-
-- Decorator: you can use python decorators. In this case we're using `app`. This `app` decorator is the instance of the `Flask` class. And route it's a method of this class.
-
-```
-@app.route('/')
-def home():
-  return 'main website'
-```
-
-- `add_url_rule` method: This is a method of the Flask class. We can also use it for map the URL with a function.
-
-```
-def home():
-  return 'main website'
-
-app.add_url_rule('/', view_func=home)
-```
-
-</b></details>
-
-<details>
-<summary>What is a blueprint in Flask?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a template?</summary><br><b>
-</b></details>
-
-#### zip
-
-<details>
-<summary>Given <code>x = [1, 2, 3]</code>, what is the result of list(zip(x))?</summary><br><b>
-
-```
-[(1,), (2,), (3,)]
-```
-</b></details>
-
-<details>
-<summary>What is the result of each of the following:
-
-```
-list(zip(range(5), range(50), range(50)))
-list(zip(range(5), range(50), range(-2)))
-```
-</summary><br><b>
-
-```
-[(0, 0, 0), (1, 1, 1), (2, 2, 2), (3, 3, 3), (4, 4, 4)]
-[]
-```
-</b></details>
-
-#### Python Descriptors
-
-<details>
-<summary>Explain Descriptors</summary><br><b>
-
-Read about descriptors [here](https://docs.python.org/3/howto/descriptor.html)
-</b></details>
-
-<details>
-<summary>What would be the result of running <code>a.num2</code> assuming the following code
-
-```
-class B:
-    def __get__(self, obj, objtype=None):
-        reuturn 10
-
-class A:
-    num1 = 2
-    num2 = Five()
-```
-</summary><br><b>
-10
-</b></details>
-
-<details>
-<summary>What would be the result of running <code>some_car = Car("Red", 4)</code> assuming the following code
-
-```
-class Print:
-
-    def __get__(self, obj, objtype=None):
-        value = obj._color
-        print("Color was set to {}".format(valie))
-        return value
-
-    def __set__(self, obj, value):
-        print("The color of the car is {}".format(value))
-        obj._color = value
-
-class Car:
-
-    color = Print()
-
-    def __ini__(self, color, age):
-        self.color = color
-        self.age = age
-```
-</summary><br><b>
-An instance of Car class will be created and the following will be printed: "The color of the car is Red"
-</b></details>
-
-#### Python Misc
-
-<details>
-<summary>How can you spawn multiple processes with Python?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Implement simple calculator for two numbers</summary><br><b>
-
-```
-def add(num1, num2):
-    return num1 + num2
-
-
-def sub(num1, num2):
-    return num1 - num2
-
-
-def mul(num1, num2):
-    return num1*num2
-
-
-def div(num1, num2):
-    return num1 / num2
-
-operators = {
-    '+': add,
-    '-': sub,
-    '*': mul,
-    '/': div
-}
-
-if __name__ == '__main__':
-    operator = str(input("Operator: "))
-    num1 = int(input("1st number: "))
-    num2 = int(input("2nd number: "))
-    print(operators[operator](num1, num2))
-```
-</b></details>
-
-<details>
-<summary>What data types are you familiar with that are not Python built-in types but still provided by modules which are part of the standard library?</summary><br><b>
-
-This is a good reference https://docs.python.org/3/library/datatypes.html
-</b></details>
-
-<details>
-<summary>Explain what is a decorator</summary><br><b>
-</b>
-<b>In python, everything is an object, even functions themselves. Therefore you could pass functions as arguments
-for another function eg;
-
-```
-def wee(word):
-    return word
-
-def oh(f):
-    return f + "Ohh"
-
->>> oh(wee("Wee"))
-<<< Wee Ohh
-```
-
-This allows us to control the before execution of any given function and if we added another function as wrapper,
-(a function receiving another function that receives a function as parameter) we could also control the after execution.
-
-Sometimes we want to control the before-after execution of many functions and it would get tedious to write
-
-<code> f = function(function_1())</code>
-<code> f = function(function_1(function_2(*args)))</code>
-
-every time, that's what decorators do, they introduce syntax to write all of this on the go, using the keyword '@'.
-</b>
-</details>
-
-<details>
-<summary>Can you show how to write and use decorators?</summary><br><b>
-
-<code>
-These two decorators (ntimes and timer) are usually used to display decorators functionalities, you can find them in lots of
-tutorials/reviews. I first saw these examples two years ago in pyData 2017. https://www.youtube.com/watch?v=7lmCu8wz8ro&t=3731s</code>
-
-```
-Simple decorator:
-
-def deco(f):
-    print(f"Hi I am the {f.__name__}() function!")
-    return f
-
-@deco
-def hello_world():
-    return "Hi, I'm in!"
-
-a = hello_world()
-print(a)
-
->>> Hi I am the hello_world() function!
-    Hi, I'm in!
-```
-
-This is the simplest decorator version, it basically saves us from writting <code>a = deco(hello_world())</code>.
-But at this point we can only control the before execution, let's take on the after:
-
-```
-def deco(f):
-    def wrapper(*args, **kwargs):
-        print("Rick Sanchez!")
-        func = f(*args, **kwargs)
-        print("I'm in!")
-        return func
-    return wrapper
-
-@deco
-def f(word):
-    print(word)
-
-a = f("************")
->>> Rick Sanchez!
-    ************
-    I'm in!
-```
-
-deco receives a function -> f
-wrapper receives the arguments -> *args, **kwargs
-
-wrapper returns the function plus the arguments -> f(*args, **kwargs)
-deco returns wrapper.
-
-As you can see we conveniently do things before and after the execution of a given function.
-
-For example, we could write a decorator that calculates the execution time of a function.
-
-```
-import time
-def deco(f):
-    def wrapper(*args, **kwargs):
-        before = time.time()
-        func = f(*args, **kwargs)
-        after = time.time()
-        print(after-before)
-        return func
-    return wrapper
-
-@deco
-def f():
-    time.sleep(2)
-    print("************")
-
-a = f()
->>> 2.0008859634399414
-```
-
-Or create a decorator that executes a function n times.
-
-```
-def n_times(n):
-    def wrapper(f):
-        def inner(*args, **kwargs):
-            for _ in range(n):
-                func = f(*args, **kwargs)
-            return func
-        return inner
-    return wrapper
-
-@n_times(4)
-def f():
-    print("************")
-
-a = f()
-
->>>************
-   ************
-   ************
-   ************
-```
-
-</b></details>
-
-<details>
-<summary>Write a decorator that calculates the execution time of a function</summary><br><b>
-</b></details>
-
-<details>
-<summary>Write a script which will determine if a given host is accessible on a given port</summary><br><b>
-</b></details>
-
-<details>
-<summary>Are you familiar with Dataclasses? Can you explain what are they used for?</summary><br><b>
-</b></details>
-
-<details>
-<summary>You wrote a class to represent a car. How would you compare two cars instances if two cars are equal if they have the same model and color?</summary><br><b>
-
-```
-class Car:
-    def __init__(self, model, color):
-        self.model = model
-        self.color = color
-
-    def __eq__(self, other):
-        if not isinstance(other, Car):
-            return NotImplemented
-        return self.model == other.model and self.color == other.color
-
->> a = Car('model_1', 'red')
->> b = Car('model_2', 'green')
->> c = Car('model_1', 'red')
->> a == b
-False
->> a == c
-True
-```
-</b></details>
-
-<details>
-<summary>Explain Context Manager</summary><br><b>
-</b></details>
-
-<details>
-<summary>Tell me everything you know about concurrency in Python</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain the Buffer Protocol</summary><br><b>
-</b></details>
-
-<details>
-<summary>Do you have experience with web scraping? Can you describe what have you used and for what?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Can you implement Linux's <code>tail</code> command in Python? Bonus: implement <code>head</code> as well</summary><br><b>
-</b></details>
-
-<details>
-<summary>You have created a web page where a user can upload a document. But the function which reads the uploaded files, runs for a long time, based on the document size and user has to wait for the read operation to complete before he/she can continue using the web site. How can you overcome this?</summary><br><b>
-</b></details>
-
-<details>
-<summary>How yield works exactly?</summary><br><b>
-</b></details>
-
-## Monitoring
-
-<details>
-<summary>Explain monitoring. What is it? What its goal?</summary><br><b>
-
-Google: "Monitoring is one of the primary means by which service owners keep track of a system’s health and availability".
-</b></details>
-
-<details>
-<summary>What is wrong with the old approach of watching for a specific value and trigger an email/phone alert while value is exceeded?</summary><br><b>
-
-This approach require from a human to always check why the value exceeded and how to handle it while today, it is more effective to notify people only when they need to take an actual action.
-If the issue doesn't require any human intervention, then the problem can be fixed by some processes running in the relevant environment.
-</b></details>
-
-<details>
-<summary>What types of monitoring outputs are you familiar with and/or used in the past?</summary><br><b>
-
-Alerts<br>
-Tickets<br>
-Logging<br>
-</b></details>
-
-<details>
-<summary>What is the difference between infrastructure monitoring and application monitoring? (methods, tools, ...)</summary><br><b>
+Yes, virtual machines are still relevant even in the age of containers. While containers provide a lightweight and portable alternative to virtual machines, they do have certain limitations. Virtual machines still matter because they offer isolation and security, can run different operating systems, and are good for legacy apps. Containers limitations for example are sharing the host kernel.
 </b></details>
 
 ## Prometheus
 
 <details>
 <summary>What is Prometheus? What are some of Prometheus's main features?</summary><br><b>
+
+Prometheus is a popular open-source systems monitoring and alerting toolkit, originally developed at SoundCloud. It is designed to collect and store time-series data, and to allow for querying and analysis of that data using a powerful query language called PromQL. Prometheus is frequently used to monitor cloud-native applications, microservices, and other modern infrastructure.
+
+Some of the main features of Prometheus include:
+
+    1. Data model: Prometheus uses a flexible data model that allows users to organize and label their time-series data in a way that makes sense for their particular use case. Labels are used to identify different dimensions of the data, such as the source of the data or the environment in which it was collected.
+
+    2. Pull-based architecture: Prometheus uses a pull-based model to collect data from targets, meaning that the Prometheus server actively queries its targets for metrics data at regular intervals. This architecture is more scalable and reliable than a push-based model, which would require every target to push data to the server.
+
+    3. Time-series database: Prometheus stores all of its data in a time-series database, which allows users to perform queries over time ranges and to aggregate and analyze their data in various ways. The database is optimized for write-heavy workloads, and can handle a high volume of data with low latency.
+
+    4. Alerting: Prometheus includes a powerful alerting system that allows users to define rules based on their metrics data and to send alerts when certain conditions are met. Alerts can be sent via email, chat, or other channels, and can be customized to include specific details about the problem.
+
+    5. Visualization: Prometheus has a built-in graphing and visualization tool, called PromDash, which allows users to create custom dashboards to monitor their systems and applications. PromDash supports a variety of graph types and visualization options, and can be customized using CSS and JavaScript.
+
+Overall, Prometheus is a powerful and flexible tool for monitoring and analyzing systems and applications, and is widely used in the industry for cloud-native monitoring and observability.
+
 </b></details>
 
 <details>
@@ -4470,62 +925,143 @@ From Prometheus documentation: "if you need 100% accuracy, such as for per-reque
 
 <details>
 <summary>Describe Prometheus architecture and components</summary><br><b>
+
+The Prometheus architecture consists of four major components:
+
+    1. Prometheus Server: The Prometheus server is responsible for collecting and storing metrics data. It has a simple built-in storage layer that allows it to store time-series data in a time-ordered database.
+
+    2. Client Libraries: Prometheus provides a range of client libraries that enable applications to expose their metrics data in a format that can be ingested by the Prometheus server. These libraries are available for a range of programming languages, including Java, Python, and Go.
+
+    3. Exporters: Exporters are software components that expose existing metrics from third-party systems and make them available for ingestion by the Prometheus server. Prometheus provides exporters for a range of popular technologies, including MySQL, PostgreSQL, and Apache.
+
+    4. Alertmanager: The Alertmanager component is responsible for processing alerts generated by the Prometheus server. It can handle alerts from multiple sources and provides a range of features for deduplicating, grouping, and routing alerts to appropriate channels.
+
+Overall, the Prometheus architecture is designed to be highly scalable and resilient. The server and client libraries can be deployed in a distributed fashion to support monitoring across large-scale, highly dynamic environments
 </b></details>
 
 <details>
 <summary>Can you compare Prometheus to other solutions like InfluxDB for example?</summary><br><b>
+
+Compared to other monitoring solutions, such as InfluxDB, Prometheus is known for its high performance and scalability. It can handle large volumes of data and can easily be integrated with other tools in the monitoring ecosystem. InfluxDB, on the other hand, is known for its ease of use and simplicity. It has a user-friendly interface and provides easy-to-use APIs for collecting and querying data.
+
+Another popular solution, Nagios, is a more traditional monitoring system that relies on a push-based model for collecting data. Nagios has been around for a long time and is known for its stability and reliability. However, compared to Prometheus, Nagios lacks some of the more advanced features, such as multi-dimensional data model and powerful query language.
+
+Overall, the choice of a monitoring solution depends on the specific needs and requirements of the organization. While Prometheus is a great choice for large-scale monitoring and alerting, InfluxDB may be a better fit for smaller environments that require ease of use and simplicity. Nagios remains a solid choice for organizations that prioritize stability and reliability over advanced features.
 </b></details>
 
 <details>
 <summary>What is an Alert?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Describe the following Prometheus components:
-
-  * Prometheus server
-  * Push Gateway
-  * Alert Manager</summary><br><b>
-
-Prometheus server is responsible for scraping and storing the data<br>
-Push gateway is used for short-lived jobs<br>
-Alert manager is responsible for alerts ;)
+In Prometheus, an alert is a notification triggered when a specific condition or threshold is met. Alerts can be configured to trigger when certain metrics cross a certain threshold or when specific events occur. Once an alert is triggered, it can be routed to various channels, such as email, pager, or chat, to notify relevant teams or individuals to take appropriate action. Alerts are a critical component of any monitoring system, as they allow teams to proactively detect and respond to issues before they impact users or cause system downtime.
 </b></details>
 
 <details>
 <summary>What is an Instance? What is a Job?</summary><br><b>
+
+In Prometheus, an instance refers to a single target that is being monitored. For example, a single server or service. A job is a set of instances that perform the same function, such as a set of web servers serving the same application. Jobs allow you to define and manage a group of targets together.
+
+In essence, an instance is an individual target that Prometheus collects metrics from, while a job is a collection of similar instances that can be managed as a group.
 </b></details>
 
 <details>
 <summary>What core metrics types Prometheus supports?</summary><br><b>
+Prometheus supports several types of metrics, including:
+
+    1. Counter: A monotonically increasing value used for tracking counts of events or samples. Examples include the number of requests processed or the total number of errors encountered.
+
+    2. Gauge: A value that can go up or down, such as CPU usage or memory usage. Unlike counters, gauge values can be arbitrary, meaning they can go up and down based on changes in the system being monitored.
+
+    3. Histogram: A set of observations or events that are divided into buckets based on their value. Histograms help in analyzing the distribution of a metric, such as request latencies or response sizes.
+
+    4. Summary: A summary is similar to a histogram, but instead of buckets, it provides a set of quantiles for the observed values. Summaries are useful for monitoring the distribution of request latencies or response sizes over time.
+
+Prometheus also supports various functions and operators for aggregating and manipulating metrics, such as sum, max, min, and rate. These features make it a powerful tool for monitoring and alerting on system metrics.
 </b></details>
 
 <details>
 <summary>What is an exporter? What is it used for?</summary><br><b>
+The exporter serves as a bridge between the third-party system or application and Prometheus, making it possible for Prometheus to monitor and collect data from that system or application.
+
+The exporter acts as a server, listening on a specific network port for requests from Prometheus to scrape metrics. It collects metrics from the third-party system or application and transforms them into a format that can be understood by Prometheus. The exporter then exposes these metrics to Prometheus via an HTTP endpoint, making them available for collection and analysis.
+
+Exporters are commonly used to monitor various types of infrastructure components such as databases, web servers, and storage systems. For example, there are exporters available for monitoring popular databases such as MySQL and PostgreSQL, as well as web servers like Apache and Nginx.
+
+Overall, exporters are a critical component of the Prometheus ecosystem, allowing for the monitoring of a wide range of systems and applications, and providing a high degree of flexibility and extensibility to the platform.
 </b></details>
 
 <details>
-<summary>Which Prometheus best practices are you familiar with?. Name at least three</summary><br><b>
+<summary>Which Prometheus best practices?</summary><br><b>
+Here are three of them:
+
+    1. Label carefully: Careful and consistent labeling of metrics is crucial for effective querying and alerting. Labels should be clear, concise, and include all relevant information about the metric.
+
+    2. Keep metrics simple: The metrics exposed by exporters should be simple and focus on a single aspect of the system being monitored. This helps avoid confusion and ensures that the metrics are easily understandable by all members of the team.
+
+    3. Use alerting sparingly: While alerting is a powerful feature of Prometheus, it should be used sparingly and only for the most critical issues. Setting up too many alerts can lead to alert fatigue and result in important alerts being ignored. It is recommended to set up only the most important alerts and adjust the thresholds over time based on the actual frequency of alerts.
 </b></details>
 
 <details>
 <summary>How to get total requests in a given period of time?</summary><br><b>
+To get the total requests in a given period of time using Prometheus, you can use the *sum* function along with the *rate* function. Here is an example query that will give you the total number of requests in the last hour:
+
+```
+sum(rate(http_requests_total[1h]))
+```
+In this query, *http_requests_total* is the name of the metric that tracks the total number of HTTP requests, and the *rate* function calculates the per-second rate of requests over the last hour. The *sum* function then adds up all of the requests to give you the total number of requests in the last hour.
+
+You can adjust the time range by changing the duration in the *rate* function. For example, if you wanted to get the total number of requests in the last day, you could change the function to *rate(http_requests_total[1d])*.
 </b></details>
 
 <details>
 <summary>What HA in Prometheus means?</summary><br><b>
+
+HA stands for High Availability. This means that the system is designed to be highly reliable and always available, even in the face of failures or other issues. In practice, this typically involves setting up multiple instances of Prometheus and ensuring that they are all synchronized and able to work together seamlessly. This can be achieved through a variety of techniques, such as load balancing, replication, and failover mechanisms. By implementing HA in Prometheus, users can ensure that their monitoring data is always available and up-to-date, even in the face of hardware or software failures, network issues, or other problems that might otherwise cause downtime or data loss.
 </b></details>
 
 <details>
 <summary>How do you join two metrics?</summary><br><b>
+In Prometheus, joining two metrics can be achieved using the *join()* function. The *join()* function combines two or more time series based on their label values. It takes two mandatory arguments: *on* and *table*. The on argument specifies the labels to join *on* and the *table* argument specifies the time series to join.
+
+Here's an example of how to join two metrics using the *join()* function:
+
+```
+sum_series(
+  join(
+    on(service, instance) request_count_total,
+    on(service, instance) error_count_total,
+  )
+)
+```
+In this example, the *join()* function combines the *request_count_total* and *error_count_total* time series based on their *service* and *instance* label values. The *sum_series()* function then calculates the sum of the resulting time series
 </b></details>
 
 <details>
 <summary>How to write a query that returns the value of a label?</summary><br><b>
+To write a query that returns the value of a label in Prometheus, you can use the *label_values* function. The *label_values* function takes two arguments: the name of the label and the name of the metric.
+
+For example, if you have a metric called *http_requests_total* with a label called *method*, and you want to return all the values of the *method* label, you can use the following query:
+
+```
+label_values(http_requests_total, method)
+```
+
+This will return a list of all the values for the *method* label in the *http_requests_total* metric. You can then use this list in further queries or to filter your data.
 </b></details>
 
 <details>
 <summary>How do you convert cpu_user_seconds to cpu usage in percentage?</summary><br><b>
+To convert *cpu_user_seconds* to CPU usage in percentage, you need to divide it by the total elapsed time and the number of CPU cores, and then multiply by 100. The formula is as follows:
+
+```
+100 * sum(rate(process_cpu_user_seconds_total{job="<job-name>"}[<time-period>])) by (instance) / (<time-period> * <num-cpu-cores>)
+```
+
+Here, *<job-name>* is the name of the job you want to query, *<time-period>* is the time range you want to query (e.g. *5m*, *1h*), and *<num-cpu-cores>* is the number of CPU cores on the machine you are querying.
+
+For example, to get the CPU usage in percentage for the last 5 minutes for a job named *my-job* running on a machine with 4 CPU cores, you can use the following query:
+
+```
+100 * sum(rate(process_cpu_user_seconds_total{job="my-job"}[5m])) by (instance) / (5m * 4)
+```
 </b></details>
 
 ## Go
@@ -4582,7 +1118,8 @@ func main() {
 <details>
 <summary>The following block of code tries to convert the integer 101 to a string but instead we get "e". Why is that? How to fix it?
 
-```
+
+```go
 package main
 
 import "fmt"
@@ -4623,7 +1160,7 @@ But `x`, `y` and their sum is variable.
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import "fmt"
@@ -4661,7 +1198,7 @@ It is called the [blank identifier](https://golang.org/doc/effective_go.html#bla
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import "fmt"
@@ -4683,7 +1220,7 @@ Since the first iota is declared with the value `3` (` + 3`), the next one has t
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import (
@@ -4722,7 +1259,7 @@ Output: 2 1 3
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import (
@@ -4776,7 +1313,7 @@ But in `mod2`, `append` creats new slice, and we're changing only `a` value, not
 <details>
 <summary>What will be the output of the following block of code?:
 
-```
+```go
 package main
 
 import (
@@ -4852,18 +1389,27 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>What is a document? What is a collection?</summary><br><b>
+
+  * A document is a record in MongoDB, which is stored in BSON (Binary JSON) format and is the basic unit of data in MongoDB.
+  * A collection is a group of related documents stored in a single database in MongoDB.
 </b></details>
 
 <details>
 <summary>What is an aggregator?</summary><br><b>
+
+  * An aggregator is a framework in MongoDB that performs operations on a set of data to return a single computed result.
 </b></details>
 
 <details>
 <summary>What is better? Embedded documents or referenced?</summary><br><b>
+
+  * There is no definitive answer to which is better, it depends on the specific use case and requirements. Some explainations : Embedded documents provide atomic updates, while referenced documents allow for better normalization.
 </b></details>
 
 <details>
 <summary>Have you performed data retrieval optimizations in Mongo? If not, can you think about ways to optimize a slow data retrieval?</summary><br><b>
+
+  * Some ways to optimize data retrieval in MongoDB are: indexing, proper schema design, query optimization and database load balancing.
 </b></details>
 
 ##### Queries
@@ -4878,6 +1424,9 @@ as key-value pair, document-oriented, etc.
 
 <details>
 <summary>What is the difference between find() and find_one()?</code></summary><br><b>
+	
+  * `find()` returns all documents that match the query conditions.
+  * find_one() returns only one document that matches the query conditions (or null if no match is found).
 </b></details>
 
 <details>
@@ -4893,7 +1442,7 @@ as key-value pair, document-oriented, etc.
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Functions vs. Comparisons | Query Improvements | [Exercise](exercises/sql/improve_query.md) | [Solution](exercises/sql/solutions/improve_query.md)
+| Functions vs. Comparisons | Query Improvements | [Exercise](topics/sql/improve_query.md) | [Solution](topics/sql/solutions/improve_query.md)
 
 ### SQL Self Assessment
 
@@ -5045,322 +1594,6 @@ WHERE
 When you use a function (`YEAR(purchased_at)`) it has to scan the whole database as opposed to using indexes and basically the column as it is, in its natural state.
 </b></details>
 
-## GCP
-
-<details>
-<summary>Explain GCP's architecture</summary><br><b>
-</b></details>
-
-<details>
-<summary>What are the main components and services of GCP?</summary><br><b>
-
-| Components | Services          |
-| ---------- | ----------------- |
-| Compute    | Compute Engine    |
-|            | App Engine        |
-|            | Kubernetes Engine |
-|            | Cloud Function    |
-|            | Cloud Run         | 
-| Storage &  | Cloud Storage     |
-| Database   | Cloud SQL         |
-|            | Cloud BigTable    |
-|            | Cloud Spanner     |
-|            | Cloud Datastore   |
-| Networking | VPC               |
-|            | Load Balancing    |
-|            | Cloud Armor       |
-|            | Cloud CDN         |
-|            | Cloud DNS         |
-|            | Cloud Interconnect|
-| Big Data   | Big Query         |
-|            | Cloud Dataproc    |
-|            | Cloud Datalab     |
-|            | Data Studio       |
-| DevOps     | Container Registry|
-|            | Cloud Build       |
-|            | Source Repository |
-| Identity & | Cloud Identity    |
-| Security   | Cloud IAM         |
-|            | Cloud KMS         |
-| Cloud AI   | Cloud AutoML      |
-|            | Cloud Vision API  |
-|            | Natural Language  |
-|            | Cloud Speech-to-Text|
-|            | Cloud Text-to-Speech|
-|            | Cloud Translation API|
-|            | Cloud Video Intelligence|
-| API Platform | Maps Platform    |
-|            | API Analytics  |
-|            | Apigee Sense   |
-|            | Cloud Endpoints|
-
-</b></details>
-
-<details>
-<summary>What GCP management tools are you familiar with?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Tell me what do you know about GCP networking</summary><br><b>
-
-Virtual Private Cloud(VPC) network is a virtual version of physical network, implemented in Google's internal Network. VPC is a gloabal resource in GCP.
-Subnetworks(subnets) are regional resources, ie., subnets can be created withinin regions.
-
-VPC are created in 2 modes,
-
-1. Auto mode VPC - One subnet in each region is created automatically by GCP while creating VPC
-
-2. Custom mode VPC - No subnets are automatically created. This type of network provides complete control over the subnets creation to the users. 
-
-
-</b></details>
-
-<details>
-<summary>Explain Cloud Functions</summary><br><b>
-
-Google Cloud Functions is a serverless execution environment for building and connecting cloud services. With Cloud Functions you write simple, single-purpose functions that are attached to events emitted from your cloud infrastructure and services. Your function is triggered when an event being watched is fired.
-
-</b></details>
-
-<details>
-<summary>What is Cloud Datastore?</summary><br><b>
-
-Cloud Datastore is a schemaless NoSQL datastore in Google's cloud. Applications can use Datastore to query your data with SQL-like queries that support filtering and sorting. Datastore replicates data across multiple datacenters, which provides a high level of read/write availability.
-
-</b></details>
-
-<details>
-<summary>What network tags are used for?</summary><br><b>
-
-Network tags allow you to apply firewall rules and routes to a specific instance or set of instances: You make a firewall rule applicable to specific instances by using target tags and source tags.
-
-</b></details>
-
-<details>
-<summary>What are flow logs? Where are they enabled?</summary><br><b>
-
-VPC Flow Logs records a sample of network flows sent from and received by VM instances, including instances used as Google Kubernetes Engine nodes. These logs can be used for network monitoring, forensics, real-time security analysis, and expense optimization.
-
-Enable Flow Logs
-
-1. Open VPC Network in GCP Console
-
-2. Click the name of the subnet 
-
-3. Click EDIT button
-
-4. Set Flow Logs to On
-
-5. Click Save
-
-
-
-</b></details>
-
-<details>
-<summary>How do you list buckets?</summary><br><b>
-    Two ways to do that:
-	 
-   $ gsutil ls
-	 
-   $ gcloud alpha storage ls
-	
-</b></details>
- 
-<details>
-<summary>What Compute metadata key allows you to run code at startup?</summary><br><b>
-
-startap-script
-</b></details>
-
-<details>
-<summary>What the following commands does? `gcloud deployment-manager deployments create`</summary><br><b>
-
-Deployment Manager creates a new deployment. 
-
-</b></details>
-
-<details>
-<summary>What is Cloud Code?</summary><br><b>
-It is a set of tools to help developers write, run and debug GCP kubernetes based applications. It provides built-in support for rapid iteration, debugging and running applications in development and production K8s environments.
-</b></details>
-
-### Google Kubernetes Engine (GKE)
-
-<details>
-<summary>What is GKE</summary><br><b>
-
-* It is the managed kubernetes service on GCP for deploying, managing and scaling containerised applications using Google infrastructure.
-</b></details>
-
-### Anthos
-
-<details>
-<summary>What is Anthos</summary><br><b>
-It is a managed application platform for organisations like enterprises that require quick modernisation and certain levels
-of consistency for their legacy applications in a hybrid or multicloud world. From this explanation the core ideas can be drawn from these statements;
-
-* Managed -> the customer does not need to worry about the underlying software intergrations, they just enable the API.
-* application platform -> It consists of open source tools like K8s, Knative, Istio and Tekton
-* Enterprises -> these are usually organisations with complex needs
-* Consistency -> to have the same policies declaratively initiated to be run anywhere securely e.g on-prem, GCP or other-clouds (AWS or Azure)
-
-fun fact: Anthos is flower in greek, they grow in the ground (earth) but need rain from the clouds to flourish.
-</b></details>
-
-<details>
-<summary>List the technical components that make up Anthos</summary><br><b>
-
-* Infrastructure management - Google Kubernetes Engine (GKE)
-* Cluster management - GKE, Ingress for Anthos
-* Service management - Anthos Service Mesh
-* Policy enforcement - Anthos Config Management, Anthos Enterprise Data Protection, Policy Controller
-* Application deployment - CI/CD tools like Cloud Build, GitLab
-* Application development - Cloud Code
-</b></details>
-
-<details>
-<summary>What is the primary computing environment for Anthos to easily manage workload deployment?</summary><br><b>
-
-* Google Kubernetes Engine (GKE)
-</b></details>
-
-<details>
-<summary>How does Anthos handle the control plane and node components for GKE?</summary><br><b>
-
-On GCP the kubernetes api-server is the only control plane component exposed to customers whilst compute engine manages
-instances in the project.
-</b></details>
-
-<details>
-<summary>Which load balancing options are available?</summary><br><b>
-
-* Networking load balancing for L4 and HTTP(S) Load Balancing for L7 which are both managed services that do not require
-  additional configuration.
-* Ingress for Anthos which allows the ability to deploy a load balancer that serves an application across multiple clusters
-  on GKE
-</b></details>
-
-<details>
-<summary>Can you deploy Anthos on AWS?</summary><br><b>
-
-* Yes, Anthos on AWS is now GA. For more read [here](https://cloud.google.com/anthos/gke/docs/aws)
-</b></details>
-
-<details>
-<summary>List and explain the enterprise security capabilities provided by Anthos</summary><br><b>
-
-* Control plane security - GCP manages and maintains the K8s control plane out of the box. The user can secure the api-server by using master authorized networks and private clusters. These allow the user to disable access on the public IP address by assigning a private IP address to the master.
-* Node security - By default workloads are provisioned on Compute engine instances that use Google's Container Optimised OS. This operating system implements a locked-down firewall, limited user accounts with root disabled and a read-only filesystem. There is a further option to enable GKE Sandbox for stronger isolation in multi-tenant deployment scenarios.
-* Network security - Within a created cluster VPC, Anthos GKE leverages a powerful software-defined network that enables simple Pod-to-Pod communications. Network policies allow locking down ingress and egress connections in a given namespace. Filtering can also be implemented to incoming load-balanced traffic for services that require external access, by supplying whitelisted CIDR IP ranges.
-* Workload security - Running workloads run with limited privileges, default Docker AppArmor security policies are applied to all Kubernetes Pods. Workload identity for Anthos GKE aligns with the open source kubernetes service accounts with GCP service account permissions.
-* Audit logging - Adminstrators are given a way to retain, query, process and alert on events of the deployed environments.
-</b></details>
-
-<details>
-<summary>How can workloads deployed on Anthos GKE on-prem clusters securely connect to Google Cloud services?</summary><br><b>
-
-* Google Cloud Virtual Private Network (Cloud VPN) - this is for secure networking
-* Google Cloud Key Management Service (Cloud KMS) - for key management
-</b></details>
-
-<details>
-<summary>What is Island Mode configuration with regards to networking in Anthos GKE deployed on-prem?</summary><br><b>
-
-* This is when pods can directly talk to each other within a cluster, but cannot be reached from outside the cluster thus forming an "island" within the network that is not connected to the external network.
-</b></details>
-
-<details>
-<summary>Explain Anthos Config Management</summary><br><b>
-
-It is a core component of the Anthos stack which provides platform, service and security operators with a single, unified approach to multi-cluster management that spans both on-premises and cloud environments. It closely follows K8s best practices, favoring declarative approaches over imperative operations, and actively monitors cluster state and applies the desired state as defined in Git. It includes three key components as follows:
-
-1. An importer that reads from a central Git repository
-2. A component that synchronises stored configuration data into K8s objects
-3. A component that monitors drift between desired and actual cluster configurations with a capability of reconciliation when need rises.
-</b></details>
-
-<details>
-<summary>How does Anthos Config Management help?</summary><br><b>
-
-It follows common modern software development practices which makes cluster configuration, management and policy changes auditable, revertable, and versionable easily enforcing IT governance and unifying resource management in an organisation.
-</b></details>
-
-<details>
-<summary>What is Anthos Service Mesh?</summary><br><b>
-
-* It is a suite of tools that assist in monitoring and managing deployed services on Anthos of all shapes and sizes whether running in cloud, hybrid or multi-cloud environments. It leverages the APIs and core components from Istio, a highly configurable and open-source service mesh platform.
-</b></details>
-
-<details>
-<summary>Describe the two main components of Anthos Service Mesh</summary><br><b>
-
-1. Data plane - it consists of a set of distributed proxies that mediate all inbound and outbound network traffic between individual services which are configured using a centralised control plane and an open API
-2. Control plane - is a fully managed offering outside of Anthos GKE clusters to simplify management overhead and ensure highest possible availability.
-</b></details>
-
-<details>
-<summary>What are the components of the managed control plane of Anthos Service Mesh?</summary><br><b>
-
-1. Traffic Director - it is GCP's fully managed service mesh traffic control plane, responsible for translating Istio API objects into configuration information for the distributed proxies, as well as directing service mesh ingress and egress traffic
-2. Managed CA - is a centralised certificate authority responsible for providing SSL certificates to each of the distributed proxies, authentication information and distributing secrets
-3. Operations tooling - formerly stackdriver, provides a managed ingestion point for observability and telemetry, specifically monitoring, tracing and logging data generated by each of the proxies. This powers the observability dashboard for operators to visually inspect their services and service dependencies assisting in the implementation of SRE best practices for monitoring SLIs and establishing SLOs.
-</b></details>
-
-<details>
-<summary>How does Anthos Service Mesh help?</summary><br><b>
-Tool and technology integration that makes up Anthos service mesh delivers signficant operational benefits to Anthos environments, with minimal additional overhead such as follows:
-
-* Uniform observability - the data plane reports service to service communication back to the control plane generating a service dependency graph. Traffic inspection by the proxy inserts headers to facilitate distributed tracing, capturing and reporting service logs together with service-level metrics (i.e latency, errors, availability).
-* Operational agility - fine-grained controls for managing the flow of inter-mesh (north-south) and intra-mesh (east-west) traffic are provided.
-* Policy-driven security - policies can be enforced consistently across diverse protocols and runtimes as service communications are secured by default.
-</b></details>
-
-<details>
-<summary>List possible use cases of traffic controls that can be implemented within Anthos Service Mesh</summary><br><b>
-
-* Traffic splitting across differing service versions for canary or A/B testing
-* Circuit breaking to prevent cascading failures
-* Fault injection to help build resilient and fault-tolerant deployments
-* HTTP header-based traffic steering between individual services or versions
-</b></details>
-
-<details>
-<summary>What is Cloud Run for Anthos?</summary><br><b>
-
-It is part of the Anthos stack that brings a serverless container experience to Anthos, offering a high-level platform experience on top of K8s clusters. It is built with Knative, an open-source operator for K8s that brings serverless application serving and eventing capabilities.
-</b></details>
-
-<details>
-<summary>How does Cloud Run for Anthos simplify operations?</summary><br><b>
-
-Platform teams in organisations that wish to offer developers additional tools to test, deploy and run applications can use Knative to enhance this experience on Anthos as Cloud Run. Below are some of the benefits;
-
-* Easy migration from K8s deployments - Without Cloud Run, platform engineers have to configure deployment, service, and HorizontalPodAutoscalers(HPA) objects to a loadbalancer and autoscaling. If application is already serving traffic it becomes hard to change configurations or roll back efficiently. Using Cloud Run all this is managed thus the Knative service manifest describes the application to be autoscaled and loadbalanced
-* Autoscaling - a sudden traffic spike may cause application containers in K8s to crash due to overload thus an efficient automated autoscaling is executed to serve the high volume of traffic
-* Networking - it has built-in load balancing capabilities and policies for traffic splitting between multiple versions of an application.
-* Releases and rollouts - supports the notion of the Knatibe API's revisions which describe new versions or different configurations of your application and canary deployments by splitting traffic.
-* Monitoring - observing and recording metrics such as latency, error rate and requests per second.
-</b></details>
-
-<details>
-<summary>List and explain three high-level out of the box autoscaling primitives offered by Cloud Run for Anthos that do not exist in K8s natively</summary><br><b>
-
-* Rapid, request-based autoscaling - default autoscalers monitor request metrics which allows Cloud Run for Anthos to handle spiky traffic patterns smoothly
-* Concurrency controls - limits such as max in-flight requests per container are enforced to ensure the container does not become overloaded and crash. More containers are added to handle the spiky traffic, buffering the requests.
-* Scale to zero - if an application is inactive for a while Cloud Run scales it down to zero to reduce its footprint. Alternatively one can turn off scale-to-zero to prevent cold starts.
-</b></details>
-
-<details>
-<summary>List some Cloud Run for Anthos use cases</summary><br><b>
-
-As it does not support stateful applications or sticky sessions, it is suitable for running stateless applications such as:
-
-* Machine learning model predictions e.g Tensorflow serving containers
-* API gateways, API middleware, web front ends and Microservices
-* Event handlers, ETL
-</b></details>
-
 ## OpenStack
 
 <details>
@@ -5377,7 +1610,9 @@ As it does not support stateful applications or sticky sessions, it is suitable 
   - Keystone</summary><br><b>
 
   * Nova - Manage virtual instances
+  * Neutron - Manage networking by providing Network as a service (NaaS)
   * Cinder - Block Storage
+  * Glance - Manage images for virtual machines and containers (search, get and register)
   * Keystone - Authentication service across the cloud
 </b></details>
 
@@ -5814,15 +2049,20 @@ A list of services and their endpoints
 ## Puppet
 
 <details>
-<summary>What is Puppet? How does it works?</summary><br><b>
-</b></details>
+<summary>What is Puppet? How does it works?</summary><br><b> 
 
+  * Puppet is a configuration management tool ensuring that all systems are configured to a desired and predictable state.
+</b></details>
 <details>
 <summary>Explain Puppet architecture</summary><br><b>
+
+  * Puppet has a primary-secondary node architecture. The clients are distributed across the network and communicate with the primary-secondary environment where Puppet modules are present. The client agent sends a certificate with its ID to the server; the server then signs that certificate and sends it back to the client. This authentication allows for secure and verifiable communication between the client and the master. 
 </b></details>
 
 <details>
 <summary>Can you compare Puppet to other configuration management tools? Why did you chose to use Puppet?</summary><br><b>
+
+  * Puppet is often compared to other configuration management tools like Chef, Ansible, SaltStack, and cfengine. The choice to use Puppet often depends on an organization's needs, such as ease of use, scalability, and community support.
 </b></details>
 
 <details>
@@ -5830,15 +2070,24 @@ A list of services and their endpoints
 
   * Module
   * Manifest
-  * Node</summary><br><b>
+  * Node
+</summary><br><b>
+  
+  * Modules - are a collection of manifests, templates, and files
+  * Manifests - are the actual codes for configuring the clients
+  * Node - allows you to assign specific configurations to specific nodes
 </b></details>
 
 <details>
 <summary>Explain Facter</summary><br><b>
+
+  * Facter is a standalone tool in Puppet that collects information about a system and its configuration, such as the operating system, IP addresses, memory, and network interfaces. This information can be used in Puppet manifests to make decisions about how resources should be managed, and to customize the behavior of Puppet based on the characteristics of the system. Facter is integrated into Puppet, and its facts can be used within Puppet manifests to make decisions about resource management.
 </b></details>
 
 <details>
 <summary>What is MCollective?</summary><br><b>
+
+  * MCollective is a middleware system that integrates with Puppet to provide orchestration, remote execution, and parallel job execution capabilities.
 </b></details>
 
 <details>
@@ -5847,6 +2096,8 @@ A list of services and their endpoints
 
 <details>
 <summary>Explain what is Hiera</summary><br><b>
+
+  * Hiera is a hierarchical data store in Puppet that is used to separate data from code, allowing data to be more easily separated, managed, and reused.
 </b></details>
 
 ## Elastic
@@ -5863,7 +2114,7 @@ The Elastic Stack consists of:
   * Elastic Hadoop
   * APM Server
 
-Elasticserach, Logstash and Kibana are also known as the ELK stack.
+Elasticsearch, Logstash and Kibana are also known as the ELK stack.
 </b></details>
 
 <details>
@@ -5920,7 +2171,7 @@ This is where data is stored and also where different processing takes place (e.
 <details>
 <summary>What is a master node?</summary><br><b>
 
-Par of a master node responsibilites:
+Part of a master node responsibilites:
   * Track the status of all the nodes in the cluster
   * Verify replicas are working and the data is available from every data node.
   * No hot nodes (no data node that works much harder than other nodes)
@@ -5931,17 +2182,22 @@ While there can be multiple master nodes in reality only of them is the elected 
 <details>
 <summary>What is an ingest node?</summary><br><b>
 
-A node which responsible for parsing the data. In case you don't use logstash then this node can recieve data from beats and parse it, similarly to how it can be parsed in Logstash.
+A node which responsible for processing the data according to ingest pipeline. In case you don't need to use 
+logstash then this node can recieve data from beats and process it, similarly to how it can be processed 
+in Logstash.
 </b></details>
 
 <details>
-<summary>What is Coordinating node?</summary><br><b>
+<summary>What is Coordinating only node?</summary><br><b>
 
-A Coordinating node responsible for routing requests out and in to the cluser (data nodes).
+From the official docs:
+
+Coordinating only nodes can benefit large clusters by offloading the coordinating node role from data and master-eligible nodes. They join the cluster and receive the full cluster state, like every other node, and they use the cluster state to route requests directly to the appropriate place(s).
+
 </b></details>
 
 <details>
-<summary>How data is stored in elasticsearch?</summary><br><b>
+<summary>How data is stored in Elasticsearch?</summary><br><b>
 
 * Data is stored in an index
 * The index is spread across the cluster using shards
@@ -5950,7 +2206,7 @@ A Coordinating node responsible for routing requests out and in to the cluser (d
 <details>
 <summary>What is an Index?</summary><br><b>
 
-Index in Elastic is in most cases compared to a whole database from the SQL/NoSQL world.<br>
+Index in Elasticsearch is in most cases compared to a whole database from the SQL/NoSQL world.<br>
 You can choose to have one index to hold all the data of your app or have multiple indices where each index holds different type of your app (e.g. index for each service your app is running).
 
 The official docs also offer a great explanation (in general, it's really good documentation, as every project should have):
@@ -5976,15 +2232,17 @@ From the official docs:
 <details>
 <summary>What is a Document?</summary><br><b>
 
-Continuing with the comparison to SQL/NoSQL a Document in Elastic is a row in table in the case of SQL or a document in a collection in the case of NoSQL.
-As in NoSQL a Document is a JSON object which holds data on a unit in your app. What is this unit depends on the your app. If your app related to book then each document describes a book. If you are app is about shirts then each document is a shirt.
+Continuing with the comparison to SQL/NoSQL a Document in Elasticsearch is a row in table in the case of SQL or a document in a collection in the case of NoSQL.
+As in NoSQL a document is a JSON object which holds data on a unit in your app. What is this unit depends on the your app. If your app related to book then each document describes a book. If you are app is about shirts then each document is a shirt.
 </b></details>
 
 <details>
 <summary>You check the health of your elasticsearch cluster and it's red. What does it mean? What can cause the status to be yellow instead of green?</summary><br><b>
 
-Red means some data is unavailable.
-Yellow can be caused by running single node cluster instead of multi-node.
+Red means some data is unavailable in your cluster. Some shards of your indices are unassinged. 
+There are some other states for the cluster.
+Yellow means that you have unassigned shards in the cluster. You can be in this state if you have single node and your indices have replicas.
+Green means that all shards in the cluster are assigned to nodes and your cluster is healthy. 
 </b></details>
 
 <details>
@@ -6252,7 +2510,7 @@ It's an architecture in which data is and retrieved from a single, non-shared, s
 
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
-| Highly Available "Hello World" | [Exercise](exercises/devops/ha_hello_world.md) | [Solution](exercises/devops/solutions/ha_hello_world.md)
+| Highly Available "Hello World" | [Exercise](topics/devops/ha_hello_world.md) | [Solution](topics/devops/solutions/ha_hello_world.md)
 
 <details>
 <summary>What happens when you type in a URL in an address bar in a browser?</summary><br><b>
@@ -6295,6 +2553,29 @@ From [swagger.io](https://swagger.io/resources/articles/difference-between-api-d
 False. From [swagger.io](https://swagger.io/resources/articles/difference-between-api-documentation-specification):
 
 "An API definition is similar to an API specification in that it provides an understanding of how an API is organized and how the API functions. But the API definition is aimed at machine consumption instead of human consumption of APIs."
+</b></details>
+
+<details>
+<summary>What is an API gateway?</summary><br><b>
+
+An API gateway is like the gatekeeper that controls how different parts talk to each other and how information is exchanged between them.
+
+The API gateway provides a single point of entry for all clients, and it can perform several tasks, including routing requests to the appropriate backend service, load balancing, security and authentication, rate limiting, caching, and monitoring.
+
+By using an API gateway, organizations can simplify the management of their APIs, ensure consistent security and governance, and improve the performance and scalability of their backend services. They are also commonly used in microservices architectures, where there are many small, independent services that need to be accessed by different clients.
+</b></details>
+
+<details>
+<summary>What are the advantages of using/implementing an API gateway?</summary><br><b>
+
+Advantages:
+
+  - Simplifies API management: Provides a single entry point for all requests, which simplifies the management and monitoring of multiple APIs.
+  - Improves security: Able to implement security features like authentication, authorization, and encryption to protect the backend services from unauthorized access.
+  - Enhances scalability: Can handle traffic spikes and distribute requests to backend services in a way that maximizes resource utilization and improves overall system performance.
+  - Enables service composition: Can combine different backend services into a single API, providing more granular control over the services that clients can access.
+  - Facilitates integration with external systems:  Can be used to expose internal services to external partners or customers, making it easier to integrate with external systems and enabling new business models.
+
 </b></details>
 
 <details>
@@ -6460,47 +2741,6 @@ document_number: 2
 [Wikipedia](https://en.wikipedia.org/wiki/Firmware): "In computing, firmware is a specific class of computer software that provides the low-level control for a device's specific hardware. Firmware, such as the BIOS of a personal computer, may contain basic functions of a device, and may provide hardware abstraction services to higher-level software such as operating systems."
 </b></details>
 
-#### Customers and Service Providers
-
-<details>
-<summary>What is SLO (service-level objective)?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is SLA (service-level agreement)?</summary><br><b>
-</b></details>
-
-## Jira
-
-<details>
-<summary>Explain/Demonstrate the following types in Jira:
-
-  * Epic
-  * Story
-  * Task</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a project in Jira?</summary><br><b>
-</b></details>
-
-## Kafka
-
-<details>
-<summary>What is Kafka?</summary><br><b>
-</b></details>
-
-<details>
-<summary>In Kafka, how to automatically balance brokers leadership of partitions in a cluster?
-
-  * Enable auto leader election and reduce the imbalance
-percentage ratio
-  * Manually rebalance by using kafkat
-  * Configure group.initial.rebalance.delay.ms to 3000
-  * All of the above
-</summary><br><b>
-</b></details>
-
 ## Cassandra
 
 <details>
@@ -6516,6 +2756,8 @@ percentage ratio
 
 <details>
 <summary>What is HTTP?</summary><br><b>
+
+[Avinetworks](https://avinetworks.com/glossary/layer-7/): HTTP stands for Hypertext Transfer Protocol. HTTP uses TCP port 80 to enable internet communication. It is part of the Application Layer (L7) in OSI Model. 
 </b></details>
 
 <details>
@@ -6570,6 +2812,11 @@ It consists of:
 
 <details>
 <summary>What is HTTPS?</summary><br><b>
+
+
+HTTPS is a secure version of the HTTP protocol used to transfer data between a web browser and a web server. It encrypts the communication using SSL/TLS encryption to ensure that the data is private and secure.
+
+Learn more: https://www.cloudflare.com/learning/ssl/why-is-http-not-secure/
 </b></details>
 
 <details>
@@ -6592,10 +2839,16 @@ The server didn't receive a response from another server it communicates with in
 
 <details>
 <summary>What is a proxy?</summary><br><b>
+
+A proxy is a server that acts as a middleman between a client device and a destination server. It can help improve privacy, security, and performance by hiding the client's IP address, filtering content, and caching frequently accessed data. 
+  - Proxies can be used for load balancing, distributing traffic across multiple servers to help prevent server overload and improve website or application performance. They can also be used for data analysis, as they can log requests and traffic, providing useful insights into user behavior and preferences.
 </b></details>
 
 <details>
 <summary>What is a reverse proxy?</summary><br><b>
+
+A reverse proxy is a type of proxy server that sits between a client and a server, but it is used to manage traffic going in the opposite direction of a traditional forward proxy. In a forward proxy, the client sends requests to the proxy server, which then forwards them to the destination server. However, in a reverse proxy, the client sends requests to the destination server, but the requests are intercepted by the reverse proxy before they reach the server. 
+  - They're commonly used to improve web server performance, provide high availability and fault tolerance, and enhance security by preventing direct access to the back-end server. They are often used in large-scale web applications and high-traffic websites to manage and distribute requests to multiple servers, resulting in improved scalability and reliability.
 </b></details>
 
 <details>
@@ -6737,6 +2990,19 @@ The maximum timeout value can be set between 1 and 3,600 seconds on both GCP and
 
 <details>
 <summary>Are you familiar with "Creative Commons"? What do you know about it?</summary><br><b>
+
+The Creative Commons license is a set of copyright licenses that allow creators to share their work with the public while retaining some control over how it can be used. The license was developed as a response to the restrictive standards of traditional copyright laws, which limited access of creative works. Its creators to choose the terms under which their works can be shared, distributed, and used by others. They're six main types of Creative Commons licenses, each with different levels of restrictions and permissions, the six licenses are:
+
+  * Attribution (CC BY): Allows others to distribute, remix, and build upon the work, even commercially, as long as they credit the original creator.
+  * Attribution-ShareAlike (CC BY-SA): Allows others to remix and build upon the work, even commercially, as long as they credit the original creator and release any new creations under the same license.
+  * Attribution-NoDerivs (CC BY-ND): Allows others to distribute the work, even commercially, but they cannot remix or change it in any way and must credit the original creator.
+  * Attribution-NonCommercial (CC BY-NC): Allows others to remix and build upon the work, but they cannot use it commercially and must credit the original creator.
+  * Attribution-NonCommercial-ShareAlike (CC BY-NC-SA): Allows others to remix and build upon the work, but they cannot use it commercially, must credit the original creator, and must release any new creations under the same license.
+  * Attribution-NonCommercial-NoDerivs (CC BY-NC-ND): Allows others to download and share the work, but they cannot use it commercially, remix or change it in any way, and must credit the original creator.
+
+Simply stated, the Creative Commons licenses are a way for creators to share their work with the public while retaining some control over how it can be used. The licenses promote creativity, innovation, and collaboration, while also respecting the rights of creators while still encouraging the responsible use of creative works.
+
+More information: https://creativecommons.org/licenses/
 </b></details>
 
 <details>
@@ -6764,6 +3030,10 @@ CPU cache.
 
 <details>
 <summary>What is a memory leak?</summary><br><b>
+
+A memory leak is a programming error that occurs when a program fails to release memory that is no longer needed, causing the program to consume increasing amounts of memory over time.
+
+The leaks can lead to a variety of problems, including system crashes, performance degradation, and instability. Usually occuring after failed maintenance on older systems and compatibility with new components over time.
 </b></details>
 
 <details>
@@ -6789,11 +3059,57 @@ https://idiallo.com/blog/c10k-2016
 ## Storage
 
 <details>
-<summary>What types of storage formats are there?</summary><br><b>
+<summary>What types of storage are there?</summary><br><b>
 
   * File
   * Block
   * Object
+</b></details>
+
+<details>
+<summary>Explain Object Storage</summary><br><b>
+
+- Data is divided to self-contained objects
+- Objects can contain metadata
+</b></details>
+
+<details>
+<summary>What are the pros and cons of object storage?</summary><br><b>
+
+Pros:
+  - Usually with object storage, you pay for what you use as opposed to other storage types where you pay for the storage space you allocate
+  - Scalable storage: Object storage mostly based on a model where what you use, is what you get and you can add storage as need
+Cons:
+  - Usually performs slower than other types of storage
+  - No granular modification: to change an object, you have re-create it
+</b></details>
+
+<details>
+<summary>What are some use cases for using object storage?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Explain File Storage</summary><br><b>
+
+- File Storage used for storing data in files, in a hierarchical sturcture
+- Some of the devices for file storage: hard drive, flash drive, cloud-based file storage
+- Files usually organized in directories
+</b></details>
+
+<details>
+<summary>What are the pros and cons of File Storage?</summary><br><b>
+
+Pros:
+- Users have full control of their own files and can run variety of operations on the files: delete, read, write and move.
+- Security mechanism allows for users to have a better control at things such as file locking
+</b></details>
+
+<details>
+<summary>What are some examples of file storage?</summary><br><b>
+
+Local filesystem
+Dropbox
+Google Drive
 </b></details>
 
 <details>
@@ -6810,6 +3126,18 @@ https://idiallo.com/blog/c10k-2016
 
 <details>
 <summary>What is a filesystem?</summary><br><b>
+
+A file system is a way for computers and other electronic devices to organize and store data files. It provides a structure that helps to organize data into files and directories, making it easier to find and manage information. A file system is crucial for providing a way to store and manage data in an organized manner.
+
+Commonly used filed systems:
+  Windows:
+  * NTFS
+  * exFAT
+
+  Mac OS:
+  * HFS+
+  *APFS
+
 </b></details>
 
 <details>
@@ -6820,9 +3148,8 @@ https://idiallo.com/blog/c10k-2016
 <summary>Explain MBR</summary><br><b>
 </b></details>
 
-## Questions you CAN ask
-
 <a name="questions-you-ask"></a>
+## Questions you CAN ask
 
 A list of questions you as a candidate can ask the interviewer during or after the interview.
 These are only a suggestion, use them carefully. Not every interviewer will be able to answer these (or happy to) which should be perhaps a red flag warning for your regarding working in such place but that's really up to you.
@@ -6887,6 +3214,10 @@ Not only this will tell you what is expected from you, it will also provide big 
 
 <details>
 <summary>What are unit tests?</summary><br><b>
+
+Unit test are a software testing technique that involves systimatically breaking down a system and testing each individual part of the assembly. These tests are automated and can be run repeatedly to allow developers to catch edge case scenarios or bugs quickly while developing.
+
+The main objective of unit tests are to verify each function is producing proper outputs given a set of inputs.
 </b></details>
 
 <details>
@@ -6920,164 +3251,6 @@ Not only this will tell you what is expected from you, it will also provide big 
 </summary><br><b>
 </b></details>
 
-## Databases
-
-|Name|Topic|Objective & Instructions|Solution|Comments|
-|--------|--------|------|----|----|
-| Message Board Tables  | Relational DB Tables | [Exercise](exercises/databases/table_for_message_board_system.md) | [Solution](exercises/databases/solutions/table_for_message_board_system.md)
-
-<details>
-<summary>What is a relational database?</summary><br><b>
-
-  * Data Storage: system to store data in tables
-  * SQL: programming language to manage relational databases
-  * Data Definition Language: a standard syntax to create, alter and delete tables
-</b></details>
-
-<details>
-<summary>What does it mean when a database is ACID compliant?</summary><br>
-
-ACID stands for Atomicity, Consistency, Isolation, Durability. In order to be ACID compliant, the database must meet each of the four criteria
-
-**Atomicity** - When a change occurs to the database, it should either succeed or fail as a whole.
-
-For example, if you were to update a table, the update should completely execute. If it only partially executes, the
-update is considered failed as a whole, and will not go through - the DB will revert back to it's original
-state before the update occurred. It should also be mentioned that Atomicity ensures that each
-transaction is completed as it's own stand alone "unit" - if any part fails, the whole statement fails.
-
-**Consistency** - any change made to the database should bring it from one valid state into the next.
-
-For example, if you make a change to the DB, it shouldn't corrupt it. Consistency is upheld by checks and constraints that
-are pre-defined in the DB. For example, if you tried to change a value from a string to an int when the column
-should be of datatype string, a consistent DB would not allow this transaction to go through, and the action would
-not be executed
-
-**Isolation** - this ensures that a database will never be seen "mid-update" - as multiple transactions are running at
-the same time, it should still leave the DB in the same state as if the transactions were being run sequentially.
-
-For example, let's say that 20 other people were making changes to the database at the same time. At the
-time you executed your query, 15 of the 20 changes had gone through, but 5 were still in progress. You should
-only see the 15 changes that had completed - you wouldn't see the database mid-update as the change goes through.
-
-**Durability** - Once a change is committed, it will remain committed regardless of what happens
-(power failure, system crash, etc.). This means that all completed transactions
-must be recorded in non-volatile memory.
-
-Note that SQL is by nature ACID compliant. Certain NoSQL DB's can be ACID compliant depending on
-how they operate, but as a general rule of thumb, NoSQL DB's are not considered ACID compliant
-</details>
-
-<details>
-<summary>What is sharding?</summary><br><b>
-
-Sharding is a horizontal partitioning.
-
-Are you able to explain what is it good for?
-</b></details>
-
-<details>
-<summary>You find out your database became a bottleneck and users experience issues accessing data. How can you deal with such situation?</summary><br><b>
-
-Not much information provided as to why it became a bottleneck and what is current architecture, so one general approach could be<br>
-to reduce the load on your database by moving frequently-accessed data to in-memory structure.
-</b></details>
-
-<details>
-<summary>What is a connection pool?</summary><br><b>
-
-Connection Pool is a cache of database connections and the reason it's used is to avoid an overhead of establishing a connection for every query done to a database.
-</b></details>
-
-<details>
-<summary>What is a connection leak?</summary><br><b>
-
-A connection leak is a situation where database connection isn't closed after being created and is no longer needed.
-</b></details>
-
-<details>
-<summary>What is Table Lock?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Your database performs slowly than usual. More specifically, your queries are taking a lot of time. What would you do?</summary><br><b>
-
-* Query for running queries and cancel the irrelevant queries
-* Check for connection leaks (query for running connections and include their IP)
-* Check for table locks and kill irrelevant locking sessions
-</b></details>
-
-<details>
-<summary>What is a Data Warehouse?</summary><br><b>
-
-"A data warehouse is a subject-oriented, integrated, time-variant and non-volatile collection of data in support of organisation's decision-making process"
-</b></details>
-
-<details>
-<summary>Explain what is a time-series database</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is OLTP (Online transaction processing)?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is OLAP (Online Analytical Processing)?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is an index in a database?</summary><br><b>
-
-A database index is a data structure that improves the speed of operations in a table. Indexes can be created using one or more columns, providing the basis for both rapid random lookups and efficient ordering of access to records.
-</b></details>
-
-<details>
-<summary>What data types are there in relational databases?</summary><br><b>
-</b></details>
-
-<details>
-<summary>Explain Normalization</summary><br><b>
-
-Data that is used multiple times in a database should be stored once and referenced with a foreign key.<br>
-This has the clear benefit of ease of maintenance where you need to change a value only in a single place to change it everywhere.
-</b></details>
-
-<details>
-<summary>Explain Primary Key and Foreign Key</summary><br><b>
-
-Primary Key: each row in every table should a unique identifier that represents the row.<br>
-Foreign Key: a reference to another table's primary key. This allows you to join table together to retrieve all the information you need without duplicating data.
-</b></details>
-
-<details>
-<summary>What types of data tables have you used?</summary><br><b>
-
-  * Primary data table: main data you care about
-  * Details table: includes a foreign key and has one to many relationship
-  * Lookup values table: can be one table per lookup or a table containing all the lookups and has one to many relationship
-  * Multi reference table
-</b></details>
-
-<details>
-<summary>What is ORM? What benefits it provides in regards to relational databases usage?</summary><br><b>
-
-[Wikipedia](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping): "is a programming technique for converting data between incompatible type systems using object-oriented programming languages"
-
-In regards to the relational databases:
-
-  * Database as code
-  * Database abstraction
-  * Encapsulates SQL complexity
-  * Enables code review process
-  * Enables usage as a native OOP structure
-</b></details>
-
-<details>
-<summary>What is DDL?</summary><br><b>
-
-[Wikipedia](https://en.wikipedia.org/wiki/Data_definition_language): "In the context of SQL, data definition or data description language (DDL) is a syntax for creating and modifying database objects such as tables, indices, and users."
-</b></details>
-
 ## Regex
 
 Given a text file, perform the following exercises
@@ -7086,16 +3259,23 @@ Given a text file, perform the following exercises
 
 <details>
 <summary>Extract all the numbers</summary><br><b>
+
+  - "\d+"
 </b></details>
 
 <details>
 <summary>Extract the first word of each line</summary><br><b>
 
+  - "^\w+"
 Bonus: extract the last word of each line
+
+  - "\w+(?=\W*$)" (in most cases, depends on line formating)
 </b></details>
 
 <details>
 <summary>Extract all the IP addresses</summary><br><b>
+
+  - "\b(?:\d{1,3}\ .){3}\d{1,3}\b" IPV4:(This format looks for 1 to 3 digit sequence 3 times)
 </b></details>
 
 <details>
@@ -7104,6 +3284,8 @@ Bonus: extract the last word of each line
 
 <details>
 <summary>Extract email addresses</summary><br><b>
+
+  - "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\ .[A-Za-z]{2,}\b"
 </b></details>
 
 #### Replace
@@ -7197,6 +3379,9 @@ The ability to grow but also to reduce based on what is required
 
 <details>
 <summary>Explain Disaster Recovery</summary><br><b>
+
+
+Disaster recovery is the process of restoring critical business systems and data after a disruptive event. The goal is to minimize the impact and resume normal business activities quickly. This involves creating a plan, testing it, backing up critical data, and storing it in safe locations. In case of a disaster, the plan is then executed, backups are restored, and systems are hopefully brought back online. The recovery process may take hours or days depending on the damages of infrastructure. This makes business planning important, as a well-designed and tested disaster recovery plan can minimize the impact of a disaster and keep operations going.
 </b></details>
 
 <details>
@@ -7318,6 +3503,11 @@ Read about it [here](https://en.wikipedia.org/wiki/Cache_replacement_policies)
 
 <details>
 <summary>Why not writing everything to cache instead of a database/datastore?</summary><br><b>
+Caching and databases serve different purposes and are optimized for different use cases.
+
+Caching is used to speed up read operations by storing frequently accessed data in memory or on a fast storage medium. By keeping data close to the application, caching reduces the latency and overhead of accessing data from a slower, more distant storage system such as a database or disk.
+
+On the other hand, databases are optimized for storing and managing persistent data. Databases are designed to handle concurrent read and write operations, enforce consistency and integrity constraints, and provide features such as indexing and querying.
 </b></details>
 
 #### Migrations
@@ -7372,6 +3562,10 @@ RAM (Random Access Memory) is the hardware in a computing device where the opera
 </b></details>
 
 <details>
+<summary>What is a GPU?</summary><br><b>
+</b></details>
+
+<details>
 <summary>What is an embedded system?</summary><br><b>
 
 An embedded system is a computer system - a combination of a computer processor, computer memory, and input/output peripheral devices—that has a dedicated function within a larger mechanical or electronic system. It is embedded as part of a complete device often including electrical or electronic hardware and mechanical parts. 
@@ -7385,6 +3579,28 @@ Raspberry Pi
 
 <details>
 <summary>What types of storage are there?</summary><br><b>
+
+There are several types of storage, including hard disk drives (HDDs), solid-state drives (SSDs), and optical drives (CD/DVD/Blu-ray). Other types of storage include USB flash drives, memory cards, and network-attached storage (NAS).
+</b></details>
+
+<details>
+<summary>What are some considerations DevOps teams should keep in mind when selecting hardware for their job?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is the role of hardware in disaster recovery planning and implementation?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a RAID?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a microcontroller?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What is a Network Interface Controller or NIC?</summary><br><b>
 </b></details>
 
 ## Big Data
@@ -7576,6 +3792,23 @@ A configuration->deployment which has some advantages like:
 2. More immutable infrastructure - with configuration->deployment it's not likely to have very different deployments since most of the configuration is done prior to the deployment. Issues like dependencies errors are handled/discovered prior to deployment in this model.
 </b></details>
 
+## Release
+
+<details>
+<summary>Explain Semantic Versioning</summary><br><b>
+
+[This](https://semver.org/) page explains it perfectly:
+
+```
+Given a version number MAJOR.MINOR.PATCH, increment the:
+
+MAJOR version when you make incompatible API changes
+MINOR version when you add functionality in a backwards compatible manner
+PATCH version when you make backwards compatible bug fixes
+Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+```
+</b></details>
+
 ## Certificates
 
 If you are looking for a way to prepare for a certain exam this is the section for you. Here you'll find a list of certificates, each references to a separate file with focused questions that will help you to prepare to the exam. Good luck :)
@@ -7584,6 +3817,8 @@ If you are looking for a way to prepare for a certain exam this is the section f
 
 * [Cloud Practitioner](certificates/aws-cloud-practitioner.md) (Latest update: 2020)
 * [Solutions Architect Associate](certificates/aws-solutions-architect-associate.md) (Latest update: 2021)
+* [Cloud SysOps Administration Associate](certificates/aws-cloud-sysops-associate.md) (Latest update: Oct 2022)
+
 
 #### Azure
 
@@ -7591,9 +3826,11 @@ If you are looking for a way to prepare for a certain exam this is the section f
 
 #### Kubernetes
 
-* [Certified Kubernetes Administrator (CKA)](certificates/cka.md) (Latest update: 2020)
+* [Certified Kubernetes Administrator (CKA)](topics/kubernetes/CKA.md) (Latest update: 2022)
 
-## Other DevOps Projects
+## Additional DevOps and SRE Projects
+
+<p align="center"><a href="https://github.com/bregman-arie/sre-checklist"><img width="500px" src="images/sre_checklist.png"/></a></p>
 
 <p align="center"><a href="https://github.com/bregman-arie/howtheydevops"><img src="images/how_they_devops.png"/></a></p>
 <p align="center"><a href="https://github.com/bregman-arie/devops-resources"><img src="images/devops_resources.png"/></a></p>

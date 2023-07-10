@@ -6,15 +6,15 @@ Note: the following is opinionated.
  
 #### Linux
  
-Every DevOps Engineer should have a deep understanding of at least one operating system and if you have the option to choose then I would say it should definitely be Linux as I believe it's a requirement of at least 90% of the DevOps jobs postings out there.
+Every DevOps Engineer should have a deep understanding of at least one operating system and if you have the option to choose then I would say it should definitely be Linux as I believe it's a requirement of at least 90% of the DevOps jobs postings out there. In addition, Linux is almost integral part of any sub-area or domain in DevOps like Cloud, Containers, etc.
  
-Usually, the followup question is "How extensive should my knowledge be?" Out of all the DevOps skills, I would say this, along with coding, should be your strongest skills. Be familiar with OS processes, debugging tools, filesystem, networking, ... know your operating system, understand how it works, how to manage issues, etc.
+Usually, the followup question is "How extensive should my knowledge be?" Out of all the DevOps skills, I would say this, along with coding, should be your strongest skills. Be familiar with OS processes, debugging tools, filesystem, networking, ... know your operating system, understand how it works, how to troubleshoot issues, etc.
 
 Not long ago, I've created a list of Linux resources right [here](https://dev.to/abregman/collection-of-linux-resources-3nhk). There are some good sites there that you can use for learning more about Linux.
  
 #### Programming
  
-My personal belief is that any DevOps engineer should know programming, at least to some degree. Having this skill you can automate manual processes, improve some of the open source tools you are using today or build new tools & projects to provide a solution to existing problems. Knowing how to code =  a lot of power.
+My personal belief is that any DevOps engineer should know programming, at least to some degree. Having this skill you can automate manual processes, improve some of the open source tools you are using today or build new tools & projects to provide a solution to existing problems. Knowing how to code = a lot of power.
 
 When it comes to interviews you'll notice that the level of knowledge very much depends on the company or position you are interviewing for. Some will require you just to be able to write simple scripts while others will deep dive into complex algorithms and data structures.
 
@@ -39,19 +39,18 @@ Some ideas for you to explore:
 * How to design and implement a CI pipeline (or pipelines) for verifying PRs, run multiple different types of tests, package the project and deploy it somewhere
 * How to design and implement secured ELK architecture which will get logs from 10,000 apps and will display the data eventually to the user
 * Microservices designs are also quite popular these days
-                       
-I recommend going over the following GitHub projects as they are really deep-diving into System Design:
-                               
-* https://github.com/donnemartin/system-design-primer
-                               
-#### Tools           
-                               
+
+In general, you should be able to describe some designs, projects, architectures, ... you performed.
+
+#### Tooling
+
 Some interviews will focus on specific tools or technologies. Which tools? this is mainly based on a combination of what you mentioned in your C.V & those that are mentioned in the job posting and used in the company. Here are some questions I believe anyone should know to answer regarding the tools he/she is familiar with:
                                
 * What the tool does? What it allows us to achieve that we couldn't do without it?                            
 * What its advantages over other tools in the same area, with the same purpose? Why you specifically using it?
-* How it works?                
-* How to use it?               
+* How it works?
+* How to use it?
+* Best practices you apply/use when using it
                                
 Let's deep dive into practical preparation steps
                                
@@ -65,12 +64,11 @@ This is a great way to prepare for interviews and I recommend to try it out befo
                                
 At this point, some people ask: "but what project?" and the answer is: what about GitHub? it has only 9125912851285192 projects...and a free way to set up CI to any of them (also a great way to learn how to collaborate with others :) )
                                
-Let's convert another scenario:                                                                                                                                              
-                               
+Let's convert another scenario:
+
 "Experience with provisioning servers" -> Scenario: provision a server (to make it more interesting: create a web server).
 
 And the last example:                                                                                                                                                        
-  
 "Experience with scripting" -> Scenario: write a script. Don't waste too much time thinking "what script should I write?". Simply automate something you are doing manually or even implement your own version of common small utils.
   
 ### Start your own DevOps project
@@ -102,7 +100,6 @@ Doing so can give you a lot of information on what to expect from an interview a
 It may sound trivial but the idea here is simple: be ready to answer any question regarding any line you included in your resume.
 Sometimes candidates surprised when they are asked on a skill or line which seems to be not related to the position but the simple truth is: if you mentioned something on your resume, it's only fair to ask you about it.
 
-
 ### Know the company
 
 Be familiar with the company you are interviewing at. Some ideas:
@@ -115,7 +112,7 @@ Be familiar with the company you are interviewing at. Some ideas:
 
 From my experience, this is not done by many candidates but it's one of the best ways to deep dive into topics like operating system, virtualization, scale, distributed systems, etc.    
 
-In most cases, you will do fine without reading books but for the AAA interviews (hardest level) you'll want to read some books and overall if you inspire to be better DevOps Engineer, books (also articles, blog posts) is a great way :)
+In most cases, you will do fine without reading books but for the AAA interviews (hardest level) you'll want to read some books and overall if you inspire to be better DevOps Engineer, books (also articles, blog posts) is a great way devleop yourself :)
 
 ### Consider starting in non-DevOps position
 
@@ -147,7 +144,6 @@ the company he/she is interviewing at, is the right place for him/her.
 * Do I care about work-life balance?                                       
 * Do I care about personal growth and how it's practically done?           
 * Do I care about knowing what are my responsibilities as part of the role?                                                                                                  
-                                                                           
 If you do, you should also play the interviewer role :)
 
 ### One Last Thing                                

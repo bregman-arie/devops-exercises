@@ -13,3 +13,17 @@
   * Private - Cloud services having computing resources limited to specific customer or organization, managed by third party or organizations itself
   * Hybrid - Combination of public and private clouds
 </b></details>
+
+
+<details>
+<summary>What is Azure Firewall?</summary><br><b>
+
+Azure Firewall is a cloud-native and intelligent network firewall security service that provides the best of breed threat protection for your cloud workloads running in Azure.
+</b></details>
+
+
+<details>
+<summary>What is Network Security Group?</summary><br><b>
+
+A network security group contains security rules that allow or deny inbound network traffic to, or outbound network traffic from, several types of Azure resources. For each rule, you can specify source and destination, port, and protocol.
+</b></details>
