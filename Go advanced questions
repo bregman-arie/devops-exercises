@@ -1,0 +1,54 @@
+Certainly! Below are 50 advanced Go (Golang) questions that cover various aspects of the language:
+
+1. What is Goroutine? How is it different from a regular thread?
+2. Explain the differences between channels and goroutines in Go.
+3. What are the advantages of using channels for communication between Goroutines?
+4. How do you handle errors in Go? What's the idiomatic way to deal with errors?
+5. What is the use of the `defer` keyword in Go? Provide examples.
+6. Explain the purpose of the `sync` package in Go.
+7. How does garbage collection work in Go? What's the role of the garbage collector?
+8. Describe the differences between Mutex and RWMutex in Go.
+9. How do you achieve parallelism in Go?
+10. What are context.Context and how are they used in Go?
+11. Explain the concept of "interface" in Go and its significance.
+12. How do you implement a custom sort in Go for a user-defined type?
+13. What is reflection in Go? Provide a practical scenario where it can be useful.
+14. How does Go handle pointer arithmetic, and what safety measures are in place?
+15. How do you handle timeouts in Go when making network requests?
+16. Explain the purpose and usage of the `sync/atomic` package in Go.
+17. How do you implement a worker pool in Go to process tasks concurrently?
+18. What is the `context` package used for? Provide an example of its usage.
+19. How does Go support functional programming paradigms?
+20. What are the best practices for error handling and logging in Go?
+21. How do you serialize and deserialize JSON data in Go?
+22. Explain the differences between arrays and slices in Go.
+23. How do you manage configuration settings in a Go application?
+24. Describe how to create and use custom middleware in Go.
+25. How can you prevent race conditions in Go?
+26. What are Go's variadic functions, and how do you use them?
+27. How do you write unit tests in Go? Provide examples.
+28. Explain the purpose and usage of the `http` package in Go.
+29. How do you handle panic and recover in Go?
+30. What are the differences between HTTP and HTTP/2 in the context of Go?
+31. How can you create a custom HTTP server using the `net/http` package in Go?
+32. What is a pointer receiver in Go methods? How is it different from a value receiver?
+33. How do you handle cross-origin requests (CORS) in a Go web application?
+34. Explain the concept of embedding in Go structs and how it relates to inheritance.
+35. How do you implement a WebSocket server in Go?
+36. What is a context switch in Go, and when does it happen?
+37. How do you implement graceful shutdown for a Go web server?
+38. Explain the purpose and usage of the `time` package in Go.
+39. How do you work with environment variables in Go?
+40. What are modules in Go, and how do they differ from GOPATH-based projects?
+41. How do you implement rate limiting in a Go application?
+42. Explain how to create and work with custom error types in Go.
+43. How do you perform database migrations in a Go application?
+44. How can you ensure data consistency in concurrent operations in Go?
+45. Describe the purpose and usage of the `template` package in Go.
+46. How do you manage and handle dependencies in a Go project?
+47. Explain the benefits and drawbacks of using a single binary deployment in Go.
+48. How do you implement caching in a Go application?
+49. What are the best practices for writing concurrent and thread-safe Go code?
+50. How can you optimize performance in Go applications?
+
+These questions cover a wide range of topics related to Go and should help you deepen your understanding of the language. Happy learning!
