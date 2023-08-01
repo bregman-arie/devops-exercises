@@ -244,7 +244,13 @@ The average performance of the above algorithm is O(log n). Best performance can
 <summary>What is the complexity for the best, worst and average cases of each of the following algorithms?:
 
   * Quick sort
+    The worst case time for a quick sort algorithm is O(n^2)
+    The best case time is: O(nlogn)
+    
   * Merge sort
+    in a merge sort let T(n) denote the time needed to sort an array containing 'n' elements using a merger sort. Assume n is a power of two.
+    The time required for a merge sort would be : T(n)=T(n/2)+T(n/2) +mergetime
+    
   * Bucket Sort
   * Radix Sort</summary><br><b>
 </b></details>
