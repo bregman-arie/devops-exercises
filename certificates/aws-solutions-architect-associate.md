@@ -55,7 +55,7 @@ False. Users can belong to multiple groups.
 <summary>What are Roles?</summary><br><b>
 
 A way for allowing a service of AWS to use another service of AWS. You assign roles to AWS resources.
-For example, you can make use of a role which allows EC2 service to acesses s3 buckets (read and write).
+For example, you can make use of a role which allows EC2 service to accesses s3 buckets (read and write).
 </b></details>
 
 <details>

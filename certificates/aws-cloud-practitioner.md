@@ -24,7 +24,7 @@ SAAS
   * IAAS
   * PAAS
   * SAAS</summary><br><b>
- - IAAS - Infrastructure As A Service is a cloud computing service where a cloud provider rents out IT infrastructure such as compute, networking resources and strorage over the internet.<br>
+ - IAAS - Infrastructure As A Service is a cloud computing service where a cloud provider rents out IT infrastructure such as compute, networking resources and storage over the internet.<br>
  
  - PAAS - Platform As A Service is a cloud hosting platform with an on-demand access to ready-to-use set of deployment, application management and DevOps tools.<br>
  
@@ -432,7 +432,7 @@ False. Users can belong to multiple groups.
 <summary>What are Roles?</summary><br><b>
 
 A way for allowing a service of AWS to use another service of AWS. You assign roles to AWS resources.
-For example, you can make use of a role which allows EC2 service to acesses s3 buckets (read and write).
+For example, you can make use of a role which allows EC2 service to accesses s3 buckets (read and write).
 </b></details>
 
 <details>

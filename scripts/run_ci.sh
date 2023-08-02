@@ -10,6 +10,6 @@ for file in ${MD_FILES[@]}; do
    python ${PROJECT_DIR}/tests/syntax_lint.py ${file} > /dev/null
 done
 
-echo "- Syntax lint tests on MD files passed sucessfully"
+echo "- Syntax lint tests on MD files passed successfully"
 
 flake8 --max-line-length=100 . && echo "- PEP8 Passed"

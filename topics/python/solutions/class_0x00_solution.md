@@ -32,7 +32,7 @@ class Student:
         """Changes the department of the student object
 
         Args:
-            new_deparment (str): Assigns the new deparment value to dept attr
+            new_deparment (str): Assigns the new department value to dept attr
         """
         self.department = new_deparment
 

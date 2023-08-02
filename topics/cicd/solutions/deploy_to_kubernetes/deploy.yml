@@ -14,7 +14,7 @@
       openssl_privatekey:
         path: /etc/ssl/private/privkey.pem
 
-    - name: generate openssl certficate signing requests
+    - name: generate openssl certificate signing requests
       openssl_csr:
         path: /etc/ssl/csr/hello-world.app.csr
         privatekey_path: /etc/ssl/private/privkey.pem
