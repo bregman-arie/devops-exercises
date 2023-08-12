@@ -3719,6 +3719,8 @@ A microcontroller is a small integrated circuit that controls certain tasks in a
 
 <details>
 <summary>What is a Network Interface Controller or NIC?</summary><br><b>
+A Network Interface Controller (NIC) is a piece of hardware that connects a computer to a network and allows it to communicate with other devices.
+
 </b></details>
 
 ## Big Data
