@@ -3711,7 +3711,10 @@ RAID is an acronym that stands for "Redundant Array of Independent Disks." It is
 </b></details>
 
 <details>
-<summary>What is a microcontroller?</summary><br><b>
+<summary>What is a microcontroller?</summary><br>
+<b>
+A microcontroller is a small integrated circuit that controls certain tasks in an embedded system. It typically includes a CPU, memory, and input/output peripherals.
+
 </b></details>
 
 <details>
