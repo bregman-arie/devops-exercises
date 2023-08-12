@@ -3704,7 +3704,10 @@ In summary, while software and human interventions are important in disaster rec
 </details>
 
 <details>
-<summary>What is a RAID?</summary><br><b>
+<summary>What is a RAID?</summary><br>
+<b>
+RAID is an acronym that stands for "Redundant Array of Independent Disks." It is a technique that combines numerous hard drives into a single device known as an array in order to improve performance, expand storage capacity, and/or offer redundancy to prevent data loss. RAID levels (for example, RAID 0, RAID 1, and RAID 5) provide varied benefits in terms of performance, redundancy, and storage efficiency.
+
 </b></details>
 
 <details>
