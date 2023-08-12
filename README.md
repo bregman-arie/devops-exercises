@@ -3563,6 +3563,8 @@ RAM (Random Access Memory) is the hardware in a computing device where the opera
 
 <details>
 <summary>What is a GPU?</summary><br><b>
+A GPU, or Graphics Processing Unit, is a specialized electronic circuit designed to expedite image and video processing for display on a computer screen.
+
 </b></details>
 
 <details>
@@ -3574,7 +3576,10 @@ An embedded system is a computer system - a combination of a computer processor,
 <details>
 <summary>Can you give an example of an embedded system?</summary><br><b>
 
-Raspberry Pi
+A common example of an embedded system is a microwave oven's digital control panel, which is managed by a microcontroller.
+
+When committed to a certain goal, Raspberry Pi can serve as an embedded system.
+
 </b></details>
 
 <details>
