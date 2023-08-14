@@ -1851,7 +1851,7 @@ False. It's disabled by default
 <details>
 <summary>True or False? In regards to cross zone load balancing, AWS charges you for inter AZ data in network load balancer but no in application load balancer</summary><br><b>
 
-False. It charges for inter AZ data in network load balancer, but not in application load balancer
+True. It charges for inter AZ data in network load balancer, but not in application load balancer
 </b></details>
 
 <details>
