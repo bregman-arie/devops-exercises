@@ -7,6 +7,7 @@
 
 <details>
 <summary>What's Observability?</summary><br><b>
+Observability refers to the process of gaining insights of the internal workings of Software Systems, applications, and infrastructure in order to understand their behaviour, performance and potential issues.
 </b></details>
 
 ## Monitoring
@@ -33,7 +34,7 @@ Logging<br>
 - Hardware (CPU, RAM, ...)
 - Infrastructure (Disk capacity, Network latency, ...)
 - App (Status code, Errors in logs, ...)
-</b></details>
+  </b></details>
 
 <details>
 <summary>Explain "Time Series" data</summary><br><b>
@@ -47,6 +48,7 @@ An example would be CPU utilization every hour:
 09:00   22
 10:00   91
 ```
+
 </b></details>
 
 <details>
@@ -55,7 +57,6 @@ An example would be CPU utilization every hour:
 In monitoring, aggregating data is basically combining collection of values. It can be done in different ways like taking the average of multiple values, the sum of them, the count of many times they appear in the collection and other ways that mainly depend on the type of the collection (e.g. time-series would be one type).
 
 </b></details>
-
 
 ## Application Performance Management
 
