@@ -2414,10 +2414,14 @@ Total number of documents matching the search results. If not query used then si
 
 <details>
 <summary>What is Filebeat?</summary><br><b>
+
+Filebeat is used to monitor the logging directories inside of VMs or mounted as a sidecar if exporting logs from containers, and then forward these logs onward for further processing, usually to logstash.
 </b></details>
 
 <details>
 <summary>If one is using ELK, is it a must to also use filebeat? In what scenarios it's useful to use filebeat?</summary><br><b>
+
+Filebeat is a typical component of the ELK stack, since it was developed by Elastic to work with the other products (Logstash and Kibana). It's possible to send logs directly to logstash, though this often requires coding changes for the application. Particularly for legacy applications with little test coverage, it might be a better option to use filebeat, since you don't need to make any changes to the application code.
 </b></details>
 
 <details>
@@ -2434,6 +2438,8 @@ False. One harvester harvests one file.
 
 <details>
 <summary>What are filebeat modules?</summary><br><b>
+
+These are pre-configured modules for specific types of logging locations (eg, Traefik, Fargate, HAProxy) to make it easy to configure forwarding logs using filebeat. They have different configurations based on where you're collecting logs from.
 </b></details>
 
 #### Elastic Stack
