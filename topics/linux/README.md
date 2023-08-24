@@ -1195,7 +1195,7 @@ You can also try closing/terminating the parent process. This will make the zomb
   * Zombie Processes
 </summary><br><b>
 
-If you mention at any point ps command with arugments, be familiar with what these arguments does exactly.
+If you mention at any point ps command with arguments, be familiar with what these arguments does exactly.
 </b></details>
 
 <details>
@@ -1649,7 +1649,7 @@ There are 2 configuration files, which stores users information
 <details>
 <summary>Which file stores users passwords? Is it visible for everyone?</summary><br>
 
-`/etc/shadow` file holds the passwords of the users in encryted format. NO, it is only visble to the `root` user
+`/etc/shadow` file holds the passwords of the users in encryted format. NO, it is only visible to the `root` user
 </details>
 
 <details>
@@ -1980,7 +1980,7 @@ Given the name of an executable and some arguments, it loads the code and static
 <summary>True or False? A successful call to exec() never returns</summary><br><b>
 
 True<br>
-Since a succesful exec replace the current process, it can't return anything to the process that made the call.
+Since a successful exec replace the current process, it can't return anything to the process that made the call.
 </b></details>
 
 <details>

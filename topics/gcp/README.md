@@ -88,7 +88,7 @@ False. You can see [here](https://cloud.google.com/about/locations) which produc
 Organization
   Folder
     Project
-      Resoruces
+      Resources
 
 * Organizations - Company
 * Folder - usually for departments, teams, products, etc.
@@ -195,7 +195,7 @@ While labels don't affect the resources on which they are applied, network tags 
 <details>
 <summary>Tell me what do you know about GCP networking</summary><br><b>
 
-Virtual Private Cloud(VPC) network is a virtual version of physical network, implemented in Google's internal Network. VPC is a gloabal resource in GCP.
+Virtual Private Cloud(VPC) network is a virtual version of physical network, implemented in Google's internal Network. VPC is a global resource in GCP.
 Subnetworks(subnets) are regional resources, ie., subnets can be created withinin regions.
 
 VPC are created in 2 modes,
@@ -290,7 +290,7 @@ It is a set of tools to help developers write, run and debug GCP kubernetes base
 It is a managed application platform for organisations like enterprises that require quick modernisation and certain levels
 of consistency for their legacy applications in a hybrid or multicloud world. From this explanation the core ideas can be drawn from these statements;
 
-* Managed -> the customer does not need to worry about the underlying software intergrations, they just enable the API.
+* Managed -> the customer does not need to worry about the underlying software integrations, they just enable the API.
 * application platform -> It consists of open source tools like K8s, Knative, Istio and Tekton
 * Enterprises -> these are usually organisations with complex needs
 * Consistency -> to have the same policies declaratively initiated to be run anywhere securely e.g on-prem, GCP or other-clouds (AWS or Azure)
@@ -344,7 +344,7 @@ instances in the project.
 * Node security - By default workloads are provisioned on Compute engine instances that use Google's Container Optimised OS. This operating system implements a locked-down firewall, limited user accounts with root disabled and a read-only filesystem. There is a further option to enable GKE Sandbox for stronger isolation in multi-tenant deployment scenarios.
 * Network security - Within a created cluster VPC, Anthos GKE leverages a powerful software-defined network that enables simple Pod-to-Pod communications. Network policies allow locking down ingress and egress connections in a given namespace. Filtering can also be implemented to incoming load-balanced traffic for services that require external access, by supplying whitelisted CIDR IP ranges.
 * Workload security - Running workloads run with limited privileges, default Docker AppArmor security policies are applied to all Kubernetes Pods. Workload identity for Anthos GKE aligns with the open source kubernetes service accounts with GCP service account permissions.
-* Audit logging - Adminstrators are given a way to retain, query, process and alert on events of the deployed environments.
+* Audit logging - Administrators are given a way to retain, query, process and alert on events of the deployed environments.
 </b></details>
 
 <details>
@@ -399,7 +399,7 @@ It follows common modern software development practices which makes cluster conf
 
 <details>
 <summary>How does Anthos Service Mesh help?</summary><br><b>
-Tool and technology integration that makes up Anthos service mesh delivers signficant operational benefits to Anthos environments, with minimal additional overhead such as follows:
+Tool and technology integration that makes up Anthos service mesh delivers significant operational benefits to Anthos environments, with minimal additional overhead such as follows:
 
 * Uniform observability - the data plane reports service to service communication back to the control plane generating a service dependency graph. Traffic inspection by the proxy inserts headers to facilitate distributed tracing, capturing and reporting service logs together with service-level metrics (i.e latency, errors, availability).
 * Operational agility - fine-grained controls for managing the flow of inter-mesh (north-south) and intra-mesh (east-west) traffic are provided.

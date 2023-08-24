@@ -497,7 +497,7 @@ EBS
 <details>
 <summary>What happens to EBS volumes when the instance is terminated?</summary><br><b>
 
-By deafult, the root volume is marked for deletion, while other volumes will still remain.<br>
+By default, the root volume is marked for deletion, while other volumes will still remain.<br>
 You can control what will happen to every volume upon termination.
 </b></details>
 
@@ -1258,7 +1258,7 @@ This not only provides enhanced security but also easier access for the user whe
 
 - Uploading images to S3 and tagging them or inserting information on the images to a database
 - Uploading videos to S3 and edit them or add subtitles/captions to them and store the result in S3
-- Use SNS and/or SQS to trigger functions based on notifications or messages receieved from these services.
+- Use SNS and/or SQS to trigger functions based on notifications or messages received from these services.
 - Cron Jobs: Use Lambda together with CloudWatch events to schedule tasks/functions periodically.
 </b></details>
 
@@ -2594,7 +2594,7 @@ AWS Cognito
 </b></details>
 
 <details>
-<summary>Which service is often reffered to as "used for decoupling applications"?</summary><br><b>
+<summary>Which service is often referred to as "used for decoupling applications"?</summary><br><b>
 
 AWS SQS. Since it's a messaging queue so it allows applications to switch from synchronous communication to asynchronous one.
 </b></details>

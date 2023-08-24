@@ -798,10 +798,10 @@ https://www.minitool.com/lib/virtual-memory.html
 Copy-on-write (COW) is a resource management concept, with the goal to reduce unnecessary copying of information. It is a concept which is implemented for instance within the POSIX fork syscall, which creates a duplicate process of the calling process.
 
 The idea:
-1. If resources are shared between 2 or more entities (for example shared memory segments between 2 processes) the resources don't need to be copied for every entity, but rather every entity has a READ operation access permission on the shared resource. (the shared segements are marked as read-only) 
+1. If resources are shared between 2 or more entities (for example shared memory segments between 2 processes) the resources don't need to be copied for every entity, but rather every entity has a READ operation access permission on the shared resource. (the shared segments are marked as read-only) 
 (Think of every entity having a pointer to the location of the shared resource which can be dereferenced to read its value)
 2. If one entity would perform a WRITE operation on a shared resource a problem would arise since the resource also would be permanently changed for ALL other entities sharing it.
-(Think of a process modifying some variables on the stack, or allocatingy some data dynamically on the heap, these changes to the shared resource would also apply for ALL other processes, this is definetly an undesirable behaviour)
+(Think of a process modifying some variables on the stack, or allocatingy some data dynamically on the heap, these changes to the shared resource would also apply for ALL other processes, this is definitely an undesirable behaviour)
 3. As a solution only if a WRITE operation is about to be performed on a shared resource, this resource gets COPIED first and then the changes are applied.
 </b></details>
 
@@ -1304,7 +1304,7 @@ Output: <code><br>
 </code>
 
 In `mod1` a is link, and when we're using `a[i]`, we're changing `s1` value to.
-But in `mod2`, `append` creats new slice, and we're changing only `a` value, not `s2`.
+But in `mod2`, `append` creates new slice, and we're changing only `a` value, not `s2`.
 
 [Aritcle about arrays](https://golangbot.com/arrays-and-slices/),
 [Blog post about `append`](https://blog.golang.org/slices)
@@ -1362,7 +1362,7 @@ Output: 3
 <details>
 <summary>What are the advantages of MongoDB? Or in other words, why choosing MongoDB and not other implementation of NoSQL?</summary><br><b>
 
-MongoDB advantages are as followings:
+MongoDB advantages are as following:
 - Schemaless
 - Easy to scale-out
 - No complex joins
@@ -1403,7 +1403,7 @@ as key-value pair, document-oriented, etc.
 <details>
 <summary>What is better? Embedded documents or referenced?</summary><br><b>
 
-  * There is no definitive answer to which is better, it depends on the specific use case and requirements. Some explainations : Embedded documents provide atomic updates, while referenced documents allow for better normalization.
+  * There is no definitive answer to which is better, it depends on the specific use case and requirements. Some explanations : Embedded documents provide atomic updates, while referenced documents allow for better normalization.
 </b></details>
 
 <details>
@@ -2171,7 +2171,7 @@ This is where data is stored and also where different processing takes place (e.
 <details>
 <summary>What is a master node?</summary><br><b>
 
-Part of a master node responsibilites:
+Part of a master node responsibilities:
   * Track the status of all the nodes in the cluster
   * Verify replicas are working and the data is available from every data node.
   * No hot nodes (no data node that works much harder than other nodes)
@@ -2183,7 +2183,7 @@ While there can be multiple master nodes in reality only of them is the elected 
 <summary>What is an ingest node?</summary><br><b>
 
 A node which responsible for processing the data according to ingest pipeline. In case you don't need to use 
-logstash then this node can recieve data from beats and process it, similarly to how it can be processed 
+logstash then this node can receive data from beats and process it, similarly to how it can be processed 
 in Logstash.
 </b></details>
 
@@ -2239,7 +2239,7 @@ As in NoSQL a document is a JSON object which holds data on a unit in your app. 
 <details>
 <summary>You check the health of your elasticsearch cluster and it's red. What does it mean? What can cause the status to be yellow instead of green?</summary><br><b>
 
-Red means some data is unavailable in your cluster. Some shards of your indices are unassinged. 
+Red means some data is unavailable in your cluster. Some shards of your indices are unassigned. 
 There are some other states for the cluster.
 Yellow means that you have unassigned shards in the cluster. You can be in this state if you have single node and your indices have replicas.
 Green means that all shards in the cluster are assigned to nodes and your cluster is healthy. 
@@ -2600,7 +2600,7 @@ While automation focuses on a task level, Orchestration is the process of automa
 </b></details>
 
 <details>
-<summary>What is a Debuggger and how it works?</summary><br><b>
+<summary>What is a Debugger and how it works?</summary><br><b>
 </b></details>
 
 <details>
@@ -2789,7 +2789,7 @@ False. It doesn't maintain state for incoming request.
 It consists of:
 
  * Request line - request type
- * Headers - content info like length, enconding, etc.
+ * Headers - content info like length, encoding, etc.
  * Body (not always included)
 </b></details>
 
@@ -3039,7 +3039,7 @@ CPU cache.
 
 A memory leak is a programming error that occurs when a program fails to release memory that is no longer needed, causing the program to consume increasing amounts of memory over time.
 
-The leaks can lead to a variety of problems, including system crashes, performance degradation, and instability. Usually occuring after failed maintenance on older systems and compatibility with new components over time.
+The leaks can lead to a variety of problems, including system crashes, performance degradation, and instability. Usually occurring after failed maintenance on older systems and compatibility with new components over time.
 </b></details>
 
 <details>
@@ -3097,7 +3097,7 @@ Cons:
 <details>
 <summary>Explain File Storage</summary><br><b>
 
-- File Storage used for storing data in files, in a hierarchical sturcture
+- File Storage used for storing data in files, in a hierarchical structure
 - Some of the devices for file storage: hard drive, flash drive, cloud-based file storage
 - Files usually organized in directories
 </b></details>
@@ -3275,7 +3275,7 @@ Given a text file, perform the following exercises
   - "^\w+"
 Bonus: extract the last word of each line
 
-  - "\w+(?=\W*$)" (in most cases, depends on line formating)
+  - "\w+(?=\W*$)" (in most cases, depends on line formatting)
 </b></details>
 
 <details>
