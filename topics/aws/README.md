@@ -1112,6 +1112,8 @@ Use Elastic IP which provides you a fixed IP address.
 
 <details>
 <summary>When creating a new VPC, there is an option called "Tenancy". What is it used for?</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html): `Tenancy` option defines if EC2 instances that you launch into the VPC will run on hardware that's shared with other AWS accounts or on hardware that's dedicated for your use only. 
 </b></details>
 
 <details>
@@ -1851,7 +1853,7 @@ False. It's disabled by default
 <details>
 <summary>True or False? In regards to cross zone load balancing, AWS charges you for inter AZ data in network load balancer but no in application load balancer</summary><br><b>
 
-False. It charges for inter AZ data in network load balancer, but not in application load balancer
+True. It charges for inter AZ data in network load balancer, but not in application load balancer
 </b></details>
 
 <details>
