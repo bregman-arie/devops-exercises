@@ -3609,6 +3609,30 @@ There are several types of storage, including hard disk drives (HDDs), solid-sta
 <summary>What is a Network Interface Controller or NIC?</summary><br><b>
 </b></details>
 
+<details>
+<summary>What is a DMA?</summary><br><b>
+
+Direct memory access (DMA) is a feature of computer systems that allows certain hardware subsystems to access main system memory independently of the central processing unit (CPU).DMA enables devices to share and receive data from the main memory in a computer. It does this while still allowing the CPU to perform other tasks.
+</b></details>
+
+<details>
+<summary>What is a Real-Time Operating Systems?</summary><br><b>
+
+A real-time operating system (RTOS) is an operating system (OS) for real-time computing applications that processes data and events that have critically defined time constraints. An RTOS is distinct from a time-sharing operating system, such as Unix, which manages the sharing of system resources with a scheduler, data buffers, or fixed task prioritization in a multitasking or multiprogramming environment. Processing time requirements need to be fully understood and bound rather than just kept as a minimum. All processing must occur within the defined constraints. Real-time operating systems are event-driven and preemptive, meaning the OS can monitor the relevant priority of competing tasks, and make changes to the task priority. Event-driven systems switch between tasks based on their priorities, while time-sharing systems switch the task based on clock interrupts.
+</b></details>
+
+<details>
+<summary>List of interrupt types</summary><br><b>
+
+There are six classes of interrupts possible:
+* External
+* Machine check
+* I/O
+* Program
+* Restart
+* Supervisor call (SVC)
+</b></details>
+
 ## Big Data
 
 <details>
