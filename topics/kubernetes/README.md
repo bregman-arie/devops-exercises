@@ -312,8 +312,10 @@ Outputs the status of each of the control plane components.
 #### Kubelet
 
 <details>
-<summary>What happens to running pods if if you stop Kubelet on the worker nodes?</summary><br><b>
+<summary>What happens to running pods if you stop Kubelet on the worker nodes?</summary><br><b>
 
+
+If you stop the Kubelet on a worker node, the running pods on that node will be terminated. This is because the Kubelet is responsible for managing the pods on the node, and if it is stopped, it will no longer be able to keep the pods running.
 </b></details>
 
 #### Nodes Commands
