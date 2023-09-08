@@ -315,7 +315,7 @@ Outputs the status of each of the control plane components.
 <summary>What happens to running pods if you stop Kubelet on the worker nodes?</summary><br><b>
 
 
-If you stop the Kubelet on a worker node, the running pods on that node will be terminated. This is because the Kubelet is responsible for managing the pods on the node, and if it is stopped, it will no longer be able to keep the pods running.
+If the kubelet on a node is stopped, the pods on that nodes will not be terminated effective immediately. The containers will continue to run, but since the health probes are not executed and reporting via PLEG is not available for the api-server, the API Server reckons the node and pods are not healthy and marks it for termination. But can't do that as well, since the kublet is down even if the control plane marks pods on that node for termination, the deletions cannot be enforced since kubelet is not running.
 </b></details>
 
 #### Nodes Commands
