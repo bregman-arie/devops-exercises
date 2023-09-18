@@ -433,6 +433,13 @@ Its a bit that only allows the owner or the root user to delete or modify the fi
 
 <details>
 <summary>What is sudo? How do you set it up?</summary><br><b>
+  Sudo is command-line utility for Unix and Unix-based operating systems,that provides an efficient way to temporarily grant users or user groups privileged access to system resources so that they can run commands that they cannot run under their regular accounts.
+  To set it up you need to:
+  
+  * use vsudo command to edit the configuration file: sudo visudo.
+  * this will open /etc/sudoers.
+  * to add a user and grant full sudo privileges, add the following line: [username] ALL=(ALL:ALL) ALL.
+  * save and exit the file
 </b></details>
 
 <details>
