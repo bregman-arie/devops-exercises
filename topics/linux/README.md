@@ -443,6 +443,12 @@ True
 
 <details>
 <summary>Explain what are ACLs. For what use cases would you recommend to use them?</summary><br><b>
+  Access control lists (ACLs) contains rules that grant or deny access to certain digital environments. ACLs can be used for:
+  
+  * traffic flow control
+  * restricted network traffic for better network performance
+  * as level of security for network
+  * monitoring of the traffic
 </b></details>
 
 <details>
