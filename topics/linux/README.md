@@ -578,6 +578,24 @@ tail -f <file_name>
 
 <details>
 <summary>Explain iostat output</summary><br><b>
+The <code>iostat</code> command is a computer system monitor tool used to collect and show operating system storage input and output statistics. 
+  
+  CPU Statistics
+  * <code> user: </code> The percentage of time the CPU spent executing user-level processes.
+  * <code> nice: </code> The percentage of time the CPU spent executing user-level processes with a positive nice value.
+  * <code> system: </code> The percentage of time the CPU spent executing system-level processes.
+  * <code> iowait: </code> The percentage of time the CPU spent waiting for I/O operations to complete.
+  * <code> steal: </code> The percentage of time the CPU spent in involuntary wait while the hypervisor serviced another virtual processor.
+  * <code> idle: </code> The percentage of time the CPU was idle.
+
+  Device Statistics
+  * <code>device:</code> The name of the device.
+  * <code>tps:</code> The number of transfers per second sent to the device.
+  * <code>kB_read/s:</code> The number of kilobytes read from the device per second.
+  * <code>kB_wrtn/s:</code> The number of kilobytes written to the device per second.
+  * <code>kB_read:</code> The total number of kilobytes read from the device.
+  * <code>kB_wrtn:</code> The total number of kilobytes written to the device.
+
 </b></details>
 
 <details>
