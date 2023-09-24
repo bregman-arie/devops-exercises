@@ -360,6 +360,7 @@ It contains useful information about the processes that are currently running, i
 
 <details>
 <summary>What makes /proc different from other filesystems?</summary><br><b>
+  /proc is very special in that it is also a virtual filesystem.It doesn't contain 'real' files but runtime system information.
 </b></details>
 
 <details>
