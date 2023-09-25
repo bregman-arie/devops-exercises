@@ -586,6 +586,9 @@ tail -f <file_name>
 
 <details>
 <summary>What is the difference between CPU load and utilization?</summary><br><b>
+CPU load is a measurement of how many processes are being executed or waiting to be executed by the CPU.
+  
+CPU utilization is the percentage of work the CPU is handling to manage tasks.
 </b></details>
 
 <details>
