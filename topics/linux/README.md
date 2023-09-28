@@ -622,6 +622,11 @@ The kernel is part of the operating system and is responsible for tasks like:
 
 <details>
 <summary>What is a Linux kernel module and how do you load a new module?</summary><br><b>
+  Kernel modules are pieces of code that can be loaded and unloaded into the kernel upon demand.
+
+  To run kernel module run as root:
+  
+  <code> modprobe module_name </code>
 </b></details>
 
 <details>
