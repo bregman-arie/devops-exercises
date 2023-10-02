@@ -806,10 +806,12 @@ Learn more : [How can I tell how many bits my ssh key is? - Superuser](https://s
 
 <details>
 <summary>What is Globbing?</summary><br><b>
+  Globbing is the operation that expands a wildcard pattern into the list of pathnames matching the pattern.
 </b></details>
 
 <details>
 <summary>What are wildcards? Can you give an example of how to use them?</summary><br><b>
+  Asterisk (*) and question mark (?) are the two wildcard characters. 
 </b></details>
 
 <details>
