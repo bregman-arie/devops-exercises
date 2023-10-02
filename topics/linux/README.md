@@ -433,6 +433,13 @@ Its a bit that only allows the owner or the root user to delete or modify the fi
 
 <details>
 <summary>What is sudo? How do you set it up?</summary><br><b>
+  Sudo is command-line utility for Unix and Unix-based operating systems,that provides an efficient way to temporarily grant users or user groups privileged access to system resources so that they can run commands that they cannot run under their regular accounts.
+  To set it up you need to:
+  
+  * use vsudo command to edit the configuration file: sudo visudo.
+  * this will open /etc/sudoers.
+  * to add a user and grant full sudo privileges, add the following line: [username] ALL=(ALL:ALL) ALL.
+  * save and exit the file
 </b></details>
 
 <details>
@@ -799,10 +806,12 @@ Learn more : [How can I tell how many bits my ssh key is? - Superuser](https://s
 
 <details>
 <summary>What is Globbing?</summary><br><b>
+  Globbing is the operation that expands a wildcard pattern into the list of pathnames matching the pattern.
 </b></details>
 
 <details>
 <summary>What are wildcards? Can you give an example of how to use them?</summary><br><b>
+  Asterisk (*) and question mark (?) are the two wildcard characters. 
 </b></details>
 
 <details>
