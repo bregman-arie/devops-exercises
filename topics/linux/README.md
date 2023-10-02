@@ -728,6 +728,7 @@ It means that the key of the remote host was changed and doesn't match the one t
 
 <details>
 <summary>What is the difference between SSH and SSL?</summary><br><b>
+SSH uses a username/password authentication system, while SSL uses a digital certificate.
 </b></details>
 
 <details>
