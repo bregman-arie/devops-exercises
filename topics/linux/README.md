@@ -792,6 +792,7 @@ Learn more : [How can I tell how many bits my ssh key is? - Superuser](https://s
 
 <details>
 <summary>What is SSH port forwarding?</summary><br><b>
+  SSH port forwarding is a method of sending data over an encrypted SSH connection. SSH port forwarding allows connections made to a local port to be forwarded to a remote machine via the secure channel.
 </b></details>
 
 <a name="questions-linux-wildcards"></a>
