@@ -857,6 +857,7 @@ lines 1 and 3.
 
 <details>
 <summary>What is escaping? What escape character is used for escaping?</summary><br><b>
+Escape characters are used to remove the special meaning from a single character. A non-quoted backslash, \, is used as an escape character in Bash. It preserves the literal value of the next character that follows, with the exception of newline. If a newline character appears immediately after the backslash, it marks the continuation of a line when it is longer that the width of the terminal, the backslash is removed from the input stream and effectively ignored.
 </b></details>
 
 <details>
