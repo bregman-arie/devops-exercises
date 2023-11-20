@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - if [ $CODEBUILD_WEBHOOK_EVENT == "PULL_REQUEST_MERGED" ]; then export BUILD_BRANCH_NAME=${CODEBUILD_WEBHOOK_BASE_REF#"refs/heads/"};  else export BUILD_BRANCH_NAME=${CODEBUILD_WEBHOOK_HEAD_REF#"refs/heads/"}; fi
+      - echo $CODEBUILD_WEBHOOK_EVENT
+      - echo $BUILD_BRANCH_NAME
+      - echo $CODEBUILD_WEBHOOK_BASE_REF
+      - echo $CODEBUILD_WEBHOOK_HEAD_REF
+  build:
+    commands:
+      - mkdir -p /artifact/echo-ip/$BUILD_BRANCH_NAME
+      - echo -n "$CODEBUILD_RESOLVED_SOURCE_VERSION-$BUILD_BRANCH_NAME-$CODEBUILD_BUILD_NUMBER-$(date) ubuntu22" > /artifact/echo-ip/$BUILD_BRANCH_NAME/commit
+artifacts:
+  files:
+    - echo-ip/**/*
+  base-directory: /artifact
