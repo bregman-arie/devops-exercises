@@ -314,6 +314,16 @@ Outputs the status of each of the control plane components.
 <details>
 <summary>What happens to running pods if if you stop Kubelet on the worker nodes?</summary><br><b>
 
+Here's what generally happens when you stop the Kubelet on a worker node:
+Pods are not monitored: Kubelet is responsible for monitoring the health of pods on the node. If Kubelet is stopped, it won't be able to check the status of the running pods.
+
+Pods may continue running: The containers within the pods may continue running even if Kubelet is stopped. Kubelet manages the pod lifecycle, so if a pod is already running, the containers within it may keep running until they complete or encounter an issue.
+
+No communication with the control plane: Kubelet communicates with the Kubernetes control plane (API server) to report the node's status, get instructions, and manage pod lifecycle. When Kubelet is stopped, the control plane won't receive updates from that node, and the node may be marked as unreachable.
+
+No rescheduling or scaling: If Kubelet is stopped, Kubernetes won't be able to reschedule the pods running on that node to other healthy nodes in the cluster. Similarly, any scaling operations that involve the affected node won't be possible.
+
+Eventual termination of running pods: While the containers within the pods may continue running, Kubernetes won't be able to monitor or manage them properly. If the containers encounter issues or complete their tasks, the pods may eventually be terminated, and their resources released.
 </b></details>
 
 #### Nodes Commands
