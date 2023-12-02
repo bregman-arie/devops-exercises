@@ -44,3 +44,15 @@ An application that publishes data to the Kafka cluster.
 
 - Broker: a server with kafka process running on it. Such server has local storage. In a single Kafka clusters there are usually multiple brokers.
 </b></details>
+
+<details>
+  <summary>What is the role of ZooKeeper is Kafka?</summary><br/><b>
+In Kafka, Zookeeper is a centralized controller that manages metadata for producers, brokers, and consumers.
+Zookeeper also:
+- Tracks which brokers are part of the Kafka cluster
+- Determines which broker is the leader of a given partition and topic
+- Performs leader elections
+- Manages cluster membership of brokers
+
+  </b>
+</details>
