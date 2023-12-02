@@ -49,10 +49,18 @@ An application that publishes data to the Kafka cluster.
   <summary>What is the role of ZooKeeper is Kafka?</summary><br/><b>
 In Kafka, Zookeeper is a centralized controller that manages metadata for producers, brokers, and consumers.
 Zookeeper also:
-- Tracks which brokers are part of the Kafka cluster
-- Determines which broker is the leader of a given partition and topic
-- Performs leader elections
-- Manages cluster membership of brokers
+    <ul>
+      <li>Tracks which brokers are part of the Kafka cluster</li>
+      <li>
+Determines which broker is the leader of a given partition and topic
+      </li>
+      <li>
+Performs leader elections
+      </li>
+      <li>
+Manages cluster membership of brokers
+      </li>
+    </ul>
 
   </b>
 </details>
