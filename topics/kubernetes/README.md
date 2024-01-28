@@ -314,6 +314,7 @@ Outputs the status of each of the control plane components.
 <details>
 <summary>What happens to running pods if if you stop Kubelet on the worker nodes?</summary><br><b>
 
+When you stop the kubelet service on a worker node, it will no longer be able to communicate with the Kubernetes API server. As a result, the node will be marked as NotReady and the pods running on that node will be marked as Unknown. The Kubernetes control plane will then attempt to reschedule the pods to other available nodes in the cluster. 
 </b></details>
 
 #### Nodes Commands
