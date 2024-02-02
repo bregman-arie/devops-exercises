@@ -7,7 +7,7 @@
 | Set up a CI pipeline | CI | [Exercise](ci_for_open_source_project.md) | | |
 | Deploy to Kubernetes | Deployment | [Exercise](deploy_to_kubernetes.md) | [Solution](solutions/deploy_to_kubernetes/README.md) | |
 | Jenkins - Remove Jobs | Jenkins Scripts | [Exercise](remove_jobs.md) | [Solution](solutions/remove_jobs_solution.groovy) | |
-| Jenkins - Remove Builds | Jenkins Sripts | [Exercise](remove_builds.md) | [Solution](solutions/remove_builds_solution.groovy) | |
+| Jenkins - Remove Builds | Jenkins Scripts | [Exercise](remove_builds.md) | [Solution](solutions/remove_builds_solution.groovy) | |
 
 ### CI/CD Self Assessment
 
@@ -546,7 +546,7 @@ For example, you might configure the workflow to trigger every time a changed is
 </b></details>
 
 <details>
-<summary>True or False? In Github Actions, jobs are executed in parallel by deafult</summary><br><b>
+<summary>True or False? In Github Actions, jobs are executed in parallel by default</summary><br><b>
 
 True
 </b></details>

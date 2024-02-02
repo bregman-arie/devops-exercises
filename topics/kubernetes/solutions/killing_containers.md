@@ -9,4 +9,5 @@
 
 ## After you complete the exercise
 
+
 * Why did the "RESTARTS" count raised? - `Kubernetes restarted the Pod because we killed the process and the container was not running properly.`

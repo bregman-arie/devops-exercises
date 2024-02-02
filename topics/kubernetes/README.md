@@ -314,6 +314,7 @@ Outputs the status of each of the control plane components.
 <details>
 <summary>What happens to running pods if if you stop Kubelet on the worker nodes?</summary><br><b>
 
+When you stop the kubelet service on a worker node, it will no longer be able to communicate with the Kubernetes API server. As a result, the node will be marked as NotReady and the pods running on that node will be marked as Unknown. The Kubernetes control plane will then attempt to reschedule the pods to other available nodes in the cluster. 
 </b></details>
 
 #### Nodes Commands
@@ -736,21 +737,29 @@ A Deployment is a declarative statement for the desired state for Pods and Repli
 <details>
 <summary>How to create a deployment with the image "nginx:alpine"?</code></summary><br><b>
 
-`kubectl create deployment my_first_deployment --image=nginx:alpine`
+`kubectl create deployment my-first-deployment --image=nginx:alpine`
 
 OR
 
 ```
 cat << EOF | kubectl create -f -
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: nginx
 spec:
-  containers:
-  - name: nginx
-    image: nginx:alpine
-EOF
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
 ```
 </b></details>
 
@@ -1173,7 +1182,7 @@ Explanation as to who added them:
 <details>
 <summary>After creating a service that forwards incoming external traffic to the containerized application, how to make sure it works?</summary><br><b>
 
-You can run `curl <SERIVCE IP>:<SERVICE PORT>` to examine the output.
+You can run `curl <SERVICE IP>:<SERVICE PORT>` to examine the output.
 </b></details>
 
 <details>
@@ -1316,7 +1325,7 @@ To run two instances of the applicaation?
 
 `kubectl scale deployment <DEPLOYMENT_NAME> --replicas=2`
 
-You can speciy any other number, given that your application knows how to scale.
+You can specify any other number, given that your application knows how to scale.
 </b></details>
 
 ### ReplicaSets
@@ -1791,9 +1800,9 @@ False. When a namespace is deleted, the resources in that namespace are deleted 
 </b></details>
 
 <details>
-<summary>While namspaces do provide scope for resources, they are not isolating them</summary><br><b>
+<summary>While namespaces do provide scope for resources, they are not isolating them</summary><br><b>
 
-True. Try create two pods in two separate namspaces for example, and you'll see there is a connection between the two.
+True. Try create two pods in two separate namespaces for example, and you'll see there is a connection between the two.
 </b></details>
 
 #### Namespaces - commands
@@ -1858,7 +1867,7 @@ If the namespace doesn't exist already: `k create ns dev`
 <details>
 <summary>What kube-node-lease contains?</summary><br><b>
 
-It holds information on hearbeats of nodes. Each node gets an object which holds information about its availability.
+It holds information on heartbeats of nodes. Each node gets an object which holds information about its availability.
 </b></details>
 
 <details>
@@ -2854,7 +2863,7 @@ Running `kubectl get events` you can see which scheduler was used.
 </b></details>
 
 <details>
-<summary>You want to run a new Pod and you would like it to be scheduled by a custom schduler. How to achieve it?</summary><br><b>
+<summary>You want to run a new Pod and you would like it to be scheduled by a custom scheduler. How to achieve it?</summary><br><b>
 
 Add the following to the spec of the Pod:
 
@@ -2912,7 +2921,7 @@ Exit and save. The pod should be in Running state now.
 
 `NoSchedule`: prevents from resources to be scheduled on a certain node
 `PreferNoSchedule`: will prefer to shcedule resources on other nodes before resorting to scheduling the resource on the chosen node (on which the taint was applied)
-`NoExecute`: Appling "NoSchedule" will not evict already running Pods (or other resources) from the node as opposed to "NoExecute" which will evict any already running resource from the Node
+`NoExecute`: Applying "NoSchedule" will not evict already running Pods (or other resources) from the node as opposed to "NoExecute" which will evict any already running resource from the Node
 </b></details>
 
 ### Resource Limits
@@ -3122,7 +3131,7 @@ Namespaces. See the following [namespaces question and answer](#namespaces-use-c
 The container failed to run (due to different reasons) and Kubernetes tries to run the Pod again after some delay (= BackOff time).
 
 Some reasons for it to fail:
-  - Misconfiguration - mispelling, non supported value, etc.
+  - Misconfiguration - misspelling, non supported value, etc.
   - Resource not available - nodes are down, PV not mounted, etc.
 
 Some ways to debug:

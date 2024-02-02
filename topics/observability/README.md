@@ -7,6 +7,11 @@
 
 <details>
 <summary>What's Observability?</summary><br><b>
+  
+  In distributed systems, observability is the ability to collect data about programs' execution, modules' internal states, and the communication among components.<br>
+  To improve observability, software engineers use a wide range of logging and tracing techniques to gather telemetry information, and tools to analyze and use it.<br>
+  Observability is foundational to site reliability engineering, as it is the first step in triaging a service outage.<sup title="wikipedia"><a href="https://en.wikipedia.org/wiki/Observability_(software)">[1]</a></sup>
+  
 </b></details>
 
 ## Monitoring

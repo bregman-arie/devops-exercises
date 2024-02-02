@@ -822,7 +822,7 @@ Through the use of namespaces and cgroups. Linux kernel has several types of nam
 
 * namespaces: same as cgroups, namespaces isolate some of the system resources so it's available only for processes in the namespace. Differently from cgroups the focus with namespaces is on resources like mount points, IPC, network, ... and not about memory and CPU as in cgroups
 
-* SElinux: the access control mechanism used to protect processes. Unfortunately to this date many users don't actually understand SElinux and some turn it off but nontheless, it's a very important security feature of the Linux kernel, used by container as well
+* SElinux: the access control mechanism used to protect processes. Unfortunately to this date many users don't actually understand SElinux and some turn it off but nonetheless, it's a very important security feature of the Linux kernel, used by container as well
 
 * Seccomp: similarly to SElinux, it's also a security mechanism, but its focus is on limiting the processes in regards to using system calls and file descriptors
 </b></details>
@@ -1224,7 +1224,7 @@ In rootless containers, user namespace appears to be running as root but it does
 <details>
 <summary>When running a container, usually a virtual ethernet device is created. To do so, root privileges are required. How is it then managed in rootless containers?</summary><br><b>
 
-Networking is usually managed by Slirp in rootless containers. Slirp creates a tap device which is also the default route and it creates it in the network namepsace of the container. This device's file descriptor passed to the parent who runs it in the default namespace and the default namespace connected to the internet. This enables communication externally and internally.
+Networking is usually managed by Slirp in rootless containers. Slirp creates a tap device which is also the default route and it creates it in the network namespace of the container. This device's file descriptor passed to the parent who runs it in the default namespace and the default namespace connected to the internet. This enables communication externally and internally.
 </b></details>
 
 <details>

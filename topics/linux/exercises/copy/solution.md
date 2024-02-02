@@ -17,8 +17,7 @@ touch /tmp/x
 cp x ~/
 cp x y
 mkdir files
-cp x files
-cp y files
+mv x files | mv y files
 cp -r files copy_of_files
 mv copy_of_files files2
 rm -rf files files2

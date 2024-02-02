@@ -270,7 +270,7 @@ We can understand web servers using two view points, which is:
 ## How communication between web server and web browsers established:
 	
  Whenever a browser needs a file that is hosted on a web server, the browser requests the page from the web server and the web server responds with that page.
-This communcation between web browser and web server happens in the following ways:
+This communication between web browser and web server happens in the following ways:
 
 (1) User enters the domain name in the browser,and the browser then search for the IP address of the entered name. It can be done in 2 ways- 
 	
@@ -455,7 +455,7 @@ A repository that doesn't holds the application source code, but the configurati
 One might say we need more details as to what these configuration and infra files look like exactly and how complex the application and its CI/CD pipeline(s), but in general, most of the time you will want to put configuration and infra related files in their own separate repository and not in the repository of the application for multiple reasons:
 
 * Every change submitted to the configuration, shouldn't trigger the CI/CD of the application, it should be testing out and applying the modified configuration, not the application itself
-* When you mix application code with conifguration and infra related files
+* When you mix application code with configuration and infra related files
 </b></details>
 
 #### SRE
@@ -525,12 +525,12 @@ Read more about it [here](https://sre.google/sre-book/eliminating-toil/)
 <details>
 <summary>What is a postmortem ? </summary><br><b>
 
-The postmortem is a process that should take place folowing an incident. It’s purpose is to identify the root cause of an incident and the actions that should be taken to avoid this kind of incidents from hapenning again. </b></details>
+The postmortem is a process that should take place following an incident. It’s purpose is to identify the root cause of an incident and the actions that should be taken to avoid this kind of incidents from happening again. </b></details>
 
 
 <details>
 <summary>What is the core value often put forward when talking about postmortem?</summary><br><b>
 
 Blamelessness. 
-Postmortems need to be blameless and this value should be remided at the begining of every postmortem. This is the best way to ensure that people are playing the game to find the root cause and not trying to hide their possible faults.</b></details>
+Postmortems need to be blameless and this value should be remided at the beginning of every postmortem. This is the best way to ensure that people are playing the game to find the root cause and not trying to hide their possible faults.</b></details>
 

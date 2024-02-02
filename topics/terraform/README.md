@@ -179,7 +179,7 @@ Run `terraform apply`. That will apply the changes described in your .tf files.
 </b></details>
 
 <details>
-<summary>How to cleanup Terraform resources? Why the user shold be careful doing so?</summary><br><b>
+<summary>How to cleanup Terraform resources? Why the user should be careful doing so?</summary><br><b>
 
 `terraform destroy` will cleanup all the resources tracked by Terraform.
 
@@ -359,7 +359,7 @@ False. You can specify any provider from any URL, not only those from hashicorp.
 #### Input Variables
 
 <details>
-<summary>What input variables are good for in Terraform?</summary><br><b>
+<summary>What are input variables good for in Terraform?</summary><br><b>
 
 Variables allow you define piece of data in one location instead of repeating the hardcoded value of it in multiple different locations. Then when you need to modify the variable's value, you do it in one location instead of changing each one of the hardcoded values.
 </b></details>
@@ -628,7 +628,7 @@ data "aws_vpc" "default {
 <details>
 <summary>How to get data out of a data source?</summary><br><b>
 
-The general syntax is `data.<PROVIDER_AND_TYPE>.<NAME>.<ATTRBIUTE>`
+The general syntax is `data.<PROVIDER_AND_TYPE>.<NAME>.<ATTRIBUTE>`
 
 So if you defined the following data source
 
@@ -923,7 +923,7 @@ It starts with acquiring a state lock so others can't modify the state at the sa
 </b></details>
 
 <details>
-<summary>What would be te process of switching back from remote backend to local?</summary><br><b>
+<summary>What would be the process of switching back from remote backend to local?</summary><br><b>
 
 1. You remove the backend code and perform `terraform init` to switch back to `local` backend
 2. You remove the resources that are the remote backend itself
@@ -940,7 +940,7 @@ One way to deal with it is using partial configurations in a completely separate
 </b></details>
 
 <details>
-<summary>Is there a way to obtain information from a remote backend/state usign Terraform?</summary><br><b>
+<summary>Is there a way to obtain information from a remote backend/state using Terraform?</summary><br><b>
 
 Yes, using the concept of data sources. There is a data source for a remote state called "terraform_remote_state".
 
@@ -965,9 +965,9 @@ True
 </b></details>
 
 <details>
-<summary>Why workspaces might not be the best solution for managing states for different environemnts? like staging and production</summary><br><b>
+<summary>Why workspaces might not be the best solution for managing states for different environments? like staging and production</summary><br><b>
 
-One reason is that all the workspaces are stored in one location (as in one backend) and usually you don't want to use the same access control and authentication for both staging and production for obvious reasons. Also working in workspaces is quite prone to human errors as you might accidently think you are in one workspace, while you are working a completely different one.
+One reason is that all the workspaces are stored in one location (as in one backend) and usually you don't want to use the same access control and authentication for both staging and production for obvious reasons. Also working in workspaces is quite prone to human errors as you might accidentally think you are in one workspace, while you are working a completely different one.
 </b></details>
 
 
@@ -1167,7 +1167,7 @@ for_each can applied only on collections like maps or sets so the list should be
 
 
 ```
-resouce "some_instance" "instance" {
+resource "some_instance" "instance" {
 
 dynamic "tag" {
   for_each = var.tags
@@ -1829,7 +1829,7 @@ Suggest to use Terraform modules.
 <summary>When working with nested layout of many directories, it can make it cumbresome to run terraform commands in many different folders. How to deal with it?</summary><br><b>
 
 There are multiple ways to deal with it:
-1. Write scripts that perform some commands recurisvely with different conditions
+1. Write scripts that perform some commands recursively with different conditions
 2. Use tools like Terragrunt where you commands like "run-all" that can run in parallel on multiple different paths
 
 </b></details>

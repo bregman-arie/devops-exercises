@@ -24,7 +24,7 @@ SAAS
   * IAAS
   * PAAS
   * SAAS</summary><br><b>
- - IAAS - Infrastructure As A Service is a cloud computing service where a cloud provider rents out IT infrastructure such as compute, networking resources and strorage over the internet.<br>
+ - IAAS - Infrastructure As A Service is a cloud computing service where a cloud provider rents out IT infrastructure such as compute, networking resources and storage over the internet.<br>
  
  - PAAS - Platform As A Service is a cloud hosting platform with an on-demand access to ready-to-use set of deployment, application management and DevOps tools.<br>
  
@@ -400,8 +400,8 @@ Learn more [here](https://aws.amazon.com/snowmobile)
 <details>
 <summary>What is IAM? What are some of its features?</summary><br><b>
 
+IAM stands for Identity and Access Management, and is used for managing users, groups, access policies & roles
 Full explanation is [here](https://aws.amazon.com/iam)
-In short: it's used for managing users, groups, access policies & roles
 </b></details>
 
 <details>
@@ -432,7 +432,7 @@ False. Users can belong to multiple groups.
 <summary>What are Roles?</summary><br><b>
 
 A way for allowing a service of AWS to use another service of AWS. You assign roles to AWS resources.
-For example, you can make use of a role which allows EC2 service to acesses s3 buckets (read and write).
+For example, you can make use of a role which allows EC2 service to accesses s3 buckets (read and write).
 </b></details>
 
 <details>
@@ -570,7 +570,7 @@ Read more about it [here](https://aws.amazon.com/sns)
 <details>
 <summary>What is the shared responsibility model? What AWS is responsible for and what the user is responsible for based on the shared responsibility model?</summary><br><b>
 
-The shared responsibility model defines what the customer is responsible for and what AWS is responsible for.
+The shared responsibility model defines what the customer is responsible for and what AWS is responsible for. For example, AWS is responsible for security "of" the cloud, while the customer is responsible for security "in" the cloud.
 
 More on the shared responsibility model [here](https://aws.amazon.com/compliance/shared-responsibility-model)
 </b></details>
@@ -611,6 +611,8 @@ Learn more [here](https://aws.amazon.com/inspector)
 
 <details>
 <summary>What is AWS Guarduty?</summary><br><b>
+
+Guarduty is a threat detection service that monitors your AWS accounts to help detect and mitigate malicious activity
 </b></details>
 
 <details>
@@ -621,6 +623,8 @@ AWS definition: "AWS Shield is a managed Distributed Denial of Service (DDoS) pr
 
 <details>
 <summary>What is AWS WAF? Give an example of how it can used and describe what resources or services you can use it with</summary><br><b>
+
+An AWS Web Application Firewall (WAF) can filter out unwanted web traffic (bots), and protect against attacks like SQL injection and cross-site scripting. One service you could use it with would be Amazon CloudFront, a CDN service, to block attacks before they reach your origin servers
 </b></details>
 
 <details>
@@ -697,6 +701,11 @@ Learn more [here](https://aws.amazon.com/certificate-manager)
 
 <details>
 <summary>What is AWS RDS?</summary><br><b>
+
+Amazon Relational Database Service (RDS) is a service for setting up  and managing resizable, cost-efficient relational databases
+resource
+
+Learn more [here](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
 </b></details>
 
 <details>
@@ -730,7 +739,7 @@ Learn more [here](https://aws.amazon.com/dynamodb/dax)
 <details>
 <summary>What is AWS Redshift and how is it different than RDS?</summary><br><b>
 
-cloud data warehouse
+AWS Redshift is a cloud data warehousing service that is geared towards handling massive amounts of data (think petabytes) and being able to execute complex queries. In contrast, Amazon RDS is best suited for things like web applications requiring simple queries with more frequent transactions, and on a smaller scale.
 </b></details>
 
 <details>
@@ -815,7 +824,7 @@ CloudFormation
 <details>
 <summary>Which service would you use for building a website or web application?</summary><br><b>
 
-Lightsail
+Lightsail or Elastic Beanstalk
 </b></details>
 
 <details>

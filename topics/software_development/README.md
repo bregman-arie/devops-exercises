@@ -101,7 +101,7 @@ SOLID is:
 * Single Responsibility - A class* should have one ~responsibility~ reason to change. It was edited by Robert Martin due to wrong understanding of principle
 * Open-Closed - A class should be open for extension, but closed for modification. What this practically means is that you should extend functionality by adding a new code and not by modifying it. Your system should be separated into components so it can be easily extended without breaking everything
 * Liskov Substitution - Any derived class should be able to substitute the its parent without altering its corrections. Practically, every part of the code will get the expected result no matter which part is using it
-* Interface Segregation - A client should never depend on anything it doesn't uses. Big interfaces must be splitted to smaller interfaces if needed
+* Interface Segregation - A client should never depend on anything it doesn't uses. Big interfaces must be split to smaller interfaces if needed
 * Dependency Inversion - High level modules should depend on abstractions, not low level modules
 
 *there also can be module, component, entity, etc. Depends on project structure and programming language
@@ -143,7 +143,7 @@ Inversion of Control - design principle, used to achieve loose coupling. You mus
 <details>
 <summary>Explain Dependency Injection (DI)</summary><br><b>
 
-Dependency Injection - deisgn pattern, used with IoC. Our object fields (dependecies) must be configurated by external objects
+Dependency Injection - design pattern, used with IoC. Our object fields (dependencies) must be configurated by external objects
 </b></details>
 
 <details>

@@ -164,7 +164,7 @@ Multi-Factor Authentication (Also known as 2FA). Allows the user to present two 
 <details>
 <summary>What is password salting? What attack does it help to deter?</summary><br><b>
 
-Password salting is the processing of prepending or appending a series of characters to a user's password before hashing this new combined value. This value should be different for every single user but the same salt should be applied to the same user password everytime it is validated.
+Password salting is the processing of prepending or appending a series of characters to a user's password before hashing this new combined value. This value should be different for every single user but the same salt should be applied to the same user password every time it is validated.
 
  This ensures that users that have the same password will still have very different hash values stored in the password database. This process specifically helps deter rainbow table attacks since a new rainbow table would need to be computed for every single user in the database.
 </b></details>
@@ -340,7 +340,7 @@ The 'S' in HTTPS stands for 'secure'. HTTPS uses TLS to provide encryption of HT
   [Red Hat](https://www.redhat.com/en/topics/security/what-is-cve#how-does-it-work) : "When someone refers to a CVE (Common Vulnerabilities and Exposures), they mean a security flaw that's been assigned a CVE ID number. They don’t include technical data, or information about risks, impacts, and fixes." So CVE is just identified by an ID written with 8 digits. The CVE ID have the following format:  CVE prefix + Year + Arbitrary Digits.
  Anyone can submit a vulnerability, [Exploit Database](https://www.exploit-db.com/submit) explains how it works to submit.
   
-Then CVSS stands for Common Vulnerability Scoring System, it attemps to assign severity scores to vulnerabilities, allowing to ordonnance and prioritize responses and ressources according to threat. 
+Then CVSS stands for Common Vulnerability Scoring System, it attempts to assign severity scores to vulnerabilities, allowing to ordonnance and prioritize responses and resources according to threat. 
  
 </b></details>
 
@@ -395,7 +395,7 @@ Spectre is an attack method which allows a hacker to “read over the shoulder�
 <details>
 <summary>What is CSRF? How to handle CSRF?</summary><br><b>
 
-Cross-Site Request Forgery (CSRF) is an attack that makes the end user to initate a unwanted action on the web application in which the user has a authenticated session, the attacker may user an email and force the end user to click on the link and that then execute malicious actions. When an CSRF attack is successful it will compromise the end user data 
+Cross-Site Request Forgery (CSRF) is an attack that makes the end user to initiate a unwanted action on the web application in which the user has a authenticated session, the attacker may user an email and force the end user to click on the link and that then execute malicious actions. When an CSRF attack is successful it will compromise the end user data 
 
 You can use OWASP ZAP to analyze a "request", and if it appears that there no protection against cross-site request forgery when the Security Level is set to 0 (the value of csrf-token is SecurityIsDisabled.) One can use data from this request to prepare a CSRF attack by using OWASP ZAP
 </b></details>
