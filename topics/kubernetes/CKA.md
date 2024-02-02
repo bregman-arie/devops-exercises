@@ -22,7 +22,7 @@
 
 ## Setup
 
-* Set up Kubernetes cluster. Use on of the following
+* Set up Kubernetes cluster. Use one of the following
    1. Minikube for local free & simple cluster
    2. Managed Cluster (EKS, GKE, AKS)
 
@@ -54,7 +54,7 @@ Note: create an alias (`alias k=kubectl`) and get used to `k get po`
 </b></details>
 
 <details>
-<summary>Assuming you have a Pod called "nginx-test", how to remove it?</summary><br><b>
+<summary>Assuming that you have a Pod called "nginx-test", how to remove it?</summary><br><b>
 
 `k delete nginx-test`
 </b></details>
@@ -107,7 +107,7 @@ If you ask yourself how would I remember writing all of that? no worries, you ca
 <details>
 <summary>How to test a manifest is valid?</summary><br><b>
 
-with `--dry-run` flag which will not actually create it, but it will test it and you can find this way any syntax issues.
+with `--dry-run` flag which will not actually create it, but it will test it and you can find this way, any syntax issues.
 
 `k create -f YAML_FILE --dry-run`
 </b></details>
@@ -158,7 +158,11 @@ To count them: `k get po -l env=prod --no-headers | wc -l`
 First change to the directory tracked by kubelet for creating static pod: `cd /etc/kubernetes/manifests` (you can verify path by reading kubelet conf file)
 
 Now create the definition/manifest in that directory
+
+`k run some-pod --image=python --command sleep 2017 --restart=Never --dry-run=client -o yaml > status-pod.yaml`
+=======
 `k run some-pod --image=python --command sleep 2017 --restart=Never --dry-run=client -o yaml > static-pod.yaml`
+
 </b></details>
 
 <details>
