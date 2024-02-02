@@ -509,6 +509,9 @@ If your group has 8 hosts. It will run the whole play on 4 hosts and then the sa
 
 <details>
 <summary>What is Molecule? How does it works?</summary><br><b>
+
+It's used to rapidy develop and test Ansbile roles.  Molecule can be used to test Ansible roles against a varaitey of Linux Distros at the same time.  This testing ability helps instill confidence of the automation today and as time go on while a role is maintined.  
+
 </b></details>
 
 <details>
