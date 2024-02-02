@@ -23,3 +23,37 @@ As you probably know at this point, it's not recommended to work with the root a
 10. Click on "Next: Tags"
 11. Add a tag with the key `Role` and the value `DevOps`
 12. Click on "Review" and then create on "Create user"
+
+13. ### Solution using Terraform
+    
+```
+ 
+resource "aws_iam_group_membership" "team" {
+  name = "tf-testing-group-membership"
+
+  users = [
+    aws_iam_user.newuser.name,
+
+  ]
+
+  group = aws_iam_group.admin.name
+}
+
+resource "aws_iam_group_policy_attachment" "test-attach" {
+  group      = aws_iam_group.admin.name
+  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
+}
+resource "aws_iam_group" "admin" {
+  name = "admin"
+}
+
+resource "aws_iam_user" "newuser" {
+  name = "newuser"
+  path = "/system/"
+
+  tags = {
+    Role = "DevOps"
+  }
+}
+```
+
