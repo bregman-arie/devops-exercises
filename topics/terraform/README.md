@@ -359,7 +359,7 @@ False. You can specify any provider from any URL, not only those from hashicorp.
 #### Input Variables
 
 <details>
-<summary>What input variables are good for in Terraform?</summary><br><b>
+<summary>What are input variables good for in Terraform?</summary><br><b>
 
 Variables allow you define piece of data in one location instead of repeating the hardcoded value of it in multiple different locations. Then when you need to modify the variable's value, you do it in one location instead of changing each one of the hardcoded values.
 </b></details>
