@@ -314,6 +314,7 @@ Outputs the status of each of the control plane components.
 <details>
 <summary>What happens to running pods if if you stop Kubelet on the worker nodes?</summary><br><b>
 
+When you stop the kubelet service on a worker node, it will no longer be able to communicate with the Kubernetes API server. As a result, the node will be marked as NotReady and the pods running on that node will be marked as Unknown. The Kubernetes control plane will then attempt to reschedule the pods to other available nodes in the cluster. 
 </b></details>
 
 #### Nodes Commands
@@ -736,21 +737,29 @@ A Deployment is a declarative statement for the desired state for Pods and Repli
 <details>
 <summary>How to create a deployment with the image "nginx:alpine"?</code></summary><br><b>
 
-`kubectl create deployment my_first_deployment --image=nginx:alpine`
+`kubectl create deployment my-first-deployment --image=nginx:alpine`
 
 OR
 
 ```
 cat << EOF | kubectl create -f -
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: nginx
 spec:
-  containers:
-  - name: nginx
-    image: nginx:alpine
-EOF
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
 ```
 </b></details>
 
