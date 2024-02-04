@@ -17,3 +17,4 @@ int main()
 
 1. How many times the word "yay" will be printed?
 2. How many processes will be created?
+i don't know 
