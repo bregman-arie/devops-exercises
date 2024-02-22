@@ -360,6 +360,7 @@ It contains useful information about the processes that are currently running, i
 
 <details>
 <summary>What makes /proc different from other filesystems?</summary><br><b>
+/proc is a special virtual filesystem in Unix-like operating systems, including Linux, that provides information about processes and system resources.
 </b></details>
 
 <details>
