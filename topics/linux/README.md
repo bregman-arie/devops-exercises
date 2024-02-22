@@ -434,6 +434,10 @@ Its a bit that only allows the owner or the root user to delete or modify the fi
 
 <details>
 <summary>What is sudo? How do you set it up?</summary><br><b>
+sudo is a command-line utility in Unix-like operating systems that allows users to run programs with the privileges of another user, usually the superuser (root). It stands for "superuser do.
+
+The sudo program is installed by default in almost all Linux distributions. If you need to install sudo in Debian/Ubuntu, use the command apt-get install sudo
+
 </b></details>
 
 <details>
