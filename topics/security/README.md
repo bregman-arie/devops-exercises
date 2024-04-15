@@ -42,7 +42,7 @@ The principle of least privilege refers to the practice of providing minimal per
   * Subject name
   * Subject Public Key info
  
-Every certificates must be signed by a trusted authority, a certificate chain is a concatenation of mutilple certificates signed by a more trusted authority from the one delivered by the website to the root Certificate Authority (CA). The root Certificate Authority is the top most trusted authority and every browsers embark their certificate natively.
+Every certificates must be signed by a trusted authority, a certificate chain is a concatenation of multiple certificates signed by a more trusted authority from the one delivered by the website to the root Certificate Authority (CA). The root Certificate Authority is the top most trusted authority and every browsers embark their certificate natively.
  
 </b></details>
 
