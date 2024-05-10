@@ -947,7 +947,7 @@ Launch configuration is a legacy form of Launch Template that must be recreated 
 In addition, launch template has the clear benefits of:
   * Provision both On-Demand and Spot instances
   * supporting multiple versions
-  * support creating parameters subsets (used for re-use and inheritance)
+  * support creating parameters subsets (used for reuse and inheritance)
 </b></details>
 
 #### ENI
