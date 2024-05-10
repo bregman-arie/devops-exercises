@@ -3910,6 +3910,7 @@ A programming model for large-scale data processing
 
 <details>
 <summary>Explain what is Ceph</summary><br><b>
+Ceph is an Open-Source Distributed Storage System designed to provide excellent performance, reliability, and scalability. It's often used in cloud computing environments and Data Centers.
 </b></details>
 
 <details>
