@@ -94,6 +94,7 @@
     <td align="center"><a href="#Misc"><img src="images/general.png" width="75px;" height="75px;" alt="Misc"/><br /><b>Misc</b></a></td>
     <td align="center"><a href="#elastic"><img src="images/elastic.png" width="75px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
     <td align="center"><a href="topics/kafka/README.md"><img src="images/logos/kafka.png" width="85px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
+    <td align="center"><a href="topics/node/node_questions_basic.md"><img src="images/nodejs.png" width="85px;" height="80px;" alt="NodeJs"/><br /><b>NodeJs</b></a></td>
    </tr>
    
 </table>
