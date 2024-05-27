@@ -2739,7 +2739,7 @@ Istio is an open source service mesh that helps organizations run distributed, m
 <details>
 <summary>Name two controllers you are familiar with</summary><br><b>
 
-1. Node Contorller: manages the nodes of a cluster. Among other things, the controller is responsible for monitoring nodes' health - if the node is suddenly unreachable it will evacuate all the pods running on it and will mark the node status accordingly.
+1. Node Controller: manages the nodes of a cluster. Among other things, the controller is responsible for monitoring nodes' health - if the node is suddenly unreachable it will evacuate all the pods running on it and will mark the node status accordingly.
 2. Replication Controller - monitors the status of pod replicas based on what should be running. It makes sure the number of pods that should be running is actually running
 </b></details>
 
