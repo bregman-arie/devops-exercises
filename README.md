@@ -94,6 +94,7 @@
     <td align="center"><a href="#Misc"><img src="images/general.png" width="75px;" height="75px;" alt="Misc"/><br /><b>Misc</b></a></td>
     <td align="center"><a href="#elastic"><img src="images/elastic.png" width="75px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
     <td align="center"><a href="topics/kafka/README.md"><img src="images/logos/kafka.png" width="85px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
+    <td align="center"><a href="topics/node/node_questions_basic.md"><img src="images/nodejs.png" width="85px;" height="80px;" alt="NodeJs"/><br /><b>NodeJs</b></a></td>
    </tr>
    
 </table>
@@ -740,22 +741,22 @@ It would support the following:
 * Program's code is loaded into the memory or more specifically, into the address space of the process.
 * Memory is allocated for program's stack (aka run-time stack). The stack also initialized by the OS with data like argv, argc and parameters to main()
 * Memory is allocated for program's heap which is required for dynamically allocated data like the data structures linked lists and hash tables
-* I/O initialization tasks are performed, like in Unix/Linux based systems where each process has 3 file descriptors (input, output and error)
+* I/O initialization tasks are performed, like in Unix/Linux based systems, where each process has 3 file descriptors (input, output and error)
 * OS is running the program, starting from main()
 </b></details>
 
 <details>
 <summary>True or False? The loading of the program into the memory is done eagerly (all at once)</summary><br><b>
 
-False. It was true in the past but today's operating systems perform lazy loading which means only the relevant pieces required for the process to run are loaded first.
+False. It was true in the past but today's operating systems perform lazy loading, which means only the relevant pieces required for the process to run are loaded first.
 </b></details>
 
 <details>
 <summary>What are different states of a process?</summary><br><b>
 
 * Running - it's executing instructions
-* Ready - it's ready to run but for different reasons it's on hold
-* Blocked - it's waiting for some operation to complete. For example I/O disk request
+* Ready - it's ready to run, but for different reasons it's on hold
+* Blocked - it's waiting for some operation to complete, for example I/O disk request
 </b></details>
 
 <details>
@@ -767,19 +768,21 @@ False. It was true in the past but today's operating systems perform lazy loadin
 
 <details>
 <summary>What is Inter Process Communication (IPC)?</summary><br><b>
+
+Inter-process communication (IPC) refers to the mechanisms provided by an operating system that allow processes to manage shared data.
 </b></details>
 
 <details>
 <summary>What is "time sharing"?</summary><br><b>
 
-Even when using a system with one physical CPU, it's possible to allow multiple users to work on it and run programs. This is possible with time sharing where computing resources are shared in a way it seems to the user the system has multiple CPUs but in fact it's simply one CPU shared by applying multiprogramming and multi-tasking.
+Even when using a system with one physical CPU, it's possible to allow multiple users to work on it and run programs. This is possible with time sharing, where computing resources are shared in a way it seems to the user, the system has multiple CPUs, but in fact it's simply one CPU shared by applying multiprogramming and multi-tasking.
 </b></details>
 
 <details>
 <summary>What is "space sharing"?</summary><br><b>
 
 Somewhat the opposite of time sharing. While in time sharing a resource is used for a while by one entity and then the same resource can be used by another resource, in space sharing the space is shared by multiple entities but in a way where it's not being transferred between them.<br>
-It's used by one entity until this entity decides to get rid of it. Take for example storage. In storage, a file is yours until you decide to delete it.
+It's used by one entity, until this entity decides to get rid of it. Take for example storage. In storage, a file is yours, until you decide to delete it.
 </b></details>
 
 <details>
@@ -791,26 +794,28 @@ CPU scheduler
 #### Operating System - Memory
 
 <details>
-<summary>What is "virtual memory" and what purpose it serves?</summary><br><b>
+<summary>What is "virtual memory" and what purpose does serve?</summary><br><b>
 
-Virtual memory combines your computer's RAM with temporary space on your hard disk. When RAM runs low, virtual memory helps to move data from RAM to a space called a paging file. Moving data to paging file can free up the RAM so your computer can complete its work. In general, the more RAM your computer has, the faster the programs run.
+Virtual memory combines your computer's RAM with temporary space on your hard disk. When RAM runs low, virtual memory helps to move data from RAM to a space called a paging file. Moving data to paging file can free up the RAM, so your computer can complete its work. In general, the more RAM your computer has, the faster the programs run.
 https://www.minitool.com/lib/virtual-memory.html
 </b></details>
 
 <details>
 <summary>What is demand paging?</summary><br><b>
+
+Demand paging is a memory management technique where pages are loaded into physical memory only when accessed by a process. It optimizes memory usage by loading pages on demand, reducing startup latency and space overhead. However, it introduces some latency when accessing pages for the first time. Overall, it’s a cost-effective approach for managing memory resources in operating systems. 
 </b></details>
 
 <details>
 <summary>What is copy-on-write?</summary><br><b>
-Copy-on-write (COW) is a resource management concept, with the goal to reduce unnecessary copying of information. It is a concept which is implemented for instance within the POSIX fork syscall, which creates a duplicate process of the calling process.
+Copy-on-write (COW) is a resource management concept, with the goal to reduce unnecessary copying of information. It is a concept, which is implemented for instance within the POSIX fork syscall, which creates a duplicate process of the calling process.
 
 The idea:
-1. If resources are shared between 2 or more entities (for example shared memory segments between 2 processes) the resources don't need to be copied for every entity, but rather every entity has a READ operation access permission on the shared resource. (the shared segments are marked as read-only) 
-(Think of every entity having a pointer to the location of the shared resource which can be dereferenced to read its value)
-2. If one entity would perform a WRITE operation on a shared resource a problem would arise since the resource also would be permanently changed for ALL other entities sharing it.
+1. If resources are shared between 2 or more entities (for example shared memory segments between 2 processes), the resources don't need to be copied for every entity, but rather every entity has a READ operation access permission on the shared resource. (the shared segments are marked as read-only) 
+(Think of every entity having a pointer to the location of the shared resource, which can be dereferenced to read its value)
+2. If one entity would perform a WRITE operation on a shared resource, a problem would arise, since the resource also would be permanently changed for ALL other entities sharing it.
 (Think of a process modifying some variables on the stack, or allocatingy some data dynamically on the heap, these changes to the shared resource would also apply for ALL other processes, this is definitely an undesirable behaviour)
-3. As a solution only if a WRITE operation is about to be performed on a shared resource, this resource gets COPIED first and then the changes are applied.
+3. As a solution only, if a WRITE operation is about to be performed on a shared resource, this resource gets COPIED first and then the changes are applied.
 </b></details>
 
 <details>
@@ -824,24 +829,28 @@ The kernel is part of the operating system and is responsible for tasks like:
 </b></details>
 
 <details>
-<summary>True or False? Some pieces of the code in the kernel are loaded into protected areas of the memory so applications can't overwritten them</summary><br><b>
+<summary>True or False? Some pieces of the code in the kernel are loaded into protected areas of the memory so applications can't overwrite them.</summary><br><b>
 
 True
 </b></details>
 
 <details>
 <summary>What is POSIX?</summary><br><b>
+
+POSIX (Portable Operating System Interface) is a set of standards that define the interface between a Unix-like operating system and application programs.
 </b></details>
 
 <details>
-<summary>Explain what is Semaphore and what its role in operating systems</summary><br><b>
+<summary>Explain what is Semaphore and what its role in operating systems.</summary><br><b>
+
+A semaphore is a synchronization primitive used in operating systems and concurrent programming to control access to shared resources. It's a variable or abstract data type that acts as a counter or a signaling mechanism for managing access to resources by multiple processes or threads.
 </b></details>
 
 <details>
 <summary>What is cache? What is buffer?</summary><br><b>
 
-Buffer: Reserved place in RAM which is used to hold data for temporary purposes
-Cache: Cache is usually used when processes reading and writing to the disk to make the process faster by making similar data used by different programs easily accessible.
+Cache: Cache is usually used when processes are reading and writing to the disk to make the process faster, by making similar data used by different programs easily accessible.
+Buffer: Reserved place in RAM, which is used to hold data for temporary purposes.
 </b></details>
 
 ## Virtualization
@@ -849,7 +858,7 @@ Cache: Cache is usually used when processes reading and writing to the disk to m
 <details>
 <summary>What is Virtualization?</summary><br><b>
 
-Virtualization uses software to create an abstraction layer over computer hardware that allows the hardware elements of a single computer—processors, memory, storage and more - to be divided into multiple virtual computers, commonly called virtual machines (VMs).
+Virtualization uses software to create an abstraction layer over computer hardware, that allows the hardware elements of a single computer - processors, memory, storage and more - to be divided into multiple virtual computers, commonly called virtual machines (VMs).
 </b></details>
 
 <details>
@@ -891,7 +900,7 @@ Yes, it's a operating-system-level virtualization, where the kernel is shared an
 <details>
 <summary>How the introduction of virtual machines changed the industry and the way applications were deployed?</summary><br><b>
 
-The introduction of virtual machines allowed companies to deploy multiple business applications on the same hardware while each application is separated from each other in secured way, where each is running on its own separate operating system.
+The introduction of virtual machines allowed companies to deploy multiple business applications on the same hardware, while each application is separated from each other in secured way, where each is running on its own separate operating system.
 </b></details>
 
 #### Virtual Machines
@@ -3901,6 +3910,7 @@ A programming model for large-scale data processing
 
 <details>
 <summary>Explain what is Ceph</summary><br><b>
+Ceph is an Open-Source Distributed Storage System designed to provide excellent performance, reliability, and scalability. It's often used in cloud computing environments and Data Centers.
 </b></details>
 
 <details>
@@ -3943,10 +3953,31 @@ True
 
 <details>
 <summary>What is the workflow of retrieving data from Ceph?</summary><br><b>
+The work flow is as follows:
+
+1. The client sends a request to the ceph cluster to retrieve data:
+> **Client could be any of the following**
+>> * Ceph Block Device
+>> * Ceph Object Gateway
+>> * Any third party ceph client
+
+
+2. The client retrieves the latest cluster map from the Ceph Monitor
+3. The client uses the CRUSH algorithm to map the object to a placement group. The placement group is then assigned to a OSD.
+4. Once the placement group and the OSD Daemon are determined, the client can retrieve the data from the appropriate OSD
+
+
 </b></details>
 
 <details>
-<summary>What is the workflow of retrieving data from Ceph?</summary><br><b>
+<summary>What is the workflow of writing data to Ceph?</summary><br><b>
+The work flow is as follows:
+
+1. The client sends a request to the ceph cluster to retrieve data
+2. The client retrieves the latest cluster map from the Ceph Monitor
+3. The client uses the CRUSH algorithm to map the object to a placement group. The placement group is then assigned to a Ceph OSD Daemon dynamically.
+4. The client sends the data to the primary OSD of the determined placement group. If the data is stored in an erasure-coded pool, the primary OSD is responsible for encoding the object into data chunks and coding chunks, and distributing them to the other OSDs. 
+
 </b></details>
 
 <details>

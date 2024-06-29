@@ -1,8 +1,8 @@
 # AWS
 
-**Note**: Some of the exercises <b>cost $$$</b> and can't be performed using the free tier/resources
+**Note**: Some of the exercises <b>cost $$$</b> and can't be performed using the free tier or resources
 
-**2nd Note**: Provided solutions are using the AWS console. It's recommended you'll use IaC technologies to solve the exercises (e.g. Terraform, Pulumi).<br>
+**2nd Note**: The provided solutions are using the AWS console. It's recommended you use IaC technologies to solve the exercises (e.g., Terraform, Pulumi).<br>
 
 - [AWS](#aws)
   - [Exercises](#exercises)
@@ -10,7 +10,7 @@
     - [EC2](#ec2)
     - [S3](#s3)
     - [ELB](#elb)
-    - [Auto Scaling Groups](#auto-scaling-groups)
+    - [Auto Scaling Groups] (#auto-scaling-groups)
     - [VPC](#vpc)
     - [Databases](#databases)
     - [DNS](#dns)
@@ -24,14 +24,14 @@
     - [Global Infrastructure](#global-infrastructure)
     - [IAM](#iam-1)
     - [EC2](#ec2-1)
-      - [AMI](#ami)
-      - [EBS](#ebs)
-      - [Instance Store](#instance-store)
-      - [EFS](#efs)
-      - [Pricing Models](#pricing-models)
-      - [Launch Template](#launch-template)
-      - [ENI](#eni)
-      - [Placement Groups](#placement-groups)
+    - [AMI](#ami)
+    - [EBS](#ebs)
+    - [Instance Store](#instance-store)
+    - [EFS](#efs)
+    - [Pricing Models](#pricing-models)
+    - [Launch Template](#launch-template)
+    - [ENI](#eni)
+    - [Placement Groups](#placement-groups)
     - [VPC](#vpc-1)
       - [Default VPC](#default-vpc)
     - [Lambda](#lambda-1)
@@ -63,7 +63,7 @@
     - [SNS](#sns)
     - [Monitoring and Logging](#monitoring-and-logging)
     - [Billing and Support](#billing-and-support)
-      - [AWS Organizations](#aws-organizations)
+    - [AWS Organizations](#aws-organizations)
     - [Automation](#automation)
     - [Misc](#misc-2)
     - [High Availability](#high-availability)
@@ -947,7 +947,7 @@ Launch configuration is a legacy form of Launch Template that must be recreated 
 In addition, launch template has the clear benefits of:
   * Provision both On-Demand and Spot instances
   * supporting multiple versions
-  * support creating parameters subsets (used for re-use and inheritance)
+  * support creating parameters subsets (used for reuse and inheritance)
 </b></details>
 
 #### ENI
@@ -3485,6 +3485,6 @@ More details are missing to determine for sure but it might be better to decoupl
 <details>
 <summary>What's an ARN?</summary><br><b>
 
-ARN (Amazon Resources Names) used for uniquely identifying different AWS resources.
-It is used when you would like to identify resource uniqely across all AWS infra.
+ARN (Amazon Resources Names) are used for uniquely identifying different AWS resources.
+It is used when you would like to identify resource uniqely across all AWS infrastructures.
 </b></details>

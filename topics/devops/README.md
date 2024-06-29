@@ -162,6 +162,7 @@ Things to think about:
 * Share your changes frequently
 * Coordinate with your co-workers
 * Don't commit generated files
+* Don't commit binary files
 </b></details>
 
 <details>

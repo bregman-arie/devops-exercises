@@ -188,8 +188,8 @@ Read more about instance types [here](https://docs.aws.amazon.com/AWSEC2/latest/
 <details>
 <summary>True or False? The following are instance types available for a user in AWS:
 
-  * Compute optimizied
-  * Network optimizied
+  * Compute optimized
+  * Network optimized
   * Web optimized</summary><br><b>
 
 False. From the above list only compute optimized is available.
