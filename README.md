@@ -910,7 +910,9 @@ The introduction of virtual machines allowed companies to deploy multiple busine
 
 Yes, virtual machines are still relevant even in the age of containers. While containers provide a lightweight and portable alternative to virtual machines, they do have certain limitations. Virtual machines still matter because they offer isolation and security, can run different operating systems, and are good for legacy apps. Containers limitations for example are sharing the host kernel.
 </b></details>
-
+<details>
+<summary>what are the limitations of server virtualization? </summary><br><b>
+	
 ## Prometheus
 
 <details>
