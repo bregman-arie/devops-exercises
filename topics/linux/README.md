@@ -2143,6 +2143,20 @@ This is a good article about the topic: https://ops.tips/blog/how-linux-creates-
 
 <details>
 <summary>You executed a script and while still running, it got accidentally removed. Is it possible to restore the script while it's still running?</summary><br><b>
+It is possible to restore a script while it's still running if it has been accidentally removed. The running script process still has the code in memory. You can use the /proc filesystem to retrieve the content of the running script.
+1.Find the Process ID by running 
+```
+ps aux | grep yourscriptname.sh
+```
+Replace yourscriptname.sh with your script name.
+2.Once you have the PID, you can access the script's memory through the /proc filesystem. The script will be available at /proc/<PID>/fd/, where <PID> is the process ID of the running script. Typically, the script's file descriptor is 0 or 1.
+
+You can copy the script content to a new file using the cp command:
+```
+cp /proc/<PID>/fd/0 /path_to_restore_your_file/yourscriptname.sh
+```
+Replace <PID> with the actual PID of the  script and /path_to_restore_your_file/yourscriptname.sh with the path where you want to restore the script.
+
 </b></details>
 
 <a name="questions-linux-memory"></a>
