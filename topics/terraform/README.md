@@ -1,4 +1,4 @@
-# Terraform 
+# Terraform
 
 - [Terraform](#terraform)
   - [Exercises](#exercises)
@@ -71,7 +71,7 @@
 - Full automation: In the past, resource creation, modification and removal were handled manually or by using a set of tooling. With Terraform or other IaC technologies, you manage the full lifecycle in an automated fashion.<br>
 - Modular and Reusable: Code that you write for certain purposes can be used and assembled in different ways. You can write code to create resources on a public cloud and it can be shared with other teams who can also use it in their account on the same (or different) cloud><br>
 - Improved testing: Concepts like CI can be easily applied on IaC based projects and code snippets. This allow you to test and verify operations beforehand
-- 
+-
 </b></details>
 
 <details>
@@ -80,7 +80,7 @@
 - Declarative: Terraform uses the declarative approach (rather than the procedural one) in order to define end-status of the resources
 - No agents: as opposed to other technologies (e.g. Puppet) where you use a model of agent and server, with Terraform you use the different APIs (of clouds, services, etc.) to perform the operations
 - Community: Terraform has strong community who constantly publishes modules and fixes when needed. This ensures there is good modules maintenance and users can get support quite quickly at any point
-- 
+-
 </b></details>
 
 <details>
@@ -186,7 +186,7 @@ Run `terraform apply`. That will apply the changes described in your .tf files.
 A user should be careful with this command because there is no way to revert it. Sure, you can always run again "apply" but that can take time, generates completely new resources, etc.
 </b></details>
 
-### Dependencies 
+### Dependencies
 
 <details>
 <summary>Sometimes you need to reference some resources in the same or separate .tf file. Why and how it's done?</summary><br><b>
@@ -201,7 +201,7 @@ In your AWS instance it would like that:
 
 ```
 resource "aws_instance" "some-instance" {
-  
+
   ami           = "some-ami"
   instance_type = "t2.micro"
   vpc_security_group_ids = [aws_security_group.instance.id]
@@ -215,7 +215,7 @@ resource "aws_instance" "some-instance" {
 
 Yes, when there is a dependency between different Terraform resources, you want the resources to be created in the right order and this is exactly what Terraform does.
 
-To make it ever more clear, if you have a resource X that references the ID of resource Y, it doesn't makes sense to create first resource X because it won't have any ID to get from a resource that wasn't created yet. 
+To make it ever more clear, if you have a resource X that references the ID of resource Y, it doesn't makes sense to create first resource X because it won't have any ID to get from a resource that wasn't created yet.
 </b></details>
 
 <details>
@@ -237,7 +237,7 @@ The output is in DOT - A graph description language.
 <details>
 <summary>Where can you find publicly available providers?</summary><br><b>
 
-In the [Terraform Registry](https://registry.terraform.io/browse/providers) 
+In the [Terraform Registry](https://registry.terraform.io/browse/providers)
 </b></details>
 
 <details>
@@ -419,10 +419,10 @@ True
 - The file `terraform.tfvars`
 - Environment variable
 - Using `-var` or `-var-file`
-  
+
 According to variable precedence, which source will be used first?</summary><br><b>
 
-The order is:
+Terraform loads variables in the following order, with later sources taking precedence over earlier ones:
 
   - Environment variable
   - The file `terraform.tfvars`
@@ -487,9 +487,9 @@ You have multiple hardcoded values that repeat themselves in different sections,
 
 ```
 variable "app_id" {
-  type = string
+  type        = string
   description = "The id of application"
-  default = "some_value"
+  default     = "some_value"
 }
 ```
 
@@ -638,7 +638,7 @@ data "aws_vpc" "default {
 }
 ```
 
-You can retrieve the ID attribute this way: `data.aws_vpc.default.id` 
+You can retrieve the ID attribute this way: `data.aws_vpc.default.id`
 </b></details>
 
 <details>
@@ -716,6 +716,9 @@ Since a provisioner can run a variety of actions, it's not always feasible to pl
 
 <details>
 <summary>What is <code>local-exec</code> and <code>remote-exec</code> in the context of provisioners?</summary><br><b>
+
+<code>local-exec</code> provisioners run commands on the machine where Terraform is executed, while <code>remote-exec</code> provisioners run commands on the remote resource.
+
 </b></details>
 
 <details>
@@ -746,11 +749,6 @@ There are quite a few cases you might need to use them:
 <summary>What are output variables and what <code>terraform output</code> does?</summary><br><b>
 Output variables are named values that are sourced from the attributes of a module. They are stored in terraform state, and can be used by other modules through <code>remote_state</code>
 </b></details>
-
-<details>
-<summary>Explain <code>remote-exec</code> and <code>local-exec</code></summary><br><b>
-</b></details>
-
 
 <details>
 <summary>Explain "Remote State". When would you use it and how?</summary><br><b>
@@ -833,7 +831,7 @@ There is more than one answer to this question. It's very much depends on whethe
 - tfstate contains credentials in plain text. You don't want to put it in publicly shared location
 - tfstate shouldn't be modified concurrently so putting it in a shared location available for everyone with "write" permissions might lead to issues. (Terraform remote state doesn't has this problem).
 - tfstate is an important file. As such, it might be better to put it in a location that has regular backups and good security.
-  
+
 As such, tfstate shouldn't be stored in git repositories. secured storage such as secured buckets, is a better option.
 
 </b></details>
@@ -855,7 +853,7 @@ In general, storing state file on your computer isn't a problem. It starts to be
 
   - Don't edit it manually. tfstate was designed to be manipulated by terraform and not by users directly.
   - Store it in secured location (since it can include credentials and sensitive data in general)
-  - Backup it regularly so you can roll-back easily when needed 
+  - Backup it regularly so you can roll-back easily when needed
   - Store it in remote shared storage. This is especially needed when working in a team and the state can be updated by any of the team members
   - Enabled versioning if the storage where you store the state file, supports it. Versioning is great for backups and roll-backs in case of an issue.
 
@@ -902,7 +900,7 @@ Let's say we chose use Amazon s3 as a remote Terraform backend where we can stor
 4. Block public access
 5. Handle locking. One way is to add DB for it
 6. Add the point you'll want to run init and apply commands to avoid an issue where you at the same time create the resources for remote backend and also switch to a remote backend
-7. Once resources were created, add Terraform backend code 
+7. Once resources were created, add Terraform backend code
 
 ```
 terraform {
@@ -911,7 +909,7 @@ terraform {
   }
 }
 ```
-7. Run `teraform init` as it will configure the backend
+7. Run `terraform init` as it will configure the backend
 
 </b></details>
 
@@ -1044,14 +1042,25 @@ resource "some_resource" "some_name" {
 </b></details>
 
 <details>
-<summary>You have a list variable called "users". How to access the second item in that list and attribute called "name"?</summary><br><b>
+<summary>You have a list variable called "users" with an object containing a name attribute like this:<br>
+
+```
+variable "users" {
+  type = list(object({
+    name = string
+    age  = number
+  }))
+}
+```
+
+How to access the name attribute of the second item in that list?</summary><br><b>
 
 `users[1].name`
 
 </b></details>
 
 <details>
-<summary>You have a list variable called "users". How to access attribute "name" of all items?</summary><br><b>
+<summary>Given the same list, how to access attribute "name" of all items?</summary><br><b>
 
 `users[*].name`
 
@@ -1139,7 +1148,7 @@ resource "aws_iam_user" "user" {
 
 ```
 resource “google_compute_instance” “instances” {
-  
+
   for_each = var.names_map
   name = each.value
 }
@@ -1147,11 +1156,11 @@ resource “google_compute_instance” “instances” {
 </b></details>
 
 <details>
-<summary>The following resource tries to use for_each loop on a list of string but it fails, why?
+<summary>The following resource tries to use for_each loop on a list of strings but it fails, why?
 
 ```
 resource “google_compute_instance” “instances” {
-  
+
   for_each = var.names
   name = each.value
 }
@@ -1261,11 +1270,11 @@ output "name_and_age" {
 </b></details>
 
 <details>
-<summary>You have a map variable, called "users", with the keys "name" (string) and "age" (float). Define an output map variable with the key being name in uppercase and value being age in the closest whole number </summary><br><b>
+<summary>You have a map variable, called "users", with the keys "name" (string) and "age" (number). Define an output map variable with the key being name in uppercase and value being age in the closest whole number </summary><br><b>
 
 ```
 output "name_and_age" {
-  value = {for name, age in var.users : upper(name) => floor(age) 
+  value = {for name, age in var.users : upper(name) => floor(age)
 }
 ```
 
@@ -1357,7 +1366,7 @@ Renders a template file and returns the result as string.
 <details>
 <summary>You are trying to use templatefile as part of a module and you use a relative path to load a file but sometimes it fails, especially when others try to reuse the module. How can you deal with that?</summary><br><b>
 
-Switch relative paths with what is known as path references. These are fixes paths like module root path, module expression file path, etc.
+Switch relative paths with what is known as path references. These are fixes: paths like module root path, module expression file path, etc.
 
 </b></details>
 
@@ -1387,7 +1396,7 @@ False. terraform console is ready-only.
 <details>
 <summary>Explain what <code>depends_on</code> used for and given an example</summary><br><b>
 
-`depends_on` used to create a dependency between resources in Terraform. For example, there is an application you would like to deploy in a cluster. If the cluster isn't ready (and also managed by Terraform of course) then you can't deploy the app. In this case, you will define "depends_on" in the app configuration and its value will be the cluster resource.
+`depends_on` used to create an explicit dependency between resources in Terraform. For example, there is an application you would like to deploy in a cluster. If the cluster isn't ready (and also managed by Terraform of course) then you can't deploy the app. In this case, you will define "depends_on" in the app configuration and its value will be the cluster resource.
 
 </b></details>
 
@@ -1490,7 +1499,7 @@ module "amazing_module" {
 <details>
 <summary>What should be done every time you modify the source parameter of a module?</summary><br><b>
 
-`terraform init` should be executed as it takes care of downloading and installing the module from the new path.
+`terraform get -update` should be executed as it takes care of downloading and installing the module from the new path.
 </b></details>
 
 <details>
@@ -1550,9 +1559,11 @@ It's does NOT create the definitions/configuration for creating such infrastruct
 <summary>You have a Git repository with Terraform files but no .gitignore. What would you add to a .gitignore file in Terraform repository?</summary><br><b>
 
 ```
-.terraform
+**/.terraform/*
 *.tfstate
-*.tfstate.backup
+*.tfstate.*
+*.tfvars
+*.tfvars.json
 ```
 
 You don't want to store state file nor any downloaded providers in .terraform directory. It also doesn't makes sense to share/store the state backup files.
@@ -1562,17 +1573,18 @@ You don't want to store state file nor any downloaded providers in .terraform di
 ### AWS
 
 <details>
-<summary>What happens if you update user_data in the following case apply the changes?
+<summary>What happens if you update user_data in the following case and apply the changes?
 
 ```
 resource "aws_instance" "example" {
  ami = "..."
  instance_type = "t2.micro"
 
-user_data = <<-EOF
-            #!/bin/bash
-            echo "Hello, World" > index.xhtml
-            EOF
+ user_data = <<-EOF
+             #!/bin/bash
+             echo "Hello, World" > index.xhtml
+ EOF
+}
 ```
 </summary><br><b>
 
@@ -1703,7 +1715,7 @@ provider "aws" {
 ```
 </summary><br><b>
 
-It's not secure! you should never store credentials in plain text this way. 
+It's not secure! you should never store credentials in plain text this way.
 
 </b></details>
 
@@ -1787,7 +1799,7 @@ terraform_project/
 
 Each environment has its own backend (as you don't want to use the same authentication and access controls for all environments)
 
-Going further, under each environment you'll separate between comoponents, applications and services
+Going further, under each environment you'll separate between components, applications and services
 
 
 ```
