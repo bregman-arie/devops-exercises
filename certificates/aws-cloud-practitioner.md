@@ -1,6 +1,6 @@
 ## AWS - Cloud Practitioner
 
-A summary of what you need to know for the exam can be found [here](https://codingshell.com/aws-cloud-practitioner)
+A summary of what you need to know for the exam can be found [here](https://aws.amazon.com/certification/certified-cloud-practitioner/)
 
 #### Cloud 101
 
