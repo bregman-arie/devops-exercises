@@ -115,4 +115,3 @@ False. Auto scaling adjusts capacity and this can mean removing some resources b
 - Instance should have minimal permissions needed. You don't want an instance-level incident to become an account-level incident
 - Instances should be accessed through load balancers or bastion hosts. In other words, they should be off the internet (in a private subnet behind a NAT).
 - Using latest OS images with your instances (or at least apply latest patches)
-  </b></details>
