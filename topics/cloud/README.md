@@ -3,12 +3,12 @@
 <details>
 <summary>What is Cloud Computing? What is a Cloud Provider?</summary><br><b>
 
-Cloud computing refers to the delivery of on-demand computing services 
+Cloud computing refers to the delivery of on-demand computing services
 over the internet on a pay-as-you-go basis.
 
 In simple words, Cloud computing is a service that lets you use any computing
-service such as a server, storage, networking, databases, and intelligence, 
-right through your browser without owning anything. You can do anything you 
+service such as a server, storage, networking, databases, and intelligence,
+right through your browser without owning anything. You can do anything you
 can think of unless it doesn’t require you to stay close to your hardware.
 
 Cloud service providers are companies that establish public clouds, manage private clouds, or offer on-demand cloud computing components (also known as cloud computing services) like Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS), and Software-as-a-Service(SaaS). Cloud services can reduce business process costs when compared to on-premise IT.
@@ -17,11 +17,11 @@ Cloud service providers are companies that establish public clouds, manage priva
 <details>
 <summary>What are the advantages of cloud computing? Mention at least 3 advantages</summary><br><b>
 
-* Pay as you go: you are paying only for what you are using. No upfront payments and payment stops when resources are no longer used.
-* Scalable: resources are scaled down or up based on demand
-* High availability: resources and applications provide seamless experience, even when some services are down
-* Disaster recovery 
-</b></details>
+- Pay as you go: you are paying only for what you are using. No upfront payments and payment stops when resources are no longer used.
+- Scalable: resources are scaled down or up based on demand
+- High availability: resources and applications provide seamless experience, even when some services are down
+- Disaster recovery
+  </b></details>
 
 <details>
 <summary>True or False? Cloud computing is a consumption-based model (users only pay for for resources they use)</summary><br><b>
@@ -40,21 +40,21 @@ SAAS - Software as a Service
 <details>
 <summary>Explain each of the following and give an example:
 
-  * IAAS
-  * PAAS
-  * SAAS</summary><br><b>
-  * IAAS - Users have control over complete Operating System and don't need to worry about the physical resources, which is managed by Cloud Service Provider.
-  * PAAS - CLoud Service Provider takes care of Operating System, Middlewares and users only need to focus on our Data and Application.
-  * SAAS - A cloud based method to provide software to users, software logics running on cloud, can be run on-premises or managed by Cloud Service Provider.
-</b></details>
+- IAAS
+- PAAS
+- SAAS</summary><br><b>
+- IAAS - Users have control over complete Operating System and don't need to worry about the physical resources, which is managed by Cloud Service Provider.
+- PAAS - CLoud Service Provider takes care of Operating System, Middlewares and users only need to focus on our Data and Application.
+- SAAS - A cloud based method to provide software to users, software logics running on cloud, can be run on-premises or managed by Cloud Service Provider.
+  </b></details>
 
 <details>
 <summary>What types of clouds (or cloud deployments) are there?</summary><br><b>
 
-  * Public - Cloud services sharing computing resources among multiple customers
-  * Private - Cloud services having computing resources limited to specific customer or organization, managed by third party or organizations itself
-  * Hybrid - Combination of public and private clouds
-</b></details>
+- Public - Cloud services sharing computing resources among multiple customers
+- Private - Cloud services having computing resources limited to specific customer or organization, managed by third party or organizations itself
+- Hybrid - Combination of public and private clouds
+  </b></details>
 
 <details>
 <summary>What are the differences between Cloud Providers and On-Premise solution?</summary><br><b>
@@ -71,9 +71,9 @@ The main idea behind serverless computing is that you don't need to manage the c
 
 It's important to note that:
 
-* Serverless Computing is still using servers. So saying there are no servers in serverless computing is completely wrong
-* Serverless Computing allows you to have a different paying model. You basically pay only when your functions are running and not when the VM or containers are running as in other payment models
-</b></details>
+- Serverless Computing is still using servers. So saying there are no servers in serverless computing is completely wrong
+- Serverless Computing allows you to have a different paying model. You basically pay only when your functions are running and not when the VM or containers are running as in other payment models
+  </b></details>
 
 <details>
 <summary>Can we replace any type of computing on servers with serverless?</summary><br><b>
@@ -92,6 +92,16 @@ Read more about auto scaling [here](https://aws.amazon.com/autoscaling)
 </b></details>
 
 <details>
+<summary>What is the difference between horizontal scaling and vertical scaling?</summary><br><b>
+
+[AWS Docs](https://wa.aws.amazon.com/wellarchitected/2020-07-02T19-33-23/wat.concept.horizontal-scaling.en.html):
+
+A "horizontally scalable" system is one that can increase capacity by adding more computers to the system. This is in contrast to a "vertically scalable" system, which is constrained to running its processes on only one computer; in such systems the only way to increase performance is to add more resources into one computer in the form of faster (or more) CPUs, memory or storage.
+
+Horizontally scalable systems are oftentimes able to outperform vertically scalable systems by enabling parallel execution of workloads and distributing those across many different computers.
+</b></details>
+
+<details>
 <summary>True or False? Auto Scaling is about adding resources (such as instances) and not about removing resource</summary><br><b>
 
 False. Auto scaling adjusts capacity and this can mean removing some resources based on usage and performances.
@@ -102,7 +112,7 @@ False. Auto scaling adjusts capacity and this can mean removing some resources b
 <details>
 <summary>How to secure instances in the cloud?</summary><br><b>
 
-  * Instance should have minimal permissions needed. You don't want an instance-level incident to become an account-level incident
-  * Instances should be accessed through load balancers or bastion hosts. In other words, they should be off the internet (in a private subnet behind a NAT). 
-  * Using latest OS images with your instances (or at least apply latest patches)
-</b></details>
+- Instance should have minimal permissions needed. You don't want an instance-level incident to become an account-level incident
+- Instances should be accessed through load balancers or bastion hosts. In other words, they should be off the internet (in a private subnet behind a NAT).
+- Using latest OS images with your instances (or at least apply latest patches)
+  </b></details>
