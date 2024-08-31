@@ -92,6 +92,16 @@ Read more about auto scaling [here](https://aws.amazon.com/autoscaling)
 </b></details>
 
 <details>
+<summary>What is the difference between horizontal scaling and vertical scaling?</summary><br><b>
+
+[AWS Docs](https://wa.aws.amazon.com/wellarchitected/2020-07-02T19-33-23/wat.concept.horizontal-scaling.en.html):
+
+A "horizontally scalable" system is one that can increase capacity by adding more computers to the system. This is in contrast to a "vertically scalable" system, which is constrained to running its processes on only one computer; in such systems the only way to increase performance is to add more resources into one computer in the form of faster (or more) CPUs, memory or storage.
+
+Horizontally scalable systems are oftentimes able to outperform vertically scalable systems by enabling parallel execution of workloads and distributing those across many different computers.
+</b></details>
+
+<details>
 <summary>True or False? Auto Scaling is about adding resources (such as instances) and not about removing resource</summary><br><b>
 
 False. Auto scaling adjusts capacity and this can mean removing some resources based on usage and performances.
@@ -105,4 +115,4 @@ False. Auto scaling adjusts capacity and this can mean removing some resources b
   * Instance should have minimal permissions needed. You don't want an instance-level incident to become an account-level incident
   * Instances should be accessed through load balancers or bastion hosts. In other words, they should be off the internet (in a private subnet behind a NAT). 
   * Using latest OS images with your instances (or at least apply latest patches)
-</b></details>
+  </b></details>
