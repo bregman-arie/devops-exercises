@@ -77,10 +77,16 @@ It's important to note that:
 
 <details>
 <summary>Can we replace any type of computing on servers with serverless?</summary><br><b>
+
+ No, we cannot replace all types of computing on servers with serverless computing. While serverless computing offers many advantages, such as automatic scaling, cost-efficiency, and reduced operational complexity, it is not a one-size-fits-all solution. The decision to use serverless depends on several factors, including the nature of the workload, performance requirements, cost considerations, and the need for control over the underlying infrastructure.
 </b></details>
 
 <details>
 <summary>Is there a difference between managed service to SaaS or is it the same thing?</summary><br><b>
+
+Managed services and Software as a Service (SaaS) are not the same, though they are related concepts. A managed service involves a third-party provider taking over the management and operation of specific IT functions or infrastructure for a client, offering a higher level of customization and control based on the client’s specific needs. In contrast, SaaS is a software delivery model where applications are hosted by a service provider and made available to users over the internet, typically in a standardized form with limited customization options. While SaaS can be considered a type of managed service focused on software delivery, managed services encompass a broader range of IT functions beyond just software, including infrastructure management, cybersecurity, and more.
+
+ 
 </b></details>
 
 <details>
