@@ -1615,6 +1615,15 @@ When you use a function (`YEAR(purchased_at)`) it has to scan the whole database
 
 <details>
 <summary>What components/projects of OpenStack are you familiar with?</summary><br><b>
+I’m most familiar with several core OpenStack components:
+
+- Nova for compute resource provisioning, including VM lifecycle management.
+- Neutron for networking, focusing on creating and managing networks, subnets, and routers.
+- Cinder for block storage, used to attach and manage storage volumes.
+- Keystone for identity services, handling authentication and authorization.
+
+I’ve implemented these in past projects, configuring them for scalability and security to support multi-tenant environments.
+ 
 </b></details>
 
 <details>
