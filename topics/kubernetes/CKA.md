@@ -56,7 +56,7 @@ Note: create an alias (`alias k=kubectl`) and get used to `k get po`
 <details>
 <summary>Assuming that you have a Pod called "nginx-test", how to remove it?</summary><br><b>
 
-`k delete nginx-test`
+`k delete po nginx-test`
 </b></details>
 
 <details>
