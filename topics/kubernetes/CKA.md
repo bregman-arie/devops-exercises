@@ -56,7 +56,7 @@ Note: create an alias (`alias k=kubectl`) and get used to `k get po`
 <details>
 <summary>Assuming that you have a Pod called "nginx-test", how to remove it?</summary><br><b>
 
-`k delete nginx-test`
+`k delete po nginx-test`
 </b></details>
 
 <details>
@@ -159,8 +159,6 @@ First change to the directory tracked by kubelet for creating static pod: `cd /e
 
 Now create the definition/manifest in that directory
 
-`k run some-pod --image=python --command sleep 2017 --restart=Never --dry-run=client -o yaml > status-pod.yaml`
-=======
 `k run some-pod --image=python --command sleep 2017 --restart=Never --dry-run=client -o yaml > static-pod.yaml`
 
 </b></details>
