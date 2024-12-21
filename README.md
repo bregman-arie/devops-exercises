@@ -21,7 +21,7 @@
     <td align="center"><a href="topics/devops/README.md"><img src="images/devops.png" width="75px;" height="75px;" alt="DevOps" /><br /><b>DevOps</b></a></td>
     <td align="center"><a href="topics/git/README.md"><img src="images/git.png" width="75px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
     <td align="center"><a href="#network"><img src="images/network.png" width="75px;" height="75px;" alt="Network"/><br /><b>Network</b></a></td>
-    <td align="center"><a href="#hardware"><img src="images/hardware.png" width="75px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
+    <td align="center"><a href="topics/docker/README.md"><img src="images/docker.png" width="75px;" height="75px;" alt="Docker"/><br /><b>Docker</b></a></td>
     <td align="center"><a href="topics/kubernetes/README.md"><img src="images/kubernetes.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
   </tr>
 
@@ -87,6 +87,8 @@
     <td align="center"><a href="topics/soft_skills/README.md"><img src="images/HR.png" width="75px;" height="75px;" alt="HR"/><br /><b>Soft Skills</b></a></td>
     <td align="center"><a href="topics/security/README.md"><img src="images/security.png" width="75px;" height="75px;" alt="security"/><br /><b>Security</b></a></td>
     <td align="center"><a href="#system-design"><img src="images/design.png" width="75px;" height="75px;" alt="Design"/><br /><b>System Design</b></a></td>
+    <td align="center"><a href="#hardware"><img src="images/hardware.png" width="75px;" height="75px;" alt="Hardware"/><br /><b>Hardware</b></a></td>
+
    </tr>
 
    <tr>
@@ -97,7 +99,11 @@
     <td align="center"><a href="topics/node/node_questions_basic.md"><img src="images/nodejs.png" width="85px;" height="80px;" alt="NodeJs"/><br /><b>NodeJs</b></a></td>
    </tr>
    
+   <tr>
+   <td align="center"><a href="topics/jira/README.md"><img src="images/jira.png" width="85px;" height="80px;" alt="jira"/><br /><b>Jira</b></a></td>
+   </tr>
 </table>
+
 </center>
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
