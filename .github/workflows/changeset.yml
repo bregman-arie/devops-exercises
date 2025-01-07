@@ -1,5 +1,9 @@
 name: Changeset Workflow
 
+permissions:
+  contents: write
+  actions: write
+
 on:
   push:
     branches:
