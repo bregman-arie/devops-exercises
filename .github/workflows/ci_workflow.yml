@@ -5,6 +5,9 @@ on:
     workflows: ["Changeset Workflow"]
     types:
       - completed
+permissions:
+  contents: write
+  actions: write
 
 jobs:
   deploy:
