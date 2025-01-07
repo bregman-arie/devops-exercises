@@ -2,7 +2,7 @@ name: Deploy Workflow
 
 on:
   workflow_run:
-    workflows: ["Changeset Workflow"]
+    workflows: ["changeset"]
     types:
       - completed
 
