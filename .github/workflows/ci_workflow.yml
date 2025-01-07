@@ -16,3 +16,7 @@ jobs:
     steps:
       - name: Fazer deploy
         run: echo "Deploy bem-sucedido após changeset!"
+      - name: Exibir status do evento
+        run: |
+          echo "Workflow Run status: ${{ github.event.workflow_run.conclusion }}"
+          echo "ID do Workflow: ${{ github.event.workflow_run.id }}"
