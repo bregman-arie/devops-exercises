@@ -3,9 +3,10 @@ name: Deploy Workflow
 on:
   workflow_run:
     workflows: ["Changeset Workflow"]
- #   types:
-#      - completed
-
+    types:
+      - completed
+  workflow_dispatch:
+  
 jobs:
   deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
