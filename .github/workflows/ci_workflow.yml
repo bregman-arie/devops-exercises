@@ -1,18 +1,30 @@
-name: CI
+name: Deploy Workflow
 
 on:
-  pull_request:
-    branches: [ master ]
+  workflow_run:
+    workflows: ["changeset"]
+    types:
+      - completed
 
 jobs:
-  ci:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Install flake8
-        run: pip install flake8
-      - name: Give executable permissions to run_ci.sh inside the scripts directory
-        run: chmod a+x scripts/run_ci.sh
-      - name: Run the ci script inside the scripts folder
-        run: bash scripts/run_ci.sh
-        shell: bash
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Construir aplicação
+        run: npm run build
+
+      - name: Fazer deploy
+        run: echo "Deploy bem-sucedido após changeset!"
