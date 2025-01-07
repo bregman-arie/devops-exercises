@@ -16,3 +16,9 @@ jobs:
     steps:
       - name: Teste de mudanças
         run: echo "Mudanças processadas com sucesso!"
+            - name: Verificar variáveis
+      - name : vars
+        run: |
+          echo "Evento do workflow: ${{ github.event_name }}"
+          echo "Conclusão do workflow: ${{ github.event.workflow_run.conclusion }}"
+          echo "ID do Workflow: ${{ github.event.workflow_run.id }}"
