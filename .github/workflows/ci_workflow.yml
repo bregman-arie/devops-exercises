@@ -2,21 +2,13 @@ name: Deploy Workflow
 
 on:
   workflow_run:
-    workflows: ["changeset"]
+    workflows: ["Changeset Workflow"]
     types:
       - success
 
 jobs:
   deploy:
-#    if: ${{ github.event.workflow_run.conclusion == 'success' }}  # Só se o Changeset Workflow tiver sido bem-sucedido
     runs-on: ubuntu-latest
-  #  environment:
-   #   name: production  # Ambiente específico (opcional)
-
     steps:
-      - name: Fazer deploy
+      - name: Deploy bem-sucedido
         run: echo "Deploy bem-sucedido após changeset!"
-      - name: Exibir status do evento
-        run: |
-          echo "Workflow Run status: ${{ github.event.workflow_run.conclusion }}"
-          echo "ID do Workflow: ${{ github.event.workflow_run.id }}"
