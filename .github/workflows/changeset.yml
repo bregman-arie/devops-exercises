@@ -13,9 +13,6 @@ jobs:
     environment:
       name: production
     steps:
-      - name: Instalar dependências
-        run: npm install
-
       - name: Aprovação Manual
         run: echo "Aguardando aprovação para prosseguir para produção."
         env:
