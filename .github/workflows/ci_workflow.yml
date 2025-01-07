@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: ["Changeset Workflow"]  # Certifique-se de que o nome está correto e sem erros
     types:
-      - success  # Pode ser 'completed' para pegar qualquer finalização
+      - failure  # Pode ser 'completed' para pegar qualquer finalização
       
 jobs:
   deploy:
