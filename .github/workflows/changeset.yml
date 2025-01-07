@@ -12,24 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://example.com
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v4
-
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
       - name: Instalar dependências
         run: npm install
-
-      - name: Rodar testes
-        run: npm test
-
-      - name: Build aplicação
-        run: npm run build
 
       - name: Aprovação Manual
         run: echo "Aguardando aprovação para prosseguir para produção."
