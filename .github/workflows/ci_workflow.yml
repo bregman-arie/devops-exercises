@@ -1,16 +1,11 @@
 name: Deploy Workflow
 
 on:
-#  workflow_run:
-#    workflows: ["Changeset Workflow"]
-#    types:
-#      - completed
-  push:
-    branches:
-      - main
-      - pipe
-  workflow_dispatch:
-  
+  workflow_run:
+    workflows: ["Changeset Workflow"]
+    types:
+      - completed
+
 jobs:
   deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
