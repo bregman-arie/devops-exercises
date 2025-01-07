@@ -1,19 +1,14 @@
-name: changeset
+name: Changeset Workflow
 
 on:
   push:
     branches:
-      - main
       - pipe
   workflow_dispatch:
 
 jobs:
   changeset:
     runs-on: ubuntu-latest
-    environment:
-      name: production
     steps:
-      - name: Aprovação Manual
-        run: echo "Aguardando aprovação para prosseguir para produção."
-        #env:
-         # GITHUB_ENVIRONMENT: production
+      - name: Teste de mudanças
+        run: echo "Mudanças processadas com sucesso!"
