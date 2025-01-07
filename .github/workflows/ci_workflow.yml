@@ -2,16 +2,20 @@ name: Deploy Workflow
 
 on:
   workflow_run:
-    workflows: ["Changeset Workflow"]
+    workflows: ["Changeset Workflow"]  # Certifique-se de que o nome está correto e sem erros
     types:
-      - completed
-permissions:
-  contents: write
-  actions: write
-
+      - success  # Pode ser 'completed' para pegar qualquer finalização
+      
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Deploy bem-sucedido
+      - name: Verificar variáveis
+        run: |
+          echo "Evento do workflow: ${{ github.event_name }}"
+          echo "Conclusão do workflow: ${{ github.event.workflow_run.conclusion }}"
+          echo "ID do Workflow: ${{ github.event.workflow_run.id }}"
+
+      - name: Fazer deploy
         run: echo "Deploy bem-sucedido após changeset!"
