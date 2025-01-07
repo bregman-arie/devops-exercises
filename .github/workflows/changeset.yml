@@ -1,4 +1,4 @@
-name: Changeset Workflow
+name: changeset
 
 on:
   push:
