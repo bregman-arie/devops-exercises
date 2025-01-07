@@ -17,5 +17,3 @@ jobs:
           echo "Conclusão do workflow: ${{ github.event.workflow_run.conclusion }}"
           echo "ID do Workflow: ${{ github.event.workflow_run.id }}"
 
-      - name: Fazer deploy
-        run: echo "Deploy bem-sucedido após changeset!"
