@@ -8,10 +8,10 @@ on:
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}  # Só se o Changeset Workflow tiver sido bem-sucedido
+#    if: ${{ github.event.workflow_run.conclusion == 'success' }}  # Só se o Changeset Workflow tiver sido bem-sucedido
     runs-on: ubuntu-latest
-    environment:
-      name: production  # Ambiente específico (opcional)
+  #  environment:
+   #   name: production  # Ambiente específico (opcional)
 
     steps:
       - name: Fazer deploy
