@@ -15,5 +15,5 @@ jobs:
     steps:
       - name: Aprovação Manual
         run: echo "Aguardando aprovação para prosseguir para produção."
-        env:
-          GITHUB_ENVIRONMENT: production
+        #env:
+         # GITHUB_ENVIRONMENT: production
