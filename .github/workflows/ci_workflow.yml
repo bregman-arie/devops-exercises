@@ -5,6 +5,7 @@ on:
     workflows: ["changeset"]
     types:
       - completed
+      - success
 
 jobs:
   deploy:
