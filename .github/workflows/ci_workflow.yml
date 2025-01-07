@@ -4,7 +4,6 @@ on:
   workflow_run:
     workflows: ["changeset"]
     types:
-      - completed
       - success
 
 jobs:
