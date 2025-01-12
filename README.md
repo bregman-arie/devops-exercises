@@ -94,6 +94,7 @@
     <td align="center"><a href="#Misc"><img src="images/general.png" width="75px;" height="75px;" alt="Misc"/><br /><b>Misc</b></a></td>
     <td align="center"><a href="#elastic"><img src="images/elastic.png" width="75px;" height="75px;" alt="Elastic"/><br /><b>Elastic</b></a></td>
     <td align="center"><a href="topics/kafka/README.md"><img src="images/logos/kafka.png" width="85px;" height="80px;" alt="Kafka"/><br /><b>Kafka</b></a></td>
+    <td align="center"><a href="topics/node/node_questions_basic.md"><img src="images/nodejs.png" width="85px;" height="80px;" alt="NodeJs"/><br /><b>NodeJs</b></a></td>
    </tr>
    
 </table>
@@ -622,6 +623,14 @@ Throughput. To have good throughput, the upload stream should be routed to an un
 
 <details>
 <summary>Explain Spine & Leaf</summary><br><b>
+"Spine & Leaf" is a networking topology commonly used in data center environments to connect multiple switches and manage network traffic efficiently. It is also known as "spine-leaf" architecture or "leaf-spine" topology. This design provides high bandwidth, low latency, and scalability, making it ideal for modern data centers handling large volumes of data and traffic.
+
+Within a Spine & Leaf network there are two main tipology of switches:
+
+* Spine Switches: Spine switches are high-performance switches arranged in a spine layer. These switches act as the core of the network and are typically interconnected with each leaf switch. Each spine switch is connected to all the leaf switches in the data center.
+* Leaf Switches: Leaf switches are connected to end devices like servers, storage arrays, and other networking equipment. Each leaf switch is connected to every spine switch in the data center. This creates a non-blocking, full-mesh connectivity between leaf and spine switches, ensuring any leaf switch can communicate with any other leaf switch with maximum throughput.
+
+The Spine & Leaf architecture has become increasingly popular in data centers due to its ability to handle the demands of modern cloud computing, virtualization, and big data applications, providing a scalable, high-performance, and reliable network infrastructure
 </b></details>
 
 <details>
@@ -732,22 +741,22 @@ It would support the following:
 * Program's code is loaded into the memory or more specifically, into the address space of the process.
 * Memory is allocated for program's stack (aka run-time stack). The stack also initialized by the OS with data like argv, argc and parameters to main()
 * Memory is allocated for program's heap which is required for dynamically allocated data like the data structures linked lists and hash tables
-* I/O initialization tasks are performed, like in Unix/Linux based systems where each process has 3 file descriptors (input, output and error)
+* I/O initialization tasks are performed, like in Unix/Linux based systems, where each process has 3 file descriptors (input, output and error)
 * OS is running the program, starting from main()
 </b></details>
 
 <details>
 <summary>True or False? The loading of the program into the memory is done eagerly (all at once)</summary><br><b>
 
-False. It was true in the past but today's operating systems perform lazy loading which means only the relevant pieces required for the process to run are loaded first.
+False. It was true in the past but today's operating systems perform lazy loading, which means only the relevant pieces required for the process to run are loaded first.
 </b></details>
 
 <details>
 <summary>What are different states of a process?</summary><br><b>
 
 * Running - it's executing instructions
-* Ready - it's ready to run but for different reasons it's on hold
-* Blocked - it's waiting for some operation to complete. For example I/O disk request
+* Ready - it's ready to run, but for different reasons it's on hold
+* Blocked - it's waiting for some operation to complete, for example I/O disk request
 </b></details>
 
 <details>
@@ -759,19 +768,21 @@ False. It was true in the past but today's operating systems perform lazy loadin
 
 <details>
 <summary>What is Inter Process Communication (IPC)?</summary><br><b>
+
+Inter-process communication (IPC) refers to the mechanisms provided by an operating system that allow processes to manage shared data.
 </b></details>
 
 <details>
 <summary>What is "time sharing"?</summary><br><b>
 
-Even when using a system with one physical CPU, it's possible to allow multiple users to work on it and run programs. This is possible with time sharing where computing resources are shared in a way it seems to the user the system has multiple CPUs but in fact it's simply one CPU shared by applying multiprogramming and multi-tasking.
+Even when using a system with one physical CPU, it's possible to allow multiple users to work on it and run programs. This is possible with time sharing, where computing resources are shared in a way it seems to the user, the system has multiple CPUs, but in fact it's simply one CPU shared by applying multiprogramming and multi-tasking.
 </b></details>
 
 <details>
 <summary>What is "space sharing"?</summary><br><b>
 
 Somewhat the opposite of time sharing. While in time sharing a resource is used for a while by one entity and then the same resource can be used by another resource, in space sharing the space is shared by multiple entities but in a way where it's not being transferred between them.<br>
-It's used by one entity until this entity decides to get rid of it. Take for example storage. In storage, a file is yours until you decide to delete it.
+It's used by one entity, until this entity decides to get rid of it. Take for example storage. In storage, a file is yours, until you decide to delete it.
 </b></details>
 
 <details>
@@ -783,26 +794,28 @@ CPU scheduler
 #### Operating System - Memory
 
 <details>
-<summary>What is "virtual memory" and what purpose it serves?</summary><br><b>
+<summary>What is "virtual memory" and what purpose does serve?</summary><br><b>
 
-Virtual memory combines your computer's RAM with temporary space on your hard disk. When RAM runs low, virtual memory helps to move data from RAM to a space called a paging file. Moving data to paging file can free up the RAM so your computer can complete its work. In general, the more RAM your computer has, the faster the programs run.
+Virtual memory combines your computer's RAM with temporary space on your hard disk. When RAM runs low, virtual memory helps to move data from RAM to a space called a paging file. Moving data to paging file can free up the RAM, so your computer can complete its work. In general, the more RAM your computer has, the faster the programs run.
 https://www.minitool.com/lib/virtual-memory.html
 </b></details>
 
 <details>
 <summary>What is demand paging?</summary><br><b>
+
+Demand paging is a memory management technique where pages are loaded into physical memory only when accessed by a process. It optimizes memory usage by loading pages on demand, reducing startup latency and space overhead. However, it introduces some latency when accessing pages for the first time. Overall, it’s a cost-effective approach for managing memory resources in operating systems. 
 </b></details>
 
 <details>
 <summary>What is copy-on-write?</summary><br><b>
-Copy-on-write (COW) is a resource management concept, with the goal to reduce unnecessary copying of information. It is a concept which is implemented for instance within the POSIX fork syscall, which creates a duplicate process of the calling process.
+Copy-on-write (COW) is a resource management concept, with the goal to reduce unnecessary copying of information. It is a concept, which is implemented for instance within the POSIX fork syscall, which creates a duplicate process of the calling process.
 
 The idea:
-1. If resources are shared between 2 or more entities (for example shared memory segments between 2 processes) the resources don't need to be copied for every entity, but rather every entity has a READ operation access permission on the shared resource. (the shared segements are marked as read-only) 
-(Think of every entity having a pointer to the location of the shared resource which can be dereferenced to read its value)
-2. If one entity would perform a WRITE operation on a shared resource a problem would arise since the resource also would be permanently changed for ALL other entities sharing it.
-(Think of a process modifying some variables on the stack, or allocatingy some data dynamically on the heap, these changes to the shared resource would also apply for ALL other processes, this is definetly an undesirable behaviour)
-3. As a solution only if a WRITE operation is about to be performed on a shared resource, this resource gets COPIED first and then the changes are applied.
+1. If resources are shared between 2 or more entities (for example shared memory segments between 2 processes), the resources don't need to be copied for every entity, but rather every entity has a READ operation access permission on the shared resource. (the shared segments are marked as read-only) 
+(Think of every entity having a pointer to the location of the shared resource, which can be dereferenced to read its value)
+2. If one entity would perform a WRITE operation on a shared resource, a problem would arise, since the resource also would be permanently changed for ALL other entities sharing it.
+(Think of a process modifying some variables on the stack, or allocatingy some data dynamically on the heap, these changes to the shared resource would also apply for ALL other processes, this is definitely an undesirable behaviour)
+3. As a solution only, if a WRITE operation is about to be performed on a shared resource, this resource gets COPIED first and then the changes are applied.
 </b></details>
 
 <details>
@@ -816,24 +829,28 @@ The kernel is part of the operating system and is responsible for tasks like:
 </b></details>
 
 <details>
-<summary>True or False? Some pieces of the code in the kernel are loaded into protected areas of the memory so applications can't overwritten them</summary><br><b>
+<summary>True or False? Some pieces of the code in the kernel are loaded into protected areas of the memory so applications can't overwrite them.</summary><br><b>
 
 True
 </b></details>
 
 <details>
 <summary>What is POSIX?</summary><br><b>
+
+POSIX (Portable Operating System Interface) is a set of standards that define the interface between a Unix-like operating system and application programs.
 </b></details>
 
 <details>
-<summary>Explain what is Semaphore and what its role in operating systems</summary><br><b>
+<summary>Explain what is Semaphore and what its role in operating systems.</summary><br><b>
+
+A semaphore is a synchronization primitive used in operating systems and concurrent programming to control access to shared resources. It's a variable or abstract data type that acts as a counter or a signaling mechanism for managing access to resources by multiple processes or threads.
 </b></details>
 
 <details>
 <summary>What is cache? What is buffer?</summary><br><b>
 
-Buffer: Reserved place in RAM which is used to hold data for temporary purposes
-Cache: Cache is usually used when processes reading and writing to the disk to make the process faster by making similar data used by different programs easily accessible.
+Cache: Cache is usually used when processes are reading and writing to the disk to make the process faster, by making similar data used by different programs easily accessible.
+Buffer: Reserved place in RAM, which is used to hold data for temporary purposes.
 </b></details>
 
 ## Virtualization
@@ -841,7 +858,7 @@ Cache: Cache is usually used when processes reading and writing to the disk to m
 <details>
 <summary>What is Virtualization?</summary><br><b>
 
-Virtualization uses software to create an abstraction layer over computer hardware that allows the hardware elements of a single computer—processors, memory, storage and more - to be divided into multiple virtual computers, commonly called virtual machines (VMs).
+Virtualization uses software to create an abstraction layer over computer hardware, that allows the hardware elements of a single computer - processors, memory, storage and more - to be divided into multiple virtual computers, commonly called virtual machines (VMs).
 </b></details>
 
 <details>
@@ -883,7 +900,7 @@ Yes, it's a operating-system-level virtualization, where the kernel is shared an
 <details>
 <summary>How the introduction of virtual machines changed the industry and the way applications were deployed?</summary><br><b>
 
-The introduction of virtual machines allowed companies to deploy multiple business applications on the same hardware while each application is separated from each other in secured way, where each is running on its own separate operating system.
+The introduction of virtual machines allowed companies to deploy multiple business applications on the same hardware, while each application is separated from each other in secured way, where each is running on its own separate operating system.
 </b></details>
 
 #### Virtual Machines
@@ -1304,7 +1321,7 @@ Output: <code><br>
 </code>
 
 In `mod1` a is link, and when we're using `a[i]`, we're changing `s1` value to.
-But in `mod2`, `append` creats new slice, and we're changing only `a` value, not `s2`.
+But in `mod2`, `append` creates new slice, and we're changing only `a` value, not `s2`.
 
 [Aritcle about arrays](https://golangbot.com/arrays-and-slices/),
 [Blog post about `append`](https://blog.golang.org/slices)
@@ -1362,7 +1379,7 @@ Output: 3
 <details>
 <summary>What are the advantages of MongoDB? Or in other words, why choosing MongoDB and not other implementation of NoSQL?</summary><br><b>
 
-MongoDB advantages are as followings:
+MongoDB advantages are as following:
 - Schemaless
 - Easy to scale-out
 - No complex joins
@@ -1403,7 +1420,7 @@ as key-value pair, document-oriented, etc.
 <details>
 <summary>What is better? Embedded documents or referenced?</summary><br><b>
 
-  * There is no definitive answer to which is better, it depends on the specific use case and requirements. Some explainations : Embedded documents provide atomic updates, while referenced documents allow for better normalization.
+  * There is no definitive answer to which is better, it depends on the specific use case and requirements. Some explanations : Embedded documents provide atomic updates, while referenced documents allow for better normalization.
 </b></details>
 
 <details>
@@ -1598,6 +1615,15 @@ When you use a function (`YEAR(purchased_at)`) it has to scan the whole database
 
 <details>
 <summary>What components/projects of OpenStack are you familiar with?</summary><br><b>
+I’m most familiar with several core OpenStack components:
+
+- Nova for compute resource provisioning, including VM lifecycle management.
+- Neutron for networking, focusing on creating and managing networks, subnets, and routers.
+- Cinder for block storage, used to attach and manage storage volumes.
+- Keystone for identity services, handling authentication and authorization.
+
+I’ve implemented these in past projects, configuring them for scalability and security to support multi-tenant environments.
+ 
 </b></details>
 
 <details>
@@ -2171,7 +2197,7 @@ This is where data is stored and also where different processing takes place (e.
 <details>
 <summary>What is a master node?</summary><br><b>
 
-Part of a master node responsibilites:
+Part of a master node responsibilities:
   * Track the status of all the nodes in the cluster
   * Verify replicas are working and the data is available from every data node.
   * No hot nodes (no data node that works much harder than other nodes)
@@ -2183,7 +2209,7 @@ While there can be multiple master nodes in reality only of them is the elected 
 <summary>What is an ingest node?</summary><br><b>
 
 A node which responsible for processing the data according to ingest pipeline. In case you don't need to use 
-logstash then this node can recieve data from beats and process it, similarly to how it can be processed 
+logstash then this node can receive data from beats and process it, similarly to how it can be processed 
 in Logstash.
 </b></details>
 
@@ -2239,7 +2265,7 @@ As in NoSQL a document is a JSON object which holds data on a unit in your app. 
 <details>
 <summary>You check the health of your elasticsearch cluster and it's red. What does it mean? What can cause the status to be yellow instead of green?</summary><br><b>
 
-Red means some data is unavailable in your cluster. Some shards of your indices are unassinged. 
+Red means some data is unavailable in your cluster. Some shards of your indices are unassigned. 
 There are some other states for the cluster.
 Yellow means that you have unassigned shards in the cluster. You can be in this state if you have single node and your indices have replicas.
 Green means that all shards in the cluster are assigned to nodes and your cluster is healthy. 
@@ -2414,10 +2440,14 @@ Total number of documents matching the search results. If not query used then si
 
 <details>
 <summary>What is Filebeat?</summary><br><b>
+
+Filebeat is used to monitor the logging directories inside of VMs or mounted as a sidecar if exporting logs from containers, and then forward these logs onward for further processing, usually to logstash.
 </b></details>
 
 <details>
 <summary>If one is using ELK, is it a must to also use filebeat? In what scenarios it's useful to use filebeat?</summary><br><b>
+
+Filebeat is a typical component of the ELK stack, since it was developed by Elastic to work with the other products (Logstash and Kibana). It's possible to send logs directly to logstash, though this often requires coding changes for the application. Particularly for legacy applications with little test coverage, it might be a better option to use filebeat, since you don't need to make any changes to the application code.
 </b></details>
 
 <details>
@@ -2434,6 +2464,8 @@ False. One harvester harvests one file.
 
 <details>
 <summary>What are filebeat modules?</summary><br><b>
+
+These are pre-configured modules for specific types of logging locations (eg, Traefik, Fargate, HAProxy) to make it easy to configure forwarding logs using filebeat. They have different configurations based on where you're collecting logs from.
 </b></details>
 
 #### Elastic Stack
@@ -2594,7 +2626,7 @@ While automation focuses on a task level, Orchestration is the process of automa
 </b></details>
 
 <details>
-<summary>What is a Debuggger and how it works?</summary><br><b>
+<summary>What is a Debugger and how it works?</summary><br><b>
 </b></details>
 
 <details>
@@ -2783,7 +2815,7 @@ False. It doesn't maintain state for incoming request.
 It consists of:
 
  * Request line - request type
- * Headers - content info like length, enconding, etc.
+ * Headers - content info like length, encoding, etc.
  * Body (not always included)
 </b></details>
 
@@ -3033,7 +3065,7 @@ CPU cache.
 
 A memory leak is a programming error that occurs when a program fails to release memory that is no longer needed, causing the program to consume increasing amounts of memory over time.
 
-The leaks can lead to a variety of problems, including system crashes, performance degradation, and instability. Usually occuring after failed maintenance on older systems and compatibility with new components over time.
+The leaks can lead to a variety of problems, including system crashes, performance degradation, and instability. Usually occurring after failed maintenance on older systems and compatibility with new components over time.
 </b></details>
 
 <details>
@@ -3091,7 +3123,7 @@ Cons:
 <details>
 <summary>Explain File Storage</summary><br><b>
 
-- File Storage used for storing data in files, in a hierarchical sturcture
+- File Storage used for storing data in files, in a hierarchical structure
 - Some of the devices for file storage: hard drive, flash drive, cloud-based file storage
 - Files usually organized in directories
 </b></details>
@@ -3269,7 +3301,7 @@ Given a text file, perform the following exercises
   - "^\w+"
 Bonus: extract the last word of each line
 
-  - "\w+(?=\W*$)" (in most cases, depends on line formating)
+  - "\w+(?=\W*$)" (in most cases, depends on line formatting)
 </b></details>
 
 <details>
@@ -3301,7 +3333,9 @@ Bonus: extract the last word of each line
 ## System Design
 
 <details>
-<summary>Explain what is a "Single point of failure"?</summary><br><b>
+<summary>Explain what a "single point of failure" is. </summary><br><b>
+A "single point of failure", in a system or organization, if it were to fail would cause the entire system to fail or significantly disrupt it's operation. In other words, it is a vulnerability where there
+is no backup in place to compensate for the failure.
 </b></details>
 
 <details>
@@ -3328,10 +3362,34 @@ In multi-CDN, content is distributed across multiple different CDNs, each might 
 
 <details>
 <summary>Explain "3-Tier Architecture" (including pros and cons)</summary><br><b>
+A "3-Tier Architecture" is a pattern used in software development for designing and structuring applications. It divides the application into 3 interconnected layers: Presentation, Business logic and Data storage.  
+PROS: 
+* Scalability
+* Security
+* Reusability
+CONS:
+* Complexity
+* Performance overhead
+* Cost and development time
 </b></details>
 
 <details>
-<summary>Explain Mono-repo vs. Multi-repo. What are the cons and pros of each approach?</summary><br><b>
+<summary>Explain Mono-repo vs. Multi-repo.What are the cons and pros of each approach?</summary><br><b>
+In a Mono-repo, all the code for an organization is stored in a single,centralized repository.
+PROS (Mono-repo):
+* Unified tooling
+* Code Sharing
+CONS (Mono-repo):
+* Increased complexity
+* Slower cloning
+
+In a Multi-repo setup, each component is stored in it's own separate repository. Each repository has it's own version control history.
+PROS (Multi-repo):
+* Simpler to manage
+* Different teams and developers can work on different parts of the project independently, making parallel development easier.
+CONS (Multi-repo):
+* Code duplication
+* Integration challenges
 </b></details>
 
 <details>
@@ -3340,6 +3398,7 @@ In multi-CDN, content is distributed across multiple different CDNs, each might 
 * Not suitable for frequent code changes and the ability to deploy new features
 * Not designed for today's infrastructure (like public clouds)
 * Scaling a team to work monolithic architecture is more challenging
+* If a single component in this architecture fails, then the entire application fails.
 </b></details>
 
 <details>
@@ -3351,16 +3410,17 @@ In multi-CDN, content is distributed across multiple different CDNs, each might 
 
 <details>
 <summary>What's a service mesh?</summary><br><b>
-
-[This article](https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh) provides a great explanation.
+It is a layer that facilitates communication management and control between microservices in a containerized application. It handles tasks such as load balancing, encryption, and monitoring.
 </b></details>
 
 <details>
 <summary>Explain "Loose Coupling"</summary><br><b>
+In "Loose Coupling", components of a system communicate with each other with a little understanding of each other's internal workings. This improves scalability and ease of modification in complex systems.
 </b></details>
 
 <details>
 <summary>What is a message queue? When is it used?</summary><br><b>
+It is a communication mechanism used in distributed systems to enable asynchronous communication between different components. It is generally used when the systems use a microservices approach.
 </b></details>
 
 #### Scalability
@@ -3563,6 +3623,8 @@ RAM (Random Access Memory) is the hardware in a computing device where the opera
 
 <details>
 <summary>What is a GPU?</summary><br><b>
+A GPU, or Graphics Processing Unit, is a specialized electronic circuit designed to expedite image and video processing for display on a computer screen.
+
 </b></details>
 
 <details>
@@ -3574,7 +3636,10 @@ An embedded system is a computer system - a combination of a computer processor,
 <details>
 <summary>Can you give an example of an embedded system?</summary><br><b>
 
-Raspberry Pi
+A common example of an embedded system is a microwave oven's digital control panel, which is managed by a microcontroller.
+
+When committed to a certain goal, Raspberry Pi can serve as an embedded system.
+
 </b></details>
 
 <details>
@@ -3584,23 +3649,167 @@ There are several types of storage, including hard disk drives (HDDs), solid-sta
 </b></details>
 
 <details>
-<summary>What are some considerations DevOps teams should keep in mind when selecting hardware for their job?</summary><br><b>
+<summary>What are some considerations DevOps teams should keep in mind when selecting hardware for their job?</summary><br>
+
+Choosing the right DevOps hardware is essential for ensuring streamlined CI/CD pipelines, timely feedback loops, and consistent service availability. Here's a distilled guide on what DevOps teams should consider:
+
+1. **Understanding Workloads**:
+    - **CPU**: Consider the need for multi-core or high-frequency CPUs based on your tasks.
+    - **RAM**: Enough memory is vital for activities like large-scale coding or intensive automation.
+    - **Storage**: Evaluate storage speed and capacity. SSDs might be preferable for swift operations.
+
+2. **Expandability**:
+    - **Horizontal Growth**: Check if you can boost capacity by adding more devices.
+    - **Vertical Growth**: Determine if upgrades (like RAM, CPU) to individual machines are feasible.
+
+3. **Connectivity Considerations**:
+    - **Data Transfer**: Ensure high-speed network connections for activities like code retrieval and data transfers.
+    - **Speed**: Aim for low-latency networks, particularly important for distributed tasks.
+    - **Backup Routes**: Think about having backup network routes to avoid downtimes.
+
+4. **Consistent Uptime**:
+    - Plan for hardware backups like RAID configurations, backup power sources, or alternate network connections to ensure continuous service.
+
+5. **System Compatibility**:
+    - Make sure your hardware aligns with your software, operating system, and intended platforms.
+
+6. **Power Efficiency**:
+    - Hardware that uses energy efficiently can reduce costs in long-term, especially in large setups.
+
+7. **Safety Measures**:
+    - Explore hardware-level security features, such as TPM, to enhance protection.
+
+8. **Overseeing & Control**:
+    - Tools like ILOM can be beneficial for remote handling.
+    - Make sure the hardware can be seamlessly monitored for health and performance.
+
+9. **Budgeting**:
+    - Consider both initial expenses and long-term costs when budgeting.
+
+10. **Support & Community**:
+    - Choose hardware from reputable vendors known for reliable support.
+    - Check for available drivers, updates, and community discussions around the hardware.
+
+11. **Planning Ahead**:
+    - Opt for hardware that can cater to both present and upcoming requirements.
+
+12. **Operational Environment**:
+    - **Temperature Control**: Ensure cooling systems to manage heat from high-performance units.
+    - **Space Management**: Assess hardware size considering available rack space.
+    - **Reliable Power**: Factor in consistent and backup power sources.
+
+13. **Cloud Coordination**:
+    - If you're leaning towards a hybrid cloud setup, focus on how local hardware will mesh with cloud resources.
+
+14. **Life Span of Hardware**:
+    - Be aware of the hardware's expected duration and when you might need replacements or upgrades.
+
+15. **Optimized for Virtualization**:
+    - If utilizing virtual machines or containers, ensure the hardware is compatible and optimized for such workloads.
+
+16. **Adaptability**:
+    - Modular hardware allows individual component replacements, offering more flexibility.
+
+17. **Avoiding Single Vendor Dependency**:
+    - Try to prevent reliance on a single vendor unless there are clear advantages.
+
+18. **Eco-Friendly Choices**:
+    - Prioritize sustainably produced hardware that's energy-efficient and environmentally responsible.
+
+In essence, DevOps teams should choose hardware that is compatible with their tasks, versatile, gives good performance, and stays within their budget. Furthermore, long-term considerations such as maintenance, potential upgrades, and compatibility with impending technological shifts must be prioritized.
+
+</details>
+
+<details>
+<summary>What is the role of hardware in disaster recovery planning and implementation?</summary><br>
+
+Hardware is critical in disaster recovery (DR) solutions. While the broader scope of DR includes things like standard procedures, norms, and human roles, it's the hardware that keeps business processes running smoothly. Here's an outline of how hardware works with DR:
+
+1. **Storing Data and Ensuring Its Duplication**:
+    - **Backup Equipment**: Devices like tape storage, backup servers, and external HDDs keep essential data stored safely at a different location.
+    - **Disk Arrays**: Systems such as RAID offer a safety net. If one disk crashes, the others compensate.
+
+2. **Alternate Systems for Recovery**:
+    - **Backup Servers**: These step in when the main servers falter, maintaining service flow.
+    - **Traffic Distributors**: Devices like load balancers share traffic across servers. If a server crashes, they reroute users to operational ones.
+
+3. **Alternate Operation Hubs**:
+    - **Ready-to-use Centers**: Locations equipped and primed to take charge immediately when the main center fails.
+    - **Basic Facilities**: Locations with necessary equipment but lacking recent data, taking longer to activate.
+    - **Semi-prepped Facilities**: Locations somewhat prepared with select systems and data, taking a moderate duration to activate.
+
+4. **Power Backup Mechanisms**:
+    - **Instant Power Backup**: Devices like UPS offer power during brief outages, ensuring no abrupt shutdowns.
+    - **Long-term Power Solutions**: Generators keep vital systems operational during extended power losses.
+
+5. **Networking Equipment**:
+    - **Backup Internet Connections**: Having alternatives ensures connectivity even if one provider faces issues.
+    - **Secure Connection Tools**: Devices ensuring safe remote access, especially crucial during DR situations.
+
+6. **On-site Physical Setup**:
+    - **Organized Housing**: Structures like racks to neatly store and manage hardware.
+    - **Emergency Temperature Control**: Backup cooling mechanisms to counter server overheating in HVAC malfunctions.
+
+7. **Alternate Communication Channels**:
+    - **Orbit-based Phones**: Handy when regular communication methods falter.
+    - **Direct Communication Devices**: Devices like radios useful when primary systems are down.
+
+8. **Protection Mechanisms**:
+    - **Electronic Barriers & Alert Systems**: Devices like firewalls and intrusion detection keep DR systems safeguarded.
+    - **Physical Entry Control**: Systems controlling entry and monitoring, ensuring only cleared personnel have access.
+
+9. **Uniformity and Compatibility in Hardware**:
+    - It's simpler to manage and replace equipment in emergencies if hardware configurations are consistent and compatible.
+
+10. **Equipment for Trials and Upkeep**:
+    - DR drills might use specific equipment to ensure the primary systems remain unaffected. This verifies the equipment's readiness and capacity to manage real crises.
+
+In summary, while software and human interventions are important in disaster recovery operations, it is the hardware that provides the underlying support. It is critical for efficient disaster recovery plans to keep this hardware resilient, duplicated, and routinely assessed.
+
+</details>
+
+<details>
+<summary>What is a RAID?</summary><br>
+<b>
+RAID is an acronym that stands for "Redundant Array of Independent Disks." It is a technique that combines numerous hard drives into a single device known as an array in order to improve performance, expand storage capacity, and/or offer redundancy to prevent data loss. RAID levels (for example, RAID 0, RAID 1, and RAID 5) provide varied benefits in terms of performance, redundancy, and storage efficiency.
+
 </b></details>
 
 <details>
-<summary>What is the role of hardware in disaster recovery planning and implementation?</summary><br><b>
-</b></details>
+<summary>What is a microcontroller?</summary><br>
+<b>
+A microcontroller is a small integrated circuit that controls certain tasks in an embedded system. It typically includes a CPU, memory, and input/output peripherals.
 
-<details>
-<summary>What is a RAID?</summary><br><b>
-</b></details>
-
-<details>
-<summary>What is a microcontroller?</summary><br><b>
 </b></details>
 
 <details>
 <summary>What is a Network Interface Controller or NIC?</summary><br><b>
+A Network Interface Controller (NIC) is a piece of hardware that connects a computer to a network and allows it to communicate with other devices.
+
+</b></details>
+
+<details>
+<summary>What is a DMA?</summary><br><b>
+
+Direct memory access (DMA) is a feature of computer systems that allows certain hardware subsystems to access main system memory independently of the central processing unit (CPU).DMA enables devices to share and receive data from the main memory in a computer. It does this while still allowing the CPU to perform other tasks.
+</b></details>
+
+<details>
+<summary>What is a Real-Time Operating Systems?</summary><br><b>
+
+A real-time operating system (RTOS) is an operating system (OS) for real-time computing applications that processes data and events that have critically defined time constraints. An RTOS is distinct from a time-sharing operating system, such as Unix, which manages the sharing of system resources with a scheduler, data buffers, or fixed task prioritization in a multitasking or multiprogramming environment. Processing time requirements need to be fully understood and bound rather than just kept as a minimum. All processing must occur within the defined constraints. Real-time operating systems are event-driven and preemptive, meaning the OS can monitor the relevant priority of competing tasks, and make changes to the task priority. Event-driven systems switch between tasks based on their priorities, while time-sharing systems switch the task based on clock interrupts.
+</b></details>
+
+<details>
+<summary>List of interrupt types</summary><br><b>
+
+There are six classes of interrupts possible:
+* External
+* Machine check
+* I/O
+* Program
+* Restart
+* Supervisor call (SVC)
 </b></details>
 
 ## Big Data
@@ -3710,6 +3919,7 @@ A programming model for large-scale data processing
 
 <details>
 <summary>Explain what is Ceph</summary><br><b>
+Ceph is an Open-Source Distributed Storage System designed to provide excellent performance, reliability, and scalability. It's often used in cloud computing environments and Data Centers.
 </b></details>
 
 <details>
@@ -3752,10 +3962,31 @@ True
 
 <details>
 <summary>What is the workflow of retrieving data from Ceph?</summary><br><b>
+The work flow is as follows:
+
+1. The client sends a request to the ceph cluster to retrieve data:
+> **Client could be any of the following**
+>> * Ceph Block Device
+>> * Ceph Object Gateway
+>> * Any third party ceph client
+
+
+2. The client retrieves the latest cluster map from the Ceph Monitor
+3. The client uses the CRUSH algorithm to map the object to a placement group. The placement group is then assigned to a OSD.
+4. Once the placement group and the OSD Daemon are determined, the client can retrieve the data from the appropriate OSD
+
+
 </b></details>
 
 <details>
-<summary>What is the workflow of retrieving data from Ceph?</summary><br><b>
+<summary>What is the workflow of writing data to Ceph?</summary><br><b>
+The work flow is as follows:
+
+1. The client sends a request to the ceph cluster to retrieve data
+2. The client retrieves the latest cluster map from the Ceph Monitor
+3. The client uses the CRUSH algorithm to map the object to a placement group. The placement group is then assigned to a Ceph OSD Daemon dynamically.
+4. The client sends the data to the primary OSD of the determined placement group. If the data is stored in an erasure-coded pool, the primary OSD is responsible for encoding the object into data chunks and coding chunks, and distributing them to the other OSDs. 
+
 </b></details>
 
 <details>

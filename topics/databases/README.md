@@ -20,7 +20,7 @@
 
 Relational (SQL)
 NoSQL
-Time serties
+Time series
 </b></details>
 
 ### SQL

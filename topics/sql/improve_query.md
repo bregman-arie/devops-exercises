@@ -3,8 +3,7 @@
 1. Improve the following query
 
 ```
-SELECT count(*)
+SELECT COUNT(purchased_at)
 FROM shawarma_purchases
-WHERE
-  YEAR(purchased_at) == '2017'
+WHERE purchased_at BETWEEN '2017-01-01' AND '2017-12-31';
 ```

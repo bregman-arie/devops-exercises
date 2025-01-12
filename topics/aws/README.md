@@ -1,8 +1,8 @@
 # AWS
 
-**Note**: Some of the exercises <b>cost $$$</b> and can't be performed using the free tier/resources
+**Note**: Some of the exercises <b>cost $$$</b> and can't be performed using the free tier or resources
 
-**2nd Note**: Provided solutions are using the AWS console. It's recommended you'll use IaC technologies to solve the exercises (e.g. Terraform, Pulumi).<br>
+**2nd Note**: The provided solutions are using the AWS console. It's recommended you use IaC technologies to solve the exercises (e.g., Terraform, Pulumi).<br>
 
 - [AWS](#aws)
   - [Exercises](#exercises)
@@ -10,7 +10,7 @@
     - [EC2](#ec2)
     - [S3](#s3)
     - [ELB](#elb)
-    - [Auto Scaling Groups](#auto-scaling-groups)
+    - [Auto Scaling Groups] (#auto-scaling-groups)
     - [VPC](#vpc)
     - [Databases](#databases)
     - [DNS](#dns)
@@ -24,14 +24,14 @@
     - [Global Infrastructure](#global-infrastructure)
     - [IAM](#iam-1)
     - [EC2](#ec2-1)
-      - [AMI](#ami)
-      - [EBS](#ebs)
-      - [Instance Store](#instance-store)
-      - [EFS](#efs)
-      - [Pricing Models](#pricing-models)
-      - [Launch Template](#launch-template)
-      - [ENI](#eni)
-      - [Placement Groups](#placement-groups)
+    - [AMI](#ami)
+    - [EBS](#ebs)
+    - [Instance Store](#instance-store)
+    - [EFS](#efs)
+    - [Pricing Models](#pricing-models)
+    - [Launch Template](#launch-template)
+    - [ENI](#eni)
+    - [Placement Groups](#placement-groups)
     - [VPC](#vpc-1)
       - [Default VPC](#default-vpc)
     - [Lambda](#lambda-1)
@@ -63,7 +63,7 @@
     - [SNS](#sns)
     - [Monitoring and Logging](#monitoring-and-logging)
     - [Billing and Support](#billing-and-support)
-      - [AWS Organizations](#aws-organizations)
+    - [AWS Organizations](#aws-organizations)
     - [Automation](#automation)
     - [Misc](#misc-2)
     - [High Availability](#high-availability)
@@ -497,7 +497,7 @@ EBS
 <details>
 <summary>What happens to EBS volumes when the instance is terminated?</summary><br><b>
 
-By deafult, the root volume is marked for deletion, while other volumes will still remain.<br>
+By default, the root volume is marked for deletion, while other volumes will still remain.<br>
 You can control what will happen to every volume upon termination.
 </b></details>
 
@@ -947,7 +947,7 @@ Launch configuration is a legacy form of Launch Template that must be recreated 
 In addition, launch template has the clear benefits of:
   * Provision both On-Demand and Spot instances
   * supporting multiple versions
-  * support creating parameters subsets (used for re-use and inheritance)
+  * support creating parameters subsets (used for reuse and inheritance)
 </b></details>
 
 #### ENI
@@ -1112,6 +1112,8 @@ Use Elastic IP which provides you a fixed IP address.
 
 <details>
 <summary>When creating a new VPC, there is an option called "Tenancy". What is it used for?</summary><br><b>
+
+[AWS Docs](https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html): `Tenancy` option defines if EC2 instances that you launch into the VPC will run on hardware that's shared with other AWS accounts or on hardware that's dedicated for your use only. 
 </b></details>
 
 <details>
@@ -1256,7 +1258,7 @@ This not only provides enhanced security but also easier access for the user whe
 
 - Uploading images to S3 and tagging them or inserting information on the images to a database
 - Uploading videos to S3 and edit them or add subtitles/captions to them and store the result in S3
-- Use SNS and/or SQS to trigger functions based on notifications or messages receieved from these services.
+- Use SNS and/or SQS to trigger functions based on notifications or messages received from these services.
 - Cron Jobs: Use Lambda together with CloudWatch events to schedule tasks/functions periodically.
 </b></details>
 
@@ -1851,7 +1853,7 @@ False. It's disabled by default
 <details>
 <summary>True or False? In regards to cross zone load balancing, AWS charges you for inter AZ data in network load balancer but no in application load balancer</summary><br><b>
 
-False. It charges for inter AZ data in network load balancer, but not in application load balancer
+True. It charges for inter AZ data in network load balancer, but not in application load balancer
 </b></details>
 
 <details>
@@ -2592,7 +2594,7 @@ AWS Cognito
 </b></details>
 
 <details>
-<summary>Which service is often reffered to as "used for decoupling applications"?</summary><br><b>
+<summary>Which service is often referred to as "used for decoupling applications"?</summary><br><b>
 
 AWS SQS. Since it's a messaging queue so it allows applications to switch from synchronous communication to asynchronous one.
 </b></details>
@@ -3483,6 +3485,6 @@ More details are missing to determine for sure but it might be better to decoupl
 <details>
 <summary>What's an ARN?</summary><br><b>
 
-ARN (Amazon Resources Names) used for uniquely identifying different AWS resources.
-It is used when you would like to identify resource uniqely across all AWS infra.
+ARN (Amazon Resources Names) are used for uniquely identifying different AWS resources.
+It is used when you would like to identify resource uniqely across all AWS infrastructures.
 </b></details>

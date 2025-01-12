@@ -9,7 +9,7 @@ Initialize a CDK project and set up files required to build a CDK project.
 #### Initialize a CDK project
 
 1. Install CDK on your machine by running `npm install -g aws-cdk`.
-2. Create a new directory named `sample` for your project and run `cdk init app --language typescript` to initialize a CDK project. You can choose lanugage as csharp, fsharp, go, java, javascript, python or typescript.
+2. Create a new directory named `sample` for your project and run `cdk init app --language typescript` to initialize a CDK project. You can choose language as csharp, fsharp, go, java, javascript, python or typescript.
 3. You would see the following files created in your directory:
    1. `cdk.json`, `tsconfig.json`, `package.json`  - These are configuration files that are used to define some global settings for your CDK project.
    2. `bin/sample.ts` - This is the entry point for your CDK project. This file is used to define the stack that you want to create.

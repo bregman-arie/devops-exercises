@@ -51,7 +51,7 @@ kubectl label pod <POD_NAME> type-
 5. List the Pods running. Are there more Pods running after removing the label? Why?
 
 ```
-Yes, there is an additional Pod running because once the label (used as a matching selector) was removed, the Pod became independant meaning, it's not controlled by the ReplicaSet anymore and the ReplicaSet was missing replicas based on its definition so, it created a new Pod.
+Yes, there is an additional Pod running because once the label (used as a matching selector) was removed, the Pod became independent meaning, it's not controlled by the ReplicaSet anymore and the ReplicaSet was missing replicas based on its definition so, it created a new Pod.
 ```
 
 6. Verify the ReplicaSet indeed created a new Pod

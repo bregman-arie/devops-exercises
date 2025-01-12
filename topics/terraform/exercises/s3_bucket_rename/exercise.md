@@ -11,6 +11,8 @@ resource "aws_s3_bucket" "some_bucket" {
 }
 ```
 
+Attention: Since S3 buckets are globally unique, you will likely have to rename the bucket as someone else might have named it that way already.
+
 ## Objectives
 
 1. Rename an existing S3 bucket and make sure it's still tracked by Terraform

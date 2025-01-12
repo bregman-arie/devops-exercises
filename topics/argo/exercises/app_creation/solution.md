@@ -7,7 +7,7 @@
 
 ## Objectives
 
-1. Using the CLI or the UI, create a a new application with the following properties:
+1. Using the CLI or the UI, create a new application with the following properties:
    1. app name: app-demo
    2. project: app-project
    3. repository URL: your repo with some k8s manifests

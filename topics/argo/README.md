@@ -134,7 +134,7 @@ The answer is yes, it's possible. You can configure ArgoCD to sync to desired st
 <details>
 <summary>How cluster disaster recovery becomes easier with ArgoCD?</summary><br><b>
 
-Imagine you have a cluster in the cloud, in one of the regions. Something happens to that cluster and it's either crashes or simply no longer opertional.
+Imagine you have a cluster in the cloud, in one of the regions. Something happens to that cluster and it's either crashes or simply no longer operational.
 
 If you have all your cluster configuration in a GitOps repository, ArgoCD can be pointed to that repository while be configured to use a new cluster you've set up and apply that configuration so your cluster is again up and running with the same status as o
 </b></details>
@@ -335,7 +335,7 @@ There are multiple ways to deal with it:
 <summary>What are some possible health statuses for an ArgoCD application?</summary><br><b>
 
 * Healthy
-* Missing: resource doesn't exist in the cluser
+* Missing: resource doesn't exist in the cluster
 * Suspended: resource is paused
 * Progressing: resources isn't healthy but will become healthy or has the chance to become healthy
 * Degraded: resource isn't healthy

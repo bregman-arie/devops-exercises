@@ -152,6 +152,8 @@ An Azure region is a set of datacenters deployed within an interval-defined and 
 
 <details>
 <summary>What is the N-tier architecture?</summary><br><b>
+
+N-tier architecture divides an application into logical layers and physical tiers. Each layer has a specific responsibility. Tiers are physically separated, running on separate machines. An N-tier application can have a closed layer architecture or an open layer architecture. N-tier architectures are typically implemented as infrastructure-as-service (IaaS) applications, with each tier running on a separate set of VMs
 </b></details>
 
 ### Storage

@@ -141,7 +141,7 @@ Federation
 <details>
 <summary>What is OpenShift Federation?</summary><br><b>
 
-Management and deployment of services and workloads accross multiple independent clusters from a single API
+Management and deployment of services and workloads across multiple independent clusters from a single API
 </b></details>
 
 <details>
@@ -190,7 +190,7 @@ Master node automatically restarts the pod unless it fails too often.
 <details>
 <summary>What happens when a pod fails too often?</summary><br><b>
 
-It's marked as bad by the master node and temporarly not restarted anymore.
+It's marked as bad by the master node and temporary not restarted anymore.
 </b></details>
 
 <details>

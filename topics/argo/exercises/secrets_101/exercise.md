@@ -14,4 +14,4 @@
 
 ## Solution
 
-Click [here](soltuion.md) to view the solution
+Click [here](solution.md) to view the solution

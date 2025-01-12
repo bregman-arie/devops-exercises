@@ -7,7 +7,7 @@
 | Set up a CI pipeline | CI | [Exercise](ci_for_open_source_project.md) | | |
 | Deploy to Kubernetes | Deployment | [Exercise](deploy_to_kubernetes.md) | [Solution](solutions/deploy_to_kubernetes/README.md) | |
 | Jenkins - Remove Jobs | Jenkins Scripts | [Exercise](remove_jobs.md) | [Solution](solutions/remove_jobs_solution.groovy) | |
-| Jenkins - Remove Builds | Jenkins Sripts | [Exercise](remove_builds.md) | [Solution](solutions/remove_builds_solution.groovy) | |
+| Jenkins - Remove Builds | Jenkins Scripts | [Exercise](remove_builds.md) | [Solution](solutions/remove_builds_solution.groovy) | |
 
 ### CI/CD Self Assessment
 
@@ -16,7 +16,7 @@
 
 A development practice where developers integrate code into a shared repository frequently. It can range from a couple of changes every day or a week to a couple of changes in one hour in larger scales.
 
-Each piece of code (change/patch) is verified, to make the change is safe to merge. Today, it's a common practice to test the change using an automated build that makes sure the code can be integrated. It can be one build which runs several tests in different levels (unit, functional, etc.) or several separate builds that all or some has to pass in order for the change to be merged into the repository.
+Each piece of code (change/patch) is verified to make sure that the change is safe to merge. Today, it's a common practice to test the change using an automated build that makes sure the code can be integrated. It can be one build which runs several tests in different levels (unit, functional, etc.) or several separate builds that all or some has to pass in order for the change to be merged into the repository.
 </b></details>
 
 <details>
@@ -546,7 +546,7 @@ For example, you might configure the workflow to trigger every time a changed is
 </b></details>
 
 <details>
-<summary>True or False? In Github Actions, jobs are executed in parallel by deafult</summary><br><b>
+<summary>True or False? In Github Actions, jobs are executed in parallel by default</summary><br><b>
 
 True
 </b></details>

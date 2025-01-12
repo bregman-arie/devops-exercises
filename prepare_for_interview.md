@@ -112,7 +112,7 @@ Be familiar with the company you are interviewing at. Some ideas:
 
 From my experience, this is not done by many candidates but it's one of the best ways to deep dive into topics like operating system, virtualization, scale, distributed systems, etc.    
 
-In most cases, you will do fine without reading books but for the AAA interviews (hardest level) you'll want to read some books and overall if you inspire to be better DevOps Engineer, books (also articles, blog posts) is a great way devleop yourself :)
+In most cases, you will do fine without reading books but for the AAA interviews (hardest level) you'll want to read some books and overall if you inspire to be better DevOps Engineer, books (also articles, blog posts) is a great way develop yourself :)
 
 ### Consider starting in non-DevOps position
 
