@@ -8,6 +8,15 @@ Learn how to use and run Terraform basic commands
 2. Inside the directory create a file called "main.tf" with the following content
 
 ```terraform
+terraform {
+  required_providers {
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.0"
+    }
+  }
+}
+
 resource "local_file" "mario_local_file" {
     content  = "It's a me, Mario!"
     filename = "/tmp/who_is_it.txt"
@@ -25,6 +34,15 @@ mkdir my_first_run && cd my_first_run
 
 # Create the file 'main.tf'
 cat << EOT >>  main.tf
+terraform {
+  required_providers {
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.0"
+    }
+  }
+}
+
 resource "local_file" "mario_local_file" {
     content  = "It's a me, Mario!"
     filename = "/tmp/who_is_it.txt"
