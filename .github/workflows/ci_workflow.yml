@@ -1,18 +1,19 @@
-name: CI
+name: Deploy Workflow
 
 on:
-  pull_request:
-    branches: [ master ]
-
+  workflow_run:
+    workflows: ["Changeset Workflow"]  # Certifique-se de que o nome está correto e sem erros
+    types:
+      - failure  # Pode ser 'completed' para pegar qualquer finalização
+      
 jobs:
-  ci:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Install flake8
-        run: pip install flake8
-      - name: Give executable permissions to run_ci.sh inside the scripts directory
-        run: chmod a+x scripts/run_ci.sh
-      - name: Run the ci script inside the scripts folder
-        run: bash scripts/run_ci.sh
-        shell: bash
+      - name: Verificar variáveis
+        run: |
+          echo "Evento do workflow: ${{ github.event_name }}"
+          echo "Conclusão do workflow: ${{ github.event.workflow_run.conclusion }}"
+          echo "ID do Workflow: ${{ github.event.workflow_run.id }}"
+
