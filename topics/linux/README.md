@@ -2249,6 +2249,14 @@ $OLDPWD
 
 <details>
 <summary>How to count the number of lines in a file? What about words?</summary><br><b>
+
+For these we can use `wc` command.
+
+1. To count the number of lines in file
+```wc -l```
+
+2. To count the number of words in file
+```wc -w```
 </b></details>
 
 <details>
