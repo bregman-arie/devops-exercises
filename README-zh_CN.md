@@ -3616,5 +3616,3 @@ where c.Customer_ID in (Select Customer_ID from cat_food);
 * [Cloud Slack bot](scenarios/cloud_slack_bot.md)
 * [Writing Jenkins Scripts](scenarios/jenkins_scripts.md)
 * [Writing Jenkins Pipelines](scenarios/jenkins_pipelines.md)
-
-<!-- {% endraw %} -->
