@@ -422,10 +422,6 @@ def cap(self, string):
 </b></details>
 
 <details>
-<summary>What is Ansible Collections?</summary><br><b>
-</b></details>
-
-<details>
 <summary>What is the difference between `include_task` and `import_task`?</summary><br><b>
 </b></details>
 
@@ -530,6 +526,16 @@ It's used to rapidy develop and test Ansbile roles.  Molecule can be used to tes
 
 <details>
 <summary>What are collections in Ansible?</summary><br><b>
+Ansible Collections are a way to package and distribute modules, roles, plugins, and documentation in a structured format. They help organize and distribute automation code efficiently, especially for complex environments.
+</b></details>
+
+<details>
+<summary>Why Use Ansible Collections?</summary><br><b>
+
+  - Modular and reusable components
+  - Simplifies management of custom and third-party modules
+  - Provides a standardized way to distribute automation content
+  - Helps in version control and dependency management
 </b></details>
 
 <!-- {% endraw %} -->
