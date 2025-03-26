@@ -17,7 +17,7 @@ def binary_search(arr: List[int], lb: int, ub: int, target: int) -> int:
         else:
             return binary_search(arr, lb, mid - 1, target)
     else:
-        return -1
+        return 0
 
 
 if __name__ == '__main__':
