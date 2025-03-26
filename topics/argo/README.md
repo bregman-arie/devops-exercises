@@ -308,7 +308,9 @@ So instead of creating multiple separate applications, you have the root applica
 
 * Cluster Preparation: You would like to deploy multiple applications at once to bootstrap a Kubernetes cluster
 
-TODO: add more :)
+* Multiple environments: If deploying many versions of the same application, but with minor changes. For example, several test deployments to test different features
+
+* Multiple clusters: when the same application needs to be deployed across multiple K8s clusters connected to ArgoCD
 </b></details>
 
 <details>
