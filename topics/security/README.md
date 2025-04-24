@@ -640,3 +640,31 @@ You can’t. You will always be exposed to security risk once you start using op
 - Network: Modify network devices and their configuration to create microsegmentation 
 
 </b></details>
+
+<details>
+<summary>What are ephemeral environments in the context of Microsegmentation?</summary><br><b>
+
+- These are short-lived resources like containers or serverless functions that start and stop quickly.
+- Because they don’t last long, they need security rules that can change just as fast.
+- Microsegmentation helps by giving each one exactly the network access it needs — nothing more.
+
+</b></details>
+
+<details>
+<summary>How does Microsegmentation help prevent lateral movement?</summary><br><b>
+
+- It sets tight rules for how services or systems can talk to each other.
+- If one system gets hacked, the attacker can’t easily move to others.
+- By dividing systems into smaller zones, it makes the whole network harder to break into.
+
+</b></details>
+
+<details>
+<summary>What challenges arise when scaling Microsegmentation?</summary><br><b>
+
+- As more systems get added, managing all the rules becomes harder.
+- It’s tough to keep security rules consistent when everything’s changing all the time.
+- You also have to be careful not to slow things down while keeping everything secure.
+
+</b></details>
+
