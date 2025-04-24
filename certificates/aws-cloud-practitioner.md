@@ -8,13 +8,15 @@ A summary of what you need to know for the exam can be found [here](https://aws.
 <summary>What is cloud computing?</summary><br><b>
 
 [Wikipedia](https://en.wikipedia.org/wiki/Cloud_computing): "Cloud computing is the on-demand availability of computer system resources, especially data storage (cloud storage) and computing power, without direct active management by the user"
+
+Cloud computing also allows you to scale resources up or down as needed, paying only for what you use.
 </b></details>
 
 <details>
 <summary>What types of Cloud Computing services are there?</summary><br><b>
 
-IAAS
-PAAS
+IAAS  
+PAAS  
 SAAS
 </b></details>
 
@@ -24,11 +26,12 @@ SAAS
   * IAAS
   * PAAS
   * SAAS</summary><br><b>
- - IAAS - Infrastructure As A Service is a cloud computing service where a cloud provider rents out IT infrastructure such as compute, networking resources and storage over the internet.<br>
- 
- - PAAS - Platform As A Service is a cloud hosting platform with an on-demand access to ready-to-use set of deployment, application management and DevOps tools.<br>
- 
- - SAAS - Software As A Service is a software distribution model in which services are hosted by a cloud service provider.
+
+- IAAS - Infrastructure As A Service is a cloud computing service where a cloud provider rents out IT infrastructure such as compute, networking resources and storage over the internet (e.g., AWS EC2).<br>
+
+- PAAS - Platform As A Service is a cloud hosting platform with an on-demand access to ready-to-use set of deployment, application management and DevOps tools (e.g., AWS Elastic Beanstalk).<br>
+
+- SAAS - Software As A Service is a software distribution model in which services are hosted by a cloud service provider (e.g., AWS WorkSpaces or any web-based email service).
 </b></details>
 
 <details>
@@ -46,12 +49,13 @@ SAAS
   * Hybrid
   * Private</summary><br><b>
 
-- Public - Public cloud is when you leverage cloud services over the open internet on hardware owned by the cloud provider, but its usage is shared by other companies.<br>
+- Public - Public cloud is when you leverage cloud services over the open internet on hardware owned by the cloud provider, but its usage is shared by other companies. It offers cost-effectiveness and ease of scaling.<br>
 
-- Hybrid - A hybrid cloud is a cloud computing environment that uses a mix of combining a public and private cloud environment, like an on-premises data center, and public CSPs.<br>
+- Hybrid - A hybrid cloud is a cloud computing environment that uses a mix of combining a public and private cloud environment, like an on-premises data center, and public CSPs. It provides greater flexibility and more deployment options.<br>
 
-- Private - Private cloud means that the cloud infrastructure is provisioned for exclusive use by a single organization.
-  [Read more](https://aws.amazon.com/types-of-cloud-computing/)
+- Private - Private cloud means that the cloud infrastructure is provisioned for exclusive use by a single organization. Resources are not shared with others, so it offers more control over security and data.
+  
+[Read more](https://aws.amazon.com/types-of-cloud-computing/)
 </b></details>
 
 #### AWS Global Infrastructure
@@ -65,9 +69,9 @@ SAAS
 
 AWS regions are data centers hosted across different geographical locations worldwide, each region is completely independent of one another.<br>
 
-Within each region, there are multiple isolated locations known as Availability Zones. Multiple availability zones ensure high availability in case one of them goes down.<br>
+Within each region, there are multiple isolated locations known as Availability Zones. Multiple availability zones ensure high availability in case one of them goes down. Each Availability Zone is physically separated from others, with its own power, networking, and connectivity.<br>
 
-Edge locations are basically content delivery network which caches data and insures lower latency and faster delivery to the users in any location. They are located in major cities in the world.
+Edge locations are basically content delivery network endpoints which cache data and ensure lower latency and faster delivery to the users in any location. They are located in major cities around the world.
 </b></details>
 
 #### AWS Networking
@@ -75,20 +79,22 @@ Edge locations are basically content delivery network which caches data and insu
 <details>
 <summary>What is VPC?</summary><br><b>
 
-"A logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define"
+"A logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define".
 Read more about it [here](https://aws.amazon.com/vpc).
+
+A VPC spans all the Availability Zones within a single region.
 </b></details>
 
 <details>
 <summary>True or False? VPC spans multiple regions</summary><br><b>
 
-False
+False. A VPC is region-specific and cannot span multiple regions.
 </b></details>
 
 <details>
 <summary>True or False? Subnets belong to the same VPC, can be in different availability zones</summary><br><b>
 
-True. Just to clarify, a subnet must reside entirely in one AZ.
+True. Just to clarify, a subnet must reside entirely in one AZ, but a single VPC can contain subnets across multiple AZs.
 </b></details>
 
 <details>
@@ -96,6 +102,8 @@ True. Just to clarify, a subnet must reside entirely in one AZ.
 
 "component that allows communication between instances in your VPC and the internet" (AWS docs).
 Read more about it [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
+
+It scales horizontally and is highly available, allowing inbound and outbound traffic to flow without imposing availability risks or bandwidth constraints.
 </b></details>
 
 <details>
@@ -113,14 +121,14 @@ False. Only one internet gateway can be attached to a single VPC.
 <details>
 <summary>True or False? Route Tables used to allow or deny traffic from the internet to AWS instances</summary><br><b>
 
-False.
+False. Route tables are used to direct traffic to the right destination (e.g., Internet Gateway, NAT Gateway, etc.), not to allow or deny traffic.
 </b></details>
 
 <details>
 <summary>Explain Security Groups and Network ACLs</summary><br><b>
 
-* NACL - security layer on the subnet level.
-* Security Group - security layer on the instance level.
+* NACL - security layer on the subnet level. They are stateless, meaning inbound and outbound rules are evaluated separately.<br>
+* Security Group - security layer on the instance level. They are stateful, meaning if you allow inbound traffic, outbound traffic is automatically allowed, and vice versa.
 
 Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html) and [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
 </b></details>
@@ -128,7 +136,7 @@ Read more about it [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec
 <details>
 <summary>What is AWS Direct Connect?</summary><br><b>
 
-Allows you to connect your corporate network to AWS network.
+Allows you to connect your corporate network to AWS network. It provides a dedicated network connection that can offer more consistent performance than internet-based connections.
 </b></details>
 
 #### AWS Compute
@@ -138,6 +146,8 @@ Allows you to connect your corporate network to AWS network.
 
 "a web service that provides secure, resizable compute capacity in the cloud".
 Read more [here](https://aws.amazon.com/ec2)
+
+EC2 allows you to quickly scale up or down to match resource needs, paying only for the compute time you consume.
 </b></details>
 
 <details>
@@ -145,14 +155,18 @@ Read more [here](https://aws.amazon.com/ec2)
 
 Amazon Machine Images is "An Amazon Machine Image (AMI) provides the information required to launch an instance".
 Read more [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
+
+An AMI typically includes an operating system, application server, and applications, so you can quickly spin up new instances with the same configuration.
 </b></details>
 
 <details>
 <summary>What are the different source for AMIs?</summary><br><b>
 
 * Personal AMIs - AMIs you create
-* AWS Marketplace for AMIs - Paid AMIs usually with bundled with licensed software
+* AWS Marketplace for AMIs - Paid AMIs usually bundled with licensed software
 * Community AMIs - Free
+
+You can also share AMIs across accounts if needed.
 </b></details>
 
 <details>
@@ -160,6 +174,8 @@ Read more [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
 
 "the instance type that you specify determines the hardware of the host computer used for your instance"
 Read more about instance types [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html)
+
+Instance types vary by CPU, memory, storage, and networking capacity, e.g., t2.micro, c5.large, etc.
 </b></details>
 
 <details>
@@ -169,7 +185,7 @@ Read more about instance types [here](https://docs.aws.amazon.com/AWSEC2/latest/
   * Network optimized
   * Web optimized</summary><br><b>
 
-False. From the above list only compute optimized is available.
+False. From the above list only compute optimized is available. There's no "Web optimized" or "Network optimized" instance type. You do have memory optimized, storage optimized, etc.
 </b></details>
 
 <details>
@@ -177,15 +193,17 @@ False. From the above list only compute optimized is available.
 
 "provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices."
 More on EBS [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html)
+
+EBS volumes are tied to an Availability Zone. They can be snapshotted to Amazon S3 for durability and can be detached/reattached between EC2 instances in the same AZ.
 </b></details>
 
 <details>
 <summary>What EC2 pricing models are there?</summary><br><b>
 
-On Demand - pay a fixed rate by the hour/second with no commitment. You can provision and terminate it at any given time.
-Reserved - you get capacity reservation, basically purchase an instance for a fixed time of period. The longer, the cheaper.
-Spot - Enables you to bid whatever price you want for instances or pay the spot price.
-Dedicated Hosts - physical EC2 server dedicated for your use.
+On Demand - pay a fixed rate by the hour/second with no commitment. You can provision and terminate at any time.<br>
+Reserved - you get capacity reservation, basically purchase an instance for a fixed time period (1 or 3 years). The longer, the cheaper.<br>
+Spot - Enables you to bid whatever price you want for instances or pay the spot price. Ideal for workloads that can be interrupted.<br>
+Dedicated Hosts - physical EC2 server dedicated for your use. Helps you address compliance requirements and use your own software licenses.
 </b></details>
 
 <details>
@@ -193,22 +211,28 @@ Dedicated Hosts - physical EC2 server dedicated for your use.
 
 "A security group acts as a virtual firewall that controls the traffic for one or more instances"
 More on this subject [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)
+
+They are stateful, so any rule applied for inbound automatically applies to outbound, and vice versa (if the inbound rule is allowed).
 </b></details>
 
 <details>
 <summary>What can you attach to an EC2 instance in order to store data?</summary><br><b>
 
 EBS
+
+Additionally, some instance types support Instance Store (ephemeral storage), and you can also mount EFS (file storage) if you need a shared filesystem across multiple instances.
 </b></details>
 
 <details>
 <summary>What EC2 RI types are there?</summary><br><b>
 
-Standard RI - most significant discount + suited for steady-state usage
-Convertible RI - discount + change attribute of RI + suited for steady-state usage
+Standard RI - most significant discount + suited for steady-state usage<br>
+Convertible RI - discount + change attribute of RI + suited for steady-state usage<br>
 Scheduled RI - launch within time windows you reserve
 
 Learn more about EC2 RI [here](https://aws.amazon.com/ec2/pricing/reserved-instances)
+
+Some RIs also offer different payment options (no upfront, partial upfront, or all upfront) affecting the discount level.
 </b></details>
 
 #### AWS Containers
