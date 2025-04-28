@@ -1,4 +1,4 @@
-## Grafana
+### Grafana
 
 <details>
 <summary>Explain what is Grafana</summary><br><b>
