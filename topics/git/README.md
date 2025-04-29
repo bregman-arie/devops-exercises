@@ -139,14 +139,13 @@ True
 
 <details>
 <summary>You have two branches - main and devel. How do you make sure devel is in sync with main?</summary><br><b>
-<code>
+
 ```
 git checkout main
 git pull
 git checkout devel
 git merge main
 ```
-</code>
 
 </b></details>
 
