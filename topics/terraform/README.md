@@ -402,6 +402,18 @@ Using the syntax `var.<VAR_NAME>`
 </b></details>
 
 <details>
+[Question] You are configuring a variable for your Terraform configuration. Which arguments are required when configuring a `variable` block? 1. `type` and `description` 2. There are no required arguments 3. `type` 4. `type`, `description` and `default`
+
+[Answer]</b> 2. There are no required arguments
+
+In Terraform, when declaring a variable block, there are no mandatory arguments. You can create a variable with an empty block like:
+
+variable "example" {}
+
+While `type`, `description`, and `default` are commonly used, they're all optional. The `type` argument helps with validation, `description` documents the variable's purpose, and `default` provides a fallback value if none is specified.
+</details>
+
+<details>
 <summary>What is the effect of setting variable as "sensitive"?</summary><br><b>
 
 It doesn't show its value when you run `terraform apply` or `terraform plan` but eventually it's still recorded in the state file.
