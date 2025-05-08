@@ -958,6 +958,13 @@ You can use it the following syntax `data.terraform_remote_state.<NAME>.outputs.
 
 </b></details>
 
+<details>
+<summary>How does a remote state backend improve collaboration for a Terraform project?</summary><br><b>
+
+By storing the state file in a shared location enabling multiple people or processes to work with the same state.
+A remote state backend improves collaboration on Terraform projects by addressing the core challenge of sharing infrastructure state. When a team works on infrastructure, everyone needs access to the current state to safely make changes.
+</b></details>
+
 #### Workspaces
 
 <details>
