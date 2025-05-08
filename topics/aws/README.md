@@ -1688,6 +1688,11 @@ True
 A transport solution which was designed for transferring large amounts of data (petabyte-scale) into and out the AWS cloud.
 </b></details>
 
+<details>
+<summary> How can a company ensure their web application continues to operate if it becomes unavailable in its current single region?</summary><br><b>
+Deploy the application in multiple Regions. Use Amazon Route 53 DNS health checks to route traffic to a healthy Region
+</b></details>
+
 ### ELB
 
 <details>
