@@ -75,6 +75,17 @@
 </b></details>
 
 <details>
+<summary>What is one reason why manual processes can be helpful?</summary><br><b>
+For learning a platform when first starting out
+</b></details>
+
+<details>
+<summary>Why is it advisable to avoid using manual processes when creating infrastructure at scale?</summary><br><b>
+Manual processes for creating infrastructure are slow because they require human intervention for each step, which delays deployment. They are error-prone since manual configuration increases the risk of mistakes and inconsistencies. Additionally, these processes are not easily repeatable, making it difficult to ensure the same infrastructure setup across different environments—unlike Infrastructure as Code (IaC), which automates and standardizes deployments.
+</b></details>
+
+
+<details>
 <summary>What are some of Terraform features?</summary><br><b>
 
 - Declarative: Terraform uses the declarative approach (rather than the procedural one) in order to define end-status of the resources
