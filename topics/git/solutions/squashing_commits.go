@@ -52,7 +52,7 @@ Save it and provide a commit message for the squashed commit.
 **Answer the following:**
 
 * **What is the reason for squashing commits?**  
-  History becomes cleaner and it's easier to track changes without many small commits like "removed a character," for example.
+  History becomes cleaner and it's easier to track changes withoudt many small commits like "removed a character," for example.
 
 * **Is it possible to squash more than 2 commits?**  
   Yes.
