@@ -80,7 +80,7 @@ For learning a platform when first starting out
 </b></details>
 
 <details>
-<summary>Why is it advisable to avoid using manual processes when creating infrastructure at scale?</summary><br><b>
+<summary>Why is it advisable to avoid using manual processes when creating infrastructure at scale?</summary>
 Manual processes for creating infrastructure are slow because they require human intervention for each step, which delays deployment. They are error-prone since manual configuration increases the risk of mistakes and inconsistencies. Additionally, these processes are not easily repeatable, making it difficult to ensure the same infrastructure setup across different environments—unlike Infrastructure as Code (IaC), which automates and standardizes deployments.
 </b></details>
 
