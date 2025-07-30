@@ -53,6 +53,7 @@
 |--------|--------|------|----|----|
 | Launch EC2 instance | EC2 | [Exercise](exercises/launch_ec2_instance/exercise.md) | [Solution](exercises/launch_ec2_instance/solution.md) | |
 | Rename S3 bucket | S3 | [Exercise](exercises/s3_bucket_rename/exercise.md) | [Solution](exercises/s3_bucket_rename/solution.md) | |
+| Create Custom VPC and Subnets | VPC | [Exercise](exercises/vpc_subnet_creation/exercise.md) | [Solution](exercises/vpc_subnet_creation/solution.md) | |
 
 ## Questions
 
