@@ -76,6 +76,17 @@
 </b></details>
 
 <details>
+<summary>What is one reason why manual processes can be helpful?</summary><br><b>
+For learning a platform when first starting out
+</b></details>
+
+<details>
+<summary>Why is it advisable to avoid using manual processes when creating infrastructure at scale?</summary>
+Manual processes for creating infrastructure are slow because they require human intervention for each step, which delays deployment. They are error-prone since manual configuration increases the risk of mistakes and inconsistencies. Additionally, these processes are not easily repeatable, making it difficult to ensure the same infrastructure setup across different environments—unlike Infrastructure as Code (IaC), which automates and standardizes deployments.
+</b></details>
+
+
+<details>
 <summary>What are some of Terraform features?</summary><br><b>
 
 - Declarative: Terraform uses the declarative approach (rather than the procedural one) in order to define end-status of the resources
@@ -401,6 +412,18 @@ If no value given, user will be prompted to provide one.
 
 Using the syntax `var.<VAR_NAME>`
 </b></details>
+
+<details>
+[Question] You are configuring a variable for your Terraform configuration. Which arguments are required when configuring a `variable` block? 1. `type` and `description` 2. There are no required arguments 3. `type` 4. `type`, `description` and `default`
+
+[Answer]</b> 2. There are no required arguments
+
+In Terraform, when declaring a variable block, there are no mandatory arguments. You can create a variable with an empty block like:
+
+variable "example" {}
+
+While `type`, `description`, and `default` are commonly used, they're all optional. The `type` argument helps with validation, `description` documents the variable's purpose, and `default` provides a fallback value if none is specified.
+</details>
 
 <details>
 <summary>What is the effect of setting variable as "sensitive"?</summary><br><b>
@@ -945,6 +968,13 @@ Yes, using the concept of data sources. There is a data source for a remote stat
 
 You can use it the following syntax `data.terraform_remote_state.<NAME>.outputs.<ATTRIBUTE>`
 
+</b></details>
+
+<details>
+<summary>How does a remote state backend improve collaboration for a Terraform project?</summary><br><b>
+
+By storing the state file in a shared location enabling multiple people or processes to work with the same state.
+A remote state backend improves collaboration on Terraform projects by addressing the core challenge of sharing infrastructure state. When a team works on infrastructure, everyone needs access to the current state to safely make changes.
 </b></details>
 
 #### Workspaces
