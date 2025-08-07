@@ -1119,7 +1119,7 @@ With <code>var x int = 2</code> we are setting the variable type to integer whil
 <details>
 <summary>True or False? In Go we can redeclare variables and once declared we must use it.</summary>
 
-False. We can't redeclare variables but yes, we must used declared variables.
+False. We can't redeclare variables but yes, we must use declared variables.
 </b></details>
 
 <details>
