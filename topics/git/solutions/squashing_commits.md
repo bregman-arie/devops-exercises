@@ -1,5 +1,4 @@
 ## Git - Squashing Commits - Solution
-
 1. In a git repository, create a new file with the content "Mario" and commit the change:
 
 ```
@@ -46,6 +45,50 @@ Save it and provide a commit message for the squashed commit.
 > **Note**: If running `git rebase -i HEAD~2` returns a fatal error (e.g., "invalid upstream 'HEAD~2'"), that usually means your second commit is actually the root commit and there's no valid parent before it. In that case, you can either:
 > * Use `git rebase -i --root` to allow rewriting the root commit, **or**
 > * Create an initial commit before these two commits so that `HEAD~2` points to valid commits.
+
+## Alternative
+
+1. In a git repository, create a new file with the content "Mario" and commit the change:
+
+```
+echo "Mario" > new_file
+git add new_file
+git commit -m "New file"
+```
+
+2. Make a change to the content of the file you just created so it becomes "Mario & Luigi," then create another commit:
+
+```
+echo "Mario & Luigi" > new_file
+git commit -a -m "Added Luigi"
+```
+
+3. Verify you have two separate commits by running:
+
+```
+git log
+```
+
+4. Reset your local git code to the specified commit (a commit before commiting a file with "Mario" inside it):
+
+```
+git reset --soft <commit-sha>
+```
+
+5. Commit your changes
+
+```
+git commit -m "Added Mario and Luigi"
+```
+
+You should see something similar to:
+
+```
+[master 125f023] Added Mario and Luigi
+ 1 file changed, 1 insertion(+)
+ create mode 100644 new_file
+```
+
 
 ### After you complete the exercise
 
