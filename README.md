@@ -1670,6 +1670,7 @@ I’ve implemented these in past projects, configuring them for scalability and 
 
 <details>
 <summary>What is a tenant/project?</summary><br><b>
+In OpenStack, a project (formerly known as a tenant) is a fundamental unit of ownership and isolation for resources like virtual machines, storage volumes, and networks. Each project is owned by a specific user or group of users and provides a way to manage and segregate resources within a shared cloud environment. This ensures that one project's resources are not accessible to another unless explicitly shared.
 </b></details>
 
 <details>
@@ -1678,32 +1679,67 @@ I’ve implemented these in past projects, configuring them for scalability and 
   * OpenStack is free to use
   * The service responsible for networking is Glance
   * The purpose of tenant/project is to share resources between different projects and users of OpenStack</summary><br><b>
+  * OpenStack is free to use - **True**. OpenStack is open-source software released under the Apache 2.0 license.
+  * The service responsible for networking is Glance - **False**. Neutron is the service responsible for networking. Glance is the image service.
+  * The purpose of tenant/project is to share resources between different projects and users of OpenStack - **False**. The primary purpose is to isolate resources.
 </b></details>
 
 <details>
 <summary>Describe in detail how you bring up an instance with a floating IP</summary><br><b>
+To launch an instance with a floating IP, you would follow these steps:
+1.  **Create a Network and Subnet:** First, ensure you have a private network and subnet for your instances.
+2.  **Create a Router:** Create a router and connect it to the public (external) network and your private subnet.
+3.  **Launch an Instance:** Launch a new instance, attaching it to your private network. It will receive a private IP address from the subnet.
+4.  **Allocate a Floating IP:** Allocate a new floating IP address from the public network pool to your project.
+5.  **Associate the Floating IP:** Associate the allocated floating IP with the private IP address of your instance. This allows the instance to be accessible from the internet.
 </b></details>
 
 <details>
 <summary>You get a call from a customer saying: "I can ping my instance but can't connect (ssh) it". What might be the problem?</summary><br><b>
+If you can ping an instance but cannot SSH into it, the issue is likely related to one of the following:
+*   **Security Group Rules:** The security group attached to the instance may not have a rule allowing inbound traffic on TCP port 22 (the default SSH port).
+*   **Firewall on the Instance:** A firewall running on the instance itself (like `iptables` or `firewalld`) might be blocking the SSH port.
+*   **SSH Service:** The SSH daemon (`sshd`) on the instance might not be running or could be misconfigured.
+*   **Incorrect SSH Key:** You might be using the wrong private key to connect to the instance.
 </b></details>
 
 <details>
 <summary>What types of networks OpenStack supports?</summary><br><b>
+OpenStack Neutron supports several network types:
+*   **Local:** A local network is isolated to a single compute node and cannot be shared between multiple nodes.
+*   **Flat:** A flat network is a simple, non-VLAN-tagged network that is shared across all compute nodes.
+*   **VLAN:** A VLAN network uses 802.1q tagging to create isolated layer-2 broadcast domains.
+*   **VXLAN:** VXLAN (Virtual Extensible LAN) is an overlay network technology that encapsulates layer-2 frames in UDP packets, allowing for a large number of isolated networks.
+*   **GRE:** GRE (Generic Routing Encapsulation) is another overlay network technology that can be used to create private networks over a public network.
 </b></details>
 
 <details>
 <summary>How do you debug OpenStack storage issues? (tools, logs, ...)</summary><br><b>
+To debug storage issues in OpenStack (Cinder), you can use the following:
+*   **Logs:** Check the Cinder service logs (e.g., `/var/log/cinder/cinder-volume.log`, `/var/log/cinder/cinder-api.log`) for error messages.
+*   **Cinder CLI:** Use the `cinder` command-line tool to check the status of volumes, snapshots, and storage backends.
+*   **Database:** Inspect the Cinder database to check for inconsistencies in volume states or metadata.
+*   **Backend Storage:** Check the logs and status of the underlying storage system (e.g., LVM, Ceph, NFS) to identify issues with the storage itself.
 </b></details>
 
 <details>
 <summary>How do you debug OpenStack compute issues? (tools, logs, ...)</summary><br><b>
+To debug compute issues in OpenStack (Nova), you can use the following:
+*   **Logs:** Check the Nova service logs (e.g., `/var/log/nova/nova-compute.log`, `/var/log/nova/nova-api.log`, `/var/log/nova/nova-scheduler.log`) for error messages.
+*   **Nova CLI:** Use the `nova` command-line tool to check the status of instances, hosts, and services.
+*   **Instance Console Log:** View the console log of a specific instance to see boot-up messages and other output.
+*   **Hypervisor:** Check the logs and status of the underlying hypervisor (e.g., KVM, QEMU) to identify issues with virtualization.
 </b></details>
 
 #### OpenStack Deployment & TripleO
 
 <details>
 <summary>Have you deployed OpenStack in the past? If yes, can you describe how you did it?</summary><br><b>
+There are several ways to deploy OpenStack, depending on the scale and complexity of the environment. Some common methods include:
+*   **DevStack:** A script-based installer designed for development and testing purposes. It deploys OpenStack from the latest source code.
+*   **Packstack:** A utility that uses Puppet modules to deploy OpenStack on CentOS or RHEL. It is suitable for proof-of-concept and small-scale production environments.
+*   **Kolla-Ansible:** A set of Ansible playbooks that deploy OpenStack services as Docker containers. This method is highly scalable and recommended for production deployments.
+*   **OpenStack-Ansible:** A collection of Ansible playbooks that deploy OpenStack services directly on bare metal or virtual machines.
 </b></details>
 
 <details>
@@ -1797,34 +1833,54 @@ There are many reasons for that. One for example: you can't remove router if the
 
 <details>
 <summary>What is a provider network?</summary><br><b>
+A provider network is a network that is created by an OpenStack administrator and maps directly to an existing physical network in the data center. It allows for direct layer-2 connectivity to instances and is typically used for providing external network access or for connecting to specific physical networks.
 </b></details>
 
 <details>
 <summary>What components and services exist for L2 and L3?</summary><br><b>
+*   **L2 (Layer 2):** The primary L2 component is the `neutron-openvswitch-agent` (or a similar agent for other plugins), which runs on each compute node and manages the local virtual switch (e.g., Open vSwitch). It is responsible for connecting instances to virtual networks and enforcing security group rules.
+*   **L3 (Layer 3):** The `neutron-l3-agent` is responsible for providing L3 services like routing and floating IPs. It manages virtual routers that connect private networks to external networks.
 </b></details>
 
 <details>
 <summary>What is the ML2 plug-in? Explain its architecture</summary><br><b>
+ML2 (Modular Layer 2) is a framework that allows OpenStack to simultaneously utilize a variety of layer-2 networking technologies. It replaces the monolithic plugins for individual network types and provides a more flexible and extensible architecture. ML2 uses a combination of `Type` drivers (for network types like VLAN, VXLAN, etc.) and `Mechanism` drivers (for connecting to different network mechanisms like Open vSwitch, Linux Bridge, etc.).
 </b></details>
 
 <details>
 <summary>What is the L2 agent? How does it works and what is it responsible for?</summary><br><b>
+The L2 agent is a service that runs on each compute node and is responsible for wiring virtual networks to instances. It communicates with the Neutron server to get the network topology and then configures the local virtual switch (e.g., Open vSwitch) to connect instances to the correct networks. It also enforces security group rules by configuring the virtual switch.
 </b></details>
 
 <details>
 <summary>What is the L3 agent? How does it works and what is it responsible for?</summary><br><b>
+The L3 agent is responsible for providing layer-3 networking services, such as routing and floating IPs. It runs on network nodes and manages virtual routers that connect private networks to external networks. The L3 agent creates network namespaces for each router to provide isolation and then configures routing rules and NAT to enable traffic to flow between networks.
 </b></details>
 
 <details>
 <summary>Explain what the Metadata agent is responsible for</summary><br><b>
+The Metadata agent is responsible for providing metadata (e.g., instance ID, hostname, public keys) to instances. It runs on network nodes and acts as a proxy between instances and the Nova metadata service. When an instance requests metadata, the request is forwarded to the Metadata agent, which then retrieves the information from Nova and returns it to the instance.
 </b></details>
 
 <details>
 <summary>What networking entities Neutron supports?</summary><br><b>
+Neutron supports a variety of networking entities, including:
+*   **Network:** An isolated layer-2 broadcast domain.
+*   **Subnet:** A block of IP addresses that can be assigned to instances.
+*   **Port:** A connection point for attaching a single device, such as an instance, to a virtual network.
+*   **Router:** A logical entity that connects multiple layer-2 networks.
+*   **Floating IP:** A public IP address that can be associated with an instance to provide external connectivity.
+*   **Security Group:** A collection of firewall rules that control inbound and outbound traffic to instances.
 </b></details>
 
 <details>
 <summary>How do you debug OpenStack networking issues? (tools, logs, ...)</summary><br><b>
+To debug networking issues in OpenStack (Neutron), you can use the following:
+*   **Logs:** Check the Neutron service logs (e.g., `/var/log/neutron/neutron-server.log`, `/var/log/neutron/openvswitch-agent.log`, `/var/log/neutron/l3-agent.log`) for error messages.
+*   **Neutron CLI:** Use the `neutron` command-line tool to check the status of networks, subnets, ports, routers, and other networking entities.
+*   **`ip netns`:** Use the `ip netns` command to inspect network namespaces and the network configurations within them.
+*   **`ovs-vsctl` and `ovs-ofctl`:** Use these tools to inspect the configuration and flow tables of Open vSwitch bridges.
+*   **`tcpdump`:** Use `tcpdump` to capture and analyze network traffic on various interfaces to identify connectivity issues.
 </b></details>
 
 #### OpenStack - Glance
@@ -2042,6 +2098,9 @@ A list of services and their endpoints
   * nova-api - responsible for managing requests/calls
   * nova-compute - responsible for managing instance lifecycle
   * nova-conductor - Mediates between nova-compute and the database so nova-compute doesn't access it directly
+  * nova-cert - Manages X509 certificates for secure communication.
+  * nova-consoleauth - Authorizes tokens for users to access instance consoles.
+  * nova-scheduler - Determines which compute host an instance should be launched on based on a set of filters and weights.
 </b></details>
 
 <details>
@@ -2056,10 +2115,12 @@ A list of services and their endpoints
 
 <details>
 <summary>Explain BGP dynamic routing</summary><br><b>
+BGP (Border Gateway Protocol) is a standardized exterior gateway protocol used to exchange routing and reachability information among autonomous systems on the internet. In OpenStack, BGP can be used to dynamically advertise floating IP addresses and project networks to physical routers, eliminating the need for static routes and enabling more scalable and resilient network architectures.
 </b></details>
 
 <details>
 <summary>What is the role of network namespaces in OpenStack?</summary><br><b>
+Network namespaces are a Linux kernel feature that provides isolated network stacks for different processes. In OpenStack, network namespaces are used to isolate the network resources of different virtual routers and other networking services. This ensures that each router has its own set of interfaces, routing tables, and firewall rules, preventing conflicts and providing a secure multi-tenant environment.
 </b></details>
 
 #### OpenStack Advanced - Horizon
