@@ -1442,6 +1442,16 @@ In addition, modules are great for creating reusable Terraform code that can be 
 
 </b></details>
 
+</b></details>
+
+<details>
+<summary>What is a remote backend in Terraform?</summary><br><b>
+
+A remote backend stores Terraform state in a remote location (e.g., S3, Azure Blob, GCS, Terraform Cloud) instead of locally.  
+It enables collaboration, team access, and state locking to prevent conflicts during concurrent operations.  
+
+</b></details>
+
 <details>
 <summary>What makes a Terraform code module? In other words, what a module is from practical perspective?</summary>
 
