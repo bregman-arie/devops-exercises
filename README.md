@@ -852,7 +852,7 @@ POSIX (Portable Operating System Interface) is a set of standards that define th
 </b></details>
 
 <details>
-<summary>Explain what is Semaphore and what its role in operating systems.</summary><br><b>
+<summary>Explain what Semaphore is and what its role in operating systems.</summary><br><b>
 
 A semaphore is a synchronization primitive used in operating systems and concurrent programming to control access to shared resources. It's a variable or abstract data type that acts as a counter or a signaling mechanism for managing access to resources by multiple processes or threads.
 </b></details>
@@ -887,7 +887,7 @@ Hosted hypervisors and bare-metal hypervisors.
 </b></details>
 
 <details>
-<summary>What are the advantages and disadvantges of bare-metal hypervisor over a hosted hypervisor?</summary><br><b>
+<summary>What are the advantages and disadvantages of bare-metal hypervisor over a hosted hypervisor?</summary><br><b>
 
 Due to having its own drivers and a direct access to hardware components, a baremetal hypervisor will often have better performances along with stability and scalability.
 
@@ -903,7 +903,7 @@ Desktop virtualization
 </b></details>
 
 <details>
-<summary>Is containerization is a type of Virtualization?</summary><br><b>
+<summary>Is containerization a type of Virtualization?</summary><br><b>
 
 Yes, it's a operating-system-level virtualization, where the kernel is shared and allows to use multiple isolated user-spaces instances.
 </b></details>
@@ -2974,7 +2974,7 @@ A load balancer accepts (or denies) incoming network traffic from a client, and 
 </b></details>
 
 <details>
-<summary>Why to used a load balancer?</summary><br><b>
+<summary>Why to use a load balancer?</summary><br><b>
 
 * Scalability - using a load balancer, you can possibly add more servers in the backend to handle more requests/traffic from the clients, as opposed to using one server.
 * Redundancy - if one server in the backend dies, the load balancer will keep forwarding the traffic/requests to the second server so users won't even notice one of the servers in the backend is down.
