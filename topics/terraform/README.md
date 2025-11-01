@@ -29,6 +29,7 @@
       - [Misc](#misc)
     - [Modules](#modules)
       - [Modules Hands-On](#modules-hands-on)
+      - [Interview Cheatsheet](#interview-cheatsheet)
     - [Import](#import)
     - [Version Control](#version-control)
     - [AWS](#aws-1)
@@ -39,21 +40,22 @@
 ## Exercises
 
 <a name="exercises-terraform-101"></a>
+
 ### Terraform 101
 
-|Name|Topic|Objective & Instructions|Solution|Comments|
-|--------|--------|------|----|----|
-| Local Provider  | Basics | [Exercise](exercises/terraform_local_provider/exercise.md) | [Solution](exercises/terraform_local_provider/solution.md) | |
+| Name           | Topic  | Objective & Instructions                                   | Solution                                                   | Comments |
+| -------------- | ------ | ---------------------------------------------------------- | ---------------------------------------------------------- | -------- |
+| Local Provider | Basics | [Exercise](exercises/terraform_local_provider/exercise.md) | [Solution](exercises/terraform_local_provider/solution.md) |          |
 
 ### AWS
 
- The following exercises require account in AWS and might cost you $$$
+The following exercises require account in AWS and might cost you $$$
 
-|Name|Topic|Objective & Instructions|Solution|Comments|
-|--------|--------|------|----|----|
-| Launch EC2 instance | EC2 | [Exercise](exercises/launch_ec2_instance/exercise.md) | [Solution](exercises/launch_ec2_instance/solution.md) | |
-| Rename S3 bucket | S3 | [Exercise](exercises/s3_bucket_rename/exercise.md) | [Solution](exercises/s3_bucket_rename/solution.md) | |
-| Create Custom VPC and Subnets | VPC | [Exercise](exercises/vpc_subnet_creation/exercise.md) | [Solution](exercises/vpc_subnet_creation/solution.md) | |
+| Name                          | Topic | Objective & Instructions                              | Solution                                              | Comments |
+| ----------------------------- | ----- | ----------------------------------------------------- | ----------------------------------------------------- | -------- |
+| Launch EC2 instance           | EC2   | [Exercise](exercises/launch_ec2_instance/exercise.md) | [Solution](exercises/launch_ec2_instance/solution.md) |          |
+| Rename S3 bucket              | S3    | [Exercise](exercises/s3_bucket_rename/exercise.md)    | [Solution](exercises/s3_bucket_rename/solution.md)    |          |
+| Create Custom VPC and Subnets | VPC   | [Exercise](exercises/vpc_subnet_creation/exercise.md) | [Solution](exercises/vpc_subnet_creation/solution.md) |          |
 
 ## Questions
 
@@ -65,15 +67,13 @@
 [Terraform](https://www.terraform.io/intro): "HashiCorp Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. You can then use a consistent workflow to provision and manage all of your infrastructure throughout its lifecycle. Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features."
 </b></details>
 
-
 <details>
 <summary>What are the advantages in using Terraform or IaC in general?</summary><br><b>
 
 - Full automation: In the past, resource creation, modification and removal were handled manually or by using a set of tooling. With Terraform or other IaC technologies, you manage the full lifecycle in an automated fashion.<br>
 - Modular and Reusable: Code that you write for certain purposes can be used and assembled in different ways. You can write code to create resources on a public cloud and it can be shared with other teams who can also use it in their account on the same (or different) cloud><br>
 - Improved testing: Concepts like CI can be easily applied on IaC based projects and code snippets. This allow you to test and verify operations beforehand
--
-</b></details>
+- </b></details>
 
 <details>
 <summary>What is one reason why manual processes can be helpful?</summary><br><b>
@@ -85,15 +85,13 @@ For learning a platform when first starting out
 Manual processes for creating infrastructure are slow because they require human intervention for each step, which delays deployment. They are error-prone since manual configuration increases the risk of mistakes and inconsistencies. Additionally, these processes are not easily repeatable, making it difficult to ensure the same infrastructure setup across different environments—unlike Infrastructure as Code (IaC), which automates and standardizes deployments.
 </b></details>
 
-
 <details>
 <summary>What are some of Terraform features?</summary><br><b>
 
 - Declarative: Terraform uses the declarative approach (rather than the procedural one) in order to define end-status of the resources
 - No agents: as opposed to other technologies (e.g. Puppet) where you use a model of agent and server, with Terraform you use the different APIs (of clouds, services, etc.) to perform the operations
 - Community: Terraform has strong community who constantly publishes modules and fixes when needed. This ensures there is good modules maintenance and users can get support quite quickly at any point
--
-</b></details>
+- </b></details>
 
 <details>
 <summary>What language does Terraform uses?</summary><br><b>
@@ -144,6 +142,7 @@ resource "aws_instance" "some-instance" {
   instance_type = "t2.micro
 }
 ```
+
 </summary><br><b>
 
 It's a resource of type "aws_instance" used to provision an instance. The name of the resource (NOT INSTANCE) is "some-instance".
@@ -160,6 +159,7 @@ resource "aws_instance" "some-instance" {
   instance_type = "t2.micro
 }
 ```
+
 </summary><br><b>
 
 Run `terraform init`. This will scan the code in the directory to figure out which providers are used (in this case AWS provider) and will download them.
@@ -180,15 +180,15 @@ Run `terraform apply`. That will apply the changes described in your .tf files.
 <details>
 <summary>Explain the meaning of the following strings that seen at the beginning of each line When you run <code>terraform apply</code>
 
-* '+'
-* '-'
-* '-/+'
+- '+'
+- '-'
+- '-/+'
 </summary><br><b>
 
-* '+' - The resource or attribute is going to be added
-* '-' - the resource or attribute is going to be removed
-* '-/+' - the resource or attribute is going to be replaced
-</b></details>
+- '+' - The resource or attribute is going to be added
+- '-' - the resource or attribute is going to be removed
+- '-/+' - the resource or attribute is going to be replaced
+  </b></details>
 
 <details>
 <summary>How to cleanup Terraform resources? Why the user should be careful doing so?</summary><br><b>
@@ -220,6 +220,7 @@ resource "aws_instance" "some-instance" {
 
 }
 ```
+
 </b></details>
 
 <details>
@@ -268,6 +269,7 @@ terraform {
     }
   }
 ```
+
 </summary><br><b>
 
 azurerm and aws
@@ -296,6 +298,7 @@ terraform {
     }
   }
 ```
+
 </summary><br><b>
 
 False. It will look for "aws" provider in the public Terraform registry and will take the latest version.
@@ -321,6 +324,7 @@ provider "aws" {
   region = "us-west-2"
 }
 ```
+
 </b></details>
 
 <details>
@@ -354,11 +358,12 @@ terraform {
   }
 }
 ```
+
 </summary><br><b>
 
 1. Terraform checks if there is an aws provider in this address: `registry.terraform.io/hashicorp/aws`
 2. Installs latest version of aws provider (assuming the URL exists and valid)
-</b></details>
+   </b></details>
 
 <details>
 <summary>True or False? You can install providers only from hashicorp</summary><br><b>
@@ -389,6 +394,7 @@ map(<TYPE>)
 object({<ATTR_NAME> = <TYPE>, ... })
 tuple([<TYPE>, ...])
 ```
+
 </b></details>
 
 <details>
@@ -400,9 +406,9 @@ tuple([<TYPE>, ...])
 <details>
 <summary>What ways are there to pass values for input variables?</summary><br><b>
 
-* Using `-var` option in the CLI
-* Using a file by using the `-var-file` option in the CLI
-* Environment variable that starts with `TF_VAR_<VAR_NAME>`
+- Using `-var` option in the CLI
+- Using a file by using the `-var-file` option in the CLI
+- Environment variable that starts with `TF_VAR_<VAR_NAME>`
 
 If no value given, user will be prompted to provide one.
 </b></details>
@@ -423,6 +429,7 @@ In Terraform, when declaring a variable block, there are no mandatory arguments.
 variable "example" {}
 
 While `type`, `description`, and `default` are commonly used, they're all optional. The `type` argument helps with validation, `description` documents the variable's purpose, and `default` provides a fallback value if none is specified.
+
 </details>
 
 <details>
@@ -448,9 +455,9 @@ According to variable precedence, which source will be used first?</summary><br>
 
 Terraform loads variables in the following order, with later sources taking precedence over earlier ones:
 
-  - Environment variable
-  - The file `terraform.tfvars`
-  - Using `-var` or `-var-file`
+- Environment variable
+- The file `terraform.tfvars`
+- Using `-var` or `-var-file`
 
 </b></details>
 
@@ -611,6 +618,7 @@ locals {
   z = 2.2
 }
 ```
+
 </b></details>
 
 <details>
@@ -632,9 +640,9 @@ then to use it, you have to use something like this: `local.x`
 <details>
 <summary>Explain data sources in Terraform</summary><br><b>
 
-* Data sources used to get data from providers or in general from external resources to Terraform (e.g. public clouds like AWS, GCP, Azure).
-* Data sources used for reading. They are not modifying or creating anything
-* Many providers expose multiple data sources
+- Data sources used to get data from providers or in general from external resources to Terraform (e.g. public clouds like AWS, GCP, Azure).
+- Data sources used for reading. They are not modifying or creating anything
+- Many providers expose multiple data sources
 
 </b></details>
 
@@ -725,9 +733,9 @@ Provisioners can be described as plugin to use with Terraform, usually focusing 
 
 Few example of provisioners:
 
-* Run configuration management on a provisioned instance using technology like Ansible, Chef or Puppet.
-* Copying files
-* Executing remote scripts
+- Run configuration management on a provisioned instance using technology like Ansible, Chef or Puppet.
+- Copying files
+- Executing remote scripts
 
 </b></details>
 
@@ -763,9 +771,10 @@ It's a resource which was successfully created but failed during provisioning. T
 Data sources lookup or compute values that can be used elsewhere in terraform configuration.
 
 There are quite a few cases you might need to use them:
-* you want to reference resources not managed through terraform
-* you want to reference resources managed by a different terraform module
-* you want to cleanly compute a value with typechecking, such as with <code>aws_iam_policy_document</code>
+
+- you want to reference resources not managed through terraform
+- you want to reference resources managed by a different terraform module
+- you want to cleanly compute a value with typechecking, such as with <code>aws_iam_policy_document</code>
 
 </b></details>
 
@@ -803,8 +812,10 @@ Output variables are named values that are sourced from the attributes of a modu
 3. Run terraform command <code>terraform import RESOURCE ID</code><br>
 
 eg. Let's say you want to import an aws instance. Then you'll perform following:
+
 1. Identify that aws instance in console
 2. Refer to it's configuration and write Terraform code which will look something like:
+
 ```
 resource "aws_instance" "tf_aws_instance" {
   ami           = data.aws_ami.ubuntu.id
@@ -815,55 +826,47 @@ resource "aws_instance" "tf_aws_instance" {
   }
 }
 ```
-3. Run terraform command <code>terraform import aws_instance.tf_aws_instance i-12345678</code>
-</b></details>
 
+3. Run terraform command <code>terraform import aws_instance.tf_aws_instance i-12345678</code>
+   </b></details>
 
 ### State
 
 <details>
-<summary>What's Terraform State?</summary><br><b>
-
-[terraform.io](https://www.terraform.io/language/state): "Terraform must store state about your managed infrastructure and configuration. This state is used by Terraform to map real world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures."
-
-In other words, it's a mechanism in Terraform to track resources you've created or cleaned up. This is how terraform knows what to update/create/delete when you run `terraform apply` and also other commands like `terraform destroy`.
-
-</b></details>
-
-<details>
-<summary>Where Terraform state is stored?</summary><br><b>
-
-There is more than one answer to this question. It's very much depends on whether you share it with others or it's only local in your Terraform directory, but taking a beginner's case, when you run terraform in a directory, the state will be stored in that directory in `terraform.tfstate` file.
-
-</b></details>
-
-<details>
 <summary>Can you name three different things included in the state file?</summary><br><b>
 
-* The representation of resources - JSON format of the resources, their attributes, IDs, ... everything that required to identify the resource and also anything that was included in the .tf files on these resources
-* Terraform version
-* Outputs
-</b></details>
+- The representation of resources - JSON format of the resources, their attributes, IDs, ... everything that required to identify the resource and also anything that was included in the .tf files on these resources
+- Terraform version
+- Outputs
+  </b></details>
+
+<details>
+<summary>Why does Terraform keep state and how do local and remote state differ?</summary><br><b>
+
+Terraform stores state to map real infrastructure objects to the resources declared in code, keep track of dependencies, detect drift, and speed up planning by caching attribute data.<br><br>
+
+- Local state is stored in a `terraform.tfstate` file on disk and is suitable for quick experiments or single-operator workflows.<br>
+- Remote state lives in a backend (such as S3, GCS, Terraform Cloud) that can enforce locking, access controls, and versioning so teams share a single source of truth.<br>
+  Always choose a remote backend once there is more than one operator or automation pipeline touching the configuration.
+  </b></details>
 
 <details>
 <summary>Why does it matter where you store the tfstate file? In your answer make sure to address the following:
 
-* Public vs. Private
-* Git repository vs. Other locations
+- Public vs. Private
+- Git repository vs. Other locations
 </summary><br><b>
 
-- tfstate contains credentials in plain text. You don't want to put it in publicly shared location
-- tfstate shouldn't be modified concurrently so putting it in a shared location available for everyone with "write" permissions might lead to issues. (Terraform remote state doesn't has this problem).
-- tfstate is an important file. As such, it might be better to put it in a location that has regular backups and good security.
-
-As such, tfstate shouldn't be stored in git repositories. secured storage such as secured buckets, is a better option.
-
-</b></details>
+* tfstate contains credentials in plain text. You don't want to put it in publicly shared location.<br>
+* tfstate shouldn't be modified concurrently so putting it in a shared location available for everyone with "write" permissions might lead to issues. (Terraform remote state doesn't has this problem).<br>
+* tfstate is an important file. As such, it might be better to put it in a location that has regular backups and good security.<br><br>
+  As such, tfstate shouldn't be stored in git repositories. secured storage such as secured buckets, is a better option.
+  </b></details>
 
 <details>
 <summary>True or False? it's common to edit terraform state file directly by hand and even recommended for many different use cases</summary><br><b>
 
-False. You should avoid as much possible to edit Terraform state files directly by hand.
+False. You should avoid as much possible to edit Terraform state files directly by hand. Prefer supported commands such as `terraform state mv`, `terraform state rm`, or `terraform state replace-provider` so the CLI keeps metadata consistent.
 </b></details>
 
 <details>
@@ -875,97 +878,136 @@ In general, storing state file on your computer isn't a problem. It starts to be
 <details>
 <summary>Mention some best practices related to tfstate</summary><br><b>
 
-  - Don't edit it manually. tfstate was designed to be manipulated by terraform and not by users directly.
-  - Store it in secured location (since it can include credentials and sensitive data in general)
-  - Backup it regularly so you can roll-back easily when needed
-  - Store it in remote shared storage. This is especially needed when working in a team and the state can be updated by any of the team members
-  - Enabled versioning if the storage where you store the state file, supports it. Versioning is great for backups and roll-backs in case of an issue.
-
-</b></details>
+- Don't edit it manually. tfstate was designed to be manipulated by terraform and not by users directly.<br>
+- Store it in secured location (since it can include credentials and sensitive data in general).<br>
+- Backup it regularly so you can roll-back easily when needed.<br>
+- Store it in remote shared storage. This is especially needed when working in a team and the state can be updated by any of the team members.<br>
+- Enabled versioning if the storage where you store the state file, supports it. Versioning is great for backups and roll-backs in case of an issue.<br>
+- Designate "state owners" who review access, rotate credentials, and execute migrations.<br>
+- Keep `.tfstate` files and the `.terraform/` directory out of version control (`.gitignore`) and encrypt any ad-hoc backups.
+  </b></details>
 
 <details>
 <summary>How and why concurrent edits of the state file should be avoided?</summary><br><b>
 
-If there are two users or processes concurrently editing the state file it can result in invalid state file that doesn't actually represents the state of resources.<br>
-
-To avoid that, Terraform can apply state locking if the backend supports that. For example, AWS s3 supports state locking and consistency via DynamoDB. Often, if the backend supports it, Terraform will make use of state locking automatically so nothing is required from the user to activate it.
+If there are two users or processes concurrently editing the state file it can result in invalid state file that doesn't actually represents the state of resources.<br><br>
+To avoid that, Terraform can apply state locking if the backend supports that. For example, AWS s3 supports state locking and consistency via DynamoDB. Often, if the backend supports it, Terraform will make use of state locking automatically so nothing is required from the user to activate it. Automation pipelines should wait for locks to clear instead of forcing unlocks.
 </b></details>
 
 <details>
 <summary>Describe how you manage state file(s) when you have multiple environments (e.g. development, staging and production)</summary><br><b>
 
-Probably no right or wrong answer here, but it seems, based on different source, that the overall preferred way is to have a dedicated state file per environment.
-</b></details>
+Probably no right or wrong answer here, but it seems, based on different source, that the overall preferred way is to have a dedicated state file per environment.<br><br>
+Common patterns:<br>
+
+- Separate backend configurations per environment (different S3 prefixes or even different buckets and DynamoDB tables).<br>
+- Distinct workspaces or directories when you need isolated state plus different credentials.<br>
+- Terraform Cloud organizations/workspaces mapped to environments with role-based access control.
+  </b></details>
 
 <details>
 <summary>Why storing the state in versioned control repo is not a good idea?</summary><br><b>
 
-* Sensitive data: some resources may specify sensitive data (like passwords and tokens) and everything in a state file is stored in plain text
-* Prone to errors: when working with Git repos, you mayo often find yourself switch branches, checkout specific commits, perform rebases, ... all these operations may end up in you eventually performing `terraform apply` on non-latest version of your Terraform code
-</b></details>
+- Sensitive data: some resources may specify sensitive data (like passwords and tokens) and everything in a state file is stored in plain text.<br>
+- Prone to errors: when working with Git repos, you mayo often find yourself switch branches, checkout specific commits, perform rebases, ... all these operations may end up in you eventually performing `terraform apply` on non-latest version of your Terraform code. Keeping state outside Git eliminates that risk.<br>
+- Lack of locking and audit trails compared to managed backends.
+  </b></details>
 
 #### Terraform Backend
 
 <details>
 <summary>What's a Terraform backend? What is the default backend?</summary><br><b>
 
-Terraform backend determines how the Terraform state is stored and loaded. By default the state is local, but it's possible to set a remote backend
+Terraform backend determines how the Terraform state is stored and loaded. By default the state is local, but it's possible to set a remote backend.
 </b></details>
 
 <details>
-<summary>Describe how to set a remote backend of any type you choose</summary><br><b>
+<summary>How do you configure an AWS S3 backend with DynamoDB state locking?</summary><br><b>
 
-Let's say we chose use Amazon s3 as a remote Terraform backend where we can store Terraform's state.
+Use a remote backend when you need a shared, durable source of truth. A minimal configuration looks like:
 
-1. Write Terraform code for creating an s3 bucket
-   1. It would be a good idea to add lifecycle of "prevent_destroy" to it so it's not accidentally deleted
-2. Enable versioning (add a resource of "aws_s3_bucket_versioning")
-3. Encrypt the bucket ("aws_s3_bucket_server_side_encryption_configuration")
-4. Block public access
-5. Handle locking. One way is to add DB for it
-6. Add the point you'll want to run init and apply commands to avoid an issue where you at the same time create the resources for remote backend and also switch to a remote backend
-7. Once resources were created, add Terraform backend code
-
-```
+```hcl
 terraform {
+  required_version = ">= 1.6.0"
+
   backend "s3" {
-    bucket ...
+    bucket         = "my-tfstate-bucket"
+    key            = "prod/network/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "tf-locks"
+    encrypt        = true
   }
 }
 ```
-7. Run `terraform init` as it will configure the backend
 
-</b></details>
+- Create the S3 bucket with versioning, default encryption, and block public access before enabling the backend.<br>
+- Provision a DynamoDB table with the primary key `LockID` so Terraform can acquire locks.<br>
+- Use IAM least privilege policies that allow only state operations on the bucket and table to reduce blast radius.
+  </b></details>
+
+<details>
+<summary>Which commands help you inspect, migrate, and safely manipulate Terraform state?</summary><br><b>
+
+```bash
+terraform init -migrate-state
+terraform plan -refresh-only
+terraform state list
+terraform show -json | jq '.values.root_module.resources[].address' | head
+terraform state mv module.vpc.aws_subnet.public[0] module.vpc.aws_subnet.public_a
+```
+
+- `terraform init -migrate-state`: moves an existing local state file into the configured backend with locking.<br>
+- `terraform plan -refresh-only`: detects drift by refreshing remote object attributes without proposing changes.<br>
+- `terraform state list`: confirms which objects are tracked in the state after migrations or imports.<br>
+- `terraform show -json`: enables scripted inspections (paired here with `jq`) so you can audit addresses or metadata.<br>
+- `terraform state mv`: renames or relocates resources/modules without recreation, useful during refactors.
+  </b></details>
+
+<details>
+<summary>What best practices keep Terraform state secure and reliable?</summary><br><b>
+
+- Encrypt and version your remote backend (for example `aws_s3_bucket_versioning` plus SSE-KMS on S3).<br>
+- Enforce locking (DynamoDB, GCS locking, or Terraform Cloud workspaces) and monitor stuck locks.<br>
+- Grant IAM minimum privileges and rotate access keys; automation should assume roles with short-lived credentials.<br>
+- Schedule automated backups of the backend (S3 replication, DynamoDB PITR) and periodically test restores.<br>
+- Document "state owner" responsibility, incident response, and break-glass steps for unlocks or manual edits (should be last resort).
+  </b></details>
+
+<details>
+<summary>How do you migrate from local state to a new remote backend?</summary><br><b>
+
+1. Provision backend resources (for example an S3 bucket with versioning and a DynamoDB table) from a separate bootstrap configuration.<br>
+2. Add the backend block to your Terraform configuration and run `terraform init -migrate-state`.<br>
+3. Verify the migration with `terraform state list` or `terraform state pull` and keep a secure backup of the previous file.<br>
+4. Remove or archive the local `terraform.tfstate` only after confirming new plans operate against the remote backend.
+   </b></details>
 
 <details>
 <summary>How <code>terraform apply</code> workflow is different when a remote backend is used?</summary><br><b>
 
-It starts with acquiring a state lock so others can't modify the state at the same time.
-
+It starts with acquiring a state lock so others can't modify the state at the same time. The apply will also download the latest state snapshot before planning and upload the updated state atomically after the run completes.
 </b></details>
 
 <details>
 <summary>What would be the process of switching back from remote backend to local?</summary><br><b>
 
-1. You remove the backend code and perform `terraform init` to switch back to `local` backend
-2. You remove the resources that are the remote backend itself
-
-</b></details>
+1. You remove the backend code and perform `terraform init` to switch back to `local` backend.<br>
+2. You remove the resources that are the remote backend itself.<br>
+3. Archive the latest remote state file so you can recover if the local copy gets corrupted.
+   </b></details>
 
 <details>
 <summary>True or False? it's NOT possible to use variable in a backend configuration</summary><br><b>
 
-That's true and quite a limitation as it means you'll have to go to the resources of the remote backend and copy some values to the backend configuration.
-
-One way to deal with it is using partial configurations in a completely separate file from the backend itself and then load them with `terraform init -backend-config=some_backend_partial_conf.hcl`
+That's true and quite a limitation as it means you'll have to go to the resources of the remote backend and copy some values to the backend configuration.<br><br>
+One way to deal with it is using partial configurations in a completely separate file from the backend itself and then load them with `terraform init -backend-config=some_backend_partial_conf.hcl`.
 
 </b></details>
 
 <details>
 <summary>Is there a way to obtain information from a remote backend/state using Terraform?</summary><br><b>
 
-Yes, using the concept of data sources. There is a data source for a remote state called "terraform_remote_state".
-
+Yes, using the concept of data sources. There is a data source for a remote state called "terraform_remote_state".<br><br>
 You can use it the following syntax `data.terraform_remote_state.<NAME>.outputs.<ATTRIBUTE>`
 
 </b></details>
@@ -974,7 +1016,7 @@ You can use it the following syntax `data.terraform_remote_state.<NAME>.outputs.
 <summary>How does a remote state backend improve collaboration for a Terraform project?</summary><br><b>
 
 By storing the state file in a shared location enabling multiple people or processes to work with the same state.
-A remote state backend improves collaboration on Terraform projects by addressing the core challenge of sharing infrastructure state. When a team works on infrastructure, everyone needs access to the current state to safely make changes.
+A remote state backend improves collaboration on Terraform projects by addressing the core challenge of sharing infrastructure state. When a team works on infrastructure, everyone needs access to the current state to safely make changes, and locking prevents clashing applies.
 </b></details>
 
 #### Workspaces
@@ -998,7 +1040,6 @@ True
 
 One reason is that all the workspaces are stored in one location (as in one backend) and usually you don't want to use the same access control and authentication for both staging and production for obvious reasons. Also working in workspaces is quite prone to human errors as you might accidentally think you are in one workspace, while you are working a completely different one.
 </b></details>
-
 
 #### State Hands-On
 
@@ -1147,6 +1188,7 @@ variable "users" {
 ```
 
 How to use it to create users on one of the public clouds (or any other platform, infra)?
+
 </summary><br><b>
 
 ```
@@ -1162,17 +1204,17 @@ resource "aws_iam_user" "user" {
 <details>
 <summary>Is there any limitation to "count" meta-argument?</summary><br><b>
 
-* `count` isn't supported within an inline block
-* It's quite limited when it comes to lists.You'll notice that modifying items in lists or even operations like removal sometimes interpreted in a way you didn't expect. For example, removing an item from a list, may shift other items to a new position and since each position represents a resource with count, that may lead to a result where wrong resources are being modified and removed. There are ways to do deal it, but still using count with lists is not always straightforward
-</b></details>
+- `count` isn't supported within an inline block
+- It's quite limited when it comes to lists.You'll notice that modifying items in lists or even operations like removal sometimes interpreted in a way you didn't expect. For example, removing an item from a list, may shift other items to a new position and since each position represents a resource with count, that may lead to a result where wrong resources are being modified and removed. There are ways to do deal it, but still using count with lists is not always straightforward
+  </b></details>
 
 <details>
 <summary>What's a for_each loop? How is it different from "count"?</summary><br><b>
 
-* for_each can applied only on collections like maps or sets (as opposed to count that can be applied on lists)
-* for_each helps to deal with the limitation of `count` which isn't optimal for use cases of modifying lists
-* for_each supports inline blocks as opposed to `count`
-</b></details>
+- for_each can applied only on collections like maps or sets (as opposed to count that can be applied on lists)
+- for_each helps to deal with the limitation of `count` which isn't optimal for use cases of modifying lists
+- for_each supports inline blocks as opposed to `count`
+  </b></details>
 
 <details>
 <summary>Demonstrate how to use the for_each loop</summary><br><b>
@@ -1184,6 +1226,7 @@ resource “google_compute_instance” “instances” {
   name = each.value
 }
 ```
+
 </b></details>
 
 <details>
@@ -1196,6 +1239,7 @@ resource “google_compute_instance” “instances” {
   name = each.value
 }
 ```
+
 </summary><br><b>
 
 for_each can applied only on collections like maps or sets so the list should be converted to a set like this: `for_each = toset(var.names)`
@@ -1204,7 +1248,6 @@ for_each can applied only on collections like maps or sets so the list should be
 
 <details>
 <summary>How to use for_each loop for inline blocks?</summary><br><b>
-
 
 ```
 resource "some_instance" "instance" {
@@ -1280,12 +1323,12 @@ output "users" {
 <details>
 <summary>There is a map called "instances"
 
-* How to extract only the values of that map?
-* How to extract only the attribute "name" from each value?
+- How to extract only the values of that map?
+- How to extract only the attribute "name" from each value?
 </summary><br><b>
 
-* Using the values built-in function: `values(instances)`
-* `values(instances)[*].name`
+- Using the values built-in function: `values(instances)`
+- `values(instances)[*].name`
 
 </b></details>
 
@@ -1374,18 +1417,18 @@ Arguments that affect the lifecycle of a resources (its creation, modification, 
 
 Some examples:
 
-* count: how many resources to create out of one definition of a resource
-* lifecycle: how to treat resource creation or removal
+- count: how many resources to create out of one definition of a resource
+- lifecycle: how to treat resource creation or removal
 
 </b></details>
 
 <details>
 <summary>What meta-arguments are you familiar with?</summary><br><b>
 
-* count: how many resources to create out of one definition of a resource
-* lifecycle: how to treat resource creation or removal
-* depends_on: create a dependency between resources
-</b></details>
+- count: how many resources to create out of one definition of a resource
+- lifecycle: how to treat resource creation or removal
+- depends_on: create a dependency between resources
+  </b></details>
 
 <details>
 <summary>What <code>templatefile</code> function does?</summary><br><b>
@@ -1434,39 +1477,120 @@ False. terraform console is ready-only.
 ### Modules
 
 <details>
-<summary>Explain Modules</summary>
+<summary>Explain Modules</summary><br><b>
 
 [Terraform.io](https://www.terraform.io/language/modules/develop): "A module is a container for multiple resources that are used together. Modules can be used to create lightweight abstractions, so that you can describe your infrastructure in terms of its architecture, rather than directly in terms of physical objects."
 
-In addition, modules are great for creating reusable Terraform code that can be shared and used not only between different repositories but even within the same repo, between different environments (like staging and production).
+In addition, modules are great for creating reusable Terraform code that can be shared and used not only between different repositories but even within the same repo, between different environments (like staging and production). Well-designed modules also expose a small, opinionated surface and hide implementation details.
 
 </b></details>
 
 <details>
-<summary>What makes a Terraform code module? In other words, what a module is from practical perspective?</summary>
+<summary>What makes a Terraform code module? In other words, what a module is from practical perspective?</summary><br><b>
 
-Basically any file or files in a directory is a module in Terraform. There is no special syntax to use in order to define a module.
+Basically any file or files in a directory is a module in Terraform. There is no special syntax to use in order to define a module. The root configuration is itself a module, and any module that is called from it is considered a child module.
 
 </b></details>
+
+<details>
+<summary>When should you use a module instead of inline resources?</summary><br><b>
+
+- You need to reuse infrastructure patterns across environments, teams, or regions without copy-paste.<br>
+- You want to codify best practices (naming, tagging, security controls) behind a stable interface.<br>
+- You need to version and promote infrastructure changes using semantic releases and CI pipelines.<br>
+- You want to limit blast radius by updating one module and rolling it out gradually.
+  </b></details>
+
+<details>
+<summary>What is a recommended layout for a reusable module?</summary><br><b>
+
+```text
+modules/vpc/
+  main.tf
+  variables.tf
+  outputs.tf
+  versions.tf
+  README.md
+  examples/
+    basic/
+      main.tf
+```
+
+- `main.tf` defines resources, data sources, and locals.<br>
+- `variables.tf` contains typed inputs with descriptions and validations.<br>
+- `outputs.tf` exposes the minimal set of outputs downstream stacks need.<br>
+- `versions.tf` pins compatible Terraform and provider versions.<br>
+- `examples/` hosts runnable samples for documentation and testing, usually referenced by CI.
+  </b></details>
+
+<details>
+<summary>How do you consume a versioned module from a VCS or the Terraform Registry?</summary><br><b>
+
+```hcl
+module "vpc" {
+  source  = "git::https://github.com/org/infra-modules.git//vpc?ref=v1.2.3"
+  cidr    = "10.0.0.0/16"
+  azs     = ["us-east-1a", "us-east-1b"]
+}
+```
+
+- For registry modules, use `version` constraints (for example `version = ">= 1.2.0, < 2.0.0"`).<br>
+- Always pin module versions to keep plans reproducible and review upstream releases before upgrading.<br>
+- Prefer tags or immutable SHAs for VCS sources to guarantee repeatable builds.
+  </b></details>
+
+<details>
+<summary>How do modules handle inputs, outputs, locals and validation effectively?</summary><br><b>
+
+- Define typed variables with defaults and `validation` blocks to guard against invalid CIDRs, AZ counts, or empty strings.<br>
+- Use `locals` to transform data or derive names, and combine with `for_each`/`count` for deterministic resource creation.<br>
+- Document outputs in `outputs.tf`, mark sensitive ones, and keep outputs minimal to reduce coupling.<br>
+- Surface module metadata (like version or tags) through outputs for downstream modules or automation.
+  </b></details>
+
+<details>
+<summary>Which module anti-patterns should you avoid?</summary><br><b>
+
+- Embedding provider blocks inside the module which makes reuse across accounts harder.<br>
+- Accepting overly generic `map(any)` inputs that hide required structure instead of typed objects.<br>
+- Outputting secrets or credentials without `sensitive = true` or secret stores.<br>
+- Creating "god" root modules that mix networking, compute, and application concerns instead of composing smaller modules.<br>
+- Copying and pasting modules without versioning, documentation, or automated tests.
+  </b></details>
+
+<details>
+<summary>How do you test and lint modules during development?</summary><br><b>
+
+```bash
+terraform -chdir=examples/vpc init
+terraform -chdir=examples/vpc validate
+terraform -chdir=examples/vpc plan
+tflint --module
+```
+
+- `terraform validate` catches syntax errors and missing providers.<br>
+- Running `plan` against an example stack surfaces integration issues before promotion.<br>
+- `tflint --module` adds provider-specific linting; tools like Terratest can provision ephemeral infra for assertions.<br>
+- Include these commands in CI so every module change is exercised automatically.
+  </b></details>
 
 <details>
 <summary>How do you test a Terraform module?</summary><br><b>
 
-There are multiple answers, but the most common answer would likely to be using the tool <code>terratest</code>, and to test that a module can be initialized, can create resources, and can destroy those resources cleanly.
+There are multiple answers, but the most common answer would likely to be using the tool <code>terratest</code>, and to test that a module can be initialized, can create resources, and can destroy those resources cleanly. You can also rely on `terraform validate`, `terraform plan` with sample configurations, and linting tools such as `tflint`.
 
 </b></details>
 
 <details>
-<summary>When creating a module, do you prefer to use inline blocks, separate resources or both? why?</summary>
+<summary>When creating a module, do you prefer to use inline blocks, separate resources or both? why?</summary><br><b>
 
-No right or wrong here.
-
+No right or wrong here.<br><br>
 Personally, I prefer to use only separate resources in modules as it makes modules more flexible. So if a resource includes inline blocks, that may limit you at some point.
 
 </b></details>
 
 <details>
-<summary>True or False? Module source can be only local path</summary>
+<summary>True or False? Module source can be only local path</summary><br><b>
 
 False. It can be a Git URL, HTTP URL, ... for example:
 
@@ -1493,9 +1617,9 @@ Relative paths usually work fine in your own environment as you are familiar wit
 
 A better approach would be to use `path reference` like one of the following:
 
-* `path.module`: the path of the module where the expression is used
-* `path.cwd`: the path of the current working directory
-* `path.root`: the path of the root module
+- `path.module`: the path of the module where the expression is used
+- `path.cwd`: the path of the current working directory
+- `path.root`: the path of the root module
 
 </b></details>
 
@@ -1506,15 +1630,16 @@ A better approach would be to use `path reference` like one of the following:
 
 The general syntax is:
 
-```
+```hcl
 module "<MODULE_NAME>" {
-  source = "<MODULE_SOURCE>"
+  source  = "<MODULE_SOURCE>"
+  version = ">= 1.2.0, < 2.0.0"
 
-  ...
+  # module inputs
 }
 ```
 
-The critical part is the source which you use to tell Terraform where the module can be found.
+The critical part is the source which you use to tell Terraform where the module can be found. When the module comes from the registry, you can pin the `version`; for local paths omit that attribute.
 </b></details>
 
 <details>
@@ -1525,27 +1650,29 @@ module "amazing_module" {
   source = "../modules/amazing-module"
 }
 ```
+
 </b></details>
 
 <details>
 <summary>What should be done every time you modify the source parameter of a module?</summary><br><b>
 
-`terraform get -update` should be executed as it takes care of downloading and installing the module from the new path.
+Run `terraform init -upgrade` (or `terraform get -update` on older versions) so Terraform downloads the new version of the module and updates the `.terraform/modules` directory.
 </b></details>
 
 <details>
 <summary>How to access module output variables?</summary><br><b>
 
-the general syntax is `module.<MODULE_NAME>.<OUTPUT_VAR_NAME>`
+The general syntax is `module.<MODULE_NAME>.<OUTPUT_VAR_NAME>`
 
 </b></details>
 
 <details>
 <summary>You would like to load and render a file from module directory. How to do that?</summary><br><b>
 
-script = templatesfile("${path.module}/user-data.sh", {
-  ...
+script = templatefile("${path.module}/user-data.sh", {
+...
 })
+
 </b></details>
 
 <details>
@@ -1564,6 +1691,35 @@ module "instances" {
 You can also use it in outputs vars: `value = module.instances[*]`
 
 </b></details>
+
+<details>
+<summary>How to use a module with <code>for_each</code> to create networks per availability zone?</summary><br><b>
+
+```hcl
+module "subnet" {
+  source   = "../modules/subnet"
+  for_each = toset(var.azs)
+
+  name = "subnet-${each.key}"
+  az   = each.value
+}
+```
+
+`for_each` keeps addresses stable and lets you add or remove AZs without re-creating the entire module.
+</b></details>
+
+#### Interview Cheatsheet
+
+- Remote state belongs in an encrypted, versioned S3 bucket with a DynamoDB table for locking.
+- Run `terraform init -migrate-state` when enabling a backend so existing state moves safely.
+- Detect drift quickly with `terraform plan -refresh-only` before every change.
+- Script state reviews with `terraform show -json | jq '.values.root_module.resources[].address'`.
+- Keep `.tfstate*` out of Git; grant IAM least privilege and rotate state access credentials.
+- Structure reusable modules with `main.tf`, `variables.tf`, `outputs.tf`, `versions.tf`, `README.md`, and an `examples/` folder.
+- Pin module versions (`?ref=` or `version` constraints) to make plans reproducible and review upgrades deliberately.
+- Validate modules in CI using `terraform validate`, `terraform plan` on examples, and `tflint --module`.
+- Avoid module anti-patterns like embedding provider blocks, exposing secrets, or hyper-generic inputs.
+- Use `locals` plus `for_each` inside modules for predictable names and per-environment customization.
 
 ### Import
 
@@ -1617,6 +1773,7 @@ resource "aws_instance" "example" {
  EOF
 }
 ```
+
 </summary><br><b>
 
 Nothing, because user_data is executed on boot so if an instance is already running, it won't change anything.
@@ -1744,6 +1901,7 @@ provider "aws" {
   secret_key = "bipbopbipbop"
 }
 ```
+
 </summary><br><b>
 
 It's not secure! you should never store credentials in plain text this way.
@@ -1772,7 +1930,6 @@ with:
  aws-region: ...
 ```
 
-
 - Jenkins: If Jenkins runs on the provider, you can use the provider access entities (like roles, policies, ...) to grant the instance, on which Jenkins is running, access control
 - CircleCI: you can use `CircleCI Context` and then specify it in your CircleCI config file
 
@@ -1787,13 +1944,15 @@ context:
 <summary>What are the pros and cons of using environment variables for managing secrets in Terraform configurations?</summary><br><b>
 
 Pros:
- * You avoid using secrets directly in configurations in plain text
- * free (no need to pay for secret management platforms/solutions)
- * Straightforward to use
+
+- You avoid using secrets directly in configurations in plain text
+- free (no need to pay for secret management platforms/solutions)
+- Straightforward to use
 
 Cons:
-  * Configurations might not be usable without the environment variables which may make impact the user experience as the user has to know what environment variables he should pass for everything to work properly
-  * Mostly managed outside of Terraform mechanisms which makes it hard to enforce, track, ... anything that is related to secrets when it depends on the user to pass environment variables
+
+- Configurations might not be usable without the environment variables which may make impact the user experience as the user has to know what environment variables he should pass for everything to work properly
+- Mostly managed outside of Terraform mechanisms which makes it hard to enforce, track, ... anything that is related to secrets when it depends on the user to pass environment variables
 
 </b></details>
 
@@ -1832,7 +1991,6 @@ Each environment has its own backend (as you don't want to use the same authenti
 
 Going further, under each environment you'll separate between components, applications and services
 
-
 ```
 terraform_project/
   staging/
@@ -1844,6 +2002,7 @@ terraform_project/
       postgres/
     networking/
 ```
+
 </b></details>
 
 <details>
@@ -1872,6 +2031,7 @@ Suggest to use Terraform modules.
 <summary>When working with nested layout of many directories, it can make it cumbresome to run terraform commands in many different folders. How to deal with it?</summary><br><b>
 
 There are multiple ways to deal with it:
+
 1. Write scripts that perform some commands recursively with different conditions
 2. Use tools like Terragrunt where you commands like "run-all" that can run in parallel on multiple different paths
 
