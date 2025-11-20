@@ -448,6 +448,8 @@ True
 
 <details>
 <summary>Explain what are ACLs. For what use cases would you recommend to use them?</summary><br><b>
+ACL stands for Access Control Lists. We can use ACL to have more granular control over accesses to certain files for certain users specifically. For instance, we can return the ACL of a particular file with the command <code>getfacl /absolute/file/path</code> and modify ACLs for a specific file with <code>setfacl -m</code>.
+  
 </b></details>
 
 <details>
@@ -524,6 +526,7 @@ To stop a service: `systemctl stop <service name>`
 
 <details>
 <summary>Describe how to make a certain process/app a service</summary><br><b>
+  The process will need a <code>.service</code> file to be created at the location <code>/etc/systemd/system/service-name.service</code> to be made into a service. The file has certain characteristics and need certain inputs to work. More details <a href="https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6">here</a>.
 </b></details>
 
 ### Troubleshooting and Debugging
