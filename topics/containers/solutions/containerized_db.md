@@ -18,7 +18,7 @@ podman ps
 
 # Add student row to the database
 podman exec -it mysql /bin/bash
-mysql -u root
+mysql -u root -p
 use university;
 CREATE TABLE Students (id int NOT NULL, name varchar(255) DEFAULT NULL, PRIMARY KEY (id));
 insert into Projects (id, name) values (1,'Luigi');
