@@ -2278,6 +2278,12 @@ A good answer can be found [here](https://askubuntu.com/questions/9325/what-is-t
 
 <details>
 <summary>What is a TTY device?</summary><br><b>
+
+TTY is short for Teletypewriter and is a virtual device file that acts as a communication interface between the user's hardware (keyboard and screen) and system processes.
+
+Modern Usage:
+- Virtual Consoles (/dev/ttyN): The full-screen command line interfaces you access via keys like Ctrl+Alt+F3.
+- Pseudo-TTYs (/dev/pts/N): Emulated terminals used by windowed applications (like GNOME Terminal) or SSH sessions.
 </b></details>
 
 <details>
