@@ -261,6 +261,10 @@ git checkout HEAD~1 -- /path/of/the/file
 
 <details>
 <summary>How to squash last two commits?</summary><br><b>
+	
+git rebase -i HEAD~2
+
+In the editor that opens, change the second `pick` to `squash` (or `s`). Save and provide a commit message for the squashed commit.
 </b></details>
 
 <details>
