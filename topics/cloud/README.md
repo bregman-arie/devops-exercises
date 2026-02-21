@@ -76,12 +76,10 @@ It's important to note that:
 </b></details>
 
 <details>
-<summary>Can we replace any type of computing on servers with serverless?</summary><br><b>
-</b></details>
+<summary>Can we replace any type of computing on servers with serverless?</summary><br><b> No. Not all computing can be replaced with serverless. Serverless is best suited for event-driven, stateless, and short-lived tasks. Long-running processes, real-time streaming, or low-latency persistent connections are not ideal for serverless architecture. </b></details>
 
 <details>
-<summary>Is there a difference between managed service to SaaS or is it the same thing?</summary><br><b>
-</b></details>
+<summary>Is there a difference between managed service to SaaS or is it the same thing?</summary><br><b> Yes. Managed services and SaaS are different. A managed service means the provider manages the infrastructure and operations, but you still control the application. SaaS is a fully hosted application delivered over the internet where the provider manages everything including the application itself. </b></details>
 
 <details>
 <summary>What is auto scaling?</summary><br><b>
