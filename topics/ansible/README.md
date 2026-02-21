@@ -58,7 +58,7 @@ Ansible rather follows the mutable infrastructure paradigm where it allows you t
 <details>
 <summary>True or False? Ansible uses declarative style to describe the expected end state</summary><br><b>
 
-False. It uses a procedural style.
+True. Ansible is primarily declarative - it describes the desired end state. While playbooks execute tasks in a sequential (procedural) order, the resource management philosophy is declarative.
 </b></details>
 
 <details>
@@ -510,7 +510,7 @@ If your group has 8 hosts. It will run the whole play on 4 hosts and then the sa
 <details>
 <summary>What is Molecule? How does it works?</summary><br><b>
 
-It's used to rapidy develop and test Ansbile roles.  Molecule can be used to test Ansible roles against a varaitey of Linux Distros at the same time.  This testing ability helps instill confidence of the automation today and as time go on while a role is maintined.  
+It's used to rapidly develop and test Ansible roles.  Molecule can be used to test Ansible roles against a variety of Linux Distros at the same time.  This testing ability helps instill confidence of the automation today and as time go on while a role is maintained.  
 
 </b></details>
 
