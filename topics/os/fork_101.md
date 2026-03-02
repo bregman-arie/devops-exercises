@@ -14,4 +14,4 @@ int main()
 ```
 
 1. How many times the word "yay" will be printed?
-2. How many processes will be created?
+2. How many processes will be created?I'm i'm just a beginner, I don't know if I have the right to win, when I don't know the code you wrote, so you decide 
