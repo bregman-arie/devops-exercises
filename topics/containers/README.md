@@ -986,11 +986,34 @@ shim is the process that becomes the container's parent when runc process exists
 <details>
 <summary>How would you transfer data from one container into another?</summary><br><b>
 </b></details>
+There are several ways:
+
+1. Using a shared volume:
+
+   docker run -v shared_data:/data container1
+   docker run -v shared_data:/data container2
+
+2. Using docker cp to copy from container to host, then to another container:
+
+   docker cp container1:/path/to/file /tmp/file
+   docker cp /tmp/file container2:/path/to/file
+
+3. Using a network - containers on the same Docker network
+   can transfer data via HTTP, TCP, etc.
 
 <details>
 <summary>What happens to data of the container when a container exists?</summary><br><b>
 </b></details>
+When a container exits, the data in its writable layer is preserved 
+but NOT deleted - it still exists until the container is explicitly 
+removed with docker rm.
 
+However, once the container is removed, all data in the writable 
+layer is permanently lost.
+
+To persist data beyond the container lifecycle, use volumes:
+
+   docker run -v myvolume:/data myimage
 <details>
 <summary>How do you remove old, non running, containers?</summary><br><b>
 
@@ -1029,15 +1052,54 @@ Because each container has its own writable container layer, and all changes are
 <details>
 <summary>How do you manage persistent storage in Docker?</summary><br><b>
 </b></details>
+There are three options:
 
+1. Volumes (recommended) - managed by Docker,
+   stored in /var/lib/docker/volumes/:
+
+   docker volume create myvolume
+   docker run -v myvolume:/app/data myimage
+
+2. Bind mounts - mount a host directory directly:
+
+   docker run -v /host/path:/container/path myimage
+
+3. tmpfs mounts - stored in host memory only,
+   not persisted to disk:
+
+   docker run --tmpfs /tmp myimage
+
+Volumes are preferred in production as they are portable,
+easy to back up and independent of host directory structure.
 <details>
 <summary>How can you connect from the inside of your container to the localhost of your host, where the container runs?</summary><br><b>
 </b></details>
+Use the special DNS name host.docker.internal which 
+resolves to the host machine IP:
 
+   curl http://host.docker.internal:8080
+
+On Linux, you may need to add --add-host flag:
+
+   docker run --add-host=host.docker.internal:host-gateway myimage
+
+Alternatively find the host IP using:
+
+   ip route | grep default | awk '{print $3}'
 <details>
 <summary>How do you copy files from Docker container to the host and vice versa?</summary><br><b>
 </b></details>
+Use the docker cp command:
 
+   # From container to host
+   docker cp <container_id>:/path/in/container /path/on/host
+
+   # From host to container
+   docker cp /path/on/host <container_id>:/path/in/container
+
+   # Example
+   docker cp mycontainer:/app/logs/app.log /tmp/app.log
+   docker cp /tmp/config.yml mycontainer:/app/config.yml
 <a name="questions-docker-compose"></a>
 ### Docker Compose
 
