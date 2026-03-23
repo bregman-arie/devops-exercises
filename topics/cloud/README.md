@@ -77,10 +77,12 @@ It's important to note that:
 
 <details>
 <summary>Can we replace any type of computing on servers with serverless?</summary><br><b>
+Not really. Serverless works best for short-lived, event-driven, stateless workloads. Long running jobs, workloads that need fine-grained control of the underlying OS, GPUs, or persistent connections are usually a poor fit and still require servers/VMs/containers.
 </b></details>
 
 <details>
 <summary>Is there a difference between managed service to SaaS or is it the same thing?</summary><br><b>
+Yes. A managed service is an infrastructure component (database, cache, queue, etc.) that the provider operates for you while you still run your own application. SaaS delivers the complete application as a finished product that you simply configure and consume, without deploying or managing your own code.
 </b></details>
 
 <details>
