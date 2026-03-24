@@ -1,0 +1,13 @@
+{
+  "exercise": {
+    "title": "Docker Container Basics",
+    "description": "Learn basic Docker container operations",
+    "difficulty": "beginner",
+    "tags": ["docker", "containers", "basics"]
+  },
+  "category": "containers",
+  "hints": [
+    "Use docker run to start a container",
+    "Check container status with docker ps"
+  ]
+}
