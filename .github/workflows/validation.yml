@@ -1,0 +1,23 @@
+name: Validation
+
+on:
+  pull_request:
+    branches: [ master ]
+  push:
+    branches: [ master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install pyyaml
+      - name: Run validation tests
+        run: python -m pytest tests/test_validation.py -v
+      - name: Validate exercises directory
+        run: python scripts/validate/validator.py
