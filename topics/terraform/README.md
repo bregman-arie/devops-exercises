@@ -1557,7 +1557,52 @@ module "vpc" {
 - Creating "god" root modules that mix networking, compute, and application concerns instead of composing smaller modules.<br>
 - Copying and pasting modules without versioning, documentation, or automated tests.
   </b></details>
+<details>
+<summary>How to filter a map using `for` expression in Terraform?</summary><br><b>
 
+Terraform allows filtering maps using a `for` expression with a condition.
+
+Example:
+
+```hcl
+rg_config = {
+  for k, v in var.rg_config : k => v
+  if v.deploy
+}
+```
+
+Explanation:
+
+- `for k, v in var.rg_config` iterates over the map  
+- `k => v` keeps the key-value pair  
+- `if v.deploy` filters only entries where `deploy = true`  
+
+Input:
+
+```hcl
+variable "rg_config" {
+  default = {
+    rg1 = { name = "dev-rg",  deploy = true }
+    rg2 = { name = "test-rg", deploy = false }
+  }
+}
+```
+
+Output:
+
+```hcl
+rg_config = {
+  rg1 = { name = "dev-rg", deploy = true }
+}
+```
+
+Use Cases:
+
+- Conditional resource deployment  
+- Filtering configurations  
+- Multi-environment setups  
+
+</b></details>
 <details>
 <summary>How do you test and lint modules during development?</summary><br><b>
 
