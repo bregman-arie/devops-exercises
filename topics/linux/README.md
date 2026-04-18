@@ -598,6 +598,23 @@ tail -f <file_name>
 
 <details>
 <summary>How you measure time execution of a program?</summary><br><b>
+
+You can measure the execution time of a program using the time command in Linux.
+
+Example: `time ls`
+
+Example Output: 
+```bash
+  real    0m0.005s
+  user    0m0.002s
+  sys     0m0.003s
+```
+- real: Total elapsed time (wall-clock time from start to finish)
+- user: Time the CPU spent executing user-level instructions
+- sys: Time the CPU spent in kernel (system) operations
+
+This command is useful for analyzing the performance of commands and scripts.
+
 </b></details>
 
 #### Scenarios
