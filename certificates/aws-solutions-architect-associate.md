@@ -280,7 +280,7 @@ An S3 bucket is a resource which is similar to folders in a file system and allo
 <details>
 <summary>True or False? A bucket name must be globally unique</summary><br><b>
 
-True
+false
 </b></details>
 
 <details>
