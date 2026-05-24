@@ -1,0 +1,3 @@
+2026/05/24 22:10:00 [info] Nginx configuration reloaded successfully.
+2026/05/24 22:15:02 [error] 822#822: *142 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.1.52, server: ticketing.internal, request: "GET /dashboard HTTP/1.1", upstream: "http://127.0.0.1:5000/dashboard"
+2026/05/24 22:16:10 [error] 822#822: *145 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.1.53, server: ticketing.internal, request: "GET /dashboard HTTP/1.1", upstream: "http://127.0.0.1:5000/dashboard"

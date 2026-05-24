@@ -62,6 +62,7 @@ Disclaimer: developed by repository owner
 |Name|Topic|Objective & Instructions|Solution|Comments|
 |--------|--------|------|----|----|
 | Unique Count |  | [Exercise](exercises/uniqe_count/README.md) | [Solution](exercises/uniqe_count/solution.md)
+| Reverse Proxy Log Diagnostics | grep, systemd, logs | [Exercise](exercises/log_troubleshooting/README.md) | [Solution](exercises/log_troubleshooting/solution.md) | Highly relevant SRE scenario. |
 
 ## Linux Questions
 
