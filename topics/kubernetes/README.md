@@ -6,7 +6,7 @@ What's your goal?
 
 * I would like to prepare for CKA certification
   * See [CKA](CKA.md) page
-* I would like to learn Kubernetes by practicing both theoritcal and practical material
+* I would like to learn Kubernetes by practicing both theoretical and practical material
   * Solve [exercises](#kubernetes-exercises)
   * Solve [questions](#kubernetes-questions)
 * I would like to learn practical Kubernetes

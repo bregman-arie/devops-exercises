@@ -139,7 +139,7 @@ To be clear, CM tools can be used to provision resources so in the end goal of h
 ```
 resource "aws_instance" "some-instance" {
   ami           = "ami-201720221991yay"
-  instance_type = "t2.micro
+  instance_type = "t2.micro"
 }
 ```
 
@@ -156,7 +156,7 @@ The instance itself will be provisioned with type "t2.micro" and using an image 
 ```
 resource "aws_instance" "some-instance" {
   ami           = "ami-201720221991yay"
-  instance_type = "t2.micro
+  instance_type = "t2.micro"
 }
 ```
 
