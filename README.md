@@ -1279,7 +1279,7 @@ func main() {
 
 Output: 2 1 3
 
-[Aritcle about sync/waitgroup](https://tutorialedge.net/golang/go-waitgroup-tutorial/)
+[Article about sync/waitgroup](https://tutorialedge.net/golang/go-waitgroup-tutorial/)
 
 [Golang package sync](https://golang.org/pkg/sync/)
 </b></details>
@@ -1334,7 +1334,7 @@ Output: <code><br>
 In `mod1` a is link, and when we're using `a[i]`, we're changing `s1` value to.
 But in `mod2`, `append` creates new slice, and we're changing only `a` value, not `s2`.
 
-[Aritcle about arrays](https://golangbot.com/arrays-and-slices/),
+[Article about arrays](https://golangbot.com/arrays-and-slices/),
 [Blog post about `append`](https://blog.golang.org/slices)
 </b></details>
 
