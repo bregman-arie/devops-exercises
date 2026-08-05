@@ -350,6 +350,9 @@ Then CVSS stands for Common Vulnerability Scoring System, it attempts to assign 
 
 <details>
 <summary>Describe how do you secure public repositories</summary><br><b>
+
+ Securing public repositories involves several practices: never commit secrets (API keys, passwords, tokens) directly into code - use environment variables, secret managers (like AWS Secrets Manager or HashiCorp Vault), and scanning tools like git-secrets or gitleaks to catch accidentally committed secrets. Enable branch protection rules so changes to main branches require pull request review before merging. Turn on Dependabot or similar dependency-scanning tools to catch vulnerable third-party packages. Use signed commits (GPG/SSH signing) to verify contributor identity. Enable two-factor authentication for all maintainers and collaborators. Add a SECURITY.md file describing how to responsibly report vulnerabilities. Regularly audit repository access and remove inactive collaborators. Use CI/CD security scanning (SAST tools, container image scanning) as part of the pipeline before merging or releasing code.
+ 
 </b></details>
 
 <details>
