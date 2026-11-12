@@ -2,6 +2,8 @@
 
 A summary of what you need to know for the exam can be found [here](https://aws.amazon.com/certification/certified-sysops-admin-associate)
 
+> **Note:** AWS has renamed this certification **AWS Certified CloudOps Engineer - Associate**. The current exam is SOA-C03: AWS says SOA-C02 was in use until 29 September 2025 and SOA-C03 from 30 September 2025, with five domains instead of six. Current SysOps Administrator holders keep their credential. Sources: [AWS certification page](https://aws.amazon.com/certification/certified-cloudops-engineer-associate/), [SOA-C02 vs SOA-C03](https://docs.aws.amazon.com/aws-certification/latest/sysops-administrator-associate-03/sysops-administrator-associate-03-comparison.html)
+
 ### <b>  Who should take this exam? </b>
 <br>
 AWS Certified SysOps Administrator - Associate is intended for system administrators in cloud operations roles to validate technical skills. 
@@ -18,9 +20,10 @@ AWS Certified SysOps Administrator - Associate is intended for system administra
 <br>
 Get started with free resources or explore additional resources, including Official Practice Exams, with a subscription to AWS Skill Builder.
 
- * AWS Cloud SysOps Guide (SOA-C02) [here](https://d1.awsstatic.com/training-and-certification/docs-sysops-associate/AWS-Certified-SysOps-Administrator-Associate_Exam-Guide.pdf)
+ * AWS Certified CloudOps Engineer - Associate Exam Guide (SOA-C03) [here](https://docs.aws.amazon.com/aws-certification/latest/sysops-administrator-associate-03/sysops-administrator-associate-03.html)
  * AWS Certified SysOps Administrator - Associate Official Practice Question Set (FREE) [here](https://explore.skillbuilder.aws/learn/course/external/view/elearning/12485/aws-certified-sysops-administrator-associate-practice-question-set-soa-c02-english?syops=sec&sec=prep)
  * Exam Prep: AWS Certified SysOps Administrator - Associate (FREE) [here](https://explore.skillbuilder.aws/learn/course/external/view/elearning/9313/exam-prep-aws-certified-sysops-administrator-associate)
+ * ExamCrest SOA-C03 sample questions (FREE, no signup; full mock tests are paid) [here](https://examcrest.com/exam/aws-soa-c03/free-questions?utm_source=github&utm_campaign=devops-exercises-soa)
 
  ### <b> Certification resource </b>
  <br>
