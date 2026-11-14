@@ -1192,6 +1192,26 @@ Restart Policies. It allows you to automatically restart containers after certai
   * on-failure: restart the container when it exists due to an error (= exit code different than zero)
 </b></details>
 
+<details>
+<summary>How do you determine whether a container restart was caused by an OOM kill or by the application exiting?</summary><br><b>
+
+Start with the container's runtime state:
+
+- `docker inspect <container> --format '{{.State.OOMKilled}} {{.State.ExitCode}} {{.State.Error}}'`
+
+`OOMKilled=true` is the direct signal that the container exceeded its memory limit. Exit code `137` means the process was killed by `SIGKILL`; it is consistent with an OOM kill, but it can also be a manual kill, so confirm it with `OOMKilled`.
+
+If `OOMKilled` is false, check the application and kernel logs:
+
+- `docker logs --tail 100 <container>`
+- `dmesg -T | grep -iE 'out of memory|oom|killed process'` (or `journalctl -k` on systemd hosts)
+- `docker events --filter container=<container> --since 1h`
+
+If there is no OOM record and the logs show an exception, panic, or a clean exit, the application exited on its own. `docker stats` and the container's memory limit show whether it is close to the limit.
+
+On Kubernetes, the same cause appears as `Reason: OOMKilled` in `kubectl describe pod`.
+</b></details>
+
 <a name="questions-rootless-containers"></a>
 
 <details>
